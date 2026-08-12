@@ -700,7 +700,7 @@ cf_common_exit_004FD1D2:
       case 2:
       case 10:
         if ((g_bldObjPanel_00801684 == nullptr) ||
-           (g_bldObjPanel_00801684->field_0172 == 2)) {
+           (g_bldObjPanel_00801684->field_0172 == CASE_2)) {
           piVar19 = (int *)0x1;
         }
         else {
@@ -724,14 +724,14 @@ cf_common_exit_004FD1D2:
       case 8:
       case 9:
         if ((g_researchPanel_008016E8 == nullptr) ||
-           (g_researchPanel_008016E8->field_0172 == 2)) {
+           (g_researchPanel_008016E8->field_0172 == CASE_2)) {
           piVar19 = (int *)0x1;
         }
         else {
           piVar19 = nullptr;
         }
         if ((g_bldBoatPanel_0080167C != nullptr) &&
-           (g_bldBoatPanel_0080167C->field_0172 != 2)) {
+           (g_bldBoatPanel_0080167C->field_0172 != CASE_2)) {
           piVar19 = nullptr;
         }
         if ((g_infocPanel_00801698 != nullptr) &&
@@ -744,7 +744,7 @@ cf_common_exit_004FD1D2:
           piVar19 = nullptr;
         }
       }
-      if ((pFVar16 != nullptr) && (pFVar16->field_0172 != 2)) {
+      if ((pFVar16 != nullptr) && (pFVar16->field_0172 != CASE_2)) {
         piVar19 = nullptr;
       }
 LAB_004fbe73:
@@ -765,7 +765,7 @@ LAB_004fbe73:
             if ((*local_1c != '\0') &&
                ((((short)local_8 != 2 ||
                  ((((g_bldObjPanel_00801684 == nullptr ||
-                    (g_bldObjPanel_00801684->field_0172 == 2)) &&
+                    (g_bldObjPanel_00801684->field_0172 == CASE_2)) &&
                    ((g_behPanel_00801678 == nullptr ||
                     (g_behPanel_00801678->field_0172 == 2)))) &&
                   ((((g_sAMPanel_008016EC == nullptr ||
@@ -776,15 +776,15 @@ LAB_004fbe73:
                     (g_frmPanel_0080168C->field_0172 == 2)))))))) &&
                 (((short)local_8 != 6 ||
                  ((((((g_researchPanel_008016E8 == nullptr ||
-                      (g_researchPanel_008016E8->field_0172 == 2)) &&
+                      (g_researchPanel_008016E8->field_0172 == CASE_2)) &&
                      ((g_bldBoatPanel_0080167C == nullptr ||
-                      (g_bldBoatPanel_0080167C->field_0172 == 2)))) &&
+                      (g_bldBoatPanel_0080167C->field_0172 == CASE_2)))) &&
                     ((g_infocPanel_00801698 == nullptr ||
                      (g_infocPanel_00801698->field_0172 == 2)))) &&
                    ((g_tradePanel_00802A44 == nullptr ||
                     (g_tradePanel_00802A44->field_0172 == 2)))) &&
                   ((g_bldLabPanel_00801680 == nullptr ||
-                   (g_bldLabPanel_00801680->field_0172 == 2)))))))))) {
+                   (g_bldLabPanel_00801680->field_0172 == CASE_2)))))))))) {
               local_2c = (&local_44->field_003C)[iVar6] + 7;
               local_24 = 0xe;
               local_20 = 0x1b;
@@ -829,7 +829,7 @@ LAB_004fbe73:
             if (*local_1c != '\0') {
               if ((short)local_8 == 3) {
                 if ((((((g_bldObjPanel_00801684 != nullptr) &&
-                       (g_bldObjPanel_00801684->field_0172 != 2)) ||
+                       (g_bldObjPanel_00801684->field_0172 != CASE_2)) ||
                       ((g_behPanel_00801678 != nullptr &&
                        (g_behPanel_00801678->field_0172 != 2)))) ||
                      ((g_sAMPanel_008016EC != nullptr &&
@@ -849,15 +849,15 @@ LAB_004fbe73:
               }
               if ((short)local_8 == 5) {
                 if (((((g_researchPanel_008016E8 != nullptr) &&
-                      (g_researchPanel_008016E8->field_0172 != 2)) ||
+                      (g_researchPanel_008016E8->field_0172 != CASE_2)) ||
                      ((g_bldBoatPanel_0080167C != nullptr &&
-                      (g_bldBoatPanel_0080167C->field_0172 != 2)))) ||
+                      (g_bldBoatPanel_0080167C->field_0172 != CASE_2)))) ||
                     ((g_infocPanel_00801698 != nullptr &&
                      (g_infocPanel_00801698->field_0172 != 2)))) ||
                    (((g_tradePanel_00802A44 != nullptr &&
                      (g_tradePanel_00802A44->field_0172 != 2)) ||
                     ((g_bldLabPanel_00801680 != nullptr &&
-                     (g_bldLabPanel_00801680->field_0172 != 2)))))) break;
+                     (g_bldLabPanel_00801680->field_0172 != CASE_2)))))) break;
                 iVar6 = local_44->field_00A8 + 0xb;
                 if ((iVar6 < (int)local_18) &&
                    ((((int)local_18 < local_44->field_00A8 + 0x41 &&
@@ -982,7 +982,7 @@ LAB_004fbe73:
           case 0:
           case 1:
             if (((((g_bldObjPanel_00801684 != nullptr) &&
-                  (g_bldObjPanel_00801684->field_0172 == 2)) &&
+                  (g_bldObjPanel_00801684->field_0172 == CASE_2)) &&
                  (g_behPanel_00801678 != nullptr)) &&
                 (((g_behPanel_00801678->field_0172 == 2 &&
                   (g_upgPanel_00802A48 != nullptr)) &&
@@ -998,15 +998,15 @@ LAB_004fbe73:
           case 3:
           case 4:
             if (((g_researchPanel_008016E8 != nullptr) &&
-                (g_researchPanel_008016E8->field_0172 == 2)) &&
+                (g_researchPanel_008016E8->field_0172 == CASE_2)) &&
                ((g_bldBoatPanel_0080167C != nullptr &&
-                (((g_bldBoatPanel_0080167C->field_0172 == 2 &&
+                (((g_bldBoatPanel_0080167C->field_0172 == CASE_2 &&
                   (g_infocPanel_00801698 != nullptr)) &&
                  (g_infocPanel_00801698->field_0172 == 2)))))) {
               if (DAT_0080874e == '\x03') {
 LAB_004fba8d:
                 if ((g_bldLabPanel_00801680 != nullptr) &&
-                   (g_bldLabPanel_00801680->field_0172 == 2)) {
+                   (g_bldLabPanel_00801680->field_0172 == CASE_2)) {
 LAB_004fbaa0:
                   piVar19 = local_c;
                 }

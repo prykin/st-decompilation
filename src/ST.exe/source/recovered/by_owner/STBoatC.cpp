@@ -101,7 +101,7 @@ STBoatC * __thiscall st::fn_0044E690(STBoatC *this)
   int iVar1;
   undefined4 *puVar2;
   short *psVar3;
-  uint *puVar4;
+  STBoatC_field_06F3State *pSVar4;
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
@@ -147,22 +147,34 @@ STBoatC * __thiscall st::fn_0044E690(STBoatC *this)
     *(undefined4 *)psVar3 = 0;
     psVar3 = psVar3 + 2;
   }
-  memset(&this->field_0588, 0, 0x18); /* compiler bulk-zero initialization */
-  iVar1 = 0;
+  psVar3 = &this->field_0588;
+  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *(undefined4 *)psVar3 = 0;
+    psVar3 = psVar3 + 2;
+  }
   memset(&this->field_05A0, 0, 0x2a); /* compiler bulk-zero initialization */
   iVar1 = 0;
-  *(undefined4 *)&this->field_0x5ca = 0;
-  *(undefined4 *)&this->field_0x5ce = 0;
-  *(undefined4 *)&this->field_0x5d2 = 0;
+  this->field_05CA = 0;
+  this->field_05CC = 0;
+  this->field_05CE = 0;
+  this->field_05D0 = 0;
+  this->field_05D2 = 0;
+  this->field_05D4 = 0;
   this->field_05D6 = 0;
   this->field_05DA = 0;
-  *(undefined4 *)&this->field_0x5dc = 0;
-  *(undefined4 *)&this->field_0x5e0 = 0;
-  *(undefined4 *)&this->field_0x5e4 = 0;
+  this->field_05DC = 0;
+  this->field_05DE = 0;
+  this->field_05E0 = 0;
+  this->field_05E2 = 0;
+  this->field_05E4 = 0;
+  this->field_05E6 = 0;
   this->field_05E8 = 0;
-  *(undefined4 *)&this->field_0x5ec = 0;
-  *(undefined4 *)&this->field_0x5f0 = 0;
-  *(undefined4 *)&this->field_0x5f4 = 0;
+  this->field_05EC = 0;
+  this->field_05EE = 0;
+  this->field_05F0 = 0;
+  this->field_05F2 = 0;
+  this->field_05F4 = 0;
+  this->field_05F6 = 0;
   this->field_05F8 = 0;
   memset(&this->field_05FC, 0, 0x1d); /* compiler bulk-zero initialization */
   iVar1 = 0;
@@ -172,8 +184,12 @@ STBoatC * __thiscall st::fn_0044E690(STBoatC *this)
   iVar1 = 0;
   memset(&this->field_066B, 0, 0x20); /* compiler bulk-zero initialization */
   iVar1 = 0;
-  memset(&this->field_068B, 0, 0x1e); /* compiler bulk-zero initialization */
-  iVar1 = 0;
+  psVar3 = &this->field_068B;
+  for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *(undefined4 *)psVar3 = 0;
+    psVar3 = psVar3 + 2;
+  }
+  *psVar3 = 0;
   psVar3 = &this->field_06A9;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(undefined4 *)psVar3 = 0;
@@ -185,12 +201,16 @@ STBoatC * __thiscall st::fn_0044E690(STBoatC *this)
     *(undefined4 *)psVar3 = 0;
     psVar3 = psVar3 + 2;
   }
-  this->field_06EB = 0;
+  *(undefined4 *)&this->field_0x6eb = 0;
   this->field_06EF = 0;
   this->field_045D = CASE_3;
-  puVar4 = &this->field_06F3;
-  memset(puVar4, 0, 0x16b); /* compiler bulk-zero initialization */
-  puVar4 = st::pointer_boundary_cast<uint *>((undefined4 *)((byte *)puVar4 + 0x168));
+  pSVar4 = &this->field_06F3;
+  for (iVar1 = 0x5a; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *pSVar4 = CASE_0;
+    pSVar4 = pSVar4 + 1;
+  }
+  *(undefined2 *)pSVar4 = CASE_0;
+  STField<byte>(pSVar4,2) = 0;
   this->field_0716 = 100;
   this->field_0712 = 100;
   this->field_071A = 100;
@@ -530,11 +550,11 @@ int __thiscall st::fn_004803D0(STBoatC *this,AnonShape_004803D0_350EB461 *param_
     if (this->field_07CA != nullptr) {
       return 0;
     }
-    *(undefined2 *)&this->field_0x3ba = *(undefined2 *)&this->field_0x44b;
+    this->field_03BA = this->field_044B;
     *(undefined2 *)&this->field_0x3be = *(undefined2 *)&this->field_0x44f;
-    *(undefined2 *)&this->field_0x3bc = *(undefined2 *)&this->field_0x44d;
+    this->field_03BC = this->field_044D;
     *(undefined4 *)&this->field_0x3c0 = *(undefined4 *)&this->field_0x451;
-    this->field_06EB = *(undefined4 *)&this->field_0x451;
+    *(undefined4 *)&this->field_0x6eb = *(undefined4 *)&this->field_0x451;
     this->field_06EF = 0;
   }
   iVar2 = this->field_06EF;
@@ -1908,7 +1928,9 @@ void __thiscall st::fn_00492420(STBoatC *this)
   if ((this->field_07C6 == 1) && (this->field_07CA == nullptr)) {
     this->field_07C6 = 0;
     local_8 = this;
-    iVar1 = st::fn_006E62D0(g_playSystem_00802A38,this->field_058E,(int *)&local_8);
+    iVar1 = st::fn_006E62D0
+                      (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
+                       (int *)&local_8);
     if (iVar1 != -4) {
       local_8->ReleaseLoad(this->field_0018);
     }
@@ -1956,7 +1978,7 @@ undefined4 __thiscall st::fn_004926C0(STBoatC *this,int param_1)
   local_dc[0x45] = 0;
   local_dc[0x52] = 0;
   local_dc[0x53] = 0;
-  uVar1 = *(ushort *)&this->field_0x5ec;
+  uVar1 = this->field_05EC;
   local_dc[0x2e] = 2;
   local_dc[0x2f] = 0;
   local_dc[0x3e] = 2;
@@ -1977,7 +1999,7 @@ undefined4 __thiscall st::fn_004926C0(STBoatC *this,int param_1)
   local_dc[0x5b] = 0;
   local_dc[0x5c] = 2;
   local_dc[0x5d] = 0;
-  uVar2 = *(ushort *)&this->field_0x5ee;
+  uVar2 = this->field_05EE;
   local_dc[0x1e] = -2;
   local_dc[0x1f] = -1;
   local_dc[0x20] = -2;
@@ -2048,13 +2070,13 @@ undefined4 __thiscall st::fn_004926C0(STBoatC *this,int param_1)
        (((g_worldGrid.sizeY <= (short)uVar2 || (g_worldGrid.sizeZ < 5)) ||
         (local_8 = (int)g_worldGrid.planeStride,
         STGridAt3D(g_worldGrid, uVar1, uVar2, 4).objects[1] == nullptr)))))))) {
-    *(ushort *)&this->field_0x5f2 = uVar1;
-    *(ushort *)&this->field_0x5f4 = uVar2;
-    *(undefined2 *)&this->field_0x5f6 = 4;
+    this->field_05F2 = uVar1;
+    this->field_05F4 = uVar2;
+    this->field_05F6 = 4;
     return 1;
   }
   iVar6 = 4;
-  local_18 = *(short *)&this->field_0x5f0 + 1;
+  local_18 = st::machine_word_boundary_cast<int>(this->field_05F0 + 1);
   if (local_18 < 5) {
     do {
       local_10 = local_dc;
@@ -2075,9 +2097,9 @@ undefined4 __thiscall st::fn_004926C0(STBoatC *this,int param_1)
                (g_worldGrid.cells
                 [(int)sVar4 * (int)g_worldGrid.sizeX + sVar5 * local_8 + (int)sVar3].objects[1] ==
                 nullptr)))))))))) {
-          *(short *)&this->field_0x5f6 = sVar5;
-          *(short *)&this->field_0x5f4 = sVar4;
-          *(short *)&this->field_0x5f2 = sVar3;
+          this->field_05F6 = sVar5;
+          this->field_05F4 = sVar4;
+          this->field_05F2 = sVar3;
           return 1;
         }
         local_10 = local_10 + 4;

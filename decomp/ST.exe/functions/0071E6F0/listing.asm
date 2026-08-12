@@ -1,4 +1,4 @@
-FUN_0071e6f0:
+ViewerClassTy::ViewerClassTy:
 0071E6F0  56                        PUSH ESI
 0071E6F1  8B F1                     MOV ESI,ECX
 0071E6F3  E8 08 D0 00 00            CALL 0x0072b700

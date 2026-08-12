@@ -42,15 +42,15 @@ int __thiscall CPanelTy::sub_004FAB10(CPanelTy *this,CPanelTy_sub_004FAB10_param
     return (uint)(this->field_023F == CASE_1);
   case CASE_6:
     if (g_researchPanel_008016E8 != nullptr) {
-      return (uint)(g_researchPanel_008016E8->field_0172 != 2);
+      return (uint)(g_researchPanel_008016E8->field_0172 != CASE_2);
     }
   case CASE_7:
     if (g_bldBoatPanel_0080167C != nullptr) {
-      return (uint)(g_bldBoatPanel_0080167C->field_0172 != 2);
+      return (uint)(g_bldBoatPanel_0080167C->field_0172 != CASE_2);
     }
   case CASE_8:
     if (g_bldObjPanel_00801684 != nullptr) {
-      return (uint)(g_bldObjPanel_00801684->field_0172 != 2);
+      return (uint)(g_bldObjPanel_00801684->field_0172 != CASE_2);
     }
   case CASE_9:
     if (g_infocPanel_00801698 != nullptr) {
@@ -66,7 +66,7 @@ int __thiscall CPanelTy::sub_004FAB10(CPanelTy *this,CPanelTy_sub_004FAB10_param
     }
   case CASE_C:
     if (g_bldLabPanel_00801680 != nullptr) {
-      return (uint)(g_bldLabPanel_00801680->field_0172 != 2);
+      return (uint)(g_bldLabPanel_00801680->field_0172 != CASE_2);
     }
   case CASE_10:
     if (g_upgPanel_00802A48 != nullptr) {

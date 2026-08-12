@@ -45,7 +45,7 @@ STGroupBoatC * __thiscall st::fn_00497AF0(STGroupBoatC *this)
 {
   int iVar1;
   DArrayTy **ppDVar2;
-  undefined4 *puVar3;
+  short *psVar4;
 
   st::fn_004053B7(this);
   this->vtable = &st_global_00790728;
@@ -72,44 +72,62 @@ STGroupBoatC * __thiscall st::fn_00497AF0(STGroupBoatC *this)
   this->field_0236 = 1;
   memset(&this->field_024A, 0, 0x2c); /* compiler bulk-zero initialization */
   iVar1 = 0;
-  puVar3 = (undefined4 *)&this->field_0276;
-  memset(puVar3, 0, 0x1f); /* compiler bulk-zero initialization */
-  puVar3 = (undefined4 *)((byte *)puVar3 + 0x1c);
-  *(undefined4 *)&this->field_0x295 = 0;
+  psVar4 = &this->field_0276;
+  for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *(undefined4 *)psVar4 = 0;
+    psVar4 = psVar4 + 2;
+  }
+  *psVar4 = 0;
+  *(undefined1 *)(psVar4 + 1) = 0;
+  this->field_0295 = 0;
+  this->field_0297 = 0;
   this->field_0299 = 0;
   this->field_029B = 0;
-  *(undefined4 *)&this->field_0x29f = 0;
-  *(undefined4 *)&this->field_0x2a3 = 0;
+  this->field_029F = 0;
+  this->field_02A3 = 0;
+  this->field_02A5 = 0;
   *(undefined4 *)&this->field_0x2a7 = 0;
   this->field_02AB = 0;
-  *(undefined4 *)&this->field_0x2b3 = 0;
+  this->field_02B3 = 0;
+  this->field_02B5 = 0;
   *(undefined4 *)&this->field_0x2b7 = 0;
-  *(undefined2 *)&this->field_0x2bb = 0;
-  *(undefined4 *)&this->field_0x2bd = 0;
+  this->field_02BB = 0;
+  this->field_02BD = 0;
+  this->field_02BF = 0;
   this->field_02C1 = 0;
   *(undefined4 *)&this->field_0x2c3 = 0;
   *(undefined4 *)&this->field_0x2c7 = 0;
   this->field_02CB = 0;
   this->field_02CD = 0;
   this->field_02CE = 0;
-  *(undefined4 *)&this->field_0x2d2 = 0;
+  this->field_02D2 = 0;
+  this->field_02D4 = 0;
   this->field_02D6 = 0;
   this->field_02D8 = 0;
-  *(undefined4 *)&this->field_0x2dc = 0;
-  *(undefined4 *)&this->field_0x2e0 = 0;
-  *(undefined4 *)&this->field_0x2e4 = 0;
-  *(undefined4 *)&this->field_0x2e8 = 0;
+  this->field_02DC = 0;
+  this->field_02DE = 0;
+  this->field_02E0 = 0;
+  this->field_02E2 = 0;
+  this->field_02E4 = 0;
+  this->field_02E6 = 0;
+  this->field_02E8 = 0;
+  this->field_02EA = 0;
   this->field_02EC = 0;
-  *(undefined4 *)&this->field_0x2ee = 0;
+  this->field_02EE = 0;
+  this->field_02F0 = 0;
   *(undefined4 *)&this->field_0x2f2 = 0;
   this->field_02F6 = 0;
-  *(undefined4 *)&this->field_0x2f8 = 0;
-  *(undefined4 *)&this->field_0x2fc = 0;
-  *(undefined4 *)&this->field_0x300 = 0;
-  *(undefined4 *)&this->field_0x304 = 0;
+  this->field_02F8 = 0;
+  this->field_02FA = 0;
+  this->field_02FC = 0;
+  this->field_02FE = 0;
+  this->field_0300 = 0;
+  this->field_0302 = 0;
+  this->field_0304 = 0;
+  this->field_0306 = 0;
   *(undefined4 *)&this->field_0x308 = 0;
   this->field_030C = 0;
-  this->field_030E = 0;
+  *(undefined4 *)&this->field_0x30e = 0;
   this->field_01E6 = CASE_3;
   this->field_0039 = 0;
   return this;
@@ -222,13 +240,13 @@ st::fn_0049A500
       } while (index < uVar1);
     }
     if (param_1 != nullptr) {
-      *param_1 = (short)((int)sVar4 / (int)(uint)this->field_0027);
+      *param_1 = (short)((int)sVar4 / (int)(uint)(ushort)this->field_0027);
     }
     if (param_2 != nullptr) {
-      *param_2 = (short)((int)sVar2 / (int)(uint)this->field_0027);
+      *param_2 = (short)((int)sVar2 / (int)(uint)(ushort)this->field_0027);
     }
     if (param_3 != nullptr) {
-      *param_3 = (short)((int)(short)local_8 / (int)(uint)this->field_0027);
+      *param_3 = (short)((int)(short)local_8 / (int)(uint)(ushort)this->field_0027);
     }
   }
   return;

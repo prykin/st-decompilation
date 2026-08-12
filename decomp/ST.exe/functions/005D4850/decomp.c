@@ -29,14 +29,14 @@ void __thiscall SettMapMTy::RunGame(SettMapMTy *this)
     }
     this_01 = local_8;
     thunk_FUN_005b6350(local_8,0x6948,0,0);
-    this_01->field_0x21e6 = 1;
-    this_01->field_0x21e5 = 1;
-    this_01->field_0x21e4 = 1;
+    this_01->field_21E6 = 1;
+    this_01->field_21E5 = 1;
+    this_01->field_21E4 = 1;
     this_01->field_21E7 = 1;
-    this_01->field_0x21e2 = 1;
-    this_01->field_0x21e1 = 1;
+    this_01->field_21E2 = 1;
+    this_01->field_21E1 = 1;
     (*this_01->vtable->CloseButtons)((SettMapTy *)this_01);
-    this_00 = this_01->field_1A5B->field_02E6;
+    this_00 = (this_01->array_00BC[0xc].field_01DB)->field_02E6;
     if (this_00 != nullptr) {
       MMsgTy::HidePanel(this_00,1,0,1);
     }

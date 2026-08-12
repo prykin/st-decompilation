@@ -8,7 +8,11 @@
 
    [STSwitchEnumApplier] Switch target field_0257 uses
    /SubmarineTitans/Recovered/Enums/STSharkC_field_0257State. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7
+
+   [STSwitchEnumApplier] Switch target field_0257 uses
+   /SubmarineTitans/Recovered/Enums/STSharkC_field_0257State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8 */
 
 int __thiscall STSharkC::sub_0058FF70(STSharkC *this)
 

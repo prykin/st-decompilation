@@ -65,32 +65,11 @@ undefined4 __thiscall TLOBaseTy::sub_004C56B0(TLOBaseTy *this,void *param_1)
     else {
       iVar6 = (int)pvVar1 * 0x16;
       iVar4 = (int)sVar7 + (int)*(short *)(&DAT_007932d8 + iVar6);
-      sVar7 = (short)(iVar4 >> 0x1f);
-      if (iVar4 < 0) {
-        sVar7 = (((short)(iVar4 / 200) + sVar7) - (short)((longlong)iVar4 * 0x51eb851f >> 0x3f)) +
-                -1;
-      }
-      else {
-        sVar7 = ((short)(iVar4 / 200) + sVar7) - (short)((longlong)iVar4 * 0x51eb851f >> 0x3f);
-      }
+      sVar7 = STBiasedDiv16(iVar4, 200); /* exact signed 16-bit grid-index division */
       iVar4 = (int)*(short *)(&DAT_007932d6 + iVar6) + (int)sVar8;
-      sVar8 = (short)(iVar4 >> 0x1f);
-      if (iVar4 < 0) {
-        sVar8 = (((short)(iVar4 / 0xc9) + sVar8) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)) +
-                -1;
-      }
-      else {
-        sVar8 = ((short)(iVar4 / 0xc9) + sVar8) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f);
-      }
+      sVar8 = STBiasedDiv16(iVar4, 0xc9); /* exact signed 16-bit grid-index division */
       iVar6 = (int)*(short *)(&DAT_007932d4 + iVar6) + (int)(short)local_8;
-      sVar9 = (short)(iVar6 >> 0x1f);
-      if (iVar6 < 0) {
-        sVar9 = (((short)(iVar6 / 0xc9) + sVar9) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) +
-                -1;
-      }
-      else {
-        sVar9 = ((short)(iVar6 / 0xc9) + sVar9) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f);
-      }
+      sVar9 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
       if (((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar8 < 0)) ||
           ((g_worldGrid.sizeY <= sVar8 || (sVar7 < 0)))) ||
          ((g_worldGrid.sizeZ <= sVar7 ||

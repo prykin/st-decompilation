@@ -1030,7 +1030,9 @@ cf_common_join_005305BC:
       uVar38 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x94,0x7c,1,pCVar13,uVar12,uVar25,sVar26,
                                    uVar28,uVar32,pcVar33,uVar37,uVar40);
       this_00->field_01B5[3] = uVar38;
-      PrepFiles(this_00,this_00->field_01E1);
+      STPiece<0,2>(uVar38) = this_00->field_01E1;
+      STPiece<2,2>(uVar38) = this_00->field_01E3;
+      PrepFiles(this_00,uVar38);
     }
     break;
   case CASE_5:
@@ -1573,7 +1575,8 @@ switchD_005311ec_caseD_3:
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,8,this_00->field_01B5,nullptr,local_11fc,0);
     this_00->field_0028 = 0x20;
-    *(undefined4 *)&this_00->field_0x2c = 1;
+    this_00->field_002C = 1;
+    this_00->field_002E = 0;
     FUN_006e6080(this_00,2,this_00->field_01B5[0],(undefined4 *)&this_00->field_0x18);
     break;
   case CASE_D:
@@ -1688,10 +1691,12 @@ switchD_005311ec_caseD_3:
     this_00->field_0305 = DAT_00807348;
   }
   if ((this_00->field_01A4 == CASE_1) || (this_00->field_01A9 == '\0')) {
-    *(undefined4 *)&this_00->field_0x2c = 0;
+    this_00->field_002C = 0;
+    this_00->field_002E = 0;
   }
   else {
-    *(undefined4 *)&this_00->field_0x2c = 1;
+    this_00->field_002C = 1;
+    this_00->field_002E = 0;
   }
   uVar38 = this_00->field_01AD[1];
   this_00->field_0028 = 0x20;

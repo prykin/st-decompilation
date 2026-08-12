@@ -19,7 +19,11 @@
    references; ret_sites=0058E9F8 RET | 0058ECB0 RET
    [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
    return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
-   while changing only function arity; restore Ghidra DefaultDataType */
+   while changing only function arity; restore Ghidra DefaultDataType
+
+   [STSwitchEnumApplier] Switch target field_0257 uses
+   /SubmarineTitans/Recovered/Enums/STSharkC_field_0257State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8 */
 
 void __thiscall STSharkC::LifeShark(STSharkC *this)
 

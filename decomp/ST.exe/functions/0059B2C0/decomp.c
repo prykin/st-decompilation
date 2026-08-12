@@ -63,7 +63,7 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this)
                      (ccFntTy *)pFVar3->field_1A7F,0);
           StartServTy::WrTextDDX
                     (local_8,0,0x50,(int)local_8,0xe9,0x10,(char *)(piVar9 + 2),0,0xffffffff,
-                     pFVar3->field_1A73,2);
+                     pFVar3->array_00BC[0xc].field_01F3,2);
           iVar7 = -1;
           piVar10 = piVar9 + 2;
           do {

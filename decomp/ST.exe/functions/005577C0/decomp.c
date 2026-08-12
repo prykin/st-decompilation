@@ -50,7 +50,7 @@ VisibleClassTy * __thiscall VisibleClassTy::VisibleClassTy(VisibleClassTy *this)
   this->field_0110 = nullptr;
   this->field_0114 = 0;
   this->field_00F8 = 1;
-  memset(&this->field_0118, 0, 0xc0); /* compiler bulk-zero initialization */
+  memset(this->field_0118, 0, 0xc0); /* compiler bulk-zero initialization */
   iVar2 = 0;
   memset(&this->field_01D8, 0, 0xc0); /* compiler bulk-zero initialization */
   this->field_00FC[0] = 0;

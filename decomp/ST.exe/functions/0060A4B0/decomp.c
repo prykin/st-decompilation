@@ -36,35 +36,11 @@ undefined4 __fastcall FUN_0060a4b0(AnonShape_0060A4B0_7BF9A20C *param_1)
           local_c = 1;
           if (g_visibleClass_00802A88 != nullptr) {
             iVar6 = *(int *)(iVar7 + 0x14);
-            sVar3 = (short)(iVar6 >> 0x1f);
-            if (iVar6 < 0) {
-              local_8 = (short)(((short)(iVar6 / 200) + sVar3) -
-                               (short)((longlong)iVar6 * 0x51eb851f >> 0x3f)) + -1;
-            }
-            else {
-              local_8 = (int)(short)(((short)(iVar6 / 200) + sVar3) -
-                                    (short)((longlong)iVar6 * 0x51eb851f >> 0x3f));
-            }
+            local_8 = STBiasedDiv16(iVar6, 200); /* exact signed 16-bit grid-index division */
             iVar6 = *(int *)(iVar7 + 0x10);
-            sVar3 = (short)(iVar6 >> 0x1f);
-            if (iVar6 < 0) {
-              iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar3) -
-                             (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
-            }
-            else {
-              iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar3) -
-                                  (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
-            }
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             iVar5 = *(int *)(iVar7 + 0xc);
-            sVar3 = (short)(iVar5 >> 0x1f);
-            if (iVar5 < 0) {
-              iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar3) -
-                             (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
-            }
-            else {
-              iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar3) -
-                                  (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-            }
+            iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
             if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
                 ((VisibleClassTy::sub_00558C00
                             (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6

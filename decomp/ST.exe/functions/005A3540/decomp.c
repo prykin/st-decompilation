@@ -32,7 +32,8 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
   FSGSTy_field_1EBEElement *element_1ebe;
   uint local_8;
 
-  if ((this->field_1A5F == CASE_8) && (this->field_1EBE != nullptr)) {
+  if ((this->array_00BC[0xc].field_01DF == '\b') &&
+     (this->field_1EBE != nullptr)) {
     local_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_60;
     local_10 = this;
@@ -71,10 +72,10 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
           PutDDXClip(0x13,0x5e,0,0,0x174,(byte *)0x175,'\x01',this_01->field_1E9A);
           this_01->field_002D = 0x28;
           *(dword *)&this_01->field_0x31 = this_01->field_1EBE->count;
-          *(undefined2 *)&this_01->field_0x35 = 1;
+          this_01->field_0035 = 1;
           FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
           this_01->field_002D = 0x20;
-          if ((this_01->field_1EBE->count == 0) || (this_01->field_1A6B == 0)) {
+          if ((this_01->field_1EBE->count == 0) || (this_01->array_00BC[0xc].field_01EB == 0)) {
             uVar4 = 0;
           }
           else {
@@ -117,8 +118,8 @@ LAB_005a380b:
 LAB_005a3810:
                   if (iVar7 == 0) {
                     *(short *)&this_01->field_0x31 = (short)uVar8;
-                    *(undefined2 *)&this_01->field_0x37 = 1;
-                    *(undefined2 *)&this_01->field_0x35 = 1;
+                    this_01->field_0037 = 1;
+                    this_01->field_0035 = 1;
                     this_01->field_002D = 0x22;
                     FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
                     g_currentExceptionFrame = local_60.previous;

@@ -52,7 +52,7 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)pSVar3->field_1CC0,0,0,0,0,0);
-    if (pSVar3->field_1A5F == '\0') {
+    if (pSVar3->array_00BC[0xc].field_01DF == '\0') {
       iVar12 = -1;
       iVar10 = -1;
       uVar8 = 0;

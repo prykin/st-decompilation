@@ -137,8 +137,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     }
     bVar12 = local_8 != 0;
     if (g_helpPanel_00801690 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (**(code **)(g_helpPanel_00801690->vtable + 0x18))(0);
+      local_8 = g_helpPanel_00801690->SetPanel('\0');
     }
     bVar13 = local_8 != 0;
     if (g_playPanel_008016E4 != nullptr) {

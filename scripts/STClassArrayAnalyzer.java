@@ -7,6 +7,7 @@
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.security.MessageDigest;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -26,9 +27,12 @@ import java.util.regex.Pattern;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.Array;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.lang.OperandType;
 import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Function;
@@ -42,6 +46,12 @@ import ghidra.program.model.scalar.Scalar;
 public class STClassArrayAnalyzer extends GhidraScript {
     private static final int MAX_ARRAY_COUNT = 0x400;
     private static final int MAX_LOOP_SCAN = 64;
+    private static final int MAX_RECORD_LOOP_SCAN = 256;
+    private static final int MAX_RECORD_STRIDE = 0x10000;
+    private static final String RECORD_TYPE_ROOT =
+        "/SubmarineTitans/Recovered/InlineRecordArrays/";
+    private static final String CLASS_LAYOUT_MARKER = "[STClassLayoutApplier]";
+    private static final String HASH_MARKER = "generated_layout_sha256=";
     private static final Pattern REGISTER_TERM = Pattern.compile(
         "^([A-Z][A-Z0-9]{1,3})(?:\\*(0X[0-9A-F]+|[0-9]+))?$");
     private static final Pattern STACK = Pattern.compile(
@@ -49,6 +59,7 @@ public class STClassArrayAnalyzer extends GhidraScript {
 
     private final Map<ArrayKey, ArrayEvidence> arrays = new TreeMap<>();
     private final Map<SpanKey, SpanEvidence> zeroSpans = new TreeMap<>();
+    private final Map<RecordKey, RecordEvidence> recordArrays = new TreeMap<>();
     private DataTypeManager dataTypes;
 
     @Override
@@ -71,27 +82,42 @@ public class STClassArrayAnalyzer extends GhidraScript {
             monitor.checkCancelled();
             Function function = functions.next();
             String owner = ownerOf(function);
+            boolean factory = isObjectFactory(function);
             if (owner.isBlank() || function.isExternal() || function.isThunk() ||
                     isLibrary(function) ||
-                    !"__thiscall".equals(function.getCallingConventionName())) continue;
+                    !("__thiscall".equals(function.getCallingConventionName()) || factory))
+                continue;
             Structure structure = findOwnerType(owner);
             if (structure == null) continue;
             functionsSeen++;
-            analyzeFunction(function, owner, structure);
+            analyzeFunction(function, owner, structure, factory);
         }
 
         List<Proposal> proposals = makeProposals();
+        RecordProposals records = makeRecordProposals(proposals);
         writeTsv(directory.resolve("class_array_proposals.tsv"), proposals);
+        writeRecordTypes(directory.resolve("class_record_array_type_proposals.tsv"),
+            records.types);
+        writeRecordFields(directory.resolve("class_record_array_field_proposals.tsv"),
+            records.fields);
         writeSummary(directory.resolve("class_array_summary.txt"), functionsSeen, proposals);
         println("Class-array analysis complete: " +
             directory.toAbsolutePath().normalize());
         println("Functions=" + functionsSeen + ", candidates=" + proposals.size() +
             ", auto_apply=" + proposals.stream().filter(row -> row.apply).count() +
             ", bounded_sites=" + proposals.stream().mapToInt(row -> row.boundedSites).sum() +
-            ", exact_loops=" + proposals.stream().mapToInt(row -> row.exactLoops).sum());
+            ", exact_loops=" + proposals.stream().mapToInt(row -> row.exactLoops).sum() +
+            ", record_arrays=" + records.types.size() +
+            ", record_array_apply=" + records.types.stream()
+                .filter(row -> row.apply).count());
     }
 
     private void analyzeFunction(Function function, String owner, Structure structure) {
+        analyzeFunction(function, owner, structure, false);
+    }
+
+    private void analyzeFunction(Function function, String owner, Structure structure,
+            boolean factory) {
         List<Instruction> instructions = new ArrayList<>();
         InstructionIterator iterator = currentProgram.getListing()
             .getInstructions(function.getBody(), true);
@@ -102,7 +128,7 @@ public class STClassArrayAnalyzer extends GhidraScript {
         Map<String, Long> constants = new HashMap<>();
         Map<Long, Value> stack = new HashMap<>();
         Map<String, ArrayEvidence> pointerOrigins = new HashMap<>();
-        registers.put("ECX", Value.thisAddress(0));
+        if (!factory) registers.put("ECX", Value.thisAddress(0));
 
         for (int index = 0; index < instructions.size(); index++) {
             Instruction instruction = instructions.get(index);
@@ -146,12 +172,17 @@ public class STClassArrayAnalyzer extends GhidraScript {
                 String cursor = fullRegister(operands.get(0));
                 AddressExpr expression = addressExpr(operands.get(1));
                 ThisAddress base = thisAddress(expression, registers);
-                if (!cursor.isBlank() && base != null && base.indexRegister.isBlank())
+                if (!cursor.isBlank() && base != null && base.indexRegister.isBlank()) {
+                    observeRecordLoop(function, owner, structure, instructions, index,
+                        cursor, base.offset, factory);
                     observeExactLoop(function, owner, structure, instructions, index,
                         cursor, base.offset);
+                }
             }
 
             updateState(instruction, mnemonic, operands, registers, stack, pointerOrigins);
+            if (factory && isExactFactoryAllocationCall(instructions, index, structure))
+                registers.put("EAX", Value.thisAddress(0));
             updateConstants(mnemonic, operands, constants);
         }
     }
@@ -421,6 +452,255 @@ public class STClassArrayAnalyzer extends GhidraScript {
         }
     }
 
+    /**
+     * Recover a repeated record independently of the scalar member-array logic above.
+     * x86 SIB scales stop at eight, so MSVC advances a record cursor explicitly for
+     * packed elements such as 0x1fb-byte UI records.  An exact decrementing loop proves
+     * the count; other loops with the same owner/stride contribute only member geometry.
+     */
+    private void observeRecordLoop(Function function, String owner, Structure structure,
+            List<Instruction> instructions, int leaIndex, String cursor, long offset,
+            boolean factory) {
+        boolean backwardLoop = false;
+        Address loopTarget = null;
+        String conditionCounter = "";
+        int stride = -1;
+        Map<String, Long> aliases = new HashMap<>();
+        aliases.put(cursor, 0L);
+        Map<Long, Set<Integer>> accesses = new TreeMap<>();
+        Map<Long, Map<String, Integer>> typedObjects = new TreeMap<>();
+        Set<String> sites = new TreeSet<>();
+
+        int end = Math.min(instructions.size(), leaIndex + MAX_RECORD_LOOP_SCAN);
+        for (int index = leaIndex + 1; index < end; index++) {
+            Instruction instruction = instructions.get(index);
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            List<String> operands = operands(instruction);
+
+            if (!"LEA".equals(mnemonic)) {
+                for (int operandIndex = 0; operandIndex < operands.size(); operandIndex++) {
+                    if (!OperandType.isIndirect(instruction.getOperandType(operandIndex)) &&
+                            !operands.get(operandIndex).contains(" PTR [")) continue;
+                    Long relative = aliasDisplacement(operands.get(operandIndex), aliases);
+                    int width = memoryWidth(operands.get(operandIndex));
+                    if (relative == null || width < 1 || width > 16) continue;
+                    long absolute = offset + relative;
+                    if (absolute < 0 || absolute + width > structure.getLength()) continue;
+                    accesses.computeIfAbsent(absolute, ignored -> new TreeSet<>()).add(width);
+                    if (sites.size() < 128)
+                        sites.add(addr(instruction.getAddress()) + " " + instruction);
+                }
+            }
+
+            if ("CALL".equals(mnemonic)) {
+                Long receiver = aliases.get("ECX");
+                Structure receiverType = receiverStructure(resolveThunk(
+                    directCalledFunction(instruction)));
+                if (receiver != null && receiverType != null && receiverType.getLength() > 0 &&
+                        receiverType.getLength() <= MAX_RECORD_STRIDE) {
+                    long absolute = offset + receiver;
+                    if (absolute >= 0 && absolute + receiverType.getLength() <=
+                            structure.getLength()) {
+                        typedObjects.computeIfAbsent(absolute, ignored -> new TreeMap<>())
+                            .merge(receiverType.getPathName(), 1, Integer::sum);
+                        sites.add(addr(instruction.getAddress()) + " typed nested receiver=" +
+                            receiverType.getPathName() + " at owner+" + hex(absolute));
+                    }
+                }
+            }
+
+            if ("ADD".equals(mnemonic) && operands.size() >= 2 &&
+                    cursor.equals(fullRegister(operands.get(0)))) {
+                Long value = immediate(operands.get(1));
+                if (value != null && value > 16 && value <= MAX_RECORD_STRIDE)
+                    stride = value.intValue();
+            }
+            if ("DEC".equals(mnemonic) && !operands.isEmpty())
+                conditionCounter = fullRegister(operands.get(0));
+            else if (writesConditionFlags(mnemonic)) conditionCounter = "";
+            if (instruction.getFlowType().isJump()) {
+                for (Address target : instruction.getFlows()) {
+                    if (target.compareTo(instructions.get(leaIndex).getAddress()) >= 0 &&
+                            target.compareTo(instruction.getAddress()) < 0) {
+                        backwardLoop = true;
+                        loopTarget = target;
+                    }
+                }
+            }
+
+            updateCursorAliases(mnemonic, operands, aliases, cursor, stride);
+            // A later independent definition of the same machine register starts a
+            // different cursor lifetime.  Do not let an earlier LEA inherit that
+            // later loop's stride merely because MSVC reused EDI/EDX.
+            if (!aliases.containsKey(cursor) && stride <= 16) return;
+            if (stride > 16 && backwardLoop) break;
+        }
+        if (stride <= 16 || !backwardLoop || offset < 0) return;
+
+        Integer exactCount = exactRecordLoopCount(instructions, leaIndex, loopTarget,
+            conditionCounter);
+
+        RecordKey key = new RecordKey(owner, stride);
+        RecordEvidence evidence = recordArrays.computeIfAbsent(key, RecordEvidence::new);
+        evidence.loops++;
+        evidence.functions.add(addr(function.getEntryPoint()));
+        evidence.boundaries.add(offset);
+        evidence.sites.add(addr(instructions.get(leaIndex).getAddress()) +
+            " record cursor owner+" + hex(offset) + ", stride=" + hex(stride) +
+            (exactCount != null ? ", exact_count=" + exactCount :
+                ", runtime_bound"));
+        evidence.sites.addAll(sites);
+        for (Map.Entry<Long, Set<Integer>> access : accesses.entrySet())
+            evidence.accessWidths.computeIfAbsent(access.getKey(), ignored -> new TreeSet<>())
+                .addAll(access.getValue());
+        for (Map.Entry<Long, Map<String, Integer>> object : typedObjects.entrySet())
+            for (Map.Entry<String, Integer> type : object.getValue().entrySet())
+                evidence.typedObjects.computeIfAbsent(object.getKey(),
+                    ignored -> new TreeMap<>()).merge(type.getKey(), type.getValue(),
+                        Integer::sum);
+        if (exactCount != null) {
+            evidence.counts.add(exactCount);
+            if (factory) evidence.factoryCounts.add(exactCount);
+            evidence.exactLoops++;
+        }
+    }
+
+    private Integer exactRecordLoopCount(List<Instruction> instructions, int leaIndex,
+            Address loopTarget, String counter) {
+        if (loopTarget == null || counter.isBlank()) return null;
+        int targetIndex = -1;
+        for (int index = leaIndex; index < instructions.size(); index++) {
+            if (instructions.get(index).getAddress().equals(loopTarget)) {
+                targetIndex = index;
+                break;
+            }
+        }
+        if (targetIndex < 0) return null;
+        int first = Math.max(0, Math.min(leaIndex, targetIndex) - 12);
+        for (int index = targetIndex - 1; index >= first; index--) {
+            Instruction instruction = instructions.get(index);
+            List<String> operands = operands(instruction);
+            if (operands.isEmpty() ||
+                    !counter.equals(fullRegister(operands.get(0))) ||
+                    !writesFirstOperand(instruction.getMnemonicString().toUpperCase(
+                        Locale.ROOT))) continue;
+            if (!"MOV".equalsIgnoreCase(instruction.getMnemonicString()) ||
+                    operands.size() < 2) break;
+            Long count = immediate(operands.get(1));
+            if (count != null && count >= 2 && count <= MAX_ARRAY_COUNT)
+                return count.intValue();
+            break;
+        }
+
+        // Optimized frame-pointer builds commonly spill the loop count:
+        //   mov [ebp-4], N; loop: mov eax,[ebp-4]; ...; dec eax;
+        //   mov [ebp-4],eax; jnz loop
+        // The matching load and write-back make this the same induction value;
+        // an arbitrary nearby stack constant is not accepted.
+        Long counterStack = null;
+        boolean decrementSeen = false;
+        boolean writeBack = false;
+        int loopEnd = -1;
+        for (int index = targetIndex;
+                index < Math.min(instructions.size(), targetIndex + MAX_RECORD_LOOP_SCAN);
+                index++) {
+            Instruction instruction = instructions.get(index);
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            List<String> operands = operands(instruction);
+            if ("MOV".equals(mnemonic) && operands.size() >= 2 &&
+                    counter.equals(fullRegister(operands.get(0)))) {
+                Long loaded = stackOffset(instruction, 1);
+                if (loaded != null) counterStack = loaded;
+            }
+            if ("DEC".equals(mnemonic) && !operands.isEmpty() &&
+                    counter.equals(fullRegister(operands.get(0)))) decrementSeen = true;
+            if (decrementSeen && counterStack != null && "MOV".equals(mnemonic) &&
+                    operands.size() >= 2 && counterStack.equals(stackOffset(instruction, 0)) &&
+                    counter.equals(fullRegister(operands.get(1)))) writeBack = true;
+            if (instruction.getFlowType().isJump()) {
+                for (Address target : instruction.getFlows()) {
+                    if (target.equals(loopTarget)) loopEnd = index;
+                }
+                if (loopEnd >= 0) break;
+            }
+        }
+        if (counterStack == null || !decrementSeen || !writeBack || loopEnd < 0)
+            return null;
+        first = Math.max(0, Math.min(leaIndex, targetIndex) - 16);
+        for (int index = targetIndex - 1; index >= first; index--) {
+            Instruction instruction = instructions.get(index);
+            List<String> operands = operands(instruction);
+            if (!"MOV".equalsIgnoreCase(instruction.getMnemonicString()) ||
+                    operands.size() < 2 ||
+                    !counterStack.equals(stackOffset(instruction, 0))) continue;
+            Long count = immediate(operands.get(1));
+            if (count == null || count < 2 || count > MAX_ARRAY_COUNT) return null;
+            return count.intValue();
+        }
+        return null;
+    }
+
+    private boolean writesConditionFlags(String mnemonic) {
+        return Set.of("ADD", "ADC", "SUB", "SBB", "INC", "NEG", "AND", "OR",
+            "XOR", "CMP", "TEST", "SHL", "SHR", "SAR", "ROL", "ROR", "MUL",
+            "IMUL", "DIV", "IDIV").contains(mnemonic);
+    }
+
+    private Long aliasDisplacement(String operand, Map<String, Long> aliases) {
+        AddressExpr expression = addressExpr(operand);
+        if (expression == null || expression.registers.size() != 1) return null;
+        RegisterTerm term = expression.registers.get(0);
+        if (term.scale != 1 || !aliases.containsKey(term.register)) return null;
+        return aliases.get(term.register) + expression.displacement;
+    }
+
+    private void updateCursorAliases(String mnemonic, List<String> operands,
+            Map<String, Long> aliases, String cursor, int stride) {
+        if ("CALL".equals(mnemonic)) {
+            aliases.remove("EAX"); aliases.remove("ECX"); aliases.remove("EDX");
+            return;
+        }
+        if (operands.isEmpty()) return;
+        String destination = fullRegister(operands.get(0));
+        if (destination.isBlank()) return;
+        if ("MOV".equals(mnemonic) && operands.size() >= 2) {
+            String source = fullRegister(operands.get(1));
+            Long value = aliases.get(source);
+            if (value == null) aliases.remove(destination);
+            else aliases.put(destination, value);
+            return;
+        }
+        if ("LEA".equals(mnemonic) && operands.size() >= 2) {
+            Long value = aliasDisplacement(operands.get(1), aliases);
+            if (value == null) aliases.remove(destination);
+            else aliases.put(destination, value);
+            return;
+        }
+        if (("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) &&
+                operands.size() >= 2 && aliases.containsKey(destination)) {
+            Long delta = immediate(operands.get(1));
+            // The cursor increment is the loop latch, not an in-iteration alias shift.
+            if (destination.equals(cursor) && delta != null && delta == stride) return;
+            if (delta == null) aliases.remove(destination);
+            else aliases.put(destination, aliases.get(destination) +
+                ("SUB".equals(mnemonic) ? -delta : delta));
+            return;
+        }
+        if (writesFirstOperand(mnemonic)) aliases.remove(destination);
+    }
+
+    private Structure receiverStructure(Function function) {
+        if (function == null || !"__thiscall".equals(function.getCallingConventionName()))
+            return null;
+        for (Parameter parameter : function.getParameters()) {
+            if (!parameter.isAutoParameter() ||
+                    !(parameter.getDataType() instanceof Pointer pointer)) continue;
+            DataType pointed = untypedef(pointer.getDataType());
+            if (pointed instanceof Structure structure) return structure;
+        }
+        return null;
+    }
+
     private Long cursorDisplacement(Instruction instruction, int operandIndex,
             String cursor) {
         if (instruction == null || operandIndex < 0 ||
@@ -575,12 +855,205 @@ public class STClassArrayAnalyzer extends GhidraScript {
             result.add(new Proposal(apply, evidence.key, count, size, elementType,
                 evidence.boundedSites, evidence.exactLoops,
                 evidence.pointerDereferences, apply ? "high" : "review", reason,
-                evidence.functions, evidence.sites));
+                evidence.functions, evidence.sites, false));
         }
         result.sort(Comparator.comparing((Proposal row) -> row.key.owner)
             .thenComparingLong(row -> row.key.offset));
         disableOverlaps(result);
         return result;
+    }
+
+    private RecordProposals makeRecordProposals(List<Proposal> arraysOut) {
+        List<RecordTypeProposal> types = new ArrayList<>();
+        List<RecordFieldProposal> fields = new ArrayList<>();
+        for (RecordEvidence evidence : recordArrays.values()) {
+            Set<Integer> extentCounts = evidence.factoryCounts.size() == 1 ?
+                evidence.factoryCounts : evidence.counts;
+            int stride = evidence.key.stride;
+            Structure owner = findOwnerType(evidence.key.owner);
+            if (owner == null || evidence.boundaries.isEmpty()) continue;
+            long base = recordBase(evidence);
+            String safeOwner = evidence.key.owner.replaceAll("[^A-Za-z0-9_]", "_");
+            String typePath = RECORD_TYPE_ROOT + safeOwner + "_Record_" +
+                String.format("%04X", base) + "_" + String.format("%04X", stride);
+            if (extentCounts.size() != 1 || evidence.exactLoops < 1 ||
+                    evidence.loops < 2) {
+                String reason = "review-only repeated record geometry: counts=" +
+                    evidence.counts + ", factory_counts=" + evidence.factoryCounts +
+                    ", stride=" + hex(stride) + ", loops=" + evidence.loops +
+                    ", exact_loops=" + evidence.exactLoops +
+                    "; ambiguous_or_missing_exact_extent";
+                types.add(new RecordTypeProposal(false, evidence.key.owner, base,
+                    typePath, stride, 0, evidence.accessWidths.size(), reason,
+                    evidence.functions, evidence.sites));
+                continue;
+            }
+            int count = extentCounts.iterator().next();
+            long total = (long)count * stride;
+            boolean range = base >= 0 && total <= Integer.MAX_VALUE &&
+                base + total <= owner.getLength();
+            boolean owned = isOwnedUnchanged(owner);
+            List<RecordFieldProposal> selected = range ? recordFields(owner, evidence,
+                base, count, stride, typePath) : List.of();
+            boolean hasTypedObject = selected.stream().anyMatch(row ->
+                !row.type.startsWith("/undefined") && row.size > 4);
+            boolean apply = range && owned && selected.size() >= 3 &&
+                (hasTypedObject || evidence.accessWidths.size() >= 6);
+            String reason = "fixed inline record array from exact cursor loops: counts=" +
+                evidence.counts + ", factory_counts=" + evidence.factoryCounts +
+                ", stride=" + hex(stride) + ", loops=" +
+                evidence.loops + ", exact_loops=" + evidence.exactLoops +
+                ", boundaries=" + evidence.boundaries + ", access_offsets=" +
+                evidence.accessWidths.size() + ", typed_nested_objects=" +
+                evidence.typedObjects.size() + (range ? "" : "; range_outside_owner") +
+                (owned ? "" : "; owner_layout_hash_changed_or_unowned") +
+                (selected.size() >= 3 ? "" : "; insufficient_nonoverlapping_fields") +
+                (hasTypedObject || evidence.accessWidths.size() >= 6 ? "" :
+                    "; insufficient_record_semantics");
+            RecordTypeProposal type = new RecordTypeProposal(apply,
+                evidence.key.owner, base, typePath, stride, selected.size(),
+                evidence.accessWidths.size(), reason, evidence.functions, evidence.sites);
+            types.add(type);
+            for (RecordFieldProposal field : selected) field.apply = apply;
+            fields.addAll(selected);
+            ArrayKey key = new ArrayKey(evidence.key.owner, base, stride);
+            arraysOut.add(new Proposal(apply, key, count, (int)total, typePath,
+                0, evidence.exactLoops, evidence.accessWidths.size(),
+                apply ? "high" : "review", reason, evidence.functions,
+                evidence.sites, true));
+        }
+        types.sort(Comparator.comparing((RecordTypeProposal row) -> row.owner)
+            .thenComparingLong(row -> row.parentOffset));
+        fields.sort(Comparator.comparing((RecordFieldProposal row) -> row.typePath)
+            .thenComparingLong(row -> row.offset));
+        arraysOut.sort(Comparator.comparing((Proposal row) -> row.key.owner)
+            .thenComparingLong(row -> row.key.offset));
+        disableOverlaps(arraysOut);
+        return new RecordProposals(types, fields);
+    }
+
+    private long recordBase(RecordEvidence evidence) {
+        long base = evidence.boundaries.stream().mapToLong(Long::longValue)
+            .min().orElse(Long.MAX_VALUE);
+        if (!evidence.accessWidths.isEmpty())
+            base = Math.min(base, evidence.accessWidths.keySet().stream()
+                .mapToLong(Long::longValue).min().orElse(base));
+        if (!evidence.typedObjects.isEmpty())
+            base = Math.min(base, evidence.typedObjects.keySet().stream()
+                .mapToLong(Long::longValue).min().orElse(base));
+        return base;
+    }
+
+    private List<RecordFieldProposal> recordFields(Structure owner,
+            RecordEvidence evidence, long base, int count, int stride, String typePath) {
+        Map<FieldCandidateKey, FieldCandidate> candidates = new TreeMap<>();
+        DataTypeComponent arrayComponent = base <= Integer.MAX_VALUE ?
+            owner.getComponentAt((int)base) : null;
+        DataType arrayType = arrayComponent != null && arrayComponent.getOffset() == base ?
+            untypedef(arrayComponent.getDataType()) : null;
+        if (arrayType instanceof Array array && array.getNumElements() == count &&
+                array.getElementLength() == stride &&
+                untypedef(array.getDataType()) instanceof Structure existingElement) {
+            addStructureCandidates(candidates, existingElement, 0, stride, 4,
+                "existing exact record-array element");
+        }
+        else {
+            long end = base + (long)count * stride;
+            for (DataTypeComponent component : owner.getDefinedComponents()) {
+                long absolute = component.getOffset();
+                if (absolute < base || absolute >= end) continue;
+                long relative = (absolute - base) % stride;
+                if (component.getLength() < 1 || relative + component.getLength() > stride)
+                    continue;
+                DataType type = untypedef(component.getDataType());
+                int priority = isUndefinedType(type) ? 2 : 3;
+                addCandidate(candidates, new FieldCandidate(relative,
+                    component.getLength(), typeSpecification(type), priority, 1,
+                    "existing hash-owned class member " + hex(absolute)));
+            }
+        }
+
+        for (Map.Entry<Long, Map<String, Integer>> entry : evidence.typedObjects.entrySet()) {
+            if (entry.getKey() < base ||
+                    entry.getKey() >= base + (long)count * stride) continue;
+            long relative = Math.floorMod(entry.getKey() - base, stride);
+            if (entry.getValue().size() != 1) continue;
+            Map.Entry<String, Integer> vote = entry.getValue().entrySet().iterator().next();
+            DataType type = dataTypes.getDataType(vote.getKey());
+            if (!(untype(type) instanceof Structure structure) ||
+                    relative + structure.getLength() > stride) continue;
+            addCandidate(candidates, new FieldCandidate(relative, structure.getLength(),
+                structure.getPathName(), 5, vote.getValue(),
+                "exact repeated typed receiver construction"));
+        }
+
+        Map<Long, Set<Integer>> relativeWidths = new TreeMap<>();
+        for (Map.Entry<Long, Set<Integer>> entry : evidence.accessWidths.entrySet()) {
+            if (entry.getKey() < base ||
+                    entry.getKey() >= base + (long)count * stride) continue;
+            long relative = Math.floorMod(entry.getKey() - base, stride);
+            relativeWidths.computeIfAbsent(relative, ignored -> new TreeSet<>())
+                .addAll(entry.getValue());
+        }
+        for (Map.Entry<Long, Set<Integer>> entry : relativeWidths.entrySet()) {
+            if (entry.getValue().size() != 1) continue;
+            int width = entry.getValue().iterator().next();
+            if (entry.getKey() + width > stride) continue;
+            addCandidate(candidates, new FieldCandidate(entry.getKey(), width,
+                "/undefined" + width, 1, 1, "exact record-cursor machine access"));
+        }
+
+        List<FieldCandidate> ordered = new ArrayList<>(candidates.values());
+        ordered.sort(Comparator.<FieldCandidate>comparingInt(row -> row.priority).reversed()
+            .thenComparing(Comparator.comparingInt((FieldCandidate row) -> row.evidence)
+                .reversed()).thenComparingLong(row -> row.offset));
+        List<FieldCandidate> selected = new ArrayList<>();
+        Set<FieldCandidateKey> conflicted = new HashSet<>();
+        for (int left = 0; left < ordered.size(); left++) {
+            FieldCandidate a = ordered.get(left);
+            for (int right = left + 1; right < ordered.size(); right++) {
+                FieldCandidate b = ordered.get(right);
+                if (a.priority != b.priority || a.priority < 3) continue;
+                if (a.offset < b.offset + b.size && b.offset < a.offset + a.size &&
+                        !(a.offset == b.offset && a.size == b.size &&
+                            a.type.equals(b.type))) {
+                    conflicted.add(a.key()); conflicted.add(b.key());
+                }
+            }
+        }
+        for (FieldCandidate candidate : ordered) {
+            if (conflicted.contains(candidate.key())) continue;
+            boolean overlap = selected.stream().anyMatch(field -> candidate.offset <
+                field.offset + field.size && field.offset < candidate.offset + candidate.size);
+            if (!overlap) selected.add(candidate);
+        }
+        selected.sort(Comparator.comparingLong(row -> row.offset));
+        List<RecordFieldProposal> result = new ArrayList<>();
+        for (FieldCandidate field : selected)
+            result.add(new RecordFieldProposal(false, typePath, field.offset, field.size,
+                String.format("field_%04X", field.offset), field.type, field.evidence,
+                field.reason));
+        return result;
+    }
+
+    private void addStructureCandidates(Map<FieldCandidateKey, FieldCandidate> candidates,
+            Structure structure, long base, int stride, int priority, String reason) {
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            long offset = base + component.getOffset();
+            if (offset < 0 || component.getLength() < 1 ||
+                    offset + component.getLength() > stride) continue;
+            addCandidate(candidates, new FieldCandidate(offset, component.getLength(),
+                typeSpecification(component.getDataType()), priority, 1, reason));
+        }
+    }
+
+    private void addCandidate(Map<FieldCandidateKey, FieldCandidate> candidates,
+            FieldCandidate candidate) {
+        FieldCandidate old = candidates.get(candidate.key());
+        if (old == null) candidates.put(candidate.key(), candidate);
+        else candidates.put(candidate.key(), new FieldCandidate(candidate.offset,
+            candidate.size, candidate.type, Math.max(old.priority, candidate.priority),
+            old.evidence + candidate.evidence, old.reason + " | " + candidate.reason));
     }
 
     private void applyExactZeroExtent(ArrayEvidence evidence) {
@@ -667,10 +1140,22 @@ public class STClassArrayAnalyzer extends GhidraScript {
             Proposal a = rows.get(left);
             if (!a.apply) continue;
             for (int right = left + 1; right < rows.size(); right++) {
+                if (!a.apply) break;
                 Proposal b = rows.get(right);
                 if (!a.key.owner.equals(b.key.owner)) break;
                 if (b.key.offset >= a.key.offset + a.size) break;
                 if (!b.apply) continue;
+                if (a.recordArray != b.recordArray) {
+                    Proposal record = a.recordArray ? a : b;
+                    Proposal scalar = a.recordArray ? b : a;
+                    if (scalar.key.offset >= record.key.offset &&
+                            scalar.key.offset + scalar.size <= record.key.offset + record.size) {
+                        scalar.apply = false;
+                        scalar.reason += "; contained_by_record_array_" +
+                            hex(record.key.offset);
+                        continue;
+                    }
+                }
                 a.apply = false;
                 b.apply = false;
                 a.reason += "; overlaps_array_" + hex(b.key.offset);
@@ -722,6 +1207,14 @@ public class STClassArrayAnalyzer extends GhidraScript {
             }
             Long immediate = immediate(term);
             if (immediate == null) return null;
+            // Ghidra commonly renders a negative 32-bit LEA displacement as an
+            // unsigned hexadecimal literal (for example 0xffffff6f == -0x91).
+            // This conversion belongs only to address geometry; the same bit
+            // pattern used as an ordinary immediate may intentionally be unsigned.
+            String normalized = term.toUpperCase(Locale.ROOT);
+            if (!normalized.startsWith("-") && normalized.startsWith("0X") &&
+                    immediate >= 0x80000000L && immediate <= 0xffffffffL)
+                immediate -= 0x100000000L;
             displacement += immediate;
         }
         return new AddressExpr(registers, displacement);
@@ -803,6 +1296,68 @@ public class STClassArrayAnalyzer extends GhidraScript {
         return type == null ? -1 : type.getLength();
     }
 
+    private DataType untypedef(DataType type) {
+        while (type instanceof TypeDef definition) type = definition.getBaseDataType();
+        return type;
+    }
+
+    private DataType untype(DataType type) { return untypedef(type); }
+
+    private boolean isUndefinedType(DataType type) {
+        type = untypedef(type);
+        return type == null || type.getPathName().matches("/undefined(?:[1248])?");
+    }
+
+    private String typeSpecification(DataType type) {
+        type = untypedef(type);
+        if (type instanceof Pointer pointer && pointer.getDataType() != null)
+            return "pointer:" + untypedef(pointer.getDataType()).getPathName();
+        if (type instanceof Array array)
+            return "array:" + array.getNumElements() + ":" +
+                typeSpecification(array.getDataType());
+        return type == null ? "" : type.getPathName();
+    }
+
+    private boolean isOwnedUnchanged(Structure structure) {
+        String description = structure.getDescription();
+        if (description == null || !description.contains(CLASS_LAYOUT_MARKER)) return false;
+        int marker = description.indexOf(HASH_MARKER);
+        if (marker < 0) return false;
+        String tail = description.substring(marker + HASH_MARKER.length()).trim();
+        if (tail.length() < 64) return false;
+        String stored = tail.substring(0, 64).toLowerCase(Locale.ROOT);
+        return stored.matches("[0-9a-f]{64}") && stored.equals(layoutHash(structure));
+    }
+
+    private String layoutHash(Structure structure) {
+        StringBuilder layout = new StringBuilder();
+        layout.append("length=").append(structure.getLength()).append('\n');
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            layout.append(component.getOffset()).append('|')
+                .append(component.getLength()).append('|')
+                .append(component.getDataType().getPathName()).append('|')
+                .append(component.getFieldName() == null ? "" : component.getFieldName())
+                .append('|')
+                .append(component.getComment() == null ? "" : component.getComment())
+                .append('\n');
+        }
+        return sha256(layout.toString());
+    }
+
+    private String sha256(String value) {
+        try {
+            byte[] digest = MessageDigest.getInstance("SHA-256")
+                .digest(value.getBytes(StandardCharsets.UTF_8));
+            StringBuilder result = new StringBuilder();
+            for (byte item : digest)
+                result.append(String.format("%02x", item & 0xff));
+            return result.toString();
+        }
+        catch (Exception exception) {
+            throw new IllegalStateException("SHA-256 unavailable", exception);
+        }
+    }
+
     private List<String> operands(Instruction instruction) {
         List<String> result = new ArrayList<>();
         for (int index = 0; index < instruction.getNumOperands(); index++)
@@ -881,7 +1436,31 @@ public class STClassArrayAnalyzer extends GhidraScript {
             DataType pointed = pointer.getDataType();
             if (pointed instanceof Structure) return pointed.getName();
         }
+        if (isObjectFactory(function)) {
+            DataType returned = untypedef(function.getReturnType());
+            if (returned instanceof Pointer pointer) {
+                DataType pointed = untypedef(pointer.getDataType());
+                if (pointed instanceof Structure structure) return structure.getName();
+            }
+        }
         return "";
+    }
+
+    private boolean isObjectFactory(Function function) {
+        return function.getTags().stream().anyMatch(tag ->
+            "RECOVERED_OBJECT_FACTORY".equals(tag.getName()));
+    }
+
+    private boolean isExactFactoryAllocationCall(List<Instruction> instructions, int index,
+            Structure owner) {
+        if (index < 1 || index >= instructions.size()) return false;
+        Instruction call = instructions.get(index);
+        if (!"CALL".equalsIgnoreCase(call.getMnemonicString())) return false;
+        Instruction prior = instructions.get(index - 1);
+        if (!"PUSH".equalsIgnoreCase(prior.getMnemonicString())) return false;
+        List<String> operands = operands(prior);
+        Long bytes = operands.isEmpty() ? null : immediate(operands.get(0));
+        return bytes != null && bytes == owner.getLength();
     }
 
     private Structure findOwnerType(String owner) {
@@ -958,6 +1537,34 @@ public class STClassArrayAnalyzer extends GhidraScript {
         }
     }
 
+    private void writeRecordTypes(Path path, List<RecordTypeProposal> rows)
+            throws Exception {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("apply\towner\tparent_offset\ttype_path\tlength\tfield_count\t" +
+                "access_count\tconfidence\treason\tevidence_functions\tevidence_sites\n");
+            for (RecordTypeProposal row : rows)
+                out.write(bit(row.apply) + "\t" + tsv(row.owner) + "\t" +
+                    row.parentOffset + "\t" + tsv(row.typePath) + "\t" + row.length +
+                    "\t" + row.fieldCount + "\t" + row.accessCount + "\t" +
+                    (row.apply ? "layout" : "review") + "\t" + tsv(row.reason) +
+                    "\t" + tsv(String.join(" | ", row.functions)) + "\t" +
+                    tsv(String.join(" | ", row.sites)) + "\n");
+        }
+    }
+
+    private void writeRecordFields(Path path, List<RecordFieldProposal> rows)
+            throws Exception {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("apply\ttype_path\toffset\tsize\tproposed_name\tproposed_type\t" +
+                "evidence_count\treason\n");
+            for (RecordFieldProposal row : rows)
+                out.write(bit(row.apply) + "\t" + tsv(row.typePath) + "\t" +
+                    row.offset + "\t" + row.size + "\t" + row.name + "\t" +
+                    tsv(row.type) + "\t" + row.evidenceCount + "\t" +
+                    tsv(row.reason) + "\n");
+        }
+    }
+
     private void writeSummary(Path path, int functions, List<Proposal> rows)
             throws Exception {
         Files.write(path, List.of(
@@ -969,7 +1576,11 @@ public class STClassArrayAnalyzer extends GhidraScript {
                 .filter(row -> row.boundedSites > 0).count(),
             "exact_pointer_walk_arrays=" + rows.stream()
                 .filter(row -> row.exactLoops > 0).count(),
+            "record_arrays=" + rows.stream().filter(row -> row.recordArray).count(),
+            "record_array_auto_apply=" + rows.stream()
+                .filter(row -> row.recordArray && row.apply).count(),
             "note=Only bounded this+index*stride accesses and exact decrementing pointer walks contribute an extent.",
+            "note=Large-stride record arrays require an exact loop count plus repeated cursor geometry; nested record fields retain only non-conflicting hash-owned or typed-receiver evidence.",
             "note=Semantic names are not guessed; address-stable array_XXXX names are structural.",
             "note=Manual/unowned class components and conflicting element roles remain review-only."
         ), StandardCharsets.UTF_8);
@@ -1037,6 +1648,12 @@ public class STClassArrayAnalyzer extends GhidraScript {
             return order != 0 ? order : Long.compare(offset, other.offset);
         }
     }
+    private record RecordKey(String owner, int stride) implements Comparable<RecordKey> {
+        @Override public int compareTo(RecordKey other) {
+            int order = owner.compareTo(other.owner);
+            return order != 0 ? order : Integer.compare(stride, other.stride);
+        }
+    }
     private static class SpanEvidence {
         final SpanKey key;
         final Set<Integer> lengths = new TreeSet<>();
@@ -1056,6 +1673,71 @@ public class STClassArrayAnalyzer extends GhidraScript {
         int pointerDereferences;
         ArrayEvidence(ArrayKey key) { this.key = key; }
     }
+    private static class RecordEvidence {
+        final RecordKey key;
+        final Set<Integer> counts = new TreeSet<>();
+        final Set<Integer> factoryCounts = new TreeSet<>();
+        final Set<Long> boundaries = new TreeSet<>();
+        final Map<Long, Set<Integer>> accessWidths = new TreeMap<>();
+        final Map<Long, Map<String, Integer>> typedObjects = new TreeMap<>();
+        final Set<String> functions = new TreeSet<>();
+        final Set<String> sites = new TreeSet<>();
+        int loops;
+        int exactLoops;
+        RecordEvidence(RecordKey key) { this.key = key; }
+    }
+    private record FieldCandidateKey(long offset, int size, String type)
+            implements Comparable<FieldCandidateKey> {
+        @Override public int compareTo(FieldCandidateKey other) {
+            int order = Long.compare(offset, other.offset);
+            if (order != 0) return order;
+            order = Integer.compare(size, other.size);
+            return order != 0 ? order : type.compareTo(other.type);
+        }
+    }
+    private static class FieldCandidate {
+        final long offset;
+        final int size;
+        final String type;
+        final int priority;
+        final int evidence;
+        final String reason;
+        FieldCandidate(long offset, int size, String type, int priority,
+                int evidence, String reason) {
+            this.offset = offset; this.size = size; this.type = type;
+            this.priority = priority; this.evidence = evidence; this.reason = reason;
+        }
+        FieldCandidateKey key() { return new FieldCandidateKey(offset, size, type); }
+    }
+    private record RecordProposals(List<RecordTypeProposal> types,
+        List<RecordFieldProposal> fields) { }
+    private static class RecordTypeProposal {
+        final boolean apply;
+        final String owner, typePath, reason;
+        final long parentOffset;
+        final int length, fieldCount, accessCount;
+        final Set<String> functions, sites;
+        RecordTypeProposal(boolean apply, String owner, long parentOffset,
+                String typePath, int length, int fieldCount, int accessCount,
+                String reason, Set<String> functions, Set<String> sites) {
+            this.apply = apply; this.owner = owner; this.parentOffset = parentOffset;
+            this.typePath = typePath; this.length = length; this.fieldCount = fieldCount;
+            this.accessCount = accessCount; this.reason = reason;
+            this.functions = new TreeSet<>(functions); this.sites = new TreeSet<>(sites);
+        }
+    }
+    private static class RecordFieldProposal {
+        boolean apply;
+        final String typePath, name, type, reason;
+        final long offset;
+        final int size, evidenceCount;
+        RecordFieldProposal(boolean apply, String typePath, long offset, int size,
+                String name, String type, int evidenceCount, String reason) {
+            this.apply = apply; this.typePath = typePath; this.offset = offset;
+            this.size = size; this.name = name; this.type = type;
+            this.evidenceCount = evidenceCount; this.reason = reason;
+        }
+    }
     private static class Proposal {
         boolean apply;
         final ArrayKey key;
@@ -1069,10 +1751,11 @@ public class STClassArrayAnalyzer extends GhidraScript {
         String reason;
         final Set<String> functions;
         final Set<String> sites;
+        final boolean recordArray;
         Proposal(boolean apply, ArrayKey key, int count, int size, String elementType,
                 int boundedSites, int exactLoops, int pointerDereferences,
                 String confidence, String reason, Set<String> functions,
-                Set<String> sites) {
+                Set<String> sites, boolean recordArray) {
             this.apply = apply;
             this.key = key;
             this.count = count;
@@ -1085,6 +1768,7 @@ public class STClassArrayAnalyzer extends GhidraScript {
             this.reason = reason;
             this.functions = new TreeSet<>(functions);
             this.sites = new TreeSet<>(sites);
+            this.recordArray = recordArray;
         }
     }
 }

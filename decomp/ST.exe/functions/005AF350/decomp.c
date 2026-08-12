@@ -59,13 +59,15 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   FUN_006b5f80((int *)g_ddxContext_008075A8,0x112,0x38,0x204,0x19d);
   MMMObjTy::OutBSlProc
             ((MMMObjTy *)g_dDXContext_0080759C,g_dDXContext_0080759C,nullptr,nullptr
-             ,0x112,0x38,0x204,0x19d,&this_00->field_1A5B->field_0140);
-  if (this_00->field_1A6C != 0) {
-    StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_1A6C);
+             ,0x112,0x38,0x204,0x19d,(undefined4 *)(this_00->array_00BC[0xc].field_01DB + 0x140));
+  uVar11 = this_00->array_00BC[0xc].field_01EC;
+  if (uVar11 != 0) {
+    StartSystemTy::sub_006E56B0(this_00->field_000C,uVar11);
   }
-  this_00->field_1A6C = 0;
-  if (this_00->field_20B8 != nullptr) {
-    HoloTy::Done(this_00->field_20B8);
+  pHVar3 = this_00->field_20B8;
+  this_00->array_00BC[0xc].field_01EC = 0;
+  if (pHVar3 != nullptr) {
+    HoloTy::Done(pHVar3);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_20B8);
     this_00->field_20B8 = nullptr;
   }
@@ -110,8 +112,9 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     PutDDXClip(0x112,0x38,0x112,0x38,0x204,(byte *)0x19d,'\x01',
                (BITMAPINFO *)g_startSystem_0081176C->field_002C);
   }
-  if (this_00->field_1A74 != 0xffffffff) {
-    FUN_006b3af0((int *)this_00->field_1AB8,this_00->field_1A74);
+  uVar11 = this_00->array_00BC[0xc].field_01F4;
+  if (uVar11 != 0xffffffff) {
+    FUN_006b3af0((int *)this_00->field_1AB8,uVar11);
   }
   if (this_00->field_1B05 != 0xffffffff) {
     FUN_006b3af0((int *)this_00->field_1B49,this_00->field_1B05);
@@ -126,9 +129,10 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     puVar6 = puVar6 + 1;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
-  if (this_00->field_0x20b4 == '\0') {
+  if (this_00->field_20B4 == '\0') {
     this_00->field_002D = 0x20;
-    *(undefined4 *)&this_00->field_0x31 = 0;
+    this_00->field_0031 = 0;
+    this_00->field_0033 = 0;
     FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_00->field_0x1d);
   }
   else {
@@ -204,11 +208,13 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   }
   if (this_00->field_20B7 == '\0') {
     this_00->field_002D = 0x20;
-    *(undefined4 *)&this_00->field_0x31 = 0;
+    this_00->field_0031 = 0;
+    this_00->field_0033 = 0;
     if (g_startSystem_0081176C->field_054C != 0) {
       FUN_006e6080(this_00,2,g_startSystem_0081176C->field_054C,(undefined4 *)&this_00->field_0x1d);
     }
-    *(undefined4 *)&this_00->field_0x31 = 0;
+    this_00->field_0031 = 0;
+    this_00->field_0033 = 0;
     if (g_startSystem_0081176C->field_0550 != 0) {
       FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0550,(undefined4 *)&this_00->field_0x1d);
     }

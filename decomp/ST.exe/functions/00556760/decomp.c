@@ -72,24 +72,9 @@ TraksClassTy::TraksCreate
   if (this->field_0024 == nullptr) {
     return 0;
   }
-  if (param_4 < 0) {
-    local_10 = param_4 / 0xc9 + -1;
-  }
-  else {
-    local_10 = param_4 / 0xc9;
-  }
-  if (param_5 < 0) {
-    local_18 = param_5 / 0xc9 + -1;
-  }
-  else {
-    local_18 = param_5 / 0xc9;
-  }
-  if (param_6 < 0) {
-    iVar8 = param_6 / 200 + -1;
-  }
-  else {
-    iVar8 = param_6 / 200;
-  }
+  local_10 = STBiasedDiv16(param_4, 0xc9); /* exact signed 16-bit grid-index division */
+  local_18 = STBiasedDiv16(param_5, 0xc9); /* exact signed 16-bit grid-index division */
+  iVar8 = STBiasedDiv16(param_6, 200); /* exact signed 16-bit grid-index division */
   local_60 = this;
   local_14 = iVar8;
   if ((param_15 & 2) != 0) goto LAB_0055693a;

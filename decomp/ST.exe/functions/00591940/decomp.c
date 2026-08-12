@@ -88,7 +88,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
     } while (iVar4 != 0);
     iVar4 = 0;
     if (pCVar2->field_009A != '\0') {
-      puVar6 = &pCVar2->field_00FF;
+      puVar6 = &pCVar2->field_00BB[0].field_0028.field_001C;
       do {
         if (puVar6[-6] != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730

@@ -407,11 +407,11 @@ LAB_005c665d:
     this_00->field_0031 = 1;
     FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_00->field_0x1d);
   }
-  if (this_00->field_0x21e2 != '\0') {
+  if (this_00->field_21E2 != '\0') {
     StartSystemTy::CreateBinDesc(g_startSystem_0081176C);
   }
 LAB_005c69ed:
-  pMVar4 = this_00->field_1A5B;
+  pMVar4 = this_00->array_00BC[0xc].field_01DB;
   if (*(int *)(pMVar4 + 0x2e6) != 0) {
     memset(&local_38, 0, 0x1a); /* compiler bulk-zero initialization */
     local_2c = 1;

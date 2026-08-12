@@ -69,17 +69,20 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         }
         else {
           local_40->field_01A2 = 0;
-          local_40->field_01AB = nullptr;
+          local_40->field_01AB = 0;
         }
+        STPiece<0,2>(iVar13) = local_40->field_0178;
+        STPiece<2,2>(iVar13) = local_40->field_017A;
         local_40->field_01A1 = CASE_3;
         local_40->field_01A3 = (void *)param_1;
         local_40->field_01AF = 0x32;
         local_40->field_01B1 = 5;
-        if (local_40->field_0178 != 0) {
+        if (iVar13 != 0) {
           local_40->field_0028 = 0x4202;
           *(undefined2 *)&local_40->field_0x2c = 0;
-          local_40->field_002E = 2;
-          *(undefined4 *)&local_40->field_0x30 = local_40->field_0178;
+          *(undefined2 *)&local_40->field_0x2e = 2;
+          local_40->field_0030 = (undefined2)iVar13;
+          local_40->field_0032 = STPiece<2,2>(iVar13);
           if (g_cursorClass_00802A30 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_40->field_0x18);
@@ -184,7 +187,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_2b = (-(uint)(cVar5 != '\x03') & 0xfffffffc) + 0xe2;
         local_2c = 1;
         local_27 = local_1c;
-        Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_3c);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_3c);
         local_8 = local_8 + 0x14;
         local_14 = (AnonShape_00518C20_0B2995D2 *)0x1;
       }
@@ -204,7 +207,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_2c = 1;
         local_2b = 0xdd;
         local_27 = local_1c;
-        Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_3c);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_3c);
         local_14 = (AnonShape_00518C20_0B2995D2 *)0x1;
         local_8 = local_8 + 0x14;
       }
@@ -224,7 +227,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_2c = 1;
         local_2b = 0xdd;
         local_27 = local_1c;
-        Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_3c);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_3c);
         local_14 = (AnonShape_00518C20_0B2995D2 *)0x1;
         local_8 = local_8 + 0x14;
       }
@@ -267,7 +270,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_4f = (uint)*local_18;
         local_50 = 5;
         local_4b = 0;
-        Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_60);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_60);
         local_8 = local_8 + 5 + (pBVar8->bmiHeader).biHeight;
         local_14 = (AnonShape_00518C20_0B2995D2 *)&local_14->field_0x1;
       } while ((ushort)local_14 < 3);
@@ -460,7 +463,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_2b = (-(uint)(cVar5 != '\x03') & 0xfffffffc) + 0xe2;
         local_2c = 1;
         local_27 = local_1c;
-        Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_3c);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_3c);
         local_8 = local_8 + 0x14;
       }
       UVar6 = thunk_FUN_00523410(param_1,(char)_local_20,2);

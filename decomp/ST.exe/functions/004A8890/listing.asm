@@ -1,4 +1,4 @@
-FUN_004a8890:
+CreateSTGroupBoat:
 004A8890  68 12 03 00 00            PUSH 0x312
 004A8895  E8 36 7C 20 00            CALL 0x006b04d0
 004A889A  85 C0                     TEST EAX,EAX

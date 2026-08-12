@@ -13,18 +13,19 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
 
 {
   HelpPanelTy_field_01A1State HVar1;
+  int iVar2;
   HelpPanelTy *this_00;
-  int errorCode;
-  int iVar3;
+  int iVar3_mg0;
+  int iVar3_mg0_2;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  iVar3_mg0 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
-  if (errorCode == 0) {
+  if (iVar3_mg0 == 0) {
     HVar1 = local_8->field_01A1;
     if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == CASE_A)) {
       local_8->field_01A2 = HVar1;
@@ -32,18 +33,21 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
     }
     else {
       local_8->field_01A2 = 0;
-      local_8->field_01AB = nullptr;
+      local_8->field_01AB = 0;
     }
+    STPiece<0,2>(iVar2) = local_8->field_0178;
+    STPiece<2,2>(iVar2) = local_8->field_017A;
     local_8->field_01A1 = CASE_7;
     local_8->field_01A7 = 0;
     local_8->field_01A3 = nullptr;
     local_8->field_01AF = 0;
     local_8->field_01B1 = 0;
-    if (local_8->field_0178 != 0) {
+    if (iVar2 != 0) {
       local_8->field_0028 = 0x4202;
       *(undefined2 *)&local_8->field_0x2c = 0;
-      local_8->field_002E = 2;
-      *(undefined4 *)&local_8->field_0x30 = local_8->field_0178;
+      *(undefined2 *)&local_8->field_0x2e = 2;
+      local_8->field_0030 = (undefined2)iVar2;
+      local_8->field_0032 = STPiece<2,2>(iVar2);
       if (g_cursorClass_00802A30 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_8->field_0x18);
@@ -57,12 +61,12 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x46e,0,errorCode,
-                             "%s","HelpPanelTy::MObjProc");
-  if (iVar3 != 0) {
+  iVar3_mg0_2 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x46e,0,iVar3_mg0,
+                                   "%s","HelpPanelTy::MObjProc");
+  if (iVar3_mg0_2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\helppan.cpp",0x46e);
+  RaiseInternalException(iVar3_mg0,0,"E:\\__titans\\Andrey\\helppan.cpp",0x46e);
   return;
 }
 

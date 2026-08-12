@@ -63,10 +63,9 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
     }
     if (pSVar2->field_0164 == 1) {
       STAllPlayersC::GetGObjFromBox
-                (g_allPlayers_007FA174,pSVar2->field_0024,pSVar2->field_016C,
-                 *(short *)&pSVar2->field_0x16e,*(short *)&pSVar2->field_0x170,pSVar2->field_0172,
-                 pSVar2->field_0174,pSVar2->field_0176,(int *)&local_1c,(int *)&local_10,&local_14,
-                 &local_18);
+                (g_allPlayers_007FA174,pSVar2->field_0024,pSVar2->field_016C,pSVar2->field_016E,
+                 pSVar2->field_0170,pSVar2->field_0172,pSVar2->field_0174,pSVar2->field_0176,
+                 (int *)&local_1c,(int *)&local_10,&local_14,&local_18);
       if (0 < local_14) {
         Library::DKW::TBL::FUN_006afe40((int *)&local_8,local_1c);
       }

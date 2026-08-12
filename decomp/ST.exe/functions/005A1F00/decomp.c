@@ -146,9 +146,10 @@ LAB_005a1fc3:
       Library::DKW::TBL::FUN_006b5aa0(pDVar7,(char *)local_c);
       this_00 = local_14;
       pDVar8 = (DArrayTy *)
-               ccFntTy::FormSarr(local_14->field_1A77,&pDVar7->flags," ,.;:!?/\\()[]{}",
-                                 0x1a6 - local_14->field_1B4C,0,0xffffffff,1);
-      if (this_00->field_1A5F == CASE_6) {
+               ccFntTy::FormSarr(local_14->array_00BC[0xc].field_01F7,&pDVar7->flags,
+                                 " ,.;:!?/\\()[]{}",0x1a6 - local_14->field_1B4C,0,0xffffffff
+                                 ,1);
+      if (this_00->array_00BC[0xc].field_01DF == '\x06') {
         this_00->field_002D = 0x26;
         FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
         local_10 = (uint)*(ushort *)&this_00->field_0x33;
@@ -157,7 +158,8 @@ LAB_005a1fc3:
         }
       }
       if (pDVar8 != nullptr) {
-        ccFntTy::SepColorStrInSarr(this_00->field_1A77,(uint *)pDVar8,(uint *)pDVar8);
+        ccFntTy::SepColorStrInSarr
+                  (this_00->array_00BC[0xc].field_01F7,(uint *)pDVar8,(uint *)pDVar8);
         pAVar3 = (AnonShape_006B7830_769CA2DF *)this_00->field_1E9E;
         iVar9 = pAVar3->field_0008 + pDVar8->elementSize;
         while (499 < iVar9) {
@@ -182,7 +184,7 @@ LAB_005a2188:
         pDVar7 = local_18;
       }
       FUN_006b5570(pDVar7);
-      if (this_00->field_1A5F == CASE_6) {
+      if (this_00->array_00BC[0xc].field_01DF == '\x06') {
         this_00->field_002D = 0x28;
         *(undefined2 *)&this_00->field_0x31 = 1;
         *(short *)&this_00->field_0x33 = (short)this_00->field_1E9E[2];

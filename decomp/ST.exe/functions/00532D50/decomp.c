@@ -7,7 +7,12 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
+
+   [STSwitchEnumApplier] Switch target field_01A4 uses
+   /SubmarineTitans/Recovered/Enums/OptPanelTy_field_01A4State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14
+    */
 
 void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
 
@@ -84,10 +89,12 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,0x32,10);
   this_01->field_01E9 = pDVar5;
   pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,0x32,8,10);
+  uVar9 = this_01->field_01B5[0];
   this_01->field_01ED = pDVar5;
   this_01->field_0028 = 0x20;
-  *(undefined4 *)&this_01->field_0x2c = 0;
-  FUN_006e6080(this_01,2,this_01->field_01B5[0],(undefined4 *)&this_01->field_0x18);
+  this_01->field_002C = 0;
+  this_01->field_002E = 0;
+  FUN_006e6080(this_01,2,uVar9,(undefined4 *)&this_01->field_0x18);
   uVar9 = 0xffffffff;
   pcVar12 = &CHAR_00h_00807680;
   do {
@@ -352,7 +359,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     Library::DKW::TBL::FUN_006b6020(this_01->field_01F1,0,&CHAR_00h_008016a0);
     uVar10 = this_01->field_01B5[1];
     this_01->field_0028 = 0x33;
-    *(DArrayTy **)&this_01->field_0x2c = this_01->field_01F1;
+    *(DArrayTy **)&this_01->field_002C = this_01->field_01F1;
   }
   else {
     if (1 < uVar9) {
@@ -377,23 +384,27 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
       } while (local_c != 0);
     }
     this_01->field_0028 = 0x28;
-    *(uint *)&this_01->field_0x2c = uVar9;
+    this_01->field_002C = (short)uVar9;
+    this_01->field_002E = (short)(uVar9 >> 0x10);
     FUN_006e6080(this_01,2,this_01->field_01B5[0],(undefined4 *)&this_01->field_0x18);
     this_01->field_0028 = 0x20;
-    *(undefined4 *)&this_01->field_0x2c = 1;
+    this_01->field_002C = 1;
+    this_01->field_002E = 0;
     FUN_006e6080(this_01,2,this_01->field_01B5[0],(undefined4 *)&this_01->field_0x18);
     this_01->field_0028 = 0x22;
     if (uVar9 <= param_1) {
       param_1 = uVar9 - 1;
     }
     uVar10 = this_01->field_01B5[0];
-    *(uint *)&this_01->field_0x2c = param_1;
+    this_01->field_002C = (short)param_1;
+    this_01->field_002E = (short)(param_1 >> 0x10);
   }
   FUN_006e6080(this_01,2,uVar10,(undefined4 *)&this_01->field_0x18);
 LAB_0053325d:
   uVar10 = this_01->field_01B5[3];
   this_01->field_0028 = 0x20;
-  *(uint *)&this_01->field_0x2c = (uint)(uVar9 != 0);
+  this_01->field_002C = (short)(uint)(uVar9 != 0);
+  this_01->field_002E = (short)((uint)(uVar9 != 0) >> 0x10);
   FUN_006e6080(this_01,2,uVar10,(undefined4 *)&this_01->field_0x18);
   if (this_01->field_01A4 == CASE_4) {
     FUN_006e6080(this_01,2,this_01->field_01B5[2],(undefined4 *)&this_01->field_0x18);

@@ -10,24 +10,28 @@
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5
 
    [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 00478030 -> 00415ED0 @ 004781BF | 00478030 -> 00415ED0 @ 00478438 */
+   Evidence: 00478030 -> 00415ED0 @ 004781BF | 00478030 -> 00415ED0 @ 00478438
+
+   [STSwitchEnumApplier] Switch target field_0615 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0615State. Cases: CASE_0=0;CASE_2=2;CASE_5=5 */
 
 int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
 
 {
-  undefined2 uVar2;
+  STBoatC_field_0615State SVar1;
+  undefined2 uVar3;
   int local_EAX_36;
   int local_EAX_253;
   int local_EAX_463;
-  STGameObjC *pSVar3;
-  uint uVar4;
+  STGameObjC *pSVar4;
+  uint uVar5;
   int iVar5;
   int local_EAX_1096;
   int local_EAX_1172;
   int iVar6;
   STBoatC *local_8;
 
-  uVar2 = (undefined2)((uint)this >> 0x10);
+  uVar3 = (undefined2)((uint)this >> 0x10);
   local_8 = this;
   switch(this->field_0611) {
   case CASE_0:
@@ -37,31 +41,31 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
   case CASE_1:
     return 0;
   case CASE_2:
-    iVar6 = this->field_0615;
-    if (iVar6 == 0) {
+    SVar1 = this->field_0615;
+    if (SVar1 == CASE_0) {
       return 0;
     }
-    if (iVar6 == 1) {
+    if (SVar1 == 1) {
       return 0;
     }
-    if (iVar6 == 2) {
+    if (SVar1 == CASE_2) {
       return 0;
     }
-    if (iVar6 == 3) {
+    if (SVar1 == 3) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar6 = CONCAT22(uVar2,this->field_0605 * 0xc9) + 100;
-      uVar2 = (*this->vtable->vfunc_10)
+      iVar6 = CONCAT22(uVar3,this->field_0605 * 0xc9) + 100;
+      uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
                          this->field_0603 * 0xc9 + 100,(short)iVar6,
                          (ushort)(this->field_0607 * 200) + 100);
-      this->field_060F = uVar2;
+      this->field_060F = uVar3;
       this->field_0615 = 4;
     }
     if (this->field_0615 == 4) {
-      uVar4 = sub_004176C0(this,this->field_060F);
-      uVar4 = sub_00417910(this,(short)uVar4);
-      if (uVar4 == 0xffffffff) {
+      uVar5 = sub_004176C0(this,this->field_060F);
+      uVar5 = sub_00417910(this,(short)uVar5);
+      if (uVar5 == 0xffffffff) {
         local_EAX_253 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3336,0,0,"%s",
                                 "STBoatC::BackCapture, CAPTURE_PMOVE");
@@ -70,14 +74,14 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if (uVar4 == 0) {
-        this->field_0615 = 5;
+      if (uVar5 == 0) {
+        this->field_0615 = CASE_5;
 LAB_00478373:
         iVar6 = this->vfunc_D8();
         return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
       }
     }
-    if (this->field_0615 == 5) {
+    if (this->field_0615 == CASE_5) {
       sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_0603 * 0xc9 + 100,this->field_0605 * 0xc9 + 100,
                    this->field_0607 * 200 + 100,this->field_0061);
@@ -105,11 +109,11 @@ LAB_0047848a:
     }
     break;
   case CASE_3:
-    pSVar3 = STAllPlayersC::GetObjPtr
+    pSVar4 = STAllPlayersC::GetObjPtr
                        (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
-    if (((pSVar3 != nullptr) && (pSVar3->field_0018 == this->field_05FF)) &&
-       (iVar6 = (*pSVar3->vtable->vfunc_108)(this->field_0024), iVar6 != 0)) {
-      thunk_FUN_004cd450((AnonShape_004CC900_31EE9CAA *)pSVar3);
+    if (((pSVar4 != nullptr) && (pSVar4->field_0018 == *(int *)&this->field_0x5ff)) &&
+       (iVar6 = (*pSVar4->vtable->vfunc_108)(this->field_0024), iVar6 != 0)) {
+      thunk_FUN_004cd450((AnonShape_004CC900_31EE9CAA *)pSVar4);
     }
     if (((int)this->field_0041 != (this->field_0609 + 1) * 0xc9) ||
        ((int)this->field_0043 != (this->field_060B + 1) * 0xc9)) {
@@ -117,24 +121,24 @@ LAB_0047848a:
       return -(uint)(iVar6 != 0);
     }
     this->field_0611 = CASE_4;
-    this->field_0615 = 0;
+    this->field_0615 = CASE_0;
     break;
   case CASE_4:
-    if (this->field_0615 == 0) {
+    if (this->field_0615 == CASE_0) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar6 = CONCAT22(uVar2,this->field_0605 * 0xc9) + 100;
-      uVar2 = (*this->vtable->vfunc_10)
+      iVar6 = CONCAT22(uVar3,this->field_0605 * 0xc9) + 100;
+      uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
                          this->field_0603 * 0xc9 + 100,(short)iVar6,
                          (ushort)(this->field_0607 * 200) + 100);
-      this->field_060F = uVar2;
+      this->field_060F = uVar3;
       this->field_0615 = 1;
     }
     if (this->field_0615 == 1) {
-      uVar4 = sub_004176C0(this,this->field_060F);
-      uVar4 = sub_00417910(this,(short)uVar4);
-      if (uVar4 == 0xffffffff) {
+      uVar5 = sub_004176C0(this,this->field_060F);
+      uVar5 = sub_00417910(this,(short)uVar5);
+      if (uVar5 == 0xffffffff) {
         iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3373,0,0,"%s",
                                    "STBoatC::BackCapture, CAPTURE_OMOVE");
         if (iVar5 == 0) {
@@ -142,12 +146,12 @@ LAB_0047848a:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if (uVar4 == 0) {
-        this->field_0615 = 2;
+      if (uVar5 == 0) {
+        this->field_0615 = CASE_2;
         goto LAB_00478373;
       }
     }
-    if (this->field_0615 == 2) {
+    if (this->field_0615 == CASE_2) {
       sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_0603 * 0xc9 + 100,this->field_0605 * 0xc9 + 100,
                    this->field_0607 * 200 + 100,this->field_0061);

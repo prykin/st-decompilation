@@ -23,7 +23,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
-  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != nullptr)) &&
+  if (((this->array_00BC[0xc].field_01DF == '\x01') && (this->field_1AC0 != nullptr)) &&
      (-1 < (int)this->field_1ABC)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
@@ -46,7 +46,8 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
         *(undefined1 *)puVar6 = 0xff;
         puVar6 = (undefined4 *)((int)puVar6 + 1);
       }
-      ccFntTy::SetSurf(pFVar4->field_1A73,(int)pFVar4->field_1AC0,0,0,0x16,0x1b8,0xf0);
+      ccFntTy::SetSurf(pFVar4->array_00BC[0xc].field_01F3,(int)pFVar4->field_1AC0,0,0,0x16,0x1b8,
+                       0xf0);
       if (param_1 < param_2) {
         iVar5 = (param_1 * 100) / param_2;
         pcVar7_mg2 = LoadResourceString(0x2571,g_hINSTANCE_00807618);
@@ -68,7 +69,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
         pcVar11 = (char *)&DAT_0080f33a;
         memmove(pcVar11, pcVar10, uVar9); /* compiler REP MOVS byte copy */
       }
-      ccFntTy::WrTxt(pFVar4->field_1A73,(char *)&DAT_0080f33a,-1,-1,2,-1,-1);
+      ccFntTy::WrTxt(pFVar4->array_00BC[0xc].field_01F3,(char *)&DAT_0080f33a,-1,-1,2,-1,-1);
       FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar4->field_1ABC);
       g_currentExceptionFrame = local_4c.previous;
       return;

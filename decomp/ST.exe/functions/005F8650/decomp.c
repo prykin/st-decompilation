@@ -18,32 +18,11 @@ undefined4 __thiscall STColl3C::sub_005F8650(STColl3C *this,int param_1,int para
   this->field_02C9 = param_3;
   this->field_02C1 = param_1;
   this->field_02C5 = param_2;
-  sVar3 = (short)(param_1 >> 0x1f);
-  if (param_1 < 0) {
-    sVar3 = (((short)(param_1 / 0xc9) + sVar3) - (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar3 = ((short)(param_1 / 0xc9) + sVar3) - (short)((longlong)param_1 * 0x28c1979 >> 0x3f);
-  }
+  sVar3 = STBiasedDiv16(param_1, 0xc9); /* exact signed 16-bit grid-index division */
   this->field_0047 = sVar3;
-  sVar4 = (short)(param_2 >> 0x1f);
-  if (param_2 < 0) {
-    sVar4 = (((short)(param_2 / 0xc9) + sVar4) - (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar4 = ((short)(param_2 / 0xc9) + sVar4) - (short)((longlong)param_2 * 0x28c1979 >> 0x3f);
-  }
+  sVar4 = STBiasedDiv16(param_2, 0xc9); /* exact signed 16-bit grid-index division */
   this->field_0049 = sVar4;
-  sVar5 = (short)(param_3 >> 0x1f);
-  if (param_3 < 0) {
-    sVar5 = (((short)(param_3 / 200) + sVar5) - (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar5 = ((short)(param_3 / 200) + sVar5) - (short)((longlong)param_3 * 0x51eb851f >> 0x3f);
-  }
+  sVar5 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   this->field_004B = sVar5;
   this->field_0041 = *(short *)&this->field_02C1;
   this->field_0043 = *(short *)&this->field_02C5;

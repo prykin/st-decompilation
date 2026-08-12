@@ -7,13 +7,12 @@
 RadioClassTy * __cdecl CreateRadio(void)
 
 {
-  undefined4 *puVar1;
-  RadioClassTy *pRVar2;
+  RadioClassTy *pRVar1;
 
-  puVar1 = FUN_006b04d0(0x68);
-  if (puVar1 != nullptr) {
-    pRVar2 = (RadioClassTy *)FUN_0071e040(puVar1);
-    return pRVar2;
+  pRVar1 = (RadioClassTy *)FUN_006b04d0(0x68);
+  if (pRVar1 != nullptr) {
+    pRVar1 = RadioClassTy::RadioClassTy(pRVar1);
+    return pRVar1;
   }
   return nullptr;
 }

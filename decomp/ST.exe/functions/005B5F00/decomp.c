@@ -19,33 +19,34 @@ SettMapMTy::sub_005B5F00(SettMapMTy *this,RecoveredSourceFamily_dibcopy *param_1
     FUN_006b4170(param_1,0,iVar2,3,param_2[5] + -2,param_2[6] + -3,0);
     FUN_006b4170(param_1,0,iVar2 + 2,1,param_2[5] + -6,2,0);
     FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,param_2[6] - ((*param_2 != 1) + 1),
-                 iVar2,3,(byte)this->field_1A5B->field_0140,0xd);
+                 iVar2,3,(byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
     FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,3,iVar2 + 3,0,
-                 (byte)this->field_1A5B->field_0140,0xd);
+                 (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
     FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,0,param_2[5] + -6 + iVar2,0,
-                 (byte)this->field_1A5B->field_0140,0xd);
+                 (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
     FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,param_2[5] + iVar2 + -6,0,
-                 param_2[5] + iVar2 + -3,3,(byte)this->field_1A5B->field_0140,0xd);
+                 param_2[5] + iVar2 + -3,3,(byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
     iVar2 = param_2[5] + -3 + iVar2;
     FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,3,iVar2,param_2[6] + -2,
-                 (byte)this->field_1A5B->field_0140,0xd);
+                 (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
     return;
   }
   FUN_006b4170(param_1,0,iVar2 + 1,4,param_2[5] + -4,param_2[6] + -5,0);
   FUN_006b4170(param_1,0,iVar2 + 2,2,param_2[5] + -6,2,0);
   FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,param_2[6] + -1,iVar2,4,
-               (byte)this->field_1A5B->field_0140,0xd);
+               (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
   FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,4,iVar2 + 3,1,
-               (byte)this->field_1A5B->field_0140,0xd);
+               (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
   FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,1,param_2[5] + -6 + iVar2,1,
-               (byte)this->field_1A5B->field_0140,0xd);
+               (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
   FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,param_2[5] + iVar2 + -6,1,
-               param_2[5] + iVar2 + -3,4,(byte)this->field_1A5B->field_0140,0xd);
+               param_2[5] + iVar2 + -3,4,(byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
   iVar1 = param_2[5] + -3 + iVar2;
   FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar1,4,iVar1,param_2[6] + -1,
-               (byte)this->field_1A5B->field_0140,0xd);
+               (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
   FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,param_2[6] + -1,
-               param_2[5] + -3 + iVar2,param_2[6] + -1,(byte)this->field_1A5B->field_0140,0xd);
+               param_2[5] + -3 + iVar2,param_2[6] + -1,
+               (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
   return;
 }
 

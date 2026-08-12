@@ -29,7 +29,7 @@ void __thiscall STDestC::sub_006024B0(STDestC *this)
   this->field_0049 = this->field_0257;
   this->field_0372 = this->field_0245;
   this->field_03A7 = 1;
-  this->field_036E = 1;
+  this->field_036E = CASE_1;
   this->field_0249 = 0xffffffff;
   return;
 }

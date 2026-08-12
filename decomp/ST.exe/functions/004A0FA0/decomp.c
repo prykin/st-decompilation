@@ -10,7 +10,12 @@
    listing references; ret_sites=004A297E RET | 004A2C89 RET | 004A2CD7 RET
    [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
    return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
-   while changing only function arity; restore Ghidra DefaultDataType */
+   while changing only function arity; restore Ghidra DefaultDataType
+
+   [STSwitchEnumApplier] Switch target field_01E6 uses
+   /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_01E6State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21
+    */
 
 void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this)
 
@@ -90,9 +95,9 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this)
   InternalExceptionFrame local_19c;
   STGroupBoatC *local_158;
   uint local_154;
-  undefined2 local_150;
-  undefined2 local_14e;
-  undefined2 local_14c;
+  short local_150;
+  short local_14e;
+  short local_14c;
   undefined4 local_14a;
   undefined4 local_146;
   undefined4 local_142;
@@ -129,8 +134,8 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this)
   undefined2 local_be;
   undefined2 local_bc;
   uint local_b8;
-  undefined2 local_b4;
-  undefined2 local_b2;
+  short local_b4;
+  short local_b2;
   undefined2 local_b0;
   undefined4 local_ae;
   uint local_a8;
@@ -158,9 +163,9 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this)
   undefined2 local_6a;
   undefined2 local_68;
   uint local_64;
-  undefined2 local_60;
-  undefined2 local_5e;
-  undefined2 local_5c;
+  short local_60;
+  short local_5e;
+  short local_5c;
   uint local_58;
   undefined2 local_54;
   undefined2 local_52;
@@ -581,8 +586,8 @@ LAB_004a1878:
     uVar12 = 0;
     local_1c = g_playSystem_00802A38->field_00E4;
     local_64 = g_playSystem_00802A38->field_00E4;
-    local_60 = *(undefined2 *)&this_00->field_0x295;
-    local_5e = *(undefined2 *)&this_00->field_0x297;
+    local_60 = this_00->field_0295;
+    local_5e = this_00->field_0297;
     local_5c = this_00->field_0299;
     if (local_14 != 0) {
       uVar11 = 0;
@@ -668,7 +673,7 @@ LAB_004a1a74:
     }
   }
   if (this_00->field_01E6 == CASE_4) {
-    DistributeDock(this_00,1,*(DArrayTy **)&this_00->field_0x29f,this_00->field_002D);
+    DistributeDock(this_00,1,(DArrayTy *)this_00->field_029F,this_00->field_002D);
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     SVar10 = extraout_ECX_11;
   }
@@ -795,8 +800,8 @@ LAB_004a1a74:
                 SVar10 = extraout_ECX_24;
                 goto LAB_004a1ea4;
               }
-              local_d4 = *(undefined2 *)&this_00->field_0x2a3;
-              local_d2 = *(undefined2 *)&this_00->field_0x2a5;
+              local_d4 = this_00->field_02A3;
+              local_d2 = this_00->field_02A5;
               local_d0 = *(undefined2 *)&this_00->field_0x2a7;
               local_ce = *(undefined4 *)&this_00->field_0x2a9;
               STBoatC::CmdToObj(pSVar5,CASE_F,&local_d8);
@@ -881,8 +886,8 @@ LAB_004a1ede:
             if ((((dVar6 == 7) || (dVar6 == 0x13)) || (dVar6 == 0x1b)) &&
                (iVar7 = thunk_FUN_00492370((STGameObjC *)pSVar5), iVar7 != 0)) {
               STBoatC::CmdToObj(pSVar5,CASE_10,local_e4);
-              if (((*(short *)&this_00->field_0x2ad != -1) ||
-                  (*(short *)&this_00->field_0x2af != -1)) || (this_00->field_02B1 != -1)) {
+              if (((this_00->field_02AD != -1) || (this_00->field_02AF != -1)) ||
+                 (this_00->field_02B1 != -1)) {
                 pDVar9 = local_10;
                 if (local_10 == nullptr) {
                   pDVar9 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
@@ -897,8 +902,8 @@ LAB_004a2089:
               if (iVar7 == 0) {
                 STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
               }
-              else if (((*(short *)&this_00->field_0x2ad != -1) ||
-                       (*(short *)&this_00->field_0x2af != -1)) || (this_00->field_02B1 != -1)) {
+              else if (((this_00->field_02AD != -1) || (this_00->field_02AF != -1)) ||
+                      (this_00->field_02B1 != -1)) {
                 pDVar9 = local_c;
                 if (local_c == nullptr) {
                   pDVar9 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
@@ -948,11 +953,11 @@ LAB_004a20d0:
     }
   }
   if (this_00->field_01E6 == CASE_D) {
-    local_52 = *(undefined2 *)&this_00->field_0x2b5;
+    local_52 = this_00->field_02B5;
     uVar12 = 0;
     local_58 = g_playSystem_00802A38->field_00E4;
     local_50 = *(undefined2 *)&this_00->field_0x2b7;
-    local_54 = *(undefined2 *)&this_00->field_0x2b3;
+    local_54 = this_00->field_02B3;
     local_1c = local_58;
     if (0 < (int)local_14) {
       uVar11 = 0;
@@ -992,11 +997,11 @@ LAB_004a221d:
     }
   }
   if (this_00->field_01E6 == CASE_E) {
-    local_78 = *(undefined2 *)&this_00->field_0x2bd;
+    local_78 = this_00->field_02BD;
     uVar12 = 0;
     local_7c = g_playSystem_00802A38->field_00E4;
     local_74 = this_00->field_02C1;
-    local_76 = *(undefined2 *)&this_00->field_0x2bf;
+    local_76 = this_00->field_02BF;
     local_1c = local_7c;
     if (0 < (int)local_14) {
       uVar11 = 0;
@@ -1066,8 +1071,8 @@ LAB_004a221d:
     local_c4 = this_00->field_02CE;
     uVar12 = 0;
     local_c8 = g_playSystem_00802A38->field_00E4;
-    local_c0 = *(undefined2 *)&this_00->field_0x2d2;
-    local_be = *(undefined2 *)&this_00->field_0x2d4;
+    local_c0 = this_00->field_02D2;
+    local_be = this_00->field_02D4;
     local_bc = this_00->field_02D6;
     if (0 < (int)local_14) {
       uVar11 = 0;
@@ -1093,12 +1098,12 @@ LAB_004a221d:
     local_f8 = this_00->field_02D8;
     uVar12 = 0;
     local_fc = g_playSystem_00802A38->field_00E4;
-    local_f4 = *(undefined2 *)&this_00->field_0x2dc;
-    local_f0 = *(undefined2 *)&this_00->field_0x2e0;
-    local_ea = *(undefined2 *)&this_00->field_0x2e6;
-    local_f2 = *(undefined2 *)&this_00->field_0x2de;
-    local_ee = *(undefined2 *)&this_00->field_0x2e2;
-    local_ec = *(undefined2 *)&this_00->field_0x2e4;
+    local_f4 = this_00->field_02DC;
+    local_f0 = this_00->field_02E0;
+    local_ea = this_00->field_02E6;
+    local_f2 = this_00->field_02DE;
+    local_ee = this_00->field_02E2;
+    local_ec = this_00->field_02E4;
     if (0 < (int)local_14) {
       uVar11 = 0;
       do {
@@ -1120,9 +1125,9 @@ LAB_004a221d:
     }
   }
   if (this_00->field_01E6 == CASE_12) {
-    local_6c = *(undefined2 *)&this_00->field_0x2e8;
+    local_6c = this_00->field_02E8;
     local_70 = g_playSystem_00802A38->field_00E4;
-    local_6a = *(undefined2 *)&this_00->field_0x2ea;
+    local_6a = this_00->field_02EA;
     local_68 = this_00->field_02EC;
     uVar12 = 0;
     local_18 = 0;
@@ -1204,12 +1209,12 @@ LAB_004a26f5:
     }
   }
   if (this_00->field_01E6 == CASE_13) {
-    local_b2 = *(undefined2 *)&this_00->field_0x2f0;
+    local_b2 = this_00->field_02F0;
     uVar11 = 0;
     local_b8 = g_playSystem_00802A38->field_00E4;
     local_b0 = *(undefined2 *)&this_00->field_0x2f2;
     uVar12 = STReplaceLowWord((uint32_t)(g_playSystem_00802A38), (uint16_t)(local_b0));
-    local_b4 = *(undefined2 *)&this_00->field_0x2ee;
+    local_b4 = this_00->field_02EE;
     local_ae = *(undefined4 *)&this_00->field_0x2f4;
     local_1c = local_b8;
     if (0 < (int)local_14) {
@@ -1268,19 +1273,17 @@ LAB_004a2897:
   if (this_00->field_01E6 == CASE_14) {
     local_28 = (DArrayTy *)
                Way3DGrpGetDistrPoint
-                         (this_00,this_00->field_002D,(int)*(short *)&this_00->field_0x2fe,
-                          (int)*(short *)&this_00->field_0x300,(int)*(short *)&this_00->field_0x302,
-                          (int)*(short *)&this_00->field_0x2f8,(int)*(short *)&this_00->field_0x2fa,
-                          (int)*(short *)&this_00->field_0x2fc);
+                         (this_00,this_00->field_002D,(int)this_00->field_02FE,
+                          (int)this_00->field_0300,(int)this_00->field_0302,(int)this_00->field_02F8
+                          ,(int)this_00->field_02FA,(int)this_00->field_02FC);
     if (local_28 == nullptr) {
       return;
     }
     pDVar9 = (DArrayTy *)
              Way3DGrpGetDistrPoint
-                       (this_00,this_00->field_002D,(int)*(short *)&this_00->field_0x2f8,
-                        (int)*(short *)&this_00->field_0x2fa,(int)*(short *)&this_00->field_0x2fc,
-                        (int)*(short *)&this_00->field_0x2fe,(int)*(short *)&this_00->field_0x300,
-                        (int)*(short *)&this_00->field_0x302);
+                       (this_00,this_00->field_002D,(int)this_00->field_02F8,
+                        (int)this_00->field_02FA,(int)this_00->field_02FC,(int)this_00->field_02FE,
+                        (int)this_00->field_0300,(int)this_00->field_0302);
     if (pDVar9 == nullptr) {
       DArrayDestroy(local_28);
       return;
@@ -1345,8 +1348,8 @@ LAB_004a2897:
             if ((dVar6 == 7) || (dVar6 == 0x13)) {
               iVar7 = thunk_FUN_00492370((STGameObjC *)pSVar5);
               if (iVar7 == 0) {
-                local_a2 = *(undefined2 *)&this_00->field_0x306;
-                local_a4 = *(undefined2 *)&this_00->field_0x304;
+                local_a2 = this_00->field_0306;
+                local_a4 = this_00->field_0304;
                 local_a0 = *(undefined2 *)&this_00->field_0x308;
                 local_9e = *(undefined4 *)&this_00->field_0x30a;
                 STBoatC::CmdToObj(pSVar5,CASE_F,&local_a8);

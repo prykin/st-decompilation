@@ -71,35 +71,11 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                       }
                       iVar6 = *(int *)(iVar12 + 0xe);
                       *(int *)(iVar12 + 0x22) = param_1[2] + 4;
-                      sVar7 = (short)(iVar6 >> 0x1f);
-                      if (iVar6 < 0) {
-                        local_10 = (((short)(iVar6 / 0xc9) + sVar7) -
-                                   (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
-                      }
-                      else {
-                        local_10 = ((short)(iVar6 / 0xc9) + sVar7) -
-                                   (short)((longlong)iVar6 * 0x28c1979 >> 0x3f);
-                      }
+                      local_10 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
                       iVar6 = *(int *)(iVar12 + 0x12);
-                      sVar7 = (short)(iVar6 >> 0x1f);
-                      if (iVar6 < 0) {
-                        sVar7 = (((short)(iVar6 / 0xc9) + sVar7) -
-                                (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
-                      }
-                      else {
-                        sVar7 = ((short)(iVar6 / 0xc9) + sVar7) -
-                                (short)((longlong)iVar6 * 0x28c1979 >> 0x3f);
-                      }
+                      sVar7 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
                       iVar6 = *(int *)(iVar12 + 0x16);
-                      sVar8 = (short)(iVar6 >> 0x1f);
-                      if (iVar6 < 0) {
-                        sVar8 = (((short)(iVar6 / 200) + sVar8) -
-                                (short)((longlong)iVar6 * 0x51eb851f >> 0x3f)) + -1;
-                      }
-                      else {
-                        sVar8 = ((short)(iVar6 / 200) + sVar8) -
-                                (short)((longlong)iVar6 * 0x51eb851f >> 0x3f);
-                      }
+                      sVar8 = STBiasedDiv16(iVar6, 200); /* exact signed 16-bit grid-index division */
                       iVar5 = thunk_FUN_004961b0(local_10,sVar7,sVar8);
                       if (iVar5 == 0) {
                         *(undefined4 *)(iVar12 + 8) = 0;
@@ -205,35 +181,11 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                   }
                   iVar6 = *(int *)(iVar12 + 0xe);
                   *(int *)(iVar12 + 0x22) = param_1[2] + 4;
-                  sVar7 = (short)(iVar6 >> 0x1f);
-                  if (iVar6 < 0) {
-                    local_10 = (((short)(iVar6 / 0xc9) + sVar7) -
-                               (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
-                  }
-                  else {
-                    local_10 = ((short)(iVar6 / 0xc9) + sVar7) -
-                               (short)((longlong)iVar6 * 0x28c1979 >> 0x3f);
-                  }
+                  local_10 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
                   iVar6 = *(int *)(iVar12 + 0x12);
-                  sVar7 = (short)(iVar6 >> 0x1f);
-                  if (iVar6 < 0) {
-                    sVar7 = (((short)(iVar6 / 0xc9) + sVar7) -
-                            (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
-                  }
-                  else {
-                    sVar7 = ((short)(iVar6 / 0xc9) + sVar7) -
-                            (short)((longlong)iVar6 * 0x28c1979 >> 0x3f);
-                  }
+                  sVar7 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
                   iVar6 = *(int *)(iVar12 + 0x16);
-                  sVar8 = (short)(iVar6 >> 0x1f);
-                  if (iVar6 < 0) {
-                    sVar8 = (((short)(iVar6 / 200) + sVar8) -
-                            (short)((longlong)iVar6 * 0x51eb851f >> 0x3f)) + -1;
-                  }
-                  else {
-                    sVar8 = ((short)(iVar6 / 200) + sVar8) -
-                            (short)((longlong)iVar6 * 0x51eb851f >> 0x3f);
-                  }
+                  sVar8 = STBiasedDiv16(iVar6, 200); /* exact signed 16-bit grid-index division */
                   local_EAX_1400 = thunk_FUN_004961b0(local_10,sVar7,sVar8);
                   if (local_EAX_1400 == 0) {
                     *(undefined4 *)(iVar12 + 8) = 0;

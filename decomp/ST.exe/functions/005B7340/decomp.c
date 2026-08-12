@@ -33,7 +33,7 @@ void __thiscall MMsgTy::PaintMMsg(MMsgTy *this)
     }
     iVar3 = 0;
     if (pMVar2->field_009A != 0) {
-      puVar5 = &pMVar2->field_00FF;
+      puVar5 = &pMVar2->array_00BC[0].field_0027.field_001C;
       do {
         if (puVar5[-6] != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730

@@ -3,7 +3,10 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
-   MTaskTy::NoneMTask */
+   MTaskTy::NoneMTask
+
+   [STSwitchEnumApplier] Switch target field_006D uses
+   /SubmarineTitans/Recovered/Enums/MTaskTy_field_006DState. Cases: CASE_1=1;CASE_3=3;CASE_5=5 */
 
 void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
 
@@ -43,7 +46,7 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if ((local_c->field_006D == '\x03') || (local_c->field_006D == '\x05')) {
+  if ((local_c->field_006D == CASE_3) || (local_c->field_006D == CASE_5)) {
     PlayScript(local_c);
   }
   pDVar6 = this_00->field_0647;

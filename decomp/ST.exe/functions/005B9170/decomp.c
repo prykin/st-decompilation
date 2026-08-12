@@ -33,9 +33,9 @@ void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
     if (this_00->field_009A != 0) {
       do {
         uVar2 = local_8 & 0xff;
-        *(undefined4 *)((int)&this_00->field_0127 + uVar2 * 0x1fb) = this_00->field_0061;
-        *(uint *)((int)&this_00->field_0123 + uVar2 * 0x1fb) = ((local_c & 0xff) + 1) * 100;
-        if (*(int *)(&this_00->field_0xbc + uVar2 * 0x1fb) != 0) {
+        this_00->array_00BC[uVar2].field_0027.field_0044 = this_00->field_0061;
+        this_00->array_00BC[uVar2].field_0027.field_0040 = ((local_c & 0xff) + 1) * 100;
+        if (this_00->array_00BC[uVar2].field_0000 != 0) {
           local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)local_c + '\x01'));
         }
         bVar4 = bVar4 + 1;
@@ -45,9 +45,9 @@ void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
     local_8 = local_8 & 0xffffff00;
     if (this_00->field_009A != 0) {
       do {
-        uVar2 = *(uint *)((int)&this_00->field_0178 + (local_8 & 0xff) * 0x1fb);
+        uVar2 = this_00->array_00BC[local_8 & 0xff].field_00B8.field_0004;
         if (uVar2 != 0xffffffff) {
-          FUN_006b3af0(*(int **)((int)&this_00->field_01BC + (local_8 & 0xff) * 0x1fb),uVar2);
+          FUN_006b3af0((int *)this_00->array_00BC[local_8 & 0xff].field_00B8.field_0048,uVar2);
         }
         bVar5 = bVar5 + 1;
         local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));

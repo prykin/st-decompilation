@@ -541,7 +541,7 @@ LAB_0058ea68:
                          STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0],
               local_8 = this_01, this_01 != nullptr &&
               (st::fn_004018C5
-                         ((STFishC *)this_01,st::pointer_boundary_cast<short *>(&this->field_0231),st::pointer_boundary_cast<short *>(&this->field_0233),st::pointer_boundary_cast<short *>(&this->field_0235)),
+                         ((STFishC *)this_01,&this->field_0231,&this->field_0233,&this->field_0235),
               this->field_0047 == this->field_0231)) && (this->field_0049 == this->field_0233)) &&
             ((this->field_004B == this->field_0235 &&
              (pSVar9 = st::fn_004028BA

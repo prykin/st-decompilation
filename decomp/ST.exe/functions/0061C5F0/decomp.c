@@ -29,34 +29,11 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
       STField<STGameObjC *>(this,0x139) = this_00;
       STFishC::sub_004162B0((STFishC *)this_00,&local_a,&local_e,&local_10);
       iVar5 = STField<int>(this,0x127);
-      sVar1 = (short)(iVar5 >> 0x1f);
-      if (iVar5 < 0) {
-        iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar1) -
-                       (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar1) -
-                            (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-      }
+      iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
       iVar6 = STField<int>(this,299);
-      sVar1 = (short)(iVar6 >> 0x1f);
-      if (iVar6 < 0) {
-        iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar1) -
-                       (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar1) -
-                            (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
-      }
+      iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
       iVar3 = STField<int>(this,0x12f);
-      sVar1 = (short)(iVar3 >> 0x1f);
-      if (iVar3 < 0) {
-        local_18 = (((short)(iVar3 / 200) + sVar1) - (short)((longlong)iVar3 * 0x51eb851f >> 0x3f))
-                   + -1;
-      }
-      else {
-        local_18 = ((short)(iVar3 / 200) + sVar1) - (short)((longlong)iVar3 * 0x51eb851f >> 0x3f);
-      }
+      local_18 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
       iVar3 = (-(uint)(STField<int>(this,0x7d) != 0) & 4) + 1;
       if ((((local_a - iVar3 <= iVar5) && (iVar5 < local_a + iVar3)) && (local_e - iVar3 <= iVar6))
          && (iVar6 < local_e + iVar3)) {

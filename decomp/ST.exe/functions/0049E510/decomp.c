@@ -60,11 +60,11 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
   }
   if ((param_1 != 1) && (param_1 != 0)) goto LAB_0049e7c1;
   memset(&local_28->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
-  local_30 = *(undefined2 *)&local_28->field_0x17c;
+  local_30 = local_28->field_017C;
   local_28->field_0065 = 0;
-  *(undefined2 *)&local_28->field_0x2ad = local_30;
-  local_2e = *(undefined2 *)&local_28->field_0x17e;
-  *(undefined2 *)&local_28->field_0x2af = local_2e;
+  local_28->field_02AD = local_30;
+  local_2e = local_28->field_017E;
+  local_28->field_02AF = local_2e;
   local_2c = local_28->field_0180;
   local_28->field_02B1 = local_2c;
   local_34 = g_playSystem_00802A38->field_00E4;
@@ -88,8 +88,8 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
           if ((((dVar4 == 7) || (dVar4 == 0x13)) || (dVar4 == 0x1b)) &&
              (iVar9 = thunk_FUN_00492370((STGameObjC *)pSVar3), iVar9 != 0)) {
             STBoatC::CmdToObj(pSVar3,CASE_10,&local_34);
-            if (((*(short *)&pSVar2->field_0x2ad != -1) || (*(short *)&pSVar2->field_0x2af != -1))
-               || (pSVar2->field_02B1 != -1)) {
+            if (((pSVar2->field_02AD != -1) || (pSVar2->field_02AF != -1)) ||
+               (pSVar2->field_02B1 != -1)) {
               pDVar5 = local_10;
               if (local_10 == nullptr) {
                 pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
@@ -104,8 +104,8 @@ LAB_0049e6f6:
             if (iVar9 == 0) {
               STBoatC::CmdToObj(pSVar3,CASE_3,&local_18);
             }
-            else if (((*(short *)&pSVar2->field_0x2ad != -1) ||
-                     (*(short *)&pSVar2->field_0x2af != -1)) || (pSVar2->field_02B1 != -1)) {
+            else if (((pSVar2->field_02AD != -1) || (pSVar2->field_02AF != -1)) ||
+                    (pSVar2->field_02B1 != -1)) {
               pDVar5 = local_c;
               if (local_c == nullptr) {
                 pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);

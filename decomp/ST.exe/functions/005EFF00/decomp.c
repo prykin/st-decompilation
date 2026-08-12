@@ -13,33 +13,15 @@ void __fastcall FUN_005eff00(int param_1)
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x277);
-  sVar2 = (short)(iVar1 >> 0x1f);
-  if (iVar1 < 0) {
-    sVar2 = (((short)(iVar1 / 0xc9) + sVar2) - (short)((longlong)iVar1 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    sVar2 = ((short)(iVar1 / 0xc9) + sVar2) - (short)((longlong)iVar1 * 0x28c1979 >> 0x3f);
-  }
+  sVar2 = STBiasedDiv16(iVar1, 0xc9); /* exact signed 16-bit grid-index division */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x27b);
   *(short *)(param_1 + 0x47) = sVar2;
-  sVar2 = (short)(iVar1 >> 0x1f);
-  if (iVar1 < 0) {
-    sVar2 = (((short)(iVar1 / 0xc9) + sVar2) - (short)((longlong)iVar1 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    sVar2 = ((short)(iVar1 / 0xc9) + sVar2) - (short)((longlong)iVar1 * 0x28c1979 >> 0x3f);
-  }
+  sVar2 = STBiasedDiv16(iVar1, 0xc9); /* exact signed 16-bit grid-index division */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x27f);
   *(short *)(param_1 + 0x49) = sVar2;
-  sVar2 = (short)(iVar1 >> 0x1f);
-  if (iVar1 < 0) {
-    sVar2 = (((short)(iVar1 / 200) + sVar2) - (short)((longlong)iVar1 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    sVar2 = ((short)(iVar1 / 200) + sVar2) - (short)((longlong)iVar1 * 0x51eb851f >> 0x3f);
-  }
+  sVar2 = STBiasedDiv16(iVar1, 200); /* exact signed 16-bit grid-index division */
   *(short *)(param_1 + 0x4b) = sVar2;
   *(undefined2 *)(param_1 + 0x41) = *(undefined2 *)(param_1 + 0x277);
   *(undefined2 *)(param_1 + 0x45) = *(undefined2 *)(param_1 + 0x27f);

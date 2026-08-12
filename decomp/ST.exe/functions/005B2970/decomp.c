@@ -8,8 +8,9 @@
 void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
 
 {
-  CursorClassTy *this_00;
-  MainMenuTy *this_01;
+  MMsgTy *this_00;
+  CursorClassTy *this_01;
+  MainMenuTy *this_02;
   int iVar2;
   LPSTR pCVar2;
   ushort *puVar3;
@@ -55,7 +56,7 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
       FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
     }
   }
-  this_01 = local_8;
+  this_02 = local_8;
   if (g_startSystem_0081176C->field_0028 != 0) {
     puVar4 = &local_8->field_1A7F;
     do {
@@ -70,9 +71,9 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
   }
   iVar5 = 0;
   do {
-    if (this_01->field_1AA7[iVar5 + -10] != 0) {
-      puVar4 = Library::DKW::FLC::FUN_006c4a20(this_01->field_1AA7[iVar5 + -10]);
-      this_01->field_1AA7[iVar5] = (uint)puVar4;
+    if (this_02->field_1AA7[iVar5 + -10] != 0) {
+      puVar4 = Library::DKW::FLC::FUN_006c4a20(this_02->field_1AA7[iVar5 + -10]);
+      this_02->field_1AA7[iVar5] = (uint)puVar4;
       if (puVar4 != nullptr) {
         switch(iVar5) {
         case 0:
@@ -124,59 +125,61 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
 switchD_005b2a8d_default:
     iVar5 = iVar5 + 1;
     if (9 < iVar5) {
-      MMObjTy::InitSprBut((MMObjTy *)this_01,
-                          (RecoveredRecord_MMObjTy_005B5240 *)&this_01->field_0x9b,
+      MMObjTy::InitSprBut((MMObjTy *)this_02,
+                          (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_0x9b,
                           "MM_MBUT00",0xf2,0x13a,7,8,0,0,0x9d,0x38,0x33,
                           "MM_MABUT00",6,8,9,6,0x28,0,nullptr,0,0,0,-1,-1);
-      MMObjTy::InitSprBut((MMObjTy *)this_01,
-                          (RecoveredRecord_MMObjTy_005B5240 *)&this_01->field_0x296,
+      MMObjTy::InitSprBut((MMObjTy *)this_02,
+                          (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_00BB[0].field_01DB,
                           "MM_MBUT01",0x191,0x13a,9,8,0,0,0x9d,0x38,0x33,
                           "MM_MABUT01",8,8,8,6,0x32,0,nullptr,0,0,0,-1,-1);
-      MMObjTy::InitSprBut((MMObjTy *)this_01,
-                          (RecoveredRecord_MMObjTy_005B5240 *)&this_01->field_0x491,
+      MMObjTy::InitSprBut((MMObjTy *)this_02,
+                          (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_00BB[1].field_01DB,
                           "MM_MBUT02",0xf2,0x173,8,6,0,0,0x9d,0x38,0x33,
                           "MM_MABUT02",8,7,10,5,0x28,0,nullptr,0,0,0,-1,-1);
-      MMObjTy::InitSprBut((MMObjTy *)this_01,
-                          (RecoveredRecord_MMObjTy_005B5240 *)&this_01->field_0x68c,
+      MMObjTy::InitSprBut((MMObjTy *)this_02,
+                          (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_00BB[2].field_01DB,
                           "MM_MBUT03",0x191,0x173,8,6,0,0,0x9d,0x38,0x33,
                           "MM_MABUT03",8,7,8,5,0x32,0,nullptr,0,0,0,-1,-1);
-      MMObjTy::InitSprBut((MMObjTy *)this_01,
-                          (RecoveredRecord_MMObjTy_005B5240 *)&this_01->field_0x887,
+      MMObjTy::InitSprBut((MMObjTy *)this_02,
+                          (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_00BB[3].field_01DB,
                           "MM_MBUT04",0x143,0x1ac,7,8,0,0,0x9d,0x38,0x33,
                           "MM_MABUT04",8,9,9,6,0x32,0,nullptr,0,0,0,-1,-1);
       puVar3 = FUN_0070a9f0(g_cMf32_00806780,"MM_BKG",0,1);
       g_startSystem_0081176C->field_002C = puVar3;
       DarkScreen(g_dDXContext_0080759C,1,0);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(MMsgTy **)(this_01->field_1A5B + 0x2e6) != nullptr) {
+      this_00 = *(MMsgTy **)(this_02->field_00BB[0xc].field_01DC + 0x2e6);
+      if (this_00 != nullptr) {
+        MMsgTy::HidePanel(this_00,0,0,1);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        MMsgTy::HidePanel(*(MMsgTy **)(this_01->field_1A5B + 0x2e6),0,0,1);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        MMsgTy::ShowSprites(*(MMsgTy **)(this_01->field_1A5B + 0x2e6));
-        *(undefined4 *)(*(int *)(this_01->field_1A5B + 0x2e6) + 0x1cab) = this_01->field_0008;
+        MMsgTy::ShowSprites(*(MMsgTy **)(this_02->field_00BB[0xc].field_01DC + 0x2e6));
+        *(undefined4 *)(*(int *)(this_02->field_00BB[0xc].field_01DC + 0x2e6) + 0x1cab) =
+             this_02->field_0008;
       }
-      FUN_006bc360(g_startSystem_0081176C->field_002C,(undefined4 *)&this_01->field_0x1adf,
+      FUN_006bc360(g_startSystem_0081176C->field_002C,(undefined4 *)&this_02->field_0x1adf,
                    nullptr);
-      this_00 = g_cursorClass_00802A30;
+      this_01 = g_cursorClass_00802A30;
       if (g_cursorClass_00802A30 != nullptr) {
         iVar5 = g_cursorClass_00802A30->field_00C9;
         iVar8 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
-        this_00->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(this_00,CASE_0,iVar8,iVar5);
-        CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-        this_00->field_00D2 = 0;
-        this_00->field_04DF = -1;
+        this_01->field_0494 = 0xffff;
+        CursorClassTy::SetGCType(this_01,CASE_0,iVar8,iVar5);
+        CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);
+        this_01->field_00D2 = 0;
+        this_01->field_04DF = -1;
       }
-      SetMode(this_01,param_1,1);
+      SetMode(this_02,param_1,1);
       thunk_FUN_00568bc0(&g_sound,0);
       if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
         thunk_FUN_0056a130(&g_sound,0x10,'\x02',0,nullptr);
       }
       if (DAT_00808446 == '\0') {
-        this_01->field_1A6B = 2;
-        this_01->field_1A67 = this_01->field_0008;
-        this_01->field_1A6F = 0x6902;
+        uVar7 = this_02->field_0008;
+        this_02->field_00BB[0xc].field_01EC = 2;
+        this_02->field_00BB[0xc].field_01E8 = uVar7;
+        this_02->field_00BB[0xc].field_01F0 = 0x6902;
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

@@ -895,13 +895,13 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
       st::fn_00402D8D(1);
       st::fn_00405CD1(this_01,1);
       st::fn_00403148((undefined4 *)&DAT_007d3f78);
-      DAT_008489d0 = static_cast<undefined4>(0);
+      DAT_008489d0 = 0;
       g_allocationRecord_00648620_008489B4 = nullptr;
       g_allocationRecord_0067D3B0_008489B8 = nullptr;
       g_allocationRecord_0065CD10_008489BC = nullptr;
       DAT_008489c0 = 0;
       g_allocationRecord_006684E0_008489C4 = nullptr;
-      DAT_008489c8 = static_cast<undefined4>(0);
+      DAT_008489c8 = 0;
       PTR_008489cc = nullptr;
       g_array_008489D4 = nullptr;
       g_dArray_008489D8 = nullptr;
@@ -3220,7 +3220,7 @@ cf_common_join_006895D5:
           pAVar17 = st::pointer_boundary_cast<AllocationRecord_0065CD10 *>(DAT_008489c8);
           if (g_allocationRecord_0067D3B0_008489B8 == nullptr) {
             if (DAT_008489d0 == nullptr) {
-              DAT_008489c8 = static_cast<undefined4>(0);
+              DAT_008489c8 = 0;
               if (param_3 != nullptr) {
                 *param_3 = 2;
               }
@@ -3239,7 +3239,7 @@ cf_common_join_006895D5:
             local_d8 = *(uint *)&DAT_008489c8->field_0x14;
             st::fn_006AE1C0
                       (g_allocationRecord_0067D3B0_008489B8->field_00C2,&local_e4);
-            DAT_008489c8 = static_cast<undefined4>(0);
+            DAT_008489c8 = 0;
             DAT_008488b0 = DAT_008488b0 + -1;
           }
           goto switchD_006841b6_default;

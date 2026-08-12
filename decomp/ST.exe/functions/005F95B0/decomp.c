@@ -97,39 +97,10 @@ undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
     *(undefined4 *)(param_1->field_02E6 + 0x5c) = 10;
     return 1;
   }
-  sVar6 = (short)(iVar9 >> 0x1f);
-  if (iVar9 < 0) {
-    iVar7 = (short)(((short)(iVar9 / 200) + sVar6) - (short)((longlong)iVar9 * 0x51eb851f >> 0x3f))
-            + -1;
-  }
-  else {
-    iVar7 = (int)(short)(((short)(iVar9 / 200) + sVar6) -
-                        (short)((longlong)iVar9 * 0x51eb851f >> 0x3f));
-  }
-  if (sVar5 < 0) {
-    iVar9 = (short)((sVar5 / 200 + (sVar5 >> 0xf)) -
-                   (short)((longlong)(int)sVar5 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    iVar9 = (int)(short)((sVar5 / 200 + (sVar5 >> 0xf)) -
-                        (short)((longlong)(int)sVar5 * 0x51eb851f >> 0x3f));
-  }
-  if (local_6 < 0) {
-    sVar5 = ((local_6 / 0xc9 + (local_6 >> 0xf)) -
-            (short)((longlong)(int)local_6 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    sVar5 = (local_6 / 0xc9 + (local_6 >> 0xf)) -
-            (short)((longlong)(int)local_6 * 0x28c1979 >> 0x3f);
-  }
-  if (local_8 < 0) {
-    sVar6 = ((local_8 / 0xc9 + (local_8 >> 0xf)) -
-            (short)((longlong)(int)local_8 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    sVar6 = (local_8 / 0xc9 + (local_8 >> 0xf)) -
-            (short)((longlong)(int)local_8 * 0x28c1979 >> 0x3f);
-  }
+  iVar7 = STBiasedDiv16(iVar9, 200); /* exact signed 16-bit grid-index division */
+  iVar9 = STBiasedDiv16(sVar5, 200); /* exact signed 16-bit grid-index division */
+  sVar5 = STBiasedDiv16(local_6, 0xc9); /* exact signed 16-bit grid-index division */
+  sVar6 = STBiasedDiv16(local_8, 0xc9); /* exact signed 16-bit grid-index division */
   iVar7 = thunk_FUN_005f9bd0(sVar6,sVar5,iVar9,iVar7,&local_20,&local_24);
   switch(local_18) {
   case 1:

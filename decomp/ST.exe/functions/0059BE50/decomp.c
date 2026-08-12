@@ -13,16 +13,18 @@
 void __thiscall FSGSTy::sub_0059BE50(FSGSTy *this)
 
 {
-  int iVar1;
+  undefined1 uVar1;
+  int iVar2;
 
-  this->field_1A6B = 0;
+  uVar1 = this->array_00BC[0xc].field_01DF;
+  this->array_00BC[0xc].field_01EB = 0;
   this->field_0029 = 2;
-  switch(this->field_1A5F) {
-  case CASE_2:
-  case CASE_3:
-  case CASE_4:
-  case CASE_5:
-  case CASE_7:
+  switch(uVar1) {
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+  case 7:
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 0;
     if (this->field_1AC4 != 0) {
@@ -86,9 +88,9 @@ void __thiscall FSGSTy::sub_0059BE50(FSGSTy *this)
     if (this->field_1AD0 != 0) {
       FUN_006e6080(this,2,this->field_1AD0,(undefined4 *)&this->field_0x1d);
     }
-    iVar1 = this->field_1EB6;
+    iVar2 = this->field_1EB6;
     goto LAB_0059c1ca;
-  case CASE_6:
+  case 6:
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x19;
     if (this->field_1B10 != 0) {
@@ -113,9 +115,9 @@ void __thiscall FSGSTy::sub_0059BE50(FSGSTy *this)
     if (this->field_1B24 != 0) {
       FUN_006e6080(this,2,this->field_1B24,(undefined4 *)&this->field_0x1d);
     }
-    iVar1 = this->field_1B1C;
+    iVar2 = this->field_1B1C;
     goto joined_r0x0059c1b1;
-  case CASE_8:
+  case 8:
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x99;
     if (this->field_1AC4 != 0) {
@@ -132,20 +134,20 @@ void __thiscall FSGSTy::sub_0059BE50(FSGSTy *this)
     if (this->field_1EBA != 0) {
       FUN_006e6080(this,2,this->field_1EBA,(undefined4 *)&this->field_0x1d);
     }
-    iVar1 = this->field_1B24;
+    iVar2 = this->field_1B24;
 joined_r0x0059c1b1:
-    if (iVar1 != 0) {
-      FUN_006e6080(this,2,iVar1,(undefined4 *)&this->field_0x1d);
+    if (iVar2 != 0) {
+      FUN_006e6080(this,2,iVar2,(undefined4 *)&this->field_0x1d);
     }
-    iVar1 = this->field_1B20;
+    iVar2 = this->field_1B20;
     *(undefined4 *)&this->field_0x31 = 0;
 LAB_0059c1ca:
-    if (iVar1 != 0) {
-      FUN_006e6080(this,2,iVar1,(undefined4 *)&this->field_0x1d);
+    if (iVar2 != 0) {
+      FUN_006e6080(this,2,iVar2,(undefined4 *)&this->field_0x1d);
       return;
     }
     break;
-  case CASE_9:
+  case 9:
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 0;
     if (this->field_1ED3 != 0) {
@@ -174,7 +176,7 @@ LAB_0059c1ca:
       FUN_006e6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
     }
     break;
-  case CASE_A:
+  case 10:
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 0;
     if (this->field_1AD8 != 0) {

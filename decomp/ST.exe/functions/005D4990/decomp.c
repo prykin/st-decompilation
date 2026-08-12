@@ -29,7 +29,7 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
     iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar2 == 0) {
       if (*param_2 != 0xffffffff) {
-        uVar4 = local_8->field_1A5B->field_06A6;
+        uVar4 = *(uint *)&(local_8->array_00BC[0xc].field_01DB)->field_0x6a6;
         puVar5 = (byte *)param_1->field_0008;
         memset(puVar5, 0, uVar4); /* compiler bulk-zero initialization */
         uVar4 = *param_2;
@@ -39,7 +39,7 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
         if (uVar4 != 0) {
           do {
             param_2 = param_2 + 1;
-            if (*param_2 < local_8->field_1A5B->field_06A6) {
+            if (*param_2 < *(uint *)&(local_8->array_00BC[0xc].field_01DB)->field_0x6a6) {
               *(undefined1 *)(*param_2 + iVar1) = 1;
             }
             uVar3 = uVar3 + 1;
@@ -48,7 +48,7 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      uVar4 = local_8->field_1A5B->field_06A6;
+      uVar4 = *(uint *)&(local_8->array_00BC[0xc].field_01DB)->field_0x6a6;
       puVar5 = (byte *)param_1->field_0008;
       for (uVar3 = uVar4 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
         *puVar5 = 0x1010101;
@@ -58,7 +58,7 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
         *(undefined1 *)puVar5 = 1;
         puVar5 = (byte *)((int)puVar5 + 1);
       }
-      param_1->field_0004 = local_8->field_1A5B->field_06A6;
+      param_1->field_0004 = *(undefined4 *)&(local_8->array_00BC[0xc].field_01DB)->field_0x6a6;
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

@@ -8,7 +8,15 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
+
+   [STSwitchEnumApplier] Switch target field_036E uses
+   /SubmarineTitans/Recovered/Enums/STDestC_field_036EState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_4=4;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_036E uses
+   /SubmarineTitans/Recovered/Enums/STDestC_field_036EState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_6=6 */
 
 void __thiscall STDestC::sub_00602BE0(STDestC *this)
 
@@ -22,7 +30,7 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
   if ((this->field_039B < 0) && (iVar2 = thunk_FUN_006029c0(), iVar2 == 0)) {
     return;
   }
-  if (this->field_036E == 2) {
+  if (this->field_036E == CASE_2) {
     if (this->field_037A == '\x01') {
       Library::Ourlib::ST3DSMAP::SprSetMask
                 (this->field_0211,this->field_01ED,PTR_00806724->entries[this->field_0397],
@@ -34,22 +42,22 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
     if (this->field_039F < '\x01') {
       if (this->field_0397 < 0) {
         Library::Ourlib::ST3DSMAP::SprSetMask(this->field_0211,this->field_01ED,0,0);
-        this->field_036E = 1;
+        this->field_036E = CASE_1;
       }
     }
     else if (((int)PTR_00806724->entryCount <= this->field_0397) &&
-            (this->field_036E = 0, this->field_037A == '\x01')) {
+            (this->field_036E = CASE_0, this->field_037A == '\x01')) {
       thunk_FUN_004ad430((STT3DSprC *)&this->field_01D5);
       this->field_037A = 0;
     }
   }
-  else if (this->field_036E != 4) {
+  else if (this->field_036E != CASE_4) {
     puVar3 = sub_00602E90(this);
     this->field_03AB = puVar3;
     if (puVar3 != nullptr) {
       thunk_FUN_004ad310((STT3DSprC *)&this->field_01D5);
       this->field_039B = -1;
-      this->field_036E = 4;
+      this->field_036E = CASE_4;
     }
   }
   pVVar1 = g_visibleClass_00802A88;

@@ -2907,7 +2907,10 @@ class SourceTreeGenerator:
                 f"{source.display_type} -> {target_display}",
             )
         if target_word and source.kind == "null_pointer":
-            return (f"static_cast<{target_type}>(0)", "nullptr -> zero word")
+            # A null pointer converted to a machine word is exactly the integer
+            # constant zero.  Keeping the neutral Ghidra typedef in a cast only
+            # leaks recovery scaffolding into otherwise ordinary source.
+            return ("0", "nullptr -> zero word")
         if target_word and source.kind.endswith("_pointer"):
             return (
                 f"st::machine_word_boundary_cast<{target_type}>({expression})",

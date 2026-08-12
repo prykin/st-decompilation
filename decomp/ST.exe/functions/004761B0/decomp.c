@@ -35,12 +35,12 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
     sVar1 = this->field_03D8;
     sVar2 = this->field_03DA;
     sVar3 = this->field_03DC;
-    *(short *)&this->field_0x5e2 = sVar1;
-    *(short *)&this->field_0x5dc = sVar1;
-    *(short *)&this->field_0x5e4 = sVar2;
-    *(short *)&this->field_0x5de = sVar2;
-    *(short *)&this->field_0x5e6 = sVar3;
-    *(short *)&this->field_0x5e0 = sVar3;
+    this->field_05E2 = sVar1;
+    this->field_05DC = sVar1;
+    this->field_05E4 = sVar2;
+    this->field_05DE = sVar2;
+    this->field_05E6 = sVar3;
+    this->field_05E0 = sVar3;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
          (((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)) ||
@@ -53,15 +53,13 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
            ((iVar7 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
             iVar7 == 0x5a || (iVar7 == 0x1ae)))))))))) &&
        (iVar7 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
-                             (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
-                                             this->field_004B),1,(short *)&this->field_0x5e2,
-                             (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar7 == 0))
-    {
+                             (int *)CONCAT22((short)((uint)&this->field_05E2 >> 0x10),
+                                             this->field_004B),1,&this->field_05E2,&this->field_05E4
+                             ,&this->field_05E6), iVar7 == 0)) {
       return 0;
     }
     this->field_05E8 = 0;
-    sub_00481520(this,(int)*(short *)&this->field_0x5e2,(int)*(short *)&this->field_0x5e4,
-                 (int)*(short *)&this->field_0x5e6);
+    sub_00481520(this,(int)this->field_05E2,(int)this->field_05E4,(int)this->field_05E6);
     iVar5 = sub_00460260(this,0);
     return (-(uint)(iVar5 != -1) & 3) - 1;
   }
@@ -72,12 +70,12 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
       this->field_05E8 = 1;
       return 2;
     case 1:
-      sVar1 = *(short *)&this->field_0x5e2;
-      sVar2 = *(short *)&this->field_0x5e4;
-      sVar3 = *(short *)&this->field_0x5e6;
-      *(short *)&this->field_0x5dc = sVar1;
-      *(short *)&this->field_0x5de = sVar2;
-      *(short *)&this->field_0x5e0 = sVar3;
+      sVar1 = this->field_05E2;
+      sVar2 = this->field_05E4;
+      sVar3 = this->field_05E6;
+      this->field_05DC = sVar1;
+      this->field_05DE = sVar2;
+      this->field_05E0 = sVar3;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
              ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) || (g_worldGrid.sizeZ <= sVar3)) ||
@@ -89,10 +87,9 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
             ((iVar7 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
              iVar7 == 0x5a || (iVar7 == 0x1ae)))))))) &&
          (iVar7 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
-                               (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
-                                               this->field_004B),1,(short *)&this->field_0x5e2,
-                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar7 == 0)
-         ) {
+                               (int *)CONCAT22((short)((uint)&this->field_05E2 >> 0x10),
+                                               this->field_004B),1,&this->field_05E2,
+                               &this->field_05E4,&this->field_05E6), iVar7 == 0)) {
         return 0;
       }
       sub_004602B0(this);
@@ -100,12 +97,12 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
     default:
       goto switchD_004761eb_caseD_3;
     case 3:
-      sVar1 = *(short *)&this->field_0x5e2;
-      sVar2 = *(short *)&this->field_0x5e4;
-      sVar3 = *(short *)&this->field_0x5e6;
-      *(short *)&this->field_0x5dc = sVar1;
-      *(short *)&this->field_0x5de = sVar2;
-      *(short *)&this->field_0x5e0 = sVar3;
+      sVar1 = this->field_05E2;
+      sVar2 = this->field_05E4;
+      sVar3 = this->field_05E6;
+      this->field_05DC = sVar1;
+      this->field_05DE = sVar2;
+      this->field_05E0 = sVar3;
       if (((((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) &&
              ((-1 < sVar2 &&
               (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)))))) &&
@@ -122,10 +119,9 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
             ((iVar7 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
              iVar7 == 0x5a || (iVar7 == 0x1ae)))))))) &&
          (iVar7 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
-                               (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
-                                               this->field_004B),1,(short *)&this->field_0x5e2,
-                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar7 == 0)
-         ) {
+                               (int *)CONCAT22((short)((uint)&this->field_05E2 >> 0x10),
+                                               this->field_004B),1,&this->field_05E2,
+                               &this->field_05E4,&this->field_05E6), iVar7 == 0)) {
         return 0;
       }
       break;
@@ -137,8 +133,7 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
       }
       return 0xffff;
     }
-    sub_00481520(this,(int)*(short *)&this->field_0x5e2,(int)*(short *)&this->field_0x5e4,
-                 (int)*(short *)&this->field_0x5e6);
+    sub_00481520(this,(int)this->field_05E2,(int)this->field_05E4,(int)this->field_05E6);
     sub_00460260(this,0);
 switchD_004761eb_caseD_3:
     return 2;

@@ -28,7 +28,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
   STMessage local_28;
   FSGSTy *local_8;
 
-  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != nullptr)) &&
+  if (((this->array_00BC[0xc].field_01DF == '\x01') && (this->field_1AC0 != nullptr)) &&
      (-1 < (int)this->field_1ABC)) {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
@@ -70,16 +70,18 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
         *(undefined1 *)puVar4 = 0xff;
         puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
-      ccFntTy::SetSurf(this_02->field_1A73,(int)this_02->field_1AC0,0,0,0x16,0x1b8,0xf0);
+      ccFntTy::SetSurf(this_02->array_00BC[0xc].field_01F3,(int)this_02->field_1AC0,0,0,0x16,0x1b8,
+                       0xf0);
       iVar12 = -1;
       iVar11 = -1;
       uVar6 = 2;
       iVar10 = -1;
       iVar8 = -2;
       resourceString = LoadResourceString(0x25b9,g_hINSTANCE_00807618);
-      ccFntTy::WrTxt(this_02->field_1A73,resourceString,iVar8,iVar10,uVar6,iVar11,iVar12);
+      ccFntTy::WrTxt(this_02->array_00BC[0xc].field_01F3,resourceString,iVar8,iVar10,uVar6,iVar11,
+                     iVar12);
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_02->field_1ABC);
-      pSVar2 = this_02->field_1A5B;
+      pSVar2 = this_02->array_00BC[0xc].field_01DB;
       pSVar7 = &local_28;
       for (iVar8 = 8; iVar8 != 0; iVar8 = iVar8 + -1) {
         pSVar7->unknown_00 = 0;

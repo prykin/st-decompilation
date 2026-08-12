@@ -91,15 +91,7 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
       STField<undefined4>(this,0x28b) = 0;
     }
   }
-  sVar1 = (short)(iVar11 >> 0x1f);
-  if (iVar11 < 0) {
-    iVar8 = (short)(((short)(iVar11 / 200) + sVar1) - (short)((longlong)iVar11 * 0x51eb851f >> 0x3f)
-                   ) + -1;
-  }
-  else {
-    iVar8 = (int)(short)(((short)(iVar11 / 200) + sVar1) -
-                        (short)((longlong)iVar11 * 0x51eb851f >> 0x3f));
-  }
+  iVar8 = STBiasedDiv16(iVar11, 200); /* exact signed 16-bit grid-index division */
   sVar1 = STField<short>(this,0x246);
   if (iVar8 != sVar1) {
     if ((1 < STField<byte>(this,0x252)) && (STField<short>(this,600) == iVar8)) {

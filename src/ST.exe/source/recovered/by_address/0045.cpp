@@ -31,7 +31,7 @@ undefined4 __fastcall st::fn_0045F980(STBoatC *param_1)
         param_1->field_008F = 0;
       }
       param_1->field_00FA = param_1->field_00FA + 1;
-      if ((short)param_1->field_00FA <= param_1->field_00F8) {
+      if (param_1->field_00FA <= param_1->field_00F8) {
         return 0;
       }
       param_1->field_00D7 = (int)local_8[0];
@@ -91,7 +91,7 @@ undefined4 __fastcall st::fn_0045F980(STBoatC *param_1)
             param_1->field_008F = 0;
           }
           param_1->field_00FA = param_1->field_00FA + 1;
-          if (param_1->field_00F8 < (short)param_1->field_00FA) {
+          if (param_1->field_00F8 < param_1->field_00FA) {
             param_1->field_00FC = param_1->field_00FC + '\x01';
             param_1->field_00FA = 0;
             param_1->field_00FD = 1;

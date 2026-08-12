@@ -19,7 +19,8 @@ void __thiscall MReportTy::sub_005C0190(MReportTy *this)
   do {
     if (*piVar1 != 0) {
       this->field_0025 = *piVar1;
-      *(undefined4 *)&this->field_0x31 = 0;
+      this->field_0031 = 0;
+      this->field_0033 = 0;
       (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
     }
     piVar1 = piVar1 + 1;
@@ -27,7 +28,8 @@ void __thiscall MReportTy::sub_005C0190(MReportTy *this)
   } while (local_8 != 0);
   if (this->field_009F != 0) {
     this->field_0025 = this->field_009F;
-    *(undefined4 *)&this->field_0x31 = 0;
+    this->field_0031 = 0;
+    this->field_0033 = 0;
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   return;

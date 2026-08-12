@@ -234,37 +234,13 @@ switchD_00625b9f_caseD_a8:
 LAB_00625d60:
           if (in_stack_00000010 != 0) {
             iVar6 = this->field_02C6;
-            sVar4 = (short)(iVar6 >> 0x1f);
-            if (iVar6 < 0) {
-              iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar4) -
-                             (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
-            }
-            else {
-              iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar4) -
-                                  (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
-            }
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             iVar7 = this->field_02C2;
-            sVar4 = (short)(iVar7 >> 0x1f);
-            if (iVar7 < 0) {
-              iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar4) -
-                             (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)) + -1;
-            }
-            else {
-              iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar4) -
-                                  (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
-            }
+            iVar7 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
             iVar13 = FUN_006acf90(iVar7,iVar6,iVar14,iVar15);
             if (iVar13 < 2) {
               iVar15 = this->field_02C2;
-              sVar4 = (short)(iVar15 >> 0x1f);
-              if (iVar15 < 0) {
-                iVar15 = (short)(((short)(iVar15 / 0xc9) + sVar4) -
-                                (short)((longlong)iVar15 * 0x28c1979 >> 0x3f)) + -1;
-              }
-              else {
-                iVar15 = (int)(short)(((short)(iVar15 / 0xc9) + sVar4) -
-                                     (short)((longlong)iVar15 * 0x28c1979 >> 0x3f));
-              }
+              iVar15 = STBiasedDiv16(iVar15, 0xc9); /* exact signed 16-bit grid-index division */
               uVar9 = iVar15 - iVar11 >> 0x1f;
               if ((int)((iVar15 - iVar11 ^ uVar9) - uVar9) < 2) {
                 if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||

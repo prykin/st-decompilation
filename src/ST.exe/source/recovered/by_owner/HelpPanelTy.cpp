@@ -1,6 +1,81 @@
 #include "st/generated.hpp"
 // Generated translation unit: source/recovered/by_owner/HelpPanelTy.cpp
 
+// 00510C80 HelpPanelTy::HelpPanelTy
+#line 4 "decomp/ST.exe/functions/00510C80/decomp.c"
+/* [STReturnSemanticsApplier] typed_pointer_return.
+   Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed
+   structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_00510C80_2C2DC38C (current recovered
+   extent=592)
+
+   [STConstructorApplier] Recovered constructor candidate.
+   VTable: 0079AC48 (store 00510CB9)
+   Evidence: final_vptr=0079AC48; returns_this=true; calls_before=1; field_writes_after=38;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=medium;
+   exact_factory_tail=00510C50->00403035->00510C80; allocation_size=596 */
+
+HelpPanelTy * __thiscall st::fn_00510C80(HelpPanelTy *this)
+
+{
+  byte *pbVar1;
+  int iVar2;
+
+  st::fn_006E5FB0(this);
+  this->field_005C = 0;
+  this->field_0044 = 0;
+  this->field_003C = 0;
+  this->field_0060 = 0xffffffff;
+  this->field_0064 = 3;
+  this->field_0068 = nullptr;
+  this->field_0172 = 2;
+  this->field_0178 = 0;
+  this->field_017A = 0;
+  this->vtable = &st_global_0079AC48;
+  this->field_0040 = 500;
+  this->field_0048 = 400;
+  this->field_01A0 = 0;
+  this->field_01A2 = 0;
+  this->field_01A1 = 0;
+  this->field_01A7 = 0;
+  this->field_01A3 = nullptr;
+  this->field_01DC = nullptr;
+  this->field_01E8 = nullptr;
+  this->field_01E4 = nullptr;
+  this->field_01E0 = nullptr;
+  this->field_0218 = nullptr;
+  this->field_01EC = nullptr;
+  memset(this->field_01F0, 0, 0x28); /* compiler bulk-zero initialization */
+  iVar2 = 0;
+  this->field_017C = 0;
+  memset(this->field_0180, 0, 0x1c); /* compiler bulk-zero initialization */
+  this->field_019C = 0;
+  this->field_01CB = nullptr;
+  this->field_01BB = nullptr;
+  this->field_01B3 = nullptr;
+  pbVar1 = *(byte **)structHelp_exref;
+  this->field_01CF = 0xffffffff;
+  this->field_01C7 = pbVar1;
+  this->field_01BF = 0;
+  this->field_01B7 = 0;
+  this->field_01D7 = nullptr;
+  this->field_01DB = 0;
+  this->field_024C = nullptr;
+  this->field_021C = nullptr;
+  this->field_0238 = nullptr;
+  this->field_0248 = nullptr;
+  this->field_022C = nullptr;
+  this->field_0228 = nullptr;
+  this->field_0234 = nullptr;
+  this->field_0230 = nullptr;
+  this->field_0220 = nullptr;
+  this->field_0224 = nullptr;
+  this->field_0244 = nullptr;
+  this->field_0240 = 0;
+  this->field_023C = 0;
+  this->field_01D3 = nullptr;
+  return this;
+}
+
 // 005148A0 HelpPanelTy::sub_005148A0
 #line 4 "decomp/ST.exe/functions/005148A0/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
@@ -203,8 +278,7 @@ LAB_00514d04:
     st::fn_004054C5(this,*(int *)(this->field_01C7 + iVar6 + 9),*(int *)(this->field_01C7 + iVar6 + 0xd));
     st::fn_00405100(this);
     local_c = *(uint *)sizeHelp_exref;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this->vtable + 0x18))(1);
+    this->SetPanel('\x01');
   }
   local_c = local_c + 1;
   if (*(uint *)sizeHelp_exref <= local_c) {
@@ -388,8 +462,7 @@ void __thiscall st::fn_0051DA70(HelpPanelTy *this)
           if ((*puVar12 & 1 << ((byte)uVar11 & 0x1f)) == 0) {
             if ((char)local_8 == '\0') {
               st::fn_004020B8(this,(void *)(uint)bVar1,local_c,'\0');
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (**(code **)(this->vtable + 0x18))(1);
+              this->SetPanel('\x01');
               return;
             }
             local_8 = (uint)(byte)((char)local_8 - 1);

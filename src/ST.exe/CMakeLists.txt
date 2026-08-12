@@ -224,6 +224,7 @@ add_library(st_recovered OBJECT
     source/recovered/by_owner/CursorClassTy.cpp
     source/recovered/by_owner/DebugSystemC.cpp
     source/recovered/by_owner/DumpClassC.cpp
+    source/recovered/by_owner/EditorClassTy.cpp
     source/recovered/by_owner/FSGSTy.cpp
     source/recovered/by_owner/GameSystemC.cpp
     source/recovered/by_owner/HelpPanelTy.cpp
@@ -240,6 +241,7 @@ add_library(st_recovered OBJECT
     source/recovered/by_owner/OpticClassC.cpp
     source/recovered/by_owner/PlayPanelTy.cpp
     source/recovered/by_owner/PrividerTy.cpp
+    source/recovered/by_owner/RadioClassTy.cpp
     source/recovered/by_owner/ResearchPanelTy.cpp
     source/recovered/by_owner/ST3DSMAPContext.cpp
     source/recovered/by_owner/STAllPlayersC.cpp
@@ -280,6 +282,7 @@ add_library(st_recovered OBJECT
     source/recovered/by_owner/STTmMineC.cpp
     source/recovered/by_owner/STVolcanoC.cpp
     source/recovered/by_owner/SettMapMTy.cpp
+    source/recovered/by_owner/SliderClassTy.cpp
     source/recovered/by_owner/SndUnderAttMenegC.cpp
     source/recovered/by_owner/SoundClassTy.cpp
     source/recovered/by_owner/SoundManagerTy.cpp
@@ -317,6 +320,7 @@ add_library(st_recovered OBJECT
     source/recovered/by_owner/TLOFakeTy.cpp
     source/recovered/by_owner/TradePanelTy.cpp
     source/recovered/by_owner/TraksClassTy.cpp
+    source/recovered/by_owner/ViewerClassTy.cpp
     source/recovered/by_owner/VisibleClassTy.cpp
     source/recovered/by_owner/WaitTy.cpp
     source/recovered/by_owner/cLoadingTy.cpp

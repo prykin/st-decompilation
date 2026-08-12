@@ -895,14 +895,14 @@ LAB_0057fc59:
     goto switchD_0057f734_caseD_df;
   case CASE_E0:
     if ((((((int)local_18->field_0245 < (int)g_worldGrid.sizeX) && (-1 < (int)local_18->field_0245))
-         && (local_18->field_0249 < (int)g_worldGrid.sizeY)) &&
-        ((-1 < local_18->field_0249 && (iVar12 = local_18->field_024D, -1 < iVar12)))) &&
+         && ((int)local_18->field_0249 < (int)g_worldGrid.sizeY)) &&
+        ((-1 < (int)local_18->field_0249 && (iVar12 = local_18->field_024D, -1 < iVar12)))) &&
        ((iVar12 < 5 &&
-        (iVar5 = st::fn_00404D3B(*(short *)&local_18->field_0245,(short)local_18->field_0249,
+        (iVar5 = st::fn_00404D3B(*(short *)&local_18->field_0245,*(short *)&local_18->field_0249,
                                     (short)iVar12), iVar5 != 0)))) {
       sVar1 = *(short *)&this_00->field_0245;
       sVar2 = *(short *)&this_00->field_024D;
-      sVar3 = (short)this_00->field_0249;
+      sVar3 = *(short *)&this_00->field_0249;
       if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
          (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))) {
         pSVar9 = nullptr;

@@ -11,7 +11,11 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=high
 
    [STPrototypeRepairApplier] Propagated return.
-   Evidence: 004232A0 returns STGroupBoatC::sub_004232A0 this @ 004232C9 */
+   Evidence: 004232A0 returns STGroupBoatC::sub_004232A0 this @ 004232C9
+
+   [STSwitchEnumApplier] Switch target field_0020 uses
+   /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_0020State. Cases:
+   CASE_0=0;CASE_14=20;CASE_1AE=430 */
 
 STGroupBoatC * __thiscall STGroupBoatC::sub_004232A0(STGroupBoatC *this)
 
@@ -19,7 +23,7 @@ STGroupBoatC * __thiscall STGroupBoatC::sub_004232A0(STGroupBoatC *this)
   sub_006E60E0(this);
   this->vtable = (STGroupBoatCVTable *)&VTable_00790508;
   this->field_001C = 0;
-  this->field_0020 = 0;
+  this->field_0020 = CASE_0;
   this->field_0029 = 0;
   this->field_002D = nullptr;
   this->field_0027 = 0;

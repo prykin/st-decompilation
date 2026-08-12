@@ -9,30 +9,35 @@
 void __thiscall MReportTy::sub_005C00D0(MReportTy *this)
 
 {
-  byte bVar1;
+  uint uVar1;
+  byte bVar2;
   uint local_8;
 
-  bVar1 = 0;
+  bVar2 = 0;
   local_8 = 0;
   this->field_0029 = 2;
   this->field_002D = 0x20;
   do {
     if ((&this->field_008F)[local_8] != 0) {
       this->field_0025 = (&this->field_008F)[local_8];
-      if (bVar1 == 0) {
-        *(uint *)&this->field_0x31 = (uint)(this->field_0067 != '\0');
+      if (bVar2 == 0) {
+        uVar1 = (uint)(this->field_0067 != '\0');
+        this->field_0031 = (short)uVar1;
+        this->field_0033 = (short)(uVar1 >> 0x10);
       }
       else {
-        *(undefined4 *)&this->field_0x31 = 1;
+        this->field_0031 = 1;
+        this->field_0033 = 0;
       }
       (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
     }
-    bVar1 = bVar1 + 1;
-    local_8 = (uint)bVar1;
-  } while (bVar1 < 4);
+    bVar2 = bVar2 + 1;
+    local_8 = (uint)bVar2;
+  } while (bVar2 < 4);
   if ((this->field_009F != 0) && (this->field_0067 != '\0')) {
     this->field_0025 = this->field_009F;
-    *(undefined4 *)&this->field_0x31 = 1;
+    this->field_0031 = 1;
+    this->field_0033 = 0;
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   return;

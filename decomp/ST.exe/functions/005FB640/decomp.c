@@ -165,7 +165,8 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
           return 0;
         }
         local_14 = STAllPlayersC::thunk_FUN_005fcad0((STAllPlayersC *)local_8,(uint *)&local_10);
-        STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_14,local_10);
+        STPlaySystemC::SaveObjData
+                  (g_playSystem_00802A38,this_00->field_0018,local_14,(uint)local_10);
         FreeAndNull(&local_14);
         g_currentExceptionFrame = local_60.previous;
         return 0;

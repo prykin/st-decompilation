@@ -102,7 +102,7 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
   }
   if (SVar1 == MESS_SHARED_010F) {
     local_20 = sub_005F5A90(local_14,(int *)&local_1c);
-    STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_20,local_1c);
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_20,(uint)local_1c);
     FreeAndNull(&local_20);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
@@ -291,7 +291,7 @@ LAB_005f2d8b:
               (g_sT3DSMAPContext_00807598,this_00->field_008F,
                (float)this_00->field_0093 * _DAT_007904f8 * _DAT_007904f0,
                (float)this_00->field_0097 * _DAT_007904f8 * _DAT_007904f0,
-               (float)(int)this_00->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+               (float)this_00->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     if (this_00->field_00C0 == this_00->field_00BC) {
       if (-1 < (int)this_00->field_008F) {
         Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this_00->field_008F);
@@ -301,35 +301,11 @@ LAB_005f2d8b:
     pVVar4 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != nullptr) {
       iVar8 = this_00->field_009B;
-      sVar3 = (short)(iVar8 >> 0x1f);
-      if (iVar8 < 0) {
-        local_18 = (short)(((short)(iVar8 / 200) + sVar3) -
-                          (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) + -1;
-      }
-      else {
-        local_18 = (int)(short)(((short)(iVar8 / 200) + sVar3) -
-                               (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
-      }
+      local_18 = STBiasedDiv16(iVar8, 200); /* exact signed 16-bit grid-index division */
       iVar8 = this_00->field_0097;
-      sVar3 = (short)(iVar8 >> 0x1f);
-      if (iVar8 < 0) {
-        iVar8 = (short)(((short)(iVar8 / 0xc9) + sVar3) -
-                       (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
-                            (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
-      }
+      iVar8 = STBiasedDiv16(iVar8, 0xc9); /* exact signed 16-bit grid-index division */
       iVar7 = this_00->field_0093;
-      sVar3 = (short)(iVar7 >> 0x1f);
-      if (iVar7 < 0) {
-        iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar3) -
-                       (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar3) -
-                            (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
-      }
+      iVar7 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
       if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar7,iVar8,

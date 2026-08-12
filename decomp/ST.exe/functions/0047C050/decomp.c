@@ -241,7 +241,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
         this->field_05D6 = 0;
         return 2;
       }
-      if (this->field_05D6 == 1) {
+      if (this->field_05D6 == CASE_1) {
         sVar1 = this->field_066F;
         sVar2 = this->field_0673;
         sVar3 = this->field_0671;
@@ -349,7 +349,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
   if (local_EAX_674 == -1) {
     return 0xffffffff;
   }
-  if (this->field_082E != 0) {
+  if (this->field_082E != ~CASE_FFFFFFFF) {
     return 2;
   }
   if (this->field_048B != 0xffff) {

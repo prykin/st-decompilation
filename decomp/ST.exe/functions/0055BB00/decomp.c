@@ -43,19 +43,28 @@
    [STReturnSemanticsApplier] repair_unsafe_eax_rollback.
    Evidence: restore the earlier evidence-backed void type after an unsafe automated rollback;
    post-CALL EAX reads alone do not prove a source-level return value; machine CFG audit: used=0,
-   ignored=4, unknown=3 */
+   ignored=4, unknown=3
+
+   [STPrototypeApplier] Propagated parameter 7.
+   Evidence: 00558DC0 -> 0055BB00 @ 00558E28; VisibleClassTy::sub_00558DC0 parameter param_6 |
+   005594A0 -> 0055BB00 @ 00559511; VisibleClassTy::sub_005594A0 parameter param_6 | 005597A0 ->
+   0055BB00 @ 00559860; VisibleClassTy::SetZoneDes parameter param_6 | 00559B30 -> 0055BB00 @
+   00559BF0; VisibleClassTy::SetZoneAst parameter param_6 | 00559EC0 -> 0055BB00 @ 00559F86;
+   VisibleClassTy::SetZoneTsh parameter param_6 | 0055A270 -> 0055BB00 @ 0055A336;
+   VisibleClassTy::SetZoneMin1 parameter param_6 | 0055A620 -> 0055BB00 @ 0055A6E6;
+   VisibleClassTy::SetZoneMin2 parameter param_6 */
 
 void __thiscall
 VisibleClassTy::sub_0055BB00
           (VisibleClassTy *this,byte param_1,short param_2,short param_3,char param_4,uint param_5,
-          byte param_6,undefined4 param_7)
+          byte param_6,uint param_7)
 
 {
   undefined4 local_10;
   short local_c;
   char cStack_a;
   byte bStack_9;
-  undefined4 local_8;
+  uint local_8;
 
   if ((((this->field_0114 != 0) && (this->field_0110 != nullptr)) &&
       (param_5 < 8)) &&

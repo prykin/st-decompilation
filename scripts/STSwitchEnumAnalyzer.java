@@ -76,6 +76,8 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
     private static final Pattern THIS_OFFSET = Pattern.compile(
         "\\bthis\\s*\\+\\s*(0[xX][0-9a-fA-F]+|[0-9]+)");
     private static final Pattern GLOBAL = Pattern.compile("^(?:_)?DAT_([0-9A-Fa-f]+)$");
+    private static final Pattern MACHINE_MEMORY = Pattern.compile(
+        "^\\[([A-Z][A-Z0-9]{1,3})(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$");
     private static final String CLASS_MARKER = "[STClassLayoutApplier]";
     private static final String ENUM_MARKER = "[STSwitchEnumApplier]";
 
@@ -137,6 +139,7 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         int rawSwitches = 0;
         for (Decompiled unit : completed.values())
             rawSwitches += analyzeDecompiled(unit, grouped, observedEnums);
+        int comparisonDomains = addComparisonStateDomains(grouped);
 
         List<Proposal> proposals = new ArrayList<>();
         for (Proposal proposal : grouped.values())
@@ -164,9 +167,336 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         long auto = proposals.stream().filter(proposal -> proposal.apply).count();
         println("Switch-enum analysis complete: " + directory.toAbsolutePath().normalize());
         println("Candidate functions: " + candidateFunctions + ", switches: " + rawSwitches +
+            ", comparison_domains: " + comparisonDomains +
             ", proposals: " + proposals.size() + ", auto_apply: " + auto +
             ", decompile retries: " + decompileRetries +
             ", failures: " + decompileFailures);
+    }
+
+    /**
+     * Recover small class state domains which the optimizer implemented as chains of
+     * comparisons instead of a switch.  This is entirely machine-derived: a generated scalar
+     * field must have at least two exact immediate comparisons and one exact immediate write,
+     * and at least three distinct observed values.  The rule is shared by every named class and
+     * deliberately ignores semantic method/class names.
+     */
+    private int addComparisonStateDomains(Map<String, Proposal> grouped) throws Exception {
+        Map<String, ComparisonDomain> domains = new TreeMap<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            if (function.isThunk() || function.isExternal() || isExcludedLibrary(function))
+                continue;
+            String owner = functionOwner(function);
+            Structure structure = ownerStructure(owner);
+            if (structure == null || !isGeneratedClass(structure.getPathName())) continue;
+            Set<String> aliases = stableThisAliases(function);
+            if (aliases.isEmpty()) continue;
+            InstructionIterator instructions = currentProgram.getListing()
+                .getInstructions(function.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction instruction = instructions.next();
+                String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+                String[] operands = splitMachineOperands(
+                    instruction.toString().toUpperCase(Locale.ROOT));
+                if ("MOV".equals(mnemonic) && operands.length >= 2)
+                    addArithmeticComparisonChain(domains, function, owner, structure,
+                        aliases, instruction, operands);
+                if (operands.length < 2) continue;
+                Long value = immediateOperand(instruction, 1, operands[1]);
+                if (value == null && "MOV".equals(mnemonic)) {
+                    String sourceRegister = machineRegister(operands[1]);
+                    if (sourceRegister != null)
+                        value = precedingRegisterConstant(function, instruction,
+                            sourceRegister);
+                }
+                if (value == null) continue;
+                MachineField field = machineField(operands[0], aliases);
+                if (field == null && "CMP".equals(mnemonic)) {
+                    String register = machineRegister(operands[0]);
+                    if (register != null)
+                        field = precedingFieldLoad(function, instruction, register, aliases);
+                }
+                if (field == null) continue;
+                DataTypeComponent component = structure.getComponentAt((int)field.offset);
+                if (component == null || component.getOffset() != field.offset ||
+                        component.getLength() != field.width ||
+                        !isSafeScalarType(component.getDataType())) continue;
+                String key = structure.getPathName() + ":" + field.offset;
+                ComparisonDomain domain = domains.computeIfAbsent(key,
+                    ignored -> new ComparisonDomain(function, owner, structure, component));
+                domain.functions.add(addr(function.getEntryPoint()));
+                long normalized = normalizeMachineValue(value, field.width);
+                if ("CMP".equals(mnemonic)) domain.addComparison(normalized,
+                    addr(instruction.getAddress()));
+                else if ("MOV".equals(mnemonic)) domain.addWrite(normalized,
+                    addr(instruction.getAddress()));
+            }
+        }
+
+        int accepted = 0;
+        for (ComparisonDomain domain : domains.values()) {
+            if (domain.comparisons.size() < 2 || domain.writes.isEmpty() ||
+                    domain.values.size() < 3 || domain.values.size() > 64) continue;
+            String fieldName = domain.component.getFieldName() == null ?
+                String.format("field_%04X", domain.component.getOffset()) :
+                domain.component.getFieldName();
+            Target target = new Target("class_field", fieldName, -1,
+                domain.component.getOffset(), domain.structure.getPathName(),
+                domain.component.getDataType(), SourceType.ANALYSIS, domain.owner,
+                "exact_machine_comparison_state_domain");
+            String key = target.groupKey(domain.anchor, 0);
+            Proposal proposal = grouped.get(key);
+            if (proposal == null) {
+                proposal = proposal(domain.anchor, target);
+                grouped.put(key, proposal);
+            }
+            proposal.values.addAll(domain.values);
+            proposal.expressions.add(fieldName + " immediate comparison/write domain");
+            proposal.switchSites.addAll(domain.sites);
+            proposal.evidenceFunctions.addAll(domain.functions);
+            proposal.reason += "; comparisons=" + domain.comparisons.size() +
+                "; writes=" + domain.writes.size() +
+                "; no_switch_required";
+            accepted++;
+        }
+        return accepted;
+    }
+
+    /** Resolve an exact constant still resident in the source register of a field write. */
+    private Long precedingRegisterConstant(Function function, Instruction use,
+            String register) {
+        Instruction cursor = currentProgram.getListing().getInstructionBefore(use.getAddress());
+        for (int distance = 0; cursor != null && distance < 32; distance++) {
+            if (!function.getBody().contains(cursor.getAddress())) return null;
+            String mnemonic = cursor.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitMachineOperands(
+                cursor.toString().toUpperCase(Locale.ROOT));
+            if ("CALL".equals(mnemonic)) return null;
+            if (operands.length == 0 ||
+                    !register.equals(machineRegister(operands[0])) ||
+                    !writesMachineRegister(mnemonic)) {
+                cursor = currentProgram.getListing().getInstructionBefore(cursor.getAddress());
+                continue;
+            }
+            if (("XOR".equals(mnemonic) || "SUB".equals(mnemonic)) &&
+                    operands.length >= 2 &&
+                    register.equals(machineRegister(operands[1]))) return 0L;
+            if ("AND".equals(mnemonic) && operands.length >= 2) {
+                Long immediate = immediateOperand(cursor, 1, operands[1]);
+                if (immediate != null && immediate == 0) return 0L;
+            }
+            if ("OR".equals(mnemonic) && operands.length >= 2) {
+                Long immediate = immediateOperand(cursor, 1, operands[1]);
+                if (immediate != null &&
+                        normalizeMachineValue(immediate, machineOperandWidth(operands[0])) ==
+                            normalizeMachineValue(-1L, machineOperandWidth(operands[0])))
+                    return -1L;
+            }
+            if ("MOV".equals(mnemonic) && operands.length >= 2)
+                return immediateOperand(cursor, 1, operands[1]);
+            return null;
+        }
+        return null;
+    }
+
+    /**
+     * MSVC commonly lowers a two-value state test without CMP:
+     *
+     * <pre>
+     * MOV EAX,[this+field]
+     * DEC EAX
+     * JZ  state_one
+     * DEC EAX
+     * JNZ default
+     * </pre>
+     *
+     * Each conditional branch is still an exact equality boundary for the original field.
+     * Accept only a contiguous load/arithmetic/zero-branch chain; any other flag-producing
+     * instruction, register write, call, or non-zero branch terminates the proof.
+     */
+    private void addArithmeticComparisonChain(Map<String, ComparisonDomain> domains,
+            Function function, String owner, Structure structure, Set<String> aliases,
+            Instruction load, String[] loadOperands) {
+        String register = machineRegister(loadOperands[0]);
+        MachineField field = machineField(loadOperands[1], aliases);
+        if (register == null || field == null ||
+                field.width != machineOperandWidth(loadOperands[0])) return;
+        DataTypeComponent component = structure.getComponentAt((int)field.offset);
+        if (component == null || component.getOffset() != field.offset ||
+                component.getLength() != field.width ||
+                !isSafeScalarType(component.getDataType())) return;
+
+        Map<Long, String> comparisons = new LinkedHashMap<>();
+        long subtracted = 0;
+        Instruction arithmetic = currentProgram.getListing()
+            .getInstructionAfter(load.getAddress());
+        for (int term = 0; term < 8 && arithmetic != null; term++) {
+            if (!function.getBody().contains(arithmetic.getAddress())) break;
+            String mnemonic = arithmetic.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitMachineOperands(
+                arithmetic.toString().toUpperCase(Locale.ROOT));
+            if ("DEC".equals(mnemonic) && operands.length >= 1 &&
+                    register.equals(machineRegister(operands[0]))) subtracted++;
+            else if ("SUB".equals(mnemonic) && operands.length >= 2 &&
+                    register.equals(machineRegister(operands[0]))) {
+                Long immediate = immediateOperand(arithmetic, 1, operands[1]);
+                if (immediate == null || immediate <= 0) break;
+                subtracted += immediate;
+            }
+            else break;
+
+            Instruction branch = currentProgram.getListing()
+                .getInstructionAfter(arithmetic.getAddress());
+            if (branch == null || !function.getBody().contains(branch.getAddress())) break;
+            String branchMnemonic = branch.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (!Set.of("JZ", "JNZ", "JE", "JNE").contains(branchMnemonic)) break;
+            comparisons.put(normalizeMachineValue(subtracted, field.width),
+                addr(branch.getAddress()));
+            arithmetic = currentProgram.getListing()
+                .getInstructionAfter(branch.getAddress());
+        }
+        if (comparisons.isEmpty()) return;
+        String key = structure.getPathName() + ":" + field.offset;
+        ComparisonDomain domain = domains.computeIfAbsent(key,
+            ignored -> new ComparisonDomain(function, owner, structure, component));
+        domain.functions.add(addr(function.getEntryPoint()));
+        comparisons.forEach(domain::addComparison);
+    }
+
+    private Set<String> stableThisAliases(Function function) {
+        Map<String, Boolean> latestDefinitionIsThis = new TreeMap<>();
+        Set<String> thisSpillSlots = new TreeSet<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitMachineOperands(
+                instruction.toString().toUpperCase(Locale.ROOT));
+            if (operands.length == 0) continue;
+            if ("MOV".equals(mnemonic) && operands.length >= 2 &&
+                    "ECX".equals(machineRegister(operands[1]))) {
+                String spill = machineMemoryKey(operands[0]);
+                if (spill != null && spill.startsWith("[EBP")) thisSpillSlots.add(spill);
+            }
+            String destination = machineRegister(operands[0]);
+            if (destination == null || !writesMachineRegister(mnemonic) ||
+                    "POP".equals(mnemonic)) continue;
+            boolean fromThis = false;
+            if ("MOV".equals(mnemonic) && operands.length >= 2) {
+                fromThis = "ECX".equals(machineRegister(operands[1]));
+                String sourceSlot = machineMemoryKey(operands[1]);
+                if (sourceSlot != null && thisSpillSlots.contains(sourceSlot)) fromThis = true;
+            }
+            latestDefinitionIsThis.put(destination, fromThis);
+        }
+        Set<String> result = new TreeSet<>();
+        for (Map.Entry<String, Boolean> entry : latestDefinitionIsThis.entrySet())
+            if (entry.getValue() && Set.of("EBX", "ESI", "EDI").contains(entry.getKey()))
+                result.add(entry.getKey());
+        return result;
+    }
+
+    private String machineMemoryKey(String operand) {
+        int open = operand.indexOf('['), close = operand.lastIndexOf(']');
+        if (open < 0 || close <= open) return null;
+        return operand.substring(open, close + 1).replace(" ", "")
+            .replace("+-", "-").toUpperCase(Locale.ROOT);
+    }
+
+    private MachineField precedingFieldLoad(Function function, Instruction comparison,
+            String register, Set<String> aliases) {
+        Instruction cursor = currentProgram.getListing()
+            .getInstructionBefore(comparison.getAddress());
+        for (int distance = 0; cursor != null && distance < 8; distance++) {
+            if (!function.getBody().contains(cursor.getAddress())) return null;
+            String mnemonic = cursor.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitMachineOperands(
+                cursor.toString().toUpperCase(Locale.ROOT));
+            if ("CALL".equals(mnemonic) || cursor.getFlowType().isJump()) return null;
+            if (operands.length > 0 && register.equals(machineRegister(operands[0]))) {
+                if (!"MOV".equals(mnemonic) || operands.length < 2) return null;
+                MachineField field = machineField(operands[1], aliases);
+                return field != null && field.width == machineOperandWidth(operands[0]) ?
+                    field : null;
+            }
+            cursor = currentProgram.getListing()
+                .getInstructionBefore(cursor.getAddress());
+        }
+        return null;
+    }
+
+    private MachineField machineField(String operand, Set<String> aliases) {
+        int open = operand.indexOf('['), close = operand.lastIndexOf(']');
+        if (open < 0 || close <= open) return null;
+        String expression = operand.substring(open, close + 1).replace(" ", "")
+            .replace("+-", "-").toUpperCase(Locale.ROOT);
+        Matcher matcher = MACHINE_MEMORY.matcher(expression);
+        if (!matcher.matches() || !aliases.contains(matcher.group(1))) return null;
+        long offset = 0;
+        if (matcher.group(3) != null) {
+            Long parsed = number(matcher.group(3));
+            if (parsed == null) return null;
+            offset = "-".equals(matcher.group(2)) ? -parsed : parsed;
+        }
+        int width = machineOperandWidth(operand);
+        return offset < 0 || offset > Integer.MAX_VALUE || width < 1 ? null :
+            new MachineField(offset, width);
+    }
+
+    private int machineOperandWidth(String operand) {
+        String value = operand.trim().toUpperCase(Locale.ROOT);
+        if (value.contains("BYTE PTR")) return 1;
+        if (value.contains("WORD PTR") && !value.contains("DWORD PTR") &&
+                !value.contains("QWORD PTR")) return 2;
+        if (value.contains("DWORD PTR")) return 4;
+        if (value.contains("QWORD PTR")) return 8;
+        String register = machineRegister(value);
+        if (register == null) return 0;
+        if (Set.of("AL", "AH", "BL", "BH", "CL", "CH", "DL", "DH")
+                .contains(value)) return 1;
+        if (Set.of("AX", "BX", "CX", "DX", "SI", "DI", "BP", "SP")
+                .contains(value)) return 2;
+        return 4;
+    }
+
+    private String machineRegister(String operand) {
+        String value = operand.trim().toUpperCase(Locale.ROOT);
+        if (!value.matches("[A-Z][A-Z0-9]{1,3}")) return null;
+        return switch (value) {
+            case "AL", "AH", "AX", "EAX" -> "EAX";
+            case "BL", "BH", "BX", "EBX" -> "EBX";
+            case "CL", "CH", "CX", "ECX" -> "ECX";
+            case "DL", "DH", "DX", "EDX" -> "EDX";
+            case "SI", "ESI" -> "ESI";
+            case "DI", "EDI" -> "EDI";
+            default -> value;
+        };
+    }
+
+    private boolean writesMachineRegister(String mnemonic) {
+        return !Set.of("CMP", "TEST", "PUSH", "POP", "JMP", "RET", "CALL", "NOP")
+            .contains(mnemonic);
+    }
+
+    private Long immediateOperand(Instruction instruction, int index, String operand) {
+        ghidra.program.model.scalar.Scalar scalar = instruction.getScalar(index);
+        if (scalar != null) return scalar.getSignedValue();
+        return number(operand.trim().replace("+", ""));
+    }
+
+    private long normalizeMachineValue(long value, int width) {
+        if (width >= 8) return value;
+        long mask = (1L << (width * 8)) - 1;
+        return value & mask;
+    }
+
+    private String[] splitMachineOperands(String instruction) {
+        int space = instruction.indexOf(' ');
+        return space < 0 || space == instruction.length() - 1 ? new String[0] :
+            instruction.substring(space + 1).split("\\s*,\\s*");
     }
 
     private List<Decompiled> parallelDecompile(Collection<Function> functions,
@@ -1115,6 +1445,35 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             String scope = "class_field".equals(kind) || "global".equals(kind) ?
                 "shared" : function.getEntryPoint().toString();
             return scope + "\u0000" + kind + "\u0000" + identity;
+        }
+    }
+    private record MachineField(long offset, int width) { }
+    private static class ComparisonDomain {
+        final Function anchor;
+        final String owner;
+        final Structure structure;
+        final DataTypeComponent component;
+        final Set<Long> values = new TreeSet<>();
+        final Set<Long> comparisons = new TreeSet<>();
+        final Set<Long> writes = new TreeSet<>();
+        final Set<String> sites = new TreeSet<>();
+        final Set<String> functions = new TreeSet<>();
+        ComparisonDomain(Function anchor, String owner, Structure structure,
+                DataTypeComponent component) {
+            this.anchor = anchor;
+            this.owner = owner;
+            this.structure = structure;
+            this.component = component;
+        }
+        void addComparison(long value, String site) {
+            values.add(value);
+            comparisons.add(value);
+            sites.add(site + ":cmp");
+        }
+        void addWrite(long value, String site) {
+            values.add(value);
+            writes.add(value);
+            sites.add(site + ":write");
         }
     }
     private static class DomainState {

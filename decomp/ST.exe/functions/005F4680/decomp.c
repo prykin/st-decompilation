@@ -25,35 +25,11 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
   pVVar2 = g_visibleClass_00802A88;
   if (g_visibleClass_00802A88 != nullptr) {
     iVar5 = this->field_009B;
-    sVar1 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      local_8 = (short)(((short)(iVar5 / 200) + sVar1) -
-                       (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      local_8 = (int)(short)(((short)(iVar5 / 200) + sVar1) -
-                            (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
-    }
+    local_8 = STBiasedDiv16(iVar5, 200); /* exact signed 16-bit grid-index division */
     iVar5 = this->field_0097;
-    sVar1 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar1) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar1) -
-                          (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-    }
+    iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
     iVar3 = this->field_0093;
-    sVar1 = (short)(iVar3 >> 0x1f);
-    if (iVar3 < 0) {
-      iVar3 = (short)(((short)(iVar3 / 0xc9) + sVar1) - (short)((longlong)iVar3 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar3 = (int)(short)(((short)(iVar3 / 0xc9) + sVar1) -
-                          (short)((longlong)iVar3 * 0x28c1979 >> 0x3f));
-    }
+    iVar3 = STBiasedDiv16(iVar3, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,iVar5,
@@ -79,7 +55,7 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
               (g_sT3DSMAPContext_00807598,this->field_008F,
                (float)this->field_0093 * _DAT_007904f8 * _DAT_007904f0,
                (float)this->field_0097 * _DAT_007904f8 * _DAT_007904f0,
-               (float)(int)this->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+               (float)this->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this->field_008F,0,this->field_00AB);
     local_8 = FUN_006acf0d(this->field_009F,this->field_00A3,this->field_00A7,this->field_0093,
                            this->field_0097,this->field_009B);

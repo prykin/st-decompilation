@@ -628,7 +628,7 @@ void st::fn_00413AF0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int
   puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790090);
   puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
-  DAT_007f4d04 = static_cast<undefined4>(0);
+  DAT_007f4d04 = 0;
   DAT_007f4cf0 = st::machine_word_boundary_cast<undefined4>(g_pathingGrid.cells);
   DAT_007f4d2c = (int)g_pathingGrid.sizeX;
   DAT_007f4d30 = (int)g_pathingGrid.sizeY;

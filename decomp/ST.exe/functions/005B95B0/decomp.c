@@ -13,9 +13,10 @@ MMsgTy * __cdecl CreateMMsg(void)
 {
   MMsgTy *this;
   int iVar1;
-  undefined4 *puVar3;
+  int iVar2;
+  MMsgTy_Record_00BC_01FB *pMVar3;
   SpriteClassTy *this_00;
-  undefined4 *puVar5;
+  MMsgTy_Record_00BC_01FB *pMVar5;
 
   this = (MMsgTy *)FUN_006b04d0(0x1eaa);
   if (this != nullptr) {
@@ -27,7 +28,7 @@ MMsgTy * __cdecl CreateMMsg(void)
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->array_00BC[0].field_00B8;
     iVar1 = 0xd;
     do {
       SpriteClassTy::SpriteClassTy(this_00 + -1);
@@ -41,19 +42,23 @@ MMsgTy * __cdecl CreateMMsg(void)
     this->field_009A = 0;
     memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
-    puVar3 = (undefined4 *)&this->field_0xbc;
+    pMVar3 = this->array_00BC;
     do {
-      puVar5 = puVar3;
-      memset(puVar5, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar5 = (undefined4 *)((byte *)puVar5 + 0x24);
+      pMVar5 = pMVar3;
+      for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
+        pMVar5->field_0000 = 0;
+        pMVar5 = (MMsgTy_Record_00BC_01FB *)&pMVar5->field_0x4;
+      }
+      *(undefined2 *)&pMVar5->field_0000 = 0;
       iVar1 = iVar1 + -1;
-      puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
+      *(undefined1 *)((int)&pMVar5->field_0000 + 2) = 0;
+      pMVar3 = pMVar3 + 1;
     } while (iVar1 != 0);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x1cf7);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1D88);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x1e19);
     this->vtable = &MMsgTyVTable;
-    this->field_1A5F = 0;
+    this->array_00BC[0xc].field_01DF = 0;
     this->field_1CAA = 0;
     this->field_1CA9 = 0;
     this->field_1CAB = 0;

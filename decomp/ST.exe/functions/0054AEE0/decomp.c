@@ -67,8 +67,8 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
      ((((this_00->field_00DE == CASE_2 || (this_00->field_00DE == CASE_4)) &&
        (iVar6 = FUN_00405687((int)this_00), iVar6 == 0)) || (this_00->field_0496 == 0)))) {
     sub_0054B700(this_00,-1);
-    if ((g_helpPanel_00801690 == nullptr) || (g_helpPanel_00801690->field_0172 == 2))
-    goto LAB_0054b372;
+    if ((g_helpPanel_00801690 == nullptr) || (g_helpPanel_00801690->field_0172 == CASE_2)
+       ) goto LAB_0054b372;
 LAB_0054b019:
     iVar6 = this_00->field_0038;
     iVar17 = this_00->field_0034;
@@ -78,7 +78,8 @@ LAB_0054b019:
   memset(local_f8, 0, 0x20); /* compiler bulk-zero initialization */
   if ((g_allPlayers_007FA174 == nullptr) || (DAT_00808784 != 0)) {
 LAB_0054b335:
-    if ((g_helpPanel_00801690 == nullptr) || (g_helpPanel_00801690->field_0172 == 2)) {
+    if ((g_helpPanel_00801690 == nullptr) || (g_helpPanel_00801690->field_0172 == CASE_2)
+       ) {
       iVar6 = this_00->field_0038;
       iVar17 = this_00->field_0034;
 LAB_0054b366:
@@ -98,12 +99,13 @@ LAB_0054b366:
       bVar3 = true;
     }
     if (bVar3) goto LAB_0054b335;
-    if ((((g_playPanel_008016E4 != nullptr) && (g_playPanel_008016E4->field_0172 != 2))
-        || ((g_helpPanel_00801690 != nullptr && (g_helpPanel_00801690->field_0172 != 2)))
-        ) || ((g_optPanel_008016DC != nullptr &&
-              (g_optPanel_008016DC->field_0172 != CASE_2)))) {
-      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2))
-      goto LAB_0054b019;
+    if ((((g_playPanel_008016E4 != nullptr) &&
+         (g_playPanel_008016E4->field_0172 != CASE_2)) ||
+        ((g_helpPanel_00801690 != nullptr && (g_helpPanel_00801690->field_0172 != CASE_2)
+         ))) || ((g_optPanel_008016DC != nullptr &&
+                 (g_optPanel_008016DC->field_0172 != CASE_2)))) {
+      if ((g_helpPanel_00801690 != nullptr) &&
+         (g_helpPanel_00801690->field_0172 != CASE_2)) goto LAB_0054b019;
       iVar6 = this_00->field_0038;
       iVar17 = this_00->field_0034;
       goto LAB_0054b366;

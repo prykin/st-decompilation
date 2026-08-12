@@ -11,10 +11,10 @@ ChooseMapTy * __cdecl CreateChooseMap(void)
 {
   ChooseMapTy *this;
   int iVar1;
-  undefined4 *puVar2;
+  ChooseMapTy_Record_00BC_01FB *pCVar2;
   SpriteClassTy *this_00;
-  undefined4 *puVar3;
-  uint *puVar4;
+  ChooseMapTy_Record_00BC_01FB *pCVar4;
+  uint *puVar5;
   int local_8;
 
   this = (ChooseMapTy *)FUN_006b04d0(0x20c4);
@@ -28,7 +28,7 @@ ChooseMapTy * __cdecl CreateChooseMap(void)
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->array_00BC[0].field_00B8;
     local_8 = 0xd;
     do {
       SpriteClassTy::SpriteClassTy(this_00 + -1);
@@ -43,25 +43,28 @@ ChooseMapTy * __cdecl CreateChooseMap(void)
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
-    puVar2 = (undefined4 *)&this->field_0xbc;
+    pCVar2 = this->array_00BC;
     do {
-      puVar3 = puVar2;
-      memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
-      iVar1 = 0;
+      pCVar4 = pCVar2;
+      for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *(undefined4 *)pCVar4 = 0;
+        pCVar4 = (ChooseMapTy_Record_00BC_01FB *)&pCVar4->field_0x4;
+      }
+      *(undefined2 *)pCVar4 = 0;
+      pCVar4->field_0x2 = 0;
       local_8 = local_8 + -1;
-      puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
+      pCVar2 = pCVar2 + 1;
     } while (local_8 != 0);
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1A70);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->array_00BC[0xc].field_01F0);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1B01);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1B92);
     this->vtable = &ChooseMapTyVTable;
-    this->field_1A60 = 1;
-    this->field_1A6C = 0;
-    puVar4 = &this->field_1C23;
+    this->array_00BC[0xc].field_01E0 = 1;
+    this->array_00BC[0xc].field_01EC = 0;
+    puVar5 = &this->field_1C23;
     for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar4 = 0xffffffff;
-      puVar4 = puVar4 + 1;
+      *puVar5 = 0xffffffff;
+      puVar5 = puVar5 + 1;
     }
     this->field_1C87 = 0xffffffff;
     this->field_1C7B = nullptr;
@@ -74,8 +77,8 @@ ChooseMapTy * __cdecl CreateChooseMap(void)
     this->field_20C0 = nullptr;
     this->field_20BC = nullptr;
     this->field_20B8 = nullptr;
-    this->field_1A64 = 0;
-    this->field_1A68 = 0;
+    this->array_00BC[0xc].field_01E4 = 0;
+    this->array_00BC[0xc].field_01E8 = 0;
     this->field_1C83 = 0;
     this->field_1C8B = nullptr;
     return this;

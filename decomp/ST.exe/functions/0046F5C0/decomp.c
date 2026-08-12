@@ -137,11 +137,11 @@ cf_common_exit_00470E32:
     local_EAX_53 = sub_00460260(this,2);
     switch(local_EAX_53) {
     case 0:
-      if (*(int *)&this->field_0x564 == 1) {
+      if (this->field_0564 == 1) {
         iVar7 = (int)this->field_0556;
         iVar12 = (int)this->field_0554;
         iVar10 = this->field_0558 + 1;
-        *(undefined4 *)&this->field_0x564 = 0;
+        this->field_0564 = 0;
         break;
       }
       sVar14 = this->field_0554;
@@ -186,17 +186,16 @@ LAB_0046f888:
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0554,
-                   this->field_0556,(int *)CONCAT22(uVar5,this->field_0558 + 1),1,
-                   (short *)&this->field_0x55e,(short *)&this->field_0x560,
-                   (short *)&this->field_0x562);
+                   this->field_0556,(int *)CONCAT22(uVar5,this->field_0558 + 1),1,&this->field_055E,
+                   (short *)&this->field_0x560,(short *)&this->field_0x562);
       iVar10 = (int)*(short *)&this->field_0x562;
       iVar7 = (int)*(short *)&this->field_0x560;
-      iVar12 = (int)*(short *)&this->field_0x55e;
+      iVar12 = (int)this->field_055E;
       this->field_0580 = CASE_1;
       this->field_00B7 = 0;
       break;
     case 1:
-      if (*(int *)&this->field_0x564 != 1) {
+      if (this->field_0564 != 1) {
         sVar14 = this->field_0554;
         sVar19 = this->field_0558;
         sVar21 = this->field_0556;
@@ -210,7 +209,7 @@ LAB_0046f888:
         goto cf_common_exit_004707B7;
         goto LAB_0046f888;
       }
-      *(undefined4 *)&this->field_0x564 = 0;
+      this->field_0564 = 0;
       sub_004602B0(this);
     case 3:
       iVar7 = (int)this->field_0556;
@@ -240,7 +239,7 @@ cf_error_exit_00470C46:
       if (local_EAX_1543 == -1) {
         return -1;
       }
-      if (this->field_082E != 0) {
+      if (this->field_082E != ~CASE_FFFFFFFF) {
         return 2;
       }
       if (this->field_048B != 0xffff) {
@@ -293,7 +292,7 @@ LAB_0046fd3e:
       local_EAX_1958 = sub_00460260(this,2);
       switch(local_EAX_1958) {
       case 0:
-        if (*(int *)&this->field_0x564 != 1) {
+        if (this->field_0564 != 1) {
           sVar14 = this->field_0554;
           sVar19 = this->field_0558;
           sVar21 = this->field_0556;
@@ -320,7 +319,7 @@ LAB_0046fd3e:
         }
         break;
       case 1:
-        if (*(int *)&this->field_0x564 != 1) {
+        if (this->field_0564 != 1) {
           sub_004602B0(this);
           sVar14 = this->field_0554;
           sVar19 = this->field_0558;
@@ -372,7 +371,7 @@ LAB_00470071:
       sVar14 = this->field_0558;
       sVar21 = this->field_0556;
       sVar19 = this->field_0554;
-      *(undefined4 *)&this->field_0x564 = 0;
+      this->field_0564 = 0;
       this->field_0580 = CASE_0;
       this->field_00B7 = 3;
       goto LAB_00470e23;
@@ -604,14 +603,13 @@ LAB_004707ad:
         sVar22 = this->field_0047;
         uVar20 = *(ushort *)&this->field_0x562;
         sVar14 = *(short *)&this->field_0x560;
-        sVar19 = *(short *)&this->field_0x55e;
+        sVar19 = this->field_055E;
       }
-      sub_0048DFD0(this,sVar19,sVar14,uVar20,sVar22,sVar21,piVar13,iVar12,
-                   (short *)&this->field_0x55e,(short *)&this->field_0x560,
-                   (short *)&this->field_0x562);
+      sub_0048DFD0(this,sVar19,sVar14,uVar20,sVar22,sVar21,piVar13,iVar12,&this->field_055E,
+                   (short *)&this->field_0x560,(short *)&this->field_0x562);
       sVar21 = *(short *)&this->field_0x562;
       sVar19 = *(short *)&this->field_0x560;
-      sVar14 = *(short *)&this->field_0x55e;
+      sVar14 = this->field_055E;
       goto LAB_00470bfe;
     }
     iVar12 = this->field_057C + 1;
@@ -734,13 +732,14 @@ cf_common_exit_00470B14:
       this->field_0580 = CASE_7;
       sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0047,
                    this->field_0049,(int *)STReplaceLowWord((uint32_t)(pSVar16), (uint16_t)(this->field_004B))
-                   ,3,(short *)&this->field_0x55e,(short *)&this->field_0x560,
-                   (short *)&this->field_0x562);
+                   ,3,&this->field_055E,(short *)&this->field_0x560,(short *)&this->field_0x562);
     }
     else {
       if (*(int *)&pSVar16[0x1d].field_0x18 != 0) {
-        if (&this->field_0x55e != nullptr) {
-          *(undefined4 *)&this->field_0x55e = *(undefined4 *)&pSVar16[0x1d].field_0x1c;
+        if (&this->field_055E != nullptr) {
+          uVar5 = *(undefined2 *)&pSVar16[0x1d].field_0x1e;
+          this->field_055E = *(undefined2 *)&pSVar16[0x1d].field_0x1c;
+          *(undefined2 *)&this->field_0x560 = uVar5;
         }
         if (&this->field_0x560 != nullptr) {
           *(int *)&this->field_0x560 = pSVar16[0x1d].value_20;
@@ -752,7 +751,7 @@ cf_common_exit_00470B14:
       if (*(int *)&pSVar16[0x1d].field_0x18 != 1) goto cf_common_exit_00470B14;
       this->field_0580 = CASE_8;
     }
-    sub_00481520(this,(int)*(short *)&this->field_0x55e,(int)*(short *)&this->field_0x560,
+    sub_00481520(this,(int)this->field_055E,(int)*(short *)&this->field_0x560,
                  (int)*(short *)&this->field_0x562);
     goto cf_common_exit_00470E2B;
   }
@@ -767,15 +766,14 @@ cf_common_exit_00470B14:
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0554,
                  this->field_0556,(int *)CONCAT22(extraout_var_03,this->field_0558 + 1),1,
-                 (short *)&this->field_0x55e,(short *)&this->field_0x560,(short *)&this->field_0x562
-                );
+                 &this->field_055E,(short *)&this->field_0x560,(short *)&this->field_0x562);
     iVar10 = (int)*(short *)&this->field_0x562;
     iVar7 = (int)*(short *)&this->field_0x560;
-    iVar12 = (int)*(short *)&this->field_0x55e;
+    iVar12 = (int)this->field_055E;
     break;
   case 1:
-    if (*(int *)&this->field_0x564 == 1) {
-      *(undefined4 *)&this->field_0x564 = 0;
+    if (this->field_0564 == 1) {
+      this->field_0564 = 0;
       sub_004602B0(this);
       this->field_0580 = CASE_0;
       this->field_00B7 = 3;
@@ -816,10 +814,9 @@ cf_common_exit_00470B14:
       sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0554,
                    this->field_0556,
                    (int *)CONCAT22((short)((uint)&this->field_0x562 >> 0x10),this->field_0558 + 1),1
-                   ,(short *)&this->field_0x55e,(short *)&this->field_0x560,
-                   (short *)&this->field_0x562);
+                   ,&this->field_055E,(short *)&this->field_0x560,(short *)&this->field_0x562);
     }
-    sub_00481520(this,(int)*(short *)&this->field_0x55e,(int)*(short *)&this->field_0x560,
+    sub_00481520(this,(int)this->field_055E,(int)*(short *)&this->field_0x560,
                  (int)*(short *)&this->field_0x562);
     sub_00460260(this,0);
     goto cf_common_exit_004707B7;

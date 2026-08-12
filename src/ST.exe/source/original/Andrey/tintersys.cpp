@@ -372,8 +372,7 @@ int __thiscall st::fn_00542F40(InterSystemC *this,STMessage *message)
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(g_helpPanel_00801690->vtable + 0x18))(1);
+      g_helpPanel_00801690->st::fn_0040425F('\x01');
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }

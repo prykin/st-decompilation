@@ -106,7 +106,7 @@ switchD_004ceb68_caseD_32:
     local_14 = local_14 + local_18;
     do {
       if ((int)local_18 < local_14) {
-        sVar10 = *(short *)&this->field_05B8 + 1;
+        sVar10 = (short)this->field_05B8 + 1;
         local_8 = local_18;
         do {
           sVar4 = (short)local_8;

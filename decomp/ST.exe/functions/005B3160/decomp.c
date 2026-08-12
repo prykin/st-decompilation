@@ -46,10 +46,10 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
       uVar10 = DAT_00807dd5 & 0xffff;
       uVar7 = DAT_00807dd5 >> 0x18;
       pcVar3 = LoadResourceString(0x2329,g_hINSTANCE_00807618);
-      wsprintfA((LPSTR)(pMVar2->field_1A5B + 0x3c),pcVar3,uVar7,uVar8,uVar10);
+      wsprintfA((LPSTR)(pMVar2->field_00BB[0xc].field_01DC + 0x3c),pcVar3,uVar7,uVar8,uVar10);
       StartServTy::WrTextDDX
                 ((StartServTy *)g_startSystem_0081176C,0,0,0x240,800,0x18,
-                 (char *)(pMVar2->field_1A5B + 0x3c),0xfffffffe,0xffffffff,
+                 (char *)(pMVar2->field_00BB[0xc].field_01DC + 0x3c),0xfffffffe,0xffffffff,
                  g_startSystem_0081176C->field_0034,0);
     }
     else if (local_8->field_1EE3 == '\x01') {
@@ -70,7 +70,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
     } while (iVar5 != 0);
     iVar5 = 0;
     if (pMVar2->field_009A != 0) {
-      puVar6 = &pMVar2->field_00FF;
+      puVar6 = &pMVar2->field_00BB[0].field_0028.field_001C;
       do {
         if (puVar6[-6] != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730

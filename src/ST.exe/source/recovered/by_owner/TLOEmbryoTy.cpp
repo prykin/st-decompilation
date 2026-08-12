@@ -81,14 +81,12 @@ void __thiscall st::fn_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
                  (char)this->field_005F,(undefined *)this->field_0024,this->field_0105,
                  this->field_0018,0xffffffff);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    uVar2 = (*(code *)this->field_0000->field_002C)();
+    uVar2 = (*this->vtable->vfunc_2C)();
     switch(uVar2) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     case 5:
     case 0x11:
     case 0x21:
-      (**(code **)(this->field_0000 + 1))();
+      (*this->vtable->vfunc_94)();
       break;
     case 0xb:
     case 0x23:
@@ -101,6 +99,44 @@ void __thiscall st::fn_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
     }
   }
   return;
+}
+
+// 004D0FC0 TLOEmbryoTy::TLOEmbryoTy
+#line 4 "decomp/ST.exe/functions/004D0FC0/decomp.c"
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 00798C70 (store 004D0FE0)
+   Evidence: final_vptr=00798C70; returns_this=true; calls_before=2; field_writes_after=19;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=low;
+   exact_factory_tail=004D6DC0->00404110->004D0FC0; allocation_size=884 */
+
+TLOEmbryoTy * __thiscall st::fn_004D0FC0(TLOEmbryoTy *this)
+
+{
+
+  st::fn_00401933((STGameObjC *)this);
+  st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->vtable_at_1d5);
+  this->vtable = &st_global_00798C70;
+  this->vtable_at_1d5 = &st_global_00798C6C;
+  this->field_02A8 = 0;
+  this->field_02DC = 0;
+  this->field_0350 = nullptr;
+  this->field_0354 = 0;
+  this->field_0358 = 0;
+  memset(&this->field_0x308, 0, 0x30); /* compiler bulk-zero initialization */
+  this->field_035C = nullptr;
+  this->field_02C8 = 1;
+  this->field_02C4 = 1;
+  this->field_02C0 = 1;
+  this->field_02BC = 1;
+  this->field_02B8 = 1;
+  this->field_02B4 = 1;
+  this->field_02E0 = 0;
+  this->field_02A0 = 0;
+  this->field_02E4 = 0;
+  this->field_02E8 = 0;
+  this->field_034C = 0xff;
+  this->field_02A4 = 0;
+  return this;
 }
 
 // 004D10A0 TLOEmbryoTy::sub_004D10A0
@@ -123,10 +159,42 @@ undefined4 __thiscall st::fn_004D10A0(TLOEmbryoTy *this,int param_1)
     uVar2 = (*(int *)(this->field_01F5 + 0x18 + this->field_02F0 * 0x24) -
             *(int *)(this->field_01F5 + this->field_02F0 * 0x24 + 0x10)) + uVar1;
   }
-  st::fn_00401EBA(&this->field_01D5,*(byte *)&this->field_02F0,uVar1,uVar1 + 8,'\0');
-  st::fn_00401064((STT3DSprC *)&this->field_01D5,*(char *)&this->field_02F0,uVar2);
-  st::fn_00401EBA(&this->field_01D5,*(char *)&this->field_02F0 - 1,uVar1,uVar1 + 8,'\0');
-  st::fn_00401064((STT3DSprC *)&this->field_01D5,*(char *)&this->field_02F0 + -1,uVar2);
+  st::fn_00401EBA(&this->vtable_at_1d5,*(byte *)&this->field_02F0,uVar1,uVar1 + 8,'\0');
+  st::fn_00401064((STT3DSprC *)&this->vtable_at_1d5,*(char *)&this->field_02F0,uVar2);
+  st::fn_00401EBA(&this->vtable_at_1d5,*(char *)&this->field_02F0 - 1,uVar1,uVar1 + 8,'\0');
+  st::fn_00401064((STT3DSprC *)&this->vtable_at_1d5,*(char *)&this->field_02F0 + -1,uVar2);
   return 0;
+}
+
+// 004D6C00 TLOEmbryoTy::FUN_004d6c00
+#line 4 "decomp/ST.exe/functions/004D6C00/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 00798C70
+   Entries: 00401695
+   Slots: 0xC
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_owner_for_target;
+   receiver_only_leaf_virtual_signature */
+
+dword __thiscall st::fn_004D6C00(TLOEmbryoTy *this)
+
+{
+  return this->field_036C + 1;
+}
+
+// 004D6C50 TLOEmbryoTy::FUN_004d6c50
+#line 4 "decomp/ST.exe/functions/004D6C50/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 00798C70
+   Entries: 00402CE3
+   Slots: 0x7C
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_owner_for_target;
+   receiver_only_leaf_virtual_signature */
+
+dword __thiscall st::fn_004D6C50(TLOEmbryoTy *this)
+
+{
+  return this->field_02A8;
 }
 

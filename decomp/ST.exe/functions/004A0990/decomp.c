@@ -70,8 +70,8 @@ undefined4 __thiscall STGroupBoatC::GrpRepSub(STGroupBoatC *this,int param_1)
     return 0;
   }
   STFishC::sub_004162F0
-            ((STFishC *)local_8,(undefined2 *)&pSVar2->field_0x304,
-             (undefined2 *)&pSVar2->field_0x306,(undefined2 *)&pSVar2->field_0x308);
+            ((STFishC *)local_8,&pSVar2->field_0304,&pSVar2->field_0306,
+             (short *)&pSVar2->field_0x308);
   local_20 = 0;
   *(int *)&pSVar2->field_0x30a = local_8->field_0018;
   local_40 = g_playSystem_00802A38->field_00E4;
@@ -98,8 +98,8 @@ undefined4 __thiscall STGroupBoatC::GrpRepSub(STGroupBoatC *this,int param_1)
             if ((dVar3 == 7) || (dVar3 == 0x13)) {
               iVar8 = thunk_FUN_00492370((STGameObjC *)local_8);
               if (iVar8 == 0) {
-                local_3a = *(undefined2 *)&pSVar2->field_0x306;
-                local_3c = *(undefined2 *)&pSVar2->field_0x304;
+                local_3a = pSVar2->field_0306;
+                local_3c = pSVar2->field_0304;
                 local_38 = *(undefined2 *)&pSVar2->field_0x308;
                 local_36 = *(undefined4 *)&pSVar2->field_0x30a;
                 STBoatC::CmdToObj(local_8,CASE_E,&local_40);

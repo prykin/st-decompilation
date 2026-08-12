@@ -44,22 +44,10 @@ STOctopusC::sub_0058B190
   }
   sVar8 = this->field_0043;
   this->field_0047 = (short)local_14;
-  if (sVar8 < 0) {
-    sVar8 = ((sVar8 / 0xc9 + (sVar8 >> 0xf)) - (short)((longlong)(int)sVar8 * 0x28c1979 >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar8 = (sVar8 / 0xc9 + (sVar8 >> 0xf)) - (short)((longlong)(int)sVar8 * 0x28c1979 >> 0x3f);
-  }
+  sVar8 = STBiasedDiv16(sVar8, 0xc9); /* exact signed 16-bit grid-index division */
   sVar9 = this->field_0045;
   this->field_0049 = sVar8;
-  if (sVar9 < 0) {
-    sVar9 = ((sVar9 / 200 + (sVar9 >> 0xf)) - (short)((longlong)(int)sVar9 * 0x51eb851f >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar9 = (sVar9 / 200 + (sVar9 >> 0xf)) - (short)((longlong)(int)sVar9 * 0x51eb851f >> 0x3f);
-  }
+  sVar9 = STBiasedDiv16(sVar9, 200); /* exact signed 16-bit grid-index division */
   this->field_004B = sVar9;
   if ((short)local_14 < 0) {
     this->field_0047 = 0;
@@ -85,7 +73,7 @@ STOctopusC::sub_0058B190
   if (iVar4 < iVar5 + 1) {
     bVar14 = bVar14 + 1;
   }
-  if ((((this->field_02A5 == 0xf8) || (this->field_02A5 == 0xf9)) && (sVar9 < 4)) &&
+  if ((((this->field_02A5 == CASE_F8) || (this->field_02A5 == CASE_F9)) && (sVar9 < 4)) &&
      (((byte)g_playSystem_00802A38->field_00E4 & 7) == 1)) {
     uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar12;
@@ -194,26 +182,10 @@ LAB_0058b499:
   if ((int)((int)this->field_0045 + local_8) < 900) {
     iVar3 = local_c - local_8;
     if (0x31 < iVar3) {
-      sVar8 = (short)(iVar3 >> 0x1f);
-      if (iVar3 < 0) {
-        iVar3 = (short)(((short)(iVar3 / 200) + sVar8) -
-                       (short)((longlong)iVar3 * 0x51eb851f >> 0x3f)) + -1;
-      }
-      else {
-        iVar3 = (int)(short)(((short)(iVar3 / 200) + sVar8) -
-                            (short)((longlong)iVar3 * 0x51eb851f >> 0x3f));
-      }
+      iVar3 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
       uVar11 = thunk_FUN_00496250(iVar6,iVar5,iVar3);
       iVar3 = local_8 + local_c;
-      sVar8 = (short)(iVar3 >> 0x1f);
-      if (iVar3 < 0) {
-        iVar3 = (short)(((short)(iVar3 / 200) + sVar8) -
-                       (short)((longlong)iVar3 * 0x51eb851f >> 0x3f)) + -1;
-      }
-      else {
-        iVar3 = (int)(short)(((short)(iVar3 / 200) + sVar8) -
-                            (short)((longlong)iVar3 * 0x51eb851f >> 0x3f));
-      }
+      iVar3 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
       uVar10 = thunk_FUN_00496250(iVar6,iVar5,iVar3);
       if (((int)uVar11 < 0) && ((int)uVar10 < 0)) {
         if ((local_8 & 1) != 0) {

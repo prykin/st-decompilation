@@ -50,35 +50,11 @@ int __thiscall FUN_0063c510(void *this,int param_1)
       pVVar2 = g_visibleClass_00802A88;
       if (g_visibleClass_00802A88 != nullptr) {
         iVar4 = STField<int>(this,0x26e);
-        sVar1 = (short)(iVar4 >> 0x1f);
-        if (iVar4 < 0) {
-          local_8 = (short)(((short)(iVar4 / 200) + sVar1) -
-                           (short)((longlong)iVar4 * 0x51eb851f >> 0x3f)) + -1;
-        }
-        else {
-          local_8 = (int)(short)(((short)(iVar4 / 200) + sVar1) -
-                                (short)((longlong)iVar4 * 0x51eb851f >> 0x3f));
-        }
+        local_8 = STBiasedDiv16(iVar4, 200); /* exact signed 16-bit grid-index division */
         iVar4 = STField<int>(this,0x26a);
-        sVar1 = (short)(iVar4 >> 0x1f);
-        if (iVar4 < 0) {
-          iVar4 = (short)(((short)(iVar4 / 0xc9) + sVar1) -
-                         (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)) + -1;
-        }
-        else {
-          iVar4 = (int)(short)(((short)(iVar4 / 0xc9) + sVar1) -
-                              (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
-        }
+        iVar4 = STBiasedDiv16(iVar4, 0xc9); /* exact signed 16-bit grid-index division */
         iVar3 = STField<int>(this,0x266);
-        sVar1 = (short)(iVar3 >> 0x1f);
-        if (iVar3 < 0) {
-          iVar3 = (short)(((short)(iVar3 / 0xc9) + sVar1) -
-                         (short)((longlong)iVar3 * 0x28c1979 >> 0x3f)) + -1;
-        }
-        else {
-          iVar3 = (int)(short)(((short)(iVar3 / 0xc9) + sVar1) -
-                              (short)((longlong)iVar3 * 0x28c1979 >> 0x3f));
-        }
+        iVar3 = STBiasedDiv16(iVar3, 0xc9); /* exact signed 16-bit grid-index division */
         if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
               (VisibleClassTy::sub_00558C00
                          (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,iVar4,

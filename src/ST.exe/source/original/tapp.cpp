@@ -1556,7 +1556,7 @@ void __thiscall st::fn_0056D580(STAppC *this)
       st::fn_0070A300((int *)&PTR_0080678c);
     }
     st::fn_006F1170(st::pointer_boundary_cast<cMf32 *>(DAT_00806788));
-    DAT_00806788 = static_cast<undefined4>(0);
+    DAT_00806788 = 0;
     if (PTR_00806794 != nullptr) {
       st::fn_0070A300((int *)&PTR_00806794);
     }
@@ -1566,7 +1566,7 @@ void __thiscall st::fn_0056D580(STAppC *this)
       st::fn_0070A300((int *)&PTR_0080677c);
     }
     st::fn_006F1170(st::pointer_boundary_cast<cMf32 *>(DAT_00806778));
-    DAT_00806778 = static_cast<undefined4>(0);
+    DAT_00806778 = 0;
     if (PTR_00806774 != nullptr) {
       st::fn_0070A300((int *)&PTR_00806774);
     }
@@ -1576,7 +1576,7 @@ void __thiscall st::fn_0056D580(STAppC *this)
       st::fn_0070A300((int *)&PTR_0080676c);
     }
     st::fn_006F1170(st::pointer_boundary_cast<cMf32 *>(DAT_00806768));
-    DAT_00806768 = static_cast<undefined4>(0);
+    DAT_00806768 = 0;
     g_currentExceptionFrame = local_48.previous;
     return;
   }

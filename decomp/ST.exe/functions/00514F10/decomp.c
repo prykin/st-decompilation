@@ -71,9 +71,9 @@ LAB_00514f85:
     puVar1 = &this_00->field_0x18;
     this_00->field_0028 = 0x28;
     *(undefined2 *)&this_00->field_0x2c = 1;
-    this_00->field_002E = (short)this_00->field_01D3[2];
+    *(short *)&this_00->field_0x2e = (short)this_00->field_01D3[2];
     FUN_006e6080(this_00,2,this_00->field_019C,(undefined4 *)puVar1);
-    this_00->field_002E = 0;
+    *(undefined2 *)&this_00->field_0x2e = 0;
     *(undefined2 *)&this_00->field_0x2c = 0;
     this_00->field_0028 = 0x22;
     FUN_006e6080(this_00,2,this_00->field_019C,(undefined4 *)puVar1);

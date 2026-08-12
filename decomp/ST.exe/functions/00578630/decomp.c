@@ -7,27 +7,34 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=00405871|00578630; family_names=STCrabC::GetMessage; ret4=8;
-   direct_offsets={10:2,14:2,18:2,1c:0} */
+   direct_offsets={10:2,14:2,18:2,1c:0}
+
+   [STSwitchEnumApplier] Switch target field_0279 uses
+   /SubmarineTitans/Recovered/Enums/STCrabC_field_0279State. Cases:
+   CASE_F2=242;CASE_F3=243;CASE_F4=244;CASE_F5=245;CASE_F6=246;CASE_F7=247
+
+   [STSwitchEnumApplier] Switch target field_0239 uses
+   /SubmarineTitans/Recovered/Enums/STCrabC_field_0239State. Cases: CASE_0=0;CASE_2=2;CASE_3=3 */
 
 int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
 
 {
-  undefined4 *puVar1;
-  STMessageId SVar2;
+  STMessageId SVar1;
+  byte bVar3;
   byte bVar4;
-  STSprGameObjC *this_00;
-  undefined1 uVar5;
+  byte bVar5;
+  STCrabC *this_00;
   short sVar6;
   int local_EAX_70;
   int iVar7;
-  undefined4 uVar7;
+  STCrabC_field_0239State SVar7;
   int iVar8;
   int iVar9;
   uint uVar10;
-  STSprGameObjC_field_0259State SVar11;
-  STSprGameObjC_field_0259State *pSVar12;
-  byte *pbVar13;
-  STSprGameObjC_field_0259State *pSVar14;
+  byte *puVar11;
+  byte *pbVar12;
+  byte *puVar13;
+  AnonShape_00578630_C5BC66E1 *pAVar14;
   byte *pbVar15;
   InternalExceptionFrame local_80;
   void *local_3c;
@@ -37,20 +44,20 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
   undefined4 local_2c;
   undefined4 local_28;
   undefined4 local_24;
-  STSprGameObjC_field_0259State *local_20;
-  STSprGameObjC *local_1c;
+  undefined4 *local_20;
+  STCrabC *local_1c;
   byte *local_18;
-  STSprGameObjC_field_0259State *local_14;
+  byte *local_14;
   uint local_10;
-  STSprGameObjC_field_0259State *local_c;
-  STSprGameObjC_field_0259State local_8;
+  AnonShape_00578630_C5BC66E1 *local_c;
+  uint local_8;
 
-  if ((this->field_0239 == 3) && (message->id != MESS_SHARED_0003)) {
+  if ((this->field_0239 == CASE_3) && (message->id != MESS_SHARED_0003)) {
     return 0;
   }
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
-  local_1c = (STSprGameObjC *)this;
+  local_1c = this;
   local_EAX_70 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_1c;
   if (local_EAX_70 != 0) {
@@ -63,32 +70,32 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     RaiseInternalException(local_EAX_70,0,"E:\\__titans\\Igor\\to_crab.cpp",0x1b8);
     return 0xffff;
   }
-  STSprGameObjC::GetMessage(local_1c,message);
-  SVar2 = message->id;
-  if (MESS_SHARED_010F < SVar2) {
-    if (SVar2 != MESS_HITKILL) {
-      if (SVar2 != MESS_SHARED_440F) {
+  STSprGameObjC::GetMessage((STSprGameObjC *)local_1c,message);
+  SVar1 = message->id;
+  if (MESS_SHARED_010F < SVar1) {
+    if (SVar1 != MESS_HITKILL) {
+      if (SVar1 != MESS_SHARED_440F) {
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      puVar1 = &this_00->field_01D5;
+      puVar11 = (byte *)(&this_00->field_01D5);
       if (DAT_0080732c != 0) {
-        thunk_FUN_004ad0e0(puVar1,0xe);
-        thunk_FUN_004ad0e0(puVar1,0xd);
+        thunk_FUN_004ad0e0(puVar11,0xe);
+        thunk_FUN_004ad0e0(puVar11,0xd);
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      STT3DSprC::sub_004AD070((STT3DSprC *)puVar1,0xe);
-      STT3DSprC::sub_004AD070((STT3DSprC *)puVar1,0xd);
+      STT3DSprC::sub_004AD070((STT3DSprC *)puVar11,0xe);
+      STT3DSprC::sub_004AD070((STT3DSprC *)puVar11,0xd);
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
     uVar10 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
-    Library::Ourlib::ST3DSMAP::SprHide(this_00->field_0211,uVar10);
+    Library::Ourlib::ST3DSMAP::SprHide((void *)this_00->field_0211,uVar10);
     goto LAB_00578ea2;
   }
-  if (SVar2 == MESS_SHARED_010F) {
-    local_14 = STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
+  if (SVar1 == MESS_SHARED_010F) {
+    local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
     local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x68 + local_8);
     if (local_14 == nullptr) {
@@ -99,53 +106,61 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    pSVar12 = &this_00->field_0259;
-    pSVar14 = local_c;
-    memmove(pSVar14, pSVar12, 0x28); /* compiler REP MOVS byte copy */
-    local_c[3] = 2;
-    local_c[10] = *(STSprGameObjC_field_0259State *)&this_00->field_0x235;
-    local_c[0xb] = *(STSprGameObjC_field_0259State *)&this_00->field_0x239;
-    *(undefined2 *)(local_c + 0x14) = *(undefined2 *)&this_00->field_0x41;
-    uVar5 = this_00->field_0x44;
-    ((byte *)((int)local_c + 0x52))[0] = this_00->field_0x43;
-    ((byte *)((int)local_c + 0x52))[1] = uVar5;
-    *(undefined2 *)(local_c + 0x15) = *(undefined2 *)&this_00->field_0x45;
-    local_c[0xd] = this_00->field_0231;
-    local_c[0x12] = *(STSprGameObjC_field_0259State *)((int)&this_00->field_0244 + 1);
-    local_c[0x13] = *(STSprGameObjC_field_0259State *)&this_00->field_0x24d;
-    local_c[0xe] = *(STSprGameObjC_field_0259State *)((int)&this_00->field_023E + 3);
-    local_c[0xf] = *(STSprGameObjC_field_0259State *)&this_00->field_0x249;
-    local_c[0x10] = *(STSprGameObjC_field_0259State *)&this_00->field_0x251;
-    local_c[0x11] = *(STSprGameObjC_field_0259State *)&this_00->field_0x255;
-    uVar5 = this_00->field_0x4f;
-    ((byte *)((int)local_c + 0x56))[0] = this_00->field_0x4e;
-    ((byte *)((int)local_c + 0x56))[1] = uVar5;
-    *(undefined2 *)(local_c + 0x16) = *(undefined2 *)&this_00->field_0x50;
-    uVar5 = this_00->field_0x6d;
-    ((byte *)((int)local_c + 0x5a))[0] = this_00->field_0x6c;
-    ((byte *)((int)local_c + 0x5a))[1] = uVar5;
-    local_c[0xc] = *(STSprGameObjC_field_0259State *)&this_00->field_0x23d;
-    local_c[0x17] = 0;
-    local_c[0x18] = local_8;
-    pSVar12 = local_14;
-    pSVar14 = local_c + 0x19;
-    memmove(pSVar14, pSVar12, local_8); /* compiler REP MOVS byte copy */
-    uVar10 = 0;
-    *(uint *)((int)local_c + local_8 + 100) = local_10;
-    pbVar13 = local_18;
-    pbVar15 = (byte *)((int)local_c + local_8 + 0x68);
-    memmove(pbVar15, pbVar13, local_10); /* compiler REP MOVS byte copy */
+    puVar11 = (byte *)&this_00->field_0x259;
+    pAVar14 = local_c;
+    memmove(pAVar14, puVar11, 0x28); /* compiler REP MOVS byte copy */
+    *(undefined4 *)&local_c->field_0xc = 2;
+    local_c->field_0028 = this_00->field_0235;
+    local_c->field_002C = this_00->field_0239;
+    local_c->field_0050 = this_00->field_0041;
+    local_c->field_0052 = this_00->field_0043;
+    local_c->field_0054 = this_00->field_0045;
+    local_c->field_0034 = this_00->field_0231;
+    local_c->field_0048 = this_00->field_0245;
+    local_c->field_004C = this_00->field_024D;
+    local_c->field_0038 = this_00->field_0241;
+    local_c->field_003C = this_00->field_0249;
+    local_c->field_0040 = this_00->field_0251;
+    local_c->field_0044 = this_00->field_0255;
+    local_c->field_0056 = this_00->field_004E;
+    local_c->field_0058 = this_00->field_0050;
+    local_c->field_005A = this_00->field_006C;
+    local_c->field_0030 = this_00->field_023D;
+    *(undefined4 *)&local_c->field_0x5c = 0;
+    local_c->field_0060 = local_8;
+    pbVar12 = local_14;
+    pAVar14 = local_c + 1;
+    for (uVar10 = local_8 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+      bVar3 = pbVar12[1];
+      bVar4 = pbVar12[2];
+      bVar5 = pbVar12[3];
+      pAVar14->field_0x0 = pbVar12[0];
+      pAVar14->field_0x1 = bVar3;
+      pAVar14->field_0x2 = bVar4;
+      pAVar14->field_0x3 = bVar5;
+      pbVar12 = pbVar12 + 4;
+      pAVar14 = (AnonShape_00578630_C5BC66E1 *)&pAVar14->field_0x4;
+    }
+    for (uVar10 = local_8 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+      *(byte *)pAVar14 = *pbVar12;
+      pbVar12 = pbVar12 + 1;
+      pAVar14 = (AnonShape_00578630_C5BC66E1 *)&pAVar14->field_0x1;
+    }
+    *(uint *)(&local_c[1].field_0x0 + local_8) = local_10;
+    pbVar12 = local_18;
+    pbVar15 = &local_c[1].field_0x4 + local_8;
+    memmove(pbVar15, pbVar12, local_10); /* compiler REP MOVS byte copy */
     STPlaySystemC::SaveObjData
               (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
-               (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x68 + local_8));
+               local_10 + 0x68 + local_8);
     FreeAndNull(&local_14);
     FreeAndNull(&local_18);
     FreeAndNull(&local_c);
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
-  if (SVar2 == MESS_ID_NONE) {
-    if (*(int *)&this_00->field_0x239 == 2) {
+  if (SVar1 == MESS_ID_NONE) {
+    if (this_00->field_0239 == CASE_2) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
@@ -153,8 +168,8 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
-  if (SVar2 != MESS_ID_CREATE) {
-    if (SVar2 != MESS_SHARED_0003) {
+  if (SVar1 != MESS_ID_CREATE) {
+    if (SVar1 != MESS_SHARED_0003) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
@@ -163,32 +178,30 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
-  local_20 = (STSprGameObjC_field_0259State *)(message->arg0).u32;
-  if (local_20[3] < 2) {
-    *(undefined4 *)&this_00->field_0x239 = 3;
+  local_20 = (undefined4 *)(message->arg0).u32;
+  if ((uint)local_20[3] < 2) {
+    this_00->field_0239 = CASE_3;
     uVar10 = g_playSystem_00802A38->field_00E4;
-    *(undefined4 *)&this_00->field_0x23d = 0;
-    this_00->field_0231 = CASE_0;
-    *(uint *)&this_00->field_0x235 = uVar10 - 3;
-    pSVar12 = (message->arg0).ptr;
-    pSVar14 = &this_00->field_0259;
-    memmove(pSVar14, pSVar12, 0x28); /* compiler REP MOVS byte copy */
+    this_00->field_023D = 0;
+    this_00->field_0231 = 0;
+    this_00->field_0235 = uVar10 - 3;
+    puVar11 = (byte *)((message->arg0).ptr);
+    puVar13 = (byte *)&this_00->field_0x259;
+    memmove(puVar13, puVar11, 0x28); /* compiler REP MOVS byte copy */
     iVar9 = 0;
-    Bad((STCrabC *)this_00);
-    if (((((*(int *)&this_00->field_0x26d < 0) ||
-          ((int)g_worldGrid.sizeX <= *(int *)&this_00->field_0x26d)) ||
-         (*(int *)&this_00->field_0x271 < 0)) ||
-        (((int)g_worldGrid.sizeY <= *(int *)&this_00->field_0x271 ||
-         (iVar9 = *(int *)&this_00->field_0x275, iVar9 < 0)))) ||
-       ((g_worldGrid.sizeZ <= iVar9 ||
-        (iVar7 = thunk_FUN_004961b0(*(short *)&this_00->field_0x26d,*(short *)&this_00->field_0x271,
-                                    (short)iVar9), iVar7 == 0)))) {
+    Bad(this_00);
+    if (((((this_00->field_026D < 0) || ((int)g_worldGrid.sizeX <= this_00->field_026D)) ||
+         (this_00->field_0271 < 0)) ||
+        (((int)g_worldGrid.sizeY <= this_00->field_0271 || (iVar9 = this_00->field_0275, iVar9 < 0))
+        )) || ((g_worldGrid.sizeZ <= iVar9 ||
+               (iVar7 = thunk_FUN_004961b0((short)this_00->field_026D,(short)this_00->field_0271,
+                                           (short)iVar9), iVar7 == 0)))) {
       thunk_FUN_005783f0(this_00);
-      *(undefined4 *)&this_00->field_0x239 = 2;
+      this_00->field_0239 = CASE_2;
     }
     else {
-      switch(*(undefined4 *)&this_00->field_0x279) {
-      case 0xf2:
+      switch(this_00->field_0279) {
+      case CASE_F2:
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab1l",
                            CASE_1D);
@@ -206,7 +219,7 @@ cf_error_exit_00578B5D:
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",iVar9);
         }
         break;
-      case 0xf3:
+      case CASE_F3:
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab2l",
                            CASE_1D);
@@ -222,7 +235,7 @@ cf_error_exit_00578B5D:
           goto cf_error_exit_00578B5D;
         }
         break;
-      case 0xf4:
+      case CASE_F4:
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab1b",
                            CASE_1D);
@@ -238,7 +251,7 @@ cf_error_exit_00578B5D:
           goto cf_error_exit_00578B5D;
         }
         break;
-      case 0xf5:
+      case CASE_F5:
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab2b",
                            CASE_1D);
@@ -254,7 +267,7 @@ cf_error_exit_00578B5D:
           goto cf_error_exit_00578B5D;
         }
         break;
-      case 0xf6:
+      case CASE_F6:
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"langus2",
                            CASE_1D);
@@ -270,7 +283,7 @@ cf_error_exit_00578B5D:
           goto cf_error_exit_00578B5D;
         }
         break;
-      case 0xf7:
+      case CASE_F7:
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"langus1",
                            CASE_1D);
@@ -286,61 +299,57 @@ cf_error_exit_00578B5D:
           goto cf_error_exit_00578B5D;
         }
       }
-      puVar1 = &this_00->field_01D5;
-      STT3DSprC::sub_004ACF50((STT3DSprC *)puVar1,'\r');
-      thunk_FUN_004ac610(puVar1,'\x0e');
-      thunk_FUN_004ac610(puVar1,'\r');
-      STT3DSprC::StartShow((STT3DSprC *)puVar1,0xe,g_playSystem_00802A38->field_00E4);
-      STT3DSprC::StartShow((STT3DSprC *)puVar1,0xd,g_playSystem_00802A38->field_00E4);
-      sVar6 = *(short *)&this_00->field_0x275 * 200;
-      *(short *)&this_00->field_0x41 = *(short *)&this_00->field_0x26d * 0xc9 + 100;
-      *(short *)&this_00->field_0x43 = *(short *)&this_00->field_0x271 * 0xc9 + 100;
-      *(short *)&this_00->field_0x45 = sVar6 + 100;
-      if ((*(int *)&this_00->field_0x279 < 0xf6) || (0xf7 < *(int *)&this_00->field_0x279)) {
+      puVar11 = (byte *)(&this_00->field_01D5);
+      STT3DSprC::sub_004ACF50((STT3DSprC *)puVar11,'\r');
+      thunk_FUN_004ac610(puVar11,'\x0e');
+      thunk_FUN_004ac610(puVar11,'\r');
+      STT3DSprC::StartShow((STT3DSprC *)puVar11,0xe,g_playSystem_00802A38->field_00E4);
+      STT3DSprC::StartShow((STT3DSprC *)puVar11,0xd,g_playSystem_00802A38->field_00E4);
+      sVar6 = (short)this_00->field_0275 * 200;
+      this_00->field_0041 = (short)this_00->field_026D * 0xc9 + 100;
+      this_00->field_0043 = (short)this_00->field_0271 * 0xc9 + 100;
+      this_00->field_0045 = sVar6 + 100;
+      if (((int)this_00->field_0279 < 0xf6) || (0xf7 < (int)this_00->field_0279)) {
         sVar6 = sVar6 + 0x28;
       }
       else {
         sVar6 = sVar6 + 0x82;
       }
-      *(short *)&this_00->field_0x45 = sVar6;
-      *(short *)&this_00->field_0x6c =
-           (short)(*(int *)&this_00->field_0x27d / 0x2d) -
-           (short)(*(int *)&this_00->field_0x27d / -0x4c000000);
-      uVar7 = thunk_FUN_005797b0(this_00,(short *)&this_00->field_0x4e,(short *)&this_00->field_0x50
-                                 ,(undefined2 *)&this_00->field_0x6c);
-      *(undefined4 *)&this_00->field_0x239 = uVar7;
+      this_00->field_0045 = sVar6;
+      this_00->field_006C =
+           (short)(this_00->field_027D / 0x2d) - (short)(this_00->field_027D / -0x4c000000);
+      SVar7 = thunk_FUN_005797b0(this_00,&this_00->field_004E,&this_00->field_0050,
+                                 &this_00->field_006C);
+      this_00->field_0239 = SVar7;
     }
   }
   else if (local_20[3] == 2) {
-    pSVar12 = local_20;
-    pSVar14 = &this_00->field_0259;
-    memmove(pSVar14, pSVar12, 0x28); /* compiler REP MOVS byte copy */
+    puVar11 = (byte *)(local_20);
+    puVar13 = (byte *)&this_00->field_0x259;
+    memmove(puVar13, puVar11, 0x28); /* compiler REP MOVS byte copy */
     local_8 = local_20[0x18];
     STAllPlayersC::RestoreGObjData
               ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x68 + (int)local_20));
-    pSVar12 = local_20;
-    *(STSprGameObjC_field_0259State *)&this_00->field_0x239 = local_20[0xb];
-    *(STSprGameObjC_field_0259State *)&this_00->field_0x235 = local_20[10];
-    *(short *)&this_00->field_0x41 = (short)local_20[0x14];
-    bVar4 = ((byte *)((int)local_20 + 0x52))[1];
-    this_00->field_0x43 = ((byte *)((int)local_20 + 0x52))[0];
-    this_00->field_0x44 = bVar4;
-    *(short *)&this_00->field_0x45 = (short)local_20[0x15];
+    puVar11 = (byte *)(local_20);
+    this_00->field_0239 = local_20[0xb];
+    this_00->field_0235 = local_20[10];
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    this_00->field_0041 = *(undefined2 *)(local_20 + 0x14);
+    this_00->field_0043 = STField<undefined2>(local_20,0x52);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    this_00->field_0045 = *(undefined2 *)(local_20 + 0x15);
     this_00->field_0231 = local_20[0xd];
-    *(STSprGameObjC_field_0259State *)((int)&this_00->field_0244 + 1) = local_20[0x12];
-    *(STSprGameObjC_field_0259State *)&this_00->field_0x24d = local_20[0x13];
-    *(STSprGameObjC_field_0259State *)((int)&this_00->field_023E + 3) = local_20[0xe];
-    *(STSprGameObjC_field_0259State *)&this_00->field_0x249 = local_20[0xf];
-    *(STSprGameObjC_field_0259State *)&this_00->field_0x251 = local_20[0x10];
-    *(STSprGameObjC_field_0259State *)&this_00->field_0x255 = local_20[0x11];
-    bVar4 = ((byte *)((int)local_20 + 0x56))[1];
-    this_00->field_0x4e = ((byte *)((int)local_20 + 0x56))[0];
-    this_00->field_0x4f = bVar4;
-    *(short *)&this_00->field_0x50 = (short)local_20[0x16];
-    bVar4 = ((byte *)((int)local_20 + 0x5a))[1];
-    this_00->field_0x6c = ((byte *)((int)local_20 + 0x5a))[0];
-    this_00->field_0x6d = bVar4;
-    *(STSprGameObjC_field_0259State *)&this_00->field_0x23d = local_20[0xc];
+    this_00->field_0245 = local_20[0x12];
+    this_00->field_024D = local_20[0x13];
+    this_00->field_0241 = local_20[0xe];
+    this_00->field_0249 = local_20[0xf];
+    this_00->field_0251 = local_20[0x10];
+    this_00->field_0255 = local_20[0x11];
+    this_00->field_004E = STField<undefined2>(local_20,0x56);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    this_00->field_0050 = *(undefined2 *)(local_20 + 0x16);
+    this_00->field_006C = STField<undefined2>(local_20,0x5a);
+    this_00->field_023D = local_20[0xc];
     local_3c = Library::DKW::LIB::MemAlloc(0x44);
     if (local_3c != nullptr) {
       iVar9 = 0;
@@ -356,11 +365,11 @@ cf_error_exit_00578B5D:
       local_24 = 0;
       STT3DSprC::RestoreSpr
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
-                 (AnonShape_004AD790_77673787 *)(pSVar12 + 0x19));
+                 (AnonShape_004AD790_77673787 *)(puVar11 + 0x19));
       FreeAndNull(&local_3c);
     }
   }
-  if (*(int *)&this_00->field_0x239 == 3) {
+  if (this_00->field_0239 == CASE_3) {
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
@@ -371,7 +380,7 @@ cf_error_exit_00578B5D:
   }
 LAB_00578ea2:
   thunk_FUN_005783f0(this_00);
-  *(undefined4 *)&this_00->field_0x239 = 2;
+  this_00->field_0239 = CASE_2;
   g_currentExceptionFrame = local_80.previous;
   return 0;
 }

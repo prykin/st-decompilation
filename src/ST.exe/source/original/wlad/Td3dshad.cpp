@@ -1153,7 +1153,7 @@ st::fn_00427F20(void *this,float param_1,float param_2,float param_3,int param_4
   local_30 = 0;
   DAT_007f4d84 = 0;
   DAT_007f4d78 = 0;
-  DAT_007f4d6c = static_cast<undefined4>(0);
+  DAT_007f4d6c = 0;
   ExceptionList = &local_14;
   puVar2 = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff3c);
   if (param_4 < 1) goto cf_common_join_004286D0;

@@ -7,7 +7,11 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=00402D6A|00618C00; family_names=STJumpMineC::GetMessage; ret4=10;
-   direct_offsets={10:1,14:1,18:4,1c:2} */
+   direct_offsets={10:1,14:1,18:4,1c:2}
+
+   [STSwitchEnumApplier] Switch target field_0093 uses
+   /SubmarineTitans/Recovered/Enums/STJumpMineC_field_0093State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
 
@@ -24,7 +28,7 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
   InternalExceptionFrame local_58;
   void *local_14;
   byte *local_10;
-  AnonShape_0060EA30_DCEB68AD *local_c;
+  uint local_c;
   STJumpMineC *local_8;
 
   local_58.previous = g_currentExceptionFrame;

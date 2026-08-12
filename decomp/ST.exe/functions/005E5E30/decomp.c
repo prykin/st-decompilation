@@ -4,7 +4,10 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\test_obj.cpp
-   MTestTy::NoneMTest */
+   MTestTy::NoneMTest
+
+   [STSwitchEnumApplier] Switch target field_00B3 uses
+   /SubmarineTitans/Recovered/Enums/MTestTy_field_00B3State. Cases: CASE_1=1;CASE_4=4;CASE_5=5 */
 
 void __thiscall MTestTy::NoneMTest(MTestTy *this)
 
@@ -22,15 +25,15 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (iVar3 == 0) {
-    if (local_8->field_00B3 == '\x01') {
+    if (local_8->field_00B3 == CASE_1) {
       if (g_holo_00811778 != nullptr) {
         iVar5 = HoloTy::NextFas(g_holo_00811778);
         if (iVar5 == 0) {
-          pMVar2->field_00B3 = 4;
+          pMVar2->field_00B3 = CASE_4;
         }
       }
     }
-    else if ((local_8->field_00B3 == '\x05') && (g_holo_00811778 != nullptr)) {
+    else if ((local_8->field_00B3 == CASE_5) && (g_holo_00811778 != nullptr)) {
       iVar5 = HoloTy::NextFas(g_holo_00811778);
       if (iVar5 == 0) {
         pMVar2->field_00B3 = 0;

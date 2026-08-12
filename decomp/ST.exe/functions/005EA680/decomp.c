@@ -15,11 +15,12 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   char cVar1;
   STMessageId SVar2;
   MMsgTy *this_00;
-  DArrayTy *pDVar3;
   StartSystemTy *this_01;
+  DArrayTy *pDVar3;
+  undefined4 uVar4;
   WaitTy *this_02;
-  bool bVar5;
-  DWORD DVar6;
+  bool bVar6;
+  DWORD DVar7;
   int local_EAX_52;
   int iVar9;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -37,8 +38,8 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   char *local_8;
 
   local_c = this;
-  DVar6 = STAppC::sub_006E51B0(this->field_0010);
-  this->field_0061 = DVar6;
+  DVar7 = STAppC::sub_006E51B0(this->field_0010);
+  this->field_0061 = DVar7;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_EAX_52 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
@@ -142,14 +143,14 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       else if (SVar2 == MESS_SETTMAPMTY_6340) {
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_02,
-                   (RecoveredRecord_MMMObjTy_005B6560 *)&this_02->field_1A5B->field_055C,
-                   (int)message,0);
+                   (RecoveredRecord_MMMObjTy_005B6560 *)
+                   (this_02->array_00BC[0xc].field_01DB + 0x55c),(int)message,0);
       }
       else if (SVar2 == MESS_SHARED_6341) {
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_02,
-                   (RecoveredRecord_MMMObjTy_005B6560 *)&this_02->field_1A5B->field_05ED,
-                   (int)message,0);
+                   (RecoveredRecord_MMMObjTy_005B6560 *)
+                   (this_02->array_00BC[0xc].field_01DB + 0x5ed),(int)message,0);
       }
     }
     else if (SVar2 == MESS_SHARED_6940) {
@@ -160,11 +161,11 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   if (SVar2 < MESS_PRIVIDERTY_6952) {
     if (SVar2 == MESS_SHARED_6951) {
       thunk_FUN_005b6350(this_02,0x610a,0,0);
-      this_02->field_1A64 = 0;
+      this_02->array_00BC[0xc].field_01E4 = 0;
     }
     else if (SVar2 == MESS_WAITTY_6943) {
       thunk_FUN_005b6350(this_02,0x6942,(message->arg0).u32,0);
-      this_02->field_1A64 = 0;
+      this_02->array_00BC[0xc].field_01E4 = 0;
       if (DAT_00811768 == '\x01') {
         DAT_00811768 = '\x02';
       }
@@ -172,39 +173,42 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     else {
       if (SVar2 != MESS_WAITTY_694D) goto cf_common_exit_005EAB6A;
       thunk_FUN_005b6350(this_02,0x6105,1,0);
-      this_02->field_1A64 = 0;
+      this_02->array_00BC[0xc].field_01E4 = 0;
       if (DAT_00811768 == '\x01') {
         DAT_00811768 = '\x02';
       }
     }
     this_02->CloseButtons();
-    this_00 = this_02->field_1A5B->field_02E6;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    this_00 = *(MMsgTy **)(this_02->array_00BC[0xc].field_01DB + 0x2e6);
     if (this_00 != nullptr) {
       MMsgTy::HidePanel(this_00,1,0,1);
     }
     goto cf_common_exit_005EAB6A;
   }
   if (SVar2 != MESS_SHARED_C0A2) goto cf_common_exit_005EAB6A;
-  iVar9 = thunk_FUN_005ddb40((int)this_02->field_1A5B);
+  iVar9 = thunk_FUN_005ddb40(this_02->array_00BC[0xc].field_01DB);
   if (iVar9 == 0) {
     if (DAT_008067a0 != '\0') {
-      pDVar3 = this_02->field_1A5B->field_0686;
-      if ((int)pDVar3->elementSize < 1) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      iVar9 = *(int *)(this_02->array_00BC[0xc].field_01DB + 0x686);
+      if (*(int *)(iVar9 + 8) < 1) {
         pcVar12 = nullptr;
       }
       else {
-        pcVar12 = *(char **)pDVar3->growCapacity;
+        pcVar12 = (char *)**(undefined4 **)(iVar9 + 0x14);
       }
-      bVar5 = thunk_FUN_005717e0(pcVar12);
+      bVar6 = thunk_FUN_005717e0(pcVar12);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      if (CONCAT31(extraout_var,bVar5) != 0) {
-        pDVar3 = this_02->field_1A5B->field_0686;
-        if ((int)pDVar3->elementSize < 1) {
+      if (CONCAT31(extraout_var,bVar6) != 0) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        iVar9 = *(int *)(this_02->array_00BC[0xc].field_01DB + 0x686);
+        if (*(int *)(iVar9 + 8) < 1) {
           CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,nullptr);
         }
         else {
           CFsgsConnection::SendChatMessage
-                    ((CFsgsConnection *)&DAT_00802a90,*(char **)pDVar3->growCapacity);
+                    ((CFsgsConnection *)&DAT_00802a90,(char *)**(undefined4 **)(iVar9 + 0x14));
         }
         goto LAB_005eab28;
       }
@@ -232,7 +236,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       pcVar12 = pcVar13;
     } while (cVar1 != '\0');
     uVar10 = ~uVar10;
-    this_01 = this_02->field_1A5B;
+    this_01 = (StartSystemTy *)this_02->array_00BC[0xc].field_01DB;
     pcVar12 = pcVar13 + -uVar10;
     pcVar13 = local_4a4;
     memmove(pcVar13, pcVar12, uVar10); /* compiler REP MOVS byte copy */
@@ -261,11 +265,16 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     StartSystemTy::AddToChat(this_01,(int)local_4a4);
     FUN_00715360(g_int_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);
   }
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_005eab28:
-  Library::DKW::TBL::FUN_006b6020(this_02->field_1A5B->field_0686,0,&CHAR_00h_008016a0);
+  Library::DKW::TBL::FUN_006b6020
+            (*(DArrayTy **)(this_02->array_00BC[0xc].field_01DB + 0x686),0,&CHAR_00h_008016a0);
+  iVar9 = this_02->array_00BC[0xc].field_01DB;
   this_02->field_002D = 0x33;
-  *(DArrayTy **)&this_02->field_0x31 = this_02->field_1A5B->field_0686;
-  FUN_006e6080(this_02,2,this_02->field_1A5B->field_054C,(undefined4 *)&this_02->field_0x1d);
+  uVar4 = *(undefined4 *)(iVar9 + 0x686);
+  this_02->field_0031 = (short)uVar4;
+  this_02->field_0033 = (short)((uint)uVar4 >> 0x10);
+  FUN_006e6080(this_02,2,*(undefined4 *)(iVar9 + 0x54c),(undefined4 *)&this_02->field_0x1d);
 cf_common_exit_005EAB6A:
   g_currentExceptionFrame = local_50.previous;
   iVar7 = MMObjTy::GetMessage((MMObjTy *)this_02,message);

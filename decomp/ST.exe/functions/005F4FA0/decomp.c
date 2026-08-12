@@ -60,34 +60,10 @@ int __thiscall STBHEShellC::sub_005F4FA0(STBHEShellC *this)
                    this->field_0115;
               iVar2 = (&this->field_0149)[local_8];
               *(int *)(pcVar9 + 10) = iVar2;
-              sVar7 = (short)(iVar6 >> 0x1f);
-              if (iVar6 < 0) {
-                local_18 = (((short)(iVar6 / 0xc9) + sVar7) -
-                           (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
-              }
-              else {
-                local_18 = ((short)(iVar6 / 0xc9) + sVar7) -
-                           (short)((longlong)iVar6 * 0x28c1979 >> 0x3f);
-              }
+              local_18 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
               iVar3 = *(int *)(pcVar9 + 6);
-              sVar7 = (short)(iVar3 >> 0x1f);
-              if (iVar3 < 0) {
-                local_14 = (((short)(iVar3 / 0xc9) + sVar7) -
-                           (short)((longlong)iVar3 * 0x28c1979 >> 0x3f)) + -1;
-              }
-              else {
-                local_14 = ((short)(iVar3 / 0xc9) + sVar7) -
-                           (short)((longlong)iVar3 * 0x28c1979 >> 0x3f);
-              }
-              sVar7 = (short)(iVar2 >> 0x1f);
-              if (iVar2 < 0) {
-                sVar7 = (((short)(iVar2 / 200) + sVar7) -
-                        (short)((longlong)iVar2 * 0x51eb851f >> 0x3f)) + -1;
-              }
-              else {
-                sVar7 = ((short)(iVar2 / 200) + sVar7) -
-                        (short)((longlong)iVar2 * 0x51eb851f >> 0x3f);
-              }
+              local_14 = STBiasedDiv16(iVar3, 0xc9); /* exact signed 16-bit grid-index division */
+              sVar7 = STBiasedDiv16(iVar2, 200); /* exact signed 16-bit grid-index division */
               if ((((iVar6 < 0) || (g_worldGrid.sizeX <= iVar6)) ||
                   ((*(int *)(pcVar9 + 6) < 0 ||
                    (((int)g_worldGrid.sizeY <= *(int *)(pcVar9 + 6) || (iVar2 < 0)))))) ||

@@ -1,4 +1,3 @@
-#include "../../pseudocode_runtime.h"
 
 
 void FUN_00497110(AnonShape_00497110_11FEE69C *param_1,AnonShape_00497110_465BC742 *param_2)
@@ -27,15 +26,7 @@ void FUN_00497110(AnonShape_00497110_11FEE69C *param_1,AnonShape_00497110_465BC7
     iVar3 = local_18 - iVar6;
     local_c = iVar3 / 2 + iVar6;
     local_14 = (iVar4 - iVar5) / 2 + iVar5;
-    sVar1 = (short)(local_10 >> 0x1f);
-    if (local_10 < 0) {
-      local_8 = (short)(((short)(local_10 / 200) + sVar1) -
-                       (short)((longlong)local_10 * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      local_8 = (int)(short)(((short)(local_10 / 200) + sVar1) -
-                            (short)((longlong)local_10 * 0x51eb851f >> 0x3f));
-    }
+    local_8 = STBiasedDiv16(local_10, 200); /* exact signed 16-bit grid-index division */
     ST3DSMAPContext::sub_006E3310
               (g_sT3DSMAPContext_00807598,(g_sT3DSMAPContext_00807598->field_0380 * local_14) / 0xc9
                ,(int *)((g_sT3DSMAPContext_00807598->field_0380 * local_c) / 0xc9),local_8,&local_1c

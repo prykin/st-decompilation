@@ -52,9 +52,9 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
       PaintMTest(local_c);
       break;
     case MESS_TRACKBARCLASSTY_0062:
-      if (local_c->field_00B3 == '\0') {
+      if (local_c->field_00B3 == 0) {
         _DAT_00811774 = STAppC::sub_006E51B0(local_c->field_0010);
-        this_00->field_00B3 = 1;
+        this_00->field_00B3 = CASE_1;
         if (g_holo_00811778 != nullptr) {
           HoloTy::Done(g_holo_00811778);
           Library::MSVCRT::FUN_0072e2b0(g_holo_00811778);
@@ -104,9 +104,9 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           local_8 = 0xffffffff;
         }
       }
-      else if (local_c->field_00B3 == '\x04') {
+      else if (local_c->field_00B3 == CASE_4) {
         _DAT_00811774 = STAppC::sub_006E51B0(local_c->field_0010);
-        this_00->field_00B3 = 5;
+        this_00->field_00B3 = CASE_5;
         if (g_holo_00811778 != nullptr) {
           HoloTy::Done(g_holo_00811778);
           Library::MSVCRT::FUN_0072e2b0(g_holo_00811778);

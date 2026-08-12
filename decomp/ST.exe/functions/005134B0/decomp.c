@@ -40,12 +40,12 @@ void __thiscall HelpPanelTy::PutToSHlp(HelpPanelTy *this)
       while (-1 < iVar4) {
         dVar1 = pHVar3->field_01CB->count;
         if ((int)(dVar1 - 1) <= iVar4) break;
-        DArrayRemoveAt(pHVar3->field_01CB,dVar1 - 1);
+        DArrayRemoveAt((DArrayTy *)pHVar3->field_01CB,dVar1 - 1);
         iVar4 = pHVar3->field_01CF;
       }
       index = pHVar3->field_01CF + 1;
       pHVar3->field_01CF = index;
-      Library::DKW::TBL::DArrayPut(pHVar3->field_01CB,index,&local_14);
+      Library::DKW::TBL::DArrayPut((DArrayTy *)pHVar3->field_01CB,index,&local_14);
       g_currentExceptionFrame = local_58.previous;
       return;
     }

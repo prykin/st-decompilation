@@ -51,7 +51,7 @@ thunk_address	status	proposed_qualified_name	details
 0040110E	disabled	WaitTy::CloseButtons	apply=0
 00401113	disabled	STBoatC::BackBuild	apply=0
 00401118	disabled	STExplosion::sub_00604970	apply=0
-0040111D	disabled	FUN_004a8890	apply=0
+0040111D	disabled	CreateSTGroupBoat	apply=0
 00401122	disabled	FUN_004dbb60	apply=0
 00401127	disabled	TraksClassTy::DrawTrakSprite	apply=0
 0040112C	disabled	FUN_006a3c50	apply=0
@@ -302,7 +302,7 @@ thunk_address	status	proposed_qualified_name	details
 00401686	disabled	FUN_0067d1d0	apply=0
 0040168B	disabled	CPanelTy::PaintBBut	apply=0
 00401690	disabled	FUN_004e1310	apply=0
-00401695	disabled	FUN_004d6c00	apply=0
+00401695	disabled	TLOEmbryoTy::FUN_004d6c00	apply=0
 0040169A	disabled	FUN_0061c5f0	apply=0
 0040169F	disabled	FUN_005f1700	apply=0
 004016A4	disabled	FUN_005f3b00	apply=0
@@ -1376,7 +1376,7 @@ thunk_address	status	proposed_qualified_name	details
 00402CD4	disabled	ChooseMapTy::InitChooseMap	apply=0
 00402CD9	disabled	STJellyGunC::sub_00584380	apply=0
 00402CDE	disabled	STBoatC::STBoatC	apply=0
-00402CE3	disabled	FUN_004d6c50	apply=0
+00402CE3	disabled	TLOEmbryoTy::FUN_004d6c50	apply=0
 00402CE8	disabled	FUN_00496cc0	apply=0
 00402CED	disabled	FSGSTy::DoLogon	apply=0
 00402CF2	disabled	STDestC::sub_00602BE0	apply=0
@@ -1532,7 +1532,7 @@ thunk_address	status	proposed_qualified_name	details
 00403026	disabled	STCrabC::FUN_0057a2a0	apply=0
 0040302B	disabled	FUN_0062e440	apply=0
 00403030	disabled	FUN_006a1100	apply=0
-00403035	disabled	FUN_00510c80	apply=0
+00403035	disabled	HelpPanelTy::HelpPanelTy	apply=0
 0040303A	disabled	FUN_004de0d0	apply=0
 0040303F	disabled	FSGSTy::OutTRGlProc	apply=0
 00403044	disabled	FUN_0055f0c0	apply=0
@@ -2352,7 +2352,7 @@ thunk_address	status	proposed_qualified_name	details
 00404101	disabled	TLOBaseTy::sub_004CAFC0	apply=0
 00404106	disabled	FUN_004b7080	apply=0
 0040410B	disabled	FUN_00674fb0	apply=0
-00404110	disabled	FUN_004d0fc0	apply=0
+00404110	disabled	TLOEmbryoTy::TLOEmbryoTy	apply=0
 00404115	disabled	FUN_005f0410	apply=0
 0040411F	disabled	FUN_0041c300	apply=0
 00404124	disabled	CreateSTDest	apply=0

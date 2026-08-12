@@ -24,18 +24,6 @@ ListClassTy * __cdecl st::fn_00720960(void)
   return nullptr;
 }
 
-// 007209B0 FUN_007209b0
-#line 4 "decomp/ST.exe/functions/007209B0/decomp.c"
-undefined4 * __fastcall st::fn_007209B0(undefined4 *param_1)
-
-{
-  st::fn_0072B700(param_1);
-  *param_1 = st::machine_word_boundary_cast<undefined4>(&st_global_0079E2B4);
-  param_1[0x80] = 0;
-  param_1[0x7f] = 0;
-  return param_1;
-}
-
 // 007209D0 FUN_007209d0
 #line 4 "decomp/ST.exe/functions/007209D0/decomp.c"
 int __thiscall st::fn_007209D0(void *this,undefined4 param_1)
@@ -1067,13 +1055,12 @@ void __thiscall st::fn_00721A20(void *this,int param_1)
 EditorClassTy * __cdecl st::fn_007233B0(void)
 
 {
-  undefined4 *puVar1;
-  EditorClassTy *pEVar2;
+  EditorClassTy *pEVar1;
 
-  puVar1 = st::fn_006B04D0(0x218);
-  if (puVar1 != nullptr) {
-    pEVar2 = (EditorClassTy *)st::fn_007209B0(puVar1);
-    return pEVar2;
+  pEVar1 = (EditorClassTy *)st::fn_006B04D0(0x218);
+  if (pEVar1 != nullptr) {
+    pEVar1 = st::fn_007209B0(pEVar1);
+    return pEVar1;
   }
   return nullptr;
 }
@@ -1135,20 +1122,6 @@ void * __cdecl st::fn_007242D0(void)
     return this;
   }
   return nullptr;
-}
-
-// 00724310 FUN_00724310
-#line 4 "decomp/ST.exe/functions/00724310/decomp.c"
-undefined4 * __fastcall st::fn_00724310(undefined4 *param_1)
-
-{
-  st::fn_006E5FB0(param_1);
-  *param_1 = st::machine_word_boundary_cast<undefined4>(&st_global_0079E2C8);
-  param_1[7] = 0;
-  param_1[8] = 0;
-  param_1[9] = 0;
-  param_1[0x14] = 0;
-  return param_1;
 }
 
 // 00724330 FUN_00724330
@@ -1242,13 +1215,12 @@ void __fastcall st::fn_00724360(AnonShape_00724360_3CA25F92 *param_1)
 SliderClassTy * __cdecl st::fn_00724D00(void)
 
 {
-  undefined4 *puVar1;
-  SliderClassTy *pSVar2;
+  SliderClassTy *pSVar1;
 
-  puVar1 = st::fn_006B04D0(100);
-  if (puVar1 != nullptr) {
-    pSVar2 = (SliderClassTy *)st::fn_00724310(puVar1);
-    return pSVar2;
+  pSVar1 = (SliderClassTy *)st::fn_006B04D0(100);
+  if (pSVar1 != nullptr) {
+    pSVar1 = st::fn_00724310(pSVar1);
+    return pSVar1;
   }
   return nullptr;
 }
@@ -4857,7 +4829,7 @@ void st::fn_0072AFC0(void)
   if (DAT_00857134 != nullptr) {
     st::fn_006B3BB0(st::pointer_boundary_cast<int *>(DAT_00857134),DAT_007f1080);
     DAT_007f1080 = 0xffffffff;
-    DAT_00857134 = static_cast<undefined4>(0);
+    DAT_00857134 = 0;
   }
   return;
 }

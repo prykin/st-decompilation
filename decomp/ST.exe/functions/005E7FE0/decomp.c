@@ -108,16 +108,17 @@ LAB_005e829d:
   DAT_008087be = this_00->field_1A8F;
   if (local_c == 0) {
     this_00->field_002D = 0x28;
-    *(undefined2 *)&this_00->field_0x31 = 1;
+    this_00->field_0031 = 1;
     puVar1 = &this_00->field_0x1d;
-    *(short *)&this_00->field_0x33 = (short)g_startSystem_0081176C->field_0548[2];
+    this_00->field_0033 = (short)g_startSystem_0081176C->field_0548[2];
     FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
     this_00->field_002D = 0x22;
-    *(undefined2 *)&this_00->field_0x33 = 0;
-    *(undefined2 *)&this_00->field_0x31 = 0;
+    this_00->field_0033 = 0;
+    this_00->field_0031 = 0;
     FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
     this_00->field_002D = 0x20;
-    *(undefined4 *)&this_00->field_0x31 = 0;
+    this_00->field_0031 = 0;
+    this_00->field_0033 = 0;
     FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
   }
   if (-1 < (int)g_startSystem_0081176C->field_02EC) {

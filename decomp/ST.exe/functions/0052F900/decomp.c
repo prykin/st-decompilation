@@ -34,7 +34,7 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
     if (param_1 == 0) {
       sVar2 = -sVar2;
     }
-    *(short *)&this->field_0x2e = sVar2;
+    this->field_002E = sVar2;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;

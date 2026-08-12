@@ -56,23 +56,9 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
                                         (short)((longlong)(int)sVar1 * 0x51eb851f >> 0x3f));
               }
               sVar1 = *(short *)(iVar5 + 8);
-              if (sVar1 < 0) {
-                iVar6 = (short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
-                               (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f)) + -1;
-              }
-              else {
-                iVar6 = (int)(short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
-                                    (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f));
-              }
+              iVar6 = STBiasedDiv16(sVar1, 0xc9); /* exact signed 16-bit grid-index division */
               sVar1 = *(short *)(iVar5 + 6);
-              if (sVar1 < 0) {
-                iVar5 = (short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
-                               (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f)) + -1;
-              }
-              else {
-                iVar5 = (int)(short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
-                                    (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f));
-              }
+              iVar5 = STBiasedDiv16(sVar1, 0xc9); /* exact signed 16-bit grid-index division */
               if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
                   (((VisibleClassTy::sub_00558C00
                                (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,
@@ -113,23 +99,9 @@ LAB_00600928:
             sVar1 = *(short *)(iVar8 + 8 + param_1->field_0233);
             iVar8 = iVar8 + param_1->field_0233;
             pSVar2 = *(STT3DSprC **)(iVar8 + 0x42);
-            if (sVar1 < 0) {
-              iVar5 = (short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
-                             (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f)) + -1;
-            }
-            else {
-              iVar5 = (int)(short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
-                                  (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f));
-            }
+            iVar5 = STBiasedDiv16(sVar1, 0xc9); /* exact signed 16-bit grid-index division */
             sVar1 = *(short *)(iVar8 + 6);
-            if (sVar1 < 0) {
-              iVar8 = (short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
-                             (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f)) + -1;
-            }
-            else {
-              iVar8 = (int)(short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
-                                  (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f));
-            }
+            iVar8 = STBiasedDiv16(sVar1, 0xc9); /* exact signed 16-bit grid-index division */
             thunk_FUN_00600110(param_1,iVar8,iVar5,0x460);
             iVar5 = param_1->field_01E9;
             if (iVar5 != 0) {
@@ -232,23 +204,9 @@ LAB_00600928:
                                       (short)((longlong)(int)sVar1 * 0x51eb851f >> 0x3f));
             }
             sVar1 = *(short *)(iVar5 + 8);
-            if (sVar1 < 0) {
-              iVar8 = (short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
-                             (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f)) + -1;
-            }
-            else {
-              iVar8 = (int)(short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
-                                  (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f));
-            }
+            iVar8 = STBiasedDiv16(sVar1, 0xc9); /* exact signed 16-bit grid-index division */
             sVar1 = *(short *)(iVar5 + 6);
-            if (sVar1 < 0) {
-              iVar5 = (short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
-                             (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f)) + -1;
-            }
-            else {
-              iVar5 = (int)(short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
-                                  (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f));
-            }
+            iVar5 = STBiasedDiv16(sVar1, 0xc9); /* exact signed 16-bit grid-index division */
             if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
                  (VisibleClassTy::sub_00558C00
                             (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar8

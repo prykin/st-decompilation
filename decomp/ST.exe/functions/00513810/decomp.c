@@ -19,6 +19,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
   HelpPanelTy *this_00;
   int iVar3;
   int iVar4;
+  int iVar5;
   InternalExceptionFrame local_50;
   HelpPanelTy *local_c;
   void *local_8;
@@ -30,11 +31,14 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
     iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     this_00 = local_c;
     if (iVar3 == 0) {
-      if (local_c->field_0178 != 0) {
+      STPiece<0,2>(iVar5) = local_c->field_0178;
+      STPiece<2,2>(iVar5) = local_c->field_017A;
+      if (iVar5 != 0) {
         local_c->field_0028 = 0x4202;
         *(undefined2 *)&local_c->field_0x2c = 0;
-        local_c->field_002E = 2;
-        *(undefined4 *)&local_c->field_0x30 = local_c->field_0178;
+        *(undefined2 *)&local_c->field_0x2e = 2;
+        local_c->field_0030 = (undefined2)iVar5;
+        local_c->field_0032 = STPiece<2,2>(iVar5);
         if (g_cursorClass_00802A30 != nullptr) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)g_cursorClass_00802A30->field_0000)(&local_c->field_0x18);
@@ -43,7 +47,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
       HVar1 = this_00->field_01A2;
       if (HVar1 != 0) {
         if (HVar1 == CASE_6) {
-          TTreeProc(this_00,(uint)this_00->field_01AB,'\0');
+          TTreeProc(this_00,this_00->field_01AB,'\0');
           PutToSHlp(this_00);
           g_currentExceptionFrame = local_50.previous;
           return;
@@ -63,13 +67,13 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
         local_8 = (void *)this_00->field_01B7;
       }
       else {
-        local_8 = *(void **)&this_00->field_0x1bf;
+        local_8 = (void *)this_00->field_01BF;
       }
       if (this_00->field_019C != 0) {
         memset(&this_00->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
         this_00->field_0028 = 0x22;
         *(short *)&this_00->field_0x2c = (short)local_8;
-        *(undefined2 *)&this_00->field_0x30 = 1;
+        this_00->field_0030 = 1;
         this_00->field_0032 = 1;
         FUN_006e6080(this_00,2,this_00->field_019C,(undefined4 *)&this_00->field_0x18);
       }

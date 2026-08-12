@@ -39,7 +39,7 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
   local_dc[0x45] = 0;
   local_dc[0x52] = 0;
   local_dc[0x53] = 0;
-  uVar1 = *(ushort *)&this->field_0x5ec;
+  uVar1 = this->field_05EC;
   local_dc[0x2e] = 2;
   local_dc[0x2f] = 0;
   local_dc[0x3e] = 2;
@@ -60,7 +60,7 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
   local_dc[0x5b] = 0;
   local_dc[0x5c] = 2;
   local_dc[0x5d] = 0;
-  uVar2 = *(ushort *)&this->field_0x5ee;
+  uVar2 = this->field_05EE;
   local_dc[0x1e] = -2;
   local_dc[0x1f] = -1;
   local_dc[0x20] = -2;
@@ -131,13 +131,13 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
        (((g_worldGrid.sizeY <= (short)uVar2 || (g_worldGrid.sizeZ < 5)) ||
         (local_8 = (int)g_worldGrid.planeStride,
         STGridAt3D(g_worldGrid, uVar1, uVar2, 4).objects[1] == nullptr)))))))) {
-    *(ushort *)&this->field_0x5f2 = uVar1;
-    *(ushort *)&this->field_0x5f4 = uVar2;
-    *(undefined2 *)&this->field_0x5f6 = 4;
+    this->field_05F2 = uVar1;
+    this->field_05F4 = uVar2;
+    this->field_05F6 = 4;
     return 1;
   }
   iVar6 = 4;
-  local_18 = *(short *)&this->field_0x5f0 + 1;
+  local_18 = this->field_05F0 + 1;
   if (local_18 < 5) {
     do {
       local_10 = local_dc;
@@ -158,9 +158,9 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
                (g_worldGrid.cells
                 [(int)sVar4 * (int)g_worldGrid.sizeX + sVar5 * local_8 + (int)sVar3].objects[1] ==
                 nullptr)))))))))) {
-          *(short *)&this->field_0x5f6 = sVar5;
-          *(short *)&this->field_0x5f4 = sVar4;
-          *(short *)&this->field_0x5f2 = sVar3;
+          this->field_05F6 = sVar5;
+          this->field_05F4 = sVar4;
+          this->field_05F2 = sVar3;
           return 1;
         }
         local_10 = local_10 + 4;

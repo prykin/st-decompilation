@@ -70,6 +70,38 @@ floating conversion. The fold requires one unambiguous structure declaration
 and an exact concrete narrow-integer member; complex expressions, enums,
 unions, and generic fields are untouched.
 
+### Biased narrow grid division
+
+MSVC emits several forms of the game's signed coordinate-to-grid conversion.
+Ghidra can recover the constant divisor but often retains the sign shift and
+magic multiply, for example:
+
+```c
+sign = (short)(value >> 0x1f);
+if (value < 0) {
+  cell = (short)(((short)(value / 0xc9) + sign) -
+                 (short)((longlong)value * 0x28c1979 >> 0x3f)) + -1;
+}
+else {
+  cell = (int)(short)(((short)(value / 0xc9) + sign) -
+                      (short)((longlong)value * 0x28c1979 >> 0x3f));
+}
+```
+
+`STDecompExport` folds only a complete matching positive/negative branch to:
+
+```c
+cell = STBiasedDiv16(value, 0xc9);
+```
+
+The same proof covers divisor `200`, inline sign extraction from a narrow
+source, and the form where Ghidra has already simplified away the multiplier.
+`STBiasedDiv16` narrows the quotient to 16 bits and subtracts one for every
+negative source. That exact boundary behavior differs from mathematical floor
+division for negative exact multiples, so the exporter does not replace the
+idiom with an ordinary `/` or a misleading `floor` helper. Alias-mismatched or
+split-result SSA forms remain visible until their value identity is proven.
+
 ### Opaque `code *` locals
 
 Ghidra's `code *` means “pointer to executable code with no recovered

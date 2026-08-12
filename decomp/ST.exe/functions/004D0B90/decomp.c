@@ -14,26 +14,26 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
 {
   short *psVar1;
   STMessageId SVar2;
-  STSprGameObjC *pSVar4;
+  TLOFakeTy *pTVar4;
   int iVar5;
-  void *pvVar5;
+  ushort *puVar5;
   int exceptionCode;
   int iVar9;
   int iVar6;
   uint uVar7;
-  STSprGameObjC_field_0231State *pSVar8;
+  byte *pbVar8;
   int iVar10;
-  STSprGameObjC_field_0231State *pSVar11;
+  byte *puVar11;
   InternalExceptionFrame local_50;
-  STSprGameObjC *local_c;
-  STSprGameObjC_field_0231State *local_8;
+  TLOFakeTy *local_c;
+  byte *local_8;
 
-  pSVar11 = nullptr;
+  puVar11 = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  local_c = (STSprGameObjC *)this;
+  local_c = this;
   iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-  pSVar4 = local_c;
+  pTVar4 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar9 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_dock.cpp",0x341,0,iVar5,"%s"
@@ -44,46 +44,46 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
     RaiseInternalException(iVar5,0,"E:\\__titans\\Artem\\TLO_dock.cpp",0x342);
     return iVar5;
   }
-  STSprGameObjC::GetMessage(local_c,message);
+  STSprGameObjC::GetMessage((STSprGameObjC *)local_c,message);
   SVar2 = message->id;
   if (SVar2 == MESS_ID_CREATE) {
-    DAT_00800bcc = pSVar4;
-    pSVar4->field_0020 = 0x3ea;
-    *(undefined4 *)&pSVar4->field_0x28 = 2;
+    DAT_00800bcc = pTVar4;
+    pTVar4->field_0020 = 0x3ea;
+    pTVar4->field_0028 = 2;
     local_8 = (message->arg0).ptr;
-    if (pSVar4 != nullptr) {
-      pSVar11 = &pSVar4->field_0231;
+    if (pTVar4 != nullptr) {
+      puVar11 = (byte *)&pTVar4->field_0x231;
     }
-    pSVar8 = local_8;
-    memmove(pSVar11, pSVar8, 0x1c); /* compiler REP MOVS byte copy */
-    if (*(int *)&pSVar4->field_0x23d == 2) {
-      if (*(int *)&pSVar4->field_0x249 != 0) {
-        pvVar5 = Library::DKW::LIB::MemAlloc(*(int *)&pSVar4->field_0x249 * 0xc);
-        *(void **)&pSVar4->field_0x24d = pvVar5;
+    pbVar8 = local_8;
+    memmove(puVar11, pbVar8, 0x1c); /* compiler REP MOVS byte copy */
+    iVar6 = 0;
+    if (pTVar4->field_023D == 2) {
+      if (pTVar4->field_0249 != 0) {
+        puVar5 = Library::DKW::LIB::MemAlloc(pTVar4->field_0249 * 0xc);
+        pTVar4->field_024D = puVar5;
       }
-      iVar6 = *(int *)((int)&pSVar4->field_0244 + 1);
-      if (iVar6 != 0) {
-        pSVar11 = local_8 + 7;
-        pSVar8 = *(STSprGameObjC_field_0231State **)&pSVar4->field_0x24d;
-        for (uVar7 = iVar6 * 3 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *pSVar8 = *pSVar11;
-          pSVar11 = pSVar11 + 1;
-          pSVar8 = pSVar8 + 1;
+      if (pTVar4->field_0245 != 0) {
+        pbVar8 = local_8 + 0x1c;
+        puVar5 = pTVar4->field_024D;
+        for (uVar7 = pTVar4->field_0245 * 3 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
+          *(undefined4 *)puVar5 = *(undefined4 *)pbVar8;
+          pbVar8 = pbVar8 + 4;
+          puVar5 = puVar5 + 2;
         }
         for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *(char *)pSVar8 = (char)*pSVar11;
-          pSVar11 = (STSprGameObjC_field_0231State *)((int)pSVar11 + 1);
-          pSVar8 = (STSprGameObjC_field_0231State *)((int)pSVar8 + 1);
+          *(byte *)puVar5 = *pbVar8;
+          pbVar8 = pbVar8 + 1;
+          puVar5 = (ushort *)((int)puVar5 + 1);
         }
         iVar6 = 0;
-        if (0 < *(int *)((int)&pSVar4->field_0244 + 1)) {
+        if (0 < pTVar4->field_0245) {
           iVar10 = 0;
           do {
-            psVar1 = (short *)(*(int *)&pSVar4->field_0x24d + iVar10);
+            psVar1 = (short *)((int)pTVar4->field_024D + iVar10);
             exceptionCode =
                  DumpClassC::WritePtr
-                           (*psVar1,*(short *)(*(int *)&pSVar4->field_0x24d + 4 + iVar10),psVar1[4],
-                            0,(RecoveredRecord_DumpClassC_00495EC0 *)pSVar4);
+                           (*psVar1,*(short *)((int)pTVar4->field_024D + iVar10 + 4),psVar1[4],0,
+                            (RecoveredRecord_DumpClassC_00495EC0 *)pTVar4);
             if (exceptionCode != 0) {
               RaiseInternalException
                         (exceptionCode,g_overwriteContext_007ED77C,
@@ -91,51 +91,51 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
             }
             iVar6 = iVar6 + 1;
             iVar10 = iVar10 + 0xc;
-          } while (iVar6 < *(int *)((int)&pSVar4->field_0244 + 1));
+          } while (iVar6 < pTVar4->field_0245);
         }
       }
     }
   }
   else if (SVar2 == MESS_SHARED_0003) {
     DAT_00800bcc = nullptr;
-    thunk_FUN_004ad310((STT3DSprC *)&pSVar4->field_01D5);
-    if (*(int *)&pSVar4->field_0x24d != 0) {
-      FreeAndNull(&pSVar4->field_0x24d);
+    thunk_FUN_004ad310((STT3DSprC *)&pTVar4->field_01D5);
+    if (pTVar4->field_024D != nullptr) {
+      FreeAndNull(&pTVar4->field_024D);
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
   }
   else if (SVar2 == MESS_SHARED_010F) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_8 = Library::DKW::LIB::MemAlloc(*(int *)((int)&pSVar4->field_0244 + 1) * 0xc + 0x1c);
-    if (pSVar4 == nullptr) {
-      pSVar11 = nullptr;
+    local_8 = Library::DKW::LIB::MemAlloc(pTVar4->field_0245 * 0xc + 0x1c);
+    if (pTVar4 == nullptr) {
+      puVar11 = nullptr;
     }
     else {
-      pSVar11 = &pSVar4->field_0231;
+      puVar11 = (byte *)&pTVar4->field_0x231;
     }
-    pSVar8 = local_8;
-    memmove(pSVar8, pSVar11, 0x1c); /* compiler REP MOVS byte copy */
-    local_8[3] = CASE_2;
-    iVar6 = *(int *)((int)&pSVar4->field_0244 + 1);
-    if (iVar6 != 0) {
-      pSVar11 = *(STSprGameObjC_field_0231State **)&pSVar4->field_0x24d;
-      pSVar8 = local_8 + 7;
-      for (uVar7 = iVar6 * 3 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *pSVar8 = *pSVar11;
-        pSVar11 = pSVar11 + 1;
-        pSVar8 = pSVar8 + 1;
+    pbVar8 = local_8;
+    memmove(pbVar8, puVar11, 0x1c); /* compiler REP MOVS byte copy */
+    iVar6 = 0;
+    local_8[0xc] = 2;
+    local_8[0xd] = 0;
+    local_8[0xe] = 0;
+    local_8[0xf] = 0;
+    if (pTVar4->field_0245 != 0) {
+      puVar5 = pTVar4->field_024D;
+      pbVar8 = local_8 + 0x1c;
+      for (uVar7 = pTVar4->field_0245 * 3 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
+        *(undefined4 *)pbVar8 = *(undefined4 *)puVar5;
+        puVar5 = puVar5 + 2;
+        pbVar8 = pbVar8 + 4;
       }
       for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *(char *)pSVar8 = (char)*pSVar11;
-        pSVar11 = (STSprGameObjC_field_0231State *)((int)pSVar11 + 1);
-        pSVar8 = (STSprGameObjC_field_0231State *)((int)pSVar8 + 1);
+        *pbVar8 = (byte)*puVar5;
+        puVar5 = (ushort *)((int)puVar5 + 1);
+        pbVar8 = pbVar8 + 1;
       }
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     STPlaySystemC::SaveObjData
-              (g_playSystem_00802A38,(int *)pSVar4->field_0018,(byte *)local_8,
-               (AnonShape_0060EA30_DCEB68AD *)(*(int *)((int)&pSVar4->field_0244 + 1) * 0xc + 0x1c));
+              (g_playSystem_00802A38,pTVar4->field_0018,local_8,pTVar4->field_0245 * 0xc + 0x1c);
     FreeAndNull(&local_8);
     g_currentExceptionFrame = local_50.previous;
     return 0;

@@ -64,8 +64,7 @@ undefined4 __thiscall PlayPanelTy::SetPanel(PlayPanelTy *this,char param_1)
         ProdPanelTy::SetPanel(g_bldLabPanel_00801680,'\0');
       }
       if (g_helpPanel_00801690 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(g_helpPanel_00801690->vtable + 0x18))(0);
+        g_helpPanel_00801690->SetPanel('\0');
       }
       if (g_optPanel_008016DC != nullptr) {
         OptPanelTy::SwitchOptPanelOff(g_optPanel_008016DC);

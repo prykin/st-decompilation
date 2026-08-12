@@ -36,7 +36,7 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   uint local_c;
   char **local_8;
 
-  local_24 = (uint)this->field_0014 >> 8 & 0xff;
+  local_24 = this->field_0014 >> 8 & 0xff;
   ppcVar13 = nullptr;
   local_8 = nullptr;
   switch(local_24) {
@@ -46,18 +46,18 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
     if (iVar12 == 4) {
       ppcVar13 = &PTR_s_partdw01_007d0798;
       local_8 = &PTR_s_partdw01_007d0798;
-      iVar12 = (uint)*(byte *)&this->field_0014 * 8;
+      iVar12 = (uint)(byte)this->field_0014 * 8;
       local_10 = *(int *)(&DAT_007d0af0 + iVar12) / 2;
       local_c = *(int *)(&DAT_007d0af4 + iVar12) / 2 - 0xe;
     }
     else {
       if (local_24 == 0) {
-        iVar10 = (uint)*(byte *)&this->field_0014 * 8;
+        iVar10 = (uint)(byte)this->field_0014 * 8;
         iVar2 = *(int *)(&DAT_007d0a70 + iVar10);
         iVar10 = *(int *)("%" + iVar10);
       }
       else {
-        iVar10 = (uint)*(byte *)&this->field_0014 * 8;
+        iVar10 = (uint)(byte)this->field_0014 * 8;
         iVar2 = *(int *)(&DAT_007d0bf0 + iVar10);
         iVar10 = *(int *)(&DAT_007d0bf4 + iVar10);
       }
@@ -92,7 +92,7 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   case 4:
     ppcVar13 = &PTR_s_stoun0_007d09d8;
     local_8 = &PTR_s_stoun0_007d09d8;
-    iVar12 = *(int *)(&DAT_007d0a00 + (uint)*(byte *)&this->field_0014 * 4);
+    iVar12 = *(int *)(&DAT_007d0a00 + (uint)(byte)this->field_0014 * 4);
     goto LAB_00629242;
   case 8:
     ppcVar13 = &PTR_s_gr1part0_007d0870;
@@ -103,14 +103,14 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   case 0x10:
     ppcVar13 = &PTR_s_partsi01_007d08c4;
     local_8 = &PTR_s_partsi01_007d08c4;
-    iVar12 = (uint)*(byte *)&this->field_0014 * 8;
+    iVar12 = (uint)(byte)this->field_0014 * 8;
     local_10 = *(int *)(&DAT_007d0af0 + iVar12) / 2;
     local_c = *(int *)(&DAT_007d0af4 + iVar12) / 2 - 0xe;
     break;
   case 0x20:
     ppcVar13 = &PTR_s_part_s0_007d0924;
     local_8 = &PTR_s_part_s0_007d0924;
-    iVar12 = (uint)*(byte *)&this->field_0014 * 8;
+    iVar12 = (uint)(byte)this->field_0014 * 8;
     local_10 = *(int *)(&DAT_007d0b70 + iVar12) / 2;
     local_c = *(int *)(&DAT_007d0b74 + iVar12) / 2 - 0xe;
     break;
@@ -130,7 +130,7 @@ LAB_00629242:
   if (ppcVar13 == nullptr) {
     return 0xffffffff;
   }
-  local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(*(undefined1 *)&this->field_0014));
+  local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)((char)this->field_0014));
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_1c = this;
@@ -197,25 +197,9 @@ LAB_00629242:
                                     (short)((longlong)iVar12 * 0x51eb851f >> 0x3f));
     }
     iVar12 = pSVar8->field_004A;
-    sVar5 = (short)(iVar12 >> 0x1f);
-    if (iVar12 < 0) {
-      iVar12 = (short)(((short)(iVar12 / 0xc9) + sVar5) -
-                      (short)((longlong)iVar12 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar12 = (int)(short)(((short)(iVar12 / 0xc9) + sVar5) -
-                           (short)((longlong)iVar12 * 0x28c1979 >> 0x3f));
-    }
+    iVar12 = STBiasedDiv16(iVar12, 0xc9); /* exact signed 16-bit grid-index division */
     iVar10 = pSVar8->field_0046;
-    sVar5 = (short)(iVar10 >> 0x1f);
-    if (iVar10 < 0) {
-      iVar10 = (short)(((short)(iVar10 / 0xc9) + sVar5) -
-                      (short)((longlong)iVar10 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar10 = (int)(short)(((short)(iVar10 / 0xc9) + sVar5) -
-                           (short)((longlong)iVar10 * 0x28c1979 >> 0x3f));
-    }
+    iVar10 = STBiasedDiv16(iVar10, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
         (VisibleClassTy::sub_00558C00
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar10,iVar12,

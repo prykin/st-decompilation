@@ -82,8 +82,7 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
             (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
           }
           if (g_helpPanel_00801690 != nullptr) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)(g_helpPanel_00801690->vtable + 0x18))(0);
+            g_helpPanel_00801690->SetPanel('\0');
           }
           if (g_optPanel_008016DC != nullptr) {
             OptPanelTy::SwitchOptPanelOff(g_optPanel_008016DC);
@@ -177,8 +176,7 @@ switchD_004f9f52_caseD_3:
             (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
           }
           if (g_helpPanel_00801690 != nullptr) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)(g_helpPanel_00801690->vtable + 0x18))(0);
+            g_helpPanel_00801690->SetPanel('\0');
           }
           if (g_optPanel_008016DC != nullptr) {
             OptPanelTy::SwitchOptPanelOff(g_optPanel_008016DC);

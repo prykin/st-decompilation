@@ -66,7 +66,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1B00);
       pWVar2->field_1B00 = nullptr;
     }
-    if (pWVar2->field_1A64 == 0) {
+    if (pWVar2->array_00BC[0xc].field_01E4 == 0) {
       if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
         FUN_006b3af0((int *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391);
       }
@@ -85,7 +85,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1AFC);
       pWVar2->field_1AFC = nullptr;
     }
-    if (pWVar2->field_1A64 == 0) {
+    if (pWVar2->array_00BC[0xc].field_01E4 == 0) {
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         FUN_006b3af0((int *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560);
       }
@@ -109,10 +109,12 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
     if (pWVar2->field_1A83 != nullptr) {
       FreeAndNull(&pWVar2->field_1A83);
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((pWVar2->field_004D == 0x6102) &&
-       (this_00 = pWVar2->field_1A5B->field_02E6, this_00 != nullptr)) {
+       (this_00 = *(MMsgTy **)(pWVar2->array_00BC[0xc].field_01DB + 0x2e6), this_00 != nullptr
+       )) {
       MMsgTy::HideSprites(this_00);
-      pWVar2->field_1A5B->field_02E6->field_1CAB = 0;
+      *(undefined4 *)(*(int *)(pWVar2->array_00BC[0xc].field_01DB + 0x2e6) + 0x1cab) = 0;
     }
     if (pWVar2->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pWVar2->field_0x3d);

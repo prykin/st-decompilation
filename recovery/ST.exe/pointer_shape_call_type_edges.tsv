@@ -4777,7 +4777,7 @@ source_target	destination_target	site
 004D0B90|parameter|Stack[0x4]:4	0041E530|parameter|Stack[0x4]:4	004D0B90 C call -> STSprGameObjC::GetMessage
 004D0B90|local|Stack[-0x8]:4	0054D430|parameter|Stack[0x8]:4	004D0B90 C call -> STPlaySystemC::SaveObjData
 004D0F00|local|Stack[-0x20]:4	0054CC20|parameter|Stack[0x10]:4	004D0F00 C call -> STPlaySystemC::CreateGameObject
-004D0FC0|parameter|ECX:4	004158E0|parameter|ECX:4 (auto)	004D0FC0 C call -> STGameObjC::STGameObjC
+004D0FC0|parameter|ECX:4 (auto)	004158E0|parameter|ECX:4 (auto)	004D0FC0 C call -> STGameObjC::STGameObjC
 004D11D0|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	004D11D0 C call -> RaiseInternalException
 004D11D0|local|EAX:4	006EA340|parameter|Stack[0x4]:4	004D11D0 C call -> FUN_006ea340
 004D11D0|local|EAX:4	006EA340|parameter|Stack[0x8]:4	004D11D0 C call -> FUN_006ea340
@@ -5731,7 +5731,7 @@ source_target	destination_target	site
 005107C0|parameter|Stack[0x4]:4	0053EB70|parameter|Stack[0x4]:4	005107C0 C call -> SpecPanelTy::GetMessage
 005107C0|local|Stack[-0x1c]:4	0054EDF0|parameter|Stack[0x8]:4	005107C0 C call -> FUN_0054edf0
 005107C0|parameter|Stack[0x4]:4	005105E0|parameter|Stack[0x4]:4	005107C0 C call -> FrmPanelTy::PaintBut
-00510C80|parameter|ECX:4	006E5FB0|parameter|ECX:4 (auto)	00510C80 C call -> sub_006E5FB0
+00510C80|parameter|ECX:4 (auto)	006E5FB0|parameter|ECX:4 (auto)	00510C80 C call -> sub_006E5FB0
 00510E30|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00510E30 C call -> RaiseInternalException
 00510E30|local|EAX:4	0072E620|parameter|Stack[0x4]:4	00510E30 C call -> Library::MSVCRT::__strcmpi
 00510E30|local|Stack[-0x14]:4	0072E620|parameter|Stack[0x8]:4	00510E30 C call -> Library::MSVCRT::__strcmpi
@@ -5743,11 +5743,13 @@ source_target	destination_target	site
 00511AB0|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00511AB0 C call -> RaiseInternalException
 00511C70|local|Stack[-0x8]:4	006E6080|parameter|ECX:4 (auto)	00511C70 C call -> FUN_006e6080
 00511C70|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00511C70 C call -> RaiseInternalException
+00511DF0|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00511DF0 C call -> RaiseInternalException
 005123A0|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	005123A0 C call -> RaiseInternalException
 00512830|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00512830 C call -> RaiseInternalException
 00513030|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00513030 C call -> RaiseInternalException
 005135F0|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	005135F0 C call -> RaiseInternalException
 00513810|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00513810 C call -> RaiseInternalException
+00513A40|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00513A40 C call -> RaiseInternalException
 00513BC0|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00513BC0 C call -> RaiseInternalException
 00513BC0|local|Stack[-0x8]:4	00517A50|parameter|ECX:4 (auto)	00513BC0 C call -> HelpPanelTy::RCProc
 00513BC0|local|Stack[-0x8]:4	0051A100|parameter|ECX:4 (auto)	00513BC0 C call -> HelpPanelTy::ObjProc
@@ -5846,6 +5848,7 @@ source_target	destination_target	site
 00515C00|parameter|Stack[0x8]:4	006B0140|parameter|Stack[0x4]:4	00515C00 C call -> LoadResourceString
 00515E30|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00515E30 C call -> RaiseInternalException
 00515E30|local|EAX:4	007119C0|parameter|Stack[0x4]:4	00515E30 C call -> ccFntTy::WrStr
+00516300|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00516300 C call -> RaiseInternalException
 00516480|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00516480 C call -> RaiseInternalException
 00516480|local|EAX:4	0070B3A0|parameter|Stack[0x8]:4	00516480 C call -> FUN_0070b3a0
 00516A40|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00516A40 C call -> RaiseInternalException
@@ -6168,10 +6171,12 @@ source_target	destination_target	site
 0051C980|parameter|Stack[0x4]:4	00523410|parameter|Stack[0x4]:4	0051C980 C call -> FUN_00523410
 0051C980|parameter|Stack[0x4]:4	00515E30|parameter|Stack[0xc]:4	0051C980 C call -> HelpPanelTy::AddLinks
 0051C980|parameter|Stack[0x8]:4	00515E30|parameter|Stack[0x10]:4	0051C980 C call -> HelpPanelTy::AddLinks
+0051C980|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	0051C980 C call -> RaiseInternalException
 0051D360|parameter|Stack[0x4]:4	00523410|parameter|Stack[0x4]:4	0051D360 C call -> FUN_00523410
 0051D360|parameter|Stack[0x4]:4	00515650|parameter|Stack[0x8]:4	0051D360 C call -> HelpPanelTy::DrawObj
 0051D360|parameter|Stack[0x4]:4	00523410|parameter|Stack[0x4]:4	0051D360 C call -> FUN_00523410
 0051D360|parameter|Stack[0x4]:4	00515E30|parameter|Stack[0xc]:4	0051D360 C call -> HelpPanelTy::AddLinks
+0051D360|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	0051D360 C call -> RaiseInternalException
 0051D540|parameter|Stack[0x4]:4	00529D80|parameter|Stack[0x4]:4	0051D540 C call -> FUN_00529d80
 0051D540|parameter|Stack[0x8]:4	00529D80|parameter|Stack[0x8]:4	0051D540 C call -> FUN_00529d80
 0051D540|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	0051D540 C call -> RaiseInternalException
@@ -8865,7 +8870,6 @@ source_target	destination_target	site
 005BAE00|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	005BAE00 C call -> RaiseInternalException
 005BAE00|local|Stack[-0xc8]:1	00715360|parameter|Stack[0x10]:4	005BAE00 C call -> FUN_00715360
 005BAE00|local|Stack[-0x14]:4	005B6350|parameter|Stack[0x8]:4	005BAE00 C call -> FUN_005b6350
-005BAE00|local|Stack[-0x5c]:1	005B7EF0|parameter|Stack[0xc]:4	005BAE00 C call -> MMsgTy::SetMessage
 005BB910|local|Stack[-0x8]:4	005B6480|parameter|ECX:4 (auto)	005BB910 C call -> MMObjTy::CloseButtons
 005BB910|parameter|Stack[0x4]:1	005BC050|parameter|Stack[0x4]:1	005BB910 C call -> PrividerTy::DeleteCtrls
 005BBA90|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	005BBA90 C call -> RaiseInternalException
@@ -15541,16 +15545,14 @@ source_target	destination_target	site
 0071C7C0|local|Stack[-0x68]:1	006B1190|parameter|EDX:4	0071C7C0 C call -> DArrayGetNext
 0071C7C0|local|Stack[-0x68]:1	006B1190|parameter|EDX:4	0071C7C0 C call -> DArrayGetNext
 0071C9F0|local|Stack[-0x10]:1	006ACC70|parameter|Stack[0x4]:4	0071C9F0 C call -> DArrayGetElement
-0071E040|parameter|ECX:4	006E5FB0|parameter|ECX:4 (auto)	0071E040 C call -> sub_006E5FB0
+0071E040|parameter|ECX:4 (auto)	006E5FB0|parameter|ECX:4 (auto)	0071E040 C call -> sub_006E5FB0
 0071E060|parameter|ECX:4 (auto)	006E6060|parameter|ECX:4 (auto)	0071E060 C call -> FUN_006e6060
 0071E060|local|Stack[-0x24]:1	006E6060|parameter|Stack[0x4]:4	0071E060 C call -> FUN_006e6060
 0071E060|parameter|ECX:4 (auto)	006E6060|parameter|ECX:4 (auto)	0071E060 C call -> FUN_006e6060
 0071E060|local|Stack[-0x24]:1	006E6060|parameter|Stack[0x4]:4	0071E060 C call -> FUN_006e6060
-0071E6F0|parameter|ECX:4	0072B700|parameter|ECX:4	0071E6F0 C call -> FUN_0072b700
 0071E860|parameter|ECX:4 (auto)	006E5FE0|parameter|ECX:4 (auto)	0071E860 C call -> FUN_006e5fe0
 0071F2B0|parameter|ECX:4 (auto)	006E5FE0|parameter|ECX:4 (auto)	0071F2B0 C call -> FUN_006e5fe0
 0071F2F0|parameter|ECX:4 (auto)	006E5FE0|parameter|ECX:4 (auto)	0071F2F0 C call -> FUN_006e5fe0
-007209B0|parameter|ECX:4	0072B700|parameter|ECX:4	007209B0 C call -> FUN_0072b700
 007209D0|parameter|ECX:4 (auto)	006E5FE0|parameter|ECX:4 (auto)	007209D0 C call -> FUN_006e5fe0
 00721340|local|Stack[-0x8]:4	0072E340|parameter|Stack[0x4]:4	00721340 C call -> Library::MSVCRT::_strncpy
 00721340|local|Stack[-0x8]:4	00752D50|parameter|Stack[0xc]:4	00721340 C call -> Library::DKW::TBL::FUN_00752d50
@@ -15592,7 +15594,7 @@ source_target	destination_target	site
 00721A20|parameter|ECX:4 (auto)	006E6060|parameter|ECX:4 (auto)	00721A20 C call -> FUN_006e6060
 00721A20|local|Stack[-0x24]:1	006E6060|parameter|Stack[0x4]:4	00721A20 C call -> FUN_006e6060
 007233D0|parameter|ECX:4 (auto)	006E5FE0|parameter|ECX:4 (auto)	007233D0 C call -> FUN_006e5fe0
-00724310|parameter|ECX:4	006E5FB0|parameter|ECX:4 (auto)	00724310 C call -> sub_006E5FB0
+00724310|parameter|ECX:4 (auto)	006E5FB0|parameter|ECX:4 (auto)	00724310 C call -> sub_006E5FB0
 00724360|parameter|ECX:4	006E6060|parameter|ECX:4 (auto)	00724360 C call -> FUN_006e6060
 00724360|local|Stack[-0x24]:1	006E6060|parameter|Stack[0x4]:4	00724360 C call -> FUN_006e6060
 00724360|parameter|ECX:4	006E6060|parameter|ECX:4 (auto)	00724360 C call -> FUN_006e6060

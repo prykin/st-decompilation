@@ -13,9 +13,10 @@ SIDTy * __cdecl CreateSID(void)
 {
   SIDTy *this;
   int iVar1;
-  undefined4 *puVar3;
+  int iVar2;
+  SIDTy_Record_00BC_01FB *pSVar3;
   SpriteClassTy *this_00;
-  undefined4 *puVar4;
+  SIDTy_Record_00BC_01FB *pSVar5;
 
   this = (SIDTy *)FUN_006b04d0(0x1dd8);
   if (this != nullptr) {
@@ -27,7 +28,7 @@ SIDTy * __cdecl CreateSID(void)
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->array_00BC[0].field_00B8;
     iVar1 = 0xd;
     do {
       SpriteClassTy::SpriteClassTy(this_00 + -1);
@@ -41,20 +42,24 @@ SIDTy * __cdecl CreateSID(void)
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
-    puVar3 = (undefined4 *)&this->field_0xbc;
+    pSVar3 = this->array_00BC;
     do {
-      puVar4 = puVar3;
-      memset(puVar4, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar4 = (undefined4 *)((byte *)puVar4 + 0x24);
+      pSVar5 = pSVar3;
+      for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
+        *(undefined4 *)pSVar5 = 0;
+        pSVar5 = (SIDTy_Record_00BC_01FB *)&pSVar5->field_0x4;
+      }
+      *(undefined2 *)pSVar5 = 0;
       iVar1 = iVar1 + -1;
-      puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
+      pSVar5->field_0x2 = 0;
+      pSVar3 = pSVar3 + 1;
     } while (iVar1 != 0);
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1A60);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->array_00BC[0xc].field_01E0);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1B01);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1B92);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1C23);
     this->vtable = &SIDTyVTable;
-    this->field_1A5F = 0;
+    this->array_00BC[0xc].field_01DF = 0;
     this->field_1AF1 = 0;
     this->field_1AF5 = 0;
     this->field_1AF9[0] = 0;

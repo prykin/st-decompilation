@@ -397,7 +397,7 @@ undefined4 __fastcall st::fn_005F07A0(STBoatC *param_1)
   short local_8;
   short local_6;
 
-  if ((param_1->field_024F == '\0') && (0 < (short)param_1->field_0246)) {
+  if ((param_1->field_024F == '\0') && (0 < param_1->field_0246)) {
     local_EAX_72 = st::fn_00404D3B(param_1->field_0242,*(short *)&param_1->field_0x244,
                                       param_1->field_0246 + -1);
     if (local_EAX_72 == 0) {
@@ -475,7 +475,7 @@ bool __fastcall st::fn_005F0A30(STSprGameObjC *param_1)
 
   uVar5 = (uint)(byte)param_1->field_024F;
   if ((param_1->field_024F != 0) &&
-     (uVar5 = (uint)(ushort)param_1->field_0246, 0 < (short)param_1->field_0246)) {
+     (uVar5 = (uint)(ushort)param_1->field_0246, 0 < param_1->field_0246)) {
     uVar5 = st::fn_00404D3B(param_1->field_0242,param_1->field_0244,(short)(uVar5 - 1));
     if (uVar5 == 0) {
       sVar1 = param_1->field_0242;

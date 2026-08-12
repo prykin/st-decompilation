@@ -7,7 +7,11 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=00522E80; family_names=IntercomPanelTy::GetMessage; ret4=7;
-   direct_offsets={10:2,14:2,18:2,1c:0} */
+   direct_offsets={10:2,14:2,18:2,1c:0}
+
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/IntercomPanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *message)
 
@@ -69,7 +73,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
   if (SVar2 < MESS_BEHPANELTY_C0A0) {
     if (SVar2 != MESS_SHARED_C09F) {
       if (SVar2 == MESS_ID_NONE) {
-        if (this_00->field_0172 == 3) {
+        if (this_00->field_0172 == CASE_3) {
           iVar7 = this_00->field_018C;
           if (this_00->field_0044 < iVar7) {
             this_00->field_0044 = this_00->field_0044 + 5;
@@ -82,7 +86,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
             }
             pAVar3 = this_00->field_0180;
             this_00->field_0044 = iVar7;
-            this_00->field_0172 = 1;
+            this_00->field_0172 = CASE_1;
             local_8dc[0] = (AnonShape_00710790_4CBB90D4 *)0x1;
             local_8dc[1] = (AnonShape_00710790_4CBB90D4 *)0x9;
             local_8dc[2] = pAVar3;
@@ -116,7 +120,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
-        if (this_00->field_0172 != 4) {
+        if (this_00->field_0172 != CASE_4) {
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
@@ -126,7 +130,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
         }
         if (this_00->field_0044 <= iVar7) {
           this_00->field_0044 = iVar7;
-          this_00->field_0172 = 2;
+          this_00->field_0172 = CASE_2;
           this_00->field_017C = 0;
         }
         Library::DKW::DDX::FUN_006b3640
@@ -188,7 +192,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }
-  if (this_00->field_0172 == 1) {
+  if (this_00->field_0172 == CASE_1) {
     SwitchIntercomPanel(this_00,0);
   }
   g_currentExceptionFrame = local_50.previous;

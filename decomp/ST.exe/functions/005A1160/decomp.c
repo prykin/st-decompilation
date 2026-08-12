@@ -82,14 +82,14 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
     *(undefined1 *)puVar5 = 0xff;
     puVar5 = (undefined4 *)((int)puVar5 + 1);
   }
-  ccFntTy::SetSurf(this_01->field_1A73,(int)this_01->field_1AC0,0,0,0x16,0x1b8,0xf0);
+  ccFntTy::SetSurf(this_01->array_00BC[0xc].field_01F3,(int)this_01->field_1AC0,0,0,0x16,0x1b8,0xf0);
   iVar15 = -1;
   iVar14 = -1;
   uVar6 = 2;
   iVar13 = -1;
   iVar12 = -2;
   pcVar4 = LoadResourceString(0x25bd,g_hINSTANCE_00807618);
-  ccFntTy::WrTxt(this_01->field_1A73,pcVar4,iVar12,iVar13,uVar6,iVar14,iVar15);
+  ccFntTy::WrTxt(this_01->array_00BC[0xc].field_01F3,pcVar4,iVar12,iVar13,uVar6,iVar14,iVar15);
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1ABC);
   pSVar9 = &local_2c;
   for (iVar12 = 8; iVar12 != 0; iVar12 = iVar12 + -1) {
@@ -102,7 +102,7 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   local_2c.id = MESS_FSGSTY_6957;
   local_4c[3] = 2;
   local_4c[4] = 0x6956;
-  this_00 = this_01->field_1A5B->field_02E6;
+  this_00 = (this_01->array_00BC[0xc].field_01DB)->field_02E6;
   local_2c.unknown_08 = local_4c[2];
   if (this_00 != nullptr) {
     MMsgTy::SetMessage(this_00,0x25b7,'\x01',&local_2c.unknown_00,local_4c,nullptr,local_8

@@ -3,12 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   SpecPanelTy::SwitchPanel */
+   SpecPanelTy::SwitchPanel
+
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/SpecPanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
 
 {
-  short sVar1;
+  SpecPanelTy_field_0172State SVar1;
   SpecPanelTy *pSVar3;
   int errorCode;
   int iVar4;
@@ -30,8 +34,8 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  sVar1 = local_8->field_0172;
-  if (sVar1 == 1) {
+  SVar1 = local_8->field_0172;
+  if (SVar1 == CASE_1) {
     if (param_1 != 0) {
       g_currentExceptionFrame = local_4c.previous;
       return;
@@ -50,12 +54,12 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
     (*(code *)pSVar3->field_0000->field_0018)(0);
   }
   else {
-    if (sVar1 == 2) {
+    if (SVar1 == CASE_2) {
       if (param_1 == 0) {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      local_8->field_0172 = 3;
+      local_8->field_0172 = CASE_3;
       thunk_FUN_005252c0(CASE_AF);
       if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_4c.previous;
@@ -65,13 +69,13 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    if (sVar1 != 3) {
+    if (SVar1 != CASE_3) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
   }
   if (param_1 == 0) {
-    pSVar3->field_0172 = 4;
+    pSVar3->field_0172 = CASE_4;
     thunk_FUN_005252c0(CASE_B0);
   }
   g_currentExceptionFrame = local_4c.previous;

@@ -51,15 +51,7 @@ byte __thiscall STParticleC::sub_0062B4A0(STParticleC *this)
     local_8 = iVar6;
   }
   iVar2 = this->field_004E;
-  sVar3 = (short)(iVar2 >> 0x1f);
-  if (iVar2 < 0) {
-    local_10 = (short)(((short)(iVar2 / 200) + sVar3) -
-                      (short)((longlong)iVar2 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    local_10 = (int)(short)(((short)(iVar2 / 200) + sVar3) -
-                           (short)((longlong)iVar2 * 0x51eb851f >> 0x3f));
-  }
+  local_10 = STBiasedDiv16(iVar2, 200); /* exact signed 16-bit grid-index division */
   if (iVar1 < 0) {
     iVar6 = iVar6 + -1;
   }

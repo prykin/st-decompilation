@@ -62,8 +62,12 @@ SettMapMTy * __cdecl st::fn_005D4B40(void)
     this->field_1C63 = 0;
     this->field_1E27 = 0;
     this->field_1E2B = nullptr;
-    *(undefined4 *)&this->field_0x21e1 = 0;
-    *(undefined2 *)&this->field_0x21e5 = 0;
+    this->field_21E1 = 0;
+    this->field_21E2 = 0;
+    this->field_21E3 = 0;
+    this->field_21E4 = 0;
+    this->field_21E5 = 0;
+    this->field_21E6 = 0;
     this->field_21E7 = 0;
     memset(&this->field_0x2161, 0, 0x80); /* compiler bulk-zero initialization */
     iVar1 = 0;
@@ -196,8 +200,12 @@ SettMapTy * __cdecl st::fn_005D77A0(void)
     this->field_1C63 = 0;
     this->field_1E27 = 0;
     this->field_1E2B = nullptr;
-    *(undefined4 *)&this->field_0x21e1 = 0;
-    *(undefined2 *)&this->field_0x21e5 = 0;
+    this->field_21E1 = 0;
+    this->field_21E2 = 0;
+    this->field_21E3 = 0;
+    this->field_21E4 = 0;
+    this->field_21E5 = 0;
+    this->field_21E6 = 0;
     this->field_21E7 = 0;
     memset(&this->field_0x2161, 0, 0x80); /* compiler bulk-zero initialization */
     iVar1 = 0;

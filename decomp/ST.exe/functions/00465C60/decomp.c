@@ -13,7 +13,19 @@
    00466FED RET 0x4 | 004674DE RET 0x4 | 00467756 RET 0x4 | 0046776F RET 0x4 | 00467C9F RET 0x4 |
    004681EC RET 0x4 | 0046833D RET 0x4 | 0046858A RET 0x4 | 004685A3 RET 0x4 | 00468810 RET 0x4 |
    0046889D RET 0x4 | 00468B1B RET 0x4 | 00468C69 RET 0x4 | 00468D28 RET 0x4 | 00468FCE RET 0x4 |
-   004693E2 RET 0x4 | 00469754 RET 0x4 | 004698B3 RET 0x4 | 0046998F RET 0x4 | 00469A02 RET 0x4 */
+   004693E2 RET 0x4 | 00469754 RET 0x4 | 004698B3 RET 0x4 | 0046998F RET 0x4 | 00469A02 RET 0x4
+
+   [STSwitchEnumApplier] Switch target field_04D9 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_04D9State. Cases:
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_04D9 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_04D9State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_04D9 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_04D9State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1)
 
@@ -168,7 +180,7 @@ cf_common_exit_004699DA:
       if (local_EAX_56 == -1) {
         return -1;
       }
-      if (this->field_082E != 0) {
+      if (this->field_082E != ~CASE_FFFFFFFF) {
         return 2;
       }
       if (this->field_04BD == 1) {
@@ -373,7 +385,7 @@ cf_common_exit_00468C49:
       if (local_EAX_626 == -1) {
         return -1;
       }
-      if (this->field_082E != 0) {
+      if (this->field_082E != ~CASE_FFFFFFFF) {
         return 2;
       }
       if (this->field_04BD == 1) {
@@ -447,7 +459,7 @@ cf_common_exit_00465E5A:
         if (local_EAX_3064 == -1) {
           return -1;
         }
-        if (this->field_082E != 0) {
+        if (this->field_082E != ~CASE_FFFFFFFF) {
           return 2;
         }
         if ((this->field_04BD != 1) && (this->field_04C1 != 1)) {
@@ -685,7 +697,7 @@ LAB_00468c40:
         if (local_EAX_3933 == -1) {
           return -1;
         }
-        if (this->field_082E != 0) {
+        if (this->field_082E != ~CASE_FFFFFFFF) {
           return 2;
         }
         if (this->field_04BD == 1) {
@@ -1054,7 +1066,7 @@ cf_error_exit_004660E9:
             if (local_EAX_9594 == -1) {
               return -1;
             }
-            if (this->field_082E != 0) {
+            if (this->field_082E != ~CASE_FFFFFFFF) {
               return 2;
             }
             if ((this->field_04BD != 1) && (this->field_04C1 != 1)) {
@@ -1184,7 +1196,7 @@ LAB_00468493:
           }
           if (iVar8 != 10) {
             if (iVar8 == 0xb) {
-              if (this->field_04D9 == 0) {
+              if (this->field_04D9 == CASE_0) {
                 iVar16 = (ushort)(this->field_04A9 * 200) + 300;
                 iVar8 = STReplaceLowWord((uint32_t)(iVar16), (uint16_t)(this->field_04A7 + 1)) * 0xc9;
                 iVar23 = STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_04A5 + 1));
@@ -1194,9 +1206,9 @@ LAB_00468493:
                                    CONCAT22((short)((uint)(iVar23 * 0x19) >> 0x10),this->field_0045)
                                    ,(short)(iVar23 * 0xc9),(short)iVar8,iVar16);
                 this->field_04CB = uVar5;
-                this->field_04D9 = 1;
+                this->field_04D9 = CASE_1;
               }
-              if (this->field_04D9 == 1) {
+              if (this->field_04D9 == CASE_1) {
                 uVar9 = sub_004176C0(this,this->field_04CB);
                 uVar9 = sub_00417910(this,(short)uVar9);
                 if (uVar9 == 0xffffffff) {
@@ -1210,18 +1222,18 @@ LAB_00468493:
                   goto cf_error_exit_004660E9;
                 }
                 if (uVar9 == 0) {
-                  this->field_04D9 = 2;
+                  this->field_04D9 = CASE_2;
                   iVar8 = this->vfunc_D8();
                   return (-(uint)(iVar8 != 0) & 0xfffffffd) + 2;
                 }
               }
-              if (this->field_04D9 == 2) {
+              if (this->field_04D9 == CASE_2) {
                 sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                              (this->field_04A5 + 1) * 0xc9,(this->field_04A7 + 1) * 0xc9,
                              this->field_04A9 * 200 + 300,this->field_0061);
-                this->field_04D9 = 3;
+                this->field_04D9 = CASE_3;
               }
-              if (this->field_04D9 == 3) {
+              if (this->field_04D9 == CASE_3) {
                 local_10 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = nullptr;
@@ -1296,7 +1308,7 @@ LAB_00468493:
                 }
                 if (local_10 == 0) {
                   *(undefined4 *)&this->field_0x4d5 = 0xc;
-                  this->field_04D9 = 0;
+                  this->field_04D9 = CASE_0;
                   iVar8 = this->vfunc_D8();
                   return (-(uint)(iVar8 != 0) & 0xfffffffd) + 2;
                 }
@@ -1308,7 +1320,7 @@ LAB_00468493:
                 iVar8 = *(int *)&this->field_0x4d1 + 1;
                 *(int *)&this->field_0x4d1 = iVar8;
                 if (0x45 < iVar8) {
-                  if (this->field_04D9 == 0) {
+                  if (this->field_04D9 == CASE_0) {
                     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                     iVar16 = STReplaceLowWord((uint32_t)(in_EDX), (uint16_t)(this->field_04C7 * 0xc9)) + 100;
                     uVar5 = (*this->vtable->vfunc_10)
@@ -1318,9 +1330,9 @@ LAB_00468493:
                                        STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_04C9 * 200))
                                        + 100);
                     this->field_04CB = uVar5;
-                    this->field_04D9 = 1;
+                    this->field_04D9 = CASE_1;
                   }
-                  if (this->field_04D9 == 1) {
+                  if (this->field_04D9 == CASE_1) {
                     uVar9 = sub_004176C0(this,this->field_04CB);
                     uVar9 = sub_00417910(this,(short)uVar9);
                     if (uVar9 == 0xffffffff) {
@@ -1335,17 +1347,17 @@ LAB_00468493:
                       goto cf_error_exit_004660E9;
                     }
                     if (uVar9 == 0) {
-                      this->field_04D9 = 2;
+                      this->field_04D9 = CASE_2;
                       goto cf_common_exit_004699E9;
                     }
                   }
-                  if (this->field_04D9 == 2) {
+                  if (this->field_04D9 == CASE_2) {
                     sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                                  this->field_04C5 * 0xc9 + 100,this->field_04C7 * 0xc9 + 100,
                                  this->field_04C9 * 200 + 100,this->field_0061);
-                    this->field_04D9 = 3;
+                    this->field_04D9 = CASE_3;
                   }
-                  if (this->field_04D9 == 3) {
+                  if (this->field_04D9 == CASE_3) {
                     local_10 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,&local_18);
                     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_1 = nullptr;
@@ -1625,7 +1637,7 @@ LAB_004692be:
               if (((this->field_0047 == this->field_04C5) && (this->field_0049 == this->field_04C7))
                  && (this->field_004B == this->field_04C9)) {
                 *(undefined4 *)&this->field_0x4d5 = 0xb;
-                this->field_04D9 = 0;
+                this->field_04D9 = CASE_0;
                 iVar8 = this->vfunc_D8();
                 return (-(uint)(iVar8 != 0) & 0xfffffffd) + 2;
               }
@@ -1685,7 +1697,7 @@ LAB_004692be:
           if (local_EAX_10545 == -1) {
             return -1;
           }
-          if (this->field_082E != 0) {
+          if (this->field_082E != ~CASE_FFFFFFFF) {
             return 2;
           }
           if (this->field_04BD == 1) {
@@ -1872,7 +1884,7 @@ LAB_004685d3:
         if (local_EAX_6909 == -1) {
           return -1;
         }
-        if (this->field_082E != 0) {
+        if (this->field_082E != ~CASE_FFFFFFFF) {
           return 2;
         }
         if (this->field_04BD == 1) {

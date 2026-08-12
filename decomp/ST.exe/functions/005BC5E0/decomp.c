@@ -16,11 +16,12 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
   ushort uVar2;
   STMessageId SVar3;
   StartSystemTy *pSVar4;
-  STMessageArg SVar5;
-  CursorClassTy *pCVar7;
+  DWORD DVar5;
+  STMessageArg SVar6;
+  CursorClassTy *pCVar8;
   PrividerTy *this_00;
-  undefined1 uVar8;
-  DWORD DVar9;
+  undefined1 uVar9;
+  DWORD DVar9_mg0;
   int local_EAX_61;
   int iVar11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -51,8 +52,8 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
   uint local_8;
 
   local_c = this;
-  DVar9 = STAppC::sub_006E51B0(this->field_0010);
-  this->field_0061 = DVar9;
+  DVar9_mg0 = STAppC::sub_006E51B0(this->field_0010);
+  this->field_0061 = DVar9_mg0;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   local_EAX_61 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
@@ -112,29 +113,32 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
           }
           goto cf_common_exit_005BCF7F;
         }
-        uVar8 = StartSystemTy::sub_005DA940(g_startSystem_0081176C,this_00->field_1A61);
+        uVar9 = StartSystemTy::sub_005DA940
+                          (g_startSystem_0081176C,this_00->array_00BC[0xc].field_01E1);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        if (CONCAT31(extraout_var,uVar8) == 0) {
-          this_00->field_1A71 = uVar8;
-          iVar11 = thunk_FUN_005da980(this_00->field_1A61);
+        if (CONCAT31(extraout_var,uVar9) == 0) {
+          iVar11 = this_00->array_00BC[0xc].field_01E1;
+          this_00->array_00BC[0xc].field_01F1 = uVar9;
+          iVar11 = thunk_FUN_005da980(iVar11);
           if ((iVar11 == 0) && (iVar11 = thunk_FUN_005daa90(), iVar11 == 0)) {
             DAT_0080877e = 0;
             CloseButtons(this_00,'\0');
-            if (this_00->field_1A5B->field_02E6 != nullptr) {
+            pSVar4 = this_00->array_00BC[0xc].field_01DB;
+            if (pSVar4->field_02E6 != nullptr) {
               local_18 = 0x1000000;
               local_14 = 0;
               local_10 = 0;
               local_1c = 0x10101;
-              MMsgTy::thunk_FUN_005b8f40(this_00->field_1A5B->field_02E6,&local_1c);
+              MMsgTy::thunk_FUN_005b8f40(pSVar4->field_02E6,&local_1c);
             }
             this_00->field_0065 = CASE_5;
-            this_00->field_1A60 = 1;
+            this_00->array_00BC[0xc].field_01E0 = 1;
           }
           goto cf_common_exit_005BCF7F;
         }
 LAB_005bccb9:
         this_00->field_004D = 0x6951;
-        this_00->GetMessage((int)&this_00->field_0x3d);
+        this_00->GetMessage((STMessage *)&this_00->field_0x3d);
         goto cf_common_exit_005BCF7F;
       }
       if (SVar3 == MESS_SHARED_6501) goto switchD_005bc9da_caseD_6949;
@@ -155,23 +159,26 @@ LAB_005bccb9:
           FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1C8A);
         }
         else if (SVar3 == MESS_SHARED_64FF) {
-          this_00->field_1A71 = 0;
+          this_00->array_00BC[0xc].field_01F1 = 0;
           iVar11 = thunk_FUN_005daa90();
           if (iVar11 == 0) {
             this_00->field_0031 = 0;
+            uVar13 = this_00->array_00BC[0xc].field_01F3;
             puVar1 = &this_00->field_0x1d;
             this_00->field_002D = 0x20;
-            FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
+            FUN_006e6080(this_00,2,uVar13,(undefined4 *)puVar1);
             this_00->field_002D = 0x28;
             uVar19 = *(uint *)(g_startSystem_0081176C->field_068E + 4);
+            uVar13 = this_00->array_00BC[0xc].field_01F3;
             this_00->field_0031 = uVar19 & ((int)uVar19 < 0) - 1;
-            FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
+            FUN_006e6080(this_00,2,uVar13,(undefined4 *)puVar1);
             if (0 < *(int *)(g_startSystem_0081176C->field_068E + 4)) {
+              uVar13 = this_00->array_00BC[0xc].field_01F3;
               this_00->field_002D = 0x20;
               this_00->field_0031 = 1;
-              FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
+              FUN_006e6080(this_00,2,uVar13,(undefined4 *)puVar1);
             }
-            pSVar4 = this_00->field_1A5B;
+            pSVar4 = this_00->array_00BC[0xc].field_01DB;
             if (pSVar4->field_02E6 != nullptr) {
               memset(&local_48, 0, 0x1a); /* compiler bulk-zero initialization */
               STPiece<2,2>(local_48) = ((*(int *)(g_startSystem_0081176C->field_068E + 4) < 1) - 1 & 2) - 1;
@@ -182,7 +189,7 @@ LAB_005bccb9:
         goto cf_common_exit_005BCF7F;
       }
     }
-    StartSystemTy::InitChat(this_00->field_1A5B);
+    StartSystemTy::InitChat(this_00->array_00BC[0xc].field_01DB);
     this_00->field_0045 = 0x200;
     this_00->field_0049 = 0;
     this_00->field_004D = message->id;
@@ -199,7 +206,7 @@ LAB_005bccb9:
                    ((RecoveredSourceFamily_dibcopy *)this_00->field_1C82)->field_0004,0x13,0);
       ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)this_00->field_1C82,0,4,
                        (uint)(message->arg1).words.high,*(int *)(this_00->field_1C82 + 2) + -4,0x13);
-      if (this_00->field_1A5F == '\0') {
+      if (this_00->array_00BC[0xc].field_01DF == '\0') {
         iVar11 = g_startSystem_0081176C->field_068A;
       }
       else {
@@ -216,13 +223,14 @@ LAB_005bccb9:
                  uVar19 + 0x67);
       break;
     case MESS_SIDTY_8163:
-      SVar5 = message->arg0;
-      this_00->field_1A71 = 0;
-      this_00->field_1A61 = SVar5;
+      SVar6 = message->arg0;
+      this_00->array_00BC[0xc].field_01F1 = 0;
+      this_00->array_00BC[0xc].field_01E1 = SVar6;
       break;
     case MESS_OPTPANELTY_8164:
       MMMObjTy::PaintSlBut
-                ((MMMObjTy *)this_00,(RecoveredRecord_MMMObjTy_005B6560 *)&this_00->field_1A77,
+                ((MMMObjTy *)this_00,
+                 (RecoveredRecord_MMMObjTy_005B6560 *)&this_00->array_00BC[0xc].field_01F7,
                  (int)message,0);
       break;
     case MESS_OPTPANELTY_8165:
@@ -257,14 +265,14 @@ LAB_005bccb9:
     DAT_0080877e = 1;
     thunk_FUN_005b6350(this_00,0x6942,(message->arg0).u32,0);
     CloseButtons(this_00,'\x01');
-    pMVar14 = this_00->field_1A5B->field_02E6;
+    pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
     goto cf_common_exit_005BCD75;
   case MESS_FSGSTY_6949:
 switchD_005bc9da_caseD_6949:
-    uVar8 = StartSystemTy::sub_005DA940(g_startSystem_0081176C,this_00->field_1A61);
+    uVar9 = StartSystemTy::sub_005DA940(g_startSystem_0081176C,this_00->array_00BC[0xc].field_01E1);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    if (CONCAT31(extraout_var_00,uVar8) != 0) goto LAB_005bccb9;
-    iVar11 = thunk_FUN_005da980(this_00->field_1A61);
+    if (CONCAT31(extraout_var_00,uVar9) != 0) goto LAB_005bccb9;
+    iVar11 = thunk_FUN_005da980(this_00->array_00BC[0xc].field_01E1);
     if (iVar11 != 0) break;
     if ((int)this_00->field_1C92->elementSize < 1) {
       uVar13 = 0;
@@ -274,7 +282,7 @@ switchD_005bc9da_caseD_6949:
     }
     iVar11 = thunk_FUN_005dab70(0,uVar13);
     if (iVar11 != 0) {
-      pMVar14 = this_00->field_1A5B->field_02E6;
+      pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
       if (pMVar14 != nullptr) {
         MMsgTy::SetMessage(pMVar14,0x2134,'\0',nullptr,nullptr,nullptr
                            ,0,0);
@@ -284,24 +292,25 @@ switchD_005bc9da_caseD_6949:
     DAT_0080877e = 1;
     thunk_FUN_005b6350(this_00,0x611f,(-(uint)(message->id != MESS_SHARED_6501) & 8) + 4,0x11);
     CloseButtons(this_00,'\x01');
-    pMVar14 = this_00->field_1A5B->field_02E6;
+    pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
     goto cf_common_exit_005BCD75;
   case 0x694e:
-    iVar11 = thunk_FUN_005dab70(this_00->field_1A61,&CHAR_00h_008016a0);
+    iVar11 = thunk_FUN_005dab70(this_00->array_00BC[0xc].field_01E1,&CHAR_00h_008016a0);
     if (iVar11 == 0) {
-      this_00->field_1A71 = 1;
-      this_00->field_1A69 = this_00->field_0061;
-      this_00->field_1A6D = 0;
-      pCVar7 = g_cursorClass_00802A30;
+      DVar5 = this_00->field_0061;
+      this_00->array_00BC[0xc].field_01F1 = 1;
+      this_00->array_00BC[0xc].field_01E9 = DVar5;
+      this_00->array_00BC[0xc].field_01ED = 0;
+      pCVar8 = g_cursorClass_00802A30;
       if (g_cursorClass_00802A30 != nullptr) {
         iVar11 = g_cursorClass_00802A30->field_00C9;
         iVar16 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_5;
-        pCVar7->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(pCVar7,CASE_0,iVar16,iVar11);
-        CursorClassTy::DrawSprite(pCVar7,pCVar7->field_00C5,pCVar7->field_00C9);
-        pCVar7->field_00D2 = 0;
-        pCVar7->field_04DF = -1;
+        pCVar8->field_0494 = 0xffff;
+        CursorClassTy::SetGCType(pCVar8,CASE_0,iVar16,iVar11);
+        CursorClassTy::DrawSprite(pCVar8,pCVar8->field_00C5,pCVar8->field_00C9);
+        pCVar8->field_00D2 = 0;
+        pCVar8->field_04DF = -1;
       }
     }
     break;
@@ -309,49 +318,51 @@ switchD_005bc9da_caseD_6949:
     DAT_0080877e = 1;
     thunk_FUN_005b6350(this_00,0x610a,0,0);
     CloseButtons(this_00,'\x01');
-    pMVar14 = this_00->field_1A5B->field_02E6;
+    pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
 cf_common_exit_005BCD75:
     if (pMVar14 != nullptr) {
       MMsgTy::HidePanel(pMVar14,1,0,1);
     }
     break;
   case MESS_PRIVIDERTY_6952:
-    this_00->field_1A71 = 0;
-    pCVar7 = g_cursorClass_00802A30;
+    this_00->array_00BC[0xc].field_01F1 = 0;
+    pCVar8 = g_cursorClass_00802A30;
     DAT_0080877e = 1;
     if (g_cursorClass_00802A30 != nullptr) {
       iVar11 = g_cursorClass_00802A30->field_00C9;
       iVar16 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
-      pCVar7->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(pCVar7,CASE_0,iVar16,iVar11);
-      CursorClassTy::DrawSprite(pCVar7,pCVar7->field_00C5,pCVar7->field_00C9);
-      pCVar7->field_00D2 = 0;
-      pCVar7->field_04DF = -1;
+      pCVar8->field_0494 = 0xffff;
+      CursorClassTy::SetGCType(pCVar8,CASE_0,iVar16,iVar11);
+      CursorClassTy::DrawSprite(pCVar8,pCVar8->field_00C5,pCVar8->field_00C9);
+      pCVar8->field_00D2 = 0;
+      pCVar8->field_04DF = -1;
     }
-    if (this_00->field_1A5F == '\0') {
+    if (this_00->array_00BC[0xc].field_01DF == '\0') {
       thunk_FUN_005b6350(this_00,0x6942,(message->arg0).u32,0);
       CloseButtons(this_00,'\x01');
-      pMVar14 = this_00->field_1A5B->field_02E6;
+      pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
       if (pMVar14 != nullptr) {
         MMsgTy::HidePanel(pMVar14,1,0,1);
       }
     }
     else {
       CloseButtons(this_00,'\0');
-      if (this_00->field_1A5B->field_02E6 != nullptr) {
+      pSVar4 = this_00->array_00BC[0xc].field_01DB;
+      if (pSVar4->field_02E6 != nullptr) {
         local_2c = 0x10100;
         local_24 = 0;
         local_28 = 0x100;
         local_20 = 0;
-        MMsgTy::thunk_FUN_005b8f40(this_00->field_1A5B->field_02E6,&local_2c);
+        MMsgTy::thunk_FUN_005b8f40(pSVar4->field_02E6,&local_2c);
       }
+      uVar19 = this_00->field_1C8A;
       this_00->field_0065 = CASE_5;
-      this_00->field_1A60 = 0;
+      this_00->array_00BC[0xc].field_01E0 = 0;
       local_8 = 0xffffffff;
-      Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1C8A);
+      Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar19);
       FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x402f13,0x22e,0x2e,
-                   (ushort *)&this_00->field_1A5B->field_0140);
+                   (ushort *)&(this_00->array_00BC[0xc].field_01DB)->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x79,0x197);
       pHVar12 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
       if (pHVar12 == nullptr) {

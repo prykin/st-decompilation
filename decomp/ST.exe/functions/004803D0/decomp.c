@@ -16,11 +16,11 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *
     if (this->field_07CA != nullptr) {
       return 0;
     }
-    *(undefined2 *)&this->field_0x3ba = *(undefined2 *)&this->field_0x44b;
+    this->field_03BA = this->field_044B;
     *(undefined2 *)&this->field_0x3be = *(undefined2 *)&this->field_0x44f;
-    *(undefined2 *)&this->field_0x3bc = *(undefined2 *)&this->field_0x44d;
+    this->field_03BC = this->field_044D;
     *(undefined4 *)&this->field_0x3c0 = *(undefined4 *)&this->field_0x451;
-    this->field_06EB = *(undefined4 *)&this->field_0x451;
+    *(undefined4 *)&this->field_0x6eb = *(undefined4 *)&this->field_0x451;
     this->field_06EF = 0;
   }
   iVar2 = this->field_06EF;

@@ -34,9 +34,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     }
     local_8 = Library::DKW::LIB::MemAlloc(0x7a);
     thunk_FUN_00639bf0(this,(undefined4 *)local_8);
-    STPlaySystemC::SaveObjData
-              (g_playSystem_00802A38,STField<int *>(this,0x18),local_8,
-               (AnonShape_0060EA30_DCEB68AD *)0x7a);
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,STField<int *>(this,0x18),local_8,0x7a);
     FreeAndNull(&local_8);
     return 0;
   }
@@ -129,25 +127,9 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
                             (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
     }
     iVar8 = STField<int>(this,0x27e);
-    sVar3 = (short)(iVar8 >> 0x1f);
-    if (iVar8 < 0) {
-      iVar8 = (short)(((short)(iVar8 / 0xc9) + sVar3) - (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
-                          (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
-    }
+    iVar8 = STBiasedDiv16(iVar8, 0xc9); /* exact signed 16-bit grid-index division */
     iVar6 = STField<int>(this,0x27a);
-    sVar3 = (short)(iVar6 >> 0x1f);
-    if (iVar6 < 0) {
-      iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar3) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar3) -
-                          (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
-    }
+    iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
     if (((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
          (VisibleClassTy::sub_00558C00
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar8,
@@ -230,25 +212,9 @@ joined_r0x00639236:
                             (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
     }
     iVar8 = STField<int>(this,0x27e);
-    sVar3 = (short)(iVar8 >> 0x1f);
-    if (iVar8 < 0) {
-      iVar8 = (short)(((short)(iVar8 / 0xc9) + sVar3) - (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
-                          (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
-    }
+    iVar8 = STBiasedDiv16(iVar8, 0xc9); /* exact signed 16-bit grid-index division */
     iVar6 = STField<int>(this,0x27a);
-    sVar3 = (short)(iVar6 >> 0x1f);
-    if (iVar6 < 0) {
-      iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar3) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar3) -
-                          (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
-    }
+    iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar8,

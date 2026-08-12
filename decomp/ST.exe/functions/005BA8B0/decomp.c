@@ -48,7 +48,7 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   pcVar7 = g_startSystem_0081176C->field_0030;
   uVar6 = 0xffffffff;
   uVar5 = 0xfffffffe;
-  if (pPVar2->field_1A5F == '\x01') {
+  if (pPVar2->array_00BC[0xc].field_01DF == '\x01') {
     pcVar3 = LoadResourceString(0x26b4,g_hINSTANCE_00807618);
     StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,pcVar3,uVar5,uVar6,pcVar7,uVar8);
     g_currentExceptionFrame = local_4c.previous;
@@ -59,7 +59,7 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   if ((pPVar2->field_1C9A == nullptr) && (param_1 == '\0')) {
     MMMObjTy::OutEdProc((MMMObjTy *)g_dDXContext_0080759C,
                         (AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,0x79,0x197,
-                        0x22e,0x2e,&pPVar2->field_1A5B->field_0140);
+                        0x22e,0x2e,&(pPVar2->array_00BC[0xc].field_01DB)->field_0140);
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

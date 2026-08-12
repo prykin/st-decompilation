@@ -3,7 +3,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::UnLoadRC */
+   STBoatC::UnLoadRC
+
+   [STSwitchEnumApplier] Switch target field_0550 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0550State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_0550 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0550State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
 
@@ -108,8 +116,7 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
     this->field_0544 = 0;
     this->field_054C = CASE_0;
     this->field_00B7 = 3;
-    sub_00481520(this,(int)this->field_0396,(int)(short)this->field_0398,(short)this->field_039A + 1
-                );
+    sub_00481520(this,(int)this->field_0396,(int)this->field_0398,this->field_039A + 1);
   }
   else {
     SVar1 = this->field_054C;
@@ -250,7 +257,7 @@ cf_common_exit_0046E811:
       if (local_EAX_1434 == -1) {
         return -1;
       }
-      if ((this->field_082E != 0) || (this->field_0544 % 0x32 != 1)) {
+      if ((this->field_082E != ~CASE_FFFFFFFF) || (this->field_0544 % 0x32 != 1)) {
         return 2;
       }
       sVar19 = this->field_052C;
@@ -285,7 +292,7 @@ cf_common_exit_0046E811:
     }
     if (SVar1 != CASE_3) {
       if (SVar1 == CASE_4) {
-        if (this->field_0550 == 0) {
+        if (this->field_0550 == CASE_0) {
           iVar8 = (ushort)(this->field_0530 * 200) + 300;
           iVar13 = STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_052E + 1)) * 0xc9;
           iVar25 = STReplaceLowWord((uint32_t)(iVar13), (uint16_t)(this->field_052C + 1));
@@ -295,9 +302,9 @@ cf_common_exit_0046E811:
                              CONCAT22((short)((uint)(iVar25 * 0x19) >> 0x10),this->field_0045),
                              (short)(iVar25 * 0xc9),(short)iVar13,iVar8);
           this->field_0542 = uVar6;
-          this->field_0550 = 1;
+          this->field_0550 = CASE_1;
         }
-        if (this->field_0550 == 1) {
+        if (this->field_0550 == CASE_1) {
           uVar9 = sub_004176C0(this,this->field_0542);
           uVar9 = sub_00417910(this,(short)uVar9);
           if (uVar9 == 0xffffffff) {
@@ -311,18 +318,18 @@ cf_common_exit_0046E811:
             goto cf_error_exit_0046E857;
           }
           if (uVar9 == 0) {
-            this->field_0550 = 2;
+            this->field_0550 = CASE_2;
             iVar13 = this->vfunc_D8();
             return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
           }
         }
-        if (this->field_0550 == 2) {
+        if (this->field_0550 == CASE_2) {
           sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                        (this->field_052C + 1) * 0xc9,(this->field_052E + 1) * 0xc9,
                        this->field_0530 * 200 + 300,this->field_0061);
-          this->field_0550 = 3;
+          this->field_0550 = CASE_3;
         }
-        if (this->field_0550 == 3) {
+        if (this->field_0550 == CASE_3) {
           local_c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,&local_10);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 0;
@@ -398,7 +405,7 @@ cf_common_exit_0046E811:
             return 0xffff;
           }
           if (local_c == 0) {
-            this->field_0550 = 0;
+            this->field_0550 = CASE_0;
             this->field_054C = CASE_5;
             iVar13 = this->vfunc_D8();
             return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
@@ -411,7 +418,7 @@ cf_common_exit_0046E811:
           iVar13 = this->field_0548 + 1;
           this->field_0548 = iVar13;
           if (0x45 < iVar13) {
-            if (this->field_0550 == 0) {
+            if (this->field_0550 == CASE_0) {
               iVar13 = STReplaceLowWord((uint32_t)(iVar13), (uint16_t)(this->field_053E * 0xc9)) + 100;
               uVar6 = (*this->vtable->vfunc_10)
                                 (this->field_0041,this->field_0043,
@@ -419,9 +426,9 @@ cf_common_exit_0046E811:
                                  this->field_053C * 0xc9 + 100,(short)iVar13,
                                  (ushort)(this->field_0540 * 200) + 100);
               this->field_0542 = uVar6;
-              this->field_0550 = 1;
+              this->field_0550 = CASE_1;
             }
-            if (this->field_0550 == 1) {
+            if (this->field_0550 == CASE_1) {
               uVar9 = sub_004176C0(this,this->field_0542);
               uVar9 = sub_00417910(this,(short)uVar9);
               if (uVar9 == 0xffffffff) {
@@ -435,17 +442,17 @@ cf_common_exit_0046E811:
                 goto cf_error_exit_0046E857;
               }
               if (uVar9 == 0) {
-                this->field_0550 = 2;
+                this->field_0550 = CASE_2;
               }
             }
             else {
-              if (this->field_0550 == 2) {
+              if (this->field_0550 == CASE_2) {
                 sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                              this->field_053C * 0xc9 + 100,this->field_053E * 0xc9 + 100,
                              this->field_0540 * 200 + 100,this->field_0061);
-                this->field_0550 = 3;
+                this->field_0550 = CASE_3;
               }
-              if (this->field_0550 == 3) {
+              if (this->field_0550 == CASE_3) {
                 local_c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_10,&local_14);
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = 0;
@@ -654,7 +661,7 @@ LAB_0046e2c8:
         if (((this->field_0047 == this->field_053C) && (this->field_0049 == this->field_053E)) &&
            (this->field_004B == this->field_0540)) {
           this->field_054C = CASE_4;
-          this->field_0550 = 0;
+          this->field_0550 = CASE_0;
           iVar13 = this->vfunc_D8();
           return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
         }

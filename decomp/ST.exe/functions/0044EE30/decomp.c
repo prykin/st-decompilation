@@ -444,9 +444,11 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
                    STGridAt3D(g_worldGrid, sVar4, sVar7, sVar5).objects[0];
       }
       if (((local_24 == nullptr) ||
-          (*(AnonShape_005EFAE0_B406B78B **)&local_24->field_0x18 != this_00->field_06AF)) ||
+          (*(int *)&local_24->field_0x18 != *(int *)&this_00->field_0x6af)) ||
          (iVar30 = thunk_FUN_004b9d90(local_24), iVar30 == 0)) {
-        STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this_00->field_06AF,(int *)&local_24);
+        STPlaySystemC::sub_006E62D0
+                  (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this_00->field_0x6af,
+                   (int *)&local_24);
       }
       if (((local_24 != nullptr) &&
           (*(int *)&local_24->field_0x20 == 1000)) &&
@@ -607,7 +609,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       local_20->field_05F6 = local_34 + local_2c;
       local_20->field_05FA = local_38;
       STPlaySystemC::SaveObjData
-                (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_20,local_7c);
+                (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_20,(uint)local_7c);
       FreeAndNull(&local_44);
       FreeAndNull(&local_3c);
       FreeAndNull(&local_40);
@@ -1013,9 +1015,11 @@ LAB_00459f59:
                    STGridAt3D(g_worldGrid, sVar42, sVar5, sVar4).objects[0];
       }
       if (((local_28 == nullptr) ||
-          (*(AnonShape_005EFAE0_B406B78B **)&local_28->field_0x18 != this_00->field_06AF)) ||
+          (*(int *)&local_28->field_0x18 != *(int *)&this_00->field_0x6af)) ||
          (iVar30 = thunk_FUN_004b9d90(local_28), iVar30 == 0)) {
-        STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this_00->field_06AF,(int *)&local_28);
+        STPlaySystemC::sub_006E62D0
+                  (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this_00->field_0x6af,
+                   (int *)&local_28);
       }
       if (((local_28 != nullptr) &&
           (*(int *)&local_28->field_0x20 == 1000)) &&
@@ -6996,7 +7000,7 @@ cf_error_exit_0045AEE3:
   thunk_FUN_00417a00(this_00,0);
   if (*(int *)&local_1c->field_0xc == 0) {
     dVar15 = (message->arg0).u32;
-    this_00->field_06F3 = *(uint *)(dVar15 + 0x14);
+    this_00->field_06F3 = *(STBoatC_field_06F3State *)(dVar15 + 0x14);
     this_00->field_06F7 = *(STBoatC_field_06F7State *)(dVar15 + 0x18);
     iVar14 = *(int *)(dVar15 + 0x2a);
     if (iVar14 < 0) {
@@ -7161,7 +7165,7 @@ cf_error_exit_0045AEE3:
     this_00->field_0814 = this_00->field_0816 * 0xc9;
     if (((local_10 == nullptr) || (SVar41 = this_00->field_06F7, SVar41 == CASE_7)) ||
        ((SVar41 == CASE_13 || (SVar41 == CASE_1B)))) {
-      this_00->field_082E = 0xffffffff;
+      this_00->field_082E = CASE_FFFFFFFF;
       this_00->field_0836 = 4;
       this_00->field_0475 = this_00->field_0047;
       this_00->field_0477 = this_00->field_0049;
@@ -7175,7 +7179,7 @@ cf_error_exit_0045AEE3:
       this_00->field_05A0 = this_00->field_0030;
       this_00->field_05A2 = (AnonShape_005EFAE0_B406B78B *)local_10->field_0018;
       this_00->field_05A6 = nullptr;
-      this_00->field_05C4 = 7;
+      this_00->field_05C4 = CASE_7;
     }
     uVar17 = this_00->field_001C * 0x41c64e6d + 0x3039;
     this_00->field_001C = uVar17;
@@ -7210,7 +7214,7 @@ cf_error_exit_0045AEE3:
   }
   if (*(int *)&local_1c->field_0xc == 1) {
     dVar15 = (message->arg0).u32;
-    this_00->field_06F3 = *(uint *)(dVar15 + 0x14);
+    this_00->field_06F3 = *(STBoatC_field_06F3State *)(dVar15 + 0x14);
     this_00->field_06F7 = *(STBoatC_field_06F7State *)(dVar15 + 0x18);
     this_00->field_06FB = *(undefined4 *)(dVar15 + 0x32);
     this_00->field_06FF = *(undefined4 *)(dVar15 + 0x36);
@@ -7800,28 +7804,28 @@ switchD_0044fb10_default:
               (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2de);
   }
   switch(this_00->field_06F3) {
-  case 0:
+  case CASE_0:
     pcVar36 = &CHAR_0_007a9d88;
     break;
-  case 1:
+  case CASE_1:
     pcVar36 = &CHAR_1_007a4ffc;
     break;
-  case 2:
+  case CASE_2:
     pcVar36 = &CHAR_2_007aa028;
     break;
-  case 3:
+  case CASE_3:
     pcVar36 = &CHAR_3_007aa024;
     break;
-  case 4:
+  case CASE_4:
     pcVar36 = &CHAR_4_007aa020;
     break;
-  case 5:
+  case CASE_5:
     pcVar36 = &CHAR_5_007aa01c;
     break;
-  case 6:
+  case CASE_6:
     pcVar36 = &CHAR_6_007aa018;
     break;
-  case 7:
+  case CASE_7:
     pcVar36 = &CHAR_7_007aa014;
     break;
   default:
@@ -7956,8 +7960,10 @@ LAB_00450268:
     Library::Ourlib::ST3DSMAP::SprSetLevAfter
               (this_00->field_0211,this_00->field_01ED,*(int *)(local_30 + 0x1ed));
   }
-  if ((this_00->field_045D == CASE_F) && (this_00->field_0596 == 3)) {
-    iVar30 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this_00->field_058E,&local_30);
+  if ((this_00->field_045D == CASE_F) && (this_00->field_0596 == CASE_3)) {
+    iVar30 = STPlaySystemC::sub_006E62D0
+                       (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this_00->field_0x58e
+                        ,&local_30);
     if (iVar30 == -4) {
       local_EAX_5399 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x33c,0,0,"%s",

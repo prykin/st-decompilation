@@ -107,7 +107,7 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
         break;
       case MESS_TRACKBARCLASSTY_0062:
         if (DAT_0080fb6e == 0) {
-          if (local_18->field_006D == '\x01') {
+          if (local_18->field_006D == CASE_1) {
             thunk_FUN_005b66e0(local_18);
             uVar16 = 0xffffffff;
             pcVar18 = &CHAR_00h_0080ed16;
@@ -136,8 +136,8 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
         break;
       case MESS_SHARED_0064:
         iVar20 = 1;
-        if (local_18->field_006D != '\x01') {
-          local_18->field_006D = 5;
+        if (local_18->field_006D != CASE_1) {
+          local_18->field_006D = CASE_5;
           PlayScript(local_18);
           iVar23 = 0x1f;
           do {
@@ -316,15 +316,15 @@ LAB_005e496b:
           iVar20 = iVar20 + -1;
         } while (iVar20 != 0);
         PaintMTask(this_00);
-        this_00->field_006D = 3;
+        this_00->field_006D = CASE_3;
         Library::DKW::TBL::FUN_006afe40((int *)&this_00->field_0074,&this_00->field_0078->flags);
         PlayScript(this_00);
         thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                            this_00->field_005D,10,2);
         break;
       case 0x6204:
-        if (local_18->field_006D != '\x01') {
-          local_18->field_006D = 5;
+        if (local_18->field_006D != CASE_1) {
+          local_18->field_006D = CASE_5;
           PlayScript(local_18);
           iVar20 = 1;
           iVar23 = 0x1f;

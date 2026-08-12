@@ -55,11 +55,12 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
       puVar6 = puVar6 + 1;
     }
     *(undefined2 *)puVar6 = 0;
-    this_00->field_1A5F = param_1;
+    this_00->array_00BC[0xc].field_01DF = param_1;
     STField<undefined1>(puVar6,2) = 0;
     if (param_1 == '\x01') {
       local_1a1 = 0x2340;
-      if ((this_00->field_0065 != CASE_5) || (local_19d = 0, this_00->field_1A72 != '\0')) {
+      if ((this_00->field_0065 != CASE_5) ||
+         (local_19d = 0, this_00->array_00BC[0xc].field_01F2 != '\0')) {
         local_19d = 1;
       }
       local_194 = this_00->field_0008;
@@ -67,7 +68,8 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
       local_18c = 0x6943;
     }
     local_17a = 0x24bc;
-    if ((this_00->field_0065 != CASE_5) || (local_176 = 0, this_00->field_1A72 != '\0')) {
+    if ((this_00->field_0065 != CASE_5) ||
+       (local_176 = 0, this_00->array_00BC[0xc].field_01F2 != '\0')) {
       local_176 = 1;
     }
     local_230 = this_00->field_0008;
@@ -95,7 +97,7 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
     }
     local_205 = 2;
     local_22c = 2;
-    pSVar1 = this_00->field_1A5B;
+    pSVar1 = this_00->array_00BC[0xc].field_01DB;
     local_209 = local_230;
     local_16d = local_230;
     if (pSVar1->field_02E6 != nullptr) {
@@ -106,7 +108,7 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
       }
       *(undefined2 *)puVar6 = 0xffff;
       MMsgTy::SetPanel(pSVar1->field_02E6,0,(int)&local_264,0,0);
-      MMsgTy::StatePanel(this_00->field_1A5B->field_02E6,(int)local_68);
+      MMsgTy::StatePanel((this_00->array_00BC[0xc].field_01DB)->field_02E6,(int)local_68);
     }
     PaintPrivider(this_00,param_2);
     this_00->field_0065 = CASE_3;

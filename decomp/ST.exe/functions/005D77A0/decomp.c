@@ -11,11 +11,11 @@ SettMapTy * __cdecl CreateSettMap(void)
 {
   SettMapTy *this;
   int iVar1;
-  undefined4 *puVar2;
+  SettMapTy_Record_00BC_01FB *pSVar2;
   SpriteClassTy *this_00;
-  undefined4 *puVar3;
-  void **ppvVar4;
-  uint *puVar5;
+  SettMapTy_Record_00BC_01FB *pSVar3;
+  void **ppvVar5;
+  uint *puVar6;
   int local_8;
 
   this = (SettMapTy *)FUN_006b04d0(0x21fc);
@@ -29,7 +29,7 @@ SettMapTy * __cdecl CreateSettMap(void)
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->array_00BC[0].field_00B8;
     local_8 = 0xd;
     do {
       SpriteClassTy::SpriteClassTy(this_00 + -1);
@@ -44,14 +44,17 @@ SettMapTy * __cdecl CreateSettMap(void)
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
-    puVar2 = (undefined4 *)&this->field_0xbc;
+    pSVar2 = this->array_00BC;
     do {
-      puVar3 = puVar2;
-      memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
-      iVar1 = 0;
+      pSVar3 = pSVar2;
+      for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *(undefined4 *)pSVar3 = 0;
+        pSVar3 = (SettMapTy_Record_00BC_01FB *)&pSVar3->field_0x4;
+      }
+      *(undefined2 *)pSVar3 = 0;
+      pSVar3->field_0x2 = 0;
       local_8 = local_8 + -1;
-      puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
+      pSVar2 = pSVar2 + 1;
     } while (local_8 != 0);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x1c6b);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x1cfc);
@@ -60,8 +63,12 @@ SettMapTy * __cdecl CreateSettMap(void)
     this->field_1C63 = 0;
     this->field_1E27 = 0;
     this->field_1E2B = nullptr;
-    *(undefined4 *)&this->field_0x21e1 = 0;
-    *(undefined2 *)&this->field_0x21e5 = 0;
+    this->field_21E1 = 0;
+    this->field_21E2 = 0;
+    this->field_21E3 = 0;
+    this->field_21E4 = 0;
+    this->field_21E5 = 0;
+    this->field_21E6 = 0;
     this->field_21E7 = 0;
     memset(&this->field_0x2161, 0, 0x80); /* compiler bulk-zero initialization */
     iVar1 = 0;
@@ -75,15 +82,15 @@ SettMapTy * __cdecl CreateSettMap(void)
     iVar1 = 0;
     this->field_211D = 0;
     this->field_1F88 = 0;
-    puVar5 = this->field_20CC;
+    puVar6 = this->field_20CC;
     for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar5 = 0xffffffff;
-      puVar5 = puVar5 + 1;
+      *puVar6 = 0xffffffff;
+      puVar6 = puVar6 + 1;
     }
-    ppvVar4 = this->field_20F4;
+    ppvVar5 = this->field_20F4;
     for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *ppvVar4 = nullptr;
-      ppvVar4 = ppvVar4 + 1;
+      *ppvVar5 = nullptr;
+      ppvVar5 = ppvVar5 + 1;
     }
     this->field_1E1E = 0;
     this->field_1E22 = 0xffffffff;

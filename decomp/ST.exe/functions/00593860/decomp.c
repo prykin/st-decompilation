@@ -28,7 +28,7 @@ CampaignTy * __cdecl CreateCampaign(void)
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->field_00BB[0].field_00B9;
     iVar1 = 0xd;
     do {
       SpriteClassTy::SpriteClassTy(this_00 + -1);
@@ -42,7 +42,7 @@ CampaignTy * __cdecl CreateCampaign(void)
     this->field_009A = 0;
     memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
-    puVar3 = (undefined4 *)&this->field_0xbc;
+    puVar3 = &this->field_00BB[0].field_0001;
     do {
       puVar5 = puVar3;
       memset(puVar5, 0, 0x27); /* compiler bulk-zero initialization */
@@ -51,7 +51,7 @@ CampaignTy * __cdecl CreateCampaign(void)
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
     } while (iVar1 != 0);
     this->vtable = &CampaignTyVTable;
-    memset(&this->field_1A5F, 0, 0xb4); /* compiler bulk-zero initialization */
+    memset(&this->field_00BB[0xc].field_01E0, 0, 0xb4); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_1B13, 0, 0xb4); /* compiler bulk-zero initialization */
     this->field_1BC7 = 0;

@@ -179,7 +179,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   case 0x1d:
   case 0x3d:
     if ((g_bldBoatPanel_0080167C != nullptr) &&
-       (g_bldBoatPanel_0080167C->field_0172 == 2)) {
+       (g_bldBoatPanel_0080167C->field_0172 == CASE_2)) {
       ProdPanelTy::SetPanel(g_bldBoatPanel_0080167C,'\x01');
     }
     sub_004FAD20(this_00);
@@ -206,7 +206,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   case 0x21:
   case 0x41:
     if ((g_researchPanel_008016E8 != nullptr) &&
-       (g_researchPanel_008016E8->field_0172 == 2)) {
+       (g_researchPanel_008016E8->field_0172 == CASE_2)) {
       ProdPanelTy::SetPanel(g_researchPanel_008016E8,'\x01');
     }
     sub_004FAD20(this_00);
@@ -343,8 +343,8 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     g_currentExceptionFrame = local_e8.previous;
     return;
   case 0x44:
-    if ((g_bldLabPanel_00801680 != nullptr) && (g_bldLabPanel_00801680->field_0172 == 2))
-    {
+    if ((g_bldLabPanel_00801680 != nullptr) &&
+       (g_bldLabPanel_00801680->field_0172 == CASE_2)) {
       ProdPanelTy::SetPanel(g_bldLabPanel_00801680,'\x01');
     }
     sub_004FAD20(this_00);

@@ -11,7 +11,7 @@ void __thiscall STParticleC::sub_00629830(STParticleC *this)
 {
   this->field_00B2 = 0;
   this->field_00BF = 1;
-  if (*(byte *)&this->field_0014 < 4) {
+  if ((byte)this->field_0014 < 4) {
     this->field_00BA = 0x25;
   }
   else {

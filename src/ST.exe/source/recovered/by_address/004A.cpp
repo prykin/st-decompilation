@@ -75,7 +75,7 @@ void __thiscall st::fn_004A8220(void *this,char param_1,short param_2,ushort par
   return;
 }
 
-// 004A8890 FUN_004a8890
+// 004A8890 CreateSTGroupBoat
 #line 4 "decomp/ST.exe/functions/004A8890/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA7FC>0040111D
@@ -84,7 +84,7 @@ void __thiscall st::fn_004A8220(void *this,char param_1,short param_2,ushort par
    Evidence: registry[27] at 007CA7F8 stores type 0x10FF and executable pointer 0040111D; allocation
    size 786 has no unique current class-layout match */
 
-void * __cdecl st::fn_004A8890(void)
+STGroupBoatC * __cdecl st::fn_004A8890(void)
 
 {
   STGroupBoatC *pSVar1;

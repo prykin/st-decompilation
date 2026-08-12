@@ -517,14 +517,14 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
           this_00->field_060B = 0xffffffff;
         }
         thunk_FUN_00417a00(this_00,0);
-        iVar27 = thunk_FUN_00417a20(this_00,*(short *)&this_00->field_05B0,
-                                    *(short *)&this_00->field_05B4,*(short *)&this_00->field_05B8,1);
+        iVar27 = thunk_FUN_00417a20(this_00,(short)this_00->field_05B0,
+                                    *(short *)&this_00->field_05B4,(short)this_00->field_05B8,1);
         if (iVar27 != 0) {
           RaiseInternalException
                     (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_base.cpp",0x290);
         }
-        thunk_FUN_0041d900(this_00,*(short *)&this_00->field_05B0,*(short *)&this_00->field_05B4,
-                           *(short *)&this_00->field_05B8);
+        thunk_FUN_0041d900(this_00,(short)this_00->field_05B0,*(short *)&this_00->field_05B4,
+                           (short)this_00->field_05B8);
         thunk_FUN_004b9920((AnonShape_004B9920_1D6BF5BA *)this_00);
         switch(this_00->field_0231) {
         case CASE_0:
@@ -958,7 +958,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
                 if (iVar40 < iVar40 + iVar27) {
                   do {
                     iVar23 = thunk_FUN_004960d0((short)iVar40,(short)local_8,
-                                                *(short *)&this_00->field_05B8);
+                                                (short)this_00->field_05B8);
                     if (iVar23 != 0) {
                       RaiseInternalException
                                 (-5,g_overwriteContext_007ED77C,
@@ -1099,7 +1099,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
       pbVar36 = local_8;
       pbVar43 = local_10 + local_ca;
       memmove(pbVar43, pbVar36, local_ce); /* compiler REP MOVS byte copy */
-      STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_18);
+      STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,(uint)local_18);
       if (local_40 != nullptr) {
         FreeAndNull(&local_40);
       }
@@ -2003,7 +2003,7 @@ LAB_004bbfe9:
       local_8 = nullptr;
       iVar27 = this_00->field_05B8 + -2;
       if (-1 < iVar27) {
-        sVar16 = *(short *)&this_00->field_05B0;
+        sVar16 = (short)this_00->field_05B0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_14 = CONCAT22((short)(bVar1 - 8 >> 0x10),sVar16);
         sVar4 = *(short *)&this_00->field_05B4;
@@ -2036,7 +2036,7 @@ LAB_004bbfe9:
         } while (-1 < iVar27);
       }
       if (local_8 == nullptr) {
-        sVar16 = *(short *)&this_00->field_05B0;
+        sVar16 = (short)this_00->field_05B0;
         sVar4 = *(short *)&this_00->field_05B4;
         if (((sVar16 < 0) || (g_worldGrid.sizeX <= sVar16)) ||
            ((sVar4 < 0 || ((g_worldGrid.sizeY <= sVar4 || (g_worldGrid.sizeZ < 1)))))) {

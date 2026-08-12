@@ -9,7 +9,11 @@
 
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0056ADC0 -> EXTERNAL:00000089 @ 0056AEB3 | 00575A10 -> 0056ADC0 @ 00575AD0;
-   FUN_00575a10 parameter param_1 */
+   FUN_00575a10 parameter param_1
+
+   [STSwitchEnumApplier] Switch target field_1180 uses
+   /SubmarineTitans/Recovered/Enums/STAppC_field_1180State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_6=6;CASE_8=8;CASE_9=9;CASE_B=11;CASE_C=12 */
 
 undefined4 __thiscall
 STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 param_3,int param_4)

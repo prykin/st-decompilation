@@ -6,14 +6,18 @@
    STBoatC::UnLoadObj
 
    [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 004803D0 -> 004758E0 @ 0048053F */
+   Evidence: 004803D0 -> 004758E0 @ 0048053F
+
+   [STSwitchEnumApplier] Switch target field_05D6 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_05D6State. Cases: CASE_1=1;CASE_2=2;CASE_5=5 */
 
 int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
 
 {
   undefined1 uVar1;
   undefined1 uVar2;
-  short sVar4;
+  STBoatC_field_05D6State SVar3;
+  short sVar5;
   int iVar6;
   int local_EAX_246;
   uint uVar7;
@@ -51,32 +55,30 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     if (this->field_07CA != nullptr) {
-      sVar4 = this->field_03CE;
+      sVar5 = this->field_03CE;
       sVar14 = this->field_03D0;
-      *(short *)&this->field_0x5ca = sVar4;
-      *(short *)&this->field_0x5cc = sVar14;
-      *(undefined2 *)&this->field_0x5ce = this->field_03D2;
-      if (((sVar4 == -1) && (sVar14 == -1)) && (this->field_03D2 == -1)) {
+      this->field_05CA = sVar5;
+      this->field_05CC = sVar14;
+      this->field_05CE = this->field_03D2;
+      if (((sVar5 == -1) && (sVar14 == -1)) && (this->field_03D2 == -1)) {
         this->field_05D6 = 0;
         return 2;
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar6 = sub_0048DFD0(this,sVar4,sVar14,this->field_03D2,this->field_005B,this->field_005D,
-                           (int *)CONCAT22((short)((uint)&this->field_0x5d0 >> 0x10),
-                                           this->field_005F),0,(short *)&this->field_0x5d0,
-                           (short *)&this->field_0x5d2,(short *)&this->field_0x5d4);
+      iVar6 = sub_0048DFD0(this,sVar5,sVar14,this->field_03D2,this->field_005B,this->field_005D,
+                           (int *)CONCAT22((short)((uint)&this->field_05D0 >> 0x10),this->field_005F
+                                          ),0,&this->field_05D0,&this->field_05D2,&this->field_05D4);
       if (iVar6 != 0) {
-        this->field_05D6 = 5;
-        sub_00481520(this,(int)*(short *)&this->field_0x5d0,(int)*(short *)&this->field_0x5d2,
-                     (int)*(short *)&this->field_0x5d4);
+        this->field_05D6 = CASE_5;
+        sub_00481520(this,(int)this->field_05D0,(int)this->field_05D2,(int)this->field_05D4);
         sub_0045FF50(this,0);
         return 2;
       }
     }
     return 0;
   }
-  iVar6 = this->field_05D6;
-  if (iVar6 == 5) {
+  SVar3 = this->field_05D6;
+  if (SVar3 == CASE_5) {
     iVar6 = sub_0045FF50(this,2);
     if (iVar6 == -1) {
       local_EAX_246 =
@@ -92,43 +94,39 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     }
     else if (iVar6 == 3) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar6 = sub_0048DFD0(this,*(short *)&this->field_0x5ca,*(short *)&this->field_0x5cc,
-                           *(short *)&this->field_0x5ce,this->field_005B,this->field_005D,
-                           (int *)CONCAT22((short)((uint)&this->field_0x5d0 >> 0x10),
-                                           this->field_005F),0,(short *)&this->field_0x5d0,
-                           (short *)&this->field_0x5d2,(short *)&this->field_0x5d4);
+      iVar6 = sub_0048DFD0(this,this->field_05CA,this->field_05CC,this->field_05CE,this->field_005B,
+                           this->field_005D,
+                           (int *)CONCAT22((short)((uint)&this->field_05D0 >> 0x10),this->field_005F
+                                          ),0,&this->field_05D0,&this->field_05D2,&this->field_05D4);
       if (iVar6 == 0) {
         return 0;
       }
-      sub_00481520(this,(int)*(short *)&this->field_0x5d0,(int)*(short *)&this->field_0x5d2,
-                   (int)*(short *)&this->field_0x5d4);
+      sub_00481520(this,(int)this->field_05D0,(int)this->field_05D2,(int)this->field_05D4);
       sub_0045FF50(this,0);
       return 2;
     }
     return 2;
   }
-  if (iVar6 == 0) {
+  if (SVar3 == 0) {
     iVar6 = thunk_FUN_00492550(this,this->field_005B,this->field_005D,this->field_005F,
-                               (undefined2 *)&this->field_0x5d0,(undefined2 *)&this->field_0x5d2,
-                               (short *)&this->field_0x5d4);
+                               &this->field_05D0,&this->field_05D2,&this->field_05D4);
     if (iVar6 == 0) {
       iVar6 = this->vfunc_D8();
       return -(uint)(iVar6 != 0);
     }
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    iVar10 = CONCAT22(extraout_var,*(short *)&this->field_0x5d2 * 0xc9) + 100;
-    sVar4 = (*this->vtable->vfunc_10)
+    iVar10 = CONCAT22(extraout_var,this->field_05D2 * 0xc9) + 100;
+    sVar5 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
                        STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(this->field_0045)),
-                       *(short *)&this->field_0x5d0 * 0xc9 + 100,(short)iVar10,
-                       STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(*(short *)&this->field_0x5d4 * 200)) +
-                       100);
-    this->field_05DA = sVar4;
-    uVar7 = sub_004176C0(this,sVar4);
+                       this->field_05D0 * 0xc9 + 100,(short)iVar10,
+                       STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_05D4 * 200)) + 100);
+    this->field_05DA = sVar5;
+    uVar7 = sub_004176C0(this,sVar5);
     uVar7 = sub_00417910(this,(short)uVar7);
     if (uVar7 != 0xffffffff) {
       if (uVar7 == 0) {
-        this->field_05D6 = 1;
+        this->field_05D6 = CASE_1;
         STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&local_c);
         uVar1 = local_c->field_0062;
         uVar2 = local_c->field_0061;
@@ -145,8 +143,8 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)local_c + 0xb8))();
         DumpClassC::WritePtr
-                  (*(short *)&this->field_0x5d0,*(short *)&this->field_0x5d2,
-                   *(short *)&this->field_0x5d4,0,(RecoveredRecord_DumpClassC_00495EC0 *)this);
+                  (this->field_05D0,this->field_05D2,this->field_05D4,0,
+                   (RecoveredRecord_DumpClassC_00495EC0 *)this);
         TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,(undefined *)this->field_070A);
         this->field_07CA = nullptr;
         this->field_07C6 = 0;
@@ -162,13 +160,13 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     }
     return -1;
   }
-  if (iVar6 == 1) {
+  if (SVar3 == CASE_1) {
     sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
-                 *(short *)&this->field_0x5d0 * 0xc9 + 100,*(short *)&this->field_0x5d2 * 0xc9 + 100
-                 ,*(short *)&this->field_0x5d4 * 200 + 100,this->field_0061);
-    this->field_05D6 = 2;
+                 this->field_05D0 * 0xc9 + 100,this->field_05D2 * 0xc9 + 100,
+                 this->field_05D4 * 200 + 100,this->field_0061);
+    this->field_05D6 = CASE_2;
   }
-  if (this->field_05D6 == 2) {
+  if (this->field_05D6 == CASE_2) {
     local_20 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
     local_10 = 0;
     if (this->field_02BF != '\0') {
@@ -194,7 +192,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
           local_1c = uVar9 * 0x41c64e6d + 0x3039;
           sVar14 = 0;
           this->field_001C = local_1c;
-          sVar4 = 0;
+          sVar5 = 0;
           lVar13 = Library::MSVCRT::__ftol();
           iVar6 = (int)(short)lVar13 + (uVar7 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                   (int)local_24;
@@ -216,7 +214,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
           sVar16 = 0;
           sVar15 = 0;
           sVar14 = 0;
-          sVar4 = 0;
+          sVar5 = 0;
           iVar6 = (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_24;
           STPiece<2,2>(local_28) = (short)((uint)local_28 >> 0x10);
           iVar10 = ((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_28);
@@ -224,7 +222,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         TraksClassTy::TraksCreate
                   (g_traksClass_00802A7C,1,2,7,
                    (uVar7 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_28,
-                   iVar10 + -3,iVar6,sVar4,sVar14,sVar15,sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
+                   iVar10 + -3,iVar6,sVar5,sVar14,sVar15,sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
         local_10 = local_10 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 6;

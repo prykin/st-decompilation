@@ -1,11 +1,11 @@
 program=ST.exe
-active_vtables=94
-slot_families=321
-target_functions=473
+active_vtables=101
+slot_families=324
+target_functions=491
 name_auto_apply=0
 convention_auto_apply=0
 signature_auto_apply=0
-placeholder_names_for_review=198
+placeholder_names_for_review=212
 multi_owner_targets_left_unresolved=120
 missing_slot_function_entries=0
 class_hierarchy_proposals=2

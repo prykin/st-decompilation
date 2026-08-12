@@ -4,7 +4,10 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
-   MTaskTy::PlayScript */
+   MTaskTy::PlayScript
+
+   [STSwitchEnumApplier] Switch target field_006D uses
+   /SubmarineTitans/Recovered/Enums/MTaskTy_field_006DState. Cases: CASE_1=1;CASE_3=3;CASE_5=5 */
 
 void __thiscall MTaskTy::PlayScript(MTaskTy *this)
 
@@ -209,7 +212,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
         piVar19 = nullptr;
       }
       if (((uint)(this_01->field_0069 - this_01->field_0061) < STField<uint>(piVar19,1)) &&
-         (this_01->field_006D != '\x05')) break;
+         (this_01->field_006D != CASE_5)) break;
       switch((char)*piVar19) {
       case '\x01':
         if ((this_01->field_006E != '\x01') ||
@@ -887,7 +890,7 @@ LAB_005e24c5:
           }
         }
         else if ((pAVar14 != nullptr) && (-1 < *(int *)pAVar14)) {
-          if (this_01->field_006D == '\x05') {
+          if (this_01->field_006D == CASE_5) {
             TTaskItemClose(this_01,pAVar14);
           }
           else {
@@ -905,7 +908,7 @@ LAB_005e24c5:
         }
         break;
       case '\x06':
-        if (this_01->field_006D != '\x05') {
+        if (this_01->field_006D != CASE_5) {
           puVar12 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
                                       (this_01->field_0070,(char *)((int)piVar19 + 0xd),0,
                                        nullptr);
@@ -1836,7 +1839,7 @@ LAB_005e195d:
     } while (iVar24 < (int)uVar29);
   }
   if (this_01->field_007C == this_01->field_0074->count) {
-    if ((this_01->field_006D == '\x05') &&
+    if ((this_01->field_006D == CASE_5) &&
        (pDVar16 = this_01->field_064B, pDVar16 != nullptr)) {
       uVar29 = 0;
       if (pDVar16->count != 0) {
@@ -1859,7 +1862,7 @@ LAB_005e34e0:
         } while (uVar29 < pDVar16->count);
       }
     }
-    this_01->field_006D = 1;
+    this_01->field_006D = CASE_1;
   }
   g_currentExceptionFrame = local_278.previous;
   return;

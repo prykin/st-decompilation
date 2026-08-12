@@ -12,12 +12,16 @@
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00522E80 -> 00522D40 @ 0052315F; literal 0 at 0052315B | 005449B0 -> 00522D40 @
    00546551; literal 0 at 0054654F | 005449B0 -> 00522D40 @ 0054667C; literal 1 at 0054667A |
-   005449B0 -> 00522D40 @ 005466BB; literal 3 at 005466B9 */
+   005449B0 -> 00522D40 @ 005466BB; literal 3 at 005466B9
+
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/IntercomPanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,byte param_1)
 
 {
-  short sVar1;
+  IntercomPanelTy_field_0172State IVar1;
   IntercomPanelTy *pIVar3;
   int errorCode;
   int iVar4;
@@ -40,20 +44,20 @@ void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,byte 
     RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\intercom.cpp",0x13b);
     return;
   }
-  sVar1 = local_8->field_0172;
-  if (sVar1 != 1) {
-    if (sVar1 == 2) {
-      local_8->field_0172 = 3;
+  IVar1 = local_8->field_0172;
+  if (IVar1 != CASE_1) {
+    if (IVar1 == CASE_2) {
+      local_8->field_0172 = CASE_3;
       local_8->field_01A4 = param_1;
       GVar5 = CASE_AF;
       goto LAB_00522dd6;
     }
-    if (sVar1 != 3) {
+    if (IVar1 != CASE_3) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
   }
-  local_8->field_0172 = 4;
+  local_8->field_0172 = CASE_4;
   if (local_8->field_01A0 != 0) {
     StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_01A0);
   }

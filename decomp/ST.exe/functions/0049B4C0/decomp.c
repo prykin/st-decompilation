@@ -50,7 +50,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&local_1c->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
     uVar8 = 0;
-    *(undefined4 *)&local_1c->field_0x222 = local_1c->field_00FF;
+    *(undefined4 *)&local_1c->field_0x222 = *(undefined4 *)&local_1c->field_0xff;
     local_1c->field_0065 = 0;
     if (local_18 != 0) {
       uVar6 = 0;

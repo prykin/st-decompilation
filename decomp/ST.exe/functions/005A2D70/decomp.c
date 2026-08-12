@@ -28,8 +28,8 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
   undefined1 local_b;
   FSGSTy *local_8;
 
-  if (this->field_1A5F == CASE_6) {
-    this->field_1A60 = 0;
+  if (this->array_00BC[0xc].field_01DF == '\x06') {
+    this->array_00BC[0xc].field_01E0 = 0;
     local_7c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_7c;
     local_8 = this;
@@ -55,10 +55,10 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
       this_01->field_002D = 0x28;
       puVar1 = &this_01->field_0x1d;
       *(dword *)&this_01->field_0x31 = this_01->field_1EA6->count;
-      *(undefined2 *)&this_01->field_0x35 = 1;
+      this_01->field_0035 = 1;
       FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)puVar1);
       this_01->field_002D = 0x20;
-      if ((this_01->field_1EA6->count == 0) || (this_01->field_1A6B == 0)) {
+      if ((this_01->field_1EA6->count == 0) || (this_01->array_00BC[0xc].field_01EB == 0)) {
         uVar6 = 0;
       }
       else {
@@ -72,7 +72,7 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
         FUN_006e6080(this_01,2,this_01->field_1B24,(undefined4 *)puVar1);
       }
       *(undefined4 *)&this_01->field_0x31 = 1;
-      if ((this_01->field_1B18 != 0) && (this_01->field_1A6B != 0)) {
+      if ((this_01->field_1B18 != 0) && (this_01->array_00BC[0xc].field_01EB != 0)) {
         FUN_006e6080(this_01,2,this_01->field_1B18,(undefined4 *)puVar1);
       }
       g_currentExceptionFrame = local_7c.previous;

@@ -17,7 +17,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   byte *puVar8;
   byte *puVar9;
   byte *local_c;
-  AnonShape_0060EA30_DCEB68AD *local_8;
+  uint local_8;
 
   local_EAX_15 = STGameObjC::GetMessage(this,(STMessage *)param_1);
   if (local_EAX_15 == 0xffff) {
@@ -26,7 +26,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   uVar1 = param_1->field_0010;
   if (3 < uVar1) {
     if (uVar1 == 0x10f) {
-      local_c = (byte *)thunk_FUN_0060c020(this,(uint *)&local_8);
+      local_c = (byte *)thunk_FUN_0060c020(this,&local_8);
       if (local_c == nullptr) {
         return 0;
       }
@@ -43,35 +43,11 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   if (uVar1 == 3) {
     if (STField<int>(this,0x1f5) == 0x4d) {
       iVar6 = STField<int>(this,0x1f9);
-      sVar2 = (short)(iVar6 >> 0x1f);
-      if (iVar6 < 0) {
-        iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar2) -
-                       (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar2) -
-                            (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
-      }
+      iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
       iVar7 = STField<int>(this,0x1ed);
-      sVar2 = (short)(iVar7 >> 0x1f);
-      if (iVar7 < 0) {
-        iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar2) -
-                       (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar2) -
-                            (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
-      }
+      iVar7 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
       iVar5 = STField<int>(this,0x1e9);
-      sVar2 = (short)(iVar5 >> 0x1f);
-      if (iVar5 < 0) {
-        iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar2) -
-                       (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar2) -
-                            (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-      }
+      iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
       thunk_FUN_00496e40(iVar5,iVar7,iVar6,STField<int>(this,0x18));
     }
     if (STField<int>(this,0x23c) != 0) {
@@ -217,25 +193,9 @@ LAB_00609164:
         iVar6 = iVar6 + -1;
       }
       iVar7 = STField<int>(this,0x1ed);
-      sVar2 = (short)(iVar7 >> 0x1f);
-      if (iVar7 < 0) {
-        iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar2) -
-                       (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar2) -
-                            (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
-      }
+      iVar7 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
       iVar5 = STField<int>(this,0x1e9);
-      sVar2 = (short)(iVar5 >> 0x1f);
-      if (iVar5 < 0) {
-        iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar2) -
-                       (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar2) -
-                            (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-      }
+      iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
       thunk_FUN_00496cc0(iVar5,iVar7,STField<uint>(this,0x1d9),iVar6,STField<uint>(this,0x18),
                          this);
       if (STField<int>(this,0x209) != 0) {

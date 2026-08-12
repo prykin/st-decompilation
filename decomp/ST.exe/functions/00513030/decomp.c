@@ -183,9 +183,9 @@ LAB_00513233:
     uVar7 = this_00->field_01B7;
     this_00->field_0028 = 0x28;
     *(undefined2 *)&this_00->field_0x2c = *(undefined2 *)&this_00->field_01B3->field_0xc;
-    *(undefined2 *)&this_00->field_0x30 = 1;
+    this_00->field_0030 = 1;
     FUN_006e6080(this_00,2,this_00->field_019C,(undefined4 *)puVar1);
-    *(undefined2 *)&this_00->field_0x30 = 1;
+    this_00->field_0030 = 1;
     this_00->field_0032 = 1;
     this_00->field_0028 = 0x22;
     *(short *)&this_00->field_0x2c = (short)uVar7;

@@ -25,8 +25,8 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
   AnonShape_00413AF0_B6B4EE9A *local_c;
   FSGSTy *local_8;
 
-  if (((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) &&
-     (this->field_1EA6 != nullptr)) {
+  if (((this->array_00BC[0xc].field_01DF == '\x06') && (this->array_00BC[0xc].field_01E0 == '\0'))
+     && (this->field_1EA6 != nullptr)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_8 = this;

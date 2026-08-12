@@ -46,7 +46,7 @@ VisibleClassTy::sub_00558DC0
       (g_bulkInitializedRecords_008087C7[(int)param_4].field_0022 < 8)))) {
     if ((param_7 & 0x1000) != 0) {
       sub_0055BB00(this,0,(short)param_1,(short)param_2,(char)param_3,(uint)param_4,(byte)param_5,
-                   param_6);
+                   (uint)param_6);
     }
     if (*(char *)((int)(piVar4 + 0x3f) + (int)this) != '\0') {
       iVar2 = uVar10 * 2 + 1;

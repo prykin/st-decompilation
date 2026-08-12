@@ -37,7 +37,7 @@ void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
     VisibleClassTy::SetZoneMin1
               (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
-               *(undefined4 *)&param_1->field_0x18,0xffffffff);
+               *(uint *)&param_1->field_0x18,0xffffffff);
   }
   iVar1 = thunk_FUN_004e60d0(*(int *)&param_1->field_0x24,0x9a);
   if (((0 < iVar1) || (iVar1 = thunk_FUN_004e60d0(*(int *)&param_1->field_0x24,0x41), 0 < iVar1)) ||
@@ -49,7 +49,7 @@ void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
       VisibleClassTy::SetZoneMin2
                 (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                  (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
-                 *(undefined4 *)&param_1->field_0x18,0xffffffff);
+                 *(uint *)&param_1->field_0x18,0xffffffff);
     }
     return;
   }

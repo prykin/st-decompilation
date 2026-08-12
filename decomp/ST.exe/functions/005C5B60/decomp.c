@@ -22,7 +22,7 @@ void __thiscall SettMapTy::CloseButtons(SettMapTy *this)
   if (errorCode == 0) {
     MMObjTy::CloseButtons((MMObjTy *)local_8);
     this_00->DeleteCtrls();
-    if (this_00->field_0x21e4 != '\0') {
+    if (this_00->field_21E4 != '\0') {
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,

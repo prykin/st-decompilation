@@ -46,7 +46,8 @@ MReportTy::CreateBut
     local_1bc = param_5;
     local_1cc[2] = param_3;
     local_1cc[3] = param_4;
-    local_1ac = local_c->field_0008;
+    STPiece<0,2>(local_1ac) = local_c->field_0008;
+    STPiece<2,2>(local_1ac) = local_c->field_000A;
     local_1a4 = param_7;
     local_1b8 = param_6;
     local_1a8 = 2;

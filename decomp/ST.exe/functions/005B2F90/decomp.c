@@ -8,6 +8,7 @@
 void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
 
 {
+  MMsgTy *this_00;
   MainMenuTy *pMVar2;
   int iVar3;
   int iVar4;
@@ -36,10 +37,10 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(MMsgTy **)(pMVar2->field_1A5B + 0x2e6) != nullptr) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      MMsgTy::HideSprites(*(MMsgTy **)(pMVar2->field_1A5B + 0x2e6));
-      *(undefined4 *)(*(int *)(pMVar2->field_1A5B + 0x2e6) + 0x1cab) = 0;
+    this_00 = *(MMsgTy **)(pMVar2->field_00BB[0xc].field_01DC + 0x2e6);
+    if (this_00 != nullptr) {
+      MMsgTy::HideSprites(this_00);
+      *(undefined4 *)(*(int *)(pMVar2->field_00BB[0xc].field_01DC + 0x2e6) + 0x1cab) = 0;
     }
     puVar3 = pMVar2->field_1AA7;
     iVar5 = 10;

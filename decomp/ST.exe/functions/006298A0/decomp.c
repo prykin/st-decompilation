@@ -49,7 +49,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   text = PTR_s_expl_sb1_007d0c44;
-  if (3 < *(byte *)&local_18->field_0014) {
+  if (3 < (byte)local_18->field_0014) {
     text = PTR_s_expl_sb0_007d0c40;
   }
   puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
@@ -94,25 +94,9 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
                                      (short)((longlong)iVar11 * 0x51eb851f >> 0x3f));
       }
       iVar11 = pSVar7->field_004A;
-      sVar4 = (short)(iVar11 >> 0x1f);
-      if (iVar11 < 0) {
-        iVar11 = (short)(((short)(iVar11 / 0xc9) + sVar4) -
-                        (short)((longlong)iVar11 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar11 = (int)(short)(((short)(iVar11 / 0xc9) + sVar4) -
-                             (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
-      }
+      iVar11 = STBiasedDiv16(iVar11, 0xc9); /* exact signed 16-bit grid-index division */
       iVar9 = pSVar7->field_0046;
-      sVar4 = (short)(iVar9 >> 0x1f);
-      if (iVar9 < 0) {
-        iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar4) -
-                       (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar4) -
-                            (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
-      }
+      iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
       if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar11,
@@ -148,7 +132,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
         pSVar7->field_00C1 = 0;
       }
     }
-    if (*(byte *)&pSVar7->field_0014 < 4) {
+    if ((byte)pSVar7->field_0014 < 4) {
       puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
                          (PTR_00806764,CASE_1D,"expl_s1",0xffffffff,0,1,0,nullptr
                          );

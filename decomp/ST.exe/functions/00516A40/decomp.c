@@ -109,18 +109,21 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
     }
     else {
       local_44->field_01A2 = 0;
-      local_44->field_01AB = nullptr;
+      local_44->field_01AB = 0;
     }
+    STPiece<0,2>(iVar16) = local_44->field_0178;
+    STPiece<2,2>(iVar16) = local_44->field_017A;
     local_44->field_01A1 = CASE_5;
     local_44->field_01A3 = (void *)param_1;
     local_44->field_01A7 = (uint)param_2;
     local_44->field_01AF = 0x32;
     local_44->field_01B1 = 5;
-    if (local_44->field_0178 != 0) {
+    if (iVar16 != 0) {
       local_44->field_0028 = 0x4202;
       *(undefined2 *)&local_44->field_0x2c = 0;
-      local_44->field_002E = 2;
-      *(undefined4 *)&local_44->field_0x30 = local_44->field_0178;
+      *(undefined2 *)&local_44->field_0x2e = 2;
+      local_44->field_0030 = (undefined2)iVar16;
+      local_44->field_0032 = STPiece<2,2>(iVar16);
       if (g_cursorClass_00802A30 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_44->field_0x18);
@@ -294,7 +297,7 @@ LAB_00516f6b:
     local_23 = (-(uint)((char)local_c != '\x03') & 0xfffffffc) + 0xe0;
     local_24 = 1;
     local_1f = local_18;
-    Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_34);
+    Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
   }
   local_8 = local_8 + 0xf;
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
@@ -380,7 +383,7 @@ LAB_00516f6b:
       local_23 = local_10;
       local_24 = 2;
       local_1f = local_18;
-      Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_34);
+      Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
       local_8 = local_8 + (pBVar4->bmiHeader).biHeight;
     }
     if (local_14 != 0) {
@@ -423,7 +426,7 @@ LAB_00516f6b:
       local_23 = local_14;
       local_24 = 3;
       local_1f = local_18;
-      Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_34);
+      Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
       local_8 = local_8 + (pBVar4->bmiHeader).biHeight;
     }
   }

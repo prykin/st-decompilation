@@ -959,5 +959,132 @@ The general call-boundary/lifetime layer reduced assignment diagnostics from
 compiler queues are 888 undeclared identifiers, 354 pointer-indirection errors,
 261 non-callable values, and 146 invalid operands. Prefer address-stable Ghidra
 recovery where machine evidence exists; exact source-boundary repairs remain
-limited to representationally equivalent pointer/scalar crossings. The 1,888
+limited to representationally equivalent pointer/scalar crossings. The 1,853
 raw indirect calls still require callback/vtable ABI evidence.
+
+## Factory constructors, copied subfields, and physical-vtable aliases
+
+The latest accepted export supersedes the state above. `STConstructorAnalyzer`
+now follows a concrete factory allocation result into ECX and through a terminal
+JMP/thunk only when the allocation extent exactly matches the returned class and
+no strong vtable owner disagrees. This corrected `004D0FC0` from a contaminating
+`STGroupBoatC` method to `TLOEmbryoTy::TLOEmbryoTy` and recovered six constructors
+without address-specific rules.
+
+`STClassLayoutAnalyzer` transfers only width/offset geometry for independently
+observed subfields contained in an exact machine-word field copy. Additions are
+staged from a snapshot, so copies cannot bootstrap a cyclic layout. A complete
+two-short partition may replace a dword transport field, while sliding overlaps
+remain review-only union evidence. The converged corpus has 100 transferred copy
+views and 84 partitioned machine words. In `STGroupBoatC::Recharge`, the former
+`*(undefined2 *)((int)&field_019D + 2)` now renders as `field_019F`, and the copied
+destination renders as four named-width fields. `STGroupBoatC::SetMine` similarly
+recovers `field_0182/0184` and `field_02B3/02B5`; the remaining overlapping dwords
+at `0x2B7` and `0x2B9` are honest packed-union debt.
+
+Vtable ownership refinement temporarily left both `PanelTyVTable` and
+`HelpPanelTyVTable` describing physical address `0079AC48`. The applier now treats
+generated same-address types as aliases and carries a unanimous independently
+recovered slot ABI across them. Indirect-call family collection uses exact raw and
+resolved targets and automation-owned datatype category provenance; weak structural
+typedefs no longer veto a recovered family. The ABI gate passes with zero errors and
+warnings after accepting the already-established `PrividerTy::GetMessage(STMessage *)`
+slot and removing its exact one-run transition.
+
+Current accepted state:
+
+- run `1863ef85371fdeb46c8c2424a305c5daf0a7e4789f076575b85c503a06eed6f6`;
+- semantic hash `88a98ae17b5391a8acbe0b639320d2420cf8e114634b646ef87ad8764a67dfbc`;
+- corpus manifest `5973cf7554507fd5fcdeab791a5fdb09d17626142aeae84ded9f769f4df09dc9`;
+- 10,400 function records, 5,720 bodies, zero failed bodies, 2,737 typed vtable slots;
+- export gate: zero hard regressions, four nonblocking quality warnings;
+- post-acceptance ABI gate: zero errors and zero warnings;
+- core duration `00:08:47`; export duration `00:12:29` with 9,707/10,400 function
+  records reused without decompilation and 5,046/5,720 quality analyses reused.
+
+## Fixed class arrays and exact receiver-spill lifetimes
+
+The latest accepted export supersedes the state above. `STClassArrayAnalyzer`
+now proves fixed inline arrays embedded in generated UI classes, and
+`STClassLayoutAnalyzer` projects exact owner-field evidence into the proven
+element record instead of leaving every indexed member as a cast. The accepted
+pass recovered 13-element records with stride `0x1fb` in ten related classes;
+the rule is geometric and does not contain their names or addresses.
+
+`STLocalLifetimeAnalyzer/Applier` also handles an MSVC SEH/setjmp pattern which
+spills auto-`this` through a persistent local carrying a shorter base-class
+view. The value must trace to the exact unadjusted receiver through only
+same-size neutral p-code, and a downstream exact named member must require the
+owner layout. Fresh-decompile attachment is mandatory. Eighteen such receiver
+aliases were accepted across independent classes; two unstable candidates were
+rejected and rolled back. In `STTorpC::GetMessage` (`006406D0`), for example,
+`local_c8` is now `STTorpC *`, so offsets `0x24b` through `0x255` render as
+direct short fields rather than `*(short *)&base->field_0x...`.
+
+Current accepted state:
+
+- semantic hash `b7dd4d6ef688a830446a79168662d872cc5c151f0c0f2d715f8d9ca7f83d4072`;
+- corpus manifest `dfff1b32e2d619a4215ad1ce246fb214c381f346674e530c240b410ac02a453f`;
+- 10,400 function records, 5,720 bodies, zero failed bodies, 2,737 typed vtable slots;
+- export gate: zero hard regressions and six nonblocking quality warnings;
+- receiver/lifetime changes reduced `casted_generic_field` by 317,
+  `undefined_type` by 34, and `anonymous_shape_type` by two;
+- export reused 10,368 of 10,400 function records and regenerated only the 32
+  affected bodies. The small `raw_pointer_offset` increase is confined mainly
+  to newly exposed packet-buffer arithmetic and remains explicit review debt.
+
+## Output stack lifetimes, comparison states, and biased coordinate division
+
+The latest accepted export supersedes the state above. A review of
+`STRubbishC::GetMessage` exposed three repository-wide compiler/decompiler
+patterns rather than address-specific mistakes.
+
+`STClassLayoutAnalyzer` now keeps a full-width scalar field when all competing
+evidence is a contained low-offset scalar view. This recovered
+`STRubbishC+0x1D5/+0x1D9/+0x1DD` as signed 32-bit fields while retaining their
+intentional low-short consumers. A complete independently accessed narrow
+partition still outranks a transport word, and overlapping/partial evidence
+remains review-only.
+
+`STPrototypeAnalyzer` now models a pointer to an incoming EBP slot as a new
+post-call lifetime when the callee writes the complete pointee on every return
+path. This preserved the entry message ABI at `0060EA30`, but recovered the
+later scalar size passed to `STPlaySystemC::SaveObjData`. It also accepts an
+exact full-EAX pointer boundary return when every return is fed by a trusted
+pointer-producing call. Consequently `0062F940` returns `byte *`, its caller's
+size local is `uint`, and `SaveObjData` has a scalar fourth argument without an
+anonymous pointer-shaped contamination.
+
+`STSwitchEnumAnalyzer` now supplements switch domains with exact machine
+comparison/write domains on generated scalar class fields. It accepts direct
+immediate comparisons, bounded load/compare def-use, and contiguous
+`MOV field -> DEC/SUB positive immediate -> JZ/JNZ` equality chains. A field
+write through a register is admitted only after a bounded exact constant
+definition (`MOV`, self-`XOR/SUB`, `AND 0`, or `OR -1`). The current proposal
+set contains 25 independent comparison-domain rows; the staged updates applied
+without conflicts. `STRubbishC+0x1FA` is now the generated three-value
+`STRubbishC_field_01FAState` (`CASE_0..CASE_2`).
+
+Finally, `STDecompExport` folds a complete two-branch MSVC signed coordinate
+division idiom to `STBiasedDiv16(value, 201|200)`. Both branches and the exact
+magic/divisor relation are required; the helper preserves the original
+16-bit quotient and negative-value bias rather than pretending it is ordinary
+floor division. This reduced raw `0x28c1979`/`0x51eb851f` multiplier
+occurrences from 511 to 219 and produced 369 readable helper calls. Remaining
+occurrences primarily use unproven alias values or split the quotient/result
+between different SSA lifetimes; eight are unrelated negative-multiplier scale
+calculations and must not be folded by constant alone.
+
+Current accepted state:
+
+- run `c0b307d56a91b1452911f22fbeef16452b1f47b4ca840619d8f08995d3e89b25`;
+- semantic hash `76982f60fdd65a328a929e0995e61dde20d94ba44feead0fd812518e0c55c32d`;
+- corpus manifest `f3e435c54509e60165fb935a02a57084895dddc7b0c68cc550adfdd7fa7ee26c`;
+- 10,400 function records, 5,720 bodies, zero failed bodies and 2,737 typed
+  physical-vtable slots;
+- export and ABI gates: zero errors and zero warnings;
+- quality deltas across the full recovery included `anonymous_shape_type -23`,
+  `casted_generic_field -64`, and `undefined_type -29`; the final incremental
+  export introduced no regression;
+- the full recovery/export which established the new facts took `01:25:41`;
+  the final warmed export took `00:02:48` and reused all 10,400 function bodies.

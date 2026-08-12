@@ -54,7 +54,7 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
       *ppcVar7 = nullptr;
       ppcVar7 = ppcVar7 + 1;
     }
-    local_8d8[2] = this_00->field_1A73;
+    local_8d8[2] = this_00->array_00BC[0xc].field_01F3;
     local_8b8 = this_00->field_1AE8;
     local_8ac = this_00->field_0008;
     local_848 = 2;
@@ -90,7 +90,8 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
     uVar3 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0xcd,0x16f,0x186,0x19,0x6904,0x698b);
     this_00->field_1EB6 = uVar3;
     this_00->field_002D = 0x61;
-    *(undefined4 *)&this_00->field_0x35 = 0;
+    this_00->field_0035 = 0;
+    this_00->field_0037 = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -5,16 +5,16 @@
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::SaveObjData
 
-   [STPrototypeApplier] Propagated parameter 3.
-   Evidence: 0060EA30 -> 0054D430 @ 0060EB81
-
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 005F5F20 -> 0054D430 @ 005F62C9; /STColl3C+0x18 | 00621B50 -> 0054D430 @ 00622246;
-   /STMineSetC+0x18 */
+   /STMineSetC+0x18
+
+   [STPrototypeRepairApplier] Propagated parameter 3.
+   Evidence: 0054D430 -> 006F13F0 @ 0054D4A7 | 0060EA30 -> 0054D430 @ 0060EB81; 0060EB66 definite
+   output through FUN_00614950 parameter 1 */
 
 int __thiscall
-STPlaySystemC::SaveObjData
-          (STPlaySystemC *this,int *param_1,byte *param_2,AnonShape_0060EA30_DCEB68AD *param_3)
+STPlaySystemC::SaveObjData(STPlaySystemC *this,int *param_1,byte *param_2,uint param_3)
 
 {
   int iVar2;
@@ -33,7 +33,7 @@ STPlaySystemC::SaveObjData
   iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar2 == 0) {
     wsprintfA(local_28,"%s%08ld",PTR_DAT_007c83b0,param_1);
-    cMf32::RecPut(local_8->field_0024,0xc,local_28,param_2,(uint)param_3,nullptr,'\x02',
+    cMf32::RecPut(local_8->field_0024,0xc,local_28,param_2,param_3,nullptr,'\x02',
                   nullptr);
     g_currentExceptionFrame = local_6c.previous;
     return 0;

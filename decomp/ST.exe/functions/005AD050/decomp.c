@@ -17,14 +17,14 @@
 void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
 
 {
-  ChooseMapTy_field_1A5FState CVar1;
+  char cVar1;
   ChooseMapTy *pCVar3;
   int errorCode;
   UINT resourceId;
   char *resourceString;
   int iVar4;
   MMMObjTy *this_00;
-  undefined4 *this_01;
+  MMMObjTy *this_01;
   StartServTy *this_02;
   uint uVar5;
   uint uVar6;
@@ -53,46 +53,46 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   if ((local_8->field_20B8 == nullptr) && (param_1 == '\0')) {
     MMMObjTy::OutBSlProc
               (this_00,g_dDXContext_0080759C,nullptr,nullptr,0x112,0x38,0x204,0x19d,
-               &local_8->field_1A5B->field_0140);
+               (undefined4 *)(local_8->array_00BC[0xc].field_01DB + 0x140));
   }
   if (((pCVar3->field_20BC == nullptr) && (param_1 == '\0')) ||
-     ((param_1 != '\0' && (pCVar3->field_0x20b4 == '\0')))) {
-    this_01 = &pCVar3->field_1A5B->field_0140;
+     ((param_1 != '\0' && (pCVar3->field_20B4 == '\0')))) {
+    this_01 = (MMMObjTy *)(pCVar3->array_00BC[0xc].field_01DB + 0x140);
     MMMObjTy::OutBSlProc
-              ((MMMObjTy *)this_01,g_dDXContext_0080759C,nullptr,nullptr,10,0xb4,
-               0xf9,0x121,this_01);
+              (this_01,g_dDXContext_0080759C,nullptr,nullptr,10,0xb4,0xf9,0x121,
+               (undefined4 *)this_01);
   }
-  CVar1 = pCVar3->field_1A5F;
-  if (((((CVar1 == CASE_C) || (CVar1 == CASE_4)) || (CVar1 == CASE_5)) || (CVar1 == CASE_13)) &&
+  cVar1 = pCVar3->array_00BC[0xc].field_01DF;
+  if (((((cVar1 == '\f') || (cVar1 == '\x04')) || (cVar1 == '\x05')) || (cVar1 == '\x13')) &&
      (((pCVar3->field_20C0 == nullptr && (param_1 == '\0')) ||
       ((param_1 != '\0' && (pCVar3->field_20B7 == '\0')))))) {
     ChatGlassTy::OutChGlProc
               ((ChatGlassTy *)g_dDXContext_0080759C,
                (AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,200,0x1f1,400,0x62,
-               &pCVar3->field_1A5B->field_0140);
+               (undefined4 *)(pCVar3->array_00BC[0xc].field_01DB + 0x140));
   }
-  switch(pCVar3->field_1A5F) {
-  case CASE_1:
-  case CASE_2:
-  case CASE_4:
-  case CASE_5:
+  switch(pCVar3->array_00BC[0xc].field_01DF) {
+  case 1:
+  case 2:
+  case 4:
+  case 5:
     pcVar7 = g_startSystem_0081176C->field_0030;
     resourceId = 0x26ae;
     break;
-  case CASE_3:
+  case 3:
     pcVar7 = g_startSystem_0081176C->field_0030;
     resourceId = 0x26af;
     break;
   default:
     goto switchD_005ad1b8_caseD_6;
-  case CASE_9:
-  case CASE_A:
-  case CASE_B:
-  case CASE_C:
+  case 9:
+  case 10:
+  case 0xb:
+  case 0xc:
     pcVar7 = g_startSystem_0081176C->field_0030;
     resourceId = 0x26ad;
     break;
-  case CASE_13:
+  case 0x13:
     pcVar7 = g_startSystem_0081176C->field_0030;
     resourceId = (DAT_00803400 != '\f') + 0x26ad;
   }

@@ -39,15 +39,18 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
     }
     else {
       local_c->field_01A2 = 0;
-      local_c->field_01AB = nullptr;
+      local_c->field_01AB = 0;
     }
+    STPiece<0,2>(iVar5) = local_c->field_0178;
+    STPiece<2,2>(iVar5) = local_c->field_017A;
     local_c->field_01A1 = 0;
     local_c->field_01A3 = nullptr;
-    if (local_c->field_0178 != 0) {
+    if (iVar5 != 0) {
       local_c->field_0028 = 0x4202;
       *(undefined2 *)&local_c->field_0x2c = 0;
-      local_c->field_002E = 2;
-      *(undefined4 *)&local_c->field_0x30 = local_c->field_0178;
+      *(undefined2 *)&local_c->field_0x2e = 2;
+      local_c->field_0030 = (undefined2)iVar5;
+      local_c->field_0032 = STPiece<2,2>(iVar5);
       if (g_cursorClass_00802A30 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_c->field_0x18);

@@ -14,7 +14,7 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
   int iVar3;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   ChatGlassTy *extraout_ECX;
-  undefined4 *this_00;
+  MMMObjTy *this_00;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   ChatGlassTy *extraout_ECX_00;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -39,26 +39,29 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     this_01 = extraout_ECX;
     if ((pWVar2->field_1AF8 == nullptr) && (param_1 == '\0')) {
-      this_00 = &pWVar2->field_1A5B->field_0140;
+      this_00 = (MMMObjTy *)(pWVar2->array_00BC[0xc].field_01DB + 0x140);
       MMMObjTy::OutRGlProc
-                ((MMMObjTy *)this_00,(int)g_dDXContext_0080759C,nullptr,nullptr,
-                 0x112,0x38,0x204,0x19d,this_00);
+                (this_00,(int)g_dDXContext_0080759C,nullptr,nullptr,0x112,0x38,0x204
+                 ,0x19d,(undefined4 *)this_00);
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       this_01 = extraout_ECX_00;
     }
     if (((pWVar2->field_1B00 == nullptr) && (param_1 == '\0')) ||
-       ((param_1 != '\0' && ((pWVar2->field_1A64 != 0 && (pWVar2->field_1A68 == 0)))))) {
+       ((param_1 != '\0' &&
+        ((pWVar2->array_00BC[0xc].field_01E4 != 0 && (pWVar2->array_00BC[0xc].field_01E8 == 0))))))
+    {
       MMMObjTy::OutBSlProc
                 ((MMMObjTy *)g_dDXContext_0080759C,g_dDXContext_0080759C,nullptr,
-                 nullptr,10,0xb4,0xf9,0x121,&pWVar2->field_1A5B->field_0140);
+                 nullptr,10,0xb4,0xf9,0x121,
+                 (undefined4 *)(pWVar2->array_00BC[0xc].field_01DB + 0x140));
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       this_01 = extraout_ECX_01;
     }
     if (((pWVar2->field_1AFC == nullptr) && (param_1 == '\0')) ||
-       ((param_1 != '\0' && (pWVar2->field_1A64 != 0)))) {
+       ((param_1 != '\0' && (pWVar2->array_00BC[0xc].field_01E4 != 0)))) {
       ChatGlassTy::OutChGlProc
                 (this_01,(AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,200,0x1f1,
-                 400,0x62,&pWVar2->field_1A5B->field_0140);
+                 400,0x62,(undefined4 *)(pWVar2->array_00BC[0xc].field_01DB + 0x140));
     }
     uVar7 = 0;
     pcVar6 = g_startSystem_0081176C->field_0030;

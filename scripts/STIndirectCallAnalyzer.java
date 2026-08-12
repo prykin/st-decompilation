@@ -41,6 +41,8 @@ import ghidra.program.model.symbol.SourceType;
 
 public class STIndirectCallAnalyzer extends GhidraScript {
     private static final String VTABLE_ROOT = "/SubmarineTitans/Recovered/VTables/";
+    private static final String INDIRECT_FUNCTION_ROOT =
+        "/SubmarineTitans/Recovered/IndirectCallFunctions";
     private static final String APPLIER_MARKER = "[STIndirectCallApplier]";
     private static final Pattern TARGET = Pattern.compile("(?i)->\\s*([0-9a-f]{8,16})\\b");
     private static final Pattern SLOT = Pattern.compile(
@@ -281,10 +283,14 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                 Function target = resolveThunk(entry);
                 boolean trusted = trusted(target);
                 Synthetic synthetic = trusted ? null : syntheticSignature(target, structure);
-                FunctionPointerFamily family = target == null ? null :
-                    targetFamilies.get(addr(target.getEntryPoint()));
+                FunctionPointerFamily family = raw == null ? null :
+                    targetFamilies.get(addr(raw));
+                if (family == null && target != null)
+                    family = targetFamilies.get(addr(target.getEntryPoint()));
                 Pointer recovered = trusted ? strongerGeneratedPointer(
                     structure, component, pointer, target) : null;
+                boolean familyRepair = family != null &&
+                    !pointer.isEquivalent(family.pointer);
                 if (generated && !trusted && synthetic == null &&
                         family == null) {
                     rows.add(new Row(true, "revert_generated_slot", structure.getPathName(),
@@ -297,28 +303,36 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                         "generated indirect ABI no longer has sufficient machine evidence"));
                     continue;
                 }
-                boolean apply = recovered != null || trusted || synthetic != null ||
-                    family != null;
+                boolean apply = recovered != null || familyRepair || trusted ||
+                    synthetic != null || family != null;
                 rows.add(new Row(apply, "vtable_slot", structure.getPathName(),
                     component.getOffset(), name(component), typeSpec(component.getDataType()),
                     safeText(component.getComment()), structure.getPathName(), name(component), 0, 0,
                     target == null ? "" : addr(target.getEntryPoint()),
                     target == null ? "" : target.getName(true),
                     recovered != null ? "generated_family" :
+                        familyRepair ? "family_target" :
                         trusted ? "target" : synthetic != null ? synthetic.mode :
                         family != null ? "family_target" : "",
                     recovered != null ? typeSpec(recovered) :
-                        synthetic == null ? "" : synthetic.receiverType,
+                        familyRepair ? family.pointerType :
+                        synthetic == null ? family == null ? "" : family.pointerType :
+                            synthetic.receiverType,
                     synthetic == null ? -1 : synthetic.stackParameters,
                     synthetic == null ? "" : synthetic.parameterTypes,
                     synthetic == null ? "" : synthetic.returnType,
-                    recovered != null ? "high" : trusted ? "high" :
+                    recovered != null || familyRepair ? "high" : trusted ? "high" :
                         synthetic != null ? "layout" :
                         family != null ? "family" : "review",
                     recovered != null ?
                         "an automation-owned receiver-aware function-pointer ABI is " +
                             "strictly stronger than the reviewed target signature; " +
                             "preserving generated family " + typeSpec(recovered) :
+                        familyRepair ?
+                            family.occurrences + " independently recovered slot(s) for " +
+                            "resolved target " + addr(target.getEntryPoint()) +
+                            " unanimously carry stronger family " + family.pointerType +
+                            "; replace the weaker physical-table typedef" :
                         trusted ? "slot target has a reviewed function signature" :
                         synthetic != null ? synthetic.evidence :
                         family != null ?
@@ -401,10 +415,11 @@ public class STIndirectCallAnalyzer extends GhidraScript {
     /**
      * The same implementation address is frequently reused in several physical
      * vtables (base implementations, shared empty overrides, thunk aliases).
-     * If every already-typed component naming that resolved target has one
-     * equivalent function-pointer ABI, that ABI is an exact family anchor for
-     * still-generic occurrences of the same target. Conflicting receiver or
-     * parameter types invalidate the family instead of being majority-voted.
+     * Independently recovered indirect-call components are the authoritative family anchors.
+     * VTableApplier-owned target typedefs are deliberately excluded: a stale weak typedef in a
+     * newly named physical table must not veto the already recovered ABI for the same machine
+     * implementation. Conflicting independent pointers invalidate the family instead of being
+     * majority-voted.
      */
     private void collectTargetFamilies() {
         Map<String, List<TypedTargetComponent>> grouped = new TreeMap<>();
@@ -415,7 +430,8 @@ public class STIndirectCallAnalyzer extends GhidraScript {
             if (!structure.getPathName().startsWith(VTABLE_ROOT)) continue;
             for (DataTypeComponent component : structure.getDefinedComponents()) {
                 if (!(component.getDataType() instanceof Pointer pointer) ||
-                        !(pointer.getDataType() instanceof FunctionDefinition))
+                        !(pointer.getDataType() instanceof FunctionDefinition) ||
+                        !generatedIndirectPointer(component, pointer))
                     continue;
                 Matcher matcher = TARGET.matcher(safeText(component.getComment()));
                 if (!matcher.find()) continue;
@@ -425,10 +441,13 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                     currentProgram.getFunctionManager().getFunctionAt(raw);
                 Function resolved = resolveThunk(entry);
                 if (resolved == null) continue;
-                String key = addr(resolved.getEntryPoint());
-                grouped.computeIfAbsent(key, ignored -> new ArrayList<>())
-                    .add(new TypedTargetComponent(pointer,
-                        structure.getPathName(), component.getOffset()));
+                TypedTargetComponent typed = new TypedTargetComponent(pointer,
+                    structure.getPathName(), component.getOffset());
+                String rawKey = addr(raw);
+                grouped.computeIfAbsent(rawKey, ignored -> new ArrayList<>()).add(typed);
+                String resolvedKey = addr(resolved.getEntryPoint());
+                if (!resolvedKey.equals(rawKey))
+                    grouped.computeIfAbsent(resolvedKey, ignored -> new ArrayList<>()).add(typed);
             }
         }
         for (Map.Entry<String, List<TypedTargetComponent>> entry :
@@ -445,7 +464,7 @@ public class STIndirectCallAnalyzer extends GhidraScript {
             }
             if (!conflict && agreed != null)
                 targetFamilies.put(entry.getKey(),
-                    new FunctionPointerFamily(typeSpec(agreed),
+                    new FunctionPointerFamily(agreed, typeSpec(agreed),
                         candidates.size()));
         }
     }
@@ -609,7 +628,8 @@ public class STIndirectCallAnalyzer extends GhidraScript {
     private boolean generatedIndirectPointer(DataTypeComponent component, Pointer pointer) {
         if (!(pointer.getDataType() instanceof FunctionDefinition definition)) return false;
         return safeText(component.getComment()).contains(APPLIER_MARKER) &&
-            safeText(definition.getComment()).contains(APPLIER_MARKER);
+            (safeText(definition.getComment()).contains(APPLIER_MARKER) ||
+                definition.getCategoryPath().getPath().equals(INDIRECT_FUNCTION_ROOT));
     }
 
     private Set<Long> returnPops(Function function) {
@@ -897,5 +917,6 @@ public class STIndirectCallAnalyzer extends GhidraScript {
     private record DispatchTable(Structure structure, int slots, String address) {}
     private record TypedTargetComponent(Pointer pointer, String structurePath,
         int offset) {}
-    private record FunctionPointerFamily(String pointerType, int occurrences) {}
+    private record FunctionPointerFamily(Pointer pointer, String pointerType,
+        int occurrences) {}
 }

@@ -39,26 +39,11 @@ int __thiscall STParticleC::sub_0062A370(STParticleC *this,int param_1)
   iVar3 = (this->field_0092 * local_c) / 10000 + this->field_007E;
   local_10 = (this->field_0096 * local_c) / 10000 + this->field_007A;
   if ((this->field_0014 & 0xff00) == 0x400) {
-    if (local_10 < 0) {
-      iVar5 = (short)(local_10 / 0xc9) + -1;
-    }
-    else {
-      iVar5 = (int)(short)(local_10 / 0xc9);
-    }
+    iVar5 = STBiasedDiv16(local_10, 0xc9); /* exact signed 16-bit grid-index division */
     if (iVar5 == this->field_005E) {
-      if (iVar3 < 0) {
-        iVar5 = (short)(iVar3 / 0xc9) + -1;
-      }
-      else {
-        iVar5 = (int)(short)(iVar3 / 0xc9);
-      }
+      iVar5 = STBiasedDiv16(iVar3, 0xc9); /* exact signed 16-bit grid-index division */
       if (iVar5 == this->field_005E) {
-        if (iVar3 < 0) {
-          iVar5 = (short)(iVar3 / 200) + -1;
-        }
-        else {
-          iVar5 = (int)(short)(iVar3 / 200);
-        }
+        iVar5 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
         if (iVar5 == this->field_0066) {
           local_14 = 0;
         }
@@ -68,8 +53,7 @@ int __thiscall STParticleC::sub_0062A370(STParticleC *this,int param_1)
   uVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
                     ((AnonReceiver_00601500 *)&this->field_0xd7,local_10,iVar3,iVar4,
                      this->field_0046,this->field_004A,this->field_004E,0xff,
-                     *(int *)(&DAT_007d0a1c + (uint)*(byte *)&this->field_0014 * 4),0,0xffff,0x14e,0
-                     ,0);
+                     *(int *)(&DAT_007d0a1c + (uint)(byte)this->field_0014 * 4),0,0xffff,0x14e,0,0);
   if ((uVar2 == 0) || (local_14 == 0)) {
     iVar5 = this->field_004E;
     this->field_0086 = this->field_0086 + local_c;

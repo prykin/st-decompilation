@@ -96,12 +96,11 @@ switchD_005b939a_default:
   SVar1 = message->id;
   if ((0x68fe < SVar1) && (SVar1 < 0x697f)) {
     bVar2 = (char)SVar1 + 1;
-    this_00->field_1A5A = bVar2;
-    if ((&this_00->field_0xe1)[(uint)bVar2 * 0x1fb] == '\0') {
-      if (*(int *)(&this_00->field_0xd1 + (uint)bVar2 * 0x1fb) != 0) {
+    this_00->array_00BC[0xc].field_01DA = bVar2;
+    if (this_00->array_00BC[bVar2].field_0025 == '\0') {
+      if (*(int *)&this_00->array_00BC[bVar2].field_0x15 != 0) {
         AppClassTy::PostNextMessage
-                  ((AppClassTy *)&DAT_00807620,
-                   (undefined4 *)(&this_00->field_0xc1 + (uint)bVar2 * 0x1fb));
+                  ((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->array_00BC[bVar2].field_0x5);
       }
     }
     else {

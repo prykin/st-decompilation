@@ -13,10 +13,7 @@ CPanelTy	2965	disabled	apply=0
 ChooseMapTy	7323	disabled	apply=0
 FSGSTy	7870	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/FSGSTy_field_1EBEElement; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/FSGSTy_field_1EBEDArray; verified=10 fields [0x0=field_0000, 0x4=field_0004, 0x24=field_0024, 0x28=field_0028, 0x2C=field_002C, 0x30=field_0030, 0x7C=field_007C, 0x7D=field_007D, 0x7E=field_007E, 0x1E0=field_01E0]; owner field already specialized
 FSGSTy	8115	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/FSGSTy_field_1FB3Element; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/FSGSTy_field_1FB3DArray; verified=5 fields [0x0=field_0000, 0x4=field_0004, 0x7C=field_007C, 0x7D=field_007D, 0x7E=field_007E]; owner field already specialized
-HelpPanelTy	443	disabled	apply=0
-HelpPanelTy	459	disabled	apply=0
-HelpPanelTy	471	disabled	apply=0
-MTaskTy	116	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/MTaskTy_field_0074Element; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/MTaskTy_field_0074DArray; verified=17 fields [0x0=field_0000, 0x5=field_0005, 0x9=field_0009, 0xA=field_000A, 0xB=field_000B, 0xD=field_000D, 0xE=field_000E, 0xF=field_000F, 0x14=field_0014, 0x18=field_0018, 0x19=field_0019, 0x1A=field_001A, 0x1E=field_001E, 0x22=field_0022, 0x26=field_0026, 0x2A=field_002A, 0x2E=field_002E]; owner field already specialized
+MTaskTy	116	disabled	apply=0
 OptPanelTy	493	disabled	apply=0
 OptPanelTy	765	disabled	apply=0
 STBHEShellC	361	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/STBHEShellC_field_0169Element; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/STBHEShellC_field_0169DArray; verified=8 fields [0x0=field_0000, 0x1=field_0001, 0x2=field_0002, 0x6=field_0006, 0xA=field_000A, 0x12=field_0012, 0x16=field_0016, 0x1F=spriteHandle]; owner field already specialized
@@ -29,6 +26,7 @@ STGroupBoatC	352	disabled	apply=0
 STGroupBoatC	360	disabled	apply=0
 STGroupBoatC	458	disabled	apply=0
 STGroupBoatC	462	disabled	apply=0
+STGroupBoatC	466	disabled	apply=0
 STGroupBoatC	470	disabled	apply=0
 STGroupBoatC	474	disabled	apply=0
 STGroupBoatC	526	disabled	apply=0
@@ -42,6 +40,7 @@ STManBasisC	56	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElem
 STManRuinC	56	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/STManRuinC_field_0038Element; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_0038DArray; verified=8 fields [0x0=field_0000, 0x2=field_0002, 0x4=field_0004, 0x6=field_0006, 0x8=field_0008, 0xC=field_000C, 0x10=field_0010, 0x14=field_0014]; owner field already specialized
 STManRuinC	60	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/STManRuinC_field_003CElement; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_003CDArray; verified=10 fields [0x0=field_0000, 0x4=state, 0x8=statusFlag, 0xC=variant, 0x10=field_0010, 0x14=field_0014, 0x18=field_0018, 0x1C=positionZ, 0x20=maskIndex, 0x21=spriteHandle]; owner field already specialized
 STTmMineC	822	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/STTmMineC_field_0336Element; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/STTmMineC_field_0336DArray; verified=2 fields [0x0=field_0000, 0x38=field_0038]; owner field already specialized
+STTorpC	577	disabled	apply=0
 SettMapMTy	7727	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/SettMapMTy_field_1E2FElement; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/SettMapMTy_field_1E2FDArray; verified=2 fields [0x0=field_0000, 0x108=field_0108]; owner field already specialized
 SettMapMTy	8060	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/SettMapMTy_field_1F7CElement; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/SettMapMTy_field_1F7CDArray; verified=2 fields [0x0=field_0000, 0x208=field_0208]; owner field already specialized
 SettMapMTy	8068	conflict	installed element verification failed /SubmarineTitans/Recovered/DArrayElements/SettMapMTy_field_1F84Element+0x6: expected field_0006 /int, found element /int

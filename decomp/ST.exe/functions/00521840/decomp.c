@@ -20,7 +20,7 @@ IntercomPanelTy * __cdecl CreateIntercomPanel(void)
     this->field_0060 = 0xffffffff;
     this->field_0064 = 4;
     this->field_0068 = 0;
-    this->field_0172 = 2;
+    this->field_0172 = CASE_2;
     this->field_0178 = 0;
     this->vtable = &IntercomPanelTyVTable;
     this->field_003C = 0xc;

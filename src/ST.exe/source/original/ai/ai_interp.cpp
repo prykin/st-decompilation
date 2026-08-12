@@ -544,7 +544,7 @@ LAB_0066bdcc:
         if (iVar13 == 0x7d6) {
           local_c = nullptr;
           if (0 < param_2) {
-            local_10 = static_cast<undefined4>(0);
+            local_10 = 0;
             do {
               if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
                 local_EAX_2265 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -588,7 +588,7 @@ LAB_0066bdcc:
           if (iVar13 == 0x7d3) {
             local_c = nullptr;
             if (0 < param_2) {
-              local_10 = static_cast<undefined4>(0);
+              local_10 = 0;
               do {
                 if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
                   local_EAX_2083 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -620,7 +620,7 @@ LAB_0066bdcc:
               if (iVar13 == 0x7d5) {
                 local_c = nullptr;
                 if (0 < param_2) {
-                  local_10 = static_cast<undefined4>(0);
+                  local_10 = 0;
                   do {
                     if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
                       local_EAX_1650 =
@@ -653,7 +653,7 @@ LAB_0066bdcc:
             }
             local_c = nullptr;
             if (0 < param_2) {
-              local_10 = static_cast<undefined4>(0);
+              local_10 = 0;
               do {
                 if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
                   local_EAX_1859 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -687,7 +687,7 @@ LAB_0066bdcc:
         if (iVar13 == 0x7d2) {
           local_c = nullptr;
           if (0 < param_2) {
-            local_10 = static_cast<undefined4>(0);
+            local_10 = 0;
             do {
               if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
                 local_EAX_1401 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -719,7 +719,7 @@ LAB_0066bdcc:
           if (iVar13 == 2000) {
             local_c = nullptr;
             if (0 < param_2) {
-              local_10 = static_cast<undefined4>(0);
+              local_10 = 0;
               do {
                 if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
                   local_EAX_452 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -785,7 +785,7 @@ LAB_0066bdcc:
             if ((iVar13 < 800) || (0x321 < iVar13)) goto cf_common_exit_00670456;
             local_c = nullptr;
             if (0 < param_2) {
-              local_10 = static_cast<undefined4>(0);
+              local_10 = 0;
               do {
                 if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
                   local_EAX_315 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -819,7 +819,7 @@ cf_common_exit_00670456:
         }
         local_c = nullptr;
         if (0 < param_2) {
-          local_10 = static_cast<undefined4>(0);
+          local_10 = 0;
           do {
             if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
               local_EAX_901 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -905,7 +905,7 @@ LAB_0066b1fb:
         case 0x7dd:
           local_c = nullptr;
           if (0 < param_2) {
-            local_10 = static_cast<undefined4>(0);
+            local_10 = 0;
             do {
               if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
                 local_EAX_2671 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -961,7 +961,7 @@ joined_r0x0066b1d2:
         case 0x7de:
           local_c = nullptr;
           if (0 < param_2) {
-            local_10 = static_cast<undefined4>(0);
+            local_10 = 0;
             do {
               if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
                 local_EAX_3000 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -1501,7 +1501,7 @@ cf_common_exit_0066DF5E:
       puVar24 = (uint *)(param_1 + 5);
       uVar14 = (*this_00->vtable->slot_00)(puVar24,local_50);
       pcVar31 = (char *)st::fn_004016B8(this_00,(char *)local_8,uVar14,puVar24);
-      local_10 = static_cast<undefined4>(0);
+      local_10 = 0;
       if (0 < (int)pcVar31) {
         local_c = param_1 + 10;
         local_8 = (AiFltClassTy *)local_50;
@@ -1610,7 +1610,7 @@ cf_continue_loop_0066CACD:
       puVar24 = (uint *)(param_1 + 5);
       uVar14 = (*this_00->vtable->slot_00)(puVar24,local_50);
       pcVar31 = (char *)st::fn_004016B8(this_00,(char *)local_8,uVar14,puVar24);
-      local_10 = static_cast<undefined4>(0);
+      local_10 = 0;
       if (0 < (int)pcVar31) {
         local_c = param_1 + 10;
         local_8 = (AiFltClassTy *)local_50;
@@ -1719,7 +1719,7 @@ cf_continue_loop_0066CD4A:
       puVar24 = (uint *)(param_1 + 5);
       uVar14 = (*this_00->vtable->slot_00)(puVar24,local_50);
       pcVar31 = (char *)st::fn_004016B8(this_00,(char *)local_8,uVar14,puVar24);
-      local_10 = static_cast<undefined4>(0);
+      local_10 = 0;
       if (0 < (int)pcVar31) {
         local_c = param_1 + 10;
         local_8 = (AiFltClassTy *)local_50;
@@ -2368,7 +2368,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
     }
-    local_10 = static_cast<undefined4>(0);
+    local_10 = 0;
     local_EAX_14021 = st::fn_004016B8(this_00,(char *)local_8,0,(uint *)local_50);
     if (local_EAX_14021 == 1) {
       puVar34 = nullptr;
@@ -2460,7 +2460,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
     }
-    local_10 = static_cast<undefined4>(0);
+    local_10 = 0;
     local_EAX_14752 = st::fn_004016B8(this_00,(char *)local_8,0,(uint *)local_50);
     if (local_EAX_14752 == 1) {
       uVar23 = 0;
@@ -2482,7 +2482,7 @@ cf_common_exit_0066DCED:
         local_c = (char *)(*this_00->vtable->slot_00)(param_1 + 0x14);
         iVar17 = (*this_00->vtable->slot_00)(param_1 + 0x19);
         if ((-1 < iVar13) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-          st::fn_00405F0B(g_fish_00811984,st::pointer_boundary_cast<undefined2 *>(&local_5c),st::pointer_boundary_cast<undefined2 *>(&local_56),st::pointer_boundary_cast<undefined2 *>(&local_54));
+          st::fn_00405F0B(g_fish_00811984,&local_5c,&local_56,&local_54);
           (*this_00->vtable->slot_20)(iVar13,(int)local_5c);
           (*this_00->vtable->slot_20)(local_8,(int)local_56);
           (*this_00->vtable->slot_20)(local_c,(int)local_54);
@@ -2539,7 +2539,7 @@ cf_common_exit_0066DCED:
     sVar9 = -1;
     sVar7 = -1;
     sVar6 = 0;
-    local_10 = static_cast<undefined4>(0);
+    local_10 = 0;
     sVar5 = 0;
     sVar4 = 0;
     temp_3ffc6253af = param_1;
@@ -2553,8 +2553,7 @@ cf_common_exit_0066DCED:
       local_c = (char *)(*this_00->vtable->slot_00)(param_1 + 0xf);
       iVar17 = (*this_00->vtable->slot_00)(param_1 + 0x14);
       if ((-1 < iVar13) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-        st::fn_00405F0B
-                  (g_fish_00811984,st::pointer_boundary_cast<undefined2 *>(&local_60),st::pointer_boundary_cast<undefined2 *>(&local_5e),(undefined2 *)((int)&local_28 + 2));
+        st::fn_00405F0B(g_fish_00811984,&local_60,&local_5e,(short *)((int)&local_28 + 2));
         (*this_00->vtable->slot_20)(iVar13,(int)local_60);
         (*this_00->vtable->slot_20)(local_8,(int)local_5e);
         (*this_00->vtable->slot_20)(local_c,(int)STPiece<2,2>(local_28));
@@ -2600,7 +2599,7 @@ cf_common_exit_0066DCED:
     sVar9 = -1;
     sVar7 = 0;
     sVar6 = 0;
-    local_10 = static_cast<undefined4>(0);
+    local_10 = 0;
     sVar5 = 0;
     sVar4 = -1;
     temp_3fd8761c8d = param_1;
@@ -2673,7 +2672,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
     }
-    local_1c = static_cast<undefined4>(0);
+    local_1c = 0;
     local_EAX_16356 = st::fn_004016B8(this_00,(char *)local_8,0,(uint *)local_50);
     if (local_EAX_16356 == 1) {
       uVar23 = 0;
@@ -2845,7 +2844,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
     }
-    local_18 = static_cast<undefined4>(0);
+    local_18 = 0;
     local_EAX_17437 = st::fn_004016B8(this_00,st::pointer_boundary_cast<char *>(local_10),0,(uint *)local_50);
     pAVar16 = local_8;
     pcVar31 = local_c;
@@ -2926,7 +2925,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
     }
-    local_10 = static_cast<undefined4>(0);
+    local_10 = 0;
     local_EAX_18055 = st::fn_004016B8(this_00,(char *)local_8,0,(uint *)local_50);
     if (local_EAX_18055 == 1) {
       local_EAX_18079 = st::fn_00401E1F((int)local_50[0],(uint)local_c);

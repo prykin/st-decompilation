@@ -205,11 +205,12 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   g_startSystem_0081176C->field_002C = local_EAX_481;
   this_01->field_005D = g_startSystem_0081176C->field_002C;
   FUN_006bc360(g_startSystem_0081176C->field_002C,local_b18,nullptr);
-  this_01->field_1A5B->field_0140 = 0x1f;
+  (this_01->array_00BC[0xc].field_01DB)->field_0140 = 0x1f;
   Library::Ourlib::PALETTE::FUN_00718780
-            ((int)local_b18,0,0x100,0x8b,0x15,(undefined4 *)&this_01->field_1A5B->field_0x144);
+            ((int)local_b18,0,0x100,0x8b,0x15,
+             (undefined4 *)&(this_01->array_00BC[0xc].field_01DB)->field_0x144);
   if ((DAT_008067a0 != '\0') && (g_int_00811764 != nullptr)) {
-    FUN_006b6160(&this_01->field_0x1a5f,(int)(g_int_00811764 + 6));
+    FUN_006b6160(&this_01->array_00BC[0xc].field_0x1df,(int)(g_int_00811764 + 6));
     this_01->field_1A7F = 1;
     this_01->field_1A80 = DAT_008087c6;
     this_01->field_1A81 = (char)(DAT_008087c2 >> 1);
@@ -248,7 +249,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   this_01->field_1F4B = local_EAX_977;
   SVar1 = this_01->field_1E26;
   if (((SVar1 == 6) || (SVar1 == CASE_7)) || (SVar1 == 0xe)) {
-    this_01->field_0x21e3 = 1;
+    this_01->field_21E3 = 1;
     iVar33 = 1;
     puVar10 = (undefined4 *)(this_01->field_005D + 0x28);
     uVar22 = FUN_006b4fe0(this_01->field_005D);
@@ -453,14 +454,14 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     }
   }
   SVar1 = this_01->field_1E26;
-  this_01->field_0x21e1 = 1;
-  this_01->field_0x21e5 = 1;
+  this_01->field_21E1 = 1;
+  this_01->field_21E5 = 1;
   if ((((SVar1 == 0xd) || (SVar1 == CASE_F)) || ((SVar1 == 0xe || (SVar1 == CASE_10)))) &&
      (this_01->field_1E27 == 0x11)) {
-    this_01->field_0x21e4 = 1;
-    this_01->field_0x21e6 = 1;
+    this_01->field_21E4 = 1;
+    this_01->field_21E6 = 1;
     if (SVar1 != 0xe) {
-      this_01->field_0x21e2 = 1;
+      this_01->field_21E2 = 1;
     }
   }
   SpriteClassTy::InitSprite
@@ -682,9 +683,9 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
                (ushort *)pAVar14);
   Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar15,0xffffffff,0x112,0x149);
   this_01->CreateCtrls('\x01');
-  if (this_01->field_0x21e2 != '\0') {
+  if (this_01->field_21E2 != '\0') {
     FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4042d2,0xf9,0x121,
-                 (ushort *)&this_01->field_1A5B->field_0140);
+                 (ushort *)&(this_01->array_00BC[0xc].field_01DB)->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);
     pHVar16 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
     if (pHVar16 == nullptr) {
@@ -739,12 +740,12 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       local_8 = 0xffffffff;
     }
   }
-  if (this_01->field_0x21e5 == '\0') {
+  if (this_01->field_21E5 == '\0') {
     FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar15);
   }
   else {
     FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403099,0x205,0x8c,
-                 (ushort *)&this_01->field_1A5B->field_0140);
+                 (ushort *)&(this_01->array_00BC[0xc].field_01DB)->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x112,0x149);
     pHVar16 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
     if (pHVar16 == nullptr) {
@@ -791,7 +792,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       local_8 = 0xffffffff;
     }
   }
-  if (this_01->field_0x21e1 == '\0') {
+  if (this_01->field_21E1 == '\0') {
     if (this_01->field_1C6F != 0xffffffff) {
       FUN_006b3af0((int *)this_01->field_1CB3,this_01->field_1C6F);
     }
@@ -811,7 +812,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   }
   else {
     FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4042d2,0x205,0x104,
-                 (ushort *)&this_01->field_1A5B->field_0140);
+                 (ushort *)&(this_01->array_00BC[0xc].field_01DB)->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x112,0x38);
     pHVar16 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
     if (pHVar16 == nullptr) {
@@ -873,9 +874,9 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       local_8 = 0xffffffff;
     }
   }
-  if (this_01->field_0x21e3 != '\0') {
+  if (this_01->field_21E3 != '\0') {
     FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403099,0xf9,0x123,
-                 (ushort *)&this_01->field_1A5B->field_0140);
+                 (ushort *)&(this_01->array_00BC[0xc].field_01DB)->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);
     pHVar16 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
     if (pHVar16 == nullptr) {
@@ -945,7 +946,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     local_28c = 0x694a;
     local_294 = uVar17;
   }
-  pSVar3 = this_01->field_1A5B;
+  pSVar3 = this_01->array_00BC[0xc].field_01DB;
   local_1f8 = uVar17;
   local_1d1 = uVar17;
   if (pSVar3->field_02E6 != nullptr) {
@@ -956,9 +957,9 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     }
     *(undefined2 *)puVar10 = 0xffff;
     MMsgTy::ShowSprites(pSVar3->field_02E6);
-    this_01->field_1A5B->field_02E6->field_1CAB = this_01->field_0008;
-    MMsgTy::SetPanel(this_01->field_1A5B->field_02E6,0,(int)&local_2c8,0,0);
-    MMsgTy::StatePanel(this_01->field_1A5B->field_02E6,(int)local_44);
+    (this_01->array_00BC[0xc].field_01DB)->field_02E6->field_1CAB = this_01->field_0008;
+    MMsgTy::SetPanel((this_01->array_00BC[0xc].field_01DB)->field_02E6,0,(int)&local_2c8,0,0);
+    MMsgTy::StatePanel((this_01->array_00BC[0xc].field_01DB)->field_02E6,(int)local_44);
   }
   SettMapTy::PaintSettMap((SettMapTy *)this_01,'\x01');
   this_00 = g_cursorClass_00802A30;
@@ -975,7 +976,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   this_01->field_0065 = 3;
   thunk_FUN_005b6730(this_01,0xb,'\0',-1);
   if (DAT_008067a0 != '\0') {
-    CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this_01->field_0x1a5f);
+    CFsgsConnection::UpdateGame
+              ((CFsgsConnection *)&DAT_00802a90,4,&this_01->array_00BC[0xc].field_0x1df);
   }
   g_currentExceptionFrame = local_88.previous;
   return;

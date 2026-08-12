@@ -56,15 +56,7 @@ FUN_0061bdb0(void *this,Global_sub_0061BDB0_param_1Enum param_1,int param_2,int 
     STField<undefined4>(this,0x117) = 0xfffff18c;
     STField<int>(this,0xcf) = STField<int>(this,0x9f);
     STField<int>(this,0xd3) = STField<int>(this,0xa3);
-    sVar1 = (short)(iVar7 >> 0x1f);
-    if (iVar7 < 0) {
-      iVar7 = (short)(((short)(iVar7 / 200) + sVar1) - (short)((longlong)iVar7 * 0x51eb851f >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar7 = (int)(short)(((short)(iVar7 / 200) + sVar1) -
-                          (short)((longlong)iVar7 * 0x51eb851f >> 0x3f));
-    }
+    iVar7 = STBiasedDiv16(iVar7, 200); /* exact signed 16-bit grid-index division */
     ST3DSMAPContext::sub_006E3310
               (g_sT3DSMAPContext_00807598,
                (STField<int>(this,0x9f) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9,

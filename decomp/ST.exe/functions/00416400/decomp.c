@@ -99,34 +99,13 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
   }
   if ((param_1->field_005A == '\0') && (param_1->field_004D == '\x01')) {
     sVar6 = param_1->field_003A;
-    if (sVar6 < 0) {
-      iVar4 = (short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
-                     (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar4 = (int)(short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
-                          (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f));
-    }
+    iVar4 = STBiasedDiv16(sVar6, 0xc9); /* exact signed 16-bit grid-index division */
     if (param_1->field_0054 == iVar4) {
       sVar6 = param_1->field_003C;
-      if (sVar6 < 0) {
-        iVar4 = (short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
-                       (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar4 = (int)(short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
-                            (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f));
-      }
+      iVar4 = STBiasedDiv16(sVar6, 0xc9); /* exact signed 16-bit grid-index division */
       if (param_1->field_0056 == iVar4) {
         sVar6 = param_1->field_003E;
-        if (sVar6 < 0) {
-          iVar4 = (short)((sVar6 / 200 + (sVar6 >> 0xf)) -
-                         (short)((longlong)(int)sVar6 * 0x51eb851f >> 0x3f)) + -1;
-        }
-        else {
-          iVar4 = (int)(short)((sVar6 / 200 + (sVar6 >> 0xf)) -
-                              (short)((longlong)(int)sVar6 * 0x51eb851f >> 0x3f));
-        }
+        iVar4 = STBiasedDiv16(sVar6, 200); /* exact signed 16-bit grid-index division */
         if (param_1->field_0058 == iVar4) goto LAB_004166c7;
       }
     }

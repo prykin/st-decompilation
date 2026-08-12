@@ -132,7 +132,7 @@ int __thiscall st::fn_0051FBA0(HelpStringTy *this,STMessage *message)
       DAT_00801694 = st::machine_word_boundary_cast<undefined4>(this_00);
       break;
     case MESS_SHARED_0003:
-      DAT_00801694 = static_cast<undefined4>(0);
+      DAT_00801694 = 0;
       if (local_8->field_011E != nullptr) {
         st::fn_00710560((uint *)local_8->field_011E);
         this_00->field_011E = nullptr;

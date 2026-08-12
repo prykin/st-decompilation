@@ -21,7 +21,7 @@ void __thiscall ChooseMapTy::CloseButtons(ChooseMapTy *this)
   this_00 = local_8;
   if (errorCode == 0) {
     MMObjTy::CloseButtons((MMObjTy *)local_8);
-    if (this_00->field_0x20b5 != '\0') {
+    if (this_00->field_20B5 != '\0') {
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,

@@ -83,31 +83,13 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,RecoveredRecord_TraksClassTy_005
              (short)((longlong)iVar6 * 0x66666667 >> 0x3f)) + sVar3;
       }
       sVar3 = param_1->field_0002;
-      if (sVar3 < 0) {
-        sVar3 = ((sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f)
-                ) + -1;
-      }
-      else {
-        sVar3 = (sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f);
-      }
+      sVar3 = STBiasedDiv16(sVar3, 0xc9); /* exact signed 16-bit grid-index division */
       param_1->field_001C = sVar3;
       sVar3 = param_1->field_0004;
-      if (sVar3 < 0) {
-        sVar3 = ((sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f)
-                ) + -1;
-      }
-      else {
-        sVar3 = (sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f);
-      }
+      sVar3 = STBiasedDiv16(sVar3, 0xc9); /* exact signed 16-bit grid-index division */
       param_1->field_001E = sVar3;
       sVar3 = param_1->field_0006;
-      if (sVar3 < 0) {
-        sVar3 = ((sVar3 / 200 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x51eb851f >> 0x3f)
-                ) + -1;
-      }
-      else {
-        sVar3 = (sVar3 / 200 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x51eb851f >> 0x3f);
-      }
+      sVar3 = STBiasedDiv16(sVar3, 200); /* exact signed 16-bit grid-index division */
       param_1->field_0020 = sVar3;
       iVar6 = thunk_FUN_00555880((RecoveredRecord_TraksClassTy_00555880 *)param_1);
       if (iVar6 == 0) {

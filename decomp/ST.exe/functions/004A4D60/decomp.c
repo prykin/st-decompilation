@@ -39,35 +39,35 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    if (*(int *)&local_c->field_0x29f == 0) {
+    if (local_c->field_029F == 0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = *(int *)(*(int *)&local_c->field_0x29f + 0xc);
+    iVar2 = *(int *)(local_c->field_029F + 0xc);
     index = 0;
     if (0 < iVar2) {
       do {
-        DArrayGetElement(*(DArrayTy **)&this_00->field_0x29f,index,local_8);
+        DArrayGetElement((DArrayTy *)this_00->field_029F,index,local_8);
         if (local_8[0] == -1) break;
         index = index + 1;
       } while ((int)index < iVar2);
     }
     element = &param_2;
 LAB_004a4e27:
-    Library::DKW::TBL::DArrayPut(*(DArrayTy **)&this_00->field_0x29f,index,element);
+    Library::DKW::TBL::DArrayPut((DArrayTy *)this_00->field_029F,index,element);
   }
   else {
-    if (*(int *)&local_c->field_0x29f == 0) {
+    if (local_c->field_029F == 0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = *(int *)(*(int *)&local_c->field_0x29f + 0xc);
+    iVar2 = *(int *)(local_c->field_029F + 0xc);
     index = 0;
     if (0 < iVar2) {
       do {
-        DArrayGetElement(*(DArrayTy **)&this_00->field_0x29f,index,local_8);
+        DArrayGetElement((DArrayTy *)this_00->field_029F,index,local_8);
         if (local_8[0] == param_2) {
           local_8[0] = -1;
           local_8[1] = 0;
@@ -78,7 +78,7 @@ LAB_004a4e27:
       } while ((int)index < iVar2);
     }
   }
-  DistributeDock(this_00,0,*(DArrayTy **)&this_00->field_0x29f,(DArrayTy *)this_00->field_0029);
+  DistributeDock(this_00,0,(DArrayTy *)this_00->field_029F,(DArrayTy *)this_00->field_0029);
   g_currentExceptionFrame = local_50.previous;
   return;
 }

@@ -28,7 +28,7 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
   undefined4 *local_8;
   byte *pbVar10;
 
-  if ((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) {
+  if ((this->array_00BC[0xc].field_01DF == '\x06') && (this->array_00BC[0xc].field_01E0 == '\0')) {
     local_84.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_84;
     local_10 = this;
@@ -94,10 +94,10 @@ LAB_005a27bf:
       PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',this_00->field_1E9A);
       this_00->field_002D = 0x28;
       *(dword *)&this_00->field_0x31 = this_00->field_1EA6->count;
-      *(undefined2 *)&this_00->field_0x35 = 1;
+      this_00->field_0035 = 1;
       FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
       this_00->field_002D = 0x20;
-      if ((this_00->field_1EA6->count == 0) || (this_00->field_1A6B == 0)) {
+      if ((this_00->field_1EA6->count == 0) || (this_00->array_00BC[0xc].field_01EB == 0)) {
         uVar4 = 0;
       }
       else {
@@ -139,8 +139,8 @@ LAB_005a28e9:
 LAB_005a28ee:
               if (iVar6 == 0) {
                 *(short *)&this_00->field_0x31 = (short)uVar7;
-                *(undefined2 *)&this_00->field_0x37 = 1;
-                *(undefined2 *)&this_00->field_0x35 = 1;
+                this_00->field_0037 = 1;
+                this_00->field_0035 = 1;
                 this_00->field_002D = 0x22;
                 FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
                 g_currentExceptionFrame = local_84.previous;

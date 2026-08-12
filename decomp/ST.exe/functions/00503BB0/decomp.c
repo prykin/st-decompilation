@@ -132,8 +132,8 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0xe:
-    if ((g_bldObjPanel_00801684 != nullptr) && (g_bldObjPanel_00801684->field_0172 == 2))
-    {
+    if ((g_bldObjPanel_00801684 != nullptr) &&
+       (g_bldObjPanel_00801684->field_0172 == CASE_2)) {
       ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\x01');
     }
     break;

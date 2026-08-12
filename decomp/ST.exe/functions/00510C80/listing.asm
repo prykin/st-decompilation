@@ -1,4 +1,4 @@
-FUN_00510c80:
+HelpPanelTy::HelpPanelTy:
 00510C80  56                        PUSH ESI
 00510C81  57                        PUSH EDI
 00510C82  8B F1                     MOV ESI,ECX

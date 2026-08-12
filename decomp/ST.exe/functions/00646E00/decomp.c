@@ -41,17 +41,8 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = iVar6;
   }
-  sVar1 = (short)(param_3 >> 0x1f);
-  if (param_3 < 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (short)(((short)(param_3 / 200) + sVar1) -
-                     (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (int)(short)(((short)(param_3 / 200) + sVar1) -
-                          (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
-  }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  param_1 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   if (iVar4 < 0) {
     iVar6 = iVar6 + -1;
   }

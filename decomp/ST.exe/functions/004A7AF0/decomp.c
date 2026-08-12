@@ -33,7 +33,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
     local_1e = thunk_FUN_0040bc90(this,param_2 & 0xffff,(short *)(int)local_14,
                                   (short *)(int)local_12,(short *)(int)local_10,'\0');
     if (this->field_0242 < local_1e) {
-      if ((1 < this->field_0027) &&
+      if ((1 < (ushort)this->field_0027) &&
          (((this->field_0236 == 1 && (local_1e <= local_a / 2)) ||
           ((this->field_0236 == 0 && (local_1e <= local_e / 2)))))) {
         DArrayGetElement(this->field_022E,param_3,&local_2c);

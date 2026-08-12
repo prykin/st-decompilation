@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
-   STAppC::StartGame */
+   STAppC::StartGame
+
+   [STSwitchEnumApplier] Switch target field_1180 uses
+   /SubmarineTitans/Recovered/Enums/STAppC_field_1180State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_6=6;CASE_8=8;CASE_9=9;CASE_B=11;CASE_C=12 */
 
 void __thiscall STAppC::StartGame(STAppC *this)
 
@@ -125,7 +129,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     puVar7 = cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_BRIEFING_GAME_0079b06c,(int *)&local_8,0);
     local_8 = &pSVar11->field_1180;
     pSVar11->field_4ED9 = puVar7 != nullptr;
-    if ((*local_8 != 0xc) && (*local_8 != 0x10)) {
+    if ((*local_8 != CASE_C) && (*local_8 != 0x10)) {
       cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_TYPE_START_0079b08c,(int *)&local_8,0);
     }
     local_8 = &pSVar11->field_0x2b2f;
@@ -244,7 +248,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       if (g_cLoading_00802A58 != nullptr) {
         cLoadingTy::DrawLineCR(g_cLoading_00802A58,&pSVar11->field_7D1A);
       }
-      if ((pSVar11->field_1180 == 0xc) || (pSVar11->field_1180 == 0x10)) {
+      if ((pSVar11->field_1180 == CASE_C) || (pSVar11->field_1180 == 0x10)) {
         local_8 = &pSVar11->field_1180;
         cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_TYPE_START_0079b08c,(int *)&local_8,0);
       }

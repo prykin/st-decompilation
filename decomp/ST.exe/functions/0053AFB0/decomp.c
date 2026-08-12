@@ -281,14 +281,14 @@ LAB_0053b2ea:
       return 0;
     }
     if (SVar5 == MESS_ID_NONE) {
-      if (this_00->field_0172 == 3) {
+      if (this_00->field_0172 == CASE_3) {
         iVar8 = this_00->field_0050;
         if (this_00->field_0044 < iVar8) {
           this_00->field_0044 = this_00->field_0044 + 0x1e;
         }
         if (iVar8 <= this_00->field_0044) {
           this_00->field_0044 = iVar8;
-          this_00->field_0172 = 1;
+          this_00->field_0172 = CASE_1;
           ShiftControls(this_00,1);
         }
         Library::DKW::DDX::FUN_006b3640
@@ -297,14 +297,14 @@ LAB_0053b2ea:
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }
-      if (this_00->field_0172 == 4) {
+      if (this_00->field_0172 == CASE_4) {
         iVar8 = this_00->field_0050 - this_00->field_0048;
         if (iVar8 < this_00->field_0044) {
           this_00->field_0044 = this_00->field_0044 + -0x1e;
         }
         if (this_00->field_0044 <= iVar8) {
           this_00->field_0044 = iVar8;
-          this_00->field_0172 = 2;
+          this_00->field_0172 = CASE_2;
         }
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
@@ -536,9 +536,11 @@ LAB_0053b2ea:
       if (this_00->field_01C1 != 0) {
         this_00->field_0028 = 0x25;
         FUN_006e6080(this_00,2,this_00->field_01C1,(undefined4 *)puVar2);
-        if (*(int *)&this_00->field_0x2c != 4) {
+        STPiece<0,2>(iVar8) = this_00->field_002C;
+        STPiece<2,2>(iVar8) = this_00->field_002E;
+        if (iVar8 != 4) {
           this_00->field_0028 = 0x22;
-          *(undefined2 *)&this_00->field_0x2c = 4;
+          this_00->field_002C = 4;
           FUN_006e6080(this_00,2,this_00->field_01C1,(undefined4 *)puVar2);
           g_currentExceptionFrame = local_64.previous;
           return 0;

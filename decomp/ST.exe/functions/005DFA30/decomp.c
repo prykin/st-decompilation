@@ -3,7 +3,10 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
-   MTaskTy::InitMTask */
+   MTaskTy::InitMTask
+
+   [STSwitchEnumApplier] Switch target field_006D uses
+   /SubmarineTitans/Recovered/Enums/MTaskTy_field_006DState. Cases: CASE_1=1;CASE_3=3;CASE_5=5 */
 
 void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2)
 
@@ -290,7 +293,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   }
   SetAccelerator(1,pMVar3->field_0008,2,100,2,1,0,0,0,0,0,0);
   SetAccelerator(1,pMVar3->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
-  pMVar3->field_006D = 3;
+  pMVar3->field_006D = CASE_3;
   PlayScript(pMVar3);
   PaintMTask(pMVar3);
   thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,

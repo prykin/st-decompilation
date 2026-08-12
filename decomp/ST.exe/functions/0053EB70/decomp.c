@@ -7,7 +7,11 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=00401401|0053EB70; family_names=SpecPanelTy::GetMessage; ret4=6;
-   direct_offsets={10:3,14:0,18:1,1c:1} */
+   direct_offsets={10:3,14:0,18:1,1c:1}
+
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/SpecPanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
 
@@ -57,14 +61,14 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_ID_NONE) {
-      if (this_00->field_0172 == 3) {
+      if (this_00->field_0172 == CASE_3) {
         iVar6 = this_00->field_0050 + (this_00->field_0058 - this_00->field_0048);
         if (iVar6 < this_00->field_0044) {
           this_00->field_0044 = this_00->field_0044 + -0xf;
         }
         if (this_00->field_0044 <= iVar6) {
           this_00->field_0044 = iVar6;
-          this_00->field_0172 = 1;
+          this_00->field_0172 = CASE_1;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)this_00->field_0000->field_0018)(1);
         }
@@ -74,14 +78,14 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      if (this_00->field_0172 == 4) {
+      if (this_00->field_0172 == CASE_4) {
         iVar6 = this_00->field_0050 + this_00->field_0058;
         if (this_00->field_0044 < iVar6) {
           this_00->field_0044 = this_00->field_0044 + 0xf;
         }
         if (iVar6 <= this_00->field_0044) {
           this_00->field_0044 = iVar6;
-          this_00->field_0172 = 2;
+          this_00->field_0172 = CASE_2;
         }
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,

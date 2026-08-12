@@ -50,11 +50,12 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   }
   pPVar3 = local_c;
   if (param_1 != '\0') {
-    if (local_c->field_1A73 != 0) {
-      StartSystemTy::sub_006E56B0(local_c->field_000C,local_c->field_1A73);
+    uVar12 = local_c->array_00BC[0xc].field_01F3;
+    if (uVar12 != 0) {
+      StartSystemTy::sub_006E56B0(local_c->field_000C,uVar12);
     }
-    pPVar3->field_1A73 = 0;
-    pPVar3->field_1A61 = 0;
+    pPVar3->array_00BC[0xc].field_01F3 = 0;
+    pPVar3->array_00BC[0xc].field_01E1 = 0;
     FUN_006b5f80((int *)g_ddxContext_008075A8,0x79,0x51,0x22e,0x145);
     if (pPVar3->field_1C96 != nullptr) {
       HoloTy::Done(pPVar3->field_1C96);

@@ -17,6 +17,7 @@ import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
@@ -24,6 +25,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ghidra.app.cmd.function.CreateFunctionCmd;
 import ghidra.app.cmd.function.CreateThunkFunctionCmd;
@@ -67,6 +70,8 @@ public class STVTableApplier extends GhidraScript {
         new CategoryPath("/SubmarineTitans/Recovered/VTables");
     private static final CategoryPath VFUNCTIONS =
         new CategoryPath("/SubmarineTitans/Recovered/VTableFunctions");
+    private static final CategoryPath INDIRECT_FUNCTIONS =
+        new CategoryPath("/SubmarineTitans/Recovered/IndirectCallFunctions");
     private static final String FUNCTION_TAG = "RECOVERED_VTABLE_SLOT";
     private static final String VIRTUAL_METHOD_TAG = "RECOVERED_VIRTUAL_METHOD";
     private static final String MESSAGE_HANDLER_TAG = "RECOVERED_MESSAGE_HANDLER";
@@ -75,6 +80,10 @@ public class STVTableApplier extends GhidraScript {
     private static final String INDIRECT_CALL_MARKER = "[STIndirectCallApplier]";
     private static final String LAYOUT_HASH_MARKER = "; generated_layout_sha256=";
     private static final String SIGNATURE_HASH_MARKER = "; generated_signature_sha256=";
+    private static final Pattern SLOT_TARGET = Pattern.compile(
+        "(?i)->\\s*([0-9a-f]{8,16})\\b");
+    private static final Pattern VTABLE_SOURCE = Pattern.compile(
+        "(?i)\\bGenerated from\\s+([0-9a-f]{8,16})\\b");
 
     private Listing listing;
     private DataTypeManager dataTypes;
@@ -733,7 +742,14 @@ public class STVTableApplier extends GhidraScript {
                 slot.get("raw_target_address") + " " + unt(slot.get("raw_target_symbol"));
             DataType retained = retainedIndirectCallType(existing, slotOffset,
                 slot.get("raw_target_address"));
-            if (retained != null && retainIndependentSlotAbi(fieldType, retained, function)) {
+            DataType physicalAlias = physicalAliasIndirectType(
+                proposal.get("table_address"), slotOffset,
+                slot.get("raw_target_address"));
+            if (retained == null) retained = physicalAlias;
+            if (retained == null)
+                retained = dominantIndirectCallType(rawAddress, fieldType, function);
+            if (retained != null && (physicalAlias != null ||
+                    retainIndependentSlotAbi(fieldType, retained, function))) {
                 fieldType = retained;
                 comment += " " + INDIRECT_CALL_MARKER;
             }
@@ -762,8 +778,107 @@ public class STVTableApplier extends GhidraScript {
         if (!(component.getDataType() instanceof Pointer pointer) ||
                 !(pointer.getDataType() instanceof FunctionDefinition definition)) return null;
         String definitionComment = text(definition.getComment());
-        return definitionComment.contains(INDIRECT_CALL_MARKER) ?
+        return definitionComment.contains(INDIRECT_CALL_MARKER) ||
+                definition.getCategoryPath().equals(INDIRECT_FUNCTIONS) ?
             component.getDataType() : null;
+    }
+
+    /**
+     * Vtable ownership can improve after a table type has already been generated.  The old and
+     * new names may therefore coexist temporarily, but they still describe the same physical
+     * bytes.  An independently recovered slot ABI on one exact-address alias is authoritative
+     * for that slot on every generated alias.  This is address identity, not layout similarity.
+     */
+    private DataType physicalAliasIndirectType(String tableAddress, int offset,
+            String rawTarget) {
+        DataType agreed = null;
+        Iterator<Structure> structures = dataTypes.getAllStructures();
+        while (structures.hasNext()) {
+            Structure structure = structures.next();
+            if (!structure.getCategoryPath().equals(VTABLES) ||
+                    !generatedForTable(structure, tableAddress)) continue;
+            DataTypeComponent component = structure.getComponentAt(offset);
+            if (component == null || component.getOffset() != offset ||
+                    component.getLength() != pointerSize ||
+                    !text(component.getComment()).toUpperCase(Locale.ROOT).contains(
+                        "-> " + unt(rawTarget).toUpperCase(Locale.ROOT)) ||
+                    !(component.getDataType() instanceof Pointer pointer) ||
+                    !(pointer.getDataType() instanceof FunctionDefinition definition) ||
+                    !(text(component.getComment()).contains(INDIRECT_CALL_MARKER) ||
+                        definition.getCategoryPath().equals(INDIRECT_FUNCTIONS))) continue;
+            DataType recovered = component.getDataType();
+            if (agreed != null && !agreed.isEquivalent(recovered)) return null;
+            agreed = recovered;
+        }
+        return agreed;
+    }
+
+    private boolean generatedForTable(Structure structure, String tableAddress) {
+        String description = text(structure.getDescription());
+        if (!description.contains(COMMENT_MARKER)) return false;
+        Matcher matcher = VTABLE_SOURCE.matcher(description);
+        return matcher.find() && matcher.group(1).equalsIgnoreCase(unt(tableAddress));
+    }
+
+    /**
+     * One implementation address has one machine ABI even when several physical vtables point
+     * at it.  A newly discovered owner can cause this script to build a fresh physical table
+     * before STIndirectCallAnalyzer sees it.  In that situation, copying the weak target Listing
+     * signature would discard an independently recovered slot ABI which is already installed in
+     * another table.  Recover the unanimous generated indirect-call family by resolved target.
+     *
+     * Only marker-owned function pointers participate.  Conflicting recovered families cancel
+     * the transfer, and retainIndependentSlotAbi() still refuses the transfer when the target has
+     * stronger manual/imported or machine-ABI provenance.  Thus table similarity, slot number,
+     * and owner name are never evidence by themselves.
+     */
+    private DataType dominantIndirectCallType(Address rawAddress, DataType candidate,
+            Function entry) {
+        Function wanted = resolvedTarget(entry);
+        if (rawAddress == null || wanted == null) return null;
+        DataType agreed = null;
+        Iterator<Structure> structures = dataTypes.getAllStructures();
+        while (structures.hasNext()) {
+            Structure structure = structures.next();
+            if (!structure.getCategoryPath().equals(VTABLES)) continue;
+            for (DataTypeComponent component : structure.getDefinedComponents()) {
+                if (!(component.getDataType() instanceof Pointer pointer) ||
+                        !(pointer.getDataType() instanceof FunctionDefinition definition) ||
+                        !text(component.getComment()).contains(INDIRECT_CALL_MARKER) ||
+                        !(text(definition.getComment()).contains(INDIRECT_CALL_MARKER) ||
+                            definition.getCategoryPath().equals(INDIRECT_FUNCTIONS))) continue;
+                Matcher matcher = SLOT_TARGET.matcher(text(component.getComment()));
+                if (!matcher.find()) continue;
+                Address otherRaw = address(matcher.group(1));
+                Function otherEntry = otherRaw == null ? null :
+                    currentProgram.getFunctionManager().getFunctionAt(otherRaw);
+                Function otherTarget = resolvedTarget(otherEntry);
+                if (otherTarget == null || !otherTarget.getEntryPoint().equals(
+                        wanted.getEntryPoint())) continue;
+                DataType recovered = component.getDataType();
+                if (!matchesTrustedTarget(recovered, entry) &&
+                        !retainIndependentSlotAbi(candidate, recovered, entry)) continue;
+                if (agreed != null && !agreed.isEquivalent(recovered)) return null;
+                agreed = recovered;
+            }
+        }
+        return agreed;
+    }
+
+    private boolean matchesTrustedTarget(DataType recovered, Function entry) {
+        Function trusted = trustedSignatureFunction(entry);
+        FunctionDefinition definition = pointedFunction(recovered);
+        if (trusted == null || definition == null) return false;
+        FunctionDefinitionDataType target = new FunctionDefinitionDataType(
+            VFUNCTIONS, "comparison_" + addr(trusted.getEntryPoint()),
+            trusted.getSignature(), dataTypes);
+        return definition.isEquivalentSignature(target);
+    }
+
+    private Function resolvedTarget(Function entry) {
+        if (entry == null) return null;
+        Function target = entry.isThunk() ? entry.getThunkedFunction(true) : entry;
+        return target == null ? entry : target;
     }
 
     private boolean isVoidPointer(DataType type) {

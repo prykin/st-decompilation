@@ -205,7 +205,7 @@ undefined4 __thiscall st::fn_0068E730(AiTactClassTy *this,int param_1)
     element_00a5 = nullptr;
   }
   element_00a5->field_0004 = 0;
-  element_00a5->field_0000 = static_cast<undefined4>(0);
+  element_00a5->field_0000 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_00405957(this,*(short *)(param_1 + 0x7d));
   st::fn_00404F2A(param_1);

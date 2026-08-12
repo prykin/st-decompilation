@@ -40,7 +40,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
   int local_18;
   uint local_14;
   byte *local_10;
-  AnonShape_0060EA30_DCEB68AD *local_c;
+  uint local_c;
   STMineSetC *local_8;
 
   local_8 = this;
@@ -120,7 +120,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
-    local_10 = STAllPlayersC::thunk_FUN_00622990((STAllPlayersC *)local_8,(uint *)&local_c);
+    local_10 = STAllPlayersC::thunk_FUN_00622990((STAllPlayersC *)local_8,&local_c);
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,(int *)this_00->field_0018,local_10,local_c);
     FreeAndNull(&local_10);
     g_currentExceptionFrame = local_60.previous;

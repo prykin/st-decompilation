@@ -39,7 +39,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pWVar2 = local_8;
   if (iVar4 == 0) {
-    if (local_8->field_1A64 == 0) {
+    if (local_8->array_00BC[0xc].field_01E4 == 0) {
       StartSystemTy::CreateBinDesc(g_startSystem_0081176C);
       StartSystemTy::CreateChatView(g_startSystem_0081176C);
       ppcVar6 = local_8d8;

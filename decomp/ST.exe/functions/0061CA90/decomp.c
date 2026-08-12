@@ -50,33 +50,9 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
   if (param_4 == nullptr) {
     return 0;
   }
-  sVar9 = (short)(param_1 >> 0x1f);
-  if (param_1 < 0) {
-    iVar16 = (short)(((short)(param_1 / 0xc9) + sVar9) -
-                    (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    iVar16 = (int)(short)(((short)(param_1 / 0xc9) + sVar9) -
-                         (short)((longlong)param_1 * 0x28c1979 >> 0x3f));
-  }
-  sVar9 = (short)(param_2 >> 0x1f);
-  if (param_2 < 0) {
-    iVar13 = (short)(((short)(param_2 / 0xc9) + sVar9) -
-                    (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    iVar13 = (int)(short)(((short)(param_2 / 0xc9) + sVar9) -
-                         (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
-  }
-  sVar9 = (short)(param_3 >> 0x1f);
-  if (param_3 < 0) {
-    iVar10 = (short)(((short)(param_3 / 200) + sVar9) -
-                    (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    iVar10 = (int)(short)(((short)(param_3 / 200) + sVar9) -
-                         (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
-  }
+  iVar16 = STBiasedDiv16(param_1, 0xc9); /* exact signed 16-bit grid-index division */
+  iVar13 = STBiasedDiv16(param_2, 0xc9); /* exact signed 16-bit grid-index division */
+  iVar10 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   if (((((-1 < iVar16) && (-1 < iVar13)) && (-1 < iVar10)) &&
       ((iVar18 = (int)g_worldGrid.sizeX, iVar16 < iVar18 &&
        (iVar15 = (int)g_worldGrid.sizeY, iVar13 < iVar15)))) && (iVar10 < 5)) {

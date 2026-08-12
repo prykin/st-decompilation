@@ -39,9 +39,9 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
         DArrayDestroy(local_14->field_0160);
         this_00->field_0160 = nullptr;
       }
-      if (*(DArrayTy **)&this_00->field_0x29f != nullptr) {
-        DArrayDestroy(*(DArrayTy **)&this_00->field_0x29f);
-        *(undefined4 *)&this_00->field_0x29f = 0;
+      if ((DArrayTy *)this_00->field_029F != nullptr) {
+        DArrayDestroy((DArrayTy *)this_00->field_029F);
+        this_00->field_029F = 0;
       }
       return 0;
     }
@@ -57,12 +57,12 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
     memset(&local_14->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
     iVar8 = 0;
     local_14->field_0065 = 0;
-    if (*(DArrayTy **)&local_14->field_0x29f != nullptr) {
-      DArrayDestroy(*(DArrayTy **)&local_14->field_0x29f);
+    if ((DArrayTy *)local_14->field_029F != nullptr) {
+      DArrayDestroy((DArrayTy *)local_14->field_029F);
     }
     this_00->field_029B = this_00->field_015C;
-    *(DArrayTy **)&this_00->field_0x29f = this_00->field_0160;
-    *(undefined4 *)&this_00->field_0x29f = 0;
+    this_00->field_029F = this_00->field_0160;
+    this_00->field_029F = 0;
     if (this_00->field_029B == 0) {
       if ((this_00->field_0160 == nullptr) ||
          (dVar9 = this_00->field_0160->count, local_c = dVar9, dVar9 == 0)) {
@@ -73,7 +73,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       }
       pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
       uVar11 = 0;
-      *(DArrayTy **)&this_00->field_0x29f = pDVar2;
+      this_00->field_029F = pDVar2;
       if (0 < (int)dVar9) {
         do {
           DArrayGetElement(this_00->field_0160,uVar11,local_8);
@@ -82,7 +82,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
                                   (g_allPlayers_007FA174,this_00->field_0024,STPiece<0,2>(local_8),CASE_1),
               pSVar3 != nullptr)) &&
              (iVar8 = (*pSVar3->vtable->vfunc_2C)(), iVar8 == 0x33)) {
-            Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&this_00->field_0x29f,local_8);
+            Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_029F,local_8);
           }
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < (int)dVar9);
@@ -90,7 +90,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       DArrayDestroy(this_00->field_0160);
       this_00->field_0160 = nullptr;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)(*(int *)&this_00->field_0x29f + 0xc) == 0) {
+      if (*(int *)(this_00->field_029F + 0xc) == 0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x9c8);
@@ -98,19 +98,19 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
     }
     if (this_00->field_029B == 1) {
       puVar4 = STAllPlayersC::GetTOBJList(g_allPlayers_007FA174,this_00->field_0024,0x33,0,-1);
-      *(uint **)&this_00->field_0x29f = puVar4;
+      this_00->field_029F = puVar4;
       if (puVar4[3] == 0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x9cd);
       }
     }
-    DistributeDock(this_00,1,*(DArrayTy **)&this_00->field_0x29f,(DArrayTy *)this_00->field_0029);
+    DistributeDock(this_00,1,(DArrayTy *)this_00->field_029F,(DArrayTy *)this_00->field_0029);
   }
   uVar11 = 0;
   local_10 = 2;
   if (g_playSystem_00802A38->field_00E4 % 0x19 == 0) {
-    if ((*(int *)&this_00->field_0x29f == 0) || (this_00->field_0027 == 0)) {
+    if ((this_00->field_029F == 0) || (this_00->field_0027 == 0)) {
       local_10 = 0;
     }
     else {

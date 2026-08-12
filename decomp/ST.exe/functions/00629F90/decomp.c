@@ -68,34 +68,13 @@ STParticleC::sub_00629F90(STParticleC *this,STParticleC *param_1,undefined4 para
   iVar5 = this->field_0046;
   this->field_00AA = param_2;
   this->field_00AE = param_2;
-  sVar3 = (short)(iVar5 >> 0x1f);
-  if (iVar5 < 0) {
-    iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar3) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f))
-            + -1;
-  }
-  else {
-    iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar3) -
-                        (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-  }
+  iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
   iVar2 = this->field_004A;
   this->field_005E = iVar5;
-  sVar3 = (short)(iVar2 >> 0x1f);
-  if (iVar2 < 0) {
-    iVar5 = (short)(((short)(iVar2 / 0xc9) + sVar3) - (short)((longlong)iVar2 * 0x28c1979 >> 0x3f))
-            + -1;
-  }
-  else {
-    iVar5 = (int)(short)(((short)(iVar2 / 0xc9) + sVar3) -
-                        (short)((longlong)iVar2 * 0x28c1979 >> 0x3f));
-  }
+  iVar5 = STBiasedDiv16(iVar2, 0xc9); /* exact signed 16-bit grid-index division */
   iVar2 = this->field_004E;
   this->field_0062 = iVar5;
-  if (iVar2 < 0) {
-    iVar5 = (short)(iVar2 / 200) + -1;
-  }
-  else {
-    iVar5 = (int)(short)(iVar2 / 200);
-  }
+  iVar5 = STBiasedDiv16(iVar2, 200); /* exact signed 16-bit grid-index division */
   this->field_0066 = iVar5;
   cVar1 = param_1->field_0041;
   this->field_00C0 = cVar1;
@@ -103,17 +82,17 @@ STParticleC::sub_00629F90(STParticleC *this,STParticleC *param_1,undefined4 para
     return 0;
   }
   this->field_00BE = 0x1e;
-  switch((uint)this->field_0014 >> 8 & 0xff) {
+  switch(this->field_0014 >> 8 & 0xff) {
   case 0:
     if (param_1->field_001C == 4) {
-      this->field_00BE = (byte)(&DAT_007d0af0)[(uint)*(byte *)&param_1->field_0014 * 8] >> 1;
+      this->field_00BE = (byte)(&DAT_007d0af0)[(uint)(byte)param_1->field_0014 * 8] >> 1;
       goto cf_common_exit_0062A1E3;
     }
-    bVar4 = (byte)(&DAT_007d0a70)[(uint)*(byte *)&param_1->field_0014 * 8] >> 1;
+    bVar4 = (byte)(&DAT_007d0a70)[(uint)(byte)param_1->field_0014 * 8] >> 1;
     goto LAB_0062a1dd;
   case 1:
   case 0x20:
-    this->field_00BE = (byte)(&DAT_007d0bf0)[(uint)*(byte *)&param_1->field_0014 * 8] >> 1;
+    this->field_00BE = (byte)(&DAT_007d0bf0)[(uint)(byte)param_1->field_0014 * 8] >> 1;
     goto cf_common_exit_0062A1E3;
   case 2:
   case 8:
@@ -123,10 +102,10 @@ STParticleC::sub_00629F90(STParticleC *this,STParticleC *param_1,undefined4 para
   default:
     goto cf_common_exit_0062A1E3;
   case 4:
-    iVar5 = *(int *)(&DAT_007d0a00 + (uint)*(byte *)&this->field_0014 * 4);
+    iVar5 = *(int *)(&DAT_007d0a00 + (uint)(byte)this->field_0014 * 4);
     break;
   case 0x10:
-    iVar5 = *(int *)(&DAT_007d0af0 + (uint)*(byte *)&param_1->field_0014 * 8);
+    iVar5 = *(int *)(&DAT_007d0af0 + (uint)(byte)param_1->field_0014 * 8);
     break;
   case 0x80:
     iVar5 = DAT_007d08b8;

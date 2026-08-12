@@ -132,8 +132,8 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
                      ,0x77d);
         }
         STFishC::sub_004162F0
-                  ((STFishC *)pSVar7,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
-                   (undefined2 *)&local_14);
+                  ((STFishC *)pSVar7,(short *)((int)&param_1 + 2),(short *)&local_10,
+                   (short *)&local_14);
         iVar10 = (int)STPiece<2,2>(param_1);
         if (iVar10 < local_c) {
           local_c = iVar10;
@@ -246,8 +246,8 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
                      ,0x7a7);
         }
         STFishC::sub_004162F0
-                  ((STFishC *)pSVar7,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
-                   (undefined2 *)&local_14);
+                  ((STFishC *)pSVar7,(short *)((int)&param_1 + 2),(short *)&local_10,
+                   (short *)&local_14);
         GVar15 = local_20;
         if (g_pathingScratchGrid.cells
             [(((short)local_10 - local_8) * (int)g_pathingGrid.sizeX +
@@ -290,8 +290,8 @@ joined_r0x0049bc58:
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x7bd);
             }
             STFishC::sub_004162F0
-                      ((STFishC *)pSVar7,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
-                       (undefined2 *)&local_14);
+                      ((STFishC *)pSVar7,(short *)((int)&param_1 + 2),(short *)&local_10,
+                       (short *)&local_14);
             if (g_pathingScratchGrid.cells
                 [(int)g_pathingGrid.planeStride * (int)(short)local_14 +
                  (int)g_pathingGrid.sizeX * (int)(short)local_10 + (int)STPiece<2,2>(param_1)] == 0) {
@@ -325,7 +325,7 @@ joined_r0x0049bc58:
   DArrayDestroy(this->field_0103);
   this->field_0103 = nullptr;
   ReMakePatrolPoints(this);
-  pDVar9 = Library::DKW::TBL::DArrayCreate(nullptr,(uint)this->field_0027,0x16,1);
+  pDVar9 = Library::DKW::TBL::DArrayCreate(nullptr,(uint)(ushort)this->field_0027,0x16,1);
   this->field_022E = pDVar9;
   uVar13 = 0;
   local_6c = 0;

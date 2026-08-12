@@ -92,7 +92,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
       *ppcVar10 = nullptr;
       ppcVar10 = ppcVar10 + 1;
     }
-    local_8e0[2] = this_00->field_1A73;
+    local_8e0[2] = this_00->array_00BC[0xc].field_01F3;
     local_8c0 = this_00->field_1AE8;
     local_894 = this_00->field_0008;
     local_850 = 2;
@@ -110,7 +110,8 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,nullptr,local_8e0,0);
     this_00->field_002D = 0x61;
-    *(undefined4 *)&this_00->field_0x35 = 0;
+    this_00->field_0035 = 0;
+    this_00->field_0037 = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_54.previous;
     return;

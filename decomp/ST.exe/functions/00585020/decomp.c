@@ -21,33 +21,15 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
   short local_8;
 
   sVar7 = param_1->field_0041;
-  if (sVar7 < 0) {
-    sVar7 = ((sVar7 / 0xc9 + (sVar7 >> 0xf)) - (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar7 = (sVar7 / 0xc9 + (sVar7 >> 0xf)) - (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f);
-  }
+  sVar7 = STBiasedDiv16(sVar7, 0xc9); /* exact signed 16-bit grid-index division */
   param_1->field_0047 = sVar7;
   param_1->field_005B = sVar7;
   sVar7 = param_1->field_0043;
-  if (sVar7 < 0) {
-    sVar7 = ((sVar7 / 0xc9 + (sVar7 >> 0xf)) - (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar7 = (sVar7 / 0xc9 + (sVar7 >> 0xf)) - (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f);
-  }
+  sVar7 = STBiasedDiv16(sVar7, 0xc9); /* exact signed 16-bit grid-index division */
   param_1->field_0049 = sVar7;
   param_1->field_005D = sVar7;
   sVar7 = param_1->field_0045;
-  if (sVar7 < 0) {
-    sVar7 = ((sVar7 / 200 + (sVar7 >> 0xf)) - (short)((longlong)(int)sVar7 * 0x51eb851f >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar7 = (sVar7 / 200 + (sVar7 >> 0xf)) - (short)((longlong)(int)sVar7 * 0x51eb851f >> 0x3f);
-  }
+  sVar7 = STBiasedDiv16(sVar7, 200); /* exact signed 16-bit grid-index division */
   param_1->field_004B = sVar7;
   param_1->field_005F = sVar7;
   iVar4 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)param_1);
@@ -90,14 +72,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
     local_8 = (sVar7 / 0xc9 + (sVar7 >> 0xf)) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f);
   }
   sVar7 = param_1->field_0045;
-  if (sVar7 < 0) {
-    local_14 = (short)((sVar7 / 200 + (sVar7 >> 0xf)) -
-                      (short)((longlong)(int)sVar7 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    local_14 = (int)(short)((sVar7 / 200 + (sVar7 >> 0xf)) -
-                           (short)((longlong)(int)sVar7 * 0x51eb851f >> 0x3f));
-  }
+  local_14 = STBiasedDiv16(sVar7, 200); /* exact signed 16-bit grid-index division */
   iVar8 = param_1->field_0231;
   sVar7 = (short)local_14;
   if (iVar8 == 0) {
@@ -144,23 +119,9 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       param_1->field_024D = iVar4 - (iVar4 >> 0x1f);
       if (g_visibleClass_00802A88 != nullptr) {
         sVar7 = param_1->field_0043;
-        if (sVar7 < 0) {
-          iVar4 = (short)((sVar7 / 0xc9 + (sVar7 >> 0xf)) -
-                         (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f)) + -1;
-        }
-        else {
-          iVar4 = (int)(short)((sVar7 / 0xc9 + (sVar7 >> 0xf)) -
-                              (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f));
-        }
+        iVar4 = STBiasedDiv16(sVar7, 0xc9); /* exact signed 16-bit grid-index division */
         sVar7 = param_1->field_0041;
-        if (sVar7 < 0) {
-          iVar6 = (short)((sVar7 / 0xc9 + (sVar7 >> 0xf)) -
-                         (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f)) + -1;
-        }
-        else {
-          iVar6 = (int)(short)((sVar7 / 0xc9 + (sVar7 >> 0xf)) -
-                              (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f));
-        }
+        iVar6 = STBiasedDiv16(sVar7, 0xc9); /* exact signed 16-bit grid-index division */
         VisibleClassTy::VisHoleCreate
                   (g_visibleClass_00802A88,iVar6,iVar4,nullptr,
                    *(uint *)&param_1->field_0x24,(undefined *)0x5,500);

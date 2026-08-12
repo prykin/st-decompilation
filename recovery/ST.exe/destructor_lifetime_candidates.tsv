@@ -66,7 +66,13 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 004CF640	FUN_004cf640	TLOBaseTy	0x3C	0	0	0	3	0	13
 004D0B90	TLOFakeTy::GetMessage	TLOFakeTy	0x0	0	0	0	0	0	12
 004D55B0	TLOEmbryoTy::GetMessage	TLOEmbryoTy	0x0	0	0	0	0	0	58
+004D6360	FUN_004d6360	TLOEmbryoTy	0xDC	0	0	0	0	0	1
+004D6590	FUN_004d6590	TLOEmbryoTy	0xE0	0	0	0	0	0	4
 004D67B0	TLOBaseTy::SetActivity	TLOBaseTy	0xE8	0	0	0	0	0	5
+004D6890	FUN_004d6890	TLOEmbryoTy	0x30	0	0	0	0	0	2
+004D6930	FUN_004d6930	TLOEmbryoTy	0x34	0	0	0	0	0	4
+004D6C90	FUN_004d6c90	TLOEmbryoTy	0x28	0	0	0	0	0	2
+004D6D50	FUN_004d6d50	TLOEmbryoTy	0x68	0	0	0	0	0	2
 004D7390	FUN_004d7390	TLOBaseTy	0xD0	0	0	0	1	0	1
 004DA340	FUN_004da340	TLOBaseTy	0x44	0	0	0	0	0	1
 004E3200	FUN_004e3200	TLOBaseTy	0x38	0	0	0	2	0	31
@@ -268,9 +274,11 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 00690B90	AiTactClassTy::GetMessage	AiTactClassTy	0x0	0	0	0	0	0	16
 006E5150	STAppC::sub_006E5150	STAppC	0x18	0	1	0	1	0	2
 0071CF80	FUN_0071cf80	ButtonClassTy	0x8	0	3	0	1	0	1
+0071E860	FUN_0071e860	ViewerClassTy	0x8	0	4	0	1	0	1
 0071F230	FUN_0071f230	ListClassTy	0x4	0	0	0	0	0	2
 0071F2B0	FUN_0071f2b0	ListClassTy	0x8	0	2	0	1	0	1
 0071F2F0	FUN_0071f2f0	ListClassTy	0xC	0	4	0	1	0	1
+007209D0	FUN_007209d0	EditorClassTy	0x8	0	5	0	1	0	1
 00724D40	FUN_00724d40	TrackbarClassTy	0x8	0	3	0	1	0	1
 0074A113	CBaseRenderer::EndOfStream	CBaseRenderer	0x68	0	1	0	1	0	2
 0074A143	CBaseRenderer::BeginFlush	CBaseRenderer	0x84	0	0	0	2	0	5

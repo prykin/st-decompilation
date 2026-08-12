@@ -362,7 +362,7 @@ int __thiscall st::fn_004D0B90(TLOFakeTy *this,STMessage *message)
     }
   }
   else if (SVar2 == MESS_SHARED_0003) {
-    DAT_00800bcc = static_cast<undefined4>(0);
+    DAT_00800bcc = 0;
     st::fn_004021D5((STT3DSprC *)&pSVar4->field_01D5);
     if (*(int *)&pSVar4->field_0x24d != 0) {
       st::fn_006AB060(&pSVar4->field_0x24d);

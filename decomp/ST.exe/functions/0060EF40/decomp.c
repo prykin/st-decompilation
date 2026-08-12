@@ -78,23 +78,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40
   local_3c = sVar11 + local_b8[0];
   local_48 = sVar9 + local_74;
   sVar11 = *(short *)&this->field_0x1ef;
-  if (sVar11 < 0) {
-    local_80 = (short)((sVar11 / 0xc9 + (sVar11 >> 0xf)) -
-                      (short)((longlong)(int)sVar11 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    local_80 = (int)(short)((sVar11 / 0xc9 + (sVar11 >> 0xf)) -
-                           (short)((longlong)(int)sVar11 * 0x28c1979 >> 0x3f));
-  }
+  local_80 = STBiasedDiv16(sVar11, 0xc9); /* exact signed 16-bit grid-index division */
   sVar11 = *(short *)&this->field_0x1f1;
-  if (sVar11 < 0) {
-    local_b0 = (short)((sVar11 / 0xc9 + (sVar11 >> 0xf)) -
-                      (short)((longlong)(int)sVar11 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    local_b0 = (int)(short)((sVar11 / 0xc9 + (sVar11 >> 0xf)) -
-                           (short)((longlong)(int)sVar11 * 0x28c1979 >> 0x3f));
-  }
+  local_b0 = STBiasedDiv16(sVar11, 0xc9); /* exact signed 16-bit grid-index division */
   sVar11 = *(short *)&this->field_0x1f3;
   if (sVar11 < 0) {
     local_34 = (short *)((short)((sVar11 / 200 + (sVar11 >> 0xf)) -

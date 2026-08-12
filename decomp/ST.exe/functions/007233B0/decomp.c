@@ -7,13 +7,12 @@
 EditorClassTy * __cdecl CreateEditor(void)
 
 {
-  undefined4 *puVar1;
-  EditorClassTy *pEVar2;
+  EditorClassTy *pEVar1;
 
-  puVar1 = FUN_006b04d0(0x218);
-  if (puVar1 != nullptr) {
-    pEVar2 = (EditorClassTy *)FUN_007209b0(puVar1);
-    return pEVar2;
+  pEVar1 = (EditorClassTy *)FUN_006b04d0(0x218);
+  if (pEVar1 != nullptr) {
+    pEVar1 = EditorClassTy::EditorClassTy(pEVar1);
+    return pEVar1;
   }
   return nullptr;
 }

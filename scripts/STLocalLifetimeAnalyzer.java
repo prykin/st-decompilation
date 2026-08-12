@@ -212,8 +212,11 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         String currentSpecification = typeSpecification(currentType);
         SourceType symbolSource = symbolSource(highSymbol);
         boolean merged = groups.size() > 1;
+        boolean receiverAliasCandidate =
+            receiverAliasCandidate(function, highSymbol, currentType);
         if (!merged && !genericUnknown(currentType) &&
-                !scriptOwnedScalarLocal(highSymbol, currentType))
+                !scriptOwnedScalarLocal(highSymbol, currentType) &&
+                !receiverAliasCandidate)
             return;
         if (merged) {
             mergedLocals++;
@@ -227,6 +230,9 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             for (Object varnode : entry.getValue())
                 collectEvidence(varnode, evidence,
                     scalarRoleEligible(currentType));
+            if (receiverAliasCandidate)
+                collectReceiverAliasEvidence(function, entry.getValue(),
+                    currentType, evidence);
             if (!evidence.isEmpty()) groupsWithEvidence++;
             Decision decision = decide(evidence);
             decisions.put(entry.getKey(), decision);
@@ -272,6 +278,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             String confidence = apply ? "high" :
                 manual ? "manual" : different ? "review" : "existing";
             String reason = (merged ? "separate decompiler merge group" :
+                receiverAliasCandidate ? "single receiver-alias lifetime" :
                 "single undefined local lifetime") + "; exact_type_votes=" +
                 selected.anchors.size() + "; score=" + selected.score +
                 "; sources=" + selected.sources +
@@ -311,6 +318,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         return evidence.sources.contains("call_return") ||
             evidence.sources.contains("typed_copy") ||
             evidence.sources.contains("typed_cast") ||
+            evidence.sources.contains("receiver_alias") ||
             evidence.sources.contains("typed_recursive_field");
     }
 
@@ -327,6 +335,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     }
 
     private int automaticThreshold(TypeEvidence evidence) {
+        if (evidence.sources.contains("receiver_alias"))
+            return TYPED_FIELD_WEIGHT;
         if (evidence.sources.contains("call_return")) return RETURN_WEIGHT;
         if (evidence.sources.contains("typed_copy")) return COPY_WEIGHT;
         if (evidence.sources.contains("typed_cast")) return COPY_WEIGHT;
@@ -338,6 +348,14 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     private Decision decide(Map<String, TypeEvidence> evidence) {
         if (evidence.isEmpty()) return new Decision(null, false, evidence);
         if (evidence.size() != 1) {
+            List<TypeEvidence> receiverAliases = evidence.values().stream()
+                .filter(value -> value.sources.contains("receiver_alias"))
+                .toList();
+            // The exact unadjusted machine provenance of a local is stronger
+            // than a downstream call accepting a base or neutral pointer.  A
+            // competing receiver origin still cancels the proposal.
+            if (receiverAliases.size() == 1)
+                return new Decision(receiverAliases.get(0), false, evidence);
             List<TypeEvidence> exact = evidence.values().stream()
                 .filter(value -> value.sources.stream()
                     .anyMatch(source -> !source.startsWith("scalar_") &&
@@ -351,6 +369,183 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             return new Decision(null, true, evidence);
         }
         return new Decision(evidence.values().iterator().next(), false, evidence);
+    }
+
+    /**
+     * Recover a compiler spill/reload alias of a method receiver.  MSVC SEH and
+     * setjmp-heavy functions frequently copy ECX through a stack local; Ghidra
+     * then assigns that local a shorter base-class view and renders every
+     * derived member as `*(T *)&alias->field_0xNN`.  This rule is deliberately
+     * independent of names and addresses: the value must trace to the exact
+     * auto `this` parameter through representation-neutral p-code only, and a
+     * use must reach a concrete member present in the owner layout but absent
+     * from the current pointee layout.
+     */
+    private void collectReceiverAliasEvidence(Function function,
+            List<Object> varnodes, DataType currentType,
+            Map<String, TypeEvidence> evidence) {
+        DataType receiverType = receiverType(function);
+        Structure receiver = pointedStructure(receiverType);
+        Structure current = pointedStructure(currentType);
+        if (receiver == null || current == null ||
+                equivalentLifetimeType(receiverType, currentType)) return;
+        try {
+            for (Object varnode : varnodes) {
+                Object definition = varnode.getClass().getMethod("getDef")
+                    .invoke(varnode);
+                if (definition == null ||
+                        !receiverAliasOrigin(varnode, receiverType,
+                            java.util.Collections.newSetFromMap(
+                                new java.util.IdentityHashMap<>()), 0) ||
+                        !needsReceiverLayout(varnode, current, receiver))
+                    continue;
+                String operation = mnemonic(definition);
+                if (!Set.of("COPY", "CAST", "MULTIEQUAL", "INDIRECT")
+                        .contains(operation)) continue;
+                Evidence anchor = anchor(definition,
+                    "receiver_alias_" + operation.toLowerCase(Locale.ROOT),
+                    -1, null, typeSpecification(receiverType));
+                addEvidence(evidence, receiverType, TYPED_FIELD_WEIGHT,
+                    "receiver_alias", anchor);
+            }
+        }
+        catch (Exception ignored) {
+            // A partially malformed SSA chain is not receiver evidence.
+        }
+    }
+
+    private boolean receiverAliasCandidate(Function function, Object highSymbol,
+            DataType currentType) {
+        DataType receiverType = receiverType(function);
+        Structure receiver = pointedStructure(receiverType);
+        Structure current = pointedStructure(currentType);
+        return receiver != null && current != null &&
+            !equivalentLifetimeType(receiverType, currentType) &&
+            persistentLocal(highSymbol);
+    }
+
+    private boolean persistentLocal(Object highSymbol) {
+        try {
+            Symbol symbol = (Symbol)highSymbol.getClass()
+                .getMethod("getSymbol").invoke(highSymbol);
+            Object object = symbol == null ? null : symbol.getObject();
+            return object instanceof Variable variable &&
+                !(variable instanceof Parameter);
+        }
+        catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    private DataType receiverType(Function function) {
+        if (function == null ||
+                !"__thiscall".equals(function.getCallingConventionName()))
+            return null;
+        for (Parameter parameter : function.getParameters()) {
+            if (!parameter.isAutoParameter() ||
+                    !"this".equals(parameter.getName())) continue;
+            return semanticPointer(parameter.getDataType()) ?
+                parameter.getDataType() : null;
+        }
+        return null;
+    }
+
+    private Structure pointedStructure(DataType type) {
+        type = untypedef(type);
+        if (!(type instanceof Pointer pointer)) return null;
+        DataType pointed = untypedef(pointer.getDataType());
+        return pointed instanceof Structure structure ? structure : null;
+    }
+
+    private boolean receiverAliasOrigin(Object varnode, DataType receiverType,
+            Set<Object> visited, int depth) throws Exception {
+        if (varnode == null || depth > 32 || !visited.add(varnode)) return false;
+        Object high = varnode.getClass().getMethod("getHigh").invoke(varnode);
+        Object symbol = high == null ? null : high.getClass()
+            .getMethod("getSymbol").invoke(high);
+        if (symbol != null && (boolean)symbol.getClass()
+                .getMethod("isParameter").invoke(symbol)) {
+            String name = (String)symbol.getClass().getMethod("getName")
+                .invoke(symbol);
+            DataType type = (DataType)high.getClass().getMethod("getDataType")
+                .invoke(high);
+            return "this".equals(name) &&
+                equivalentLifetimeType(type, receiverType);
+        }
+        Object definition = varnode.getClass().getMethod("getDef").invoke(varnode);
+        if (definition == null) return false;
+        String operation = mnemonic(definition);
+        int inputs = ((Number)definition.getClass().getMethod("getNumInputs")
+            .invoke(definition)).intValue();
+        if (operation.equals("COPY") || operation.equals("CAST") ||
+                operation.equals("INDIRECT")) {
+            if (inputs < 1) return false;
+            Object input = definition.getClass().getMethod("getInput", int.class)
+                .invoke(definition, 0);
+            int inputSize = ((Number)input.getClass().getMethod("getSize")
+                .invoke(input)).intValue();
+            int outputSize = ((Number)varnode.getClass().getMethod("getSize")
+                .invoke(varnode)).intValue();
+            return inputSize == outputSize && receiverAliasOrigin(input,
+                receiverType, visited, depth + 1);
+        }
+        if (!operation.equals("MULTIEQUAL") || inputs < 1) return false;
+        for (int index = 0; index < inputs; index++) {
+            Object input = definition.getClass().getMethod("getInput", int.class)
+                .invoke(definition, index);
+            Set<Object> branch = java.util.Collections.newSetFromMap(
+                new java.util.IdentityHashMap<>());
+            branch.addAll(visited);
+            if (!receiverAliasOrigin(input, receiverType, branch, depth + 1))
+                return false;
+        }
+        return true;
+    }
+
+    private boolean needsReceiverLayout(Object varnode, Structure current,
+            Structure receiver) throws Exception {
+        return needsReceiverLayout(varnode, current, receiver,
+            java.util.Collections.newSetFromMap(
+                new java.util.IdentityHashMap<>()), 0);
+    }
+
+    private boolean needsReceiverLayout(Object varnode, Structure current,
+            Structure receiver, Set<Object> visited, int depth) throws Exception {
+        if (varnode == null || depth > 16 || !visited.add(varnode)) return false;
+        @SuppressWarnings("unchecked")
+        Iterator<Object> descendants = (Iterator<Object>)varnode.getClass()
+            .getMethod("getDescendants").invoke(varnode);
+        while (descendants.hasNext()) {
+            Object operation = descendants.next();
+            String mnemonic = mnemonic(operation);
+            if (Set.of("COPY", "CAST", "INDIRECT", "MULTIEQUAL")
+                    .contains(mnemonic)) {
+                Object output = operation.getClass().getMethod("getOutput")
+                    .invoke(operation);
+                if (output != null && needsReceiverLayout(output, current,
+                        receiver, visited, depth + 1)) return true;
+                continue;
+            }
+            if (!mnemonic.equals("PTRSUB")) continue;
+            Object base = operation.getClass().getMethod("getInput", int.class)
+                .invoke(operation, 0);
+            if (!sameLifetime(base, varnode)) continue;
+            Long offset = constant(operation.getClass()
+                .getMethod("getInput", int.class).invoke(operation, 1));
+            if (offset == null || offset < 0 || offset > Integer.MAX_VALUE)
+                continue;
+            DataTypeComponent wanted = receiver.getComponentAt(offset.intValue());
+            if (wanted == null || wanted.getOffset() != offset.intValue() ||
+                    wanted.getFieldName() == null ||
+                    wanted.getFieldName().isBlank() ||
+                    !semanticType(wanted.getDataType())) continue;
+            DataTypeComponent existing = current.getComponentAt(offset.intValue());
+            if (existing == null || existing.getOffset() != offset.intValue() ||
+                    existing.getLength() != wanted.getLength() ||
+                    !equivalentLifetimeType(existing.getDataType(),
+                        wanted.getDataType())) return true;
+        }
+        return false;
     }
 
     private Evidence firstEvidence(Map<String, TypeEvidence> evidence) {
@@ -1237,7 +1432,10 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             "policy=Distinct decompiler merge groups are split independently. A " +
                 "single-group raw undefined local is also eligible, but only from " +
                 "the same exact typed return/copy/recursive-field evidence or two agreeing typed " +
-                "call arguments. Script-owned scalar splits are revisited so an " +
+                "call arguments. A persistent pointer local may recover the exact " +
+                "unadjusted __thiscall receiver type only when neutral SSA provenance " +
+                "reaches auto this and a downstream named owner member proves that " +
+                "the current shorter view is insufficient. Script-owned scalar splits are revisited so an " +
                 "exact nominal copy can restore an enum, typedef, or pointer. " +
                 "Competing exact types are review-only. Already-correct groups are " +
                 "counted in the summary but omitted from the proposal/apply queue.",

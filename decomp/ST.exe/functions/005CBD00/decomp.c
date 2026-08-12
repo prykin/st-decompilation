@@ -47,7 +47,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
       local_c->field_2121 = 0;
       DAT_00808aa8 = DAT_0080734b;
     }
-    slotStorage = &local_c->field_1A5B->field_069A;
+    slotStorage = &(local_c->array_00BC[0xc].field_01DB)->field_069A;
     DAT_00808aab = DAT_00809958;
     if (*slotStorage != nullptr) {
       FreeAndNull(slotStorage);
@@ -89,7 +89,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
     if (((((param_1 == '\r') || (param_1 == '\x0e')) || (param_1 == '\x0f')) || (param_1 == '\x10'))
        && (this_00->field_1E27 == 0x11)) {
       FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403b61,400,0x62,
-                   (ushort *)&this_00->field_1A5B->field_0140);
+                   (ushort *)&(this_00->array_00BC[0xc].field_01DB)->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,200,0x1f1);
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0

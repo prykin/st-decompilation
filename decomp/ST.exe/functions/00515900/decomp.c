@@ -89,7 +89,7 @@ HelpPanelTy::DrawWeapon
       local_17 = param_3;
       local_13 = (uint)param_5;
       local_18 = 4;
-      Library::DKW::TBL::DArrayAppend(local_8->field_01D7,&local_28);
+      Library::DKW::TBL::DArrayAppend((DArrayTy *)local_8->field_01D7,&local_28);
       iVar3 = (pBVar5->bmiHeader).biHeight;
       if (iVar3 < 0x10) {
         iVar3 = 0xf;

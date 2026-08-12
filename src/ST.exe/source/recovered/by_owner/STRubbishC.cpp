@@ -15,9 +15,9 @@ STRubbishC * __thiscall st::fn_0062ED10(STRubbishC *this)
 
 {
   st::fn_00401933((STGameObjC *)this);
-  this->field_01D5 = -1;
-  this->field_01D9 = -1;
-  this->field_01DD = -1;
+  this->field_01D5 = 0xffffffff;
+  this->field_01D9 = 0xffffffff;
+  this->field_01DD = 0xffffffff;
   this->vtable = &st_global_0079D098;
   this->field_01E1 = 0;
   this->field_01E5 = 0;

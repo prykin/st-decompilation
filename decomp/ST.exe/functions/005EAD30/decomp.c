@@ -11,10 +11,10 @@ WaitTy * __cdecl CreateWait(void)
 {
   WaitTy *this;
   int iVar1;
-  undefined4 *puVar2;
+  WaitTy_Record_00BC_01FB *pWVar2;
   SpriteClassTy *this_00;
-  undefined4 *puVar3;
-  uint *puVar4;
+  WaitTy_Record_00BC_01FB *pWVar4;
+  uint *puVar5;
   int local_8;
 
   this = (WaitTy *)FUN_006b04d0(0x1b04);
@@ -28,7 +28,7 @@ WaitTy * __cdecl CreateWait(void)
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->array_00BC[0].field_00B8;
     local_8 = 0xd;
     do {
       SpriteClassTy::SpriteClassTy(this_00 + -1);
@@ -43,35 +43,38 @@ WaitTy * __cdecl CreateWait(void)
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
-    puVar2 = (undefined4 *)&this->field_0xbc;
+    pWVar2 = this->array_00BC;
     do {
-      puVar3 = puVar2;
-      memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
-      iVar1 = 0;
+      pWVar4 = pWVar2;
+      for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *(undefined4 *)pWVar4 = 0;
+        pWVar4 = (WaitTy_Record_00BC_01FB *)&pWVar4->field_0x4;
+      }
+      *(undefined2 *)pWVar4 = 0;
+      pWVar4->field_0x2 = 0;
       local_8 = local_8 + -1;
-      puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
+      pWVar2 = pWVar2 + 1;
     } while (local_8 != 0);
-    this->field_1A60 = 1;
-    this->field_1A64 = 1;
-    this->field_1A68 = 1;
+    this->array_00BC[0xc].field_01E0 = 1;
+    this->array_00BC[0xc].field_01E4 = 1;
+    this->array_00BC[0xc].field_01E8 = 1;
     this->vtable = &WaitTyVTable;
-    this->field_1A74 = 0;
-    this->field_1A6C = 0;
-    this->field_1A70 = 0;
-    this->field_1A75 = 0;
+    this->array_00BC[0xc].field_01F4 = 0;
+    this->array_00BC[0xc].field_01EC = 0;
+    this->array_00BC[0xc].field_01F0 = 0;
+    this->array_00BC[0xc].field_01F5 = 0;
     this->field_1A87 = 0;
     this->field_1A8B = 0;
     this->field_1A8F = 0xffffffff;
     this->field_1A93 = 0;
-    this->field_1A76 = 0;
-    this->field_1A77 = 0;
+    this->array_00BC[0xc].field_01F6 = 0;
+    this->array_00BC[0xc].field_01F7 = 0;
     this->field_1A7B = 0;
     this->field_1A83 = nullptr;
-    puVar4 = this->field_1A94;
+    puVar5 = this->field_1A94;
     for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar4 = 0xffffffff;
-      puVar4 = puVar4 + 1;
+      *puVar5 = 0xffffffff;
+      puVar5 = puVar5 + 1;
     }
     this->field_1AF0 = nullptr;
     this->field_1AF4 = 0;

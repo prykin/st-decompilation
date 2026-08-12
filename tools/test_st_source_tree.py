@@ -11,6 +11,7 @@ from st_source_tree import (
     ADDRESS_CODED_GLOBAL_RE,
     ADDRESS_TAKEN_LABEL_RE,
     ADDRESS_CODED_FUNCTION_RE,
+    BoundaryValue,
     QUALIFIED_ADDRESS_SYMBOL_RE,
     SourceTreeGenerator,
     TypeEmitter,
@@ -396,6 +397,20 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         self.assertTrue(emitter.display_machine_word_scalar("int"))
         self.assertTrue(emitter.display_machine_word_scalar("HANDLE32"))
         self.assertFalse(emitter.display_machine_word_scalar("Owner *"))
+
+    def test_null_pointer_to_machine_word_uses_plain_zero(self) -> None:
+        records = self.records() + [
+            primitive("/undefined4", "undefined4", 4),
+        ]
+        records[-1]["class"] = "Undefined4DataType"
+        generator = SourceTreeGenerator.__new__(SourceTreeGenerator)
+        generator.type_emitter = TypeEmitter(records, [])
+        self.assertEqual(
+            generator._boundary_replacement(
+                "undefined4", BoundaryValue("nullptr", "null_pointer"), "nullptr"
+            ),
+            ("0", "nullptr -> zero word"),
+        )
 
     def test_raw_offset_resolves_to_existing_exact_member(self) -> None:
         emitter = TypeEmitter(self.records(), [])

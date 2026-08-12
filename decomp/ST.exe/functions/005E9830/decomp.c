@@ -21,7 +21,7 @@ void __thiscall WaitTy::CloseButtons(WaitTy *this)
   this_00 = local_8;
   if (errorCode == 0) {
     MMObjTy::CloseButtons((MMObjTy *)local_8);
-    if (this_00->field_1A64 == 0) {
+    if (this_00->array_00BC[0xc].field_01E4 == 0) {
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,

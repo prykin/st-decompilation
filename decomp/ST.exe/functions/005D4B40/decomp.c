@@ -11,9 +11,9 @@ SettMapMTy * __cdecl CreateSettMapM(void)
 {
   SettMapMTy *this;
   int iVar1;
-  undefined4 *puVar2;
+  SettMapMTy_Record_00BC_01FB *pSVar2;
   SpriteClassTy *this_00;
-  undefined4 *puVar3;
+  SettMapMTy_Record_00BC_01FB *pSVar3;
   ushort **ppuVar4;
   uint *puVar5;
   int local_8;
@@ -29,7 +29,7 @@ SettMapMTy * __cdecl CreateSettMapM(void)
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->array_00BC[0].field_00B8;
     local_8 = 0xd;
     do {
       SpriteClassTy::SpriteClassTy(this_00 + -1);
@@ -44,14 +44,17 @@ SettMapMTy * __cdecl CreateSettMapM(void)
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
-    puVar2 = (undefined4 *)&this->field_0xbc;
+    pSVar2 = this->array_00BC;
     do {
-      puVar3 = puVar2;
-      memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
-      iVar1 = 0;
+      pSVar3 = pSVar2;
+      for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *(undefined4 *)pSVar3 = 0;
+        pSVar3 = (SettMapMTy_Record_00BC_01FB *)&pSVar3->field_0x4;
+      }
+      *(undefined2 *)pSVar3 = 0;
+      pSVar3->field_0x2 = 0;
       local_8 = local_8 + -1;
-      puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
+      pSVar2 = pSVar2 + 1;
     } while (local_8 != 0);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1C6B);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1CFC);
@@ -60,8 +63,12 @@ SettMapMTy * __cdecl CreateSettMapM(void)
     this->field_1C63 = 0;
     this->field_1E27 = 0;
     this->field_1E2B = nullptr;
-    *(undefined4 *)&this->field_0x21e1 = 0;
-    *(undefined2 *)&this->field_0x21e5 = 0;
+    this->field_21E1 = 0;
+    this->field_21E2 = 0;
+    this->field_21E3 = 0;
+    this->field_21E4 = 0;
+    this->field_21E5 = 0;
+    this->field_21E6 = 0;
     this->field_21E7 = 0;
     memset(&this->field_0x2161, 0, 0x80); /* compiler bulk-zero initialization */
     iVar1 = 0;

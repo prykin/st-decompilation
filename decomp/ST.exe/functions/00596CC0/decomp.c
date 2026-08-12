@@ -46,21 +46,21 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
   FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
   this_00 = local_c;
   PutDDX(0,0,'\x01',(BITMAPINFO *)local_c->field_005D);
-  switch(this_00->field_1A5F) {
-  case CASE_1:
+  switch(this_00->array_00BC[0xc].field_01DF) {
+  case 1:
     if (local_8 == 0) {
       local_8 = 0x2563;
       goto LAB_00596d58;
     }
     break;
-  case CASE_2:
+  case 2:
 LAB_00596d58:
     if (local_8 == 0) {
       local_8 = 0x2553;
       goto LAB_00596d69;
     }
     break;
-  case CASE_3:
+  case 3:
     if (this_00->field_1F23 != nullptr) {
       g_currentExceptionFrame = local_50.previous;
       return;
@@ -71,27 +71,28 @@ LAB_00596d58:
     }
     MMMObjTy::OutBSlProc
               ((MMMObjTy *)g_dDXContext_0080759C,g_dDXContext_0080759C,nullptr,
-               nullptr,0x22,0x72,0x2e1,0x14c,&this_00->field_1A5B->field_0140);
+               nullptr,0x22,0x72,0x2e1,0x14c,
+               &(this_00->array_00BC[0xc].field_01DB)->field_0140);
     g_currentExceptionFrame = local_50.previous;
     return;
-  case CASE_4:
+  case 4:
 LAB_00596d69:
     if (local_8 == 0) {
       local_8 = 0x2552;
       goto LAB_00596d7a;
     }
     break;
-  case CASE_5:
+  case 5:
 LAB_00596d7a:
     if (local_8 == 0) {
       local_8 = 0x2562;
       goto LAB_00596d8b;
     }
     break;
-  case CASE_6:
+  case 6:
     if ((this_00->field_1F27 == nullptr) && (param_1 == '\0')) {
       OutChSlProc(this_01,(AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,0x13,0x5e,
-                  0x1bf,0x175,&this_00->field_1A5B->field_0140);
+                  0x1bf,0x175,&(this_00->array_00BC[0xc].field_01DB)->field_0140);
     }
     if (this_00->field_1F2B != nullptr) {
       g_currentExceptionFrame = local_50.previous;
@@ -101,24 +102,25 @@ LAB_00596d7a:
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    this_02 = &this_00->field_1A5B->field_0140;
+    this_02 = &(this_00->array_00BC[0xc].field_01DB)->field_0140;
     OutTRGlProc((FSGSTy *)this_02,(AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,
                 nullptr,nullptr,(StartServTy *)0x1e9,0x5e,0x124,0x175,(int)this_02);
     g_currentExceptionFrame = local_50.previous;
     return;
-  case CASE_7:
+  case 7:
 LAB_00596d8b:
     if (local_8 == 0) {
       local_8 = 0x255b;
       goto LAB_00596d9c;
     }
     break;
-  case CASE_8:
+  case 8:
     pFVar3 = this_01;
     if ((this_00->field_1F2F == nullptr) && (param_1 == '\0')) {
       OutSGlProc((FSGSTy *)g_dDXContext_0080759C,
                  (AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,nullptr,
-                 nullptr,0x199,0x5e,0x174,0x175,(int)&this_00->field_1A5B->field_0140);
+                 nullptr,0x199,0x5e,0x174,0x175,
+                 (int)&(this_00->array_00BC[0xc].field_01DB)->field_0140);
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       pFVar3 = extraout_ECX;
     }
@@ -132,10 +134,10 @@ LAB_00596d8b:
     }
     MMMObjTy::OutBSlProc
               ((MMMObjTy *)pFVar3,g_dDXContext_0080759C,nullptr,nullptr,0x13,0x5e,
-               0x174,0x175,&this_00->field_1A5B->field_0140);
+               0x174,0x175,&(this_00->array_00BC[0xc].field_01DB)->field_0140);
     g_currentExceptionFrame = local_50.previous;
     return;
-  case CASE_9:
+  case 9:
     if (this_00->field_1F23 != nullptr) {
       g_currentExceptionFrame = local_50.previous;
       return;
@@ -149,7 +151,7 @@ LAB_00596d8b:
     PaintLadder(this_00);
     g_currentExceptionFrame = local_50.previous;
     return;
-  case CASE_A:
+  case 10:
 LAB_00596d9c:
     if (local_8 == 0) {
       local_8 = 0x259c;

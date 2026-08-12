@@ -3,7 +3,10 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::Capture */
+   STBoatC::Capture
+
+   [STSwitchEnumApplier] Switch target field_0615 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0615State. Cases: CASE_0=0;CASE_2=2;CASE_5=5 */
 
 int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
 
@@ -72,7 +75,9 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
     this->field_02C4 = 0;
     this->field_05FD = *(undefined2 *)&this->field_0x3ed;
     this->field_05FC = this->field_0x3ec;
-    this->field_05FF = *(undefined4 *)&this->field_0x3ef;
+    this->field_0x5ff = this->field_0x3ef;
+    *(undefined2 *)&this->field_0x600 = this->field_03F0;
+    this->field_0x602 = this->field_03F2;
     iVar7 = thunk_FUN_00492b20(this);
     if (iVar7 != 1) {
       return 0;
@@ -107,7 +112,7 @@ cf_common_exit_00476DBA:
     case 1:
       pSVar8 = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
-      if (((pSVar8 != nullptr) && (pSVar8->field_0018 == this->field_05FF)) &&
+      if (((pSVar8 != nullptr) && (pSVar8->field_0018 == *(int *)&this->field_0x5ff)) &&
          (iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024), iVar7 != 0)) {
         return 2;
       }
@@ -144,7 +149,7 @@ cf_common_exit_00476DBA:
     if (pSVar8 == nullptr) {
       return 0;
     }
-    if (pSVar8->field_0018 != this->field_05FF) {
+    if (pSVar8->field_0018 != *(int *)&this->field_0x5ff) {
       return 0;
     }
     iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024);
@@ -204,13 +209,13 @@ cf_common_exit_00476DBA:
         } while (iVar16 <= iVar7);
       }
       this->field_0611 = CASE_2;
-      this->field_0615 = 0;
+      this->field_0615 = CASE_0;
       return 2;
     }
     return 0;
   }
   if (SVar1 == CASE_2) {
-    if (this->field_0615 == 0) {
+    if (this->field_0615 == CASE_0) {
       iVar16 = (ushort)(this->field_060D * 200) + 300;
       iVar7 = STReplaceLowWord((uint32_t)(iVar16), (uint16_t)(this->field_060B + 1)) * 0xc9;
       iVar13 = STReplaceLowWord((uint32_t)(iVar7), (uint16_t)(this->field_0609 + 1));
@@ -235,11 +240,11 @@ cf_common_exit_00476DBA:
         return -1;
       }
       if (uVar9 == 0) {
-        this->field_0615 = 2;
+        this->field_0615 = CASE_2;
         goto cf_common_exit_00477B2E;
       }
     }
-    if (this->field_0615 == 2) {
+    if (this->field_0615 == CASE_2) {
       sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                    (this->field_0609 + 1) * 0xc9,(this->field_060B + 1) * 0xc9,
                    this->field_060D * 200 + 300,this->field_0061);
@@ -316,10 +321,10 @@ cf_common_exit_00476DBA:
       if (local_8 == 0) {
         pSVar8 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
-        if (((pSVar8 == nullptr) || (pSVar8->field_0018 != this->field_05FF)) ||
+        if (((pSVar8 == nullptr) || (pSVar8->field_0018 != *(int *)&this->field_0x5ff)) ||
            (iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024), iVar7 == 0)) {
           this->field_0611 = CASE_4;
-          this->field_0615 = 0;
+          this->field_0615 = CASE_0;
         }
         else {
           thunk_FUN_004cd3e0(pSVar8,this->field_0018,this->field_0024);
@@ -378,7 +383,7 @@ cf_common_exit_00477B2E:
         iVar7 = this->vfunc_D8();
         return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
       }
-      if (this->field_0615 == 0) {
+      if (this->field_0615 == CASE_0) {
         iVar7 = STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_0605 * 0xc9)) + 100;
         uVar6 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
@@ -401,11 +406,11 @@ cf_common_exit_00477B2E:
           return -1;
         }
         if (uVar9 == 0) {
-          this->field_0615 = 2;
+          this->field_0615 = CASE_2;
           goto cf_common_exit_00477B2E;
         }
       }
-      if (this->field_0615 == 2) {
+      if (this->field_0615 == CASE_2) {
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_0603 * 0xc9 + 100,this->field_0605 * 0xc9 + 100,
                      this->field_0607 * 200 + 100,this->field_0061);
@@ -501,12 +506,12 @@ cf_common_exit_00477B2E:
     }
     pSVar8 = STAllPlayersC::GetObjPtr
                        (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
-    if (((pSVar8 == nullptr) || (pSVar8->field_0018 != this->field_05FF)) ||
+    if (((pSVar8 == nullptr) || (pSVar8->field_0018 != *(int *)&this->field_0x5ff)) ||
        (iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024), iVar7 == 0)) {
       if (((int)this->field_0041 == (this->field_0609 + 1) * 0xc9) &&
          ((int)this->field_0043 == (this->field_060B + 1) * 0xc9)) {
         this->field_0611 = CASE_4;
-        this->field_0615 = 0;
+        this->field_0615 = CASE_0;
         iVar7 = this->vfunc_D8();
         return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
       }
@@ -541,7 +546,7 @@ cf_common_exit_00477B2E:
     if ((this->field_0041 == iVar7) &&
        (iVar7 = (this->field_060B + 1) * 0xc9, this->field_0043 == iVar7)) {
       this->field_0611 = CASE_4;
-      this->field_0615 = 0;
+      this->field_0615 = CASE_0;
     }
     else {
       this->field_0611 = CASE_5;

@@ -54,33 +54,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
   uint local_c;
   int local_8;
 
-  sVar6 = (short)(param_1 >> 0x1f);
-  if (param_1 < 0) {
-    iVar11 = (short)(((short)(param_1 / 0xc9) + sVar6) -
-                    (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    iVar11 = (int)(short)(((short)(param_1 / 0xc9) + sVar6) -
-                         (short)((longlong)param_1 * 0x28c1979 >> 0x3f));
-  }
-  sVar6 = (short)(param_2 >> 0x1f);
-  if (param_2 < 0) {
-    iVar7 = (short)(((short)(param_2 / 0xc9) + sVar6) -
-                   (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    iVar7 = (int)(short)(((short)(param_2 / 0xc9) + sVar6) -
-                        (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
-  }
-  sVar6 = (short)(param_3 >> 0x1f);
-  if (param_3 < 0) {
-    local_8 = (short)(((short)(param_3 / 200) + sVar6) -
-                     (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    local_8 = (int)(short)(((short)(param_3 / 200) + sVar6) -
-                          (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
-  }
+  iVar11 = STBiasedDiv16(param_1, 0xc9); /* exact signed 16-bit grid-index division */
+  iVar7 = STBiasedDiv16(param_2, 0xc9); /* exact signed 16-bit grid-index division */
+  local_8 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   bVar12 = param_1 < 0;
   if (bVar12) {
     iVar11 = 0;
@@ -116,33 +92,9 @@ cf_common_exit_00601B38:
   }
   local_10 = this;
   if (((param_11 != 0xa8) && (param_11 != 0xb1)) && (param_11 != 0x14e)) {
-    sVar6 = (short)(param_4 >> 0x1f);
-    if (param_4 < 0) {
-      iVar8 = (short)(((short)(param_4 / 0xc9) + sVar6) -
-                     (short)((longlong)param_4 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar8 = (int)(short)(((short)(param_4 / 0xc9) + sVar6) -
-                          (short)((longlong)param_4 * 0x28c1979 >> 0x3f));
-    }
-    sVar6 = (short)(param_5 >> 0x1f);
-    if (param_5 < 0) {
-      iVar4 = (short)(((short)(param_5 / 0xc9) + sVar6) -
-                     (short)((longlong)param_5 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar4 = (int)(short)(((short)(param_5 / 0xc9) + sVar6) -
-                          (short)((longlong)param_5 * 0x28c1979 >> 0x3f));
-    }
-    sVar6 = (short)(param_6 >> 0x1f);
-    if (param_6 < 0) {
-      iVar5 = (short)(((short)(param_6 / 200) + sVar6) -
-                     (short)((longlong)param_6 * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      iVar5 = (int)(short)(((short)(param_6 / 200) + sVar6) -
-                          (short)((longlong)param_6 * 0x51eb851f >> 0x3f));
-    }
+    iVar8 = STBiasedDiv16(param_4, 0xc9); /* exact signed 16-bit grid-index division */
+    iVar4 = STBiasedDiv16(param_5, 0xc9); /* exact signed 16-bit grid-index division */
+    iVar5 = STBiasedDiv16(param_6, 200); /* exact signed 16-bit grid-index division */
     if (((iVar11 != iVar8) || (iVar7 != iVar4)) || (local_8 != iVar5)) {
       iVar8 = local_8;
       if (iVar11 < 0) goto LAB_006018c7;

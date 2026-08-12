@@ -40,33 +40,37 @@ void __thiscall FSGSTy::PaintLogPsw(FSGSTy *this)
       *(undefined1 *)puVar5 = 0xff;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x2a,0x186,0x14);
+    ccFntTy::SetSurf(pFVar3->array_00BC[0xc].field_01F3,(int)pFVar3->field_1AC0,0,0x19,0x2a,0x186,
+                     0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     pcVar6 = LoadResourceString(0x254f,g_hINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,pcVar6,iVar4,iVar9,uVar8);
+    ccFntTy::WrStr(pFVar3->array_00BC[0xc].field_01F3,pcVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x3d,0x188,0x1b,0xf,0xd);
-    ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x61,0xb4,0x14);
+    ccFntTy::SetSurf(pFVar3->array_00BC[0xc].field_01F3,(int)pFVar3->field_1AC0,0,0x19,0x61,0xb4,
+                     0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     pcVar6 = LoadResourceString(0x2556,g_hINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,pcVar6,iVar4,iVar9,uVar8);
+    ccFntTy::WrStr(pFVar3->array_00BC[0xc].field_01F3,pcVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x74,0xb6,0x16,0xf,0xd);
-    ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x89,0xb4,0x14);
+    ccFntTy::SetSurf(pFVar3->array_00BC[0xc].field_01F3,(int)pFVar3->field_1AC0,0,0x19,0x89,0xb4,
+                     0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     pcVar6 = LoadResourceString(0x2555,g_hINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,pcVar6,iVar4,iVar9,uVar8);
+    ccFntTy::WrStr(pFVar3->array_00BC[0xc].field_01F3,pcVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x9c,0xb6,0x16,0xf,0xd);
-    ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0xb1,0xb4,0x14);
+    ccFntTy::SetSurf(pFVar3->array_00BC[0xc].field_01F3,(int)pFVar3->field_1AC0,0,0x19,0xb1,0xb4,
+                     0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     pcVar6 = LoadResourceString(0x2554,g_hINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,pcVar6,iVar4,iVar9,uVar8);
+    ccFntTy::WrStr(pFVar3->array_00BC[0xc].field_01F3,pcVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0xc4,0xb6,0x16,0xf,0xd);
     Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
     FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);

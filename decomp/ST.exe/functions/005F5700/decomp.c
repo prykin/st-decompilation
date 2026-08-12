@@ -28,25 +28,9 @@ int __thiscall STBHEShellC::sub_005F5700(STBHEShellC *this,int param_1,int param
   iVar2 = param_1;
   local_c = 0;
   iVar1 = this->field_0111;
-  sVar3 = (short)(iVar1 >> 0x1f);
-  if (iVar1 < 0) {
-    local_14 = (short)(((short)(iVar1 / 0xc9) + sVar3) -
-                      (short)((longlong)iVar1 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    local_14 = (int)(short)(((short)(iVar1 / 0xc9) + sVar3) -
-                           (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
-  }
+  local_14 = STBiasedDiv16(iVar1, 0xc9); /* exact signed 16-bit grid-index division */
   iVar1 = this->field_0115;
-  sVar3 = (short)(iVar1 >> 0x1f);
-  if (iVar1 < 0) {
-    local_1c = (short)(((short)(iVar1 / 0xc9) + sVar3) -
-                      (short)((longlong)iVar1 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    local_1c = (int)(short)(((short)(iVar1 / 0xc9) + sVar3) -
-                           (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
-  }
+  local_1c = STBiasedDiv16(iVar1, 0xc9); /* exact signed 16-bit grid-index division */
   iVar1 = param_2 / 0xc9;
   iVar5 = local_1c - (iVar1 + 1);
   local_10 = local_14 - (iVar1 + 1);

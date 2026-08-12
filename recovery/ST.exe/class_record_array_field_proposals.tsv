@@ -1,0 +1,113 @@
+apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
+1	/SubmarineTitans/Recovered/InlineRecordArrays/CampaignTy_Record_00BB_01FB	0	1	field_0000	/undefined1	2	existing exact record-array element | exact record-cursor machine access
+1	/SubmarineTitans/Recovered/InlineRecordArrays/CampaignTy_Record_00BB_01FB	1	4	field_0001	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/CampaignTy_Record_00BB_01FB	39	1	field_0027	/undefined1	2	existing exact record-array element | exact record-cursor machine access
+1	/SubmarineTitans/Recovered/InlineRecordArrays/CampaignTy_Record_00BB_01FB	40	145	field_0028	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/CampaignTy_Record_00BB_01FB	185	145	field_00B9	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/CampaignTy_Record_00BB_01FB	330	145	field_014A	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/CampaignTy_Record_00BB_01FB	475	1	field_01DB	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/CampaignTy_Record_00BB_01FB	476	4	field_01DC	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/CampaignTy_Record_00BB_01FB	480	4	field_01E0	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	39	145	field_0027	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	184	145	field_00B8	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	329	145	field_0149	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	474	1	field_01DA	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	475	4	field_01DB	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	479	1	field_01DF	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	480	4	field_01E0	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	484	4	field_01E4	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	488	4	field_01E8	/ulong	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	492	4	field_01EC	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	496	4	field_01F0	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	500	4	field_01F4	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	39	145	field_0027	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	184	145	field_00B8	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	329	145	field_0149	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	474	1	field_01DA	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	475	4	field_01DB	pointer:/StartSystemTy	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	479	1	field_01DF	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	480	1	field_01E0	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	481	1	field_01E1	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	482	1	field_01E2	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	483	4	field_01E3	/ulong	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	487	4	field_01E7	pointer:/void	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	491	4	field_01EB	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	495	4	field_01EF	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	499	4	field_01F3	pointer:/ccFntTy	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	503	4	field_01F7	pointer:/ccFntTy	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MMsgTy_Record_00BC_01FB	0	4	field_0000	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MMsgTy_Record_00BC_01FB	37	1	field_0025	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MMsgTy_Record_00BC_01FB	38	1	field_0026	/undefined1	2	existing exact record-array element | exact record-cursor machine access
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MMsgTy_Record_00BC_01FB	39	145	field_0027	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MMsgTy_Record_00BC_01FB	184	145	field_00B8	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MMsgTy_Record_00BC_01FB	329	145	field_0149	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MMsgTy_Record_00BC_01FB	474	1	field_01DA	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MMsgTy_Record_00BC_01FB	479	1	field_01DF	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	0	1	field_0000	/undefined1	2	existing exact record-array element | exact record-cursor machine access
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	1	4	field_0001	/undefined4	2	existing exact record-array element | exact record-cursor machine access
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	14	4	field_000E	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	18	4	field_0012	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	22	4	field_0016	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	26	4	field_001A	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	30	4	field_001E	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	39	1	field_0027	/undefined1	2	existing exact record-array element | exact record-cursor machine access
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	40	145	field_0028	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	185	145	field_00B9	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	330	145	field_014A	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	475	1	field_01DB	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	476	4	field_01DC	pointer:/StartServTy	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	488	4	field_01E8	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	492	4	field_01EC	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	496	4	field_01F0	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	39	145	field_0027	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	184	145	field_00B8	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	329	145	field_0149	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	474	1	field_01DA	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	475	4	field_01DB	pointer:/StartSystemTy	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	479	1	field_01DF	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	480	1	field_01E0	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	481	4	field_01E1	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	485	4	field_01E5	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	489	4	field_01E9	/ulong	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	493	4	field_01ED	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	497	1	field_01F1	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	498	1	field_01F2	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	499	4	field_01F3	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	503	4	field_01F7	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SIDTy_Record_00BC_01FB	39	145	field_0027	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SIDTy_Record_00BC_01FB	184	145	field_00B8	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SIDTy_Record_00BC_01FB	329	145	field_0149	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SIDTy_Record_00BC_01FB	479	1	field_01DF	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SIDTy_Record_00BC_01FB	480	4	field_01E0	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SIDTy_Record_00BC_01FB	484	4	field_01E4	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SIDTy_Record_00BC_01FB	488	4	field_01E8	/int	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SIDTy_Record_00BC_01FB	492	4	field_01EC	/int	1	existing exact record-array element
+0	/SubmarineTitans/Recovered/InlineRecordArrays/STAppC_Record_11A7_0051	0	1	field_0000	/undefined1	2	existing hash-owned class member 0x11A7 | exact record-cursor machine access
+0	/SubmarineTitans/Recovered/InlineRecordArrays/STAppC_Record_11A7_0051	33	1	field_0021	/undefined1	2	existing hash-owned class member 0x11C8 | exact record-cursor machine access
+0	/SubmarineTitans/Recovered/InlineRecordArrays/STAppC_Record_11A7_0051	34	1	field_0022	/undefined1	2	existing hash-owned class member 0x11C9 | exact record-cursor machine access
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapMTy_Record_00BC_01FB	39	145	field_0027	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapMTy_Record_00BC_01FB	184	145	field_00B8	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapMTy_Record_00BC_01FB	329	145	field_0149	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapMTy_Record_00BC_01FB	475	4	field_01DB	pointer:/StartSystemTy	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	39	145	field_0027	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	184	145	field_00B8	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	329	145	field_0149	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	474	1	field_01DA	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	475	4	field_01DB	pointer:/MMMObjTy	1	existing exact record-array element
+0	/SubmarineTitans/Recovered/InlineRecordArrays/UpgPanelTy_Record_01AB_0030	0	4	field_0000	/uint	1	existing hash-owned class member 0x1AB
+0	/SubmarineTitans/Recovered/InlineRecordArrays/UpgPanelTy_Record_01AB_0030	8	1	field_0008	/undefined1	2	existing hash-owned class member 0x1B3 | exact record-cursor machine access
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	39	145	field_0027	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	184	145	field_00B8	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	329	145	field_0149	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	474	1	field_01DA	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	475	4	field_01DB	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	479	1	field_01DF	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	480	4	field_01E0	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	484	4	field_01E4	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	488	4	field_01E8	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	492	4	field_01EC	/ulong	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	496	4	field_01F0	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	500	1	field_01F4	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	501	1	field_01F5	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	502	1	field_01F6	/undefined1	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	503	4	field_01F7	/undefined4	1	existing exact record-array element

@@ -12,7 +12,11 @@
    stack bytes; current signature describes 12; removed trailing parameter slots have no listing
    references; ret_sites=004653E5 RET 0x4 | 0046543A RET 0x4 | 004654E4 RET 0x4 | 0046559A RET 0x4 |
    004655F1 RET 0x4 | 004656CB RET 0x4 | 00465736 RET 0x4 | 00465781 RET 0x4 | 0046578D RET 0x4 |
-   004657BC RET 0x4 */
+   004657BC RET 0x4
+
+   [STSwitchEnumApplier] Switch target field_082E uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_082EState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_FFFFFFFF=4294967295 */
 
 int __thiscall STBoatC::BackAttack(STBoatC *this,int *param_1)
 
@@ -38,7 +42,7 @@ int __thiscall STBoatC::BackAttack(STBoatC *this,int *param_1)
   uVar7 = (undefined2)((uint)this >> 0x10);
   local_8 = this;
   if (this->field_06F7 == CASE_9) {
-    if (this->field_082E != 3) {
+    if (this->field_082E != CASE_3) {
 LAB_00465581:
       this->field_00B7 = 0;
       local_EAX_481 = sub_00460360(this);
@@ -107,7 +111,7 @@ LAB_00465581:
       this->field_0816 = 5;
       return 0;
     }
-    if (this->field_082E != 3) goto LAB_00465581;
+    if (this->field_082E != CASE_3) goto LAB_00465581;
     pSVar6 = this;
     if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
       /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */

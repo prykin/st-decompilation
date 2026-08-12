@@ -32,7 +32,7 @@ void __thiscall MMsgTy::ShowSprites(MMsgTy *this)
     }
     iVar3 = 0;
     if (pMVar2->field_009A != 0) {
-      puVar5 = &pMVar2->field_00E7;
+      puVar5 = &pMVar2->array_00BC[0].field_0027.field_0004;
       do {
         if (*puVar5 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b34d0

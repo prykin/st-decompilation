@@ -884,4 +884,5 @@ address	status	proposed_name	detail
 00717870	disabled	ST3DSMAPContext::sub_00717870	all apply flags are 0
 007178C0	disabled	ST3DSMAPContext::sub_007178C0	all apply flags are 0
 0071A990	disabled	SoundClassTy::sub_0071A990	all apply flags are 0
+0072B700	disabled		all apply flags are 0
 00749D5F	disabled	CBaseRenderer::sub_00749D5F	all apply flags are 0

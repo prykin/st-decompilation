@@ -18,7 +18,8 @@ void __thiscall st::fn_00532CE0(OptPanelTy *this)
     this->field_0028 = 0x20;
     iVar2 = st::fn_0040522C((uint)DAT_0080874d,nullptr);
     uVar1 = this->field_01B5[3];
-    *(uint *)&this->field_0x2c = (uint)(iVar2 != 0);
+    this->field_002C = (short)(uint)(iVar2 != 0);
+    this->field_002E = (short)((uint)(iVar2 != 0) >> 0x10);
     st::fn_006E6080(this,2,uVar1,(undefined4 *)&this->field_0x18);
   }
   return;

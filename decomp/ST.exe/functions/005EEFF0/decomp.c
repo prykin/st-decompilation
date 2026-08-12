@@ -31,37 +31,12 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
       return;
     }
     iVar5 = STField<int>(this,0x27f);
-    sVar2 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (short)(((short)(iVar5 / 200) + sVar2) -
-                       (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int)(short)(((short)(iVar5 / 200) + sVar2) -
-                            (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
-    }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_1 = STBiasedDiv16(iVar5, 200); /* exact signed 16-bit grid-index division */
     iVar5 = STField<int>(this,0x27b);
-    sVar2 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar2) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar2) -
-                          (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-    }
+    iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
     iVar4 = STField<int>(this,0x277);
-    sVar2 = (short)(iVar4 >> 0x1f);
-    if (iVar4 < 0) {
-      iVar4 = (short)(((short)(iVar4 / 0xc9) + sVar2) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar4 = (int)(short)(((short)(iVar4 / 0xc9) + sVar2) -
-                          (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
-    }
+    iVar4 = STBiasedDiv16(iVar4, 0xc9); /* exact signed 16-bit grid-index division */
     if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
          (VisibleClassTy::sub_00558C00
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
@@ -99,37 +74,12 @@ joined_r0x005ef316:
       return;
     }
     iVar5 = STField<int>(this,0x27f);
-    sVar2 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (short)(((short)(iVar5 / 200) + sVar2) -
-                       (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int)(short)(((short)(iVar5 / 200) + sVar2) -
-                            (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
-    }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_1 = STBiasedDiv16(iVar5, 200); /* exact signed 16-bit grid-index division */
     iVar5 = STField<int>(this,0x27b);
-    sVar2 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar2) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar2) -
-                          (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-    }
+    iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
     iVar4 = STField<int>(this,0x277);
-    sVar2 = (short)(iVar4 >> 0x1f);
-    if (iVar4 < 0) {
-      iVar4 = (short)(((short)(iVar4 / 0xc9) + sVar2) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar4 = (int)(short)(((short)(iVar4 / 0xc9) + sVar2) -
-                          (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
-    }
+    iVar4 = STBiasedDiv16(iVar4, 0xc9); /* exact signed 16-bit grid-index division */
     if (((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
            (VisibleClassTy::sub_00558C00
                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,

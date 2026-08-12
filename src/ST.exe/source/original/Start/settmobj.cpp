@@ -339,7 +339,7 @@ void __thiscall st::fn_005CC440(SettMapMTy *this,char param_1)
       st::fn_006B3430((int *)g_ddxContext_008075A8,this_01->field_2200);
     }
     else {
-      if (local_8->field_0x21e6 != '\0') {
+      if (local_8->field_21E6 != '\0') {
         st::fn_004028B5(g_startSystem_0081176C);
         ppcVar8 = local_a80;
         for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -443,7 +443,7 @@ void __thiscall st::fn_005CC840(SettMapMTy *this)
     if (-1 < (int)this_00->field_2200) {
       st::fn_006B3AF0((int *)g_ddxContext_008075A8,this_00->field_2200);
     }
-    if (this_00->field_0x21e6 != '\0') {
+    if (this_00->field_21E6 != '\0') {
       if (g_startSystem_0081176C->field_054C != 0) {
         st::fn_006E56B0(this_00->field_000C,g_startSystem_0081176C->field_054C);
         g_startSystem_0081176C->field_054C = 0;
@@ -5455,12 +5455,12 @@ void __thiscall st::fn_005D4850(SettMapMTy *this)
     }
     this_01 = local_8;
     st::fn_004036C0(local_8,0x6948,0,0);
-    this_01->field_0x21e6 = 1;
-    this_01->field_0x21e5 = 1;
-    this_01->field_0x21e4 = 1;
+    this_01->field_21E6 = 1;
+    this_01->field_21E5 = 1;
+    this_01->field_21E4 = 1;
     this_01->field_21E7 = 1;
-    this_01->field_0x21e2 = 1;
-    this_01->field_0x21e1 = 1;
+    this_01->field_21E2 = 1;
+    this_01->field_21E1 = 1;
     (*this_01->vtable->CloseButtons)((SettMapTy *)this_01);
     this_00 = this_01->field_1A5B->field_02E6;
     if (this_00 != nullptr) {

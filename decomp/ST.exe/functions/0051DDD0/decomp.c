@@ -12,7 +12,12 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=00404458|0051DDD0; family_names=HelpPanelTy::GetMessage; ret4=40;
-   direct_offsets={10:3,14:10,18:5,1c:12} */
+   direct_offsets={10:3,14:10,18:5,1c:12}
+
+   [STSwitchEnumApplier] Switch target field_01A1 uses
+   /SubmarineTitans/Recovered/Enums/HelpPanelTy_field_01A1State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_A=10;CASE_B=11;CASE_C=12
+    */
 
 int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
 
@@ -23,28 +28,30 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
   ccFntTy *pcVar4;
   AnonPointee_HelpPanelTy_0218 *pAVar5;
   void *pvVar6;
-  UINT *pUVar7;
+  ushort *puVar7;
+  UINT *pUVar8;
   HelpPanelTy *this_00;
   int iVar8;
   int iVar9;
   int *piVar10;
   undefined4 *puVar11;
-  BITMAPINFO *pBVar12;
+  HelpPanelTy_field_01D7Element *pHVar12;
+  BITMAPINFO *pBVar13;
   char *pcVar13_mg1;
-  uint *puVar13;
-  int iVar14;
-  LPSTR pCVar15;
+  uint *puVar14;
+  int iVar16;
+  LPSTR pCVar17;
   int iVar15;
-  uint uVar16;
-  DArrayTy *pDVar17;
   uint uVar18;
-  ushort uVar19;
-  byte bVar20;
-  char *pcVar21;
-  bool bVar22;
+  HelpPanelTy_field_01BBDArray *pHVar19;
+  uint uVar20;
+  ushort uVar21;
+  byte bVar22;
   char *pcVar23;
-  code *pcVar24;
-  UINT UVar25;
+  bool bVar24;
+  char *pcVar25;
+  code *pcVar26;
+  UINT UVar27;
   InternalExceptionFrame local_84;
   int local_40;
   int local_3c;
@@ -88,9 +95,9 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
   SVar3 = message->id;
   if (SVar3 < MESS_OPTPANELTY_C001) {
     if (SVar3 == MESS_SHARED_C000) {
-      UVar25 = 0x274e;
-      pCVar15 = thunk_FUN_00571240("BUT_MEDIUM",0);
-      UPanelTy::PaintIBut((UPanelTy *)this_00,(AnonShape_0053DAF0_3BDC2979 *)message,pCVar15,UVar25);
+      UVar27 = 0x274e;
+      pCVar17 = thunk_FUN_00571240("BUT_MEDIUM",0);
+      UPanelTy::PaintIBut((UPanelTy *)this_00,(AnonShape_0053DAF0_3BDC2979 *)message,pCVar17,UVar27);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     }
@@ -108,7 +115,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         if (SVar3 == MESS_SHARED_0061) {
           local_c = (uint)(message->arg1).words.low;
           local_8 = (UINT *)(uint)(message->arg1).words.high;
-          if (this_00->field_0172 != 1) {
+          if (this_00->field_0172 != CASE_1) {
             g_currentExceptionFrame = local_84.previous;
             return 0;
           }
@@ -131,8 +138,8 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
             while( true ) {
               if (local_1c < local_14) {
                 /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-                piVar10 = (int *)(this_00->field_01D7->elementSize * (int)local_1c +
-                                 (int)this_00->field_01D7->data);
+                piVar10 = (int *)((int)&this_00->field_01D7->data->field_0000 +
+                                 this_00->field_01D7->elementSize * (int)local_1c);
               }
               else {
                 piVar10 = nullptr;
@@ -143,29 +150,29 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               local_28 = piVar10[2];
               if (((((int)local_c < local_30) || (local_28 + local_30 <= (int)local_c)) ||
                   ((int)local_8 < local_2c)) || (local_24 + local_2c <= (int)local_8)) {
-                bVar22 = false;
+                bVar24 = false;
               }
               else {
-                bVar22 = true;
+                bVar24 = true;
               }
-              if ((bVar22) && ((int)local_8 < this_00->field_0044 + 300)) break;
+              if ((bVar24) && ((int)local_8 < this_00->field_0044 + 300)) break;
               local_1c = (int *)((int)local_1c + 1);
               if (local_14 <= local_1c) {
                 g_currentExceptionFrame = local_84.previous;
                 return 0;
               }
             }
-            LinkAct(this_00,STField<int>(piVar10,0x11),STField<int>(piVar10,0x15));
-            uVar16 = STField<uint>(piVar10,0x15);
+            LinkAct(this_00,STField<int>(piVar10,0x11),STField<undefined4>(piVar10,0x15));
+            uVar18 = STField<undefined4>(piVar10,0x15);
             pvVar6 = STField<void *>(piVar10,0x11);
             switch((char)piVar10[4]) {
             case '\x01':
-              RCProc(this_00,(int)pvVar6,uVar16,'\0');
+              RCProc(this_00,(int)pvVar6,uVar18,'\0');
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x02':
-              ObjProc(this_00,(int)pvVar6,uVar16,'\0');
+              ObjProc(this_00,(int)pvVar6,uVar18,'\0');
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
@@ -175,12 +182,12 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x04':
-              ArmProc(this_00,(int)pvVar6,uVar16,'\0');
+              ArmProc(this_00,(int)pvVar6,uVar18,'\0');
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x05':
-              TechProc(this_00,(uint)pvVar6,(byte)uVar16,'\0');
+              TechProc(this_00,(uint)pvVar6,(byte)uVar18,'\0');
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
@@ -195,7 +202,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\b':
-              TipProc(this_00,pvVar6,uVar16,'\0');
+              TipProc(this_00,pvVar6,uVar18,'\0');
               break;
             case '\n':
               IndexBut(this_00);
@@ -203,7 +210,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\v':
-              SpecProc(this_00,(int)pvVar6,uVar16,'\0');
+              SpecProc(this_00,(int)pvVar6,uVar18,'\0');
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
@@ -223,25 +230,25 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
             return 0;
           case CASE_8:
             if (this_00->field_01D7->count == 0) {
-              piVar10 = nullptr;
+              pHVar12 = nullptr;
             }
             else {
-              piVar10 = this_00->field_01D7->data;
+              pHVar12 = this_00->field_01D7->data;
             }
-            local_30 = this_00->field_003C + 0x21 + *piVar10;
+            local_30 = this_00->field_003C + 0x21 + pHVar12->field_0000;
             local_2c = ((uint)(ushort)this_00->field_01AF -
-                       (uint)(ushort)this_00->field_01B1 * this_00->field_01C3) + piVar10[1] + 0x16
-                       + this_00->field_0044;
-            local_28 = piVar10[2];
-            local_24 = piVar10[3];
+                       (uint)(ushort)this_00->field_01B1 * this_00->field_01C3) +
+                       pHVar12->field_0004 + 0x16 + this_00->field_0044;
+            local_28 = pHVar12->field_0008;
+            local_24 = pHVar12->field_000C;
             if (((((int)local_c < local_30) || (local_28 + local_30 <= (int)local_c)) ||
                 ((int)local_8 < local_2c)) || (local_24 + local_2c <= (int)local_8)) {
-              bVar22 = false;
+              bVar24 = false;
             }
             else {
-              bVar22 = true;
+              bVar24 = true;
             }
-            if (!bVar22) {
+            if (!bVar24) {
               g_currentExceptionFrame = local_84.previous;
               return 0;
             }
@@ -307,33 +314,33 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                              0x1ffffffc) * pAVar5->field_0008);
         }
         puVar11 = (undefined4 *)FUN_006b4fa0((int *)pAVar5);
-        for (uVar16 = (uint)local_1c >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
+        for (uVar18 = (uint)local_1c >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
           *puVar11 = 0xffffffff;
           puVar11 = puVar11 + 1;
         }
-        for (uVar16 = (uint)local_1c & 3; uVar16 != 0; uVar16 = uVar16 - 1) {
+        for (uVar18 = (uint)local_1c & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
           *(undefined1 *)puVar11 = 0xff;
           puVar11 = (undefined4 *)((int)puVar11 + 1);
         }
-        uVar18 = (uint)(message->arg0).words.high;
-        uVar16 = uVar18;
-        if ((int)uVar18 < (int)(uVar18 + STField<int>(local_10,0x1e0))) {
+        uVar20 = (uint)(message->arg0).words.high;
+        uVar18 = uVar20;
+        if ((int)uVar20 < (int)(uVar20 + STField<int>(local_10,0x1e0))) {
           do {
-            if ((int)uVar16 < (int)this_00->field_01D3[2]) {
-              local_1c = *(int **)(this_00->field_01D3[5] + uVar16 * 4);
+            if ((int)uVar18 < (int)this_00->field_01D3[2]) {
+              local_1c = *(int **)(this_00->field_01D3[5] + uVar18 * 4);
             }
             else {
               local_1c = nullptr;
             }
             if (local_1c != nullptr) {
               ccFntTy::SetSurf(this_00->field_01E4,(int)this_00->field_0218,0,0,
-                               (uVar16 - uVar18) * local_18,this_00->field_0218->field_0004,local_18
+                               (uVar18 - uVar20) * local_18,this_00->field_0218->field_0004,local_18
                               );
               ccFntTy::WrStr(this_00->field_01E4,(char *)local_1c,0,-1,local_14 & 0xff);
             }
-            uVar18 = (uint)(message->arg0).words.high;
-            uVar16 = uVar16 + 1;
-          } while ((int)uVar16 < (int)(uVar18 + STField<int>(local_10,0x1e0)));
+            uVar20 = (uint)(message->arg0).words.high;
+            uVar18 = uVar18 + 1;
+          } while ((int)uVar18 < (int)(uVar20 + STField<int>(local_10,0x1e0)));
         }
         Library::DKW::WGR::FUN_006b5110
                   ((int)this_00->field_0068,0,0x21,0x16,(BITMAPINFO *)this_00->field_0218,0,0,0,
@@ -343,14 +350,14 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
       }
       if (SVar3 != MESS_SHARED_0060) {
         if (SVar3 == MESS_ID_NONE) {
-          if (this_00->field_0172 == 3) {
+          if (this_00->field_0172 == CASE_3) {
             iVar9 = this_00->field_0050;
             if (this_00->field_0044 < iVar9) {
               this_00->field_0044 = this_00->field_0044 + 0x28;
             }
             if (iVar9 <= this_00->field_0044) {
               this_00->field_0044 = iVar9;
-              this_00->field_0172 = 1;
+              this_00->field_0172 = CASE_1;
               ShiftControls(this_00,1);
             }
             Library::DKW::DDX::FUN_006b3640
@@ -359,7 +366,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
             g_currentExceptionFrame = local_84.previous;
             return 0;
           }
-          if (this_00->field_0172 != 4) {
+          if (this_00->field_0172 != CASE_4) {
             g_currentExceptionFrame = local_84.previous;
             return 0;
           }
@@ -369,7 +376,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           }
           if (this_00->field_0044 <= iVar9) {
             this_00->field_0044 = iVar9;
-            this_00->field_0172 = 2;
+            this_00->field_0172 = CASE_2;
           }
           Library::DKW::DDX::FUN_006b3640
                     ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C
@@ -394,7 +401,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
       local_10 = nullptr;
       local_c = (uint)(message->arg1).words.high;
       this_00->field_01DB = 0;
-      if (this_00->field_0172 == 1) {
+      if (this_00->field_0172 == CASE_1) {
         switch(this_00->field_01A1) {
         case CASE_1:
         case CASE_2:
@@ -409,8 +416,8 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
             do {
               if (local_8 < local_14) {
                 /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-                piVar10 = (int *)(this_00->field_01D7->elementSize * (int)local_8 +
-                                 (int)this_00->field_01D7->data);
+                piVar10 = (int *)((int)&this_00->field_01D7->data->field_0000 +
+                                 this_00->field_01D7->elementSize * (int)local_8);
               }
               else {
                 piVar10 = nullptr;
@@ -424,12 +431,12 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               local_34 = piVar10[3];
               if (((((int)local_18 < local_40) || (local_38 + local_40 <= (int)local_18)) ||
                   ((int)local_c < local_3c)) || (local_34 + local_3c <= (int)local_c)) {
-                bVar22 = false;
+                bVar24 = false;
               }
               else {
-                bVar22 = true;
+                bVar24 = true;
               }
-              if ((bVar22) && ((int)local_c < this_00->field_0044 + 300)) goto LAB_0051e1b2;
+              if ((bVar24) && ((int)local_c < this_00->field_0044 + 300)) goto LAB_0051e1b2;
               local_8 = (UINT *)((int)local_8 + 1);
             } while (local_8 < local_14);
           }
@@ -447,37 +454,37 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
             local_8 = &DAT_007c30d8;
             local_14 = 0x46;
           }
-          uVar19 = 0;
+          uVar21 = 0;
           if ((ushort)local_14 != 0) {
             local_38 = 0x1a;
             local_34 = 0xe;
             local_1c = (int *)(uint)(ushort)this_00->field_01AF;
             do {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_40 = *(int *)((int)local_8 + (uint)uVar19 * 0xd + 5) + 0x21 +
+              local_40 = *(int *)((int)local_8 + (uint)uVar21 * 0xd + 5) + 0x21 +
                          this_00->field_003C;
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_3c = (*(int *)((int)local_8 + (uint)uVar19 * 0xd + 9) -
+              local_3c = (*(int *)((int)local_8 + (uint)uVar21 * 0xd + 9) -
                          (uint)(ushort)this_00->field_01B1 * this_00->field_01C3) + (int)local_1c +
                          0x16 + this_00->field_0044;
               if ((((int)local_18 < local_40) || (local_40 + 0x1a <= (int)local_18)) ||
                  (((int)local_c < local_3c || (local_3c + 0xe <= (int)local_c)))) {
-                bVar22 = false;
+                bVar24 = false;
               }
               else {
-                bVar22 = true;
+                bVar24 = true;
               }
-              if ((bVar22) && ((int)local_c < this_00->field_0044 + 300)) {
+              if ((bVar24) && ((int)local_c < this_00->field_0044 + 300)) {
                 local_10 = (undefined4 *)
                            thunk_FUN_00528060(*(Global_sub_00528060_param_1Enum *)
-                                               ((int)local_8 + (uint)uVar19 * 0xd),
-                                              *(char *)((int)local_8 + (uint)uVar19 * 0xd + 4));
+                                               ((int)local_8 + (uint)uVar21 * 0xd),
+                                              *(char *)((int)local_8 + (uint)uVar21 * 0xd + 4));
                 if (local_10 != (undefined4 *)0x2711) goto LAB_0051e1b2;
                 local_10 = nullptr;
                 break;
               }
-              uVar19 = uVar19 + 1;
-            } while (uVar19 < (ushort)local_14);
+              uVar21 = uVar21 + 1;
+            } while (uVar21 < (ushort)local_14);
           }
         }
       }
@@ -488,8 +495,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
       return 0;
     }
     if (SVar3 == MESS_SHARED_BFFF) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(this_00->vtable + 0x18))(0);
+      this_00->SetPanel('\0');
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_84.previous;
       return 0;
@@ -498,102 +504,102 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
     case MESS_SIDTY_8161:
       HVar2 = this_00->field_01A1;
       if (HVar2 == 0) {
-        pDVar17 = (DArrayTy *)this_00->field_01B3;
+        pHVar19 = (HelpPanelTy_field_01BBDArray *)this_00->field_01B3;
       }
       else {
         if (HVar2 != CASE_A) {
           g_currentExceptionFrame = local_84.previous;
           return 0;
         }
-        pDVar17 = this_00->field_01BB;
+        pHVar19 = this_00->field_01BB;
       }
-      uVar16 = (uint)(message->arg0).words.low;
-      if (uVar16 < pDVar17->count) {
+      uVar18 = (uint)(message->arg0).words.low;
+      if (uVar18 < pHVar19->count) {
         if (HVar2 == 0) {
-          local_8 = (UINT *)(this_00->field_01B3->field_0008 * uVar16 +
+          local_8 = (UINT *)(this_00->field_01B3->field_0008 * uVar18 +
                             this_00->field_01B3->field_001C);
         }
         else {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          local_8 = (UINT *)(this_00->field_01BB->elementSize * uVar16 +
-                            (int)this_00->field_01BB->data);
+          local_8 = (UINT *)((int)&this_00->field_01BB->data->resourceId +
+                            this_00->field_01BB->elementSize * uVar18);
         }
       }
       else {
         local_8 = nullptr;
       }
       if (local_8 != nullptr) {
-        bVar22 = (message->arg0).words.high == 1;
+        bVar24 = (message->arg0).words.high == 1;
         local_18 = *local_8;
         if (DAT_0080874e == '\x03') {
-          local_1c = (int *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(!bVar22));
+          local_1c = (int *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(!bVar24));
         }
         else if (DAT_0080874e == '\x01') {
           local_1c = (int *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(1));
         }
         else {
-          local_1c = (int *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar22 + '\a'));
+          local_1c = (int *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar24 + '\a'));
         }
         iVar9 = (message->arg1).words.high + 0x16;
         Library::DKW::WGR::FUN_006b55f0
                   ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,iVar9,
-                   (byte *)this_00->field_01DC,0,0x21,iVar9,0x19c,*(int *)(this_00->field_01EC + 8));
-        piVar10 = (int *)this_00->field_01EC;
-        uVar16 = piVar10[5];
-        if (uVar16 == 0) {
-          uVar16 = ((uint)STField<ushort>(piVar10,0xe) * piVar10[1] + 0x1f >> 3 & 0x1ffffffc) *
-                   piVar10[2];
+                   (byte *)this_00->field_01DC,0,0x21,iVar9,0x19c,*(int *)(this_00->field_01EC + 4));
+        puVar7 = this_00->field_01EC;
+        uVar18 = *(uint *)(puVar7 + 10);
+        if (uVar18 == 0) {
+          uVar18 = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+                   *(int *)(puVar7 + 4);
         }
-        puVar11 = (undefined4 *)FUN_006b4fa0(piVar10);
-        for (uVar18 = uVar16 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+        puVar11 = (undefined4 *)FUN_006b4fa0((int *)puVar7);
+        for (uVar20 = uVar18 >> 2; uVar20 != 0; uVar20 = uVar20 - 1) {
           *puVar11 = 0xffffffff;
           puVar11 = puVar11 + 1;
         }
-        for (uVar16 = uVar16 & 3; uVar16 != 0; uVar16 = uVar16 - 1) {
+        for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
           *(undefined1 *)puVar11 = 0xff;
           puVar11 = (undefined4 *)((int)puVar11 + 1);
         }
-        ccFntTy::SetSurf(this_00->field_01E4,this_00->field_01EC,0,0,0,0,0);
+        ccFntTy::SetSurf(this_00->field_01E4,(int)this_00->field_01EC,0,0,0,0,0);
         pcVar13_mg1 = LoadResourceString(local_18,g_hINSTANCE_00807618);
-        uVar16 = 0xffffffff;
+        uVar18 = 0xffffffff;
         do {
-          pcVar23 = pcVar13_mg1;
-          if (uVar16 == 0) break;
-          uVar16 = uVar16 - 1;
-          pcVar23 = pcVar13_mg1 + 1;
+          pcVar25 = pcVar13_mg1;
+          if (uVar18 == 0) break;
+          uVar18 = uVar18 - 1;
+          pcVar25 = pcVar13_mg1 + 1;
           cVar1 = *pcVar13_mg1;
-          pcVar13_mg1 = pcVar23;
+          pcVar13_mg1 = pcVar25;
         } while (cVar1 != '\0');
-        uVar16 = ~uVar16;
-        pcVar23 = pcVar23 + -uVar16;
-        pcVar21 = (char *)&DAT_0080f33a;
-        memmove(pcVar21, pcVar23, uVar16); /* compiler REP MOVS byte copy */
-        puVar13 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n');
-        pUVar7 = local_8;
-        while (local_8 = pUVar7, puVar13 != nullptr) {
-          *(undefined1 *)puVar13 = 0x20;
-          puVar13 = Library::MSVCRT::FUN_0072e560(puVar13,'\n');
-          pUVar7 = local_8;
+        uVar18 = ~uVar18;
+        pcVar25 = pcVar25 + -uVar18;
+        pcVar23 = (char *)&DAT_0080f33a;
+        memmove(pcVar23, pcVar25, uVar18); /* compiler REP MOVS byte copy */
+        puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n');
+        pUVar8 = local_8;
+        while (local_8 = pUVar8, puVar14 != nullptr) {
+          *(undefined1 *)puVar14 = 0x20;
+          puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n');
+          pUVar8 = local_8;
         }
         ccFntTy::WrStr(this_00->field_01E4,(char *)&DAT_0080f33a,
-                       (uint)STField<byte>(pUVar7,0x11) * 0x14 + 10,-1,(uint)local_1c & 0xff);
-        if ((this_00->field_01A1 == 0) && (STField<byte>(pUVar7,0x11) != 0)) {
+                       (uint)STField<byte>(pUVar8,0x11) * 0x14 + 10,-1,(uint)local_1c & 0xff);
+        if ((this_00->field_01A1 == 0) && (STField<byte>(pUVar8,0x11) != 0)) {
           if (DAT_0080874e == '\x03') {
             local_1c = (int *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(0x29));
           }
           else {
             local_1c = (int *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)((-(DAT_0080874e != '\x01') & 0x43U) + 0x10));
           }
-          iVar14 = (uint)STField<byte>(pUVar7,0x11) * 0x14;
+          iVar16 = (uint)STField<byte>(pUVar8,0x11) * 0x14;
           local_10 = (undefined4 *)((uint)local_1c & 0xff);
           iVar9 = (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC)->field_0008 / 2;
-          FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar14,iVar9,iVar14 + 8,
+          FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar16,iVar9,iVar16 + 8,
                        iVar9,(byte)local_1c,0xd);
           if (STField<char>(local_8,0x13) == '\0') {
-            iVar9 = *(int *)(this_00->field_01EC + 8);
+            iVar9 = *(int *)(this_00->field_01EC + 4);
           }
-          iVar14 = (uint)STField<byte>(local_8,0x11) * 0x14;
-          FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar14,0,iVar14,iVar9,
+          iVar16 = (uint)STField<byte>(local_8,0x11) * 0x14;
+          FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar16,0,iVar16,iVar9,
                        (byte)local_10,0xd);
           local_14 = 0;
           local_c = (uint)(message->arg0).words.low;
@@ -609,38 +615,38 @@ joined_r0x0051eec7:
             else {
               iVar9 = 0;
             }
-            if ((iVar9 == 0) || (bVar20 = *(byte *)(iVar9 + 0x11), bVar20 == 0)) goto LAB_0051ef61;
-            uVar16 = local_c;
-            if (bVar20 < STField<byte>(local_8,0x11)) {
+            if ((iVar9 == 0) || (bVar22 = *(byte *)(iVar9 + 0x11), bVar22 == 0)) goto LAB_0051ef61;
+            uVar18 = local_c;
+            if (bVar22 < STField<byte>(local_8,0x11)) {
               do {
-                uVar16 = uVar16 - 1;
-                if ((int)uVar16 < 1) goto joined_r0x0051eec7;
-                if (uVar16 < local_18) {
-                  iVar9 = this_00->field_01B3->field_0008 * uVar16 + this_00->field_01B3->field_001C
+                uVar18 = uVar18 - 1;
+                if ((int)uVar18 < 1) goto joined_r0x0051eec7;
+                if (uVar18 < local_18) {
+                  iVar9 = this_00->field_01B3->field_0008 * uVar18 + this_00->field_01B3->field_001C
                   ;
                 }
                 else {
                   iVar9 = 0;
                 }
                 if ((iVar9 == 0) || (*(byte *)(iVar9 + 0x11) == 0)) goto joined_r0x0051eec7;
-              } while (*(byte *)(iVar9 + 0x11) != bVar20);
+              } while (*(byte *)(iVar9 + 0x11) != bVar22);
               if (*(char *)(iVar9 + 0x13) == '\0') {
-                local_14 = local_14 | 1 << (bVar20 & 0x1f);
+                local_14 = local_14 | 1 << (bVar22 & 0x1f);
               }
             }
             goto joined_r0x0051eec7;
           }
 LAB_0051ef61:
-          bVar20 = 0;
+          bVar22 = 0;
           iVar9 = 0;
           do {
-            if ((local_14 & 1 << (bVar20 & 0x1f)) != 0) {
+            if ((local_14 & 1 << (bVar22 & 0x1f)) != 0) {
               FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar9,0,iVar9,
                            (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC)->field_0008,
                            (byte)local_10,0xd);
             }
             iVar9 = iVar9 + 0x14;
-            bVar20 = bVar20 + 1;
+            bVar22 = bVar22 + 1;
           } while (iVar9 < 0x280);
         }
         FUN_006b5440((ushort *)this_00->field_0068,0,0x21,(message->arg1).words.high + 0x16,
@@ -654,25 +660,25 @@ LAB_0051ef61:
     case MESS_OPTPANELTY_8162:
       HVar2 = this_00->field_01A1;
       if (HVar2 == 0) {
-        pDVar17 = (DArrayTy *)this_00->field_01B3;
+        pHVar19 = (HelpPanelTy_field_01BBDArray *)this_00->field_01B3;
       }
       else {
         if (HVar2 != CASE_A) {
           g_currentExceptionFrame = local_84.previous;
           return 0;
         }
-        pDVar17 = this_00->field_01BB;
+        pHVar19 = this_00->field_01BB;
       }
-      uVar16 = (message->arg0).u32;
-      if (uVar16 < pDVar17->count) {
+      uVar18 = (message->arg0).u32;
+      if (uVar18 < pHVar19->count) {
         if (HVar2 == 0) {
-          local_1c = (int *)(this_00->field_01B3->field_0008 * uVar16 +
+          local_1c = (int *)(this_00->field_01B3->field_0008 * uVar18 +
                             this_00->field_01B3->field_001C);
         }
         else {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          local_1c = (int *)(this_00->field_01BB->elementSize * uVar16 +
-                            (int)this_00->field_01BB->data);
+          local_1c = (int *)((int)&this_00->field_01BB->data->resourceId +
+                            this_00->field_01BB->elementSize * uVar18);
         }
       }
       else {
@@ -682,26 +688,26 @@ LAB_0051ef61:
         g_currentExceptionFrame = local_84.previous;
         return 0;
       }
-      bVar22 = false;
-      uVar16 = STField<uint>(local_1c,0xd);
+      bVar24 = false;
+      uVar18 = STField<uint>(local_1c,0xd);
       pvVar6 = STField<void *>(local_1c,9);
       switch((char)local_1c[2]) {
       default:
         goto switchD_0051ea9b_caseD_0;
       case '\x01':
-        RCProc(this_00,(int)pvVar6,uVar16,'\0');
+        RCProc(this_00,(int)pvVar6,uVar18,'\0');
         break;
       case '\x02':
-        ObjProc(this_00,(int)pvVar6,uVar16,'\0');
+        ObjProc(this_00,(int)pvVar6,uVar18,'\0');
         break;
       case '\x03':
         SubProc(this_00,(int)pvVar6,'\0');
         break;
       case '\x04':
-        ArmProc(this_00,(int)pvVar6,uVar16,'\0');
+        ArmProc(this_00,(int)pvVar6,uVar18,'\0');
         break;
       case '\x05':
-        TechProc(this_00,(uint)pvVar6,(byte)uVar16,'\0');
+        TechProc(this_00,(uint)pvVar6,(byte)uVar18,'\0');
         break;
       case '\x06':
         TTreeProc(this_00,(uint)pvVar6,'\0');
@@ -710,20 +716,20 @@ LAB_0051ef61:
         MObjProc(this_00);
         break;
       case '\b':
-        TipProc(this_00,pvVar6,uVar16,'\0');
+        TipProc(this_00,pvVar6,uVar18,'\0');
         break;
       case '\n':
         IndexBut(this_00);
         break;
       case '\v':
-        SpecProc(this_00,(int)pvVar6,uVar16,'\0');
+        SpecProc(this_00,(int)pvVar6,uVar18,'\0');
         break;
       case '\f':
         NatProc(this_00,(int)pvVar6,'\0');
       }
-      bVar22 = true;
+      bVar24 = true;
 switchD_0051ea9b_caseD_0:
-      if (bVar22) {
+      if (bVar24) {
         PutToSHlp(this_00);
         g_currentExceptionFrame = local_84.previous;
         return 0;
@@ -737,27 +743,27 @@ switchD_0051ea9b_caseD_0:
         g_currentExceptionFrame = local_84.previous;
         return 0;
       }
-      *(STMessageArg *)&this_00->field_0x1bf = message->arg0;
+      this_00->field_01BF = message->arg0;
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case MESS_OPTPANELTY_8164:
-      pcVar24 = thunk_FUN_00529fe0;
-      pCVar15 = thunk_FUN_00571240("BUT_SLUP",0);
-      bVar20 = 6;
+      pcVar26 = thunk_FUN_00529fe0;
+      pCVar17 = thunk_FUN_00571240("BUT_SLUP",0);
+      bVar22 = 6;
       break;
     case MESS_OPTPANELTY_8165:
-      pcVar24 = thunk_FUN_00529fe0;
-      pCVar15 = thunk_FUN_00571240("BUT_SLDN",0);
-      bVar20 = 6;
+      pcVar26 = thunk_FUN_00529fe0;
+      pCVar17 = thunk_FUN_00571240("BUT_SLDN",0);
+      bVar22 = 6;
       break;
     case MESS_SHARED_8166:
-      pBVar12 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0220,0);
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x1c3,0x2d,'\x06',(byte *)pBVar12);
+      pBVar13 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0220,0);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x1c3,0x2d,'\x06',(byte *)pBVar13);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      pBVar12 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0220,
+      pBVar13 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0220,
                              (*(int *)((message->arg2).u32 + 0x1c) != 1) + 1);
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x1c3,
-             (message->arg0).words.high + 0x2d,'\x06',(byte *)pBVar12);
+             (message->arg0).words.high + 0x2d,'\x06',(byte *)pBVar13);
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                  this_00->field_0044);
@@ -800,32 +806,32 @@ switchD_0051ea9b_caseD_0:
     default:
       goto cf_common_exit_0051F19A;
     case MESS_INTERCOMPANELTY_C0AF:
-      pcVar23 = "BUT_HLPHOME";
+      pcVar25 = "BUT_HLPHOME";
       break;
     case 0xc0b0:
-      pcVar23 = "BUT_HLPBACK";
+      pcVar25 = "BUT_HLPBACK";
       break;
     case MESS_BEHPANELTY_C0B1:
-      pcVar23 = "BUT_HLPINDEX";
+      pcVar25 = "BUT_HLPINDEX";
       break;
     case 0xc0b2:
-      pcVar23 = "BUT_HLPPREV";
+      pcVar25 = "BUT_HLPPREV";
       break;
     case MESS_BLDLABPANELTY_C0B3:
-      pcVar23 = "BUT_HLPNEXT";
+      pcVar25 = "BUT_HLPNEXT";
       break;
     case MESS_RESEARCHPANELTY_C0B4:
-      pcVar23 = "BUT_HLPBWD";
+      pcVar25 = "BUT_HLPBWD";
       break;
     case MESS_SHARED_C0B5:
-      pcVar23 = "BUT_HLPFWD";
+      pcVar25 = "BUT_HLPFWD";
     }
-    pcVar24 = thunk_FUN_00529f90;
-    pCVar15 = thunk_FUN_00571240(pcVar23,0);
-    bVar20 = 1;
+    pcVar26 = thunk_FUN_00529f90;
+    pCVar17 = thunk_FUN_00571240(pcVar25,0);
+    bVar22 = 1;
   }
-  UPanelTy::PaintBut((UPanelTy *)this_00,(AnonShape_0053D7A0_044B6141 *)message,bVar20,pCVar15,
-                     pcVar24);
+  UPanelTy::PaintBut((UPanelTy *)this_00,(AnonShape_0053D7A0_044B6141 *)message,bVar22,pCVar17,
+                     pcVar26);
 cf_common_exit_0051F19A:
   g_currentExceptionFrame = local_84.previous;
   return 0;
@@ -842,7 +848,7 @@ switchD_0051e4d9_caseD_6:
     local_10 = &DAT_007c30d8;
     local_18 = 0x46;
   }
-  uVar19 = 0;
+  uVar21 = 0;
   if ((ushort)local_18 == 0) {
     g_currentExceptionFrame = local_84.previous;
     return 0;
@@ -852,57 +858,59 @@ switchD_0051e4d9_caseD_6:
   local_1c = (int *)(uint)(ushort)this_00->field_01AF;
   while( true ) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_30 = *(int *)((int)local_10 + (uint)uVar19 * 0xd + 5) + 0x21 + this_00->field_003C;
+    local_30 = *(int *)((int)local_10 + (uint)uVar21 * 0xd + 5) + 0x21 + this_00->field_003C;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_2c = (*(int *)((int)local_10 + (uint)uVar19 * 0xd + 9) -
+    local_2c = (*(int *)((int)local_10 + (uint)uVar21 * 0xd + 9) -
                (uint)(ushort)this_00->field_01B1 * this_00->field_01C3) + (int)local_1c + 0x16 +
                this_00->field_0044;
     if ((((int)local_c < local_30) || (local_30 + 0x1a <= (int)local_c)) ||
        (((int)local_8 < local_2c || (local_2c + 0xe <= (int)local_8)))) {
-      bVar22 = false;
+      bVar24 = false;
     }
     else {
-      bVar22 = true;
+      bVar24 = true;
     }
-    if ((bVar22) && ((int)local_8 < this_00->field_0044 + 300)) break;
-    uVar19 = uVar19 + 1;
-    if ((ushort)local_18 <= uVar19) {
+    if ((bVar24) && ((int)local_8 < this_00->field_0044 + 300)) break;
+    uVar21 = uVar21 + 1;
+    if ((ushort)local_18 <= uVar21) {
       g_currentExceptionFrame = local_84.previous;
       return 0;
     }
   }
-  TechProc(this_00,*(uint *)((int)local_10 + (uint)uVar19 * 0xd),
-           *(byte *)((int)local_10 + (uint)uVar19 * 0xd + 4),'\0');
+  TechProc(this_00,*(uint *)((int)local_10 + (uint)uVar21 * 0xd),
+           *(byte *)((int)local_10 + (uint)uVar21 * 0xd + 4),'\0');
   PutToSHlp(this_00);
   g_currentExceptionFrame = local_84.previous;
   return 0;
 LAB_0051e1b2:
   this_00->field_01DB = 0x46;
 switchD_0051dfcc_caseD_7:
-  UVar25 = this_00->field_0178;
-  if ((undefined4 *)UVar25 == local_10) {
+  STPiece<0,2>(UVar27) = this_00->field_0178;
+  STPiece<2,2>(UVar27) = this_00->field_017A;
+  if ((undefined4 *)UVar27 == local_10) {
     g_currentExceptionFrame = local_84.previous;
     return 0;
   }
-  if (UVar25 != 0) {
+  if (UVar27 != 0) {
     this_00->field_0028 = 0x4202;
     *(undefined2 *)&this_00->field_0x2c = 0;
-    this_00->field_002E = 2;
-    *(UINT *)&this_00->field_0x30 = UVar25;
+    *(undefined2 *)&this_00->field_0x2e = 2;
+    this_00->field_0030 = (undefined2)UVar27;
+    this_00->field_0032 = STPiece<2,2>(UVar27);
     if (g_cursorClass_00802A30 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
     }
   }
-  this_00->field_0178 = local_10;
+  *(undefined4 **)&this_00->field_0178 = local_10;
   if (local_10 == nullptr) {
     g_currentExceptionFrame = local_84.previous;
     return 0;
   }
   this_00->field_0028 = 0x4201;
   *(undefined2 *)&this_00->field_0x2c = 0;
-  this_00->field_002E = 2;
-  *(undefined4 **)&this_00->field_0x30 = local_10;
+  *(undefined2 *)&this_00->field_0x2e = 2;
+  *(undefined4 **)&this_00->field_0030 = local_10;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
   g_currentExceptionFrame = local_84.previous;

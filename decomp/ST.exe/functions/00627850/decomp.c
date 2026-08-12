@@ -36,33 +36,10 @@ FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   char *pcVar8_mg1;
   char *pcVar8_mg0;
 
-  sVar7 = (short)(param_5 >> 0x1f);
-  if (param_5 < 0) {
-    local_8 = (short)(((short)(param_5 / 0xc9) + sVar7) -
-                     (short)((longlong)param_5 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    local_8 = (int)(short)(((short)(param_5 / 0xc9) + sVar7) -
-                          (short)((longlong)param_5 * 0x28c1979 >> 0x3f));
-  }
+  local_8 = STBiasedDiv16(param_5, 0xc9); /* exact signed 16-bit grid-index division */
   sVar7 = (short)local_8;
-  sVar6 = (short)(param_6 >> 0x1f);
-  if (param_6 < 0) {
-    sVar6 = (((short)(param_6 / 0xc9) + sVar6) - (short)((longlong)param_6 * 0x28c1979 >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar6 = ((short)(param_6 / 0xc9) + sVar6) - (short)((longlong)param_6 * 0x28c1979 >> 0x3f);
-  }
-  sVar2 = (short)(param_7 >> 0x1f);
-  if (param_7 < 0) {
-    local_c = (short)(((short)(param_7 / 200) + sVar2) -
-                     (short)((longlong)param_7 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    local_c = (int)(short)(((short)(param_7 / 200) + sVar2) -
-                          (short)((longlong)param_7 * 0x51eb851f >> 0x3f));
-  }
+  sVar6 = STBiasedDiv16(param_6, 0xc9); /* exact signed 16-bit grid-index division */
+  local_c = STBiasedDiv16(param_7, 200); /* exact signed 16-bit grid-index division */
   puVar9 = &local_5c;
   memset(puVar9, 0, 0x4f); /* compiler bulk-zero initialization */
   puVar9 = (undefined4 *)((byte *)puVar9 + 0x4c);

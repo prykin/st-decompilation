@@ -8,7 +8,15 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+
+   [STSwitchEnumApplier] Switch target field_036E uses
+   /SubmarineTitans/Recovered/Enums/STDestC_field_036EState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_4=4;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_036E uses
+   /SubmarineTitans/Recovered/Enums/STDestC_field_036EState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_6=6 */
 
 void __thiscall STDestC::sub_00602440(STDestC *this)
 
@@ -22,7 +30,7 @@ void __thiscall STDestC::sub_00602440(STDestC *this)
   local_10 = this->field_0008;
   local_14 = 10;
   sub_006E60A0(this,local_24);
-  this->field_036E = 6;
+  this->field_036E = CASE_6;
   return;
 }
 

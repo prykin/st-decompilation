@@ -534,7 +534,7 @@ undefined4 __fastcall st::fn_00492B20(STBoatC *param_1)
 
   this = st::fn_004028BA
                    (g_allPlayers_007FA174,param_1->field_05FC,param_1->field_05FD,CASE_1);
-  if ((((((this != nullptr) && (this->field_0018 == param_1->field_05FF)) &&
+  if ((((((this != nullptr) && (this->field_0018 == *(int *)&param_1->field_0x5ff)) &&
         (iVar1 = (*this->vtable->vfunc_108)(param_1->field_0024), iVar1 != 0)) &&
        ((st::fn_004018C5((STFishC *)this,&local_8,&local_6,local_c), -1 < local_8 &&
         (local_8 < g_pathingGrid.sizeX)))) && (-1 < local_6)) &&

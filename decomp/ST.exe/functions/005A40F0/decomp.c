@@ -33,7 +33,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
     this_00->field_00D2 = 0;
     this_00->field_04DF = -1;
   }
-  if (this->field_1A5F == CASE_9) {
+  if (this->array_00BC[0xc].field_01DF == '\t') {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
     iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
@@ -61,13 +61,14 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
       PaintLadder(this_01);
       memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
       local_18 = 0x20;
-      if ((this_01->field_1EDF == 0) || (local_14 = 1, this_01->field_1A6B == 0)) {
+      if ((this_01->field_1EDF == 0) || (local_14 = 1, this_01->array_00BC[0xc].field_01EB == 0)) {
         local_14 = 0;
       }
       if (this_01->field_1ED3 != 0) {
         FUN_006e6080(this_01,2,this_01->field_1ED3,local_28);
       }
-      if ((0xf422f < this_01->field_1EDF) || (local_14 = 1, this_01->field_1A6B == 0)) {
+      if ((0xf422f < this_01->field_1EDF) ||
+         (local_14 = 1, this_01->array_00BC[0xc].field_01EB == 0)) {
         local_14 = 0;
       }
       if (this_01->field_1ED7 != 0) {

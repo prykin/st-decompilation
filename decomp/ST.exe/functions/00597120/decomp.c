@@ -25,7 +25,7 @@
 void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
 
 {
-  FSGSTy_field_1A5FState FVar1;
+  char cVar1;
   int iVar2;
   AnonPointee_FSGSTy_1A97 *pAVar3;
   HoloTy *this_00;
@@ -94,9 +94,10 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
   switch(local_28->field_0065) {
   case CASE_1:
     CFsgsConnection::PumpMessages((CFsgsConnection *)&DAT_00802a90);
-    if (this_02->field_1A5F == CASE_6) {
+    cVar1 = this_02->array_00BC[0xc].field_01DF;
+    if (cVar1 == '\x06') {
       if (15000 < this_02->field_0061 - this_02->field_1EB2) {
-        if ((this_02->field_1A60 == '\0') &&
+        if ((this_02->array_00BC[0xc].field_01E0 == '\0') &&
            (pDVar13 = this_02->field_1EA6, pDVar13 != nullptr)) {
           if (1 < pDVar13->count) {
             do {
@@ -115,11 +116,11 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
         this_02->field_1EB2 = this_02->field_0061;
       }
     }
-    else if ((this_02->field_1A5F == CASE_8) && (60000 < this_02->field_0061 - this_02->field_1A63))
+    else if ((cVar1 == '\b') && (60000 < this_02->field_0061 - this_02->array_00BC[0xc].field_01E3))
     {
       CFsgsConnection::RequestGameList
                 ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EC2,nullptr);
-      this_02->field_1A63 = this_02->field_0061;
+      this_02->array_00BC[0xc].field_01E3 = this_02->field_0061;
       pCVar5 = g_cursorClass_00802A30;
       if (g_cursorClass_00802A30 != nullptr) {
         iVar17 = g_cursorClass_00802A30->field_00C9;
@@ -239,12 +240,13 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
     switch(this_02->field_0065) {
     case CASE_6:
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_02->field_1ABC);
-      this_02->field_1A5F = CASE_1;
+      this_02->array_00BC[0xc].field_01DF = 1;
       thunk_FUN_0055c180((CFsgsConnection *)&DAT_00802a90);
       local_18 = 1;
       break;
     case CASE_7:
-      if ((this_02->field_1A5F != CASE_3) && (this_02->field_1A5F != CASE_9)) {
+      cVar1 = this_02->array_00BC[0xc].field_01DF;
+      if ((cVar1 != '\x03') && (cVar1 != '\t')) {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_02->field_1ABC);
       }
     case CASE_8:
@@ -258,10 +260,11 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
     this_02->field_0065 = CASE_1;
     PaintFSGS(this_02,'\0');
     CreateCtrls(this_02);
-    switch(this_02->field_1A5F) {
-    case CASE_6:
+    switch(this_02->array_00BC[0xc].field_01DF) {
+    case 6:
+      cVar1 = this_02->array_00BC[0xc].field_01E2;
       this_02->field_1EB2 = this_02->field_0061;
-      if (this_02->field_1A62 == '\0') {
+      if (cVar1 == '\0') {
         thunk_FUN_0055d410((CFsgsConnection *)&DAT_00802a90);
       }
       else {
@@ -269,17 +272,17 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
         pcVar16 = &CHAR_00h_008016a0;
         resourceString = LoadResourceString(0x254d,g_hINSTANCE_00807618);
         thunk_FUN_0055d390(&DAT_00802a90,resourceString,pcVar16,uVar18);
-        this_02->field_1A62 = 0;
+        this_02->array_00BC[0xc].field_01E2 = 0;
       }
       break;
-    case CASE_8:
+    case 8:
       CFsgsConnection::RequestGameList
                 ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EC2,nullptr);
       DVar6 = timeGetTime();
-      this_02->field_1A63 = DVar6;
+      this_02->array_00BC[0xc].field_01E3 = DVar6;
       pCVar5 = g_cursorClass_00802A30;
       goto joined_r0x00597872;
-    case CASE_9:
+    case 9:
       CFsgsConnection::RequestLadderList
                 ((CFsgsConnection *)&DAT_00802a90,DAT_00803140,0,DAT_00803148,0xf);
       pCVar5 = g_cursorClass_00802A30;
@@ -294,7 +297,7 @@ joined_r0x00597872:
         pCVar5->field_04DF = -1;
       }
       break;
-    case CASE_A:
+    case 10:
       if (this_02->field_1B0C != nullptr) {
         local_64 = "Profile\\Age";
         local_60 = "Profile\\Sex";
@@ -317,7 +320,7 @@ joined_r0x00597872:
         goto joined_r0x00597872;
       }
     }
-    this_01 = this_02->field_1A5B->field_02E6;
+    this_01 = (this_02->array_00BC[0xc].field_01DB)->field_02E6;
     if (this_01 != nullptr) {
       MMsgTy::StatePanel(this_01,(int)&local_24);
       g_currentExceptionFrame = local_a8.previous;
@@ -373,7 +376,7 @@ joined_r0x00597872:
         local_8 = 0;
       }
     }
-    if (((this_02->field_1A61 == '\0') && (this_02->field_1A93 < 9)) &&
+    if (((this_02->array_00BC[0xc].field_01E1 == '\0') && (this_02->field_1A93 < 9)) &&
        (-1 < (int)this_02->field_1A8F)) {
       if ((this_02->field_1A93 == 0) && (this_02->field_1AB3 != 0)) {
         StartSystemTy::sub_006E56B0(this_02->field_000C,this_02->field_1AB3);
@@ -419,41 +422,40 @@ joined_r0x00597872:
         pCVar5->field_00D2 = 0;
         pCVar5->field_04DF = -1;
       }
-      FVar1 = this_02->field_1A61;
-      if (FVar1 != 0) {
-        switch(FVar1) {
-        case CASE_2:
-        case CASE_3:
-        case CASE_4:
-        case CASE_5:
-        case CASE_7:
-        case CASE_9:
-        case CASE_A:
-          this_02->field_1A5F = FVar1;
+      cVar1 = this_02->array_00BC[0xc].field_01E1;
+      if (cVar1 != '\0') {
+        switch(cVar1) {
+        case '\x02':
+        case '\x03':
+        case '\x04':
+        case '\x05':
+        case '\a':
+        case '\t':
+        case '\n':
+          this_02->array_00BC[0xc].field_01DF = cVar1;
           SetState(this_02,7);
-          this_02->field_1A61 = 0;
+          this_02->array_00BC[0xc].field_01E1 = 0;
           g_currentExceptionFrame = local_a8.previous;
           return;
-        case CASE_6:
-          this_02->field_1A5F = FVar1;
+        case '\x06':
+          this_02->array_00BC[0xc].field_01DF = cVar1;
           SetState(this_02,8);
-          this_02->field_1A61 = 0;
+          this_02->array_00BC[0xc].field_01E1 = 0;
           g_currentExceptionFrame = local_a8.previous;
           return;
-        case CASE_8:
-          this_02->field_1A5F = FVar1;
+        case '\b':
+          this_02->array_00BC[0xc].field_01DF = cVar1;
           SetState(this_02,10);
         }
-        this_02->field_1A61 = 0;
+        this_02->array_00BC[0xc].field_01E1 = 0;
         g_currentExceptionFrame = local_a8.previous;
         return;
       }
-      bVar15 = this_02->field_1A5A;
+      bVar15 = this_02->array_00BC[0xc].field_01DA;
       this_02->field_0065 = CASE_2;
-      if ((bVar15 != 0xff) && (*(int *)(&this_02->field_0xd1 + (uint)bVar15 * 0x1fb) != 0)) {
+      if ((bVar15 != 0xff) && (*(int *)&this_02->array_00BC[bVar15].field_0x15 != 0)) {
         AppClassTy::PostNextMessage
-                  ((AppClassTy *)&DAT_00807620,
-                   (undefined4 *)(&this_02->field_0xc1 + (uint)bVar15 * 0x1fb));
+                  ((AppClassTy *)&DAT_00807620,(undefined4 *)&this_02->array_00BC[bVar15].field_0x5);
         g_currentExceptionFrame = local_a8.previous;
         return;
       }

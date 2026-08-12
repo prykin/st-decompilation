@@ -187,7 +187,7 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
     else if (SVar1 == MESS_SHARED_0003) {
       st::fn_0040281F();
       st::fn_00401528(this_00);
-      DAT_008117bc = static_cast<undefined4>(0);
+      DAT_008117bc = 0;
     }
   }
   else if (SVar1 < 0x5ded) {

@@ -13,83 +13,14 @@
 HelpPanelTy * __cdecl st::fn_00510C50(void)
 
 {
-  AnonShape_00510C80_2C2DC38C *pAVar1;
-  HelpPanelTy *pHVar2;
+  HelpPanelTy *pHVar1;
 
-  pAVar1 = (AnonShape_00510C80_2C2DC38C *)st::fn_006B04D0(0x254);
-  if (pAVar1 != nullptr) {
-    pHVar2 = (HelpPanelTy *)st::fn_00403035(pAVar1);
-    return pHVar2;
+  pHVar1 = (HelpPanelTy *)st::fn_006B04D0(0x254);
+  if (pHVar1 != nullptr) {
+    pHVar1 = st::fn_00403035(pHVar1);
+    return pHVar1;
   }
   return nullptr;
-}
-
-// 00510C80 FUN_00510c80
-#line 4 "decomp/ST.exe/functions/00510C80/decomp.c"
-/* [STReturnSemanticsApplier] typed_pointer_return.
-   Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed
-   structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_00510C80_2C2DC38C (current recovered
-   extent=592) */
-
-AnonShape_00510C80_2C2DC38C * __fastcall st::fn_00510C80(AnonShape_00510C80_2C2DC38C *param_1)
-
-{
-  undefined4 uVar1;
-  int iVar2;
-
-  st::fn_006E5FB0(param_1);
-  param_1->field_005C = 0;
-  param_1->field_0044 = 0;
-  param_1->field_003C = 0;
-  param_1->field_0060 = 0xffffffff;
-  param_1->field_0064 = 3;
-  param_1->field_0068 = 0;
-  param_1->field_0172 = 2;
-  param_1->field_0178 = 0;
-  *(VTable_0079AC48 **)param_1 = &st_global_0079AC48;
-  param_1->field_0040 = 500;
-  param_1->field_0048 = 400;
-  param_1->field_01A0 = 0;
-  param_1->field_01A2 = 0;
-  param_1->field_01A1 = 0;
-  param_1->field_01A7 = 0;
-  param_1->field_01A3 = 0;
-  param_1->field_01DC = 0;
-  param_1->field_01E8 = 0;
-  param_1->field_01E4 = 0;
-  param_1->field_01E0 = 0;
-  param_1->field_0218 = 0;
-  param_1->field_01EC = 0;
-  memset(&param_1->field_0x1f0, 0, 0x28); /* compiler bulk-zero initialization */
-  iVar2 = 0;
-  param_1->field_017C = 0;
-  memset(&param_1->field_0x180, 0, 0x1c); /* compiler bulk-zero initialization */
-  param_1->field_019C = 0;
-  param_1->field_01CB = 0;
-  param_1->field_01BB = 0;
-  param_1->field_01B3 = 0;
-  uVar1 = *(undefined4 *)structHelp_exref;
-  param_1->field_01CF = 0xffffffff;
-  param_1->field_01C7 = uVar1;
-  param_1->field_01BF = 0;
-  param_1->field_01B7 = 0;
-  param_1->field_01D7 = 0;
-  param_1->field_01DB = 0;
-  param_1->field_024C = 0;
-  param_1->field_021C = 0;
-  param_1->field_0238 = 0;
-  param_1->field_0248 = 0;
-  param_1->field_022C = 0;
-  param_1->field_0228 = 0;
-  param_1->field_0234 = 0;
-  param_1->field_0230 = 0;
-  param_1->field_0220 = 0;
-  param_1->field_0224 = 0;
-  param_1->field_0244 = 0;
-  param_1->field_0240 = 0;
-  param_1->field_023C = 0;
-  param_1->field_01D3 = 0;
-  return param_1;
 }
 
 // 005121F0 FUN_005121f0

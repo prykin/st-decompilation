@@ -41,7 +41,8 @@ void __thiscall FSGSTy::SetInfo(FSGSTy *this,byte *param_1,uint param_2,byte *pa
     this_00->field_00D2 = 0;
     this_00->field_04DF = -1;
   }
-  if ((this->field_1A5F == CASE_A) && (pbVar4 = this->field_1B0C, pbVar4 != nullptr)) {
+  if ((this->array_00BC[0xc].field_01DF == '\n') &&
+     (pbVar4 = this->field_1B0C, pbVar4 != nullptr)) {
     do {
       bVar1 = *pbVar4;
       bVar10 = bVar1 < *param_1;
@@ -91,7 +92,7 @@ LAB_005a3b63:
           if ((DArrayTy *)this_01->field_1B04 != nullptr) {
             FUN_006b5570((DArrayTy *)this_01->field_1B04);
           }
-          puVar7 = ccFntTy::_TxtToSarr(this_01->field_1A73,local_10);
+          puVar7 = ccFntTy::_TxtToSarr(this_01->array_00BC[0xc].field_01F3,local_10);
           this_01->field_1B04 = puVar7;
           if (puVar7 == nullptr) {
             pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
@@ -137,8 +138,9 @@ LAB_005a3b63:
                         local_24.wYear);
               FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_01->field_1AC0,0,0xe2,0x11b,0xb2,
                            0x17,0xff);
-              ccFntTy::SetSurf(this_01->field_1A73,(int)this_01->field_1AC0,0,0xe2,0x11b,0xb2,0x17);
-              ccFntTy::WrStr(this_01->field_1A73,local_88,-1,-1,0);
+              ccFntTy::SetSurf(this_01->array_00BC[0xc].field_01F3,(int)this_01->field_1AC0,0,0xe2,
+                               0x11b,0xb2,0x17);
+              ccFntTy::WrStr(this_01->array_00BC[0xc].field_01F3,local_88,-1,-1,0);
             }
           }
         }

@@ -1037,11 +1037,11 @@ LAB_005d5b7e:
           memmove(pcVar33, pcVar14, uVar28); /* compiler REP MOVS byte copy */
           uVar28 = 0;
           st::fn_004036C0(this_00,0x6948,0,0);
-          this_00->field_0x21e5 = 1;
-          this_00->field_0x21e4 = 1;
+          this_00->field_21E5 = 1;
+          this_00->field_21E4 = 1;
           this_00->field_21E7 = 1;
-          this_00->field_0x21e3 = 1;
-          this_00->field_0x21e1 = 1;
+          this_00->field_21E3 = 1;
+          this_00->field_21E1 = 1;
           this_00->CloseButtons();
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(MMsgTy **)(this_00->field_1A5B + 0x2e6) != nullptr) {
@@ -1091,11 +1091,11 @@ LAB_005d5b7e:
         memmove(pcVar33, pcVar14, uVar28); /* compiler REP MOVS byte copy */
         uVar29 = 0;
         st::fn_004036C0(this_00,0x6948,0,0);
-        this_00->field_0x21e5 = 1;
-        this_00->field_0x21e4 = 1;
+        this_00->field_21E5 = 1;
+        this_00->field_21E4 = 1;
         this_00->field_21E7 = 1;
-        this_00->field_0x21e2 = 1;
-        this_00->field_0x21e1 = 1;
+        this_00->field_21E2 = 1;
+        this_00->field_21E1 = 1;
         this_00->CloseButtons();
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (*(MMsgTy **)(this_00->field_1A5B + 0x2e6) != nullptr) {

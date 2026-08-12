@@ -11,10 +11,10 @@ PrividerTy * __cdecl CreatePrivider(void)
 {
   PrividerTy *this;
   int iVar1;
-  undefined4 *puVar2;
+  PrividerTy_Record_00BC_01FB *pPVar2;
   SpriteClassTy *this_00;
-  undefined4 *puVar3;
-  uint *puVar4;
+  PrividerTy_Record_00BC_01FB *pPVar4;
+  uint *puVar5;
   int local_8;
 
   this = (PrividerTy *)FUN_006b04d0(0x1c9e);
@@ -28,7 +28,7 @@ PrividerTy * __cdecl CreatePrivider(void)
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->array_00BC[0].field_00B8;
     local_8 = 0xd;
     do {
       SpriteClassTy::SpriteClassTy(this_00 + -1);
@@ -43,30 +43,33 @@ PrividerTy * __cdecl CreatePrivider(void)
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
-    puVar2 = (undefined4 *)&this->field_0xbc;
+    pPVar2 = this->array_00BC;
     do {
-      puVar3 = puVar2;
-      memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
-      iVar1 = 0;
+      pPVar4 = pPVar2;
+      for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *(undefined4 *)pPVar4 = 0;
+        pPVar4 = (PrividerTy_Record_00BC_01FB *)&pPVar4->field_0x4;
+      }
+      *(undefined2 *)pPVar4 = 0;
+      pPVar4->field_0x2 = 0;
       local_8 = local_8 + -1;
-      puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
+      pPVar2 = pPVar2 + 1;
     } while (local_8 != 0);
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1A77);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->array_00BC[0xc].field_01F7);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1B08);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1B99);
     this->vtable = &PrividerTyVTable;
-    this->field_1A65 = 1;
-    this->field_1A73 = 0;
-    this->field_1A61 = 0;
-    this->field_1A71 = 0;
-    this->field_1A69 = 0;
-    this->field_1A6D = 0;
-    this->field_1A72 = 0;
-    puVar4 = this->field_1C2A;
+    this->array_00BC[0xc].field_01E5 = 1;
+    this->array_00BC[0xc].field_01F3 = 0;
+    this->array_00BC[0xc].field_01E1 = 0;
+    this->array_00BC[0xc].field_01F1 = 0;
+    this->array_00BC[0xc].field_01E9 = 0;
+    this->array_00BC[0xc].field_01ED = 0;
+    this->array_00BC[0xc].field_01F2 = 0;
+    puVar5 = this->field_1C2A;
     for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar4 = 0xffffffff;
-      puVar4 = puVar4 + 1;
+      *puVar5 = 0xffffffff;
+      puVar5 = puVar5 + 1;
     }
     this->field_1C8A = 0xffffffff;
     this->field_1C82 = nullptr;

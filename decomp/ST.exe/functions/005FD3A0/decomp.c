@@ -12,7 +12,7 @@ undefined4 __thiscall FUN_005fd3a0(void *this,int param_1)
   undefined4 *puVar5;
   byte *puVar6;
   byte *local_10;
-  AnonShape_0060EA30_DCEB68AD *local_c;
+  uint local_c;
   short local_8;
   short local_6;
 

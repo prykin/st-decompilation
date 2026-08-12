@@ -1,4 +1,4 @@
-FUN_0071e040:
+RadioClassTy::RadioClassTy:
 0071E040  56                        PUSH ESI
 0071E041  8B F1                     MOV ESI,ECX
 0071E043  E8 68 7F FC FF            CALL 0x006e5fb0

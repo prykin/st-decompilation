@@ -348,15 +348,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         }
         iVar3 = ((int)piVar2 + this->field_0235 * 2) * 0x16;
         local_10 = (int)*(short *)(&DAT_007932d8 + iVar3) + (int)sVar5;
-        sVar5 = (short)(local_10 >> 0x1f);
-        if (local_10 < 0) {
-          local_14 = (short)(((short)(local_10 / 200) + sVar5) -
-                            (short)((longlong)local_10 * 0x51eb851f >> 0x3f)) + -1;
-        }
-        else {
-          local_14 = (int)(short)(((short)(local_10 / 200) + sVar5) -
-                                 (short)((longlong)local_10 * 0x51eb851f >> 0x3f));
-        }
+        local_14 = STBiasedDiv16(local_10, 200); /* exact signed 16-bit grid-index division */
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)((int)(short)local_8 + (int)*(short *)(&DAT_007932d6 + iVar3));
         sVar5 = (short)((int)param_1 >> 0x1f);
@@ -369,15 +361,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                   (short)((longlong)(int)param_1 * 0x28c1979 >> 0x3f);
         }
         local_18 = (int)*(short *)(&DAT_007932d4 + iVar3) + (int)(short)local_c;
-        sVar6 = (short)(local_18 >> 0x1f);
-        if (local_18 < 0) {
-          sVar6 = (((short)(local_18 / 0xc9) + sVar6) -
-                  (short)((longlong)local_18 * 0x28c1979 >> 0x3f)) + -1;
-        }
-        else {
-          sVar6 = ((short)(local_18 / 0xc9) + sVar6) -
-                  (short)((longlong)local_18 * 0x28c1979 >> 0x3f);
-        }
+        sVar6 = STBiasedDiv16(local_18, 0xc9); /* exact signed 16-bit grid-index division */
         if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar5 < 0)) ||
            (((g_worldGrid.sizeY <= sVar5 || (sVar7 = (short)local_14, sVar7 < 0)) ||
             ((g_worldGrid.sizeZ <= sVar7 ||

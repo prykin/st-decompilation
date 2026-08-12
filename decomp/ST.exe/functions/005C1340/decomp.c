@@ -74,7 +74,8 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     pMVar3->field_0087 = pcVar6;
     g_startSystem_0081176C->field_0038 = (HDC__ *)pcVar6;
     if (param_1 != 0) {
-      local_2c[2] = pMVar3->field_0008;
+      STPiece<0,2>(local_2c[2]) = pMVar3->field_0008;
+      STPiece<2,2>(local_2c[2]) = pMVar3->field_000A;
       memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */
       local_2c[3] = 2;
       local_2c[4] = 0x70ff;

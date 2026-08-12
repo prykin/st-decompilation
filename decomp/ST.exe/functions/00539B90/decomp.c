@@ -222,9 +222,11 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,4,&this_00->field_01C5,nullptr,local_488,0);
     if (8 < DAT_00808aaf) {
+      uVar12 = this_00->field_01C5;
       this_00->field_0028 = 0x20;
-      *(undefined4 *)&this_00->field_0x2c = 1;
-      FUN_006e6080(this_00,2,this_00->field_01C5,(undefined4 *)&this_00->field_0x18);
+      this_00->field_002C = 1;
+      this_00->field_002E = 0;
+      FUN_006e6080(this_00,2,uVar12,(undefined4 *)&this_00->field_0x18);
     }
     local_10 = &this_00->field_01A1;
     local_5 = 0;

@@ -13,6 +13,7 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
 
 {
   undefined1 *puVar1;
+  undefined4 uVar2;
   PrividerTy *this_00;
   int iVar4;
   int iVar3;
@@ -109,7 +110,7 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\prov_obj.cpp",0x24d);
     return;
   }
-  local_5 = local_10->field_1A5F;
+  local_5 = local_10->array_00BC[0xc].field_01DF;
   if (local_5 == '\0') {
     if (g_startSystem_0081176C->field_068A != 0) {
       local_c = *(uint *)(g_startSystem_0081176C->field_068A + 4);
@@ -140,11 +141,12 @@ LAB_005bbb22:
       (*local_10->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)local_10->field_000C,6,&local_10->field_1C86,nullptr,local_dd0,
                  0);
+      uVar2 = this_00->array_00BC[0xc].field_01F3;
       this_00->field_002D = 0x20;
       this_00->field_0031 = 1;
-      FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)&this_00->field_0x1d);
+      FUN_006e6080(this_00,2,uVar2,(undefined4 *)&this_00->field_0x1d);
     }
-    if (this_00->field_1A5B->field_02E6 != nullptr) {
+    if ((this_00->array_00BC[0xc].field_01DB)->field_02E6 != nullptr) {
       memset(&local_2c, 0, 0x1a); /* compiler bulk-zero initialization */
       STPiece<2,2>(local_2c) = (-(ushort)(local_544[6] != 0) & 2) - 1;
       local_1e = 1;
@@ -152,7 +154,7 @@ LAB_005bbb22:
       local_22 = 1;
       local_28 = 1;
       STPiece<0,2>(local_2c) = 1;
-      MMsgTy::StatePanel(this_00->field_1A5B->field_02E6,(int)&local_2c);
+      MMsgTy::StatePanel((this_00->array_00BC[0xc].field_01DB)->field_02E6,(int)&local_2c);
     }
   }
   else {
@@ -213,19 +215,23 @@ LAB_005bbb22:
     local_234 = local_51c;
     local_c4 = local_51c;
     (*local_10->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)local_10->field_000C,7,&local_10->field_1A73,nullptr,local_544,0);
+              ((SystemClassTy *)local_10->field_000C,7,&local_10->array_00BC[0xc].field_01F3,
+               nullptr,local_544,0);
   }
+  uVar2 = this_00->array_00BC[0xc].field_01F3;
   this_00->field_0031 = 0;
   puVar1 = &this_00->field_0x1d;
   this_00->field_002D = 0x20;
-  FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
+  FUN_006e6080(this_00,2,uVar2,(undefined4 *)puVar1);
+  uVar2 = this_00->array_00BC[0xc].field_01F3;
   this_00->field_0031 = ((int)local_c < 1) - 1 & local_c;
   this_00->field_002D = 0x28;
-  FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
+  FUN_006e6080(this_00,2,uVar2,(undefined4 *)puVar1);
   if (0 < (int)local_c) {
+    uVar2 = this_00->array_00BC[0xc].field_01F3;
     this_00->field_002D = 0x20;
     this_00->field_0031 = 1;
-    FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
+    FUN_006e6080(this_00,2,uVar2,(undefined4 *)puVar1);
   }
   g_currentExceptionFrame = local_70.previous;
   return;

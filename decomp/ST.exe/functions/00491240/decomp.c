@@ -7,7 +7,15 @@
 
    [STPrototypeApplier] Propagated parameter 5.
    Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=00491287 MOV DX,word ptr
-   [EBP + 0x18] */
+   [EBP + 0x18]
+
+   [STSwitchEnumApplier] Switch target field_05C4 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_05C4State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7
+
+   [STSwitchEnumApplier] Switch target field_05C4 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_05C4State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7 */
 
 void __thiscall
 STBoatC::PrepareForLoading
@@ -26,22 +34,22 @@ STBoatC::PrepareForLoading
     this->field_05AA = param_2;
     switch((int)param_4 - (int)sVar1) {
     case 0:
-      this->field_05B2 = 0xffff;
+      this->field_05B2 = -1;
       break;
     case 1:
-      this->field_05B4 = 0xffff;
+      this->field_05B4 = -1;
       this->field_05B2 = sVar1 + 1;
       break;
     case 2:
       this->field_05B2 = sVar1 + 1;
       this->field_05B4 = sVar1 + 2;
-      this->field_05B6 = 0xffff;
+      this->field_05B6 = -1;
       break;
     case 3:
       this->field_05B2 = sVar1 + 1;
       this->field_05B4 = sVar1 + 2;
       this->field_05B6 = sVar1 + 3;
-      this->field_05B8 = 0xffff;
+      this->field_05B8 = -1;
       break;
     case 4:
       this->field_05B2 = sVar1 + 1;
@@ -61,15 +69,15 @@ STBoatC::PrepareForLoading
       this->field_05B2 = sVar1 + -1;
       this->field_05B4 = sVar1 + -2;
       this->field_05B6 = sVar1 + -3;
-      this->field_05B8 = 0xffff;
+      this->field_05B8 = -1;
       break;
     case -2:
       this->field_05B2 = sVar1 + -1;
       this->field_05B4 = sVar1 + -2;
-      this->field_05B6 = 0xffff;
+      this->field_05B6 = -1;
       break;
     case -1:
-      this->field_05B4 = 0xffff;
+      this->field_05B4 = -1;
       this->field_05B2 = sVar1 + -1;
       break;
     default:
@@ -83,26 +91,26 @@ STBoatC::PrepareForLoading
                  0x4fe6);
     }
     if (this->field_05B2 != -1) {
-      this->field_05C4 = 0;
+      this->field_05C4 = CASE_0;
       this->field_05BC = 0;
-      sub_00481520(this,(int)param_2,(int)param_3,(int)(short)this->field_05B2);
+      sub_00481520(this,(int)param_2,(int)param_3,(int)this->field_05B2);
       sub_00460260(this,0);
       return;
     }
     if ((this->field_0041 == (short)(this->field_05AA * 0xc9 + 100)) &&
        (this->field_0043 == (short)(*(short *)&this->field_0x5ac * 0xc9 + 100))) {
       if (this->field_0045 != (short)(*(short *)&this->field_0x5ae * 200 + 100)) {
-        this->field_05C4 = 3;
+        this->field_05C4 = CASE_3;
         return;
       }
       if (this->field_006C == this->field_05B0) {
-        this->field_05C4 = 6;
+        this->field_05C4 = CASE_6;
         return;
       }
-      this->field_05C4 = 5;
+      this->field_05C4 = CASE_5;
       return;
     }
-    this->field_05C4 = 1;
+    this->field_05C4 = CASE_1;
   }
   else {
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4fcb,0,0,"%s",

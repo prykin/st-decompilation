@@ -49,7 +49,7 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
     if (g_startSystem_0081176C->field_002C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
-    SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar3->field_1A77);
+    SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar3->array_00BC[0xc].field_01F7);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar3->field_1B08);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar3->field_1B99);
     puVar6 = pPVar3->field_1C2A;
@@ -83,9 +83,9 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
       pPVar3->field_1C9A = nullptr;
     }
     if ((pPVar3->field_004D == 0x6102) &&
-       (this_00 = pPVar3->field_1A5B->field_02E6, this_00 != nullptr)) {
+       (this_00 = (pPVar3->array_00BC[0xc].field_01DB)->field_02E6, this_00 != nullptr)) {
       MMsgTy::HideSprites(this_00);
-      pPVar3->field_1A5B->field_02E6->field_1CAB = 0;
+      (pPVar3->array_00BC[0xc].field_01DB)->field_02E6->field_1CAB = 0;
     }
     if (pPVar3->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pPVar3->field_0x3d);

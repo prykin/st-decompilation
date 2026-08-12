@@ -29,17 +29,16 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
 
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
-    this->field_06CF = *(short *)&this->field_0x43f;
-    this->field_06CD = *(short *)&this->field_0x43d;
-    this->field_06D1 = *(short *)&this->field_0x441;
-    this->field_06D3 = *(short *)&this->field_0x443;
+    this->field_06CF = this->field_043F;
+    this->field_06CD = this->field_043D;
+    this->field_06D1 = this->field_0441;
+    this->field_06D3 = this->field_0443;
     this->field_02C4 = 0;
     this->field_06E3 = CASE_0;
-    this->field_06CB = *(short *)&this->field_0x43b;
-    this->field_06D5 = *(short *)&this->field_0x445;
+    this->field_06CB = this->field_043B;
+    this->field_06D5 = this->field_0445;
     this->field_06E7 = 0;
-    sub_00481520(this,(int)*(short *)&this->field_0x43b,(int)*(short *)&this->field_0x43d,
-                 (int)*(short *)&this->field_0x43f);
+    sub_00481520(this,(int)this->field_043B,(int)this->field_043D,(int)this->field_043F);
     iVar5 = sub_0045FF50(this,0);
     return (-(uint)(iVar5 != -1) & 3) - 1;
   }

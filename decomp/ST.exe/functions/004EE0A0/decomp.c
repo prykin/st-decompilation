@@ -46,16 +46,20 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   local_28 = local_10->field_01AB;
-  local_24 = *(undefined4 *)&local_10->field_0x1af;
+  STPiece<0,1>(local_24) = local_10->field_01AF;
+  STPiece<1,1>(local_24) = local_10->field_01B0;
+  STPiece<2,1>(local_24) = local_10->field_01B1;
+  STPiece<3,1>(local_24) = local_10->field_01B2;
   local_20 = *(undefined4 *)&local_10->field_0x1b3;
   local_1c = local_10->field_01B7;
-  local_18 = *(undefined2 *)&local_10->field_0x1bb;
+  STPiece<0,1>(local_18) = local_10->field_01BB;
+  STPiece<1,1>(local_18) = local_10->field_01BC;
   local_16 = local_10->field_01BD;
   STAllPlayersC::GetPanelInfo
             (g_allPlayers_007FA174,0xb,(AnonShape_0043BEB0_1C00EC12 *)&local_10->field_01AB);
   local_8 = (Global_sub_005272B0_param_1Enum *)&local_24;
   local_14 = -0x1af - (int)this_00;
-  pGVar7 = &this_00->field_0x1af;
+  pGVar7 = &this_00->field_01AF;
   piVar5 = &this_00->field_01CF;
   local_c = 6;
   do {
@@ -78,7 +82,7 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   } while (local_c != 0);
   iVar4 = 3;
   bVar9 = true;
-  psVar6 = (short *)&this_00->field_0x1af;
+  psVar6 = (short *)&this_00->field_01AF;
   psVar8 = (short *)&local_24;
   do {
     if (iVar4 == 0) break;
@@ -91,13 +95,13 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
     this_00->field_0028 = 5;
     FUN_006e6080(this_00,2,this_00->field_01BE,(undefined4 *)&this_00->field_0x18);
   }
-  if (this_00->field_0x1bb != (byte)local_18) {
-    *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_0x1bb;
+  if (this_00->field_01BB != (byte)local_18) {
+    *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_01BB;
     this_00->field_0028 = 0x20;
     FUN_006e6080(this_00,2,this_00->field_01C2,(undefined4 *)&this_00->field_0x18);
   }
-  if (this_00->field_0x1bc != STPiece<1,1>(local_18)) {
-    *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_0x1bc;
+  if (this_00->field_01BC != STPiece<1,1>(local_18)) {
+    *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_01BC;
     this_00->field_0028 = 0x20;
     FUN_006e6080(this_00,2,this_00->field_01C6,(undefined4 *)&this_00->field_0x18);
   }

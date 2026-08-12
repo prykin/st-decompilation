@@ -6,8 +6,7 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-void __thiscall
-STBHEShellC::sub_005F5E30(STBHEShellC *this,int param_1,int param_2,undefined4 param_3)
+void __thiscall STBHEShellC::sub_005F5E30(STBHEShellC *this,int param_1,int param_2,int param_3)
 
 {
   this->field_009F = this->field_0093;

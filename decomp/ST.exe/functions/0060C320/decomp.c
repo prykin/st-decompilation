@@ -54,25 +54,9 @@ int __fastcall FUN_0060c320(void *param_1)
   local_74 = 0;
   local_2c = 0;
   iVar14 = STField<int>(param_1,0x1e9);
-  sVar19 = (short)(iVar14 >> 0x1f);
-  if (iVar14 < 0) {
-    local_5c = (short)(((short)(iVar14 / 0xc9) + sVar19) -
-                      (short)((longlong)iVar14 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    local_5c = (int)(short)(((short)(iVar14 / 0xc9) + sVar19) -
-                           (short)((longlong)iVar14 * 0x28c1979 >> 0x3f));
-  }
+  local_5c = STBiasedDiv16(iVar14, 0xc9); /* exact signed 16-bit grid-index division */
   iVar14 = STField<int>(param_1,0x1ed);
-  sVar19 = (short)(iVar14 >> 0x1f);
-  if (iVar14 < 0) {
-    local_6c = (short)(((short)(iVar14 / 0xc9) + sVar19) -
-                      (short)((longlong)iVar14 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    local_6c = (int)(short)(((short)(iVar14 / 0xc9) + sVar19) -
-                           (short)((longlong)iVar14 * 0x28c1979 >> 0x3f));
-  }
+  local_6c = STBiasedDiv16(iVar14, 0xc9); /* exact signed 16-bit grid-index division */
   iVar14 = STField<int>(param_1,0x24c);
   iVar17 = local_6c - iVar14;
   if (iVar17 < 0) {
@@ -177,25 +161,9 @@ LAB_0060c5f5:
                   if (0 < iVar11) {
                     puVar1[1] = iVar11;
                     iVar14 = STField<int>(param_1,0x1ed);
-                    sVar19 = (short)(iVar14 >> 0x1f);
-                    if (iVar14 < 0) {
-                      iVar14 = (short)(((short)(iVar14 / 0xc9) + sVar19) -
-                                      (short)((longlong)iVar14 * 0x28c1979 >> 0x3f)) + -1;
-                    }
-                    else {
-                      iVar14 = (int)(short)(((short)(iVar14 / 0xc9) + sVar19) -
-                                           (short)((longlong)iVar14 * 0x28c1979 >> 0x3f));
-                    }
+                    iVar14 = STBiasedDiv16(iVar14, 0xc9); /* exact signed 16-bit grid-index division */
                     iVar16 = STField<int>(param_1,0x1e9);
-                    sVar19 = (short)(iVar16 >> 0x1f);
-                    if (iVar16 < 0) {
-                      iVar16 = (short)(((short)(iVar16 / 0xc9) + sVar19) -
-                                      (short)((longlong)iVar16 * 0x28c1979 >> 0x3f)) + -1;
-                    }
-                    else {
-                      iVar16 = (int)(short)(((short)(iVar16 / 0xc9) + sVar19) -
-                                           (short)((longlong)iVar16 * 0x28c1979 >> 0x3f));
-                    }
+                    iVar16 = STBiasedDiv16(iVar16, 0xc9); /* exact signed 16-bit grid-index division */
                     iVar13 = FUN_006acf90(local_7c,local_40,iVar16,iVar14);
                     puVar1[2] = iVar13;
                     local_2c = local_2c + iVar11;

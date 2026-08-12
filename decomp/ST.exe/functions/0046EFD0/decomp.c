@@ -10,17 +10,26 @@
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7
 
    [STPrototypeRepairApplier] Propagated parameter 1.
-   Evidence: 0046EFD0 -> 004620F0 @ 0046F02A | 0046EFD0 -> 004620F0 @ 0046F03D */
+   Evidence: 0046EFD0 -> 004620F0 @ 0046F02A | 0046EFD0 -> 004620F0 @ 0046F03D
+
+   [STSwitchEnumApplier] Switch target field_0550 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0550State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_0550 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0550State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
 
 {
-  undefined2 uVar2;
+  STBoatC_field_0550State SVar1;
+  undefined2 uVar3;
   int local_EAX_56;
   int local_EAX_90;
   int local_EAX_348;
   int local_EAX_603;
-  uint uVar3;
+  uint uVar4;
   int local_EAX_902;
   int iVar4;
   int local_EAX_1149;
@@ -46,30 +55,30 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
     local_EAX_56 = thunk_FUN_004620f0(this);
     break;
   case CASE_4:
-    iVar5 = this->field_0550;
-    if (((iVar5 == 0) || (iVar5 == 1)) || (iVar5 == 2)) {
+    SVar1 = this->field_0550;
+    if (((SVar1 == CASE_0) || (SVar1 == CASE_1)) || (SVar1 == CASE_2)) {
       sub_0048D930(this);
       iVar5 = this->vfunc_D8();
       return -(uint)(iVar5 != 0);
     }
-    if (iVar5 == 3) {
+    if (SVar1 == CASE_3) {
       iVar5 = STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_053E * 0xc9)) + 100;
-      uVar2 = (*this->vtable->vfunc_10)
+      uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_0045)),
                          this->field_053C * 0xc9 + 100,(short)iVar5,
                          (ushort)(this->field_0540 * 200) + 100);
-      this->field_0542 = uVar2;
-      this->field_0550 = 4;
+      this->field_0542 = uVar3;
+      this->field_0550 = CASE_4;
     }
-    if (this->field_0550 != 4) {
-      if (this->field_0550 == 5) {
+    if (this->field_0550 != CASE_4) {
+      if (this->field_0550 == CASE_5) {
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_053C * 0xc9 + 100,this->field_053E * 0xc9 + 100,
                      this->field_0540 * 200 + 100,this->field_0061);
-        this->field_0550 = 6;
+        this->field_0550 = CASE_6;
       }
-      if (this->field_0550 != 6) {
+      if (this->field_0550 != CASE_6) {
         return 2;
       }
       iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
@@ -90,11 +99,11 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
       sub_0048D930(this);
       goto LAB_0046f1fd;
     }
-    uVar3 = sub_004176C0(this,this->field_0542);
-    uVar3 = sub_00417910(this,(short)uVar3);
-    if (uVar3 != 0xffffffff) {
-      if (uVar3 == 0) {
-        this->field_0550 = 5;
+    uVar4 = sub_004176C0(this,this->field_0542);
+    uVar4 = sub_00417910(this,(short)uVar4);
+    if (uVar4 != 0xffffffff) {
+      if (uVar4 == 0) {
+        this->field_0550 = CASE_5;
       }
       goto cf_common_exit_0046F0F9;
     }
@@ -114,22 +123,22 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
     this->field_0548 = 0;
     this->field_054C = CASE_6;
   case CASE_6:
-    if (this->field_0550 == 0) {
+    if (this->field_0550 == CASE_0) {
       iVar5 = STReplaceLowWord((uint32_t)(pSVar6), (uint16_t)(this->field_053E * 0xc9)) + 100;
-      uVar2 = (*this->vtable->vfunc_10)
+      uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_0045)),
                          this->field_053C * 0xc9 + 100,(short)iVar5,
                          (ushort)(this->field_0540 * 200) + 100);
-      this->field_0542 = uVar2;
-      this->field_0550 = 1;
+      this->field_0542 = uVar3;
+      this->field_0550 = CASE_1;
     }
-    if (this->field_0550 == 1) {
-      uVar3 = sub_004176C0(this,this->field_0542);
-      uVar3 = sub_00417910(this,(short)uVar3);
-      if (uVar3 != 0xffffffff) {
-        if (uVar3 == 0) {
-          this->field_0550 = 2;
+    if (this->field_0550 == CASE_1) {
+      uVar4 = sub_004176C0(this,this->field_0542);
+      uVar4 = sub_00417910(this,(short)uVar4);
+      if (uVar4 != 0xffffffff) {
+        if (uVar4 == 0) {
+          this->field_0550 = CASE_2;
         }
 cf_common_exit_0046F0F9:
         iVar5 = this->vfunc_D8();
@@ -144,13 +153,13 @@ cf_common_exit_0046F0F9:
       iVar5 = 0x2865;
     }
     else {
-      if (this->field_0550 == 2) {
+      if (this->field_0550 == CASE_2) {
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_053C * 0xc9 + 100,this->field_053E * 0xc9 + 100,
                      this->field_0540 * 200 + 100,this->field_0061);
-        this->field_0550 = 3;
+        this->field_0550 = CASE_3;
       }
-      if (this->field_0550 != 3) {
+      if (this->field_0550 != CASE_3) {
 switchD_0046eff1_default:
         local_EAX_1149 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x288a,0,0,"%s",

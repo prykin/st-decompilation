@@ -35,22 +35,8 @@ void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
   local_60[0] = 0x28;
   local_60[3] = 1;
   local_3a = 0;
-  if (local_46 < 0) {
-    local_8 = (short)((local_46 / 0xc9 + (local_46 >> 0xf)) -
-                     (short)((longlong)(int)local_46 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    local_8 = (int)(short)((local_46 / 0xc9 + (local_46 >> 0xf)) -
-                          (short)((longlong)(int)local_46 * 0x28c1979 >> 0x3f));
-  }
-  if (local_44 < 0) {
-    iVar3 = (short)((local_44 / 0xc9 + (local_44 >> 0xf)) -
-                   (short)((longlong)(int)local_44 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    iVar3 = (int)(short)((local_44 / 0xc9 + (local_44 >> 0xf)) -
-                        (short)((longlong)(int)local_44 * 0x28c1979 >> 0x3f));
-  }
+  local_8 = STBiasedDiv16(local_46, 0xc9); /* exact signed 16-bit grid-index division */
+  iVar3 = STBiasedDiv16(local_44, 0xc9); /* exact signed 16-bit grid-index division */
   puVar5 = (undefined *)0x4;
   local_60[1] = uVar1;
   local_40 = local_46;

@@ -145,35 +145,11 @@ STSprGameObjC::CheckRay
         local_20 = local_58;
         do {
           iVar8 = local_20 / local_8 + local_18;
-          sVar7 = (short)(iVar8 >> 0x1f);
-          if (iVar8 < 0) {
-            local_c = (short)(((short)(iVar8 / 0xc9) + sVar7) -
-                             (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)) + -1;
-          }
-          else {
-            local_c = (int)(short)(((short)(iVar8 / 0xc9) + sVar7) -
-                                  (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
-          }
+          local_c = STBiasedDiv16(iVar8, 0xc9); /* exact signed 16-bit grid-index division */
           iVar8 = local_2c / local_8 + local_14;
-          sVar7 = (short)(iVar8 >> 0x1f);
-          if (iVar8 < 0) {
-            iVar8 = (short)(((short)(iVar8 / 0xc9) + sVar7) -
-                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)) + -1;
-          }
-          else {
-            iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar7) -
-                                (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
-          }
+          iVar8 = STBiasedDiv16(iVar8, 0xc9); /* exact signed 16-bit grid-index division */
           iVar10 = local_24 / local_8 + local_10;
-          sVar7 = (short)(iVar10 >> 0x1f);
-          if (iVar10 < 0) {
-            iVar10 = (short)(((short)(iVar10 / 200) + sVar7) -
-                            (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)) + -1;
-          }
-          else {
-            iVar10 = (int)(short)(((short)(iVar10 / 200) + sVar7) -
-                                 (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
-          }
+          iVar10 = STBiasedDiv16(iVar10, 200); /* exact signed 16-bit grid-index division */
           sVar6 = (short)local_c;
           sVar7 = (short)iVar8;
           sVar12 = (short)iVar10;

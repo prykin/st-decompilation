@@ -31,17 +31,19 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 == 0) {
-    puVar4 = &local_8->field_1A60;
+    puVar4 = &local_8->array_00BC[0xc].field_01E0;
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)puVar4,(int *)g_ddxContext_008075A8,0x2f,'\a',nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*puVar4 + 4))(PTR_00806784,7,0,"MM_SID",0xffffffff);
+    (**(code **)(*puVar4 + 4))
+              ((SpriteClassTy *)puVar4,PTR_00806784,7,0,(byte *)"MM_SID",0xffffffff);
     this_00->field_1A7C = 0x2e;
     this_00->field_1A80 = 0x193;
-    this_00->field_1A68 = 0;
-    if (this_00->field_1A64 != 0xffffffff) {
+    this_00->array_00BC[0xc].field_01E8 = 0;
+    uVar7 = this_00->array_00BC[0xc].field_01E4;
+    if (uVar7 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b3730
-                ((uint *)this_00->field_1AA8,this_00->field_1A64,this_00->field_1A68,
+                ((uint *)this_00->field_1AA8,uVar7,this_00->array_00BC[0xc].field_01E8,
                  this_00->field_1A7C,this_00->field_1A80);
     }
     iVar9 = 1;

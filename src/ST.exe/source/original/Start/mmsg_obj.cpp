@@ -1109,7 +1109,7 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           uVar11 = local_8 & 0xff;
           local_10 = (UINT *)(uVar11 * 0x27 + param_2);
           if (*local_10 == 0) {
-            puVar6 = (undefined4 *)(&this_00->field_0xbc + uVar11 * 0x1fb);
+            puVar6 = (undefined4 *)((int)this_00->field_0066 + uVar11 * 0x1fb + 0x56);
             memset(puVar6, 0, 0x27); /* compiler bulk-zero initialization */
             puVar6 = (undefined4 *)((byte *)puVar6 + 0x24);
           }
@@ -1131,19 +1131,20 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
                                 uVar18,iVar19,iVar20,iVar21);
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(iVar8 + 8))(puVar6,uVar22,uVar23);
-            if ((*local_10 == *(UINT *)(&this_00->field_0xbc + iVar10)) &&
+            pUVar13 = (UINT *)((int)this_00->field_0066 + iVar10 + 0x56);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            if ((*local_10 == *(UINT *)((int)this_00->field_0066 + iVar10 + 0x56)) &&
                ((char)local_10[1] == '\0')) {
               *(int *)((int)&this_00->field_017C + iVar10) =
                    *(int *)(&this_00->field_0x180 + iVar10) + -3;
               pUVar12 = local_10;
-              pUVar13 = (UINT *)(&this_00->field_0xbc + iVar10);
               memmove(pUVar13, pUVar12, 0x27); /* compiler REP MOVS byte copy */
+              pUVar13 = pUVar13 + 0x9;
               iVar8 = 0;
             }
             else {
               *(undefined4 *)((int)&this_00->field_017C + iVar10) = 0;
               pUVar12 = local_10;
-              pUVar13 = (UINT *)(&this_00->field_0xbc + iVar10);
               memmove(pUVar13, pUVar12, 0x27); /* compiler REP MOVS byte copy */
             }
           }
@@ -1158,7 +1159,8 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           uVar11 = local_8 & 0xff;
           *(undefined4 *)((int)&this_00->field_0127 + uVar11 * 0x1fb) = this_00->field_0061;
           *(uint *)((int)&this_00->field_0123 + uVar11 * 0x1fb) = ((local_c & 0xff) + 1) * 100;
-          if (*(int *)(&this_00->field_0xbc + uVar11 * 0x1fb) != 0) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+          if (*(int *)((int)this_00->field_0066 + uVar11 * 0x1fb + 0x56) != 0) {
             local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)local_c + '\x01'));
           }
           bVar3 = bVar3 + 1;

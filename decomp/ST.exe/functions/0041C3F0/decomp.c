@@ -32,14 +32,12 @@ void __thiscall TLOEmbryoTy::sub_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
                  (char)this->field_005F,(undefined *)this->field_0024,this->field_0105,
                  this->field_0018,0xffffffff);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    uVar2 = (*(code *)this->field_0000->field_002C)();
+    uVar2 = (*this->vtable->vfunc_2C)();
     switch(uVar2) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     case 5:
     case 0x11:
     case 0x21:
-      (**(code **)(this->field_0000 + 1))();
+      (*this->vtable->vfunc_94)();
       break;
     case 0xb:
     case 0x23:

@@ -13,21 +13,23 @@
 void __thiscall FSGSTy::sub_0059B820(FSGSTy *this)
 
 {
-  byte bVar1;
-  byte *pbVar2;
-  LPCSTR pCVar3;
-  char *pcVar4;
-  int iVar5;
-  bool bVar6;
+  undefined1 uVar1;
+  byte bVar2;
+  byte *pbVar3;
+  LPCSTR pCVar4;
+  char *pcVar5;
+  int iVar6;
+  bool bVar7;
 
-  this->field_1A6B = 1;
+  uVar1 = this->array_00BC[0xc].field_01DF;
+  this->array_00BC[0xc].field_01EB = 1;
   this->field_0029 = 2;
-  switch(this->field_1A5F) {
-  case CASE_2:
-  case CASE_3:
-  case CASE_4:
-  case CASE_5:
-  case CASE_7:
+  switch(uVar1) {
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+  case 7:
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x89;
     if (this->field_1AC4 != 0) {
@@ -65,9 +67,9 @@ void __thiscall FSGSTy::sub_0059B820(FSGSTy *this)
     if (this->field_1AD0 != 0) {
       FUN_006e6080(this,2,this->field_1AD0,(undefined4 *)&this->field_0x1d);
     }
-    pCVar3 = (LPCSTR)this->field_1EB6;
+    pCVar4 = (LPCSTR)this->field_1EB6;
     break;
-  case CASE_6:
+  case 6:
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 9;
     if (this->field_1B10 != 0) {
@@ -86,19 +88,19 @@ void __thiscall FSGSTy::sub_0059B820(FSGSTy *this)
       FUN_006e6080(this,2,this->field_1B14,(undefined4 *)&this->field_0x1d);
     }
     *(undefined4 *)&this->field_0x31 = 1;
-    if ((this->field_1B18 != 0) && (this->field_1A60 == '\0')) {
+    if ((this->field_1B18 != 0) && (this->array_00BC[0xc].field_01E0 == '\0')) {
       FUN_006e6080(this,2,this->field_1B18,(undefined4 *)&this->field_0x1d);
     }
-    if ((this->field_1B24 != 0) && (this->field_1A60 != '\0')) {
+    if ((this->field_1B24 != 0) && (this->array_00BC[0xc].field_01E0 != '\0')) {
       FUN_006e6080(this,2,this->field_1B24,(undefined4 *)&this->field_0x1d);
     }
     if (this->field_1B1C != 0) {
       FUN_006e6080(this,2,this->field_1B1C,(undefined4 *)&this->field_0x1d);
     }
-    pCVar3 = (LPCSTR)this->field_1B20;
+    pCVar4 = (LPCSTR)this->field_1B20;
     *(undefined4 *)&this->field_0x31 = 1;
     goto joined_r0x0059bcb0;
-  case CASE_8:
+  case 8:
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x99;
     if (this->field_1AC4 != 0) {
@@ -120,10 +122,10 @@ void __thiscall FSGSTy::sub_0059B820(FSGSTy *this)
     if (this->field_1EBA != 0) {
       FUN_006e6080(this,2,this->field_1EBA,(undefined4 *)&this->field_0x1d);
     }
-    pCVar3 = (LPCSTR)this->field_1B20;
+    pCVar4 = (LPCSTR)this->field_1B20;
     *(undefined4 *)&this->field_0x31 = 1;
     break;
-  case CASE_9:
+  case 9:
     *(uint *)&this->field_0x31 = (uint)(this->field_1EDF != 0);
     this->field_002D = 0x20;
     if (this->field_1ED3 != 0) {
@@ -143,35 +145,35 @@ void __thiscall FSGSTy::sub_0059B820(FSGSTy *this)
     if (this->field_1B24 != 0) {
       FUN_006e6080(this,2,this->field_1B24,(undefined4 *)&this->field_0x1d);
     }
-    pCVar3 = (LPCSTR)this->field_1AC4;
+    pCVar4 = (LPCSTR)this->field_1AC4;
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x89;
 joined_r0x0059bcb0:
-    if (pCVar3 == (LPCSTR)0x0) goto switchD_0059b84b_default;
+    if (pCVar4 == (LPCSTR)0x0) goto switchD_0059b84b_default;
     goto LAB_0059bcb6;
-  case CASE_A:
-    pbVar2 = this->field_1B0C;
-    pcVar4 = &CHAR_00h_00807e1d;
+  case 10:
+    pbVar3 = this->field_1B0C;
+    pcVar5 = &CHAR_00h_00807e1d;
     do {
-      bVar1 = *pbVar2;
-      bVar6 = bVar1 < (byte)*pcVar4;
-      if (bVar1 != *pcVar4) {
+      bVar2 = *pbVar3;
+      bVar7 = bVar2 < (byte)*pcVar5;
+      if (bVar2 != *pcVar5) {
 LAB_0059bb67:
-        iVar5 = (1 - (uint)bVar6) - (uint)(bVar6 != 0);
+        iVar6 = (1 - (uint)bVar7) - (uint)(bVar7 != 0);
         goto LAB_0059bb6c;
       }
-      if (bVar1 == 0) break;
-      bVar1 = pbVar2[1];
-      bVar6 = bVar1 < (byte)pcVar4[1];
-      if (bVar1 != pcVar4[1]) goto LAB_0059bb67;
-      pbVar2 = pbVar2 + 2;
-      pcVar4 = pcVar4 + 2;
-    } while (bVar1 != 0);
-    iVar5 = 0;
+      if (bVar2 == 0) break;
+      bVar2 = pbVar3[1];
+      bVar7 = bVar2 < (byte)pcVar5[1];
+      if (bVar2 != pcVar5[1]) goto LAB_0059bb67;
+      pbVar3 = pbVar3 + 2;
+      pcVar5 = pcVar5 + 2;
+    } while (bVar2 != 0);
+    iVar6 = 0;
 LAB_0059bb6c:
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x89;
-    if (iVar5 != 0) {
+    if (iVar6 != 0) {
       *(undefined4 *)&this->field_0x31 = 0x99;
     }
     if (this->field_1AD8 != 0) {
@@ -184,21 +186,22 @@ LAB_0059bb6c:
       FUN_006e6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
     }
     *(undefined4 *)&this->field_0x31 = 200;
-    if (iVar5 != 0) {
+    if (iVar6 != 0) {
       *(undefined4 *)&this->field_0x31 = 0xcc;
     }
-    pCVar3 = this->field_1AE4;
+    pCVar4 = this->field_1AE4;
     break;
   default:
     goto switchD_0059b84b_default;
   }
-  if (pCVar3 != (LPCSTR)0x0) {
+  if (pCVar4 != (LPCSTR)0x0) {
 LAB_0059bcb6:
-    FUN_006e6080(this,2,pCVar3,(undefined4 *)&this->field_0x1d);
+    FUN_006e6080(this,2,pCVar4,(undefined4 *)&this->field_0x1d);
   }
 switchD_0059b84b_default:
   this->field_002D = 0x61;
-  *(undefined4 *)&this->field_0x35 = 0;
+  this->field_0035 = 0;
+  this->field_0037 = 0;
   FUN_006e6080(this,0xf,0,(undefined4 *)&this->field_0x1d);
   return;
 }

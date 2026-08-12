@@ -59,17 +59,20 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
     }
     else {
       local_14->field_01A2 = 0;
-      local_14->field_01AB = nullptr;
+      local_14->field_01AB = 0;
     }
+    STPiece<0,2>(iVar13) = local_14->field_0178;
+    STPiece<2,2>(iVar13) = local_14->field_017A;
     local_14->field_01A1 = CASE_6;
     local_14->field_01A3 = (void *)param_1;
     local_14->field_01AF = 0x23;
     local_14->field_01B1 = 10;
-    if (local_14->field_0178 != 0) {
+    if (iVar13 != 0) {
       local_14->field_0028 = 0x4202;
       *(undefined2 *)&local_14->field_0x2c = 0;
-      local_14->field_002E = 2;
-      *(undefined4 *)&local_14->field_0x30 = local_14->field_0178;
+      *(undefined2 *)&local_14->field_0x2e = 2;
+      local_14->field_0030 = (undefined2)iVar13;
+      local_14->field_0032 = STPiece<2,2>(iVar13);
       if (g_cursorClass_00802A30 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_14->field_0x18);

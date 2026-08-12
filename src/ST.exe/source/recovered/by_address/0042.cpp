@@ -350,7 +350,7 @@ undefined4 __fastcall st::fn_004233A0(int param_1)
    Evidence: 0042D770 -> 004233C0 @ 0042D8CF; return of FUN_0042b760 | 0042F2B0 -> 004233C0 @
    0042FFCC; return of FUN_0042b760 */
 
-ushort __fastcall st::fn_004233C0(STGroupBoatC *param_1)
+undefined2 __fastcall st::fn_004233C0(STGroupBoatC *param_1)
 
 {
   return param_1->field_0027;

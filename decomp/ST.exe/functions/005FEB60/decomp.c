@@ -44,37 +44,15 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   local_14 = ExceptionList;
   local_1c = &stack0xffffff64;
   iVar13 = 0;
-  sVar14 = (short)(param_3 >> 0x1f);
-  if (param_3 < 0) {
-    local_50 = (short)(((short)(param_3 / 200) + sVar14) -
-                      (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    local_50 = (int)(short)(((short)(param_3 / 200) + sVar14) -
-                           (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
-  }
+  local_50 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   if (local_50 < 1) {
     iVar13 = 0;
   }
   else {
     sVar14 = STField<short>(this,0x21a);
-    if (sVar14 < 0) {
-      local_64 = (short)((sVar14 / 0xc9 + (sVar14 >> 0xf)) -
-                        (short)((longlong)(int)sVar14 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      local_64 = (int)(short)((sVar14 / 0xc9 + (sVar14 >> 0xf)) -
-                             (short)((longlong)(int)sVar14 * 0x28c1979 >> 0x3f));
-    }
+    local_64 = STBiasedDiv16(sVar14, 0xc9); /* exact signed 16-bit grid-index division */
     sVar14 = STField<short>(this,0x21c);
-    if (sVar14 < 0) {
-      iVar15 = (short)((sVar14 / 0xc9 + (sVar14 >> 0xf)) -
-                      (short)((longlong)(int)sVar14 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar15 = (int)(short)((sVar14 / 0xc9 + (sVar14 >> 0xf)) -
-                           (short)((longlong)(int)sVar14 * 0x28c1979 >> 0x3f));
-    }
+    iVar15 = STBiasedDiv16(sVar14, 0xc9); /* exact signed 16-bit grid-index division */
     local_8 = 0;
     ExceptionList = &local_14;
     Library::MSVCRT::FUN_0072da40();

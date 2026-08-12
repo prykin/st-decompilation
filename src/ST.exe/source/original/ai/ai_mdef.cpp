@@ -927,7 +927,7 @@ LAB_00677cee:
       uVar9 = local_10;
       if (iVar4 != 0) {
         if ((((0 < param_7) && (0 < param_8)) && (0 < param_9)) &&
-           ((((st::fn_00405F0B(this,st::pointer_boundary_cast<undefined2 *>(&local_6),st::pointer_boundary_cast<undefined2 *>(&local_8),st::pointer_boundary_cast<undefined2 *>(&local_a)), local_6 < param_4 ||
+           ((((st::fn_00405F0B(this,&local_6,&local_8,&local_a), local_6 < param_4 ||
               (local_8 < param_5)) ||
              ((local_a < param_6 ||
               (((int)param_4 + (int)param_7 <= (int)local_6 ||
@@ -1048,7 +1048,7 @@ LAB_00678036:
       }
       if (iVar7 != 0) {
         if ((((0 < param_6) && (0 < param_7)) && (0 < param_8)) &&
-           ((((st::fn_00405F0B(this,st::pointer_boundary_cast<undefined2 *>(&local_6),st::pointer_boundary_cast<undefined2 *>(&local_8),st::pointer_boundary_cast<undefined2 *>(&local_a)), local_6 < param_3 ||
+           ((((st::fn_00405F0B(this,&local_6,&local_8,&local_a), local_6 < param_3 ||
               (local_8 < param_4)) ||
              ((local_a < param_5 ||
               (((int)param_3 + (int)param_6 <= (int)local_6 ||

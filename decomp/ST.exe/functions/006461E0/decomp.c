@@ -33,7 +33,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
   byte *puVar9;
   InternalExceptionFrame local_54;
   byte *local_10;
-  AnonShape_0060EA30_DCEB68AD *local_c;
+  uint local_c;
   STVolcanoC *local_8;
 
   local_54.previous = g_currentExceptionFrame;
@@ -279,7 +279,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
     }
   }
   else if (SVar2 == MESS_SHARED_010F) {
-    local_10 = (byte *)sub_00646D40(local_8,&local_c);
+    local_10 = sub_00646D40(local_8,&local_c);
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
     FreeAndNull(&local_10);
   }

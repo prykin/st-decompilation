@@ -11,12 +11,15 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 005597A0 -> 0055BB00 @ 00559860 */
 
 void __thiscall
 VisibleClassTy::SetZoneDes
           (VisibleClassTy *this,int param_1,int param_2,char param_3,uint param_4,int param_5,
-          undefined4 param_6,uint param_7)
+          uint param_6,uint param_7)
 
 {
   char cVar1;

@@ -28,7 +28,7 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,STMessage *message)
   int iVar11;
   int *piVar12;
   int iVar13;
-  undefined4 *puVar14;
+  TLOEmbryoTyVTable_at_1D5 **ppTVar14;
   int iVar15;
   STT3DSprC **ppSVar16;
   char *pcVar17;
@@ -104,19 +104,19 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,STMessage *message)
           if (this_00->field_02A0 == 0) {
             STT3DSprC::StopShow(this_00->field_035C,0xe);
             thunk_FUN_004ad430(this_00->field_035C);
-            puVar14 = &this_00->field_01D5;
+            ppTVar14 = &this_00->vtable_at_1d5;
             if (this_00->field_002C == 1) {
               pcVar17 = "expl_bt1";
             }
             else {
               pcVar17 = "expl_bt0";
             }
-            iVar11 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,6,PTR_00806774,pcVar17,CASE_1D);
+            iVar11 = STT3DSprC::LoadSequence((STT3DSprC *)ppTVar14,6,PTR_00806774,pcVar17,CASE_1D);
             if (iVar11 != 0) {
               return 0xffff;
             }
-            thunk_FUN_004ac700(puVar14,'\x06');
-            STT3DSprC::StartShow((STT3DSprC *)puVar14,6,g_playSystem_00802A38->field_00E4);
+            thunk_FUN_004ac700(ppTVar14,'\x06');
+            STT3DSprC::StartShow((STT3DSprC *)ppTVar14,6,g_playSystem_00802A38->field_00E4);
           }
           this_00->field_02A8 = 0;
           this_00->field_02A0 = 1;
@@ -224,36 +224,35 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,STMessage *message)
     this_00->field_02EC = 3;
     this_00->field_02E8 = 1;
     if (this_00->field_0370 == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_0000->field_0090)(3,0x361);
+      this_00->vfunc_90(3,0x361);
     }
     iVar13 = this_00->field_0259;
     if (((iVar13 != 0x6c) || (this_00->field_0251 != 3)) && ((iVar13 < 0x54 || (0x5a < iVar13)))) {
-      puVar14 = &this_00->field_01D5;
-      thunk_FUN_004ac6b0(puVar14,*(char *)&this_00->field_02F0);
+      ppTVar14 = &this_00->vtable_at_1d5;
+      thunk_FUN_004ac6b0(ppTVar14,*(char *)&this_00->field_02F0);
       iVar13 = this_00->field_02EC + this_00->field_0241 * 4;
-      thunk_FUN_004abce0(puVar14,*(byte *)&this_00->field_02F0,
+      thunk_FUN_004abce0(ppTVar14,*(byte *)&this_00->field_02F0,
                          *(int *)(this_00->field_0364 + iVar13 * 8),
                          *(int *)(this_00->field_0364 + 4 + iVar13 * 8),'\0');
       STT3DSprC::SetCurFase
-                ((STT3DSprC *)puVar14,*(char *)&this_00->field_02F0,
+                ((STT3DSprC *)ppTVar14,*(char *)&this_00->field_02F0,
                  *(uint *)(this_00->field_0364 + (this_00->field_02EC + this_00->field_0241 * 4) * 8
                           ));
       STT3DSprC::StartShow
-                ((STT3DSprC *)puVar14,*(byte *)&this_00->field_02F0,
+                ((STT3DSprC *)ppTVar14,*(byte *)&this_00->field_02F0,
                  g_playSystem_00802A38->field_00E4);
       if (this_00->field_0370 == 0) goto LAB_004d600f;
-      thunk_FUN_004ac6b0(puVar14,*(char *)&this_00->field_02F0 + -1);
+      thunk_FUN_004ac6b0(ppTVar14,*(char *)&this_00->field_02F0 + -1);
       iVar13 = this_00->field_02EC + this_00->field_0241 * 4;
-      thunk_FUN_004abce0(puVar14,*(char *)&this_00->field_02F0 - 1,
+      thunk_FUN_004abce0(ppTVar14,*(char *)&this_00->field_02F0 - 1,
                          *(int *)(this_00->field_0364 + iVar13 * 8),
                          *(int *)(this_00->field_0364 + 4 + iVar13 * 8),'\0');
       STT3DSprC::SetCurFase
-                ((STT3DSprC *)puVar14,*(char *)&this_00->field_02F0 + -1,
+                ((STT3DSprC *)ppTVar14,*(char *)&this_00->field_02F0 + -1,
                  *(uint *)(this_00->field_0364 + (this_00->field_02EC + this_00->field_0241 * 4) * 8
                           ));
       STT3DSprC::StartShow
-                ((STT3DSprC *)puVar14,*(char *)&this_00->field_02F0 - 1,
+                ((STT3DSprC *)ppTVar14,*(char *)&this_00->field_02F0 - 1,
                  g_playSystem_00802A38->field_00E4);
     }
     if (this_00->field_0370 != 0) {
@@ -312,10 +311,10 @@ LAB_004d600f:
     aiStack_f4[iVar13] = piVar12[8];
     if (*piVar12 != 0) {
       cVar18 = (char)iVar13;
-      iVar6 = thunk_FUN_004ac910(&this_00->field_01D5,cVar18);
+      iVar6 = thunk_FUN_004ac910(&this_00->vtable_at_1d5,cVar18);
       aiStack_138[iVar13] = iVar6;
-      iVar6 = thunk_FUN_004ac910(&this_00->field_01D5,cVar18);
-      uVar7 = thunk_FUN_004acdd0(&this_00->field_01D5,cVar18,iVar6);
+      iVar6 = thunk_FUN_004ac910(&this_00->vtable_at_1d5,cVar18);
+      uVar7 = thunk_FUN_004acdd0(&this_00->vtable_at_1d5,cVar18,iVar6);
       auStack_1c0[iVar13] = uVar7;
     }
     iVar11 = iVar11 + 0x24;
@@ -324,10 +323,10 @@ LAB_004d600f:
   if (this_00->field_02EC == 0) {
     sub_004D10A0(this_00,1);
     STT3DSprC::StartShow
-              ((STT3DSprC *)&this_00->field_01D5,*(byte *)&this_00->field_02F0,
+              ((STT3DSprC *)&this_00->vtable_at_1d5,*(byte *)&this_00->field_02F0,
                g_playSystem_00802A38->field_00E4);
     STT3DSprC::StartShow
-              ((STT3DSprC *)&this_00->field_01D5,*(char *)&this_00->field_02F0 - 1,
+              ((STT3DSprC *)&this_00->vtable_at_1d5,*(char *)&this_00->field_02F0 - 1,
                g_playSystem_00802A38->field_00E4);
   }
   if (this_00->field_02DC == 0) {
@@ -338,20 +337,20 @@ LAB_004d600f:
       uVar9 = (uVar9 - 1 | 0xfffffffe) + 1;
     }
     wsprintfA(local_b0,"%s%1i",(&PTR_s_tlo_embws1_007bf3e8)[this_00->field_036C],uVar9);
-    puVar14 = &this_00->field_01D5;
-    iVar11 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,0xe,PTR_0080678c,local_b0,CASE_1D);
+    ppTVar14 = &this_00->vtable_at_1d5;
+    iVar11 = STT3DSprC::LoadSequence((STT3DSprC *)ppTVar14,0xe,PTR_0080678c,local_b0,CASE_1D);
     if (iVar11 != 0) {
       RaiseInternalException
                 (iVar11,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",
                  0x43a);
     }
-    thunk_FUN_004abce0(puVar14,0xe,*(int *)(&DAT_0079104c + this_00->field_0368 * 4),
+    thunk_FUN_004abce0(ppTVar14,0xe,*(int *)(&DAT_0079104c + this_00->field_0368 * 4),
                        *(int *)(&DAT_0079104c + this_00->field_0368 * 4),'\0');
     STT3DSprC::SetCurFase
-              ((STT3DSprC *)puVar14,'\x0e',*(uint *)(&DAT_0079104c + this_00->field_0368 * 4));
-    STT3DSprC::StartShow((STT3DSprC *)puVar14,0xe,g_playSystem_00802A38->field_00E4);
+              ((STT3DSprC *)ppTVar14,'\x0e',*(uint *)(&DAT_0079104c + this_00->field_0368 * 4));
+    STT3DSprC::StartShow((STT3DSprC *)ppTVar14,0xe,g_playSystem_00802A38->field_00E4);
     iVar11 = STT3DSprC::LoadSequence
-                       ((STT3DSprC *)puVar14,0x10,PTR_0080678c,
+                       ((STT3DSprC *)ppTVar14,0x10,PTR_0080678c,
                         (&PTR_s_tlo_sha_ws_007bb1b4)[this_00->field_036C],CASE_1D);
     if (iVar11 != 0) {
       iVar13 = 0x441;
@@ -360,30 +359,30 @@ LAB_004d600f:
   }
   else {
     iVar5 = thunk_FUN_004ab050();
-    puVar14 = &this_00->field_01D5;
+    ppTVar14 = &this_00->vtable_at_1d5;
     uVar9 = *(uint *)(PTR_DAT_007b5170 +
                      (iVar5 + (this_00->field_0368 * 3 + this_00->field_036C) * 4) * 8);
-    thunk_FUN_004abce0(puVar14,0xe,uVar9,uVar9,'\0');
-    STT3DSprC::SetCurFase((STT3DSprC *)puVar14,'\x0e',uVar9);
-    STT3DSprC::StartShow((STT3DSprC *)puVar14,0xe,g_playSystem_00802A38->field_00E4);
+    thunk_FUN_004abce0(ppTVar14,0xe,uVar9,uVar9,'\0');
+    STT3DSprC::SetCurFase((STT3DSprC *)ppTVar14,'\x0e',uVar9);
+    STT3DSprC::StartShow((STT3DSprC *)ppTVar14,0xe,g_playSystem_00802A38->field_00E4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (**(int **)(this_00->field_01F5 + 0x1d4) < (int)uVar9) {
       uVar9 = 0;
     }
-    thunk_FUN_004abce0(puVar14,0xd,uVar9,uVar9,'\0');
-    STT3DSprC::SetCurFase((STT3DSprC *)puVar14,'\r',uVar9);
-    STT3DSprC::StartShow((STT3DSprC *)puVar14,0xd,g_playSystem_00802A38->field_00E4);
+    thunk_FUN_004abce0(ppTVar14,0xd,uVar9,uVar9,'\0');
+    STT3DSprC::SetCurFase((STT3DSprC *)ppTVar14,'\r',uVar9);
+    STT3DSprC::StartShow((STT3DSprC *)ppTVar14,0xd,g_playSystem_00802A38->field_00E4);
     if (*(int *)(PTR_PTR_007bb198 + (this_00->field_0368 * 3 + this_00->field_036C) * 0xc + 8) != 0)
     {
       local_EAX_862 = thunk_FUN_004ab050();
       uVar9 = *(uint *)(PTR_DAT_007b8310 +
                        (local_EAX_862 + (this_00->field_0368 * 3 + this_00->field_036C) * 4) * 8);
-      thunk_FUN_004abce0(puVar14,0xc,uVar9,uVar9,'\0');
-      STT3DSprC::SetCurFase((STT3DSprC *)puVar14,'\f',uVar9);
-      STT3DSprC::StartShow((STT3DSprC *)puVar14,0xc,g_playSystem_00802A38->field_00E4);
+      thunk_FUN_004abce0(ppTVar14,0xc,uVar9,uVar9,'\0');
+      STT3DSprC::SetCurFase((STT3DSprC *)ppTVar14,'\f',uVar9);
+      STT3DSprC::StartShow((STT3DSprC *)ppTVar14,0xc,g_playSystem_00802A38->field_00E4);
     }
     iVar11 = STT3DSprC::LoadSequence
-                       ((STT3DSprC *)puVar14,0x10,PTR_0080678c,
+                       ((STT3DSprC *)ppTVar14,0x10,PTR_0080678c,
                         (&PTR_s_tlo_sha_ws_007bb1b4)[this_00->field_036C],CASE_1D);
     if (iVar11 != 0) {
       iVar13 = 0x459;
@@ -393,13 +392,13 @@ LAB_004d5985:
                  iVar13);
     }
   }
-  puVar14 = &this_00->field_01D5;
-  thunk_FUN_004abce0(puVar14,0x10,*(int *)(&DAT_0079104c + this_00->field_0368 * 4),
+  ppTVar14 = &this_00->vtable_at_1d5;
+  thunk_FUN_004abce0(ppTVar14,0x10,*(int *)(&DAT_0079104c + this_00->field_0368 * 4),
                      *(int *)(&DAT_0079104c + this_00->field_0368 * 4),'\0');
   STT3DSprC::SetCurFase
-            ((STT3DSprC *)puVar14,'\x10',*(uint *)(&DAT_0079104c + this_00->field_0368 * 4));
-  STT3DSprC::StartShow((STT3DSprC *)puVar14,0x10,g_playSystem_00802A38->field_00E4);
-  STT3DSprC::sub_004ACF50((STT3DSprC *)puVar14,'\x10');
+            ((STT3DSprC *)ppTVar14,'\x10',*(uint *)(&DAT_0079104c + this_00->field_0368 * 4));
+  STT3DSprC::StartShow((STT3DSprC *)ppTVar14,0x10,g_playSystem_00802A38->field_00E4);
+  STT3DSprC::sub_004ACF50((STT3DSprC *)ppTVar14,'\x10');
 LAB_004d59e7:
   iVar13 = 0;
   iVar11 = 0;
@@ -411,8 +410,8 @@ LAB_004d59e7:
       *(undefined4 *)(*(int *)(iVar11 + this_00->field_01F5 + 4) + aiStack_138[iVar13] * 4) =
            *(undefined4 *)(aiStack_138[iVar13] * 4 + 0x31 + iVar6);
       uVar7 = auStack_1c0[iVar13];
-      iVar6 = thunk_FUN_004ac910(&this_00->field_01D5,(char)iVar13);
-      thunk_FUN_004ace00(&this_00->field_01D5,(char)iVar13,iVar6,uVar7);
+      iVar6 = thunk_FUN_004ac910(&this_00->vtable_at_1d5,(char)iVar13);
+      thunk_FUN_004ace00(&this_00->vtable_at_1d5,(char)iVar13,iVar6,uVar7);
     }
     iVar11 = iVar11 + 0x24;
     iVar13 = iVar13 + 1;

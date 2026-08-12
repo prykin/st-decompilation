@@ -60,33 +60,15 @@ void __fastcall FUN_00586af0(int *param_1)
 
   local_20 = nullptr;
   sVar15 = STField<short>(param_1,0x41);
-  if (sVar15 < 0) {
-    sVar15 = ((sVar15 / 0xc9 + (sVar15 >> 0xf)) - (short)((longlong)(int)sVar15 * 0x28c1979 >> 0x3f)
-             ) + -1;
-  }
-  else {
-    sVar15 = (sVar15 / 0xc9 + (sVar15 >> 0xf)) - (short)((longlong)(int)sVar15 * 0x28c1979 >> 0x3f);
-  }
+  sVar15 = STBiasedDiv16(sVar15, 0xc9); /* exact signed 16-bit grid-index division */
   STField<short>(param_1,0x47) = sVar15;
   STField<short>(param_1,0x5b) = sVar15;
   sVar15 = STField<short>(param_1,0x43);
-  if (sVar15 < 0) {
-    sVar15 = ((sVar15 / 0xc9 + (sVar15 >> 0xf)) - (short)((longlong)(int)sVar15 * 0x28c1979 >> 0x3f)
-             ) + -1;
-  }
-  else {
-    sVar15 = (sVar15 / 0xc9 + (sVar15 >> 0xf)) - (short)((longlong)(int)sVar15 * 0x28c1979 >> 0x3f);
-  }
+  sVar15 = STBiasedDiv16(sVar15, 0xc9); /* exact signed 16-bit grid-index division */
   STField<short>(param_1,0x49) = sVar15;
   STField<short>(param_1,0x5d) = sVar15;
   sVar15 = STField<short>(param_1,0x45);
-  if (sVar15 < 0) {
-    sVar15 = ((sVar15 / 200 + (sVar15 >> 0xf)) - (short)((longlong)(int)sVar15 * 0x51eb851f >> 0x3f)
-             ) + -1;
-  }
-  else {
-    sVar15 = (sVar15 / 200 + (sVar15 >> 0xf)) - (short)((longlong)(int)sVar15 * 0x51eb851f >> 0x3f);
-  }
+  sVar15 = STBiasedDiv16(sVar15, 200); /* exact signed 16-bit grid-index division */
   STField<short>(param_1,0x4b) = sVar15;
   STField<short>(param_1,0x5f) = sVar15;
   iVar8 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)param_1);
@@ -210,33 +192,9 @@ LAB_00587844:
     if (g_worldGrid.sizeZ * 200 <= iVar8) {
       iVar8 = g_worldGrid.sizeZ * 200 + -1;
     }
-    sVar15 = (short)(local_10 >> 0x1f);
-    if (local_10 < 0) {
-      local_34 = (short)(((short)(local_10 / 0xc9) + sVar15) -
-                        (short)((longlong)local_10 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      local_34 = (int)(short)(((short)(local_10 / 0xc9) + sVar15) -
-                             (short)((longlong)local_10 * 0x28c1979 >> 0x3f));
-    }
-    sVar15 = (short)(local_14 >> 0x1f);
-    if (local_14 < 0) {
-      local_38 = (short)(((short)(local_14 / 0xc9) + sVar15) -
-                        (short)((longlong)local_14 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      local_38 = (int)(short)(((short)(local_14 / 0xc9) + sVar15) -
-                             (short)((longlong)local_14 * 0x28c1979 >> 0x3f));
-    }
-    sVar15 = (short)(iVar8 >> 0x1f);
-    if (iVar8 < 0) {
-      local_3c = (short)(((short)(iVar8 / 200) + sVar15) -
-                        (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      local_3c = (int)(short)(((short)(iVar8 / 200) + sVar15) -
-                             (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
-    }
+    local_34 = STBiasedDiv16(local_10, 0xc9); /* exact signed 16-bit grid-index division */
+    local_38 = STBiasedDiv16(local_14, 0xc9); /* exact signed 16-bit grid-index division */
+    local_3c = STBiasedDiv16(iVar8, 200); /* exact signed 16-bit grid-index division */
     param_1[0x9e] = -1;
     local_1c = local_14;
     local_18 = iVar8;
@@ -254,64 +212,19 @@ LAB_00587844:
     }
     if (param_1[0x9e] < 0) {
       sVar15 = STField<short>(param_1,0x41);
-      if (sVar15 < 0) {
-        iVar13 = (short)((sVar15 / 0xc9 + (sVar15 >> 0xf)) -
-                        (short)((longlong)(int)sVar15 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar13 = (int)(short)((sVar15 / 0xc9 + (sVar15 >> 0xf)) -
-                             (short)((longlong)(int)sVar15 * 0x28c1979 >> 0x3f));
-      }
+      iVar13 = STBiasedDiv16(sVar15, 0xc9); /* exact signed 16-bit grid-index division */
       iVar12 = param_1[0xa4];
-      sVar15 = (short)(iVar12 >> 0x1f);
-      if (iVar12 < 0) {
-        iVar12 = (short)(((short)(iVar12 / 0xc9) + sVar15) -
-                        (short)((longlong)iVar12 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar12 = (int)(short)(((short)(iVar12 / 0xc9) + sVar15) -
-                             (short)((longlong)iVar12 * 0x28c1979 >> 0x3f));
-      }
+      iVar12 = STBiasedDiv16(iVar12, 0xc9); /* exact signed 16-bit grid-index division */
       if (iVar13 == iVar12) {
         sVar15 = STField<short>(param_1,0x43);
-        if (sVar15 < 0) {
-          iVar13 = (short)((sVar15 / 0xc9 + (sVar15 >> 0xf)) -
-                          (short)((longlong)(int)sVar15 * 0x28c1979 >> 0x3f)) + -1;
-        }
-        else {
-          iVar13 = (int)(short)((sVar15 / 0xc9 + (sVar15 >> 0xf)) -
-                               (short)((longlong)(int)sVar15 * 0x28c1979 >> 0x3f));
-        }
+        iVar13 = STBiasedDiv16(sVar15, 0xc9); /* exact signed 16-bit grid-index division */
         iVar12 = param_1[0xa5];
-        sVar15 = (short)(iVar12 >> 0x1f);
-        if (iVar12 < 0) {
-          iVar12 = (short)(((short)(iVar12 / 0xc9) + sVar15) -
-                          (short)((longlong)iVar12 * 0x28c1979 >> 0x3f)) + -1;
-        }
-        else {
-          iVar12 = (int)(short)(((short)(iVar12 / 0xc9) + sVar15) -
-                               (short)((longlong)iVar12 * 0x28c1979 >> 0x3f));
-        }
+        iVar12 = STBiasedDiv16(iVar12, 0xc9); /* exact signed 16-bit grid-index division */
         if (iVar13 != iVar12) goto LAB_00587dde;
         sVar15 = STField<short>(param_1,0x45);
-        if (sVar15 < 0) {
-          iVar13 = (short)((sVar15 / 200 + (sVar15 >> 0xf)) -
-                          (short)((longlong)(int)sVar15 * 0x51eb851f >> 0x3f)) + -1;
-        }
-        else {
-          iVar13 = (int)(short)((sVar15 / 200 + (sVar15 >> 0xf)) -
-                               (short)((longlong)(int)sVar15 * 0x51eb851f >> 0x3f));
-        }
+        iVar13 = STBiasedDiv16(sVar15, 200); /* exact signed 16-bit grid-index division */
         iVar12 = param_1[0xa6];
-        sVar15 = (short)(iVar12 >> 0x1f);
-        if (iVar12 < 0) {
-          iVar12 = (short)(((short)(iVar12 / 200) + sVar15) -
-                          (short)((longlong)iVar12 * 0x51eb851f >> 0x3f)) + -1;
-        }
-        else {
-          iVar12 = (int)(short)(((short)(iVar12 / 200) + sVar15) -
-                               (short)((longlong)iVar12 * 0x51eb851f >> 0x3f));
-        }
+        iVar12 = STBiasedDiv16(iVar12, 200); /* exact signed 16-bit grid-index division */
         if (iVar13 != iVar12) goto LAB_00587dde;
 LAB_00587fb9:
         iVar8 = 0;
@@ -425,33 +338,9 @@ LAB_00588002:
           local_14 = (int)STField<short>(param_1,0x43);
         }
         local_38 = iVar8 + 1;
-        sVar15 = (short)(local_c >> 0x1f);
-        if (local_c < 0) {
-          local_34 = (short)(((short)(local_c / 0xc9) + sVar15) -
-                            (short)((longlong)local_c * 0x28c1979 >> 0x3f)) + -1;
-        }
-        else {
-          local_34 = (int)(short)(((short)(local_c / 0xc9) + sVar15) -
-                                 (short)((longlong)local_c * 0x28c1979 >> 0x3f));
-        }
-        sVar15 = (short)(local_1c >> 0x1f);
-        if (local_1c < 0) {
-          sVar15 = (((short)(local_1c / 0xc9) + sVar15) -
-                   (short)((longlong)local_1c * 0x28c1979 >> 0x3f)) + -1;
-        }
-        else {
-          sVar15 = ((short)(local_1c / 0xc9) + sVar15) -
-                   (short)((longlong)local_1c * 0x28c1979 >> 0x3f);
-        }
-        sVar16 = (short)(local_18 >> 0x1f);
-        if (local_18 < 0) {
-          sVar16 = (((short)(local_18 / 200) + sVar16) -
-                   (short)((longlong)local_18 * 0x51eb851f >> 0x3f)) + -1;
-        }
-        else {
-          sVar16 = ((short)(local_18 / 200) + sVar16) -
-                   (short)((longlong)local_18 * 0x51eb851f >> 0x3f);
-        }
+        local_34 = STBiasedDiv16(local_c, 0xc9); /* exact signed 16-bit grid-index division */
+        sVar15 = STBiasedDiv16(local_1c, 0xc9); /* exact signed 16-bit grid-index division */
+        sVar16 = STBiasedDiv16(local_18, 200); /* exact signed 16-bit grid-index division */
         sVar17 = (short)local_34;
         if ((((sVar17 < 0) || (g_worldGrid.sizeX <= sVar17)) || (sVar15 < 0)) ||
            (((g_worldGrid.sizeY <= sVar15 || (sVar16 < 0)) ||
@@ -600,33 +489,9 @@ LAB_005882a0:
     }
     local_c = local_10;
     local_1c = local_14;
-    sVar5 = (short)(local_10 >> 0x1f);
-    if (local_10 < 0) {
-      local_34 = (short)(((short)(local_10 / 0xc9) + sVar5) -
-                        (short)((longlong)local_10 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      local_34 = (int)(short)(((short)(local_10 / 0xc9) + sVar5) -
-                             (short)((longlong)local_10 * 0x28c1979 >> 0x3f));
-    }
-    sVar5 = (short)(local_14 >> 0x1f);
-    if (local_14 < 0) {
-      local_38 = (short)(((short)(local_14 / 0xc9) + sVar5) -
-                        (short)((longlong)local_14 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      local_38 = (int)(short)(((short)(local_14 / 0xc9) + sVar5) -
-                             (short)((longlong)local_14 * 0x28c1979 >> 0x3f));
-    }
-    sVar5 = (short)(local_18 >> 0x1f);
-    if (local_18 < 0) {
-      local_3c = (short)(((short)(local_18 / 200) + sVar5) -
-                        (short)((longlong)local_18 * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      local_3c = (int)(short)(((short)(local_18 / 200) + sVar5) -
-                             (short)((longlong)local_18 * 0x51eb851f >> 0x3f));
-    }
+    local_34 = STBiasedDiv16(local_10, 0xc9); /* exact signed 16-bit grid-index division */
+    local_38 = STBiasedDiv16(local_14, 0xc9); /* exact signed 16-bit grid-index division */
+    local_3c = STBiasedDiv16(local_18, 200); /* exact signed 16-bit grid-index division */
     if (sVar15 < 0) {
       iVar8 = (short)((sVar15 / 0xc9 + (sVar15 >> 0xf)) -
                      (short)((longlong)iVar11 * 0x28c1979 >> 0x3f)) + -1;
@@ -636,15 +501,7 @@ LAB_005882a0:
                           (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
     }
     iVar11 = param_1[0xa4];
-    sVar15 = (short)(iVar11 >> 0x1f);
-    if (iVar11 < 0) {
-      iVar11 = (short)(((short)(iVar11 / 0xc9) + sVar15) -
-                      (short)((longlong)iVar11 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar11 = (int)(short)(((short)(iVar11 / 0xc9) + sVar15) -
-                           (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
-    }
+    iVar11 = STBiasedDiv16(iVar11, 0xc9); /* exact signed 16-bit grid-index division */
     if (iVar8 == iVar11) {
       if (sVar16 < 0) {
         iVar8 = (short)((sVar16 / 0xc9 + (sVar16 >> 0xf)) -
@@ -655,15 +512,7 @@ LAB_005882a0:
                             (short)((longlong)(int)local_44 * 0x28c1979 >> 0x3f));
       }
       iVar11 = param_1[0xa5];
-      sVar15 = (short)(iVar11 >> 0x1f);
-      if (iVar11 < 0) {
-        iVar11 = (short)(((short)(iVar11 / 0xc9) + sVar15) -
-                        (short)((longlong)iVar11 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar11 = (int)(short)(((short)(iVar11 / 0xc9) + sVar15) -
-                             (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
-      }
+      iVar11 = STBiasedDiv16(iVar11, 0xc9); /* exact signed 16-bit grid-index division */
       if (iVar8 != iVar11) goto LAB_00587161;
       if (sVar17 < 0) {
         iVar8 = (short)((sVar17 / 200 + (sVar17 >> 0xf)) -
@@ -674,15 +523,7 @@ LAB_005882a0:
                             (short)((longlong)local_48 * 0x51eb851f >> 0x3f));
       }
       iVar11 = param_1[0xa6];
-      sVar15 = (short)(iVar11 >> 0x1f);
-      if (iVar11 < 0) {
-        iVar11 = (short)(((short)(iVar11 / 200) + sVar15) -
-                        (short)((longlong)iVar11 * 0x51eb851f >> 0x3f)) + -1;
-      }
-      else {
-        iVar11 = (int)(short)(((short)(iVar11 / 200) + sVar15) -
-                             (short)((longlong)iVar11 * 0x51eb851f >> 0x3f));
-      }
+      iVar11 = STBiasedDiv16(iVar11, 200); /* exact signed 16-bit grid-index division */
       pSVar18 = local_20;
       if (iVar8 != iVar11) goto LAB_00587161;
       goto LAB_00587359;
@@ -800,31 +641,9 @@ LAB_005873a4:
         local_14 = (int)STField<short>(param_1,0x43);
       }
       local_38 = local_38 + 1;
-      sVar15 = (short)(local_c >> 0x1f);
-      if (local_c < 0) {
-        sVar15 = (((short)(local_c / 0xc9) + sVar15) -
-                 (short)((longlong)local_c * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        sVar15 = ((short)(local_c / 0xc9) + sVar15) - (short)((longlong)local_c * 0x28c1979 >> 0x3f);
-      }
-      sVar16 = (short)(local_1c >> 0x1f);
-      if (local_1c < 0) {
-        sVar16 = (((short)(local_1c / 0xc9) + sVar16) -
-                 (short)((longlong)local_1c * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        sVar16 = ((short)(local_1c / 0xc9) + sVar16) -
-                 (short)((longlong)local_1c * 0x28c1979 >> 0x3f);
-      }
-      sVar17 = (short)(iVar8 >> 0x1f);
-      if (iVar8 < 0) {
-        sVar17 = (((short)(iVar8 / 200) + sVar17) - (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) +
-                 -1;
-      }
-      else {
-        sVar17 = ((short)(iVar8 / 200) + sVar17) - (short)((longlong)iVar8 * 0x51eb851f >> 0x3f);
-      }
+      sVar15 = STBiasedDiv16(local_c, 0xc9); /* exact signed 16-bit grid-index division */
+      sVar16 = STBiasedDiv16(local_1c, 0xc9); /* exact signed 16-bit grid-index division */
+      sVar17 = STBiasedDiv16(iVar8, 200); /* exact signed 16-bit grid-index division */
       if ((((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) || (sVar16 < 0)) ||
            ((g_worldGrid.sizeY <= sVar16 || (sVar17 < 0)))) || (g_worldGrid.sizeZ <= sVar17)) ||
          (pSVar18 = STGridAt3D(g_worldGrid, sVar15, sVar16, sVar17).objects[0],
@@ -989,30 +808,9 @@ LAB_00588350:
   STField<short>(param_1,0x24f) = sVar16;
   STField<short>(param_1,0x251) = sVar17;
   if (STField<int>(param_1,0x231) != 2) {
-    if (sVar15 < 0) {
-      iVar8 = (short)((sVar15 / 0xc9 + (sVar15 >> 0xf)) -
-                     (short)((longlong)(int)sVar15 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar8 = (int)(short)((sVar15 / 0xc9 + (sVar15 >> 0xf)) -
-                          (short)((longlong)(int)sVar15 * 0x28c1979 >> 0x3f));
-    }
-    if (sVar16 < 0) {
-      iVar11 = (short)((sVar16 / 0xc9 + (sVar16 >> 0xf)) -
-                      (short)((longlong)(int)sVar16 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar11 = (int)(short)((sVar16 / 0xc9 + (sVar16 >> 0xf)) -
-                           (short)((longlong)(int)sVar16 * 0x28c1979 >> 0x3f));
-    }
-    if (sVar17 < 0) {
-      iVar13 = (short)((sVar17 / 200 + (sVar17 >> 0xf)) -
-                      (short)((longlong)(int)sVar17 * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      iVar13 = (int)(short)((sVar17 / 200 + (sVar17 >> 0xf)) -
-                           (short)((longlong)(int)sVar17 * 0x51eb851f >> 0x3f));
-    }
+    iVar8 = STBiasedDiv16(sVar15, 0xc9); /* exact signed 16-bit grid-index division */
+    iVar11 = STBiasedDiv16(sVar16, 0xc9); /* exact signed 16-bit grid-index division */
+    iVar13 = STBiasedDiv16(sVar17, 200); /* exact signed 16-bit grid-index division */
     if ((((STField<short>(param_1,0x47) != iVar8) || (STField<short>(param_1,0x49) != iVar11))
         || (STField<short>(param_1,0x4b) != iVar13)) &&
        (((-1 < iVar8 && (-1 < iVar11)) &&

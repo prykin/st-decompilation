@@ -3467,18 +3467,6 @@ ButtonClassTy * __cdecl st::fn_0071E000(void)
   return nullptr;
 }
 
-// 0071E040 FUN_0071e040
-#line 4 "decomp/ST.exe/functions/0071E040/decomp.c"
-undefined4 * __fastcall st::fn_0071E040(undefined4 *param_1)
-
-{
-  st::fn_006E5FB0(param_1);
-  *param_1 = st::machine_word_boundary_cast<undefined4>(&st_global_0079E294);
-  param_1[8] = 0;
-  param_1[9] = 0xffffffff;
-  return param_1;
-}
-
 // 0071E060 FUN_0071e060
 #line 4 "decomp/ST.exe/functions/0071E060/decomp.c"
 undefined4 __thiscall st::fn_0071E060(void *this,int param_1,int param_2)
@@ -3516,30 +3504,14 @@ undefined4 __thiscall st::fn_0071E060(void *this,int param_1,int param_2)
 RadioClassTy * __cdecl st::fn_0071E6D0(void)
 
 {
-  undefined4 *puVar1;
-  RadioClassTy *pRVar2;
+  RadioClassTy *pRVar1;
 
-  puVar1 = st::fn_006B04D0(0x68);
-  if (puVar1 != nullptr) {
-    pRVar2 = (RadioClassTy *)st::fn_0071E040(puVar1);
-    return pRVar2;
+  pRVar1 = (RadioClassTy *)st::fn_006B04D0(0x68);
+  if (pRVar1 != nullptr) {
+    pRVar1 = st::fn_0071E040(pRVar1);
+    return pRVar1;
   }
   return nullptr;
-}
-
-// 0071E6F0 FUN_0071e6f0
-#line 4 "decomp/ST.exe/functions/0071E6F0/decomp.c"
-undefined4 * __fastcall st::fn_0071E6F0(undefined4 *param_1)
-
-{
-  st::fn_0072B700(param_1);
-  *param_1 = st::machine_word_boundary_cast<undefined4>(&st_global_0079E298);
-  param_1[0x7c] = 0;
-  param_1[0x7b] = 0;
-  param_1[0x6e] = 0;
-  param_1[0x6d] = 0;
-  param_1[0x71] = 0;
-  return param_1;
 }
 
 // 0071E860 FUN_0071e860
@@ -3581,13 +3553,12 @@ int __thiscall st::fn_0071E860(void *this,ushort param_1,ushort param_2,ushort p
 ViewerClassTy * __cdecl st::fn_0071F210(void)
 
 {
-  undefined4 *puVar1;
-  ViewerClassTy *pVVar2;
+  ViewerClassTy *pVVar1;
 
-  puVar1 = st::fn_006B04D0(0x1f8);
-  if (puVar1 != nullptr) {
-    pVVar2 = (ViewerClassTy *)st::fn_0071E6F0(puVar1);
-    return pVVar2;
+  pVVar1 = (ViewerClassTy *)st::fn_006B04D0(0x1f8);
+  if (pVVar1 != nullptr) {
+    pVVar1 = st::fn_0071E6F0(pVVar1);
+    return pVVar1;
   }
   return nullptr;
 }

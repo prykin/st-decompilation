@@ -75,7 +75,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
       iVar3 = 0;
       if (0 < DAT_007f4cf8) {
         do {
-          iVar6 = (uint)param_1->field_0027 - iVar3;
+          iVar6 = (uint)(ushort)param_1->field_0027 - iVar3;
           local_14 = DAT_007f4d04[iVar6 * 0xe + -8];
           local_12 = DAT_007f4d04[iVar6 * 0xe + -6];
           local_10 = DAT_007f4d04[iVar6 * 0xe + -4];
@@ -96,7 +96,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
         do {
           Library::DKW::TBL::DArrayAppend(local_8,&local_14);
           iVar3 = iVar3 + 1;
-        } while (iVar3 < (int)(uint)param_1->field_0027);
+        } while (iVar3 < (int)(uint)(ushort)param_1->field_0027);
       }
     }
     g_currentExceptionFrame = local_58.previous;

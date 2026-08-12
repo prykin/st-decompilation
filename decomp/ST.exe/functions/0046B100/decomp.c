@@ -3,7 +3,18 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::Build */
+   STBoatC::Build
+
+   [STSwitchEnumApplier] Switch target field_050C uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_050CState. Cases: CASE_1=1;CASE_2=2;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_050C uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_050CState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_050C uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_050CState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_5=5 */
 
 int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
 
@@ -124,7 +135,7 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
     this->field_04F9 = 0;
     thunk_FUN_0048dcf0(this);
     this->field_0508 = CASE_0;
-    this->field_050C = 0;
+    this->field_050C = CASE_0;
     sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
     iVar14 = sub_0045FF50(this,0);
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -255,7 +266,7 @@ LAB_0046b5ac:
       goto cf_common_exit_0046C3C5;
     }
     if (SVar4 == CASE_2) {
-      if (this->field_050C == 0) {
+      if (this->field_050C == CASE_0) {
         iVar9 = (ushort)(this->field_0500 * 200) + 100;
         iVar14 = STReplaceLowWord((uint32_t)(iVar9), (uint16_t)(this->field_04DF + 1)) * 0xc9;
         iVar25 = STReplaceLowWord((uint32_t)(iVar14), (uint16_t)(this->field_04DD + 1));
@@ -265,9 +276,9 @@ LAB_0046b5ac:
                            CONCAT22((short)((uint)(iVar25 * 0x19) >> 0x10),this->field_0045),
                            (short)(iVar25 * 0xc9),(short)iVar14,iVar9);
         this->field_0506 = uVar7;
-        this->field_050C = 1;
+        this->field_050C = CASE_1;
       }
-      if (this->field_050C == 1) {
+      if (this->field_050C == CASE_1) {
         uVar10 = sub_004176C0(this,this->field_0506);
         uVar10 = sub_00417910(this,(short)uVar10);
         if (uVar10 == 0xffffffff) {
@@ -280,17 +291,17 @@ LAB_0046b5ac:
           goto cf_error_exit_0046C422;
         }
         if (uVar10 == 0) {
-          this->field_050C = 2;
+          this->field_050C = CASE_2;
           goto LAB_0046b6e2;
         }
       }
-      if (this->field_050C == 2) {
+      if (this->field_050C == CASE_2) {
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                      (this->field_04DD + 1) * 0xc9,(this->field_04DF + 1) * 0xc9,
                      this->field_0500 * 200 + 100,this->field_0061);
-        this->field_050C = 3;
+        this->field_050C = CASE_3;
       }
-      if (this->field_050C == 3) {
+      if (this->field_050C == CASE_3) {
         local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,(int *)&local_14);
         local_20 = 0;
         if (this->field_02BF != '\0') {
@@ -364,7 +375,7 @@ LAB_0046b5ac:
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         if (local_1c == 0) {
-          this->field_050C = 0;
+          this->field_050C = CASE_0;
           this->field_0508 = (-(uint)(this->field_06F7 != CASE_19) & 2) + CASE_3;
         }
       }
@@ -388,19 +399,19 @@ LAB_0046b5ac:
       }
       if (uVar10 == 0) {
         this->field_0508 = CASE_4;
-        this->field_050C = 2;
+        this->field_050C = CASE_2;
         iVar14 = this->vfunc_D8();
         return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
       }
       goto cf_common_exit_0046C3C5;
     }
     if (SVar4 == CASE_4) {
-      if (this->field_050C == 2) {
+      if (this->field_050C == CASE_2) {
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,this->field_0041,
                      this->field_0043,this->field_0045 + -200,this->field_0061);
-        this->field_050C = 3;
+        this->field_050C = CASE_3;
       }
-      if (this->field_050C == 3) {
+      if (this->field_050C == CASE_3) {
         local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,(int *)&local_18);
         local_20 = 0;
         if (this->field_02BF != '\0') {
@@ -475,7 +486,7 @@ LAB_0046b5ac:
         }
         if (local_1c == 0) {
           this->field_0508 = CASE_5;
-          this->field_050C = 0;
+          this->field_050C = CASE_0;
         }
       }
 LAB_0046b6e2:
@@ -569,7 +580,7 @@ cf_common_exit_0046C04E:
       return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
     }
     if (SVar4 == CASE_6) {
-      if (this->field_050C == 0) {
+      if (this->field_050C == CASE_0) {
         iVar14 = STReplaceLowWord((uint32_t)(pSVar15), (uint16_t)(this->field_04FE * 0xc9)) + 100;
         uVar7 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
@@ -577,9 +588,9 @@ cf_common_exit_0046C04E:
                            this->field_04FC * 0xc9 + 100,(short)iVar14,
                            (ushort)(this->field_0500 * 200) + 100);
         this->field_0506 = uVar7;
-        this->field_050C = 1;
+        this->field_050C = CASE_1;
       }
-      if (this->field_050C == 1) {
+      if (this->field_050C == CASE_1) {
         uVar10 = sub_004176C0(this,this->field_0506);
         uVar10 = sub_00417910(this,(short)uVar10);
         if (uVar10 == 0xffffffff) {
@@ -593,17 +604,17 @@ cf_common_exit_0046C04E:
           goto cf_error_exit_0046C422;
         }
         if (uVar10 == 0) {
-          this->field_050C = 2;
+          this->field_050C = CASE_2;
           goto cf_common_exit_0046C04E;
         }
       }
-      if (this->field_050C == 2) {
+      if (this->field_050C == CASE_2) {
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_04FC * 0xc9 + 100,this->field_04FE * 0xc9 + 100,
                      this->field_0500 * 200 + 100,this->field_0061);
-        this->field_050C = 3;
+        this->field_050C = CASE_3;
       }
-      if (this->field_050C == 3) {
+      if (this->field_050C == CASE_3) {
         local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,(int *)&local_18);
         local_20 = 0;
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */

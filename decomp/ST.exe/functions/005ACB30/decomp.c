@@ -8,7 +8,7 @@
 void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
 
 {
-  ChooseMapTy_field_1A5FState CVar1;
+  char cVar1;
   MMsgTy *this_00;
   ChooseMapTy *pCVar3;
   int iVar4;
@@ -54,7 +54,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       Library::MSVCRT::FUN_0072e2b0(pCVar3->field_20B8);
       pCVar3->field_20B8 = nullptr;
     }
-    SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1A70);
+    SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->array_00BC[0xc].field_01F0);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1B01);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1B92);
     puVar7 = &pCVar3->field_1C23;
@@ -76,7 +76,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       Library::MSVCRT::FUN_0072e2b0(pCVar3->field_20BC);
       pCVar3->field_20BC = nullptr;
     }
-    if (pCVar3->field_0x20b4 != '\0') {
+    if (pCVar3->field_20B4 != '\0') {
       if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
         FUN_006b3af0((int *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391);
       }
@@ -96,8 +96,8 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       pCVar3->field_20C0 = nullptr;
     }
     if ((pCVar3->field_20B7 != '\0') &&
-       (((CVar1 = pCVar3->field_1A5F, CVar1 == CASE_C || (CVar1 == CASE_4)) ||
-        ((CVar1 == CASE_5 || (CVar1 == CASE_13)))))) {
+       (((cVar1 = pCVar3->array_00BC[0xc].field_01DF, cVar1 == '\f' || (cVar1 == '\x04')) ||
+        ((cVar1 == '\x05' || (cVar1 == '\x13')))))) {
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         FUN_006b3af0((int *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560);
       }
@@ -118,10 +118,12 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     if (pCVar3->field_1C8B != nullptr) {
       FreeAndNull(&pCVar3->field_1C8B);
     }
-    if ((pCVar3->field_0x20b6 != '\0') &&
-       (this_00 = pCVar3->field_1A5B->field_02E6, this_00 != nullptr)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    if ((pCVar3->field_20B6 != '\0') &&
+       (this_00 = *(MMsgTy **)(pCVar3->array_00BC[0xc].field_01DB + 0x2e6), this_00 != nullptr
+       )) {
       MMsgTy::HideSprites(this_00);
-      pCVar3->field_1A5B->field_02E6->field_1CAB = 0;
+      *(undefined4 *)(*(int *)(pCVar3->array_00BC[0xc].field_01DB + 0x2e6) + 0x1cab) = 0;
     }
     if (pCVar3->field_1C97 != nullptr) {
       FUN_006b5570(pCVar3->field_1C97);

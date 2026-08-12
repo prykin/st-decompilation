@@ -31,6 +31,7 @@ retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1EA2	disabled
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FrmPanelTy_0000	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_0068	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01B3	disabled	apply=0
+retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01EC	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_0218	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpStringTy_012A	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_InfocPanelTy_0000	disabled	apply=0
@@ -645,6 +646,7 @@ retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00575CB0_4AFBDFBD	disa
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00575CB0_C367735D	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00577690_10255A81	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005776D0_202C27C7	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00578630_C5BC66E1	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00578630_E75DF825	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00579350_2E014C47	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0057A2C0_A829D396	disabled	apply=0

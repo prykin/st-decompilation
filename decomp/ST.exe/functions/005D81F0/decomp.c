@@ -15,8 +15,9 @@
 void __thiscall SIDTy::NoneSID(SIDTy *this)
 
 {
+  uint uVar1;
   SIDTy *this_00;
-  DWORD DVar2;
+  DWORD DVar3;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -27,8 +28,8 @@ void __thiscall SIDTy::NoneSID(SIDTy *this)
 
   local_8 = 1;
   local_c = this;
-  DVar2 = timeGetTime();
-  this->field_0061 = DVar2;
+  DVar3 = timeGetTime();
+  this->field_0061 = DVar3;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
@@ -44,7 +45,7 @@ void __thiscall SIDTy::NoneSID(SIDTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (((local_c->field_0065 == '\x01') && (local_c->field_1CC4 != (HANDLE)0x0)) &&
-     (DVar2 = WaitForSingleObject(local_c->field_1CC4,0), DVar2 == 0)) {
+     (DVar3 = WaitForSingleObject(local_c->field_1CC4,0), DVar3 == 0)) {
     FindNextChangeNotification(this_00->field_1CC4);
     PrepFiles(this_00);
     this_00->field_002D = 5;
@@ -59,11 +60,13 @@ void __thiscall SIDTy::NoneSID(SIDTy *this)
     } while (iVar5 != 0);
   }
   if (this_00->field_0065 == '\x03') {
-    if (this_00->field_1A68 < this_00->field_1A6C + -1) {
-      this_00->field_1A68 = this_00->field_1A68 + 1;
-      if (this_00->field_1A64 != 0xffffffff) {
+    iVar5 = this_00->array_00BC[0xc].field_01E8;
+    if (iVar5 < this_00->array_00BC[0xc].field_01EC + -1) {
+      this_00->array_00BC[0xc].field_01E8 = iVar5 + 1;
+      uVar1 = this_00->array_00BC[0xc].field_01E4;
+      if (uVar1 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  ((uint *)this_00->field_1AA8,this_00->field_1A64,this_00->field_1A68,
+                  ((uint *)this_00->field_1AA8,uVar1,this_00->array_00BC[0xc].field_01E8,
                    this_00->field_1A7C,this_00->field_1A80);
       }
       local_8 = 0;
@@ -74,11 +77,13 @@ void __thiscall SIDTy::NoneSID(SIDTy *this)
     }
   }
   else if (this_00->field_0065 == '\x04') {
-    if (0 < this_00->field_1A68) {
-      this_00->field_1A68 = this_00->field_1A68 + -1;
-      if (this_00->field_1A64 != 0xffffffff) {
+    iVar5 = this_00->array_00BC[0xc].field_01E8;
+    if (0 < iVar5) {
+      this_00->array_00BC[0xc].field_01E8 = iVar5 + -1;
+      uVar1 = this_00->array_00BC[0xc].field_01E4;
+      if (uVar1 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  ((uint *)this_00->field_1AA8,this_00->field_1A64,this_00->field_1A68,
+                  ((uint *)this_00->field_1AA8,uVar1,this_00->array_00BC[0xc].field_01E8,
                    this_00->field_1A7C,this_00->field_1A80);
       }
       local_8 = 0;

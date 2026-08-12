@@ -215,8 +215,8 @@ LAB_0065c021:
       this->field_053B = uVar5;
       this->field_053F = 0;
       STFishC::sub_004162F0
-                ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),
-                 (undefined2 *)((int)&param_2 + 2),&local_6);
+                ((STFishC *)pSVar4,(short *)((int)&message + 2),(short *)((int)&param_2 + 2),
+                 &local_6);
       this->field_0543 = (int)STPiece<2,2>(message);
       this->field_0547 = (int)STPiece<2,2>(param_2);
       this->field_054B = (int)local_6;
@@ -249,8 +249,8 @@ LAB_0065c021:
       this->field_053F = 0;
       this->field_053B = uVar5;
       STFishC::sub_004162F0
-                ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),
-                 (undefined2 *)((int)&param_2 + 2),&local_6);
+                ((STFishC *)pSVar4,(short *)((int)&message + 2),(short *)((int)&param_2 + 2),
+                 &local_6);
       this->field_0547 = (int)STPiece<2,2>(param_2);
       this->field_0543 = (int)STPiece<2,2>(message);
       this->field_054B = (int)local_6;

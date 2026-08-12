@@ -93,8 +93,8 @@ LAB_00482f52:
     return 4;
   }
   STFishC::sub_004162F0
-            (local_14,(undefined2 *)(param_1 + 0x200),(undefined2 *)((int)param_1 + 0x802),
-             (undefined2 *)(param_1 + 0x201));
+            (local_14,(short *)(param_1 + 0x200),(short *)((int)param_1 + 0x802),
+             (short *)(param_1 + 0x201));
   local_8 = (RecoveredRecord_STBoatC_00482DB0 *)local_14;
 LAB_00482fa9:
   this = local_8;

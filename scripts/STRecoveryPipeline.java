@@ -99,7 +99,8 @@ public class STRecoveryPipeline extends GhidraScript {
             "abi_consistency_proposals.tsv", "abi_consistency_scalar_audit.tsv",
             "abi_consistency_summary.txt")),
         Map.entry("STClassArrayAnalyzer.java", List.of(
-            "class_array_proposals.tsv", "class_array_summary.txt")),
+            "class_array_proposals.tsv", "class_record_array_type_proposals.tsv",
+            "class_record_array_field_proposals.tsv", "class_array_summary.txt")),
         Map.entry("STInlineAggregateAnalyzer.java", List.of(
             "inline_aggregate_proposals.tsv", "inline_aggregate_summary.txt")),
         Map.entry("STObjectFactoryAnalyzer.java", List.of(
@@ -138,7 +139,9 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STRecursivePointeeAnalyzer.java", List.of()),
         Map.entry("STClassLayoutAnalyzer.java", List.of(
             "constructor_class_sizes.tsv", "vtable_proposals.tsv",
-            "class_array_proposals.tsv", "inline_aggregate_proposals.tsv")),
+            "class_array_proposals.tsv", "class_record_array_type_proposals.tsv",
+            "class_record_array_field_proposals.tsv",
+            "inline_aggregate_proposals.tsv")),
         Map.entry("STAbiConsistencyAnalyzer.java", List.of()),
         Map.entry("STClassArrayAnalyzer.java", List.of()),
         Map.entry("STInlineAggregateAnalyzer.java", List.of()),

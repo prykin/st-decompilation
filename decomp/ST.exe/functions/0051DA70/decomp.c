@@ -127,8 +127,7 @@ void __thiscall HelpPanelTy::sub_0051DA70(HelpPanelTy *this)
           if ((*puVar12 & 1 << ((byte)uVar11 & 0x1f)) == 0) {
             if ((char)local_8 == '\0') {
               TipProc(this,(void *)(uint)bVar1,local_c,'\0');
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (**(code **)(this->vtable + 0x18))(1);
+              this->SetPanel('\x01');
               return;
             }
             local_8 = (uint)(byte)((char)local_8 - 1);

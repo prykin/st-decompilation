@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
-   STGroupBoatC::GrpAttack */
+   STGroupBoatC::GrpAttack
+
+   [STSwitchEnumApplier] Switch target field_0020 uses
+   /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_0020State. Cases:
+   CASE_0=0;CASE_14=20;CASE_1AE=430 */
 
 undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
 

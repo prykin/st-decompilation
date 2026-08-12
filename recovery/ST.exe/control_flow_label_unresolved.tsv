@@ -1,6 +1,5 @@
 function_address	function	decompiler_label	goto_count	reason
 0044EE30	STBoatC::GetMessage		0	decompile_failed: Exception while decompiling 0044ee30: process: timeout\n
-00652810	AiEventClassTy::GetMessage		0	decompile_failed: Exception while decompiling 00652810: process: timeout\n
 006CEF60	FUN_006cef60	LAB_006cf695	1	could_not_resolve_decompiler_label
 006CEF60	FUN_006cef60	LAB_006cf8ee	1	could_not_resolve_decompiler_label
 006CEF60	FUN_006cef60	LAB_006cf911	8	could_not_resolve_decompiler_label

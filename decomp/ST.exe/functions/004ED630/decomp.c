@@ -93,10 +93,10 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806794,CASE_B,"BUT_MSK_SI",0xffffffff,0,1,0,nullptr);
   this_00->field_02B8 = puVar4;
-  this_00->field_0x1af = 0x2b;
-  this_00->field_0x1b0 = 0x2c;
-  this_00->field_0x1b1 = 5;
-  this_00->field_0x1b2 = 6;
+  this_00->field_01AF = 0x2b;
+  this_00->field_01B0 = 0x2c;
+  this_00->field_01B1 = 5;
+  this_00->field_01B2 = 6;
   this_00->field_0x1b3 = 0x4d;
   this_00->field_0x1b4 = 0x2d;
   local_10 = local_10 & 0xffffff00;
@@ -174,13 +174,13 @@ switchD_004ed72f_default:
     iVar8 = 0;
     auStack_88c[uVar9 * 0x5f + 1] = 1;
     if (DAT_0080874e == '\x03') {
-      pcVar5_mg1 = thunk_FUN_00529590((&this_00->field_0x1af)[uVar9],0);
+      pcVar5_mg1 = thunk_FUN_00529590((&this_00->field_01AF)[uVar9],0);
       pCVar3 = thunk_FUN_00571240(pcVar5_mg1,iVar8);
       pCVar3 = FUN_006f2c00(pCVar3,iVar14,uVar12);
       GVar11 = CASE_6;
     }
     else {
-      pcVar5_mg0 = thunk_FUN_00529590((&this_00->field_0x1af)[uVar9],0);
+      pcVar5_mg0 = thunk_FUN_00529590((&this_00->field_01AF)[uVar9],0);
       pCVar3 = thunk_FUN_00571240(pcVar5_mg0,iVar8);
       pCVar3 = FUN_006f2c00(pCVar3,iVar14,uVar12);
       GVar11 = CASE_1;
@@ -192,9 +192,9 @@ switchD_004ed72f_default:
     local_994[uVar9 * 0x5f + 5] = iVar8;
     local_14 = (int)&this_00->vtable + uVar9 * 0x27;
     *(undefined1 *)(local_14 + 0x1ce) = 1;
-    local_EAX_721 = thunk_FUN_00525390((&this_00->field_0x1af)[uVar9],0);
+    local_EAX_721 = thunk_FUN_00525390((&this_00->field_01AF)[uVar9],0);
     *(int *)(local_14 + 0x1cf) = local_EAX_721;
-    uVar12 = thunk_FUN_005272b0((&this_00->field_0x1af)[uVar9]);
+    uVar12 = thunk_FUN_005272b0((&this_00->field_01AF)[uVar9]);
     iVar14 = local_14;
     auStack_914[uVar9 * 0x5f] = 0x101;
     auStack_914[uVar9 * 0x5f + 1] = 3;

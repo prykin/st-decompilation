@@ -14,10 +14,10 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
 
 {
   char cVar1;
-  ChooseMapTy_field_1A5FState CVar2;
+  byte bVar2;
   RecoveredSourceFamily_dibcopy *pRVar3;
   ccFntTy *pcVar4;
-  StartSystemTy *pSVar5;
+  int iVar5;
   int local_EAX_38;
   ushort *puVar7;
   DArrayTy *pDVar8;
@@ -91,8 +91,8 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     pcVar19 = local_18;
     memmove(pcVar19, pcVar9, uVar13); /* compiler REP MOVS byte copy */
     uVar14 = 0;
-    CVar2 = local_10->field_1A5F;
-    if ((8 < CVar2) && ((CVar2 < CASE_D || ((CVar2 == CASE_13 && (DAT_00803400 == '\f')))))) {
+    bVar2 = local_10->array_00BC[0xc].field_01DF;
+    if ((8 < bVar2) && ((bVar2 < 0xd || ((bVar2 == 0x13 && (DAT_00803400 == '\f')))))) {
       uVar13 = 0xffffffff;
       pcVar9 = PTR_DAT_0079c06c;
       do {
@@ -161,14 +161,15 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     pcVar10 = local_14;
     g_currentExceptionFrame = local_bc.previous;
     if (local_14 != nullptr) {
-      StartSystemTy::LoadMapData(g_startSystem_0081176C,local_14,pCVar18->field_1A5F);
+      StartSystemTy::LoadMapData
+                (g_startSystem_0081176C,local_14,pCVar18->array_00BC[0xc].field_01DF);
       cMf32::delete(pcVar10);
     }
     goto LAB_005ae602;
   }
   uVar13 = 0xffffffff;
   DAT_008087be = 0xffffffff;
-  if ((local_10->field_1A5F == CASE_3) &&
+  if ((local_10->array_00BC[0xc].field_01DF == '\x03') &&
      (0 < (int)(local_10->field_1C97->elementSize + local_10->field_1C9F->elementSize))) {
     pcVar9 = &local_10->field_1DA7;
     do {
@@ -322,19 +323,20 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   }
 LAB_005ae53a:
   pCVar18->field_002D = 0x28;
-  *(undefined2 *)&pCVar18->field_0x31 = 1;
+  pCVar18->field_0031 = 1;
   puVar11 = &pCVar18->field_0x1d;
-  *(short *)&pCVar18->field_0x33 = (short)g_startSystem_0081176C->field_0548[2];
+  pCVar18->field_0033 = (short)g_startSystem_0081176C->field_0548[2];
   FUN_006e6080(pCVar18,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar11);
   pCVar18->field_002D = 0x22;
-  *(undefined2 *)&pCVar18->field_0x31 = 0;
-  *(undefined2 *)&pCVar18->field_0x33 = 0;
+  pCVar18->field_0031 = 0;
+  pCVar18->field_0033 = 0;
   FUN_006e6080(pCVar18,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar11);
   pCVar18->field_002D = 0x20;
-  *(uint *)&pCVar18->field_0x31 = (uint)(iVar15 != 0);
+  pCVar18->field_0031 = (short)(uint)(iVar15 != 0);
+  pCVar18->field_0033 = (short)((uint)(iVar15 != 0) >> 0x10);
   FUN_006e6080(pCVar18,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar11);
-  pSVar5 = pCVar18->field_1A5B;
-  if (pSVar5->field_02E6 != nullptr) {
+  iVar5 = pCVar18->array_00BC[0xc].field_01DB;
+  if (*(int *)(iVar5 + 0x2e6) != 0) {
     psVar22 = local_34;
     for (iVar17 = 6; iVar17 != 0; iVar17 = iVar17 + -1) {
       psVar22[0] = 0;
@@ -344,10 +346,11 @@ LAB_005ae53a:
     *psVar22 = 0;
     local_34[0] = (-(ushort)(iVar15 != 0) & 2) - 1;
     local_34[1] = local_34[0];
-    MMsgTy::StatePanel(pSVar5->field_02E6,(int)local_34);
+    MMsgTy::StatePanel(*(MMsgTy **)(iVar5 + 0x2e6),(int)local_34);
   }
 LAB_005ae602:
-  if ((pCVar18->field_1A5F != CASE_3) && (-1 < (int)g_startSystem_0081176C->field_02EC)) {
+  if ((pCVar18->array_00BC[0xc].field_01DF != '\x03') &&
+     (-1 < (int)g_startSystem_0081176C->field_02EC)) {
     FUN_006b35d0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
   }
   if (-1 < (int)g_startSystem_0081176C->field_0540) {

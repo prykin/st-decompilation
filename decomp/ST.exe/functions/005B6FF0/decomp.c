@@ -46,7 +46,7 @@ void __thiscall MMsgTy::HideSprites(MMsgTy *this)
     }
     iVar5 = 0;
     if (pMVar2->field_009A != 0) {
-      puVar6 = &pMVar2->field_00E7;
+      puVar6 = &pMVar2->array_00BC[0].field_0027.field_0004;
       do {
         puVar6[1] = 0;
         if (*puVar6 != 0xffffffff) {

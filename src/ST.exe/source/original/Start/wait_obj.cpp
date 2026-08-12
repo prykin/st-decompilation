@@ -146,12 +146,12 @@ void __thiscall st::fn_005E6770(WaitTy *this,undefined4 param_1,undefined4 param
     g_startSystem_0081176C->field_0548 = st::pointer_boundary_cast<uint *>(&pDVar4->flags);
     if (g_startSystem_0081176C->field_0389 != 0) {
       this_01->field_002D = 0x28;
-      *(undefined2 *)&this_01->field_0x31 = 1;
-      *(short *)&this_01->field_0x33 = (short)g_startSystem_0081176C->field_0548[2];
+      this_01->field_0031 = 1;
+      this_01->field_0033 = (short)g_startSystem_0081176C->field_0548[2];
       st::fn_006E6080(this_01,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_01->field_0x1d);
       this_01->field_002D = 0x22;
-      *(undefined2 *)&this_01->field_0x33 = 0;
-      *(undefined2 *)&this_01->field_0x31 = 0;
+      this_01->field_0033 = 0;
+      this_01->field_0031 = 0;
       st::fn_006E6080(this_01,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_01->field_0x1d);
     }
     st::fn_004043F4(this_01,'\x01');
@@ -939,16 +939,17 @@ LAB_005e829d:
   DAT_008087be = this_00->field_1A8F;
   if (local_c == 0) {
     this_00->field_002D = 0x28;
-    *(undefined2 *)&this_00->field_0x31 = 1;
+    this_00->field_0031 = 1;
     puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x1d);
-    *(short *)&this_00->field_0x33 = (short)g_startSystem_0081176C->field_0548[2];
+    this_00->field_0033 = (short)g_startSystem_0081176C->field_0548[2];
     st::fn_006E6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
     this_00->field_002D = 0x22;
-    *(undefined2 *)&this_00->field_0x33 = 0;
-    *(undefined2 *)&this_00->field_0x31 = 0;
+    this_00->field_0033 = 0;
+    this_00->field_0031 = 0;
     st::fn_006E6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
     this_00->field_002D = 0x20;
-    *(undefined4 *)&this_00->field_0x31 = 0;
+    this_00->field_0031 = 0;
+    this_00->field_0033 = 0;
     st::fn_006E6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
   }
   if (-1 < (int)g_startSystem_0081176C->field_02EC) {
@@ -1864,7 +1865,8 @@ void __thiscall st::fn_005E9D70(WaitTy *this)
   }
   else {
     this_00->field_002D = 0x20;
-    *(undefined4 *)&this_00->field_0x31 = 0;
+    this_00->field_0031 = 0;
+    this_00->field_0033 = 0;
     st::fn_006E6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_00->field_0x1d);
   }
   if (this_00->field_1A64 == 0) {
@@ -1935,11 +1937,13 @@ void __thiscall st::fn_005E9D70(WaitTy *this)
   }
   else {
     this_00->field_002D = 0x20;
-    *(undefined4 *)&this_00->field_0x31 = 0;
+    this_00->field_0031 = 0;
+    this_00->field_0033 = 0;
     if (g_startSystem_0081176C->field_054C != 0) {
       st::fn_006E6080(this_00,2,g_startSystem_0081176C->field_054C,(undefined4 *)&this_00->field_0x1d);
     }
-    *(undefined4 *)&this_00->field_0x31 = 0;
+    this_00->field_0031 = 0;
+    this_00->field_0033 = 0;
     if (g_startSystem_0081176C->field_0550 != 0) {
       st::fn_006E6080(this_00,2,g_startSystem_0081176C->field_0550,(undefined4 *)&this_00->field_0x1d);
     }
@@ -2225,7 +2229,7 @@ int __thiscall st::fn_005EA680(WaitTy *this,STMessage *message)
 LAB_005eab28:
   st::fn_006B6020(this_02->field_1A5B->field_0686,0,&CHAR_00h_008016a0);
   this_02->field_002D = 0x33;
-  *(DArrayTy **)&this_02->field_0x31 = this_02->field_1A5B->field_0686;
+  *(DArrayTy **)&this_02->field_0031 = this_02->field_1A5B->field_0686;
   st::fn_006E6080(this_02,2,this_02->field_1A5B->field_054C,(undefined4 *)&this_02->field_0x1d);
 cf_common_exit_005EAB6A:
   g_currentExceptionFrame = local_50.previous;

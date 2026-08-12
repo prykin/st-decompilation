@@ -70,8 +70,8 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
     return 0;
   }
   STFishC::sub_004162F0
-            ((STFishC *)local_8,(undefined2 *)&pSVar2->field_0x2a3,
-             (undefined2 *)&pSVar2->field_0x2a5,(undefined2 *)&pSVar2->field_0x2a7);
+            ((STFishC *)local_8,&pSVar2->field_02A3,&pSVar2->field_02A5,
+             (short *)&pSVar2->field_0x2a7);
   local_20 = 0;
   *(int *)&pSVar2->field_0x2a9 = local_8->field_0018;
   local_40 = g_playSystem_00802A38->field_00E4;
@@ -100,8 +100,8 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
               STBoatC::CmdToObj(local_8,CASE_3,&local_1c);
               goto LAB_0049e1aa;
             }
-            local_3c = *(undefined2 *)&pSVar2->field_0x2a3;
-            local_3a = *(undefined2 *)&pSVar2->field_0x2a5;
+            local_3c = pSVar2->field_02A3;
+            local_3a = pSVar2->field_02A5;
             local_38 = *(undefined2 *)&pSVar2->field_0x2a7;
             local_36 = *(undefined4 *)&pSVar2->field_0x2a9;
             STBoatC::CmdToObj(local_8,CASE_F,&local_40);

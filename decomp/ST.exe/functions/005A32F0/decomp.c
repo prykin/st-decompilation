@@ -46,7 +46,7 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   }
   this_01 = local_8;
   if (param_1 != 0) {
-    pMVar4 = local_8->field_1A5B->field_02E6;
+    pMVar4 = (local_8->array_00BC[0xc].field_01DB)->field_02E6;
     if (pMVar4 == nullptr) {
       g_currentExceptionFrame = local_4c.previous;
       return;
@@ -57,7 +57,7 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   }
   DAT_0080877f = g_int_00811764[0xe];
   DAT_0080877e = 1;
-  local_8->field_1A61 = 0;
+  local_8->array_00BC[0xc].field_01E1 = 0;
   DAT_008067a0 = 1;
   uVar3 = local_8->field_1EC2;
   if (uVar3 < 0x502) {
@@ -82,7 +82,7 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
 cf_common_exit_005A33FB:
   thunk_FUN_005b6350(local_8,0x611f,0x13,0);
   this_01->CloseButtons();
-  pMVar4 = this_01->field_1A5B->field_02E6;
+  pMVar4 = (this_01->array_00BC[0xc].field_01DB)->field_02E6;
   if (pMVar4 == nullptr) {
     g_currentExceptionFrame = local_4c.previous;
     return;

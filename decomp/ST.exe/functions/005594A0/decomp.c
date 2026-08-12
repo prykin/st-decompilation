@@ -20,12 +20,15 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 005594A0 -> 0055BB00 @ 00559511 */
 
 void __thiscall
 VisibleClassTy::sub_005594A0
           (VisibleClassTy *this,int param_1,int param_2,char param_3,undefined *param_4,int param_5,
-          undefined4 param_6,uint param_7)
+          uint param_6,uint param_7)
 
 {
   int iVar1;

@@ -16,7 +16,7 @@ undefined4 __fastcall FUN_005f07a0(STBoatC *param_1)
   short local_8;
   short local_6;
 
-  if ((param_1->field_024F == '\0') && (0 < (short)param_1->field_0246)) {
+  if ((param_1->field_024F == '\0') && (0 < param_1->field_0246)) {
     local_EAX_72 = thunk_FUN_004961b0(param_1->field_0242,*(short *)&param_1->field_0x244,
                                       param_1->field_0246 + -1);
     if (local_EAX_72 == 0) {

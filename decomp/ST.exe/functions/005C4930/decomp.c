@@ -8,6 +8,7 @@
 void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
 
 {
+  MMsgTy *this_00;
   SettMapTy *pSVar2;
   int iVar3;
   void *pvVar3;
@@ -52,7 +53,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21EC);
       pSVar2->field_21EC = nullptr;
     }
-    if (pSVar2->field_0x21e2 != '\0') {
+    if (pSVar2->field_21E2 != '\0') {
       if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
         FUN_006b3af0((int *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391);
       }
@@ -145,11 +146,11 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     }
     FUN_006b3bb0((int *)g_ddxContext_008075A8,pSVar2->field_1E22);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((pSVar2->field_21E7 != '\0') && (*(MMsgTy **)(pSVar2->field_1A5B + 0x2e6) != nullptr))
-    {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      MMsgTy::HideSprites(*(MMsgTy **)(pSVar2->field_1A5B + 0x2e6));
-      *(undefined4 *)(*(int *)(pSVar2->field_1A5B + 0x2e6) + 0x1cab) = 0;
+    if ((pSVar2->field_21E7 != '\0') &&
+       (this_00 = *(MMsgTy **)(pSVar2->array_00BC[0xc].field_01DB + 0x2e6), this_00 != nullptr
+       )) {
+      MMsgTy::HideSprites(this_00);
+      *(undefined4 *)(*(int *)(pSVar2->array_00BC[0xc].field_01DB + 0x2e6) + 0x1cab) = 0;
     }
     if (pSVar2->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pSVar2->field_0x3d);

@@ -5988,7 +5988,7 @@ st::fn_006AD4D0(char *sourceFile,int sourceLine,int isFatal,int errorCode,char *
   char *temp_3fea71fc55;
 
   if (DAT_007ed798 == 0) {
-    g_exceptionSourceFile = static_cast<undefined4>(0);
+    g_exceptionSourceFile = 0;
     return 0;
   }
   local_34c[0] = '\0';
@@ -6220,7 +6220,7 @@ st::fn_006AD4D0(char *sourceFile,int sourceLine,int isFatal,int errorCode,char *
     pcVar10[iVar5] = '\n';
     pcVar9 = pcVar10 + iVar5 + 1;
   }
-  g_exceptionSourceFile = static_cast<undefined4>(0);
+  g_exceptionSourceFile = 0;
   if (errorCode != 0) {
     iVar5 = st::fn_00730C40(st::pointer_boundary_cast<undefined1 *>(pcVar9),0x7ed848);
     pcVar9 = pcVar9 + iVar5;

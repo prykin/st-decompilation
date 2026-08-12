@@ -11,8 +11,8 @@
 uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
 
 {
-  undefined1 *puVar1;
-  undefined1 *puVar2;
+  short *psVar1;
+  short *psVar2;
   STGroupBoatC *pSVar4;
   int iVar5;
   DArrayTy *array;
@@ -53,30 +53,27 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   pSVar4 = local_18;
   if (iVar5 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar1 = &local_18->field_0x300;
+      psVar1 = &local_18->field_0300;
       memset(&local_18->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
       local_18->field_0065 = 0;
-      puVar2 = &local_18->field_0x302;
-      *(undefined2 *)&local_18->field_0x2fa = *(undefined2 *)&local_18->field_0x1c1;
-      *(undefined2 *)&local_18->field_0x2fc = local_18->field_01C3;
-      *(undefined2 *)&local_18->field_0x2f8 = *(undefined2 *)&local_18->field_0x1bf;
-      sub_0049A500(local_18,(undefined2 *)&local_18->field_0x2fe,(undefined2 *)puVar1,
-                   (undefined2 *)puVar2);
+      psVar2 = &local_18->field_0302;
+      local_18->field_02FA = local_18->field_01C1;
+      local_18->field_02FC = local_18->field_01C3;
+      local_18->field_02F8 = local_18->field_01BF;
+      sub_0049A500(local_18,&local_18->field_02FE,psVar1,psVar2);
       local_10 = (DArrayTy *)
                  Way3DGrpGetDistrPoint
-                           (pSVar4,(DArrayTy *)pSVar4->field_0029,
-                            (int)*(short *)&pSVar4->field_0x2fe,(int)*(short *)puVar1,
-                            (int)*(short *)puVar2,(int)*(short *)&pSVar4->field_0x2f8,
-                            (int)*(short *)&pSVar4->field_0x2fa,(int)*(short *)&pSVar4->field_0x2fc);
+                           (pSVar4,(DArrayTy *)pSVar4->field_0029,(int)pSVar4->field_02FE,
+                            (int)*psVar1,(int)*psVar2,(int)pSVar4->field_02F8,
+                            (int)pSVar4->field_02FA,(int)pSVar4->field_02FC);
       if (local_10 == nullptr) {
         return nullptr;
       }
       array = (DArrayTy *)
               Way3DGrpGetDistrPoint
-                        (pSVar4,(DArrayTy *)pSVar4->field_0029,(int)*(short *)&pSVar4->field_0x2f8,
-                         (int)*(short *)&pSVar4->field_0x2fa,(int)*(short *)&pSVar4->field_0x2fc,
-                         (int)*(short *)&pSVar4->field_0x2fe,(int)*(short *)puVar1,
-                         (int)*(short *)puVar2);
+                        (pSVar4,(DArrayTy *)pSVar4->field_0029,(int)pSVar4->field_02F8,
+                         (int)pSVar4->field_02FA,(int)pSVar4->field_02FC,(int)pSVar4->field_02FE,
+                         (int)*psVar1,(int)*psVar2);
       local_1c = array;
       if (array == nullptr) {
         DArrayDestroy(local_10);

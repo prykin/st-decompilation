@@ -1,9 +1,12 @@
 program=ST.exe
-functions_scanned=1463
-candidate_arrays=71
-auto_apply=61
+functions_scanned=1544
+candidate_arrays=85
+auto_apply=73
 bounded_index_arrays=6
-exact_pointer_walk_arrays=69
+exact_pointer_walk_arrays=83
+record_arrays=12
+record_array_auto_apply=10
 note=Only bounded this+index*stride accesses and exact decrementing pointer walks contribute an extent.
+note=Large-stride record arrays require an exact loop count plus repeated cursor geometry; nested record fields retain only non-conflicting hash-owned or typed-receiver evidence.
 note=Semantic names are not guessed; address-stable array_XXXX names are structural.
 note=Manual/unowned class components and conflicting element roles remain review-only.

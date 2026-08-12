@@ -40,8 +40,8 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
     }
     pFVar5 = local_8;
     local_8->CloseButtons();
-    pFVar5->field_1A61 = 2;
-    pSVar3 = pFVar5->field_1A5B;
+    pFVar5->array_00BC[0xc].field_01E1 = 2;
+    pSVar3 = pFVar5->array_00BC[0xc].field_01DB;
     if (pSVar3->field_02E6 != nullptr) {
       local_18 = 0;
       local_14 = 0;

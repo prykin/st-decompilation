@@ -74,6 +74,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     private DataTypeManager dataTypes;
     private int crossTypedFieldAccesses;
     private int crossTypeLinks;
+    private int crossCopyViews;
+    private int partitionedMachineWordFields;
 
     @Override
     protected void run() throws Exception {
@@ -97,6 +99,9 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             directory.resolve("class_array_proposals.tsv"));
         mergeMemberArrays(memberArrays, readInlineAggregates(
             directory.resolve("inline_aggregate_proposals.tsv")));
+        RecordNestedBundle recordNested = readRecordNestedBundle(
+            directory.resolve("class_record_array_type_proposals.tsv"),
+            directory.resolve("class_record_array_field_proposals.tsv"));
         Map<String, ClassEvidence> classes = new TreeMap<>();
 
         FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
@@ -111,6 +116,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             analyzeFunction(function, classEvidence);
         }
         recoverTypedClassFieldSemantics(classes);
+        recordNested = enrichRecordNestedFields(recordNested, classes, memberArrays);
 
         List<ClassProposal> classRows = new ArrayList<>();
         List<FieldProposal> fieldRows = new ArrayList<>();
@@ -179,6 +185,19 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 nestedTypes.add(nested);
             }
         }
+        Set<String> appliedOwners = new HashSet<>();
+        for (ClassProposal row : classRows) if (row.apply) appliedOwners.add(row.owner);
+        Set<String> activeRecordTypes = new HashSet<>();
+        for (RecordNestedType row : recordNested.types) {
+            boolean apply = row.apply && appliedOwners.contains(row.owner);
+            nestedTypes.add(new NestedTypeProposal(apply, row.owner, row.parentOffset,
+                row.typePath, row.length, row.fieldCount, row.accessCount, row.reason));
+            if (apply) activeRecordTypes.add(row.typePath);
+        }
+        for (RecordNestedField row : recordNested.fields)
+            nestedFields.add(new NestedFieldProposal(
+                row.apply && activeRecordTypes.contains(row.typePath), row.typePath,
+                row.offset, row.size, row.name, row.type, row.evidenceCount, row.reason));
         classRows.sort(Comparator.comparing(row -> row.owner));
         fieldRows.sort(Comparator.comparing((FieldProposal row) -> row.owner)
             .thenComparingLong(row -> row.offset));
@@ -212,6 +231,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             ", deprecated_type_repairs: " + retiredTypes +
             ", cross_typed_accesses: " + crossTypedFieldAccesses +
             ", cross_type_links: " + crossTypeLinks +
+            ", cross_copy_views: " + crossCopyViews +
+            ", partitioned_machine_word_fields: " + partitionedMachineWordFields +
             ", nested_pointees: " + nestedTypes.size() +
             ", nested_apply: " + nestedTypes.stream().filter(row -> row.apply).count() +
             ", member_arrays: " + memberArrays.values().stream()
@@ -459,6 +480,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             if (function.isThunk() || function.isExternal() || isLibrary(function)) continue;
             recoverTypedClassFields(function, owners, links);
         }
+        propagateCrossFieldViews(owners, links);
         propagateCrossFieldTypes(owners, links);
         crossTypeLinks = links.size();
     }
@@ -654,11 +676,28 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                     function.getName(true), owners);
             if (destination != null && source != null &&
                     destination.kind == CrossKind.FIELD && source.kind == CrossKind.FIELD &&
+                    (source.fragmentWidth == 0 || source.fragmentWidth == size) &&
                     (destination.offset != source.offset ||
                      !destination.ownerPath.equals(source.ownerPath))) {
                 FieldLink link = new FieldLink(destination.ownerPath, destination.offset,
-                    source.ownerPath, source.offset, addr(instruction.getAddress()));
+                    source.ownerPath, source.offset, size, addr(function.getEntryPoint()),
+                    addr(instruction.getAddress()));
                 links.add(link);
+            }
+        }
+        if (("MOVSX".equals(mnemonic) || "MOVSXD".equals(mnemonic) ||
+                "MOVZX".equals(mnemonic)) && operands.length >= 2) {
+            String sourceRegister = cleanRegister(operands[1]);
+            int sourceWidth = registerWidth(operands[1]);
+            CrossValue source = sourceRegister == null ? null :
+                state.registers.get(sourceRegister);
+            if (source != null && source.kind == CrossKind.FIELD &&
+                    sourceWidth == 2 && source.fragmentWidth == sourceWidth) {
+                String type = "MOVZX".equals(mnemonic) ?
+                    unsignedIntegerType(sourceWidth) : signedIntegerType(sourceWidth);
+                addCrossType(source, type, addr(instruction.getAddress()) + " " +
+                    mnemonic + " of exact partial-register field load in " +
+                    function.getName(true), owners);
             }
         }
         if ("CALL".equals(mnemonic)) {
@@ -710,7 +749,26 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
         String destination = cleanRegister(operands[0]);
         if (destination == null) return;
-        if (!isFullRegister(operands[0])) { state.registers.remove(destination); return; }
+        if (!isFullRegister(operands[0])) {
+            int destinationWidth = registerWidth(operands[0]);
+            CrossValue source = null;
+            if ("MOV".equals(mnemonic) && operands.length >= 2 && destinationWidth == 2) {
+                String sourceRegister = cleanRegister(operands[1]);
+                if (sourceRegister != null && registerWidth(operands[1]) == destinationWidth) {
+                    CrossValue candidate = state.registers.get(sourceRegister);
+                    if (candidate != null && candidate.fragmentWidth == destinationWidth)
+                        source = candidate;
+                }
+                if (source == null) {
+                    CrossValue field = crossMemoryField(operands[1], state);
+                    if (field != null) source = CrossValue.fieldFragment(
+                        field.ownerPath, field.offset, destinationWidth);
+                }
+            }
+            if (source == null) state.registers.remove(destination);
+            else state.registers.put(destination, source);
+            return;
+        }
         if ("MOV".equals(mnemonic) && operands.length >= 2) {
             CrossValue source = null;
             String sourceRegister = cleanRegister(operands[1]);
@@ -944,6 +1002,71 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             case 2 -> "/ushort";
             default -> "";
         };
+    }
+
+    /**
+     * A machine-word MOV between two exact class-relative addresses is a transport copy, not
+     * proof that either logical record has one machine-word member.  If one copied byte range
+     * also has an independently observed subfield view wholly inside that range, the same view
+     * exists at the corresponding offset of the other range.  Transfer width/geometry only;
+     * signedness and semantic types remain directional in propagateCrossFieldTypes().
+     *
+     * Additions are staged from a snapshot, so a view cannot bootstrap itself through a cycle
+     * of copies during one analysis pass.  Later fixed-point passes may carry the now concrete
+     * layout onward, which is auditable and monotonic.
+     */
+    private void propagateCrossFieldViews(Map<String, CrossOwner> owners,
+            Set<FieldLink> links) {
+        Set<CopyViewAddition> additions = new TreeSet<>(Comparator
+            .comparing((CopyViewAddition value) -> value.owner)
+            .thenComparingLong(value -> value.offset)
+            .thenComparingInt(value -> value.size)
+            .thenComparing(value -> value.site));
+        for (FieldLink link : links) {
+            if (link.size <= 1 || link.size > 8) continue;
+            collectCopiedSubviews(owners, link.leftOwner, link.leftOffset,
+                link.rightOwner, link.rightOffset, link, additions);
+            collectCopiedSubviews(owners, link.rightOwner, link.rightOffset,
+                link.leftOwner, link.leftOffset, link, additions);
+        }
+        for (CopyViewAddition addition : additions) {
+            CrossOwner owner = owners.get(addition.owner);
+            if (owner == null) continue;
+            FieldEvidence evidence = field(owner.evidence, addition.offset);
+            if (evidence.sizes.containsKey(addition.size)) continue;
+            evidence.sizes.put(addition.size, 1);
+            evidence.crossRecovered++;
+            evidence.copyViewRecovered++;
+            evidence.functions.add(addition.function);
+            owner.evidence.functions.add(addition.function);
+            crossCopyViews++;
+        }
+    }
+
+    private void collectCopiedSubviews(Map<String, CrossOwner> owners,
+            String sourceOwner, long sourceBase, String destinationOwner,
+            long destinationBase, FieldLink link, Set<CopyViewAddition> additions) {
+        CrossOwner source = owners.get(sourceOwner);
+        CrossOwner destination = owners.get(destinationOwner);
+        if (source == null || destination == null) return;
+        long sourceEnd = sourceBase + link.size;
+        for (FieldEvidence view : source.evidence.fields.values()) {
+            if (view.offset < sourceBase || view.offset >= sourceEnd) continue;
+            long relative = view.offset - sourceBase;
+            for (int width : new TreeSet<>(view.sizes.keySet())) {
+                if (width <= 0 || view.offset + width > sourceEnd) continue;
+                // The full-width access at the copy base is the transport itself.  Only an
+                // independently shifted or narrower access proves a logical subview.
+                if (relative == 0 && width == link.size) continue;
+                long mapped = destinationBase + relative;
+                FieldEvidence existing = destination.evidence.fields.get(mapped);
+                if (existing != null && existing.sizes.containsKey(width)) continue;
+                additions.add(new CopyViewAddition(destinationOwner, mapped, width,
+                    link.function, link.site + " exact copied subfield view " +
+                    sourceOwner + "+" + hex(view.offset) + " -> " +
+                    destinationOwner + "+" + hex(mapped)));
+            }
+        }
     }
 
     private void propagateCrossFieldTypes(Map<String, CrossOwner> owners,
@@ -1788,7 +1911,10 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                     field.offset >= array.offset &&
                     field.offset < array.offset + array.size)) continue;
             if (field.offset == 0) hasOffsetZero = true;
-            int size = field.layoutSize();
+            int naturalSize = field.layoutSize();
+            int size = partitionedLayoutSize(evidence, structure, field);
+            boolean partitionedMachineWord = size != naturalSize;
+            if (partitionedMachineWord) partitionedMachineWordFields++;
             boolean consistent = field.compatibleWidths();
             boolean ownerVtable = field.offset == 0 && vtableType != null;
             String name = ownerVtable ? "vtable" :
@@ -1799,6 +1925,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             // fixed-offset pointee inferred from CALL [vptr+slot].
             String inferredType = ownerVtable ? type : field.uniqueType();
             boolean narrowCharQuorum = !ownerVtable && field.hasNarrowCharQuorum();
+            boolean fullWidthScalarDominates = !ownerVtable &&
+                field.fullWidthScalarDominatesContainedViews();
             boolean typeApply = !inferredType.isBlank() && typeLength(inferredType) == size;
             String suggestedName = field.uniqueName();
             if (suggestedName.isBlank() && !inferredType.isBlank() &&
@@ -1914,6 +2042,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 reason += "; compatible_DArray_element_specialization_preserved";
             if (field.sizes.size() > 1 && consistent)
                 reason += "; compatible_subwidth_views=" + field.sizeText();
+            if (partitionedMachineWord)
+                reason += "; exact_subword_partition=" + naturalSize + "->" + size;
             if (generatedRecursivePointeePreserved)
                 reason += "; hash_owned_recursive_pointee_preserved_over_generic_pointer";
             else if (!recursivePointeeConflict.isBlank())
@@ -1928,6 +2058,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 reason += "; generated_switch_enum_preserved_over_pointer_like_use";
             else if (narrowCharQuorum)
                 reason += "; dominant_char_pointer_role_over_neutral_byte_consumers";
+            else if (fullWidthScalarDominates)
+                reason += "; full_width_scalar_dominates_contained_low_view";
             else if (field.inferredTypes.size() > 1)
                 reason += "; inferred_type_conflict=" + String.join("|", field.inferredTypes.keySet());
             else if (existingConcreteType && !inferredType.isBlank() &&
@@ -1940,12 +2072,15 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 reason += "; cfg_field_recovery=" + field.cfgRecovered;
             if (field.crossRecovered > 0)
                 reason += "; typed_cross_class_recovery=" + field.crossRecovered;
+            if (field.copyViewRecovered > 0)
+                reason += "; exact_copy_subfield_views=" + field.copyViewRecovered;
             result.add(new FieldProposal(evidence.owner, field.offset, size, name, type,
                 inferredType, typeApply, suggestedName, nameApply, field.typeEvidenceText(),
                 field.nameEvidenceText(), !retiredDeprecatedInference.isBlank() ? "repair" :
                     !recursivePointeeConflict.isBlank() ? "conflict" :
                     typeApply ? "high" :
-                    field.inferredTypes.size() > 1 && !narrowCharQuorum ? "conflict" :
+                    field.inferredTypes.size() > 1 && !narrowCharQuorum &&
+                        !fullWidthScalarDominates ? "conflict" :
                     existingConcreteType ? "existing" : "none", nameConfidence,
                 field.reads, field.writes, field.functions, apply,
                 apply ? "high" : "conflict", reason));
@@ -1983,6 +2118,48 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
         result.sort(Comparator.comparingLong(field -> field.offset));
         return result;
+    }
+
+    /**
+     * A compiler may copy two adjacent shorts with one dword MOV.  That wider
+     * transport access proves the byte span, but must not erase a complete,
+     * independently observed partition into equally sized scalar members.
+     * Existing concrete members still win; this only refines script-owned/raw
+     * storage when every submember in the machine-word span is present.
+     */
+    private int partitionedLayoutSize(ClassEvidence owner, Structure structure,
+            FieldEvidence field) {
+        int naturalSize = field.layoutSize();
+        if (!field.compatibleWidths() || naturalSize <= 1 || field.pointerUses != 0 ||
+                !field.pointeeFields.isEmpty()) return naturalSize;
+        DataTypeComponent existing = field.offset <= Integer.MAX_VALUE ?
+            structure.getComponentAt((int)field.offset) : null;
+        if (existing != null && existing.getOffset() == field.offset &&
+                existing.getLength() == naturalSize &&
+                !isUndefined(existing.getDataType())) return naturalSize;
+
+        List<Integer> candidates = field.sizes.keySet().stream()
+            .filter(size -> size > 0 && size < naturalSize && naturalSize % size == 0)
+            .sorted(Comparator.reverseOrder()).toList();
+        for (int candidate : candidates) {
+            boolean complete = true;
+            for (long offset = field.offset; offset < field.offset + naturalSize;
+                    offset += candidate) {
+                FieldEvidence part = owner.fields.get(offset);
+                if (part == null || !part.sizes.containsKey(candidate) ||
+                        part.pointerUses != 0 || !part.pointeeFields.isEmpty()) {
+                    complete = false;
+                    break;
+                }
+                String type = part.uniqueType();
+                if (!type.isBlank() && typeLength(type) != candidate) {
+                    complete = false;
+                    break;
+                }
+            }
+            if (complete) return candidate;
+        }
+        return naturalSize;
     }
 
     private boolean darraySpecialization(String specification) {
@@ -2148,6 +2325,150 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         for (List<MemberArrayProposal> arrays : result.values())
             arrays.sort(Comparator.comparingLong(array -> array.offset));
         return result;
+    }
+
+    private RecordNestedBundle readRecordNestedBundle(Path typePath, Path fieldPath)
+            throws Exception {
+        if (!Files.isRegularFile(typePath) && !Files.isRegularFile(fieldPath))
+            return new RecordNestedBundle(List.of(), List.of());
+        if (!Files.isRegularFile(typePath) || !Files.isRegularFile(fieldPath))
+            throw new IllegalArgumentException(
+                "Both class record-array proposal files are required");
+        Tsv types = readTsv(typePath);
+        Tsv fields = readTsv(fieldPath);
+        for (String required : List.of("apply", "owner", "parent_offset", "type_path",
+                "length", "field_count", "access_count", "reason"))
+            if (!types.header.contains(required))
+                throw new IllegalArgumentException(typePath.getFileName() +
+                    " missing column " + required);
+        for (String required : List.of("apply", "type_path", "offset", "size",
+                "proposed_name", "proposed_type", "evidence_count", "reason"))
+            if (!fields.header.contains(required))
+                throw new IllegalArgumentException(fieldPath.getFileName() +
+                    " missing column " + required);
+        List<RecordNestedType> typeRows = new ArrayList<>();
+        List<RecordNestedField> fieldRows = new ArrayList<>();
+        for (Map<String, String> row : types.rows) {
+            String owner = unt(row.get("owner"));
+            String path = unt(row.get("type_path"));
+            if (owner.isBlank() || path.isBlank()) continue;
+            typeRows.add(new RecordNestedType(enabled(row.get("apply")), owner,
+                Long.parseLong(row.get("parent_offset")), path,
+                Integer.parseInt(row.get("length")),
+                Integer.parseInt(row.get("field_count")),
+                Integer.parseInt(row.get("access_count")), unt(row.get("reason"))));
+        }
+        for (Map<String, String> row : fields.rows) {
+            String path = unt(row.get("type_path"));
+            if (path.isBlank()) continue;
+            fieldRows.add(new RecordNestedField(enabled(row.get("apply")), path,
+                Long.parseLong(row.get("offset")), Integer.parseInt(row.get("size")),
+                unt(row.get("proposed_name")), unt(row.get("proposed_type")),
+                Integer.parseInt(row.get("evidence_count")), unt(row.get("reason"))));
+        }
+        return new RecordNestedBundle(typeRows, fieldRows);
+    }
+
+    /**
+     * Once a fixed inline record array replaces one wide owner span, ordinary
+     * owner-relative evidence inside that span must not disappear.  Fold only
+     * exact, uniquely typed machine fields through the already proven
+     * base/count/stride geometry.  Conflicting widths/types and overlaps remain
+     * untouched so a one-off access cannot corrupt the shared record layout.
+     */
+    private RecordNestedBundle enrichRecordNestedFields(RecordNestedBundle original,
+            Map<String, ClassEvidence> classes,
+            Map<String, List<MemberArrayProposal>> memberArrays) {
+        Map<String, RecordNestedType> types = new TreeMap<>();
+        for (RecordNestedType row : original.types) types.put(row.typePath, row);
+
+        Map<String, Map<Long, RecordNestedField>> existing = new TreeMap<>();
+        for (RecordNestedField row : original.fields)
+            existing.computeIfAbsent(row.typePath, ignored -> new TreeMap<>())
+                .put(row.offset, row);
+
+        Map<String, Map<Long, ProjectedRecordField>> projected = new TreeMap<>();
+        for (Map.Entry<String, List<MemberArrayProposal>> ownerEntry :
+                memberArrays.entrySet()) {
+            ClassEvidence owner = classes.get(ownerEntry.getKey());
+            if (owner == null) continue;
+            for (MemberArrayProposal array : ownerEntry.getValue()) {
+                if (!array.apply || array.count < 2 || array.elementSize < 1 ||
+                        array.size != array.count * array.elementSize) continue;
+                String elementType = arrayElementType(array.proposedType, array.count);
+                RecordNestedType nestedType = types.get(elementType);
+                if (nestedType == null || !nestedType.apply ||
+                        nestedType.length != array.elementSize ||
+                        nestedType.parentOffset != array.offset ||
+                        !nestedType.owner.equals(array.owner)) continue;
+
+                for (FieldEvidence field : owner.fields.values()) {
+                    if (field.offset < array.offset ||
+                            field.offset >= array.offset + array.size ||
+                            !field.compatibleWidths()) continue;
+                    int size = field.layoutSize();
+                    long relative = (field.offset - array.offset) % array.elementSize;
+                    String type = field.uniqueType();
+                    if (type.isBlank()) type = field.uniqueReceiverType(dataTypes);
+                    if (size < 1 || relative < 0 || relative + size > array.elementSize ||
+                            (!type.isBlank() && typeLength(type) != size)) continue;
+                    ProjectedRecordField candidate = projected
+                        .computeIfAbsent(elementType, ignored -> new TreeMap<>())
+                        .computeIfAbsent(relative,
+                            ignored -> new ProjectedRecordField(relative, size));
+                    candidate.add(size, type, field.typeEvidenceText(), field.functions,
+                        field.offset);
+                }
+            }
+        }
+
+        for (Map.Entry<String, Map<Long, ProjectedRecordField>> typeEntry :
+                projected.entrySet()) {
+            Map<Long, RecordNestedField> fields = existing.computeIfAbsent(
+                typeEntry.getKey(), ignored -> new TreeMap<>());
+            for (ProjectedRecordField candidate : typeEntry.getValue().values()) {
+                if (!candidate.consistent()) continue;
+                RecordNestedField exact = fields.get(candidate.offset);
+                if (exact != null && exact.size == candidate.size) {
+                    if (!undefinedSpecification(exact.type) &&
+                            !exact.type.equals(candidate.type())) continue;
+                    fields.put(candidate.offset, candidate.toProposal(typeEntry.getKey(),
+                        exact.name));
+                    continue;
+                }
+                boolean overlaps = fields.values().stream().anyMatch(field ->
+                    candidate.offset < field.offset + field.size &&
+                    field.offset < candidate.offset + candidate.size);
+                if (!overlaps)
+                    fields.put(candidate.offset,
+                        candidate.toProposal(typeEntry.getKey(), ""));
+            }
+        }
+
+        List<RecordNestedField> fields = existing.values().stream()
+            .flatMap(values -> values.values().stream())
+            .sorted(Comparator.comparing((RecordNestedField row) -> row.typePath)
+                .thenComparingLong(row -> row.offset)).toList();
+        List<RecordNestedType> revisedTypes = new ArrayList<>();
+        for (RecordNestedType row : original.types) {
+            int fieldCount = (int)fields.stream().filter(field ->
+                field.apply && field.typePath.equals(row.typePath)).count();
+            revisedTypes.add(new RecordNestedType(row.apply, row.owner, row.parentOffset,
+                row.typePath, row.length, fieldCount, row.accessCount,
+                row.reason + (fieldCount > row.fieldCount ?
+                    "; projected_owner_fields=" + (fieldCount - row.fieldCount) : "")));
+        }
+        return new RecordNestedBundle(revisedTypes, fields);
+    }
+
+    private String arrayElementType(String specification, int expectedCount) {
+        String prefix = "array:" + expectedCount + ":";
+        return specification.startsWith(prefix) ? specification.substring(prefix.length()) : "";
+    }
+
+    private boolean undefinedSpecification(String specification) {
+        return specification != null &&
+            specification.matches("/undefined(?:1|2|4|8)?");
     }
 
     private Map<String, List<MemberArrayProposal>> readInlineAggregates(Path path)
@@ -2720,8 +3041,10 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 .filter(row -> row.reason.contains("generated_concrete_type_revised=")).count(),
             "field_deprecated_type_repairs=" + fields.stream()
                 .filter(row -> row.reason.contains("deprecated_generated_type_reverted=")).count(),
+            "partitioned_machine_word_fields=" + partitionedMachineWordFields,
             "cross_typed_field_accesses=" + crossTypedFieldAccesses,
             "cross_field_type_links=" + crossTypeLinks,
+            "cross_copy_subfield_views=" + crossCopyViews,
             "nested_pointee_types=" + nestedTypes.size(),
             "nested_pointee_type_auto_apply=" + nestedTypes.stream()
                 .filter(row -> row.apply).count(),
@@ -2876,28 +3199,36 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         final CrossKind kind;
         final String ownerPath;
         final long offset;
-        CrossValue(CrossKind kind, String ownerPath, long offset) {
+        final int fragmentWidth;
+        CrossValue(CrossKind kind, String ownerPath, long offset, int fragmentWidth) {
             this.kind = kind; this.ownerPath = ownerPath; this.offset = offset;
+            this.fragmentWidth = fragmentWidth;
         }
         static CrossValue address(String ownerPath, long offset) {
-            return new CrossValue(CrossKind.ADDRESS, ownerPath, offset);
+            return new CrossValue(CrossKind.ADDRESS, ownerPath, offset, 0);
         }
         static CrossValue field(String ownerPath, long offset) {
-            return new CrossValue(CrossKind.FIELD, ownerPath, offset);
+            return new CrossValue(CrossKind.FIELD, ownerPath, offset, 0);
+        }
+        static CrossValue fieldFragment(String ownerPath, long offset, int width) {
+            return new CrossValue(CrossKind.FIELD, ownerPath, offset, width);
         }
         static CrossValue pointerField(String ownerPath, long offset) {
-            return new CrossValue(CrossKind.POINTER_FIELD, ownerPath, offset);
+            return new CrossValue(CrossKind.POINTER_FIELD, ownerPath, offset, 0);
         }
         static CrossValue genericPointer(String pointedPath) {
-            return new CrossValue(CrossKind.GENERIC_POINTER, pointedPath, 0);
+            return new CrossValue(CrossKind.GENERIC_POINTER, pointedPath, 0, 0);
         }
         @Override public boolean equals(Object other) {
             if (!(other instanceof CrossValue value)) return false;
             return kind == value.kind && offset == value.offset &&
+                fragmentWidth == value.fragmentWidth &&
                 ownerPath.equals(value.ownerPath);
         }
         @Override public int hashCode() {
-            return 31 * (31 * kind.hashCode() + ownerPath.hashCode()) + Long.hashCode(offset);
+            int result = 31 * (31 * kind.hashCode() + ownerPath.hashCode()) +
+                Long.hashCode(offset);
+            return 31 * result + fragmentWidth;
         }
     }
     private static class CrossState {
@@ -2918,7 +3249,9 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     }
     private record CrossOwner(Structure structure, ClassEvidence evidence) { }
     private record FieldLink(String leftOwner, long leftOffset, String rightOwner,
-        long rightOffset, String site) { }
+        long rightOffset, int size, String function, String site) { }
+    private record CopyViewAddition(String owner, long offset, int size,
+        String function, String site) { }
     private static class FieldEvidence {
         final long offset;
         final Map<Integer, Integer> sizes = new TreeMap<>();
@@ -2926,7 +3259,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         final Map<String, Set<String>> inferredTypes = new TreeMap<>();
         final Map<String, Set<String>> inferredNames = new TreeMap<>();
         final Map<Long, PointeeFieldEvidence> pointeeFields = new TreeMap<>();
-        int reads, writes, pointerUses, thisAccesses, cfgRecovered, crossRecovered, bitwiseUses;
+        int reads, writes, pointerUses, thisAccesses, cfgRecovered, crossRecovered,
+            copyViewRecovered, bitwiseUses;
         FieldEvidence(long offset) { this.offset = offset; }
         void addType(String type, String evidence) {
             if ("pointer:/void".equals(type) && inferredTypes.keySet().stream()
@@ -2942,6 +3276,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         String uniqueType() {
             if (inferredTypes.size() == 1) return inferredTypes.keySet().iterator().next();
             if (hasNarrowCharQuorum()) return "/char";
+            String fullWidthScalar = fullWidthScalarType();
+            if (!fullWidthScalar.isBlank()) return fullWidthScalar;
             List<String> namedPointers = inferredTypes.keySet().stream()
                 .filter(type -> type.startsWith("pointer:") &&
                     !type.contains("/Recovered/ClassPointees/") &&
@@ -2952,6 +3288,19 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 type.startsWith("pointer:"));
             return pointerAlternativesOnly && namedPointers.size() == 1 ?
                 namedPointers.get(0) : "";
+        }
+        String uniqueReceiverType(DataTypeManager dataTypes) {
+            List<String> receivers = inferredTypes.entrySet().stream()
+                .filter(entry -> entry.getKey().startsWith("pointer:") &&
+                    entry.getValue().stream().anyMatch(site ->
+                        site.contains(" used as receiver of ")))
+                .map(Map.Entry::getKey)
+                .filter(type -> {
+                    String path = type.substring("pointer:".length());
+                    if (path.contains("/SubmarineTitans/Recovered/")) return false;
+                    return dataTypes.getDataType(path) instanceof Structure;
+                }).distinct().toList();
+            return receivers.size() == 1 ? receivers.get(0) : "";
         }
         boolean hasNarrowCharQuorum() {
             if (!inferredTypes.keySet().stream().allMatch(type -> Set.of(
@@ -2974,7 +3323,41 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 inferredTypes.entrySet().stream()
                     .filter(entry -> !"/char".equals(entry.getKey()))
                     .flatMap(entry -> entry.getValue().stream())
-                    .allMatch(site -> site.contains(" exact address of "));
+                .allMatch(site -> site.contains(" exact address of "));
+        }
+        /**
+         * A low word/byte read of a machine-word scalar is a contained view,
+         * not a competing structure member. Prefer the one exact full-width
+         * integer domain when all alternatives are strictly narrower scalar
+         * views at the same offset. partitionedLayoutSize() still wins when
+         * every adjacent narrow subspan is independently present, so packed
+         * records copied by one MOV are not collapsed into an int.
+         */
+        boolean fullWidthScalarDominatesContainedViews() {
+            return !fullWidthScalarType().isBlank();
+        }
+        private String fullWidthScalarType() {
+            if (inferredTypes.size() < 2 || !compatibleWidths()) return "";
+            int width = maximumSize();
+            List<String> wide = inferredTypes.keySet().stream()
+                .filter(type -> scalarWidth(type) == width).toList();
+            if (wide.size() != 1) return "";
+            for (String type : inferredTypes.keySet()) {
+                int candidate = scalarWidth(type);
+                if (candidate < 1 || candidate > width ||
+                        candidate == width && !type.equals(wide.get(0))) return "";
+            }
+            return inferredTypes.keySet().stream()
+                .anyMatch(type -> scalarWidth(type) < width) ? wide.get(0) : "";
+        }
+        private int scalarWidth(String type) {
+            return switch (type) {
+                case "/bool", "/char", "/byte", "/uchar", "/undefined1" -> 1;
+                case "/short", "/ushort", "/undefined2" -> 2;
+                case "/int", "/uint", "/long", "/ulong", "/undefined4" -> 4;
+                case "/longlong", "/ulonglong", "/undefined8" -> 8;
+                default -> -1;
+            };
         }
         Set<String> directTypes() {
             Set<String> result = new TreeSet<>();
@@ -3070,6 +3453,61 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             this.apply = apply; this.typePath = typePath; this.offset = offset;
             this.size = size; this.name = name; this.type = type;
             this.evidenceCount = evidenceCount; this.reason = reason;
+        }
+    }
+    private record RecordNestedBundle(List<RecordNestedType> types,
+        List<RecordNestedField> fields) { }
+    private record RecordNestedType(boolean apply, String owner, long parentOffset,
+        String typePath, int length, int fieldCount, int accessCount, String reason) { }
+    private record RecordNestedField(boolean apply, String typePath, long offset,
+        int size, String name, String type, int evidenceCount, String reason) { }
+    private static class ProjectedRecordField {
+        final long offset;
+        final int size;
+        final Map<String, Set<String>> types = new TreeMap<>();
+        final Set<String> functions = new TreeSet<>();
+        final Set<Long> absoluteOffsets = new TreeSet<>();
+        boolean widthConflict;
+        ProjectedRecordField(long offset, int size) {
+            this.offset = offset;
+            this.size = size;
+        }
+        void add(int observedSize, String type, String evidence,
+                Set<String> observedFunctions, long absoluteOffset) {
+            if (observedSize != size) {
+                widthConflict = true;
+                return;
+            }
+            if (!type.isBlank()) {
+                if (!evidence.isBlank())
+                    types.computeIfAbsent(type, ignored -> new TreeSet<>()).add(evidence);
+                else
+                    types.computeIfAbsent(type, ignored -> new TreeSet<>());
+            }
+            functions.addAll(observedFunctions);
+            absoluteOffsets.add(absoluteOffset);
+        }
+        boolean consistent() {
+            return !widthConflict && Set.of(1, 2, 4, 8).contains(size);
+        }
+        String type() {
+            if (!consistent()) return "";
+            return types.size() == 1 ? types.keySet().iterator().next() :
+                "/undefined" + size;
+        }
+        RecordNestedField toProposal(String typePath, String existingName) {
+            String name = existingName == null || existingName.isBlank() ?
+                String.format("field_%04X", offset) : existingName;
+            String type = type();
+            String evidence = types.size() == 1 ?
+                String.join("; ", types.getOrDefault(type, Set.of())) : "";
+            String reason = "[STClassLayoutAnalyzer] exact owner field evidence projected " +
+                "through fixed record geometry; absolute_offsets=" + absoluteOffsets +
+                "; functions=" + functions +
+                (types.size() > 1 ? "; conflicting_semantic_types=" + types.keySet() : "") +
+                (evidence.isBlank() ? "" : "; " + evidence);
+            return new RecordNestedField(true, typePath, offset, size, name, type,
+                Math.max(1, functions.size()), reason);
         }
     }
     private static class ClassProposal {

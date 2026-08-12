@@ -8,7 +8,11 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=0040201D|00583270; family_names=STJellyGunC::GetMessage; ret4=10;
-   direct_offsets={10:2,14:2,18:3,1c:0} */
+   direct_offsets={10:2,14:2,18:3,1c:0}
+
+   [STSwitchEnumApplier] Switch target field_0235 uses
+   /SubmarineTitans/Recovered/Enums/STJellyGunC_field_0235State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
 
@@ -118,34 +122,13 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
           puVar14 = (byte *)&this_00->field_0x256;
           memmove(puVar14, puVar11, 0x3e); /* compiler REP MOVS byte copy */
           iVar7 = this_00->field_026A;
-          sVar9 = (short)(iVar7 >> 0x1f);
-          if (iVar7 < 0) {
-            sVar9 = (((short)(iVar7 / 0xc9) + sVar9) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f))
-                    + -1;
-          }
-          else {
-            sVar9 = ((short)(iVar7 / 0xc9) + sVar9) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f);
-          }
+          sVar9 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
           iVar7 = this_00->field_026E;
           this_00->field_0047 = sVar9;
-          sVar9 = (short)(iVar7 >> 0x1f);
-          if (iVar7 < 0) {
-            sVar9 = (((short)(iVar7 / 0xc9) + sVar9) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f))
-                    + -1;
-          }
-          else {
-            sVar9 = ((short)(iVar7 / 0xc9) + sVar9) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f);
-          }
+          sVar9 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
           iVar7 = this_00->field_0272;
           this_00->field_0049 = sVar9;
-          sVar9 = (short)(iVar7 >> 0x1f);
-          if (iVar7 < 0) {
-            sVar9 = (((short)(iVar7 / 200) + sVar9) - (short)((longlong)iVar7 * 0x51eb851f >> 0x3f))
-                    + -1;
-          }
-          else {
-            sVar9 = ((short)(iVar7 / 200) + sVar9) - (short)((longlong)iVar7 * 0x51eb851f >> 0x3f);
-          }
+          sVar9 = STBiasedDiv16(iVar7, 200); /* exact signed 16-bit grid-index division */
           this_00->field_004B = sVar9;
           this_00->field_0239 = -1;
           *(undefined4 *)&this_00->field_0x24b = 1;
@@ -206,7 +189,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
                            (float)this_00->field_026A * _DAT_007904f8 * _DAT_007904f0,
                            (float)this_00->field_026E * _DAT_007904f8 * _DAT_007904f0,
                            (float)this_00->field_0272 * _DAT_007904f8 * _DAT_007904f0);
-                this_00->field_0235 = 0;
+                this_00->field_0235 = CASE_0;
                 sub_005844E0(this_00,this_00->field_026A,this_00->field_026E,0x497);
               }
               else {
@@ -332,7 +315,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
         memmove(pbVar17, pbVar12, local_10); /* compiler REP MOVS byte copy */
         STPlaySystemC::SaveObjData
                   (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
-                   (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x6f + local_8));
+                   local_10 + 0x6f + local_8);
         FreeAndNull(&local_14);
         FreeAndNull(&local_18);
         FreeAndNull(&local_c);

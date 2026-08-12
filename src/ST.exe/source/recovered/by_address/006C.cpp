@@ -821,11 +821,11 @@ void st::fn_006C2050(void)
       (**(code **)(*DAT_008568b8 + 0x48))(DAT_008568b8);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*DAT_008568b8 + 8))(DAT_008568b8);
-      DAT_008568b8 = static_cast<undefined4>(0);
+      DAT_008568b8 = 0;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_008568b4 + 8))(DAT_008568b4);
-    DAT_008568b4 = static_cast<undefined4>(0);
+    DAT_008568b4 = 0;
     DAT_00856878 = 0;
     st::fn_006AB060(&g_lpBuffer_008568B0);
   }

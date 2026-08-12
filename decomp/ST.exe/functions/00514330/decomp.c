@@ -8,12 +8,12 @@
 void __thiscall HelpPanelTy::BwdBut(HelpPanelTy *this)
 
 {
-  DArrayTy *pDVar1;
+  HelpPanelTy_field_01CBDArray *pHVar1;
   void *pvVar2;
   int errorCode;
   uint uVar4;
   int iVar5;
-  undefined1 *puVar6;
+  HelpPanelTy_field_01CBElement *element_01cb;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
 
@@ -23,22 +23,22 @@ void __thiscall HelpPanelTy::BwdBut(HelpPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     if (0 < (int)local_8->field_01CF) {
-      pDVar1 = local_8->field_01CB;
+      pHVar1 = local_8->field_01CB;
       uVar4 = local_8->field_01CF - 1;
       local_8->field_01CF = uVar4;
-      if (uVar4 < pDVar1->count) {
-        puVar6 = DArrayAt<undefined1>(pDVar1, uVar4);
+      if (uVar4 < pHVar1->count) {
+        element_01cb = DArrayAt<HelpPanelTy_field_01CBElement>(pHVar1, uVar4);
       }
       else {
-        puVar6 = nullptr;
+        element_01cb = nullptr;
       }
-      if (puVar6 != nullptr) {
+      if (element_01cb != nullptr) {
         local_8->field_01A1 = 0;
         local_8->field_01A7 = 0;
         local_8->field_01A3 = nullptr;
-        uVar4 = *(uint *)(puVar6 + 5);
-        pvVar2 = *(void **)(puVar6 + 1);
-        switch(*puVar6) {
+        uVar4 = element_01cb->variant_0005;
+        pvVar2 = element_01cb->variant_0001;
+        switch(element_01cb->field_0000) {
         case 0:
           HomeBut(local_8);
           g_currentExceptionFrame = local_4c.previous;

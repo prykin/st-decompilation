@@ -10,8 +10,9 @@
 int __thiscall st::fn_004D11D0(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy_004D11D0 *param_1)
 
 {
+  TLOEmbryoTyVTable_at_1D5 **this_00;
   short sVar1;
-  TLOEmbryoTy *this_00;
+  TLOEmbryoTy *this_01;
   byte bVar3;
   int local_EAX_51;
   int local_EAX_120;
@@ -33,7 +34,7 @@ int __thiscall st::fn_004D11D0(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy_004
   int local_EAX_4068;
   int iVar10;
   int iVar11;
-  STWorldObject *this_01;
+  STWorldObject *this_02;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -78,7 +79,7 @@ int __thiscall st::fn_004D11D0(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy_004
   g_currentExceptionFrame = &local_cc;
   local_3c = this;
   local_EAX_51 = st::fn_0072D7F0(local_cc.jumpBuffer,0);
-  this_00 = local_3c;
+  this_01 = local_3c;
   if (local_EAX_51 != 0) {
     g_currentExceptionFrame = local_cc.previous;
     iVar10 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_embryo.cpp"),0x166,0,local_EAX_51,
@@ -100,127 +101,127 @@ int __thiscall st::fn_004D11D0(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy_004
   local_3c->field_0368 = st::machine_word_boundary_cast<undefined4>(local_3c->field_0259 + -0x32);
   local_EAX_120 = st::fn_004049B7(*(char *)&local_3c->field_0024);
   local_EAX_120 = (int)(byte)local_EAX_120;
-  this_00->field_036C = local_EAX_120 + -1;
-  bVar3 = st::fn_004049B7(*(char *)&this_00->field_0024);
-  this_00->field_0370 = (uint)(bVar3 == 3);
+  this_01->field_036C = local_EAX_120 + -1;
+  bVar3 = st::fn_004049B7(*(char *)&this_01->field_0024);
+  this_01->field_0370 = (uint)(bVar3 == 3);
   if ((bVar3 == 3) == 0) {
-    this_00->field_0364 = st::machine_word_boundary_cast<undefined4>(&DAT_007976c8);
+    this_01->field_0364 = st::machine_word_boundary_cast<undefined4>(&DAT_007976c8);
   }
   else {
-    this_00->field_0364 = st::machine_word_boundary_cast<undefined4>(&DAT_00797708);
+    this_01->field_0364 = st::machine_word_boundary_cast<undefined4>(&DAT_00797708);
   }
-  if (*(int *)(&DAT_00791f38 + this_00->field_0368 * 4) == 2) {
-    this_00->field_0360 = st::machine_word_boundary_cast<undefined4>(&DAT_007aca60);
+  if (*(int *)(&DAT_00791f38 + this_01->field_0368 * 4) == 2) {
+    this_01->field_0360 = st::machine_word_boundary_cast<undefined4>(&DAT_007aca60);
   }
-  else if (*(int *)(&DAT_00791f38 + this_00->field_0368 * 4) == 1) {
-    this_00->field_0360 = st::machine_word_boundary_cast<undefined4>(&DAT_007ace00);
+  else if (*(int *)(&DAT_00791f38 + this_01->field_0368 * 4) == 1) {
+    this_01->field_0360 = st::machine_word_boundary_cast<undefined4>(&DAT_007ace00);
   }
   else {
-    this_00->field_0360 = st::machine_word_boundary_cast<undefined4>(&DAT_007ac988);
+    this_01->field_0360 = st::machine_word_boundary_cast<undefined4>(&DAT_007ac988);
   }
-  st::fn_00402B5D(this_00,0);
-  iVar11 = st::fn_0040295F(this_00,*(short *)&this_00->field_025D,*(short *)&this_00->field_0261,
-                              this_00->field_0265,1);
+  st::fn_00402B5D(this_01,0);
+  iVar11 = st::fn_0040295F(this_01,*(short *)&this_01->field_025D,*(short *)&this_01->field_0261,
+                              this_01->field_0265,1);
   if (iVar11 != 0) {
     st::fn_006A5E40
               (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_embryo.cpp"),0x66);
   }
-  st::fn_0040278E(this_00,*(short *)&this_00->field_025D,*(short *)&this_00->field_0261,
-                     this_00->field_0265);
-  if (this_00->field_002C == 0) {
+  st::fn_0040278E(this_01,*(short *)&this_01->field_025D,*(short *)&this_01->field_0261,
+                     this_01->field_0265);
+  if (this_01->field_002C == 0) {
     local_c = 1;
   }
-  else if (this_00->field_002C == 1) {
+  else if (this_01->field_002C == 1) {
     local_c = 2;
   }
-  iVar11 = this_00->field_0261;
+  iVar11 = this_01->field_0261;
   if (iVar11 < iVar11 + local_c) {
     do {
-      iVar14 = this_00->field_025D;
+      iVar14 = this_01->field_025D;
       if (iVar14 < iVar14 + local_c) {
         do {
           sVar18 = (short)iVar14;
           sVar19 = (short)iVar11;
-          st::fn_00404CCD(sVar18,sVar19,this_00->field_0265);
-          sVar1 = this_00->field_0265;
+          st::fn_00404CCD(sVar18,sVar19,this_01->field_0265);
+          sVar1 = this_01->field_0265;
           if (((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) || (sVar19 < 0)) ||
               ((g_worldGrid.sizeY <= sVar19 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) {
-            this_01 = nullptr;
+            this_02 = nullptr;
           }
           else {
-            this_01 = STGridAt3D(g_worldGrid, sVar18, sVar19, sVar1).objects[1];
+            this_02 = STGridAt3D(g_worldGrid, sVar18, sVar19, sVar1).objects[1];
           }
-          if ((this_01 != nullptr) && (this_01->value_20 == 0xbe)) {
-            st::fn_00404C3C(this_01,(char)this_00->field_0024);
+          if ((this_02 != nullptr) && (this_02->value_20 == 0xbe)) {
+            st::fn_00404C3C(this_02,(char)this_01->field_0024);
           }
           iVar14 = iVar14 + 1;
-        } while (iVar14 < this_00->field_025D + local_c);
+        } while (iVar14 < this_01->field_025D + local_c);
       }
       iVar11 = iVar11 + 1;
-    } while (iVar11 < this_00->field_0261 + local_c);
+    } while (iVar11 < this_01->field_0261 + local_c);
   }
   puVar16 = nullptr;
-  if (this_00->field_002C == 0) {
-    this_00->field_02F8 = 0xb4;
-    this_00->field_02FC = 0x8c;
-    this_00->field_0300 = 0x5a;
-    this_00->field_0304 = 0x45;
+  if (this_01->field_002C == 0) {
+    this_01->field_02F8 = 0xb4;
+    this_01->field_02FC = 0x8c;
+    this_01->field_0300 = 0x5a;
+    this_01->field_0304 = 0x45;
   }
-  else if (this_00->field_002C == 1) {
-    this_00->field_02F8 = 0xf0;
-    this_00->field_02FC = 0xbe;
-    this_00->field_0300 = 0x78;
-    this_00->field_0304 = 0x56;
+  else if (this_01->field_002C == 1) {
+    this_01->field_02F8 = 0xf0;
+    this_01->field_02FC = 0xbe;
+    this_01->field_0300 = 0x78;
+    this_01->field_0304 = 0x56;
   }
-  if (this_00->field_0259 == 0x5c) {
-    g_packedRecords_A62x8[this_00->field_0024].field1965_0x9ca = 1;
+  if (this_01->field_0259 == 0x5c) {
+    g_packedRecords_A62x8[this_01->field_0024].field1965_0x9ca = 1;
   }
   if (g_array_007FA170 == nullptr) {
     g_array_007FA170 = st::fn_006AE290(nullptr,10,4,10);
   }
-  local_2c = this_00;
+  local_2c = this_01;
   st::fn_006AE1C0(g_array_007FA170,&local_2c);
-  iVar11 = this_00->field_0259;
+  iVar11 = this_01->field_0259;
   if (iVar11 == 100) {
-    if (g_packedRecords_A62x8[this_00->field_0024].field1968_0x9d6 == nullptr) {
+    if (g_packedRecords_A62x8[this_01->field_0024].field1968_0x9d6 == nullptr) {
       pDVar4 = st::fn_006AE290(nullptr,10,4,10);
-      g_packedRecords_A62x8[this_00->field_0024].field1968_0x9d6 = pDVar4;
+      g_packedRecords_A62x8[this_01->field_0024].field1968_0x9d6 = pDVar4;
     }
     element = &local_8;
-    local_8 = this_00;
-    pDVar4 = g_packedRecords_A62x8[this_00->field_0024].field1968_0x9d6;
+    local_8 = this_01;
+    pDVar4 = g_packedRecords_A62x8[this_01->field_0024].field1968_0x9d6;
 cf_common_join_004D1763:
     st::fn_006AE1C0(pDVar4,element);
   }
   else {
     if (iVar11 == 0x4d) {
-      if (g_packedRecords_A62x8[this_00->field_0024].field1971_0x9e2 == nullptr) {
+      if (g_packedRecords_A62x8[this_01->field_0024].field1971_0x9e2 == nullptr) {
         pDVar4 = st::fn_006AE290(nullptr,10,4,10);
-        g_packedRecords_A62x8[this_00->field_0024].field1971_0x9e2 = pDVar4;
+        g_packedRecords_A62x8[this_01->field_0024].field1971_0x9e2 = pDVar4;
       }
       element = &local_40;
-      local_40 = this_00;
-      pDVar4 = g_packedRecords_A62x8[this_00->field_0024].field1971_0x9e2;
+      local_40 = this_01;
+      pDVar4 = g_packedRecords_A62x8[this_01->field_0024].field1971_0x9e2;
       goto cf_common_join_004D1763;
     }
     if (iVar11 == 0x43) {
-      if (g_packedRecords_A62x8[this_00->field_0024].field1974_0x9ee == nullptr) {
+      if (g_packedRecords_A62x8[this_01->field_0024].field1974_0x9ee == nullptr) {
         pDVar4 = st::fn_006AE290(nullptr,10,4,10);
-        g_packedRecords_A62x8[this_00->field_0024].field1974_0x9ee = pDVar4;
+        g_packedRecords_A62x8[this_01->field_0024].field1974_0x9ee = pDVar4;
       }
       element = &local_44;
-      local_44 = this_00;
-      pDVar4 = g_packedRecords_A62x8[this_00->field_0024].field1974_0x9ee;
+      local_44 = this_01;
+      pDVar4 = g_packedRecords_A62x8[this_01->field_0024].field1974_0x9ee;
       goto cf_common_join_004D1763;
     }
     if (iVar11 == 0x73) {
-      if (g_packedRecords_A62x8[this_00->field_0024].field1975_0x9f2 == nullptr) {
+      if (g_packedRecords_A62x8[this_01->field_0024].field1975_0x9f2 == nullptr) {
         pDVar4 = st::fn_006AE290(nullptr,10,4,10);
-        g_packedRecords_A62x8[this_00->field_0024].field1975_0x9f2 = pDVar4;
+        g_packedRecords_A62x8[this_01->field_0024].field1975_0x9f2 = pDVar4;
       }
       element = &local_30;
-      local_30 = this_00;
-      pDVar4 = g_packedRecords_A62x8[this_00->field_0024].field1975_0x9f2;
+      local_30 = this_01;
+      pDVar4 = g_packedRecords_A62x8[this_01->field_0024].field1975_0x9f2;
       goto cf_common_join_004D1763;
     }
     if (iVar11 == 0x3a) {
@@ -228,35 +229,35 @@ cf_common_join_004D1763:
         g_array_007FA16C = st::fn_006AE290(nullptr,10,4,10);
       }
       element = &local_48;
-      local_48 = this_00;
+      local_48 = this_01;
       pDVar4 = g_array_007FA16C;
       goto cf_common_join_004D1763;
     }
     if (iVar11 == 0x65) {
-      if (g_packedRecords_A62x8[this_00->field_0024].field1972_0x9e6 == nullptr) {
+      if (g_packedRecords_A62x8[this_01->field_0024].field1972_0x9e6 == nullptr) {
         pDVar4 = st::fn_006AE290(nullptr,10,4,10);
-        g_packedRecords_A62x8[this_00->field_0024].field1972_0x9e6 = pDVar4;
+        g_packedRecords_A62x8[this_01->field_0024].field1972_0x9e6 = pDVar4;
       }
       element = &local_34;
-      local_34 = this_00;
-      pDVar4 = g_packedRecords_A62x8[this_00->field_0024].field1972_0x9e6;
+      local_34 = this_01;
+      pDVar4 = g_packedRecords_A62x8[this_01->field_0024].field1972_0x9e6;
       goto cf_common_join_004D1763;
     }
     if (iVar11 == 0x3b) {
-      if (g_packedRecords_A62x8[this_00->field_0024].field1973_0x9ea == nullptr) {
+      if (g_packedRecords_A62x8[this_01->field_0024].field1973_0x9ea == nullptr) {
         pDVar4 = st::fn_006AE290(nullptr,10,4,10);
-        g_packedRecords_A62x8[this_00->field_0024].field1973_0x9ea = pDVar4;
+        g_packedRecords_A62x8[this_01->field_0024].field1973_0x9ea = pDVar4;
       }
       element = &local_38;
-      local_38 = this_00;
-      pDVar4 = g_packedRecords_A62x8[this_00->field_0024].field1973_0x9ea;
+      local_38 = this_01;
+      pDVar4 = g_packedRecords_A62x8[this_01->field_0024].field1973_0x9ea;
       goto cf_common_join_004D1763;
     }
   }
-  if (this_00->field_023D != 1) {
-    if (this_00->field_023D == 2) {
-      if (this_00 != nullptr) {
-        puVar16 = (byte *)(&this_00->field_02A0);
+  if (this_01->field_023D != 1) {
+    if (this_01->field_023D == 2) {
+      if (this_01 != nullptr) {
+        puVar16 = (byte *)(&this_01->field_02A0);
       }
       puVar15 = (byte *)&param_1->field_0x6f;
       memmove(puVar16, puVar15, 0xb0); /* compiler REP MOVS byte copy */
@@ -270,12 +271,12 @@ cf_common_join_004D1763:
       local_28[0xd] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
       local_28[0xc] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
       local_28[0xb] = 0;
-      local_28[this_00->field_02F4] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
-      local_28[this_00->field_02F0] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
-      if (this_00->field_0370 != 0) {
-        local_28[this_00->field_02F0 + -1] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
+      local_28[this_01->field_02F4] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
+      local_28[this_01->field_02F0] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
+      if (this_01->field_0370 != 0) {
+        local_28[this_01->field_02F0 + -1] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
       }
-      if (this_00->field_02A0 != 0) {
+      if (this_01->field_02A0 != 0) {
         local_28[7] = st::machine_word_boundary_cast<undefined4>(PTR_00806764);
         local_28[6] = st::machine_word_boundary_cast<undefined4>(PTR_00806774);
       }
@@ -283,7 +284,7 @@ cf_common_join_004D1763:
       local_24 = 0;
       local_10 = 0;
       st::fn_00404CA5
-                ((STT3DSprC *)&this_00->field_01D5,(int *)&local_28,
+                ((STT3DSprC *)&this_01->vtable_at_1d5,(int *)&local_28,
                  (AnonShape_004AD790_77673787 *)(&param_1->field_0x0 + param_1->field_012B));
       pAVar5 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
       if (pAVar5 == nullptr) {
@@ -292,17 +293,17 @@ cf_common_join_004D1763:
       else {
         pSVar6 = (STT3DSprC *)st::fn_00401316(pAVar5);
       }
-      this_00->field_035C = pSVar6;
-      iVar11 = st::fn_0040537B(pSVar6,PTR_008073cc,this_00->field_0300,this_00->field_0304,
-                               nullptr,this_00->field_02F8,this_00->field_02FC,0x11);
+      this_01->field_035C = pSVar6;
+      iVar11 = st::fn_0040537B(pSVar6,PTR_008073cc,this_01->field_0300,this_01->field_0304,
+                               nullptr,this_01->field_02F8,this_01->field_02FC,0x11);
       if (iVar11 != 0) {
         st::fn_006A5E40
                   (iVar11,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_embryo.cpp"),
                    0x13d);
       }
-      if (this_00->field_002C == 1) {
-        uVar7 = st::fn_004052CC(this_00->field_035C);
-        st::fn_006E9210((void *)this_00->field_0211,uVar7);
+      if (this_01->field_002C == 1) {
+        uVar7 = st::fn_004052CC(this_01->field_035C);
+        st::fn_006E9210((void *)this_01->field_0211,uVar7);
       }
       memset(local_28, 0, 0x44); /* compiler bulk-zero initialization */
       iVar11 = 0;
@@ -311,21 +312,21 @@ cf_common_join_004D1763:
       local_10 = 0;
       local_1c = nullptr;
       st::fn_00404CA5
-                (this_00->field_035C,(int *)&local_28,
+                (this_01->field_035C,(int *)&local_28,
                  (AnonShape_004AD790_77673787 *)(&param_1->field_0x0 + param_1->field_0133));
-      uVar7 = this_00->field_02F4;
-      iVar4 = st::fn_004052CC((STT3DSprC *)&this_00->field_01D5);
-      local_EAX_1989 = st::fn_004052CC(this_00->field_035C);
-      st::fn_006EA340((void *)this_00->field_0211,local_EAX_1989,iVar4,uVar7);
+      uVar7 = this_01->field_02F4;
+      iVar4 = st::fn_004052CC((STT3DSprC *)&this_01->vtable_at_1d5);
+      local_EAX_1989 = st::fn_004052CC(this_01->field_035C);
+      st::fn_006EA340((void *)this_01->field_0211,local_EAX_1989,iVar4,uVar7);
       memset(local_28, 0, 0x44); /* compiler bulk-zero initialization */
       local_28[0xe] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
       local_24 = 0;
       local_10 = 0;
       local_1c = nullptr;
-      if (this_00->field_0370 == 0) {
+      if (this_01->field_0370 == 0) {
         uVar7 = 0xb;
         local_8 = (TLOEmbryoTy *)&param_1[1].field_0xb;
-        ppSVar17 = &this_00->field_0350;
+        ppSVar17 = &this_01->field_0350;
         do {
           pAVar5 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
           if (pAVar5 == nullptr) {
@@ -335,21 +336,20 @@ cf_common_join_004D1763:
             pSVar6 = (STT3DSprC *)st::fn_00401316(pAVar5);
           }
           *ppSVar17 = pSVar6;
-          iVar11 = st::fn_0040537B(pSVar6,PTR_008073cc,this_00->field_0300,this_00->field_0304,
-                                   nullptr,this_00->field_02F8,this_00->field_02FC,0x11);
+          iVar11 = st::fn_0040537B(pSVar6,PTR_008073cc,this_01->field_0300,this_01->field_0304,
+                                   nullptr,this_01->field_02F8,this_01->field_02FC,0x11);
           if (iVar11 != 0) {
             st::fn_006A5E40
                       (iVar11,g_overwriteContext_007ED77C,
                        st::mutable_c_string("E:\\__titans\\Artem\\TLO_embryo.cpp"),0x152);
           }
           uVar20 = uVar7;
-          local_EAX_2184 = st::fn_004052CC((STT3DSprC *)&this_00->field_01D5);
+          local_EAX_2184 = st::fn_004052CC((STT3DSprC *)&this_01->vtable_at_1d5);
           uVar9 = st::fn_004052CC(*ppSVar17);
-          st::fn_006EA340((void *)this_00->field_0211,uVar9,local_EAX_2184,uVar20);
+          st::fn_006EA340((void *)this_01->field_0211,uVar9,local_EAX_2184,uVar20);
           st::fn_00404CA5
                     (*ppSVar17,(int *)&local_28,
-                     (AnonShape_004AD790_77673787 *)(&param_1->field_0x0 + (int)local_8->field_0000)
-                    );
+                     (AnonShape_004AD790_77673787 *)(&param_1->field_0x0 + (int)local_8->vtable));
           uVar7 = uVar7 - 1;
           local_8 = (TLOEmbryoTy *)&local_8->field_0x4;
           ppSVar17 = ppSVar17 + 1;
@@ -357,9 +357,9 @@ cf_common_join_004D1763:
       }
       st::fn_006AB060(&local_28);
       st::fn_0040551F
-                ((STAllPlayersC *)this_00,(undefined4 *)(&param_1->field_0x0 + param_1->field_0123));
+                ((STAllPlayersC *)this_01,(undefined4 *)(&param_1->field_0x0 + param_1->field_0123));
       /* ST_PSEUDO[return_width_artifact,call_clobber_piece]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate volatile-register merge after CALL: split the partial-register lifetime */
-      st::fn_004041F6((int *)this_00,extraout_EDX,CONCAT22(extraout_var,this_00->field_0032));
+      st::fn_004041F6((int *)this_01,extraout_EDX,CONCAT22(extraout_var,this_01->field_0032));
     }
     else {
       local_EAX_1470 =
@@ -371,11 +371,11 @@ cf_common_join_004D1763:
     }
     goto LAB_004d22a1;
   }
-  this_00->field_02AC = g_playSystem_00802A38->field_00E4;
+  this_01->field_02AC = g_playSystem_00802A38->field_00E4;
   uVar7 = g_playSystem_00802A38->field_00E4;
-  this_00->field_02B4 = 1;
-  this_00->field_02B0 = uVar7;
-  this_00->field_02A4 = 0;
+  this_01->field_02B4 = 1;
+  this_01->field_02B0 = uVar7;
+  this_01->field_02A4 = 0;
   pAVar5 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
   if (pAVar5 == nullptr) {
     pSVar6 = nullptr;
@@ -383,16 +383,16 @@ cf_common_join_004D1763:
   else {
     pSVar6 = (STT3DSprC *)st::fn_00401316(pAVar5);
   }
-  this_00->field_035C = pSVar6;
-  iVar11 = st::fn_0040537B(pSVar6,PTR_008073cc,this_00->field_0300,this_00->field_0304,
-                           nullptr,this_00->field_02F8,this_00->field_02FC,0x11);
+  this_01->field_035C = pSVar6;
+  iVar11 = st::fn_0040537B(pSVar6,PTR_008073cc,this_01->field_0300,this_01->field_0304,
+                           nullptr,this_01->field_02F8,this_01->field_02FC,0x11);
   if (iVar11 != 0) {
     st::fn_006A5E40
               (iVar11,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_embryo.cpp"),200);
   }
-  if (this_00->field_0241 == 0) {
+  if (this_01->field_0241 == 0) {
     iVar11 = st::fn_00404183
-                       (this_00->field_035C,0xe,PTR_00806764,st::mutable_c_string("tlo_emb5"),CASE_1D);
+                       (this_01->field_035C,0xe,PTR_00806764,st::mutable_c_string("tlo_emb5"),CASE_1D);
     if (iVar11 != 0) {
       iVar14 = 0xca;
 LAB_004d1bda:
@@ -401,51 +401,51 @@ LAB_004d1bda:
                  iVar14);
     }
   }
-  else if (this_00->field_0241 == 1) {
-    uVar7 = st::fn_004052CC(this_00->field_035C);
-    st::fn_006E9210((void *)this_00->field_0211,uVar7);
+  else if (this_01->field_0241 == 1) {
+    uVar7 = st::fn_004052CC(this_01->field_035C);
+    st::fn_006E9210((void *)this_01->field_0211,uVar7);
     iVar11 = st::fn_00404183
-                       (this_00->field_035C,0xe,PTR_00806764,st::mutable_c_string("tlo_emb5_big"),CASE_1D);
+                       (this_01->field_035C,0xe,PTR_00806764,st::mutable_c_string("tlo_emb5_big"),CASE_1D);
     if (iVar11 != 0) {
       iVar14 = 0xcc;
       goto LAB_004d1bda;
     }
   }
-  puVar16 = (byte *)(&this_00->field_01D5);
-  uVar7 = (-(uint)(this_00->field_0370 != 0) & 4) + 7;
-  this_00->field_02F4 = uVar7;
-  local_EAX_2619 = st::fn_004052CC((STT3DSprC *)puVar16);
-  uVar8 = st::fn_004052CC(this_00->field_035C);
-  st::fn_006EA340((void *)this_00->field_0211,uVar8,local_EAX_2619,uVar7);
+  this_00 = &this_01->vtable_at_1d5;
+  uVar7 = (-(uint)(this_01->field_0370 != 0) & 4) + 7;
+  this_01->field_02F4 = uVar7;
+  local_EAX_2619 = st::fn_004052CC((STT3DSprC *)this_00);
+  uVar8 = st::fn_004052CC(this_01->field_035C);
+  st::fn_006EA340((void *)this_01->field_0211,uVar8,local_EAX_2619,uVar7);
   st::fn_004045D9
-            (this_00->field_035C,(float)this_00->field_01F9,(float)this_00->field_01FD,
-             (float)this_00->field_0201);
+            (this_01->field_035C,(float)this_01->field_01F9,(float)this_01->field_01FD,
+             (float)this_01->field_0201);
   uVar4 = st::fn_0040581C();
   uVar7 = uVar4 & 0x80000001;
   if ((int)uVar7 < 0) {
     uVar7 = (uVar7 - 1 | 0xfffffffe) + 1;
   }
-  st::external_00000080(local_88,st::mutable_c_string("%s%1i"),(&PTR_s_tlo_embws1_007bf3e8)[this_00->field_036C],uVar7);
-  iVar11 = st::fn_00404183((STT3DSprC *)puVar16,0xe,PTR_0080678c,local_88,CASE_1D);
+  st::external_00000080(local_88,st::mutable_c_string("%s%1i"),(&PTR_s_tlo_embws1_007bf3e8)[this_01->field_036C],uVar7);
+  iVar11 = st::fn_00404183((STT3DSprC *)this_00,0xe,PTR_0080678c,local_88,CASE_1D);
   if (iVar11 != 0) {
     st::fn_006A5E40
               (iVar11,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_embryo.cpp"),0xd4);
   }
-  iVar11 = this_00->field_0370;
+  iVar11 = this_01->field_0370;
   if (iVar11 == 0) {
 LAB_004d1fef:
-    if (this_00->field_0241 == 0) {
+    if (this_01->field_0241 == 0) {
       iVar11 = st::fn_00404183
-                         ((STT3DSprC *)puVar16,(-(iVar11 != 0) & 3U) + 6,PTR_0080678c,
+                         ((STT3DSprC *)this_00,(-(iVar11 != 0) & 3U) + 6,PTR_0080678c,
                           st::mutable_c_string("tlo_emb2"),CASE_1D);
       if (iVar11 != 0) {
         iVar14 = 0x101;
         goto LAB_004d204d;
       }
     }
-    else if ((this_00->field_0241 == 1) &&
+    else if ((this_01->field_0241 == 1) &&
             (iVar11 = st::fn_00404183
-                                ((STT3DSprC *)puVar16,(-(iVar11 != 0) & 3U) + 6,PTR_0080678c,
+                                ((STT3DSprC *)this_00,(-(iVar11 != 0) & 3U) + 6,PTR_0080678c,
                                  st::mutable_c_string("tlo_emb3"),CASE_1D), iVar11 != 0)) {
       iVar14 = 0x102;
 LAB_004d204d:
@@ -453,21 +453,20 @@ LAB_004d204d:
                 (iVar11,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_embryo.cpp"),
                  iVar14);
     }
-    this_00->field_02EC = 1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_0000->field_0090)(3,0x360);
-    this_00->field_02F0 = (-(uint)(this_00->field_0370 != 0) & 3) + 6;
-    iVar11 = st::machine_word_boundary_cast<int>(this_00->field_02EC + this_00->field_0241 * 4);
-    st::fn_00401EBA(puVar16,*(byte *)&this_00->field_02F0,
-                       *(int *)(this_00->field_0364 + iVar11 * 8),
-                       *(int *)(this_00->field_0364 + 4 + iVar11 * 8),'\0');
+    this_01->field_02EC = 1;
+    this_01->vfunc_90(3,0x360);
+    this_01->field_02F0 = (-(uint)(this_01->field_0370 != 0) & 3) + 6;
+    iVar11 = st::machine_word_boundary_cast<int>(this_01->field_02EC + this_01->field_0241 * 4);
+    st::fn_00401EBA(this_00,*(byte *)&this_01->field_02F0,
+                       *(int *)(this_01->field_0364 + iVar11 * 8),
+                       *(int *)(this_01->field_0364 + 4 + iVar11 * 8),'\0');
     st::fn_00401064
-              ((STT3DSprC *)puVar16,*(char *)&this_00->field_02F0,
-               *(uint *)(this_00->field_0364 + (this_00->field_02EC + this_00->field_0241 * 4) * 8));
+              ((STT3DSprC *)this_00,*(char *)&this_01->field_02F0,
+               *(uint *)(this_01->field_0364 + (this_01->field_02EC + this_01->field_0241 * 4) * 8));
     st::fn_00405240
-              ((STT3DSprC *)puVar16,*(byte *)&this_00->field_02F0,g_playSystem_00802A38->field_00E4);
+              ((STT3DSprC *)this_00,*(byte *)&this_01->field_02F0,g_playSystem_00802A38->field_00E4);
     local_8 = (TLOEmbryoTy *)&DAT_0000000b;
-    ppSVar17 = &this_00->field_0350;
+    ppSVar17 = &this_01->field_0350;
     do {
       pAVar5 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
       if (pAVar5 == nullptr) {
@@ -477,8 +476,8 @@ LAB_004d204d:
         pSVar6 = (STT3DSprC *)st::fn_00401316(pAVar5);
       }
       *ppSVar17 = pSVar6;
-      iVar11 = st::fn_0040537B(pSVar6,PTR_008073cc,this_00->field_0300,this_00->field_0304,
-                               nullptr,this_00->field_02F8,this_00->field_02FC,0x11);
+      iVar11 = st::fn_0040537B(pSVar6,PTR_008073cc,this_01->field_0300,this_01->field_0304,
+                               nullptr,this_01->field_02F8,this_01->field_02FC,0x11);
       if (iVar11 != 0) {
         st::fn_006A5E40
                   (iVar11,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_embryo.cpp"),
@@ -491,12 +490,12 @@ LAB_004d204d:
                    0x10e);
       }
       pTVar21 = local_8;
-      local_EAX_4060 = st::fn_004052CC((STT3DSprC *)puVar16);
+      local_EAX_4060 = st::fn_004052CC((STT3DSprC *)this_00);
       local_EAX_4068 = st::fn_004052CC(*ppSVar17);
-      st::fn_006EA340((void *)this_00->field_0211,local_EAX_4068,local_EAX_4060,(uint)pTVar21);
+      st::fn_006EA340((void *)this_01->field_0211,local_EAX_4068,local_EAX_4060,(uint)pTVar21);
       st::fn_004045D9
-                (*ppSVar17,(float)this_00->field_01F9,(float)this_00->field_01FD,
-                 (float)this_00->field_0201);
+                (*ppSVar17,(float)this_01->field_01F9,(float)this_01->field_01FD,
+                 (float)this_01->field_0201);
       ppSVar17 = ppSVar17 + 1;
       local_8 = (TLOEmbryoTy *)((int)&local_8[-1].field_0370 + 3);
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -504,16 +503,16 @@ LAB_004d204d:
     } while (8 < (int)local_8);
   }
   else {
-    iVar14 = this_00->field_0259;
-    if (((iVar14 == 0x6c) && (this_00->field_0251 == 3)) || ((0x53 < iVar14 && (iVar14 < 0x5b)))) {
+    iVar14 = this_01->field_0259;
+    if (((iVar14 == 0x6c) && (this_01->field_0251 == 3)) || ((0x53 < iVar14 && (iVar14 < 0x5b)))) {
       if ((iVar11 == 0) ||
-         (((iVar14 = this_00->field_0259, iVar14 != 0x6c || (this_00->field_0251 != 3)) &&
+         (((iVar14 = this_01->field_0259, iVar14 != 0x6c || (this_01->field_0251 != 3)) &&
           ((iVar14 < 0x54 || (0x5a < iVar14)))))) goto LAB_004d1fef;
-      this_00->field_02EC = 2;
-      this_00->field_02F0 = 0xb;
-      if (this_00->field_0241 == 1) {
+      this_01->field_02EC = 2;
+      this_01->field_02F0 = 0xb;
+      if (this_01->field_0241 == 1) {
         iVar11 = st::fn_00404183
-                           ((STT3DSprC *)puVar16,*(byte *)&this_00->field_02F0,PTR_0080678c,
+                           ((STT3DSprC *)this_00,*(byte *)&this_01->field_02F0,PTR_0080678c,
                             st::mutable_c_string("si_emb6"),CASE_1D);
         if (iVar11 != 0) {
           iVar14 = 0xef;
@@ -525,46 +524,45 @@ LAB_004d1f0b:
       }
       else {
         iVar11 = st::fn_00404183
-                           ((STT3DSprC *)puVar16,*(byte *)&this_00->field_02F0,PTR_0080678c,
+                           ((STT3DSprC *)this_00,*(byte *)&this_01->field_02F0,PTR_0080678c,
                             st::mutable_c_string("si_emb5"),CASE_1D);
         if (iVar11 != 0) {
           iVar14 = 0xf0;
           goto LAB_004d1f0b;
         }
       }
-      iVar11 = (-(uint)(this_00->field_0370 != 0) & 3) + 6;
-      this_00->field_02F4 = iVar11;
-      st::fn_0040498A((STT3DSprC *)puVar16,(byte)iVar11);
-      uVar7 = this_00->field_02F4;
-      local_EAX_3446 = st::fn_004052CC((STT3DSprC *)puVar16);
-      local_EAX_3458 = st::fn_004052CC(this_00->field_035C);
-      st::fn_006EA340((void *)this_00->field_0211,local_EAX_3458,local_EAX_3446,uVar7);
+      iVar11 = (-(uint)(this_01->field_0370 != 0) & 3) + 6;
+      this_01->field_02F4 = iVar11;
+      st::fn_0040498A((STT3DSprC *)this_00,(byte)iVar11);
+      uVar7 = this_01->field_02F4;
+      local_EAX_3446 = st::fn_004052CC((STT3DSprC *)this_00);
+      local_EAX_3458 = st::fn_004052CC(this_01->field_035C);
+      st::fn_006EA340((void *)this_01->field_0211,local_EAX_3458,local_EAX_3446,uVar7);
       st::fn_00405240
-                ((STT3DSprC *)puVar16,*(byte *)&this_00->field_02F0,
+                ((STT3DSprC *)this_00,*(byte *)&this_01->field_02F0,
                  g_playSystem_00802A38->field_00E4);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_0000->field_0090)(3,0x362);
-      st::fn_00401EBA(this_00->field_035C,0xe,0,
-                         *(int *)this_00->field_035C->field_0020->field_01F8 + -1,'\0');
-      st::fn_00401064(this_00->field_035C,'\x0e',0);
-      st::fn_00405240(this_00->field_035C,0xe,g_playSystem_00802A38->field_00E4);
-      st::fn_00402982(this_00->field_035C,0);
-      st::fn_00402A90((STT3DSprC *)puVar16);
+      this_01->vfunc_90(3,0x362);
+      st::fn_00401EBA(this_01->field_035C,0xe,0,
+                         *(int *)this_01->field_035C->field_0020->field_01F8 + -1,'\0');
+      st::fn_00401064(this_01->field_035C,'\x0e',0);
+      st::fn_00405240(this_01->field_035C,0xe,g_playSystem_00802A38->field_00E4);
+      st::fn_00402982(this_01->field_035C,0);
+      st::fn_00402A90((STT3DSprC *)this_00);
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar12 = extraout_EDX_01;
     }
     else {
-      if (this_00->field_0241 == 0) {
+      if (this_01->field_0241 == 0) {
         iVar11 = st::fn_00404183
-                           ((STT3DSprC *)puVar16,9,PTR_0080678c,st::mutable_c_string("si_emb1"),CASE_1D);
+                           ((STT3DSprC *)this_00,9,PTR_0080678c,st::mutable_c_string("si_emb1"),CASE_1D);
         if (iVar11 != 0) {
           st::fn_006A5E40
                     (iVar11,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_embryo.cpp"),
                      0xd9);
         }
-        st::external_00000080(local_88,st::mutable_c_string("si_emb1_id%1d"),this_00->field_0024);
+        st::external_00000080(local_88,st::mutable_c_string("si_emb1_id%1d"),this_01->field_0024);
         iVar11 = st::fn_00404183
-                           ((STT3DSprC *)puVar16,(-(this_00->field_0370 != 0) & 3U) + 5,PTR_0080678c
+                           ((STT3DSprC *)this_00,(-(this_01->field_0370 != 0) & 3U) + 5,PTR_0080678c
                             ,local_88,CASE_1D);
         if (iVar11 != 0) {
           iVar14 = 0xdb;
@@ -574,57 +572,55 @@ LAB_004d1df8:
                      iVar14);
         }
       }
-      else if (this_00->field_0241 == 1) {
+      else if (this_01->field_0241 == 1) {
         iVar11 = st::fn_00404183
-                           ((STT3DSprC *)puVar16,9,PTR_0080678c,st::mutable_c_string("si_emb4"),CASE_1D);
+                           ((STT3DSprC *)this_00,9,PTR_0080678c,st::mutable_c_string("si_emb4"),CASE_1D);
         if (iVar11 != 0) {
           st::fn_006A5E40
                     (iVar11,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_embryo.cpp"),
                      0xdf);
         }
-        st::external_00000080(local_88,st::mutable_c_string("si_emb4_id%1d"),this_00->field_0024);
+        st::external_00000080(local_88,st::mutable_c_string("si_emb4_id%1d"),this_01->field_0024);
         iVar11 = st::fn_00404183
-                           ((STT3DSprC *)puVar16,(-(this_00->field_0370 != 0) & 3U) + 5,PTR_0080678c
+                           ((STT3DSprC *)this_00,(-(this_01->field_0370 != 0) & 3U) + 5,PTR_0080678c
                             ,local_88,CASE_1D);
         if (iVar11 != 0) {
           iVar14 = 0xe1;
           goto LAB_004d1df8;
         }
       }
-      this_00->field_02EC = 0;
-      this_00->field_02F0 = (-(uint)(this_00->field_0370 != 0) & 3) + 6;
-      st::fn_00404061(this_00,0);
+      this_01->field_02EC = 0;
+      this_01->field_02F0 = (-(uint)(this_01->field_0370 != 0) & 3) + 6;
+      st::fn_00404061(this_01,0);
       st::fn_00405240
-                ((STT3DSprC *)puVar16,*(byte *)&this_00->field_02F0,
+                ((STT3DSprC *)this_00,*(byte *)&this_01->field_02F0,
                  g_playSystem_00802A38->field_00E4);
       st::fn_00405240
-                ((STT3DSprC *)puVar16,*(char *)&this_00->field_02F0 - 1,
+                ((STT3DSprC *)this_00,*(char *)&this_01->field_02F0 - 1,
                  g_playSystem_00802A38->field_00E4);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)*puVar16)();
+      (*(*this_00)->vfunc_00)();
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar12 = extraout_EDX_00;
     }
   }
-  st::fn_00404BC9((int *)this_00,uVar12,(uint)(this_00->field_023D == 0));
-  this_00->field_02D8 = 0;
-  this_00->field_02D4 = 0;
-  this_00->field_02D0 = 0;
-  this_00->field_02CC = 0;
-  iVar11 = (this_00->field_0368 * 3 + this_00->field_036C) * 4;
-  st::fn_0040497B(*(char *)&this_00->field_0024,0,(int *)this_00->field_0018,
+  st::fn_00404BC9((int *)this_01,uVar12,(uint)(this_01->field_023D == 0));
+  this_01->field_02D8 = 0;
+  this_01->field_02D4 = 0;
+  this_01->field_02D0 = 0;
+  this_01->field_02CC = 0;
+  iVar11 = (this_01->field_0368 * 3 + this_01->field_036C) * 4;
+  st::fn_0040497B(*(char *)&this_01->field_0024,0,(int *)this_01->field_0018,
                      *(int *)(&DAT_008545ac + iVar11),*(int *)(&DAT_007e1c50 + iVar11),
                      *(int *)(&DAT_007e24fc + iVar11),*(int *)(&DAT_007e3160 + iVar11));
-  iVar11 = st::fn_00402077(STReplaceLowByte((uint32_t)(this_00->field_0259), (uint8_t)(*(undefined1 *)&this_00->field_0024)),this_00->field_0259);
+  iVar11 = st::fn_00402077(STReplaceLowByte((uint32_t)(this_01->field_0259), (uint8_t)(*(undefined1 *)&this_01->field_0024)),this_01->field_0259);
   if (iVar11 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar11 = (*(code *)this_00->field_0000->field_002C)();
-    st::fn_00405E39(STReplaceLowByte((uint32_t)(iVar11), (uint8_t)(*(undefined1 *)&this_00->field_0024)),
+    iVar11 = (*this_01->vtable->vfunc_2C)();
+    st::fn_00405E39(STReplaceLowByte((uint32_t)(iVar11), (uint8_t)(*(undefined1 *)&this_01->field_0024)),
                        iVar11);
   }
-  st::fn_004023A1(this_00,(undefined *)0x5);
+  st::fn_004023A1(this_01,(undefined *)0x5);
 LAB_004d22a1:
-  st::fn_00401997((AnonShape_0041F630_B1BEE81C *)this_00);
+  st::fn_00401997((AnonShape_0041F630_B1BEE81C *)this_01);
   g_currentExceptionFrame = local_cc.previous;
   return 0;
 }
@@ -1556,7 +1552,7 @@ int __thiscall st::fn_004D55B0(TLOEmbryoTy *this,STMessage *message)
   int iVar11;
   int *piVar12;
   int iVar13;
-  undefined4 *puVar14;
+  TLOEmbryoTyVTable_at_1D5 **ppTVar14;
   int iVar15;
   STT3DSprC **ppSVar16;
   char *pcVar17;
@@ -1632,19 +1628,19 @@ int __thiscall st::fn_004D55B0(TLOEmbryoTy *this,STMessage *message)
           if (this_00->field_02A0 == 0) {
             st::fn_00404264(this_00->field_035C,0xe);
             st::fn_00403D0F(this_00->field_035C);
-            puVar14 = &this_00->field_01D5;
+            ppTVar14 = &this_00->vtable_at_1d5;
             if (this_00->field_002C == 1) {
               pcVar17 = "expl_bt1";
             }
             else {
               pcVar17 = "expl_bt0";
             }
-            iVar11 = st::fn_00404183((STT3DSprC *)puVar14,6,PTR_00806774,pcVar17,CASE_1D);
+            iVar11 = st::fn_00404183((STT3DSprC *)ppTVar14,6,PTR_00806774,pcVar17,CASE_1D);
             if (iVar11 != 0) {
               return 0xffff;
             }
-            st::fn_004022D4(puVar14,'\x06');
-            st::fn_00405240((STT3DSprC *)puVar14,6,g_playSystem_00802A38->field_00E4);
+            st::fn_004022D4(ppTVar14,'\x06');
+            st::fn_00405240((STT3DSprC *)ppTVar14,6,g_playSystem_00802A38->field_00E4);
           }
           this_00->field_02A8 = 0;
           this_00->field_02A0 = 1;
@@ -1752,36 +1748,35 @@ int __thiscall st::fn_004D55B0(TLOEmbryoTy *this,STMessage *message)
     this_00->field_02EC = 3;
     this_00->field_02E8 = 1;
     if (this_00->field_0370 == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_0000->field_0090)(3,0x361);
+      this_00->vfunc_90(3,0x361);
     }
     iVar13 = this_00->field_0259;
     if (((iVar13 != 0x6c) || (this_00->field_0251 != 3)) && ((iVar13 < 0x54 || (0x5a < iVar13)))) {
-      puVar14 = &this_00->field_01D5;
-      st::fn_004017D5(puVar14,*(char *)&this_00->field_02F0);
+      ppTVar14 = &this_00->vtable_at_1d5;
+      st::fn_004017D5(ppTVar14,*(char *)&this_00->field_02F0);
       iVar13 = st::machine_word_boundary_cast<int>(this_00->field_02EC + this_00->field_0241 * 4);
-      st::fn_00401EBA(puVar14,*(byte *)&this_00->field_02F0,
+      st::fn_00401EBA(ppTVar14,*(byte *)&this_00->field_02F0,
                          *(int *)(this_00->field_0364 + iVar13 * 8),
                          *(int *)(this_00->field_0364 + 4 + iVar13 * 8),'\0');
       st::fn_00401064
-                ((STT3DSprC *)puVar14,*(char *)&this_00->field_02F0,
+                ((STT3DSprC *)ppTVar14,*(char *)&this_00->field_02F0,
                  *(uint *)(this_00->field_0364 + (this_00->field_02EC + this_00->field_0241 * 4) * 8
                           ));
       st::fn_00405240
-                ((STT3DSprC *)puVar14,*(byte *)&this_00->field_02F0,
+                ((STT3DSprC *)ppTVar14,*(byte *)&this_00->field_02F0,
                  g_playSystem_00802A38->field_00E4);
       if (this_00->field_0370 == 0) goto LAB_004d600f;
-      st::fn_004017D5(puVar14,*(char *)&this_00->field_02F0 + -1);
+      st::fn_004017D5(ppTVar14,*(char *)&this_00->field_02F0 + -1);
       iVar13 = st::machine_word_boundary_cast<int>(this_00->field_02EC + this_00->field_0241 * 4);
-      st::fn_00401EBA(puVar14,*(char *)&this_00->field_02F0 - 1,
+      st::fn_00401EBA(ppTVar14,*(char *)&this_00->field_02F0 - 1,
                          *(int *)(this_00->field_0364 + iVar13 * 8),
                          *(int *)(this_00->field_0364 + 4 + iVar13 * 8),'\0');
       st::fn_00401064
-                ((STT3DSprC *)puVar14,*(char *)&this_00->field_02F0 + -1,
+                ((STT3DSprC *)ppTVar14,*(char *)&this_00->field_02F0 + -1,
                  *(uint *)(this_00->field_0364 + (this_00->field_02EC + this_00->field_0241 * 4) * 8
                           ));
       st::fn_00405240
-                ((STT3DSprC *)puVar14,*(char *)&this_00->field_02F0 - 1,
+                ((STT3DSprC *)ppTVar14,*(char *)&this_00->field_02F0 - 1,
                  g_playSystem_00802A38->field_00E4);
     }
     if (this_00->field_0370 != 0) {
@@ -1840,10 +1835,10 @@ LAB_004d600f:
     aiStack_f4[iVar13] = piVar12[8];
     if (*piVar12 != 0) {
       cVar18 = (char)iVar13;
-      iVar6 = st::fn_004042AF(&this_00->field_01D5,cVar18);
+      iVar6 = st::fn_004042AF(&this_00->vtable_at_1d5,cVar18);
       aiStack_138[iVar13] = iVar6;
-      iVar6 = st::fn_004042AF(&this_00->field_01D5,cVar18);
-      uVar7 = st::fn_00405A29(&this_00->field_01D5,cVar18,iVar6);
+      iVar6 = st::fn_004042AF(&this_00->vtable_at_1d5,cVar18);
+      uVar7 = st::fn_00405A29(&this_00->vtable_at_1d5,cVar18,iVar6);
       auStack_1c0[iVar13] = uVar7;
     }
     iVar11 = iVar11 + 0x24;
@@ -1852,10 +1847,10 @@ LAB_004d600f:
   if (this_00->field_02EC == 0) {
     st::fn_00404061(this_00,1);
     st::fn_00405240
-              ((STT3DSprC *)&this_00->field_01D5,*(byte *)&this_00->field_02F0,
+              ((STT3DSprC *)&this_00->vtable_at_1d5,*(byte *)&this_00->field_02F0,
                g_playSystem_00802A38->field_00E4);
     st::fn_00405240
-              ((STT3DSprC *)&this_00->field_01D5,*(char *)&this_00->field_02F0 - 1,
+              ((STT3DSprC *)&this_00->vtable_at_1d5,*(char *)&this_00->field_02F0 - 1,
                g_playSystem_00802A38->field_00E4);
   }
   if (this_00->field_02DC == 0) {
@@ -1866,20 +1861,20 @@ LAB_004d600f:
       uVar9 = (uVar9 - 1 | 0xfffffffe) + 1;
     }
     st::external_00000080(local_b0,st::mutable_c_string("%s%1i"),(&PTR_s_tlo_embws1_007bf3e8)[this_00->field_036C],uVar9);
-    puVar14 = &this_00->field_01D5;
-    iVar11 = st::fn_00404183((STT3DSprC *)puVar14,0xe,PTR_0080678c,local_b0,CASE_1D);
+    ppTVar14 = &this_00->vtable_at_1d5;
+    iVar11 = st::fn_00404183((STT3DSprC *)ppTVar14,0xe,PTR_0080678c,local_b0,CASE_1D);
     if (iVar11 != 0) {
       st::fn_006A5E40
                 (iVar11,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_embryo.cpp"),
                  0x43a);
     }
-    st::fn_00401EBA(puVar14,0xe,*(int *)(&DAT_0079104c + this_00->field_0368 * 4),
+    st::fn_00401EBA(ppTVar14,0xe,*(int *)(&DAT_0079104c + this_00->field_0368 * 4),
                        *(int *)(&DAT_0079104c + this_00->field_0368 * 4),'\0');
     st::fn_00401064
-              ((STT3DSprC *)puVar14,'\x0e',*(uint *)(&DAT_0079104c + this_00->field_0368 * 4));
-    st::fn_00405240((STT3DSprC *)puVar14,0xe,g_playSystem_00802A38->field_00E4);
+              ((STT3DSprC *)ppTVar14,'\x0e',*(uint *)(&DAT_0079104c + this_00->field_0368 * 4));
+    st::fn_00405240((STT3DSprC *)ppTVar14,0xe,g_playSystem_00802A38->field_00E4);
     iVar11 = st::fn_00404183
-                       ((STT3DSprC *)puVar14,0x10,PTR_0080678c,
+                       ((STT3DSprC *)ppTVar14,0x10,PTR_0080678c,
                         (&PTR_s_tlo_sha_ws_007bb1b4)[this_00->field_036C],CASE_1D);
     if (iVar11 != 0) {
       iVar13 = 0x441;
@@ -1888,30 +1883,30 @@ LAB_004d600f:
   }
   else {
     iVar5 = st::fn_0040581C();
-    puVar14 = &this_00->field_01D5;
+    ppTVar14 = &this_00->vtable_at_1d5;
     uVar9 = *(uint *)(PTR_DAT_007b5170 +
                      (iVar5 + (this_00->field_0368 * 3 + this_00->field_036C) * 4) * 8);
-    st::fn_00401EBA(puVar14,0xe,uVar9,uVar9,'\0');
-    st::fn_00401064((STT3DSprC *)puVar14,'\x0e',uVar9);
-    st::fn_00405240((STT3DSprC *)puVar14,0xe,g_playSystem_00802A38->field_00E4);
+    st::fn_00401EBA(ppTVar14,0xe,uVar9,uVar9,'\0');
+    st::fn_00401064((STT3DSprC *)ppTVar14,'\x0e',uVar9);
+    st::fn_00405240((STT3DSprC *)ppTVar14,0xe,g_playSystem_00802A38->field_00E4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (**(int **)(this_00->field_01F5 + 0x1d4) < (int)uVar9) {
       uVar9 = 0;
     }
-    st::fn_00401EBA(puVar14,0xd,uVar9,uVar9,'\0');
-    st::fn_00401064((STT3DSprC *)puVar14,'\r',uVar9);
-    st::fn_00405240((STT3DSprC *)puVar14,0xd,g_playSystem_00802A38->field_00E4);
+    st::fn_00401EBA(ppTVar14,0xd,uVar9,uVar9,'\0');
+    st::fn_00401064((STT3DSprC *)ppTVar14,'\r',uVar9);
+    st::fn_00405240((STT3DSprC *)ppTVar14,0xd,g_playSystem_00802A38->field_00E4);
     if (*(int *)(PTR_PTR_007bb198 + (this_00->field_0368 * 3 + this_00->field_036C) * 0xc + 8) != 0)
     {
       local_EAX_862 = st::fn_0040581C();
       uVar9 = *(uint *)(PTR_DAT_007b8310 +
                        (local_EAX_862 + (this_00->field_0368 * 3 + this_00->field_036C) * 4) * 8);
-      st::fn_00401EBA(puVar14,0xc,uVar9,uVar9,'\0');
-      st::fn_00401064((STT3DSprC *)puVar14,'\f',uVar9);
-      st::fn_00405240((STT3DSprC *)puVar14,0xc,g_playSystem_00802A38->field_00E4);
+      st::fn_00401EBA(ppTVar14,0xc,uVar9,uVar9,'\0');
+      st::fn_00401064((STT3DSprC *)ppTVar14,'\f',uVar9);
+      st::fn_00405240((STT3DSprC *)ppTVar14,0xc,g_playSystem_00802A38->field_00E4);
     }
     iVar11 = st::fn_00404183
-                       ((STT3DSprC *)puVar14,0x10,PTR_0080678c,
+                       ((STT3DSprC *)ppTVar14,0x10,PTR_0080678c,
                         (&PTR_s_tlo_sha_ws_007bb1b4)[this_00->field_036C],CASE_1D);
     if (iVar11 != 0) {
       iVar13 = 0x459;
@@ -1921,13 +1916,13 @@ LAB_004d5985:
                  iVar13);
     }
   }
-  puVar14 = &this_00->field_01D5;
-  st::fn_00401EBA(puVar14,0x10,*(int *)(&DAT_0079104c + this_00->field_0368 * 4),
+  ppTVar14 = &this_00->vtable_at_1d5;
+  st::fn_00401EBA(ppTVar14,0x10,*(int *)(&DAT_0079104c + this_00->field_0368 * 4),
                      *(int *)(&DAT_0079104c + this_00->field_0368 * 4),'\0');
   st::fn_00401064
-            ((STT3DSprC *)puVar14,'\x10',*(uint *)(&DAT_0079104c + this_00->field_0368 * 4));
-  st::fn_00405240((STT3DSprC *)puVar14,0x10,g_playSystem_00802A38->field_00E4);
-  st::fn_00403AFD((STT3DSprC *)puVar14,'\x10');
+            ((STT3DSprC *)ppTVar14,'\x10',*(uint *)(&DAT_0079104c + this_00->field_0368 * 4));
+  st::fn_00405240((STT3DSprC *)ppTVar14,0x10,g_playSystem_00802A38->field_00E4);
+  st::fn_00403AFD((STT3DSprC *)ppTVar14,'\x10');
 LAB_004d59e7:
   iVar13 = 0;
   iVar11 = 0;
@@ -1939,8 +1934,8 @@ LAB_004d59e7:
       *(undefined4 *)(*(int *)(iVar11 + this_00->field_01F5 + 4) + aiStack_138[iVar13] * 4) =
            *(undefined4 *)(aiStack_138[iVar13] * 4 + 0x31 + iVar6);
       uVar7 = auStack_1c0[iVar13];
-      iVar6 = st::fn_004042AF(&this_00->field_01D5,(char)iVar13);
-      st::fn_00405141(&this_00->field_01D5,(char)iVar13,iVar6,uVar7);
+      iVar6 = st::fn_004042AF(&this_00->vtable_at_1d5,(char)iVar13);
+      st::fn_00405141(&this_00->vtable_at_1d5,(char)iVar13,iVar6,uVar7);
     }
     iVar11 = iVar11 + 0x24;
     iVar13 = iVar13 + 1;

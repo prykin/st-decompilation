@@ -4,7 +4,12 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=15;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_009B uses
+   /SubmarineTitans/Recovered/Enums/AiFltClassTy_field_009BState. Cases:
+   CASE_0=0;CASE_A=10;CASE_14=20;CASE_19=25;CASE_23=35;CASE_28=40;CASE_2A=42;CASE_32=50;CASE_33=51;CASE_34=52;CASE_3C=60;CASE_41=65;CASE_64=100;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_78=120;CASE_82=130;CASE_83=131;CASE_84=132;CASE_85=133;CASE_8C=140;CASE_1F5=501;CASE_1F6=502;CASE_1F7=503;CASE_1F8=504;CASE_201=513;CASE_246=582;CASE_24E=590
+    */
 
 void __thiscall AiFltClassTy::sub_00664760(AiFltClassTy *this)
 
@@ -21,7 +26,7 @@ void __thiscall AiFltClassTy::sub_00664760(AiFltClassTy *this)
 
   uVar6 = 0;
   pAVar5 = this->field_022F;
-  this->field_009B = 0;
+  this->field_009B = CASE_0;
   this->field_009F = 0;
   this->field_00A3 = 0;
   this->field_00A7 = 0;

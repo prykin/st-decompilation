@@ -812,7 +812,7 @@ cf_break_loop_004B1816:
       } while (iVar8 < param_1 + 1);
     }
   }
-  local_8 = static_cast<undefined4>(0);
+  local_8 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == 0xdd) {
     local_8 = st::machine_word_boundary_cast<undefined4>(&DAT_007907ac);

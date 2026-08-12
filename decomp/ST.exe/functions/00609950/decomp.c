@@ -12,7 +12,7 @@ undefined4 * __fastcall FUN_00609950(STGroupBoatC *param_1)
     puVar2 = nullptr;
   }
   else {
-    puVar2 = (undefined4 *)&param_1->field_0x1d5;
+    puVar2 = (undefined4 *)((int)&param_1->field_01D2 + 3);
   }
   memset(puVar2, 0, 0x83); /* compiler bulk-zero initialization */
   puVar2 = (undefined4 *)((byte *)puVar2 + 0x80);

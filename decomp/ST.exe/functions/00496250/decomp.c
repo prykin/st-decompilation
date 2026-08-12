@@ -41,15 +41,7 @@ switchD_0049655f_caseD_0:
     uVar10 = (uint)(short)(((short)(param_2 / 0xc9) + sVar1) -
                           (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
   }
-  sVar1 = (short)(param_3 >> 0x1f);
-  if (param_3 < 0) {
-    iVar12 = (short)(((short)(param_3 / 200) + sVar1) -
-                    (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    iVar12 = (int)(short)(((short)(param_3 / 200) + sVar1) -
-                         (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
-  }
+  iVar12 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   if ((((-1 < (int)uVar13) && ((int)uVar13 <= (int)g_worldGrid.sizeX)) && (-1 < (int)uVar10)) &&
      ((((int)uVar10 <= (int)g_worldGrid.sizeY && (-1 < iVar12)) &&
       ((iVar12 <= g_worldGrid.sizeZ &&

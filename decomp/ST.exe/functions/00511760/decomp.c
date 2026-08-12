@@ -26,7 +26,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       StartSystemTy::sub_006E56B0(local_c->field_000C,local_c->field_017C);
     }
     pHVar2->field_017C = 0;
-    puVar4 = &pHVar2->field_0180;
+    puVar4 = pHVar2->field_0180;
     local_8 = 7;
     do {
       if (*puVar4 != 0) {
@@ -45,22 +45,22 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     }
     pHVar2->field_01B3 = nullptr;
     if (pHVar2->field_01BB != nullptr) {
-      DArrayDestroy(pHVar2->field_01BB);
+      DArrayDestroy((DArrayTy *)pHVar2->field_01BB);
     }
     pHVar2->field_01BB = nullptr;
     if (pHVar2->field_01CB != nullptr) {
-      DArrayDestroy(pHVar2->field_01CB);
+      DArrayDestroy((DArrayTy *)pHVar2->field_01CB);
     }
     pHVar2->field_01CB = nullptr;
     if (pHVar2->field_01D7 != nullptr) {
-      DArrayDestroy(pHVar2->field_01D7);
+      DArrayDestroy((DArrayTy *)pHVar2->field_01D7);
     }
     pHVar2->field_01D7 = nullptr;
     if ((DArrayTy *)pHVar2->field_01D3 != nullptr) {
       FUN_006b5570((DArrayTy *)pHVar2->field_01D3);
     }
     pHVar2->field_01D3 = nullptr;
-    puVar4 = &pHVar2->field_01F0;
+    puVar4 = pHVar2->field_01F0;
     local_8 = 10;
     do {
       if (*puVar4 != 0) {
@@ -95,7 +95,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     if (pHVar2->field_0218 != nullptr) {
       FreeAndNull(&pHVar2->field_0218);
     }
-    if (pHVar2->field_01EC != 0) {
+    if (pHVar2->field_01EC != nullptr) {
       FreeAndNull(&pHVar2->field_01EC);
     }
     if (pHVar2->field_024C != nullptr) {

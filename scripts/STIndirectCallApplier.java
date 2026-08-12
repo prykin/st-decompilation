@@ -117,7 +117,7 @@ public class STIndirectCallApplier extends GhidraScript {
             else if ("generated_family".equals(mode))
                 desired = resolveSpecification(row.get("receiver_type"));
             else if ("family_target".equals(mode))
-                desired = familyTargetFunctionPointer(signature);
+                desired = resolveSpecification(row.get("receiver_type"));
             else if ("synthetic_thiscall".equals(mode))
                 desired = syntheticThiscallFunctionPointer(row);
             else if ("synthetic_stdcall".equals(mode))
@@ -179,7 +179,8 @@ public class STIndirectCallApplier extends GhidraScript {
                 !(component.getDataType() instanceof Pointer pointer) ||
                 !(pointer.getDataType() instanceof FunctionDefinition definition)) return false;
         return text(component.getComment()).contains(MARKER) &&
-            text(definition.getComment()).contains(MARKER);
+            (text(definition.getComment()).contains(MARKER) ||
+                definition.getCategoryPath().equals(FUNCTIONS));
     }
 
     private boolean strongerThanTarget(DataTypeComponent component, Function target) {
@@ -277,9 +278,9 @@ public class STIndirectCallApplier extends GhidraScript {
 
     /**
      * Re-resolve the analyzer's same-target family inside the transaction. This
-     * avoids trusting a stale serialized type path: every currently typed
-     * vtable component for the resolved implementation must still carry an
-     * equivalent FunctionDefinition pointer.
+     * avoids trusting a stale serialized type path. Only independently generated
+     * indirect-call components participate; weak VTableApplier target typedefs are downstream
+     * consumers of this family and must not veto it.
      */
     private DataType familyTargetFunctionPointer(Function wanted) {
         Function resolvedWanted = resolveThunk(wanted);
@@ -291,7 +292,8 @@ public class STIndirectCallApplier extends GhidraScript {
             if (!structure.getPathName().startsWith(VTABLE_ROOT)) continue;
             for (DataTypeComponent component : structure.getDefinedComponents()) {
                 if (!(component.getDataType() instanceof Pointer pointer) ||
-                        !(pointer.getDataType() instanceof FunctionDefinition))
+                        !(pointer.getDataType() instanceof FunctionDefinition) ||
+                        !generatedIndirectPointer(component))
                     continue;
                 Matcher matcher =
                     TARGET.matcher(text(component.getComment()));

@@ -224,9 +224,11 @@ void __thiscall st::fn_00539B90(PlayPanelTy *this)
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,4,&this_00->field_01C5,nullptr,st::machine_word_boundary_cast<undefined4>(local_488),0);
     if (8 < DAT_00808aaf) {
+      uVar12 = this_00->field_01C5;
       this_00->field_0028 = 0x20;
-      *(undefined4 *)&this_00->field_0x2c = 1;
-      st::fn_006E6080(this_00,2,this_00->field_01C5,(undefined4 *)&this_00->field_0x18);
+      this_00->field_002C = 1;
+      this_00->field_002E = 0;
+      st::fn_006E6080(this_00,2,uVar12,(undefined4 *)&this_00->field_0x18);
     }
     local_10 = &this_00->field_01A1;
     local_5 = 0;
@@ -540,8 +542,7 @@ undefined4 __thiscall st::fn_0053A820(PlayPanelTy *this,char param_1)
         st::fn_00401A73(g_bldLabPanel_00801680,'\0');
       }
       if (g_helpPanel_00801690 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(g_helpPanel_00801690->vtable + 0x18))(0);
+        g_helpPanel_00801690->st::fn_00401A73('\0');
       }
       if (g_optPanel_008016DC != nullptr) {
         st::fn_00402630(g_optPanel_008016DC);
@@ -594,7 +595,7 @@ void __thiscall st::fn_0053AA50(PlayPanelTy *this,int param_1)
     if (param_1 == 0) {
       sVar2 = -sVar2;
     }
-    *(short *)&this->field_0x2e = sVar2;
+    this->field_002E = sVar2;
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_10 = this;
@@ -1320,9 +1321,11 @@ LAB_0053b2ea:
       if (this_00->field_01C1 != 0) {
         this_00->field_0028 = 0x25;
         st::fn_006E6080(this_00,2,this_00->field_01C1,(undefined4 *)puVar2);
-        if (*(int *)&this_00->field_0x2c != 4) {
+        STPiece<0,2>(iVar8) = this_00->field_002C;
+        STPiece<2,2>(iVar8) = this_00->field_002E;
+        if (iVar8 != 4) {
           this_00->field_0028 = 0x22;
-          *(undefined2 *)&this_00->field_0x2c = 4;
+          this_00->field_002C = 4;
           st::fn_006E6080(this_00,2,this_00->field_01C1,(undefined4 *)puVar2);
           g_currentExceptionFrame = local_64.previous;
           return 0;

@@ -29,7 +29,7 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
       FUN_006b5570(pSVar2->field_1CCC);
     }
     pSVar2->field_1CCC = nullptr;
-    SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1A60);
+    SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->array_00BC[0xc].field_01E0);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1B01);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1B92);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1C23);

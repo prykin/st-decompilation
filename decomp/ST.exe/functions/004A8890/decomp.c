@@ -8,7 +8,7 @@
    Evidence: registry[27] at 007CA7F8 stores type 0x10FF and executable pointer 0040111D; allocation
    size 786 has no unique current class-layout match */
 
-void * __cdecl FUN_004a8890(void)
+STGroupBoatC * __cdecl CreateSTGroupBoat(void)
 
 {
   STGroupBoatC *pSVar1;

@@ -5730,6 +5730,7 @@ OptPanelTy * __cdecl st::fn_0052E3A0(void)
     memset(this->field_01B5, 0, 0x28); /* compiler bulk-zero initialization */
     this->field_01DD = (HANDLE)0x0;
     this->field_01E1 = 0;
+    this->field_01E3 = 0;
     this->field_01AC = 0;
     this->field_01E5 = nullptr;
     this->field_01F1 = nullptr;

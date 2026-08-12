@@ -47,15 +47,7 @@ int __thiscall STJumpMineC::sub_00619C70(STJumpMineC *this)
     iVar13 = g_playSystem_00802A38->field_00E4 - this->field_011B;
     iVar13 = (this->field_0117 * iVar13 * iVar13) / 10000 + this->field_0113 * iVar13 +
              this->field_00D7;
-    sVar8 = (short)(iVar13 >> 0x1f);
-    if (iVar13 < 0) {
-      iVar14 = (short)(((short)(iVar13 / 200) + sVar8) -
-                      (short)((longlong)iVar13 * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      iVar14 = (int)(short)(((short)(iVar13 / 200) + sVar8) -
-                           (short)((longlong)iVar13 * 0x51eb851f >> 0x3f));
-    }
+    iVar14 = STBiasedDiv16(iVar13, 200); /* exact signed 16-bit grid-index division */
     uVar2 = sub_0061B340(this,this->field_00C9,this->field_00CB,iVar14,this->field_009F,
                          this->field_00A3,iVar13,&local_c);
     switch(uVar2) {
@@ -146,37 +138,13 @@ LAB_00619e5f:
     iVar13 = g_playSystem_00802A38->field_00E4 - this->field_011B;
     local_1c = (this->field_0117 * iVar13 * iVar13) / 10000 + this->field_0113 * iVar13 +
                this->field_00D7;
-    sVar8 = (short)(local_1c >> 0x1f);
-    if (local_1c < 0) {
-      local_20 = (short)(((short)(local_1c / 200) + sVar8) -
-                        (short)((longlong)local_1c * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      local_20 = (int)(short)(((short)(local_1c / 200) + sVar8) -
-                             (short)((longlong)local_1c * 0x51eb851f >> 0x3f));
-    }
+    local_20 = STBiasedDiv16(local_1c, 200); /* exact signed 16-bit grid-index division */
     iVar13 = this->field_010F * iVar13;
     this->field_00F3 = this->field_00F3 + this->field_010F;
     iVar14 = (this->field_0103 * iVar13) / 10000 + this->field_00CF;
     iVar13 = (this->field_0107 * iVar13) / 10000 + this->field_00D3;
-    sVar8 = (short)(iVar14 >> 0x1f);
-    if (iVar14 < 0) {
-      local_28 = (short)(((short)(iVar14 / 0xc9) + sVar8) -
-                        (short)((longlong)iVar14 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      local_28 = (int)(short)(((short)(iVar14 / 0xc9) + sVar8) -
-                             (short)((longlong)iVar14 * 0x28c1979 >> 0x3f));
-    }
-    sVar8 = (short)(iVar13 >> 0x1f);
-    if (iVar13 < 0) {
-      local_24 = (short)(((short)(iVar13 / 0xc9) + sVar8) -
-                        (short)((longlong)iVar13 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      local_24 = (int)(short)(((short)(iVar13 / 0xc9) + sVar8) -
-                             (short)((longlong)iVar13 * 0x28c1979 >> 0x3f));
-    }
+    local_28 = STBiasedDiv16(iVar14, 0xc9); /* exact signed 16-bit grid-index division */
+    local_24 = STBiasedDiv16(iVar13, 0xc9); /* exact signed 16-bit grid-index division */
     iVar3 = sub_0061B340(this,(short)local_28,(short)local_24,local_20,iVar14,iVar13,local_1c,
                          &local_c);
     switch(iVar3) {

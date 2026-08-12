@@ -55,7 +55,7 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
       iVar11 = 0;
       pcVar9 = thunk_FUN_0052a320;
       iVar8 = 0;
-      pcVar4 = thunk_FUN_00529590((&this_00->field_0x1af)[(message->arg0).words.high],
+      pcVar4 = thunk_FUN_00529590((&this_00->field_01AF)[(message->arg0).words.high],
                                   this_00->field_01AB);
       pCVar5 = thunk_FUN_00571240(pcVar4,iVar8);
       (*pBVar1->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar5,pcVar9,iVar11,iVar12);
@@ -72,7 +72,7 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
       iVar11 = 0;
       pcVar9 = thunk_FUN_0052a320;
       iVar8 = 0;
-      pcVar4 = thunk_FUN_00529590((&this_00->field_0x1af)[(message->arg0).words.high],
+      pcVar4 = thunk_FUN_00529590((&this_00->field_01AF)[(message->arg0).words.high],
                                   this_00->field_01AB);
       pCVar5 = thunk_FUN_00571240(pcVar4,iVar8);
       (*pBVar1->PaintBut)((PanelTy *)this_00,(int)message,1,pCVar5,pcVar9,iVar11,iVar12);
@@ -86,7 +86,7 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
       }
       thunk_FUN_005252c0(0xae);
       CursorClassTy::sub_0054B630
-                (g_cursorClass_00802A30,(uint)(byte)(&this_00->field_0x1af)[(message->arg0).u32],0);
+                (g_cursorClass_00802A30,(uint)(byte)(&this_00->field_01AF)[(message->arg0).u32],0);
       this_00->field_0028 = 0xbfff;
       this_00->GetMessage((STMessage *)&this_00->field_0x18);
       g_currentExceptionFrame = local_70.previous;
@@ -118,12 +118,12 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
     memset(local_2c, 0, 0x21); /* compiler bulk-zero initialization */
     if (SVar2 == MESS_SHARED_C09F) {
       STPiece<0,1>(local_2c[0]) = '\x15';
-      cVar3 = this_00->field_0x1bb;
+      cVar3 = this_00->field_01BB;
     }
     else {
       STPiece<0,1>(local_2c[0]) = (SVar2 != MESS_BEHPANELTY_C0A0) + '\x16';
       if (SVar2 == MESS_BEHPANELTY_C0A0) {
-        cVar3 = this_00->field_0x1bc;
+        cVar3 = this_00->field_01BC;
       }
       else {
         cVar3 = this_00->field_01BD;
@@ -136,11 +136,11 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
   default:
     goto switchD_004ee68c_caseD_c0a2;
   case 0xc0af:
-    bVar7 = this_00->field_0x1bb == '\x03';
+    bVar7 = this_00->field_01BB == '\x03';
     pcVar4 = "BUT_BLOCK";
     break;
   case 0xc0b0:
-    bVar7 = this_00->field_0x1bc == '\x03';
+    bVar7 = this_00->field_01BC == '\x03';
     pcVar4 = "BUT_BHOLD";
     break;
   case 0xc0b1:

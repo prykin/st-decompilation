@@ -8,10 +8,13 @@
 void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
 
 {
+  ccFntTy *pcVar1;
+  HGDIOBJ ho;
+  FSGSTy_field_1FB3DArray *array;
   MMsgTy *this_00;
   FSGSTy *this_01;
   int errorCode;
-  int iVar2;
+  int iVar3;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
@@ -111,9 +114,10 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     if (this_01->field_1A97 != nullptr) {
       FreeAndNull(&this_01->field_1A97);
     }
-    if (this_01->field_1A77 != nullptr) {
-      ccFntTy::operator_delete((uint *)this_01->field_1A77);
-      this_01->field_1A77 = nullptr;
+    pcVar1 = this_01->array_00BC[0xc].field_01F7;
+    if (pcVar1 != nullptr) {
+      ccFntTy::operator_delete((uint *)pcVar1);
+      this_01->array_00BC[0xc].field_01F7 = nullptr;
     }
     if (this_01->field_1A7B != nullptr) {
       ccFntTy::operator_delete((uint *)this_01->field_1A7B);
@@ -123,30 +127,32 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       ccFntTy::operator_delete((uint *)this_01->field_1A7F);
       this_01->field_1A7F = nullptr;
     }
-    if (this_01->field_1A67 != (HGDIOBJ)0x0) {
-      DeleteObject(this_01->field_1A67);
+    ho = this_01->array_00BC[0xc].field_01E7;
+    if (ho != (HGDIOBJ)0x0) {
+      DeleteObject(ho);
     }
-    this_01->field_1A67 = (HGDIOBJ)0x0;
-    if (this_01->field_1FB3 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_01->field_1FB3);
+    array = this_01->field_1FB3;
+    this_01->array_00BC[0xc].field_01E7 = nullptr;
+    if (array != nullptr) {
+      DArrayDestroy((DArrayTy *)array);
     }
     this_01->field_1FB3 = nullptr;
     if (this_01->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&this_01->field_0x3d);
     }
-    this_00 = this_01->field_1A5B->field_02E6;
+    this_00 = (this_01->array_00BC[0xc].field_01DB)->field_02E6;
     if (this_00 != nullptr) {
       MMsgTy::HideSprites(this_00);
-      this_01->field_1A5B->field_02E6->field_1CAB = 0;
+      (this_01->array_00BC[0xc].field_01DB)->field_02E6->field_1CAB = 0;
     }
     g_fSGS_0081174C = nullptr;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x197,0,errorCode,
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x197,0,errorCode,
                              "%s","FSGSTy::DoneFSGS");
-  if (iVar2 != 0) {
+  if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x197);

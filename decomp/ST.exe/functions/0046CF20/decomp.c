@@ -8,7 +8,10 @@
    CreateGame(STBoatC * this, int * param_1) Evidence: every machine RET purges exactly 4 explicit
    stack bytes; current signature describes 8; removed trailing parameter slots have no listing
    references; ret_sites=0046CFD8 RET 0x4 | 0046D190 RET 0x4 | 0046D1B5 RET 0x4 | 0046D201 RET 0x4 |
-   0046D2E7 RET 0x4 | 0046D2F1 RET 0x4 */
+   0046D2E7 RET 0x4 | 0046D2F1 RET 0x4
+
+   [STSwitchEnumApplier] Switch target field_0528 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0528State. Cases: CASE_1=1;CASE_3=3;CASE_4=4 */
 
 uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
 
@@ -45,16 +48,16 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
                        this->field_0510 * 0xc9 + 100,(short)iVar7,
                        STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_0514 * 200)) + 100);
     this->field_0522 = uVar5;
-    this->field_0528 = 1;
+    this->field_0528 = CASE_1;
   }
-  if (this->field_0528 != 1) {
+  if (this->field_0528 != CASE_1) {
     if (this->field_0528 == 2) {
       sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_0510 * 0xc9 + 100,this->field_0512 * 0xc9 + 100,
                    this->field_0514 * 200 + 100,this->field_0062);
-      this->field_0528 = 3;
+      this->field_0528 = CASE_3;
     }
-    if (this->field_0528 == 3) {
+    if (this->field_0528 == CASE_3) {
       iVar7 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_10,&local_c);
       if (iVar7 == -1) {
         local_EAX_688 =
@@ -98,13 +101,13 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
           if (iVar7 == -1) {
             return 0xffffffff;
           }
-          this->field_0528 = 4;
+          this->field_0528 = CASE_4;
           iVar7 = this->vfunc_D8();
           return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
         }
       }
     }
-    if (this->field_0528 == 4) {
+    if (this->field_0528 == CASE_4) {
       uVar10 = sub_0045FF50(this,2);
       if (uVar10 == 0xffffffff) {
         return 0xffffffff;

@@ -985,14 +985,14 @@ int __thiscall st::fn_00662240(AiFltClassTy *this,uint *param_1)
         if (local_EAX_6756 != nullptr) {
           st::fn_004018C5
                     ((STFishC *)local_EAX_6756,local_2c,local_30,(short *)((int)&local_8 + 2));
-          *(short *)&this_00->field_0x195 = local_2c[0] + -2;
-          *(short *)&this_00->field_0x197 = local_30[0] + -2;
-          *(undefined2 *)&this_00->field_0x199 = 0;
-          *(undefined2 *)&this_00->field_0x19b = 5;
-          *(undefined2 *)&this_00->field_0x19d = 3;
-          *(undefined2 *)&this_00->field_0x19f = 5;
-          st::fn_00401906((short *)&this_00->field_0x195,(short *)&this_00->field_0x197,
-                             (short *)&this_00->field_0x19b,(short *)&this_00->field_0x19d);
+          this_00->field_0195 = local_2c[0] + -2;
+          this_00->field_0197 = local_30[0] + -2;
+          this_00->field_0199 = 0;
+          this_00->field_019B = 5;
+          this_00->field_019D = 3;
+          this_00->field_019F = 5;
+          st::fn_00401906(st::pointer_boundary_cast<short *>(&this_00->field_0195),&this_00->field_0197,&this_00->field_019B,
+                             st::pointer_boundary_cast<short *>(&this_00->field_019D));
         }
         this_00->field_009B = 0x8c;
 LAB_00663af0:
@@ -1030,9 +1030,15 @@ LAB_00663af0:
         this_00->field_00FB = STField<undefined4>(param_1,9);
         this_00->field_00F7 = STField<undefined4>(param_1,0xd);
         this_00->field_00EF = (int)STField<short>(param_1,0x11);
-        *(undefined4 *)&this_00->field_0x195 = STField<undefined4>(param_1,0x13);
-        *(undefined4 *)&this_00->field_0x199 = STField<undefined4>(param_1,0x17);
-        *(undefined4 *)&this_00->field_0x19d = STField<undefined4>(param_1,0x1b);
+        uVar9 = STField<undefined4>(param_1,0x13);
+        this_00->field_0195 = (short)uVar9;
+        this_00->field_0197 = (short)((uint)uVar9 >> 0x10);
+        uVar9 = STField<undefined4>(param_1,0x17);
+        this_00->field_0199 = (short)uVar9;
+        this_00->field_019B = (short)((uint)uVar9 >> 0x10);
+        uVar9 = STField<undefined4>(param_1,0x1b);
+        this_00->field_019D = (short)uVar9;
+        this_00->field_019F = (short)((uint)uVar9 >> 0x10);
         this_00->field_009B = 0x82;
         this_00->field_009F = 0;
         this_00->field_00A3 = 0;

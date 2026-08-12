@@ -18,7 +18,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   uint local_EAX_879;
   uint local_EAX_1372;
   int iVar7;
-  undefined4 *this_01;
+  MMMObjTy *this_01;
   uint *puVar6;
   int iVar8;
   byte bVar9;
@@ -53,10 +53,10 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   this_00 = local_c;
   SetAccelerator(0,local_c->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
   FUN_006b5f80((int *)g_ddxContext_008075A8,0x112,0x38,0x204,0x19d);
-  this_01 = &this_00->field_1A5B->field_0140;
+  this_01 = (MMMObjTy *)(this_00->array_00BC[0xc].field_01DB + 0x140);
   MMMObjTy::OutRGlProc
-            ((MMMObjTy *)this_01,(int)g_dDXContext_0080759C,nullptr,nullptr,0x112,
-             0x38,0x204,0x19d,this_01);
+            (this_01,(int)g_dDXContext_0080759C,nullptr,nullptr,0x112,0x38,0x204,
+             0x19d,(undefined4 *)this_01);
   if (this_00->field_1AF8 != nullptr) {
     HoloTy::Done(this_00->field_1AF8);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1AF8);
@@ -110,7 +110,8 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     puVar6 = puVar6 + 1;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
-  if ((this_00->field_1A64 == 0) || (this_00->field_1A5F == '\x0e')) {
+  if ((this_00->array_00BC[0xc].field_01E4 == 0) || (this_00->array_00BC[0xc].field_01DF == '\x0e'))
+  {
     if (g_startSystem_0081176C->field_0389 != 0) {
       StartSystemTy::sub_006E56B0(this_00->field_000C,g_startSystem_0081176C->field_0389);
     }
@@ -183,10 +184,11 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   }
   else {
     this_00->field_002D = 0x20;
-    *(undefined4 *)&this_00->field_0x31 = 0;
+    this_00->field_0031 = 0;
+    this_00->field_0033 = 0;
     FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_00->field_0x1d);
   }
-  if (this_00->field_1A64 == 0) {
+  if (this_00->array_00BC[0xc].field_01E4 == 0) {
     if (g_startSystem_0081176C->field_054C != 0) {
       StartSystemTy::sub_006E56B0(this_00->field_000C,g_startSystem_0081176C->field_054C);
       g_startSystem_0081176C->field_054C = 0;
@@ -254,11 +256,13 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   }
   else {
     this_00->field_002D = 0x20;
-    *(undefined4 *)&this_00->field_0x31 = 0;
+    this_00->field_0031 = 0;
+    this_00->field_0033 = 0;
     if (g_startSystem_0081176C->field_054C != 0) {
       FUN_006e6080(this_00,2,g_startSystem_0081176C->field_054C,(undefined4 *)&this_00->field_0x1d);
     }
-    *(undefined4 *)&this_00->field_0x31 = 0;
+    this_00->field_0031 = 0;
+    this_00->field_0033 = 0;
     if (g_startSystem_0081176C->field_0550 != 0) {
       FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0550,(undefined4 *)&this_00->field_0x1d);
     }

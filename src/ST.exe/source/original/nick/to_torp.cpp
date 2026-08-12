@@ -3097,9 +3097,10 @@ byte * __thiscall st::fn_00645420(STTorpC *this,int *param_1)
 void __thiscall st::fn_006456C0(STTorpC *this,int param_1)
 
 {
-  STTorpC *pSVar2;
+  undefined2 uVar2;
+  STTorpC *pSVar3;
   int iVar3;
-  DArrayTy *pDVar3;
+  DArrayTy *pDVar4;
   int iVar4;
   byte *puVar6;
   byte *puVar7;
@@ -3112,17 +3113,19 @@ void __thiscall st::fn_006456C0(STTorpC *this,int param_1)
   g_currentExceptionFrame = &local_50;
   local_c = this;
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
-  pSVar2 = local_c;
+  pSVar3 = local_c;
   if (iVar3 == 0) {
     puVar6 = (byte *)&local_8->field_0x14;
     puVar7 = (byte *)&local_c->field_0245;
     memmove(puVar7, puVar6, 0x44); /* compiler REP MOVS byte copy */
-    *(undefined4 *)&local_c->field_0x231 = local_8->field_0058;
+    uVar2 = *(undefined2 *)((int)&local_8->field_0058 + 2);
+    local_c->field_0231 = *(undefined2 *)&local_8->field_0058;
+    local_c->field_0233 = uVar2;
     *(undefined4 *)&local_c->field_0x235 = local_8->field_005C;
     *(undefined4 *)&local_c->field_0x239 = local_8->field_0060;
     local_c->field_023D = local_8->field_0064;
-    pDVar3 = st::fn_006B0060(nullptr,(uint *)(&local_8->field_0x0 + local_8->field_0068));
-    pSVar2->field_0241 = pDVar3;
+    pDVar4 = st::fn_006B0060(nullptr,(uint *)(&local_8->field_0x0 + local_8->field_0068));
+    pSVar3->field_0241 = pDVar4;
     g_currentExceptionFrame = local_50.previous;
     return;
   }

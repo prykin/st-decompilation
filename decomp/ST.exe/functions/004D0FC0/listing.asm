@@ -1,4 +1,4 @@
-FUN_004d0fc0:
+TLOEmbryoTy::TLOEmbryoTy:
 004D0FC0  56                        PUSH ESI
 004D0FC1  57                        PUSH EDI
 004D0FC2  8B F1                     MOV ESI,ECX

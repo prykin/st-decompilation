@@ -8,12 +8,15 @@
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 00494AE0 -> 0055A270 @ 00494C1D; MOVSX at 00494C0D establishes signed source width 2 |
    00494DF0 -> 0055A270 @ 00494E5E; MOVSX at 00494E4E establishes signed source width 2 | 00557C90
-   -> 0055A270 @ 00557F34; MOVSX at 00557F1D establishes signed source width 1 */
+   -> 0055A270 @ 00557F34; MOVSX at 00557F1D establishes signed source width 1
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 0055A270 -> 0055BB00 @ 0055A336 */
 
 void __thiscall
 VisibleClassTy::SetZoneMin1
           (VisibleClassTy *this,int param_1,int param_2,char param_3,uint param_4,int param_5,
-          undefined4 param_6,uint param_7)
+          uint param_6,uint param_7)
 
 {
   byte bVar1;

@@ -7,7 +7,10 @@
    table_confidence=high
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 00589990 returns STOctopusC::STOctopusC this @ 005899CF */
+   Evidence: 00589990 returns STOctopusC::STOctopusC this @ 005899CF
+
+   [STSwitchEnumApplier] Switch target field_0249 uses
+   /SubmarineTitans/Recovered/Enums/STOctopusC_field_0249State. Cases: CASE_0=0;CASE_2=2;CASE_3=3 */
 
 STOctopusC * __thiscall STOctopusC::STOctopusC(STOctopusC *this)
 
@@ -17,7 +20,7 @@ STOctopusC * __thiscall STOctopusC::STOctopusC(STOctopusC *this)
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = &VTable_0079BD18;
   this->vtable = &STOctopusCVTable;
-  this->field_0249 = 0;
+  this->field_0249 = CASE_0;
   memset(&this->field_0x285, 0, 0x28); /* compiler bulk-zero initialization */
   return this;
 }

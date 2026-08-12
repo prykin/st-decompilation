@@ -27,6 +27,7 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionTag;
@@ -67,6 +68,10 @@ public class STConstructorAnalyzer extends GhidraScript {
         requireColumns(tsv, "table_address", "proposed_name", "owner", "confidence", "apply");
         listing = currentProgram.getListing();
 
+        Path directory = proposalsFile.getAbsoluteFile().getParentFile().toPath();
+        Map<Address, FactoryConstructorEvidence> factoryConstructors =
+            factoryConstructorEvidence(directory.resolve("object_factory_proposals.tsv"));
+
         Map<Address, TableInfo> tables = new TreeMap<>();
         for (Map<String, String> row : tsv.rows) {
             Address address = address(row.get("table_address"));
@@ -84,7 +89,8 @@ public class STConstructorAnalyzer extends GhidraScript {
             Function function = currentProgram.getFunctionManager().getFunctionAt(entry.getKey());
             if (function == null) continue;
             FlowResult flow = analyzeFlow(function, entry.getValue());
-            constructors.addAll(constructorProposals(function, flow));
+            constructors.addAll(constructorProposals(function, flow,
+                factoryConstructors.get(function.getEntryPoint())));
             hierarchy.addAll(hierarchyProposals(function, flow));
             allocations.addAll(allocationEvidence(function, flow));
         }
@@ -93,7 +99,6 @@ public class STConstructorAnalyzer extends GhidraScript {
         hierarchy = deduplicateHierarchy(hierarchy);
         List<ClassSizeProposal> sizes = classSizes(allocations);
 
-        Path directory = proposalsFile.getAbsoluteFile().getParentFile().toPath();
         writeConstructors(directory.resolve("constructor_proposals.tsv"), constructors);
         writeHierarchy(directory.resolve("constructor_hierarchy.tsv"), hierarchy);
         writeSizes(directory.resolve("constructor_class_sizes.tsv"), sizes);
@@ -107,7 +112,132 @@ public class STConstructorAnalyzer extends GhidraScript {
         println("Vptr writers: " + storesByFunction.size() + ", constructor candidates: " +
             constructors.size() + ", name_apply: " + names + ", convention_apply: " +
             conventions + ", parameter_apply: " + parameters + ", hierarchy: " +
-            hierarchy.size() + ", class sizes: " + sizes.size());
+            hierarchy.size() + ", class sizes: " + sizes.size() +
+            ", factory constructor anchors: " + factoryConstructors.size());
+    }
+
+    /**
+     * Close the circular factory -> constructor -> named-vtable dependency from exact machine
+     * flow.  A usable row has one concrete factory result whose allocation size exactly equals
+     * the recovered class.  The freshly allocated EAX value must then be copied without an
+     * adjustment into ECX and the successful path must end in a direct tail transfer.  Its
+     * resolved target is therefore the initializer which receives and returns the complete
+     * factory object, even while the target's vtable is still anonymous.
+     */
+    private Map<Address, FactoryConstructorEvidence> factoryConstructorEvidence(Path path)
+            throws Exception {
+        Map<Address, FactoryConstructorEvidence> result = new TreeMap<>();
+        Set<Address> conflicts = new TreeSet<>();
+        if (!Files.isRegularFile(path)) return result;
+        Tsv factories = readTsv(path);
+        requireColumns(factories, "target_address", "owner", "allocation_size",
+            "confidence");
+        for (Map<String, String> row : factories.rows) {
+            monitor.checkCancelled();
+            String owner = unt(row.get("owner"));
+            long allocationSize = parsePositive(row.get("allocation_size"));
+            if (owner.isBlank() || allocationSize < 4 ||
+                    !Set.of("high", "existing_typed_return").contains(row.get("confidence")) ||
+                    !ownerHasExactLength(owner, allocationSize)) continue;
+            Function factory = currentProgram.getFunctionManager().getFunctionAt(
+                address(row.get("target_address")));
+            FactoryConstructorEvidence evidence = terminalFactoryConstructor(factory, owner,
+                allocationSize);
+            if (evidence == null || conflicts.contains(evidence.constructor)) continue;
+            FactoryConstructorEvidence prior = result.get(evidence.constructor);
+            if (prior == null) result.put(evidence.constructor, evidence);
+            else if (!prior.owner.equals(evidence.owner)) {
+                result.remove(evidence.constructor);
+                conflicts.add(evidence.constructor);
+            }
+        }
+        return result;
+    }
+
+    private FactoryConstructorEvidence terminalFactoryConstructor(Function factory,
+            String owner, long allocationSize) {
+        if (factory == null || factory.isThunk() || factory.isExternal()) return null;
+        Set<String> allocationAliases = new TreeSet<>();
+        Instruction previous = null;
+        InstructionIterator iterator = listing.getInstructions(factory.getBody(), true);
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            if ("CALL".equals(mnemonic)) {
+                Long pushed = immediatePush(previous, factory);
+                allocationAliases.clear();
+                if (pushed != null && pushed == allocationSize) allocationAliases.add("EAX");
+                previous = instruction;
+                continue;
+            }
+            if ("JMP".equals(mnemonic) && instruction.getFallThrough() == null &&
+                    allocationAliases.contains("ECX")) {
+                Address rawTarget = directFlow(instruction);
+                Function target = rawTarget == null ? null :
+                    currentProgram.getFunctionManager().getFunctionAt(rawTarget);
+                Function resolved = resolveThunk(target);
+                if (resolved != null && !resolved.equals(factory))
+                    return new FactoryConstructorEvidence(resolved.getEntryPoint(), owner,
+                        factory.getEntryPoint(), rawTarget, allocationSize);
+                return null;
+            }
+            if (operands.length > 0) {
+                String destination = cleanRegister(operands[0]);
+                if ("MOV".equals(mnemonic) && destination != null &&
+                        isFullRegister(operands[0]) && operands.length >= 2) {
+                    String source = cleanRegister(operands[1]);
+                    if (source != null && isFullRegister(operands[1]) &&
+                            allocationAliases.contains(source)) allocationAliases.add(destination);
+                    else allocationAliases.remove(destination);
+                }
+                else if (destination != null && isFullRegister(operands[0]) &&
+                        writesRegister(mnemonic)) allocationAliases.remove(destination);
+            }
+            previous = instruction;
+        }
+        return null;
+    }
+
+    private Long immediatePush(Instruction instruction, Function containing) {
+        if (instruction == null || !containing.getBody().contains(instruction.getAddress()) ||
+                !"PUSH".equalsIgnoreCase(instruction.getMnemonicString())) return null;
+        String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+        return operands.length == 1 ? immediate(operands[0]) : null;
+    }
+
+    private Address directFlow(Instruction instruction) {
+        Address[] flows = instruction.getFlows();
+        return flows.length == 1 ? flows[0] : null;
+    }
+
+    private Function resolveThunk(Function function) {
+        Function current = function;
+        Set<Address> seen = new TreeSet<>();
+        for (int depth = 0; depth < 32 && current != null && current.isThunk(); depth++) {
+            if (!seen.add(current.getEntryPoint())) return null;
+            Function next = current.getThunkedFunction(false);
+            if (next == null || next.equals(current)) return null;
+            current = next;
+        }
+        return current;
+    }
+
+    private boolean ownerHasExactLength(String owner, long length) {
+        String leaf = leafOwner(owner);
+        DataType direct = currentProgram.getDataTypeManager().getDataType("/" + leaf);
+        if (direct instanceof Structure structure) return structure.getLength() == length;
+        List<DataType> matches = new ArrayList<>();
+        currentProgram.getDataTypeManager().findDataTypes(leaf, matches);
+        return matches.stream().filter(type -> type instanceof Structure)
+            .map(type -> (Structure)type)
+            .anyMatch(structure -> structure.getLength() == length &&
+                !structure.getName().endsWith("VTable"));
+    }
+
+    private long parsePositive(String value) {
+        try { return value == null || value.isBlank() ? -1 : Long.parseLong(value); }
+        catch (NumberFormatException exception) { return -1; }
     }
 
     private Map<Address, List<RawStore>> findStores(Map<Address, TableInfo> tables) {
@@ -262,17 +392,22 @@ public class STConstructorAnalyzer extends GhidraScript {
         return !Set.of("CMP", "TEST", "PUSH", "CALL", "JMP", "LEA").contains(mnemonic);
     }
 
-    private List<ConstructorProposal> constructorProposals(Function function, FlowResult flow) {
+    private List<ConstructorProposal> constructorProposals(Function function, FlowResult flow,
+            FactoryConstructorEvidence factoryEvidence) {
         List<ConstructorProposal> result = new ArrayList<>();
         Map<Integer, List<StoreEvidence>> byOrigin = storesByOrigin(flow.stores);
         List<StoreEvidence> thisStores = byOrigin.getOrDefault(Origin.THIS_ID, List.of());
         if (thisStores.isEmpty()) return result;
         StoreEvidence finalStore = thisStores.get(thisStores.size() - 1);
         String owner = finalStore.raw.table.owner;
+        boolean factoryAnchored = factoryEvidence != null &&
+            (owner.isBlank() || owner.equals(factoryEvidence.owner) ||
+             !finalStore.raw.table.apply && !"high".equals(finalStore.raw.table.confidence));
+        if (factoryAnchored) owner = factoryEvidence.owner;
         if (owner.isBlank()) return result;
 
         boolean returnsThis = flow.returnedOrigins.contains(Origin.THIS_ID);
-        boolean strongTable = finalStore.raw.table.apply ||
+        boolean strongTable = factoryAnchored || finalStore.raw.table.apply ||
             "high".equals(finalStore.raw.table.confidence);
         boolean constructorShape = finalStore.callsBefore > 0 || finalStore.postFieldWrites > 0;
         boolean high = strongTable && returnsThis && constructorShape;
@@ -301,7 +436,11 @@ public class STConstructorAnalyzer extends GhidraScript {
             "; field_writes_after=" + finalStore.postFieldWrites +
             "; incoming_edx_uses=" + edxUses +
             "; incoming_stack_parameter_uses=" + stackParameterUses +
-            "; table_confidence=" + finalStore.raw.table.confidence;
+            "; table_confidence=" + finalStore.raw.table.confidence +
+            (factoryAnchored ? "; exact_factory_tail=" + addr(factoryEvidence.factory) +
+                "->" + addr(factoryEvidence.rawTarget) + "->" +
+                addr(factoryEvidence.constructor) + "; allocation_size=" +
+                factoryEvidence.allocationSize : "");
         result.add(new ConstructorProposal(function.getEntryPoint(), expectedName,
             function.getSymbol().getSource().toString(),
             function.getSignature().getPrototypeString(true),
@@ -712,6 +851,8 @@ public class STConstructorAnalyzer extends GhidraScript {
             this.confidence = confidence; this.apply = apply;
         }
     }
+    private record FactoryConstructorEvidence(Address constructor, String owner,
+        Address factory, Address rawTarget, long allocationSize) { }
     private static class RawStore {
         final Address address;
         final TableInfo table;

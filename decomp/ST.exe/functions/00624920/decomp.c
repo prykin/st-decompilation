@@ -12,7 +12,11 @@
 
    [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/STMineSetC_sub_00624920_param_1Enum. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
+
+   [STSwitchEnumApplier] Switch target field_02AE uses
+   /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
 
 undefined4 __thiscall
 STMineSetC::sub_00624920

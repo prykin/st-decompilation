@@ -64,10 +64,15 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/DebugSystemCVTable+12	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/DebugSystemCVTable+16	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/DebugSystemCVTable+24	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/EditorClassTyVTable+8	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/GameSystemCVTable+12	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/GameSystemCVTable+16	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/GameSystemCVTable+24	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/GameSystemCVTable+28	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/HelpPanelTyVTable+0	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/HelpPanelTyVTable+12	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/HelpPanelTyVTable+20	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/HelpPanelTyVTable+24	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/InterSystemCVTable+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/InterSystemCVTable+12	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/InterSystemCVTable+16	vtable_slot	unchanged	desired function pointer already present
@@ -79,6 +84,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/PanelTyVTable+12	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/PanelTyVTable+20	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/PanelTyVTable+24	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/PrividerTyVTable+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STAppCVTable+8	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STAppCVTable+16	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STArtiafactCVTable+4	vtable_slot	unchanged	desired function pointer already present
@@ -1580,6 +1586,75 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+280	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+284	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+288	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+4	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+8	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+16	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+20	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+24	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+32	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+36	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+40	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+44	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+48	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+52	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+56	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+60	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+64	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+68	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+72	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+76	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+80	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+84	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+88	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+92	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+96	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+100	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+104	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+108	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+112	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+116	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+120	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+128	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+132	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+136	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+140	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+144	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+148	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+152	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+156	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+160	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+164	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+168	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+172	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+176	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+180	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+184	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+188	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+192	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+196	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+200	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+204	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+208	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+212	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+216	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+220	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+224	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+228	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+236	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+240	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+244	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+248	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+252	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+256	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+260	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+264	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+268	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+272	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+276	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+280	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+284	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+288	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable_at_1D5+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/TLOFakeTyVTable+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOFakeTyVTable+8	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOFakeTyVTable+12	vtable_slot	disabled	apply=0
@@ -1664,77 +1739,6 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_00790790+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_00790C00+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007976C0+0	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C6C+0	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+4	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+8	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+12	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+16	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+20	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+24	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+32	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+36	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+40	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+44	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+48	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+52	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+56	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+60	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+64	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+68	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+72	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+76	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+80	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+84	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+88	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+92	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+96	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+100	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+104	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+108	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+112	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+116	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+120	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+124	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+128	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+132	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+136	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+140	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+144	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+148	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+152	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+156	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+160	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+164	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+168	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+172	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+176	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+180	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+184	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+188	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+192	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+196	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+200	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+204	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+208	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+212	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+216	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+220	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+224	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+228	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+236	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+240	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+244	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+248	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+252	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+256	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+260	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+264	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+268	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+272	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+276	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+280	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+284	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_00798C70+288	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079B398+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079B524+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079B688+0	vtable_slot	disabled	apply=0
@@ -2328,8 +2332,6 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_0079DED8+48	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DED8+52	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DED8+56	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_0079E298+8	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_0079E2B4+8	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079E2C0+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079E360+4	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A1108+0	vtable_slot	unchanged	desired function pointer already present
@@ -2863,3 +2865,4 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A1D88+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1D88+8	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1D88+12	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable+8	vtable_slot	unchanged	desired function pointer already present

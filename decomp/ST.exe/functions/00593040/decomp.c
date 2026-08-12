@@ -105,7 +105,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     thunk_FUN_005b6350(this_00,0x6942,(message->arg0).u32,0);
     this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pMVar4 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
+    pMVar4 = *(MMsgTy **)(this_00->field_00BB[0xc].field_01DC + 0x2e6);
     if (pMVar4 != nullptr) {
       MMsgTy::HidePanel(pMVar4,1,0,1);
     }
@@ -121,7 +121,8 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case MESS_FSGSTY_694A:
     if ((((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) && (DAT_0080874e == 3)) &&
-       (pMVar4 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6), pMVar4 != nullptr)) {
+       (pMVar4 = *(MMsgTy **)(this_00->field_00BB[0xc].field_01DC + 0x2e6), pMVar4 != nullptr)
+       ) {
       MMsgTy::SetMessage(pMVar4,0x2530,'\0',nullptr,nullptr,nullptr,0,
                          0);
     }
@@ -159,7 +160,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
         thunk_FUN_005b6350(this_00,(-(uint)(this_00->field_1FFC != 0) & 8) + 0x6948,0,0);
         this_00->CloseButtons();
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        pMVar4 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
+        pMVar4 = *(MMsgTy **)(this_00->field_00BB[0xc].field_01DC + 0x2e6);
         if (pMVar4 != nullptr) {
           MMsgTy::HidePanel(pMVar4,1,0,1);
         }
@@ -196,52 +197,47 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
       goto switchD_005931dd_default;
     }
     *(int *)(iVar9 + 0xeb) = iVar8;
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 switchD_005931dd_default:
-    uVar11 = *(uint *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x81);
+    uVar11 = this_00->field_00BB[iVar17].field_0028.field_0004;
     local_c = piVar3;
     if (uVar11 != 0xffffffff) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       Library::DKW::DDX::FUN_006b3730
-                (*(uint **)((int)&this_00->field_012B + iVar17 * 0x1fb),uVar11,
-                 *(uint *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x85),
-                 *(uint *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x99),
-                 *(uint *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x9d));
+                ((uint *)this_00->field_00BB[iVar17].field_0028.field_0048,uVar11,
+                 this_00->field_00BB[iVar17].field_0028.field_0008,
+                 this_00->field_00BB[iVar17].field_0028.field_001C,
+                 this_00->field_00BB[iVar17].field_0028.field_0020);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x7c) != '\0') {
+    if (this_00->field_00BB[iVar17].field_0027 != '\0') {
       switch(piVar3[1]) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       case 0:
       case 2:
       case 3:
-        *(int *)(&this_00->field_0x221 + iVar17 * 0x1fb) =
-             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x99) +
-             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x45);
-        *(int *)(&this_00->field_0x225 + iVar17 * 0x1fb) =
-             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x9d) +
-             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x49);
+        this_00->field_00BB[iVar17].field_014A.field_001C =
+             this_00->field_00BB[iVar17].field_0028.field_001C +
+             *(int *)&this_00->field_00BB[iVar17 + -1].field_0x1eb;
+        this_00->field_00BB[iVar17].field_014A.field_0020 =
+             this_00->field_00BB[iVar17].field_0028.field_0020 +
+             *(int *)&this_00->field_00BB[iVar17 + -1].field_0x1ef;
         break;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       case 1:
-        *(int *)(&this_00->field_0x221 + iVar17 * 0x1fb) =
-             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x99) +
-             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x4d);
-        *(int *)(&this_00->field_0x225 + iVar17 * 0x1fb) =
-             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x9d) +
-             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x51);
+        this_00->field_00BB[iVar17].field_014A.field_001C =
+             this_00->field_00BB[iVar17].field_0028.field_001C +
+             *(int *)&this_00->field_00BB[iVar17 + -1].field_0x1f3;
+        this_00->field_00BB[iVar17].field_014A.field_0020 =
+             this_00->field_00BB[iVar17].field_0028.field_0020 +
+             *(int *)&this_00->field_00BB[iVar17 + -1].field_0x1f7;
       }
-      uVar11 = *(uint *)((int)&this_00->field_0209 + iVar17 * 0x1fb);
+      uVar11 = this_00->field_00BB[iVar17].field_014A.field_0004;
       if (uVar11 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)((int)&this_00->field_024D + iVar17 * 0x1fb),uVar11,
-                   *(uint *)(&this_00->field_0x20d + iVar17 * 0x1fb),
-                   *(uint *)(&this_00->field_0x221 + iVar17 * 0x1fb),
-                   *(uint *)(&this_00->field_0x225 + iVar17 * 0x1fb));
+                  ((uint *)this_00->field_00BB[iVar17].field_014A.field_0048,uVar11,
+                   this_00->field_00BB[iVar17].field_014A.field_0008,
+                   this_00->field_00BB[iVar17].field_014A.field_001C,
+                   this_00->field_00BB[iVar17].field_014A.field_0020);
       }
     }
-    local_10 = *(undefined4 *)((int)&this_00->field_0194 + iVar17 * 0x1fb);
-    iVar9 = *(int *)((int)&this_00->field_0190 + iVar17 * 0x1fb);
+    local_10 = this_00->field_00BB[iVar17].field_00B9.field_0020;
+    iVar9 = this_00->field_00BB[iVar17].field_00B9.field_001C;
     if (*local_c == 2) {
       iVar8 = 0;
 LAB_0059332b:
@@ -257,32 +253,32 @@ LAB_0059332b:
     }
     switch(local_c[1]) {
     case 0:
-      *(int *)((int)&this_00->field_017C + iVar17 * 0x1fb) =
-           *(int *)(&this_00->field_0x180 + iVar17 * 0x1fb) + -3;
+      this_00->field_00BB[iVar17].field_00B9.field_0008 =
+           this_00->field_00BB[iVar17].field_00B9.field_000C + -3;
       break;
     case 1:
-      *(int *)((int)&this_00->field_0190 + iVar17 * 0x1fb) = iVar8 + iVar9;
-      *(int *)((int)&this_00->field_0194 + iVar17 * 0x1fb) =
-           *(int *)((int)&this_00->field_0194 + iVar17 * 0x1fb) + iVar10;
+      this_00->field_00BB[iVar17].field_00B9.field_001C = iVar8 + iVar9;
+      this_00->field_00BB[iVar17].field_00B9.field_0020 =
+           this_00->field_00BB[iVar17].field_00B9.field_0020 + iVar10;
     case 3:
-      iVar8 = *(int *)(&this_00->field_0x180 + iVar17 * 0x1fb) + -2;
+      iVar8 = this_00->field_00BB[iVar17].field_00B9.field_000C + -2;
 LAB_00593378:
-      *(int *)((int)&this_00->field_017C + iVar17 * 0x1fb) = iVar8;
+      this_00->field_00BB[iVar17].field_00B9.field_0008 = iVar8;
       break;
     case 2:
-      iVar8 = *(int *)(&this_00->field_0x180 + iVar17 * 0x1fb) + -1;
+      iVar8 = this_00->field_00BB[iVar17].field_00B9.field_000C + -1;
       goto LAB_00593378;
     }
-    uVar11 = *(uint *)((int)&this_00->field_0178 + iVar17 * 0x1fb);
+    uVar11 = this_00->field_00BB[iVar17].field_00B9.field_0004;
     if (uVar11 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b3730
-                (*(uint **)((int)&this_00->field_01BC + iVar17 * 0x1fb),uVar11,
-                 *(uint *)((int)&this_00->field_017C + iVar17 * 0x1fb),
-                 *(uint *)((int)&this_00->field_0190 + iVar17 * 0x1fb),
-                 *(uint *)((int)&this_00->field_0194 + iVar17 * 0x1fb));
+                ((uint *)this_00->field_00BB[iVar17].field_00B9.field_0048,uVar11,
+                 this_00->field_00BB[iVar17].field_00B9.field_0008,
+                 this_00->field_00BB[iVar17].field_00B9.field_001C,
+                 this_00->field_00BB[iVar17].field_00B9.field_0020);
     }
-    *(int *)((int)&this_00->field_0190 + iVar17 * 0x1fb) = iVar9;
-    *(undefined4 *)((int)&this_00->field_0194 + iVar17 * 0x1fb) = local_10;
+    this_00->field_00BB[iVar17].field_00B9.field_001C = iVar9;
+    this_00->field_00BB[iVar17].field_00B9.field_0020 = local_10;
   }
 switchD_005931ad_caseD_6944:
   g_currentExceptionFrame = local_54.previous;

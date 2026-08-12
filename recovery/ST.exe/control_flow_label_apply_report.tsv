@@ -2275,6 +2275,57 @@ function_address	label_address	proposed_name	status	detail
 0064A970	0064C271	cf_common_exit_0064C271	unchanged	label is already primary
 0064A970	0064C2A4	cf_error_exit_0064C2A4	unchanged	label is already primary
 0064F900	0064F931	cf_join_0064F931	disabled	apply=0
+00652810	00652A99	cf_common_join_00652A99	unchanged	label is already primary
+00652810	00652B42	cf_branch_target_00652B42	disabled	apply=0
+00652810	006536DD	cf_join_006536DD	disabled	apply=0
+00652810	00653778	cf_join_00653778	disabled	apply=0
+00652810	00653BB7	cf_join_00653BB7	disabled	apply=0
+00652810	00653BBB	cf_branch_target_00653BBB	disabled	apply=0
+00652810	006540B9	cf_join_006540B9	disabled	apply=0
+00652810	006540BD	cf_branch_target_006540BD	disabled	apply=0
+00652810	00654362	cf_join_00654362	disabled	apply=0
+00652810	00654366	cf_branch_target_00654366	disabled	apply=0
+00652810	00654386	cf_join_00654386	disabled	apply=0
+00652810	00655322	cf_branch_target_00655322	disabled	apply=0
+00652810	00655324	cf_join_00655324	disabled	apply=0
+00652810	0065565B	cf_join_0065565B	disabled	apply=0
+00652810	00655871	cf_join_00655871	disabled	apply=0
+00652810	00655972	cf_join_00655972	disabled	apply=0
+00652810	006559D0	cf_join_006559D0	disabled	apply=0
+00652810	006559D6	cf_join_006559D6	disabled	apply=0
+00652810	006559E3	cf_join_006559E3	disabled	apply=0
+00652810	00655F44	cf_join_00655F44	disabled	apply=0
+00652810	00655F4C	cf_join_00655F4C	disabled	apply=0
+00652810	006577AE	cf_join_006577AE	disabled	apply=0
+00652810	006578FE	cf_join_006578FE	disabled	apply=0
+00652810	00657A41	cf_join_00657A41	disabled	apply=0
+00652810	00657BCE	cf_join_00657BCE	disabled	apply=0
+00652810	00657CCF	cf_join_00657CCF	disabled	apply=0
+00652810	00657DD9	cf_join_00657DD9	disabled	apply=0
+00652810	00657F1C	cf_join_00657F1C	disabled	apply=0
+00652810	0065806E	cf_join_0065806E	disabled	apply=0
+00652810	00658177	cf_join_00658177	disabled	apply=0
+00652810	006582B3	cf_join_006582B3	disabled	apply=0
+00652810	00658416	cf_join_00658416	disabled	apply=0
+00652810	00658543	cf_join_00658543	disabled	apply=0
+00652810	00658670	cf_join_00658670	disabled	apply=0
+00652810	006587E2	cf_join_006587E2	disabled	apply=0
+00652810	006588EB	cf_join_006588EB	disabled	apply=0
+00652810	006589FE	cf_join_006589FE	disabled	apply=0
+00652810	00658B70	cf_join_00658B70	disabled	apply=0
+00652810	00658D01	cf_join_00658D01	disabled	apply=0
+00652810	00658E8E	cf_join_00658E8E	disabled	apply=0
+00652810	00658FC8	cf_join_00658FC8	disabled	apply=0
+00652810	00659143	cf_join_00659143	disabled	apply=0
+00652810	0065937A	cf_join_0065937A	disabled	apply=0
+00652810	006594EC	cf_join_006594EC	disabled	apply=0
+00652810	00659640	cf_join_00659640	disabled	apply=0
+00652810	00659785	cf_join_00659785	disabled	apply=0
+00652810	006598CA	cf_join_006598CA	disabled	apply=0
+00652810	00659A1C	cf_join_00659A1C	disabled	apply=0
+00652810	00659A73	cf_common_join_00659A73	unchanged	label is already primary
+00652810	00659A80	cf_continue_loop_00659A80	unchanged	label is already primary
+00652810	00659AAE	cf_join_00659AAE	disabled	apply=0
 0065BD70	0065C021	cf_join_0065C021	disabled	apply=0
 0065BD70	0065C03E	cf_join_0065C03E	disabled	apply=0
 0065BD70	0065C042	cf_join_0065C042	disabled	apply=0

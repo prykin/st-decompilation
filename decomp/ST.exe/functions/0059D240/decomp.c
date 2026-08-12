@@ -89,7 +89,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
     iVar8 = *puVar9;
     this_00->field_1E92 = ptVar5;
     if ((iVar8 != 0) && (ptVar5 != (LPBITMAPINFO)0x0)) {
-      pcVar1 = this_00->field_1A73;
+      pcVar1 = this_00->array_00BC[0xc].field_01F3;
       local_8c4[0] = 0;
       local_8c4[3] = 0;
       local_8c4[4] = 0x2c8 - this_00->field_1B4C;
@@ -162,7 +162,8 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       }
     }
     this_00->field_002D = 0x61;
-    *(undefined4 *)&this_00->field_0x35 = 0;
+    this_00->field_0035 = 0;
+    this_00->field_0037 = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_4c.previous;
     return;

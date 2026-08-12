@@ -89,7 +89,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
     this_00->field_002D = 0x23;
     iVar9 = 0;
     do {
-      *(short *)&this_00->field_0x31 = (short)iVar9 + 1;
+      this_00->field_0031 = (short)iVar9 + 1;
       if (iVar9 == 0) {
         sVar4 = 1;
       }
@@ -99,13 +99,14 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       else {
         sVar4 = (((int)(DAT_0080c83e + 2) <= iVar9) - 1 & 0xfffe) + 2;
       }
-      *(short *)&this_00->field_0x33 = sVar4;
+      this_00->field_0033 = sVar4;
       FUN_006e6080(this_00,2,this_00->field_009F,(undefined4 *)puVar1);
       iVar9 = iVar9 + 1;
     } while (iVar9 < 9);
     if (this_00->field_0067 == '\0') {
       this_00->field_002D = 0x20;
-      *(undefined4 *)&this_00->field_0x31 = 0;
+      this_00->field_0031 = 0;
+      this_00->field_0033 = 0;
       FUN_006e6080(this_00,2,this_00->field_008F,(undefined4 *)puVar1);
     }
     else {

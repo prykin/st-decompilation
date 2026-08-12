@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
-   CursorClassTy::ReInitCursorSpr */
+   CursorClassTy::ReInitCursorSpr
+
+   [STSwitchEnumApplier] Switch target field_0494 uses
+   /SubmarineTitans/Recovered/Enums/CursorClassTy_field_0494State. Cases:
+   CASE_C=12;CASE_F=15;CASE_18=24;CASE_48=72;CASE_58=88 */
 
 void __thiscall CursorClassTy::ReInitCursorSpr(CursorClassTy *this,int param_1)
 
@@ -38,7 +42,7 @@ void __thiscall CursorClassTy::ReInitCursorSpr(CursorClassTy *this,int param_1)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)this_00,(int *)g_ddxContext_008075A8,0,cVar4,puVar5,iVar2,
                (uint)(param_1 != 7));
-    this_01->field_0494 = 0x58;
+    this_01->field_0494 = CASE_58;
     SetGCType(this_01,CASE_0,this_01->field_0034,this_01->field_0038);
     if (this_01->field_001C != 0xffffffff) {
       FUN_006b3af0((int *)this_01->field_0060,this_01->field_001C);

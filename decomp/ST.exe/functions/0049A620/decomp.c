@@ -8,13 +8,14 @@
 undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
 
 {
+  undefined2 uVar2;
   STGroupBoatC *this_00;
   int iVar2;
   DArrayTy *array;
   STBoatC *this_01;
   STGameObjC *objPtr;
   int iVar3;
-  undefined4 uVar2;
+  undefined4 uVar3;
   int iVar4;
   uint uVar5;
   uint uVar6;
@@ -48,11 +49,13 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   }
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&local_14->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
-    local_14->field_003D = (int)*(short *)&local_14->field_0xdd;
+    local_14->field_003D = (int)local_14->field_00DD;
+    uVar2 = local_14->field_00E5;
     local_14->field_0045 = (int)*(short *)&local_14->field_0xe1;
     local_14->field_0065 = 0;
-    local_14->field_0041 = (int)*(short *)&local_14->field_0xdf;
-    local_14->field_030E = *(undefined4 *)&local_14->field_0xe3;
+    local_14->field_0041 = (int)local_14->field_00DF;
+    *(undefined2 *)&local_14->field_0x30e = *(undefined2 *)&local_14->field_0xe3;
+    *(undefined2 *)&local_14->field_0x310 = uVar2;
     array = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)local_14);
     InitWay(this_00,array,this_00->field_003D,this_00->field_0041,this_00->field_0045);
     DArrayDestroy(array);

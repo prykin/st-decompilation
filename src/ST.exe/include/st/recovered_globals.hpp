@@ -1768,12 +1768,14 @@ extern undefined4 DAT_80000001;
 extern undefined4 DAT_80000002;
 extern DebugSystemCVTable st_global_0079B20C; // image symbol: DebugSystemCVTable
 extern DumpClassCVTable st_global_00790710; // image symbol: DumpClassCVTable
+extern EditorClassTyVTable st_global_0079E2B4; // image symbol: EditorClassTyVTable
 extern void *ExceptionList;
 extern FSGSTyVTable st_global_0079C02C; // image symbol: FSGSTyVTable
 extern FrmPanelTyVTable st_global_0079AC1C; // image symbol: FrmPanelTyVTable
 extern GameSystemCVTable st_global_0079B1E0; // image symbol: GameSystemCVTable
 extern HANDLE HANDLE_008118f8;
 extern HWND HWND_00856d78;
+extern HelpPanelTyVTable st_global_0079AC48; // image symbol: HelpPanelTyVTable
 extern HelpStringTyVTable st_global_0079AC6C; // image symbol: HelpStringTyVTable
 extern IMAGE_DOS_HEADER IMAGE_DOS_HEADER_00400000;
 extern InfocPanelTyVTable st_global_0079AC70; // image symbol: InfocPanelTyVTable
@@ -2038,6 +2040,7 @@ extern undefined *PTR_thunk_FUN_00680270_007d3fa8;
 extern PausePanelTyVTable st_global_0079AD2C; // image symbol: PausePanelTyVTable
 extern PlayPanelTyVTable st_global_0079AD48; // image symbol: PlayPanelTyVTable
 extern PrividerTyVTable st_global_0079C0C4; // image symbol: PrividerTyVTable
+extern RadioClassTyVTable st_global_0079E294; // image symbol: RadioClassTyVTable
 extern ResearchPanelTyVTable st_global_0079AD64; // image symbol: ResearchPanelTyVTable
 extern SAMPanelTyVTable st_global_0079AD8C; // image symbol: SAMPanelTyVTable
 extern short SHORT_007c88d4;
@@ -2084,6 +2087,7 @@ extern STTorpCVTable st_global_0079D4AC; // image symbol: STTorpCVTable
 extern STVolcanoCVTable st_global_0079D610; // image symbol: STVolcanoCVTable
 extern SettMapMTyVTable st_global_0079C124; // image symbol: SettMapMTyVTable
 extern SettMapTyVTable st_global_0079C160; // image symbol: SettMapTyVTable
+extern SliderClassTyVTable st_global_0079E2C8; // image symbol: SliderClassTyVTable
 extern SoundManagerTyVTable st_global_0079B024; // image symbol: SoundManagerTyVTable
 extern SpriteClassTyVTable st_global_0079E21C; // image symbol: SpriteClassTyVTable
 extern StartSystemTyVTable st_global_0079C1E8; // image symbol: StartSystemTyVTable
@@ -2091,6 +2095,8 @@ extern SystemClassTyVTable st_global_0079E188; // image symbol: SystemClassTyVTa
 extern SystemWithNamedObjClassTyVTable st_global_0079E1B4; // image symbol: SystemWithNamedObjClassTyVTable
 extern TLOBaseTyVTable st_global_00790AA0; // image symbol: TLOBaseTyVTable
 extern TLOBldMarkVTable st_global_00790C04; // image symbol: TLOBldMarkVTable
+extern TLOEmbryoTyVTable st_global_00798C70; // image symbol: TLOEmbryoTyVTable
+extern TLOEmbryoTyVTable_at_1D5 st_global_00798C6C; // image symbol: TLOEmbryoTyVTable_at_1D5
 extern TLOFakeTyVTable st_global_00797560; // image symbol: TLOFakeTyVTable
 extern TrackbarClassTyVTable st_global_0079E2CC; // image symbol: TrackbarClassTyVTable
 extern TraksClassTyVTable st_global_0079AEC0; // image symbol: TraksClassTyVTable
@@ -2101,10 +2107,7 @@ extern VTable_00790708 st_global_00790708; // image symbol: VTable_00790708
 extern VTable_00790790 st_global_00790790; // image symbol: VTable_00790790
 extern VTable_00790C00 st_global_00790C00; // image symbol: VTable_00790C00
 extern VTable_007976C0 st_global_007976C0; // image symbol: VTable_007976C0
-extern VTable_00798C6C st_global_00798C6C; // image symbol: VTable_00798C6C
-extern VTable_00798C70 st_global_00798C70; // image symbol: VTable_00798C70
 extern VTable_0079AC18 st_global_0079AC18; // image symbol: VTable_0079AC18
-extern VTable_0079AC48 st_global_0079AC48; // image symbol: VTable_0079AC48
 extern VTable_0079ACE8 st_global_0079ACE8; // image symbol: VTable_0079ACE8
 extern VTable_0079ADF4 st_global_0079ADF4; // image symbol: VTable_0079ADF4
 extern VTable_0079AE04 st_global_0079AE04; // image symbol: VTable_0079AE04
@@ -2156,11 +2159,7 @@ extern VTable_0079DED8 st_global_0079DED8; // image symbol: VTable_0079DED8
 extern VTable_0079E1AC st_global_0079E1AC; // image symbol: VTable_0079E1AC
 extern VTable_0079E1B0 st_global_0079E1B0; // image symbol: VTable_0079E1B0
 extern VTable_0079E284 st_global_0079E284; // image symbol: VTable_0079E284
-extern VTable_0079E294 st_global_0079E294; // image symbol: VTable_0079E294
-extern VTable_0079E298 st_global_0079E298; // image symbol: VTable_0079E298
-extern VTable_0079E2B4 st_global_0079E2B4; // image symbol: VTable_0079E2B4
 extern VTable_0079E2C0 st_global_0079E2C0; // image symbol: VTable_0079E2C0
-extern VTable_0079E2C8 st_global_0079E2C8; // image symbol: VTable_0079E2C8
 extern VTable_0079E360 st_global_0079E360; // image symbol: VTable_0079E360
 extern VTable_007A1108 st_global_007A1108; // image symbol: VTable_007A1108
 extern VTable_007A1128 st_global_007A1128; // image symbol: VTable_007A1128
@@ -2201,6 +2200,7 @@ extern VTable_007A1CC8 st_global_007A1CC8; // image symbol: VTable_007A1CC8
 extern VTable_007A1D10 st_global_007A1D10; // image symbol: VTable_007A1D10
 extern VTable_007A1D68 st_global_007A1D68; // image symbol: VTable_007A1D68
 extern VTable_007A1D88 st_global_007A1D88; // image symbol: VTable_007A1D88
+extern ViewerClassTyVTable st_global_0079E298; // image symbol: ViewerClassTyVTable
 extern VisibleClassTyVTable st_global_0079AEEC; // image symbol: VisibleClassTyVTable
 extern VisibleVTable st_global_0079C01C; // image symbol: VisibleVTable
 extern WaitTyVTable st_global_0079C24C; // image symbol: WaitTyVTable
@@ -2716,15 +2716,15 @@ extern VTable_00790C00 st_global_00790C00; // image symbol: VTable_00790C00
 extern TLOBldMarkVTable st_global_00790C04; // image symbol: TLOBldMarkVTable
 extern TLOFakeTyVTable st_global_00797560; // image symbol: TLOFakeTyVTable
 extern VTable_007976C0 st_global_007976C0; // image symbol: VTable_007976C0
-extern VTable_00798C6C st_global_00798C6C; // image symbol: VTable_00798C6C
-extern VTable_00798C70 st_global_00798C70; // image symbol: VTable_00798C70
+extern TLOEmbryoTyVTable_at_1D5 st_global_00798C6C; // image symbol: TLOEmbryoTyVTable_at_1D5
+extern TLOEmbryoTyVTable st_global_00798C70; // image symbol: TLOEmbryoTyVTable
 extern BehPanelTyVTable st_global_0079AB74; // image symbol: BehPanelTyVTable
 extern BldBoatPanelTyVTable st_global_0079ABA0; // image symbol: BldBoatPanelTyVTable
 extern BldLabPanelTyVTable st_global_0079ABC8; // image symbol: BldLabPanelTyVTable
 extern BldObjPanelTyVTable st_global_0079ABF0; // image symbol: BldObjPanelTyVTable
 extern VTable_0079AC18 st_global_0079AC18; // image symbol: VTable_0079AC18
 extern FrmPanelTyVTable st_global_0079AC1C; // image symbol: FrmPanelTyVTable
-extern VTable_0079AC48 st_global_0079AC48; // image symbol: VTable_0079AC48
+extern HelpPanelTyVTable st_global_0079AC48; // image symbol: HelpPanelTyVTable
 extern HelpStringTyVTable st_global_0079AC6C; // image symbol: HelpStringTyVTable
 extern InfocPanelTyVTable st_global_0079AC70; // image symbol: InfocPanelTyVTable
 extern IntercomPanelTyVTable st_global_0079AC9C; // image symbol: IntercomPanelTyVTable
@@ -2897,12 +2897,12 @@ extern SystemWithNamedObjClassTyVTable st_global_0079E1B4; // image symbol: Syst
 extern SpriteClassTyVTable st_global_0079E21C; // image symbol: SpriteClassTyVTable
 extern VTable_0079E284 st_global_0079E284; // image symbol: VTable_0079E284
 extern ButtonClassTyVTable st_global_0079E288; // image symbol: ButtonClassTyVTable
-extern VTable_0079E294 st_global_0079E294; // image symbol: VTable_0079E294
-extern VTable_0079E298 st_global_0079E298; // image symbol: VTable_0079E298
+extern RadioClassTyVTable st_global_0079E294; // image symbol: RadioClassTyVTable
+extern ViewerClassTyVTable st_global_0079E298; // image symbol: ViewerClassTyVTable
 extern ListClassTyVTable st_global_0079E2A4; // image symbol: ListClassTyVTable
-extern VTable_0079E2B4 st_global_0079E2B4; // image symbol: VTable_0079E2B4
+extern EditorClassTyVTable st_global_0079E2B4; // image symbol: EditorClassTyVTable
 extern VTable_0079E2C0 st_global_0079E2C0; // image symbol: VTable_0079E2C0
-extern VTable_0079E2C8 st_global_0079E2C8; // image symbol: VTable_0079E2C8
+extern SliderClassTyVTable st_global_0079E2C8; // image symbol: SliderClassTyVTable
 extern TrackbarClassTyVTable st_global_0079E2CC; // image symbol: TrackbarClassTyVTable
 extern VTable_0079E360 st_global_0079E360; // image symbol: VTable_0079E360
 extern VTable_007A1108 st_global_007A1108; // image symbol: VTable_007A1108

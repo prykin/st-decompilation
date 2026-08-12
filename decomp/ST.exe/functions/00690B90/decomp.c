@@ -41,7 +41,7 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
       if (SVar1 == MESS_SHARED_010F) {
         local_c = nullptr;
         local_10 = PrepareToSave(local_14,(uint *)&local_c);
-        STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
+        STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,(uint)local_c);
         if (local_10 != nullptr) {
           FreeAndNull(&local_10);
         }

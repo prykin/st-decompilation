@@ -1,4 +1,4 @@
-FUN_007209b0:
+EditorClassTy::EditorClassTy:
 007209B0  56                        PUSH ESI
 007209B1  8B F1                     MOV ESI,ECX
 007209B3  E8 48 AD 00 00            CALL 0x0072b700

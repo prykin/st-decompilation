@@ -13,6 +13,7 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
   short sVar3;
   short sVar4;
   STWorldObject *pSVar5;
+  undefined2 uVar7;
   int local_EAX_103;
   int local_EAX_147;
   int local_EAX_201;
@@ -31,18 +32,18 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
   int local_EAX_2613;
   int iVar9;
   int local_EAX_2758;
-  STBoatCVTable *pSVar7;
-  int iVar8;
+  STBoatCVTable *pSVar8;
   int iVar10;
   int iVar11;
+  int iVar12;
 
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
-    iVar10 = 0;
+    iVar11 = 0;
     this->field_02C4 = 0;
     iVar9 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
     if ((iVar9 == 0) ||
-       ((iVar10 = CheckForReplenisher(this), iVar10 == 1 &&
+       ((iVar11 = CheckForReplenisher(this), iVar11 == 1 &&
         (local_EAX_2758 = thunk_FUN_004d6f70((int *)this), local_EAX_2758 == 1)))) {
       this->field_0631 = 0;
       *(undefined4 *)&this->field_0x62d = 0;
@@ -50,8 +51,8 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
     }
     this->field_0619 = this->field_03F7;
     if (this->field_03F7 == 0) {
-      sVar2 = *(short *)&this->field_0x3fb;
-      sVar3 = *(short *)&this->field_0x3fd;
+      sVar2 = this->field_03FB;
+      sVar3 = this->field_03FD;
       sVar4 = this->field_03FF;
       this->field_061D = sVar2;
       this->field_061F = sVar3;
@@ -78,23 +79,23 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
       if (pSVar5 == nullptr) {
         return 0;
       }
-      iVar10 = pSVar5->GetObjectTypeId();
-      if (iVar10 != 0x62) {
+      iVar11 = pSVar5->GetObjectTypeId();
+      if (iVar11 != 0x62) {
         return 0;
       }
       if (pSVar5[1].vtable != (STWorldObjectVTable *)this->field_0024) {
         return 0;
       }
-      iVar10 = (*pSVar5->vtable[5].slots_00_28[2])();
-      if (iVar10 == 0) {
+      iVar11 = (*pSVar5->vtable[5].slots_00_28[2])();
+      if (iVar11 == 0) {
         return 0;
       }
       this->field_0623 = *(undefined4 *)&pSVar5->field_0x18;
     }
     else {
-      iVar10 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
+      iVar11 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
                                   &this->field_0623);
-      if (iVar10 == 0) {
+      if (iVar11 == 0) {
         return 0;
       }
     }
@@ -102,30 +103,30 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
     this->field_00B7 = 3;
     sub_00481520(this,(int)this->field_061D,(int)this->field_061F,(int)this->field_0621);
     sub_00460260(this,0);
-    pSVar7 = this->vtable;
+    pSVar8 = this->vtable;
 LAB_0047926a:
-    iVar10 = (*pSVar7->vfunc_D8)(this);
-    return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
+    iVar11 = (*pSVar8->vfunc_D8)(this);
+    return (-(uint)(iVar11 != 0) & 0xfffffffd) + 2;
   }
-  iVar10 = this->field_0631;
-  if (iVar10 == 0) {
-    iVar10 = *(int *)&this->field_0x62d + 1;
-    *(int *)&this->field_0x62d = iVar10;
-    pSVar7 = this->vtable;
-    if (iVar10 != 2) goto LAB_0047926a;
-    iVar10 = (*pSVar7->vfunc_D8)(this);
-    if (iVar10 != 0) {
+  iVar11 = this->field_0631;
+  if (iVar11 == 0) {
+    iVar11 = *(int *)&this->field_0x62d + 1;
+    *(int *)&this->field_0x62d = iVar11;
+    pSVar8 = this->vtable;
+    if (iVar11 != 2) goto LAB_0047926a;
+    iVar11 = (*pSVar8->vfunc_D8)(this);
+    if (iVar11 != 0) {
       return -1;
     }
     goto cf_common_exit_00478E51;
   }
-  if (iVar10 == 1) {
+  if (iVar11 == 1) {
     local_EAX_103 = sub_00460260(this,2);
     switch(local_EAX_103) {
     case 0:
       local_EAX_201 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
       if ((local_EAX_201 != 0) &&
-         ((iVar10 = CheckForReplenisher(this), iVar10 != 1 ||
+         ((iVar11 = CheckForReplenisher(this), iVar11 != 1 ||
           (local_EAX_228 = thunk_FUN_004d6f70((int *)this), local_EAX_228 != 1)))) {
         sVar2 = this->field_061D;
         sVar3 = this->field_0621;
@@ -136,15 +137,15 @@ LAB_0047926a:
             ((pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0],
              pSVar5 != nullptr &&
              ((*(int *)&pSVar5->field_0x18 == this->field_0623 &&
-              (iVar10 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar10 != 0)))))))) {
+              (iVar11 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar11 != 0)))))))) {
           this->field_00B7 = 0;
-          iVar10 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::thunk_FUN_00493610
-                             ((AnonReceiver_00493610 *)this,(short *)&this->field_0x627,
-                              (short *)&this->field_0x629,(short *)&this->field_0x62b);
-          if (iVar10 == 1) {
-            iVar8 = (int)*(short *)&this->field_0x62b;
-            iVar11 = (int)*(short *)&this->field_0x629;
-            iVar10 = (int)*(short *)&this->field_0x627;
+          iVar11 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::thunk_FUN_00493610
+                             ((AnonReceiver_00493610 *)this,&this->field_0627,&this->field_0629,
+                              (short *)&this->field_0x62b);
+          if (iVar11 == 1) {
+            iVar10 = (int)*(short *)&this->field_0x62b;
+            iVar12 = (int)this->field_0629;
+            iVar11 = (int)this->field_0627;
             this->field_0631 = 3;
             goto cf_common_exit_00478B83;
           }
@@ -164,9 +165,9 @@ LAB_0047885b:
           this->field_00B7 = 0;
           return 0;
         }
-        iVar10 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
+        iVar11 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
                                     &this->field_0623);
-        if (iVar10 == 0) goto LAB_0047885b;
+        if (iVar11 == 0) goto LAB_0047885b;
         sVar2 = this->field_0621;
         sVar3 = this->field_061F;
         goto LAB_00478b7a;
@@ -175,7 +176,7 @@ LAB_0047885b:
     case 1:
       local_EAX_618 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
       if ((local_EAX_618 != 0) &&
-         ((iVar10 = CheckForReplenisher(this), iVar10 != 1 ||
+         ((iVar11 = CheckForReplenisher(this), iVar11 != 1 ||
           (local_EAX_645 = thunk_FUN_004d6f70((int *)this), local_EAX_645 != 1)))) {
         sVar2 = this->field_061D;
         sVar3 = this->field_0621;
@@ -186,12 +187,12 @@ LAB_0047885b:
             ((pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0],
              pSVar5 != nullptr &&
              ((*(int *)&pSVar5->field_0x18 == this->field_0623 &&
-              (iVar10 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar10 != 0)))))))) {
+              (iVar11 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar11 != 0)))))))) {
           return 2;
         }
         if ((this->field_0619 == 0) ||
-           (iVar10 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
-                                        &this->field_0623), iVar10 == 0)) {
+           (iVar11 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
+                                        &this->field_0623), iVar11 == 0)) {
           sub_004602B0(this);
           this->field_00B7 = 0;
           return 0;
@@ -223,13 +224,13 @@ cf_common_exit_00478E51:
     this->vfunc_90(3,0x1b2);
     return 0;
   }
-  if (iVar10 == 2) {
+  if (iVar11 == 2) {
     *(int *)&this->field_0x62d = *(int *)&this->field_0x62d + 1;
     local_EAX_919 = Defence(this,2);
     if (local_EAX_919 == -1) {
       return -1;
     }
-    if (this->field_082E != 0) {
+    if (this->field_082E != ~CASE_FFFFFFFF) {
       return 2;
     }
     if (this->field_048B != 0xffff) {
@@ -240,7 +241,7 @@ cf_common_exit_00478E51:
     }
     local_EAX_990 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
     if ((local_EAX_990 == 0) ||
-       ((iVar10 = CheckForReplenisher(this), iVar10 == 1 &&
+       ((iVar11 = CheckForReplenisher(this), iVar11 == 1 &&
         (local_EAX_1017 = thunk_FUN_004d6f70((int *)this), local_EAX_1017 == 1))))
     goto cf_common_exit_00478E51;
     sVar2 = this->field_061D;
@@ -251,11 +252,11 @@ cf_common_exit_00478E51:
           ((-1 < sVar3 && (sVar3 < g_worldGrid.sizeZ)))) &&
          (pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0], pSVar5 != nullptr)))) &&
        ((*(int *)&pSVar5->field_0x18 == this->field_0623 &&
-        (iVar10 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar10 != 0)))) {
-      iVar10 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::thunk_FUN_00493610
-                         ((AnonReceiver_00493610 *)this,(short *)&this->field_0x627,
-                          (short *)&this->field_0x629,(short *)&this->field_0x62b);
-      if (iVar10 != 1) {
+        (iVar11 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar11 != 0)))) {
+      iVar11 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::thunk_FUN_00493610
+                         ((AnonReceiver_00493610 *)this,&this->field_0627,&this->field_0629,
+                          (short *)&this->field_0x62b);
+      if (iVar11 != 1) {
         return 2;
       }
       this->field_0631 = 3;
@@ -264,10 +265,10 @@ cf_common_exit_00478E51:
     if (this->field_0619 == 0) {
       return 0;
     }
-    iVar10 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
+    iVar11 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
                                 &this->field_0623);
 joined_r0x00478b59:
-    if (iVar10 == 0) {
+    if (iVar11 == 0) {
       return 0;
     }
 LAB_00478b5f:
@@ -280,9 +281,9 @@ LAB_00478b7a:
     sVar4 = this->field_061D;
   }
   else {
-    if (iVar10 != 3) {
-      if (iVar10 != 4) {
-        if (iVar10 != 5) {
+    if (iVar11 != 3) {
+      if (iVar11 != 4) {
+        if (iVar11 != 5) {
           return 2;
         }
         local_EAX_2613 = sub_00460260(this,2);
@@ -296,13 +297,12 @@ LAB_00478b7a:
           return 2;
         }
         sub_0048DFD0(this,this->field_061D,this->field_061F,this->field_0621,this->field_061D,
-                     this->field_061F,(int *)(uint)(ushort)this->field_0621,3,
-                     (short *)&this->field_0x627,(short *)&this->field_0x629,
-                     (short *)&this->field_0x62b);
+                     this->field_061F,(int *)(uint)(ushort)this->field_0621,3,&this->field_0627,
+                     &this->field_0629,(short *)&this->field_0x62b);
 LAB_00478b1a:
-        iVar8 = (int)*(short *)&this->field_0x62b;
-        iVar11 = (int)*(short *)&this->field_0x629;
-        iVar10 = (int)*(short *)&this->field_0x627;
+        iVar10 = (int)*(short *)&this->field_0x62b;
+        iVar12 = (int)this->field_0629;
+        iVar11 = (int)this->field_0627;
         goto cf_common_exit_00478B83;
       }
       sVar2 = this->field_061D;
@@ -313,18 +313,18 @@ LAB_00478b1a:
            ((g_worldGrid.sizeZ <= sVar3 ||
             ((pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0],
              pSVar5 == nullptr || (*(int *)&pSVar5->field_0x18 != this->field_0623)))))
-           ) || (iVar10 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar10 == 0)))) {
+           ) || (iVar11 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar11 == 0)))) {
         if (this->field_0619 == 0) {
           return 0;
         }
-        iVar10 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
+        iVar11 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
                                     &this->field_0623);
-        if (iVar10 == 0) {
+        if (iVar11 == 0) {
           return 0;
         }
-        iVar8 = (int)this->field_0621;
-        iVar11 = (int)this->field_061F;
-        iVar10 = (int)this->field_061D;
+        iVar10 = (int)this->field_0621;
+        iVar12 = (int)this->field_061F;
+        iVar11 = (int)this->field_061D;
         this->field_0631 = 1;
         this->field_00B7 = 3;
         goto cf_common_exit_00478B83;
@@ -336,15 +336,17 @@ LAB_00478b1a:
       if (*(int *)&pSVar5[0x1d].field_0x18 == 0) {
 LAB_00478f91:
         sub_0048DFD0(this,this->field_061D,this->field_061F,this->field_0621,this->field_061D,
-                     this->field_061F,(int *)(uint)(ushort)this->field_0621,3,
-                     (short *)&this->field_0x627,(short *)&this->field_0x629,(short *)puVar1);
+                     this->field_061F,(int *)(uint)(ushort)this->field_0621,3,&this->field_0627,
+                     &this->field_0629,(short *)puVar1);
       }
       else {
-        if (&this->field_0x627 != nullptr) {
-          *(undefined4 *)&this->field_0x627 = *(undefined4 *)&pSVar5[0x1d].field_0x1c;
+        if (&this->field_0627 != nullptr) {
+          uVar7 = *(undefined2 *)&pSVar5[0x1d].field_0x1e;
+          this->field_0627 = *(undefined2 *)&pSVar5[0x1d].field_0x1c;
+          this->field_0629 = uVar7;
         }
-        if (&this->field_0x629 != nullptr) {
-          *(int *)&this->field_0x629 = pSVar5[0x1d].value_20;
+        if (&this->field_0629 != nullptr) {
+          *(int *)&this->field_0629 = pSVar5[0x1d].value_20;
         }
         if (puVar1 != nullptr) {
           *(STWorldObjectVTable **)puVar1 = pSVar5[0x1e].vtable;
@@ -352,12 +354,11 @@ LAB_00478f91:
         if (*(int *)&pSVar5[0x1d].field_0x18 == 0) goto LAB_00478f91;
       }
       this->field_0631 = 5;
-      sub_00481520(this,(int)*(short *)&this->field_0x627,(int)*(short *)&this->field_0x629,
-                   (int)*(short *)puVar1);
+      sub_00481520(this,(int)this->field_0627,(int)this->field_0629,(int)*(short *)puVar1);
       sub_00460260(this,0);
 LAB_00478ff2:
-      iVar10 = this->vfunc_D8();
-      return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
+      iVar11 = this->vfunc_D8();
+      return (-(uint)(iVar11 != 0) & 0xfffffffd) + 2;
     }
     local_EAX_1388 = sub_00460260(this,2);
     switch(local_EAX_1388) {
@@ -370,20 +371,20 @@ LAB_00478ff2:
           ((sVar3 < g_worldGrid.sizeZ &&
            ((pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0],
             pSVar5 != nullptr && (*(int *)&pSVar5->field_0x18 == this->field_0623))))))
-         && (iVar10 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar10 != 0)) {
+         && (iVar11 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar11 != 0)) {
         this->field_0631 = 4;
         return 2;
       }
       if (this->field_0619 == 0) {
         return 0;
       }
-      iVar10 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
+      iVar11 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
                                   &this->field_0623);
       goto joined_r0x00478b59;
     case 1:
       local_EAX_1810 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
       if ((local_EAX_1810 == 0) ||
-         ((iVar10 = CheckForReplenisher(this), iVar10 == 1 &&
+         ((iVar11 = CheckForReplenisher(this), iVar11 == 1 &&
           (local_EAX_1837 = thunk_FUN_004d6f70((int *)this), local_EAX_1837 == 1)))) {
         sub_004602B0(this);
         goto cf_common_exit_00478E51;
@@ -396,12 +397,12 @@ LAB_00478ff2:
          (((sVar3 < g_worldGrid.sizeZ &&
            ((pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0],
             pSVar5 != nullptr && (*(int *)&pSVar5->field_0x18 == this->field_0623))))
-          && (iVar10 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar10 != 0)))) {
+          && (iVar11 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar11 != 0)))) {
         return 2;
       }
       if ((this->field_0619 == 0) ||
-         (iVar10 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
-                                      &this->field_0623), iVar10 == 0)) {
+         (iVar11 = thunk_FUN_004934b0(this,&this->field_061D,&this->field_061F,&this->field_0621,
+                                      &this->field_0623), iVar11 == 0)) {
         sub_004602B0(this);
         return 0;
       }
@@ -409,13 +410,13 @@ LAB_00478ff2:
     default:
       goto cf_common_exit_0047928C;
     case 3:
-      iVar10 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::thunk_FUN_00493610
-                         ((AnonReceiver_00493610 *)this,(short *)&this->field_0x627,
-                          (short *)&this->field_0x629,(short *)&this->field_0x62b);
-      if (iVar10 != 1) goto LAB_00478d20;
+      iVar11 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::thunk_FUN_00493610
+                         ((AnonReceiver_00493610 *)this,&this->field_0627,&this->field_0629,
+                          (short *)&this->field_0x62b);
+      if (iVar11 != 1) goto LAB_00478d20;
       sVar2 = *(short *)&this->field_0x62b;
-      sVar3 = *(short *)&this->field_0x629;
-      sVar4 = *(short *)&this->field_0x627;
+      sVar3 = this->field_0629;
+      sVar4 = this->field_0627;
       break;
     case -1:
       local_EAX_1434 =
@@ -430,11 +431,11 @@ LAB_00478ff2:
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  iVar8 = (int)sVar2;
-  iVar11 = (int)sVar3;
-  iVar10 = (int)sVar4;
+  iVar10 = (int)sVar2;
+  iVar12 = (int)sVar3;
+  iVar11 = (int)sVar4;
 cf_common_exit_00478B83:
-  sub_00481520(this,iVar10,iVar11,iVar8);
+  sub_00481520(this,iVar11,iVar12,iVar10);
   sub_00460260(this,0);
   return 2;
 }

@@ -3,7 +3,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::Annih */
+   STBoatC::Annih
+
+   [STSwitchEnumApplier] Switch target field_06A5 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_06A5State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_06A5 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_06A5State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
 
@@ -72,11 +80,11 @@ LAB_0047d831:
     uVar3 = *(undefined4 *)&pSVar2->field_0x18;
     this->field_06A1 = 0;
     this->field_0697 = uVar3;
-    this->field_06A5 = 0;
+    this->field_06A5 = CASE_0;
   }
   iVar10 = this->field_06A1;
   if (iVar10 == 0) {
-    if (this->field_06A5 == 0) {
+    if (this->field_06A5 == CASE_0) {
       iVar6 = (ushort)(this->field_068F * 200) + 0xfa;
       iVar10 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_068D + 1)) * 0xc9;
       iVar12 = STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(this->field_068B + 1));
@@ -86,9 +94,9 @@ LAB_0047d831:
                          CONCAT22((short)((uint)(iVar12 * 0x19) >> 0x10),this->field_0045),
                          (short)(iVar12 * 0xc9),(short)iVar10,iVar6);
       this->field_069B = uVar5;
-      this->field_06A5 = 1;
+      this->field_06A5 = CASE_1;
     }
-    if (this->field_06A5 == 1) {
+    if (this->field_06A5 == CASE_1) {
       uVar7 = sub_004176C0(this,this->field_069B);
       uVar7 = sub_00417910(this,(short)uVar7);
       if (uVar7 == 0xffffffff) {
@@ -101,17 +109,17 @@ LAB_0047d831:
         return -1;
       }
       if (uVar7 == 0) {
-        this->field_06A5 = 2;
+        this->field_06A5 = CASE_2;
       }
     }
     else {
-      if (this->field_06A5 == 2) {
+      if (this->field_06A5 == CASE_2) {
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                      (this->field_068B + 1) * 0xc9,(this->field_068D + 1) * 0xc9,
                      this->field_068F * 200 + 0xfa,this->field_0061);
-        this->field_06A5 = 3;
+        this->field_06A5 = CASE_3;
       }
-      if (this->field_06A5 == 3) {
+      if (this->field_06A5 == CASE_3) {
         local_18 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,&local_10);
         uVar7 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar7;
@@ -190,7 +198,7 @@ LAB_0047d831:
               ))) {
             iVar10 = (*pSVar2->vtable[5].slots_00_28[2])();
             if (iVar10 == 1) {
-              this->field_06A5 = 0;
+              this->field_06A5 = CASE_0;
               this->field_06A1 = 1;
               this->field_069D = 0;
               thunk_FUN_004b7d90((int *)pSVar2);

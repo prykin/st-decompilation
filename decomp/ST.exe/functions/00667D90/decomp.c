@@ -28,7 +28,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
   InternalExceptionFrame local_54;
   AiFltClassTy *local_10;
   byte *local_c;
-  AnonShape_0060EA30_DCEB68AD *local_8;
+  uint local_8;
 
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
@@ -112,8 +112,8 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_SHARED_010F) {
-      local_8 = nullptr;
-      local_c = PrepareToSave(local_10,(uint *)&local_8);
+      local_8 = 0;
+      local_c = PrepareToSave(local_10,&local_8);
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_c,local_8);
       if (local_c != nullptr) {
         FreeAndNull(&local_c);

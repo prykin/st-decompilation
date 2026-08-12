@@ -470,6 +470,31 @@ fixed-point, evidence, ABI, and export gates still execute. Do not extend the
 cache to a new analyzer unless its exact semantic dependencies and complete
 output set are declared.
 
+### Q-048 Recover output lifetimes, non-switch states, and exact grid division
+
+Status: implemented, runtime-confirmed, and accepted. Full-width generated
+scalar fields now survive contained low-word views; complete narrow partitions
+retain their existing higher-priority proof. Prototype propagation recognizes
+the post-call value of an incoming stack slot only after a complete definite
+out-parameter write, and exact trusted pointer-producing EAX paths may repair a
+generic return boundary. Comparison-only class-state fields include bounded
+load/compare and `DEC/SUB` equality chains plus exact register constants.
+
+`STRubbishC::GetMessage` now uses direct signed `int` members at `0x1D5/1D9/1DD`,
+a three-value enum at `0x1FA`, a `uint` saved-data length, and a `byte *` result
+from `0062F940`. Its full coordinate conversions render through
+`STBiasedDiv16`. Across the corpus the exact two-branch normalizer reduced the
+raw `0x28c1979`/`0x51eb851f` family from 511 to 219 occurrences and emits 369
+helper calls. Remaining alias-mismatched and split-result forms are the next
+SSA-lifetime presentation queue; unrelated negative-multiplier scale
+calculations are explicitly excluded.
+
+Accepted state: semantic hash
+`76982f60fdd65a328a929e0995e61dde20d94ba44feead0fd812518e0c55c32d`, corpus
+manifest `f3e435c54509e60165fb935a02a57084895dddc7b0c68cc550adfdd7fa7ee26c`;
+10,400 functions, 5,720 bodies, zero failed bodies, 2,737 typed vtable slots,
+and zero export/ABI warnings or errors.
+
 ## Definition of done for one queue item
 
 - No embedded ST image address or hand-authored type/name allow-list in the

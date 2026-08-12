@@ -94,7 +94,7 @@ LAB_0059d780:
       if (local_8 != 0) {
         local_8dc[1] = (ccFntTy *)0x99;
       }
-      local_8dc[2] = this_00->field_1A73;
+      local_8dc[2] = this_00->array_00BC[0xc].field_01F3;
       local_8bc = this_00->field_1AF8;
       local_8b0 = this_00->field_0008;
       local_68 = 2;
@@ -133,7 +133,8 @@ LAB_0059d780:
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE4,nullptr,local_8dc,0);
       this_00->field_002D = 0x61;
-      *(undefined4 *)&this_00->field_0x35 = 0;
+      this_00->field_0035 = 0;
+      this_00->field_0037 = 0;
       FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
       g_currentExceptionFrame = local_50.previous;
       return;

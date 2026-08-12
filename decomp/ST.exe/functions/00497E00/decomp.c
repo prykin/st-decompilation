@@ -84,8 +84,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     *(uint *)(local_8 + 0x38) = local_c;
     *(uint *)(local_8 + 0x3c) = local_10;
     STPlaySystemC::SaveObjData
-              (g_playSystem_00802A38,(int *)this_00->field_0018,local_8,
-               (AnonShape_0060EA30_DCEB68AD *)(local_10 + local_c));
+              (g_playSystem_00802A38,(int *)this_00->field_0018,local_8,local_10 + local_c);
     FreeAndNull(&local_1c);
     FreeAndNull(&local_18);
     FreeAndNull(&local_8);
@@ -125,9 +124,9 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       DArrayDestroy(this_00->field_01CE);
       this_00->field_01CE = nullptr;
     }
-    if (*(DArrayTy **)&this_00->field_0x1d2 != nullptr) {
-      DArrayDestroy(*(DArrayTy **)&this_00->field_0x1d2);
-      *(undefined4 *)&this_00->field_0x1d2 = 0;
+    if (this_00->field_01D2 != nullptr) {
+      DArrayDestroy(this_00->field_01D2);
+      this_00->field_01D2 = nullptr;
     }
     if (this_00->field_01D6 != nullptr) {
       DArrayDestroy(this_00->field_01D6);
@@ -179,9 +178,9 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       DArrayDestroy(this_00->field_0266);
       this_00->field_0266 = nullptr;
     }
-    if (*(DArrayTy **)&this_00->field_0x29f != nullptr) {
-      DArrayDestroy(*(DArrayTy **)&this_00->field_0x29f);
-      *(undefined4 *)&this_00->field_0x29f = 0;
+    if ((DArrayTy *)this_00->field_029F != nullptr) {
+      DArrayDestroy((DArrayTy *)this_00->field_029F);
+      this_00->field_029F = 0;
     }
     (*this_00->vtable->vfunc_18)((short)this_00,0,0,0);
     STGroupC::GetMessage((STGroupC *)this_00,message);
@@ -234,7 +233,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
         ReMakePatrolPoints(this_00);
         sub_004A7E30(this_00,1);
       }
-      if ((this_00->field_0027 == 0) && (this_00->field_0020 == 0)) {
+      if ((this_00->field_0027 == 0) && (this_00->field_0020 == CASE_0)) {
         this_00->field_005D = 1;
       }
       DArrayDestroy(this_00->field_01DA);
@@ -260,8 +259,8 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     }
     if (this_00->field_0079 == 1) {
       this_00->field_0079 = 0;
-      DArrayDestroy(*(DArrayTy **)&this_00->field_0x1d2);
-      *(undefined4 *)&this_00->field_0x1d2 = 0;
+      DArrayDestroy(this_00->field_01D2);
+      this_00->field_01D2 = nullptr;
     }
     if (this_00->field_007D == 1) {
       this_00->field_007D = 0;

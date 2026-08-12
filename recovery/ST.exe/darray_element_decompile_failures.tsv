@@ -1,3 +1,5 @@
 function_address	function_name	reason
+004FB060	CPanelTy::GetMessage	Exception while decompiling 004fb060: process: timeout\n
 0052FB00	OptPanelTy::SetOptControls	Exception while decompiling 0052fb00: process: timeout\n
 00533D10	OptPanelTy::GetMessage	Exception while decompiling 00533d10: process: timeout\n
+005E1330	MTaskTy::PlayScript	Exception while decompiling 005e1330: process: timeout\n

@@ -89,6 +89,26 @@ Original binaries are local under ignored `bin/` and must not be committed.
   width. Treat competing same-width scalar signedness on an already generated
   field as review-only; automatically clearing it can make Ghidra oscillate
   between the concrete scalar and `undefined` on successive decompiles.
+- A full-width scalar field remains full-width when every competing contained
+  view is a narrower scalar at the same low offset. A low-word consumer proves
+  a cast/view, not a short field; only an independently complete equal-width
+  partition may replace the transport scalar.
+- A compiler-reused incoming stack slot may change value domain after an exact
+  out-parameter call. Keep the original ABI parameter at entry, but kill its
+  prior value after a full-pointee write proven on every callee return path and
+  allow the post-write scalar lifetime to flow to later calls. Do not infer the
+  output type from caller pseudocode alone.
+- A generated scalar class field may become an anonymous state enum from exact
+  immediate writes plus comparisons. Comparison evidence includes only direct
+  `CMP field,imm`, a bounded load/compare def-use, or a contiguous
+  `MOV field -> DEC/SUB positive-imm -> JZ/JNZ` equality chain. Register-backed
+  writes require a bounded exact constant definition (`MOV`, self-`XOR/SUB`,
+  `AND 0`, or `OR -1`); calls and ambiguous redefinitions cancel the proof.
+- A machine-word `MOV` may cover several adjacent packed scalar members. Split
+  that transport span only when every equal narrow subspan is independently
+  accessed at the exact narrow width; preserve partial-register provenance only
+  at that same width, and use an exact `MOVSX`/`MOVZX` consumer to recover
+  signedness. An existing concrete wide member still wins.
 - A foreign class type appearing in a named method may be contamination from a
   weak method-owner vote. Audit the callee's full direct-caller coverage before
   extending the foreign layout; shared helpers must retain neutral receivers.
@@ -124,6 +144,14 @@ Original binaries are local under ignored `bin/` and must not be committed.
   recursive node and heterogeneous siblings otherwise poison its rendering. A
   fresh decompile must reattach the database local to that same anchor before
   `applied` is reported; inseparable `Node *`/`Node **` groups remain conflicts.
+- A persistent method-local pointer may recover the exact auto-`this` type only
+  when the function is `__thiscall`, its value traces to that unadjusted receiver
+  through same-size neutral `COPY`/`CAST`/`INDIRECT`/unanimous `MULTIEQUAL`
+  p-code, and a downstream exact named member exists in the owner layout but not
+  in the current shorter pointee view. Synthetic SSA values, adjusted receivers,
+  ambiguous origins, and aliases which do not reattach after a fresh decompile
+  remain conflicts. This repairs compiler SEH/setjmp receiver spills; it is not
+  evidence for promoting a neutral shared helper to a class.
 - A decompiler-only nominal type is not an independent `typed_copy` lifetime
   anchor. For ordinary types the copied value must originate at an exact typed
   parameter, global, return, or call boundary; a local-to-local or symbol-less
@@ -172,6 +200,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   receiver-aware generated function-pointer ABI already installed in a physical
   vtable slot. Recover the deterministic generated slot family or leave the
   proposed downgrade disabled.
+- Generated vtable types which name the same exact physical table address are
+  aliases, not independent ABI evidence. A unanimous independently recovered
+  slot ABI on one such alias must be retained by every generated alias at that
+  offset; conflicting indirect-call families cancel the transfer. Never select
+  a slot ABI by datatype-path or proposal-file order.
 - A class's offset-zero vptr uses its proven primary physical vtable. A secondary
   `OwnerVTable_at_OFFSET` may type only that exact secondary subobject offset and
   must never win by proposal-file order.
@@ -188,6 +221,15 @@ Original binaries are local under ignored `bin/` and must not be committed.
   inline array only when independent indexed-stride evidence agrees; install a
   nested by-value member only for an exact complete typed copy into an
   automation-owned range.
+- An exact machine-word field copy may transfer an independently observed
+  contained subfield width to the corresponding byte offset at the other end.
+  Stage transfers from one snapshot and carry geometry only—never signedness or
+  semantic type. A complete equal-width partition may replace the transport
+  word in an automation-owned layout; partial overlaps remain union/review debt.
+- A factory may anchor a constructor only when one concrete returned class has
+  an exact matching allocation extent, the unadjusted allocation result reaches
+  ECX, and the factory exits through one terminal direct-JMP/thunk chain to the
+  candidate. A conflicting high-confidence vtable owner cancels the anchor.
 - A generated global-record word may become `T *` only when the same exact
   member has both a store from a locally typed `T *` and a read/consumer cast as
   that unique `T *`. This paired evidence outranks a decompiler `(int)` storage
@@ -201,6 +243,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   the cached body. A generated layout change must invalidate functions which
   spell the changed field, but unrelated additions elsewhere in that structure
   must not invalidate every user.
+- Export may fold the complete MSVC signed grid-index division idiom to
+  `STBiasedDiv16(value, 201|200)` only when both sign branches are present and
+  algebraically identical apart from the exact negative bias. The helper keeps
+  the original narrow quotient and subtracts one for every negative source;
+  this is deliberately not ordinary floor division at exact negative multiples.
 - Hash generated class layouts only after Ghidra installs the final
   `StructureDB`; hashing the transient `StructureDataType` can make Ghidra's own
   canonicalization look like a manual edit. A legacy hash-diverged generated

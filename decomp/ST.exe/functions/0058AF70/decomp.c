@@ -10,7 +10,7 @@ undefined4 __thiscall
 STOctopusC::sub_0058AF70(STOctopusC *this,short param_1,short param_2,short param_3)
 
 {
-  uint uVar1;
+  STOctopusC_field_02A5State SVar1;
   int iVar3;
   int iVar2;
   int local_EAX_118;
@@ -29,9 +29,9 @@ STOctopusC::sub_0058AF70(STOctopusC *this,short param_1,short param_2,short para
   iVar2 = FUN_006acf0d(0,0,0,iVar3,iVar4,iVar5);
   this->field_0239 = iVar2;
   local_EAX_118 = FUN_006acf0d(0,0,0,this->field_0269,this->field_026D,0);
-  uVar1 = this->field_02A5;
+  SVar1 = this->field_02A5;
   this->field_023D = local_EAX_118;
-  if ((uVar1 == 0xf8) || (uVar1 == 0xf9)) {
+  if ((SVar1 == CASE_F8) || (SVar1 == CASE_F9)) {
     iVar3 = this->field_0239;
     this->field_0251 = (this->field_0269 << 8) / iVar3;
     this->field_0255 = (this->field_026D << 8) / iVar3;
@@ -50,7 +50,7 @@ STOctopusC::sub_0058AF70(STOctopusC *this,short param_1,short param_2,short para
   this->field_027D = (int)this->field_0045;
   this->field_0259 = iVar4 / iVar3;
   this->field_0279 = (int)this->field_0043;
-  if ((this->field_0281 == 0) && ((uVar1 == 0xf8 || (uVar1 == 0xf9)))) {
+  if ((this->field_0281 == 0) && ((SVar1 == CASE_F8 || (SVar1 == CASE_F9)))) {
     iVar3 = this->field_0251;
     if (iVar3 < 0) {
       iVar3 = -iVar3;

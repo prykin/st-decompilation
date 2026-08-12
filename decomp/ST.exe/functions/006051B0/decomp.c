@@ -111,35 +111,11 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     pVVar3 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != nullptr) {
       iVar6 = pSVar4->field_0292;
-      sVar2 = (short)(iVar6 >> 0x1f);
-      if (iVar6 < 0) {
-        local_14 = (short)(((short)(iVar6 / 200) + sVar2) -
-                          (short)((longlong)iVar6 * 0x51eb851f >> 0x3f)) + -1;
-      }
-      else {
-        local_14 = (int)(short)(((short)(iVar6 / 200) + sVar2) -
-                               (short)((longlong)iVar6 * 0x51eb851f >> 0x3f));
-      }
+      local_14 = STBiasedDiv16(iVar6, 200); /* exact signed 16-bit grid-index division */
       iVar6 = pSVar4->field_028E;
-      sVar2 = (short)(iVar6 >> 0x1f);
-      if (iVar6 < 0) {
-        iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar2) -
-                       (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar2) -
-                            (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
-      }
+      iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
       iVar9 = pSVar4->field_028A;
-      sVar2 = (short)(iVar9 >> 0x1f);
-      if (iVar9 < 0) {
-        iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar2) -
-                       (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar2) -
-                            (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
-      }
+      iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
       if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar6,

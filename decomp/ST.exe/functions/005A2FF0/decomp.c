@@ -26,7 +26,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
   FSGSTy *local_c;
   int local_8;
 
-  if ((this->field_1A5F == CASE_6) && (this->field_1A60 != '\0')) {
+  if ((this->array_00BC[0xc].field_01DF == '\x06') && (this->array_00BC[0xc].field_01E0 != '\0')) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
@@ -84,10 +84,10 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
       PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',this_01->field_1E9A);
       this_01->field_002D = 0x28;
       *(dword *)&this_01->field_0x31 = this_01->field_1EAA->count;
-      *(undefined2 *)&this_01->field_0x35 = 1;
+      this_01->field_0035 = 1;
       FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
       this_01->field_002D = 0x20;
-      if ((this_01->field_1EAA->count == 0) || (this_01->field_1A6B == 0)) {
+      if ((this_01->field_1EAA->count == 0) || (this_01->array_00BC[0xc].field_01EB == 0)) {
         uVar7 = 0;
       }
       else {

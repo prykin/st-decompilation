@@ -56,18 +56,19 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     }
   }
   pFVar2 = local_8;
-  switch(local_8->field_1A5F) {
-  case CASE_2:
-  case CASE_4:
-  case CASE_5:
-  case CASE_7:
-    if (local_8->field_1A5F == CASE_7) {
+  cVar8 = local_8->array_00BC[0xc].field_01DF;
+  switch(cVar8) {
+  case '\x02':
+  case '\x04':
+  case '\x05':
+  case '\a':
+    if (cVar8 == '\a') {
       sub_005A0A50(local_8);
     }
     else {
       sub_005A0590(local_8);
     }
-  case CASE_1:
+  case '\x01':
     if (pFVar2->field_1F23 != nullptr) {
       HoloTy::Done(pFVar2->field_1F23);
       Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F23);
@@ -118,7 +119,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     uVar10 = pFVar2->field_1ABC;
     pDVar9 = g_ddxContext_008075A8;
     break;
-  case CASE_3:
+  case '\x03':
     sub_005A0590(local_8);
     if (pFVar2->field_1F23 != nullptr) {
       HoloTy::Done(pFVar2->field_1F23);
@@ -176,7 +177,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     if (uVar10 == 0xffffffff) goto switchD_0059f6f7_default;
     pDVar9 = (DDXContext_008075A8 *)pFVar2->field_1C92;
     break;
-  case CASE_6:
+  case '\x06':
     sub_005A07F0(local_8);
     if (pFVar2->field_1F27 != nullptr) {
       HoloTy::Done(pFVar2->field_1F27);
@@ -290,7 +291,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     if (uVar10 == 0xffffffff) goto switchD_0059f6f7_default;
     pDVar9 = (DDXContext_008075A8 *)pFVar2->field_1E45;
     break;
-  case CASE_8:
+  case '\b':
     sub_005A0AF0(local_8);
     if (pFVar2->field_1F2F != nullptr) {
       HoloTy::Done(pFVar2->field_1F2F);
@@ -395,7 +396,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     if (uVar10 == 0xffffffff) goto switchD_0059f6f7_default;
     pDVar9 = (DDXContext_008075A8 *)pFVar2->field_1E45;
     break;
-  case CASE_9:
+  case '\t':
     sub_005A0C80(local_8);
     if (pFVar2->field_1F23 != nullptr) {
       HoloTy::Done(pFVar2->field_1F23);
@@ -447,7 +448,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     uVar10 = pFVar2->field_1ABC;
     pDVar9 = g_ddxContext_008075A8;
     break;
-  case CASE_A:
+  case '\n':
     sub_005A0590(local_8);
     if (pFVar2->field_1F23 != nullptr) {
       HoloTy::Done(pFVar2->field_1F23);

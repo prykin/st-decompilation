@@ -94,7 +94,7 @@ STJellyGunC_field_0235State __thiscall STJellyGunC::sub_00583E30(STJellyGunC *th
         }
       }
     }
-    SVar1 = 0;
+    SVar1 = CASE_0;
   }
   return SVar1;
 }

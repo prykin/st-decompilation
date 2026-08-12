@@ -63,7 +63,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       iVar6 = this_00->field_0245 + iVar12;
       if (((((iVar6 < g_worldGrid.sizeX) && (-1 < iVar6)) &&
            (iVar6 = this_00->field_0249 + local_10, iVar6 < g_worldGrid.sizeY)) &&
-          ((-1 < iVar6 && (-1 < (int)this_00->field_024D)))) && ((int)this_00->field_024D < 5)) {
+          ((-1 < iVar6 && (-1 < this_00->field_024D)))) && (this_00->field_024D < 5)) {
         if (this_00 == nullptr) {
           pSVar7 = nullptr;
         }
@@ -89,7 +89,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         STT3DSprC::sub_004AD3C0
                   (pSVar7,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
                    (float)iVar6 * _DAT_007904f8 + _DAT_007904f4,
-                   (float)(int)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
+                   (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
         Library::Ourlib::ST3DSMAP::SprSetLevAfter((void *)this_00->field_0211,pSVar7->field_0018,-1);
       }
       local_14 = local_14 + 4;
@@ -105,7 +105,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       iVar6 = this_00->field_0245 + iVar12;
       if ((((iVar6 < g_worldGrid.sizeX) && (-1 < iVar6)) &&
           (iVar6 = this_00->field_0249 + local_10, iVar6 < g_worldGrid.sizeY)) &&
-         (((-1 < iVar6 && (-1 < (int)this_00->field_024D)) && ((int)this_00->field_024D < 5)))) {
+         (((-1 < iVar6 && (-1 < this_00->field_024D)) && (this_00->field_024D < 5)))) {
         if (this_00 == nullptr) {
           pSVar7 = nullptr;
         }
@@ -131,7 +131,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         STT3DSprC::sub_004AD3C0
                   (pSVar7,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
                    (float)iVar6 * _DAT_007904f8 + _DAT_007904f4,
-                   (float)(int)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
+                   (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
         Library::Ourlib::ST3DSMAP::SprSetLevAfter((void *)this_00->field_0211,pSVar7->field_0018,-1);
       }
       local_14 = local_14 + 4;
@@ -149,7 +149,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       iVar6 = local_c + this_00->field_0245;
       if ((((iVar6 < g_worldGrid.sizeX) && (-1 < iVar6)) &&
           ((iVar6 = this_00->field_0249 + local_10, iVar6 < g_worldGrid.sizeY &&
-           ((-1 < iVar6 && (-1 < (int)this_00->field_024D)))))) && ((int)this_00->field_024D < 5)) {
+           ((-1 < iVar6 && (-1 < this_00->field_024D)))))) && (this_00->field_024D < 5)) {
         if (this_00 == nullptr) {
           pSVar7 = nullptr;
         }
@@ -173,8 +173,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
               STT3DSprC::sub_004AD3C0
                         (pSVar7,(float)local_14 * _DAT_007904f8 + _DAT_007904f4,
                          (float)(this_00->field_0249 + local_10) * _DAT_007904f8 + _DAT_007904f4,
-                         (float)(int)this_00->field_024D * _DAT_00790504 + _DAT_00790500 +
-                         _DAT_007904fc);
+                         (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
               Library::Ourlib::ST3DSMAP::SprSetLevAfter
                         ((void *)this_00->field_0211,pSVar7->field_0018,-1);
               goto LAB_0057fc59;
@@ -194,14 +193,14 @@ LAB_0057fc59:
   default:
     goto switchD_0057f734_caseD_df;
   case CASE_E0:
-    if ((((((int)local_18->field_0245 < (int)g_worldGrid.sizeX) && (-1 < (int)local_18->field_0245))
-         && (local_18->field_0249 < (int)g_worldGrid.sizeY)) &&
+    if (((((local_18->field_0245 < (int)g_worldGrid.sizeX) && (-1 < local_18->field_0245)) &&
+         (local_18->field_0249 < (int)g_worldGrid.sizeY)) &&
         ((-1 < local_18->field_0249 && (iVar12 = local_18->field_024D, -1 < iVar12)))) &&
        ((iVar12 < 5 &&
-        (iVar5 = thunk_FUN_004961b0(*(short *)&local_18->field_0245,(short)local_18->field_0249,
+        (iVar5 = thunk_FUN_004961b0((short)local_18->field_0245,(short)local_18->field_0249,
                                     (short)iVar12), iVar5 != 0)))) {
-      sVar1 = *(short *)&this_00->field_0245;
-      sVar2 = *(short *)&this_00->field_024D;
+      sVar1 = (short)this_00->field_0245;
+      sVar2 = (short)this_00->field_024D;
       sVar3 = (short)this_00->field_0249;
       if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
          (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))) {
@@ -240,7 +239,7 @@ LAB_0057fd72:
                    (float)local_14 * _DAT_007904f8 + _DAT_007904f4,
                    (float)(*(int *)((int)&DAT_007cb0dc + iVar11) + this_00->field_0249) *
                    _DAT_007904f8 + _DAT_007904f4,
-                   (float)(int)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
+                   (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
         iVar13 = iVar6 + 4;
         iVar14 = iVar12 + 1;
         iVar11 = local_10 + 4;

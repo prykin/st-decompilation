@@ -20,35 +20,11 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
   int local_8;
 
   iVar5 = param_1->field_01E9;
-  sVar1 = (short)(iVar5 >> 0x1f);
-  if (iVar5 < 0) {
-    iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar1) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f))
-            + -1;
-  }
-  else {
-    iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar1) -
-                        (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-  }
+  iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
   iVar6 = param_1->field_01ED;
-  sVar1 = (short)(iVar6 >> 0x1f);
-  if (iVar6 < 0) {
-    iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar1) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f))
-            + -1;
-  }
-  else {
-    iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar1) -
-                        (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
-  }
+  iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
   iVar4 = param_1->field_01F1;
-  sVar1 = (short)(iVar4 >> 0x1f);
-  if (iVar4 < 0) {
-    local_8 = (short)(((short)(iVar4 / 200) + sVar1) - (short)((longlong)iVar4 * 0x51eb851f >> 0x3f)
-                     ) + -1;
-  }
-  else {
-    local_8 = (int)(short)(((short)(iVar4 / 200) + sVar1) -
-                          (short)((longlong)iVar4 * 0x51eb851f >> 0x3f));
-  }
+  local_8 = STBiasedDiv16(iVar4, 200); /* exact signed 16-bit grid-index division */
   iVar4 = param_1->field_024C;
   if ((((g_sT3DSMAPContext_00807598->field_0048 <= iVar4 + iVar5) &&
        (iVar5 - iVar4 <= g_sT3DSMAPContext_00807598->field_0058)) &&

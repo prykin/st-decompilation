@@ -165,7 +165,7 @@ switchD_0056fad2_caseD_6105:
       OpenGameDBs(pSVar11);
       StartGame(pSVar11);
       SVar2 = pSVar11->field_1180;
-      if ((SVar2 < CASE_9) || ((0xc < SVar2 && (SVar2 != 0x10)))) {
+      if ((SVar2 < CASE_9) || ((CASE_C < SVar2 && (SVar2 != 0x10)))) {
         puVar15 = (byte *)&pSVar11->field_0x1196;
         puVar25 = (byte *)&pSVar11->field_0x2b2f;
         memmove(puVar25, puVar15, 0x1999); /* compiler REP MOVS byte copy */

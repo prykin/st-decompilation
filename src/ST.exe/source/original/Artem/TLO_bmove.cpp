@@ -146,7 +146,7 @@ LAB_004c6e4d:
             (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bmove.cpp"),
              (int)unaff_EDI);
 cf_common_exit_004C6F47:
-  st::fn_00405F0B((STFishC *)param_1,st::pointer_boundary_cast<undefined2 *>(&local_6),st::pointer_boundary_cast<undefined2 *>(&local_8),st::pointer_boundary_cast<undefined2 *>(&local_a));
+  st::fn_00405F0B((STFishC *)param_1,&local_6,&local_8,&local_a);
   param_1->field_05B0 = (int)local_6;
   param_1->field_05B4 = (int)local_8;
   param_1->field_05B8 = (int)local_a;

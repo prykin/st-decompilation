@@ -19,7 +19,7 @@ bool __fastcall FUN_005f0a30(STSprGameObjC *param_1)
 
   uVar5 = (uint)(byte)param_1->field_024F;
   if ((param_1->field_024F != 0) &&
-     (uVar5 = (uint)(ushort)param_1->field_0246, 0 < (short)param_1->field_0246)) {
+     (uVar5 = (uint)(ushort)param_1->field_0246, 0 < param_1->field_0246)) {
     uVar5 = thunk_FUN_004961b0(param_1->field_0242,param_1->field_0244,(short)(uVar5 - 1));
     if (uVar5 == 0) {
       sVar1 = param_1->field_0242;

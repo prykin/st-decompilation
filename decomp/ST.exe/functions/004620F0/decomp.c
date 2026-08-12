@@ -4,6 +4,7 @@
 int __fastcall FUN_004620f0(STBoatC *param_1)
 
 {
+  STBoatC_field_082EState SVar1;
   int iVar1;
   int iVar2;
 
@@ -11,8 +12,8 @@ int __fastcall FUN_004620f0(STBoatC *param_1)
     DArrayDestroy(param_1->field_047B);
     param_1->field_047B = nullptr;
   }
-  iVar2 = param_1->field_082E;
-  if (((iVar2 != -1) && (iVar2 != 0)) && (iVar2 != 2)) {
+  SVar1 = param_1->field_082E;
+  if (((SVar1 != CASE_FFFFFFFF) && (SVar1 != ~CASE_FFFFFFFF)) && (SVar1 != CASE_2)) {
     iVar1 = STBoatC::sub_00460360(param_1);
     return iVar1;
   }

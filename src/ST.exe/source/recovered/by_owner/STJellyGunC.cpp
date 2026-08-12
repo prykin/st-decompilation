@@ -317,7 +317,7 @@ st::fn_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param_3)
                          *(ushort *)&this->field_0x245,CASE_1);
     if ((this_00 != nullptr) &&
        (iVar1 = this_00->vfunc_F8(), iVar1 != 0)) {
-      st::fn_00405F0B((STFishC *)this_00,st::pointer_boundary_cast<undefined2 *>(&local_6),st::pointer_boundary_cast<undefined2 *>(&local_8),st::pointer_boundary_cast<undefined2 *>(&local_a));
+      st::fn_00405F0B((STFishC *)this_00,&local_6,&local_8,&local_a);
       *param_1 = (int)local_6;
       *param_2 = (int)local_8;
       *param_3 = (int)local_a;

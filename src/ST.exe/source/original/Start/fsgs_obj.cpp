@@ -3419,7 +3419,8 @@ void __thiscall st::fn_0059C700(FSGSTy *this)
     uVar3 = st::fn_0040361B((MMObjTy *)this_00,3,1,0x19a,0x13d,0x16,0x14,0x6900,0x6980);
     this_00->field_1AD0 = uVar3;
     this_00->field_002D = 0x61;
-    *(undefined4 *)&this_00->field_0x35 = 0;
+    this_00->field_0035 = 0;
+    this_00->field_0037 = 0;
     st::fn_006E6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -3558,7 +3559,8 @@ void __thiscall st::fn_0059C9F0(FSGSTy *this)
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,st::pointer_boundary_cast<undefined4 *>(&this_00->field_1AE4),nullptr,st::machine_word_boundary_cast<undefined4>(local_8d8),0);
     this_00->field_002D = 0x61;
-    *(undefined4 *)&this_00->field_0x35 = 0;
+    this_00->field_0035 = 0;
+    this_00->field_0037 = 0;
     st::fn_006E6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -3667,7 +3669,8 @@ void __thiscall st::fn_0059CEE0(FSGSTy *this)
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1ACC,nullptr,st::machine_word_boundary_cast<undefined4>(local_8d8),0);
     this_00->field_002D = 0x61;
-    *(undefined4 *)&this_00->field_0x35 = 0;
+    this_00->field_0035 = 0;
+    this_00->field_0037 = 0;
     st::fn_006E6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -3845,7 +3848,8 @@ void __thiscall st::fn_0059D240(FSGSTy *this)
       }
     }
     this_00->field_002D = 0x61;
-    *(undefined4 *)&this_00->field_0x35 = 0;
+    this_00->field_0035 = 0;
+    this_00->field_0037 = 0;
     st::fn_006E6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -3994,7 +3998,8 @@ LAB_0059d780:
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,6,st::pointer_boundary_cast<undefined4 *>(&this_00->field_1AE4),nullptr,st::machine_word_boundary_cast<undefined4>(local_8dc),0);
       this_00->field_002D = 0x61;
-      *(undefined4 *)&this_00->field_0x35 = 0;
+      this_00->field_0035 = 0;
+      this_00->field_0037 = 0;
       st::fn_006E6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
       g_currentExceptionFrame = local_50.previous;
       return;
@@ -4516,7 +4521,8 @@ void __thiscall st::fn_0059E7F0(FSGSTy *this)
     uVar3 = st::fn_0040361B((MMObjTy *)this_00,1,1,0xcd,0x16f,0x186,0x19,0x6904,0x698b);
     this_00->field_1EB6 = uVar3;
     this_00->field_002D = 0x61;
-    *(undefined4 *)&this_00->field_0x35 = 0;
+    this_00->field_0035 = 0;
+    this_00->field_0037 = 0;
     st::fn_006E6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -4766,7 +4772,8 @@ void __thiscall st::fn_0059EB00(FSGSTy *this)
     uVar6 = st::fn_0040361B((MMObjTy *)this_00,1,1,0x1fd,0x1b5,0xab,0x19,0x6903,0x698d);
     this_00->field_1B24 = uVar6;
     this_00->field_002D = 0x61;
-    *(undefined4 *)&this_00->field_0x35 = 0;
+    this_00->field_0035 = 0;
+    this_00->field_0037 = 0;
     st::fn_006E6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -4892,7 +4899,8 @@ void __thiscall st::fn_0059F260(FSGSTy *this)
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,nullptr,st::machine_word_boundary_cast<undefined4>(local_8e0),0);
     this_00->field_002D = 0x61;
-    *(undefined4 *)&this_00->field_0x35 = 0;
+    this_00->field_0035 = 0;
+    this_00->field_0037 = 0;
     st::fn_006E6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_54.previous;
     return;
@@ -6351,7 +6359,7 @@ void __thiscall st::fn_005A2380(FSGSTy *this,undefined4 *param_1)
       st::fn_00402298(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',this_00->field_1E9A);
       this_00->field_002D = 0x28;
       *(dword *)&this_00->field_0x31 = this_00->field_1EA6->count;
-      *(undefined2 *)&this_00->field_0x35 = 1;
+      this_00->field_0035 = 1;
       st::fn_006E6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
       this_00->field_002D = 0x20;
       if ((this_00->field_1EA6->count == 0) || (this_00->field_1A6B == 0)) {
@@ -6396,8 +6404,8 @@ LAB_005a255d:
 LAB_005a2562:
               if (iVar5 == 0) {
                 *(short *)&this_00->field_0x31 = (short)uVar6;
-                *(undefined2 *)&this_00->field_0x37 = 1;
-                *(undefined2 *)&this_00->field_0x35 = 1;
+                this_00->field_0037 = 1;
+                this_00->field_0035 = 1;
                 this_00->field_002D = 0x22;
                 st::fn_006E6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
                 g_currentExceptionFrame = local_80.previous;
@@ -6521,7 +6529,7 @@ LAB_005a27bf:
       st::fn_00402298(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',this_00->field_1E9A);
       this_00->field_002D = 0x28;
       *(dword *)&this_00->field_0x31 = this_00->field_1EA6->count;
-      *(undefined2 *)&this_00->field_0x35 = 1;
+      this_00->field_0035 = 1;
       st::fn_006E6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
       this_00->field_002D = 0x20;
       if ((this_00->field_1EA6->count == 0) || (this_00->field_1A6B == 0)) {
@@ -6566,8 +6574,8 @@ LAB_005a28e9:
 LAB_005a28ee:
               if (iVar6 == 0) {
                 *(short *)&this_00->field_0x31 = (short)uVar7;
-                *(undefined2 *)&this_00->field_0x37 = 1;
-                *(undefined2 *)&this_00->field_0x35 = 1;
+                this_00->field_0037 = 1;
+                this_00->field_0035 = 1;
                 this_00->field_002D = 0x22;
                 st::fn_006E6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
                 g_currentExceptionFrame = local_84.previous;
@@ -6802,7 +6810,7 @@ void __thiscall st::fn_005A2D70(FSGSTy *this)
       this_01->field_002D = 0x28;
       puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_01->field_0x1d);
       *(dword *)&this_01->field_0x31 = this_01->field_1EA6->count;
-      *(undefined2 *)&this_01->field_0x35 = 1;
+      this_01->field_0035 = 1;
       st::fn_006E6080(this_01,2,this_01->field_1B20,(undefined4 *)puVar1);
       this_01->field_002D = 0x20;
       if ((this_01->field_1EA6->count == 0) || (this_01->field_1A6B == 0)) {
@@ -6921,7 +6929,7 @@ void __thiscall st::fn_005A2FF0(FSGSTy *this,int param_1,undefined4 *param_2)
       st::fn_00402298(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',this_01->field_1E9A);
       this_01->field_002D = 0x28;
       *(dword *)&this_01->field_0x31 = this_01->field_1EAA->count;
-      *(undefined2 *)&this_01->field_0x35 = 1;
+      this_01->field_0035 = 1;
       st::fn_006E6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
       this_01->field_002D = 0x20;
       if ((this_01->field_1EAA->count == 0) || (this_01->field_1A6B == 0)) {
@@ -7111,7 +7119,7 @@ void __thiscall st::fn_005A3540(FSGSTy *this,int param_1,int *param_2)
           st::fn_00402298(0x13,0x5e,0,0,0x174,(byte *)0x175,'\x01',this_01->field_1E9A);
           this_01->field_002D = 0x28;
           *(dword *)&this_01->field_0x31 = this_01->field_1EBE->count;
-          *(undefined2 *)&this_01->field_0x35 = 1;
+          this_01->field_0035 = 1;
           st::fn_006E6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
           this_01->field_002D = 0x20;
           if ((this_01->field_1EBE->count == 0) || (this_01->field_1A6B == 0)) {
@@ -7157,8 +7165,8 @@ LAB_005a380b:
 LAB_005a3810:
                   if (iVar7 == 0) {
                     *(short *)&this_01->field_0x31 = (short)uVar8;
-                    *(undefined2 *)&this_01->field_0x37 = 1;
-                    *(undefined2 *)&this_01->field_0x35 = 1;
+                    this_01->field_0037 = 1;
+                    this_01->field_0035 = 1;
                     this_01->field_002D = 0x22;
                     st::fn_006E6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
                     g_currentExceptionFrame = local_60.previous;

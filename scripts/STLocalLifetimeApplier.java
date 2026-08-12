@@ -399,6 +399,10 @@ public class STLocalLifetimeApplier extends GhidraScript {
                 case "typed_field_store" -> "STORE";
                 case "typed_cast" -> "CAST";
                 case "typed_recursive_cast" -> "CAST";
+                case "receiver_alias_copy" -> "COPY";
+                case "receiver_alias_cast" -> "CAST";
+                case "receiver_alias_multiequal" -> "MULTIEQUAL";
+                case "receiver_alias_indirect" -> "INDIRECT";
                 default -> "CALL";
             };
         @SuppressWarnings("unchecked")
@@ -428,7 +432,8 @@ public class STLocalLifetimeApplier extends GhidraScript {
                 kind.equals("typed_field_load") ||
                 kind.equals("typed_field_address") ||
                 kind.equals("typed_cast") ||
-                kind.equals("typed_recursive_cast"))
+                kind.equals("typed_recursive_cast") ||
+                kind.startsWith("receiver_alias_"))
             varnode = op.getClass().getMethod("getOutput").invoke(op);
         else if (kind.equals("typed_field_store"))
             varnode = op.getClass().getMethod("getInput", int.class)
@@ -468,6 +473,17 @@ public class STLocalLifetimeApplier extends GhidraScript {
 
     private DataType anchoredType(Anchor anchor,
             Map<String, String> row) throws Exception {
+        if (anchor.kind.startsWith("receiver_alias_")) {
+            Function function = function(unt(row.get("function_address")));
+            DataType receiver = receiverType(function);
+            return receiver != null &&
+                    typeSpecification(receiver).equals(
+                        unt(row.get("anchor_source"))) &&
+                    receiverAliasOrigin(anchor.varnode, receiver,
+                        java.util.Collections.newSetFromMap(
+                            new java.util.IdentityHashMap<>()), 0) ?
+                receiver : null;
+        }
         if (anchor.kind.endsWith("_scalar_role")) {
             int size = ((Number)anchor.varnode.getClass()
                 .getMethod("getSize").invoke(anchor.varnode)).intValue();
@@ -576,6 +592,63 @@ public class STLocalLifetimeApplier extends GhidraScript {
         Parameter parameter = parameters[operand];
         return trustedParameter(signature.function, parameter) ?
             parameter.getDataType() : null;
+    }
+
+    private DataType receiverType(Function function) {
+        if (function == null ||
+                !"__thiscall".equals(function.getCallingConventionName()))
+            return null;
+        for (Parameter parameter : function.getParameters()) {
+            if (!parameter.isAutoParameter() ||
+                    !"this".equals(parameter.getName())) continue;
+            return semanticPointer(parameter.getDataType()) ?
+                parameter.getDataType() : null;
+        }
+        return null;
+    }
+
+    private boolean receiverAliasOrigin(Object varnode, DataType receiverType,
+            Set<Object> visited, int depth) throws Exception {
+        if (varnode == null || depth > 32 || !visited.add(varnode)) return false;
+        Object high = varnode.getClass().getMethod("getHigh").invoke(varnode);
+        Object symbol = high == null ? null : high.getClass()
+            .getMethod("getSymbol").invoke(high);
+        if (symbol != null && (boolean)symbol.getClass()
+                .getMethod("isParameter").invoke(symbol)) {
+            String name = (String)symbol.getClass().getMethod("getName")
+                .invoke(symbol);
+            DataType type = (DataType)high.getClass().getMethod("getDataType")
+                .invoke(high);
+            return "this".equals(name) && equivalentType(type, receiverType);
+        }
+        Object definition = varnode.getClass().getMethod("getDef").invoke(varnode);
+        if (definition == null) return false;
+        String operation = mnemonic(definition);
+        int inputs = ((Number)definition.getClass().getMethod("getNumInputs")
+            .invoke(definition)).intValue();
+        if (operation.equals("COPY") || operation.equals("CAST") ||
+                operation.equals("INDIRECT")) {
+            if (inputs < 1) return false;
+            Object input = definition.getClass().getMethod("getInput", int.class)
+                .invoke(definition, 0);
+            int inputSize = ((Number)input.getClass().getMethod("getSize")
+                .invoke(input)).intValue();
+            int outputSize = ((Number)varnode.getClass().getMethod("getSize")
+                .invoke(varnode)).intValue();
+            return inputSize == outputSize && receiverAliasOrigin(input,
+                receiverType, visited, depth + 1);
+        }
+        if (!operation.equals("MULTIEQUAL") || inputs < 1) return false;
+        for (int index = 0; index < inputs; index++) {
+            Object input = definition.getClass().getMethod("getInput", int.class)
+                .invoke(definition, index);
+            Set<Object> branch = java.util.Collections.newSetFromMap(
+                new java.util.IdentityHashMap<>());
+            branch.addAll(visited);
+            if (!receiverAliasOrigin(input, receiverType, branch, depth + 1))
+                return false;
+        }
+        return true;
     }
 
     /**
@@ -1062,6 +1135,10 @@ public class STLocalLifetimeApplier extends GhidraScript {
                 !pointed.getPathName().equals("/void");
         }
         return true;
+    }
+
+    private boolean semanticPointer(DataType type) {
+        return untypedef(type) instanceof Pointer && semanticType(type);
     }
 
     private boolean equivalentType(DataType left, DataType right) {

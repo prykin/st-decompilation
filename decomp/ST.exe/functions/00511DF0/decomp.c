@@ -7,44 +7,52 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/HelpPanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
 
 {
-  short sVar1;
+  HelpPanelTy_field_0172State HVar1;
+  int iVar2;
   HelpPanelTy *this_00;
-  int errorCode;
-  int iVar3;
+  int iVar3_mg0;
+  int iVar3_mg0_2;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  iVar3_mg0 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
-  if (errorCode != 0) {
+  if (iVar3_mg0 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x10f,0,errorCode,
-                               "%s","HelpPanelTy::SwitchOptPanel");
-    if (iVar3 == 0) {
-      RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\helppan.cpp",0x10f);
+    iVar3_mg0_2 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x10f,0,iVar3_mg0,
+                                     "%s","HelpPanelTy::SwitchOptPanel");
+    if (iVar3_mg0_2 == 0) {
+      RaiseInternalException(iVar3_mg0,0,"E:\\__titans\\Andrey\\helppan.cpp",0x10f);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  sVar1 = local_8->field_0172;
-  if (sVar1 == 1) {
+  HVar1 = local_8->field_0172;
+  if (HVar1 == CASE_1) {
     if (param_1 != 0) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    if (local_8->field_0178 != 0) {
+    STPiece<0,2>(iVar2) = local_8->field_0178;
+    STPiece<2,2>(iVar2) = local_8->field_017A;
+    if (iVar2 != 0) {
       local_8->field_0028 = 0x4202;
       *(undefined2 *)&local_8->field_0x2c = 0;
-      local_8->field_002E = 2;
-      *(undefined4 *)&local_8->field_0x30 = local_8->field_0178;
+      *(undefined2 *)&local_8->field_0x2e = 2;
+      local_8->field_0030 = (undefined2)iVar2;
+      local_8->field_0032 = STPiece<2,2>(iVar2);
       if (g_cursorClass_00802A30 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_8->field_0x18);
@@ -53,12 +61,12 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
     ShiftControls(this_00,0);
   }
   else {
-    if (sVar1 == 2) {
+    if (HVar1 == CASE_2) {
       if (param_1 == 0) {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      local_8->field_0172 = 3;
+      local_8->field_0172 = CASE_3;
       thunk_FUN_005252c0(CASE_AF);
       if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_4c.previous;
@@ -68,13 +76,13 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    if (sVar1 != 3) {
+    if (HVar1 != CASE_3) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
   }
   if (param_1 == 0) {
-    this_00->field_0172 = 4;
+    this_00->field_0172 = CASE_4;
     thunk_FUN_005252c0(CASE_B0);
   }
   g_currentExceptionFrame = local_4c.previous;

@@ -50,14 +50,14 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
   byte *local_14;
   cMf32 *local_10;
   byte *local_c;
-  SettMapTy *local_8;
+  SettMapSTy *local_8;
 
   this->field_211C = DAT_008087c6;
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
-  local_8 = (SettMapTy *)this;
+  local_8 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
-  this_00 = local_8;
+  this_00 = (SettMapTy *)local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_b8.previous;
     iVar5 = ReportDebugMessage("E:\\__titans\\Start\\settsobj.cpp",0x86,0,iVar4,"%s",
@@ -68,8 +68,8 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (local_8->field_1E26 == CASE_2) {
-    local_10 = local_8->field_1F3F;
+  if (local_8->field_1E26 == '\x02') {
+    local_10 = (cMf32 *)local_8->field_1F3F;
   }
   else {
     local_10 = local_8->field_1F43;
@@ -89,15 +89,15 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
         if ((pvVar4 != nullptr) && (STField<DArrayTy *>(pvVar4,0x50) != nullptr)) {
           DArrayDestroy(STField<DArrayTy *>(pvVar4,0x50));
         }
-        pDVar8 = this_00->field_1F84;
+        pDVar8 = ((SettMapSTy *)this_00)->field_1F84;
         uVar10 = uVar10 + 1;
         bVar14 = uVar10 < pDVar8->count;
       } while ((int)uVar10 < (int)pDVar8->count);
     }
-    DArrayDestroy(this_00->field_1F84);
+    DArrayDestroy(((SettMapSTy *)this_00)->field_1F84);
   }
   pDVar6 = Library::DKW::TBL::DArrayCreate(nullptr,8,0x60,8);
-  this_00->field_1F84 = pDVar6;
+  ((SettMapSTy *)this_00)->field_1F84 = pDVar6;
   local_c = &g_bulkInitializedRecords_008087C7[0].field_0021;
   do {
     pbVar11 = local_c;
@@ -153,7 +153,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
       else {
         uStack_70 = 4;
         uStack_6f = 0;
-        if (local_8->field_1E26 == CASE_2) {
+        if (local_8->field_1E26 == '\x02') {
           uVar9 = 0;
           uVar10 = local_24[3];
           if (0 < (int)uVar10) {
@@ -202,7 +202,7 @@ LAB_005d5350:
       local_29 = 0;
       local_25 = 1;
       Library::DKW::TBL::DArrayAppend(local_8->field_1F84,&local_74);
-      this_00 = local_8;
+      this_00 = (SettMapTy *)local_8;
     }
     local_c = pbVar11 + 0x51;
   } while ((int)local_c < 0x808a70);
@@ -249,7 +249,7 @@ code_r0x005d540b:
     pcVar12 = pcVar12 + 4;
     pcVar13 = pcVar13 + 4;
   }
-  for (uVar10 = uVar10 & 3; this_00 = local_8, uVar10 != 0; uVar10 = uVar10 - 1) {
+  for (uVar10 = uVar10 & 3; this_00 = (SettMapTy *)local_8, uVar10 != 0; uVar10 = uVar10 - 1) {
     *pcVar13 = *pcVar12;
     pcVar12 = pcVar12 + 1;
     pcVar13 = pcVar13 + 1;

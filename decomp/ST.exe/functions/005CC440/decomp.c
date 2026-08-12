@@ -87,7 +87,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_2200);
     }
     else {
-      if (local_8->field_0x21e6 != '\0') {
+      if (local_8->field_21E6 != '\0') {
         StartSystemTy::CreateChatView(g_startSystem_0081176C);
         ppcVar8 = local_a80;
         for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {

@@ -9,7 +9,8 @@ int __thiscall STBoatC::BackWaitLoad(STBoatC *this,int *param_1)
 
 {
   uint uVar1;
-  undefined4 uVar2;
+  STBoatC_field_05C4State SVar2;
+  undefined4 uVar3;
   int iVar5;
   int local_EAX_72;
   uint uVar6;
@@ -47,18 +48,18 @@ LAB_00475545:
     return -(uint)(iVar5 != 0);
   }
   if ((iVar5 == 1) || (iVar5 == 2)) {
-    iVar18 = this->field_05C4;
-    if (iVar18 == 0) {
+    SVar2 = this->field_05C4;
+    if (SVar2 == CASE_0) {
       local_EAX_72 = sub_00460360(this);
       return local_EAX_72;
     }
-    if (((((iVar18 == 1) || (iVar18 == 2)) || (iVar18 == 3)) || ((iVar18 == 5 || (iVar18 == 6)))) ||
-       (iVar18 == 7)) {
+    if (((((SVar2 == CASE_1) || (SVar2 == CASE_2)) || (SVar2 == CASE_3)) ||
+        ((SVar2 == CASE_5 || (SVar2 == CASE_6)))) || (SVar2 == CASE_7)) {
       this->field_0076 = 1;
       iVar5 = this->vfunc_D8();
       return -(uint)(iVar5 != 0);
     }
-    if (iVar18 == 4) {
+    if (SVar2 == CASE_4) {
       local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
       uVar6 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar6;
@@ -74,7 +75,7 @@ LAB_00475545:
         do {
           puVar7 = thunk_FUN_0041dc40(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
                                       this->field_006C);
-          uVar2 = *puVar7;
+          uVar3 = *puVar7;
           bVar20 = 0;
           sVar19 = 0;
           iVar18 = -1;
@@ -85,7 +86,7 @@ LAB_00475545:
           sVar14 = 0;
           sVar13 = 0;
           sVar12 = 0;
-          local_24 = uVar2;
+          local_24 = uVar3;
           if (DAT_0080732c == 1) {
             sVar12 = 0;
             sVar13 = 0;
@@ -102,9 +103,9 @@ LAB_00475545:
           }
           else {
             iVar8 = (int)local_20 + local_c + this->field_0045;
-            STPiece<2,2>(local_24) = (short)((uint)uVar2 >> 0x10);
+            STPiece<2,2>(local_24) = (short)((uint)uVar3 >> 0x10);
             iVar9 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
-            STPiece<0,2>(local_24) = (short)uVar2;
+            STPiece<0,2>(local_24) = (short)uVar3;
             iVar10 = (int)(short)local_24 + iVar5 + this->field_0041;
           }
           TraksClassTy::TraksCreate

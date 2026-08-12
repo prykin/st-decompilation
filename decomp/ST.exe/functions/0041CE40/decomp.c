@@ -13,8 +13,7 @@ void __thiscall FUN_0041ce40(void *this,int param_1)
     VisibleClassTy::sub_005594A0
               (g_visibleClass_00802A88,(int)STField<short>(this,0x5b),
                (int)STField<short>(this,0x5d),(char)STField<undefined2>(this,0x5f),
-               STField<undefined *>(this,0x24),param_1,STField<undefined4>(this,0x18),
-               0xffffffff);
+               STField<undefined *>(this,0x24),param_1,STField<uint>(this,0x18),0xffffffff);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(*(int *)this + 8))();

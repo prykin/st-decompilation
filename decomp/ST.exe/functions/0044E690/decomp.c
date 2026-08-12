@@ -7,7 +7,12 @@
    table_confidence=high
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 0044E690 returns STBoatC::STBoatC this @ 0044E8C3 */
+   Evidence: 0044E690 returns STBoatC::STBoatC this @ 0044E8C3
+
+   [STSwitchEnumApplier] Switch target field_045D uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_045DState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23
+    */
 
 STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
 
@@ -15,7 +20,7 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   int iVar1;
   undefined4 *puVar2;
   short *psVar3;
-  uint *puVar4;
+  STBoatC_field_06F3State *pSVar4;
 
   STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
@@ -61,22 +66,34 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
     *(undefined4 *)psVar3 = 0;
     psVar3 = psVar3 + 2;
   }
-  memset(&this->field_0588, 0, 0x18); /* compiler bulk-zero initialization */
-  iVar1 = 0;
+  psVar3 = &this->field_0588;
+  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *(undefined4 *)psVar3 = 0;
+    psVar3 = psVar3 + 2;
+  }
   memset(&this->field_05A0, 0, 0x2a); /* compiler bulk-zero initialization */
   iVar1 = 0;
-  *(undefined4 *)&this->field_0x5ca = 0;
-  *(undefined4 *)&this->field_0x5ce = 0;
-  *(undefined4 *)&this->field_0x5d2 = 0;
+  this->field_05CA = 0;
+  this->field_05CC = 0;
+  this->field_05CE = 0;
+  this->field_05D0 = 0;
+  this->field_05D2 = 0;
+  this->field_05D4 = 0;
   this->field_05D6 = 0;
   this->field_05DA = 0;
-  *(undefined4 *)&this->field_0x5dc = 0;
-  *(undefined4 *)&this->field_0x5e0 = 0;
-  *(undefined4 *)&this->field_0x5e4 = 0;
+  this->field_05DC = 0;
+  this->field_05DE = 0;
+  this->field_05E0 = 0;
+  this->field_05E2 = 0;
+  this->field_05E4 = 0;
+  this->field_05E6 = 0;
   this->field_05E8 = 0;
-  *(undefined4 *)&this->field_0x5ec = 0;
-  *(undefined4 *)&this->field_0x5f0 = 0;
-  *(undefined4 *)&this->field_0x5f4 = 0;
+  this->field_05EC = 0;
+  this->field_05EE = 0;
+  this->field_05F0 = 0;
+  this->field_05F2 = 0;
+  this->field_05F4 = 0;
+  this->field_05F6 = 0;
   this->field_05F8 = 0;
   memset(&this->field_05FC, 0, 0x1d); /* compiler bulk-zero initialization */
   iVar1 = 0;
@@ -86,8 +103,12 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   iVar1 = 0;
   memset(&this->field_066B, 0, 0x20); /* compiler bulk-zero initialization */
   iVar1 = 0;
-  memset(&this->field_068B, 0, 0x1e); /* compiler bulk-zero initialization */
-  iVar1 = 0;
+  psVar3 = &this->field_068B;
+  for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *(undefined4 *)psVar3 = 0;
+    psVar3 = psVar3 + 2;
+  }
+  *psVar3 = 0;
   psVar3 = &this->field_06A9;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(undefined4 *)psVar3 = 0;
@@ -99,12 +120,16 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
     *(undefined4 *)psVar3 = 0;
     psVar3 = psVar3 + 2;
   }
-  this->field_06EB = 0;
+  *(undefined4 *)&this->field_0x6eb = 0;
   this->field_06EF = 0;
   this->field_045D = CASE_3;
-  puVar4 = &this->field_06F3;
-  memset(puVar4, 0, 0x16b); /* compiler bulk-zero initialization */
-  puVar4 = (undefined4 *)((byte *)puVar4 + 0x168);
+  pSVar4 = &this->field_06F3;
+  for (iVar1 = 0x5a; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *pSVar4 = CASE_0;
+    pSVar4 = pSVar4 + 1;
+  }
+  *(undefined2 *)pSVar4 = CASE_0;
+  STField<byte>(pSVar4,2) = 0;
   this->field_0716 = 100;
   this->field_0712 = 100;
   this->field_071A = 100;

@@ -9,25 +9,25 @@ void __thiscall STBoatC::CancelLoading(STBoatC *this,int param_1)
 
 {
   STBoatC_field_045DState SVar1;
-  int iVar2;
+  STBoatC_field_059AState SVar2;
   int iVar3;
 
   SVar1 = this->field_045D;
-  if ((((SVar1 == CASE_F) || (SVar1 == CASE_E)) &&
-      (this->field_058E == (AnonShape_005EFAE0_B406B78B *)param_1)) && (this->field_0596 == 2)) {
-    this->field_0596 = 1;
+  if ((((SVar1 == CASE_F) || (SVar1 == CASE_E)) && (*(int *)&this->field_0x58e == param_1)) &&
+     (this->field_0596 == CASE_2)) {
+    this->field_0596 = CASE_1;
     this->field_0592 = 0;
     return;
   }
   if (((SVar1 == CASE_F) || (SVar1 == CASE_E)) &&
-     ((this->field_058E == (AnonShape_005EFAE0_B406B78B *)param_1 && (this->field_0596 == 3)))) {
-    iVar2 = this->field_059A;
-    if (((iVar2 == 0) || (iVar2 == 1)) || (iVar2 == 2)) {
-      this->field_059A = 9;
+     ((*(int *)&this->field_0x58e == param_1 && (this->field_0596 == CASE_3)))) {
+    SVar2 = this->field_059A;
+    if (((SVar2 == CASE_0) || (SVar2 == CASE_1)) || (SVar2 == CASE_2)) {
+      this->field_059A = CASE_9;
       return;
     }
-    if ((iVar2 == 3) || (iVar2 == 4)) {
-      this->field_059A = 5;
+    if ((SVar2 == CASE_3) || (SVar2 == CASE_4)) {
+      this->field_059A = CASE_5;
       return;
     }
   }

@@ -9,7 +9,7 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	CPanelTy	432	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_01B0	24	4	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	CPanelTy	2541	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_09ED	12	2	42	review	multiple non-overlapping fixed offsets through one class pointer field
 0	ChooseMapTy	12	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_000C	24	2	13	review	multiple non-overlapping fixed offsets through one class pointer field
-0	ChooseMapTy	6747	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1A5B	1674	4	42	review	multiple non-overlapping fixed offsets through one class pointer field
+0	ChooseMapTy	6747	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1A5B	1674	4	86	review	multiple non-overlapping fixed offsets through one class pointer field
 0	ChooseMapTy	7291	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C7B	12	2	5	review	multiple non-overlapping fixed offsets through one class pointer field
 0	ChooseMapTy	7307	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C8B	12	2	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	ChooseMapTy	7319	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C97	24	2	22	review	multiple non-overlapping fixed offsets through one class pointer field
@@ -20,8 +20,8 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	ComboTy	260	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ComboTy_0104	24	4	6	review	multiple non-overlapping fixed offsets through one class pointer field
 0	CursorClassTy	1178	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CursorClassTy_049A	605	3	14	review	multiple non-overlapping fixed offsets through one class pointer field
 0	FSGSTy	49	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_0031	24	2	4	review	multiple non-overlapping fixed offsets through one class pointer field
-0	FSGSTy	6747	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A5B	1690	5	60	review	multiple non-overlapping fixed offsets through one class pointer field
-0	FSGSTy	6771	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A73	164	3	8	review	multiple non-overlapping fixed offsets through one class pointer field
+0	FSGSTy	6747	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A5B	1690	5	121	review	multiple non-overlapping fixed offsets through one class pointer field
+0	FSGSTy	6771	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A73	164	3	16	review	multiple non-overlapping fixed offsets through one class pointer field
 0	FSGSTy	6775	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A77	164	2	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	FSGSTy	6807	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A97	24	4	6	review	multiple non-overlapping fixed offsets through one class pointer field
 0	FSGSTy	6848	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AC0	24	4	50	review	multiple non-overlapping fixed offsets through one class pointer field
@@ -41,7 +41,6 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	HelpPanelTy	435	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01B3	32	2	21	review	multiple non-overlapping fixed offsets through one class pointer field
 0	HelpPanelTy	455	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01C7	8	2	5	review	multiple non-overlapping fixed offsets through one class pointer field
 0	HelpPanelTy	484	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01E4	164	2	4	review	multiple non-overlapping fixed offsets through one class pointer field
-0	HelpPanelTy	492	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01EC	24	4	8	review	multiple non-overlapping fixed offsets through one class pointer field
 0	HelpPanelTy	536	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_0218	24	4	13	review	multiple non-overlapping fixed offsets through one class pointer field
 0	HelpStringTy	298	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpStringTy_012A	24	4	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	MReportTy	115	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_MReportTy_0073	12	2	6	review	multiple non-overlapping fixed offsets through one class pointer field
@@ -61,7 +60,7 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	PlayPanelTy	104	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PlayPanelTy_0068	24	4	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	PlaySystemTy	57	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PlaySystemTy_0039	24	3	6	review	multiple non-overlapping fixed offsets through one class pointer field
 0	PopUpTy	144	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PopUpTy_0090	24	4	15	review	multiple non-overlapping fixed offsets through one class pointer field
-0	PrividerTy	6747	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1A5B	746	2	21	review	multiple non-overlapping fixed offsets through one class pointer field
+0	PrividerTy	6747	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1A5B	746	2	47	review	multiple non-overlapping fixed offsets through one class pointer field
 0	PrividerTy	7298	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C82	24	4	7	review	multiple non-overlapping fixed offsets through one class pointer field
 0	PrividerTy	7318	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C96	27	5	10	review	multiple non-overlapping fixed offsets through one class pointer field
 0	PrividerTy	7322	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C9A	27	5	14	review	multiple non-overlapping fixed offsets through one class pointer field
@@ -103,7 +102,7 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	STGroupBoatC	558	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGroupBoatC_022E	32	2	5	review	multiple non-overlapping fixed offsets through one class pointer field
 0	STPlaySystemC	61	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STPlaySystemC_003D	8	2	11	review	multiple non-overlapping fixed offsets through one class pointer field
 0	SettMapMTy	12	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_000C	24	2	7	review	multiple non-overlapping fixed offsets through one class pointer field
-0	SettMapMTy	6747	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_1A5B	1718	12	59	review	multiple non-overlapping fixed offsets through one class pointer field
+0	SettMapMTy	6747	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_1A5B	1718	12	118	review	multiple non-overlapping fixed offsets through one class pointer field
 0	SettMapMTy	8680	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21E8	27	4	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	SettMapMTy	8684	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21EC	27	4	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	SettMapMTy	8688	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F0	27	4	4	review	multiple non-overlapping fixed offsets through one class pointer field
@@ -135,9 +134,8 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	TLOBaseTy	657	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0291	72	3	6	review	multiple non-overlapping fixed offsets through one class pointer field
 0	TLOBaseTy	1460	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_05B4	737	3	3	review	multiple non-overlapping fixed offsets through one class pointer field
 0	TLOBaseTy	1543	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	24	6	15	review	multiple non-overlapping fixed offsets through one class pointer field
-0	TLOEmbryoTy	0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOEmbryoTy_0000	148	2	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	WaitTy	12	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_000C	24	2	7	review	multiple non-overlapping fixed offsets through one class pointer field
-0	WaitTy	6747	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1A5B	1674	4	15	review	multiple non-overlapping fixed offsets through one class pointer field
+0	WaitTy	6747	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1A5B	1718	11	57	review	multiple non-overlapping fixed offsets through one class pointer field
 0	WaitTy	6892	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1AEC	24	4	9	review	multiple non-overlapping fixed offsets through one class pointer field
 0	WaitTy	6896	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1AF0	24	2	9	review	multiple non-overlapping fixed offsets through one class pointer field
 0	WaitTy	6904	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1AF8	27	5	10	review	multiple non-overlapping fixed offsets through one class pointer field
@@ -145,3 +143,24 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	WaitTy	6912	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1B00	27	5	10	review	multiple non-overlapping fixed offsets through one class pointer field
 0	cLoadingTy	4	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_cLoadingTy_0004	24	4	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	cLoadingTy	8	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_cLoadingTy_0008	112	8	8	review	multiple non-overlapping fixed offsets through one class pointer field
+0	BehPanelTy	462	/SubmarineTitans/Recovered/InlineRecordArrays/BehPanelTy_Record_01CE_0027	39	0	4	review	review-only repeated record geometry: counts=[6], factory_counts=[], stride=0x27, loops=1, exact_loops=1; ambiguous_or_missing_exact_extent
+1	CampaignTy	187	/SubmarineTitans/Recovered/InlineRecordArrays/CampaignTy_Record_00BB_01FB	507	9	16	layout	fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=6, exact_loops=2, boundaries=[188, 231, 255, 291, 372, 376], access_offsets=16, typed_nested_objects=3
+1	ChooseMapTy	188	/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB	507	12	0	layout	fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3
+1	FSGSTy	188	/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB	507	15	0	layout	fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3
+0	InfocPanelTy	708	/SubmarineTitans/Recovered/InlineRecordArrays/InfocPanelTy_Record_02C4_0014	20	0	3	review	review-only repeated record geometry: counts=[12], factory_counts=[], stride=0x14, loops=1, exact_loops=1; ambiguous_or_missing_exact_extent
+0	MMObjTy	226	/SubmarineTitans/Recovered/InlineRecordArrays/MMObjTy_Record_00E2_01FB	507	0	1	review	review-only repeated record geometry: counts=[13], factory_counts=[], stride=0x1FB, loops=1, exact_loops=1; ambiguous_or_missing_exact_extent
+1	MMsgTy	188	/SubmarineTitans/Recovered/InlineRecordArrays/MMsgTy_Record_00BC_01FB	507	8	18	layout	fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=6, exact_loops=2, boundaries=[188, 231, 255, 372], access_offsets=18, typed_nested_objects=3
+0	MReportTy	851	/SubmarineTitans/Recovered/InlineRecordArrays/MReportTy_Record_0353_001C	28	0	5	review	review-only repeated record geometry: counts=[9], factory_counts=[], stride=0x1C, loops=1, exact_loops=1; ambiguous_or_missing_exact_extent
+1	MainMenuTy	187	/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB	507	16	17	layout	fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=6, exact_loops=3, boundaries=[188, 231, 255, 372, 376, 380], access_offsets=17, typed_nested_objects=3
+0	PlayPanelTy	385	/SubmarineTitans/Recovered/InlineRecordArrays/PlayPanelTy_Record_0181_0020	32	0	1	review	review-only repeated record geometry: counts=[2], factory_counts=[], stride=0x20, loops=1, exact_loops=1; ambiguous_or_missing_exact_extent
+1	PrividerTy	188	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	507	15	0	layout	fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3
+0	ProdPanelTy	437	/SubmarineTitans/Recovered/InlineRecordArrays/ProdPanelTy_Record_01B5_0027	39	0	0	review	review-only repeated record geometry: counts=[5], factory_counts=[], stride=0x27, loops=1, exact_loops=1; ambiguous_or_missing_exact_extent
+1	SIDTy	188	/SubmarineTitans/Recovered/InlineRecordArrays/SIDTy_Record_00BC_01FB	507	8	0	layout	fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3
+0	STAppC	4519	/SubmarineTitans/Recovered/InlineRecordArrays/STAppC_Record_11A7_0051	81	0	3	review	fixed inline record array from exact cursor loops: counts=[8], factory_counts=[], stride=0x51, loops=2, exact_loops=2, boundaries=[4519, 4553], access_offsets=3, typed_nested_objects=0; insufficient_record_semantics
+1	SettMapMTy	188	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapMTy_Record_00BC_01FB	507	4	0	layout	fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3
+1	SettMapTy	188	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	507	5	0	layout	fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3
+0	SndUnderAttMenegC	32	/SubmarineTitans/Recovered/InlineRecordArrays/SndUnderAttMenegC_Record_0020_001D	29	0	7	review	review-only repeated record geometry: counts=[], factory_counts=[], stride=0x1D, loops=1, exact_loops=0; ambiguous_or_missing_exact_extent
+0	TLOBaseTy	1232	/SubmarineTitans/Recovered/InlineRecordArrays/TLOBaseTy_Record_04D0_0014	20	0	3	review	review-only repeated record geometry: counts=[], factory_counts=[], stride=0x14, loops=2, exact_loops=0; ambiguous_or_missing_exact_extent
+0	TLOBaseTy	1232	/SubmarineTitans/Recovered/InlineRecordArrays/TLOBaseTy_Record_04D0_0028	40	0	5	review	review-only repeated record geometry: counts=[], factory_counts=[], stride=0x28, loops=1, exact_loops=0; ambiguous_or_missing_exact_extent
+0	UpgPanelTy	427	/SubmarineTitans/Recovered/InlineRecordArrays/UpgPanelTy_Record_01AB_0030	48	0	6	review	fixed inline record array from exact cursor loops: counts=[3], factory_counts=[], stride=0x30, loops=3, exact_loops=3, boundaries=[427, 571, 859], access_offsets=6, typed_nested_objects=0; insufficient_nonoverlapping_fields
+1	WaitTy	188	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	507	15	0	layout	fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3

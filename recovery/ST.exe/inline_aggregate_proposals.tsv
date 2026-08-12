@@ -7,6 +7,8 @@ apply	kind	owner	owner_type_path	offset	offset_hex	size	proposed_type	proposed_n
 0	zero_span	CPanelTy	/CPanelTy	1356	0x54C	280			00506040	00506051 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	ComboTy	/ComboTy	24	0x18	32			005943F0	00594401 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	HelpPanelTy	/HelpPanelTy	24	0x18	32			00511C70	00511C99 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
+0	zero_span	HelpPanelTy	/HelpPanelTy	384	0x180	28			00510C80	00510D2A STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
+0	zero_span	HelpPanelTy	/HelpPanelTy	496	0x1F0	40			00510C80	00510D17 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	JumpManagC	/JumpManagC	28	0x1C	80			00617840	00617859 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	MAdvTy	/MAdvTy	24	0x18	32			00590860	00590871 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	MTestTy	/MTestTy	97	0x61	32			005E5F60	005E5F71 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
@@ -84,6 +86,7 @@ apply	kind	owner	owner_type_path	offset	offset_hex	size	proposed_type	proposed_n
 0	zero_span	SpecPanelTy	/SpecPanelTy	24	0x18	32			0053EA50	0053EA78 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	StartSystemTy	/StartSystemTy	580	0x244	24			005DA610	005DA706 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	StartSystemTy	/StartSystemTy	604	0x25C	136			005DA610	005DA713 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
+0	zero_span	TLOEmbryoTy	/TLOEmbryoTy	776	0x308	48			004D0FC0	004D100B STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	TraksClassTy	/TraksClassTy	40	0x28	2048			005556D0	00555700 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	VisibleClassTy	/VisibleClassTy	84	0x54	32			005577C0	00557806 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	VisibleClassTy	/VisibleClassTy	116	0x74	32			005577C0	00557810 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields

@@ -1,10 +1,17 @@
 #include "../../pseudocode_runtime.h"
 
 
-int __fastcall FUN_004d6c00(int param_1)
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 00798C70
+   Entries: 00401695
+   Slots: 0xC
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_owner_for_target;
+   receiver_only_leaf_virtual_signature */
+
+dword __thiscall TLOEmbryoTy::FUN_004d6c00(TLOEmbryoTy *this)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(int *)(param_1 + 0x36c) + 1;
+  return this->field_036C + 1;
 }
 

@@ -1,4 +1,3 @@
-#include "../../pseudocode_runtime.h"
 
 
 int FUN_005f3940(int param_1,int param_2,int param_3)
@@ -11,35 +10,10 @@ int FUN_005f3940(int param_1,int param_2,int param_3)
   int iVar5;
   int local_8;
 
-  sVar1 = (short)(param_1 >> 0x1f);
-  if (param_1 < 0) {
-    iVar4 = (short)(((short)(param_1 / 0xc9) + sVar1) -
-                   (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    iVar4 = (int)(short)(((short)(param_1 / 0xc9) + sVar1) -
-                        (short)((longlong)param_1 * 0x28c1979 >> 0x3f));
-  }
-  sVar1 = (short)(param_2 >> 0x1f);
-  if (param_2 < 0) {
-    iVar5 = (short)(((short)(param_2 / 0xc9) + sVar1) -
-                   (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    iVar5 = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
-                        (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
-  }
-  sVar1 = (short)(param_3 >> 0x1f);
-  if (param_3 < 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_2 = (short)(((short)(param_3 / 200) + sVar1) -
-                     (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_2 = (int)(short)(((short)(param_3 / 200) + sVar1) -
-                          (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
-  }
+  iVar4 = STBiasedDiv16(param_1, 0xc9); /* exact signed 16-bit grid-index division */
+  iVar5 = STBiasedDiv16(param_2, 0xc9); /* exact signed 16-bit grid-index division */
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  param_2 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   if ((((g_sT3DSMAPContext_00807598->field_0048 <= iVar4) &&
        (iVar4 <= g_sT3DSMAPContext_00807598->field_0058)) &&
       (g_sT3DSMAPContext_00807598->field_0044 <= iVar5)) &&

@@ -832,11 +832,12 @@ void __thiscall st::fn_005BAE00(PrividerTy *this)
   int iVar9;
   uint *puVar11;
   char *pcVar12;
+  STMessage *pSVar13;
   UINT UVar14;
   char local_c8 [2];
   undefined1 local_c6;
   InternalExceptionFrame local_a0;
-  undefined4 local_5c [8];
+  STMessage local_5c;
   int local_3c;
   char local_38;
   undefined4 local_37;
@@ -1023,11 +1024,15 @@ LAB_005bb532:
       }
     }
     pSVar4 = this_01->field_1A5B;
-    memset(local_5c, 0, 0x20); /* compiler bulk-zero initialization */
+    pSVar13 = &local_5c;
+    for (iVar10 = 8; iVar10 != 0; iVar10 = iVar10 + -1) {
+      pSVar13->unknown_00 = 0;
+      pSVar13 = (STMessage *)&pSVar13->unknown_04;
+    }
     this_01->field_1A71 = 0;
     this_01->field_1A72 = 1;
     pCVar6 = g_cursorClass_00802A30;
-    local_5c[4] = 0x6952;
+    local_5c.id = MESS_PRIVIDERTY_6952;
     if (pSVar4->field_02E6 != nullptr) {
       if (g_cursorClass_00802A30 != nullptr) {
         iVar10 = g_cursorClass_00802A30->field_00C9;
@@ -1039,14 +1044,14 @@ LAB_005bb532:
         pCVar6->field_00D2 = 0;
         pCVar6->field_04DF = -1;
       }
-      local_5c[2] = this_01->field_0008;
-      local_5c[3] = 2;
-      st::fn_00403FA8(this_01->field_1A5B->field_02E6,0x2525,'\0',local_5c,nullptr,
-                         nullptr,0,0);
+      local_5c.unknown_08 = this_01->field_0008;
+      local_5c.unknown_0c = 2;
+      st::fn_00403FA8(this_01->field_1A5B->field_02E6,0x2525,'\0',st::pointer_boundary_cast<undefined4 *>(&local_5c.unknown_00),
+                         nullptr,nullptr,0,0);
       g_currentExceptionFrame = local_a0.previous;
       return;
     }
-    this_01->GetMessage((int)local_5c);
+    this_01->GetMessage(&local_5c);
     break;
   case CASE_3:
     if ((local_20->field_1C96 != nullptr) &&
@@ -1786,7 +1791,7 @@ int __thiscall st::fn_005BC5E0(PrividerTy *this,STMessage *message)
         }
 LAB_005bccb9:
         this_00->field_004D = 0x6951;
-        this_00->st::fn_00401280((int)&this_00->field_0x3d);
+        this_00->st::fn_00401280((STMessage *)&this_00->field_0x3d);
         goto cf_common_exit_005BCF7F;
       }
       if (SVar3 == MESS_SHARED_6501) goto switchD_005bc9da_caseD_6949;

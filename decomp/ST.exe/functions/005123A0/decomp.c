@@ -10,7 +10,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
 {
   HelpPanelTy *this_00;
   int iVar3;
-  DArrayTy *pDVar2;
+  HelpPanelTy_field_01BBDArray *pHVar2;
   int iVar4;
   int iVar5;
   int *piVar7;
@@ -95,12 +95,12 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_510 = 0x19c;
     local_50c = 0x118;
     if (this_00->field_01A1 == 0) {
-      pDVar2 = (DArrayTy *)this_00->field_01B3;
+      pHVar2 = (HelpPanelTy_field_01BBDArray *)this_00->field_01B3;
     }
     else {
-      pDVar2 = this_00->field_01BB;
+      pHVar2 = this_00->field_01BB;
     }
-    local_508 = pDVar2->count;
+    local_508 = pHVar2->count;
     local_504 = 0;
     local_4f8 = this_00->field_0008;
     local_3f0[0] = 0;

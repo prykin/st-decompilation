@@ -31,23 +31,9 @@ int * __fastcall FUN_00586320(AnonShape_00586320_9792A2C7 *param_1)
   int local_c;
 
   sVar12 = param_1->field_0041;
-  if (sVar12 < 0) {
-    iVar13 = (short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
-                    (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    iVar13 = (int)(short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
-                         (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f));
-  }
+  iVar13 = STBiasedDiv16(sVar12, 0xc9); /* exact signed 16-bit grid-index division */
   sVar12 = param_1->field_0043;
-  if (sVar12 < 0) {
-    local_14 = (short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
-                      (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    local_14 = (int)(short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
-                           (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f));
-  }
+  local_14 = STBiasedDiv16(sVar12, 0xc9); /* exact signed 16-bit grid-index division */
   param_1->field_0273 = 0;
   param_1->field_026F = 0xff;
   param_1->field_0231 = 1;

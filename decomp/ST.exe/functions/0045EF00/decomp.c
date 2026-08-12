@@ -24,6 +24,7 @@
 void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum param_1,uint *param_2)
 
 {
+  uint uVar1;
   int iVar2;
   uint *puVar4;
 
@@ -73,9 +74,15 @@ void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum par
   case CASE_8:
     this->field_02E8 = 1;
     this->field_0437 = *param_2;
-    *(uint *)&this->field_0x43b = param_2[1];
-    *(uint *)&this->field_0x43f = param_2[2];
-    *(uint *)&this->field_0x443 = param_2[3];
+    uVar1 = param_2[1];
+    this->field_043B = (short)uVar1;
+    this->field_043D = (short)(uVar1 >> 0x10);
+    uVar1 = param_2[2];
+    this->field_043F = (short)uVar1;
+    this->field_0441 = (short)(uVar1 >> 0x10);
+    uVar1 = param_2[3];
+    this->field_0443 = (short)uVar1;
+    this->field_0445 = (short)(uVar1 >> 0x10);
     return;
   case CASE_9:
     this->field_02EC = 1;
@@ -112,14 +119,18 @@ cf_common_exit_0045F1A9:
   case CASE_E:
     this->field_0300 = 1;
     this->field_0447 = *param_2;
-    *(uint *)&this->field_0x44b = param_2[1];
+    uVar1 = param_2[1];
+    this->field_044B = (short)uVar1;
+    this->field_044D = (short)(uVar1 >> 0x10);
     *(uint *)&this->field_0x44f = param_2[2];
     this->field_0453 = (short)param_2[3];
     return;
   case CASE_F:
     this->field_0304 = 1;
     this->field_03B6 = *param_2;
-    *(uint *)&this->field_0x3ba = param_2[1];
+    uVar1 = param_2[1];
+    this->field_03BA = (short)uVar1;
+    this->field_03BC = (short)(uVar1 >> 0x10);
     *(uint *)&this->field_0x3be = param_2[2];
     this->field_03C2 = (short)param_2[3];
     return;
@@ -135,7 +146,9 @@ cf_common_exit_0045F1A9:
   case CASE_12:
     this->field_0310 = 1;
     this->field_0429 = *param_2;
-    *(uint *)&this->field_0x42d = param_2[1];
+    uVar1 = param_2[1];
+    this->field_042D = (short)uVar1;
+    this->field_042F = (short)(uVar1 >> 0x10);
     *(uint *)&this->field_0x431 = param_2[2];
     this->field_0435 = (short)param_2[3];
     return;
@@ -160,7 +173,9 @@ cf_common_exit_0045F1A9:
     this->field_031C = 1;
     this->field_03F3 = *param_2;
     this->field_03F7 = param_2[1];
-    *(uint *)&this->field_0x3fb = param_2[2];
+    uVar1 = param_2[2];
+    this->field_03FB = (short)uVar1;
+    this->field_03FD = (short)(uVar1 >> 0x10);
     this->field_03FF = (short)param_2[3];
     return;
   case CASE_17:

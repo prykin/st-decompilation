@@ -16,12 +16,7 @@ uint __thiscall FUN_0063c170(void *this,int param_1)
   iVar3 = (iVar3 + 0x40) * iVar3 * 8;
   iVar3 = (int)STField<short>(this,0x251) + ((int)(iVar3 + (iVar3 >> 0x1f & 0x3fU)) >> 6);
   STField<int>(this,0x26e) = iVar3;
-  if (iVar3 < 0) {
-    iVar1 = (short)(iVar3 / 200) + -1;
-  }
-  else {
-    iVar1 = (int)(short)(iVar3 / 200);
-  }
+  iVar1 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
   if (0x18 < iVar1) {
     return 10;
   }

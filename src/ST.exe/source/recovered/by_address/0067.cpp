@@ -1447,7 +1447,7 @@ void st::fn_00674CE0(void)
 {
   if ((DAT_0081196c != 0) && (DAT_00811970 != nullptr)) {
     st::fn_0072EA90(st::pointer_boundary_cast<int *>(DAT_00811970));
-    DAT_00811970 = static_cast<undefined4>(0);
+    DAT_00811970 = 0;
   }
   return;
 }
@@ -1560,7 +1560,7 @@ void st::fn_00674EB0(void)
 {
   if ((DAT_00811974 != 0) && (DAT_00811978 != nullptr)) {
     st::fn_0072EA90(st::pointer_boundary_cast<int *>(DAT_00811978));
-    DAT_00811978 = static_cast<undefined4>(0);
+    DAT_00811978 = 0;
   }
   return;
 }

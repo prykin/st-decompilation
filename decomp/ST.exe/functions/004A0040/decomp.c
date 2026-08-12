@@ -28,8 +28,8 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
   uint *puVar17;
   InternalExceptionFrame local_78;
   uint local_34;
-  undefined2 local_30;
-  undefined2 local_2e;
+  short local_30;
+  short local_2e;
   undefined2 local_2c;
   undefined4 local_2a;
   STGroupBoatC *local_24;
@@ -66,18 +66,18 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&local_24->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
     iVar11 = 0;
-    *(undefined2 *)&local_24->field_0x2f0 = *(undefined2 *)&local_24->field_0x1bb;
+    local_24->field_02F0 = local_24->field_01BB;
     local_24->field_0065 = 0;
-    *(undefined2 *)&local_24->field_0x2ee = *(undefined2 *)&local_24->field_0x1b9;
-    *(undefined2 *)&local_24->field_0x2f2 = local_24->field_01BD;
-    if (g_worldGrid.sizeZ + -2 < (int)(short)local_24->field_01BD) {
+    local_24->field_02EE = local_24->field_01B9;
+    *(short *)&local_24->field_0x2f2 = local_24->field_01BD;
+    if (g_worldGrid.sizeZ + -2 < (int)local_24->field_01BD) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0xcc7);
     }
-    sVar1 = *(short *)&pSVar6->field_0x2ee;
+    sVar1 = pSVar6->field_02EE;
     sVar2 = *(short *)&pSVar6->field_0x2f2;
-    sVar3 = *(short *)&pSVar6->field_0x2f0;
+    sVar3 = pSVar6->field_02F0;
     if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
        (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))) {
       pAVar15 = nullptr;
@@ -97,11 +97,11 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
     local_1c = 0;
     *(undefined2 *)&pSVar6->field_0x2f4 = *(undefined2 *)&pAVar15->field_0x18;
     pSVar6->field_02F6 = uVar5;
-    local_2e = *(undefined2 *)&pSVar6->field_0x2f0;
+    local_2e = pSVar6->field_02F0;
     local_34 = g_playSystem_00802A38->field_00E4;
     local_2c = *(undefined2 *)&pSVar6->field_0x2f2;
     uVar12 = STReplaceLowWord((uint32_t)(g_playSystem_00802A38), (uint16_t)(local_2c));
-    local_30 = *(undefined2 *)&pSVar6->field_0x2ee;
+    local_30 = pSVar6->field_02EE;
     local_2a = *(undefined4 *)&pSVar6->field_0x2f4;
     array_00 = local_14;
     local_18 = local_34;

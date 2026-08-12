@@ -1,9 +1,9 @@
 ST cross-function type families
 
-Anonymous types audited: 1404
-Exact family members: 488
+Anonymous types audited: 1406
+Exact family members: 489
 Targets: 2
-Named anonymous matches: 205
+Named anonymous matches: 214
 Automatic named matches: 0
 Contextual generated records: 0
 Automatic targets: 0

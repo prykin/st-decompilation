@@ -96,7 +96,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
   short local_6a [33];
   STAllPlayersC *local_28;
   STBoatC *local_24;
-  uint local_20;
+  uint local_20_mg0;
   uint local_1c;
   uint local_18;
   undefined4 local_14;
@@ -228,7 +228,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
     local_10 = STReplaceLowWord((uint32_t)(local_10), (uint16_t)(param_4));
     objPtr = (char)param_1;
     local_1c = dVar12;
-    local_20 = dVar12;
+    local_20_mg0 = dVar12;
     if (iVar6 < 0x88) {
       if (iVar6 == 0x87) {
         local_24 = (STBoatC *)((int)(dVar12 - 1) / 10);
@@ -237,8 +237,8 @@ STAllPlayersC::PutOnPlaceGuardBoats
           local_1c = 0;
           do {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            _param_4 = local_20;
-            if (9 < (int)local_20) {
+            _param_4 = local_20_mg0;
+            if (9 < (int)local_20_mg0) {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 10;
             }
@@ -287,7 +287,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
             }
             iVar6 = iVar6 + 1;
             local_1c = local_1c + 10;
-            local_20 = local_20 - 10;
+            local_20_mg0 = local_20_mg0 - 10;
           } while (iVar6 <= (int)local_24);
           return;
         }
@@ -295,9 +295,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
       else {
         switch(iVar6) {
         case 0:
-          local_20 = (int)(dVar12 - 1) / 0xf;
+          local_20_mg0 = (int)(dVar12 - 1) / 0xf;
           local_24 = nullptr;
-          if (-1 < (int)local_20) {
+          if (-1 < (int)local_20_mg0) {
             local_8 = 0;
             do {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -344,7 +344,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
               local_24 = (STBoatC *)((int)local_24 + 1);
               local_8 = local_8 + 0xf;
               local_1c = local_1c - 0xf;
-            } while ((int)local_24 <= (int)local_20);
+            } while ((int)local_24 <= (int)local_20_mg0);
             return;
           }
           break;
@@ -355,8 +355,8 @@ STAllPlayersC::PutOnPlaceGuardBoats
             local_1c = 0;
             do {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              _param_4 = local_20;
-              if (9 < (int)local_20) {
+              _param_4 = local_20_mg0;
+              if (9 < (int)local_20_mg0) {
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_4 = 10;
               }
@@ -406,15 +406,15 @@ STAllPlayersC::PutOnPlaceGuardBoats
               }
               iVar6 = iVar6 + 1;
               local_1c = local_1c + 10;
-              local_20 = local_20 - 10;
+              local_20_mg0 = local_20_mg0 - 10;
             } while (iVar6 <= (int)local_24);
             return;
           }
           break;
         case 0x5a:
-          local_20 = (int)(dVar12 - 1) / 0xf;
+          local_20_mg0 = (int)(dVar12 - 1) / 0xf;
           local_24 = nullptr;
-          if (-1 < (int)local_20) {
+          if (-1 < (int)local_20_mg0) {
             local_1c = 0;
             local_8 = dVar12;
             do {
@@ -462,14 +462,14 @@ STAllPlayersC::PutOnPlaceGuardBoats
               local_24 = (STBoatC *)((int)local_24 + 1);
               local_1c = local_1c + 0xf;
               local_8 = local_8 - 0xf;
-            } while ((int)local_24 <= (int)local_20);
+            } while ((int)local_24 <= (int)local_20_mg0);
             return;
           }
           break;
         case -1:
           local_c4 = (int)(dVar12 - 1) / 100;
           iVar6 = 0;
-          local_20 = 0xffffffff;
+          local_20_mg0 = 0xffffffff;
           if (-1 < local_c4) {
             local_8 = 0;
             do {
@@ -504,18 +504,18 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   }
                   do {
                     while( true ) {
-                      local_20 = local_20 + 1 & 0x80000007;
-                      if ((int)local_20 < 0) {
-                        local_20 = (local_20 - 1 | 0xfffffff8) + 1;
+                      local_20_mg0 = local_20_mg0 + 1 & 0x80000007;
+                      if ((int)local_20_mg0 < 0) {
+                        local_20_mg0 = (local_20_mg0 - 1 | 0xfffffff8) + 1;
                       }
-                      iVar9 = local_e4[local_20];
+                      iVar9 = local_e4[local_20_mg0];
                       if (iVar9 % 0x5a != 0) break;
-                      if (local_104[local_20] != 0xf) goto LAB_00448970;
+                      if (local_104[local_20_mg0] != 0xf) goto LAB_00448970;
                     }
-                  } while (local_104[local_20] == 10);
+                  } while (local_104[local_20_mg0] == 10);
 LAB_00448970:
-                  iVar17 = local_104[local_20] + 1;
-                  local_104[local_20] = iVar17;
+                  iVar17 = local_104[local_20_mg0] + 1;
+                  local_104[local_20_mg0] = iVar17;
                   sVar4 = (short)iVar6;
                   if (iVar9 < 0xb5) {
                     if (iVar9 == 0xb4) {
@@ -645,9 +645,9 @@ LAB_00448bc0:
     else {
       switch(iVar6) {
       case 0xb4:
-        local_20 = (int)(dVar12 - 1) / 0xf;
+        local_20_mg0 = (int)(dVar12 - 1) / 0xf;
         local_24 = nullptr;
-        if (-1 < (int)local_20) {
+        if (-1 < (int)local_20_mg0) {
           local_8 = 0;
           do {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -693,7 +693,7 @@ LAB_00448bc0:
             local_24 = (STBoatC *)((int)local_24 + 1);
             local_8 = local_8 + 0xf;
             local_1c = local_1c - 0xf;
-          } while ((int)local_24 <= (int)local_20);
+          } while ((int)local_24 <= (int)local_20_mg0);
           return;
         }
         break;
@@ -704,8 +704,8 @@ LAB_00448bc0:
           local_1c = 0;
           do {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            _param_4 = local_20;
-            if (0x13 < (int)local_20) {
+            _param_4 = local_20_mg0;
+            if (0x13 < (int)local_20_mg0) {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 0x14;
             }
@@ -756,15 +756,15 @@ LAB_00448bc0:
             }
             iVar6 = iVar6 + 1;
             local_1c = local_1c + 0x14;
-            local_20 = local_20 - 0x14;
+            local_20_mg0 = local_20_mg0 - 0x14;
           } while (iVar6 <= (int)local_24);
           return;
         }
         break;
       case 0x10e:
-        local_20 = (int)(dVar12 - 1) / 0xf;
+        local_20_mg0 = (int)(dVar12 - 1) / 0xf;
         local_24 = nullptr;
-        if (-1 < (int)local_20) {
+        if (-1 < (int)local_20_mg0) {
           local_8 = 0;
           do {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -810,7 +810,7 @@ LAB_00448bc0:
             local_24 = (STBoatC *)((int)local_24 + 1);
             local_8 = local_8 + 0xf;
             local_1c = local_1c - 0xf;
-          } while ((int)local_24 <= (int)local_20);
+          } while ((int)local_24 <= (int)local_20_mg0);
           return;
         }
         break;
@@ -821,8 +821,8 @@ LAB_00448bc0:
           local_1c = 0;
           do {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            _param_4 = local_20;
-            if (0x13 < (int)local_20) {
+            _param_4 = local_20_mg0;
+            if (0x13 < (int)local_20_mg0) {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 0x14;
             }
@@ -871,7 +871,7 @@ LAB_00448bc0:
             }
             iVar6 = iVar6 + 1;
             local_1c = local_1c + 0x14;
-            local_20 = local_20 - 0x14;
+            local_20_mg0 = local_20_mg0 - 0x14;
           } while (iVar6 <= (int)local_24);
           return;
         }

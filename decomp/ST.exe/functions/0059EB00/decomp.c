@@ -196,7 +196,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
       *ppcVar13 = nullptr;
       ppcVar13 = ppcVar13 + 1;
     }
-    local_dac[2] = this_00->field_1A73;
+    local_dac[2] = this_00->array_00BC[0xc].field_01F3;
     local_d80 = this_00->field_0008;
     local_dac[0] = (ccFntTy *)0x1;
     local_dac[1] = (ccFntTy *)0x99;
@@ -234,7 +234,8 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1fd,0x1b5,0xab,0x19,0x6903,0x698d);
     this_00->field_1B24 = uVar6;
     this_00->field_002D = 0x61;
-    *(undefined4 *)&this_00->field_0x35 = 0;
+    this_00->field_0035 = 0;
+    this_00->field_0037 = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_4c.previous;
     return;

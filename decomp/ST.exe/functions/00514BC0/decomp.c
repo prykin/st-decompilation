@@ -139,8 +139,7 @@ LAB_00514d04:
     LinkAct(this,*(int *)(this->field_01C7 + iVar6 + 9),*(int *)(this->field_01C7 + iVar6 + 0xd));
     PutToSHlp(this);
     local_c = *(uint *)sizeHelp_exref;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this->vtable + 0x18))(1);
+    this->SetPanel('\x01');
   }
   local_c = local_c + 1;
   if (*(uint *)sizeHelp_exref <= local_c) {

@@ -28,7 +28,7 @@ MainMenuTy * __cdecl CreateMainMenu(void)
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0174;
+    this_00 = &this->field_00BB[0].field_00B9;
     iVar1 = 0xd;
     do {
       SpriteClassTy::SpriteClassTy(this_00 + -1);
@@ -42,7 +42,7 @@ MainMenuTy * __cdecl CreateMainMenu(void)
     this->field_009A = 0;
     memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
-    puVar3 = &this->field_00BC;
+    puVar3 = &this->field_00BB[0].field_0001;
     do {
       puVar4 = puVar3;
       memset(puVar4, 0, 0x27); /* compiler bulk-zero initialization */
@@ -58,7 +58,7 @@ MainMenuTy * __cdecl CreateMainMenu(void)
     this->field_1ACF = 0;
     this->field_1EE3 = 0;
     this->field_1EDF = 1;
-    memset(&this->field_0x1a5f, 0, 0x20); /* compiler bulk-zero initialization */
+    memset(&this->field_00BB[0xc].field_0x1e0, 0, 0x20); /* compiler bulk-zero initialization */
     return this;
   }
   return nullptr;

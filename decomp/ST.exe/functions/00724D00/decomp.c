@@ -7,13 +7,12 @@
 SliderClassTy * __cdecl CreateSlider(void)
 
 {
-  undefined4 *puVar1;
-  SliderClassTy *pSVar2;
+  SliderClassTy *pSVar1;
 
-  puVar1 = FUN_006b04d0(100);
-  if (puVar1 != nullptr) {
-    pSVar2 = (SliderClassTy *)FUN_00724310(puVar1);
-    return pSVar2;
+  pSVar1 = (SliderClassTy *)FUN_006b04d0(100);
+  if (pSVar1 != nullptr) {
+    pSVar1 = SliderClassTy::SliderClassTy(pSVar1);
+    return pSVar1;
   }
   return nullptr;
 }

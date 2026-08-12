@@ -1,4 +1,4 @@
-FUN_00724310:
+SliderClassTy::SliderClassTy:
 00724310  56                        PUSH ESI
 00724311  8B F1                     MOV ESI,ECX
 00724313  E8 98 1C FC FF            CALL 0x006e5fb0

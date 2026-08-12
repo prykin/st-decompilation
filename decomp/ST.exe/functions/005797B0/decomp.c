@@ -33,22 +33,10 @@ undefined4 __thiscall FUN_005797b0(void *this,short *param_1,short *param_2,unde
   iVar2 = 0;
   iVar9 = 0;
   sVar4 = STField<short>(this,0x41);
-  if (sVar4 < 0) {
-    sVar4 = ((sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar4 = (sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f);
-  }
+  sVar4 = STBiasedDiv16(sVar4, 0xc9); /* exact signed 16-bit grid-index division */
   sVar5 = STField<short>(this,0x43);
   STField<short>(this,0x47) = sVar4;
-  if (sVar5 < 0) {
-    sVar5 = ((sVar5 / 0xc9 + (sVar5 >> 0xf)) - (short)((longlong)(int)sVar5 * 0x28c1979 >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar5 = (sVar5 / 0xc9 + (sVar5 >> 0xf)) - (short)((longlong)(int)sVar5 * 0x28c1979 >> 0x3f);
-  }
+  sVar5 = STBiasedDiv16(sVar5, 0xc9); /* exact signed 16-bit grid-index division */
   iVar6 = (int)sVar4;
   local_c = iVar6 + -1;
   STField<short>(this,0x49) = sVar5;
@@ -232,13 +220,7 @@ switchD_0057988b_default:
     iVar9 = g_worldGrid.sizeY + -1;
   }
   sVar4 = STField<short>(this,0x45);
-  if (sVar4 < 0) {
-    local_10 = ((sVar4 / 200 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x51eb851f >> 0x3f))
-               + -1;
-  }
-  else {
-    local_10 = (sVar4 / 200 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x51eb851f >> 0x3f);
-  }
+  local_10 = STBiasedDiv16(sVar4, 200); /* exact signed 16-bit grid-index division */
   local_14 = (int)(short)((short)iVar2 * 0xc9 + 100);
   local_18 = (int)(short)((short)iVar9 * 0xc9 + 100);
   local_8 = iVar9;

@@ -173,14 +173,14 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       this_00->field_05B0 = this_00->field_0480;
       this_00->field_05B8 = this_00->field_0488;
       this_00->field_05B4 = this_00->field_0484;
-      iVar5 = thunk_FUN_00417a20(this_00,*(short *)&this_00->field_05B0,(short)this_00->field_0484,
+      iVar5 = thunk_FUN_00417a20(this_00,(short)this_00->field_05B0,(short)this_00->field_0484,
                                  (short)this_00->field_0488,1);
       if (iVar5 != 0) {
         RaiseInternalException
                   (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tele.cpp",0x1b3);
       }
-      thunk_FUN_0041d900(this_00,*(short *)&this_00->field_05B0,*(short *)&this_00->field_05B4,
-                         *(short *)&this_00->field_05B8);
+      thunk_FUN_0041d900(this_00,(short)this_00->field_05B0,*(short *)&this_00->field_05B4,
+                         (short)this_00->field_05B8);
       iVar5 = 1;
       uVar3 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
       Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar3,iVar5);

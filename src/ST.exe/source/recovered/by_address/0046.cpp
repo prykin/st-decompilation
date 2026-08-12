@@ -328,7 +328,7 @@ int __thiscall st::fn_00462180(void *this,int param_1)
   STFishC *local_14;
   uint local_10;
   STFishC *local_c;
-  undefined2 local_8 [2];
+  short local_8 [2];
 
   if ((param_1 == 0) || (param_1 == 1)) {
     memset((void *)((int)this + 0x2cc), 0, 0x5c); /* compiler bulk-zero initialization */
@@ -639,8 +639,8 @@ LAB_00462a36:
                          CASE_1D);
               if (DAT_00811798 != nullptr) {
                 st::fn_00405F0B
-                          (pSVar15,(undefined2 *)((int)&local_14 + 2),
-                           (undefined2 *)((int)&local_28 + 2),local_8);
+                          (pSVar15,(short *)((int)&local_14 + 2),(short *)((int)&local_28 + 2),
+                           local_8);
                 pSVar15->slot_2C();
                 st::fn_00404E62(st::pointer_boundary_cast<void *>(DAT_00811798),(int)STPiece<2,2>(local_14),(int)STPiece<2,2>(local_28),
                                    pSVar15->field_0024);

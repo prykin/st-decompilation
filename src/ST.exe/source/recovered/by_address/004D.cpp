@@ -166,38 +166,6 @@ undefined4 st::fn_004D0FA0(void)
   return 0;
 }
 
-// 004D0FC0 FUN_004d0fc0
-#line 4 "decomp/ST.exe/functions/004D0FC0/decomp.c"
-undefined4 * __fastcall st::fn_004D0FC0(STGroupBoatC *param_1)
-
-{
-
-  st::fn_00401933((STGameObjC *)param_1);
-  st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&param_1->field_0x1d5);
-  param_1->vtable = (STGroupBoatCVTable *)&st_global_00798C70;
-  *(VTable_00798C6C **)&param_1->field_0x1d5 = &st_global_00798C6C;
-  *(undefined4 *)&param_1->field_0x2a8 = 0;
-  *(undefined4 *)&param_1->field_0x2dc = 0;
-  param_1->field_0350 = 0;
-  param_1->field_0354 = 0;
-  param_1->field_0358 = 0;
-  memset(&param_1->field_0x308, 0, 0x30); /* compiler bulk-zero initialization */
-  param_1->field_035C = 0;
-  *(undefined4 *)&param_1->field_0x2c8 = 1;
-  *(undefined4 *)&param_1->field_0x2c4 = 1;
-  *(undefined4 *)&param_1->field_0x2c0 = 1;
-  *(undefined4 *)&param_1->field_0x2bc = 1;
-  *(undefined4 *)&param_1->field_0x2b8 = 1;
-  *(undefined4 *)&param_1->field_0x2b4 = 1;
-  *(undefined4 *)&param_1->field_0x2e0 = 0;
-  *(undefined4 *)&param_1->field_0x2a0 = 0;
-  *(undefined4 *)&param_1->field_0x2e4 = 0;
-  *(undefined4 *)&param_1->field_0x2e8 = 0;
-  param_1->field_034C = 0xff;
-  *(undefined4 *)&param_1->field_0x2a4 = 0;
-  return st::pointer_boundary_cast<undefined4 *>(&param_1->vtable);
-}
-
 // 004D2760 FUN_004d2760
 #line 4 "decomp/ST.exe/functions/004D2760/decomp.c"
 undefined4 __fastcall st::fn_004D2760(TLOBaseTy *param_1)
@@ -922,15 +890,6 @@ undefined4 st::fn_004D6BE0(void)
   return 0x78;
 }
 
-// 004D6C00 FUN_004d6c00
-#line 4 "decomp/ST.exe/functions/004D6C00/decomp.c"
-int __fastcall st::fn_004D6C00(int param_1)
-
-{
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(int *)(param_1 + 0x36c) + 1;
-}
-
 // 004D6C20 FUN_004d6c20
 #line 4 "decomp/ST.exe/functions/004D6C20/decomp.c"
 undefined4 __fastcall st::fn_004D6C20(int param_1)
@@ -941,15 +900,6 @@ undefined4 __fastcall st::fn_004D6C20(int param_1)
     return 1;
   }
   return 0;
-}
-
-// 004D6C50 FUN_004d6c50
-#line 4 "decomp/ST.exe/functions/004D6C50/decomp.c"
-undefined4 __fastcall st::fn_004D6C50(int param_1)
-
-{
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(undefined4 *)(param_1 + 0x2a8);
 }
 
 // 004D6C70 FUN_004d6c70
@@ -1031,13 +981,12 @@ void __thiscall st::fn_004D6D50(void *this,undefined4 *param_1)
 TLOEmbryoTy * __cdecl st::fn_004D6DC0(void)
 
 {
-  STGroupBoatC *pSVar1;
-  TLOEmbryoTy *pTVar2;
+  TLOEmbryoTy *pTVar1;
 
-  pSVar1 = (STGroupBoatC *)st::fn_006B04D0(0x374);
-  if (pSVar1 != nullptr) {
-    pTVar2 = (TLOEmbryoTy *)st::fn_00404110(pSVar1);
-    return pTVar2;
+  pTVar1 = (TLOEmbryoTy *)st::fn_006B04D0(0x374);
+  if (pTVar1 != nullptr) {
+    pTVar1 = st::fn_00404110(pTVar1);
+    return pTVar1;
   }
   return nullptr;
 }

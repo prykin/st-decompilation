@@ -3,15 +3,24 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::Defence */
+   STBoatC::Defence
+
+   [STSwitchEnumApplier] Switch target field_045D uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_045DState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23
+
+   [STSwitchEnumApplier] Switch target field_082E uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_082EState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_FFFFFFFF=4294967295 */
 
 int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
 
 {
   STBoatC_field_045DState SVar1;
-  dword dVar2;
-  undefined4 uVar3;
-  short sVar5;
+  STBoatC_field_082EState SVar2;
+  dword dVar3;
+  undefined4 uVar4;
+  short sVar6;
   int iVar6;
   int iVar7;
   STGameObjC *pSVar8;
@@ -56,8 +65,8 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
   undefined4 local_10;
   short local_c;
   short local_a;
-  undefined2 local_8;
-  undefined2 local_6;
+  short local_8;
+  short local_6;
 
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
@@ -68,7 +77,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
     this->field_047B = nullptr;
     this->field_0487 = 0xffffffff;
     this->field_048B = 0xffff;
-    this->field_082E = 0xffffffff;
+    this->field_082E = CASE_FFFFFFFF;
     SVar1 = this->field_045D;
     if ((((SVar1 == CASE_6) || (SVar1 == CASE_C)) || (SVar1 == CASE_D)) || (SVar1 == CASE_4)) {
       this->field_0836 = 2;
@@ -78,36 +87,36 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
     }
     this->field_0814 = this->field_0816 * 0xc9;
   }
-  if (this->field_082E == -1) {
+  if (this->field_082E == CASE_FFFFFFFF) {
     iVar10 = this->field_0836 + -1;
     this->field_0836 = iVar10;
     if (1 < iVar10) {
       iVar10 = this->vfunc_D8();
       return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
     }
-    this->field_082E = 0;
+    this->field_082E = ~CASE_FFFFFFFF;
   }
   uVar11 = this->field_0836 + 1;
   this->field_0836 = uVar11;
-  iVar10 = this->field_082E;
-  if (iVar10 != 0) {
-    if (iVar10 == 1) {
-      uVar3 = this->field_00B7;
+  SVar2 = this->field_082E;
+  if (SVar2 != ~CASE_FFFFFFFF) {
+    if (SVar2 == CASE_1) {
+      uVar4 = this->field_00B7;
       this->field_00B7 = 0;
       iVar10 = sub_0045FF50(this,2);
-      this->field_00B7 = uVar3;
+      this->field_00B7 = uVar4;
       if (iVar10 == -1) {
         return -1;
       }
       if (iVar10 == 0) {
         this->field_047F = -1;
-        this->field_082E = 2;
+        this->field_082E = CASE_2;
       }
       else if (iVar10 == 3) {
         this->field_0469 = 0;
-        this->field_082E = 0;
+        this->field_082E = ~CASE_FFFFFFFF;
       }
-      if (this->field_082E != 1) {
+      if (this->field_082E != CASE_1) {
         return 2;
       }
       iVar10 = GetDefenceTarget(this,CASE_1);
@@ -183,29 +192,29 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
         return 2;
       case 9:
         thunk_FUN_00416270(pSVar8,&local_14,&local_18,(short *)&local_1c);
-        sVar5 = (*this->vtable->vfunc_10)
+        sVar6 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
                            STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                            (short)local_14,(short)local_18,local_1c);
-        uVar10 = sub_004176C0(this,sVar5);
+        uVar10 = sub_004176C0(this,sVar6);
         sub_00417910(this,(short)uVar10);
         return 2;
       }
     }
-    if (iVar10 == 2) {
+    if (SVar2 == CASE_2) {
       iVar10 = thunk_FUN_00483f10(this);
       if (iVar10 == 1) {
-        sVar5 = this->field_0469;
-        this->field_0469 = -sVar5;
-        iVar10 = this->vfunc_18(this->field_0047,this->field_0049,-sVar5 + this->field_004B);
+        sVar6 = this->field_0469;
+        this->field_0469 = -sVar6;
+        iVar10 = this->vfunc_18(this->field_0047,this->field_0049,-sVar6 + this->field_004B);
         if (iVar10 == 1) {
-          this->field_082E = 3;
+          this->field_082E = CASE_3;
           sub_00481520(this,(int)this->field_0047,(int)this->field_0049,
                        (int)this->field_0469 + (int)this->field_004B);
-          uVar3 = this->field_00B7;
+          uVar4 = this->field_00B7;
           this->field_00B7 = 0;
           iVar10 = sub_0045FF50(this,0);
-          this->field_00B7 = uVar3;
+          this->field_00B7 = uVar4;
           if (iVar10 == -1) {
             return -1;
           }
@@ -213,12 +222,12 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
             return 2;
           }
           this->field_0469 = 0;
-          this->field_082E = 0;
+          this->field_082E = ~CASE_FFFFFFFF;
           return 2;
         }
         this->field_0469 = -this->field_0469;
       }
-      if ((this->field_082E == 2) && (iVar10 = GetDefenceTarget(this,CASE_2), iVar10 == 0)) {
+      if ((this->field_082E == CASE_2) && (iVar10 = GetDefenceTarget(this,CASE_2), iVar10 == 0)) {
         pSVar8 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,*(char *)&this->field_0487,
                             *(ushort *)&this->field_048B,this->field_0483);
@@ -284,29 +293,29 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
           break;
         case 9:
           thunk_FUN_00416270(pSVar8,&local_14,&local_18,(short *)&local_1c);
-          sVar5 = (*this->vtable->vfunc_10)
+          sVar6 = (*this->vtable->vfunc_10)
                             (this->field_0041,this->field_0043,
                              STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                              (short)local_14,(short)local_18,local_1c);
-          local_EAX_3596 = sub_004176C0(this,sVar5);
+          local_EAX_3596 = sub_004176C0(this,sVar6);
           sub_00417910(this,(short)local_EAX_3596);
         }
       }
     }
     else {
-      if (iVar10 == 3) {
-        uVar3 = this->field_00B7;
+      if (SVar2 == CASE_3) {
+        uVar4 = this->field_00B7;
         this->field_00B7 = 0;
         iVar10 = sub_0045FF50(this,2);
-        this->field_00B7 = uVar3;
+        this->field_00B7 = uVar4;
         if (iVar10 == -1) {
           return -1;
         }
         if ((iVar10 == 0) || (iVar10 == 3)) {
           this->field_0469 = 0;
-          this->field_082E = 0;
+          this->field_082E = ~CASE_FFFFFFFF;
         }
-        if ((this->field_082E == 3) && (iVar10 = GetDefenceTarget(this,CASE_3), iVar10 == 0)) {
+        if ((this->field_082E == CASE_3) && (iVar10 = GetDefenceTarget(this,CASE_3), iVar10 == 0)) {
           pSVar8 = STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,*(char *)&this->field_0487,
                               *(ushort *)&this->field_048B,this->field_0483);
@@ -375,18 +384,18 @@ switchD_00461334_caseD_1:
             return 2;
           case 9:
             thunk_FUN_00416270(pSVar8,&local_14,&local_18,(short *)&local_1c);
-            sVar5 = (*this->vtable->vfunc_10)
+            sVar6 = (*this->vtable->vfunc_10)
                               (this->field_0041,this->field_0043,
                                STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                                (short)local_14,(short)local_18,local_1c);
-            local_EAX_4242 = sub_004176C0(this,sVar5);
+            local_EAX_4242 = sub_004176C0(this,sVar6);
             sub_00417910(this,(short)local_EAX_4242);
             return 2;
           }
         }
         return 2;
       }
-      if (iVar10 != 4) {
+      if (SVar2 != CASE_4) {
         local_EAX_4798 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1808,0,0,"%s",
                                 "STBoatC::Defence - incorrect entry");
@@ -395,16 +404,16 @@ switchD_00461334_caseD_1:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      uVar3 = this->field_00B7;
+      uVar4 = this->field_00B7;
       this->field_00B7 = 0;
       local_EAX_4703 = thunk_FUN_004601f0(this,2);
-      this->field_00B7 = uVar3;
+      this->field_00B7 = uVar4;
       if (local_EAX_4703 == -1) {
         return -1;
       }
       if ((local_EAX_4703 == 0) || (local_EAX_4703 == 3)) {
         this->field_0836 = 1;
-        this->field_082E = 0;
+        this->field_082E = ~CASE_FFFFFFFF;
       }
     }
 switchD_0046166b_caseD_2:
@@ -418,10 +427,10 @@ switchD_0046166b_caseD_2:
     bVar13 = (uVar11 - 1 | 0xfffffffe) == 0xffffffff;
   }
   if ((bVar13) && (DAT_007fa134 != 0)) {
-    dVar2 = g_array_007FA130->count;
-    local_34 = (short)dVar2;
-    sStack_32 = (short)(dVar2 >> 0x10);
-    if ((dVar2 != 0) && (uVar11 = 0, iVar10 = DAT_007fa134, dVar2 != 0)) {
+    dVar3 = g_array_007FA130->count;
+    local_34 = (short)dVar3;
+    sStack_32 = (short)(dVar3 >> 0x10);
+    if ((dVar3 != 0) && (uVar11 = 0, iVar10 = DAT_007fa134, dVar3 != 0)) {
       do {
         if (iVar10 < 1) break;
         DArrayGetElement(g_array_007FA130,uVar11,&local_20);
@@ -454,20 +463,20 @@ LAB_00460d94:
                       this->field_0469 = 0;
                       break;
                     }
-                    this->field_082E = 1;
+                    this->field_082E = CASE_1;
                     sub_00481520(this,(int)this->field_0047,(int)this->field_0049,
                                  (int)this->field_0469 + (int)this->field_004B);
-                    uVar3 = this->field_00B7;
+                    uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
                     iVar10 = sub_0045FF50(this,0);
-                    this->field_00B7 = uVar3;
+                    this->field_00B7 = uVar4;
                     if (iVar10 == -1) {
                       return -1;
                     }
                     if (iVar10 != 0) {
                       if (iVar10 == 3) {
                         this->field_0469 = 0;
-                        this->field_082E = 0;
+                        this->field_082E = ~CASE_FFFFFFFF;
                       }
                       break;
                     }
@@ -476,20 +485,20 @@ LAB_00460d94:
                     this->field_0469 = -1;
                     iVar10 = this->vfunc_18(this->field_0047,this->field_0049,3);
                     if (iVar10 != 1) goto LAB_00460d94;
-                    this->field_082E = 1;
+                    this->field_082E = CASE_1;
                     sub_00481520(this,(int)this->field_0047,(int)this->field_0049,
                                  (int)this->field_0469 + (int)this->field_004B);
-                    uVar3 = this->field_00B7;
+                    uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
                     iVar10 = sub_0045FF50(this,0);
-                    this->field_00B7 = uVar3;
+                    this->field_00B7 = uVar4;
                     if (iVar10 == -1) {
                       return -1;
                     }
                     if (iVar10 != 0) {
                       if (iVar10 == 3) {
                         this->field_0469 = 0;
-                        this->field_082E = 0;
+                        this->field_082E = ~CASE_FFFFFFFF;
                       }
                       break;
                     }
@@ -504,27 +513,27 @@ LAB_00460d94:
                     iVar10 = this->vfunc_18(this->field_0047,this->field_0049,
                                         this->field_0469 + this->field_004B);
                     if (iVar10 == 1) {
-                      this->field_082E = 1;
+                      this->field_082E = CASE_1;
                       sub_00481520(this,(int)this->field_0047,(int)this->field_0049,
                                    (int)this->field_0469 + (int)this->field_004B);
-                      uVar3 = this->field_00B7;
+                      uVar4 = this->field_00B7;
                       this->field_00B7 = 0;
                       iVar10 = sub_0045FF50(this,0);
-                      this->field_00B7 = uVar3;
+                      this->field_00B7 = uVar4;
                     }
                     else {
-                      sVar5 = this->field_0469;
-                      this->field_0469 = -sVar5;
+                      sVar6 = this->field_0469;
+                      this->field_0469 = -sVar6;
                       iVar10 = this->vfunc_18(this->field_0047,this->field_0049,
-                                          -sVar5 + this->field_004B);
+                                          -sVar6 + this->field_004B);
                       if (iVar10 != 1) goto LAB_00460d94;
-                      this->field_082E = 1;
+                      this->field_082E = CASE_1;
                       sub_00481520(this,(int)this->field_0047,(int)this->field_0049,
                                    (int)this->field_0469 + (int)this->field_004B);
-                      uVar3 = this->field_00B7;
+                      uVar4 = this->field_00B7;
                       this->field_00B7 = 0;
                       iVar10 = sub_0045FF50(this,0);
-                      this->field_00B7 = uVar3;
+                      this->field_00B7 = uVar4;
                     }
                     if (iVar10 == -1) {
                       return -1;
@@ -532,7 +541,7 @@ LAB_00460d94:
                     if ((iVar10 != 0) && (iVar10 != 3)) break;
                   }
                   this->field_0469 = 0;
-                  this->field_082E = 0;
+                  this->field_082E = ~CASE_FFFFFFFF;
                   break;
                 }
               }
@@ -548,7 +557,7 @@ LAB_00460d94:
       } while (uVar11 < CONCAT22(sStack_32,local_34));
     }
   }
-  if (this->field_082E != 0) goto LAB_00461264;
+  if (this->field_082E != ~CASE_FFFFFFFF) goto LAB_00461264;
   if (this->field_0836 == 2) {
     this->field_047F = -1;
     iVar10 = GetDefenceTarget(this,CASE_0);
@@ -627,63 +636,62 @@ LAB_00460d94:
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     case 5:
-      this->field_082E = 4;
+      this->field_082E = CASE_4;
       STFishC::sub_004162F0
-                ((STFishC *)pSVar8,(undefined2 *)&local_14,(undefined2 *)&local_18,
-                 (undefined2 *)&local_1c);
+                ((STFishC *)pSVar8,(short *)&local_14,(short *)&local_18,(short *)&local_1c);
 LAB_00460fac:
       sub_00481520(this,(int)(short)local_14,(int)(short)local_18,(int)(short)local_1c);
-      uVar3 = this->field_00B7;
+      uVar4 = this->field_00B7;
       this->field_00B7 = 0;
       local_EAX_1830 = thunk_FUN_004601f0(this,0);
       if (local_EAX_1830 == -1) {
         return -1;
       }
-      this->field_00B7 = uVar3;
+      this->field_00B7 = uVar4;
       break;
     case 6:
     case 7:
     case 8:
-      STFishC::sub_004162F0((STFishC *)pSVar8,&local_6,&local_8,(undefined2 *)((int)&param_1 + 2));
+      STFishC::sub_004162F0((STFishC *)pSVar8,&local_6,&local_8,(short *)((int)&param_1 + 2));
       this->field_0800 = local_6;
       this->field_0802 = local_8;
       this->field_0804 = STPiece<2,2>(param_1);
       iVar10 = thunk_FUN_00484020(this,(short)local_EAX_1396,(short *)&local_14,(short *)&local_18,
                                   (short *)&local_1c);
       if (iVar10 != 0) {
-        this->field_082E = 4;
+        this->field_082E = CASE_4;
         goto LAB_00460fac;
       }
-      if (300 < (short)this->field_0814) {
+      if (300 < this->field_0814) {
         this->field_0814 = this->field_0814 + -0xc9;
       }
       break;
     case 9:
       thunk_FUN_00416270(pSVar8,&local_14,&local_18,(short *)&local_1c);
-      sVar5 = (*this->vtable->vfunc_10)
+      sVar6 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),(short)local_14,
                          (short)local_18,local_1c);
-      local_EAX_1921 = sub_004176C0(this,sVar5);
+      local_EAX_1921 = sub_004176C0(this,sVar6);
       sub_00417910(this,(short)local_EAX_1921);
     }
   }
-  if ((this->field_082E == 0) && (this->field_048B == 0xffff)) {
+  if ((this->field_082E == ~CASE_FFFFFFFF) && (this->field_048B == 0xffff)) {
     if ((this->field_0475 != this->field_0047) ||
        ((this->field_0477 != this->field_0049 || (this->field_0479 != this->field_004B)))) {
       local_EAX_1668 =
            FUN_006aadd0((int)this->field_0047,(int)this->field_0049,(int)this->field_004B,
                         (int)this->field_0475,(int)this->field_0477,(int)this->field_0479);
       if ((local_EAX_1668 != -4) && (local_EAX_1668 < 8)) {
-        this->field_082E = 4;
+        this->field_082E = CASE_4;
         sub_00481520(this,(int)this->field_0475,(int)this->field_0477,(int)this->field_0479);
-        uVar3 = this->field_00B7;
+        uVar4 = this->field_00B7;
         this->field_00B7 = 0;
         local_EAX_1752 = thunk_FUN_004601f0(this,0);
         if (local_EAX_1752 == -1) {
           return -1;
         }
-        this->field_00B7 = uVar3;
+        this->field_00B7 = uVar4;
         iVar10 = this->vfunc_D8();
         return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
       }

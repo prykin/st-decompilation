@@ -12,9 +12,10 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
   MMsgTy *this_00;
   int iVar3;
   int iVar4;
-  byte bVar6;
-  int iVar7;
-  uint *puVar8;
+  uint uVar6;
+  byte bVar7;
+  int iVar8;
+  uint *puVar9;
   InternalExceptionFrame local_70;
   int local_2c [8];
   MMsgTy *local_c;
@@ -27,30 +28,30 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
     iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
     this_00 = local_c;
     if (iVar3 == 0) {
-      iVar7 = 0xd;
-      puVar8 = local_c->field_0066;
+      iVar8 = 0xd;
+      puVar9 = local_c->field_0066;
       do {
-        if (*puVar8 != 0) {
-          StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar8);
+        if (*puVar9 != 0) {
+          StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar9);
         }
-        *puVar8 = 0;
-        puVar8 = puVar8 + 1;
-        iVar7 = iVar7 + -1;
-      } while (iVar7 != 0);
+        *puVar9 = 0;
+        puVar9 = puVar9 + 1;
+        iVar8 = iVar8 + -1;
+      } while (iVar8 != 0);
       if (param_2 == 0) {
         this_00->field_1CAA = 0;
         this_00->field_1CA9 = 0;
-        this_00->field_1A5A = 0xff;
+        this_00->array_00BC[0xc].field_01DA = 0xff;
       }
       if (this_00->field_1D8C != 0xffffffff) {
         FUN_006b3af0((int *)this_00->field_1DD0,this_00->field_1D8C);
       }
-      iVar7 = this_00->field_1CAB;
-      if (iVar7 != 0) {
+      iVar8 = this_00->field_1CAB;
+      if (iVar8 != 0) {
         memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */
         local_2c[3] = 2;
         local_2c[4] = 0x6940;
-        local_2c[2] = iVar7;
+        local_2c[2] = iVar8;
         (*this_00->field_000C->vtable->vfunc_18)((short)local_2c);
       }
       if (param_1 == 0) {
@@ -60,24 +61,24 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
         return;
       }
       if (param_3 == 0) {
-        bVar6 = 0;
+        bVar7 = 0;
         local_8 = (uint)STPiece<1,3>(local_8) << 8;
         if (this_00->field_009A != 0) {
           do {
-            if (*(char *)((int)&this_00->field_1C9C + (local_8 & 0xff)) != '\0') {
-              iVar7 = (local_8 & 0xff) * 0x1fb;
-              uVar1 = *(uint *)((int)&this_00->field_0178 + iVar7);
+            uVar6 = local_8 & 0xff;
+            if (*(char *)((int)&this_00->field_1C9C + uVar6) != '\0') {
+              uVar1 = this_00->array_00BC[uVar6].field_00B8.field_0004;
               if (uVar1 != 0xffffffff) {
-                FUN_006b3af0(*(int **)((int)&this_00->field_01BC + iVar7),uVar1);
+                FUN_006b3af0((int *)this_00->array_00BC[uVar6].field_00B8.field_0048,uVar1);
               }
             }
-            bVar6 = bVar6 + 1;
-            local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar6));
-          } while (bVar6 < this_00->field_009A);
+            bVar7 = bVar7 + 1;
+            local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar7));
+          } while (bVar7 < this_00->field_009A);
         }
       }
       else {
-        bVar6 = 0;
+        bVar7 = 0;
         this_00->field_1C9C = 0x1010101;
         local_8 = (uint)STPiece<1,3>(local_8) << 8;
         this_00->field_1CA0 = 0x1010101;
@@ -85,13 +86,13 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
         this_00->field_1CA8 = 1;
         if (this_00->field_009A != 0) {
           do {
-            uVar1 = *(uint *)((int)&this_00->field_0178 + (local_8 & 0xff) * 0x1fb);
-            if (uVar1 != 0xffffffff) {
-              FUN_006b3af0(*(int **)((int)&this_00->field_01BC + (local_8 & 0xff) * 0x1fb),uVar1);
+            uVar6 = this_00->array_00BC[local_8 & 0xff].field_00B8.field_0004;
+            if (uVar6 != 0xffffffff) {
+              FUN_006b3af0((int *)this_00->array_00BC[local_8 & 0xff].field_00B8.field_0048,uVar6);
             }
-            bVar6 = bVar6 + 1;
-            local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar6));
-          } while (bVar6 < this_00->field_009A);
+            bVar7 = bVar7 + 1;
+            local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar7));
+          } while (bVar7 < this_00->field_009A);
         }
       }
       this_00->field_0065 = 4;

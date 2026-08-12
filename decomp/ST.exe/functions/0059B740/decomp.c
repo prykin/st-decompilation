@@ -24,7 +24,7 @@ void __thiscall FSGSTy::CloseButtons(FSGSTy *this)
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
     DeleteCtrls(this_00);
     this_00->field_0065 = CASE_4;
-    this_00->field_1A5F = 0;
+    this_00->array_00BC[0xc].field_01DF = 0;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

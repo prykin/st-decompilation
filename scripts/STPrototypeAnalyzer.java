@@ -9,8 +9,10 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -65,6 +67,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
     private final Map<TargetKey, Evidence> evidence = new TreeMap<>();
     private final Map<TargetKey, Set<TargetKey>> boundaryEdges = new TreeMap<>();
     private final Set<TargetKey> localPointerOutputTargets = new TreeSet<>();
+    private final Map<TargetKey, String> definiteOutputTypes = new HashMap<>();
     private final List<CallSiteAudit> callSiteAudits = new ArrayList<>();
     private Map<TargetKey, String> inferredSeeds = Map.of();
     private DataTypeManager dataTypes;
@@ -80,6 +83,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
         File selected = outputDirectory(); if (selected == null) return;
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         dataTypes = currentProgram.getDataTypeManager();
+        definiteOutputTypes.clear();
         int functionsSeen = 0, callSites = 0, propagationPasses = 0;
         List<Map<TargetKey, String>> seedHistory = new ArrayList<>();
         Map<String, Integer> seedStateIndex = new LinkedHashMap<>();
@@ -474,7 +478,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
             // pipeline pass, needlessly rerunning every unrelated whole-program analyzer.
             if (!compatible)
                 compatible = exactFullAccumulatorWrapperReturn(function, key, target,
-                    candidate, found);
+                    candidate, found) || exactFullAccumulatorBoundaryReturn(function, key,
+                        target, candidate, found);
             if (!compatible) continue;
             int count = found.types.getOrDefault(candidate, 0);
             int strongForType = found.strongTypeSites
@@ -511,7 +516,14 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 // unrelated branch and manufacturing a false prototype.
                 registers.clear();
                 registers.putAll(stableRegisters);
-                stackSpills.entrySet().removeIf(entry -> !entry.getValue().trusted);
+                Address blockStart = instruction.getAddress();
+                stackSpills.entrySet().removeIf(entry -> {
+                    Value value = entry.getValue();
+                    if (value.flowLocal)
+                        return value.flowOrigin == null ||
+                            !instructionDominates(caller, value.flowOrigin, blockStart);
+                    return !value.trusted;
+                });
                 pushes.clear();
                 stackStateComplete = false;
             }
@@ -546,6 +558,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
                         stackStateComplete);
                     propagateCall(caller, called, registers.get("ECX"), pushes, registers,
                         instruction.getAddress(), wrapper);
+                    applyDefiniteStackSlotOutputs(called, pushes, stackSpills,
+                        instruction.getAddress());
                     String returnedType = inferredSeeds.getOrDefault(
                         new TargetKey(called.getEntryPoint(), "return", -1), "");
                     boolean inferredReturn = !returnedType.isBlank();
@@ -1061,16 +1075,19 @@ public class STPrototypeAnalyzer extends GhidraScript {
             int typeCount = proposedType.isBlank() ? 0 : ev.types.get(proposedType);
             int nameCount = proposedName.isBlank() ? 0 : ev.names.get(proposedName);
             boolean machineForwardedReturn = !proposedType.isBlank() &&
-                exactFullAccumulatorWrapperReturn(function, key, target, proposedType, ev);
+                (exactFullAccumulatorWrapperReturn(function, key, target, proposedType, ev) ||
+                 exactFullAccumulatorBoundaryReturn(function, key, target, proposedType, ev));
             int strongTypeCount = proposedType.isBlank() ? 0 :
                 ev.strongTypeSites.getOrDefault(proposedType, Set.of()).size();
             boolean compatible = !proposedType.isBlank() &&
                 (typeLength(proposedType) == effectiveLength(target.getDataType()) ||
                  machineForwardedReturn);
+            boolean scalarRoleRepair = strongScalarRoleRepair(currentType, proposedType,
+                ev, strongTypeCount);
             boolean safeScriptRepair = !scriptOwned ||
                 scriptRepairImproves(currentType, proposedType) ||
                 strongPrimitiveRoleRepair(currentType, proposedType, ev,
-                    strongTypeCount);
+                    strongTypeCount) || scalarRoleRepair;
             boolean typeChange = compatible && !sameType(currentType, proposedType) &&
                 (safeToRefine(target, proposedType) || scriptOwned) && safeScriptRepair;
             boolean enoughTypeEvidence = "return".equals(key.kind) ?
@@ -1106,6 +1123,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 reasons.add("legacy_debug_signature_source_override");
             if (abiMachineTarget) reasons.add("machine_abi_target_preserved");
             if (scriptOwned) reasons.add("script_target_repair");
+            if (scalarRoleRepair)
+                reasons.add("post_overwrite_scalar_role_replaces_generated_pointer_view");
             if (scriptOwned && !safeScriptRepair)
                 reasons.add("script_repair_would_lose_semantic_type");
             if (invalidThisName) reasons.add("explicit_parameter_named_this");
@@ -1173,6 +1192,267 @@ public class STPrototypeAnalyzer extends GhidraScript {
         return sawReturn;
     }
 
+    /**
+     * A bare Ghidra {@code undefined} return is one byte even when the machine ABI returns a
+     * complete pointer in EAX.  A transparent wrapper is only one common shape: allocation
+     * builders frequently branch after one or more trusted pointer-returning calls and retain
+     * the resulting EAX until every RET.  Permit a downstream pointer boundary to repair that
+     * width only when the callee CFG itself proves a full pointer-valued accumulator on every
+     * return path.  The caller contributes the pointee view; it never proves the machine width.
+     */
+    private boolean exactFullAccumulatorBoundaryReturn(Function function, TargetKey key,
+            Parameter target, String proposedType, Evidence value) {
+        if (!"return".equals(key.kind) || !proposedType.startsWith("pointer:") ||
+                typeLength(proposedType) != currentProgram.getDefaultPointerSize() ||
+                "unknown".equalsIgnoreCase(function.getCallingConventionName()) ||
+                !Undefined.isUndefined(target.getFormalDataType()) ||
+                effectiveLength(target.getFormalDataType()) >=
+                    currentProgram.getDefaultPointerSize() ||
+                value.strongTypeSites.getOrDefault(proposedType, Set.of()).isEmpty() ||
+                function.getBody().getNumAddresses() > 0x4000)
+            return false;
+
+        Instruction entry = currentProgram.getListing()
+            .getInstructionAt(function.getEntryPoint());
+        if (entry == null) return false;
+        Deque<AccumulatorState> pending = new ArrayDeque<>();
+        Set<AccumulatorState> visited = new HashSet<>();
+        Set<Address> reachedReturns = new HashSet<>();
+        pending.add(new AccumulatorState(entry.getAddress(), false));
+        int totalReturns = 0;
+        InstructionIterator count = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (count.hasNext())
+            if (count.next().getMnemonicString().toUpperCase(Locale.ROOT).startsWith("RET"))
+                totalReturns++;
+        if (totalReturns == 0) return false;
+
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            AccumulatorState state = pending.removeFirst();
+            if (!visited.add(state) || ++nodes > 65536) continue;
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (instruction == null ||
+                    !function.getBody().contains(instruction.getAddress())) return false;
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            boolean defined = state.fullPointer;
+            if ("CALL".equals(mnemonic)) {
+                Function called = resolveThunk(directCalledFunction(instruction));
+                DataType returned = called == null ? null : unwrap(called.getReturnType());
+                defined = returned instanceof Pointer &&
+                    (trustedReturn(called) || isLibrary(called) ||
+                     hasTag(called, "RECOVERED_UTILITY_SEMANTICS"));
+            }
+            else if (operands.length > 0 &&
+                    "EAX".equals(cleanRegister(operands[0])) &&
+                    isFullRegister(operands[0]) && writesRegister(mnemonic)) {
+                // A non-call full EAX definition establishes the width but not pointer
+                // provenance.  Preserve pointer state only for identity moves.
+                defined = "MOV".equals(mnemonic) && operands.length >= 2 &&
+                    "EAX".equals(cleanRegister(operands[1])) &&
+                    isFullRegister(operands[1]) && defined;
+            }
+            if (mnemonic.startsWith("RET")) {
+                if (!defined) return false;
+                reachedReturns.add(instruction.getAddress());
+                continue;
+            }
+            List<Address> successors = instructionSuccessors(function, instruction);
+            if (successors.isEmpty()) return false;
+            for (Address successor : successors)
+                pending.addLast(new AccumulatorState(successor, defined));
+        }
+        return reachedReturns.size() == totalReturns;
+    }
+
+    /**
+     * Track the ordinary optimized C idiom where an incoming parameter stack slot is reused as
+     * a local after passing its address to a definite output parameter.  Without this effect the
+     * old input type leaks past the call and poisons unrelated downstream prototypes.  Only an
+     * exact offset-zero write of the complete current pointee on every callee path qualifies.
+     */
+    private void applyDefiniteStackSlotOutputs(Function called, List<Value> pushes,
+            Map<String, Value> stackSpills, Address site) {
+        List<Parameter> targets = stackParameters(called);
+        if (!(targets.size() == pushes.size() ||
+                called.hasVarArgs() && pushes.size() >= targets.size())) return;
+        for (int index = 0; index < targets.size(); index++) {
+            Value value = pushes.get(pushes.size() - 1 - index);
+            if (value == null || value.addressedStackOffset == null) continue;
+            Parameter target = targets.get(index);
+            String outputType = definiteOutputType(called, target);
+            if (outputType.isBlank()) continue;
+            String evidenceSite = addr(site) + " definite output through " +
+                called.getName(true) + " parameter " + target.getOrdinal();
+            DataType formal = unwrap(target.getFormalDataType());
+            DataType pointed = formal instanceof Pointer pointer ?
+                unwrap(pointer.getDataType()) : null;
+            boolean strong = protectedSource(target.getSource()) ||
+                pointed instanceof Enum || pointed instanceof TypeDef ||
+                pointed instanceof Structure ||
+                trustedNamedLibraryParameter(called, target);
+            stackSpills.put(stackKey(new MemoryExpr("EBP", value.addressedStackOffset)),
+                new Value(-1, outputType, "", strong, evidenceSite, null,
+                    Extension.NONE, 0, false, false, null, true, site));
+        }
+    }
+
+    private String definiteOutputType(Function function, Parameter parameter) {
+        TargetKey key = new TargetKey(function.getEntryPoint(), "output",
+            parameter.getOrdinal());
+        String cached = definiteOutputTypes.get(key);
+        if (cached != null) return cached;
+        String result = proveDefiniteOutputType(function, parameter);
+        definiteOutputTypes.put(key, result);
+        return result;
+    }
+
+    private String proveDefiniteOutputType(Function function, Parameter parameter) {
+        DataType formal = unwrap(parameter.getFormalDataType());
+        if (!(formal instanceof Pointer pointer)) return "";
+        DataType pointed = unwrap(pointer.getDataType());
+        int width = pointed == null ? -1 : pointed.getLength();
+        if (width < 1 || width > 8 || function.getBody().getNumAddresses() > 0x4000)
+            return "";
+        String proposed = typeSpecification(pointed);
+        if (proposed.isBlank() || "/void".equals(proposed)) return "";
+        Instruction entry = currentProgram.getListing()
+            .getInstructionAt(function.getEntryPoint());
+        if (entry == null) return "";
+
+        Deque<OutputState> pending = new ArrayDeque<>();
+        Set<OutputState> visited = new HashSet<>();
+        Set<Address> reachedReturns = new HashSet<>();
+        pending.add(new OutputState(entry.getAddress(), 0, false));
+        int totalReturns = 0;
+        InstructionIterator count = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (count.hasNext())
+            if (count.next().getMnemonicString().toUpperCase(Locale.ROOT).startsWith("RET"))
+                totalReturns++;
+        if (totalReturns == 0) return "";
+
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            OutputState state = pending.removeFirst();
+            if (!visited.add(state) || ++nodes > 65536) continue;
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (instruction == null ||
+                    !function.getBody().contains(instruction.getAddress())) return "";
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            int aliases = state.aliases;
+            boolean wrote = state.wrote;
+
+            if ("MOV".equals(mnemonic) && operands.length >= 2) {
+                MemoryExpr destination = memoryExpr(operands[0]);
+                int baseBit = destination == null ? 0 : registerBit(destination.register);
+                if (destination != null && destination.displacement == 0 &&
+                        (aliases & baseBit) != 0 && memoryOperandWidth(operands[0]) == width)
+                    wrote = true;
+            }
+
+            String destination = operands.length == 0 ? null : cleanRegister(operands[0]);
+            int destinationBit = destination == null ? 0 : registerBit(destination);
+            if (destinationBit != 0 && isFullRegister(operands[0]) &&
+                    writesRegister(mnemonic)) {
+                boolean becomesAlias = false;
+                if ("MOV".equals(mnemonic) && operands.length >= 2) {
+                    String source = cleanRegister(operands[1]);
+                    becomesAlias = source != null &&
+                        (aliases & registerBit(source)) != 0;
+                    if (!becomesAlias)
+                        becomesAlias = operandReferencesParameter(instruction, 1, parameter);
+                }
+                aliases &= ~destinationBit;
+                if (becomesAlias) aliases |= destinationBit;
+            }
+            if ("CALL".equals(mnemonic))
+                aliases &= ~(registerBit("EAX") | registerBit("ECX") |
+                    registerBit("EDX"));
+
+            if (mnemonic.startsWith("RET")) {
+                if (!wrote) return "";
+                reachedReturns.add(instruction.getAddress());
+                continue;
+            }
+            List<Address> successors = instructionSuccessors(function, instruction);
+            if (successors.isEmpty()) return "";
+            for (Address successor : successors)
+                pending.addLast(new OutputState(successor, aliases, wrote));
+        }
+        return reachedReturns.size() == totalReturns ? proposed : "";
+    }
+
+    private boolean operandReferencesParameter(Instruction instruction, int operand,
+            Parameter parameter) {
+        for (Reference reference : instruction.getOperandReferences(operand))
+            if (reference instanceof StackReference stack && parameter.isStackVariable() &&
+                    stack.getStackOffset() == parameter.getStackOffset()) return true;
+        String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+        if (operand < operands.length && parameter.isStackVariable()) {
+            MemoryExpr memory = memoryExpr(operands[operand]);
+            // In an EBP frame Ghidra's parameter stack offset excludes the saved frame
+            // pointer, while the rendered instruction displacement includes it.
+            if (memory != null && "EBP".equals(memory.register) &&
+                    memory.displacement == (long)parameter.getStackOffset() +
+                        currentProgram.getDefaultPointerSize()) return true;
+        }
+        return false;
+    }
+
+    private int registerBit(String register) {
+        if (register == null) return 0;
+        return switch (canonicalRegister(register)) {
+            case "EAX" -> 1;
+            case "EBX" -> 1 << 1;
+            case "ECX" -> 1 << 2;
+            case "EDX" -> 1 << 3;
+            case "ESI" -> 1 << 4;
+            case "EDI" -> 1 << 5;
+            default -> 0;
+        };
+    }
+
+    private List<Address> instructionSuccessors(Function function,
+            Instruction instruction) {
+        List<Address> result = new ArrayList<>();
+        Address fallThrough = instruction.getFallThrough();
+        if (fallThrough != null && function.getBody().contains(fallThrough))
+            result.add(fallThrough);
+        if (instruction.getFlowType().isJump())
+            for (Address flow : instruction.getFlows())
+                if (function.getBody().contains(flow) && !result.contains(flow))
+                    result.add(flow);
+        return result;
+    }
+
+    private boolean instructionDominates(Function function, Address origin,
+            Address target) {
+        if (origin.equals(target)) return true;
+        Instruction entry = currentProgram.getListing()
+            .getInstructionAt(function.getEntryPoint());
+        if (entry == null) return false;
+        Deque<Address> pending = new ArrayDeque<>();
+        Set<Address> visited = new HashSet<>();
+        pending.add(entry.getAddress());
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            Address address = pending.removeFirst();
+            if (!visited.add(address) || ++nodes > 65536) continue;
+            if (address.equals(target)) return false;
+            // Search specifically for a path which avoids the proposed dominator.
+            if (address.equals(origin)) continue;
+            Instruction instruction = currentProgram.getListing().getInstructionAt(address);
+            if (instruction == null || !function.getBody().contains(address)) return false;
+            pending.addAll(instructionSuccessors(function, instruction));
+        }
+        return nodes <= 65536;
+    }
+
     private void updateRegisters(Instruction instruction, String mnemonic, String[] operands,
             Map<String, Value> registers, Map<Long, Value> stackParameters,
             Map<String, Value> stackSpills) {
@@ -1190,12 +1470,23 @@ public class STPrototypeAnalyzer extends GhidraScript {
             return;
         }
         if ("MOV".equals(mnemonic) && destinationMemory != null && operands.length >= 2 &&
-                isStackSpill(destinationMemory)) {
+                (isStackSpill(destinationMemory) ||
+                 "EBP".equals(destinationMemory.register) &&
+                    stackParameters.containsKey(destinationMemory.displacement))) {
             String key = stackKey(destinationMemory);
             String source = cleanRegister(operands[1]);
             Value value = source != null && isFullRegister(operands[1]) ?
                 registers.get(source) : null;
-            if (value == null) stackSpills.remove(key);
+            if (stackParameters.containsKey(destinationMemory.displacement)) {
+                if (value == null)
+                    value = new Value(-1, "", "", false,
+                        "incoming parameter slot overwritten at " +
+                        addr(instruction.getAddress()), null, Extension.NONE, 0,
+                        false, false, null, true, instruction.getAddress());
+                else value = value.flowLocalCopy(instruction.getAddress());
+                stackSpills.put(key, value);
+            }
+            else if (value == null) stackSpills.remove(key);
             else stackSpills.put(key, value);
             return;
         }
@@ -1272,7 +1563,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
                     parameter.type.startsWith("pointer:") ?
                         "" : "pointer:" + parameter.type;
                 return new Value(parameter.parameterOrdinal, pointed, parameter.name,
-                    parameter.trusted, "address of " + parameter.evidence);
+                    parameter.trusted, "address of " + parameter.evidence, null,
+                    Extension.NONE, 0, false, false, memory.displacement, false);
             }
             Value local = stackLocalAddressValue(instruction, operandIndex,
                 memory.displacement);
@@ -1870,6 +2162,36 @@ public class STPrototypeAnalyzer extends GhidraScript {
         return current.matches("/(?:undefined4|u?int(?:4)?|dword|pointer)");
     }
 
+    /**
+     * Retire a generated anonymous pointer view which escaped from an incoming stack slot after
+     * that slot had already been overwritten with a machine word.  One trusted scalar boundary
+     * chooses the signedness; a second same-width scalar observation (including the definite
+     * output store which exposed the reuse) proves that the old pointer lifetime is gone.
+     */
+    private boolean strongScalarRoleRepair(String current, String proposed,
+            Evidence value, int strongForProposed) {
+        if (strongForProposed < 1 || !isMachineWordScalar(proposed) ||
+                !current.matches("pointer:/SubmarineTitans/Recovered/PointerShapes/" +
+                    "(?:AnonShape|RecoveredRecord)_[A-Za-z0-9_]+")) return false;
+        int scalarSites = 0;
+        for (String alternative : value.types.keySet()) {
+            if (isMachineWordScalar(alternative)) {
+                scalarSites += value.typeSites.getOrDefault(alternative, Set.of()).size();
+                continue;
+            }
+            if (!value.strongTypeSites.getOrDefault(alternative, Set.of()).isEmpty())
+                return false;
+        }
+        return scalarSites >= 2;
+    }
+
+    private boolean isMachineWordScalar(String specification) {
+        if (specification == null || specification.startsWith("pointer:")) return false;
+        if (typeLength(specification) != currentProgram.getDefaultPointerSize()) return false;
+        String value = specification.toLowerCase(Locale.ROOT);
+        return value.matches("/(?:int|uint|long|ulong|undefined4|dword|uint4)");
+    }
+
     private boolean primitiveOrVoidPointee(String specification) {
         if (specification == null || !specification.startsWith("pointer:"))
             return false;
@@ -2244,6 +2566,9 @@ public class STPrototypeAnalyzer extends GhidraScript {
                     (typeLength(candidate) == effectiveLength(target.getFormalDataType()) ||
                      found != null && exactFullAccumulatorWrapperReturn(function,
                         new TargetKey(function.getEntryPoint(), kind, ordinal), target,
+                        candidate, found) ||
+                     found != null && exactFullAccumulatorBoundaryReturn(function,
+                        new TargetKey(function.getEntryPoint(), kind, ordinal), target,
                         candidate, found));
                 int candidateStrong = candidate.isBlank() || found == null ? 0 :
                     found.strongTypeSites.getOrDefault(candidate, Set.of()).size();
@@ -2354,22 +2679,39 @@ public class STPrototypeAnalyzer extends GhidraScript {
         final Extension extension;
         final int sourceWidth;
         final boolean literal, literalSigned;
+        final Long addressedStackOffset;
+        final boolean flowLocal;
+        final Address flowOrigin;
         Value(int parameterOrdinal, String type, String name, boolean trusted, String evidence) {
             this(parameterOrdinal, type, name, trusted, evidence, null);
         }
         Value(int parameterOrdinal, String type, String name, boolean trusted, String evidence,
                 Function producer) {
             this(parameterOrdinal, type, name, trusted, evidence, producer,
-                Extension.NONE, 0, false, false);
+                Extension.NONE, 0, false, false, null, false, null);
         }
         Value(int parameterOrdinal, String type, String name, boolean trusted, String evidence,
                 Function producer, Extension extension, int sourceWidth) {
             this(parameterOrdinal, type, name, trusted, evidence, producer,
-                extension, sourceWidth, false, false);
+                extension, sourceWidth, false, false, null, false, null);
         }
         Value(int parameterOrdinal, String type, String name, boolean trusted, String evidence,
                 Function producer, Extension extension, int sourceWidth,
                 boolean literal, boolean literalSigned) {
+            this(parameterOrdinal, type, name, trusted, evidence, producer, extension,
+                sourceWidth, literal, literalSigned, null, false, null);
+        }
+        Value(int parameterOrdinal, String type, String name, boolean trusted, String evidence,
+                Function producer, Extension extension, int sourceWidth,
+                boolean literal, boolean literalSigned, Long addressedStackOffset,
+                boolean flowLocal) {
+            this(parameterOrdinal, type, name, trusted, evidence, producer, extension,
+                sourceWidth, literal, literalSigned, addressedStackOffset, flowLocal, null);
+        }
+        Value(int parameterOrdinal, String type, String name, boolean trusted, String evidence,
+                Function producer, Extension extension, int sourceWidth,
+                boolean literal, boolean literalSigned, Long addressedStackOffset,
+                boolean flowLocal, Address flowOrigin) {
             this.parameterOrdinal = parameterOrdinal; this.type = type == null ? "" : type;
             this.name = name == null ? "" : name; this.trusted = trusted;
             this.evidence = evidence == null ? "" : evidence;
@@ -2378,6 +2720,14 @@ public class STPrototypeAnalyzer extends GhidraScript {
             this.sourceWidth = sourceWidth;
             this.literal = literal;
             this.literalSigned = literalSigned;
+            this.addressedStackOffset = addressedStackOffset;
+            this.flowLocal = flowLocal;
+            this.flowOrigin = flowOrigin;
+        }
+        Value flowLocalCopy(Address origin) {
+            return new Value(parameterOrdinal, type, name, trusted, evidence, producer,
+                extension, sourceWidth, literal, literalSigned, addressedStackOffset, true,
+                origin);
         }
         static Value literal(long value, String site) {
             boolean signed = value < 0;
@@ -2386,6 +2736,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 true, signed);
         }
     }
+    private record AccumulatorState(Address address, boolean fullPointer) { }
+    private record OutputState(Address address, int aliases, boolean wrote) { }
     private enum Extension { NONE, SIGNED, UNSIGNED }
     private static class StoreType {
         final String type, evidence; final boolean strong;

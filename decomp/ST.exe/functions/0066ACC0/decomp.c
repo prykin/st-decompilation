@@ -2551,8 +2551,7 @@ cf_common_exit_0066DCED:
       local_c = (char *)(*this_00->vtable->slot_00)(param_1 + 0xf);
       iVar17 = (*this_00->vtable->slot_00)(param_1 + 0x14);
       if ((-1 < iVar13) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-        STFishC::sub_004162F0
-                  (g_fish_00811984,&local_60,&local_5e,(undefined2 *)((int)&local_28 + 2));
+        STFishC::sub_004162F0(g_fish_00811984,&local_60,&local_5e,(short *)((int)&local_28 + 2));
         (*this_00->vtable->slot_20)(iVar13,(int)local_60);
         (*this_00->vtable->slot_20)(local_8,(int)local_5e);
         (*this_00->vtable->slot_20)(local_c,(int)STPiece<2,2>(local_28));

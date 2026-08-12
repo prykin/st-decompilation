@@ -131,9 +131,9 @@ void st::fn_0055F410
     _DAT_0080336c = 0x14;
     _DAT_00803370 = 10;
     DAT_00803354 = 5;
-    DAT_008033b4 = static_cast<undefined4>(0);
+    DAT_008033b4 = 0;
     local_60[0] = nullptr;
-    DAT_00803300 = static_cast<undefined4>(0);
+    DAT_00803300 = 0;
     DAT_00803314 = 0;
     DAT_0080337c = 0;
     puVar6 = (undefined4 *)(param_4 + 8);
@@ -1411,9 +1411,9 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
     _DAT_0080336c = 0x1e;
     _DAT_00803370 = 0xf;
     DAT_00803354 = 5;
-    DAT_008033b4 = static_cast<undefined4>(0);
+    DAT_008033b4 = 0;
     local_60[0] = nullptr;
-    DAT_00803300 = static_cast<undefined4>(0);
+    DAT_00803300 = 0;
     DAT_00803314 = 0;
     DAT_0080337c = 0;
     piVar10 = (int *)(param_4 + 0xc);

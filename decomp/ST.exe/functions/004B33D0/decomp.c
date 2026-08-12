@@ -99,7 +99,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
   int local_2e3;
   int local_2df;
   int local_2db;
-  int local_2d7;
+  int local_2d7_mg1;
   undefined4 local_2d3;
   InternalExceptionFrame local_2c0;
   undefined1 *local_27c;
@@ -289,7 +289,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
           local_2e3 = (int)local_7c[0];
           local_2df = (int)local_8c[0];
           local_2db = (int)local_a8[0];
-          local_2d7 = FUN_006aced8(*param_2,param_2[1],local_2e3,local_2df);
+          local_2d7_mg1 = FUN_006aced8(*param_2,param_2[1],local_2e3,local_2df);
           local_2d3 = 0xffffffff;
           if (param_2[4] != 0) {
             *(undefined4 *)(param_2[4] + 4) = 0;

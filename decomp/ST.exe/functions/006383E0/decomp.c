@@ -50,33 +50,9 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
   local_14 = ExceptionList;
   local_1c = &stack0xffffff4c;
   local_80 = 0;
-  sVar9 = (short)(param_1 >> 0x1f);
-  if (param_1 < 0) {
-    iVar10 = (short)(((short)(param_1 / 0xc9) + sVar9) -
-                    (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    iVar10 = (int)(short)(((short)(param_1 / 0xc9) + sVar9) -
-                         (short)((longlong)param_1 * 0x28c1979 >> 0x3f));
-  }
-  sVar9 = (short)(param_2 >> 0x1f);
-  if (param_2 < 0) {
-    iVar5 = (short)(((short)(param_2 / 0xc9) + sVar9) -
-                   (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    iVar5 = (int)(short)(((short)(param_2 / 0xc9) + sVar9) -
-                        (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
-  }
-  sVar9 = (short)(param_3 >> 0x1f);
-  if (param_3 < 0) {
-    iVar6 = (short)(((short)(param_3 / 200) + sVar9) -
-                   (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    iVar6 = (int)(short)(((short)(param_3 / 200) + sVar9) -
-                        (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
-  }
+  iVar10 = STBiasedDiv16(param_1, 0xc9); /* exact signed 16-bit grid-index division */
+  iVar5 = STBiasedDiv16(param_2, 0xc9); /* exact signed 16-bit grid-index division */
+  iVar6 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   iVar8 = iVar5 - param_9;
   if (iVar8 < 0) {
     iVar8 = 0;

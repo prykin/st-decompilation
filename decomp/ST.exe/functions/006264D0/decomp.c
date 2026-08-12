@@ -123,35 +123,11 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
         do {
           piVar10 = local_18;
           iVar6 = local_1c + local_30 / iVar15;
-          sVar9 = (short)(iVar6 >> 0x1f);
-          if (iVar6 < 0) {
-            iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar9) -
-                           (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
-          }
-          else {
-            iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar9) -
-                                (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
-          }
+          iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
           iVar7 = local_14 + local_2c / iVar15;
-          sVar9 = (short)(iVar7 >> 0x1f);
-          if (iVar7 < 0) {
-            iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar9) -
-                           (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)) + -1;
-          }
-          else {
-            iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar9) -
-                                (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
-          }
+          iVar7 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
           iVar8 = local_8 + local_3c / iVar15;
-          sVar9 = (short)(iVar8 >> 0x1f);
-          if (iVar8 < 0) {
-            iVar8 = (short)(((short)(iVar8 / 200) + sVar9) -
-                           (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) + -1;
-          }
-          else {
-            iVar8 = (int)(short)(((short)(iVar8 / 200) + sVar9) -
-                                (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
-          }
+          iVar8 = STBiasedDiv16(iVar8, 200); /* exact signed 16-bit grid-index division */
           sVar9 = (short)iVar6;
           if (((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar12 = (short)iVar7, sVar12 < 0)
                ) || ((g_worldGrid.sizeY <= sVar12 || (sVar13 = (short)iVar8, sVar13 < 0)))) ||

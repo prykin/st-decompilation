@@ -176,8 +176,8 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
       if (SVar6 == MESS_SETTMAPMTY_6340) {
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_00,
-                   (RecoveredRecord_MMMObjTy_005B6560 *)&this_00->field_1A5B->field_055C,
-                   (int)message,0);
+                   (RecoveredRecord_MMMObjTy_005B6560 *)
+                   &(this_00->array_00BC[0xc].field_01DB)->field_055C,(int)message,0);
       }
       else if (SVar6 < MESS_CHOOSEMAPTY_6327) {
         if (SVar6 == MESS_SHARED_6326) {
@@ -255,8 +255,8 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
       else if (SVar6 == MESS_SHARED_6341) {
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_00,
-                   (RecoveredRecord_MMMObjTy_005B6560 *)&this_00->field_1A5B->field_05ED,
-                   (int)message,0);
+                   (RecoveredRecord_MMMObjTy_005B6560 *)
+                   &(this_00->array_00BC[0xc].field_01DB)->field_05ED,(int)message,0);
       }
       else if ((SVar6 == MESS_SHARED_64FF) && (DAT_0080877e != '\0')) {
         FUN_00715360(g_int_00811764,0,' ',(char *)&this_00->field_1F53,0xd,1,0xffffffff);
@@ -499,7 +499,8 @@ LAB_005d1b5a:
                 uVar32 = 0;
                 goto LAB_005d2018;
               }
-              if ((DAT_0080877e != '\0') && (this_00->field_1A5B->field_02E6 != nullptr)) {
+              if ((DAT_0080877e != '\0') &&
+                 ((this_00->array_00BC[0xc].field_01DB)->field_02E6 != nullptr)) {
                 if (g_cursorClass_00802A30 != nullptr) {
                   iVar24 = g_cursorClass_00802A30->field_00C9;
                   iVar41 = g_cursorClass_00802A30->field_00C5;
@@ -510,7 +511,7 @@ LAB_005d1b5a:
                   pCVar15->field_00D2 = 0;
                   pCVar15->field_04DF = -1;
                 }
-                pSVar10 = this_00->field_1A5B;
+                pSVar10 = this_00->array_00BC[0xc].field_01DB;
                 memset(local_90, 0, 0x20); /* compiler bulk-zero initialization */
                 iVar24 = 0;
                 memset(local_b0, 0, 0x20); /* compiler bulk-zero initialization */
@@ -870,7 +871,8 @@ LAB_005d22dd:
                   RunGame(this_00);
                   if (DAT_008067a0 != '\0') {
                     CFsgsConnection::UpdateGame
-                              ((CFsgsConnection *)&DAT_00802a90,6,&this_00->field_0x1a5f);
+                              ((CFsgsConnection *)&DAT_00802a90,6,
+                               &this_00->array_00BC[0xc].field_0x1df);
                     CFsgsConnection::StartGame((CFsgsConnection *)&DAT_00802a90);
                   }
                 }
@@ -903,7 +905,7 @@ LAB_005d22dd:
               } while ((int)uVar30 < (int)pSVar20->count);
             }
             if (bVar40) {
-              pMVar8 = this_00->field_1A5B->field_02E6;
+              pMVar8 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
               if (pMVar8 != nullptr) {
                 MMsgTy::SetMessage(pMVar8,0x2527,'\0',nullptr,nullptr,
                                    nullptr,0,0);
@@ -938,7 +940,7 @@ LAB_005d1b17:
                 } while ((int)uVar30 < (int)pSVar20->count);
               }
               if (1 < local_11) goto LAB_005d1b5a;
-              pMVar8 = this_00->field_1A5B->field_02E6;
+              pMVar8 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
               if (pMVar8 != nullptr) {
                 MMsgTy::SetMessage(pMVar8,0x2528,'\0',nullptr,nullptr,
                                    nullptr,0,0);
@@ -959,10 +961,10 @@ LAB_005d1b17:
       else if (SVar6 == MESS_SETTMAPTY_654D) goto switchD_005d1877_caseD_6548;
     }
     else if (SVar6 == MESS_SHARED_C0A2) {
-      iVar24 = thunk_FUN_005ddb40((int)this_00->field_1A5B);
+      iVar24 = thunk_FUN_005ddb40((int)this_00->array_00BC[0xc].field_01DB);
       if (iVar24 == 0) {
         if (DAT_008067a0 != '\0') {
-          pDVar9 = this_00->field_1A5B->field_0686;
+          pDVar9 = (this_00->array_00BC[0xc].field_01DB)->field_0686;
           if ((int)pDVar9->elementSize < 1) {
             pcVar29 = nullptr;
           }
@@ -972,7 +974,7 @@ LAB_005d1b17:
           bVar38 = thunk_FUN_005717e0(pcVar29);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if (CONCAT31(extraout_var,bVar38) != 0) {
-            pDVar9 = this_00->field_1A5B->field_0686;
+            pDVar9 = (this_00->array_00BC[0xc].field_01DB)->field_0686;
             if ((int)pDVar9->elementSize < 1) {
               CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,nullptr);
             }
@@ -998,7 +1000,7 @@ LAB_005d1b17:
           pcVar29 = pcVar35;
         } while (cVar2 != '\0');
         uVar30 = ~uVar30;
-        pSVar10 = this_00->field_1A5B;
+        pSVar10 = this_00->array_00BC[0xc].field_01DB;
         pcVar29 = pcVar35 + -uVar30;
         pcVar35 = &stack0xfffff980;
         memmove(pcVar35, pcVar29, uVar30); /* compiler REP MOVS byte copy */
@@ -1101,10 +1103,12 @@ LAB_005d28a0:
         }
       }
 LAB_005d28da:
-      Library::DKW::TBL::FUN_006b6020(this_00->field_1A5B->field_0686,0,&CHAR_00h_008016a0);
+      Library::DKW::TBL::FUN_006b6020
+                ((this_00->array_00BC[0xc].field_01DB)->field_0686,0,&CHAR_00h_008016a0);
+      pSVar10 = this_00->array_00BC[0xc].field_01DB;
       this_00->field_002D = 0x33;
-      this_00->field_0031 = this_00->field_1A5B->field_0686;
-      FUN_006e6080(this_00,2,this_00->field_1A5B->field_054C,(undefined4 *)&this_00->field_0x1d);
+      this_00->field_0031 = pSVar10->field_0686;
+      FUN_006e6080(this_00,2,pSVar10->field_054C,(undefined4 *)&this_00->field_0x1d);
     }
     goto switchD_005d1877_caseD_6507;
   }

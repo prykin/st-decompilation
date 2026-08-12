@@ -200,7 +200,8 @@ LAB_0059bcb6:
   }
 switchD_0059b84b_default:
   this->field_002D = 0x61;
-  *(undefined4 *)&this->field_0x35 = 0;
+  this->field_0035 = 0;
+  this->field_0037 = 0;
   st::fn_006E6080(this,0xf,0,(undefined4 *)&this->field_0x1d);
   return;
 }

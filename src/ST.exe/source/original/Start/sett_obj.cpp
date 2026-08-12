@@ -291,7 +291,7 @@ void __thiscall st::fn_005C29B0(SettMapMTy *this,char param_1)
   this_01->field_1F4B = local_EAX_977;
   SVar1 = this_01->field_1E26;
   if (((SVar1 == 6) || (SVar1 == CASE_7)) || (SVar1 == 0xe)) {
-    this_01->field_0x21e3 = 1;
+    this_01->field_21E3 = 1;
     iVar33 = 1;
     puVar10 = (undefined4 *)(this_01->field_005D + 0x28);
     uVar22 = st::fn_006B4FE0(this_01->field_005D);
@@ -496,14 +496,14 @@ void __thiscall st::fn_005C29B0(SettMapMTy *this,char param_1)
     }
   }
   SVar1 = this_01->field_1E26;
-  this_01->field_0x21e1 = 1;
-  this_01->field_0x21e5 = 1;
+  this_01->field_21E1 = 1;
+  this_01->field_21E5 = 1;
   if ((((SVar1 == 0xd) || (SVar1 == CASE_F)) || ((SVar1 == 0xe || (SVar1 == CASE_10)))) &&
      (this_01->field_1E27 == 0x11)) {
-    this_01->field_0x21e4 = 1;
-    this_01->field_0x21e6 = 1;
+    this_01->field_21E4 = 1;
+    this_01->field_21E6 = 1;
     if (SVar1 != 0xe) {
-      this_01->field_0x21e2 = 1;
+      this_01->field_21E2 = 1;
     }
   }
   st::fn_007158A0
@@ -725,7 +725,7 @@ void __thiscall st::fn_005C29B0(SettMapMTy *this,char param_1)
                (ushort *)pAVar14);
   st::fn_006B3640((int *)g_ddxContext_008075A8,*puVar15,0xffffffff,0x112,0x149);
   this_01->CreateCtrls('\x01');
-  if (this_01->field_0x21e2 != '\0') {
+  if (this_01->field_21E2 != '\0') {
     st::fn_006B2330(g_ddxContext_008075A8,&local_8,0x32,0x4042d2,0xf9,0x121,
                  (ushort *)&this_01->field_1A5B->field_0140);
     st::fn_006B3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);
@@ -782,7 +782,7 @@ void __thiscall st::fn_005C29B0(SettMapMTy *this,char param_1)
       local_8 = 0xffffffff;
     }
   }
-  if (this_01->field_0x21e5 == '\0') {
+  if (this_01->field_21E5 == '\0') {
     st::fn_006B3AF0((int *)g_ddxContext_008075A8,*puVar15);
   }
   else {
@@ -834,7 +834,7 @@ void __thiscall st::fn_005C29B0(SettMapMTy *this,char param_1)
       local_8 = 0xffffffff;
     }
   }
-  if (this_01->field_0x21e1 == '\0') {
+  if (this_01->field_21E1 == '\0') {
     if (this_01->field_1C6F != 0xffffffff) {
       st::fn_006B3AF0((int *)this_01->field_1CB3,this_01->field_1C6F);
     }
@@ -916,7 +916,7 @@ void __thiscall st::fn_005C29B0(SettMapMTy *this,char param_1)
       local_8 = 0xffffffff;
     }
   }
-  if (this_01->field_0x21e3 != '\0') {
+  if (this_01->field_21E3 != '\0') {
     st::fn_006B2330(g_ddxContext_008075A8,&local_8,0x32,0x403099,0xf9,0x123,
                  (ushort *)&this_01->field_1A5B->field_0140);
     st::fn_006B3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);
@@ -1077,7 +1077,7 @@ void __thiscall st::fn_005C4930(SettMapTy *this)
       st::fn_0072E2B0(pSVar2->field_21EC);
       pSVar2->field_21EC = nullptr;
     }
-    if (pSVar2->field_0x21e2 != '\0') {
+    if (pSVar2->field_21E2 != '\0') {
       if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
         st::fn_006B3AF0((int *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391);
       }
@@ -1242,7 +1242,7 @@ void __thiscall st::fn_005C4E20(SettMapTy *this,char param_1)
       }
     }
     else if (((pSVar3->field_21EC == nullptr) && (param_1 == '\0')) ||
-            ((param_1 != '\0' && (pSVar3->field_0x21e2 == '\0')))) {
+            ((param_1 != '\0' && (pSVar3->field_21E2 == '\0')))) {
       st::fn_004042D2
                 (pSVar3->field_1A5B + 0x140,g_dDXContext_0080759C,nullptr,nullptr,10
                  ,0xb4,0xf9,0x121,(undefined4 *)(pSVar3->field_1A5B + 0x140));
@@ -1252,7 +1252,7 @@ void __thiscall st::fn_005C4E20(SettMapTy *this,char param_1)
     SVar1 = pSVar3->field_1E26;
     if ((((SVar1 != CASE_6) && (SVar1 != CASE_1)) && (SVar1 != CASE_2)) &&
        (((pSVar3->field_21F8 == nullptr && (param_1 == '\0')) ||
-        ((param_1 != '\0' && (pSVar3->field_0x21e6 == '\0')))))) {
+        ((param_1 != '\0' && (pSVar3->field_21E6 == '\0')))))) {
       st::fn_00403B61
                 (pCVar5,(AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,200,0x1f1,
                  400,0x62,(undefined4 *)(pSVar3->field_1A5B + 0x140));
@@ -1338,34 +1338,34 @@ int __thiscall st::fn_005C5130(SettMapTy *this)
     }
   }
   else if (cVar1 == '\x03') {
-    if (((local_c->field_0x21e1 != '\0') && (local_c->field_21E8 != nullptr)) &&
+    if (((local_c->field_21E1 != '\0') && (local_c->field_21E8 != nullptr)) &&
        (iVar9 = st::fn_004055F1(local_c->field_21E8), iVar9 != 0)) {
       local_8 = 0;
     }
-    if (((this_00->field_0x21e5 != '\0') && (this_00->field_21F4 != nullptr)) &&
+    if (((this_00->field_21E5 != '\0') && (this_00->field_21F4 != nullptr)) &&
        (iVar9 = st::fn_004055F1(this_00->field_21F4), iVar9 != 0)) {
       local_8 = 0;
     }
     SVar2 = this_00->field_1E26;
     if (((SVar2 != CASE_6) && (SVar2 != CASE_7)) &&
        ((SVar2 != CASE_E &&
-        (((this_00->field_0x21e2 != '\0' && (this_00->field_21EC != nullptr)) &&
+        (((this_00->field_21E2 != '\0' && (this_00->field_21EC != nullptr)) &&
          (iVar9 = st::fn_004055F1(this_00->field_21EC), iVar9 != 0)))))) {
       local_8 = 0;
     }
     SVar2 = this_00->field_1E26;
     if ((((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) &&
-       (((this_00->field_0x21e3 != '\0' && (this_00->field_21F0 != nullptr)) &&
+       (((this_00->field_21E3 != '\0' && (this_00->field_21F0 != nullptr)) &&
         (iVar9 = st::fn_004055F1(this_00->field_21F0), iVar9 != 0)))) {
       local_8 = 0;
     }
     SVar2 = this_00->field_1E26;
     if (((((SVar2 != CASE_6) && (SVar2 != CASE_1)) && (SVar2 != CASE_2)) &&
-        ((this_00->field_0x21e6 != '\0' && (this_00->field_21F8 != nullptr)))) &&
+        ((this_00->field_21E6 != '\0' && (this_00->field_21F8 != nullptr)))) &&
        (iVar9 = st::fn_004055F1(this_00->field_21F8), iVar9 != 0)) {
       local_8 = 0;
     }
-    if ((this_00->field_0x21e4 != '\0') &&
+    if ((this_00->field_21E4 != '\0') &&
        (g_startSystem_0081176C->field_0300 < g_startSystem_0081176C->field_0304 + -1)) {
       g_startSystem_0081176C->field_0300 = st::machine_word_boundary_cast<int>(g_startSystem_0081176C->field_0300 + 1);
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
@@ -1388,7 +1388,7 @@ int __thiscall st::fn_005C5130(SettMapTy *this)
       }
       SVar2 = this_00->field_1E26;
       if ((((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) &&
-         (this_00->field_0x21e3 != '\0')) {
+         (this_00->field_21E3 != '\0')) {
         st::fn_006B3430((int *)g_ddxContext_008075A8,this_00->field_1F80);
       }
       if (this_00->field_21E8 != nullptr) {
@@ -1396,7 +1396,7 @@ int __thiscall st::fn_005C5130(SettMapTy *this)
         st::fn_0072E2B0(this_00->field_21E8);
         this_00->field_21E8 = nullptr;
       }
-      if (this_00->field_0x21e1 != '\0') {
+      if (this_00->field_21E1 != '\0') {
         if (this_00->field_1C6F != 0xffffffff) {
           st::fn_006B34D0
                     ((uint *)this_00->field_1CB3,this_00->field_1C6F,0xfffffffe,this_00->field_1C87,
@@ -1425,7 +1425,7 @@ int __thiscall st::fn_005C5130(SettMapTy *this)
         st::fn_0072E2B0(this_00->field_21F4);
         this_00->field_21F4 = nullptr;
       }
-      if (this_00->field_0x21e5 != '\0') {
+      if (this_00->field_21E5 != '\0') {
         st::fn_006B3430((int *)g_ddxContext_008075A8,this_00->field_1E22);
       }
       if (this_00->field_21EC != nullptr) {
@@ -1456,7 +1456,7 @@ int __thiscall st::fn_005C5130(SettMapTy *this)
         st::fn_006B3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
-      if (this_00->field_0x21e4 != '\0') {
+      if (this_00->field_21E4 != '\0') {
         st::fn_006B3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
         if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
@@ -1468,7 +1468,7 @@ int __thiscall st::fn_005C5130(SettMapTy *this)
         st::fn_0072E2B0(this_00->field_21F8);
         this_00->field_21F8 = nullptr;
       }
-      if (this_00->field_0x21e6 != '\0') {
+      if (this_00->field_21E6 != '\0') {
         if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
           st::fn_006B34D0
                     ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
@@ -1503,7 +1503,7 @@ int __thiscall st::fn_005C5130(SettMapTy *this)
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    if ((local_c->field_0x21e4 != '\0') && (0 < g_startSystem_0081176C->field_0300)) {
+    if ((local_c->field_21E4 != '\0') && (0 < g_startSystem_0081176C->field_0300)) {
       g_startSystem_0081176C->field_0300 = st::machine_word_boundary_cast<int>(g_startSystem_0081176C->field_0300 + -1);
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
         st::fn_006B3730
@@ -1513,7 +1513,7 @@ int __thiscall st::fn_005C5130(SettMapTy *this)
       }
       local_8 = 0;
     }
-    if ((this_00->field_0x21e1 != '\0') && (this_00->field_21E8 != nullptr)) {
+    if ((this_00->field_21E1 != '\0') && (this_00->field_21E8 != nullptr)) {
       iVar9 = st::fn_004055F1(this_00->field_21E8);
       if (iVar9 == 0) {
         uVar4 = *(uint *)&this_00->field_21E8->field_0x3;
@@ -1525,7 +1525,7 @@ int __thiscall st::fn_005C5130(SettMapTy *this)
         local_8 = 0;
       }
     }
-    if ((this_00->field_0x21e5 != '\0') && (this_00->field_21F4 != nullptr)) {
+    if ((this_00->field_21E5 != '\0') && (this_00->field_21F4 != nullptr)) {
       iVar9 = st::fn_004055F1(this_00->field_21F4);
       if (iVar9 == 0) {
         uVar4 = *(uint *)&this_00->field_21F4->field_0x3;
@@ -1539,7 +1539,7 @@ int __thiscall st::fn_005C5130(SettMapTy *this)
     }
     SVar2 = this_00->field_1E26;
     if ((((SVar2 != CASE_6) && (SVar2 != CASE_7)) && (SVar2 != CASE_E)) &&
-       ((this_00->field_0x21e2 != '\0' && (this_00->field_21EC != nullptr)))) {
+       ((this_00->field_21E2 != '\0' && (this_00->field_21EC != nullptr)))) {
       iVar9 = st::fn_004055F1(this_00->field_21EC);
       if (iVar9 == 0) {
         uVar4 = *(uint *)&this_00->field_21EC->field_0x3;
@@ -1553,7 +1553,7 @@ int __thiscall st::fn_005C5130(SettMapTy *this)
     }
     SVar2 = this_00->field_1E26;
     if ((((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) &&
-       ((this_00->field_0x21e3 != '\0' && (this_00->field_21F0 != nullptr)))) {
+       ((this_00->field_21E3 != '\0' && (this_00->field_21F0 != nullptr)))) {
       iVar9 = st::fn_004055F1(this_00->field_21F0);
       if (iVar9 == 0) {
         uVar4 = *(uint *)&this_00->field_21F0->field_0x3;
@@ -1567,7 +1567,7 @@ int __thiscall st::fn_005C5130(SettMapTy *this)
     }
     SVar2 = this_00->field_1E26;
     if ((((SVar2 != CASE_6) && (SVar2 != CASE_1)) && (SVar2 != CASE_2)) &&
-       ((this_00->field_0x21e6 != '\0' && (this_00->field_21F8 != nullptr)))) {
+       ((this_00->field_21E6 != '\0' && (this_00->field_21F8 != nullptr)))) {
       iVar9 = st::fn_004055F1(this_00->field_21F8);
       if (iVar9 == 0) {
         uVar4 = *(uint *)&this_00->field_21F8->field_0x3;
@@ -1622,7 +1622,7 @@ void __thiscall st::fn_005C5B60(SettMapTy *this)
   if (errorCode == 0) {
     st::fn_00403459((MMObjTy *)local_8);
     this_00->DeleteCtrls();
-    if (this_00->field_0x21e4 != '\0') {
+    if (this_00->field_21E4 != '\0') {
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
         st::fn_006B34D0
                   ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,
@@ -2053,7 +2053,7 @@ LAB_005c665d:
     this_00->field_0031 = 1;
     st::fn_006E6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_00->field_0x1d);
   }
-  if (this_00->field_0x21e2 != '\0') {
+  if (this_00->field_21E2 != '\0') {
     st::fn_00402A4A(g_startSystem_0081176C);
   }
 LAB_005c69ed:
@@ -2267,7 +2267,7 @@ void __thiscall st::fn_005C6D40(SettMapTy *this)
                (BITMAPINFO *)g_startSystem_0081176C->field_002C);
   }
   st::fn_006B3AF0((int *)g_ddxContext_008075A8,this_00->field_1E22);
-  if ((((this_00->field_0x21e2 == '\0') || (SVar1 = this_00->field_1E26, SVar1 == CASE_6)) ||
+  if ((((this_00->field_21E2 == '\0') || (SVar1 = this_00->field_1E26, SVar1 == CASE_6)) ||
       (SVar1 == CASE_7)) || (SVar1 == CASE_E)) {
     this_00->field_002D = 0x20;
     this_00->field_0031 = 0;
@@ -2344,7 +2344,7 @@ void __thiscall st::fn_005C6D40(SettMapTy *this)
     }
     st::fn_006B3AF0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
   }
-  if ((this_00->field_0x21e3 != '\0') &&
+  if ((this_00->field_21E3 != '\0') &&
      (((SVar1 = this_00->field_1E26, SVar1 == CASE_6 || (SVar1 == CASE_7)) || (SVar1 == CASE_E)))) {
     puVar7 = this_00->field_1F60;
     local_c = 7;
@@ -3903,8 +3903,12 @@ LAB_005c9c8a:
     if (DAT_00811768 == '\x01') {
       DAT_00811768 = '\x02';
     }
-    *(undefined4 *)&this_00->field_0x21e1 = 0x1010101;
-    *(undefined2 *)&this_00->field_0x21e5 = 0x101;
+    this_00->field_21E1 = 1;
+    this_00->field_21E2 = 1;
+    this_00->field_21E3 = 1;
+    this_00->field_21E4 = 1;
+    this_00->field_21E5 = 1;
+    this_00->field_21E6 = 1;
     this_00->field_21E7 = 1;
     this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -3957,15 +3961,19 @@ LAB_005c9c8a:
     break;
   case MESS_WAITTY_694D:
     st::fn_004036C0(this_00,0x6105,1,0);
-    *(undefined4 *)&this_00->field_0x21e1 = 0x1010101;
-    *(undefined2 *)&this_00->field_0x21e5 = 0x101;
+    this_00->field_21E1 = 1;
+    this_00->field_21E2 = 1;
+    this_00->field_21E3 = 1;
+    this_00->field_21E4 = 1;
+    this_00->field_21E5 = 1;
+    this_00->field_21E6 = 1;
     this_00->field_21E7 = 1;
     this_00->field_21E7 = 0;
     goto LAB_005c9e62;
   case 0x694f:
     st::fn_004036C0(this_00,0x6109,1,(uint)(this_00->field_1E26 == CASE_E));
-    this_00->field_0x21e6 = 0;
-    this_00->field_0x21e4 = 0;
+    this_00->field_21E6 = 0;
+    this_00->field_21E4 = 0;
     this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(this_00->field_1A5B + 0x2e6) != 0) {
@@ -3979,8 +3987,12 @@ LAB_005c9c8a:
     break;
   case MESS_SHARED_6951:
     st::fn_004036C0(this_00,0x610a,0,0);
-    *(undefined4 *)&this_00->field_0x21e1 = 0x1010101;
-    *(undefined2 *)&this_00->field_0x21e5 = 0x101;
+    this_00->field_21E1 = 1;
+    this_00->field_21E2 = 1;
+    this_00->field_21E3 = 1;
+    this_00->field_21E4 = 1;
+    this_00->field_21E5 = 1;
+    this_00->field_21E6 = 1;
     this_00->field_21E7 = 1;
 LAB_005c9e62:
     this_00->CloseButtons();

@@ -48,12 +48,7 @@ FUN_00624570(void *this,Global_sub_00624570_param_1Enum param_1,int param_2,int 
     STField<uint>(this,0x30f) = g_playSystem_00802A38->field_00E4;
     return uVar1;
   case CASE_3:
-    if (param_4 < 0) {
-      iVar3 = (short)(param_4 / 200) + -1;
-    }
-    else {
-      iVar3 = (int)(short)(param_4 / 200);
-    }
+    iVar3 = STBiasedDiv16(param_4, 200); /* exact signed 16-bit grid-index division */
     if (iVar3 == STField<short>(this,0x4b)) {
       uVar1 = 2;
     }

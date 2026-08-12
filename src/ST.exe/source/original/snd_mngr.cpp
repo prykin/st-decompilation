@@ -219,7 +219,7 @@ int __thiscall st::fn_00566C20(SoundManagerTy *this,STMessage *message)
       local_8->field_0028 = static_cast<undefined4>((message->arg0).u32);
     }
     else if (SVar2 == MESS_SHARED_0003) {
-      DAT_008033f0 = static_cast<undefined4>(0);
+      DAT_008033f0 = 0;
       st::fn_00403C01(local_8);
     }
     goto LAB_00566d75;

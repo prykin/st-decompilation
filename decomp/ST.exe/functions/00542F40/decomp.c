@@ -57,8 +57,7 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(g_helpPanel_00801690->vtable + 0x18))(1);
+      g_helpPanel_00801690->SetPanel('\x01');
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }

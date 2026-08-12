@@ -194,9 +194,10 @@ STGroupBoatC::sub_00498D20
 
 {
   DArrayTy *pDVar1;
+  undefined2 uVar2;
   DArrayTy *local_EAX_149;
-  DArrayTy *pDVar2;
-  undefined4 *puVar3;
+  DArrayTy *pDVar4;
+  undefined4 *puVar5;
   DArrayTy *local_EAX_438;
   DArrayTy *local_EAX_524;
   DArrayTy *local_EAX_739;
@@ -206,11 +207,12 @@ STGroupBoatC::sub_00498D20
   DArrayTy *local_EAX_1610;
   DArrayTy *pDVar3;
   DArrayTy *local_EAX_1739;
-  int iVar4;
-  DArrayTy **ppDVar5;
-  dword *pdVar6;
-  uint uVar7;
-  uint uVar8;
+  int iVar6;
+  DArrayTy **ppDVar7;
+  short *psVar8;
+  uint uVar9;
+  uint uVar10;
+  dword *pdVar11;
   undefined4 local_10;
   undefined2 local_c;
   undefined1 local_8 [4];
@@ -219,29 +221,29 @@ STGroupBoatC::sub_00498D20
   case CASE_1:
     this->field_0065 = 1;
     this->field_0089 = 1;
-    pdVar6 = (dword *)&this->field_0xdd;
+    psVar8 = &this->field_00DD;
     goto LAB_00499129;
   case CASE_2:
     this->field_0065 = 1;
     this->field_008D = 1;
-    pdVar6 = &this->field_00E7;
-    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *pdVar6 = data->flags;
+    pdVar11 = &this->field_00E7;
+    for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *pdVar11 = data->flags;
       data = (DArrayTy *)&data->iteratorIndex;
-      pdVar6 = pdVar6 + 1;
+      pdVar11 = pdVar11 + 1;
     }
     if (this->field_00E7 == 0) {
       data = this->field_00EF;
-      uVar7 = data->count;
-      local_EAX_149 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,4,1);
-      uVar8 = 0;
+      uVar9 = data->count;
+      local_EAX_149 = Library::DKW::TBL::DArrayCreate(nullptr,uVar9,4,1);
+      uVar10 = 0;
       this->field_00EF = local_EAX_149;
-      if (0 < (int)uVar7) {
+      if (0 < (int)uVar9) {
         do {
-          DArrayGetElement(data,uVar8,local_8);
-          Library::DKW::TBL::DArrayPut(this->field_00EF,uVar8,local_8);
-          uVar8 = uVar8 + 1;
-        } while ((int)uVar8 < (int)uVar7);
+          DArrayGetElement(data,uVar10,local_8);
+          Library::DKW::TBL::DArrayPut(this->field_00EF,uVar10,local_8);
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)uVar9);
         return;
       }
     }
@@ -257,16 +259,16 @@ STGroupBoatC::sub_00498D20
     this->field_0160 = (DArrayTy *)data->iteratorIndex;
     if (this->field_015C == 0) {
       data = this->field_0160;
-      uVar7 = data->count;
-      local_EAX_739 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
-      uVar8 = 0;
+      uVar9 = data->count;
+      local_EAX_739 = Library::DKW::TBL::DArrayCreate(nullptr,uVar9,2,1);
+      uVar10 = 0;
       this->field_0160 = local_EAX_739;
-      if (0 < (int)uVar7) {
+      if (0 < (int)uVar9) {
         do {
-          DArrayGetElement(data,uVar8,(byte *)((int)&orderType + 2));
-          Library::DKW::TBL::DArrayPut(this->field_0160,uVar8,(byte *)((int)&orderType + 2));
-          uVar8 = uVar8 + 1;
-        } while ((int)uVar8 < (int)uVar7);
+          DArrayGetElement(data,uVar10,(byte *)((int)&orderType + 2));
+          Library::DKW::TBL::DArrayPut(this->field_0160,uVar10,(byte *)((int)&orderType + 2));
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)uVar9);
         return;
       }
     }
@@ -274,24 +276,24 @@ STGroupBoatC::sub_00498D20
   case CASE_5:
     this->field_0065 = 1;
     this->field_0099 = 1;
-    pdVar6 = &this->field_0164;
-    for (iVar4 = 5; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *pdVar6 = data->flags;
+    pdVar11 = &this->field_0164;
+    for (iVar6 = 5; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *pdVar11 = data->flags;
       data = (DArrayTy *)&data->iteratorIndex;
-      pdVar6 = pdVar6 + 1;
+      pdVar11 = pdVar11 + 1;
     }
     if (this->field_0164 == 0) {
       data = this->field_0168;
-      uVar7 = data->count;
-      local_EAX_864 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
-      uVar8 = 0;
+      uVar9 = data->count;
+      local_EAX_864 = Library::DKW::TBL::DArrayCreate(nullptr,uVar9,2,1);
+      uVar10 = 0;
       this->field_0168 = local_EAX_864;
-      if (0 < (int)uVar7) {
+      if (0 < (int)uVar9) {
         do {
-          DArrayGetElement(data,uVar8,(byte *)((int)&orderType + 2));
-          Library::DKW::TBL::DArrayPut(this->field_0168,uVar8,(byte *)((int)&orderType + 2));
-          uVar8 = uVar8 + 1;
-        } while ((int)uVar8 < (int)uVar7);
+          DArrayGetElement(data,uVar10,(byte *)((int)&orderType + 2));
+          Library::DKW::TBL::DArrayPut(this->field_0168,uVar10,(byte *)((int)&orderType + 2));
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)uVar9);
         return;
       }
     }
@@ -299,70 +301,70 @@ STGroupBoatC::sub_00498D20
   case CASE_6:
     this->field_0065 = 1;
     this->field_009D = 1;
-    ppDVar5 = &this->field_0103;
-    *ppDVar5 = (DArrayTy *)data->flags;
+    ppDVar7 = &this->field_0103;
+    *ppDVar7 = (DArrayTy *)data->flags;
     this->field_0107 = data->iteratorIndex;
-    pDVar1 = *ppDVar5;
+    pDVar1 = *ppDVar7;
     data = (DArrayTy *)pDVar1->count;
-    pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
-    *ppDVar5 = pDVar2;
-    uVar7 = 0;
+    pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
+    *ppDVar7 = pDVar4;
+    uVar9 = 0;
     if (0 < (int)data) {
       do {
-        if (uVar7 < pDVar1->count) {
-          puVar3 = DArrayAt<undefined4>(pDVar1, uVar7);
+        if (uVar9 < pDVar1->count) {
+          puVar5 = DArrayAt<undefined4>(pDVar1, uVar9);
         }
         else {
-          puVar3 = nullptr;
+          puVar5 = nullptr;
         }
-        local_10 = *puVar3;
-        local_c = *(undefined2 *)(puVar3 + 1);
-        Library::DKW::TBL::DArrayPut(*ppDVar5,uVar7,&local_10);
-        uVar7 = uVar7 + 1;
-      } while ((int)uVar7 < (int)data);
+        local_10 = *puVar5;
+        local_c = *(undefined2 *)(puVar5 + 1);
+        Library::DKW::TBL::DArrayPut(*ppDVar7,uVar9,&local_10);
+        uVar9 = uVar9 + 1;
+      } while ((int)uVar9 < (int)data);
       return;
     }
     break;
   case CASE_7:
     this->field_0065 = 1;
     this->field_00A1 = 1;
-    this->field_00FF = data->flags;
+    *(dword *)&this->field_0xff = data->flags;
     return;
   case CASE_8:
     this->field_0065 = 1;
     this->field_00A5 = 1;
-    pdVar6 = &this->field_010B;
-    for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *pdVar6 = data->flags;
+    pdVar11 = &this->field_010B;
+    for (iVar6 = 0xb; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *pdVar11 = data->flags;
       data = (DArrayTy *)&data->iteratorIndex;
-      pdVar6 = pdVar6 + 1;
+      pdVar11 = pdVar11 + 1;
     }
     if (this->field_010B == 0) {
       data = this->field_010F;
-      uVar7 = data->count;
-      local_EAX_438 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
-      uVar8 = 0;
+      uVar9 = data->count;
+      local_EAX_438 = Library::DKW::TBL::DArrayCreate(nullptr,uVar9,2,1);
+      uVar10 = 0;
       this->field_010F = local_EAX_438;
-      if (0 < (int)uVar7) {
+      if (0 < (int)uVar9) {
         do {
-          DArrayGetElement(data,uVar8,(byte *)((int)&orderType + 2));
-          Library::DKW::TBL::DArrayPut(this->field_010F,uVar8,(byte *)((int)&orderType + 2));
-          uVar8 = uVar8 + 1;
-        } while ((int)uVar8 < (int)uVar7);
+          DArrayGetElement(data,uVar10,(byte *)((int)&orderType + 2));
+          Library::DKW::TBL::DArrayPut(this->field_010F,uVar10,(byte *)((int)&orderType + 2));
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)uVar9);
       }
     }
     if (this->field_0123 == 0) {
       data = this->field_0127;
-      uVar7 = data->count;
-      local_EAX_524 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
-      uVar8 = 0;
+      uVar9 = data->count;
+      local_EAX_524 = Library::DKW::TBL::DArrayCreate(nullptr,uVar9,2,1);
+      uVar10 = 0;
       this->field_0127 = local_EAX_524;
-      if (0 < (int)uVar7) {
+      if (0 < (int)uVar9) {
         do {
-          DArrayGetElement(data,uVar8,(byte *)((int)&orderType + 2));
-          Library::DKW::TBL::DArrayPut(this->field_0127,uVar8,(byte *)((int)&orderType + 2));
-          uVar8 = uVar8 + 1;
-        } while ((int)uVar8 < (int)uVar7);
+          DArrayGetElement(data,uVar10,(byte *)((int)&orderType + 2));
+          Library::DKW::TBL::DArrayPut(this->field_0127,uVar10,(byte *)((int)&orderType + 2));
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)uVar9);
         return;
       }
     }
@@ -370,19 +372,21 @@ STGroupBoatC::sub_00498D20
   case CASE_9:
     this->field_0065 = 1;
     this->field_00A9 = 1;
-    pdVar6 = (dword *)&this->field_0137;
-    for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *pdVar6 = data->flags;
+    pdVar11 = (dword *)&this->field_0137;
+    for (iVar6 = 7; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *pdVar11 = data->flags;
       data = (DArrayTy *)&data->iteratorIndex;
-      pdVar6 = pdVar6 + 1;
+      pdVar11 = pdVar11 + 1;
     }
-    *(short *)pdVar6 = (short)data->flags;
-    STField<undefined1>(pdVar6,2) = *(undefined1 *)((int)&data->flags + 2);
+    *(short *)pdVar11 = (short)data->flags;
+    STField<undefined1>(pdVar11,2) = *(undefined1 *)((int)&data->flags + 2);
     return;
   case CASE_A:
     this->field_0065 = 1;
     this->field_00AD = 1;
-    *(dword *)&this->field_0x156 = data->flags;
+    uVar2 = *(undefined2 *)((int)&data->flags + 2);
+    this->field_0156 = *(undefined2 *)&data->flags;
+    this->field_0158 = uVar2;
     this->field_015A = (short)data->iteratorIndex;
     return;
   case CASE_B:
@@ -393,22 +397,26 @@ STGroupBoatC::sub_00498D20
   case CASE_C:
     this->field_0065 = 1;
     this->field_00B5 = 1;
-    *(dword *)&this->field_0x17c = data->flags;
+    uVar2 = *(undefined2 *)((int)&data->flags + 2);
+    this->field_017C = *(undefined2 *)&data->flags;
+    this->field_017E = uVar2;
     this->field_0180 = (short)data->iteratorIndex;
     return;
   case CASE_D:
     this->field_0065 = 1;
     this->field_00B9 = 1;
-    pdVar6 = &this->field_0182;
+    psVar8 = &this->field_0182;
 LAB_00499129:
-    *pdVar6 = data->flags;
-    pdVar6[1] = data->iteratorIndex;
-    *(short *)(pdVar6 + 2) = (short)data->elementSize;
+    *(dword *)psVar8 = data->flags;
+    *(dword *)(psVar8 + 2) = data->iteratorIndex;
+    psVar8[4] = (short)data->elementSize;
     return;
   case CASE_E:
     this->field_0065 = 1;
     this->field_00BD = 1;
-    this->field_018C = data->flags;
+    uVar2 = *(undefined2 *)((int)&data->flags + 2);
+    this->field_018C = *(undefined2 *)&data->flags;
+    this->field_018E = uVar2;
     this->field_0190 = (short)data->iteratorIndex;
     return;
   case CASE_F:
@@ -422,33 +430,47 @@ LAB_00499129:
     this->field_0065 = 1;
     this->field_00C5 = 1;
     this->field_01A3 = data->flags;
-    this->field_01A7 = data->iteratorIndex;
-    this->field_01AB = data->elementSize;
-    this->field_01AF = data->count;
+    uVar2 = *(undefined2 *)((int)&data->iteratorIndex + 2);
+    this->field_01A7 = *(undefined2 *)&data->iteratorIndex;
+    this->field_01A9 = uVar2;
+    uVar2 = *(undefined2 *)((int)&data->elementSize + 2);
+    this->field_01AB = *(undefined2 *)&data->elementSize;
+    this->field_01AD = uVar2;
+    uVar2 = *(undefined2 *)((int)&data->count + 2);
+    this->field_01AF = *(undefined2 *)&data->count;
+    this->field_01B1 = uVar2;
     return;
   case CASE_11:
     this->field_0065 = 1;
     this->field_00C9 = 1;
     this->field_0199 = data->flags;
-    this->field_019D = data->iteratorIndex;
+    uVar2 = *(undefined2 *)((int)&data->iteratorIndex + 2);
+    this->field_019D = *(undefined2 *)&data->iteratorIndex;
+    this->field_019F = uVar2;
     this->field_01A1 = (short)data->elementSize;
     return;
   case CASE_12:
     this->field_0065 = 1;
     this->field_00CD = 1;
-    this->field_01B3 = data->flags;
+    uVar2 = *(undefined2 *)((int)&data->flags + 2);
+    this->field_01B3 = *(undefined2 *)&data->flags;
+    this->field_01B5 = uVar2;
     this->field_01B7 = (short)data->iteratorIndex;
     return;
   case CASE_13:
     this->field_0065 = 1;
     this->field_00D1 = 1;
-    *(dword *)&this->field_0x1b9 = data->flags;
+    uVar2 = *(undefined2 *)((int)&data->flags + 2);
+    this->field_01B9 = *(undefined2 *)&data->flags;
+    this->field_01BB = uVar2;
     this->field_01BD = (short)data->iteratorIndex;
     return;
   case CASE_14:
     this->field_0065 = 1;
     this->field_00D5 = 1;
-    *(dword *)&this->field_0x1bf = data->flags;
+    uVar2 = *(undefined2 *)((int)&data->flags + 2);
+    this->field_01BF = *(undefined2 *)&data->flags;
+    this->field_01C1 = uVar2;
     this->field_01C3 = (short)data->iteratorIndex;
     return;
   case CASE_15:
@@ -482,11 +504,11 @@ LAB_00499129:
   case CASE_68:
     this->field_0061 = 1;
     this->field_0079 = 1;
-    if (*(int *)&this->field_0x1d2 == 0) {
+    if (this->field_01D2 == nullptr) {
       local_EAX_1610 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
-      *(DArrayTy **)&this->field_0x1d2 = local_EAX_1610;
+      this->field_01D2 = local_EAX_1610;
     }
-    Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&this->field_0x1d2,data);
+    Library::DKW::TBL::DArrayAppend(this->field_01D2,data);
     return;
   case CASE_69:
     this->field_0061 = 1;

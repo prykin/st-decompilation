@@ -90,7 +90,7 @@ public class STDecompExport extends GhidraScript {
     private static final int COVERAGE_PADDING_RUN = 16;
     private static final int COVERAGE_MAX_RANGE = 0x10000;
     private static final String FUNCTION_ANALYSIS_CACHE_SCHEMA = "2";
-    private static final int FUNCTION_ANALYSIS_SCHEMA = 16;
+    private static final int FUNCTION_ANALYSIS_SCHEMA = 19;
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
@@ -1195,14 +1195,252 @@ public class STDecompExport extends GhidraScript {
             normalizeIntegerStoredInPointerLifetimes(semicolons.code);
         NormalizedCode narrowPromotions =
             normalizeRedundantNarrowToDoublePromotions(scalarLifetimes.code);
+        NormalizedCode biasedDivisions =
+            normalizeBiasedNarrowDivisions(narrowPromotions.code);
         NormalizedCode deadCodePointers =
-            removeDeadCodePointerDeclarations(narrowPromotions.code);
+            removeDeadCodePointerDeclarations(biasedDivisions.code);
         NormalizedCode deadSynthetics =
             removeDeadSyntheticDeclarations(deadCodePointers.code);
         return new NormalizedCode(deadSynthetics.code,
             replacements + nullPointers.replacements + semicolons.replacements +
                 scalarLifetimes.replacements + deadCodePointers.replacements +
-                narrowPromotions.replacements + deadSynthetics.replacements);
+                narrowPromotions.replacements + biasedDivisions.replacements +
+                deadSynthetics.replacements);
+    }
+
+    /**
+     * MSVC lowers the game's signed world-coordinate division to a 16-bit quotient plus an
+     * explicit negative-value bias.  Ghidra recognizes the constant division itself but leaves
+     * the redundant sign/magic-product correction in place.  Fold only the complete canonical
+     * three-statement shape, including one of the two exact divisor/multiplier pairs present in
+     * the image.  The helper deliberately preserves the source's `negative => quotient - 1`
+     * boundary behavior; it is not mislabeled as mathematical floor division.
+     */
+    private NormalizedCode normalizeBiasedNarrowDivisions(String code) {
+        if (code == null || code.isEmpty() ||
+                (!code.contains("0x28c1979") && !code.contains("0x51eb851f") &&
+                    !code.contains("/ 200") && !code.contains("/200")))
+            return new NormalizedCode(code, 0);
+        Pattern signAssignment = Pattern.compile(
+            "(?m)^(?<indent>[ \\t]*)(?<sign>[A-Za-z_$][A-Za-z0-9_$]*)\\s*=\\s*" +
+            "\\(short\\)\\((?<value>[A-Za-z_$][A-Za-z0-9_$]*)\\s*>>\\s*0x1f\\);" +
+            "[ \\t]*\\R");
+        Matcher assignments = signAssignment.matcher(code);
+        StringBuilder output = new StringBuilder(code.length());
+        int copiedThrough = 0, replacements = 0;
+        while (assignments.find()) {
+            if (assignments.start() < copiedThrough) continue;
+            String value = assignments.group("value");
+            String sign = assignments.group("sign");
+            String quotedValue = Pattern.quote(value);
+            Pattern branch = Pattern.compile(
+                "\\G[ \\t]*if\\s*\\(\\s*" + quotedValue +
+                "\\s*<\\s*0\\s*\\)\\s*\\{\\s*" +
+                "(?<negativeComments>(?:/\\*.*?\\*/\\s*)*)" +
+                "(?<target>[A-Za-z_$][A-Za-z0-9_$]*)" +
+                "\\s*=\\s*(?<negative>[^;]+);\\s*\\}\\s*else\\s*\\{\\s*" +
+                "(?<positiveComments>(?:/\\*.*?\\*/\\s*)*)" +
+                "\\k<target>\\s*=\\s*(?<positive>[^;]+);\\s*\\}",
+                Pattern.DOTALL);
+            Matcher branches = branch.matcher(code);
+            branches.region(assignments.end(), code.length());
+            if (!branches.find()) continue;
+            String negative = compactExpression(branches.group("negative"));
+            String positive = compactExpression(branches.group("positive"));
+            String divisor = matchingBiasedDivisor(value, sign, negative, positive);
+            if (divisor.isBlank()) continue;
+            output.append(code, copiedThrough, assignments.start());
+            String comments = branches.group("negativeComments") +
+                branches.group("positiveComments");
+            if (comments.contains("ST_PSEUDO[stack_slot_reuse]"))
+                output.append(assignments.group("indent"))
+                    .append("/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */")
+                    .append(System.lineSeparator());
+            output.append(assignments.group("indent")).append(branches.group("target"))
+                .append(" = STBiasedDiv16(").append(value).append(", ")
+                .append(divisor)
+                .append("); /* exact signed 16-bit grid-index division */");
+            copiedThrough = branches.end();
+            replacements++;
+        }
+        String magicNormalized = code;
+        if (replacements != 0) {
+            output.append(code, copiedThrough, code.length());
+            magicNormalized = output.toString();
+        }
+        NormalizedCode direct = normalizeDirectBiasedNarrowDivisions(magicNormalized);
+        NormalizedCode inline = normalizeInlineBiasedNarrowDivisions(direct.code);
+        return new NormalizedCode(inline.code,
+            replacements + direct.replacements + inline.replacements);
+    }
+
+    /** Fold the same exact branch when Ghidra kept the sign correction inline. */
+    private NormalizedCode normalizeInlineBiasedNarrowDivisions(String code) {
+        Pattern branch = Pattern.compile(
+            "(?m)^(?<indent>[ \\t]*)if\\s*\\(\\s*" +
+            "(?<value>[A-Za-z_$][A-Za-z0-9_$]*)\\s*<\\s*0\\s*\\)\\s*\\{\\s*" +
+            "(?<negativeComments>(?:/\\*.*?\\*/\\s*)*)" +
+            "(?<target>[A-Za-z_$][A-Za-z0-9_$]*)\\s*=\\s*(?<negative>[^;]+);" +
+            "\\s*\\}\\s*else\\s*\\{\\s*" +
+            "(?<positiveComments>(?:/\\*.*?\\*/\\s*)*)" +
+            "\\k<target>\\s*=\\s*(?<positive>[^;]+);\\s*\\}",
+            Pattern.DOTALL);
+        Matcher matcher = branch.matcher(code);
+        StringBuilder output = new StringBuilder(code.length());
+        int copiedThrough = 0, replacements = 0;
+        while (matcher.find()) {
+            String divisor = matchingInlineBiasedDivisor(matcher.group("value"),
+                compactExpression(matcher.group("negative")),
+                compactExpression(matcher.group("positive")));
+            if (divisor.isBlank()) continue;
+            output.append(code, copiedThrough, matcher.start());
+            String comments = matcher.group("negativeComments") +
+                matcher.group("positiveComments");
+            if (comments.contains("ST_PSEUDO[stack_slot_reuse]"))
+                output.append(matcher.group("indent"))
+                    .append("/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */")
+                    .append(System.lineSeparator());
+            output.append(matcher.group("indent")).append(matcher.group("target"))
+                .append(" = STBiasedDiv16(").append(matcher.group("value"))
+                .append(", ").append(divisor)
+                .append("); /* exact signed 16-bit grid-index division */");
+            copiedThrough = matcher.end();
+            replacements++;
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        output.append(code, copiedThrough, code.length());
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    private NormalizedCode normalizeDirectBiasedNarrowDivisions(String code) {
+        Pattern branch = Pattern.compile(
+            "(?m)^(?<indent>[ \\t]*)if\\s*\\(\\s*" +
+            "(?<value>[A-Za-z_$][A-Za-z0-9_$]*)\\s*<\\s*0\\s*\\)\\s*\\{\\s*" +
+            "(?<negativeComments>(?:/\\*.*?\\*/\\s*)*)" +
+            "(?<target>[A-Za-z_$][A-Za-z0-9_$]*)\\s*=\\s*" +
+            "\\(short\\)\\(\\s*\\k<value>\\s*/\\s*200\\s*\\)\\s*\\+\\s*-1\\s*;" +
+            "\\s*\\}\\s*else\\s*\\{\\s*" +
+            "(?<positiveComments>(?:/\\*.*?\\*/\\s*)*)" +
+            "\\k<target>\\s*=\\s*(?:\\(int\\))?\\(short\\)\\(" +
+            "\\s*\\k<value>\\s*/\\s*200\\s*\\)\\s*;\\s*\\}",
+            Pattern.DOTALL);
+        Matcher matcher = branch.matcher(code);
+        StringBuilder output = new StringBuilder(code.length());
+        int copiedThrough = 0, replacements = 0;
+        while (matcher.find()) {
+            output.append(code, copiedThrough, matcher.start());
+            String comments = matcher.group("negativeComments") +
+                matcher.group("positiveComments");
+            if (comments.contains("ST_PSEUDO[stack_slot_reuse]"))
+                output.append(matcher.group("indent"))
+                    .append("/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */")
+                    .append(System.lineSeparator());
+            output.append(matcher.group("indent")).append(matcher.group("target"))
+                .append(" = STBiasedDiv16(").append(matcher.group("value"))
+                .append(", 200); /* exact signed 16-bit grid-index division */");
+            copiedThrough = matcher.end();
+            replacements++;
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        output.append(code, copiedThrough, code.length());
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    private String matchingBiasedDivisor(String value, String sign,
+            String negative, String positive) {
+        String compactValue = compactExpression(value);
+        String compactSign = compactExpression(sign);
+        String negativeCore = biasedBranchCore(negative, true);
+        String positiveCore = biasedBranchCore(positive, false);
+        if (negativeCore.isBlank() || !negativeCore.equals(positiveCore)) return "";
+        for (String[] pair : List.of(
+                new String[] { "0xc9", "0x28c1979" },
+                new String[] { "200", "0x51eb851f" })) {
+            String division = "((short)(" + compactValue + "/" + pair[0] + ")+" +
+                compactSign + ")-(short)((longlong)" + compactValue + "*" + pair[1] +
+                ">>0x3f)";
+            if (negativeCore.equals(division)) return pair[0];
+        }
+        return "";
+    }
+
+    private String matchingInlineBiasedDivisor(String value,
+            String negative, String positive) {
+        String compactValue = compactExpression(value);
+        String negativeCore = biasedBranchCore(negative, true);
+        String positiveCore = biasedBranchCore(positive, false);
+        if (negativeCore.isBlank() || !negativeCore.equals(positiveCore)) return "";
+        for (String[] pair : List.of(
+                new String[] { "0xc9", "0x28c1979" },
+                new String[] { "200", "0x51eb851f" })) {
+            if (negativeCore.equals(compactValue + "/" + pair[0])) return pair[0];
+            for (String cast : List.of("", "(int)")) {
+                String correction = "(short)((longlong)" + cast + compactValue + "*" +
+                    pair[1] + ">>0x3f)";
+                for (String shift : List.of("0xf", "0x1f")) {
+                    String core = "(" + compactValue + "/" + pair[0] + "+(" +
+                        compactValue + ">>" + shift + "))-" + correction;
+                    if (negativeCore.equals(core)) return pair[0];
+                    core = "((short)(" + compactValue + "/" + pair[0] + ")+(short)(" +
+                        compactValue + ">>" + shift + "))-" + correction;
+                    if (negativeCore.equals(core)) return pair[0];
+                }
+            }
+        }
+        return "";
+    }
+
+    /** Remove only result-width casts/parentheses which STBiasedDiv16 itself preserves. */
+    private String biasedBranchCore(String expression, boolean negative) {
+        String value = compactExpression(expression);
+        value = stripBalancedOuterParentheses(value);
+        if (negative) {
+            if (value.endsWith("+-1")) value = value.substring(0, value.length() - 3);
+            else if (value.endsWith("-1")) value = value.substring(0, value.length() - 2);
+            else return "";
+        }
+        boolean changed;
+        do {
+            changed = false;
+            String stripped = stripBalancedOuterParentheses(value);
+            if (!stripped.equals(value)) {
+                value = stripped;
+                changed = true;
+            }
+            for (String cast : List.of("(int)", "(short)")) {
+                if (!value.startsWith(cast)) continue;
+                String remainder = value.substring(cast.length());
+                if (remainder.startsWith("(") &&
+                        matchingDelimiter(remainder, 0, '(', ')') ==
+                            remainder.length() - 1)
+                    value = remainder.substring(1, remainder.length() - 1);
+                else if ("(int)".equals(cast) && remainder.startsWith("(short)")) {
+                    String nested = remainder.substring("(short)".length());
+                    if (!nested.startsWith("(") ||
+                            matchingDelimiter(nested, 0, '(', ')') != nested.length() - 1)
+                        continue;
+                    value = remainder;
+                }
+                else continue;
+                changed = true;
+                break;
+            }
+        } while (changed);
+        return value;
+    }
+
+    private int matchingDelimiter(String value, int start, char open, char close) {
+        int depth = 0;
+        for (int index = start; index < value.length(); index++) {
+            char current = value.charAt(index);
+            if (current == open) depth++;
+            else if (current == close && --depth == 0) return index;
+        }
+        return -1;
+    }
+
+    private String compactExpression(String expression) {
+        return expression == null ? "" : expression.replaceAll("\\s+", "");
     }
 
     /**
@@ -5310,6 +5548,15 @@ public class STDecompExport extends GhidraScript {
             "static inline int32_t STSignExtend24(Value value) {\n" +
             "    uint32_t raw = static_cast<uint32_t>(STRawWord(value)) & 0x00ffffffu;\n" +
             "    return static_cast<int32_t>(raw << 8) >> 8;\n" +
+            "}\n" +
+            "/* Exact source convention: signed /, narrowed to 16 bits, then negative values\n" +
+            "   are biased down once. This intentionally differs from floor division at exact\n" +
+            "   negative multiples. */\n" +
+            "template <typename Value, typename Divisor>\n" +
+            "static inline int16_t STBiasedDiv16(Value value, Divisor divisor) {\n" +
+            "    int32_t source = static_cast<int32_t>(value);\n" +
+            "    int16_t quotient = static_cast<int16_t>(source / static_cast<int32_t>(divisor));\n" +
+            "    return static_cast<int16_t>(quotient - (source < 0 ? 1 : 0));\n" +
             "}\n" +
             "template <typename Value>\n" +
             "static inline long double fsin(Value value) {\n" +

@@ -36,6 +36,7 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
   local_10 = this;
   local_14 = thunk_FUN_00529d80((Global_sub_00529D80_param_1Enum)param_1,param_2);
   memset(local_34, 0, 0x19); /* compiler bulk-zero initialization */
+  iVar6 = 0;
   local_c = 0;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
@@ -59,18 +60,21 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
   }
   else {
     local_10->field_01A2 = 0;
-    local_10->field_01AB = nullptr;
+    local_10->field_01AB = 0;
   }
+  STPiece<0,2>(iVar6) = local_10->field_0178;
+  STPiece<2,2>(iVar6) = local_10->field_017A;
   local_10->field_01A1 = CASE_8;
   local_10->field_01A3 = param_1;
   local_10->field_01A7 = param_2;
   local_10->field_01AF = 0x14;
   local_10->field_01B1 = 5;
-  if (local_10->field_0178 != 0) {
+  if (iVar6 != 0) {
     local_10->field_0028 = 0x4202;
     *(undefined2 *)&local_10->field_0x2c = 0;
-    local_10->field_002E = 2;
-    *(undefined4 *)&local_10->field_0x30 = local_10->field_0178;
+    *(undefined2 *)&local_10->field_0x2e = 2;
+    local_10->field_0030 = (undefined2)iVar6;
+    local_10->field_0032 = STPiece<2,2>(iVar6);
     if (g_cursorClass_00802A30 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x18);
@@ -139,7 +143,7 @@ LAB_0051d689:
   local_34[2] = local_18;
   local_34[3] = *(uint *)(local_8 + 4);
   local_34[1] = uVar7;
-  Library::DKW::TBL::DArrayAppend(this_00->field_01D7,local_34);
+  Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,local_34);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
   CheckBkView(this_00,uVar10 + 0x1e,10);
   local_c = ((uint)uVar10 / 10 + 1) * 10;

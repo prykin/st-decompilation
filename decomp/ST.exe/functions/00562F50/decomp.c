@@ -56,7 +56,7 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
   int local_dc;
   int local_d4;
   void *local_cc;
-  int *local_c8;
+  int *local_c8_mg1;
   int local_c4;
   int local_b8;
   int local_b0;
@@ -85,7 +85,7 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
   int local_38;
   int local_34;
   void *local_30;
-  int local_28;
+  int local_28_mg1;
   undefined1 *local_1c;
   void *local_14;
   undefined1 *puStack_10;
@@ -549,18 +549,19 @@ LAB_005637bc:
                   iVar16 = *(int *)(&DAT_007a4c24 + piVar10[4] * 8);
                   iVar6 = *(int *)(&DAT_007a4c20 + piVar10[4] * 8);
                 }
-                local_c8 = FUN_00561240(iVar16,iVar6,iVar21);
-                if (1 < *local_c8) {
-                  local_13c = (iVar17 << 0x10) / *local_c8;
+                local_c8_mg1 = FUN_00561240(iVar16,iVar6,iVar21);
+                if (1 < *local_c8_mg1) {
+                  local_13c = (iVar17 << 0x10) / *local_c8_mg1;
                   iVar16 = 0;
-                  pvVar22 = (void *)((int)DAT_00803380 + (local_c8[3] + iVar11) * DAT_008033a4 * 2);
+                  pvVar22 = (void *)((int)DAT_00803380 +
+                                    (local_c8_mg1[3] + iVar11) * DAT_008033a4 * 2);
                   local_ac = 0;
-                  if (0 < local_c8[4]) {
+                  if (0 < local_c8_mg1[4]) {
                     do {
-                      iVar17 = local_c8[3] + iVar11 + local_ac;
+                      iVar17 = local_c8_mg1[3] + iVar11 + local_ac;
                       if ((-1 < iVar17) && (iVar17 < DAT_008033a8)) {
-                        local_a8 = local_c8[local_ac * 2 + 6] + local_84;
-                        for (iVar17 = local_c8[local_ac * 2 + 5] + local_84; iVar17 <= local_a8;
+                        local_a8 = local_c8_mg1[local_ac * 2 + 6] + local_84;
+                        for (iVar17 = local_c8_mg1[local_ac * 2 + 5] + local_84; iVar17 <= local_a8;
                             iVar17 = iVar17 + 1) {
                           if (((-1 < iVar17) && (iVar17 < DAT_008033a4)) &&
                              (iVar16 = iVar16 + local_13c, 0x10000 < iVar16)) {
@@ -578,10 +579,10 @@ LAB_005637bc:
                       local_ac = local_ac + 1;
                       pvVar22 = (void *)((int)pvVar22 + DAT_008033a4 * 2);
                       iVar11 = local_b8;
-                    } while (local_ac < local_c8[4]);
+                    } while (local_ac < local_c8_mg1[4]);
                   }
                 }
-                FreeAndNull(&local_c8);
+                FreeAndNull(&local_c8_mg1);
                 iVar16 = DAT_008033a4;
               }
             }
@@ -654,9 +655,9 @@ LAB_005637bc:
         piVar10 = piVar10 + 1;
       }
       for (; local_80 = piVar13, iVar17 < 0xe; iVar17 = iVar17 + 1) {
-        local_28 = FUN_0055ee70(pbVar4,iVar17,1);
+        local_28_mg1 = FUN_0055ee70(pbVar4,iVar17,1);
         iVar16 = 0;
-        if (0 < local_28) {
+        if (0 < local_28_mg1) {
           do {
             iVar11 = (char)pbVar4[iVar16 * 2] + DAT_00803304;
             iVar21 = (char)pbVar4[iVar16 * 2 + 1] + DAT_00803308;
@@ -667,9 +668,9 @@ LAB_005637bc:
               local_134[iVar17] = local_134[iVar17] + 1;
             }
             iVar16 = iVar16 + 1;
-          } while (iVar16 < local_28);
+          } while (iVar16 < local_28_mg1);
         }
-        local_134[iVar17] = (local_134[iVar17] * 100) / local_28;
+        local_134[iVar17] = (local_134[iVar17] * 100) / local_28_mg1;
         piVar13 = local_80;
       }
       iVar16 = -30000;
@@ -707,7 +708,7 @@ LAB_005637bc:
         piVar10 = local_160;
       } while (iVar16 < 0x10);
       while (local_160 = piVar10, local_88 = iVar17, iVar17 < 0x16) {
-        local_28 = FUN_0055ee70(local_a0,iVar17,1);
+        local_28_mg1 = FUN_0055ee70(local_a0,iVar17,1);
         iVar16 = DAT_00803384 - DAT_0080339c;
         iVar21 = 0x16 - DAT_00803384;
         if (iVar16 < iVar21) {
@@ -722,7 +723,7 @@ LAB_005637bc:
         }
         DAT_00803388 = iVar16 / 2;
         local_50 = 0;
-        if (0 < local_28) {
+        if (0 < local_28_mg1) {
           do {
             iVar16 = (char)local_a0[local_50 * 2] + DAT_00803304;
             if (((-1 < iVar16) && (iVar16 < DAT_008033a4)) &&
@@ -773,7 +774,7 @@ LAB_005637bc:
               }
             }
             local_50 = local_50 + 3;
-          } while (local_50 < local_28);
+          } while (local_50 < local_28_mg1);
         }
         piVar10 = local_160;
         iVar17 = local_88 + 3;

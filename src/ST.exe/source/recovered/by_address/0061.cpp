@@ -5485,7 +5485,7 @@ SndUnderAttMenegC * __cdecl st::fn_0061FE30(void)
     st::fn_00402ACC();
     return st::pointer_boundary_cast<SndUnderAttMenegC *>(DAT_00811798);
   }
-  DAT_00811798 = static_cast<undefined4>(0);
+  DAT_00811798 = 0;
   return nullptr;
 }
 

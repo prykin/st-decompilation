@@ -22,10 +22,10 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
   int iVar10;
   uint uVar11;
   uint uVar12;
-  byte *puVar13;
-  byte *puVar14;
-  STBoatC_CmdToObj_param_1Enum SVar15;
-  uint *puVar16;
+  short *psVar13;
+  short *psVar15;
+  STBoatC_CmdToObj_param_1Enum SVar16;
+  uint *puVar17;
   InternalExceptionFrame local_8c;
   uint local_48;
   undefined2 local_44;
@@ -68,9 +68,15 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
     memset(&local_24->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
     iVar10 = 0;
     local_24->field_0065 = 0;
-    puVar13 = (byte *)&local_24->field_0137;
-    puVar14 = (byte *)&local_24->field_0276;
-    memmove(puVar14, puVar13, 0x1f); /* compiler REP MOVS byte copy */
+    psVar13 = &local_24->field_0137;
+    psVar15 = &local_24->field_0276;
+    for (iVar10 = 7; iVar10 != 0; iVar10 = iVar10 + -1) {
+      *(undefined4 *)psVar15 = *(undefined4 *)psVar13;
+      psVar13 = psVar13 + 2;
+      psVar15 = psVar15 + 2;
+    }
+    *psVar15 = *psVar13;
+    *(char *)(psVar15 + 1) = (char)psVar13[1];
     local_20 = g_playSystem_00802A38->field_00E4;
     local_44 = local_24->field_0137;
     local_48 = g_playSystem_00802A38->field_00E4;
@@ -104,8 +110,8 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
               local_1c = array_00;
             }
             Library::DKW::TBL::DArrayAppend(array_00,local_8);
-            puVar16 = &local_48;
-            SVar15 = CASE_11;
+            puVar17 = &local_48;
+            SVar16 = CASE_11;
           }
           else {
             iVar10 = thunk_FUN_00490d90((STGameObjC *)pSVar6);
@@ -116,10 +122,10 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
               Library::DKW::TBL::DArrayAppend(local_10,local_8);
               goto LAB_0049cf10;
             }
-            puVar16 = &local_20;
-            SVar15 = CASE_3;
+            puVar17 = &local_20;
+            SVar16 = CASE_3;
           }
-          STBoatC::CmdToObj(pSVar6,SVar15,puVar16);
+          STBoatC::CmdToObj(pSVar6,SVar16,puVar17);
         }
 LAB_0049cf10:
         local_c = local_c + 1;

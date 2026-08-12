@@ -81,32 +81,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
           if (g_visibleClass_00802A88 != nullptr) {
             iVar5 = iVar8 + *(int *)&this->field_0x233;
             sVar2 = *(short *)(iVar8 + 10 + *(int *)&this->field_0x233);
-            if (sVar2 < 0) {
-              iVar7 = (short)((sVar2 / 200 + (sVar2 >> 0xf)) -
-                             (short)((longlong)(int)sVar2 * 0x51eb851f >> 0x3f)) + -1;
-            }
-            else {
-              iVar7 = (int)(short)((sVar2 / 200 + (sVar2 >> 0xf)) -
-                                  (short)((longlong)(int)sVar2 * 0x51eb851f >> 0x3f));
-            }
+            iVar7 = STBiasedDiv16(sVar2, 200); /* exact signed 16-bit grid-index division */
             sVar2 = *(short *)(iVar5 + 8);
-            if (sVar2 < 0) {
-              iVar6 = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
-                             (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f)) + -1;
-            }
-            else {
-              iVar6 = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
-                                  (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
-            }
+            iVar6 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */
             sVar2 = *(short *)(iVar5 + 6);
-            if (sVar2 < 0) {
-              iVar5 = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
-                             (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f)) + -1;
-            }
-            else {
-              iVar5 = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
-                                  (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
-            }
+            iVar5 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */
             iVar8 = local_8;
             this = local_c;
             if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
@@ -173,32 +152,11 @@ joined_r0x005fe09b:
             if (g_visibleClass_00802A88 != nullptr) {
               sVar2 = *(short *)(iVar8 + 10 + *(int *)&this->field_0x233);
               iVar8 = iVar8 + *(int *)&this->field_0x233;
-              if (sVar2 < 0) {
-                iVar5 = (short)((sVar2 / 200 + (sVar2 >> 0xf)) -
-                               (short)((longlong)(int)sVar2 * 0x51eb851f >> 0x3f)) + -1;
-              }
-              else {
-                iVar5 = (int)(short)((sVar2 / 200 + (sVar2 >> 0xf)) -
-                                    (short)((longlong)(int)sVar2 * 0x51eb851f >> 0x3f));
-              }
+              iVar5 = STBiasedDiv16(sVar2, 200); /* exact signed 16-bit grid-index division */
               sVar2 = *(short *)(iVar8 + 8);
-              if (sVar2 < 0) {
-                iVar7 = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
-                               (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f)) + -1;
-              }
-              else {
-                iVar7 = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
-                                    (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
-              }
+              iVar7 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */
               sVar2 = *(short *)(iVar8 + 6);
-              if (sVar2 < 0) {
-                iVar6 = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
-                               (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f)) + -1;
-              }
-              else {
-                iVar6 = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
-                                    (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
-              }
+              iVar6 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */
               iVar8 = local_8;
               this = local_c;
               if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&

@@ -40,10 +40,10 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    this_00 = *(MMsgTy **)(pCVar2->field_1A5B + 0x2e6);
+    this_00 = *(MMsgTy **)(pCVar2->field_00BB[0xc].field_01DC + 0x2e6);
     if (this_00 != nullptr) {
       MMsgTy::HideSprites(this_00);
-      *(undefined4 *)(*(int *)(pCVar2->field_1A5B + 0x2e6) + 0x1cab) = 0;
+      *(undefined4 *)(*(int *)(pCVar2->field_00BB[0xc].field_01DC + 0x2e6) + 0x1cab) = 0;
     }
     puVar5 = &pCVar2->field_1B13;
     iVar4 = 3;

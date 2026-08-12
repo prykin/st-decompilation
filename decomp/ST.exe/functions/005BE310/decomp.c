@@ -8,7 +8,8 @@
 void __thiscall MReportTy::DoneMReport(MReportTy *this)
 
 {
-  MReportTy *pMVar2;
+  undefined2 uVar2;
+  MReportTy *pMVar3;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -20,17 +21,19 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  pMVar2 = local_8;
+  pMVar3 = local_8;
   if (iVar3 == 0) {
     memset(&local_8->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
+    uVar2 = local_8->field_000A;
     local_8->field_002D = 0x14;
-    *(undefined4 *)&local_8->field_0x31 = local_8->field_0008;
+    local_8->field_0031 = local_8->field_0008;
+    local_8->field_0033 = uVar2;
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x1d);
     DarkScreen(g_dDXContext_0080759C,10,2);
     if (g_cursorClass_00802A30 != nullptr) {
       CursorClassTy::sub_00544940(g_cursorClass_00802A30);
     }
-    ppDVar7 = &pMVar2->field_0347;
+    ppDVar7 = &pMVar3->field_0347;
     iVar5 = 3;
     do {
       if (*ppDVar7 != nullptr) {
@@ -40,43 +43,43 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
       ppDVar7 = ppDVar7 + 1;
       iVar5 = iVar5 + -1;
     } while (iVar5 != 0);
-    if (pMVar2->field_0453 != nullptr) {
-      HoloTy::Done(pMVar2->field_0453);
-      Library::MSVCRT::FUN_0072e2b0(pMVar2->field_0453);
-      pMVar2->field_0453 = nullptr;
+    if (pMVar3->field_0453 != nullptr) {
+      HoloTy::Done(pMVar3->field_0453);
+      Library::MSVCRT::FUN_0072e2b0(pMVar3->field_0453);
+      pMVar3->field_0453 = nullptr;
     }
-    if (pMVar2->field_0457 != nullptr) {
-      HoloTy::Done(pMVar2->field_0457);
-      Library::MSVCRT::FUN_0072e2b0(pMVar2->field_0457);
-      pMVar2->field_0457 = nullptr;
+    if (pMVar3->field_0457 != nullptr) {
+      HoloTy::Done(pMVar3->field_0457);
+      Library::MSVCRT::FUN_0072e2b0(pMVar3->field_0457);
+      pMVar3->field_0457 = nullptr;
     }
-    cMf32::RecMemFree(g_cMf32_00806780,(uint *)&pMVar2->field_005D);
-    cMf32::RecMemFree(g_cMf32_00806780,(uint *)&pMVar2->field_006F);
-    if (pMVar2->field_0077 != nullptr) {
-      FreeAndNull(&pMVar2->field_0077);
+    cMf32::RecMemFree(g_cMf32_00806780,(uint *)&pMVar3->field_005D);
+    cMf32::RecMemFree(g_cMf32_00806780,(uint *)&pMVar3->field_006F);
+    if (pMVar3->field_0077 != nullptr) {
+      FreeAndNull(&pMVar3->field_0077);
     }
-    if (pMVar2->field_007B != nullptr) {
-      FreeAndNull(&pMVar2->field_007B);
+    if (pMVar3->field_007B != nullptr) {
+      FreeAndNull(&pMVar3->field_007B);
     }
-    if (pMVar2->field_0073 != nullptr) {
-      FreeAndNull(&pMVar2->field_0073);
+    if (pMVar3->field_0073 != nullptr) {
+      FreeAndNull(&pMVar3->field_0073);
     }
-    if (pMVar2->field_0083 != nullptr) {
-      ccFntTy::operator_delete((uint *)pMVar2->field_0083);
-      pMVar2->field_0083 = nullptr;
+    if (pMVar3->field_0083 != nullptr) {
+      ccFntTy::operator_delete((uint *)pMVar3->field_0083);
+      pMVar3->field_0083 = nullptr;
     }
-    if (pMVar2->field_0087 != nullptr) {
-      ccFntTy::operator_delete((uint *)pMVar2->field_0087);
-      pMVar2->field_0087 = nullptr;
+    if (pMVar3->field_0087 != nullptr) {
+      ccFntTy::operator_delete((uint *)pMVar3->field_0087);
+      pMVar3->field_0087 = nullptr;
       g_startSystem_0081176C->field_0038 = nullptr;
     }
-    if (pMVar2->field_008B != nullptr) {
-      ccFntTy::operator_delete((uint *)pMVar2->field_008B);
-      pMVar2->field_008B = nullptr;
+    if (pMVar3->field_008B != nullptr) {
+      ccFntTy::operator_delete((uint *)pMVar3->field_008B);
+      pMVar3->field_008B = nullptr;
     }
-    pMVar2->field_007F = nullptr;
-    if (pMVar2->field_004D != 0) {
-      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pMVar2->field_0x3d);
+    pMVar3->field_007F = nullptr;
+    if (pMVar3->field_004D != 0) {
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pMVar3->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

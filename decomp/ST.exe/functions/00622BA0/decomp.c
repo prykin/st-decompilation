@@ -32,31 +32,13 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   iVar5 = this->field_02C2;
   this->field_0054 = (short)this->field_02C2;
   this->field_0058 = (short)this->field_02CA;
-  sVar6 = (short)(iVar5 >> 0x1f);
-  if (iVar5 < 0) {
-    sVar6 = (((short)(iVar5 / 0xc9) + sVar6) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    sVar6 = ((short)(iVar5 / 0xc9) + sVar6) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f);
-  }
+  sVar6 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
   iVar5 = this->field_02C6;
   this->field_0047 = sVar6;
-  sVar7 = (short)(iVar5 >> 0x1f);
-  if (iVar5 < 0) {
-    sVar7 = (((short)(iVar5 / 0xc9) + sVar7) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    sVar7 = ((short)(iVar5 / 0xc9) + sVar7) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f);
-  }
+  sVar7 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
   iVar5 = this->field_02CA;
   this->field_0049 = sVar7;
-  sVar8 = (short)(iVar5 >> 0x1f);
-  if (iVar5 < 0) {
-    sVar8 = (((short)(iVar5 / 200) + sVar8) - (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    sVar8 = ((short)(iVar5 / 200) + sVar8) - (short)((longlong)iVar5 * 0x51eb851f >> 0x3f);
-  }
+  sVar8 = STBiasedDiv16(iVar5, 200); /* exact signed 16-bit grid-index division */
   this->field_005D = sVar7;
   this->field_004B = sVar8;
   this->field_005B = sVar6;

@@ -44,27 +44,26 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
   short sVar6;
   int local_EAX_3779;
   ushort uVar7;
-  AnonShape_005EFAE0_B406B78B *pAVar14;
   int local_EAX_4554;
   int local_EAX_4837;
   int local_EAX_4915;
-  short sVar15;
-  uint uVar16;
-  short sVar17;
+  short sVar14;
+  uint uVar15;
+  short sVar16;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EDX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  longlong lVar18;
+  longlong lVar17;
+  short sVar18;
   short sVar19;
-  short sVar20;
-  int iVar21;
-  short sVar22;
-  byte bVar23;
+  int iVar20;
+  short sVar21;
+  byte bVar22;
   undefined4 local_2c [2];
   undefined4 local_24;
   short local_20;
-  AnonShape_005EFAE0_B406B78B *local_1c;
+  uint local_1c;
   int local_18;
   int local_14;
   int local_10;
@@ -79,33 +78,32 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
     if (((SVar3 != CASE_C) && (SVar3 != CASE_18)) && (SVar3 != CASE_1D)) {
       return 0;
     }
-    sVar6 = *(short *)&this->field_0x42d;
-    sVar17 = *(short *)&this->field_0x42f;
-    sVar15 = *(short *)&this->field_0x431;
-    local_1c = *(AnonShape_005EFAE0_B406B78B **)&this->field_0x433;
+    sVar6 = this->field_042D;
+    sVar16 = this->field_042F;
+    sVar14 = *(short *)&this->field_0x431;
+    local_1c = *(uint *)&this->field_0x433;
     this->field_06A9 = sVar6;
-    this->field_06AB = sVar17;
-    this->field_06AD = sVar15;
-    this->field_06AF = local_1c;
-    if (g_worldGrid.sizeZ + -2 < (int)sVar15) {
+    this->field_06AB = sVar16;
+    this->field_06AD = sVar14;
+    *(uint *)&this->field_0x6af = local_1c;
+    if (g_worldGrid.sizeZ + -2 < (int)sVar14) {
       return 0;
     }
     if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
-        ((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar15 < 0)))))) ||
-       (g_worldGrid.sizeZ <= sVar15)) {
+        ((sVar16 < 0 || ((g_worldGrid.sizeY <= sVar16 || (sVar14 < 0)))))) ||
+       (g_worldGrid.sizeZ <= sVar14)) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = nullptr;
     }
     else {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar17, sVar15).objects[0];
+      param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar16, sVar14).objects[0];
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) {
       return 0;
     }
-    if (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
-        local_1c) {
+    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != local_1c) {
       return 0;
     }
     if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x20 != 1000) {
@@ -128,18 +126,18 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
       local_c = (undefined4 *)CONCAT22(extraout_var,this->field_06AD);
       local_10 = STReplaceLowWord((uint32_t)(local_10), (uint16_t)(sVar6));
       local_8 = 0;
-      sVar17 = this->field_06AD + 1;
+      sVar16 = this->field_06AD + 1;
       local_14 = STReplaceLowWord((uint32_t)(local_14), (uint16_t)(this->field_06A9));
       do {
         local_18 = 0;
-        sVar15 = (short)local_8 + this->field_06A9;
+        sVar14 = (short)local_8 + this->field_06A9;
         do {
           sVar8 = sVar6 + (short)local_18;
-          if (((((-1 < sVar15) && (sVar15 < g_worldGrid.sizeX)) && (-1 < sVar8)) &&
-              ((sVar8 < g_worldGrid.sizeY && (-1 < sVar17)))) &&
-             ((sVar17 < g_worldGrid.sizeZ &&
+          if (((((-1 < sVar14) && (sVar14 < g_worldGrid.sizeX)) && (-1 < sVar8)) &&
+              ((sVar8 < g_worldGrid.sizeY && (-1 < sVar16)))) &&
+             ((sVar16 < g_worldGrid.sizeZ &&
               (iVar9 = local_14,
-              STGridAt3D(g_pathingGrid, sVar15, sVar8, sVar17) == 0)))) goto LAB_0047f4cd;
+              STGridAt3D(g_pathingGrid, sVar14, sVar8, sVar16) == 0)))) goto LAB_0047f4cd;
           local_18 = local_18 + 1;
         } while (local_18 < 2);
         local_8 = local_8 + 1;
@@ -152,12 +150,12 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c = (undefined4 *)CONCAT22(uVar5,this->field_06AD);
     sVar6 = this->field_06AB;
-    sVar15 = this->field_06AD + 1;
-    sVar17 = this->field_06A9;
-    if (sVar17 < 0) {
+    sVar14 = this->field_06AD + 1;
+    sVar16 = this->field_06A9;
+    if (sVar16 < 0) {
       return 0;
     }
-    if (g_worldGrid.sizeX <= sVar17) {
+    if (g_worldGrid.sizeX <= sVar16) {
       return 0;
     }
     if (sVar6 < 0) {
@@ -166,15 +164,15 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
     if (g_worldGrid.sizeY <= sVar6) {
       return 0;
     }
-    if (sVar15 < 0) {
+    if (sVar14 < 0) {
       return 0;
     }
-    if (g_worldGrid.sizeZ <= sVar15) {
+    if (g_worldGrid.sizeZ <= sVar14) {
       return 0;
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    iVar9 = CONCAT22(uVar5,sVar17);
-    if (STGridAt3D(g_pathingGrid, sVar17, sVar6, sVar15) != 0) {
+    iVar9 = CONCAT22(uVar5,sVar16);
+    if (STGridAt3D(g_pathingGrid, sVar16, sVar6, sVar14) != 0) {
       return 0;
     }
 LAB_0047f4cd:
@@ -190,23 +188,23 @@ LAB_0047f4cd:
     switch(local_EAX_51) {
     case 0:
       sVar6 = this->field_06A9;
-      sVar17 = this->field_06AD;
-      sVar15 = this->field_06AB;
+      sVar16 = this->field_06AD;
+      sVar14 = this->field_06AB;
       this->field_00B7 = 0;
       if (((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
-         ((sVar15 < 0 ||
-          (((g_worldGrid.sizeY <= sVar15 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))))) {
+         ((sVar14 < 0 ||
+          (((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = nullptr;
       }
       else {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar15, sVar17).objects[0];
+        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
-          (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
-           this->field_06AF)) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+           *(int *)&this->field_0x6af)) ||
          ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
           (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
         return 0;
@@ -218,9 +216,9 @@ LAB_0047f4cd:
 LAB_0047e4df:
         iVar9 = (int)this->field_06B7;
         sVar6 = this->field_06B5;
-        sVar17 = this->field_06B3;
+        sVar16 = this->field_06B3;
 LAB_0047e4ee:
-        sub_00481520(this,(int)sVar17,(int)sVar6,iVar9);
+        sub_00481520(this,(int)sVar16,(int)sVar6,iVar9);
         sub_00460260(this,0);
         return 2;
       }
@@ -234,22 +232,22 @@ LAB_0047e0a4:
       break;
     case 1:
       sVar6 = this->field_06A9;
-      sVar17 = this->field_06AD;
-      sVar15 = this->field_06AB;
+      sVar16 = this->field_06AD;
+      sVar14 = this->field_06AB;
       if (((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
-         ((sVar15 < 0 ||
-          (((g_worldGrid.sizeY <= sVar15 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))))) {
+         ((sVar14 < 0 ||
+          (((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = nullptr;
       }
       else {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar15, sVar17).objects[0];
+        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
-          (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
-           this->field_06AF)) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+           *(int *)&this->field_0x6af)) ||
          ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
           (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
         sub_004602B0(this);
@@ -259,7 +257,7 @@ LAB_0047e0a4:
       break;
     case 3:
       sVar6 = this->field_06AB;
-      sVar17 = this->field_06A9;
+      sVar16 = this->field_06A9;
       iVar9 = this->field_06AD + 1;
       goto LAB_0047e4ee;
     case -1:
@@ -280,27 +278,27 @@ LAB_0047e0a4:
       if (local_EAX_668 == -1) {
         return -1;
       }
-      if (((this->field_082E == 0) && (this->field_048B == 0xffff)) && (this->field_06BF % 10 == 0))
-      {
+      if (((this->field_082E == ~CASE_FFFFFFFF) && (this->field_048B == 0xffff)) &&
+         (this->field_06BF % 10 == 0)) {
         sVar6 = this->field_06A9;
-        sVar17 = this->field_06AD;
-        sVar15 = this->field_06AB;
+        sVar16 = this->field_06AD;
+        sVar14 = this->field_06AB;
         if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
-            ((sVar15 < 0 || ((g_worldGrid.sizeY <= sVar15 || (sVar17 < 0)))))) ||
-           (g_worldGrid.sizeZ <= sVar17)) {
+            ((sVar14 < 0 || ((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)))))) ||
+           (g_worldGrid.sizeZ <= sVar16)) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = nullptr;
         }
         else {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar15, sVar17).objects[0];
+          param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) {
           return 0;
         }
-        if (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18
-            != this->field_06AF) {
+        if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+            *(int *)&this->field_0x6af) {
           return 0;
         }
         if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024) {
@@ -327,12 +325,12 @@ LAB_0047e0a4:
         if (this->field_06C7 == 0) {
           iVar10 = (ushort)(this->field_06B7 * 200) + 100;
           iVar9 = STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(this->field_06AB + 1)) * 0xc9;
-          iVar21 = STReplaceLowWord((uint32_t)(iVar9), (uint16_t)(this->field_06A9 + 1));
+          iVar20 = STReplaceLowWord((uint32_t)(iVar9), (uint16_t)(this->field_06A9 + 1));
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           uVar5 = (*this->vtable->vfunc_10)
                             (this->field_0041,this->field_0043,
-                             CONCAT22((short)((uint)(iVar21 * 0x19) >> 0x10),this->field_0045),
-                             (short)(iVar21 * 0xc9),(short)iVar9,iVar10);
+                             CONCAT22((short)((uint)(iVar20 * 0x19) >> 0x10),this->field_0045),
+                             (short)(iVar20 * 0xc9),(short)iVar9,iVar10);
           this->field_06BD = uVar5;
           this->field_06C7 = 1;
         }
@@ -377,36 +375,35 @@ LAB_0047f1f7:
             local_20 = *(short *)(puVar12 + 1);
             local_24 = uVar2;
             if (DAT_0080732c == 1) {
-              bVar23 = 0;
-              sVar22 = 0;
+              bVar22 = 0;
+              sVar21 = 0;
               uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
               iVar9 = -1;
               this->field_001C = uVar11;
-              sVar20 = 0;
               sVar19 = 0;
+              sVar18 = 0;
               uVar13 = uVar11 * 0x41c64e6d + 0x3039;
               sVar8 = 0;
               this->field_001C = uVar13;
-              sVar15 = 0;
-              sVar17 = 0;
-              local_1c = (AnonShape_005EFAE0_B406B78B *)(uVar13 * 0x41c64e6d + 0x3039);
+              sVar14 = 0;
+              sVar16 = 0;
+              local_1c = uVar13 * 0x41c64e6d + 0x3039;
               sVar6 = 0;
               this->field_001C = local_1c;
-              lVar18 = Library::MSVCRT::__ftol();
+              lVar17 = Library::MSVCRT::__ftol();
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,
-                         ((uint)local_1c >> 0x10) % 7 + (int)this->field_0041 + -3 +
-                         (int)(short)local_24,
+                         (local_1c >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_24,
                          (((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_24)) + -3
-                         ,(int)(short)lVar18 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
-                          (int)local_20,sVar6,sVar17,sVar15,sVar8,sVar19,sVar20,iVar9,sVar22,bVar23);
+                         ,(int)(short)lVar17 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                          (int)local_20,sVar6,sVar16,sVar14,sVar8,sVar18,sVar19,iVar9,sVar21,bVar22);
             }
             else {
               uVar13 = this->field_001C * 0x41c64e6d + 0x3039;
               this->field_001C = uVar13;
-              uVar16 = uVar13 * 0x41c64e6d + 0x3039;
-              this->field_001C = uVar16;
-              uVar11 = uVar16 * 0x41c64e6d + 0x3039;
+              uVar15 = uVar13 * 0x41c64e6d + 0x3039;
+              this->field_001C = uVar15;
+              uVar11 = uVar15 * 0x41c64e6d + 0x3039;
               this->field_001C = uVar11;
               STPiece<2,2>(local_24) = (short)((uint)uVar2 >> 0x10);
               iVar9 = (int)STPiece<2,2>(local_24);
@@ -415,7 +412,7 @@ LAB_0047f1f7:
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,
                          (uVar11 >> 0x10) % 7 + (int)this->field_0041 + -3 + iVar10,
-                         (((uVar16 >> 0x10) % 7 + (int)this->field_0043) - iVar9) + -3,
+                         (((uVar15 >> 0x10) % 7 + (int)this->field_0043) - iVar9) + -3,
                          (uVar13 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20,0,0,0,0,0
                          ,0,-1,0,0);
             }
@@ -439,27 +436,29 @@ LAB_0047edd5:
         }
         if (local_10 != 0) goto cf_common_exit_0047F19A;
         sVar6 = this->field_06A9;
-        sVar17 = this->field_06AD;
-        sVar15 = this->field_06AB;
-        if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar15 < 0)) ||
-           (((g_worldGrid.sizeY <= sVar15 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))) {
+        sVar16 = this->field_06AD;
+        sVar14 = this->field_06AB;
+        if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar14 < 0)) ||
+           (((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = nullptr;
         }
         else {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar15, sVar17).objects[0];
+          param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
         }
         if ((((AnonShape_004B9D90_4F3151F9 *)param_1 != nullptr) &&
-            (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18
-             == this->field_06AF)) &&
+            (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 ==
+             *(int *)&this->field_0x6af)) &&
            ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 == this->field_0024 &&
             (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 != 0)))) {
           thunk_FUN_004b9cf0((AnonShape_004B9D90_4F3151F9 *)param_1);
           this->field_06C3 = CASE_4;
           goto cf_common_exit_0047F19A;
         }
-        STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
+        STPlaySystemC::sub_006E62D0
+                  (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
+                   (int *)&param_1);
         if ((param_1 != nullptr) && (param_1[300] == this->field_0018)) {
           param_1[300] = 0;
         }
@@ -513,52 +512,52 @@ LAB_0047edd5:
                   local_24 = *puVar12;
                   local_20 = *(short *)(puVar12 + 1);
                   if (DAT_0080732c == 1) {
-                    bVar23 = 0;
-                    sVar22 = 0;
-                    iVar21 = -1;
+                    bVar22 = 0;
+                    sVar21 = 0;
+                    iVar20 = -1;
                     uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
-                    sVar20 = 0;
-                    this->field_001C = uVar11;
                     sVar19 = 0;
+                    this->field_001C = uVar11;
+                    sVar18 = 0;
                     sVar8 = 0;
                     uVar13 = uVar11 * 0x41c64e6d + 0x3039;
-                    sVar15 = 0;
+                    sVar14 = 0;
                     this->field_001C = uVar13;
-                    local_1c = (AnonShape_005EFAE0_B406B78B *)(uVar13 * 0x41c64e6d + 0x3039);
-                    sVar17 = 0;
+                    local_1c = uVar13 * 0x41c64e6d + 0x3039;
+                    sVar16 = 0;
                     this->field_001C = local_1c;
                     sVar6 = 0;
-                    lVar18 = Library::MSVCRT::__ftol();
-                    iVar9 = (int)(short)lVar18 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                    lVar17 = Library::MSVCRT::__ftol();
+                    iVar9 = (int)(short)lVar17 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                             (int)local_20;
                     iVar10 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_24);
-                    pAVar14 = local_1c;
+                    uVar11 = local_1c;
                   }
                   else {
-                    uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
-                    bVar23 = 0;
-                    this->field_001C = uVar11;
-                    uVar13 = uVar11 * 0x41c64e6d + 0x3039;
-                    sVar22 = 0;
+                    uVar13 = this->field_001C * 0x41c64e6d + 0x3039;
+                    bVar22 = 0;
                     this->field_001C = uVar13;
-                    pAVar14 = (AnonShape_005EFAE0_B406B78B *)(uVar13 * 0x41c64e6d + 0x3039);
-                    this->field_001C = pAVar14;
-                    iVar21 = -1;
-                    sVar20 = 0;
+                    uVar15 = uVar13 * 0x41c64e6d + 0x3039;
+                    sVar21 = 0;
+                    this->field_001C = uVar15;
+                    uVar11 = uVar15 * 0x41c64e6d + 0x3039;
+                    this->field_001C = uVar11;
+                    iVar20 = -1;
                     sVar19 = 0;
+                    sVar18 = 0;
                     sVar8 = 0;
-                    sVar15 = 0;
-                    sVar17 = 0;
+                    sVar14 = 0;
+                    sVar16 = 0;
                     sVar6 = 0;
-                    iVar9 = (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20;
+                    iVar9 = (uVar13 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20;
                     STPiece<2,2>(local_24) = (short)((uint)local_24 >> 0x10);
-                    iVar10 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_24);
+                    iVar10 = ((uVar15 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_24);
                   }
                   TraksClassTy::TraksCreate
                             (g_traksClass_00802A7C,1,2,7,
-                             ((uint)pAVar14 >> 0x10) % 7 + (int)this->field_0041 + -3 +
-                             (int)(short)local_24,iVar10 + -3,iVar9,sVar6,sVar17,sVar15,sVar8,sVar19
-                             ,sVar20,iVar21,sVar22,bVar23);
+                             (uVar11 >> 0x10) % 7 + (int)this->field_0041 + -3 +
+                             (int)(short)local_24,iVar10 + -3,iVar9,sVar6,sVar16,sVar14,sVar8,sVar18
+                             ,sVar19,iVar20,sVar21,bVar22);
                   local_8 = local_8 + 1;
                   local_c = (undefined4 *)((int)local_c + 6);
                 } while (local_8 < (int)(uint)(byte)this->field_02BF);
@@ -626,20 +625,20 @@ LAB_0047edd5:
           goto cf_common_exit_0047F19A;
         }
         sVar6 = this->field_06A9;
-        sVar17 = this->field_06AD;
-        sVar15 = this->field_06AB;
-        if (((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar15 < 0)) ||
-            ((g_worldGrid.sizeY <= sVar15 || (sVar17 < 0)))) || (g_worldGrid.sizeZ <= sVar17)) {
+        sVar16 = this->field_06AD;
+        sVar14 = this->field_06AB;
+        if (((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar14 < 0)) ||
+            ((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)))) || (g_worldGrid.sizeZ <= sVar16)) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = nullptr;
         }
         else {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar15, sVar17).objects[0];
+          param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
         }
         if ((((AnonShape_004B9D90_4F3151F9 *)param_1 != nullptr) &&
-            (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18
-             == this->field_06AF)) &&
+            (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 ==
+             *(int *)&this->field_0x6af)) &&
            ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 == this->field_0024 &&
             (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 != 0)))) {
           if (STField<int>(param_1,0x245) == 6) {
@@ -653,7 +652,9 @@ LAB_0047edd5:
           }
           goto cf_common_exit_0047F19A;
         }
-        STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
+        STPlaySystemC::sub_006E62D0
+                  (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
+                   (int *)&param_1);
         if ((param_1 != nullptr) && (param_1[300] == this->field_0018)) {
           param_1[300] = 0;
         }
@@ -681,24 +682,26 @@ cf_common_exit_0047F19A:
     switch(local_EAX_1031) {
     case 0:
       sVar6 = this->field_06A9;
-      sVar17 = this->field_06AD;
-      sVar15 = this->field_06AB;
-      if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar15 < 0)) ||
-         (((g_worldGrid.sizeY <= sVar15 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))) {
+      sVar16 = this->field_06AD;
+      sVar14 = this->field_06AB;
+      if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar14 < 0)) ||
+         (((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = nullptr;
       }
       else {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar15, sVar17).objects[0];
+        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
-          (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
-           this->field_06AF)) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+           *(int *)&this->field_0x6af)) ||
          ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
           (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
-        STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
+        STPlaySystemC::sub_006E62D0
+                  (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
+                   (int *)&param_1);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (param_1 == nullptr) {
           return 0;
@@ -724,24 +727,26 @@ cf_common_exit_0047F19A:
       return 0;
     case 1:
       sVar6 = this->field_06A9;
-      sVar17 = this->field_06AD;
-      sVar15 = this->field_06AB;
-      if (((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar15 < 0)) ||
-          ((g_worldGrid.sizeY <= sVar15 || (sVar17 < 0)))) || (g_worldGrid.sizeZ <= sVar17)) {
+      sVar16 = this->field_06AD;
+      sVar14 = this->field_06AB;
+      if (((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar14 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)))) || (g_worldGrid.sizeZ <= sVar16)) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = nullptr;
       }
       else {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar15, sVar17).objects[0];
+        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
-          (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
-           this->field_06AF)) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+           *(int *)&this->field_0x6af)) ||
          ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
           (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
-        STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
+        STPlaySystemC::sub_006E62D0
+                  (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
+                   (int *)&param_1);
         if ((param_1 != nullptr) && (param_1[300] == this->field_0018)) {
           param_1[300] = 0;
         }
@@ -754,24 +759,26 @@ cf_common_exit_0047F19A:
            thunk_FUN_00495420(this,&this->field_06B3,&this->field_06B5,&this->field_06B7);
       if (local_EAX_1493 == 1) goto LAB_0047e4df;
       sVar6 = this->field_06A9;
-      sVar17 = this->field_06AD;
-      sVar15 = this->field_06AB;
-      if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar15 < 0)) ||
-         (((g_worldGrid.sizeY <= sVar15 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))) {
+      sVar16 = this->field_06AD;
+      sVar14 = this->field_06AB;
+      if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar14 < 0)) ||
+         (((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = nullptr;
       }
       else {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar15, sVar17).objects[0];
+        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
-          (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
-           this->field_06AF)) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+           *(int *)&this->field_0x6af)) ||
          ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
           (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
-        STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
+        STPlaySystemC::sub_006E62D0
+                  (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
+                   (int *)&param_1);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (param_1 == nullptr) {
           return 0;

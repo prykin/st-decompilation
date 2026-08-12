@@ -15,7 +15,11 @@
    references; ret_sites=00582E57 RET | 00582ECB RET | 00582FCA RET
    [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
    return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
-   while changing only function arity; restore Ghidra DefaultDataType */
+   while changing only function arity; restore Ghidra DefaultDataType
+
+   [STSwitchEnumApplier] Switch target field_0235 uses
+   /SubmarineTitans/Recovered/Enums/STJellyGunC_field_0235State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 void __thiscall STJellyGunC::LifeGun(STJellyGunC *this)
 

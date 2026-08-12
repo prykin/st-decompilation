@@ -10,25 +10,29 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
                   undefined4 *param_5,int param_6,UINT param_7)
 
 {
+  SpriteClassTyVTable *pSVar1;
   MMsgTy *this_00;
-  byte bVar2;
+  byte bVar3;
   int iVar3;
-  char *pcVar3;
   char *pcVar4;
-  byte *puVar5;
-  uint *puVar6;
+  char *pcVar5;
+  byte *puVar6;
+  uint *puVar7;
+  short *psVar8;
   int iVar8;
-  int iVar7;
   int iVar9;
-  uint uVar11;
-  byte *puVar12;
-  int iVar13;
-  ccFntTy_CreateTypeSSpr_param_4Enum cVar14;
-  int iVar15;
+  int iVar10;
+  MMsgTy_Record_00BC_01FB *pMVar11;
+  byte *puVar13;
+  uint uVar14;
+  ccFntTy_CreateTypeSSpr_param_4Enum cVar15;
   int iVar16;
   int iVar17;
-  undefined4 uVar18;
-  undefined4 uVar19;
+  int iVar18;
+  undefined1 uVar19;
+  uint uVar20;
+  undefined4 uVar21;
+  undefined4 uVar22;
   uint local_478 [256];
   InternalExceptionFrame local_78;
   int local_34 [8];
@@ -45,284 +49,289 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
     iVar3 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
     this_00 = local_14;
     if (iVar3 == 0) {
-      iVar9 = local_14->field_1CAB;
-      if (iVar9 != 0) {
+      iVar10 = local_14->field_1CAB;
+      if (iVar10 != 0) {
         memset(local_34, 0, 0x20); /* compiler bulk-zero initialization */
         local_34[3] = 2;
         local_34[4] = 0x6940;
-        local_34[2] = iVar9;
+        local_34[2] = iVar10;
         (*this_00->field_000C->vtable->vfunc_18)((short)local_34);
       }
       this_00->field_1CA9 = 1;
-      puVar5 = (byte *)(&this_00->field_1CD0);
-      puVar12 = (byte *)&this_00->field_0x1a60;
-      memmove(puVar12, puVar5, 0x27); /* compiler REP MOVS byte copy */
-      this_00->field_1A5F = this_00->field_0065;
+      puVar6 = (byte *)(&this_00->field_1CD0);
+      puVar13 = (byte *)&this_00->array_00BC[0xc].field_0x1e0;
+      memmove(puVar13, puVar6, 0x27); /* compiler REP MOVS byte copy */
+      this_00->array_00BC[0xc].field_01DF = this_00->field_0065;
       this_00->field_002D = 0x21;
       memset(&this_00->field_0x1c82, 0, 0x1a); /* compiler bulk-zero initialization */
-      iVar9 = 0;
+      iVar10 = 0;
       local_8 = local_8 & 0xffffff00;
       if (this_00->field_009A != 0) {
         do {
-          uVar11 = local_8 & 0xff;
-          if (this_00->field_0066[uVar11] != 0) {
-            FUN_006e6080(this_00,2,this_00->field_0066[uVar11],(undefined4 *)&this_00->field_0x1d);
-            *(ushort *)(&this_00->field_0x1c82 + uVar11 * 2) =
+          uVar14 = local_8 & 0xff;
+          if (this_00->field_0066[uVar14] != 0) {
+            FUN_006e6080(this_00,2,this_00->field_0066[uVar14],(undefined4 *)&this_00->field_0x1d);
+            *(ushort *)(&this_00->field_0x1c82 + uVar14 * 2) =
                  (-(ushort)(this_00->field_0031 != 0) & 2) - 1;
           }
-          puVar5 = (byte *)((int)this_00->field_0066 + uVar11 * 0x1fb + 0x56);
-          puVar12 = (byte *)(&this_00->field_0x1a87 + uVar11 * 0x27);
-          memmove(puVar12, puVar5, 0x27); /* compiler REP MOVS byte copy */
-          bVar2 = (char)local_8 + 1;
-          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
-        } while (bVar2 < this_00->field_009A);
+          pMVar11 = this_00->array_00BC + uVar14;
+          puVar6 = (byte *)((int)(this_00->array_00BC + 0xd) + uVar14 * 0x27 + 0xc);
+          for (iVar10 = 9; iVar10 != 0; iVar10 = iVar10 + -1) {
+            *puVar6 = pMVar11->field_0000;
+            pMVar11 = (MMsgTy_Record_00BC_01FB *)&pMVar11->field_0x4;
+            puVar6 = (byte *)(puVar6 + 1);
+          }
+          *(undefined2 *)puVar6 = *(undefined2 *)&pMVar11->field_0000;
+          STField<undefined1>(puVar6,2) = *(undefined1 *)((int)&pMVar11->field_0000 + 2);
+          bVar3 = (char)local_8 + 1;
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
+        } while (bVar3 < this_00->field_009A);
       }
       this_00->field_1CD0 = param_1;
       if (param_6 == 0) {
-        uVar19 = 0xffffffff;
+        uVar22 = 0xffffffff;
         local_10 = this_00->field_1D88;
-        uVar18 = 7;
-        iVar16 = -1;
-        iVar15 = -1;
-        iVar13 = 1;
-        uVar11 = 0xffffffff;
-        cVar14 = CASE_FFFFFFFE;
-        iVar7 = 0x39;
-        iVar9 = 0x158;
-        puVar6 = (uint *)LoadResourceString(param_1,g_hINSTANCE_00807618);
-        puVar5 = ccFntTy::CreateTypeSSpr
-                           (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar7,cVar14,uVar11,
-                            iVar13,iVar15,iVar16);
+        uVar21 = 7;
+        iVar18 = -1;
+        iVar17 = -1;
+        iVar16 = 1;
+        uVar14 = 0xffffffff;
+        cVar15 = CASE_FFFFFFFE;
+        iVar9 = 0x39;
+        iVar10 = 0x158;
+        puVar7 = (uint *)LoadResourceString(param_1,g_hINSTANCE_00807618);
+        puVar6 = ccFntTy::CreateTypeSSpr
+                           (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,uVar14,
+                            iVar16,iVar17,iVar18);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(local_10 + 8))(puVar5,uVar18,uVar19);
+        (**(code **)(local_10 + 8))(puVar6,uVar21,uVar22);
       }
       else {
-        pcVar3 = LoadResourceString(param_7,g_hINSTANCE_00807618);
-        pcVar4 = LoadResourceString(param_1,g_hINSTANCE_00807618);
-        wsprintfA((LPSTR)local_478,"%s\n(%s=%li)",pcVar4,pcVar3,param_6);
-        iVar9 = this_00->field_1D88;
-        uVar19 = 0xffffffff;
-        uVar18 = 7;
-        puVar5 = ccFntTy::CreateTypeSSpr
+        pcVar4 = LoadResourceString(param_7,g_hINSTANCE_00807618);
+        pcVar5 = LoadResourceString(param_1,g_hINSTANCE_00807618);
+        wsprintfA((LPSTR)local_478,"%s\n(%s=%li)",pcVar5,pcVar4,param_6);
+        iVar10 = this_00->field_1D88;
+        uVar22 = 0xffffffff;
+        uVar21 = 7;
+        puVar6 = ccFntTy::CreateTypeSSpr
                            (g_startSystem_0081176C->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,
                             0xffffffff,1,-1,-1);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(iVar9 + 8))(puVar5,uVar18,uVar19);
+        (**(code **)(iVar10 + 8))(puVar6,uVar21,uVar22);
       }
-      bVar2 = 0;
+      bVar3 = 0;
       this_00->field_1D90 = 0;
       local_8 = local_8 & 0xffffff00;
       if (this_00->field_009A != 0) {
         do {
-          uVar11 = local_8 & 0xff;
-          bVar2 = bVar2 + 1;
-          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
-          *(undefined4 *)((int)this_00->field_0066 + uVar11 * 0x1fb + 0x56) = 0;
-          *(undefined1 *)((int)this_00->field_0066 + uVar11 * 0x1fb + 0x7b) = 1;
-        } while (bVar2 < this_00->field_009A);
+          uVar14 = local_8 & 0xff;
+          bVar3 = bVar3 + 1;
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
+          this_00->array_00BC[uVar14].field_0000 = 0;
+          this_00->array_00BC[uVar14].field_0025 = 1;
+        } while (bVar3 < this_00->field_009A);
       }
       if (param_2 == '\0') {
-        this_00->field_04B2 = 0x24b8;
-        this_00->field_04D7 = 1;
-        iVar9 = 8;
+        this_00->array_00BC[2].field_0000 = 0x24b8;
+        this_00->array_00BC[2].field_0025 = 1;
+        iVar10 = 8;
         if (param_3 == nullptr) {
-          puVar5 = (byte *)&this_00->field_0x4b7;
-          for (; iVar9 != 0; iVar9 = iVar9 + -1) {
-            *puVar5 = 0;
-            puVar5 = (byte *)(puVar5 + 1);
+          puVar6 = (byte *)&this_00->array_00BC[2].field_0x5;
+          for (; iVar10 != 0; iVar10 = iVar10 + -1) {
+            *puVar6 = 0;
+            puVar6 = (byte *)(puVar6 + 1);
           }
         }
         else {
-          puVar5 = (byte *)&this_00->field_0x4b7;
-          for (; iVar9 != 0; iVar9 = iVar9 + -1) {
-            *puVar5 = *param_3;
+          puVar6 = (byte *)&this_00->array_00BC[2].field_0x5;
+          for (; iVar10 != 0; iVar10 = iVar10 + -1) {
+            *puVar6 = *param_3;
             param_3 = param_3 + 1;
-            puVar5 = (byte *)(puVar5 + 1);
+            puVar6 = (byte *)(puVar6 + 1);
           }
         }
-        uVar19 = 0xffffffff;
-        uVar18 = 7;
+        uVar20 = 0xffffffff;
+        uVar19 = 7;
+        iVar18 = -1;
+        pSVar1 = this_00->array_00BC[2].field_00B8.vtable;
         iVar17 = -1;
-        iVar9 = this_00->field_056A;
-        iVar16 = -1;
-        iVar15 = 1;
-        uVar11 = 0xffffffff;
-        cVar14 = CASE_FFFFFFFE;
-        iVar13 = 0x1e;
-        iVar7 = 0x7d;
-        puVar6 = (uint *)LoadResourceString(this_00->field_04B2,g_hINSTANCE_00807618);
-        puVar5 = ccFntTy::CreateTypeSSpr
-                           (g_startSystem_0081176C->field_0030,puVar6,iVar7,iVar13,cVar14,uVar11,
-                            iVar15,iVar16,iVar17);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(iVar9 + 8))(puVar5,uVar18,uVar19);
-        this_00->field_0572 = 0;
+        iVar16 = 1;
+        uVar14 = 0xffffffff;
+        cVar15 = CASE_FFFFFFFE;
+        iVar9 = 0x1e;
+        iVar10 = 0x7d;
+        puVar7 = (uint *)LoadResourceString(this_00->array_00BC[2].field_0000,g_hINSTANCE_00807618);
+        psVar8 = (short *)ccFntTy::CreateTypeSSpr
+                                    (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,
+                                     uVar14,iVar16,iVar17,iVar18);
+        (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar8,uVar19,uVar20);
+        this_00->array_00BC[2].field_00B8.field_0008 = 0;
       }
       else {
         if (param_2 == '\x01') {
-          this_00->field_04B2 = 0x24b9;
-          this_00->field_04D7 = 1;
-          iVar9 = 8;
+          this_00->array_00BC[2].field_0000 = 0x24b9;
+          this_00->array_00BC[2].field_0025 = 1;
+          iVar10 = 8;
           if (param_3 == nullptr) {
-            puVar5 = (byte *)&this_00->field_0x4b7;
-            for (; iVar9 != 0; iVar9 = iVar9 + -1) {
-              *puVar5 = 0;
-              puVar5 = (byte *)(puVar5 + 1);
+            puVar6 = (byte *)&this_00->array_00BC[2].field_0x5;
+            for (; iVar10 != 0; iVar10 = iVar10 + -1) {
+              *puVar6 = 0;
+              puVar6 = (byte *)(puVar6 + 1);
             }
           }
           else {
-            puVar5 = (byte *)&this_00->field_0x4b7;
-            for (; iVar9 != 0; iVar9 = iVar9 + -1) {
-              *puVar5 = *param_3;
+            puVar6 = (byte *)&this_00->array_00BC[2].field_0x5;
+            for (; iVar10 != 0; iVar10 = iVar10 + -1) {
+              *puVar6 = *param_3;
               param_3 = param_3 + 1;
-              puVar5 = (byte *)(puVar5 + 1);
+              puVar6 = (byte *)(puVar6 + 1);
             }
           }
-          uVar19 = 0xffffffff;
-          uVar18 = 7;
+          uVar20 = 0xffffffff;
+          uVar19 = 7;
+          iVar18 = -1;
+          pSVar1 = this_00->array_00BC[2].field_00B8.vtable;
           iVar17 = -1;
-          iVar9 = this_00->field_056A;
-          iVar16 = -1;
-          iVar15 = 1;
-          uVar11 = 0xffffffff;
-          cVar14 = CASE_FFFFFFFE;
-          iVar13 = 0x1e;
-          iVar7 = 0x7d;
-          puVar6 = (uint *)LoadResourceString(this_00->field_04B2,g_hINSTANCE_00807618);
-          puVar5 = ccFntTy::CreateTypeSSpr
-                             (g_startSystem_0081176C->field_0030,puVar6,iVar7,iVar13,cVar14,uVar11,
-                              iVar15,iVar16,iVar17);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)(iVar9 + 8))(puVar5,uVar18,uVar19);
-          this_00->field_0572 = 0;
-          this_00->field_02B7 = 0x24ba;
-          this_00->field_02DC = 1;
+          iVar16 = 1;
+          uVar14 = 0xffffffff;
+          cVar15 = CASE_FFFFFFFE;
+          iVar9 = 0x1e;
+          iVar10 = 0x7d;
+          puVar7 = (uint *)LoadResourceString(this_00->array_00BC[2].field_0000,g_hINSTANCE_00807618
+                                             );
+          psVar8 = (short *)ccFntTy::CreateTypeSSpr
+                                      (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15
+                                       ,uVar14,iVar16,iVar17,iVar18);
+          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar8,uVar19,uVar20);
+          this_00->array_00BC[2].field_00B8.field_0008 = 0;
+          this_00->array_00BC[1].field_0000 = 0x24ba;
+          this_00->array_00BC[1].field_0025 = 1;
           param_5 = param_4;
         }
         else {
           if (param_2 != '\x02') goto LAB_005b8415;
-          this_00->field_06AD = 0x24b9;
-          this_00->field_06D2 = 1;
-          iVar9 = 8;
+          this_00->array_00BC[3].field_0000 = 0x24b9;
+          this_00->array_00BC[3].field_0025 = 1;
+          iVar10 = 8;
           if (param_3 == nullptr) {
-            puVar5 = (byte *)&this_00->field_0x6b2;
-            for (; iVar9 != 0; iVar9 = iVar9 + -1) {
-              *puVar5 = 0;
-              puVar5 = (byte *)(puVar5 + 1);
+            puVar6 = (byte *)&this_00->array_00BC[3].field_0x5;
+            for (; iVar10 != 0; iVar10 = iVar10 + -1) {
+              *puVar6 = 0;
+              puVar6 = (byte *)(puVar6 + 1);
             }
           }
           else {
-            puVar5 = (byte *)&this_00->field_0x6b2;
-            for (; iVar9 != 0; iVar9 = iVar9 + -1) {
-              *puVar5 = *param_3;
+            puVar6 = (byte *)&this_00->array_00BC[3].field_0x5;
+            for (; iVar10 != 0; iVar10 = iVar10 + -1) {
+              *puVar6 = *param_3;
               param_3 = param_3 + 1;
-              puVar5 = (byte *)(puVar5 + 1);
+              puVar6 = (byte *)(puVar6 + 1);
             }
           }
-          uVar19 = 0xffffffff;
-          uVar18 = 7;
+          uVar20 = 0xffffffff;
+          uVar19 = 7;
+          iVar18 = -1;
+          pSVar1 = this_00->array_00BC[3].field_00B8.vtable;
           iVar17 = -1;
-          iVar9 = this_00->field_0765;
-          iVar16 = -1;
-          iVar15 = 1;
-          uVar11 = 0xffffffff;
-          cVar14 = CASE_FFFFFFFE;
-          iVar13 = 0x1e;
-          iVar7 = 0x7d;
-          puVar6 = (uint *)LoadResourceString(this_00->field_06AD,g_hINSTANCE_00807618);
-          puVar5 = ccFntTy::CreateTypeSSpr
-                             (g_startSystem_0081176C->field_0030,puVar6,iVar7,iVar13,cVar14,uVar11,
-                              iVar15,iVar16,iVar17);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)(iVar9 + 8))(puVar5,uVar18,uVar19);
-          this_00->field_076D = 0;
-          this_00->field_04B2 = 0x24ba;
-          this_00->field_04D7 = 1;
-          iVar9 = 8;
+          iVar16 = 1;
+          uVar14 = 0xffffffff;
+          cVar15 = CASE_FFFFFFFE;
+          iVar9 = 0x1e;
+          iVar10 = 0x7d;
+          puVar7 = (uint *)LoadResourceString(this_00->array_00BC[3].field_0000,g_hINSTANCE_00807618
+                                             );
+          psVar8 = (short *)ccFntTy::CreateTypeSSpr
+                                      (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15
+                                       ,uVar14,iVar16,iVar17,iVar18);
+          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[3].field_00B8,psVar8,uVar19,uVar20);
+          this_00->array_00BC[3].field_00B8.field_0008 = 0;
+          this_00->array_00BC[2].field_0000 = 0x24ba;
+          this_00->array_00BC[2].field_0025 = 1;
+          iVar10 = 8;
           if (param_4 == nullptr) {
-            puVar5 = (byte *)&this_00->field_0x4b7;
-            for (; iVar9 != 0; iVar9 = iVar9 + -1) {
-              *puVar5 = 0;
-              puVar5 = (byte *)(puVar5 + 1);
+            puVar6 = (byte *)&this_00->array_00BC[2].field_0x5;
+            for (; iVar10 != 0; iVar10 = iVar10 + -1) {
+              *puVar6 = 0;
+              puVar6 = (byte *)(puVar6 + 1);
             }
           }
           else {
-            puVar5 = (byte *)&this_00->field_0x4b7;
-            for (; iVar9 != 0; iVar9 = iVar9 + -1) {
-              *puVar5 = *param_4;
+            puVar6 = (byte *)&this_00->array_00BC[2].field_0x5;
+            for (; iVar10 != 0; iVar10 = iVar10 + -1) {
+              *puVar6 = *param_4;
               param_4 = param_4 + 1;
-              puVar5 = (byte *)(puVar5 + 1);
+              puVar6 = (byte *)(puVar6 + 1);
             }
           }
-          uVar19 = 0xffffffff;
-          uVar18 = 7;
+          uVar20 = 0xffffffff;
+          uVar19 = 7;
+          iVar18 = -1;
+          pSVar1 = this_00->array_00BC[2].field_00B8.vtable;
           iVar17 = -1;
-          iVar9 = this_00->field_056A;
-          iVar16 = -1;
-          iVar15 = 1;
-          uVar11 = 0xffffffff;
-          cVar14 = CASE_FFFFFFFE;
-          iVar13 = 0x1e;
-          iVar7 = 0x7d;
-          puVar6 = (uint *)LoadResourceString(this_00->field_04B2,g_hINSTANCE_00807618);
-          puVar5 = ccFntTy::CreateTypeSSpr
-                             (g_startSystem_0081176C->field_0030,puVar6,iVar7,iVar13,cVar14,uVar11,
-                              iVar15,iVar16,iVar17);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)(iVar9 + 8))(puVar5,uVar18,uVar19);
-          this_00->field_0572 = 0;
-          this_00->field_02B7 = 0x24bb;
-          this_00->field_02DC = 1;
+          iVar16 = 1;
+          uVar14 = 0xffffffff;
+          cVar15 = CASE_FFFFFFFE;
+          iVar9 = 0x1e;
+          iVar10 = 0x7d;
+          puVar7 = (uint *)LoadResourceString(this_00->array_00BC[2].field_0000,g_hINSTANCE_00807618
+                                             );
+          psVar8 = (short *)ccFntTy::CreateTypeSSpr
+                                      (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15
+                                       ,uVar14,iVar16,iVar17,iVar18);
+          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar8,uVar19,uVar20);
+          this_00->array_00BC[2].field_00B8.field_0008 = 0;
+          this_00->array_00BC[1].field_0000 = 0x24bb;
+          this_00->array_00BC[1].field_0025 = 1;
         }
-        iVar9 = 8;
+        iVar10 = 8;
         if (param_5 == nullptr) {
-          puVar5 = (byte *)&this_00->field_0x2bc;
-          for (; iVar9 != 0; iVar9 = iVar9 + -1) {
-            *puVar5 = 0;
-            puVar5 = (byte *)(puVar5 + 1);
+          puVar6 = (byte *)&this_00->array_00BC[1].field_0x5;
+          for (; iVar10 != 0; iVar10 = iVar10 + -1) {
+            *puVar6 = 0;
+            puVar6 = (byte *)(puVar6 + 1);
           }
         }
         else {
-          puVar5 = (byte *)&this_00->field_0x2bc;
-          for (; iVar9 != 0; iVar9 = iVar9 + -1) {
-            *puVar5 = *param_5;
+          puVar6 = (byte *)&this_00->array_00BC[1].field_0x5;
+          for (; iVar10 != 0; iVar10 = iVar10 + -1) {
+            *puVar6 = *param_5;
             param_5 = param_5 + 1;
-            puVar5 = (byte *)(puVar5 + 1);
+            puVar6 = (byte *)(puVar6 + 1);
           }
         }
-        uVar19 = 0xffffffff;
-        uVar18 = 7;
+        uVar20 = 0xffffffff;
+        uVar19 = 7;
+        iVar18 = -1;
+        pSVar1 = this_00->array_00BC[1].field_00B8.vtable;
         iVar17 = -1;
-        iVar9 = this_00->field_036F;
-        iVar16 = -1;
-        iVar15 = 1;
-        uVar11 = 0xffffffff;
-        cVar14 = CASE_FFFFFFFE;
-        iVar13 = 0x1e;
-        iVar7 = 0x7d;
-        puVar6 = (uint *)LoadResourceString(this_00->field_02B7,g_hINSTANCE_00807618);
-        puVar5 = ccFntTy::CreateTypeSSpr
-                           (g_startSystem_0081176C->field_0030,puVar6,iVar7,iVar13,cVar14,uVar11,
-                            iVar15,iVar16,iVar17);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(iVar9 + 8))(puVar5,uVar18,uVar19);
-        this_00->field_0377 = 0;
+        iVar16 = 1;
+        uVar14 = 0xffffffff;
+        cVar15 = CASE_FFFFFFFE;
+        iVar9 = 0x1e;
+        iVar10 = 0x7d;
+        puVar7 = (uint *)LoadResourceString(this_00->array_00BC[1].field_0000,g_hINSTANCE_00807618);
+        psVar8 = (short *)ccFntTy::CreateTypeSSpr
+                                    (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,
+                                     uVar14,iVar16,iVar17,iVar18);
+        (*pSVar1->SetImagesPtr)(&this_00->array_00BC[1].field_00B8,psVar8,uVar19,uVar20);
+        this_00->array_00BC[1].field_00B8.field_0008 = 0;
       }
 LAB_005b8415:
       MMObjTy::CloseButtons((MMObjTy *)this_00);
-      bVar2 = 0;
+      bVar3 = 0;
       local_8 = local_8 & 0xffffff00;
       if (this_00->field_009A != 0) {
         do {
-          uVar11 = local_8 & 0xff;
-          *(undefined4 *)((int)&this_00->field_0127 + uVar11 * 0x1fb) = this_00->field_0061;
-          *(uint *)((int)&this_00->field_0123 + uVar11 * 0x1fb) = ((local_c & 0xff) + 1) * 100;
-          if (*(int *)(&this_00->field_0x1a87 + uVar11 * 0x27) != 0) {
+          uVar14 = local_8 & 0xff;
+          this_00->array_00BC[uVar14].field_0027.field_0044 = this_00->field_0061;
+          this_00->array_00BC[uVar14].field_0027.field_0040 = ((local_c & 0xff) + 1) * 100;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+          if (*(int *)((int)(this_00->array_00BC + 0xd) + uVar14 * 0x27 + 0xc) != 0) {
             local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)local_c + '\x01'));
           }
-          bVar2 = bVar2 + 1;
-          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
-        } while (bVar2 < this_00->field_009A);
+          bVar3 = bVar3 + 1;
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
+        } while (bVar3 < this_00->field_009A);
       }
       if (this_00->field_0065 == '\x02') {
         this_00->field_0065 = 3;
@@ -347,19 +356,18 @@ LAB_005b8415:
         local_8 = local_8 & 0xffffff00;
         if (this_00->field_009A != 0) {
           do {
-            iVar9 = (local_8 & 0xff) * 0x1fb;
-            uVar11 = *(uint *)((int)&this_00->field_0178 + (local_8 & 0xff) * 0x1fb);
-            if (uVar11 != 0xffffffff) {
-              FUN_006b3af0(*(int **)((int)&this_00->field_01BC + iVar9),uVar11);
+            uVar20 = local_8 & 0xff;
+            uVar14 = this_00->array_00BC[uVar20].field_00B8.field_0004;
+            if (uVar14 != 0xffffffff) {
+              FUN_006b3af0((int *)this_00->array_00BC[uVar20].field_00B8.field_0048,uVar14);
             }
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if ((*(char *)((int)this_00->field_0066 + iVar9 + 0x7c) != '\0') &&
-               (uVar11 = *(uint *)((int)&this_00->field_0209 + iVar9), uVar11 != 0xffffffff)) {
-              FUN_006b3af0(*(int **)((int)&this_00->field_024D + iVar9),uVar11);
+            if ((this_00->array_00BC[uVar20].field_0026 != '\0') &&
+               (uVar14 = this_00->array_00BC[uVar20].field_0149.field_0004, uVar14 != 0xffffffff)) {
+              FUN_006b3af0((int *)this_00->array_00BC[uVar20].field_0149.field_0048,uVar14);
             }
-            bVar2 = (char)local_8 + 1;
-            local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
-          } while (bVar2 < this_00->field_009A);
+            bVar3 = (char)local_8 + 1;
+            local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
+          } while (bVar3 < this_00->field_009A);
           g_currentExceptionFrame = local_78.previous;
           return 1;
         }
