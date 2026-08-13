@@ -13,9 +13,9 @@ FSGSTy * __cdecl st::fn_005AA2C0(void)
 {
   FSGSTy *this;
   int iVar1;
-  undefined4 *puVar2;
+  FSGSTy_Record_00BC_01FB *pFVar2;
   SpriteClassTy *this_00;
-  undefined4 *puVar3;
+  FSGSTy_Record_00BC_01FB *pFVar3;
   int local_8;
 
   this = (FSGSTy *)st::fn_006B04D0(0x20c3);
@@ -29,7 +29,7 @@ FSGSTy * __cdecl st::fn_005AA2C0(void)
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->array_00BC[0].field_00B8;
     local_8 = 0xd;
     do {
       st::fn_00715820(this_00 + -1);
@@ -44,14 +44,17 @@ FSGSTy * __cdecl st::fn_005AA2C0(void)
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
-    puVar2 = (undefined4 *)&this->field_0xbc;
+    pFVar2 = this->array_00BC;
     do {
-      puVar3 = puVar2;
-      memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
-      iVar1 = 0;
+      pFVar3 = pFVar2;
+      for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *(undefined4 *)pFVar3 = 0;
+        pFVar3 = (FSGSTy_Record_00BC_01FB *)&pFVar3->field_0x4;
+      }
+      *(undefined2 *)pFVar3 = 0;
+      pFVar3->field_0x2 = 0;
       local_8 = local_8 + -1;
-      puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
+      pFVar2 = pFVar2 + 1;
     } while (local_8 != 0);
     st::fn_00715820((SpriteClassTy *)&this->field_1B28);
     st::fn_00715820((SpriteClassTy *)&this->field_1BB9);
@@ -60,22 +63,22 @@ FSGSTy * __cdecl st::fn_005AA2C0(void)
     st::fn_00715820((SpriteClassTy *)&this->field_1D6C);
     st::fn_00715820((SpriteClassTy *)&this->field_1DFD);
     this->vtable = &st_global_0079C02C;
-    this->field_1A6B = 1;
+    this->array_00BC[0xc].field_01EB = 1;
     this->field_0065 = CASE_1;
-    this->field_1A61 = 0;
-    this->field_1A5F = 0;
-    this->field_1A60 = 0;
-    this->field_1A62 = 1;
+    this->array_00BC[0xc].field_01E1 = 0;
+    this->array_00BC[0xc].field_01DF = 0;
+    this->array_00BC[0xc].field_01E0 = 0;
+    this->array_00BC[0xc].field_01E2 = 1;
     this->field_1F2F = nullptr;
     this->field_1F23 = nullptr;
     this->field_1F27 = nullptr;
     this->field_1F2B = nullptr;
-    this->field_1A67 = (HGDIOBJ)0x0;
+    this->array_00BC[0xc].field_01E7 = nullptr;
     this->field_1A7F = nullptr;
     this->field_1A7B = nullptr;
-    this->field_1A77 = nullptr;
-    this->field_1A73 = nullptr;
-    this->field_1A6F = 0;
+    this->array_00BC[0xc].field_01F7 = nullptr;
+    this->array_00BC[0xc].field_01F3 = nullptr;
+    this->array_00BC[0xc].field_01EF = 0;
     this->field_1A8B = nullptr;
     this->field_1A87 = nullptr;
     this->field_1A83 = nullptr;

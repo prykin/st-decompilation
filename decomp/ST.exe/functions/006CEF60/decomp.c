@@ -96,7 +96,7 @@ int FUN_006cef60(int *param_1,AnonShape_006D86E0_D6D32C07 *param_2,
     local_58 = (local_60 - local_38) + local_30;
     local_54 = local_2c + (local_5c - local_34);
     iVar11 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     while (iVar5 = (**(code **)(**(int **)(*param_1 + 0x44) + 0x14))
                              (*(int **)(*param_1 + 0x44),&local_38,param_5,&local_60,0x1008000,0),
           iVar5 != 0) {
@@ -264,7 +264,7 @@ LAB_006cf37b:
       iVar12 = local_28;
     }
     if ((char)param_12 == '\x02') {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(**(int **)(*param_1 + 0x44) + 0x80))(*(int **)(*param_1 + 0x44),0);
       local_28 = iVar12;
     }
@@ -348,7 +348,7 @@ LAB_006cf8ee:
     goto LAB_006cf8ee;
   }
   if ((char)param_12 == '\x02') {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(**(int **)(*param_1 + 0x44) + 0x80))(*(int **)(*param_1 + 0x44),0);
   }
 LAB_006cf911:

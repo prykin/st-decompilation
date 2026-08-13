@@ -9,7 +9,10 @@
    table_confidence=high
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 005785E0 returns STCrabC::STCrabC this @ 00578610 */
+   Evidence: 005785E0 returns STCrabC::STCrabC this @ 00578610
+
+   [STSwitchEnumApplier] Switch target field_0239 uses
+   /SubmarineTitans/Recovered/Enums/STCrabC_field_0239State. Cases: CASE_0=0;CASE_2=2;CASE_3=3 */
 
 STCrabC * __thiscall st::fn_005785E0(STCrabC *this)
 
@@ -18,7 +21,7 @@ STCrabC * __thiscall st::fn_005785E0(STCrabC *this)
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079B398);
   this->vtable = &st_global_0079B238;
-  this->field_0239 = 0;
+  this->field_0239 = CASE_0;
   return this;
 }
 

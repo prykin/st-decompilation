@@ -11,7 +11,11 @@
 
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0056ADC0 -> EXTERNAL:00000089 @ 0056AEB3 | 00575A10 -> 0056ADC0 @ 00575AD0;
-   FUN_00575a10 parameter param_1 */
+   FUN_00575a10 parameter param_1
+
+   [STSwitchEnumApplier] Switch target field_1180 uses
+   /SubmarineTitans/Recovered/Enums/STAppC_field_1180State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_6=6;CASE_8=8;CASE_9=9;CASE_B=11;CASE_C=12 */
 
 undefined4 __thiscall
 st::fn_0056ADC0(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 param_3,int param_4)
@@ -1713,7 +1717,11 @@ void __thiscall st::fn_0056D740(STAppC *this,int param_1)
 #line 4 "decomp/ST.exe/functions/0056DB80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
-   STAppC::StartGame */
+   STAppC::StartGame
+
+   [STSwitchEnumApplier] Switch target field_1180 uses
+   /SubmarineTitans/Recovered/Enums/STAppC_field_1180State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_6=6;CASE_8=8;CASE_9=9;CASE_B=11;CASE_C=12 */
 
 void __thiscall st::fn_0056DB80(STAppC *this)
 
@@ -1835,7 +1843,7 @@ void __thiscall st::fn_0056DB80(STAppC *this)
     puVar7 = st::fn_006F1CE0(g_cMf32_00806754,0xc,PTR_s_BRIEFING_GAME_0079b06c,(int *)&local_8,0);
     local_8 = &pSVar11->field_1180;
     pSVar11->field_4ED9 = puVar7 != nullptr;
-    if ((*local_8 != 0xc) && (*local_8 != 0x10)) {
+    if ((*local_8 != CASE_C) && (*local_8 != 0x10)) {
       st::fn_006F1CE0(g_cMf32_00806754,0xc,PTR_s_TYPE_START_0079b08c,(int *)&local_8,0);
     }
     local_8 = st::pointer_boundary_cast<STAppC_field_1180State *>(&pSVar11->field_0x2b2f);
@@ -1954,7 +1962,7 @@ void __thiscall st::fn_0056DB80(STAppC *this)
       if (g_cLoading_00802A58 != nullptr) {
         st::fn_00401230(g_cLoading_00802A58,&pSVar11->field_7D1A);
       }
-      if ((pSVar11->field_1180 == 0xc) || (pSVar11->field_1180 == 0x10)) {
+      if ((pSVar11->field_1180 == CASE_C) || (pSVar11->field_1180 == 0x10)) {
         local_8 = &pSVar11->field_1180;
         st::fn_006F1CE0(g_cMf32_00806754,0xc,PTR_s_TYPE_START_0079b08c,(int *)&local_8,0);
       }
@@ -2286,7 +2294,7 @@ switchD_0056fad2_caseD_6105:
       st::fn_00403990(pSVar11);
       st::fn_00404BAB(pSVar11);
       SVar2 = pSVar11->field_1180;
-      if ((SVar2 < CASE_9) || ((0xc < SVar2 && (SVar2 != 0x10)))) {
+      if ((SVar2 < CASE_9) || ((CASE_C < SVar2 && (SVar2 != 0x10)))) {
         puVar15 = (byte *)&pSVar11->field_0x1196;
         puVar25 = (byte *)&pSVar11->field_0x2b2f;
         memmove(puVar25, puVar15, 0x1999); /* compiler REP MOVS byte copy */

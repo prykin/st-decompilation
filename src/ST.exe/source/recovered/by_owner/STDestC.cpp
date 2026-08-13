@@ -32,7 +32,15 @@ STDestC * __thiscall st::fn_006023F0(STDestC *this)
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+
+   [STSwitchEnumApplier] Switch target field_036E uses
+   /SubmarineTitans/Recovered/Enums/STDestC_field_036EState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_4=4;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_036E uses
+   /SubmarineTitans/Recovered/Enums/STDestC_field_036EState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_6=6 */
 
 void __thiscall st::fn_00602440(STDestC *this)
 
@@ -46,7 +54,7 @@ void __thiscall st::fn_00602440(STDestC *this)
   local_10 = this->field_0008;
   local_14 = 10;
   st::fn_006E60A0(this,local_24);
-  this->field_036E = 6;
+  this->field_036E = CASE_6;
   return;
 }
 
@@ -80,7 +88,7 @@ void __thiscall st::fn_006024B0(STDestC *this)
   this->field_0049 = this->field_0257;
   this->field_0372 = this->field_0245;
   this->field_03A7 = 1;
-  this->field_036E = 1;
+  this->field_036E = CASE_1;
   this->field_0249 = 0xffffffff;
   return;
 }
@@ -93,7 +101,11 @@ void __thiscall st::fn_006024B0(STDestC *this)
    [STMethodOwnerApplier] Structural method owner recovered as STDestC.
    Evidence: this_call_owners=[STDestC]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_036E uses
+   /SubmarineTitans/Recovered/Enums/STDestC_field_036EState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_6=6 */
 
 byte * __thiscall st::fn_006025D0(STDestC *this,undefined4 *param_1)
 
@@ -102,9 +114,9 @@ byte * __thiscall st::fn_006025D0(STDestC *this,undefined4 *param_1)
   byte *puVar3;
   byte *pbVar4;
 
-  if (this->field_036E != 3) {
+  if (this->field_036E != CASE_3) {
     pbVar1 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0x17e));
-    if (this->field_036E == 2) {
+    if (this->field_036E == CASE_2) {
       this->field_036E = (uint)(this->field_039F < '\x01');
     }
     this->field_023D = 2;
@@ -153,7 +165,15 @@ undefined4 __thiscall st::fn_00602660(STDestC *this,undefined4 *param_1)
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
+
+   [STSwitchEnumApplier] Switch target field_036E uses
+   /SubmarineTitans/Recovered/Enums/STDestC_field_036EState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_4=4;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_036E uses
+   /SubmarineTitans/Recovered/Enums/STDestC_field_036EState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_6=6 */
 
 void __thiscall st::fn_00602BE0(STDestC *this)
 
@@ -167,7 +187,7 @@ void __thiscall st::fn_00602BE0(STDestC *this)
   if ((this->field_039B < 0) && (iVar2 = st::fn_004013ED(), iVar2 == 0)) {
     return;
   }
-  if (this->field_036E == 2) {
+  if (this->field_036E == CASE_2) {
     if (this->field_037A == '\x01') {
       st::fn_006E9350
                 (this->field_0211,this->field_01ED,PTR_00806724->entries[this->field_0397],
@@ -179,22 +199,22 @@ void __thiscall st::fn_00602BE0(STDestC *this)
     if (this->field_039F < '\x01') {
       if (this->field_0397 < 0) {
         st::fn_006E9350(this->field_0211,this->field_01ED,0,0);
-        this->field_036E = 1;
+        this->field_036E = CASE_1;
       }
     }
     else if (((int)PTR_00806724->entryCount <= this->field_0397) &&
-            (this->field_036E = 0, this->field_037A == '\x01')) {
+            (this->field_036E = CASE_0, this->field_037A == '\x01')) {
       st::fn_00403D0F((STT3DSprC *)&this->field_01D5);
       this->field_037A = 0;
     }
   }
-  else if (this->field_036E != 4) {
+  else if (this->field_036E != CASE_4) {
     puVar3 = st::fn_00405D30(this);
     this->field_03AB = puVar3;
     if (puVar3 != nullptr) {
       st::fn_004021D5((STT3DSprC *)&this->field_01D5);
       this->field_039B = -1;
-      this->field_036E = 4;
+      this->field_036E = CASE_4;
     }
   }
   pVVar1 = g_visibleClass_00802A88;

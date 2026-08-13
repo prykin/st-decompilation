@@ -53,8 +53,12 @@ public class STAbiRegressionGate extends GhidraScript {
     private static final String TRANSITIONS_FILE = "abi-regression-transitions.tsv";
     private static final Pattern JSON_PATH = Pattern.compile(
         "\\\"path\\\":\\\"([^\\\"]+)\\\"");
+    private static final Pattern JSON_NAME = Pattern.compile(
+        "\\\"name\\\":\\\"([^\\\"]+)\\\"");
     private static final Pattern JSON_CLASS = Pattern.compile(
         "\\\"class\\\":\\\"([^\\\"]+)\\\"");
+    private static final Pattern JSON_LENGTH = Pattern.compile(
+        "\\\"length\\\":(-?[0-9]+)");
     private static final Pattern CALLING_CONVENTION = Pattern.compile(
         "\\\"calling_convention\\\":\\\"([^\\\"]*)\\\"");
     private static final Pattern RETURN_TYPE = Pattern.compile(
@@ -70,8 +74,9 @@ public class STAbiRegressionGate extends GhidraScript {
     private static final Pattern VTABLE_SOURCE = Pattern.compile(
         "\\bfrom ([0-9A-Fa-f]{8})\\b");
     private static final Pattern COMPONENT = Pattern.compile(
-        "\\{\\\"ordinal\\\":[0-9]+,\\\"offset\\\":([0-9]+),.*?" +
-        "\\\"field_name\\\":\\\"([^\\\"]*)\\\",\\\"type\\\":\\\"([^\\\"]+)\\\"");
+        "\\{\\\"ordinal\\\":[0-9]+,\\\"offset\\\":([0-9]+)," +
+        "\\\"length\\\":([0-9]+),\\\"field_name\\\":\\\"([^\\\"]*)\\\"," +
+        "\\\"type\\\":\\\"([^\\\"]+)\\\"");
     private static final Pattern FUNCTION_ADDRESS = Pattern.compile(
         "\\\"address\\\":\\\"([0-9A-Fa-f]{8})\\\"");
     private static final Pattern FUNCTION_SIGNATURE = Pattern.compile(
@@ -273,8 +278,12 @@ public class STAbiRegressionGate extends GhidraScript {
                 }
                 else {
                     String vptr = components.get(0);
-                    if (vptr != null && line.contains("\"field_name\":\"vtable\""))
-                        result.classVptrs.put(typePath, vptr);
+                    if (vptr != null && line.contains("\"field_name\":\"vtable\"")) {
+                        String name = unescape(match(JSON_NAME, line));
+                        int length = Integer.parseInt(match(JSON_LENGTH, line));
+                        result.classVptrs.put(typePath, new BaselineClass(typePath, name,
+                            length, vptr, componentGeometry(line)));
+                    }
                 }
             }
         }
@@ -286,33 +295,53 @@ public class STAbiRegressionGate extends GhidraScript {
         Map<Integer, String> result = new TreeMap<>();
         Matcher component = COMPONENT.matcher(line);
         while (component.find())
-            result.put(Integer.parseInt(component.group(1)), unescape(component.group(3)));
+            result.put(Integer.parseInt(component.group(1)), unescape(component.group(4)));
+        return result;
+    }
+
+    private Map<Integer, BaselineComponent> componentGeometry(String line) {
+        Map<Integer, BaselineComponent> result = new TreeMap<>();
+        Matcher component = COMPONENT.matcher(line);
+        while (component.find()) {
+            int offset = Integer.parseInt(component.group(1));
+            result.put(offset, new BaselineComponent(offset,
+                Integer.parseInt(component.group(2)), unescape(component.group(4))));
+        }
         return result;
     }
 
     private void checkClassVptrs(Baseline baseline) throws Exception {
         DataTypeManager manager = currentProgram.getDataTypeManager();
         int regressions = 0;
-        for (Map.Entry<String, String> entry : baseline.classVptrs.entrySet()) {
+        for (Map.Entry<String, BaselineClass> entry : baseline.classVptrs.entrySet()) {
             monitor.checkCancelled();
             classVptrsChecked++;
             DataType current = manager.getDataType(entry.getKey());
-            if (!(current instanceof Structure structure)) {
-                regressions++;
-                mismatch("class-vptr:" + entry.getKey(), "class_structure_erasure",
-                    canonicalType(entry.getValue()), "<missing class structure>",
-                    "Accepted class carrying a vptr is absent from the current data type manager");
-                continue;
+            String currentPath = entry.getKey();
+            Structure structure = current instanceof Structure value ? value : null;
+            if (structure == null) {
+                structure = exactSemanticAlias(entry.getValue(), manager);
+                if (structure == null) {
+                    regressions++;
+                    mismatch("class-vptr:" + entry.getKey(), "class_structure_erasure",
+                        canonicalType(entry.getValue().vptr), "<missing class structure>",
+                        "Accepted class carrying a vptr is absent from the current data type manager");
+                    continue;
+                }
+                currentPath = structure.getPathName();
+                rows.add(new Row("info", "abi", "class-vptr:" + entry.getKey(),
+                    "class_structure_exact_alias", entry.getKey(), currentPath, "", "", "ok",
+                    "Missing accepted path resolved to one exact-layout semantic anchor"));
             }
             DataTypeComponent component = structure.getComponentAt(0);
             if (component == null) {
                 regressions++;
                 mismatch("class-vptr:" + entry.getKey(), "class_vptr_erasure",
-                    canonicalType(entry.getValue()), "<missing component zero>",
+                    canonicalType(entry.getValue().vptr), "<missing component zero>",
                     "Accepted class vptr component is absent");
                 continue;
             }
-            String before = canonicalType(entry.getValue());
+            String before = canonicalType(entry.getValue().vptr);
             String after = canonicalType(component.getDataType().getPathName());
             boolean wasDispatch = dispatchPointer(before);
             boolean isDispatch = dispatchPointer(after);
@@ -327,6 +356,75 @@ public class STAbiRegressionGate extends GhidraScript {
             "class-vptrs", "class_vptr_regressions", Integer.toString(classVptrsChecked),
             Integer.toString(regressions), "", "", regressions == 0 ? "ok" : "regressed",
             "Compared every accepted class vptr; existing accepted dispatch vptrs are allowed"));
+    }
+
+    private Structure exactSemanticAlias(BaselineClass accepted,
+            DataTypeManager manager) {
+        List<Structure> matches = new ArrayList<>();
+        Iterator<DataType> iterator = manager.getAllDataTypes();
+        while (iterator.hasNext()) {
+            DataType type = iterator.next();
+            if (!(type instanceof Structure candidate) ||
+                    !candidate.getName().equals(accepted.name) ||
+                    candidate.getLength() != accepted.length ||
+                    !text(candidate.getDescription()).contains("[ST_SEMANTIC_ANCHOR]") ||
+                    !exactCompatibleGeometry(accepted, candidate)) continue;
+            matches.add(candidate);
+        }
+        return matches.size() == 1 ? matches.get(0) : null;
+    }
+
+    private boolean exactCompatibleGeometry(BaselineClass accepted,
+            Structure candidate) {
+        DataTypeComponent[] components = candidate.getDefinedComponents();
+        if (components.length != accepted.components.size()) return false;
+        for (DataTypeComponent current : components) {
+            BaselineComponent before = accepted.components.get(current.getOffset());
+            if (before == null || before.length != current.getLength() ||
+                    !compatibleStorageView(before.type,
+                        current.getDataType().getPathName())) return false;
+        }
+        return true;
+    }
+
+    private boolean compatibleStorageView(String beforeRaw, String afterRaw) {
+        String before = canonicalType(beforeRaw);
+        String after = canonicalType(afterRaw);
+        if (before.equals(after)) return true;
+        int beforeDepth = pointerDepth(before);
+        int afterDepth = pointerDepth(after);
+        if (beforeDepth == 0 || afterDepth == 0) return false;
+        if (genericPointerView(before) || genericPointerView(after)) return true;
+        return beforeDepth == afterDepth &&
+            leafType(pointerBase(before)).equals(leafType(pointerBase(after)));
+    }
+
+    private int pointerDepth(String path) {
+        int result = 0;
+        String value = canonicalType(path);
+        while (value.endsWith(" *")) {
+            result++;
+            value = value.substring(0, value.length() - 2).trim();
+        }
+        return result;
+    }
+
+    private String pointerBase(String path) {
+        String value = canonicalType(path);
+        while (value.endsWith(" *"))
+            value = value.substring(0, value.length() - 2).trim();
+        return value;
+    }
+
+    private boolean genericPointerView(String path) {
+        if (pointerDepth(path) == 0) return false;
+        String base = pointerBase(path);
+        return base.equals("/void") || base.startsWith("/undefined");
+    }
+
+    private String leafType(String path) {
+        int slash = path.lastIndexOf('/');
+        return slash < 0 ? path : path.substring(slash + 1);
     }
 
     private void checkAcceptedVtableSlots(Baseline baseline) throws Exception {
@@ -1054,8 +1152,12 @@ public class STAbiRegressionGate extends GhidraScript {
         final Map<String, Boundary> functions = new HashMap<>();
         final Map<String, Abi> definitions = new HashMap<>();
         List<BaselineVtable> vtables = new ArrayList<>();
-        final Map<String, String> classVptrs = new HashMap<>();
+        final Map<String, BaselineClass> classVptrs = new HashMap<>();
     }
+
+    private record BaselineClass(String path, String name, int length, String vptr,
+            Map<Integer, BaselineComponent> components) { }
+    private record BaselineComponent(int offset, int length, String type) { }
 
     private record Boundary(String signature, String callingConvention, int parameterCount,
             String qualifiedName, List<String> parameterTypes, boolean varargs,

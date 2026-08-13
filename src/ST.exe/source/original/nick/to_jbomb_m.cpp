@@ -23,7 +23,7 @@ int __thiscall st::fn_00617640(JumpManagC *this,STMessage *message)
   byte *puVar7;
   InternalExceptionFrame local_54;
   byte *local_10;
-  AnonShape_0060EA30_DCEB68AD *local_c;
+  uint local_c;
   JumpManagC *local_8;
 
   local_54.previous = g_currentExceptionFrame;

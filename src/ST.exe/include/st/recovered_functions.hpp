@@ -766,7 +766,7 @@ undefined4 __thiscall fn_00401839(void * st_this, undefined4 param_1, int * para
 // 00401843 thunk_FUN_00650480
 undefined4 __cdecl fn_00401843(RecoveredRecord_AiEventClassTy_00650480 * param_1);
 // 00401848 VisibleClassTy::SetZoneMin2
-undefined __thiscall fn_00401848(VisibleClassTy * st_this, int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7);
+undefined __thiscall fn_00401848(VisibleClassTy * st_this, int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7);
 // 0040184D CreateBldLabPanel
 BldLabPanelTy * __cdecl fn_0040184D(void);
 // 00401852 thunk_FUN_00677250
@@ -1198,7 +1198,7 @@ STJumpMineC * __thiscall fn_00401CAD(STJumpMineC * st_this);
 // 00401CB2 thunk_FUN_006a2d80
 void __cdecl fn_00401CB2(ushort param_1, int * param_2);
 // 00401CB7 VisibleClassTy::SetZoneTsh
-void __thiscall fn_00401CB7(VisibleClassTy * st_this, int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7);
+void __thiscall fn_00401CB7(VisibleClassTy * st_this, int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7);
 // 00401CBC OptPanelTy::sub_00532CE0
 undefined __thiscall fn_00401CBC(OptPanelTy * st_this);
 // 00401CC1 thunk_FUN_006099a0
@@ -1558,7 +1558,7 @@ undefined4 * __cdecl fn_00402054(byte * param_1, undefined4 param_2);
 // 00402059 thunk_FUN_005f0ec0
 undefined __cdecl fn_00402059(int param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, char * param_6, char * param_7, undefined4 param_8, undefined4 param_9);
 // 0040205E VisibleClassTy::SetZoneMin1
-undefined __thiscall fn_0040205E(VisibleClassTy * st_this, int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7);
+undefined __thiscall fn_0040205E(VisibleClassTy * st_this, int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7);
 // 00402068 SettMapMTy::ChangePlayerTeam
 void __thiscall fn_00402068(SettMapMTy * st_this, uint param_1, uint param_2, uint param_3);
 // 0040206D CPanelTy::Update1Panel
@@ -1604,7 +1604,7 @@ void __thiscall fn_004020D6(STAllPlayersC * st_this, char param_1, int param_2, 
 // 004020DB thunk_FUN_004e3200
 undefined __thiscall fn_004020DB(void * st_this, int * param_1);
 // 004020E0 VisibleClassTy::SetZoneDes
-void __thiscall fn_004020E0(VisibleClassTy * st_this, int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7);
+void __thiscall fn_004020E0(VisibleClassTy * st_this, int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7);
 // 004020E5 thunk_FUN_00581200
 undefined __fastcall fn_004020E5(int param_1);
 // 004020EA thunk_FUN_0065d940
@@ -2092,7 +2092,7 @@ undefined4 __thiscall fn_004025EF(void * st_this, uint * param_1);
 // 004025F4 thunk_FUN_005ddb40
 undefined4 __fastcall fn_004025F4(int param_1);
 // 004025F9 STPlaySystemC::SaveObjData
-int __thiscall fn_004025F9(STPlaySystemC * st_this, int * param_1, byte * param_2, AnonShape_0060EA30_DCEB68AD * param_3);
+int __thiscall fn_004025F9(STPlaySystemC * st_this, int * param_1, byte * param_2, uint param_3);
 // 00402603 STGroupBoatC::MakePVec
 undefined4 __thiscall fn_00402603(STGroupBoatC * st_this);
 // 00402608 thunk_FUN_00492370
@@ -2688,7 +2688,7 @@ undefined __thiscall fn_00402C20(CursorClassTy * st_this, int param_1);
 // 00402C25 BldBoatPanelTy::GetMessage
 int __thiscall fn_00402C25(BldBoatPanelTy * st_this, STMessage * message);
 // 00402C2A VisibleClassTy::sub_005594A0
-void __thiscall fn_00402C2A(VisibleClassTy * st_this, int param_1, int param_2, char param_3, undefined * param_4, int param_5, undefined4 param_6, uint param_7);
+void __thiscall fn_00402C2A(VisibleClassTy * st_this, int param_1, int param_2, char param_3, undefined * param_4, int param_5, uint param_6, uint param_7);
 // 00402C2F thunk_FUN_0064cc90
 undefined4 * __fastcall fn_00402C2F(undefined4 * param_1);
 // 00402C34 thunk_FUN_00580570
@@ -4118,7 +4118,7 @@ undefined4 __thiscall fn_00403AF8(void * st_this, int param_1, int param_2, int 
 // 00403AFD STT3DSprC::sub_004ACF50
 int __thiscall fn_00403AFD(STT3DSprC * st_this, char param_1);
 // 00403B02 VisibleClassTy::sub_0055BB00
-void __thiscall fn_00403B02(VisibleClassTy * st_this, byte param_1, short param_2, short param_3, char param_4, uint param_5, byte param_6, undefined4 param_7);
+void __thiscall fn_00403B02(VisibleClassTy * st_this, byte param_1, short param_2, short param_3, char param_4, uint param_5, byte param_6, uint param_7);
 // 00403B07 MReportTy::SetCtrl
 undefined __thiscall fn_00403B07(MReportTy * st_this);
 // 00403B0C ChooseMapTy::PrepFiles
@@ -4528,7 +4528,7 @@ int __cdecl fn_00403F2B(int param_1, char * param_2);
 // 00403F30 thunk_FUN_0067f0f0
 undefined4 __cdecl fn_00403F30(char * param_1, uint param_2);
 // 00403F35 STVolcanoC::sub_00646D40
-undefined __thiscall fn_00403F35(STVolcanoC * st_this, undefined4 * param_1);
+byte * __thiscall fn_00403F35(STVolcanoC * st_this, undefined4 * param_1);
 // 00403F3A STExplosion::sub_00604120
 undefined __thiscall fn_00403F3A(STExplosion * st_this);
 // 00403F3F thunk_FUN_006a29b0
@@ -5292,7 +5292,7 @@ undefined4 __thiscall fn_0040470F(void * st_this, undefined4 param_1);
 // 00404714 thunk_FUN_006048e0
 int __fastcall fn_00404714(AnonShape_006048E0_C1705B76 * param_1);
 // 00404719 thunk_FUN_0062f940
-undefined __thiscall fn_00404719(void * st_this, uint * param_1);
+byte * __thiscall fn_00404719(void * st_this, uint * param_1);
 // 0040471E SettMapMTy::RunGame
 void __thiscall fn_0040471E(SettMapMTy * st_this);
 // 00404723 thunk_FUN_005f03f0
@@ -11427,8 +11427,7 @@ void __thiscall fn_0054D180(STPlaySystemC *st_this);
 int __thiscall fn_0054D2F0(STPlaySystemC *st_this,cMf32 *param_1);
 // 0054D430 STPlaySystemC::SaveObjData
 int __thiscall
-fn_0054D430
-          (STPlaySystemC *st_this,int *param_1,byte *param_2,AnonShape_0060EA30_DCEB68AD *param_3);
+fn_0054D430(STPlaySystemC *st_this,int *param_1,byte *param_2,uint param_3);
 // 0054D550 STPlaySystemC::SaveObjData
 int __thiscall
 fn_0054D550(STPlaySystemC *st_this,char *text,byte *param_2,uint param_3,byte param_4);
@@ -11662,7 +11661,7 @@ fn_00559110
 void __thiscall
 fn_005594A0
           (VisibleClassTy *st_this,int param_1,int param_2,char param_3,undefined *param_4,int param_5,
-          undefined4 param_6,uint param_7);
+          uint param_6,uint param_7);
 // 00559620 VisibleClassTy::sub_00559620
 void __thiscall
 fn_00559620
@@ -11672,7 +11671,7 @@ fn_00559620
 void __thiscall
 fn_005597A0
           (VisibleClassTy *st_this,int param_1,int param_2,char param_3,uint param_4,int param_5,
-          undefined4 param_6,uint param_7);
+          uint param_6,uint param_7);
 // 005599D0 VisibleClassTy::sub_005599D0
 void __thiscall
 fn_005599D0
@@ -11692,7 +11691,7 @@ fn_00559D60
 void __thiscall
 fn_00559EC0
           (VisibleClassTy *st_this,int param_1,int param_2,char param_3,uint param_4,int param_5,
-          undefined4 param_6,uint param_7);
+          uint param_6,uint param_7);
 // 0055A110 VisibleClassTy::sub_0055A110
 void __thiscall
 fn_0055A110
@@ -11702,7 +11701,7 @@ fn_0055A110
 void __thiscall
 fn_0055A270
           (VisibleClassTy *st_this,int param_1,int param_2,char param_3,uint param_4,int param_5,
-          undefined4 param_6,uint param_7);
+          uint param_6,uint param_7);
 // 0055A4C0 VisibleClassTy::sub_0055A4C0
 void __thiscall
 fn_0055A4C0
@@ -11712,7 +11711,7 @@ fn_0055A4C0
 void __thiscall
 fn_0055A620
           (VisibleClassTy *st_this,int param_1,int param_2,char param_3,uint param_4,int param_5,
-          undefined4 param_6,uint param_7);
+          uint param_6,uint param_7);
 // 0055A870 VisibleClassTy::sub_0055A870
 void __thiscall
 fn_0055A870
@@ -11752,7 +11751,7 @@ char * __thiscall fn_0055BA90(void *st_this,char param_1,int param_2);
 void __thiscall
 fn_0055BB00
           (VisibleClassTy *st_this,byte param_1,short param_2,short param_3,char param_4,uint param_5,
-          byte param_6,undefined4 param_7);
+          byte param_6,uint param_7);
 // 0055BBC0 VisibleClassTy::sub_0055BBC0
 void __thiscall
 fn_0055BBC0
@@ -12730,8 +12729,7 @@ fn_005AB1D0
 // 005AB300 ChooseMapTy::InitChooseMap
 void __thiscall
 fn_005AB300
-          (ChooseMapTy *st_this,ChooseMapTy_field_1A5FState param_1,
-          ChooseMapTy_InitChooseMap_param_2Enum param_2);
+          (ChooseMapTy *st_this,undefined1 param_1,ChooseMapTy_InitChooseMap_param_2Enum param_2);
 // 005ACB30 ChooseMapTy::DoneChooseMap
 void __thiscall fn_005ACB30(ChooseMapTy *st_this);
 // 005AD050 ChooseMapTy::PaintChooseMap
@@ -13535,8 +13533,7 @@ void __thiscall fn_005F5C40(STBHEShellC *st_this,int param_1,int param_2,int sou
 // 005F5D10 STBHEShellC::sub_005F5D10
 void __thiscall fn_005F5D10(STBHEShellC *st_this,int param_1);
 // 005F5E30 STBHEShellC::sub_005F5E30
-void __thiscall
-fn_005F5E30(STBHEShellC *st_this,int param_1,int param_2,undefined4 param_3);
+void __thiscall fn_005F5E30(STBHEShellC *st_this,int param_1,int param_2,int param_3);
 // 005F5F20 STColl3C::GetMessage
 int __thiscall fn_005F5F20(STColl3C *st_this,STMessage *message);
 // 005F65D0 CreateSTColl3
@@ -14627,7 +14624,7 @@ undefined4 __thiscall fn_0062F830(void *st_this,int param_1,int param_2,int para
 // 0062F900 STRubbishC::sub_0062F900
 int __thiscall fn_0062F900(STRubbishC *st_this);
 // 0062F940 FUN_0062f940
-void __thiscall fn_0062F940(void *st_this,uint *param_1);
+byte * __thiscall fn_0062F940(void *st_this,uint *param_1);
 // 0062FA80 FUN_0062fa80
 int __thiscall fn_0062FA80(void *st_this,AnonShape_0062FA80_0B91B2B9 *param_1);
 // 0062FCA0 STRubbishC::sub_0062FCA0
@@ -14966,7 +14963,7 @@ STVolcanoC * __thiscall fn_00646C90(STVolcanoC *st_this);
 // 00646D00 FUN_00646d00
 int __fastcall fn_00646D00(void *param_1);
 // 00646D40 STVolcanoC::sub_00646D40
-void __thiscall fn_00646D40(STVolcanoC *st_this,undefined4 *param_1);
+byte * __thiscall fn_00646D40(STVolcanoC *st_this,undefined4 *param_1);
 // 00646DB0 STVolcanoC::sub_00646DB0
 undefined4 __thiscall fn_00646DB0(STVolcanoC *st_this,undefined4 *param_1);
 // 00646E00 FUN_00646e00
@@ -16827,8 +16824,8 @@ int * __cdecl fn_006A4130(int *param_1,uint param_2);
 int * __cdecl fn_006A4160(undefined4 * param_1, uint param_2, uint param_3, char * param_4, int param_5);
 // 006A41E0 Library::MSVCRT::FUN_006a41e0
 int * __cdecl fn_006A41E0(undefined4 * param_1, uint param_2, uint param_3, char * param_4, int param_5, int param_6);
-// 006A47F0 FUN_006a47f0
-undefined * fn_006A47F0(int param_1);
+// 006A47F0 Library::MSVCRT::FUN_006a47f0
+undefined * __stdcall fn_006A47F0(int param_1);
 // 006A48E0 FUN_006a48e0
 int * __cdecl fn_006A48E0(undefined4 *param_1,uint param_2);
 // 006A4910 FUN_006a4910
@@ -17117,8 +17114,8 @@ uint fn_006B1C80(int param_1,uint param_2);
 // 006B1CC0 FUN_006b1cc0
 void fn_006B1CC0(DDXContext_008075A8 *param_1,int param_2,undefined4 param_3,undefined4 param_4,
                  undefined4 *param_5);
-// 006B1D20 FUN_006b1d20
-void fn_006B1D20(int param_1,int param_2,undefined4 *param_3);
+// 006B1D20 Library::DKW::DDX::FUN_006b1d20
+undefined __stdcall fn_006B1D20(int param_1, int param_2, undefined4 * param_3);
 // 006B1D50 Library::DKW::DDX::FUN_006b1d50
 int __stdcall fn_006B1D50(uint param_1, uint * param_2, uint param_3, uint param_4, int * param_5, uint param_6, uint param_7, uint param_8, uint param_9, int param_10);
 // 006B2020 FUN_006b2020
@@ -17141,16 +17138,16 @@ void fn_006B23E0(int param_1,uint *param_2);
 void fn_006B2410(DDXContext_008075A8 *param_1,uint param_2,uint param_3);
 // 006B2450 FUN_006b2450
 int fn_006B2450(int *param_1,int param_2);
-// 006B2480 FUN_006b2480
-uint fn_006B2480(int *param_1,uint param_2,int param_3,uint param_4,uint param_5,uint param_6);
-// 006B2560 FUN_006b2560
-uint fn_006B2560(int *param_1,uint param_2,int param_3,uint param_4,uint param_5);
-// 006B2590 FUN_006b2590
-uint fn_006B2590(int *param_1,uint param_2,int param_3,uint param_4);
-// 006B2660 FUN_006b2660
-uint fn_006B2660(int param_1,uint param_2,int param_3);
-// 006B2710 FUN_006b2710
-void fn_006B2710(int param_1,uint param_2,uint param_3,uint param_4);
+// 006B2480 Library::DKW::DDX::FUN_006b2480
+uint __stdcall fn_006B2480(int * param_1, uint param_2, int param_3, uint param_4, uint param_5, uint param_6);
+// 006B2560 Library::DKW::DDX::FUN_006b2560
+uint __stdcall fn_006B2560(int * param_1, uint param_2, int param_3, uint param_4, uint param_5);
+// 006B2590 Library::DKW::DDX::FUN_006b2590
+uint __stdcall fn_006B2590(int * param_1, uint param_2, int param_3, uint param_4);
+// 006B2660 Library::DKW::DDX::FUN_006b2660
+uint __stdcall fn_006B2660(int param_1, uint param_2, int param_3);
+// 006B2710 Library::DKW::DDX::FUN_006b2710
+undefined __stdcall fn_006B2710(int param_1, uint param_2, uint param_3, uint param_4);
 // 006B27B0 FUN_006b27b0
 void fn_006B27B0(int param_1,uint param_2,uint *param_3,uint *param_4);
 // 006B2800 FUN_006b2800
@@ -17163,14 +17160,14 @@ bool fn_006B28C0(DDXContext_008075A8 *param_1,uint param_2,int param_3);
 undefined4 * __stdcall fn_006B2930(int * param_1, uint param_2, uint param_3, undefined4 * param_4, int * param_5, uint param_6, uint param_7, uint param_8);
 // 006B3020 FUN_006b3020
 void fn_006B3020(int param_1,uint param_2,uint param_3);
-// 006B3040 FUN_006b3040
-undefined4 fn_006B3040(int param_1,uint param_2);
+// 006B3040 Library::DKW::DDX::FUN_006b3040
+undefined4 __stdcall fn_006B3040(int param_1, uint param_2);
 // 006B3070 FUN_006b3070
 void fn_006B3070(AnonShape_006B2020_F949DD3E *param_1,uint param_2,int param_3,int param_4);
 // 006B30D0 FUN_006b30d0
 undefined4 fn_006B30D0(int param_1,uint param_2,int param_3);
-// 006B3120 FUN_006b3120
-int fn_006B3120(uint *param_1,uint *param_2);
+// 006B3120 Library::DKW::DDX::FUN_006b3120
+int __stdcall fn_006B3120(uint * param_1, uint * param_2);
 // 006B33F0 FUN_006b33f0
 int fn_006B33F0(DDXContext_008075A8 *param_1,uint param_2);
 // 006B3430 Library::DKW::DDX::FUN_006b3430
@@ -17293,8 +17290,8 @@ fn_006B6230(int *param_1,char *param_2,undefined4 param_3,undefined4 param_4,und
 int __stdcall fn_006B62D0(undefined4 * param_1);
 // 006B6350 Library::DKW::DDX::FUN_006b6350
 int __stdcall fn_006B6350(int * param_1, char * param_2, int * param_3);
-// 006B64B0 FUN_006b64b0
-void fn_006B64B0(undefined4 *param_1);
+// 006B64B0 Library::DKW::DDX::FUN_006b64b0
+void __stdcall fn_006B64B0(undefined4 * param_1);
 // 006B6500 FUN_006b6500
 uint fn_006B6500(int *param_1,int param_2);
 // 006B6530 FUN_006b6530
@@ -17308,14 +17305,14 @@ int fn_006B66A0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefi
                 char *param_5);
 // 006B6750 Library::DKW::DDX::FUN_006b6750
 int __stdcall fn_006B6750(int * param_1, uint param_2, undefined4 param_3, undefined4 param_4);
-// 006B6830 FUN_006b6830
-int fn_006B6830(undefined4 *param_1);
+// 006B6830 Library::DKW::DDX::FUN_006b6830
+int __stdcall fn_006B6830(undefined4 * param_1);
 // 006B68C0 FUN_006b68c0
 void fn_006B68C0(undefined4 *param_1);
 // 006B68E0 Library::DKW::DDX::FUN_006b68e0
 int __stdcall fn_006B68E0(int * param_1, undefined4 * param_2);
-// 006B6970 FUN_006b6970
-void fn_006B6970(undefined4 *param_1);
+// 006B6970 Library::DKW::DDX::FUN_006b6970
+undefined __stdcall fn_006B6970(undefined4 * param_1);
 // 006B69B0 Library::DKW::DDX::FUN_006b69b0
 int __stdcall fn_006B69B0(int * param_1, int * param_2, uint param_3, undefined4 param_4, undefined4 param_5);
 // 006B6A50 Library::DKW::DDX::FUN_006b6a50
@@ -17329,10 +17326,10 @@ int fn_006B7140(int *param_1);
 // 006B7170 FUN_006b7170
 undefined4
 fn_006B7170(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,int *param_5);
-// 006B7190 FUN_006b7190
-int fn_006B7190(int *param_1);
-// 006B73E0 FUN_006b73e0
-int fn_006B73E0(int param_1,int param_2);
+// 006B7190 Library::DKW::DDX::FUN_006b7190
+int __stdcall fn_006B7190(int * param_1);
+// 006B73E0 Library::DKW::DDX::FUN_006b73e0
+undefined4 __stdcall fn_006B73E0(int param_1, int param_2);
 // 006B7400 Library::DKW::DDX::FUN_006b7400
 int __stdcall fn_006B7400(int * param_1, int param_2, int * param_3, int * param_4, int * param_5, int param_6, int param_7);
 // 006B7510 Library::DKW::DDX::FUN_006b7510
@@ -17419,8 +17416,8 @@ undefined4 fn_006B98C0(int *param_1,int *param_2);
 undefined4 * fn_006B9910(undefined4 *param_1,int param_2);
 // 006B9940 Library::DKW::DDX::FUN_006b9940
 int __stdcall fn_006B9940(undefined4 * param_1, undefined4 param_2, undefined4 param_3, int * param_4);
-// 006B9A40 FUN_006b9a40
-int fn_006B9A40(int param_1,int *param_2);
+// 006B9A40 Library::DKW::DDX::FUN_006b9a40
+int __stdcall fn_006B9A40(int param_1, int * param_2);
 // 006B9AA0 FUN_006b9aa0
 undefined4 fn_006B9AA0(AnonShape_006B9AA0_FC1882B5 *param_1,undefined4 *param_2);
 // 006B9B20 FUN_006b9b20
@@ -17437,9 +17434,8 @@ void fn_006BA740(int param_1);
 void fn_006BA760(int param_1);
 // 006BA780 FUN_006ba780
 void fn_006BA780(DDXContext *param_1,int param_2);
-// 006BA7B0 FUN_006ba7b0
-void fn_006BA7B0(AnonShape_006BA7B0_E82BD3A2 *param_1,undefined4 param_2,undefined4 param_3,
-                 undefined4 *param_4);
+// 006BA7B0 Library::DKW::DDX::FUN_006ba7b0
+void __stdcall fn_006BA7B0(AnonShape_006BA7B0_E82BD3A2 * param_1, undefined4 param_2, undefined4 param_3, undefined4 * param_4);
 // 006BA7E0 Library::DKW::DDX::FUN_006ba7e0
 int __stdcall fn_006BA7E0(uint param_1, uint * param_2, uint param_3);
 // 006BA9E0 Library::DKW::DDX::FUN_006ba9e0
@@ -17509,12 +17505,10 @@ void fn_006BD260(void);
 void fn_006BD4B0(void);
 // 006BD740 Library::DKW::DDX::FUN_006bd740
 int __stdcall fn_006BD740(int * param_1);
-// 006BEA40 FUN_006bea40
-int fn_006BEA40(int *param_1,uint param_2);
-// 006BF710 FUN_006bf710
-undefined4
-fn_006BF710(AnonShape_006BF710_259ECA93 *param_1,int param_2,int param_3,int param_4,int param_5,
-            int param_6,byte *param_7,int *param_8);
+// 006BEA40 Library::DKW::DDX::FUN_006bea40
+int __stdcall fn_006BEA40(int * param_1, uint param_2);
+// 006BF710 Library::DKW::DDX::FUN_006bf710
+undefined4 __stdcall fn_006BF710(AnonShape_006BF710_259ECA93 * param_1, int param_2, int param_3, int param_4, int param_5, int param_6, byte * param_7, int * param_8);
 // 006BF9F0 Library::DKW::DDX::FUN_006bf9f0
 undefined4 __stdcall fn_006BF9F0(int * param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5);
 // 006BFB30 FUN_006bfb30
@@ -17545,8 +17539,8 @@ int fn_006C1390(uint *param_1,byte param_2,uint param_3,uint param_4,uint param_
 undefined4 __stdcall fn_006C13D0(undefined4 * param_1, char * param_2, undefined4 param_3, undefined4 * param_4);
 // 006C14B0 Library::DKW::SND::FUN_006c14b0
 undefined4 __stdcall fn_006C14B0(undefined4 param_1);
-// 006C14F0 FUN_006c14f0
-void fn_006C14F0(int *param_1);
+// 006C14F0 Library::DKW::SND::FUN_006c14f0
+undefined __stdcall fn_006C14F0(int * param_1);
 // 006C1530 Library::DKW::SND::FUN_006c1530
 undefined4 __stdcall fn_006C1530(undefined4 param_1, int param_2);
 // 006C18B0 FUN_006c18b0
@@ -17555,8 +17549,8 @@ void fn_006C18B0(uint param_1);
 undefined4 fn_006C18D0(int param_1);
 // 006C1950 FUN_006c1950
 undefined4 fn_006C1950(int param_1,byte param_2);
-// 006C19D0 FUN_006c19d0
-undefined4 fn_006C19D0(int param_1,uint param_2);
+// 006C19D0 Library::DKW::SND::FUN_006c19d0
+undefined4 __stdcall fn_006C19D0(int param_1, uint param_2);
 // 006C1AD0 Library::DKW::SND::FUN_006c1ad0
 int __stdcall fn_006C1AD0(uint param_1, int param_2);
 // 006C1BA0 FUN_006c1ba0
@@ -17625,16 +17619,16 @@ DWORD fn_006C3630(LPDWORD lpThreadId);
 undefined4 fn_006C3720(WPARAM param_1);
 // 006C3800 Library::DKW::DV::FUN_006c3800
 HRESULT __stdcall fn_006C3800(undefined4 * param_1, DDXContext * param_2, HWND param_3, undefined4 param_4);
-// 006C38D0 FUN_006c38d0
-undefined4 fn_006C38D0(undefined4 *param_1,int param_2);
+// 006C38D0 Library::DKW::DV::FUN_006c38d0
+undefined4 __stdcall fn_006C38D0(undefined4 * param_1, int param_2);
 // 006C38F0 FUN_006c38f0
 undefined4 fn_006C38F0(int param_1,int param_2,int param_3,undefined4 param_4);
 // 006C3AA0 FUN_006c3aa0
 void fn_006C3AA0(int *param_1);
 // 006C3B00 Library::DKW::DV::FUN_006c3b00
 DWORD __stdcall fn_006C3B00(LPVOID param_1, LPCSTR param_2, uint param_3);
-// 006C3D80 FUN_006c3d80
-void fn_006C3D80(AnonShape_006C3D80_5E5410BE *param_1);
+// 006C3D80 Library::DKW::DV::FUN_006c3d80
+undefined __stdcall fn_006C3D80(AnonShape_006C3D80_5E5410BE * param_1);
 // 006C3F00 FUN_006c3f00
 undefined4 fn_006C3F00(int param_1);
 // 006C3F80 FUN_006c3f80
@@ -18368,7 +18362,7 @@ void __thiscall fn_006DD790(ST3DSMAPContext *st_this,float param_1);
 // 006DD800 ST3DSMAPContext::sub_006DD800
 void __thiscall fn_006DD800(ST3DSMAPContext *st_this,float param_1);
 // 006DD870 ST3DSMAPContext::sub_006DD870
-void __thiscall fn_006DD870(ST3DSMAPContext *st_this);
+undefined __thiscall fn_006DD870(ST3DSMAPContext * st_this);
 // 006DDA90 ST3DSMAPContext::sub_006DDA90
 void __thiscall fn_006DDA90(ST3DSMAPContext *st_this,float param_1,float param_2);
 // 006DDAE0 ST3DSMAPContext::sub_006DDAE0
@@ -18385,17 +18379,14 @@ undefined4 fn_006DDBD0(void);
 void __thiscall fn_006DDBE0(ST3DSMAPContext *st_this);
 // 006DDD50 ST3DSMAPContext::sub_006DDD50
 uint __fastcall fn_006DDD50(ST3DSMAPContext *param_1);
-// 006DE570 FUN_006de570
-int __thiscall fn_006DE570(void *st_this,int param_1,int param_2);
+// 006DE570 Library::Ourlib::STREND::FUN_006de570
+int __thiscall fn_006DE570(void * st_this, int param_1, int param_2);
 // 006DE9C0 ST3DSMAPContext::sub_006DE9C0
-DDXContext * __fastcall fn_006DE9C0(ST3DSMAPContext *param_1);
+undefined4 __fastcall fn_006DE9C0(ST3DSMAPContext * param_1);
 // 006E1050 ST3DSMAPContext::sub_006E1050
 void __fastcall fn_006E1050(ST3DSMAPContext *param_1);
 // 006E1320 ST3DSMAPContext::sub_006E1320
-void __thiscall
-fn_006E1320
-          (ST3DSMAPContext *st_this,double *param_1,double *param_2,int *param_3,int *param_4,
-          int *param_5);
+void __thiscall fn_006E1320(ST3DSMAPContext * st_this, double * param_1, double * param_2, int * param_3, int * param_4, int * param_5);
 // 006E1440 FUN_006e1440
 void __thiscall fn_006E1440(void *st_this);
 // 006E1460 ST3DSMAPContext::sub_006E1460
@@ -18410,10 +18401,7 @@ fn_006E1C20
 undefined4 __thiscall
 fn_006E1DD0(void *st_this,int param_1,int param_2,float *param_3,float *param_4,float *param_5);
 // 006E1EE0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
-bool __thiscall
-fn_006E1EE0
-          (AnonReceiver_006E1EE0 *st_this,AnonShape_006E1EE0_698AE49A *param_1,undefined4 *param_2,
-          int param_3,int *param_4);
+bool __thiscall fn_006E1EE0(AnonReceiver_006E1EE0 * st_this, AnonShape_006E1EE0_698AE49A * param_1, undefined4 * param_2, int param_3, int * param_4);
 // 006E25D0 ST3DSMAPContext::sub_006E25D0
 int __thiscall
 fn_006E25D0
@@ -18429,8 +18417,8 @@ undefined __thiscall fn_006E29D0(void * st_this, float * param_1, int param_2, i
 // 006E2B60 FUN_006e2b60
 void __thiscall
 fn_006E2B60(void *st_this,AnonShape_006E2B60_E36B924C *param_1,int param_2,int param_3,int *param_4);
-// 006E2C30 FUN_006e2c30
-int __thiscall fn_006E2C30(void *st_this,int *param_1);
+// 006E2C30 Library::Ourlib::STREND::FUN_006e2c30
+undefined4 __thiscall fn_006E2C30(void * st_this, int * param_1);
 // 006E2D00 ST3DSMAPContext::sub_006E2D00
 ushort __thiscall fn_006E2D00(ST3DSMAPContext *st_this,int param_1,int param_2);
 // 006E2D50 FUN_006e2d50
@@ -18460,8 +18448,8 @@ undefined __thiscall fn_006E36E0(AppClassTy * st_this);
 int __thiscall fn_006E3810(AppClassTy * st_this, STObjectTypeId param_1, undefined4 param_2);
 // 006E3970 AppClassTy::DeleteObject
 undefined __thiscall fn_006E3970(AppClassTy * st_this, int param_1);
-// 006E3A70 FUN_006e3a70
-void __thiscall fn_006E3A70(void *st_this,int param_1,int *param_2,undefined4 *param_3);
+// 006E3A70 Library::Ourlib::SAPP::FUN_006e3a70
+undefined __thiscall fn_006E3A70(void * st_this, int param_1, int * param_2, undefined4 * param_3);
 // 006E3A90 FUN_006e3a90
 void __thiscall fn_006E3A90(void *st_this,int param_1,undefined4 *param_2);
 // 006E3AB0 AppClassTy::PostMessage
@@ -18480,23 +18468,23 @@ int __thiscall fn_006E40E0(AppClassTy * st_this, int param_1, int param_2);
 int __thiscall fn_006E41D0(AppClassTy * st_this, undefined4 * param_1);
 // 006E4290 FUN_006e4290
 int fn_006E4290(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-// 006E42C0 FUN_006e42c0
-undefined4 __thiscall fn_006E42C0(void *st_this,int *param_1);
+// 006E42C0 Library::Ourlib::SAPP::FUN_006e42c0
+undefined4 __thiscall fn_006E42C0(void * st_this, int * param_1);
 // 006E4340 FUN_006e4340
 void __thiscall
 fn_006E4340(void *st_this,int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
 // 006E4370 AppClassTy::DecodeMessage
 int __thiscall fn_006E4370(AppClassTy * st_this, STAppC_MainWindowProc_param_2Enum param_1, uint param_2, uint param_3);
-// 006E4480 FUN_006e4480
-int fn_006E4480(AnonShape_006E4480_50BB219F *param_1,int param_2);
-// 006E44E0 FUN_006e44e0
-int __thiscall fn_006E44E0(void *st_this,int param_1);
-// 006E4540 FUN_006e4540
-int fn_006E4540(DArrayTy *param_1,int param_2);
+// 006E4480 Library::Ourlib::SAPP::FUN_006e4480
+int __stdcall fn_006E4480(AnonShape_006E4480_50BB219F * param_1, int param_2);
+// 006E44E0 Library::Ourlib::SAPP::FUN_006e44e0
+int __thiscall fn_006E44E0(void * st_this, int param_1);
+// 006E4540 Library::Ourlib::SAPP::FUN_006e4540
+int __stdcall fn_006E4540(DArrayTy * param_1, int param_2);
 // 006E45A0 FUN_006e45a0
 int __thiscall fn_006E45A0(void *st_this,int param_1);
-// 006E45C0 FUN_006e45c0
-undefined4 fn_006E45C0(AnonShape_006E45C0_FB272364 *param_1);
+// 006E45C0 Library::Ourlib::SAPP::FUN_006e45c0
+undefined4 __stdcall fn_006E45C0(AnonShape_006E45C0_FB272364 * param_1);
 // 006E4620 FUN_006e4620
 undefined4 __thiscall fn_006E4620(void *st_this,int param_1);
 // 006E4650 AppClassTy::AddSystem
@@ -18507,20 +18495,20 @@ int __thiscall fn_006E47E0(AppClassTy * st_this, int * param_1, int param_2);
 int __thiscall fn_006E4960(AppClassTy * st_this, SystemClassTy * parentSystem, SystemClassTy * childSystem, int checkDuplicateId);
 // 006E4B80 FUN_006e4b80
 void __thiscall fn_006E4B80(void *st_this,int param_1);
-// 006E4BB0 FUN_006e4bb0
-void fn_006E4BB0(int *param_1);
+// 006E4BB0 Library::Ourlib::SAPP::FUN_006e4bb0
+undefined __stdcall fn_006E4BB0(int * param_1);
 // 006E4C30 FUN_006e4c30
 void __thiscall fn_006E4C30(void *st_this,int param_1);
-// 006E4C90 FUN_006e4c90
-void fn_006E4C90(DebugSystemC *param_1,DArrayTy *param_2);
+// 006E4C90 Library::Ourlib::SAPP::FUN_006e4c90
+void __stdcall fn_006E4C90(DebugSystemC * param_1, DArrayTy * param_2);
 // 006E4D20 FUN_006e4d20
 void __thiscall fn_006E4D20(void *st_this,DebugSystemC *param_1);
 // 006E4D40 FUN_006e4d40
 uint __thiscall fn_006E4D40(void *st_this,int param_1);
 // 006E4D70 AppClassTy::LifeToAllSystem
 int __thiscall fn_006E4D70(AppClassTy * st_this, int param_1);
-// 006E4EE0 FUN_006e4ee0
-int __fastcall fn_006E4EE0(int *param_1);
+// 006E4EE0 Library::Ourlib::SAPP::FUN_006e4ee0
+int __fastcall fn_006E4EE0(int * param_1);
 // 006E4FA0 FUN_006e4fa0
 void fn_006E4FA0(DWORD dwMilliseconds);
 // 006E4FC0 AppClassTy::RunApp
@@ -18562,8 +18550,8 @@ void __thiscall fn_006E57B0(STPlaySystemC *st_this,int param_1);
 int __thiscall fn_006E5810(SystemClassTy * st_this, undefined4 * param_1);
 // 006E58B0 SystemClassTy::PostNextMessage
 int __thiscall fn_006E58B0(SystemClassTy * st_this, undefined4 * param_1);
-// 006E5950 FUN_006e5950
-int fn_006E5950(int param_1);
+// 006E5950 Library::Ourlib::SAPP::FUN_006e5950
+int __stdcall fn_006E5950(int param_1);
 // 006E5970 SystemClassTy::SendMessage
 int __thiscall fn_006E5970(SystemClassTy * st_this, uint param_1, int param_2, int param_3);
 // 006E5C70 SystemClassTy::GetToAllObjects
@@ -18657,8 +18645,7 @@ undefined4 __thiscall
 fn_006E68C0
           (ST3DSMAPContext *st_this,int param_1,int param_2,int *param_3,int *param_4);
 // 006E6AF0 ST3DSMAPContext::sub_006E6AF0
-void __thiscall
-fn_006E6AF0(ST3DSMAPContext *st_this,AnonShape_006E6AF0_D2F012A7 *param_1);
+undefined __thiscall fn_006E6AF0(ST3DSMAPContext * st_this, AnonShape_006E6AF0_D2F012A7 * param_1);
 // 006E6FB0 ST3DSMAPContext::sub_006E6FB0
 void __thiscall
 fn_006E6FB0
@@ -18696,8 +18683,8 @@ fn_006E89B0(void *st_this,int *param_1,undefined4 param_2,int param_3,undefined4
             undefined4 param_10,undefined4 param_11);
 // 006E8AA0 FUN_006e8aa0
 int __thiscall fn_006E8AA0(void *st_this,uint *param_1,uint param_2);
-// 006E8B00 FUN_006e8b00
-void __thiscall fn_006E8B00(void *st_this,uint param_1,uint param_2);
+// 006E8B00 Library::Ourlib::ST3DSMAP::FUN_006e8b00
+undefined __thiscall fn_006E8B00(void * st_this, uint param_1, uint param_2);
 // 006E8BA0 Library::Ourlib::ST3DSMAP::SprClose
 undefined __thiscall fn_006E8BA0(void * st_this, uint param_1);
 // 006E8C50 FUN_006e8c50
@@ -18711,8 +18698,7 @@ undefined __thiscall fn_006E8D90(void * st_this, uint param_1, undefined4 param_
 // 006E8DF0 Library::Ourlib::ST3DSMAP::SprWireObjMove
 undefined __thiscall fn_006E8DF0(void * st_this, uint param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, int param_5, int param_6, int param_7);
 // 006E8EA0 ST3DSMAPContext::sub_006E8EA0
-undefined4 __thiscall
-fn_006E8EA0(ST3DSMAPContext *st_this,AnonShape_006E8EA0_96B71903 *param_1);
+undefined4 __thiscall fn_006E8EA0(ST3DSMAPContext * st_this, AnonShape_006E8EA0_96B71903 * param_1);
 // 006E9000 ST3DSMAPContext::sub_006E9000
 ushort * __thiscall
 fn_006E9000
@@ -18834,12 +18820,12 @@ int fn_006EB4B0(int param_1,int param_2);
 uint fn_006EB540(int param_1);
 // 006EB570 FUN_006eb570
 undefined4 fn_006EB570(int *param_1,AnonShape_006EB570_80B255F3 *param_2);
-// 006EBE40 FUN_006ebe40
-void __fastcall fn_006EBE40(AnonShape_006EBE40_77FE2AA7 *param_1);
-// 006EC010 FUN_006ec010
-int __fastcall fn_006EC010(undefined4 *param_1);
-// 006ECC70 FUN_006ecc70
-undefined4 __thiscall fn_006ECC70(void *st_this,int *param_1,uint *param_2);
+// 006EBE40 Library::Ourlib::ST3DSPR::FUN_006ebe40
+undefined __fastcall fn_006EBE40(AnonShape_006EBE40_77FE2AA7 * param_1);
+// 006EC010 Library::Ourlib::ST3DSPR::FUN_006ec010
+int __fastcall fn_006EC010(undefined4 * param_1);
+// 006ECC70 Library::Ourlib::ST3DSPR::FUN_006ecc70
+undefined4 __thiscall fn_006ECC70(void * st_this, int * param_1, uint * param_2);
 // 006ECFC0 FUN_006ecfc0
 int __cdecl fn_006ECFC0(AnonShape_006ECFC0_6CF214D7 *param_1,AnonShape_006ECFC0_1618ABFE *param_2);
 // 006ED100 Library::Ourlib::ST3DSPR::FUN_006ed100
@@ -18848,7 +18834,7 @@ int __fastcall fn_006ED100(ST3DSMAPContext * param_1);
 int __cdecl fn_006EF300(undefined4 param_1, char * param_2, undefined2 * param_3, undefined2 * param_4, undefined1 * param_5, undefined1 * param_6, undefined1 * param_7);
 // 006EF3E0 FUN_006ef3e0
 undefined1 * __cdecl fn_006EF3E0(LPCSTR param_1,undefined4 param_2);
-// 006EF410 FUN_006ef410
+// 006EF410 Library::Ourlib::MFSTMAP::FUN_006ef410
 int __cdecl fn_006EF410(int param_1);
 // 006EF440 Library::Ourlib::MFSTMAP::_mfTMapSetTxtParam
 int __cdecl fn_006EF440(int param_1, int param_2, char * param_3, char * param_4);
@@ -18868,8 +18854,8 @@ int __cdecl fn_006EFDB0(short * param_1, int param_2, char * text, char param_4)
 int __cdecl fn_006EFF90(short * param_1, int param_2, int param_3, int param_4, uint param_5, ushort param_6);
 // 006F01A0 Library::Ourlib::MFSTMAP::mfTMapDelObj
 int __cdecl fn_006F01A0(short * param_1, int param_2, int param_3, int param_4);
-// 006F02D0 FUN_006f02d0
-undefined4 __cdecl fn_006F02D0(int *param_1,int param_2,int param_3,int param_4,int param_5);
+// 006F02D0 Library::Ourlib::MFSTMAP::FUN_006f02d0
+undefined4 __cdecl fn_006F02D0(int * param_1, int param_2, int param_3, int param_4, int param_5);
 // 006F0360 Library::Ourlib::MFSTMAP::mfTMapOptimize
 int __cdecl fn_006F0360(short * param_1, undefined * param_2);
 // 006F0620 Library::Ourlib::MFSTMAP::FUN_006f0620
@@ -19192,12 +19178,10 @@ fn_00709470
 void __thiscall fn_00709670(void *st_this,uint param_1,int param_2,int param_3,byte param_4);
 // 007097C0 Library::Ourlib::MFRLOAD::mfRLoadCreate
 int * __cdecl fn_007097C0(int param_1);
-// 007098A0 FUN_007098a0
-undefined4 __cdecl
-fn_007098A0(AnonShape_007098A0_B7562D88 *param_1,char param_2,byte *param_3,int param_4,
-            int *param_5,uint *param_6);
-// 00709990 FUN_00709990
-int __cdecl fn_00709990(AnonShape_00709990_0FAEF1E0 *param_1,int param_2,uint *param_3);
+// 007098A0 Library::Ourlib::MFRLOAD::FUN_007098a0
+undefined4 __cdecl fn_007098A0(AnonShape_007098A0_B7562D88 * param_1, char param_2, byte * param_3, int param_4, int * param_5, uint * param_6);
+// 00709990 Library::Ourlib::MFRLOAD::FUN_00709990
+int __cdecl fn_00709990(AnonShape_00709990_0FAEF1E0 * param_1, int param_2, uint * param_3);
 // 00709A10 FUN_00709a10
 void __cdecl fn_00709A10(void *param_1,Global_sub_00709A10_param_2Enum param_2,uint *param_3);
 // 00709AF0 Library::Ourlib::MFRLOAD::mfRLoad
@@ -19214,8 +19198,8 @@ int __cdecl fn_0070A1B0(int param_1, int * param_2);
 void __cdecl fn_0070A300(int *param_1);
 // 0070A370 Library::Ourlib::MFRLOAD::mfRLoadRefreshAll
 undefined4 __cdecl fn_0070A370(int param_1);
-// 0070A460 FUN_0070a460
-bool __cdecl fn_0070A460(uint *param_1,char *param_2);
+// 0070A460 Library::Ourlib::MFRLOAD::FUN_0070a460
+bool __cdecl fn_0070A460(uint * param_1, char * param_2);
 // 0070A4A0 Library::Ourlib::MFRLOAD::mfRLoadRefresh
 undefined4 __cdecl fn_0070A4A0(int param_1, char param_2, char * param_3);
 // 0070A5A0 Library::Ourlib::MFIMG::mfImgLoad
@@ -19242,16 +19226,16 @@ ushort * __cdecl fn_0070AA50(cMf32 *param_1,char *text,byte param_3,int param_4)
 ushort * __cdecl fn_0070AA70(cMf32 *param_1,char *text,byte param_3,int param_4);
 // 0070AA90 FUN_0070aa90
 ushort * __cdecl fn_0070AA90(cMf32 *param_1,char *param_2,byte param_3,int param_4);
-// 0070AAB0 FUN_0070aab0
-ushort * __cdecl fn_0070AAB0(cMf32 *param_1,char *param_2,byte param_3,int param_4);
+// 0070AAB0 Library::Ourlib::MFIMG::FUN_0070aab0
+ushort * __cdecl fn_0070AAB0(cMf32 * param_1, char * param_2, byte param_3, int param_4);
 // 0070AAD0 Library::Ourlib::MFIMG::mfGifLoadToDib
 undefined4 * __cdecl fn_0070AAD0(undefined4 param_1, char * param_2, int param_3);
-// 0070ABF0 FUN_0070abf0
-ushort * __cdecl fn_0070ABF0(cMf32 *param_1,char *param_2,byte param_3,int param_4);
+// 0070ABF0 Library::Ourlib::MFIMG::FUN_0070abf0
+ushort * __cdecl fn_0070ABF0(cMf32 * param_1, char * param_2, byte param_3, int param_4);
 // 0070AC10 Library::Ourlib::MFIMG::mfPcxLoadToDib
 undefined4 * __cdecl fn_0070AC10(undefined4 param_1, char * param_2, int param_3);
-// 0070AD40 FUN_0070ad40
-ushort * __cdecl fn_0070AD40(cMf32 *param_1,char *param_2,byte param_3,int param_4);
+// 0070AD40 Library::Ourlib::MFIMG::FUN_0070ad40
+ushort * __cdecl fn_0070AD40(cMf32 * param_1, char * param_2, byte param_3, int param_4);
 // 0070AD60 Library::Ourlib::MFIMG::mfJpgLoadToDib
 undefined4 __cdecl fn_0070AD60(undefined4 param_1, char * param_2, int param_3, uint param_4, uint * param_5, int param_6, int param_7);
 // 0070AE60 Library::Ourlib::MFIMG::mfImtLoad
@@ -19288,10 +19272,10 @@ void __cdecl fn_0070B680(undefined2 *param_1);
 undefined4 __cdecl fn_0070B690(short *param_1);
 // 0070B6B0 FUN_0070b6b0
 undefined4 __cdecl fn_0070B6B0(AnonShape_0070B6B0_34698A53 *param_1);
-// 0070B6D0 FUN_0070b6d0
-int __cdecl fn_0070B6D0(byte *param_1);
-// 0070B770 FUN_0070b770
-int __cdecl fn_0070B770(AnonShape_0070B770_3BA0472D *param_1,int param_2);
+// 0070B6D0 Library::Ourlib::MFIMG::FUN_0070b6d0
+int __cdecl fn_0070B6D0(byte * param_1);
+// 0070B770 Library::Ourlib::MFIMG::FUN_0070b770
+int __cdecl fn_0070B770(AnonShape_0070B770_3BA0472D * param_1, int param_2);
 // 0070B900 Library::Ourlib::MFIMG::imgGetDibFromFile
 int * __cdecl fn_0070B900(byte * param_1, int param_2, int param_3, int param_4, int param_5, uint param_6, int param_7, uint * param_8, int param_9);
 // 0070BE00 FUN_0070be00
@@ -19309,9 +19293,9 @@ undefined4 * __cdecl fn_0070BFE0(byte * param_1, undefined2 * param_2, undefined
 // 0070C210 FUN_0070c210
 undefined4 * __cdecl
 fn_0070C210(byte *param_1,undefined2 *param_2,undefined2 *param_3,DWORD *param_4);
-// 0070C270 FUN_0070c270
+// 0070C270 Library::Ourlib::MFIMG::FUN_0070c270
 undefined4 * __cdecl fn_0070C270(int param_1);
-// 0070C390 FUN_0070c390
+// 0070C390 Library::Ourlib::MFIMG::FUN_0070c390
 undefined4 * __cdecl fn_0070C390(int param_1);
 // 0070C400 Library::Ourlib::MFIMG::FUN_0070c400
 undefined4 * __cdecl fn_0070C400(byte * param_1, int param_2);
@@ -19372,22 +19356,22 @@ void __thiscall fn_00710FB0(void *st_this,byte *param_1);
 int __thiscall fn_00711110(void *st_this,char *resourceString);
 // 007111C0 FUN_007111c0
 int __thiscall fn_007111C0(void *st_this,char *resourceString);
-// 00711260 FUN_00711260
-int __thiscall fn_00711260(void *st_this,uint *param_1);
-// 007112E0 FUN_007112e0
-int __thiscall fn_007112E0(void *st_this,uint *param_1);
+// 00711260 Library::Ourlib::MFCFNT::FUN_00711260
+int __thiscall fn_00711260(void * st_this, uint * param_1);
+// 007112E0 Library::Ourlib::MFCFNT::FUN_007112e0
+int __thiscall fn_007112E0(void * st_this, uint * param_1);
 // 00711370 FUN_00711370
 int __thiscall fn_00711370(void *st_this,uint *param_1);
 // 007113E0 FUN_007113e0
 int __thiscall fn_007113E0(void *st_this,uint *param_1);
-// 00711470 FUN_00711470
-int fn_00711470(uint *param_1);
-// 007114C0 FUN_007114c0
-int __thiscall fn_007114C0(void *st_this,uint *param_1);
-// 00711530 FUN_00711530
-int __thiscall fn_00711530(void *st_this,int *param_1);
-// 00711580 FUN_00711580
-int __thiscall fn_00711580(void *st_this,int *param_1);
+// 00711470 Library::Ourlib::MFCFNT::FUN_00711470
+int __stdcall fn_00711470(uint * param_1);
+// 007114C0 Library::Ourlib::MFCFNT::FUN_007114c0
+int __thiscall fn_007114C0(void * st_this, uint * param_1);
+// 00711530 Library::Ourlib::MFCFNT::FUN_00711530
+int __thiscall fn_00711530(void * st_this, int * param_1);
+// 00711580 Library::Ourlib::MFCFNT::FUN_00711580
+int __thiscall fn_00711580(void * st_this, int * param_1);
 // 007115E0 FUN_007115e0
 int __thiscall fn_007115E0(void *st_this,AnonShape_007115E0_FC3147FF *param_1,int param_2,int param_3);
 // 00711670 FUN_00711670
@@ -19404,8 +19388,8 @@ int __thiscall fn_00711B70(ccFntTy * st_this, char * resourceString, int param_2
 int __thiscall fn_00711DA0(ccFntTy * st_this, int * param_1, int param_2, int param_3, undefined4 param_4);
 // 00711F70 ccFntTy::WrSarr
 int __thiscall fn_00711F70(ccFntTy * st_this, int param_1, int param_2, int param_3, int param_4, int param_5, undefined4 param_6);
-// 007121A0 FUN_007121a0
-undefined4 __cdecl fn_007121A0(int param_1,int param_2,int param_3);
+// 007121A0 Library::Ourlib::MFCFNT::FUN_007121a0
+undefined4 __cdecl fn_007121A0(int param_1, int param_2, int param_3);
 // 007121F0 ccFntTy::FormSarr
 uint * __thiscall fn_007121F0(ccFntTy * st_this, uint * param_1, char * text, int param_3, int param_4, uint param_5, int param_6);
 // 007126E0 ccFntTy::FormIndentSarr
@@ -19640,28 +19624,26 @@ int __thiscall fn_0071B220(InputClassTy * st_this);
 int __thiscall fn_0071B520(InputClassTy * st_this);
 // 0071B630 Library::Ourlib::SINPUT::FUN_0071b630
 undefined4 __thiscall fn_0071B630(void * st_this, undefined4 * param_1, undefined4 * param_2, int * param_3);
-// 0071B760 FUN_0071b760
-undefined4
-fn_0071B760(uint param_1,byte param_2,AnonShape_0071B760_B33E06ED *param_3,
-            AnonShape_0071B760_D695FB3E *param_4,uint *param_5,undefined4 *param_6);
-// 0071B970 FUN_0071b970
-undefined4 fn_0071B970(uint *param_1,byte *param_2);
+// 0071B760 Library::Ourlib::SINPUT::FUN_0071b760
+undefined4 __stdcall fn_0071B760(uint param_1, byte param_2, AnonShape_0071B760_B33E06ED * param_3, AnonShape_0071B760_D695FB3E * param_4, uint * param_5, undefined4 * param_6);
+// 0071B970 Library::Ourlib::SINPUT::FUN_0071b970
+undefined4 __stdcall fn_0071B970(uint * param_1, byte * param_2);
 // 0071B9C0 InputClassTy::None
 int __thiscall fn_0071B9C0(InputClassTy * st_this);
 // 0071C1D0 InputClassTy::AddAcc
 int __thiscall fn_0071C1D0(InputClassTy * st_this, uint * param_1);
 // 0071C530 InputClassTy::DelAcc
 undefined __thiscall fn_0071C530(InputClassTy * st_this, byte * param_1);
-// 0071C7C0 FUN_0071c7c0
-undefined4 __thiscall fn_0071C7C0(void *st_this,int *param_1);
-// 0071C830 FUN_0071c830
-void __fastcall fn_0071C830(AnonShape_0071C830_6B4541B2 *param_1);
-// 0071C870 FUN_0071c870
-void __fastcall fn_0071C870(AnonShape_0071C870_66664424 *param_1);
+// 0071C7C0 Library::Ourlib::SINPUT::FUN_0071c7c0
+undefined4 __thiscall fn_0071C7C0(void * st_this, int * param_1);
+// 0071C830 Library::Ourlib::SINPUT::FUN_0071c830
+undefined __fastcall fn_0071C830(AnonShape_0071C830_6B4541B2 * param_1);
+// 0071C870 Library::Ourlib::SINPUT::FUN_0071c870
+undefined __fastcall fn_0071C870(AnonShape_0071C870_66664424 * param_1);
 // 0071C8C0 InputClassTy::AddToMouse
 int __thiscall fn_0071C8C0(InputClassTy * st_this, int param_1, uint param_2);
-// 0071C9F0 FUN_0071c9f0
-void __thiscall fn_0071C9F0(void *st_this,int param_1);
+// 0071C9F0 Library::Ourlib::SINPUT::FUN_0071c9f0
+undefined __thiscall fn_0071C9F0(void * st_this, int param_1);
 // 0071CA50 InputClassTy::GetMessage
 int __thiscall fn_0071CA50(InputClassTy * st_this, STMessage * message);
 // 0071CF60 FUN_0071cf60
@@ -19674,8 +19656,8 @@ int __thiscall fn_0071CFD0(ButtonClassTy * st_this, STMessage * message);
 ButtonClassTy * __cdecl fn_0071E000(void);
 // 0071E040 RadioClassTy::RadioClassTy
 RadioClassTy * __thiscall fn_0071E040(RadioClassTy *st_this);
-// 0071E060 FUN_0071e060
-undefined4 __thiscall fn_0071E060(void *st_this,int param_1,int param_2);
+// 0071E060 Library::Ourlib::SBUTTON::FUN_0071e060
+undefined4 __thiscall fn_0071E060(void * st_this, int param_1, int param_2);
 // 0071E0E0 RadioClassTy::GetMessage
 int __thiscall fn_0071E0E0(RadioClassTy * st_this, STMessage * message);
 // 0071E6D0 CreateRadio
@@ -19708,28 +19690,28 @@ EditorClassTy * __thiscall fn_007209B0(EditorClassTy *st_this);
 int __thiscall fn_007209D0(void *st_this,undefined4 param_1);
 // 00720A50 EditorClassTy::_Draw
 int __thiscall fn_00720A50(EditorClassTy * st_this, int * param_1);
-// 00720D30 FUN_00720d30
-int __fastcall fn_00720D30(AnonShape_00720D30_DF382E7D *param_1);
-// 00720DE0 FUN_00720de0
+// 00720D30 Library::Ourlib::SEDIT::FUN_00720d30
+int __fastcall fn_00720D30(AnonShape_00720D30_DF382E7D * param_1);
+// 00720DE0 Library::Ourlib::SEDIT::FUN_00720de0
 int __fastcall fn_00720DE0(int param_1);
-// 00720E70 FUN_00720e70
-void __thiscall fn_00720E70(void *st_this,int param_1,int param_2);
-// 00721080 FUN_00721080
-void __thiscall fn_00721080(void *st_this,int param_1,uint param_2);
-// 00721340 FUN_00721340
-uint __fastcall fn_00721340(AnonShape_00721340_81196542 *param_1);
-// 00721520 FUN_00721520
-void __thiscall fn_00721520(void *st_this,int param_1,uint param_2);
-// 00721790 FUN_00721790
-int __fastcall fn_00721790(AnonShape_00721790_E0636AC6 *param_1);
-// 007217E0 FUN_007217e0
-int __fastcall fn_007217E0(AnonShape_007217E0_1A4AB243 *param_1);
-// 00721830 FUN_00721830
-undefined4 __thiscall fn_00721830(void *st_this,char *param_1);
-// 007219A0 FUN_007219a0
-int __fastcall fn_007219A0(AnonShape_007219A0_88F70163 *param_1);
-// 00721A20 FUN_00721a20
-void __thiscall fn_00721A20(void *st_this,int param_1);
+// 00720E70 Library::Ourlib::SEDIT::FUN_00720e70
+undefined __thiscall fn_00720E70(void * st_this, int param_1, int param_2);
+// 00721080 Library::Ourlib::SEDIT::FUN_00721080
+undefined __thiscall fn_00721080(void * st_this, int param_1, uint param_2);
+// 00721340 Library::Ourlib::SEDIT::FUN_00721340
+uint __fastcall fn_00721340(AnonShape_00721340_81196542 * param_1);
+// 00721520 Library::Ourlib::SEDIT::FUN_00721520
+undefined __thiscall fn_00721520(void * st_this, int param_1, uint param_2);
+// 00721790 Library::Ourlib::SEDIT::FUN_00721790
+int __fastcall fn_00721790(AnonShape_00721790_E0636AC6 * param_1);
+// 007217E0 Library::Ourlib::SEDIT::FUN_007217e0
+int __fastcall fn_007217E0(AnonShape_007217E0_1A4AB243 * param_1);
+// 00721830 Library::Ourlib::SEDIT::FUN_00721830
+undefined4 __thiscall fn_00721830(void * st_this, char * param_1);
+// 007219A0 Library::Ourlib::SEDIT::FUN_007219a0
+int __fastcall fn_007219A0(AnonShape_007219A0_88F70163 * param_1);
+// 00721A20 Library::Ourlib::SEDIT::FUN_00721a20
+void __thiscall fn_00721A20(void * st_this, int param_1);
 // 00721BF0 EditorClassTy::SendToSliders
 int __thiscall fn_00721BF0(EditorClassTy * st_this, int * param_1);
 // 00721CD0 Library::Ourlib::SEDIT::FUN_00721cd0
@@ -22034,8 +22016,8 @@ int fn_00755E10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 para
 void fn_007561D0(AnonShape_00753C80_4C8E695D *param_1,int param_2);
 // 00756200 Library::DKW::JPG::FUN_00756200
 undefined __stdcall fn_00756200(undefined4 * param_1, int param_2, int param_3);
-// 007562C0 FUN_007562c0
-void fn_007562C0(int *param_1);
+// 007562C0 Library::DKW::JPG::FUN_007562c0
+undefined __stdcall fn_007562C0(int * param_1);
 // 007562D0 FUN_007562d0
 void fn_007562D0(int *param_1);
 // 007562E0 Library::DKW::JPG::FUN_007562e0
@@ -22044,8 +22026,8 @@ undefined __stdcall fn_007562E0(int param_1, int param_2, undefined4 param_3);
 int __stdcall fn_00756340(int * param_1, int param_2);
 // 007563C0 Library::DKW::JPG::FUN_007563c0
 int __stdcall fn_007563C0(int param_1);
-// 00756480 FUN_00756480
-void fn_00756480(AnonShape_00756480_42788A49 *param_1);
+// 00756480 Library::DKW::JPG::FUN_00756480
+undefined __stdcall fn_00756480(AnonShape_00756480_42788A49 * param_1);
 // 007565B0 Library::DKW::JPG::FUN_007565b0
 undefined4 __stdcall fn_007565B0(int param_1);
 // 00756600 Library::DKW::JPG::FUN_00756600
@@ -22054,8 +22036,8 @@ undefined4 __stdcall fn_00756600(int param_1);
 undefined4 __stdcall fn_00756650(int * param_1);
 // 00756720 Library::DKW::JPG::FUN_00756720
 undefined4 __stdcall fn_00756720(int * param_1);
-// 00756800 FUN_00756800
-int fn_00756800(AnonShape_00756800_BE569F2C *param_1);
+// 00756800 Library::DKW::JPG::FUN_00756800
+int __stdcall fn_00756800(AnonShape_00756800_BE569F2C * param_1);
 // 007568D0 Library::DKW::JPG::FUN_007568d0
 int __stdcall fn_007568D0(int param_1, undefined4 param_2, undefined4 param_3);
 // 00756960 Library::DKW::JPG::FUN_00756960
@@ -22066,16 +22048,16 @@ undefined __stdcall fn_00756A10(int param_1, int param_2);
 undefined4 __stdcall fn_00756A80(int param_1);
 // 00756B20 Library::DKW::JPG::FUN_00756b20
 undefined __stdcall fn_00756B20(int param_1);
-// 00756D40 FUN_00756d40
-undefined4 fn_00756D40(AnonShape_00756D40_7190B7CA *param_1);
+// 00756D40 Library::DKW::JPG::FUN_00756d40
+undefined4 __stdcall fn_00756D40(AnonShape_00756D40_7190B7CA * param_1);
 // 00756DD0 Library::DKW::JPG::FUN_00756dd0
 undefined __stdcall fn_00756DD0(int param_1);
-// 00756E50 FUN_00756e50
-void fn_00756E50(int *param_1);
+// 00756E50 Library::DKW::JPG::FUN_00756e50
+undefined __stdcall fn_00756E50(int * param_1);
 // 00756E90 Library::DKW::JPG::FUN_00756e90
 undefined __stdcall fn_00756E90(int * param_1);
-// 00757070 FUN_00757070
-void fn_00757070(undefined4 *param_1);
+// 00757070 Library::DKW::JPG::FUN_00757070
+undefined __stdcall fn_00757070(undefined4 * param_1);
 // 007570F0 Library::DKW::JPG::FUN_007570f0
 undefined __stdcall fn_007570F0(int param_1);
 // 00757250 FUN_00757250
@@ -22170,12 +22152,12 @@ undefined __stdcall fn_00759660(int * param_1, int param_2, undefined4 param_3, 
 void fn_007596D0(int *param_1);
 // 00759860 Library::DKW::JPG::FUN_00759860
 int __stdcall fn_00759860(undefined4 param_1, int * param_2, uint param_3, uint param_4, int param_5);
-// 007599D0 FUN_007599d0
-void fn_007599D0(undefined4 param_1,int *param_2,int param_3);
+// 007599D0 Library::DKW::JPG::FUN_007599d0
+void __stdcall fn_007599D0(undefined4 param_1, int * param_2, int param_3);
 // 00759A80 Library::DKW::JPG::FUN_00759a80
 int __stdcall fn_00759A80(undefined4 param_1, int * param_2, uint param_3, uint param_4, int param_5);
-// 00759BF0 FUN_00759bf0
-void fn_00759BF0(undefined4 param_1,int *param_2,int param_3);
+// 00759BF0 Library::DKW::JPG::FUN_00759bf0
+void __stdcall fn_00759BF0(undefined4 param_1, int * param_2, int param_3);
 // 00759CA0 Library::DKW::JPG::FUN_00759ca0
 undefined __stdcall fn_00759CA0(int * param_1, int param_2);
 // 00759D90 FUN_00759d90
@@ -22200,8 +22182,8 @@ void fn_00759F00(undefined4 *param_1,undefined4 *param_2,uint param_3);
 void fn_00759F30(undefined4 *param_1,AnonShape_0075FEE0_E0ABA202 *param_2);
 // 00759F50 Library::DKW::JPG::FUN_00759f50
 undefined __stdcall fn_00759F50(int * param_1, int param_2);
-// 0075A040 FUN_0075a040
-void fn_0075A040(AnonShape_0075A040_811C231E *param_1);
+// 0075A040 Library::DKW::JPG::FUN_0075a040
+undefined __stdcall fn_0075A040(AnonShape_0075A040_811C231E * param_1);
 // 0075A0F0 Library::DKW::JPG::FUN_0075a0f0
 undefined __stdcall fn_0075A0F0(int param_1, int param_2);
 // 0075A180 FUN_0075a180
@@ -22337,8 +22319,8 @@ void fn_0075E100(int param_1,int *param_2,int param_3,undefined4 *param_4);
 void fn_0075E260(int param_1,int *param_2,int param_3,undefined4 *param_4);
 // 0075E460 Library::DKW::JPG::FUN_0075e460
 undefined __stdcall fn_0075E460(int * param_1);
-// 0075E580 FUN_0075e580
-void fn_0075E580(undefined4 *param_1);
+// 0075E580 Library::DKW::JPG::FUN_0075e580
+undefined __stdcall fn_0075E580(undefined4 * param_1);
 // 0075E630 Library::DKW::JPG::FUN_0075e630
 undefined __stdcall fn_0075E630(int * param_1, int param_2);
 // 0075E750 FUN_0075e750
@@ -22373,18 +22355,18 @@ void fn_0075F590(AnonShape_0075F590_570A7014 *param_1,int *param_2,int param_3);
 void fn_0075F720(int param_1);
 // 0075F740 Library::DKW::JPG::FUN_0075f740
 undefined __stdcall fn_0075F740(int * param_1);
-// 0075F7D0 FUN_0075f7d0
-void fn_0075F7D0(AnonShape_0075F7D0_BDBF0616 *param_1);
+// 0075F7D0 Library::DKW::JPG::FUN_0075f7d0
+undefined __stdcall fn_0075F7D0(AnonShape_0075F7D0_BDBF0616 * param_1);
 // 0075F8E0 Library::DKW::JPG::FUN_0075f8e0
 int __stdcall fn_0075F8E0(int param_1, int * param_2);
-// 0075F9D0 FUN_0075f9d0
-int fn_0075F9D0(undefined4 param_1,undefined4 param_2,int param_3,int param_4);
-// 0075FA00 FUN_0075fa00
-void fn_0075FA00(AnonShape_0075FA00_902A830E *param_1);
-// 0075FB30 FUN_0075fb30
-int fn_0075FB30(AnonShape_0075FA00_902A830E *param_1,undefined4 param_2,int param_3,int param_4);
-// 0075FB50 FUN_0075fb50
-void fn_0075FB50(int *param_1);
+// 0075F9D0 Library::DKW::JPG::FUN_0075f9d0
+int __stdcall fn_0075F9D0(undefined4 param_1, undefined4 param_2, int param_3, int param_4);
+// 0075FA00 Library::DKW::JPG::FUN_0075fa00
+undefined __stdcall fn_0075FA00(AnonShape_0075FA00_902A830E * param_1);
+// 0075FB30 Library::DKW::JPG::FUN_0075fb30
+int __stdcall fn_0075FB30(AnonShape_0075FA00_902A830E * param_1, undefined4 param_2, int param_3, int param_4);
+// 0075FB50 Library::DKW::JPG::FUN_0075fb50
+undefined __stdcall fn_0075FB50(int * param_1);
 // 0075FBA0 Library::DKW::JPG::FUN_0075fba0
 undefined __stdcall fn_0075FBA0(int * param_1);
 // 0075FCA0 FUN_0075fca0
@@ -23847,7 +23829,7 @@ inline void ChooseMapTy::DoneChooseMap() {
     st::fn_005ACB30(this);
 }
 
-inline void ChooseMapTy::InitChooseMap(ChooseMapTy_field_1A5FState param_1, ChooseMapTy_InitChooseMap_param_2Enum param_2) {
+inline void ChooseMapTy::InitChooseMap(undefined1 param_1, ChooseMapTy_InitChooseMap_param_2Enum param_2) {
     st::fn_005AB300(this, param_1, param_2);
 }
 
@@ -25527,7 +25509,7 @@ inline void STBHEShellC::sub_005F5D10(int param_1) {
     st::fn_005F5D10(this, param_1);
 }
 
-inline void STBHEShellC::sub_005F5E30(int param_1, int param_2, undefined4 param_3) {
+inline void STBHEShellC::sub_005F5E30(int param_1, int param_2, int param_3) {
     st::fn_005F5E30(this, param_1, param_2, param_3);
 }
 
@@ -26543,7 +26525,7 @@ inline int STPlaySystemC::SaveObjData(char *text, byte *param_2, uint param_3, b
     return st::fn_0054D550(this, text, param_2, param_3, param_4);
 }
 
-inline int STPlaySystemC::SaveObjData(int *param_1, byte *param_2, AnonShape_0060EA30_DCEB68AD *param_3) {
+inline int STPlaySystemC::SaveObjData(int *param_1, byte *param_2, uint param_3) {
     return st::fn_0054D430(this, param_1, param_2, param_3);
 }
 
@@ -26783,8 +26765,8 @@ inline undefined4 STVolcanoC::LoadImagVolcano(int param_1) {
     return st::fn_006474E0(this, param_1);
 }
 
-inline void STVolcanoC::sub_00646D40(undefined4 *param_1) {
-    st::fn_00646D40(this, param_1);
+inline byte * STVolcanoC::sub_00646D40(undefined4 *param_1) {
+    return st::fn_00646D40(this, param_1);
 }
 
 inline undefined4 STVolcanoC::sub_00646DB0(undefined4 *param_1) {
@@ -27147,7 +27129,7 @@ inline int AnonReceiver_006CEC40::FUN_006d63e0(int *param_1) {
     return st::fn_006D63E0(this, param_1);
 }
 
-inline bool AnonReceiver_006E1EE0::FUN_006e1ee0(AnonShape_006E1EE0_698AE49A *param_1, undefined4 *param_2, int param_3, int *param_4) {
+inline bool AnonReceiver_006E1EE0::FUN_006e1ee0(AnonShape_006E1EE0_698AE49A * param_1, undefined4 * param_2, int param_3, int * param_4) {
     return st::fn_006E1EE0(this, param_1, param_2, param_3, param_4);
 }
 
@@ -27207,8 +27189,8 @@ inline void ST3DSMAPContext::sub_006DD800(float param_1) {
     st::fn_006DD800(this, param_1);
 }
 
-inline void ST3DSMAPContext::sub_006DD870() {
-    st::fn_006DD870(this);
+inline undefined ST3DSMAPContext::sub_006DD870() {
+    return st::fn_006DD870(this);
 }
 
 inline void ST3DSMAPContext::sub_006DDA90(float param_1, float param_2) {
@@ -27231,7 +27213,7 @@ inline void ST3DSMAPContext::sub_006DDBE0() {
     st::fn_006DDBE0(this);
 }
 
-inline void ST3DSMAPContext::sub_006E1320(double *param_1, double *param_2, int *param_3, int *param_4, int *param_5) {
+inline void ST3DSMAPContext::sub_006E1320(double * param_1, double * param_2, int * param_3, int * param_4, int * param_5) {
     st::fn_006E1320(this, param_1, param_2, param_3, param_4, param_5);
 }
 
@@ -27283,8 +27265,8 @@ inline undefined4 ST3DSMAPContext::sub_006E68C0(int param_1, int param_2, int *p
     return st::fn_006E68C0(this, param_1, param_2, param_3, param_4);
 }
 
-inline void ST3DSMAPContext::sub_006E6AF0(AnonShape_006E6AF0_D2F012A7 *param_1) {
-    st::fn_006E6AF0(this, param_1);
+inline undefined ST3DSMAPContext::sub_006E6AF0(AnonShape_006E6AF0_D2F012A7 * param_1) {
+    return st::fn_006E6AF0(this, param_1);
 }
 
 inline void ST3DSMAPContext::sub_006E6FB0(RecoveredSourceFamily_dibcopy *param_1, int param_2, int param_3, int param_4) {
@@ -27311,7 +27293,7 @@ inline int ST3DSMAPContext::sub_006E88C0(int *param_1, undefined4 param_2, undef
     return st::fn_006E88C0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12);
 }
 
-inline undefined4 ST3DSMAPContext::sub_006E8EA0(AnonShape_006E8EA0_96B71903 *param_1) {
+inline undefined4 ST3DSMAPContext::sub_006E8EA0(AnonShape_006E8EA0_96B71903 * param_1) {
     return st::fn_006E8EA0(this, param_1);
 }
 
@@ -27763,19 +27745,19 @@ inline void VisibleClassTy::SetZoneAst(int param_1, int param_2, char param_3, u
     st::fn_00559B30(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
 }
 
-inline void VisibleClassTy::SetZoneDes(int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7) {
+inline void VisibleClassTy::SetZoneDes(int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7) {
     st::fn_005597A0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
 }
 
-inline void VisibleClassTy::SetZoneMin1(int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7) {
+inline void VisibleClassTy::SetZoneMin1(int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7) {
     st::fn_0055A270(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
 }
 
-inline void VisibleClassTy::SetZoneMin2(int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7) {
+inline void VisibleClassTy::SetZoneMin2(int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7) {
     st::fn_0055A620(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
 }
 
-inline void VisibleClassTy::SetZoneTsh(int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7) {
+inline void VisibleClassTy::SetZoneTsh(int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7) {
     st::fn_00559EC0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
 }
 
@@ -27807,7 +27789,7 @@ inline void VisibleClassTy::sub_00559110(int param_1, undefined *param_2, int pa
     st::fn_00559110(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
 }
 
-inline void VisibleClassTy::sub_005594A0(int param_1, int param_2, char param_3, undefined *param_4, int param_5, undefined4 param_6, uint param_7) {
+inline void VisibleClassTy::sub_005594A0(int param_1, int param_2, char param_3, undefined *param_4, int param_5, uint param_6, uint param_7) {
     st::fn_005594A0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
 }
 
@@ -27847,7 +27829,7 @@ inline void VisibleClassTy::sub_0055B7F0(int param_1, undefined *param_2) {
     st::fn_0055B7F0(this, param_1, param_2);
 }
 
-inline void VisibleClassTy::sub_0055BB00(byte param_1, short param_2, short param_3, char param_4, uint param_5, byte param_6, undefined4 param_7) {
+inline void VisibleClassTy::sub_0055BB00(byte param_1, short param_2, short param_3, char param_4, uint param_5, byte param_6, uint param_7) {
     st::fn_0055BB00(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
 }
 

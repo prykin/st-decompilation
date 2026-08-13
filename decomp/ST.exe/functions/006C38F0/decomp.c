@@ -13,7 +13,7 @@ undefined4 FUN_006c38f0(int param_1,int param_2,int param_3,undefined4 param_4)
 
   pcVar5 = nullptr;
   local_8 = 0;
-  pAVar2 = (AnonShape_006C3FC0_72DDFA27 *)FUN_006c38d0(DAT_008568d0,param_1);
+  pAVar2 = (AnonShape_006C3FC0_72DDFA27 *)Library::DKW::DV::FUN_006c38d0(DAT_008568d0,param_1);
   if (pAVar2 != nullptr) {
     pcVar5 = *(code **)&pAVar2[3].field_0x10;
   }
@@ -34,14 +34,14 @@ undefined4 FUN_006c38f0(int param_1,int param_2,int param_3,undefined4 param_4)
          (*(byte *)(puVar1[10] + 8) & 1) != 0)) {
         if (param_3 == 0) {
           if ((puVar1[1] & 0x20000000) != 0) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*(int *)puVar1[0x17] + 0x20))((int *)puVar1[0x17]);
             uVar4 = puVar1[1] | 0x10000000;
             goto LAB_006c3a62;
           }
         }
         else if ((puVar1[1] & 0x10000000) != 0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*(int *)puVar1[0x17] + 0x1c))((int *)puVar1[0x17]);
           uVar4 = puVar1[1] & 0xefffffff;
 LAB_006c3a62:

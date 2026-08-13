@@ -329,7 +329,7 @@ cf_common_exit_00437191:
       }
       local_8c.field_0010 = 0x5d98;
       local_74 = pDVar17;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)pDVar26->flags)(&local_8c);
       DArrayDestroy(pDVar17);
       return;
@@ -926,7 +926,7 @@ cf_common_exit_00437E03:
           puVar25 = (byte *)(&local_1fc);
           memmove(puVar25, puVar18, 0x42); /* compiler REP MOVS byte copy */
           iVar24 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_1f6,(int *)&local_40);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           if ((iVar24 == 0) && (iVar24 = (**(code **)(*local_40 + 0x88))(&local_e8), 0 < iVar24)) {
             if (local_e8 == 0xdc) {
               local_d4 = local_d4 + 1;
@@ -1069,7 +1069,7 @@ LAB_00437cb5:
       local_8c.field_0010 = 0x5d98;
       local_8c.field_0014 = (undefined4 *)STReplaceLowWord((uint32_t)(local_8c.field_0014), (uint16_t)(1));
       local_74 = (DArrayTy *)pSVar16->field_0029;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)pDVar26->flags)(&local_8c);
       return;
     }

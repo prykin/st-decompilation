@@ -1454,7 +1454,7 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
       if (SVar1 == MESS_SHARED_010F) {
         local_c = nullptr;
         local_10 = st::fn_00404511(local_14,(uint *)&local_c);
-        st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
+        st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,(uint)local_c);
         if (local_10 != nullptr) {
           st::fn_006AB060(&local_10);
         }

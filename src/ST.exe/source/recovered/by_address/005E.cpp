@@ -128,10 +128,10 @@ WaitTy * __cdecl st::fn_005EAD30(void)
 {
   WaitTy *this;
   int iVar1;
-  undefined4 *puVar2;
+  WaitTy_Record_00BC_01FB *pWVar2;
   SpriteClassTy *this_00;
-  undefined4 *puVar3;
-  uint *puVar4;
+  WaitTy_Record_00BC_01FB *pWVar4;
+  uint *puVar5;
   int local_8;
 
   this = (WaitTy *)st::fn_006B04D0(0x1b04);
@@ -145,7 +145,7 @@ WaitTy * __cdecl st::fn_005EAD30(void)
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->array_00BC[0].field_00B8;
     local_8 = 0xd;
     do {
       st::fn_00715820(this_00 + -1);
@@ -160,35 +160,38 @@ WaitTy * __cdecl st::fn_005EAD30(void)
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
-    puVar2 = (undefined4 *)&this->field_0xbc;
+    pWVar2 = this->array_00BC;
     do {
-      puVar3 = puVar2;
-      memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
-      iVar1 = 0;
+      pWVar4 = pWVar2;
+      for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *(undefined4 *)pWVar4 = 0;
+        pWVar4 = (WaitTy_Record_00BC_01FB *)&pWVar4->field_0x4;
+      }
+      *(undefined2 *)pWVar4 = 0;
+      pWVar4->field_0x2 = 0;
       local_8 = local_8 + -1;
-      puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
+      pWVar2 = pWVar2 + 1;
     } while (local_8 != 0);
-    this->field_1A60 = 1;
-    this->field_1A64 = 1;
-    this->field_1A68 = 1;
+    this->array_00BC[0xc].field_01E0 = 1;
+    this->array_00BC[0xc].field_01E4 = 1;
+    this->array_00BC[0xc].field_01E8 = 1;
     this->vtable = &st_global_0079C24C;
-    this->field_1A74 = 0;
-    this->field_1A6C = 0;
-    this->field_1A70 = 0;
-    this->field_1A75 = 0;
+    this->array_00BC[0xc].field_01F4 = 0;
+    this->array_00BC[0xc].field_01EC = 0;
+    this->array_00BC[0xc].field_01F0 = 0;
+    this->array_00BC[0xc].field_01F5 = 0;
     this->field_1A87 = 0;
     this->field_1A8B = 0;
     this->field_1A8F = 0xffffffff;
     this->field_1A93 = 0;
-    this->field_1A76 = 0;
-    this->field_1A77 = 0;
+    this->array_00BC[0xc].field_01F6 = 0;
+    this->array_00BC[0xc].field_01F7 = 0;
     this->field_1A7B = 0;
     this->field_1A83 = nullptr;
-    puVar4 = this->field_1A94;
+    puVar5 = this->field_1A94;
     for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar4 = 0xffffffff;
-      puVar4 = puVar4 + 1;
+      *puVar5 = 0xffffffff;
+      puVar5 = puVar5 + 1;
     }
     this->field_1AF0 = nullptr;
     this->field_1AF4 = 0;
@@ -259,31 +262,13 @@ undefined4 __fastcall st::fn_005EBD80(AnonShape_005EBD80_1A4ED01F *param_1)
   sVar8 = param_1->field_034A;
   bVar4 = false;
   bVar3 = false;
-  if (sVar8 < 0) {
-    sVar8 = ((sVar8 / 0xc9 + (sVar8 >> 0xf)) - (short)((longlong)(int)sVar8 * 0x28c1979 >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar8 = (sVar8 / 0xc9 + (sVar8 >> 0xf)) - (short)((longlong)(int)sVar8 * 0x28c1979 >> 0x3f);
-  }
+  sVar8 = STBiasedDiv16(sVar8, 0xc9); /* exact signed 16-bit grid-index division */
   param_1->field_0242 = sVar8;
   sVar8 = param_1->field_034C;
-  if (sVar8 < 0) {
-    sVar8 = ((sVar8 / 0xc9 + (sVar8 >> 0xf)) - (short)((longlong)(int)sVar8 * 0x28c1979 >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar8 = (sVar8 / 0xc9 + (sVar8 >> 0xf)) - (short)((longlong)(int)sVar8 * 0x28c1979 >> 0x3f);
-  }
+  sVar8 = STBiasedDiv16(sVar8, 0xc9); /* exact signed 16-bit grid-index division */
   param_1->field_0244 = sVar8;
   sVar8 = param_1->field_034E;
-  if (sVar8 < 0) {
-    sVar8 = ((sVar8 / 200 + (sVar8 >> 0xf)) - (short)((longlong)(int)sVar8 * 0x51eb851f >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar8 = (sVar8 / 200 + (sVar8 >> 0xf)) - (short)((longlong)(int)sVar8 * 0x51eb851f >> 0x3f);
-  }
+  sVar8 = STBiasedDiv16(sVar8, 200); /* exact signed 16-bit grid-index division */
   param_1->field_0246 = sVar8;
   param_1->field_0231 = 0xfd;
   if ((((short)(param_1->field_046B * 0xc9 + 100) != param_1->field_034A) ||
@@ -875,15 +860,7 @@ undefined4 __thiscall st::fn_005ED1C0(void *this,int *param_1,int *param_2,int *
       STField<undefined4>(this,0x28b) = 0;
     }
   }
-  sVar1 = (short)(iVar11 >> 0x1f);
-  if (iVar11 < 0) {
-    iVar8 = (short)(((short)(iVar11 / 200) + sVar1) - (short)((longlong)iVar11 * 0x51eb851f >> 0x3f)
-                   ) + -1;
-  }
-  else {
-    iVar8 = (int)(short)(((short)(iVar11 / 200) + sVar1) -
-                        (short)((longlong)iVar11 * 0x51eb851f >> 0x3f));
-  }
+  iVar8 = STBiasedDiv16(iVar11, 200); /* exact signed 16-bit grid-index division */
   sVar1 = STField<short>(this,0x246);
   if (iVar8 != sVar1) {
     if ((1 < STField<byte>(this,0x252)) && (STField<short>(this,600) == iVar8)) {
@@ -1695,37 +1672,12 @@ void __thiscall st::fn_005EEFF0(void *this,int param_1)
       return;
     }
     iVar5 = STField<int>(this,0x27f);
-    sVar2 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (short)(((short)(iVar5 / 200) + sVar2) -
-                       (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int)(short)(((short)(iVar5 / 200) + sVar2) -
-                            (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
-    }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_1 = STBiasedDiv16(iVar5, 200); /* exact signed 16-bit grid-index division */
     iVar5 = STField<int>(this,0x27b);
-    sVar2 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar2) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar2) -
-                          (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-    }
+    iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
     iVar4 = STField<int>(this,0x277);
-    sVar2 = (short)(iVar4 >> 0x1f);
-    if (iVar4 < 0) {
-      iVar4 = (short)(((short)(iVar4 / 0xc9) + sVar2) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar4 = (int)(short)(((short)(iVar4 / 0xc9) + sVar2) -
-                          (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
-    }
+    iVar4 = STBiasedDiv16(iVar4, 0xc9); /* exact signed 16-bit grid-index division */
     if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
          (st::fn_00403F53
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
@@ -1763,37 +1715,12 @@ joined_r0x005ef316:
       return;
     }
     iVar5 = STField<int>(this,0x27f);
-    sVar2 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (short)(((short)(iVar5 / 200) + sVar2) -
-                       (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int)(short)(((short)(iVar5 / 200) + sVar2) -
-                            (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
-    }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_1 = STBiasedDiv16(iVar5, 200); /* exact signed 16-bit grid-index division */
     iVar5 = STField<int>(this,0x27b);
-    sVar2 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar2) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar2) -
-                          (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-    }
+    iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
     iVar4 = STField<int>(this,0x277);
-    sVar2 = (short)(iVar4 >> 0x1f);
-    if (iVar4 < 0) {
-      iVar4 = (short)(((short)(iVar4 / 0xc9) + sVar2) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar4 = (int)(short)(((short)(iVar4 / 0xc9) + sVar2) -
-                          (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
-    }
+    iVar4 = STBiasedDiv16(iVar4, 0xc9); /* exact signed 16-bit grid-index division */
     if (((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
            (st::fn_00403F53
                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
@@ -2205,33 +2132,15 @@ void __fastcall st::fn_005EFF00(int param_1)
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x277);
-  sVar2 = (short)(iVar1 >> 0x1f);
-  if (iVar1 < 0) {
-    sVar2 = (((short)(iVar1 / 0xc9) + sVar2) - (short)((longlong)iVar1 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    sVar2 = ((short)(iVar1 / 0xc9) + sVar2) - (short)((longlong)iVar1 * 0x28c1979 >> 0x3f);
-  }
+  sVar2 = STBiasedDiv16(iVar1, 0xc9); /* exact signed 16-bit grid-index division */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x27b);
   *(short *)(param_1 + 0x47) = sVar2;
-  sVar2 = (short)(iVar1 >> 0x1f);
-  if (iVar1 < 0) {
-    sVar2 = (((short)(iVar1 / 0xc9) + sVar2) - (short)((longlong)iVar1 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    sVar2 = ((short)(iVar1 / 0xc9) + sVar2) - (short)((longlong)iVar1 * 0x28c1979 >> 0x3f);
-  }
+  sVar2 = STBiasedDiv16(iVar1, 0xc9); /* exact signed 16-bit grid-index division */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x27f);
   *(short *)(param_1 + 0x49) = sVar2;
-  sVar2 = (short)(iVar1 >> 0x1f);
-  if (iVar1 < 0) {
-    sVar2 = (((short)(iVar1 / 200) + sVar2) - (short)((longlong)iVar1 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    sVar2 = ((short)(iVar1 / 200) + sVar2) - (short)((longlong)iVar1 * 0x51eb851f >> 0x3f);
-  }
+  sVar2 = STBiasedDiv16(iVar1, 200); /* exact signed 16-bit grid-index division */
   *(short *)(param_1 + 0x4b) = sVar2;
   *(undefined2 *)(param_1 + 0x41) = *(undefined2 *)(param_1 + 0x277);
   *(undefined2 *)(param_1 + 0x45) = *(undefined2 *)(param_1 + 0x27f);

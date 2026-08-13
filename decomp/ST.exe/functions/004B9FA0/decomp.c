@@ -714,7 +714,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
             else {
               local_62 = 0xffff;
             }
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)*DAT_008117bc)(local_7c);
           }
           local_EAX_1723 = LookupRecordByte(*(char *)&this_00->field_023D);
@@ -1272,7 +1272,7 @@ LAB_004bb5dd:
       local_62 = local_50;
       local_6c = 0x5dd5;
       local_64 = (undefined2)local_54;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*DAT_008117bc)(local_7c);
     }
     if (DAT_00811798 != nullptr) {
@@ -1326,7 +1326,7 @@ LAB_004bb5dd:
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_68 = CONCAT22(this_00->field_0032,*(undefined2 *)&this_00->field_0024);
             local_64 = (short)local_54;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)*DAT_008117bc)(local_7c);
           }
           local_68 = this_00->field_0008;
@@ -1342,7 +1342,7 @@ LAB_004bb5dd:
         local_68 = CONCAT22(this_00->field_0032,*(undefined2 *)&this_00->field_0024);
         local_62 = 0xffff;
         local_64 = (short)local_54;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (*(code *)*puRam00000000)(local_7c);
       }
       if (DAT_00811798 != nullptr) {

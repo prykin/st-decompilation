@@ -1,21 +1,21 @@
 sequence	script	status	duration_ms	argument	detail
-1	STEvidenceLedger.java	completed	7407	fingerprint | <repo>/recovery	-
-2	STAbiRegressionGate.java	completed	2050	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | startup | 76982f60fdd65a328a929e0995e61dde20d94ba44feead0fd812518e0c55c32d	-
-3	STAbiConsistencyAnalyzer.java	completed	31378	<repo>/recovery	-
-4	STAbiConsistencyApplier.java	completed	33	<repo>/recovery/ST.exe/abi_consistency_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
-5	STReturnSemanticsAnalyzer.java	completed	451	<repo>/recovery | repair-only	-
-6	STReturnSemanticsApplier.java	completed	19	<repo>/recovery/ST.exe/return_semantics_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
-7	STAbiRegressionGate.java	completed	1721	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | export-return-repair	-
-8	STFunctionPointerParameterAnalyzer.java	completed	4627	<repo>/recovery	-
-9	STFunctionPointerParameterApplier.java	completed	29	<repo>/recovery/ST.exe/function_pointer_parameter_proposals.tsv	recovery_state: proposals_enabled=5, proposals_review=20, changed=0, unchanged=5, review=20, conflict=0, error=0
-10	STFunctionPointerFieldAnalyzer.java	completed	2290	<repo>/recovery	-
-11	STFunctionPointerFieldApplier.java	completed	20	<repo>/recovery/ST.exe/function_pointer_field_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
-12	STIndirectCallAnalyzer.java	completed	2447	<repo>/recovery	-
-13	STIndirectCallApplier.java	completed	89	<repo>/recovery/ST.exe/indirect_call_proposals.tsv	recovery_state: proposals_enabled=2318, proposals_review=549, changed=0, unchanged=2288, review=579, conflict=0, error=0
-14	STAbiRegressionGate.java	completed	1847	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | export-indirect-pass-1	-
-15	STManualTypeAuditAnalyzer.java	completed	72	<repo>/recovery	-
-16	STEvidenceLedger.java	completed	4990	record | <repo>/recovery	-
-17	STEvidenceLedger.java	completed	4614	verify | <repo>/recovery	-
-18	STDecompExport.java	completed	97441	<repo>/decomp	-
-19	STExportRegressionGate.java	completed	825	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe	-
-20	STAbiRegressionGate.java	completed	3252	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | accepted-refresh | 76982f60fdd65a328a929e0995e61dde20d94ba44feead0fd812518e0c55c32d	-
+1	STEvidenceLedger.java	completed	45605	fingerprint | <repo>/recovery	-
+2	STAbiRegressionGate.java	completed	8326	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | startup | 3165427b06395bf91dcf3848364a7bef1d66e934908cc378f28beb0fdc519489	-
+3	STAbiConsistencyAnalyzer.java	completed	121054	<repo>/recovery	-
+4	STAbiConsistencyApplier.java	completed	195	<repo>/recovery/ST.exe/abi_consistency_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
+5	STReturnSemanticsAnalyzer.java	completed	1211	<repo>/recovery | repair-only	-
+6	STReturnSemanticsApplier.java	completed	88	<repo>/recovery/ST.exe/return_semantics_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
+7	STAbiRegressionGate.java	completed	8181	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | export-return-repair	-
+8	STFunctionPointerParameterAnalyzer.java	completed	19968	<repo>/recovery	-
+9	STFunctionPointerParameterApplier.java	completed	199	<repo>/recovery/ST.exe/function_pointer_parameter_proposals.tsv	recovery_state: proposals_enabled=5, proposals_review=20, changed=0, unchanged=5, review=20, conflict=0, error=0
+10	STFunctionPointerFieldAnalyzer.java	completed	11002	<repo>/recovery	-
+11	STFunctionPointerFieldApplier.java	completed	149	<repo>/recovery/ST.exe/function_pointer_field_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
+12	STIndirectCallAnalyzer.java	completed	13976	<repo>/recovery	-
+13	STIndirectCallApplier.java	completed	442	<repo>/recovery/ST.exe/indirect_call_proposals.tsv	recovery_state: proposals_enabled=2318, proposals_review=549, changed=0, unchanged=2288, review=579, conflict=0, error=0
+14	STAbiRegressionGate.java	completed	7428	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | export-indirect-pass-1	-
+15	STManualTypeAuditAnalyzer.java	completed	900	<repo>/recovery	-
+16	STEvidenceLedger.java	completed	33432	record | <repo>/recovery	-
+17	STEvidenceLedger.java	completed	41073	verify | <repo>/recovery	-
+18	STDecompExport.java	completed	290140	<repo>/decomp	-
+19	STExportRegressionGate.java	completed	1737	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe	-
+20	STAbiRegressionGate.java	completed	4993	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | accepted-refresh | 3165427b06395bf91dcf3848364a7bef1d66e934908cc378f28beb0fdc519489	-

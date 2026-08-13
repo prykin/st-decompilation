@@ -126,7 +126,11 @@ void __thiscall st::fn_00543830(CursorClassTy *this)
 #line 4 "decomp/ST.exe/functions/00543990/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
-   CursorClassTy::ReInitCursorSpr */
+   CursorClassTy::ReInitCursorSpr
+
+   [STSwitchEnumApplier] Switch target field_0494 uses
+   /SubmarineTitans/Recovered/Enums/CursorClassTy_field_0494State. Cases:
+   CASE_C=12;CASE_F=15;CASE_18=24;CASE_48=72;CASE_58=88 */
 
 void __thiscall st::fn_00543990(CursorClassTy *this,int param_1)
 
@@ -161,7 +165,7 @@ void __thiscall st::fn_00543990(CursorClassTy *this,int param_1)
     st::fn_007158A0
               ((SpriteClassTy *)this_00,(int *)g_ddxContext_008075A8,0,cVar4,puVar5,iVar2,
                (uint)(param_1 != 7));
-    this_01->field_0494 = 0x58;
+    this_01->field_0494 = CASE_58;
     st::fn_0040507E(this_01,CASE_0,this_01->field_0034,this_01->field_0038);
     if (this_01->field_001C != 0xffffffff) {
       st::fn_006B3AF0((int *)this_01->field_0060,this_01->field_001C);
@@ -1680,17 +1684,17 @@ switchD_0054679d_default:
           return 0;
         }
         if ((g_researchPanel_008016E8 != nullptr) &&
-           (g_researchPanel_008016E8->field_0172 == 1)) {
+           (g_researchPanel_008016E8->field_0172 == CASE_1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
         if ((g_bldBoatPanel_0080167C != nullptr) &&
-           (g_bldBoatPanel_0080167C->field_0172 == 1)) {
+           (g_bldBoatPanel_0080167C->field_0172 == CASE_1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
         if ((g_bldObjPanel_00801684 != nullptr) &&
-           (g_bldObjPanel_00801684->field_0172 == 1)) {
+           (g_bldObjPanel_00801684->field_0172 == CASE_1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -1721,7 +1725,7 @@ switchD_0054679d_default:
           return 0;
         }
         if ((g_bldLabPanel_00801680 != nullptr) &&
-           (g_bldLabPanel_00801680->field_0172 == 1)) {
+           (g_bldLabPanel_00801680->field_0172 == CASE_1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -1766,17 +1770,17 @@ switchD_0054679d_default:
         return 0;
       }
       if ((g_researchPanel_008016E8 != nullptr) &&
-         (g_researchPanel_008016E8->field_0172 == 1)) {
+         (g_researchPanel_008016E8->field_0172 == CASE_1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
       if ((g_bldBoatPanel_0080167C != nullptr) &&
-         (g_bldBoatPanel_0080167C->field_0172 == 1)) {
+         (g_bldBoatPanel_0080167C->field_0172 == CASE_1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
       if ((g_bldObjPanel_00801684 != nullptr) &&
-         (g_bldObjPanel_00801684->field_0172 == 1)) {
+         (g_bldObjPanel_00801684->field_0172 == CASE_1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1807,7 +1811,7 @@ switchD_0054679d_default:
         return 0;
       }
       if ((g_bldLabPanel_00801680 != nullptr) &&
-         (g_bldLabPanel_00801680->field_0172 == 1)) {
+         (g_bldLabPanel_00801680->field_0172 == CASE_1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2161,7 +2165,8 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) &&
+         (g_helpPanel_00801690->field_0172 != CASE_2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2211,7 +2216,8 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) &&
+         (g_helpPanel_00801690->field_0172 != CASE_2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2272,7 +2278,8 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) &&
+         (g_helpPanel_00801690->field_0172 != CASE_2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2326,7 +2333,8 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) &&
+         (g_helpPanel_00801690->field_0172 != CASE_2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2392,7 +2400,8 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) &&
+         (g_helpPanel_00801690->field_0172 != CASE_2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2458,7 +2467,8 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) &&
+         (g_helpPanel_00801690->field_0172 != CASE_2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2521,7 +2531,8 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) &&
+         (g_helpPanel_00801690->field_0172 != CASE_2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2584,7 +2595,8 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) &&
+         (g_helpPanel_00801690->field_0172 != CASE_2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2638,7 +2650,8 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) &&
+         (g_helpPanel_00801690->field_0172 != CASE_2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2805,7 +2818,8 @@ switchD_00546ac9_caseD_a506:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
+    if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != CASE_2)
+       ) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -2987,8 +3001,8 @@ switchD_00546ac9_caseD_a505:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2))
-        {
+        if ((g_helpPanel_00801690 != nullptr) &&
+           (g_helpPanel_00801690->field_0172 != CASE_2)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -3014,8 +3028,8 @@ switchD_00546ac9_caseD_a505:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2))
-        {
+        if ((g_helpPanel_00801690 != nullptr) &&
+           (g_helpPanel_00801690->field_0172 != CASE_2)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -3142,12 +3156,16 @@ switchD_00546590_caseD_a125:
 
    [STSwitchEnumApplier] Switch target field_04A2 uses
    /SubmarineTitans/Recovered/Enums/CursorClassTy_field_04A2State. Cases:
-   CASE_3=3;CASE_5=5;CASE_A=10;CASE_E=14;CASE_2B=43;CASE_2C=44;CASE_4E=78 */
+   CASE_3=3;CASE_5=5;CASE_A=10;CASE_E=14;CASE_2B=43;CASE_2C=44;CASE_4E=78
+
+   [STSwitchEnumApplier] Switch target field_0494 uses
+   /SubmarineTitans/Recovered/Enums/CursorClassTy_field_0494State. Cases:
+   CASE_C=12;CASE_F=15;CASE_18=24;CASE_48=72;CASE_58=88 */
 
 void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
 
 {
-  short sVar1;
+  CursorClassTy_field_0494State CVar1;
   STFishC *pSVar2;
   undefined4 uVar3;
   CursorClassTy *this_00;
@@ -3328,8 +3346,9 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
     return;
   }
   if (this_00->field_04DE != '\0') {
-    if (((this_00->field_0494 == 0x48) && (pSVar2 = this_00->field_049A, pSVar2 != nullptr))
-       && (g_helpPanel_00801690 != nullptr)) {
+    if (((this_00->field_0494 == CASE_48) &&
+        (pSVar2 = this_00->field_049A, pSVar2 != nullptr)) &&
+       (g_helpPanel_00801690 != nullptr)) {
       HVar5 = pSVar2->slot_2C();
       if (HVar5 == 0x78) {
         HVar5 = *(HelpPanelTy_sub_00514BC0_param_1Enum *)&this_00->field_049A->field_0x259;
@@ -3340,8 +3359,8 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
     }
     goto switchD_00548db5_caseD_3;
   }
-  sVar1 = this_00->field_0494;
-  switch(sVar1) {
+  CVar1 = this_00->field_0494;
+  switch(CVar1) {
   case 1:
     switch(this_00->field_04A2) {
     case CASE_3:
@@ -3501,12 +3520,12 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
     break;
   case 2:
   case 7:
-  case 0xc:
+  case CASE_C:
     if (param_1 != 0) {
       local_3c = nullptr;
       if (g_allPlayers_007FA174 != nullptr) {
         local_3c = st::fn_004010FF
-                             (g_allPlayers_007FA174,(sVar1 == 0xc) + 1,this_00->field_00DF,
+                             (g_allPlayers_007FA174,(CVar1 == CASE_C) + 1,this_00->field_00DF,
                               this_00->field_00E3,this_00->field_00E7,this_00->field_00EB,
                               (int *)&local_98);
       }
@@ -3514,7 +3533,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         local_18 = (uint *)(local_98 + 1);
         local_20 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)local_18));
         if (local_20 != nullptr) {
-          *(char *)local_20 = (this_00->field_0494 == 0xc) + '\x01';
+          *(char *)local_20 = (this_00->field_0494 == CASE_C) + '\x01';
           puVar9 = local_3c;
           puVar14 = (byte *)((int)local_20 + 1);
           for (uVar8 = local_98 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -3559,7 +3578,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
       local_11b = local_5e[0];
       local_11a = local_30[0];
       local_119 = local_32[0];
-      local_120[0] = (this_00->field_0494 != 0xc) - 1U & 5;
+      local_120[0] = (this_00->field_0494 != CASE_C) - 1U & 5;
       STPiece<1,4>(local_120) = this_00->field_049A->field_0018;
       puVar10 = (uint *)local_120;
       puVar14 = (byte *)0x16;
@@ -3651,7 +3670,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
   case 0xd:
   case 0xe:
     if (param_1 != 0) {
-      if (sVar1 == 0xd) {
+      if (CVar1 == 0xd) {
         local_44 = nullptr;
         if (g_allPlayers_007FA174 != nullptr) {
           local_44 = st::fn_004010FF
@@ -3695,13 +3714,13 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
     puVar10 = (uint *)local_1c0;
     puVar14 = (byte *)0x17;
     goto cf_common_join_0054A19A;
-  case 0xf:
+  case CASE_F:
   case 0x10:
     iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar7 != 0) {
-      local_19c = ((this_00->field_0494 != 0xf) - 1U & 0xf2) + 0x10;
+      local_19c = ((this_00->field_0494 != CASE_F) - 1U & 0xf2) + 0x10;
       lVar13 = st::fn_0072E288();
       local_19b = (undefined4)lVar13;
       lVar13 = st::fn_0072E288();
@@ -3760,7 +3779,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
   case 0x12:
   case 0x13:
     if (this_00->field_049A == nullptr) break;
-    local_d0 = (sVar1 != 0x12) + '\x01';
+    local_d0 = (CVar1 != 0x12) + '\x01';
     st::fn_004018C5(this_00->field_049A,&local_cf,&local_cd,&local_cb);
     puVar10 = (uint *)&local_d0;
     puVar14 = (byte *)0x1f;
@@ -3803,7 +3822,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
     }
     break;
   case 0x16:
-  case 0x18:
+  case CASE_18:
     pSVar2 = this_00->field_049A;
     if (pSVar2 == nullptr) break;
     memset((void *)local_260, 0, 0x21); /* compiler bulk-zero initialization */
@@ -3811,7 +3830,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
     STPiece<1,4>(local_260) = SEXT24(local_6e);
     local_25b = (int)local_66;
     local_257 = (int)local_6a;
-    local_260[0] = ((this_00->field_0494 != 0x18) - 1U & 0xeb) + 0x18;
+    local_260[0] = ((this_00->field_0494 != CASE_18) - 1U & 0xeb) + 0x18;
     puVar10 = (uint *)local_260;
     puVar14 = (byte *)0x17;
     goto cf_common_join_0054A19A;
@@ -4082,8 +4101,8 @@ void __thiscall st::fn_0054AEE0(CursorClassTy *this,int param_1)
      ((((this_00->field_00DE == CASE_2 || (this_00->field_00DE == CASE_4)) &&
        (iVar6 = st::fn_00405687((int)this_00), iVar6 == 0)) || (this_00->field_0496 == 0)))) {
     st::fn_00403175(this_00,-1);
-    if ((g_helpPanel_00801690 == nullptr) || (g_helpPanel_00801690->field_0172 == 2))
-    goto LAB_0054b372;
+    if ((g_helpPanel_00801690 == nullptr) || (g_helpPanel_00801690->field_0172 == CASE_2)
+       ) goto LAB_0054b372;
 LAB_0054b019:
     iVar6 = this_00->field_0038;
     iVar17 = this_00->field_0034;
@@ -4093,7 +4112,8 @@ LAB_0054b019:
   memset(local_f8, 0, 0x20); /* compiler bulk-zero initialization */
   if ((g_allPlayers_007FA174 == nullptr) || (DAT_00808784 != 0)) {
 LAB_0054b335:
-    if ((g_helpPanel_00801690 == nullptr) || (g_helpPanel_00801690->field_0172 == 2)) {
+    if ((g_helpPanel_00801690 == nullptr) || (g_helpPanel_00801690->field_0172 == CASE_2)
+       ) {
       iVar6 = this_00->field_0038;
       iVar17 = this_00->field_0034;
 LAB_0054b366:
@@ -4113,12 +4133,13 @@ LAB_0054b366:
       bVar3 = true;
     }
     if (bVar3) goto LAB_0054b335;
-    if ((((g_playPanel_008016E4 != nullptr) && (g_playPanel_008016E4->field_0172 != 2))
-        || ((g_helpPanel_00801690 != nullptr && (g_helpPanel_00801690->field_0172 != 2)))
-        ) || ((g_optPanel_008016DC != nullptr &&
-              (g_optPanel_008016DC->field_0172 != CASE_2)))) {
-      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2))
-      goto LAB_0054b019;
+    if ((((g_playPanel_008016E4 != nullptr) &&
+         (g_playPanel_008016E4->field_0172 != CASE_2)) ||
+        ((g_helpPanel_00801690 != nullptr && (g_helpPanel_00801690->field_0172 != CASE_2)
+         ))) || ((g_optPanel_008016DC != nullptr &&
+                 (g_optPanel_008016DC->field_0172 != CASE_2)))) {
+      if ((g_helpPanel_00801690 != nullptr) &&
+         (g_helpPanel_00801690->field_0172 != CASE_2)) goto LAB_0054b019;
       iVar6 = this_00->field_0038;
       iVar17 = this_00->field_0034;
       goto LAB_0054b366;

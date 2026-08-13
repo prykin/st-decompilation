@@ -104,15 +104,7 @@ int __thiscall st::fn_00604350(STExplosion *this)
     local_10 = iVar6;
   }
   iVar7 = this->field_01F9;
-  sVar2 = (short)(iVar7 >> 0x1f);
-  if (iVar7 < 0) {
-    local_8 = (short)(((short)(iVar7 / 200) + sVar2) - (short)((longlong)iVar7 * 0x51eb851f >> 0x3f)
-                     ) + -1;
-  }
-  else {
-    local_8 = (int)(short)(((short)(iVar7 / 200) + sVar2) -
-                          (short)((longlong)iVar7 * 0x51eb851f >> 0x3f));
-  }
+  local_8 = STBiasedDiv16(iVar7, 200); /* exact signed 16-bit grid-index division */
   if (iVar1 < 0) {
     iVar6 = iVar6 + -1;
   }

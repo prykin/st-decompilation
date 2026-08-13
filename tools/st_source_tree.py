@@ -932,10 +932,12 @@ class TypeEmitter:
                 ))
 
     @staticmethod
-    def _canonical_score(record: Mapping[str, Any]) -> tuple[int, int, int, str]:
+    def _canonical_score(record: Mapping[str, Any]) -> tuple[int, int, int, int, str]:
         path = str(record["path"])
         kind = str(record["class"])
+        description = str(record.get("description") or "")
         return (
+            200 if "[ST_SEMANTIC_ANCHOR]" in description else 0,
             100 if "/SubmarineTitans/Recovered/" in path else 0,
             20 if kind in {"StructureDB", "UnionDB", "EnumDB", "TypedefDB"} else 0,
             5 if kind == "TypedefDB" else 0,

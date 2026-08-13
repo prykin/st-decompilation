@@ -15,7 +15,7 @@
 void __thiscall st::fn_005E9970(WaitTy *this)
 
 {
-  this->field_1A60 = 1;
+  this->array_00BC[0xc].field_01E0 = 1;
   this->field_0029 = 2;
   this->field_002D = 0x20;
   if (g_startSystem_0081176C->field_0389 != 0) {
@@ -50,7 +50,7 @@ void __thiscall st::fn_005E9970(WaitTy *this)
 void __thiscall st::fn_005E9A40(WaitTy *this)
 
 {
-  this->field_1A60 = 0;
+  this->array_00BC[0xc].field_01E0 = 0;
   this->field_0029 = 2;
   this->field_002D = 0x20;
   if (g_startSystem_0081176C->field_0389 != 0) {

@@ -1712,6 +1712,15 @@ The analyzer recognizes the linked VC6 CRT, DKW modules, and source modules
 under `E:\Ourlib\`. Exact source paths outrank the weak leading-underscore
 heuristic. The latter remains `apply=0` for manual review.
 
+Static helpers do not always reference their compilation unit's debug/assertion
+path directly. The analyzer may inherit a library/source classification only
+when the helper lies between the nearest exact source anchors on both sides,
+both anchors name the same normalized source file, the helper has at least one
+direct caller, and every caller remains inside that closed object-file interval
+or is independently classified as the same library. This is not an unrestricted
+call-graph closure: indirect application callbacks and functions crossing a
+source boundary remain unclassified.
+
 Existing C++ ownership is preserved: a method such as `cMf32::RecGet` receives
 library tags and comments but is not flattened into a module namespace. Global
 functions are placed under `Library::...`.
@@ -1872,7 +1881,7 @@ a new conflict is what requires another iteration.
 | --- | --- |
 | `STRecoveryLauncher` | Capture provider/loading/runtime diagnostics for the pipeline itself in `pipeline_bootstrap.log`, then invoke the normal pipeline. |
 | `STRecoveryPipeline` | Infer repository paths, run dependency-ordered fixed-point workflows, retain the three newest hash-addressed run logs, and refuse stale/unconverged/regressed exports. |
-| `STTypeBootstrapAnalyzer/Applier` | Infer the minimum semantic type anchors from method/access/reference families; migrate exact provenance-owned legacy view parameters and stack locals without embedded addresses, type-name deletion lists, or enum values; atomically normalize signature, return, and explicit-parameter provenance after a tagged heuristic identity retirement. |
+| `STTypeBootstrapAnalyzer/Applier` | Infer the minimum semantic type anchors from method/access/reference families; reconcile a unique anchor with an exact-layout same-leaf legacy view using hash-intact baselines, concrete-over-generic pointer types, and provenance-gated member names; migrate exact provenance-owned legacy view parameters and stack locals without embedded addresses, type-name deletion lists, or enum values; atomically normalize signature, return, and explicit-parameter provenance after a tagged heuristic identity retirement. |
 | `STDebugSymbolAnalyzer/Applier` | Recover C++ owners, method names, calling conventions, source evidence, and short diagnostic printf strings. |
 | `STCallsiteConventionAnalyzer/Applier` | Audit direct and thunk-mediated callers and apply only unanimous high-confidence static `__cdecl` corrections. |
 | `STMessageIdAnalyzer/Applier` | Recover the `MESS_*`/`STMessageId` domain. |
@@ -1899,7 +1908,7 @@ a new conflict is what requires another iteration.
 | `STPrototypeRepairAnalyzer/Applier` | Isolate and safely correct stale types/names previously written by prototype propagation. |
 | `STAllocationRecordAnalyzer/Applier` | Recover producer/consumer-local packed records from one returned neutral-allocation root followed by an exact contiguous parameter-to-allocation fixed copy. Install only non-overlapping fields inside the copied span, reuse or monotonically extend hash-owned generated source views, and never specialize the shared allocator ABI. The machine audit retains exact non-returned and reallocated copies for review. |
 | `STManualTypeAuditAnalyzer` | Consolidate strong evidence that a protected/manual prototype or field type is stale; read-only by design. |
-| `STAbiRegressionGate` | Compare the current in-memory Program with the receipt-selected accepted corpus before expensive consumers run; protect all accepted typed vtable ABIs while merging physical aliases by table address, reject new class-vptr dispatch substitutions, decompile configurable ABI sentinels, and permit only exact fingerprinted reviewed transitions. |
+| `STAbiRegressionGate` | Compare the current in-memory Program with the receipt-selected accepted corpus before expensive consumers run; protect all accepted typed vtable ABIs while merging physical aliases by table address, and accept a missing legacy class path only when it resolves to one same-leaf semantic anchor with identical complete component geometry and compatible storage views; reject new class-vptr dispatch substitutions, decompile configurable ABI sentinels, and permit only exact fingerprinted reviewed transitions. |
 | `STGlobalRecordAnalyzer/Applier` | Recover packed arrays of repeated global records from a symbolically inferred base/stride plus independent extent evidence; create fields only from observed machine accesses and exact rendered scalar casts, recover pointer members only from matching typed stores and consumers, retain hash-owned concrete fields as a monotonic baseline, retire legacy seeded nested layouts, and migrate an obsolete generated Listing element identity only when its producer marker and stored/current layout hashes agree. |
 | `STDiscriminatedPayloadAnalyzer/Applier` | Infer per-case payload layouts from direct reads, fixed pointer-advance copy loops, shared goto tails, and single-element DArray appends. The final pass recovers caller stack aggregates only when thunk-resolved vtable-slot machine evidence and the typed decompiler call agree on the exact case/stack pair; obsolete hash-intact generated family identities migrate by function-address/case provenance, never by layout similarity. Imported/library families are excluded, and any intact generated false-positive left by an earlier pre-library pass is retired through the ordinary type lifecycle. |
 | `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent/indexing formula, including composed affine packed-record strides closed by exact bulk-zero extents, transpose-proven binary relation matrices, and behavior-proven Win32 resource-string scratch arenas. |

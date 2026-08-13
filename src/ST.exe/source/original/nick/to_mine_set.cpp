@@ -42,7 +42,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
   int local_18;
   uint local_14;
   byte *local_10;
-  AnonShape_0060EA30_DCEB68AD *local_c;
+  uint local_c;
   STMineSetC *local_8;
 
   local_8 = this;
@@ -122,7 +122,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
-    local_10 = st::fn_00401825((STAllPlayersC *)local_8,(uint *)&local_c);
+    local_10 = st::fn_00401825((STAllPlayersC *)local_8,&local_c);
     st::fn_004025F9(g_playSystem_00802A38,(int *)this_00->field_0018,local_10,local_c);
     st::fn_006AB060(&local_10);
     g_currentExceptionFrame = local_60.previous;

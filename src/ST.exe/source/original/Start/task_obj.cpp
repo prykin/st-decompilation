@@ -173,7 +173,10 @@ LAB_005df7f3:
 #line 4 "decomp/ST.exe/functions/005DFA30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
-   MTaskTy::InitMTask */
+   MTaskTy::InitMTask
+
+   [STSwitchEnumApplier] Switch target field_006D uses
+   /SubmarineTitans/Recovered/Enums/MTaskTy_field_006DState. Cases: CASE_1=1;CASE_3=3;CASE_5=5 */
 
 void __thiscall st::fn_005DFA30(MTaskTy *this,char param_1,undefined1 param_2)
 
@@ -460,7 +463,7 @@ void __thiscall st::fn_005DFA30(MTaskTy *this,char param_1,undefined1 param_2)
   }
   st::fn_00402DBF(1,pMVar3->field_0008,2,100,2,1,0,0,0,0,0,0);
   st::fn_00402DBF(1,pMVar3->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
-  pMVar3->field_006D = 3;
+  pMVar3->field_006D = CASE_3;
   st::fn_00405C18(pMVar3);
   st::fn_00403670(pMVar3);
   st::fn_0040448A((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
@@ -722,7 +725,10 @@ void __thiscall st::fn_005E09E0(MTaskTy *this)
 #line 4 "decomp/ST.exe/functions/005E0AC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
-   MTaskTy::NoneMTask */
+   MTaskTy::NoneMTask
+
+   [STSwitchEnumApplier] Switch target field_006D uses
+   /SubmarineTitans/Recovered/Enums/MTaskTy_field_006DState. Cases: CASE_1=1;CASE_3=3;CASE_5=5 */
 
 void __thiscall st::fn_005E0AC0(MTaskTy *this)
 
@@ -762,7 +768,7 @@ void __thiscall st::fn_005E0AC0(MTaskTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if ((local_c->field_006D == '\x03') || (local_c->field_006D == '\x05')) {
+  if ((local_c->field_006D == CASE_3) || (local_c->field_006D == CASE_5)) {
     st::fn_00405C18(local_c);
   }
   pDVar6 = this_00->field_0647;
@@ -1077,7 +1083,10 @@ st::fn_005E11D0(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char param_2,
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
-   MTaskTy::PlayScript */
+   MTaskTy::PlayScript
+
+   [STSwitchEnumApplier] Switch target field_006D uses
+   /SubmarineTitans/Recovered/Enums/MTaskTy_field_006DState. Cases: CASE_1=1;CASE_3=3;CASE_5=5 */
 
 void __thiscall st::fn_005E1330(MTaskTy *this)
 
@@ -1282,7 +1291,7 @@ void __thiscall st::fn_005E1330(MTaskTy *this)
         piVar19 = nullptr;
       }
       if (((uint)(this_01->field_0069 - this_01->field_0061) < STField<uint>(piVar19,1)) &&
-         (this_01->field_006D != '\x05')) break;
+         (this_01->field_006D != CASE_5)) break;
       switch((char)*piVar19) {
       case '\x01':
         if ((this_01->field_006E != '\x01') ||
@@ -1960,7 +1969,7 @@ LAB_005e24c5:
           }
         }
         else if ((pAVar14 != nullptr) && (-1 < *(int *)pAVar14)) {
-          if (this_01->field_006D == '\x05') {
+          if (this_01->field_006D == CASE_5) {
             st::fn_0040555B(this_01,pAVar14);
           }
           else {
@@ -1978,7 +1987,7 @@ LAB_005e24c5:
         }
         break;
       case '\x06':
-        if (this_01->field_006D != '\x05') {
+        if (this_01->field_006D != CASE_5) {
           puVar12 = (uint *)st::fn_00719D00
                                       (this_01->field_0070,(char *)((int)piVar19 + 0xd),0,
                                        nullptr);
@@ -2909,7 +2918,7 @@ LAB_005e195d:
     } while (iVar24 < (int)uVar29);
   }
   if (this_01->field_007C == this_01->field_0074->count) {
-    if ((this_01->field_006D == '\x05') &&
+    if ((this_01->field_006D == CASE_5) &&
        (pDVar16 = this_01->field_064B, pDVar16 != nullptr)) {
       uVar29 = 0;
       if (pDVar16->count != 0) {
@@ -2932,7 +2941,7 @@ LAB_005e34e0:
         } while (uVar29 < pDVar16->count);
       }
     }
-    this_01->field_006D = 1;
+    this_01->field_006D = CASE_1;
   }
   g_currentExceptionFrame = local_278.previous;
   return;
@@ -3324,7 +3333,7 @@ int __thiscall st::fn_005E4570(MTaskTy *this,STMessage *message)
         break;
       case MESS_TRACKBARCLASSTY_0062:
         if (DAT_0080fb6e == 0) {
-          if (local_18->field_006D == '\x01') {
+          if (local_18->field_006D == CASE_1) {
             st::fn_00404DB8(local_18);
             uVar16 = 0xffffffff;
             pcVar18 = &CHAR_00h_0080ed16;
@@ -3353,8 +3362,8 @@ int __thiscall st::fn_005E4570(MTaskTy *this,STMessage *message)
         break;
       case MESS_SHARED_0064:
         iVar20 = 1;
-        if (local_18->field_006D != '\x01') {
-          local_18->field_006D = 5;
+        if (local_18->field_006D != CASE_1) {
+          local_18->field_006D = CASE_5;
           st::fn_00405C18(local_18);
           iVar23 = 0x1f;
           do {
@@ -3533,15 +3542,15 @@ LAB_005e496b:
           iVar20 = iVar20 + -1;
         } while (iVar20 != 0);
         st::fn_00403670(this_00);
-        this_00->field_006D = 3;
+        this_00->field_006D = CASE_3;
         st::fn_006AFE40((int *)&this_00->field_0074,st::pointer_boundary_cast<uint *>(&this_00->field_0078->flags));
         st::fn_00405C18(this_00);
         st::fn_0040448A((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                            this_00->field_005D,10,2);
         break;
       case 0x6204:
-        if (local_18->field_006D != '\x01') {
-          local_18->field_006D = 5;
+        if (local_18->field_006D != CASE_1) {
+          local_18->field_006D = CASE_5;
           st::fn_00405C18(local_18);
           iVar20 = 1;
           iVar23 = 0x1f;

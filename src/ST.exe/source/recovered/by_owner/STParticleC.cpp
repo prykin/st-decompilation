@@ -13,7 +13,7 @@ void __thiscall st::fn_00629830(STParticleC *this)
 {
   this->field_00B2 = 0;
   this->field_00BF = 1;
-  if (*(byte *)&this->field_0014 < 4) {
+  if ((byte)this->field_0014 < 4) {
     this->field_00BA = 0x25;
   }
   else {
@@ -171,34 +171,13 @@ st::fn_00629F90(STParticleC *this,STParticleC *param_1,undefined4 param_2)
   iVar5 = this->field_0046;
   this->field_00AA = param_2;
   this->field_00AE = param_2;
-  sVar3 = (short)(iVar5 >> 0x1f);
-  if (iVar5 < 0) {
-    iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar3) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f))
-            + -1;
-  }
-  else {
-    iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar3) -
-                        (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-  }
+  iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
   iVar2 = this->field_004A;
   this->field_005E = iVar5;
-  sVar3 = (short)(iVar2 >> 0x1f);
-  if (iVar2 < 0) {
-    iVar5 = (short)(((short)(iVar2 / 0xc9) + sVar3) - (short)((longlong)iVar2 * 0x28c1979 >> 0x3f))
-            + -1;
-  }
-  else {
-    iVar5 = (int)(short)(((short)(iVar2 / 0xc9) + sVar3) -
-                        (short)((longlong)iVar2 * 0x28c1979 >> 0x3f));
-  }
+  iVar5 = STBiasedDiv16(iVar2, 0xc9); /* exact signed 16-bit grid-index division */
   iVar2 = this->field_004E;
   this->field_0062 = iVar5;
-  if (iVar2 < 0) {
-    iVar5 = (short)(iVar2 / 200) + -1;
-  }
-  else {
-    iVar5 = (int)(short)(iVar2 / 200);
-  }
+  iVar5 = STBiasedDiv16(iVar2, 200); /* exact signed 16-bit grid-index division */
   this->field_0066 = iVar5;
   cVar1 = param_1->field_0041;
   this->field_00C0 = cVar1;
@@ -206,17 +185,17 @@ st::fn_00629F90(STParticleC *this,STParticleC *param_1,undefined4 param_2)
     return 0;
   }
   this->field_00BE = 0x1e;
-  switch((uint)this->field_0014 >> 8 & 0xff) {
+  switch(this->field_0014 >> 8 & 0xff) {
   case 0:
     if (param_1->field_001C == 4) {
-      this->field_00BE = (byte)(&DAT_007d0af0)[(uint)*(byte *)&param_1->field_0014 * 8] >> 1;
+      this->field_00BE = (byte)(&DAT_007d0af0)[(uint)(byte)param_1->field_0014 * 8] >> 1;
       goto cf_common_exit_0062A1E3;
     }
-    bVar4 = (byte)(&DAT_007d0a70)[(uint)*(byte *)&param_1->field_0014 * 8] >> 1;
+    bVar4 = (byte)(&DAT_007d0a70)[(uint)(byte)param_1->field_0014 * 8] >> 1;
     goto LAB_0062a1dd;
   case 1:
   case 0x20:
-    this->field_00BE = (byte)(&DAT_007d0bf0)[(uint)*(byte *)&param_1->field_0014 * 8] >> 1;
+    this->field_00BE = (byte)(&DAT_007d0bf0)[(uint)(byte)param_1->field_0014 * 8] >> 1;
     goto cf_common_exit_0062A1E3;
   case 2:
   case 8:
@@ -226,10 +205,10 @@ st::fn_00629F90(STParticleC *this,STParticleC *param_1,undefined4 param_2)
   default:
     goto cf_common_exit_0062A1E3;
   case 4:
-    iVar5 = *(int *)(&DAT_007d0a00 + (uint)*(byte *)&this->field_0014 * 4);
+    iVar5 = *(int *)(&DAT_007d0a00 + (uint)(byte)this->field_0014 * 4);
     break;
   case 0x10:
-    iVar5 = *(int *)(&DAT_007d0af0 + (uint)*(byte *)&param_1->field_0014 * 8);
+    iVar5 = *(int *)(&DAT_007d0af0 + (uint)(byte)param_1->field_0014 * 8);
     break;
   case 0x80:
     iVar5 = DAT_007d08b8;
@@ -282,26 +261,11 @@ int __thiscall st::fn_0062A370(STParticleC *this,int param_1)
   iVar3 = (this->field_0092 * local_c) / 10000 + this->field_007E;
   local_10 = (this->field_0096 * local_c) / 10000 + this->field_007A;
   if ((this->field_0014 & 0xff00) == 0x400) {
-    if (local_10 < 0) {
-      iVar5 = (short)(local_10 / 0xc9) + -1;
-    }
-    else {
-      iVar5 = (int)(short)(local_10 / 0xc9);
-    }
+    iVar5 = STBiasedDiv16(local_10, 0xc9); /* exact signed 16-bit grid-index division */
     if (iVar5 == this->field_005E) {
-      if (iVar3 < 0) {
-        iVar5 = (short)(iVar3 / 0xc9) + -1;
-      }
-      else {
-        iVar5 = (int)(short)(iVar3 / 0xc9);
-      }
+      iVar5 = STBiasedDiv16(iVar3, 0xc9); /* exact signed 16-bit grid-index division */
       if (iVar5 == this->field_005E) {
-        if (iVar3 < 0) {
-          iVar5 = (short)(iVar3 / 200) + -1;
-        }
-        else {
-          iVar5 = (int)(short)(iVar3 / 200);
-        }
+        iVar5 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
         if (iVar5 == this->field_0066) {
           local_14 = 0;
         }
@@ -311,8 +275,7 @@ int __thiscall st::fn_0062A370(STParticleC *this,int param_1)
   uVar2 = st::fn_00404516
                     ((AnonReceiver_00601500 *)&this->field_0xd7,local_10,iVar3,iVar4,
                      this->field_0046,this->field_004A,this->field_004E,0xff,
-                     *(int *)(&DAT_007d0a1c + (uint)*(byte *)&this->field_0014 * 4),0,0xffff,0x14e,0
-                     ,0);
+                     *(int *)(&DAT_007d0a1c + (uint)(byte)this->field_0014 * 4),0,0xffff,0x14e,0,0);
   if ((uVar2 == 0) || (local_14 == 0)) {
     iVar5 = this->field_004E;
     this->field_0086 = st::machine_word_boundary_cast<undefined4>(this->field_0086 + local_c);
@@ -493,15 +456,7 @@ byte __thiscall st::fn_0062B4A0(STParticleC *this)
     local_8 = iVar6;
   }
   iVar2 = this->field_004E;
-  sVar3 = (short)(iVar2 >> 0x1f);
-  if (iVar2 < 0) {
-    local_10 = (short)(((short)(iVar2 / 200) + sVar3) -
-                      (short)((longlong)iVar2 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    local_10 = (int)(short)(((short)(iVar2 / 200) + sVar3) -
-                           (short)((longlong)iVar2 * 0x51eb851f >> 0x3f));
-  }
+  local_10 = STBiasedDiv16(iVar2, 200); /* exact signed 16-bit grid-index division */
   if (iVar1 < 0) {
     iVar6 = iVar6 + -1;
   }

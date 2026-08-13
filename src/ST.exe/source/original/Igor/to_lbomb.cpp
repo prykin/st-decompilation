@@ -16,22 +16,18 @@ int __thiscall st::fn_005859A0(STLBombC *this,STMessage *message)
 {
   STMessageId SVar1;
   dword dVar2;
-  int iVar3;
-  undefined1 uVar5;
-  undefined1 uVar6;
-  undefined1 uVar7;
-  STSprGameObjC *this_00;
+  STLBombC *this_00;
   int iVar7;
   int iVar8;
-  int iVar9;
-  uint uVar10;
-  short sVar11;
-  AnonShape_005859A0_2434EC3C *pAVar12;
-  byte *puVar13;
-  byte *pbVar14;
-  byte *puVar15;
-  AnonShape_005859A0_2F00015D *pAVar16;
-  byte *pbVar17;
+  int iVar4;
+  uint uVar5;
+  short sVar6;
+  AnonShape_005859A0_2434EC3C *pAVar7;
+  byte *puVar8;
+  byte *pbVar9;
+  byte *puVar10;
+  AnonShape_005859A0_2F00015D *pAVar11;
+  byte *pbVar12;
   InternalExceptionFrame local_80;
   void *local_3c;
   AnonShape_GLOBAL_00806724_3210464F *local_38;
@@ -41,7 +37,7 @@ int __thiscall st::fn_005859A0(STLBombC *this,STMessage *message)
   undefined4 local_28;
   undefined4 local_24;
   AnonShape_005859A0_2434EC3C *local_20;
-  STSprGameObjC *local_1c;
+  STLBombC *local_1c;
   byte *local_18;
   byte *local_14;
   uint local_10;
@@ -53,7 +49,7 @@ int __thiscall st::fn_005859A0(STLBombC *this,STMessage *message)
   }
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
-  local_1c = (STSprGameObjC *)this;
+  local_1c = this;
   iVar7 = st::fn_0072D7F0(local_80.jumpBuffer,0);
   this_00 = local_1c;
   if (iVar7 != 0) {
@@ -66,7 +62,7 @@ int __thiscall st::fn_005859A0(STLBombC *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_00404F07(local_1c,message);
+  st::fn_00404F07((STSprGameObjC *)local_1c,message);
   SVar1 = message->id;
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
@@ -75,43 +71,37 @@ int __thiscall st::fn_005859A0(STLBombC *this,STMessage *message)
       local_c = st::pointer_boundary_cast<AnonShape_005859A0_2F00015D *>(st::fn_006AAC70(local_10 + 0x67 + local_8));
       if (((local_18 != nullptr) && (local_14 != nullptr)) &&
          (local_c != nullptr)) {
-        puVar13 = (byte *)&this_00->field_0x258;
-        pAVar16 = local_c;
-        memmove(pAVar16, puVar13, 0x32); /* compiler REP MOVS byte copy */
+        puVar8 = (byte *)&this_00->field_0x258;
+        pAVar11 = local_c;
+        memmove(pAVar11, puVar8, 0x32); /* compiler REP MOVS byte copy */
         *(undefined4 *)&local_c->field_0xc = 2;
         local_c->field_0032 = this_00->field_0231;
-        *(undefined4 *)&local_c->field_0x36 = *(undefined4 *)&this_00->field_0x235;
-        local_c->field_003A = *(undefined4 *)&this_00->field_0x23d;
-        *(undefined4 *)&local_c->field_0x3e = *(undefined4 *)&this_00->field_0x249;
-        uVar5 = this_00->field_024E;
-        uVar6 = this_00->field_024F;
-        uVar7 = this_00->field_0x250;
-        local_c->field_0x42 = this_00->field_0x24d;
-        local_c->field_0x43 = uVar5;
-        local_c->field_0x44 = uVar6;
-        local_c->field_0x45 = uVar7;
-        *(undefined4 *)&local_c->field_0x4e = *(undefined4 *)&this_00->field_0x251;
-        *(undefined2 *)&local_c->field_0x52 = *(undefined2 *)&this_00->field_0x41;
-        *(undefined2 *)&local_c->field_0x54 = *(undefined2 *)&this_00->field_0x43;
-        *(undefined2 *)&local_c->field_0x56 = *(undefined2 *)&this_00->field_0x45;
-        local_c->field_0046 = *(undefined4 *)((int)&this_00->field_023E + 3);
-        *(undefined4 *)&local_c->field_0x4a = *(undefined4 *)((int)&this_00->field_0244 + 1);
+        *(undefined4 *)&local_c->field_0x36 = this_00->field_0235;
+        local_c->field_003A = this_00->field_023D;
+        *(undefined4 *)&local_c->field_0x3e = this_00->field_0249;
+        *(undefined4 *)&local_c->field_0x42 = this_00->field_024D;
+        *(undefined4 *)&local_c->field_0x4e = this_00->field_0251;
+        *(undefined2 *)&local_c->field_0x52 = this_00->field_0041;
+        *(undefined2 *)&local_c->field_0x54 = this_00->field_0043;
+        *(undefined2 *)&local_c->field_0x56 = this_00->field_0045;
+        local_c->field_0046 = this_00->field_0241;
+        *(undefined4 *)&local_c->field_0x4a = this_00->field_0245;
         *(undefined4 *)&local_c->field_0x58 = 0;
-        local_c->field_0x5c = this_00->field_0x255;
-        local_c->field_0x5d = this_00->field_0x256;
-        local_c->field_0x5e = this_00->field_0x257;
+        local_c->field_0x5c = this_00->field_0255;
+        local_c->field_0x5d = this_00->field_0256;
+        local_c->field_0x5e = this_00->field_0257;
         local_c->field_005F = local_8;
-        pbVar14 = local_18;
-        pbVar17 = st::pointer_boundary_cast<byte *>(&local_c->field_0x63);
-        memmove(pbVar17, pbVar14, local_8); /* compiler REP MOVS byte copy */
-        uVar10 = 0;
+        pbVar9 = local_18;
+        pbVar12 = st::pointer_boundary_cast<byte *>(&local_c->field_0x63);
+        memmove(pbVar12, pbVar9, local_8); /* compiler REP MOVS byte copy */
+        uVar5 = 0;
         *(uint *)(&local_c->field_0x63 + local_8) = local_10;
-        pbVar14 = local_14;
-        pbVar17 = st::pointer_boundary_cast<byte *>(&local_c[1].field_0x3 + local_8);
-        memmove(pbVar17, pbVar14, local_10); /* compiler REP MOVS byte copy */
+        pbVar9 = local_14;
+        pbVar12 = st::pointer_boundary_cast<byte *>(&local_c[1].field_0x3 + local_8);
+        memmove(pbVar12, pbVar9, local_10); /* compiler REP MOVS byte copy */
         st::fn_004025F9
                   (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
-                   (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x67 + local_8));
+                   local_10 + 0x67 + local_8);
         st::fn_006AB060(&local_18);
         st::fn_006AB060(&local_14);
         st::fn_006AB060(&local_c);
@@ -128,71 +118,69 @@ int __thiscall st::fn_005859A0(STLBombC *this,STMessage *message)
       if (SVar1 == MESS_ID_CREATE) {
         dVar2 = (message->arg0).u32;
         this_00->field_0231 = 4;
-        uVar10 = *(uint *)(dVar2 + 0xc);
-        if (uVar10 < 2) {
-          *(undefined4 *)((int)&this_00->field_023E + 3) = 0;
-          *(uint *)&this_00->field_0x23d = g_playSystem_00802A38->field_00E4;
-          puVar13 = (byte *)((message->arg0).ptr);
-          puVar15 = (byte *)&this_00->field_0x258;
-          memmove(puVar15, puVar13, 0x32); /* compiler REP MOVS byte copy */
-          *(undefined4 *)&this_00->field_0x249 = 0x28;
-          *(undefined4 *)&this_00->field_0x24d = 0xfffffe70;
-          iVar9 = st::fn_00404183
+        uVar5 = *(uint *)(dVar2 + 0xc);
+        if (uVar5 < 2) {
+          this_00->field_0241 = 0;
+          this_00->field_023D = g_playSystem_00802A38->field_00E4;
+          puVar8 = (byte *)((message->arg0).ptr);
+          puVar10 = (byte *)&this_00->field_0x258;
+          memmove(puVar10, puVar8, 0x32); /* compiler REP MOVS byte copy */
+          this_00->field_0249 = 0x28;
+          this_00->field_024D = 0xfffffe70;
+          iVar4 = st::fn_00404183
                             ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_00806774,st::mutable_c_string("lasbom"),
                              CASE_1D);
-          if (iVar9 != 0) {
+          if (iVar4 != 0) {
             st::fn_006A5E40
                       (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_lbomb.cpp"),0x19f
                       );
           }
           st::fn_00405240
                     ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
-          st::fn_00403107(this_00,*(ushort *)&this_00->field_0x26c,*(short *)&this_00->field_0x270,
-                       *(ushort *)&this_00->field_0x274);
-          iVar9 = *(int *)&this_00->field_0x270;
-          iVar3 = *(int *)&this_00->field_0x26c;
-          *(int *)((int)&this_00->field_0244 + 1) = (int)PTR_00806724->field_002C;
-          this_00->field_0231 = CASE_0;
-          st::fn_00401730(this_00,iVar3,iVar9,0x463);
+          st::fn_00403107(this_00,(ushort)this_00->field_026C,*(short *)&this_00->field_0270,
+                       this_00->field_0274);
+          this_00->field_0245 = (int)PTR_00806724->field_002C;
+          this_00->field_0231 = 0;
+          st::fn_00401730(this_00,this_00->field_026C,this_00->field_0270,0x463);
         }
-        else if (uVar10 == 2) {
+        else if (uVar5 == 2) {
           local_20 = st::pointer_boundary_cast<AnonShape_005859A0_2434EC3C *>((message->arg0).ptr);
-          pAVar12 = local_20;
-          puVar13 = (byte *)&this_00->field_0x258;
-          memmove(puVar13, pAVar12, 0x32); /* compiler REP MOVS byte copy */
+          pAVar7 = local_20;
+          puVar8 = (byte *)&this_00->field_0x258;
+          memmove(puVar8, pAVar7, 0x32); /* compiler REP MOVS byte copy */
           local_8 = local_20->field_005F;
           st::fn_0040551F
                     ((STAllPlayersC *)this_00,(undefined4 *)(&local_20[1].field_0x3 + local_8));
-          pAVar12 = local_20;
+          pAVar7 = local_20;
           this_00->field_0231 = local_20->field_0032;
-          *(undefined4 *)&this_00->field_0x235 = local_20->field_0036;
-          *(undefined4 *)&this_00->field_0x23d = local_20->field_003A;
-          *(undefined4 *)&this_00->field_0x24d = local_20->field_0042;
-          *(undefined4 *)&this_00->field_0x249 = local_20->field_003E;
-          *(undefined4 *)&this_00->field_0x251 = local_20->field_004E;
-          *(undefined4 *)((int)&this_00->field_023E + 3) = local_20->field_0046;
-          *(undefined4 *)((int)&this_00->field_0244 + 1) = local_20->field_004A;
-          this_00->field_0x255 = local_20->field_0x5c;
-          this_00->field_0x256 = local_20->field_005D;
-          this_00->field_0x257 = local_20->field_005E;
-          *(undefined2 *)&this_00->field_0x41 = local_20->field_0052;
-          *(undefined2 *)&this_00->field_0x43 = *(undefined2 *)&local_20->field_0x54;
-          *(undefined2 *)&this_00->field_0x45 = local_20->field_0056;
+          this_00->field_0235 = local_20->field_0036;
+          this_00->field_023D = local_20->field_003A;
+          this_00->field_024D = local_20->field_0042;
+          this_00->field_0249 = local_20->field_003E;
+          this_00->field_0251 = local_20->field_004E;
+          this_00->field_0241 = local_20->field_0046;
+          this_00->field_0245 = local_20->field_004A;
+          this_00->field_0255 = local_20->field_0x5c;
+          this_00->field_0256 = local_20->field_005D;
+          this_00->field_0257 = local_20->field_005E;
+          this_00->field_0041 = local_20->field_0052;
+          this_00->field_0043 = *(undefined2 *)&local_20->field_0x54;
+          this_00->field_0045 = local_20->field_0056;
           local_3c = st::fn_006AAC70(0x44);
           if (local_3c != nullptr) {
-            iVar9 = 0;
+            iVar4 = 0;
             do {
-              *(int **)(iVar9 + (int)local_3c) = PTR_00806774;
-              iVar9 = iVar9 + 4;
-            } while (iVar9 < 0x44);
+              *(int **)(iVar4 + (int)local_3c) = PTR_00806774;
+              iVar4 = iVar4 + 4;
+            } while (iVar4 < 0x44);
             STField<int *>(local_3c,0x24) = PTR_00806764;
-            iVar9 = *(int *)((int)&this_00->field_023E + 3);
-            if (((iVar9 < 1) || (PTR_00806724 == nullptr)) ||
+            if (((this_00->field_0241 < 1) ||
+                (PTR_00806724 == nullptr)) ||
                (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {
               local_38 = nullptr;
             }
             else {
-              local_38 = PTR_00806724 + iVar9;
+              local_38 = st::pointer_boundary_cast<AnonShape_GLOBAL_00806724_3210464F *>(PTR_00806724 + this_00->field_0241);
             }
             local_34 = (int)PTR_00806724->field_002C;
             local_30 = PTR_008073cc;
@@ -201,33 +189,26 @@ int __thiscall st::fn_005859A0(STLBombC *this,STMessage *message)
             local_24 = 0;
             st::fn_00404CA5
                       ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
-                       (AnonShape_004AD790_77673787 *)&pAVar12->field_0x63);
+                       (AnonShape_004AD790_77673787 *)&pAVar7->field_0x63);
             st::fn_006AB060(&local_3c);
           }
         }
-        iVar9 = *(int *)&this_00->field_0x26c;
-        sVar11 = (short)(iVar9 >> 0x1f);
-        if (iVar9 < 0) {
-          sVar11 = (((short)(iVar9 / 0xc9) + sVar11) - (short)((longlong)iVar9 * 0x28c1979 >> 0x3f))
-                   + -1;
-        }
-        else {
-          sVar11 = ((short)(iVar9 / 0xc9) + sVar11) - (short)((longlong)iVar9 * 0x28c1979 >> 0x3f);
-        }
-        iVar9 = *(int *)&this_00->field_0x270;
-        *(short *)&this_00->field_0x47 = sVar11;
-        sVar11 = (short)(iVar9 >> 0x1f);
-        if (iVar9 < 0) {
-          *(undefined2 *)&this_00->field_0x4b = 4;
-          *(short *)&this_00->field_0x49 =
-               (((short)(iVar9 / 0xc9) + sVar11) - (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) +
-               -1;
+        iVar4 = this_00->field_026C;
+        sVar6 = STBiasedDiv16(iVar4, 0xc9); /* exact signed 16-bit grid-index division */
+        iVar4 = this_00->field_0270;
+        this_00->field_0047 = sVar6;
+        sVar6 = (short)(iVar4 >> 0x1f);
+        if (iVar4 < 0) {
+          this_00->field_004B = 4;
+          this_00->field_0049 =
+               (((short)(iVar4 / 0xc9) + sVar6) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)) + -1
+          ;
           g_currentExceptionFrame = local_80.previous;
           return 0;
         }
-        *(undefined2 *)&this_00->field_0x4b = 4;
-        *(short *)&this_00->field_0x49 =
-             ((short)(iVar9 / 0xc9) + sVar11) - (short)((longlong)iVar9 * 0x28c1979 >> 0x3f);
+        this_00->field_004B = 4;
+        this_00->field_0049 =
+             ((short)(iVar4 / 0xc9) + sVar6) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f);
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }

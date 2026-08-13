@@ -38,6 +38,10 @@
    [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_A6=166;CASE_A7=167;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_B3=179;CASE_B5=181;CASE_B8=184;CASE_BC=188;CASE_BD=189;CASE_BE=190
+
+   [STSwitchEnumApplier] Switch target field_0245 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115;CASE_FFFFFFFF=4294967295
     */
 
 int __thiscall st::fn_004B80D0(TLOBaseTy *this,int param_1,int param_2)
@@ -123,8 +127,8 @@ int __thiscall st::fn_004B80D0(TLOBaseTy *this,int param_1,int param_2)
           this_01->field_0261 = 1;
         }
       }
-      sVar8 = *(short *)&this_01->field_05B0;
-      sVar1 = *(short *)&this_01->field_05B8;
+      sVar8 = (short)this_01->field_05B0;
+      sVar1 = (short)this_01->field_05B8;
       sVar13 = *(short *)&this_01->field_05B4;
       if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar13 < 0)) ||
           ((g_worldGrid.sizeY <= sVar13 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) {
@@ -141,8 +145,7 @@ int __thiscall st::fn_004B80D0(TLOBaseTy *this,int param_1,int param_2)
             iVar14 = this_01->field_05B0;
             if (iVar14 < iVar14 + iVar11) {
               do {
-                iVar12 = st::fn_00404CCD((short)iVar14,(short)local_8,
-                                            *(short *)&this_01->field_05B8);
+                iVar12 = st::fn_00404CCD((short)iVar14,(short)local_8,(short)this_01->field_05B8);
                 if (iVar12 != 0) {
                   st::fn_006A5E40
                             (-5,g_overwriteContext_007ED77C,
@@ -162,8 +165,8 @@ int __thiscall st::fn_004B80D0(TLOBaseTy *this,int param_1,int param_2)
       if (iVar11 != 0) {
         this_01->SetActivity(0);
       }
-      sVar8 = *(short *)&this_01->field_05B0;
-      sVar1 = *(short *)&this_01->field_05B8;
+      sVar8 = (short)this_01->field_05B0;
+      sVar1 = (short)this_01->field_05B8;
       sVar13 = *(short *)&this_01->field_05B4;
       if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
          (((sVar13 < 0 || ((g_worldGrid.sizeY <= sVar13 || (sVar1 < 0)))) ||
@@ -181,8 +184,7 @@ int __thiscall st::fn_004B80D0(TLOBaseTy *this,int param_1,int param_2)
             iVar14 = this_01->field_05B0;
             if (iVar14 < iVar14 + iVar11) {
               do {
-                iVar12 = st::fn_0040232E((short)iVar14,(short)local_8,
-                                            *(short *)&this_01->field_05B8);
+                iVar12 = st::fn_0040232E((short)iVar14,(short)local_8,(short)this_01->field_05B8);
                 if (iVar12 != 0) {
                   st::fn_006A5E40
                             (-5,g_overwriteContext_007ED77C,
@@ -296,8 +298,8 @@ int __thiscall st::fn_004B80D0(TLOBaseTy *this,int param_1,int param_2)
       }
       break;
     case CASE_4:
-      sVar8 = *(short *)&this_01->field_05B0;
-      sVar1 = *(short *)&this_01->field_05B8;
+      sVar8 = (short)this_01->field_05B0;
+      sVar1 = (short)this_01->field_05B8;
       sVar13 = *(short *)&this_01->field_05B4;
       if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
          ((sVar13 < 0 ||
@@ -908,14 +910,14 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
           this_00->field_060B = 0xffffffff;
         }
         st::fn_00402B5D(this_00,0);
-        iVar27 = st::fn_0040295F(this_00,*(short *)&this_00->field_05B0,
-                                    *(short *)&this_00->field_05B4,*(short *)&this_00->field_05B8,1);
+        iVar27 = st::fn_0040295F(this_00,(short)this_00->field_05B0,
+                                    *(short *)&this_00->field_05B4,(short)this_00->field_05B8,1);
         if (iVar27 != 0) {
           st::fn_006A5E40
                     (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0x290);
         }
-        st::fn_0040278E(this_00,*(short *)&this_00->field_05B0,*(short *)&this_00->field_05B4,
-                           *(short *)&this_00->field_05B8);
+        st::fn_0040278E(this_00,(short)this_00->field_05B0,*(short *)&this_00->field_05B4,
+                           (short)this_00->field_05B8);
         st::fn_00402A36((AnonShape_004B9920_1D6BF5BA *)this_00);
         switch(this_00->field_0231) {
         case CASE_0:
@@ -1105,7 +1107,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
             else {
               local_62 = 0xffff;
             }
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)*DAT_008117bc)(local_7c);
           }
           local_EAX_1723 = st::fn_004049B7(*(char *)&this_00->field_023D);
@@ -1349,7 +1351,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
                 if (iVar40 < iVar40 + iVar27) {
                   do {
                     iVar23 = st::fn_00404CCD((short)iVar40,(short)local_8,
-                                                *(short *)&this_00->field_05B8);
+                                                (short)this_00->field_05B8);
                     if (iVar23 != 0) {
                       st::fn_006A5E40
                                 (-5,g_overwriteContext_007ED77C,
@@ -1490,7 +1492,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
       pbVar36 = local_8;
       pbVar43 = local_10 + local_ca;
       memmove(pbVar43, pbVar36, local_ce); /* compiler REP MOVS byte copy */
-      st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,local_18);
+      st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,(uint)local_18);
       if (local_40 != nullptr) {
         st::fn_006AB060(&local_40);
       }
@@ -1663,7 +1665,7 @@ LAB_004bb5dd:
       local_62 = local_50;
       local_6c = 0x5dd5;
       local_64 = (undefined2)local_54;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*DAT_008117bc)(local_7c);
     }
     if (DAT_00811798 != nullptr) {
@@ -1717,7 +1719,7 @@ LAB_004bb5dd:
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_68 = CONCAT22(this_00->field_0032,*(undefined2 *)&this_00->field_0024);
             local_64 = (short)local_54;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)*DAT_008117bc)(local_7c);
           }
           local_68 = this_00->field_0008;
@@ -1733,7 +1735,7 @@ LAB_004bb5dd:
         local_68 = CONCAT22(this_00->field_0032,*(undefined2 *)&this_00->field_0024);
         local_62 = 0xffff;
         local_64 = (short)local_54;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (*(code *)*puRam00000000)(local_7c);
       }
       if (DAT_00811798 != nullptr) {
@@ -2394,7 +2396,7 @@ LAB_004bbfe9:
       local_8 = nullptr;
       iVar27 = st::machine_word_boundary_cast<int>(this_00->field_05B8 + -2);
       if (-1 < iVar27) {
-        sVar16 = *(short *)&this_00->field_05B0;
+        sVar16 = (short)this_00->field_05B0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_14 = CONCAT22((short)(bVar1 - 8 >> 0x10),sVar16);
         sVar4 = *(short *)&this_00->field_05B4;
@@ -2427,7 +2429,7 @@ LAB_004bbfe9:
         } while (-1 < iVar27);
       }
       if (local_8 == nullptr) {
-        sVar16 = *(short *)&this_00->field_05B0;
+        sVar16 = (short)this_00->field_05B0;
         sVar4 = *(short *)&this_00->field_05B4;
         if (((sVar16 < 0) || (g_worldGrid.sizeX <= sVar16)) ||
            ((sVar4 < 0 || ((g_worldGrid.sizeY <= sVar4 || (g_worldGrid.sizeZ < 1)))))) {

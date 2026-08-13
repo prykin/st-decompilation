@@ -113,7 +113,7 @@ void FUN_006cf950(uint *param_1)
         if (piVar1 != nullptr) {
           local_a0 = 0x7c;
           local_9c = 6;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar3 = (**(code **)(*piVar1 + 0x58))(piVar1,&local_a0);
           if (iVar3 != 0) {
             param_1[8] = 0;

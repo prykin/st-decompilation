@@ -120,13 +120,13 @@ int __thiscall st::fn_004D11D0(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy_004
     this_01->field_0360 = st::machine_word_boundary_cast<undefined4>(&DAT_007ac988);
   }
   st::fn_00402B5D(this_01,0);
-  iVar11 = st::fn_0040295F(this_01,*(short *)&this_01->field_025D,*(short *)&this_01->field_0261,
+  iVar11 = st::fn_0040295F(this_01,(short)this_01->field_025D,(short)this_01->field_0261,
                               this_01->field_0265,1);
   if (iVar11 != 0) {
     st::fn_006A5E40
               (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_embryo.cpp"),0x66);
   }
-  st::fn_0040278E(this_01,*(short *)&this_01->field_025D,*(short *)&this_01->field_0261,
+  st::fn_0040278E(this_01,(short)this_01->field_025D,(short)this_01->field_0261,
                      this_01->field_0265);
   if (this_01->field_002C == 0) {
     local_c = 1;

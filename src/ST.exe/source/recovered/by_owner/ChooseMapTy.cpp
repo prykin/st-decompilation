@@ -11,11 +11,14 @@
 void __thiscall st::fn_005AE840(ChooseMapTy *this)
 
 {
-  this->field_1A60 = 1;
+  int iVar1;
+
+  iVar1 = this->array_00BC[0xc].field_01EC;
+  this->array_00BC[0xc].field_01E0 = 1;
   this->field_0029 = 2;
   this->field_002D = 0x20;
-  if (this->field_1A6C != 0) {
-    this->field_0025 = this->field_1A6C;
+  if (iVar1 != 0) {
+    this->field_0025 = iVar1;
     this->field_0031 = 1;
     this->field_0033 = 0;
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
@@ -58,17 +61,21 @@ void __thiscall st::fn_005AE840(ChooseMapTy *this)
 void __thiscall st::fn_005AE950(ChooseMapTy *this)
 
 {
-  this->field_1A60 = 0;
+  int iVar1;
+
+  iVar1 = this->field_1C83;
+  this->array_00BC[0xc].field_01E0 = 0;
   this->field_0029 = 2;
   this->field_002D = 0x20;
-  if (this->field_1C83 != 0) {
-    this->field_0025 = this->field_1C83;
+  if (iVar1 != 0) {
+    this->field_0025 = iVar1;
     this->field_0031 = 0;
     this->field_0033 = 0;
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
-  if (this->field_1A6C != 0) {
-    this->field_0025 = this->field_1A6C;
+  iVar1 = this->array_00BC[0xc].field_01EC;
+  if (iVar1 != 0) {
+    this->field_0025 = iVar1;
     this->field_0031 = 0;
     this->field_0033 = 0;
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
@@ -126,34 +133,47 @@ st::fn_005B5BE0(ChooseMapTy *this,RecoveredSourceFamily_dibcopy *param_1,int *pa
     st::fn_006B4170(param_1,0,iVar2,0,st::machine_word_boundary_cast<int>(param_2[5] + -2),0x14,0);
     st::fn_006B4170(param_1,0,iVar2 + 1,0x14,st::machine_word_boundary_cast<int>(param_2[5] + -5),2,0);
     st::fn_006B4170(param_1,0,iVar2 + 3,0x16,st::machine_word_boundary_cast<int>(param_2[5] + -9),2,0);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,-(uint)(*param_2 != 1) & 2,iVar2,
-                 0x14,(byte)this->field_1A5B->field_0140,0xd);
+                 0x14,(byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,0x14,iVar2 + 3,0x17,
-                 (byte)this->field_1A5B->field_0140,0xd);
+                 (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,0x17,st::machine_word_boundary_cast<int>(param_2[5] + -6 + iVar2),
-                 0x17,(byte)this->field_1A5B->field_0140,0xd);
+                 0x17,(byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -6),0x17,
-                 st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -3),0x14,(byte)this->field_1A5B->field_0140,0xd);
+                 st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -3),0x14,
+                 (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
     iVar2 = st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,0x14,iVar2,2,
-                 (byte)this->field_1A5B->field_0140,0xd);
+                 (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
     return;
   }
   st::fn_006B4170(param_1,0,iVar2,0,st::machine_word_boundary_cast<int>(param_2[5] + -2),0x13,0);
   st::fn_006B4170(param_1,0,iVar2 + 2,0x13,st::machine_word_boundary_cast<int>(param_2[5] + -6),3,0);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,-(uint)(*param_2 != 1) & 2,iVar2,0x13,
-               (byte)this->field_1A5B->field_0140,0xd);
+               (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,0x13,iVar2 + 3,0x16,
-               (byte)this->field_1A5B->field_0140,0xd);
+               (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,0x16,st::machine_word_boundary_cast<int>(param_2[5] + -6 + iVar2),0x16,
-               (byte)this->field_1A5B->field_0140,0xd);
+               (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -6),0x16,
-               st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -3),0x13,(byte)this->field_1A5B->field_0140,0xd);
+               st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -3),0x13,
+               (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
   iVar1 = st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar1,0x13,iVar1,2,
-               (byte)this->field_1A5B->field_0140,0xd);
+               (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,1,st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2),1,
-               (byte)this->field_1A5B->field_0140,0xd);
+               (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
   return;
 }
 

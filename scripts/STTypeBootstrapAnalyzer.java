@@ -25,9 +25,13 @@ import java.util.regex.Pattern;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.TypeDef;
+import ghidra.program.model.data.Undefined;
+import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
@@ -71,23 +75,12 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
 
         int systemMethods = methodFamilyCount("SystemClassTy");
         DataType canonicalSystem = currentProgram.getDataTypeManager().getDataType("/SystemClassTy");
-        DataType duplicateSystem = currentProgram.getDataTypeManager().getDataType(
-            ROOT + "/SystemClassTy");
         rows.add(typeRow("canonical_system", "/SystemClassTy", "",
             canonicalSystem instanceof Structure && systemMethods >= 4,
             "class_namespace|method_family|vtable_family",
             "named_methods=" + systemMethods + "; canonical_type=" +
                 (canonicalSystem == null ? "missing" : canonicalSystem.getPathName())));
-        if (canonicalSystem instanceof Structure canonical &&
-                duplicateSystem instanceof Structure duplicate) {
-            boolean compatible = canonical.isEquivalent(duplicate);
-            rows.add(typeRow("replace_duplicate", duplicate.getPathName(),
-                canonical.getPathName(), compatible,
-                "canonical_class_identity|equivalent_layout",
-                "duplicate_length=" + duplicate.getLength() +
-                    "; canonical_length=" + canonical.getLength()));
-        }
-
+        addSemanticDuplicateReconciliation(rows, systemMethods);
 
         Iterator<DataType> legacyTypes =
             currentProgram.getDataTypeManager().getAllDataTypes();
@@ -249,6 +242,127 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
 
     private boolean semanticBootstrapType(DataType type) {
         return text(type.getDescription()).contains("[ST_SEMANTIC_ANCHOR]");
+    }
+
+    /**
+     * Locate an exact-layout legacy view of a unique semantic anchor. Category/name
+     * preference is not evidence: two structures may share a C leaf name while carrying
+     * different field names and different strengths of the same storage type. The applier
+     * reconciles those views before replacing the duplicate, and therefore needs hash-intact
+     * baselines for both sides.
+     */
+    private void addSemanticDuplicateReconciliation(List<Row> rows, int systemMethods) {
+        Map<String, List<Structure>> groups = new LinkedHashMap<>();
+        Iterator<DataType> iterator = currentProgram.getDataTypeManager().getAllDataTypes();
+        while (iterator.hasNext()) {
+            DataType type = iterator.next();
+            if (type instanceof Structure structure)
+                groups.computeIfAbsent(type.getName(), ignored -> new ArrayList<>())
+                    .add(structure);
+        }
+        for (List<Structure> group : groups.values()) {
+            if (group.size() < 2) continue;
+            List<Structure> anchors = group.stream().filter(type ->
+                semanticBootstrapType(type) ||
+                    ("/SystemClassTy".equals(type.getPathName()) && systemMethods >= 4))
+                .toList();
+            if (anchors.size() != 1) continue;
+            Structure canonical = anchors.get(0);
+            for (Structure duplicate : group) {
+                if (duplicate.equals(canonical) ||
+                        text(duplicate.getDescription()).contains(VIEW_ONLY) ||
+                        !(canonical.getPathName().startsWith(ROOT + "/") ||
+                            duplicate.getPathName().startsWith(ROOT + "/"))) continue;
+                MergeCompatibility compatibility = mergeCompatibility(canonical, duplicate);
+                rows.add(new Row(compatibility.compatible, "reconcile_duplicate",
+                    duplicate.getPathName(), canonical.getPathName(),
+                    typeFingerprint(duplicate), typeFingerprint(canonical),
+                    "unique_semantic_anchor|exact_component_geometry|compatible_storage_views",
+                    compatibility.compatible ? "high" : "review",
+                    "canonical_length=" + canonical.getLength() +
+                        "; duplicate_length=" + duplicate.getLength() +
+                        "; fields=" + compatibility.fields +
+                        "; generic_upgrades=" + compatibility.genericUpgrades +
+                        "; name_disagreements=" + compatibility.nameDisagreements +
+                        (compatibility.reason.isBlank() ? "" :
+                            "; blocked=" + compatibility.reason)));
+            }
+        }
+    }
+
+    private MergeCompatibility mergeCompatibility(Structure canonical,
+            Structure duplicate) {
+        if (canonical.getLength() != duplicate.getLength())
+            return MergeCompatibility.blocked("different_lengths");
+        DataTypeComponent[] left = canonical.getDefinedComponents();
+        DataTypeComponent[] right = duplicate.getDefinedComponents();
+        if (left.length != right.length)
+            return MergeCompatibility.blocked("different_component_counts");
+        int genericUpgrades = 0;
+        int nameDisagreements = 0;
+        for (int index = 0; index < left.length; index++) {
+            DataTypeComponent a = left[index];
+            DataTypeComponent b = right[index];
+            if (a.getOffset() != b.getOffset() || a.getLength() != b.getLength())
+                return MergeCompatibility.blocked("different_geometry_at_" +
+                    Integer.toHexString(Math.min(a.getOffset(), b.getOffset())));
+            if (!compatibleStorageTypes(a.getDataType(), b.getDataType()))
+                return MergeCompatibility.blocked("conflicting_types_at_" +
+                    Integer.toHexString(a.getOffset()) + ":" +
+                    a.getDataType().getPathName() + "_vs_" +
+                    b.getDataType().getPathName());
+            if (genericPointer(a.getDataType()) != genericPointer(b.getDataType()))
+                genericUpgrades++;
+            if (!text(a.getFieldName()).equals(text(b.getFieldName())))
+                nameDisagreements++;
+        }
+        return new MergeCompatibility(true, left.length, genericUpgrades,
+            nameDisagreements, "");
+    }
+
+    private boolean compatibleStorageTypes(DataType left, DataType right) {
+        left = unwrap(left);
+        right = unwrap(right);
+        if (left.isEquivalent(right)) return true;
+        if (left instanceof Pointer && right instanceof Pointer) {
+            if (genericPointer(left) || genericPointer(right)) return true;
+            DataType leftBase = nominalBase(left);
+            DataType rightBase = nominalBase(right);
+            return pointerDepth(left) == pointerDepth(right) &&
+                leftBase != null && rightBase != null &&
+                leftBase.getName().equals(rightBase.getName()) &&
+                leftBase.getLength() == rightBase.getLength();
+        }
+        return false;
+    }
+
+    private boolean genericPointer(DataType type) {
+        type = unwrap(type);
+        if (!(type instanceof Pointer)) return false;
+        DataType base = nominalBase(type);
+        return base == null || base instanceof VoidDataType ||
+            Undefined.isUndefined(base);
+    }
+
+    private int pointerDepth(DataType type) {
+        int result = 0;
+        type = unwrap(type);
+        while (type instanceof Pointer pointer) {
+            result++;
+            type = unwrap(pointer.getDataType());
+        }
+        return result;
+    }
+
+    private DataType nominalBase(DataType type) {
+        type = unwrap(type);
+        while (type instanceof Pointer pointer) type = unwrap(pointer.getDataType());
+        return type;
+    }
+
+    private DataType unwrap(DataType type) {
+        while (type instanceof TypeDef definition) type = definition.getBaseDataType();
+        return type;
     }
 
     private boolean legacyProjection(String description) {
@@ -480,7 +594,9 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
         for (var component : structure.getDefinedComponents())
             result.append('|').append(component.getOffset()).append(':')
                 .append(component.getLength()).append(':')
-                .append(component.getDataType().getPathName());
+                .append(component.getDataType().getPathName()).append(':')
+                .append(text(component.getFieldName())).append(':')
+                .append(text(component.getComment()));
         return result.append("|description=").append(
             type.getDescription() == null ? "" : type.getDescription()).toString();
     }
@@ -571,6 +687,13 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
                 "; identity=" + identityDomains + "; operations=" + operations +
                 "; examples=" +
                 names.stream().limit(8).toList();
+        }
+    }
+
+    private record MergeCompatibility(boolean compatible, int fields,
+            int genericUpgrades, int nameDisagreements, String reason) {
+        static MergeCompatibility blocked(String reason) {
+            return new MergeCompatibility(false, 0, 0, 0, reason);
         }
     }
     private record Row(boolean apply, String action, String target, String replacement,

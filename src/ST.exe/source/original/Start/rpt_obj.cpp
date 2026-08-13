@@ -1176,7 +1176,7 @@ void __thiscall st::fn_005BF860(MReportTy *this)
   char cVar1;
   AnonPointee_MReportTy_0073 *pAVar2;
   bool bVar4;
-  MTaskTy *this_00;
+  MReportTy *this_00;
   int iVar5;
   int iVar7;
   int iVar6;
@@ -1184,14 +1184,14 @@ void __thiscall st::fn_005BF860(MReportTy *this)
   uint uVar9;
   int iVar10;
   InternalExceptionFrame local_50;
-  MTaskTy *local_c;
+  MReportTy *local_c;
   int local_8;
 
   iVar8 = 0;
   local_8 = 1;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  local_c = (MTaskTy *)this;
+  local_c = this;
   iVar5 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar5 != 0) {
@@ -1204,69 +1204,57 @@ void __thiscall st::fn_005BF860(MReportTy *this)
     st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\Start\\rpt_obj.cpp"),0x1f9);
     return;
   }
-  cVar1 = *(char *)&local_c->field_0065;
+  cVar1 = local_c->field_0065;
   if (cVar1 == '\x01') {
-    if (((*(char *)((int)&local_c->field_0065 + 2) != '\0') &&
-        (*(char *)&local_c->field_0069 == '\0')) &&
-       (*(char *)((int)&local_c->field_0065 + 3) != '\0')) {
+    if (((local_c->field_0067 != '\0') && (local_c->field_0069 == '\0')) &&
+       (local_c->field_0068 != '\0')) {
       bVar4 = false;
       st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
       if (DAT_0080c83e != 0xffffffff) {
         do {
           if (iVar8 == 0) {
-            if (DAT_0080c963 <= *(int *)&this_00->field_0x2c3) {
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              uVar9 = *(uint *)((int)this_00->field_0291 + 0x12);
+            if (DAT_0080c963 <= this_00->field_02C3) {
+              uVar9 = this_00->field_02A3;
               iVar10 = 0;
               iVar6 = DAT_0080c963;
               goto LAB_005bfb27;
             }
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            uVar9 = *(uint *)((int)this_00->field_0291 + 0x12);
+            uVar9 = this_00->field_02A3;
             if ((int)uVar9 < 0x29) {
               iVar6 = 5;
             }
             else {
               iVar6 = (int)uVar9 / 0x28;
             }
-            iVar6 = *(int *)&this_00->field_0x2c3 + iVar6;
-            *(int *)&this_00->field_0x2c3 = iVar6;
+            iVar6 = st::machine_word_boundary_cast<int>(this_00->field_02C3 + iVar6);
+            this_00->field_02C3 = iVar6;
             if (DAT_0080c963 < iVar6) {
-              *(int *)&this_00->field_0x2c3 = DAT_0080c963;
+              this_00->field_02C3 = DAT_0080c963;
             }
-            st::fn_004016FE((MReportTy *)this_00,*(int *)&this_00->field_0x2c3,uVar9,0);
+            st::fn_004016FE(this_00,this_00->field_02C3,uVar9,0);
             bVar4 = true;
           }
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          else if (*(int *)((int)this_00->field_0291 + iVar8 * 4 + 0x12) <
-                   (int)(&DAT_0080c943)[iVar8]) {
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            iVar6 = *(int *)((int)this_00->field_0291 + 0x12);
-            if (iVar6 < 0x29) {
+          else if ((&this_00->field_02A3)[iVar8] < (int)(&DAT_0080c943)[iVar8]) {
+            if (this_00->field_02A3 < 0x29) {
               iVar6 = 5;
             }
             else {
-              iVar6 = iVar6 / 0x28;
+              iVar6 = st::machine_word_boundary_cast<int>(this_00->field_02A3 / 0x28);
             }
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            iVar6 = *(int *)((int)this_00->field_0291 + iVar8 * 4 + 0x12) + iVar6;
-            *(int *)((int)this_00->field_0291 + iVar8 * 4 + 0x12) = iVar6;
+            iVar6 = (&this_00->field_02A3)[iVar8] + iVar6;
+            (&this_00->field_02A3)[iVar8] = iVar6;
             if ((int)(&DAT_0080c943)[iVar8] < iVar6) {
-              *(undefined4 *)((int)this_00->field_0291 + iVar8 * 4 + 0x12) = (&DAT_0080c943)[iVar8];
+              (&this_00->field_02A3)[iVar8] = (&DAT_0080c943)[iVar8];
             }
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            st::fn_004016FE((MReportTy *)this_00,
-                           *(int *)((int)this_00->field_0291 + iVar8 * 4 + 0x12),
-                           *(uint *)((int)this_00->field_0291 + 0x12),iVar8);
+            st::fn_004016FE(this_00,(&this_00->field_02A3)[iVar8],this_00->field_02A3,iVar8);
             bVar4 = true;
           }
           else {
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            uVar9 = *(uint *)((int)this_00->field_0291 + 0x12);
+            uVar9 = this_00->field_02A3;
             iVar6 = (&DAT_0080c943)[iVar8];
             iVar10 = iVar8;
 LAB_005bfb27:
-            st::fn_004016FE((MReportTy *)this_00,iVar6,uVar9,iVar10);
+            st::fn_004016FE(this_00,iVar6,uVar9,iVar10);
           }
           iVar8 = iVar8 + 1;
         } while (iVar8 < (int)(DAT_0080c83e + 1));
@@ -1274,54 +1262,53 @@ LAB_005bfb27:
       if (bVar4) {
         st::fn_00404BF1(this_00,0x1e,'\x01',-1);
         st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
-        iVar8 = *(int *)((int)&this_00->field_0070 + 3);
-        st::fn_00402298(0x1a,0x46,0x1a,0x46,*(uint *)(iVar8 + 4),*(byte **)(iVar8 + 8),'\x01',
-                   (BITMAPINFO *)this_00->field_005D);
-        pAVar2 = *(AnonPointee_MReportTy_0073 **)((int)&this_00->field_0070 + 3);
+        st::fn_00402298(0x1a,0x46,0x1a,0x46,this_00->field_0073->field_0004,
+                   (byte *)this_00->field_0073->field_0008,'\x01',(BITMAPINFO *)this_00->field_005D);
+        pAVar2 = this_00->field_0073;
         st::fn_006B48E0
                   ((int)g_dDXContext_0080759C,0x1a,0x46,pAVar2,0,0,0,pAVar2->field_0004,
-                   pAVar2->field_0008,(ushort *)&this_00->field_0xa3,0x4c,0x10000ff);
+                   pAVar2->field_0008,(ushort *)&this_00->field_00A3,0x4c,0x10000ff);
         g_currentExceptionFrame = local_50.previous;
         return;
       }
-      *(undefined1 *)((int)&this_00->field_0065 + 3) = 0;
+      this_00->field_0068 = 0;
     }
   }
   else if (cVar1 == '\x03') {
-    if (*(HoloTy **)&local_c->field_0x453 != nullptr) {
-      iVar8 = st::fn_004055F1(*(HoloTy **)&local_c->field_0x453);
+    if (local_c->field_0453 != nullptr) {
+      iVar8 = st::fn_004055F1(local_c->field_0453);
       if (iVar8 != 0) {
         local_8 = 0;
       }
     }
-    if (*(HoloTy **)&this_00->field_0x457 != nullptr) {
-      iVar8 = st::fn_004055F1(*(HoloTy **)&this_00->field_0x457);
+    if (this_00->field_0457 != nullptr) {
+      iVar8 = st::fn_004055F1(this_00->field_0457);
       if (iVar8 != 0) {
         local_8 = 0;
       }
     }
     if (local_8 != 0) {
-      if (*(HoloTy **)&this_00->field_0x453 != nullptr) {
-        st::fn_0040128A(*(HoloTy **)&this_00->field_0x453);
-        st::fn_0072E2B0(*(HoloTy **)&this_00->field_0x453);
-        *(undefined4 *)&this_00->field_0x453 = 0;
+      if (this_00->field_0453 != nullptr) {
+        st::fn_0040128A(this_00->field_0453);
+        st::fn_0072E2B0(this_00->field_0453);
+        this_00->field_0453 = nullptr;
       }
-      if (*(HoloTy **)&this_00->field_0x457 != nullptr) {
-        st::fn_0040128A(*(HoloTy **)&this_00->field_0x457);
-        st::fn_0072E2B0(*(HoloTy **)&this_00->field_0x457);
-        *(undefined4 *)&this_00->field_0x457 = 0;
+      if (this_00->field_0457 != nullptr) {
+        st::fn_0040128A(this_00->field_0457);
+        st::fn_0072E2B0(this_00->field_0457);
+        this_00->field_0457 = nullptr;
       }
-      *(undefined1 *)&this_00->field_0065 = 1;
-      st::fn_00403A6C((MReportTy *)this_00);
+      this_00->field_0065 = 1;
+      st::fn_00403A6C(this_00);
       g_currentExceptionFrame = local_50.previous;
       return;
     }
   }
   else if (cVar1 == '\x04') {
-    if (*(HoloTy **)&local_c->field_0x453 != nullptr) {
-      iVar8 = st::fn_004055F1(*(HoloTy **)&local_c->field_0x453);
+    if (local_c->field_0453 != nullptr) {
+      iVar8 = st::fn_004055F1(local_c->field_0453);
       if (iVar8 == 0) {
-        uVar9 = *(uint *)(*(int *)&this_00->field_0x453 + 3);
+        uVar9 = *(uint *)&this_00->field_0453->field_0x3;
         if (-1 < (int)uVar9) {
           st::fn_006B3AF0((int *)g_ddxContext_008075A8,uVar9);
         }
@@ -1330,10 +1317,10 @@ LAB_005bfb27:
         local_8 = 0;
       }
     }
-    if (*(HoloTy **)&this_00->field_0x457 != nullptr) {
-      iVar8 = st::fn_004055F1(*(HoloTy **)&this_00->field_0x457);
+    if (this_00->field_0457 != nullptr) {
+      iVar8 = st::fn_004055F1(this_00->field_0457);
       if (iVar8 == 0) {
-        uVar9 = *(uint *)(*(int *)&this_00->field_0x457 + 3);
+        uVar9 = *(uint *)&this_00->field_0457->field_0x3;
         if (-1 < (int)uVar9) {
           st::fn_006B3AF0((int *)g_ddxContext_008075A8,uVar9);
         }
@@ -1343,8 +1330,8 @@ LAB_005bfb27:
       }
     }
     if (local_8 != 0) {
-      *(undefined1 *)&this_00->field_0065 = 2;
-      st::fn_00404DB8(this_00);
+      this_00->field_0065 = 2;
+      st::fn_00404DB8((MTaskTy *)this_00);
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -2376,7 +2363,7 @@ switchD_005c1b14_caseD_5:
             local_10->field_0031 = 0;
             local_10->field_0033 = 3;
             local_10->field_0035 = st::machine_word_boundary_cast<undefined4>(piVar19);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x1d);
           }
           this_00->field_044F = st::machine_word_boundary_cast<undefined4>(piVar21);
@@ -2385,7 +2372,7 @@ switchD_005c1b14_caseD_5:
             this_00->field_0031 = 0;
             this_00->field_0033 = 3;
             this_00->field_0035 = st::machine_word_boundary_cast<undefined4>(piVar21);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x1d);
           }
         }

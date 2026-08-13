@@ -32,7 +32,7 @@ int __thiscall st::fn_005F5F20(STColl3C *this,STMessage *message)
   STWorldObject *pSVar11;
   InternalExceptionFrame local_60;
   byte *local_1c;
-  AnonShape_0060EA30_DCEB68AD *local_18;
+  uint local_18;
   short local_14 [2];
   short local_10 [2];
   short local_c [2];
@@ -83,7 +83,7 @@ int __thiscall st::fn_005F5F20(STColl3C *this,STMessage *message)
     }
   }
   if (SVar1 == MESS_SHARED_010F) {
-    local_1c = st::fn_00403E59(local_8,(uint *)&local_18);
+    local_1c = st::fn_00403E59(local_8,&local_18);
     st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_1c,local_18);
     st::fn_006AB060(&local_1c);
     g_currentExceptionFrame = local_60.previous;
@@ -123,37 +123,13 @@ int __thiscall st::fn_005F5F20(STColl3C *this,STMessage *message)
     puVar10 = (byte *)&local_8->field_0x231;
     memmove(puVar10, puVar9, 0x2c); /* compiler REP MOVS byte copy */
     iVar8 = local_8->field_0245;
-    sVar5 = (short)(iVar8 >> 0x1f);
-    if (iVar8 < 0) {
-      iVar8 = (short)(((short)(iVar8 / 0xc9) + sVar5) - (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar5) -
-                          (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
-    }
+    iVar8 = STBiasedDiv16(iVar8, 0xc9); /* exact signed 16-bit grid-index division */
     iVar2 = local_8->field_0249;
     local_8->field_025D = iVar8;
-    sVar5 = (short)(iVar2 >> 0x1f);
-    if (iVar2 < 0) {
-      iVar8 = (short)(((short)(iVar2 / 0xc9) + sVar5) - (short)((longlong)iVar2 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar8 = (int)(short)(((short)(iVar2 / 0xc9) + sVar5) -
-                          (short)((longlong)iVar2 * 0x28c1979 >> 0x3f));
-    }
+    iVar8 = STBiasedDiv16(iVar2, 0xc9); /* exact signed 16-bit grid-index division */
     iVar2 = local_8->field_024D;
     local_8->field_0261 = iVar8;
-    sVar5 = (short)(iVar2 >> 0x1f);
-    if (iVar2 < 0) {
-      iVar8 = (short)(((short)(iVar2 / 200) + sVar5) - (short)((longlong)iVar2 * 0x51eb851f >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar8 = (int)(short)(((short)(iVar2 / 200) + sVar5) -
-                          (short)((longlong)iVar2 * 0x51eb851f >> 0x3f));
-    }
+    iVar8 = STBiasedDiv16(iVar2, 200); /* exact signed 16-bit grid-index division */
     local_8->field_0265 = iVar8;
     st::fn_0040163B(local_8,st::pointer_boundary_cast<int *>(&local_8->field_027D),st::pointer_boundary_cast<int *>(&local_8->field_0281),st::pointer_boundary_cast<int *>(&local_8->field_0285));
     this_00->field_0269 = 600;

@@ -9,7 +9,10 @@
    table_confidence=high
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 00589990 returns STOctopusC::STOctopusC this @ 005899CF */
+   Evidence: 00589990 returns STOctopusC::STOctopusC this @ 005899CF
+
+   [STSwitchEnumApplier] Switch target field_0249 uses
+   /SubmarineTitans/Recovered/Enums/STOctopusC_field_0249State. Cases: CASE_0=0;CASE_2=2;CASE_3=3 */
 
 STOctopusC * __thiscall st::fn_00589990(STOctopusC *this)
 
@@ -19,7 +22,7 @@ STOctopusC * __thiscall st::fn_00589990(STOctopusC *this)
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079BD18);
   this->vtable = &st_global_0079BBB8;
-  this->field_0249 = 0;
+  this->field_0249 = CASE_0;
   memset(&this->field_0x285, 0, 0x28); /* compiler bulk-zero initialization */
   return this;
 }
@@ -35,7 +38,7 @@ undefined4 __thiscall
 st::fn_0058AF70(STOctopusC *this,short param_1,short param_2,short param_3)
 
 {
-  uint uVar1;
+  STOctopusC_field_02A5State SVar1;
   int iVar3;
   int iVar2;
   int local_EAX_118;
@@ -54,9 +57,9 @@ st::fn_0058AF70(STOctopusC *this,short param_1,short param_2,short param_3)
   iVar2 = st::fn_006ACF0D(0,0,0,iVar3,iVar4,iVar5);
   this->field_0239 = iVar2;
   local_EAX_118 = st::fn_006ACF0D(0,0,0,this->field_0269,this->field_026D,0);
-  uVar1 = this->field_02A5;
+  SVar1 = this->field_02A5;
   this->field_023D = local_EAX_118;
-  if ((uVar1 == 0xf8) || (uVar1 == 0xf9)) {
+  if ((SVar1 == CASE_F8) || (SVar1 == CASE_F9)) {
     iVar3 = this->field_0239;
     this->field_0251 = (this->field_0269 << 8) / iVar3;
     this->field_0255 = (this->field_026D << 8) / iVar3;
@@ -75,7 +78,7 @@ st::fn_0058AF70(STOctopusC *this,short param_1,short param_2,short param_3)
   this->field_027D = (int)this->field_0045;
   this->field_0259 = iVar4 / iVar3;
   this->field_0279 = (int)this->field_0043;
-  if ((this->field_0281 == 0) && ((uVar1 == 0xf8 || (uVar1 == 0xf9)))) {
+  if ((this->field_0281 == 0) && ((SVar1 == CASE_F8 || (SVar1 == CASE_F9)))) {
     iVar3 = this->field_0251;
     if (iVar3 < 0) {
       iVar3 = -iVar3;
@@ -139,22 +142,10 @@ st::fn_0058B190
   }
   sVar8 = this->field_0043;
   this->field_0047 = (short)local_14;
-  if (sVar8 < 0) {
-    sVar8 = ((sVar8 / 0xc9 + (sVar8 >> 0xf)) - (short)((longlong)(int)sVar8 * 0x28c1979 >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar8 = (sVar8 / 0xc9 + (sVar8 >> 0xf)) - (short)((longlong)(int)sVar8 * 0x28c1979 >> 0x3f);
-  }
+  sVar8 = STBiasedDiv16(sVar8, 0xc9); /* exact signed 16-bit grid-index division */
   sVar9 = this->field_0045;
   this->field_0049 = sVar8;
-  if (sVar9 < 0) {
-    sVar9 = ((sVar9 / 200 + (sVar9 >> 0xf)) - (short)((longlong)(int)sVar9 * 0x51eb851f >> 0x3f)) +
-            -1;
-  }
-  else {
-    sVar9 = (sVar9 / 200 + (sVar9 >> 0xf)) - (short)((longlong)(int)sVar9 * 0x51eb851f >> 0x3f);
-  }
+  sVar9 = STBiasedDiv16(sVar9, 200); /* exact signed 16-bit grid-index division */
   this->field_004B = sVar9;
   if ((short)local_14 < 0) {
     this->field_0047 = 0;
@@ -180,7 +171,7 @@ st::fn_0058B190
   if (iVar4 < iVar5 + 1) {
     bVar14 = bVar14 + 1;
   }
-  if ((((this->field_02A5 == 0xf8) || (this->field_02A5 == 0xf9)) && (sVar9 < 4)) &&
+  if ((((this->field_02A5 == CASE_F8) || (this->field_02A5 == CASE_F9)) && (sVar9 < 4)) &&
      (((byte)g_playSystem_00802A38->field_00E4 & 7) == 1)) {
     uVar12 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
     this->field_001C = uVar12;
@@ -289,26 +280,10 @@ LAB_0058b499:
   if ((int)((int)this->field_0045 + local_8) < 900) {
     iVar3 = local_c - local_8;
     if (0x31 < iVar3) {
-      sVar8 = (short)(iVar3 >> 0x1f);
-      if (iVar3 < 0) {
-        iVar3 = (short)(((short)(iVar3 / 200) + sVar8) -
-                       (short)((longlong)iVar3 * 0x51eb851f >> 0x3f)) + -1;
-      }
-      else {
-        iVar3 = (int)(short)(((short)(iVar3 / 200) + sVar8) -
-                            (short)((longlong)iVar3 * 0x51eb851f >> 0x3f));
-      }
+      iVar3 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
       uVar11 = st::fn_00404A3E(iVar6,iVar5,iVar3);
       iVar3 = local_8 + local_c;
-      sVar8 = (short)(iVar3 >> 0x1f);
-      if (iVar3 < 0) {
-        iVar3 = (short)(((short)(iVar3 / 200) + sVar8) -
-                       (short)((longlong)iVar3 * 0x51eb851f >> 0x3f)) + -1;
-      }
-      else {
-        iVar3 = (int)(short)(((short)(iVar3 / 200) + sVar8) -
-                            (short)((longlong)iVar3 * 0x51eb851f >> 0x3f));
-      }
+      iVar3 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
       uVar10 = st::fn_00404A3E(iVar6,iVar5,iVar3);
       if (((int)uVar11 < 0) && ((int)uVar10 < 0)) {
         if ((local_8 & 1) != 0) {

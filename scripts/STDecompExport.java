@@ -5230,7 +5230,7 @@ public class STDecompExport extends GhidraScript {
             case "flattened_global_record_array" ->
                 "expected typedRecordArray[index].field after inferred base/stride proof";
             case "raw_indirect_call" ->
-                "expected typed vtable/callback call with explicit __thiscall receiver";
+                "expected typed vtable or function-table callback call with the machine-proven calling convention";
             case "packed_or_unaligned_piece" -> packedInlineTransform(line);
             case "raw_pointer_offset" ->
                 "candidate structure field after proof; otherwise retain buffer arithmetic";
@@ -5360,7 +5360,7 @@ public class STDecompExport extends GhidraScript {
             case "flattened_global_record_array" ->
                 "recompose as typedRecordArray[index].field using the inferred record stride and component metadata";
             case "raw_indirect_call" ->
-                "apply a function-pointer or vtable-slot prototype, including explicit __thiscall receiver";
+                "apply a function-pointer or vtable-slot prototype; add an explicit receiver only when the machine ABI proves __thiscall";
             case "packed_or_unaligned_piece" ->
                 "replace piece syntax with a named packed field, bit extract/compose, memcpy, or explicit unaligned load";
             case "raw_pointer_offset" ->

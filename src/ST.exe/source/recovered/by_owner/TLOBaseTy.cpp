@@ -103,7 +103,12 @@ void __thiscall st::fn_0041D590(TLOBaseTy *this)
    table_confidence=high
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 004B7EF0 returns TLOBaseTy::TLOBaseTy this @ 004B7F63 */
+   Evidence: 004B7EF0 returns TLOBaseTy::TLOBaseTy this @ 004B7F63
+
+   [STSwitchEnumApplier] Switch target field_0245 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115;CASE_FFFFFFFF=4294967295
+    */
 
 TLOBaseTy * __thiscall st::fn_004B7EF0(TLOBaseTy *this)
 
@@ -121,7 +126,7 @@ TLOBaseTy * __thiscall st::fn_004B7EF0(TLOBaseTy *this)
   this->field_061B = nullptr;
   this->field_061F = nullptr;
   this->vtable = &st_global_00790AA0;
-  this->field_0245 = ~CASE_0;
+  this->field_0245 = CASE_FFFFFFFF;
   this->field_0249 = 0xffffffff;
   this->field_024D = 0xffffffff;
   return this;
@@ -137,6 +142,10 @@ TLOBaseTy * __thiscall st::fn_004B7EF0(TLOBaseTy *this)
    [STSwitchEnumApplier] Switch target field_0245 uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115
+
+   [STSwitchEnumApplier] Switch target field_0245 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115;CASE_FFFFFFFF=4294967295
     */
 
 undefined4 __thiscall st::fn_004B7F90(TLOBaseTy *this,int param_1)
@@ -163,7 +172,7 @@ undefined4 __thiscall st::fn_004B7F90(TLOBaseTy *this,int param_1)
   case CASE_5:
     if (((param_1 != 0) && (param_1 != 1)) && (param_1 != 6)) goto cf_common_exit_004B8058;
     break;
-  case ~CASE_0:
+  case CASE_FFFFFFFF:
     goto switchD_004b7fa6_caseD_ffffffff;
   }
   iVar2 = st::fn_004042AF(&this->field_01D5,'\x0e');
@@ -391,6 +400,10 @@ dword __thiscall st::fn_004BE450(TLOBaseTy *this)
    [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_A6=166;CASE_A7=167;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_B3=179;CASE_B5=181;CASE_B8=184;CASE_BC=188;CASE_BD=189;CASE_BE=190
+
+   [STSwitchEnumApplier] Switch target field_0245 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115;CASE_FFFFFFFF=4294967295
     */
 
 bool __thiscall st::fn_004BEA70(TLOBaseTy *this,int *param_1)
@@ -2575,15 +2588,7 @@ undefined4 __thiscall st::fn_004C4550(TLOBaseTy *this,int *param_1)
         }
         iVar3 = ((int)piVar2 + this->field_0235 * 2) * 0x16;
         local_10 = (int)*(short *)(&DAT_007932d8 + iVar3) + (int)sVar5;
-        sVar5 = (short)(local_10 >> 0x1f);
-        if (local_10 < 0) {
-          local_14 = (short)(((short)(local_10 / 200) + sVar5) -
-                            (short)((longlong)local_10 * 0x51eb851f >> 0x3f)) + -1;
-        }
-        else {
-          local_14 = (int)(short)(((short)(local_10 / 200) + sVar5) -
-                                 (short)((longlong)local_10 * 0x51eb851f >> 0x3f));
-        }
+        local_14 = STBiasedDiv16(local_10, 200); /* exact signed 16-bit grid-index division */
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)((int)(short)local_8 + (int)*(short *)(&DAT_007932d6 + iVar3));
         sVar5 = (short)((int)param_1 >> 0x1f);
@@ -2596,15 +2601,7 @@ undefined4 __thiscall st::fn_004C4550(TLOBaseTy *this,int *param_1)
                   (short)((longlong)(int)param_1 * 0x28c1979 >> 0x3f);
         }
         local_18 = (int)*(short *)(&DAT_007932d4 + iVar3) + (int)(short)local_c;
-        sVar6 = (short)(local_18 >> 0x1f);
-        if (local_18 < 0) {
-          sVar6 = (((short)(local_18 / 0xc9) + sVar6) -
-                  (short)((longlong)local_18 * 0x28c1979 >> 0x3f)) + -1;
-        }
-        else {
-          sVar6 = ((short)(local_18 / 0xc9) + sVar6) -
-                  (short)((longlong)local_18 * 0x28c1979 >> 0x3f);
-        }
+        sVar6 = STBiasedDiv16(local_18, 0xc9); /* exact signed 16-bit grid-index division */
         if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar5 < 0)) ||
            (((g_worldGrid.sizeY <= sVar5 || (sVar7 = (short)local_14, sVar7 < 0)) ||
             ((g_worldGrid.sizeZ <= sVar7 ||
@@ -2705,32 +2702,11 @@ undefined4 __thiscall st::fn_004C56B0(TLOBaseTy *this,void *param_1)
     else {
       iVar6 = (int)pvVar1 * 0x16;
       iVar4 = (int)sVar7 + (int)*(short *)(&DAT_007932d8 + iVar6);
-      sVar7 = (short)(iVar4 >> 0x1f);
-      if (iVar4 < 0) {
-        sVar7 = (((short)(iVar4 / 200) + sVar7) - (short)((longlong)iVar4 * 0x51eb851f >> 0x3f)) +
-                -1;
-      }
-      else {
-        sVar7 = ((short)(iVar4 / 200) + sVar7) - (short)((longlong)iVar4 * 0x51eb851f >> 0x3f);
-      }
+      sVar7 = STBiasedDiv16(iVar4, 200); /* exact signed 16-bit grid-index division */
       iVar4 = (int)*(short *)(&DAT_007932d6 + iVar6) + (int)sVar8;
-      sVar8 = (short)(iVar4 >> 0x1f);
-      if (iVar4 < 0) {
-        sVar8 = (((short)(iVar4 / 0xc9) + sVar8) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)) +
-                -1;
-      }
-      else {
-        sVar8 = ((short)(iVar4 / 0xc9) + sVar8) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f);
-      }
+      sVar8 = STBiasedDiv16(iVar4, 0xc9); /* exact signed 16-bit grid-index division */
       iVar6 = (int)*(short *)(&DAT_007932d4 + iVar6) + (int)(short)local_8;
-      sVar9 = (short)(iVar6 >> 0x1f);
-      if (iVar6 < 0) {
-        sVar9 = (((short)(iVar6 / 0xc9) + sVar9) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) +
-                -1;
-      }
-      else {
-        sVar9 = ((short)(iVar6 / 0xc9) + sVar9) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f);
-      }
+      sVar9 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
       if (((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar8 < 0)) ||
           ((g_worldGrid.sizeY <= sVar8 || (sVar7 < 0)))) ||
          ((g_worldGrid.sizeZ <= sVar7 ||
@@ -2799,7 +2775,7 @@ undefined4 __thiscall st::fn_004C7070(TLOBaseTy *this,int param_1)
     iVar5 = st::machine_word_boundary_cast<int>(this->field_05B8 + -1);
     if (-1 < iVar5) {
       sVar1 = *(short *)&this->field_05B4;
-      sVar2 = *(short *)&this->field_05B0;
+      sVar2 = (short)this->field_05B0;
       do {
         if (sVar2 < 0) {
 LAB_004c719b:
@@ -2932,7 +2908,12 @@ undefined4 __thiscall st::fn_004C7460(TLOBaseTy *this)
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=2; incoming_this_accesses=18;
    incoming_edx_uses=0; incoming_stack_parameter_uses=15; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_0245 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115;CASE_FFFFFFFF=4294967295
+    */
 
 int __thiscall
 st::fn_004C7860
@@ -2958,7 +2939,7 @@ st::fn_004C7860
   switch(param_1 + -1) {
   case 0:
     local_EAX_52 = st::fn_0040413D(this->field_0024,param_2);
-    if ((local_EAX_52 != 0) && ((int)this->field_05B8 < g_worldGrid.sizeZ + -1))
+    if ((local_EAX_52 != 0) && (this->field_05B8 < g_worldGrid.sizeZ + -1))
     goto switchD_004c787f_caseD_2;
     break;
   case 1:
@@ -4186,7 +4167,7 @@ switchD_004ceb68_caseD_32:
     local_14 = local_14 + local_18;
     do {
       if ((int)local_18 < local_14) {
-        sVar10 = *(short *)&this->field_05B8 + 1;
+        sVar10 = (short)this->field_05B8 + 1;
         local_8 = local_18;
         do {
           sVar4 = (short)local_8;
@@ -4638,7 +4619,12 @@ undefined4 __thiscall st::fn_004DF9F0(TLOBaseTy *this)
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_04D0 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_04D0State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_40=64;CASE_49=73;CASE_5C=92
+    */
 
 undefined4 __thiscall st::fn_004E2AD0(TLOBaseTy *this,int param_1,uint param_2)
 
@@ -4698,6 +4684,11 @@ cf_common_exit_004E2B69:
 
 // 004E2C30 TLOBaseTy::FUN_004e2c30
 #line 4 "decomp/ST.exe/functions/004E2C30/decomp.c"
+/* [STSwitchEnumApplier] Switch target field_04D0 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_04D0State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_40=64;CASE_49=73;CASE_5C=92
+    */
+
 undefined4 __thiscall st::fn_004E2C30(TLOBaseTy *this,uint param_1)
 
 {
@@ -4887,7 +4878,12 @@ cf_common_exit_004E2FE4:
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_04D0 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_04D0State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_40=64;CASE_49=73;CASE_5C=92
+    */
 
 undefined4 __thiscall st::fn_004E3120(TLOBaseTy *this)
 
@@ -4926,7 +4922,12 @@ undefined4 __thiscall st::fn_004E3120(TLOBaseTy *this)
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_0245 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115;CASE_FFFFFFFF=4294967295
+    */
 
 undefined4 __thiscall st::fn_004EA620(TLOBaseTy *this)
 

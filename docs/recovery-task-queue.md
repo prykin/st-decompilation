@@ -495,6 +495,31 @@ manifest `f3e435c54509e60165fb935a02a57084895dddc7b0c68cc550adfdd7fa7ee26c`;
 10,400 functions, 5,720 bodies, zero failed bodies, 2,737 typed vtable slots,
 and zero export/ABI warnings or errors.
 
+### Q-049 Recover source-bracketed static library helpers
+
+Status: implemented, runtime-confirmed, and accepted. A raw four-argument
+function-table call in `0075FA00` initially appeared to be an untyped C++
+vtable call. Machine argument setup and the surrounding `jquant1.c` anchors
+instead identify the function as a missed static IJG JPEG helper; its slot is
+an ordinary memory-manager callback, not a `__thiscall` virtual method.
+
+`STLibraryAnalyzer` now classifies a static helper only between its nearest
+exact source anchors when both anchors name the same normalized compilation
+unit, the helper has a direct caller, and every direct caller remains inside
+that closed interval or is independently classified as the same library. This
+recovered 96 linked-library helpers without conflicts, including five helpers
+inside the `jquant1.c` interval. It does not perform unrestricted call-graph
+closure and therefore does not consume indirect application callbacks.
+
+Accepted state: run
+`3af397a8ad99b62a8119ee85de446470e1ef4cce6dc1d2f18fccdcd589d8f980`,
+semantic hash `b5781d678f5958c4addf367f089811c7953a2eaaaaa43d6b5cdad943f81cac67`,
+manifest `9ae4850a02520eb5eb8c2e91af12effda2495f49e69a1916f37c0416407adaa2`;
+10,400 functions, 5,624 game-owned bodies, zero failed bodies, and 2,737 typed
+vtable slots. The export gate accepted all 96 explicit library exclusions with
+zero hard regressions; its four warnings are improving stage transitions. The
+ABI gate reports zero errors and warnings.
+
 ## Definition of done for one queue item
 
 - No embedded ST image address or hand-authored type/name allow-list in the

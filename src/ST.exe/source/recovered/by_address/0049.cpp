@@ -1488,7 +1488,7 @@ void __fastcall st::fn_00494AE0(AnonShape_00494AE0_7F188308 *param_1)
     st::fn_0040205E
               (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
-               *(undefined4 *)&param_1->field_0x18,0xffffffff);
+               *(uint *)&param_1->field_0x18,0xffffffff);
   }
   iVar1 = st::fn_0040186B(*(int *)&param_1->field_0x24,0x9a);
   if (((0 < iVar1) || (iVar1 = st::fn_0040186B(*(int *)&param_1->field_0x24,0x41), 0 < iVar1)) ||
@@ -1500,7 +1500,7 @@ void __fastcall st::fn_00494AE0(AnonShape_00494AE0_7F188308 *param_1)
       st::fn_00401848
                 (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                  (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
-                 *(undefined4 *)&param_1->field_0x18,0xffffffff);
+                 *(uint *)&param_1->field_0x18,0xffffffff);
     }
     return;
   }
@@ -2040,15 +2040,7 @@ switchD_0049655f_caseD_0:
     uVar10 = (uint)(short)(((short)(param_2 / 0xc9) + sVar1) -
                           (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
   }
-  sVar1 = (short)(param_3 >> 0x1f);
-  if (param_3 < 0) {
-    iVar12 = (short)(((short)(param_3 / 200) + sVar1) -
-                    (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
-  }
-  else {
-    iVar12 = (int)(short)(((short)(param_3 / 200) + sVar1) -
-                         (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
-  }
+  iVar12 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   if ((((-1 < (int)uVar13) && ((int)uVar13 <= (int)g_worldGrid.sizeX)) && (-1 < (int)uVar10)) &&
      ((((int)uVar10 <= (int)g_worldGrid.sizeY && (-1 < iVar12)) &&
       ((iVar12 <= g_worldGrid.sizeZ &&
@@ -2640,7 +2632,9 @@ uint st::fn_00497030(int param_1,int param_2,int param_3,int param_4,int param_5
 }
 
 // 00497110 FUN_00497110
-#line 4 "decomp/ST.exe/functions/00497110/decomp.c"
+#line 1 "decomp/ST.exe/functions/00497110/decomp.c"
+
+
 void st::fn_00497110(AnonShape_00497110_11FEE69C *param_1,AnonShape_00497110_465BC742 *param_2)
 
 {
@@ -2667,15 +2661,7 @@ void st::fn_00497110(AnonShape_00497110_11FEE69C *param_1,AnonShape_00497110_465
     iVar3 = local_18 - iVar6;
     local_c = iVar3 / 2 + iVar6;
     local_14 = (iVar4 - iVar5) / 2 + iVar5;
-    sVar1 = (short)(local_10 >> 0x1f);
-    if (local_10 < 0) {
-      local_8 = (short)(((short)(local_10 / 200) + sVar1) -
-                       (short)((longlong)local_10 * 0x51eb851f >> 0x3f)) + -1;
-    }
-    else {
-      local_8 = (int)(short)(((short)(local_10 / 200) + sVar1) -
-                            (short)((longlong)local_10 * 0x51eb851f >> 0x3f));
-    }
+    local_8 = STBiasedDiv16(local_10, 200); /* exact signed 16-bit grid-index division */
     st::fn_006E3310
               (g_sT3DSMAPContext_00807598,(g_sT3DSMAPContext_00807598->field_0380 * local_14) / 0xc9
                ,(int *)((g_sT3DSMAPContext_00807598->field_0380 * local_c) / 0xc9),local_8,&local_1c

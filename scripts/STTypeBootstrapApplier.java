@@ -19,6 +19,7 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.CategoryPath;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.DWordDataType;
@@ -28,6 +29,8 @@ import ghidra.program.model.data.IntegerDataType;
 import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.StructureDataType;
+import ghidra.program.model.data.TypeDef;
+import ghidra.program.model.data.Undefined;
 import ghidra.program.model.data.Union;
 import ghidra.program.model.data.UnionDataType;
 import ghidra.program.model.data.VoidDataType;
@@ -59,7 +62,7 @@ public class STTypeBootstrapApplier extends GhidraScript {
         File file = inputFile();
         if (file == null) return;
         Tsv input = read(file.toPath());
-        require(input, "apply", "action", "target", "replacement", "expected",
+        require(input, "apply", "action", "target", "replacement", "expected", "proposed",
             "evidence_domains", "confidence", "evidence");
         dataTypes = currentProgram.getDataTypeManager();
         pointerSize = currentProgram.getDefaultPointerSize();
@@ -93,11 +96,19 @@ public class STTypeBootstrapApplier extends GhidraScript {
             return;
         }
         try {
-            if (("replace_duplicate".equals(action) || "mark_view_only".equals(action)) &&
+            if (("replace_duplicate".equals(action) || "reconcile_duplicate".equals(action) ||
+                    "mark_view_only".equals(action)) &&
                     !typeFingerprint(dataTypes.getDataType(target)).equals(
                         unt(row.get("expected")))) {
                 report.add(new Report(action, target, "preserved",
                     "stale type baseline"));
+                return;
+            }
+            if ("reconcile_duplicate".equals(action) &&
+                    !typeFingerprint(dataTypes.getDataType(
+                        unt(row.get("replacement")))).equals(unt(row.get("proposed")))) {
+                report.add(new Report(action, target, "preserved",
+                    "stale canonical type baseline"));
                 return;
             }
             String status = switch (action) {
@@ -105,6 +116,8 @@ public class STTypeBootstrapApplier extends GhidraScript {
                 case "ensure_message" -> ensureMessage();
                 case "canonical_system" -> canonicalSystem();
                 case "replace_duplicate" -> replaceDuplicate(target,
+                    unt(row.get("replacement")));
+                case "reconcile_duplicate" -> reconcileDuplicate(target,
                     unt(row.get("replacement")));
                 case "mark_view_only" -> markViewOnly(target);
                 case "demote_signature" -> demoteSignature(target,
@@ -210,9 +223,29 @@ public class STTypeBootstrapApplier extends GhidraScript {
     private String canonicalSystem() {
         DataType type = dataTypes.getDataType("/SystemClassTy");
         if (!(type instanceof Structure structure)) return "preserved";
-        return ensureDescription(structure, MARKER + " " + ANCHOR +
-            " canonical class identity; fields and vptr are refined by class/vtable solvers.") ?
-            "applied" : "unchanged";
+        boolean changed = ensureDescription(structure, MARKER + " " + ANCHOR +
+            " canonical class identity; fields and vptr are refined by class/vtable solvers.");
+        changed |= normalizeDerivedFieldComments(structure);
+        return changed ? "applied" : "unchanged";
+    }
+
+    private boolean normalizeDerivedFieldComments(Structure structure) {
+        boolean changed = false;
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            String fieldName = component.getFieldName();
+            String derived = derivedPointeeName(component.getDataType());
+            String comment = component.getComment();
+            if (fieldName == null || derived.isBlank() ||
+                    !sameIdentifier(fieldName, derived) || comment == null ||
+                    !comment.toLowerCase(java.util.Locale.ROOT).contains(
+                        "exact semantic type unresolved")) continue;
+            structure.replaceAtOffset(component.getOffset(), component.getDataType(),
+                component.getLength(), fieldName, MARKER +
+                    " Member name derived mechanically from concrete pointee type " +
+                    component.getDataType().getPathName() + ".");
+            changed = true;
+        }
+        return changed;
     }
 
     private String replaceDuplicate(String oldPath, String replacementPath) throws Exception {
@@ -226,6 +259,169 @@ public class STTypeBootstrapApplier extends GhidraScript {
         DataType remaining = dataTypes.getDataType(oldPath);
         return remaining == null || remaining.equals(replacement) ?
             "applied" : "preserved";
+    }
+
+    /**
+     * Merge two exact-layout views before retiring the noncanonical one. This is deliberately
+     * conservative about names: an unsupported legacy semantic name must not survive merely
+     * because it was written into one old structure. A disagreeing name is retained only when
+     * it is mechanically derived from the selected concrete pointee type or carries provenance
+     * from an active applier; otherwise Ghidra renders the member by its byte offset.
+     */
+    private String reconcileDuplicate(String duplicatePath, String canonicalPath)
+            throws Exception {
+        DataType old = dataTypes.getDataType(duplicatePath);
+        DataType replacement = dataTypes.getDataType(canonicalPath);
+        if (old == null) return "unchanged";
+        if (!(old instanceof Structure duplicate) ||
+                !(replacement instanceof Structure canonical)) return "preserved";
+        if (!mergeCompatible(canonical, duplicate)) return "preserved";
+
+        List<DataTypeComponent> left = List.of(canonical.getDefinedComponents());
+        List<DataTypeComponent> right = List.of(duplicate.getDefinedComponents());
+        for (int index = 0; index < left.size(); index++) {
+            DataTypeComponent current = left.get(index);
+            DataTypeComponent alternate = right.get(index);
+            DataType selected = selectStorageType(current.getDataType(),
+                alternate.getDataType());
+            if (selected == null) return "preserved";
+            String name = selectFieldName(current, alternate, selected);
+            String comment = selectFieldComment(current, alternate, name);
+            canonical.replaceAtOffset(current.getOffset(), selected, current.getLength(),
+                name, comment);
+        }
+        ensureDescription(canonical, MARKER + " " + ANCHOR +
+            " exact-layout duplicate views reconciled without category preference.");
+        dataTypes.replaceDataType(duplicate, canonical, false);
+        DataType remaining = dataTypes.getDataType(duplicatePath);
+        return remaining == null || remaining.equals(canonical) ? "applied" : "preserved";
+    }
+
+    private boolean mergeCompatible(Structure canonical, Structure duplicate) {
+        if (canonical.getLength() != duplicate.getLength()) return false;
+        DataTypeComponent[] left = canonical.getDefinedComponents();
+        DataTypeComponent[] right = duplicate.getDefinedComponents();
+        if (left.length != right.length) return false;
+        for (int index = 0; index < left.length; index++) {
+            if (left[index].getOffset() != right[index].getOffset() ||
+                    left[index].getLength() != right[index].getLength() ||
+                    selectStorageType(left[index].getDataType(),
+                        right[index].getDataType()) == null) return false;
+        }
+        return true;
+    }
+
+    private DataType selectStorageType(DataType canonical, DataType duplicate) {
+        DataType left = unwrap(canonical);
+        DataType right = unwrap(duplicate);
+        if (left.isEquivalent(right)) return canonical;
+        if (!(left instanceof ghidra.program.model.data.Pointer) ||
+                !(right instanceof ghidra.program.model.data.Pointer)) return null;
+        boolean leftGeneric = genericPointer(left);
+        boolean rightGeneric = genericPointer(right);
+        if (leftGeneric && !rightGeneric) return duplicate;
+        if (!leftGeneric && rightGeneric) return canonical;
+        if (leftGeneric) return canonical;
+        DataType leftBase = nominalBase(left);
+        DataType rightBase = nominalBase(right);
+        if (pointerDepth(left) == pointerDepth(right) && leftBase != null &&
+                rightBase != null && leftBase.getName().equals(rightBase.getName()) &&
+                leftBase.getLength() == rightBase.getLength()) return canonical;
+        return null;
+    }
+
+    private String selectFieldName(DataTypeComponent canonical,
+            DataTypeComponent duplicate, DataType selected) {
+        String left = cleanName(canonical.getFieldName());
+        String right = cleanName(duplicate.getFieldName());
+        if (left.equals(right)) return left.isBlank() ?
+            genericFieldName(canonical.getOffset()) : left;
+        String derived = derivedPointeeName(selected);
+        if (!derived.isBlank()) {
+            if (sameIdentifier(left, derived)) return left;
+            if (sameIdentifier(right, derived)) return right;
+        }
+        if (trustedGeneratedName(canonical)) return left.isBlank() ? null : left;
+        if (trustedGeneratedName(duplicate)) return right.isBlank() ? null : right;
+        return genericFieldName(canonical.getOffset());
+    }
+
+    private String selectFieldComment(DataTypeComponent canonical,
+            DataTypeComponent duplicate, String selectedName) {
+        String left = canonical.getComment() == null ? "" : canonical.getComment().trim();
+        String right = duplicate.getComment() == null ? "" : duplicate.getComment().trim();
+        if (genericFieldName(canonical.getOffset()).equals(selectedName)) return MARKER +
+            " Exact-layout views disagreed on the semantic name; retained as offset-only storage.";
+        if (left.contains("[ST") && !left.isBlank()) return left;
+        if (!right.isBlank()) return right;
+        return left.isBlank() ? null : left;
+    }
+
+    private boolean trustedGeneratedName(DataTypeComponent component) {
+        String comment = component.getComment();
+        return comment != null && comment.matches(
+            "(?s).*\\[ST[A-Za-z0-9]+Applier\\].*");
+    }
+
+    private String derivedPointeeName(DataType type) {
+        type = unwrap(type);
+        if (!(type instanceof ghidra.program.model.data.Pointer pointer) ||
+                pointer.getDataType() == null) return "";
+        DataType pointee = unwrap(pointer.getDataType());
+        if (pointee instanceof ghidra.program.model.data.Pointer ||
+                pointee instanceof VoidDataType || Undefined.isUndefined(pointee)) return "";
+        String name = pointee.getName();
+        if (name.endsWith("VTable")) return "vtable";
+        for (String suffix : List.of("ClassTy", "ClassC"))
+            if (name.endsWith(suffix) && name.length() > suffix.length()) {
+                name = name.substring(0, name.length() - suffix.length());
+                break;
+            }
+        if (name.isBlank()) return "";
+        return Character.toLowerCase(name.charAt(0)) + name.substring(1);
+    }
+
+    private boolean sameIdentifier(String left, String right) {
+        return left.replace("_", "").equalsIgnoreCase(right.replace("_", ""));
+    }
+
+    private String cleanName(String value) {
+        if (value == null || value.matches("(?i)(?:field|unknown)_?(?:0x)?[0-9a-f]+"))
+            return "";
+        return value;
+    }
+
+    private String genericFieldName(int offset) {
+        return String.format("field_%04X", offset);
+    }
+
+    private boolean genericPointer(DataType type) {
+        type = unwrap(type);
+        if (!(type instanceof ghidra.program.model.data.Pointer)) return false;
+        DataType base = nominalBase(type);
+        return base == null || base instanceof VoidDataType || Undefined.isUndefined(base);
+    }
+
+    private int pointerDepth(DataType type) {
+        int result = 0;
+        type = unwrap(type);
+        while (type instanceof ghidra.program.model.data.Pointer pointer) {
+            result++;
+            type = unwrap(pointer.getDataType());
+        }
+        return result;
+    }
+
+    private DataType nominalBase(DataType type) {
+        type = unwrap(type);
+        while (type instanceof ghidra.program.model.data.Pointer pointer)
+            type = unwrap(pointer.getDataType());
+        return type;
+    }
+
+    private DataType unwrap(DataType type) {
+        while (type instanceof TypeDef definition) type = definition.getBaseDataType();
+        return type;
     }
 
     private boolean equivalentReplacement(DataType old, DataType replacement) {
@@ -538,7 +734,10 @@ public class STTypeBootstrapApplier extends GhidraScript {
         for (var component : structure.getDefinedComponents())
             result.append('|').append(component.getOffset()).append(':')
                 .append(component.getLength()).append(':')
-                .append(component.getDataType().getPathName());
+                .append(component.getDataType().getPathName()).append(':')
+                .append(component.getFieldName() == null ? "" : component.getFieldName())
+                .append(':').append(component.getComment() == null ? "" :
+                    component.getComment());
         return result.append("|description=").append(
             type.getDescription() == null ? "" : type.getDescription()).toString();
     }

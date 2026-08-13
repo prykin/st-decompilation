@@ -13,10 +13,10 @@ ChooseMapTy * __cdecl st::fn_005B2790(void)
 {
   ChooseMapTy *this;
   int iVar1;
-  undefined4 *puVar2;
+  ChooseMapTy_Record_00BC_01FB *pCVar2;
   SpriteClassTy *this_00;
-  undefined4 *puVar3;
-  uint *puVar4;
+  ChooseMapTy_Record_00BC_01FB *pCVar4;
+  uint *puVar5;
   int local_8;
 
   this = (ChooseMapTy *)st::fn_006B04D0(0x20c4);
@@ -30,7 +30,7 @@ ChooseMapTy * __cdecl st::fn_005B2790(void)
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->array_00BC[0].field_00B8;
     local_8 = 0xd;
     do {
       st::fn_00715820(this_00 + -1);
@@ -45,25 +45,28 @@ ChooseMapTy * __cdecl st::fn_005B2790(void)
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
-    puVar2 = (undefined4 *)&this->field_0xbc;
+    pCVar2 = this->array_00BC;
     do {
-      puVar3 = puVar2;
-      memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
-      iVar1 = 0;
+      pCVar4 = pCVar2;
+      for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *(undefined4 *)pCVar4 = 0;
+        pCVar4 = (ChooseMapTy_Record_00BC_01FB *)&pCVar4->field_0x4;
+      }
+      *(undefined2 *)pCVar4 = 0;
+      pCVar4->field_0x2 = 0;
       local_8 = local_8 + -1;
-      puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
+      pCVar2 = pCVar2 + 1;
     } while (local_8 != 0);
-    st::fn_00715820((SpriteClassTy *)&this->field_1A70);
+    st::fn_00715820((SpriteClassTy *)&this->array_00BC[0xc].field_01F0);
     st::fn_00715820((SpriteClassTy *)&this->field_1B01);
     st::fn_00715820((SpriteClassTy *)&this->field_1B92);
     this->vtable = &st_global_0079C088;
-    this->field_1A60 = 1;
-    this->field_1A6C = 0;
-    puVar4 = &this->field_1C23;
+    this->array_00BC[0xc].field_01E0 = 1;
+    this->array_00BC[0xc].field_01EC = 0;
+    puVar5 = &this->field_1C23;
     for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar4 = 0xffffffff;
-      puVar4 = puVar4 + 1;
+      *puVar5 = 0xffffffff;
+      puVar5 = puVar5 + 1;
     }
     this->field_1C87 = 0xffffffff;
     this->field_1C7B = nullptr;
@@ -76,8 +79,8 @@ ChooseMapTy * __cdecl st::fn_005B2790(void)
     this->field_20C0 = nullptr;
     this->field_20BC = nullptr;
     this->field_20B8 = nullptr;
-    this->field_1A64 = 0;
-    this->field_1A68 = 0;
+    this->array_00BC[0xc].field_01E4 = 0;
+    this->array_00BC[0xc].field_01E8 = 0;
     this->field_1C83 = 0;
     this->field_1C8B = nullptr;
     return this;
@@ -114,7 +117,7 @@ MainMenuTy * __cdecl st::fn_005B50E0(void)
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0174;
+    this_00 = &this->field_00BB[0].field_00B9;
     iVar1 = 0xd;
     do {
       st::fn_00715820(this_00 + -1);
@@ -128,7 +131,7 @@ MainMenuTy * __cdecl st::fn_005B50E0(void)
     this->field_009A = 0;
     memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
-    puVar3 = &this->field_00BC;
+    puVar3 = &this->field_00BB[0].field_0001;
     do {
       puVar4 = puVar3;
       memset(puVar4, 0, 0x27); /* compiler bulk-zero initialization */
@@ -144,7 +147,7 @@ MainMenuTy * __cdecl st::fn_005B50E0(void)
     this->field_1ACF = 0;
     this->field_1EE3 = 0;
     this->field_1EDF = 1;
-    memset(&this->field_0x1a5f, 0, 0x20); /* compiler bulk-zero initialization */
+    memset(&this->field_00BB[0xc].field_0x1e0, 0, 0x20); /* compiler bulk-zero initialization */
     return this;
   }
   return nullptr;
@@ -274,9 +277,10 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
 {
   MMsgTy *this;
   int iVar1;
-  undefined4 *puVar3;
+  int iVar2;
+  MMsgTy_Record_00BC_01FB *pMVar3;
   SpriteClassTy *this_00;
-  undefined4 *puVar5;
+  MMsgTy_Record_00BC_01FB *pMVar5;
 
   this = (MMsgTy *)st::fn_006B04D0(0x1eaa);
   if (this != nullptr) {
@@ -288,7 +292,7 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->array_00BC[0].field_00B8;
     iVar1 = 0xd;
     do {
       st::fn_00715820(this_00 + -1);
@@ -302,19 +306,23 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
     this->field_009A = 0;
     memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
-    puVar3 = (undefined4 *)&this->field_0xbc;
+    pMVar3 = this->array_00BC;
     do {
-      puVar5 = puVar3;
-      memset(puVar5, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar5 = (undefined4 *)((byte *)puVar5 + 0x24);
+      pMVar5 = pMVar3;
+      for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
+        pMVar5->field_0000 = 0;
+        pMVar5 = (MMsgTy_Record_00BC_01FB *)&pMVar5->field_0x4;
+      }
+      *(undefined2 *)&pMVar5->field_0000 = 0;
       iVar1 = iVar1 + -1;
-      puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
+      *(undefined1 *)((int)&pMVar5->field_0000 + 2) = 0;
+      pMVar3 = pMVar3 + 1;
     } while (iVar1 != 0);
     st::fn_00715820((SpriteClassTy *)&this->field_0x1cf7);
     st::fn_00715820((SpriteClassTy *)&this->field_1D88);
     st::fn_00715820((SpriteClassTy *)&this->field_0x1e19);
     this->vtable = &st_global_0079C0A8;
-    this->field_1A5F = 0;
+    this->array_00BC[0xc].field_01DF = 0;
     this->field_1CAA = 0;
     this->field_1CA9 = 0;
     this->field_1CAB = 0;
@@ -357,10 +365,10 @@ PrividerTy * __cdecl st::fn_005BD2E0(void)
 {
   PrividerTy *this;
   int iVar1;
-  undefined4 *puVar2;
+  PrividerTy_Record_00BC_01FB *pPVar2;
   SpriteClassTy *this_00;
-  undefined4 *puVar3;
-  uint *puVar4;
+  PrividerTy_Record_00BC_01FB *pPVar4;
+  uint *puVar5;
   int local_8;
 
   this = (PrividerTy *)st::fn_006B04D0(0x1c9e);
@@ -374,7 +382,7 @@ PrividerTy * __cdecl st::fn_005BD2E0(void)
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)&this->field_0x174;
+    this_00 = &this->array_00BC[0].field_00B8;
     local_8 = 0xd;
     do {
       st::fn_00715820(this_00 + -1);
@@ -389,30 +397,33 @@ PrividerTy * __cdecl st::fn_005BD2E0(void)
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
-    puVar2 = (undefined4 *)&this->field_0xbc;
+    pPVar2 = this->array_00BC;
     do {
-      puVar3 = puVar2;
-      memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
-      iVar1 = 0;
+      pPVar4 = pPVar2;
+      for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *(undefined4 *)pPVar4 = 0;
+        pPVar4 = (PrividerTy_Record_00BC_01FB *)&pPVar4->field_0x4;
+      }
+      *(undefined2 *)pPVar4 = 0;
+      pPVar4->field_0x2 = 0;
       local_8 = local_8 + -1;
-      puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
+      pPVar2 = pPVar2 + 1;
     } while (local_8 != 0);
-    st::fn_00715820((SpriteClassTy *)&this->field_1A77);
+    st::fn_00715820((SpriteClassTy *)&this->array_00BC[0xc].field_01F7);
     st::fn_00715820((SpriteClassTy *)&this->field_1B08);
     st::fn_00715820((SpriteClassTy *)&this->field_1B99);
     this->vtable = &st_global_0079C0C4;
-    this->field_1A65 = 1;
-    this->field_1A73 = 0;
-    this->field_1A61 = 0;
-    this->field_1A71 = 0;
-    this->field_1A69 = 0;
-    this->field_1A6D = 0;
-    this->field_1A72 = 0;
-    puVar4 = this->field_1C2A;
+    this->array_00BC[0xc].field_01E5 = 1;
+    this->array_00BC[0xc].field_01F3 = 0;
+    this->array_00BC[0xc].field_01E1 = 0;
+    this->array_00BC[0xc].field_01F1 = 0;
+    this->array_00BC[0xc].field_01E9 = 0;
+    this->array_00BC[0xc].field_01ED = 0;
+    this->array_00BC[0xc].field_01F2 = 0;
+    puVar5 = this->field_1C2A;
     for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar4 = 0xffffffff;
-      puVar4 = puVar4 + 1;
+      *puVar5 = 0xffffffff;
+      puVar5 = puVar5 + 1;
     }
     this->field_1C8A = 0xffffffff;
     this->field_1C82 = nullptr;

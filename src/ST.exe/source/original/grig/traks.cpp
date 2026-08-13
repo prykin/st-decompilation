@@ -116,31 +116,13 @@ st::fn_00555910(TraksClassTy *this,RecoveredRecord_TraksClassTy_00555910 *param_
              (short)((longlong)iVar6 * 0x66666667 >> 0x3f)) + sVar3;
       }
       sVar3 = param_1->field_0002;
-      if (sVar3 < 0) {
-        sVar3 = ((sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f)
-                ) + -1;
-      }
-      else {
-        sVar3 = (sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f);
-      }
+      sVar3 = STBiasedDiv16(sVar3, 0xc9); /* exact signed 16-bit grid-index division */
       param_1->field_001C = sVar3;
       sVar3 = param_1->field_0004;
-      if (sVar3 < 0) {
-        sVar3 = ((sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f)
-                ) + -1;
-      }
-      else {
-        sVar3 = (sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f);
-      }
+      sVar3 = STBiasedDiv16(sVar3, 0xc9); /* exact signed 16-bit grid-index division */
       param_1->field_001E = sVar3;
       sVar3 = param_1->field_0006;
-      if (sVar3 < 0) {
-        sVar3 = ((sVar3 / 200 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x51eb851f >> 0x3f)
-                ) + -1;
-      }
-      else {
-        sVar3 = (sVar3 / 200 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x51eb851f >> 0x3f);
-      }
+      sVar3 = STBiasedDiv16(sVar3, 200); /* exact signed 16-bit grid-index division */
       param_1->field_0020 = sVar3;
       iVar6 = st::fn_0040468D((RecoveredRecord_TraksClassTy_00555880 *)param_1);
       if (iVar6 == 0) {
@@ -618,24 +600,9 @@ st::fn_00556760
   if (this->field_0024 == nullptr) {
     return 0;
   }
-  if (param_4 < 0) {
-    local_10 = param_4 / 0xc9 + -1;
-  }
-  else {
-    local_10 = param_4 / 0xc9;
-  }
-  if (param_5 < 0) {
-    local_18 = param_5 / 0xc9 + -1;
-  }
-  else {
-    local_18 = param_5 / 0xc9;
-  }
-  if (param_6 < 0) {
-    iVar8 = param_6 / 200 + -1;
-  }
-  else {
-    iVar8 = param_6 / 200;
-  }
+  local_10 = STBiasedDiv16(param_4, 0xc9); /* exact signed 16-bit grid-index division */
+  local_18 = STBiasedDiv16(param_5, 0xc9); /* exact signed 16-bit grid-index division */
+  iVar8 = STBiasedDiv16(param_6, 200); /* exact signed 16-bit grid-index division */
   local_60 = this;
   local_14 = iVar8;
   if ((param_15 & 2) != 0) goto LAB_0055693a;

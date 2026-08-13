@@ -522,7 +522,7 @@ LAB_00576308:
         local_10 = (AnonShape_00575CB0_065D0A66 *)&pAVar5->field_0002;
       } while (local_18 < pSVar18->field_003C);
     }
-    st::fn_004025F9(g_playSystem_00802A38,pSVar18->field_0018,local_1c,local_20);
+    st::fn_004025F9(g_playSystem_00802A38,pSVar18->field_0018,local_1c,(uint)local_20);
     st::fn_006AB060(&local_1c);
     g_currentExceptionFrame = local_a4.previous;
     return 0;

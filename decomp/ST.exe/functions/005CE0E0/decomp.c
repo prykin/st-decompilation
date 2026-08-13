@@ -858,7 +858,7 @@ cf_continue_loop_005CF38C:
       else {
         this_00->field_223F = this_00->field_223F + -1;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar7 = (**(code **)(*(int *)*g_int_00811764 + 200))
                         ((int *)*g_int_00811764,DAT_0080877f,0,1,0,&local_64);
       if (((iVar7 == 0) && (local_64 < 0x400)) && (this_00->field_223F == 0)) {

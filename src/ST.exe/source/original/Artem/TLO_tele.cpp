@@ -175,14 +175,14 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
       this_00->field_05B0 = this_00->field_0480;
       this_00->field_05B8 = this_00->field_0488;
       this_00->field_05B4 = this_00->field_0484;
-      iVar5 = st::fn_0040295F(this_00,*(short *)&this_00->field_05B0,(short)this_00->field_0484,
+      iVar5 = st::fn_0040295F(this_00,(short)this_00->field_05B0,(short)this_00->field_0484,
                                  (short)this_00->field_0488,1);
       if (iVar5 != 0) {
         st::fn_006A5E40
                   (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_tele.cpp"),0x1b3);
       }
-      st::fn_0040278E(this_00,*(short *)&this_00->field_05B0,*(short *)&this_00->field_05B4,
-                         *(short *)&this_00->field_05B8);
+      st::fn_0040278E(this_00,(short)this_00->field_05B0,*(short *)&this_00->field_05B4,
+                         (short)this_00->field_05B8);
       iVar5 = 1;
       uVar3 = st::fn_004052CC((STT3DSprC *)&this_00->field_01D5);
       st::fn_006EABF0((void *)this_00->field_0211,uVar3,iVar5);

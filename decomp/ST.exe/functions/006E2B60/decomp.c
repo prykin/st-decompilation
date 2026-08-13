@@ -17,9 +17,9 @@ FUN_006e2b60(void *this,AnonShape_006E2B60_E36B924C *param_1,int param_2,int par
   if (0 < param_1->field_0024) {
     do {
       if ((STField<byte>(this,0xac) & *pbVar2) != 0) {
-        FUN_006e2c30(this,(int *)((uint)pbVar2[1] * 0x10 + param_2));
-        FUN_006e2c30(this,(int *)((uint)pbVar2[2] * 0x10 + param_2));
-        FUN_006e2c30(this,(int *)((uint)pbVar2[3] * 0x10 + param_2));
+        Library::Ourlib::STREND::FUN_006e2c30(this,(int *)((uint)pbVar2[1] * 0x10 + param_2));
+        Library::Ourlib::STREND::FUN_006e2c30(this,(int *)((uint)pbVar2[2] * 0x10 + param_2));
+        Library::Ourlib::STREND::FUN_006e2c30(this,(int *)((uint)pbVar2[3] * 0x10 + param_2));
         *(undefined1 *)(local_8 + param_3) = (undefined1)local_c;
         iVar1 = local_8 + 1;
         local_8 = iVar1;

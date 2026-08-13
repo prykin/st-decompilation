@@ -631,7 +631,7 @@ int __thiscall st::fn_0044EE30(STBoatC *this,STMessage *message)
           local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
           local_9c.arg1.words.high = *(undefined2 *)&pSVar31->field_0xc;
           local_9c.arg1.words.low = *(undefined2 *)&pSVar31->field_0008;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)*DAT_008117bc)(&local_9c);
         }
         if (((DAT_008117bc != nullptr) && (pSVar31 != nullptr)) &&
@@ -641,7 +641,7 @@ int __thiscall st::fn_0044EE30(STBoatC *this,STMessage *message)
           local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
           local_9c.arg1.words.high = *(undefined2 *)&pSVar31->field_0xc;
           local_9c.arg1.words.low = *(undefined2 *)&pSVar31->field_0008;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)*DAT_008117bc)(&local_9c);
         }
       }
@@ -667,7 +667,7 @@ int __thiscall st::fn_0044EE30(STBoatC *this,STMessage *message)
         }
         local_9c.id = MESS_HITKILL;
         local_9c.arg0.ptr = local_140;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)*local_4c)(&local_9c);
         pSVar31 = local_1c;
       }
@@ -883,7 +883,7 @@ int __thiscall st::fn_0044EE30(STBoatC *this,STMessage *message)
       local_20->field_05F6 = local_34 + local_2c;
       local_20->field_05FA = local_38;
       st::fn_004025F9
-                (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_20,local_7c);
+                (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_20,(uint)local_7c);
       st::fn_006AB060(&local_44);
       st::fn_006AB060(&local_3c);
       st::fn_006AB060(&local_40);
@@ -1077,7 +1077,7 @@ LAB_00459f59:
       local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
       local_9c.arg1.words.high = (short)STField<int>(pSVar31,0xc);
       local_9c.arg1.words.low = (short)STField<int>(pSVar31,8);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*DAT_008117bc)(&local_9c);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar25 = extraout_var_00;
@@ -1090,7 +1090,7 @@ LAB_00459f59:
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
         local_9c.arg1.words.high = (short)STField<int>(pSVar31,0xc);
         local_9c.arg1.words.low = (short)STField<int>(pSVar31,8);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)*DAT_008117bc)(&local_9c);
       }
       this_00->field_02C0 = 1;
@@ -1268,7 +1268,7 @@ LAB_00459f59:
         local_124[0] = 0x1716b;
         local_9c.id = MESS_TORPHIT;
         local_9c.arg0.ptr = local_124;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)*local_58)(&local_9c);
         pSVar31 = local_1c;
       }
@@ -7439,7 +7439,7 @@ cf_error_exit_0045AEE3:
     this_00->field_0814 = this_00->field_0816 * 0xc9;
     if (((local_10 == nullptr) || (SVar41 = this_00->field_06F7, SVar41 == CASE_7)) ||
        ((SVar41 == CASE_13 || (SVar41 == CASE_1B)))) {
-      this_00->field_082E = 0xffffffff;
+      this_00->field_082E = CASE_FFFFFFFF;
       this_00->field_0836 = 4;
       this_00->field_0475 = this_00->field_0047;
       this_00->field_0477 = this_00->field_0049;
@@ -7453,7 +7453,7 @@ cf_error_exit_0045AEE3:
       this_00->field_05A0 = this_00->field_0030;
       this_00->field_05A2 = (AnonShape_005EFAE0_B406B78B *)local_10->field_0018;
       this_00->field_05A6 = nullptr;
-      this_00->field_05C4 = 7;
+      this_00->field_05C4 = CASE_7;
     }
     uVar17 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
     this_00->field_001C = uVar17;
@@ -7601,7 +7601,7 @@ cf_error_exit_0045AEE3:
       local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
       local_9c.arg1.words.high = *(undefined2 *)(dVar15 + 0x28);
       local_9c.arg1.words.low = *(undefined2 *)&this_00->field_0024;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*DAT_008117bc)(&local_9c);
     }
     switch(this_00->field_06F7) {
@@ -8234,7 +8234,7 @@ LAB_00450268:
     st::fn_006EA3E0
               (this_00->field_0211,this_00->field_01ED,*(int *)(local_30 + 0x1ed));
   }
-  if ((this_00->field_045D == CASE_F) && (this_00->field_0596 == 3)) {
+  if ((this_00->field_045D == CASE_F) && (this_00->field_0596 == CASE_3)) {
     iVar30 = st::fn_006E62D0
                        (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this_00->field_0x58e
                         ,&local_30);
@@ -8591,15 +8591,24 @@ undefined4 __thiscall st::fn_0045FD30(STBoatC *this)
 #line 4 "decomp/ST.exe/functions/004608B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::Defence */
+   STBoatC::Defence
+
+   [STSwitchEnumApplier] Switch target field_045D uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_045DState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23
+
+   [STSwitchEnumApplier] Switch target field_082E uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_082EState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_FFFFFFFF=4294967295 */
 
 int __thiscall st::fn_004608B0(STBoatC *this,int param_1)
 
 {
   STBoatC_field_045DState SVar1;
-  dword dVar2;
-  undefined4 uVar3;
-  short sVar5;
+  STBoatC_field_082EState SVar2;
+  dword dVar3;
+  undefined4 uVar4;
+  short sVar6;
   int iVar6;
   int iVar7;
   STGameObjC *pSVar8;
@@ -8656,7 +8665,7 @@ int __thiscall st::fn_004608B0(STBoatC *this,int param_1)
     this->field_047B = nullptr;
     this->field_0487 = 0xffffffff;
     this->field_048B = 0xffff;
-    this->field_082E = 0xffffffff;
+    this->field_082E = CASE_FFFFFFFF;
     SVar1 = this->field_045D;
     if ((((SVar1 == CASE_6) || (SVar1 == CASE_C)) || (SVar1 == CASE_D)) || (SVar1 == CASE_4)) {
       this->field_0836 = 2;
@@ -8666,36 +8675,36 @@ int __thiscall st::fn_004608B0(STBoatC *this,int param_1)
     }
     this->field_0814 = this->field_0816 * 0xc9;
   }
-  if (this->field_082E == -1) {
+  if (this->field_082E == CASE_FFFFFFFF) {
     iVar10 = st::machine_word_boundary_cast<int>(this->field_0836 + -1);
     this->field_0836 = iVar10;
     if (1 < iVar10) {
       iVar10 = this->vfunc_D8();
       return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
     }
-    this->field_082E = 0;
+    this->field_082E = ~CASE_FFFFFFFF;
   }
   uVar11 = st::machine_word_boundary_cast<uint>(this->field_0836 + 1);
   this->field_0836 = uVar11;
-  iVar10 = this->field_082E;
-  if (iVar10 != 0) {
-    if (iVar10 == 1) {
-      uVar3 = this->field_00B7;
+  SVar2 = this->field_082E;
+  if (SVar2 != ~CASE_FFFFFFFF) {
+    if (SVar2 == CASE_1) {
+      uVar4 = this->field_00B7;
       this->field_00B7 = 0;
       iVar10 = st::fn_00403B34(this,2);
-      this->field_00B7 = uVar3;
+      this->field_00B7 = uVar4;
       if (iVar10 == -1) {
         return -1;
       }
       if (iVar10 == 0) {
         this->field_047F = -1;
-        this->field_082E = 2;
+        this->field_082E = CASE_2;
       }
       else if (iVar10 == 3) {
         this->field_0469 = 0;
-        this->field_082E = 0;
+        this->field_082E = ~CASE_FFFFFFFF;
       }
-      if (this->field_082E != 1) {
+      if (this->field_082E != CASE_1) {
         return 2;
       }
       iVar10 = st::fn_00405B05(this,CASE_1);
@@ -8771,29 +8780,29 @@ int __thiscall st::fn_004608B0(STBoatC *this,int param_1)
         return 2;
       case 9:
         st::fn_004031E3(pSVar8,&local_14,&local_18,(short *)&local_1c);
-        sVar5 = (*this->vtable->vfunc_10)
+        sVar6 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
                            STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                            (short)local_14,(short)local_18,local_1c);
-        uVar10 = st::fn_004030B2(this,sVar5);
+        uVar10 = st::fn_004030B2(this,sVar6);
         st::fn_004022FC(this,(short)uVar10);
         return 2;
       }
     }
-    if (iVar10 == 2) {
+    if (SVar2 == CASE_2) {
       iVar10 = st::fn_00405E57(this);
       if (iVar10 == 1) {
-        sVar5 = this->field_0469;
-        this->field_0469 = -sVar5;
-        iVar10 = this->vfunc_18(this->field_0047,this->field_0049,-sVar5 + this->field_004B);
+        sVar6 = this->field_0469;
+        this->field_0469 = -sVar6;
+        iVar10 = this->vfunc_18(this->field_0047,this->field_0049,-sVar6 + this->field_004B);
         if (iVar10 == 1) {
-          this->field_082E = 3;
+          this->field_082E = CASE_3;
           st::fn_00404F6B(this,(int)this->field_0047,(int)this->field_0049,
                        (int)this->field_0469 + (int)this->field_004B);
-          uVar3 = this->field_00B7;
+          uVar4 = this->field_00B7;
           this->field_00B7 = 0;
           iVar10 = st::fn_00403B34(this,0);
-          this->field_00B7 = uVar3;
+          this->field_00B7 = uVar4;
           if (iVar10 == -1) {
             return -1;
           }
@@ -8801,12 +8810,12 @@ int __thiscall st::fn_004608B0(STBoatC *this,int param_1)
             return 2;
           }
           this->field_0469 = 0;
-          this->field_082E = 0;
+          this->field_082E = ~CASE_FFFFFFFF;
           return 2;
         }
         this->field_0469 = -this->field_0469;
       }
-      if ((this->field_082E == 2) && (iVar10 = st::fn_00405B05(this,CASE_2), iVar10 == 0)) {
+      if ((this->field_082E == CASE_2) && (iVar10 = st::fn_00405B05(this,CASE_2), iVar10 == 0)) {
         pSVar8 = st::fn_004028BA
                            (g_allPlayers_007FA174,*(char *)&this->field_0487,
                             *(ushort *)&this->field_048B,this->field_0483);
@@ -8872,29 +8881,29 @@ int __thiscall st::fn_004608B0(STBoatC *this,int param_1)
           break;
         case 9:
           st::fn_004031E3(pSVar8,&local_14,&local_18,(short *)&local_1c);
-          sVar5 = (*this->vtable->vfunc_10)
+          sVar6 = (*this->vtable->vfunc_10)
                             (this->field_0041,this->field_0043,
                              STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                              (short)local_14,(short)local_18,local_1c);
-          local_EAX_3596 = st::fn_004030B2(this,sVar5);
+          local_EAX_3596 = st::fn_004030B2(this,sVar6);
           st::fn_004022FC(this,(short)local_EAX_3596);
         }
       }
     }
     else {
-      if (iVar10 == 3) {
-        uVar3 = this->field_00B7;
+      if (SVar2 == CASE_3) {
+        uVar4 = this->field_00B7;
         this->field_00B7 = 0;
         iVar10 = st::fn_00403B34(this,2);
-        this->field_00B7 = uVar3;
+        this->field_00B7 = uVar4;
         if (iVar10 == -1) {
           return -1;
         }
         if ((iVar10 == 0) || (iVar10 == 3)) {
           this->field_0469 = 0;
-          this->field_082E = 0;
+          this->field_082E = ~CASE_FFFFFFFF;
         }
-        if ((this->field_082E == 3) && (iVar10 = st::fn_00405B05(this,CASE_3), iVar10 == 0)) {
+        if ((this->field_082E == CASE_3) && (iVar10 = st::fn_00405B05(this,CASE_3), iVar10 == 0)) {
           pSVar8 = st::fn_004028BA
                              (g_allPlayers_007FA174,*(char *)&this->field_0487,
                               *(ushort *)&this->field_048B,this->field_0483);
@@ -8963,18 +8972,18 @@ switchD_00461334_caseD_1:
             return 2;
           case 9:
             st::fn_004031E3(pSVar8,&local_14,&local_18,(short *)&local_1c);
-            sVar5 = (*this->vtable->vfunc_10)
+            sVar6 = (*this->vtable->vfunc_10)
                               (this->field_0041,this->field_0043,
                                STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                                (short)local_14,(short)local_18,local_1c);
-            local_EAX_4242 = st::fn_004030B2(this,sVar5);
+            local_EAX_4242 = st::fn_004030B2(this,sVar6);
             st::fn_004022FC(this,(short)local_EAX_4242);
             return 2;
           }
         }
         return 2;
       }
-      if (iVar10 != 4) {
+      if (SVar2 != CASE_4) {
         local_EAX_4798 =
              st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x1808,0,0,st::mutable_c_string("%s"),
                                 "STBoatC::Defence - incorrect entry");
@@ -8983,16 +8992,16 @@ switchD_00461334_caseD_1:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      uVar3 = this->field_00B7;
+      uVar4 = this->field_00B7;
       this->field_00B7 = 0;
       local_EAX_4703 = st::fn_00402266(this,2);
-      this->field_00B7 = uVar3;
+      this->field_00B7 = uVar4;
       if (local_EAX_4703 == -1) {
         return -1;
       }
       if ((local_EAX_4703 == 0) || (local_EAX_4703 == 3)) {
         this->field_0836 = 1;
-        this->field_082E = 0;
+        this->field_082E = ~CASE_FFFFFFFF;
       }
     }
 switchD_0046166b_caseD_2:
@@ -9006,10 +9015,10 @@ switchD_0046166b_caseD_2:
     bVar13 = (uVar11 - 1 | 0xfffffffe) == 0xffffffff;
   }
   if ((bVar13) && (DAT_007fa134 != 0)) {
-    dVar2 = g_array_007FA130->count;
-    local_34 = (short)dVar2;
-    sStack_32 = (short)(dVar2 >> 0x10);
-    if ((dVar2 != 0) && (uVar11 = 0, iVar10 = DAT_007fa134, dVar2 != 0)) {
+    dVar3 = g_array_007FA130->count;
+    local_34 = (short)dVar3;
+    sStack_32 = (short)(dVar3 >> 0x10);
+    if ((dVar3 != 0) && (uVar11 = 0, iVar10 = DAT_007fa134, dVar3 != 0)) {
       do {
         if (iVar10 < 1) break;
         st::fn_006ACC70(g_array_007FA130,uVar11,&local_20);
@@ -9041,20 +9050,20 @@ LAB_00460d94:
                       this->field_0469 = 0;
                       break;
                     }
-                    this->field_082E = 1;
+                    this->field_082E = CASE_1;
                     st::fn_00404F6B(this,(int)this->field_0047,(int)this->field_0049,
                                  (int)this->field_0469 + (int)this->field_004B);
-                    uVar3 = this->field_00B7;
+                    uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
                     iVar10 = st::fn_00403B34(this,0);
-                    this->field_00B7 = uVar3;
+                    this->field_00B7 = uVar4;
                     if (iVar10 == -1) {
                       return -1;
                     }
                     if (iVar10 != 0) {
                       if (iVar10 == 3) {
                         this->field_0469 = 0;
-                        this->field_082E = 0;
+                        this->field_082E = ~CASE_FFFFFFFF;
                       }
                       break;
                     }
@@ -9063,20 +9072,20 @@ LAB_00460d94:
                     this->field_0469 = -1;
                     iVar10 = this->vfunc_18(this->field_0047,this->field_0049,3);
                     if (iVar10 != 1) goto LAB_00460d94;
-                    this->field_082E = 1;
+                    this->field_082E = CASE_1;
                     st::fn_00404F6B(this,(int)this->field_0047,(int)this->field_0049,
                                  (int)this->field_0469 + (int)this->field_004B);
-                    uVar3 = this->field_00B7;
+                    uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
                     iVar10 = st::fn_00403B34(this,0);
-                    this->field_00B7 = uVar3;
+                    this->field_00B7 = uVar4;
                     if (iVar10 == -1) {
                       return -1;
                     }
                     if (iVar10 != 0) {
                       if (iVar10 == 3) {
                         this->field_0469 = 0;
-                        this->field_082E = 0;
+                        this->field_082E = ~CASE_FFFFFFFF;
                       }
                       break;
                     }
@@ -9091,27 +9100,27 @@ LAB_00460d94:
                     iVar10 = this->vfunc_18(this->field_0047,this->field_0049,
                                         this->field_0469 + this->field_004B);
                     if (iVar10 == 1) {
-                      this->field_082E = 1;
+                      this->field_082E = CASE_1;
                       st::fn_00404F6B(this,(int)this->field_0047,(int)this->field_0049,
                                    (int)this->field_0469 + (int)this->field_004B);
-                      uVar3 = this->field_00B7;
+                      uVar4 = this->field_00B7;
                       this->field_00B7 = 0;
                       iVar10 = st::fn_00403B34(this,0);
-                      this->field_00B7 = uVar3;
+                      this->field_00B7 = uVar4;
                     }
                     else {
-                      sVar5 = this->field_0469;
-                      this->field_0469 = -sVar5;
+                      sVar6 = this->field_0469;
+                      this->field_0469 = -sVar6;
                       iVar10 = this->vfunc_18(this->field_0047,this->field_0049,
-                                          -sVar5 + this->field_004B);
+                                          -sVar6 + this->field_004B);
                       if (iVar10 != 1) goto LAB_00460d94;
-                      this->field_082E = 1;
+                      this->field_082E = CASE_1;
                       st::fn_00404F6B(this,(int)this->field_0047,(int)this->field_0049,
                                    (int)this->field_0469 + (int)this->field_004B);
-                      uVar3 = this->field_00B7;
+                      uVar4 = this->field_00B7;
                       this->field_00B7 = 0;
                       iVar10 = st::fn_00403B34(this,0);
-                      this->field_00B7 = uVar3;
+                      this->field_00B7 = uVar4;
                     }
                     if (iVar10 == -1) {
                       return -1;
@@ -9119,7 +9128,7 @@ LAB_00460d94:
                     if ((iVar10 != 0) && (iVar10 != 3)) break;
                   }
                   this->field_0469 = 0;
-                  this->field_082E = 0;
+                  this->field_082E = ~CASE_FFFFFFFF;
                   break;
                 }
               }
@@ -9135,7 +9144,7 @@ LAB_00460d94:
       } while (uVar11 < CONCAT22(sStack_32,local_34));
     }
   }
-  if (this->field_082E != 0) goto LAB_00461264;
+  if (this->field_082E != ~CASE_FFFFFFFF) goto LAB_00461264;
   if (this->field_0836 == 2) {
     this->field_047F = -1;
     iVar10 = st::fn_00405B05(this,CASE_0);
@@ -9214,18 +9223,18 @@ LAB_00460d94:
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     case 5:
-      this->field_082E = 4;
+      this->field_082E = CASE_4;
       st::fn_00405F0B
                 ((STFishC *)pSVar8,(short *)&local_14,(short *)&local_18,(short *)&local_1c);
 LAB_00460fac:
       st::fn_00404F6B(this,(int)(short)local_14,(int)(short)local_18,(int)(short)local_1c);
-      uVar3 = this->field_00B7;
+      uVar4 = this->field_00B7;
       this->field_00B7 = 0;
       local_EAX_1830 = st::fn_00402266(this,0);
       if (local_EAX_1830 == -1) {
         return -1;
       }
-      this->field_00B7 = uVar3;
+      this->field_00B7 = uVar4;
       break;
     case 6:
     case 7:
@@ -9237,7 +9246,7 @@ LAB_00460fac:
       iVar10 = st::fn_00405E66(this,(short)local_EAX_1396,(short *)&local_14,(short *)&local_18,
                                   (short *)&local_1c);
       if (iVar10 != 0) {
-        this->field_082E = 4;
+        this->field_082E = CASE_4;
         goto LAB_00460fac;
       }
       if (300 < this->field_0814) {
@@ -9246,30 +9255,30 @@ LAB_00460fac:
       break;
     case 9:
       st::fn_004031E3(pSVar8,&local_14,&local_18,(short *)&local_1c);
-      sVar5 = (*this->vtable->vfunc_10)
+      sVar6 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),(short)local_14,
                          (short)local_18,local_1c);
-      local_EAX_1921 = st::fn_004030B2(this,sVar5);
+      local_EAX_1921 = st::fn_004030B2(this,sVar6);
       st::fn_004022FC(this,(short)local_EAX_1921);
     }
   }
-  if ((this->field_082E == 0) && (this->field_048B == 0xffff)) {
+  if ((this->field_082E == ~CASE_FFFFFFFF) && (this->field_048B == 0xffff)) {
     if ((this->field_0475 != this->field_0047) ||
        ((this->field_0477 != this->field_0049 || (this->field_0479 != this->field_004B)))) {
       local_EAX_1668 =
            st::fn_006AADD0((int)this->field_0047,(int)this->field_0049,(int)this->field_004B,
                         (int)this->field_0475,(int)this->field_0477,(int)this->field_0479);
       if ((local_EAX_1668 != -4) && (local_EAX_1668 < 8)) {
-        this->field_082E = 4;
+        this->field_082E = CASE_4;
         st::fn_00404F6B(this,(int)this->field_0475,(int)this->field_0477,(int)this->field_0479);
-        uVar3 = this->field_00B7;
+        uVar4 = this->field_00B7;
         this->field_00B7 = 0;
         local_EAX_1752 = st::fn_00402266(this,0);
         if (local_EAX_1752 == -1) {
           return -1;
         }
-        this->field_00B7 = uVar3;
+        this->field_00B7 = uVar4;
         iVar10 = this->vfunc_D8();
         return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
       }
@@ -9296,7 +9305,11 @@ LAB_00461264:
    stack bytes; current signature describes 12; removed trailing parameter slots have no listing
    references; ret_sites=004653E5 RET 0x4 | 0046543A RET 0x4 | 004654E4 RET 0x4 | 0046559A RET 0x4 |
    004655F1 RET 0x4 | 004656CB RET 0x4 | 00465736 RET 0x4 | 00465781 RET 0x4 | 0046578D RET 0x4 |
-   004657BC RET 0x4 */
+   004657BC RET 0x4
+
+   [STSwitchEnumApplier] Switch target field_082E uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_082EState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_FFFFFFFF=4294967295 */
 
 int __thiscall st::fn_004653B0(STBoatC *this,int *param_1)
 
@@ -9322,7 +9335,7 @@ int __thiscall st::fn_004653B0(STBoatC *this,int *param_1)
   uVar7 = (undefined2)((uint)this >> 0x10);
   local_8 = this;
   if (this->field_06F7 == CASE_9) {
-    if (this->field_082E != 3) {
+    if (this->field_082E != CASE_3) {
 LAB_00465581:
       this->field_00B7 = 0;
       local_EAX_481 = st::fn_00403DF0(this);
@@ -9391,7 +9404,7 @@ LAB_00465581:
       this->field_0816 = 5;
       return 0;
     }
-    if (this->field_082E != 3) goto LAB_00465581;
+    if (this->field_082E != CASE_3) goto LAB_00465581;
     pSVar6 = this;
     if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
       /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
@@ -9503,7 +9516,19 @@ int __thiscall st::fn_00465BE0(STBoatC *this,int *param_1)
    00466FED RET 0x4 | 004674DE RET 0x4 | 00467756 RET 0x4 | 0046776F RET 0x4 | 00467C9F RET 0x4 |
    004681EC RET 0x4 | 0046833D RET 0x4 | 0046858A RET 0x4 | 004685A3 RET 0x4 | 00468810 RET 0x4 |
    0046889D RET 0x4 | 00468B1B RET 0x4 | 00468C69 RET 0x4 | 00468D28 RET 0x4 | 00468FCE RET 0x4 |
-   004693E2 RET 0x4 | 00469754 RET 0x4 | 004698B3 RET 0x4 | 0046998F RET 0x4 | 00469A02 RET 0x4 */
+   004693E2 RET 0x4 | 00469754 RET 0x4 | 004698B3 RET 0x4 | 0046998F RET 0x4 | 00469A02 RET 0x4
+
+   [STSwitchEnumApplier] Switch target field_04D9 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_04D9State. Cases:
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_04D9 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_04D9State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_04D9 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_04D9State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall st::fn_00465C60(STBoatC *this,int *param_1)
 
@@ -9658,7 +9683,7 @@ cf_common_exit_004699DA:
       if (local_EAX_56 == -1) {
         return -1;
       }
-      if (this->field_082E != 0) {
+      if (this->field_082E != ~CASE_FFFFFFFF) {
         return 2;
       }
       if (this->field_04BD == 1) {
@@ -9863,7 +9888,7 @@ cf_common_exit_00468C49:
       if (local_EAX_626 == -1) {
         return -1;
       }
-      if (this->field_082E != 0) {
+      if (this->field_082E != ~CASE_FFFFFFFF) {
         return 2;
       }
       if (this->field_04BD == 1) {
@@ -9937,7 +9962,7 @@ cf_common_exit_00465E5A:
         if (local_EAX_3064 == -1) {
           return -1;
         }
-        if (this->field_082E != 0) {
+        if (this->field_082E != ~CASE_FFFFFFFF) {
           return 2;
         }
         if ((this->field_04BD != 1) && (this->field_04C1 != 1)) {
@@ -10175,7 +10200,7 @@ LAB_00468c40:
         if (local_EAX_3933 == -1) {
           return -1;
         }
-        if (this->field_082E != 0) {
+        if (this->field_082E != ~CASE_FFFFFFFF) {
           return 2;
         }
         if (this->field_04BD == 1) {
@@ -10544,7 +10569,7 @@ cf_error_exit_004660E9:
             if (local_EAX_9594 == -1) {
               return -1;
             }
-            if (this->field_082E != 0) {
+            if (this->field_082E != ~CASE_FFFFFFFF) {
               return 2;
             }
             if ((this->field_04BD != 1) && (this->field_04C1 != 1)) {
@@ -10674,7 +10699,7 @@ LAB_00468493:
           }
           if (iVar8 != 10) {
             if (iVar8 == 0xb) {
-              if (this->field_04D9 == 0) {
+              if (this->field_04D9 == CASE_0) {
                 iVar16 = (ushort)(this->field_04A9 * 200) + 300;
                 iVar8 = STReplaceLowWord((uint32_t)(iVar16), (uint16_t)(this->field_04A7 + 1)) * 0xc9;
                 iVar23 = STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_04A5 + 1));
@@ -10684,9 +10709,9 @@ LAB_00468493:
                                    CONCAT22((short)((uint)(iVar23 * 0x19) >> 0x10),this->field_0045)
                                    ,(short)(iVar23 * 0xc9),(short)iVar8,iVar16);
                 this->field_04CB = uVar5;
-                this->field_04D9 = 1;
+                this->field_04D9 = CASE_1;
               }
-              if (this->field_04D9 == 1) {
+              if (this->field_04D9 == CASE_1) {
                 uVar9 = st::fn_004030B2(this,this->field_04CB);
                 uVar9 = st::fn_004022FC(this,(short)uVar9);
                 if (uVar9 == 0xffffffff) {
@@ -10700,18 +10725,18 @@ LAB_00468493:
                   goto cf_error_exit_004660E9;
                 }
                 if (uVar9 == 0) {
-                  this->field_04D9 = 2;
+                  this->field_04D9 = CASE_2;
                   iVar8 = this->vfunc_D8();
                   return (-(uint)(iVar8 != 0) & 0xfffffffd) + 2;
                 }
               }
-              if (this->field_04D9 == 2) {
+              if (this->field_04D9 == CASE_2) {
                 st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                              (this->field_04A5 + 1) * 0xc9,(this->field_04A7 + 1) * 0xc9,
                              this->field_04A9 * 200 + 300,this->field_0061);
-                this->field_04D9 = 3;
+                this->field_04D9 = CASE_3;
               }
-              if (this->field_04D9 == 3) {
+              if (this->field_04D9 == CASE_3) {
                 local_10 = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_18),&local_14);
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = nullptr;
@@ -10786,7 +10811,7 @@ LAB_00468493:
                 }
                 if (local_10 == 0) {
                   *(undefined4 *)&this->field_0x4d5 = 0xc;
-                  this->field_04D9 = 0;
+                  this->field_04D9 = CASE_0;
                   iVar8 = this->vfunc_D8();
                   return (-(uint)(iVar8 != 0) & 0xfffffffd) + 2;
                 }
@@ -10798,7 +10823,7 @@ LAB_00468493:
                 iVar8 = *(int *)&this->field_0x4d1 + 1;
                 *(int *)&this->field_0x4d1 = iVar8;
                 if (0x45 < iVar8) {
-                  if (this->field_04D9 == 0) {
+                  if (this->field_04D9 == CASE_0) {
                     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                     iVar16 = STReplaceLowWord((uint32_t)(in_EDX), (uint16_t)(this->field_04C7 * 0xc9)) + 100;
                     uVar5 = (*this->vtable->vfunc_10)
@@ -10808,9 +10833,9 @@ LAB_00468493:
                                        STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_04C9 * 200))
                                        + 100);
                     this->field_04CB = uVar5;
-                    this->field_04D9 = 1;
+                    this->field_04D9 = CASE_1;
                   }
-                  if (this->field_04D9 == 1) {
+                  if (this->field_04D9 == CASE_1) {
                     uVar9 = st::fn_004030B2(this,this->field_04CB);
                     uVar9 = st::fn_004022FC(this,(short)uVar9);
                     if (uVar9 == 0xffffffff) {
@@ -10825,17 +10850,17 @@ LAB_00468493:
                       goto cf_error_exit_004660E9;
                     }
                     if (uVar9 == 0) {
-                      this->field_04D9 = 2;
+                      this->field_04D9 = CASE_2;
                       goto cf_common_exit_004699E9;
                     }
                   }
-                  if (this->field_04D9 == 2) {
+                  if (this->field_04D9 == CASE_2) {
                     st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                                  this->field_04C5 * 0xc9 + 100,this->field_04C7 * 0xc9 + 100,
                                  this->field_04C9 * 200 + 100,this->field_0061);
-                    this->field_04D9 = 3;
+                    this->field_04D9 = CASE_3;
                   }
-                  if (this->field_04D9 == 3) {
+                  if (this->field_04D9 == CASE_3) {
                     local_10 = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_14),&local_18);
                     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_1 = nullptr;
@@ -11115,7 +11140,7 @@ LAB_004692be:
               if (((this->field_0047 == this->field_04C5) && (this->field_0049 == this->field_04C7))
                  && (this->field_004B == this->field_04C9)) {
                 *(undefined4 *)&this->field_0x4d5 = 0xb;
-                this->field_04D9 = 0;
+                this->field_04D9 = CASE_0;
                 iVar8 = this->vfunc_D8();
                 return (-(uint)(iVar8 != 0) & 0xfffffffd) + 2;
               }
@@ -11175,7 +11200,7 @@ LAB_004692be:
           if (local_EAX_10545 == -1) {
             return -1;
           }
-          if (this->field_082E != 0) {
+          if (this->field_082E != ~CASE_FFFFFFFF) {
             return 2;
           }
           if (this->field_04BD == 1) {
@@ -11362,7 +11387,7 @@ LAB_004685d3:
         if (local_EAX_6909 == -1) {
           return -1;
         }
-        if (this->field_082E != 0) {
+        if (this->field_082E != ~CASE_FFFFFFFF) {
           return 2;
         }
         if (this->field_04BD == 1) {
@@ -11704,28 +11729,41 @@ switchD_0046878c_caseD_1:
 
    [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 0046AA50 -> 004620F0 @ 0046AAAA | 0046AA50 -> 004620F0 @ 0046AABD | 0046AA50 ->
-   004620F0 @ 0046AF0D */
+   004620F0 @ 0046AF0D
+
+   [STSwitchEnumApplier] Switch target field_04D9 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_04D9State. Cases:
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_04D9 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_04D9State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_04D9 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_04D9State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall st::fn_0046AA50(STBoatC *this,STBoatC *param_1)
 
 {
-  undefined2 uVar2;
+  STBoatC_field_04D9State SVar1;
+  undefined2 uVar3;
   int local_EAX_56;
   int local_EAX_90;
   int local_EAX_185;
   int local_EAX_430;
   int local_EAX_685;
-  uint uVar3;
+  uint uVar4;
   int local_EAX_984;
   int iVar5;
   int local_EAX_1213;
   int local_EAX_1268;
-  int iVar4;
-  STBoatC *pSVar5;
+  int iVar6;
+  STBoatC *pSVar7;
   STBoatC *local_8;
 
   this->field_00B7 = 0;
-  pSVar5 = this;
+  pSVar7 = this;
   local_8 = this;
   switch(*(undefined4 *)&this->field_0x4d5) {
   case 0:
@@ -11748,12 +11786,12 @@ int __thiscall st::fn_0046AA50(STBoatC *this,STBoatC *param_1)
     break;
   case 5:
     st::fn_00403C0B(this);
-    iVar4 = *(int *)&this->field_0x4d1 + 1;
-    *(int *)&this->field_0x4d1 = iVar4;
-    if (iVar4 < 0x47) {
+    iVar6 = *(int *)&this->field_0x4d1 + 1;
+    *(int *)&this->field_0x4d1 = iVar6;
+    if (iVar6 < 0x47) {
 LAB_0046acad:
-      iVar4 = this->vfunc_D8();
-      return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
+      iVar6 = this->vfunc_D8();
+      return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
     }
     *(undefined4 *)&this->field_0x4d1 = 0;
     goto LAB_0046aaed;
@@ -11762,28 +11800,28 @@ LAB_0046acad:
     local_EAX_185 = st::fn_00403DF0(this);
     return local_EAX_185;
   case 0xb:
-    iVar4 = this->field_04D9;
-    if (((iVar4 == 0) || (iVar4 == 1)) || (iVar4 == 2)) {
+    SVar1 = this->field_04D9;
+    if (((SVar1 == CASE_0) || (SVar1 == CASE_1)) || (SVar1 == CASE_2)) {
       st::fn_00403C0B(this);
-      iVar4 = this->vfunc_D8();
-      return -(uint)(iVar4 != 0);
+      iVar6 = this->vfunc_D8();
+      return -(uint)(iVar6 != 0);
     }
-    if (iVar4 == 3) {
-      iVar4 = STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_04C7 * 0xc9)) + 100;
-      uVar2 = (*this->vtable->vfunc_10)
+    if (SVar1 == CASE_3) {
+      iVar6 = STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_04C7 * 0xc9)) + 100;
+      uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(this->field_0045)),
-                         this->field_04C5 * 0xc9 + 100,(short)iVar4,
+                         STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
+                         this->field_04C5 * 0xc9 + 100,(short)iVar6,
                          (ushort)(this->field_04C9 * 200) + 100);
-      this->field_04CB = uVar2;
-      this->field_04D9 = 4;
+      this->field_04CB = uVar3;
+      this->field_04D9 = CASE_4;
     }
-    if (this->field_04D9 == 4) {
-      uVar3 = st::fn_004030B2(this,this->field_04CB);
-      uVar3 = st::fn_004022FC(this,(short)uVar3);
-      if (uVar3 != 0xffffffff) {
-        if (uVar3 == 0) {
-          this->field_04D9 = 5;
+    if (this->field_04D9 == CASE_4) {
+      uVar4 = st::fn_004030B2(this,this->field_04CB);
+      uVar4 = st::fn_004022FC(this,(short)uVar4);
+      if (uVar4 != 0xffffffff) {
+        if (uVar4 == 0) {
+          this->field_04D9 = CASE_5;
         }
         goto cf_common_exit_0046ABCB;
       }
@@ -11793,24 +11831,24 @@ LAB_0046acad:
       if (local_EAX_430 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar4 = 0x22fe;
+      iVar6 = 0x22fe;
     }
     else {
-      if (this->field_04D9 == 5) {
+      if (this->field_04D9 == CASE_5) {
         st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_04C5 * 0xc9 + 100,this->field_04C7 * 0xc9 + 100,
                      this->field_04C9 * 200 + 100,this->field_0061);
-        this->field_04D9 = 6;
+        this->field_04D9 = CASE_6;
       }
-      if (this->field_04D9 != 6) {
+      if (this->field_04D9 != CASE_6) {
         return 2;
       }
-      iVar4 = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_8),(int *)&param_1);
-      if (iVar4 != -1) {
-        if (iVar4 == 0) {
+      iVar6 = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_8),(int *)&param_1);
+      if (iVar6 != -1) {
+        if (iVar6 == 0) {
           st::fn_00403C0B(this);
-          iVar4 = this->vfunc_D8();
-          return -(uint)(iVar4 != 0);
+          iVar6 = this->vfunc_D8();
+          return -(uint)(iVar6 != 0);
         }
         goto LAB_0046acad;
       }
@@ -11820,37 +11858,37 @@ LAB_0046acad:
       if (local_EAX_685 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar4 = 0x2312;
+      iVar6 = 0x2312;
     }
     goto LAB_0046ac10;
   case 0xc:
     st::fn_00403C0B(this);
-    pSVar5 = (STBoatC *)(*(int *)&this->field_0x4d1 + 1);
-    *(STBoatC **)&this->field_0x4d1 = pSVar5;
-    if ((int)pSVar5 < 0x47) goto cf_common_exit_0046ABCB;
+    pSVar7 = (STBoatC *)(*(int *)&this->field_0x4d1 + 1);
+    *(STBoatC **)&this->field_0x4d1 = pSVar7;
+    if ((int)pSVar7 < 0x47) goto cf_common_exit_0046ABCB;
     *(undefined4 *)&this->field_0x4d1 = 0;
     *(undefined4 *)&this->field_0x4d5 = 0xd;
   case 0xd:
-    if (this->field_04D9 == 0) {
-      iVar4 = STReplaceLowWord((uint32_t)(pSVar5), (uint16_t)(this->field_04C7 * 0xc9)) + 100;
-      uVar2 = (*this->vtable->vfunc_10)
+    if (this->field_04D9 == CASE_0) {
+      iVar6 = STReplaceLowWord((uint32_t)(pSVar7), (uint16_t)(this->field_04C7 * 0xc9)) + 100;
+      uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(this->field_0045)),
-                         this->field_04C5 * 0xc9 + 100,(short)iVar4,
+                         STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
+                         this->field_04C5 * 0xc9 + 100,(short)iVar6,
                          (ushort)(this->field_04C9 * 200) + 100);
-      this->field_04CB = uVar2;
-      this->field_04D9 = 1;
+      this->field_04CB = uVar3;
+      this->field_04D9 = CASE_1;
     }
-    if (this->field_04D9 == 1) {
-      uVar3 = st::fn_004030B2(this,this->field_04CB);
-      uVar3 = st::fn_004022FC(this,(short)uVar3);
-      if (uVar3 != 0xffffffff) {
-        if (uVar3 == 0) {
-          this->field_04D9 = 2;
+    if (this->field_04D9 == CASE_1) {
+      uVar4 = st::fn_004030B2(this,this->field_04CB);
+      uVar4 = st::fn_004022FC(this,(short)uVar4);
+      if (uVar4 != 0xffffffff) {
+        if (uVar4 == 0) {
+          this->field_04D9 = CASE_2;
         }
 cf_common_exit_0046ABCB:
-        iVar4 = this->vfunc_D8();
-        return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
+        iVar6 = this->vfunc_D8();
+        return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
       }
       local_EAX_984 =
            st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2338,0,0,st::mutable_c_string("%s"),
@@ -11858,44 +11896,44 @@ cf_common_exit_0046ABCB:
       if (local_EAX_984 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar4 = 0x2339;
+      iVar6 = 0x2339;
     }
     else {
-      if (this->field_04D9 == 2) {
+      if (this->field_04D9 == CASE_2) {
         st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_04C5 * 0xc9 + 100,this->field_04C7 * 0xc9 + 100,
                      this->field_04C9 * 200 + 100,this->field_0061);
-        this->field_04D9 = 3;
+        this->field_04D9 = CASE_3;
       }
-      if (this->field_04D9 != 3) {
+      if (this->field_04D9 != CASE_3) {
 switchD_0046aa71_caseD_0:
         local_EAX_1213 = st::fn_0040493A(this);
-        iVar4 = this->vfunc_D8();
-        if (iVar4 != 0) {
+        iVar6 = this->vfunc_D8();
+        if (iVar6 != 0) {
           return -1;
         }
         return local_EAX_1213;
       }
-      iVar4 = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_8),(int *)&param_1);
-      if (iVar4 != -1) {
-        if (iVar4 != 0) {
-          iVar4 = this->vfunc_D8();
-          return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
+      iVar6 = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_8),(int *)&param_1);
+      if (iVar6 != -1) {
+        if (iVar6 != 0) {
+          iVar6 = this->vfunc_D8();
+          return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
         }
 LAB_0046aaed:
-        iVar4 = this->vfunc_D8();
-        return -(uint)(iVar4 != 0);
+        iVar6 = this->vfunc_D8();
+        return -(uint)(iVar6 != 0);
       }
       iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2350,0,0,st::mutable_c_string("%s"),
                                  "STBoatC::BackLoadRC, LOADRC_ODEPOT 2");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar4 = 0x2351;
+      iVar6 = 0x2351;
     }
 LAB_0046ac10:
     st::fn_006A5E40
-              (0xffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),iVar4);
+              (0xffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),iVar6);
     return 0xffff;
   default:
     local_EAX_1268 =
@@ -11916,7 +11954,18 @@ LAB_0046ac10:
 #line 4 "decomp/ST.exe/functions/0046B100/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::Build */
+   STBoatC::Build
+
+   [STSwitchEnumApplier] Switch target field_050C uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_050CState. Cases: CASE_1=1;CASE_2=2;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_050C uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_050CState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_050C uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_050CState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_5=5 */
 
 int __thiscall st::fn_0046B100(STBoatC *this,uint param_1)
 
@@ -12037,7 +12086,7 @@ int __thiscall st::fn_0046B100(STBoatC *this,uint param_1)
     this->field_04F9 = 0;
     st::fn_00403EB3(this);
     this->field_0508 = CASE_0;
-    this->field_050C = 0;
+    this->field_050C = CASE_0;
     st::fn_00404F6B(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
     iVar14 = st::fn_00403B34(this,0);
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -12168,7 +12217,7 @@ LAB_0046b5ac:
       goto cf_common_exit_0046C3C5;
     }
     if (SVar4 == CASE_2) {
-      if (this->field_050C == 0) {
+      if (this->field_050C == CASE_0) {
         iVar9 = (ushort)(this->field_0500 * 200) + 100;
         iVar14 = STReplaceLowWord((uint32_t)(iVar9), (uint16_t)(this->field_04DF + 1)) * 0xc9;
         iVar25 = STReplaceLowWord((uint32_t)(iVar14), (uint16_t)(this->field_04DD + 1));
@@ -12178,9 +12227,9 @@ LAB_0046b5ac:
                            CONCAT22((short)((uint)(iVar25 * 0x19) >> 0x10),this->field_0045),
                            (short)(iVar25 * 0xc9),(short)iVar14,iVar9);
         this->field_0506 = uVar7;
-        this->field_050C = 1;
+        this->field_050C = CASE_1;
       }
-      if (this->field_050C == 1) {
+      if (this->field_050C == CASE_1) {
         uVar10 = st::fn_004030B2(this,this->field_0506);
         uVar10 = st::fn_004022FC(this,(short)uVar10);
         if (uVar10 == 0xffffffff) {
@@ -12193,17 +12242,17 @@ LAB_0046b5ac:
           goto cf_error_exit_0046C422;
         }
         if (uVar10 == 0) {
-          this->field_050C = 2;
+          this->field_050C = CASE_2;
           goto LAB_0046b6e2;
         }
       }
-      if (this->field_050C == 2) {
+      if (this->field_050C == CASE_2) {
         st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                      (this->field_04DD + 1) * 0xc9,(this->field_04DF + 1) * 0xc9,
                      this->field_0500 * 200 + 100,this->field_0061);
-        this->field_050C = 3;
+        this->field_050C = CASE_3;
       }
-      if (this->field_050C == 3) {
+      if (this->field_050C == CASE_3) {
         local_1c = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_18),(int *)&local_14);
         local_20 = 0;
         if (this->field_02BF != '\0') {
@@ -12277,7 +12326,7 @@ LAB_0046b5ac:
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         if (local_1c == 0) {
-          this->field_050C = 0;
+          this->field_050C = CASE_0;
           this->field_0508 = (-(uint)(this->field_06F7 != CASE_19) & 2) + CASE_3;
         }
       }
@@ -12301,19 +12350,19 @@ LAB_0046b5ac:
       }
       if (uVar10 == 0) {
         this->field_0508 = CASE_4;
-        this->field_050C = 2;
+        this->field_050C = CASE_2;
         iVar14 = this->vfunc_D8();
         return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
       }
       goto cf_common_exit_0046C3C5;
     }
     if (SVar4 == CASE_4) {
-      if (this->field_050C == 2) {
+      if (this->field_050C == CASE_2) {
         st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,this->field_0041,
                      this->field_0043,this->field_0045 + -200,this->field_0061);
-        this->field_050C = 3;
+        this->field_050C = CASE_3;
       }
-      if (this->field_050C == 3) {
+      if (this->field_050C == CASE_3) {
         local_1c = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_14),(int *)&local_18);
         local_20 = 0;
         if (this->field_02BF != '\0') {
@@ -12388,7 +12437,7 @@ LAB_0046b5ac:
         }
         if (local_1c == 0) {
           this->field_0508 = CASE_5;
-          this->field_050C = 0;
+          this->field_050C = CASE_0;
         }
       }
 LAB_0046b6e2:
@@ -12482,7 +12531,7 @@ cf_common_exit_0046C04E:
       return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
     }
     if (SVar4 == CASE_6) {
-      if (this->field_050C == 0) {
+      if (this->field_050C == CASE_0) {
         iVar14 = STReplaceLowWord((uint32_t)(pSVar15), (uint16_t)(this->field_04FE * 0xc9)) + 100;
         uVar7 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
@@ -12490,9 +12539,9 @@ cf_common_exit_0046C04E:
                            this->field_04FC * 0xc9 + 100,(short)iVar14,
                            (ushort)(this->field_0500 * 200) + 100);
         this->field_0506 = uVar7;
-        this->field_050C = 1;
+        this->field_050C = CASE_1;
       }
-      if (this->field_050C == 1) {
+      if (this->field_050C == CASE_1) {
         uVar10 = st::fn_004030B2(this,this->field_0506);
         uVar10 = st::fn_004022FC(this,(short)uVar10);
         if (uVar10 == 0xffffffff) {
@@ -12506,17 +12555,17 @@ cf_common_exit_0046C04E:
           goto cf_error_exit_0046C422;
         }
         if (uVar10 == 0) {
-          this->field_050C = 2;
+          this->field_050C = CASE_2;
           goto cf_common_exit_0046C04E;
         }
       }
-      if (this->field_050C == 2) {
+      if (this->field_050C == CASE_2) {
         st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_04FC * 0xc9 + 100,this->field_04FE * 0xc9 + 100,
                      this->field_0500 * 200 + 100,this->field_0061);
-        this->field_050C = 3;
+        this->field_050C = CASE_3;
       }
-      if (this->field_050C == 3) {
+      if (this->field_050C == CASE_3) {
         local_1c = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_14),(int *)&local_18);
         local_20 = 0;
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -12658,18 +12707,30 @@ cf_common_exit_0046C3C5:
    stack bytes; current signature describes 12; removed trailing parameter slots have no listing
    references; ret_sites=0046C9BB RET 0x4 | 0046C9E0 RET 0x4 | 0046C9F6 RET 0x4 | 0046CAC7 RET 0x4 |
    0046CB14 RET 0x4 | 0046CBB5 RET 0x4 | 0046CC01 RET 0x4 | 0046CC0B RET 0x4 | 0046CD77 RET 0x4 |
-   0046CDD6 RET 0x4 */
+   0046CDD6 RET 0x4
+
+   [STSwitchEnumApplier] Switch target field_050C uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_050CState. Cases: CASE_1=1;CASE_2=2;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_050C uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_050CState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_050C uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_050CState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_5=5 */
 
 int __thiscall st::fn_0046C980(STBoatC *this,int *param_1)
 
 {
-  undefined2 uVar2;
+  STBoatC_field_050CState SVar1;
+  undefined2 uVar3;
   int local_EAX_105;
   int local_EAX_354;
   int local_EAX_592;
-  uint uVar3;
+  uint uVar4;
   int iVar5;
-  undefined4 uVar4;
+  undefined4 uVar5;
   int local_EAX_1042;
   int local_EAX_1089;
   int iVar6;
@@ -12677,7 +12738,7 @@ int __thiscall st::fn_0046C980(STBoatC *this,int *param_1)
   undefined4 in_EDX;
   STBoatC *local_8;
 
-  uVar2 = (undefined2)((uint)this >> 0x10);
+  uVar3 = (undefined2)((uint)this >> 0x10);
   local_8 = this;
   switch(this->field_0508) {
   case CASE_0:
@@ -12688,25 +12749,25 @@ int __thiscall st::fn_0046C980(STBoatC *this,int *param_1)
   case CASE_2:
   case CASE_3:
   case CASE_4:
-    iVar6 = this->field_050C;
-    if (((iVar6 == 0) || (iVar6 == 1)) || (iVar6 == 2)) {
+    SVar1 = this->field_050C;
+    if (((SVar1 == CASE_0) || (SVar1 == CASE_1)) || (SVar1 == CASE_2)) {
       return 0;
     }
-    if (iVar6 == 3) {
+    if (SVar1 == CASE_3) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar6 = CONCAT22(uVar2,this->field_04FE * 0xc9) + 100;
-      uVar2 = (*this->vtable->vfunc_10)
+      iVar6 = CONCAT22(uVar3,this->field_04FE * 0xc9) + 100;
+      uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
                          this->field_04FC * 0xc9 + 100,(short)iVar6,
                          (ushort)(this->field_0500 * 200) + 100);
-      this->field_0506 = uVar2;
+      this->field_0506 = uVar3;
       this->field_050C = 4;
     }
     if (this->field_050C == 4) {
-      uVar3 = st::fn_004030B2(this,this->field_0506);
-      uVar3 = st::fn_004022FC(this,(short)uVar3);
-      if ((short)uVar3 == -1) {
+      uVar4 = st::fn_004030B2(this,this->field_0506);
+      uVar4 = st::fn_004022FC(this,(short)uVar4);
+      if ((short)uVar4 == -1) {
         local_EAX_354 =
              st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x253e,0,0,st::mutable_c_string("%s"),
                                 "STBoatC::BackBuild, BUILD_PMOVE");
@@ -12718,21 +12779,21 @@ int __thiscall st::fn_0046C980(STBoatC *this,int *param_1)
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if ((short)uVar3 == 0) {
-        this->field_050C = 5;
+      if ((short)uVar4 == 0) {
+        this->field_050C = CASE_5;
         iVar6 = this->vfunc_D8();
         return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
       }
     }
-    if (this->field_050C == 5) {
+    if (this->field_050C == CASE_5) {
       st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_04FC * 0xc9 + 100,this->field_04FE * 0xc9 + 100,
                    this->field_0500 * 200 + 100,this->field_0061);
       this->field_050C = 6;
     }
     if (this->field_050C == 6) {
-      uVar4 = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_8),(int *)&param_1);
-      if ((short)uVar4 == -1) {
+      uVar5 = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_8),(int *)&param_1);
+      if ((short)uVar5 == -1) {
         local_EAX_592 =
              st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2554,0,0,st::mutable_c_string("%s"),
                                 "STBoatC::BackBuild, BUILD_PMOVE 2");
@@ -12745,7 +12806,7 @@ cf_error_exit_0046CBE2:
                   (0xffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),iVar6);
         return 0xffff;
       }
-      if ((short)uVar4 == 0) {
+      if ((short)uVar5 == 0) {
         iVar6 = this->vfunc_D8();
         return -(uint)(iVar6 != 0);
       }
@@ -12759,22 +12820,22 @@ cf_error_exit_0046CBE2:
     this->field_0508 = CASE_6;
     break;
   case CASE_6:
-    if (this->field_050C == 0) {
+    if (this->field_050C == CASE_0) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       iVar6 = STReplaceLowWord((uint32_t)(in_EDX), (uint16_t)(this->field_04FE * 0xc9)) + 100;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar2 = (*this->vtable->vfunc_10)
+      uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
                          this->field_04FC * 0xc9 + 100,(short)iVar6,
-                         CONCAT22(uVar2,this->field_0500 * 200) + 100);
-      this->field_0506 = uVar2;
-      this->field_050C = 1;
+                         CONCAT22(uVar3,this->field_0500 * 200) + 100);
+      this->field_0506 = uVar3;
+      this->field_050C = CASE_1;
     }
-    if (this->field_050C == 1) {
-      uVar3 = st::fn_004030B2(this,this->field_0506);
-      uVar3 = st::fn_004022FC(this,(short)uVar3);
-      if ((short)uVar3 == -1) {
+    if (this->field_050C == CASE_1) {
+      uVar4 = st::fn_004030B2(this,this->field_0506);
+      uVar4 = st::fn_004022FC(this,(short)uVar4);
+      if ((short)uVar4 == -1) {
         iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x256d,0,0,st::mutable_c_string("%s"),
                                    "STBoatC::BackBuild, BUILD_OMOVE");
         if (iVar5 != 0) {
@@ -12783,20 +12844,20 @@ cf_error_exit_0046CBE2:
         iVar6 = 0x256e;
         goto cf_error_exit_0046CBE2;
       }
-      if ((short)uVar3 == 0) {
-        this->field_050C = 2;
+      if ((short)uVar4 == 0) {
+        this->field_050C = CASE_2;
         break;
       }
     }
-    if (this->field_050C == 2) {
+    if (this->field_050C == CASE_2) {
       st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_04FC * 0xc9 + 100,this->field_04FE * 0xc9 + 100,
                    this->field_0500 * 200 + 100,this->field_0061);
-      this->field_050C = 3;
+      this->field_050C = CASE_3;
     }
-    if (this->field_050C == 3) {
-      uVar4 = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_8),(int *)&param_1);
-      if ((short)uVar4 == -1) {
+    if (this->field_050C == CASE_3) {
+      uVar5 = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_8),(int *)&param_1);
+      if ((short)uVar5 == -1) {
         local_EAX_1042 =
              st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2583,0,0,st::mutable_c_string("%s"),
                                 "STBoatC::BackBuild, BUILD_OMOVE 2");
@@ -12806,7 +12867,7 @@ cf_error_exit_0046CBE2:
         iVar6 = 0x2584;
         goto cf_error_exit_0046CBE2;
       }
-      if ((short)uVar4 == 0) {
+      if ((short)uVar5 == 0) {
         iVar6 = this->vfunc_D8();
         return -(uint)(iVar6 != 0);
       }
@@ -12834,7 +12895,10 @@ cf_error_exit_0046CBE2:
    CreateGame(STBoatC * this, int * param_1) Evidence: every machine RET purges exactly 4 explicit
    stack bytes; current signature describes 8; removed trailing parameter slots have no listing
    references; ret_sites=0046CFD8 RET 0x4 | 0046D190 RET 0x4 | 0046D1B5 RET 0x4 | 0046D201 RET 0x4 |
-   0046D2E7 RET 0x4 | 0046D2F1 RET 0x4 */
+   0046D2E7 RET 0x4 | 0046D2F1 RET 0x4
+
+   [STSwitchEnumApplier] Switch target field_0528 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0528State. Cases: CASE_1=1;CASE_3=3;CASE_4=4 */
 
 uint __thiscall st::fn_0046CF20(STBoatC *this,int *param_1)
 
@@ -12871,16 +12935,16 @@ uint __thiscall st::fn_0046CF20(STBoatC *this,int *param_1)
                        this->field_0510 * 0xc9 + 100,(short)iVar7,
                        STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_0514 * 200)) + 100);
     this->field_0522 = uVar5;
-    this->field_0528 = 1;
+    this->field_0528 = CASE_1;
   }
-  if (this->field_0528 != 1) {
+  if (this->field_0528 != CASE_1) {
     if (this->field_0528 == 2) {
       st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_0510 * 0xc9 + 100,this->field_0512 * 0xc9 + 100,
                    this->field_0514 * 200 + 100,this->field_0062);
-      this->field_0528 = 3;
+      this->field_0528 = CASE_3;
     }
-    if (this->field_0528 == 3) {
+    if (this->field_0528 == CASE_3) {
       iVar7 = st::fn_00402847((STJellyGunC *)this,&local_10,&local_c);
       if (iVar7 == -1) {
         local_EAX_688 =
@@ -12924,13 +12988,13 @@ uint __thiscall st::fn_0046CF20(STBoatC *this,int *param_1)
           if (iVar7 == -1) {
             return 0xffffffff;
           }
-          this->field_0528 = 4;
+          this->field_0528 = CASE_4;
           iVar7 = this->vfunc_D8();
           return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
         }
       }
     }
-    if (this->field_0528 == 4) {
+    if (this->field_0528 == CASE_4) {
       uVar10 = st::fn_00403B34(this,2);
       if (uVar10 == 0xffffffff) {
         return 0xffffffff;
@@ -12985,7 +13049,15 @@ LAB_0046d1e2:
 #line 4 "decomp/ST.exe/functions/0046D450/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::UnLoadRC */
+   STBoatC::UnLoadRC
+
+   [STSwitchEnumApplier] Switch target field_0550 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0550State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_0550 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0550State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall st::fn_0046D450(STBoatC *this,int param_1)
 
@@ -13231,7 +13303,7 @@ cf_common_exit_0046E811:
       if (local_EAX_1434 == -1) {
         return -1;
       }
-      if ((this->field_082E != 0) || (this->field_0544 % 0x32 != 1)) {
+      if ((this->field_082E != ~CASE_FFFFFFFF) || (this->field_0544 % 0x32 != 1)) {
         return 2;
       }
       sVar19 = this->field_052C;
@@ -13266,7 +13338,7 @@ cf_common_exit_0046E811:
     }
     if (SVar1 != CASE_3) {
       if (SVar1 == CASE_4) {
-        if (this->field_0550 == 0) {
+        if (this->field_0550 == CASE_0) {
           iVar8 = (ushort)(this->field_0530 * 200) + 300;
           iVar13 = STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_052E + 1)) * 0xc9;
           iVar25 = STReplaceLowWord((uint32_t)(iVar13), (uint16_t)(this->field_052C + 1));
@@ -13276,9 +13348,9 @@ cf_common_exit_0046E811:
                              CONCAT22((short)((uint)(iVar25 * 0x19) >> 0x10),this->field_0045),
                              (short)(iVar25 * 0xc9),(short)iVar13,iVar8);
           this->field_0542 = uVar6;
-          this->field_0550 = 1;
+          this->field_0550 = CASE_1;
         }
-        if (this->field_0550 == 1) {
+        if (this->field_0550 == CASE_1) {
           uVar9 = st::fn_004030B2(this,this->field_0542);
           uVar9 = st::fn_004022FC(this,(short)uVar9);
           if (uVar9 == 0xffffffff) {
@@ -13292,18 +13364,18 @@ cf_common_exit_0046E811:
             goto cf_error_exit_0046E857;
           }
           if (uVar9 == 0) {
-            this->field_0550 = 2;
+            this->field_0550 = CASE_2;
             iVar13 = this->vfunc_D8();
             return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
           }
         }
-        if (this->field_0550 == 2) {
+        if (this->field_0550 == CASE_2) {
           st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                        (this->field_052C + 1) * 0xc9,(this->field_052E + 1) * 0xc9,
                        this->field_0530 * 200 + 300,this->field_0061);
-          this->field_0550 = 3;
+          this->field_0550 = CASE_3;
         }
-        if (this->field_0550 == 3) {
+        if (this->field_0550 == CASE_3) {
           local_c = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_14),&local_10);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 0;
@@ -13379,7 +13451,7 @@ cf_common_exit_0046E811:
             return 0xffff;
           }
           if (local_c == 0) {
-            this->field_0550 = 0;
+            this->field_0550 = CASE_0;
             this->field_054C = CASE_5;
             iVar13 = this->vfunc_D8();
             return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
@@ -13392,7 +13464,7 @@ cf_common_exit_0046E811:
           iVar13 = st::machine_word_boundary_cast<int>(this->field_0548 + 1);
           this->field_0548 = iVar13;
           if (0x45 < iVar13) {
-            if (this->field_0550 == 0) {
+            if (this->field_0550 == CASE_0) {
               iVar13 = STReplaceLowWord((uint32_t)(iVar13), (uint16_t)(this->field_053E * 0xc9)) + 100;
               uVar6 = (*this->vtable->vfunc_10)
                                 (this->field_0041,this->field_0043,
@@ -13400,9 +13472,9 @@ cf_common_exit_0046E811:
                                  this->field_053C * 0xc9 + 100,(short)iVar13,
                                  (ushort)(this->field_0540 * 200) + 100);
               this->field_0542 = uVar6;
-              this->field_0550 = 1;
+              this->field_0550 = CASE_1;
             }
-            if (this->field_0550 == 1) {
+            if (this->field_0550 == CASE_1) {
               uVar9 = st::fn_004030B2(this,this->field_0542);
               uVar9 = st::fn_004022FC(this,(short)uVar9);
               if (uVar9 == 0xffffffff) {
@@ -13416,17 +13488,17 @@ cf_common_exit_0046E811:
                 goto cf_error_exit_0046E857;
               }
               if (uVar9 == 0) {
-                this->field_0550 = 2;
+                this->field_0550 = CASE_2;
               }
             }
             else {
-              if (this->field_0550 == 2) {
+              if (this->field_0550 == CASE_2) {
                 st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                              this->field_053C * 0xc9 + 100,this->field_053E * 0xc9 + 100,
                              this->field_0540 * 200 + 100,this->field_0061);
-                this->field_0550 = 3;
+                this->field_0550 = CASE_3;
               }
-              if (this->field_0550 == 3) {
+              if (this->field_0550 == CASE_3) {
                 local_c = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_10),&local_14);
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = 0;
@@ -13635,7 +13707,7 @@ LAB_0046e2c8:
         if (((this->field_0047 == this->field_053C) && (this->field_0049 == this->field_053E)) &&
            (this->field_004B == this->field_0540)) {
           this->field_054C = CASE_4;
-          this->field_0550 = 0;
+          this->field_0550 = CASE_0;
           iVar13 = this->vfunc_D8();
           return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
         }
@@ -13754,17 +13826,26 @@ LAB_0046d652:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7
 
    [STPrototypeRepairApplier] Propagated parameter 1.
-   Evidence: 0046EFD0 -> 004620F0 @ 0046F02A | 0046EFD0 -> 004620F0 @ 0046F03D */
+   Evidence: 0046EFD0 -> 004620F0 @ 0046F02A | 0046EFD0 -> 004620F0 @ 0046F03D
+
+   [STSwitchEnumApplier] Switch target field_0550 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0550State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_0550 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0550State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall st::fn_0046EFD0(STBoatC *this,STBoatC *param_1)
 
 {
-  undefined2 uVar2;
+  STBoatC_field_0550State SVar1;
+  undefined2 uVar3;
   int local_EAX_56;
   int local_EAX_90;
   int local_EAX_348;
   int local_EAX_603;
-  uint uVar3;
+  uint uVar4;
   int local_EAX_902;
   int iVar4;
   int local_EAX_1149;
@@ -13790,30 +13871,30 @@ int __thiscall st::fn_0046EFD0(STBoatC *this,STBoatC *param_1)
     local_EAX_56 = st::fn_0040493A(this);
     break;
   case CASE_4:
-    iVar5 = this->field_0550;
-    if (((iVar5 == 0) || (iVar5 == 1)) || (iVar5 == 2)) {
+    SVar1 = this->field_0550;
+    if (((SVar1 == CASE_0) || (SVar1 == CASE_1)) || (SVar1 == CASE_2)) {
       st::fn_00403C0B(this);
       iVar5 = this->vfunc_D8();
       return -(uint)(iVar5 != 0);
     }
-    if (iVar5 == 3) {
+    if (SVar1 == CASE_3) {
       iVar5 = STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_053E * 0xc9)) + 100;
-      uVar2 = (*this->vtable->vfunc_10)
+      uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_0045)),
                          this->field_053C * 0xc9 + 100,(short)iVar5,
                          (ushort)(this->field_0540 * 200) + 100);
-      this->field_0542 = uVar2;
-      this->field_0550 = 4;
+      this->field_0542 = uVar3;
+      this->field_0550 = CASE_4;
     }
-    if (this->field_0550 != 4) {
-      if (this->field_0550 == 5) {
+    if (this->field_0550 != CASE_4) {
+      if (this->field_0550 == CASE_5) {
         st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_053C * 0xc9 + 100,this->field_053E * 0xc9 + 100,
                      this->field_0540 * 200 + 100,this->field_0061);
-        this->field_0550 = 6;
+        this->field_0550 = CASE_6;
       }
-      if (this->field_0550 != 6) {
+      if (this->field_0550 != CASE_6) {
         return 2;
       }
       iVar5 = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_8),(int *)&param_1);
@@ -13834,11 +13915,11 @@ int __thiscall st::fn_0046EFD0(STBoatC *this,STBoatC *param_1)
       st::fn_00403C0B(this);
       goto LAB_0046f1fd;
     }
-    uVar3 = st::fn_004030B2(this,this->field_0542);
-    uVar3 = st::fn_004022FC(this,(short)uVar3);
-    if (uVar3 != 0xffffffff) {
-      if (uVar3 == 0) {
-        this->field_0550 = 5;
+    uVar4 = st::fn_004030B2(this,this->field_0542);
+    uVar4 = st::fn_004022FC(this,(short)uVar4);
+    if (uVar4 != 0xffffffff) {
+      if (uVar4 == 0) {
+        this->field_0550 = CASE_5;
       }
       goto cf_common_exit_0046F0F9;
     }
@@ -13858,22 +13939,22 @@ int __thiscall st::fn_0046EFD0(STBoatC *this,STBoatC *param_1)
     this->field_0548 = 0;
     this->field_054C = CASE_6;
   case CASE_6:
-    if (this->field_0550 == 0) {
+    if (this->field_0550 == CASE_0) {
       iVar5 = STReplaceLowWord((uint32_t)(pSVar6), (uint16_t)(this->field_053E * 0xc9)) + 100;
-      uVar2 = (*this->vtable->vfunc_10)
+      uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_0045)),
                          this->field_053C * 0xc9 + 100,(short)iVar5,
                          (ushort)(this->field_0540 * 200) + 100);
-      this->field_0542 = uVar2;
-      this->field_0550 = 1;
+      this->field_0542 = uVar3;
+      this->field_0550 = CASE_1;
     }
-    if (this->field_0550 == 1) {
-      uVar3 = st::fn_004030B2(this,this->field_0542);
-      uVar3 = st::fn_004022FC(this,(short)uVar3);
-      if (uVar3 != 0xffffffff) {
-        if (uVar3 == 0) {
-          this->field_0550 = 2;
+    if (this->field_0550 == CASE_1) {
+      uVar4 = st::fn_004030B2(this,this->field_0542);
+      uVar4 = st::fn_004022FC(this,(short)uVar4);
+      if (uVar4 != 0xffffffff) {
+        if (uVar4 == 0) {
+          this->field_0550 = CASE_2;
         }
 cf_common_exit_0046F0F9:
         iVar5 = this->vfunc_D8();
@@ -13888,13 +13969,13 @@ cf_common_exit_0046F0F9:
       iVar5 = 0x2865;
     }
     else {
-      if (this->field_0550 == 2) {
+      if (this->field_0550 == CASE_2) {
         st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_053C * 0xc9 + 100,this->field_053E * 0xc9 + 100,
                      this->field_0540 * 200 + 100,this->field_0061);
-        this->field_0550 = 3;
+        this->field_0550 = CASE_3;
       }
-      if (this->field_0550 != 3) {
+      if (this->field_0550 != CASE_3) {
 switchD_0046eff1_default:
         local_EAX_1149 =
              st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x288a,0,0,st::mutable_c_string("%s"),
@@ -14174,7 +14255,7 @@ cf_error_exit_00470C46:
       if (local_EAX_1543 == -1) {
         return -1;
       }
-      if (this->field_082E != 0) {
+      if (this->field_082E != ~CASE_FFFFFFFF) {
         return 2;
       }
       if (this->field_048B != 0xffff) {
@@ -14975,13 +15056,18 @@ LAB_0047171f:
 #line 4 "decomp/ST.exe/functions/00471AC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::Guard */
+   STBoatC::Guard
+
+   [STSwitchEnumApplier] Switch target field_082E uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_082EState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_FFFFFFFF=4294967295 */
 
 int __thiscall st::fn_00471AC0(STBoatC *this,int param_1)
 
 {
-  dword dVar1;
-  short sVar3;
+  STBoatC_field_082EState SVar1;
+  dword dVar2;
+  short sVar4;
   int local_EAX_438;
   int iVar5;
   int iVar4;
@@ -15041,24 +15127,24 @@ int __thiscall st::fn_00471AC0(STBoatC *this,int param_1)
     this->field_047B = nullptr;
     this->field_0487 = 0xffffffff;
     this->field_048B = 0xffff;
-    this->field_082E = 0xffffffff;
+    this->field_082E = CASE_FFFFFFFF;
     this->field_0836 = 2;
     this->field_0814 = this->field_0816 * 0xc9;
   }
-  if (this->field_082E == -1) {
+  if (this->field_082E == CASE_FFFFFFFF) {
     iVar8 = st::machine_word_boundary_cast<int>(this->field_0836 + -1);
     this->field_0836 = iVar8;
     if (1 < iVar8) {
       iVar8 = this->vfunc_D8();
       return (-(uint)(iVar8 != 0) & 0xfffffffd) + 2;
     }
-    this->field_082E = 0;
+    this->field_082E = ~CASE_FFFFFFFF;
   }
   uVar10 = st::machine_word_boundary_cast<uint>(this->field_0836 + 1);
   this->field_0836 = uVar10;
-  iVar8 = this->field_082E;
-  if (iVar8 != 0) {
-    if (iVar8 == 1) {
+  SVar1 = this->field_082E;
+  if (SVar1 != ~CASE_FFFFFFFF) {
+    if (SVar1 == CASE_1) {
       uVar11 = this->field_00B7;
       this->field_00B7 = 0;
       iVar8 = st::fn_00403B34(this,2);
@@ -15068,12 +15154,12 @@ int __thiscall st::fn_00471AC0(STBoatC *this,int param_1)
       }
       if (iVar8 == 0) {
         this->field_047F = -1;
-        this->field_082E = 2;
+        this->field_082E = CASE_2;
       }
       else if (iVar8 == 3) {
-        this->field_082E = 0;
+        this->field_082E = ~CASE_FFFFFFFF;
       }
-      if ((this->field_082E != 1) || (iVar8 = st::fn_00405B05(this,CASE_1), iVar8 != 0))
+      if ((this->field_082E != CASE_1) || (iVar8 = st::fn_00405B05(this,CASE_1), iVar8 != 0))
       goto cf_common_exit_00472CB0;
       pSVar6 = st::fn_004028BA
                          (g_allPlayers_007FA174,*(char *)&this->field_0487,
@@ -15142,18 +15228,18 @@ cf_common_exit_00472A1F:
       case 9:
 LAB_00472a3a:
         st::fn_004031E3(pSVar6,&local_14,&local_18,(short *)&local_1c);
-        sVar3 = (*this->vtable->vfunc_10)
+        sVar4 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
                            STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                            (short)local_14,(short)local_18,local_1c);
-        uVar9 = st::fn_004030B2(this,sVar3);
+        uVar9 = st::fn_004030B2(this,sVar4);
         st::fn_004022FC(this,(short)uVar9);
       }
     }
     else {
-      if (iVar8 != 2) {
-        if (iVar8 != 3) {
-          if (iVar8 == 4) {
+      if (SVar1 != CASE_2) {
+        if (SVar1 != CASE_3) {
+          if (SVar1 == CASE_4) {
             uVar11 = this->field_00B7;
             this->field_00B7 = 0;
             local_EAX_4449 = st::fn_00402266(this,2);
@@ -15161,14 +15247,14 @@ LAB_00472a3a:
             if (local_EAX_4449 != -1) {
               if ((local_EAX_4449 == 0) || (local_EAX_4449 == 3)) {
                 this->field_0836 = 1;
-                this->field_082E = 0;
+                this->field_082E = ~CASE_FFFFFFFF;
               }
               iVar8 = this->vfunc_D8();
               return (-(uint)(iVar8 != 0) & 0xfffffffd) + 2;
             }
           }
           else {
-            if (iVar8 != 5) {
+            if (SVar1 != CASE_5) {
               iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2dbf,0,0,
                                          st::mutable_c_string("%s"),"STBoatC::Guard - incorrect entry");
               if (iVar7 == 0) {
@@ -15200,7 +15286,7 @@ LAB_00472a3a:
               }
               else if (local_EAX_4547 != 3) goto cf_common_exit_00472CB0;
               this->field_0836 = 1;
-              this->field_082E = 0;
+              this->field_082E = ~CASE_FFFFFFFF;
               goto cf_common_exit_00472CB0;
             }
           }
@@ -15214,9 +15300,9 @@ LAB_00472a3a:
           return -1;
         }
         if ((iVar8 == 0) || (iVar8 == 3)) {
-          this->field_082E = 0;
+          this->field_082E = ~CASE_FFFFFFFF;
         }
-        if ((this->field_082E != 1) || (iVar8 = st::fn_00405B05(this,CASE_1), iVar8 != 0))
+        if ((this->field_082E != CASE_1) || (iVar8 = st::fn_00405B05(this,CASE_1), iVar8 != 0))
         goto cf_common_exit_00472CB0;
         pSVar6 = st::fn_004028BA
                            (g_allPlayers_007FA174,*(char *)&this->field_0487,
@@ -15287,11 +15373,11 @@ LAB_00472a3a:
       }
       iVar8 = st::fn_00405E57(this);
       if (iVar8 == 1) {
-        sVar3 = this->field_0469;
-        this->field_0469 = -sVar3;
-        iVar8 = this->vfunc_18(this->field_0047,this->field_0049,-sVar3 + this->field_004B);
+        sVar4 = this->field_0469;
+        this->field_0469 = -sVar4;
+        iVar8 = this->vfunc_18(this->field_0047,this->field_0049,-sVar4 + this->field_004B);
         if (iVar8 == 1) {
-          this->field_082E = 3;
+          this->field_082E = CASE_3;
           st::fn_00404F6B(this,(int)this->field_0047,(int)this->field_0049,
                        (int)this->field_0469 + (int)this->field_004B);
           uVar11 = this->field_00B7;
@@ -15305,12 +15391,12 @@ LAB_00472a3a:
             return 2;
           }
           this->field_0469 = 0;
-          this->field_082E = 0;
+          this->field_082E = ~CASE_FFFFFFFF;
           return 2;
         }
         this->field_0469 = -this->field_0469;
       }
-      if ((this->field_082E != 2) || (iVar8 = st::fn_00405B05(this,CASE_2), iVar8 != 0))
+      if ((this->field_082E != CASE_2) || (iVar8 = st::fn_00405B05(this,CASE_2), iVar8 != 0))
       goto cf_common_exit_00472CB0;
       pSVar6 = st::fn_004028BA
                          (g_allPlayers_007FA174,*(char *)&this->field_0487,
@@ -15389,10 +15475,10 @@ cf_common_exit_00472CB0:
     bVar13 = (uVar10 - 1 | 0xfffffffe) == 0xffffffff;
   }
   if ((bVar13) && (DAT_007fa134 != 0)) {
-    dVar1 = g_array_007FA130->count;
-    local_34 = (short)dVar1;
-    sStack_32 = (short)(dVar1 >> 0x10);
-    if ((dVar1 != 0) && (uVar10 = 0, iVar8 = DAT_007fa134, dVar1 != 0)) {
+    dVar2 = g_array_007FA130->count;
+    local_34 = (short)dVar2;
+    sStack_32 = (short)(dVar2 >> 0x10);
+    if ((dVar2 != 0) && (uVar10 = 0, iVar8 = DAT_007fa134, dVar2 != 0)) {
       while (0 < iVar8) {
         st::fn_006ACC70(g_array_007FA130,uVar10,&local_20);
         if (local_20 != nullptr) {
@@ -15419,11 +15505,11 @@ LAB_00471cbd:
                   if (this->field_004B == 0) {
                     pSVar9 = this->vtable;
                     this->field_0469 = 1;
-                    sVar3 = 1;
+                    sVar4 = 1;
 LAB_00471ec9:
-                    iVar8 = (*pSVar9->vfunc_18)(this,this->field_0047,this->field_0049,sVar3);
+                    iVar8 = (*pSVar9->vfunc_18)(this,this->field_0047,this->field_0049,sVar4);
                     if (iVar8 != 1) break;
-                    this->field_082E = 1;
+                    this->field_082E = CASE_1;
                     st::fn_00404F6B(this,(int)this->field_0047,(int)this->field_0049,
                                  (int)this->field_0469 + (int)this->field_004B);
                     uVar11 = this->field_00B7;
@@ -15435,7 +15521,7 @@ LAB_00471ec9:
                     this->field_0469 = -1;
                     iVar8 = this->vfunc_18(this->field_0047,this->field_0049,3);
                     if (iVar8 != 1) break;
-                    this->field_082E = 1;
+                    this->field_082E = CASE_1;
                     st::fn_00404F6B(this,(int)this->field_0047,(int)this->field_0049,
                                  (int)this->field_0469 + (int)this->field_004B);
                     uVar11 = this->field_00B7;
@@ -15447,18 +15533,18 @@ LAB_00471ec9:
                     uVar10 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
                     this->field_001C = uVar10;
                     this->field_0469 = (ushort)(uVar10 >> 0x10) & 1;
-                    sVar3 = (-(ushort)((uVar10 & 0x10000) != 0) & 2) - 1;
-                    this->field_0469 = sVar3;
+                    sVar4 = (-(ushort)((uVar10 & 0x10000) != 0) & 2) - 1;
+                    this->field_0469 = sVar4;
                     iVar8 = this->vfunc_18(this->field_0047,this->field_0049,
-                                       sVar3 + this->field_004B);
+                                       sVar4 + this->field_004B);
                     if (iVar8 != 1) {
-                      sVar3 = this->field_0469;
+                      sVar4 = this->field_0469;
                       pSVar9 = this->vtable;
-                      this->field_0469 = -sVar3;
-                      sVar3 = -sVar3 + this->field_004B;
+                      this->field_0469 = -sVar4;
+                      sVar4 = -sVar4 + this->field_004B;
                       goto LAB_00471ec9;
                     }
-                    this->field_082E = 1;
+                    this->field_082E = CASE_1;
                     st::fn_00404F6B(this,(int)this->field_0047,(int)this->field_0049,
                                  (int)this->field_0469 + (int)this->field_004B);
                     uVar11 = this->field_00B7;
@@ -15471,7 +15557,7 @@ LAB_00471ec9:
                   }
                   if ((iVar8 == 0) || (iVar8 == 3)) {
                     this->field_0469 = 0;
-                    this->field_082E = 0;
+                    this->field_082E = ~CASE_FFFFFFFF;
                   }
                   break;
                 }
@@ -15489,7 +15575,7 @@ LAB_00471ec9:
       }
     }
   }
-  if (this->field_082E != 0) goto switchD_00471fe0_caseD_2;
+  if (this->field_082E != ~CASE_FFFFFFFF) goto switchD_00471fe0_caseD_2;
   if (this->field_0836 == 2) {
     this->field_047F = -1;
     iVar8 = st::fn_00405B05(this,CASE_0);
@@ -15504,7 +15590,7 @@ LAB_00471ec9:
                        (int)this->field_0475,(int)this->field_0477,(int)this->field_0479);
   if (iVar8 != 0) {
     if (iVar4 < 1) goto switchD_00471fe0_caseD_2;
-    this->field_082E = 5;
+    this->field_082E = CASE_5;
     st::fn_00404F6B(this,(int)this->field_0475,(int)this->field_0477,(int)this->field_0479);
     uVar11 = this->field_00B7;
     this->field_00B7 = 0;
@@ -15515,7 +15601,7 @@ LAB_00471ec9:
     goto LAB_0047233a;
   }
   if (5 < iVar4) {
-    this->field_082E = 5;
+    this->field_082E = CASE_5;
     st::fn_00404F6B(this,(int)this->field_0475,(int)this->field_0477,(int)this->field_0479);
     uVar11 = this->field_00B7;
     this->field_00B7 = 0;
@@ -15588,7 +15674,7 @@ LAB_00471ec9:
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   case 5:
-    this->field_082E = 4;
+    this->field_082E = CASE_4;
     st::fn_00405F0B
               ((STFishC *)pSVar6,(short *)&local_14,(short *)&local_18,(short *)&local_1c);
     goto LAB_0047207e;
@@ -15607,7 +15693,7 @@ LAB_00471ec9:
       }
       break;
     }
-    this->field_082E = 4;
+    this->field_082E = CASE_4;
 LAB_0047207e:
     st::fn_00404F6B(this,(int)(short)local_14,(int)(short)local_18,(int)(short)local_1c);
     uVar11 = this->field_00B7;
@@ -15622,22 +15708,22 @@ LAB_0047233a:
     break;
   case 9:
     st::fn_004031E3(pSVar6,&local_14,&local_18,(short *)&local_1c);
-    sVar3 = (*this->vtable->vfunc_10)
+    sVar4 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
                        STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),(short)local_14,
                        (short)local_18,local_1c);
-    local_EAX_1596 = st::fn_004030B2(this,sVar3);
+    local_EAX_1596 = st::fn_004030B2(this,sVar4);
     st::fn_004022FC(this,(short)local_EAX_1596);
   }
 switchD_00471fe0_caseD_2:
-  if ((this->field_082E == 0) && (this->field_048B == 0xffff)) {
+  if ((this->field_082E == ~CASE_FFFFFFFF) && (this->field_048B == 0xffff)) {
     if ((this->field_0475 != this->field_0047) ||
        ((this->field_0477 != this->field_0049 || (this->field_0479 != this->field_004B)))) {
       local_EAX_2286 =
            st::fn_006AADD0((int)this->field_0047,(int)this->field_0049,(int)this->field_004B,
                         (int)this->field_0475,(int)this->field_0477,(int)this->field_0479);
       if ((local_EAX_2286 != -4) && (local_EAX_2286 < 8)) {
-        this->field_082E = 4;
+        this->field_082E = CASE_4;
         st::fn_00404F6B(this,(int)this->field_0475,(int)this->field_0477,(int)this->field_0479);
         uVar11 = this->field_00B7;
         this->field_00B7 = 0;
@@ -15665,7 +15751,19 @@ switchD_00471fe0_caseD_2:
    STBoatC::LoadObj
 
    [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 004732F0 -> 006E62D0 @ 004733E4 */
+   Evidence: 004732F0 -> 006E62D0 @ 004733E4
+
+   [STSwitchEnumApplier] Switch target field_0596 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0596State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
+
+   [STSwitchEnumApplier] Switch target field_059A uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_059AState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_7=7;CASE_9=9
+
+   [STSwitchEnumApplier] Switch target field_059A uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_059AState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9 */
 
 int __thiscall st::fn_004732F0(STBoatC *this,AnonShape_005EFAE0_B406B78B *param_1)
 
@@ -15678,15 +15776,16 @@ int __thiscall st::fn_004732F0(STBoatC *this,AnonShape_005EFAE0_B406B78B *param_
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  STWorldObject *pSVar6;
+  STBoatC_field_0596State SVar6;
+  STWorldObject *pSVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  uint uVar7;
+  uint uVar8;
   int local_EAX_2224;
-  undefined4 *puVar8;
+  undefined4 *puVar9;
   int local_EAX_3016;
   int local_EAX_3489;
-  uint uVar9;
+  uint uVar10;
   int local_EAX_4152;
   int iVar11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -15810,7 +15909,7 @@ int __thiscall st::fn_004732F0(STBoatC *this,AnonShape_005EFAE0_B406B78B *param_
     pSVar12 = (STBoatC *)CONCAT22(extraout_var_01,STPiece<2,2>(param_1));
     if (((this->field_005B != local_6) || (this->field_005D != local_8)) ||
        (this->field_005F != STPiece<2,2>(param_1))) {
-      this->field_0596 = 0;
+      this->field_0596 = CASE_0;
       sVar16 = STPiece<2,2>(param_1);
       if (iVar11 == -1) {
         local_6 = (short)local_18;
@@ -15821,12 +15920,12 @@ int __thiscall st::fn_004732F0(STBoatC *this,AnonShape_005EFAE0_B406B78B *param_
       st::fn_004031DE(this,0);
       goto cf_common_exit_0047405D;
     }
-    this->field_0596 = 1;
+    this->field_0596 = CASE_1;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar4 = extraout_var_09;
   }
   uVar14 = (undefined2)((uint)pSVar12 >> 0x10);
-  if (this->field_0596 == 0) {
+  if (this->field_0596 == CASE_0) {
     iVar10 = st::fn_004031DE(this,2);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar4 = extraout_var_10;
@@ -15876,7 +15975,7 @@ int __thiscall st::fn_004732F0(STBoatC *this,AnonShape_005EFAE0_B406B78B *param_
         }
         goto LAB_004736e2;
       }
-      this->field_0596 = 1;
+      this->field_0596 = CASE_1;
       this->field_0592 = 0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar4 = extraout_var_11;
@@ -15897,8 +15996,8 @@ int __thiscall st::fn_004732F0(STBoatC *this,AnonShape_005EFAE0_B406B78B *param_
       return 0xffff;
     }
   }
-  iVar11 = this->field_0596;
-  if (iVar11 == 1) {
+  SVar6 = this->field_0596;
+  if (SVar6 == CASE_1) {
     iVar11 = this->vfunc_D8();
     if (iVar11 != 0) {
       return -1;
@@ -15938,7 +16037,7 @@ cf_common_exit_004743A5:
       if (iVar11 == -2) goto cf_common_exit_004743A5;
       if (((this->field_005B != local_6) || (this->field_005D != local_8)) ||
          (this->field_005F != STPiece<2,2>(param_1))) {
-        this->field_0596 = 0;
+        this->field_0596 = CASE_0;
         if (iVar11 == -1) {
           iVar5 = (int)(short)local_10;
           iVar11 = (int)(short)local_14;
@@ -15960,7 +16059,7 @@ LAB_004736e2:
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar14 = extraout_var_04;
       if (iVar5 == 1) {
-        this->field_0596 = 2;
+        this->field_0596 = CASE_2;
         pSVar2 = local_c->vtable;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar4 = (*this->vtable->vfunc_10)
@@ -15975,13 +16074,13 @@ LAB_004736e2:
       }
     }
     uVar4 = (undefined2)((uint)iVar11 >> 0x10);
-    iVar11 = this->field_0596;
-    if (iVar11 == 1) {
+    SVar6 = this->field_0596;
+    if (SVar6 == CASE_1) {
       this->field_0592 = st::machine_word_boundary_cast<int>(this->field_0592 + 1);
       return 2;
     }
   }
-  if (iVar11 == 2) {
+  if (SVar6 == CASE_2) {
     sVar16 = this->field_0588;
     sVar17 = this->field_058C;
     sVar18 = this->field_058A;
@@ -16010,21 +16109,21 @@ cf_common_exit_0047405D:
     iVar11 = this->vfunc_D8();
     return (-(uint)(iVar11 != 0) & 0xfffffffd) + 2;
   }
-  if (iVar11 == 3) {
-    if (this->field_059A == 0) {
+  if (SVar6 == CASE_3) {
+    if (this->field_059A == CASE_0) {
       sVar16 = this->field_0588;
       sVar17 = this->field_058C;
       sVar18 = this->field_058A;
       if ((((sVar16 < 0) || (g_worldGrid.sizeX <= sVar16)) ||
           ((sVar18 < 0 || ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))))) ||
          (g_worldGrid.sizeZ <= sVar17)) {
-        pSVar6 = nullptr;
+        pSVar7 = nullptr;
       }
       else {
-        pSVar6 = STGridAt3D(g_worldGrid, sVar16, sVar18, sVar17).objects[0];
+        pSVar7 = STGridAt3D(g_worldGrid, sVar16, sVar18, sVar17).objects[0];
       }
       st::fn_006EA3E0
-                (this->field_0211,this->field_01ED,*(int *)&pSVar6[0xd].field_0x19);
+                (this->field_0211,this->field_01ED,*(int *)&pSVar7[0xd].field_0x19);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       iVar11 = CONCAT22(extraout_var_05,this->field_058A * 0xc9) + 100;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -16034,16 +16133,16 @@ cf_common_exit_0047405D:
                          this->field_0588 * 0xc9 + 100,(short)iVar11,
                          CONCAT22(extraout_var_00,this->field_058C * 200) + 100);
       this->field_059E = uVar4;
-      this->field_059A = 1;
+      this->field_059A = CASE_1;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar4 = extraout_var_12;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar14 = extraout_var_06;
     }
-    if (this->field_059A == 1) {
-      uVar7 = st::fn_004030B2(this,this->field_059E);
-      uVar7 = st::fn_004022FC(this,(short)uVar7);
-      if (uVar7 == 0xffffffff) {
+    if (this->field_059A == CASE_1) {
+      uVar8 = st::fn_004030B2(this,this->field_059E);
+      uVar8 = st::fn_004022FC(this,(short)uVar8);
+      if (uVar8 == 0xffffffff) {
         local_EAX_2224 =
              st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2e7d,0,0,st::mutable_c_string("%s"),
                                 "STBoatC::LoadObj LOADOBJ_LOAD sloi.regime2=1");
@@ -16056,66 +16155,66 @@ cf_common_exit_0047405D:
       uVar4 = extraout_var_13;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar14 = extraout_var_07;
-      if (uVar7 == 0) {
-        this->field_059A = 2;
+      if (uVar8 == 0) {
+        this->field_059A = CASE_2;
         goto LAB_00473b6c;
       }
     }
-    if (this->field_059A == 2) {
+    if (this->field_059A == CASE_2) {
       st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_0588 * 0xc9 + 100,this->field_058A * 0xc9 + 100,
                    this->field_058C * 200 + 100,this->field_0061);
-      this->field_059A = 3;
+      this->field_059A = CASE_3;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar4 = extraout_var_14;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar14 = extraout_var_08;
     }
-    if (this->field_059A == 3) {
+    if (this->field_059A == CASE_3) {
       local_24 = st::fn_00402847((STJellyGunC *)this,st::pointer_boundary_cast<undefined4 *>(&local_2c),&local_28);
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-      uVar7 = STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(this->field_02BF));
+      uVar8 = STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(this->field_02BF));
       local_1c = 0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar4 = extraout_var_15;
       if (this->field_02BF != '\0') {
         local_20 = (undefined4 *)&this->field_0x2b3;
         do {
-          puVar8 = st::fn_0040342C(local_40,(short)*local_20,*(ushort *)(local_20 + 1),
+          puVar9 = st::fn_0040342C(local_40,(short)*local_20,*(ushort *)(local_20 + 1),
                                       this->field_006C);
-          local_38 = *puVar8;
-          local_34 = *(short *)(puVar8 + 1);
+          local_38 = *puVar9;
+          local_34 = *(short *)(puVar9 + 1);
           if (DAT_0080732c == 1) {
             bVar24 = 0;
             sVar23 = 0;
             iVar22 = -1;
-            uVar7 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+            uVar8 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
             sVar21 = 0;
-            this->field_001C = uVar7;
+            this->field_001C = uVar8;
             sVar20 = 0;
             sVar19 = 0;
-            uVar9 = uVar7 * 0x41c64e6d + 0x3039;
+            uVar10 = uVar8 * 0x41c64e6d + 0x3039;
             sVar18 = 0;
-            this->field_001C = uVar9;
-            local_30 = uVar9 * 0x41c64e6d + 0x3039;
+            this->field_001C = uVar10;
+            local_30 = uVar10 * 0x41c64e6d + 0x3039;
             sVar17 = 0;
             this->field_001C = local_30;
             sVar16 = 0;
             lVar15 = st::fn_0072E288();
-            iVar11 = (int)(short)lVar15 + (uVar7 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+            iVar11 = (int)(short)lVar15 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                      (int)local_34;
-            iVar5 = ((uVar9 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_38);
-            uVar7 = local_30;
+            iVar5 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_38);
+            uVar8 = local_30;
           }
           else {
-            uVar9 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+            uVar10 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
             bVar24 = 0;
-            this->field_001C = uVar9;
-            uVar13 = uVar9 * 0x41c64e6d + 0x3039;
+            this->field_001C = uVar10;
+            uVar13 = uVar10 * 0x41c64e6d + 0x3039;
             sVar23 = 0;
             this->field_001C = uVar13;
-            uVar7 = uVar13 * 0x41c64e6d + 0x3039;
-            this->field_001C = uVar7;
+            uVar8 = uVar13 * 0x41c64e6d + 0x3039;
+            this->field_001C = uVar8;
             iVar22 = -1;
             sVar21 = 0;
             sVar20 = 0;
@@ -16123,23 +16222,23 @@ cf_common_exit_0047405D:
             sVar18 = 0;
             sVar17 = 0;
             sVar16 = 0;
-            iVar11 = (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_34;
+            iVar11 = (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_34;
             STPiece<2,2>(local_38) = (short)((uint)local_38 >> 0x10);
             iVar5 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_38);
           }
           st::fn_00401433
                     (g_traksClass_00802A7C,1,2,7,
-                     (uVar7 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_38,
+                     (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_38,
                      iVar5 + -3,iVar11,sVar16,sVar17,sVar18,sVar19,sVar20,sVar21,iVar22,sVar23,
                      bVar24);
-          uVar7 = (uint)(byte)this->field_02BF;
+          uVar8 = (uint)(byte)this->field_02BF;
           local_1c = local_1c + 1;
           local_20 = (undefined4 *)((int)local_20 + 6);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar4 = extraout_var_16;
-        } while (local_1c < (int)uVar7);
+        } while (local_1c < (int)uVar8);
       }
-      uVar14 = (undefined2)(uVar7 >> 0x10);
+      uVar14 = (undefined2)(uVar8 >> 0x10);
       if (local_24 == -1) {
         local_EAX_3016 =
              st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2ea3,0,0,st::mutable_c_string("%s"),
@@ -16150,10 +16249,10 @@ cf_common_exit_0047405D:
         return -1;
       }
       if (local_24 == 0) {
-        this->field_059A = 4;
+        this->field_059A = CASE_4;
       }
     }
-    if ((this->field_059A == 4) && (this->field_006E == 0x2f)) {
+    if ((this->field_059A == CASE_4) && (this->field_006E == 0x2f)) {
       sVar16 = this->field_0588;
       sVar17 = this->field_058C;
       sVar18 = this->field_058A;
@@ -16188,7 +16287,7 @@ cf_common_exit_0047405D:
 switchD_004734db_caseD_2:
       return 2;
     }
-    if (this->field_059A == 5) {
+    if (this->field_059A == CASE_5) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar11 = CONCAT22(uVar4,this->field_005D * 0xc9) + 100;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -16198,12 +16297,12 @@ switchD_004734db_caseD_2:
                          this->field_005B * 0xc9 + 100,(short)iVar11,
                          CONCAT22(uVar14,this->field_005F * 200) + 100);
       this->field_059E = uVar4;
-      this->field_059A = 6;
+      this->field_059A = CASE_6;
     }
-    if (this->field_059A == 6) {
-      uVar7 = st::fn_004030B2(this,this->field_059E);
-      uVar7 = st::fn_004022FC(this,(short)uVar7);
-      if (uVar7 == 0xffffffff) {
+    if (this->field_059A == CASE_6) {
+      uVar8 = st::fn_004030B2(this,this->field_059E);
+      uVar8 = st::fn_004022FC(this,(short)uVar8);
+      if (uVar8 == 0xffffffff) {
         local_EAX_3489 =
              st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2ed4,0,0,st::mutable_c_string("%s"),
                                 "STBoatC::LoadObj LOADOBJ_LOAD sloi.regime2=6");
@@ -16212,12 +16311,12 @@ switchD_004734db_caseD_2:
         }
         return -1;
       }
-      if (uVar7 == 0) {
-        this->field_059A = 7;
+      if (uVar8 == 0) {
+        this->field_059A = CASE_7;
         goto cf_common_exit_0047405D;
       }
     }
-    if (this->field_059A == 7) {
+    if (this->field_059A == CASE_7) {
       st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_005B * 0xc9 + 100,this->field_005D * 0xc9 + 100,
                    this->field_005F * 200 + 100,this->field_0061);
@@ -16229,40 +16328,40 @@ switchD_004734db_caseD_2:
       if (this->field_02BF != '\0') {
         local_20 = (undefined4 *)&this->field_0x2b3;
         do {
-          puVar8 = st::fn_0040342C(local_40,(short)*local_20,*(ushort *)(local_20 + 1),
+          puVar9 = st::fn_0040342C(local_40,(short)*local_20,*(ushort *)(local_20 + 1),
                                       this->field_006C);
-          local_38 = *puVar8;
-          local_34 = *(short *)(puVar8 + 1);
+          local_38 = *puVar9;
+          local_34 = *(short *)(puVar9 + 1);
           if (DAT_0080732c == 1) {
             bVar24 = 0;
             sVar23 = 0;
-            uVar7 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+            uVar8 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
             iVar22 = -1;
-            this->field_001C = uVar7;
+            this->field_001C = uVar8;
             sVar21 = 0;
             sVar20 = 0;
-            uVar9 = uVar7 * 0x41c64e6d + 0x3039;
+            uVar10 = uVar8 * 0x41c64e6d + 0x3039;
             sVar19 = 0;
-            this->field_001C = uVar9;
+            this->field_001C = uVar10;
             sVar18 = 0;
             sVar17 = 0;
-            local_30 = uVar9 * 0x41c64e6d + 0x3039;
+            local_30 = uVar10 * 0x41c64e6d + 0x3039;
             sVar16 = 0;
             this->field_001C = local_30;
             lVar15 = st::fn_0072E288();
-            iVar11 = (int)(short)lVar15 + (uVar7 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+            iVar11 = (int)(short)lVar15 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                      (int)local_34;
-            iVar5 = ((uVar9 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_38);
-            uVar7 = local_30;
+            iVar5 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_38);
+            uVar8 = local_30;
           }
           else {
-            uVar9 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
-            this->field_001C = uVar9;
-            uVar13 = uVar9 * 0x41c64e6d + 0x3039;
+            uVar10 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+            this->field_001C = uVar10;
+            uVar13 = uVar10 * 0x41c64e6d + 0x3039;
             bVar24 = 0;
             this->field_001C = uVar13;
-            uVar7 = uVar13 * 0x41c64e6d + 0x3039;
-            this->field_001C = uVar7;
+            uVar8 = uVar13 * 0x41c64e6d + 0x3039;
+            this->field_001C = uVar8;
             sVar23 = 0;
             iVar22 = -1;
             sVar21 = 0;
@@ -16271,13 +16370,13 @@ switchD_004734db_caseD_2:
             sVar18 = 0;
             sVar17 = 0;
             sVar16 = 0;
-            iVar11 = (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_34;
+            iVar11 = (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_34;
             STPiece<2,2>(local_38) = (short)((uint)local_38 >> 0x10);
             iVar5 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_38);
           }
           st::fn_00401433
                     (g_traksClass_00802A7C,1,2,7,
-                     (uVar7 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_38,
+                     (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_38,
                      iVar5 + -3,iVar11,sVar16,sVar17,sVar18,sVar19,sVar20,sVar21,iVar22,sVar23,
                      bVar24);
           local_1c = local_1c + 1;
@@ -16299,7 +16398,7 @@ switchD_004734db_caseD_2:
         return -(uint)(iVar11 != 0);
       }
     }
-    if (this->field_059A == 9) {
+    if (this->field_059A == CASE_9) {
       iVar11 = this->vfunc_D8();
       return -(uint)(iVar11 != 0);
     }
@@ -16313,37 +16412,47 @@ LAB_00473b6c:
 #line 4 "decomp/ST.exe/functions/00474810/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::BackLoadObj */
+   STBoatC::BackLoadObj
+
+   [STSwitchEnumApplier] Switch target field_059A uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_059AState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_7=7;CASE_9=9
+
+   [STSwitchEnumApplier] Switch target field_059A uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_059AState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9 */
 
 int __thiscall st::fn_00474810(STBoatC *this,int *param_1)
 
 {
+  STBoatC_field_0596State SVar1;
+  STBoatC_field_059AState SVar2;
   int local_EAX_32;
-  int iVar3;
+  int iVar4;
   int local_EAX_171;
   int iVar2;
 
   if (param_1 == nullptr) {
     st::fn_004027CA(this);
   }
-  iVar3 = this->field_0596;
-  if (iVar3 == 0) {
+  SVar1 = this->field_0596;
+  if (SVar1 == CASE_0) {
     local_EAX_32 = st::fn_00403DF0(this);
     return local_EAX_32;
   }
-  if (iVar3 == 1) {
-    iVar3 = this->vfunc_D8();
-    return -(uint)(iVar3 != 0);
+  if (SVar1 == CASE_1) {
+    iVar4 = this->vfunc_D8();
+    return -(uint)(iVar4 != 0);
   }
-  if (iVar3 == 2) {
+  if (SVar1 == CASE_2) {
     st::fn_006E62D0
               (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
                (int *)&param_1);
     if ((param_1 != nullptr) && (param_1[6] == *(int *)&this->field_0x58e)) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*param_1 + 0xac))(this->field_0018);
-      iVar3 = this->vfunc_D8();
-      return -(uint)(iVar3 != 0);
+      iVar4 = this->vfunc_D8();
+      return -(uint)(iVar4 != 0);
     }
     local_EAX_171 =
          st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2f2d,0,0,st::mutable_c_string("%s"),
@@ -16353,22 +16462,22 @@ int __thiscall st::fn_00474810(STBoatC *this,int *param_1)
     }
     return -1;
   }
-  if (iVar3 != 3) {
+  if (SVar1 != CASE_3) {
     return 2;
   }
-  iVar3 = this->field_059A;
-  if (((iVar3 != 0) && (iVar3 != 1)) && (iVar3 != 2)) {
-    if ((iVar3 != 3) && (iVar3 != 4)) {
+  SVar2 = this->field_059A;
+  if (((SVar2 != CASE_0) && (SVar2 != CASE_1)) && (SVar2 != CASE_2)) {
+    if ((SVar2 != CASE_3) && (SVar2 != CASE_4)) {
       iVar2 = st::fn_00404E1C(this,(AnonShape_005EFAE0_B406B78B *)0x2);
       return iVar2;
     }
-    this->field_059A = 5;
-    iVar3 = this->vfunc_D8();
-    return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
+    this->field_059A = CASE_5;
+    iVar4 = this->vfunc_D8();
+    return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
   }
   st::fn_006EA2F0(this->field_0211,this->field_01ED);
-  iVar3 = this->vfunc_D8();
-  return -(uint)(iVar3 != 0);
+  iVar4 = this->vfunc_D8();
+  return -(uint)(iVar4 != 0);
 }
 
 // 004749C0 STBoatC::WaitLoad
@@ -16378,41 +16487,50 @@ int __thiscall st::fn_00474810(STBoatC *this,int *param_1)
    STBoatC::WaitLoad
 
    [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 004749C0 -> 006E62D0 @ 00474A98 | 004749C0 -> 006E62D0 @ 00474FD8 */
+   Evidence: 004749C0 -> 006E62D0 @ 00474A98 | 004749C0 -> 006E62D0 @ 00474FD8
+
+   [STSwitchEnumApplier] Switch target field_05C4 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_05C4State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7
+
+   [STSwitchEnumApplier] Switch target field_05C4 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_05C4State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7 */
 
 int __thiscall st::fn_004749C0(STBoatC *this,STBoatC *param_1)
 
 {
   uint uVar1;
-  undefined4 uVar2;
-  ulonglong uVar3;
-  undefined2 uVar5;
+  STBoatC_field_05C4State SVar2;
+  undefined4 uVar3;
+  ulonglong uVar4;
+  undefined2 uVar6;
   int iVar10;
   int local_EAX_164;
   int local_EAX_248;
-  uint uVar6;
+  uint uVar7;
   int local_EAX_758;
-  undefined4 *puVar7;
-  int iVar8;
+  undefined4 *puVar8;
   int iVar9;
+  int iVar11;
   int local_EAX_1388;
   int local_EAX_1495;
   int local_EAX_1592;
   int local_EAX_1718;
   int local_EAX_2278;
-  int iVar11;
-  STBoatC *pSVar12;
-  int iVar13;
-  longlong lVar14;
-  short sVar15;
+  int iVar12;
+  STBoatC *pSVar13;
+  int iVar14;
+  longlong lVar15;
   short sVar16;
   short sVar17;
   short sVar18;
   short sVar19;
   short sVar20;
-  int iVar21;
-  short sVar22;
-  byte bVar23;
+  short sVar21;
+  int iVar22;
+  short sVar23;
+  byte bVar24;
   undefined4 local_4c [2];
   undefined4 local_44;
   undefined4 local_40;
@@ -16428,14 +16546,14 @@ int __thiscall st::fn_004749C0(STBoatC *this,STBoatC *param_1)
   undefined4 *local_8;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((param_1 == nullptr) || (pSVar12 = this, param_1 == (STBoatC *)0x1)) {
+  if ((param_1 == nullptr) || (pSVar13 = this, param_1 == (STBoatC *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
-    iVar11 = 0;
+    iVar12 = 0;
     this->field_02C4 = 0;
     memset(&this->field_05A0, 0, 0x2a); /* compiler bulk-zero initialization */
     this->field_05A0 = this->field_03C8;
     this->field_05C0 = 0;
-    pSVar12 = nullptr;
+    pSVar13 = nullptr;
   }
   if (this->field_05C0 != 0) {
     if (this->field_05C0 != 1) {
@@ -16457,35 +16575,35 @@ LAB_00475068:
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if ((this->field_05A6 == nullptr) &&
-         (iVar11 = st::fn_006E62D0
+         (iVar12 = st::fn_006E62D0
                              (g_playSystem_00802A38,this->field_05A2,(int *)&this->field_05A6),
-         iVar11 == -4)) {
+         iVar12 == -4)) {
         st::fn_006A5E40
                   (0xffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2fea
                   );
       }
       if ((*(int *)(this->field_05A6 + 999) != 0) && (this->field_0716 < this->field_0712)) {
-        uVar3 = (ulonglong)g_playSystem_00802A38->field_00E4 % 0x19;
-        if ((int)uVar3 == 0) {
-          iVar11 = st::machine_word_boundary_cast<int>(this->field_06F7 - CASE_1);
-          if ((int)((uVar3 << 0x20 | (ulonglong)g_playSystem_00802A38->field_00E4) % 100) == 0) {
+        uVar4 = (ulonglong)g_playSystem_00802A38->field_00E4 % 0x19;
+        if ((int)uVar4 == 0) {
+          iVar12 = st::machine_word_boundary_cast<int>(this->field_06F7 - CASE_1);
+          if ((int)((uVar4 << 0x20 | (ulonglong)g_playSystem_00802A38->field_00E4) % 100) == 0) {
             this->vfunc_90(3,0x363);
             st::fn_00402DD8(this->field_01ED,1,-100,-100,-100,0,0);
           }
-          iVar21 = this->field_0712;
-          iVar8 = (iVar21 * 0x19) / (int)(&DAT_007e04a0)[iVar11];
-          if (iVar21 < this->field_0716 + iVar8) {
-            iVar8 = iVar21 - this->field_0716;
+          iVar22 = this->field_0712;
+          iVar9 = (iVar22 * 0x19) / (int)(&DAT_007e04a0)[iVar12];
+          if (iVar22 < this->field_0716 + iVar9) {
+            iVar9 = iVar22 - this->field_0716;
           }
-          local_8 = (undefined4 *)((*(int *)(&DAT_0085442c + iVar11 * 4) * iVar8) / iVar21);
-          iVar21 = (*(int *)(&DAT_007e07a0 + iVar11 * 4) * iVar8) / iVar21;
-          st::fn_00405556(*(char *)&this->field_0024,4,this->field_0018,(int)local_8,0,iVar21,0);
-          iVar11 = st::fn_00405DFD(*(char *)&this->field_0024,4);
-          if (((int)local_8 <= iVar11) &&
-             (iVar11 = st::fn_004023AB(*(char *)&this->field_0024,4), iVar21 <= iVar11)) {
+          local_8 = (undefined4 *)((*(int *)(&DAT_0085442c + iVar12 * 4) * iVar9) / iVar22);
+          iVar22 = (*(int *)(&DAT_007e07a0 + iVar12 * 4) * iVar9) / iVar22;
+          st::fn_00405556(*(char *)&this->field_0024,4,this->field_0018,(int)local_8,0,iVar22,0);
+          iVar12 = st::fn_00405DFD(*(char *)&this->field_0024,4);
+          if (((int)local_8 <= iVar12) &&
+             (iVar12 = st::fn_004023AB(*(char *)&this->field_0024,4), iVar22 <= iVar12)) {
             st::fn_00402AF9(*(char *)&this->field_0024,4,this->field_0018,(int)local_8);
-            st::fn_00402793(*(char *)&this->field_0024,4,this->field_0018,iVar21);
-            this->field_0716 = st::machine_word_boundary_cast<int>(this->field_0716 + iVar8);
+            st::fn_00402793(*(char *)&this->field_0024,4,this->field_0018,iVar22);
+            this->field_0716 = st::machine_word_boundary_cast<int>(this->field_0716 + iVar9);
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (this->field_0024 == (uint)*(byte *)(this->field_0010 + 0x112d)) {
               st::fn_00404B8D((char)this->field_0024);
@@ -16501,15 +16619,15 @@ LAB_00475068:
 switchD_00474a47_caseD_2:
       return 2;
     }
-    if (this->field_05C4 == 0) {
+    if (this->field_05C4 == CASE_0) {
       iVar10 = st::fn_004031DE(this,2);
       switch(iVar10) {
       case 0:
       case 1:
         st::fn_00403855(this);
-        iVar11 = this->field_05BC;
-        this->field_05BC = iVar11 + 1;
-        if ((&this->field_05B4)[iVar11] != -1) {
+        iVar12 = this->field_05BC;
+        this->field_05BC = iVar12 + 1;
+        if ((&this->field_05B4)[iVar12] != -1) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (STBoatC *)st::fn_00405CF9(*(char *)&this->field_0024,this->field_0030);
           st::fn_00404F6B(this,(int)this->field_005B,(int)this->field_005D,
@@ -16520,20 +16638,20 @@ switchD_00474a47_caseD_2:
         if ((this->field_0041 == (short)(this->field_05AA * 0xc9 + 100)) &&
            (this->field_0043 == (short)(*(short *)&this->field_0x5ac * 0xc9 + 100))) {
           if (this->field_0045 != (short)(*(short *)&this->field_0x5ae * 200 + 100)) {
-            this->field_05C4 = 3;
+            this->field_05C4 = CASE_3;
             return 2;
           }
-          this->field_05C4 = 6 - (uint)(this->field_006C != this->field_05B0);
+          this->field_05C4 = CASE_6 - (this->field_006C != this->field_05B0);
           return 2;
         }
-        this->field_05C4 = 1;
+        this->field_05C4 = CASE_1;
         return 2;
       case 2:
         goto switchD_00474a47_caseD_2;
       case 3:
         this->field_05C0 = 0;
-        iVar11 = st::fn_006E62D0(g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
-        if (iVar11 != -4) {
+        iVar12 = st::fn_006E62D0(g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
+        if (iVar12 != -4) {
           st::fn_004054E3(param_1,this->field_0018);
           return 2;
         }
@@ -16556,25 +16674,25 @@ switchD_00474a47_caseD_2:
         return 2;
       }
     }
-    if (this->field_05C4 == 1) {
-      iVar11 = STReplaceLowWord((uint32_t)(pSVar12), (uint16_t)(*(short *)&this->field_0x5ac * 0xc9)) + 100;
-      uVar5 = (*this->vtable->vfunc_10)
+    if (this->field_05C4 == CASE_1) {
+      iVar12 = STReplaceLowWord((uint32_t)(pSVar13), (uint16_t)(*(short *)&this->field_0x5ac * 0xc9)) + 100;
+      uVar6 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         STReplaceLowWord((uint32_t)(iVar11), (uint16_t)(this->field_0045)),
-                         this->field_05AA * 0xc9 + 100,(short)iVar11,
+                         STReplaceLowWord((uint32_t)(iVar12), (uint16_t)(this->field_0045)),
+                         this->field_05AA * 0xc9 + 100,(short)iVar12,
                          (ushort)(*(short *)&this->field_0x5ae * 200) + 100);
-      this->field_05C8 = uVar5;
-      this->field_05C4 = 2;
+      this->field_05C8 = uVar6;
+      this->field_05C4 = CASE_2;
     }
-    if (this->field_05C4 == 2) {
-      uVar6 = st::fn_004030B2(this,this->field_05C8);
-      uVar6 = st::fn_004022FC(this,(short)uVar6);
-      if (uVar6 != 0xffffffff) {
-        if (uVar6 == 0) {
-          this->field_05C4 = 3;
+    if (this->field_05C4 == CASE_2) {
+      uVar7 = st::fn_004030B2(this,this->field_05C8);
+      uVar7 = st::fn_004022FC(this,(short)uVar7);
+      if (uVar7 != 0xffffffff) {
+        if (uVar7 == 0) {
+          this->field_05C4 = CASE_3;
         }
-        iVar11 = this->vfunc_D8();
-        return (-(uint)(iVar11 != 0) & 0xfffffffd) + 2;
+        iVar12 = this->vfunc_D8();
+        return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
       }
       local_EAX_758 =
            st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2f8f,0,0,st::mutable_c_string("%s"),
@@ -16584,20 +16702,20 @@ switchD_00474a47_caseD_2:
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    if (this->field_05C4 == 3) {
+    if (this->field_05C4 == CASE_3) {
       st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_05AA * 0xc9 + 100,*(short *)&this->field_0x5ac * 0xc9 + 100,
                    *(short *)&this->field_0x5ae * 200 + 100,this->field_0061);
-      this->field_05C4 = 4;
+      this->field_05C4 = CASE_4;
     }
-    iVar11 = this->field_05C4;
-    if (iVar11 == 4) {
+    SVar2 = this->field_05C4;
+    if (SVar2 == CASE_4) {
       local_1c = st::fn_00402847((STJellyGunC *)this,&local_18,&local_14);
-      uVar6 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
-      this->field_001C = uVar6;
-      iVar11 = (uVar6 >> 0x10) % 7 - 3;
-      uVar6 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
-      this->field_001C = uVar6;
+      uVar7 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+      this->field_001C = uVar7;
+      iVar12 = (uVar7 >> 0x10) % 7 - 3;
+      uVar7 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+      this->field_001C = uVar7;
       uVar1 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
       this->field_001C = uVar1;
       local_c = (uVar1 >> 0x10) % 7 - 3;
@@ -16605,44 +16723,44 @@ switchD_00474a47_caseD_2:
          (local_10 = 0, this->field_02BF != '\0')) {
         local_8 = (undefined4 *)&this->field_0x2b3;
         do {
-          puVar7 = st::fn_0040342C(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
+          puVar8 = st::fn_0040342C(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
                                       this->field_006C);
-          uVar2 = *puVar7;
-          bVar23 = 0;
-          sVar22 = 0;
-          iVar21 = -1;
-          local_20 = *(short *)(puVar7 + 1);
+          uVar3 = *puVar8;
+          bVar24 = 0;
+          sVar23 = 0;
+          iVar22 = -1;
+          local_20 = *(short *)(puVar8 + 1);
+          sVar21 = 0;
           sVar20 = 0;
           sVar19 = 0;
           sVar18 = 0;
           sVar17 = 0;
           sVar16 = 0;
-          sVar15 = 0;
-          local_24 = uVar2;
+          local_24 = uVar3;
           if (DAT_0080732c == 1) {
-            sVar15 = 0;
             sVar16 = 0;
             sVar17 = 0;
             sVar18 = 0;
             sVar19 = 0;
             sVar20 = 0;
-            sVar22 = 0;
-            bVar23 = 0;
-            lVar14 = st::fn_0072E288();
-            iVar13 = (int)local_20 + this->field_0045 + local_c + (int)(short)lVar14;
-            iVar8 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
-            iVar9 = (int)(short)local_24 + iVar11 + this->field_0041;
+            sVar21 = 0;
+            sVar23 = 0;
+            bVar24 = 0;
+            lVar15 = st::fn_0072E288();
+            iVar14 = (int)local_20 + this->field_0045 + local_c + (int)(short)lVar15;
+            iVar9 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
+            iVar11 = (int)(short)local_24 + iVar12 + this->field_0041;
           }
           else {
-            iVar13 = (int)local_20 + local_c + this->field_0045;
-            STPiece<2,2>(local_24) = (short)((uint)uVar2 >> 0x10);
-            iVar8 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
-            STPiece<0,2>(local_24) = (short)uVar2;
-            iVar9 = (int)(short)local_24 + iVar11 + this->field_0041;
+            iVar14 = (int)local_20 + local_c + this->field_0045;
+            STPiece<2,2>(local_24) = (short)((uint)uVar3 >> 0x10);
+            iVar9 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
+            STPiece<0,2>(local_24) = (short)uVar3;
+            iVar11 = (int)(short)local_24 + iVar12 + this->field_0041;
           }
           st::fn_00401433
-                    (g_traksClass_00802A7C,1,2,7,iVar9,iVar8 + ((uVar6 >> 0x10) % 7 - 3),iVar13,
-                     sVar15,sVar16,sVar17,sVar18,sVar19,sVar20,iVar21,sVar22,bVar23);
+                    (g_traksClass_00802A7C,1,2,7,iVar11,iVar9 + ((uVar7 >> 0x10) % 7 - 3),iVar14,
+                     sVar16,sVar17,sVar18,sVar19,sVar20,sVar21,iVar22,sVar23,bVar24);
           local_8 = (undefined4 *)((int)local_8 + 6);
           local_10 = local_10 + 1;
         } while (local_10 < (int)(uint)(byte)this->field_02BF);
@@ -16657,15 +16775,15 @@ switchD_00474a47_caseD_2:
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if (local_1c == 0) {
-        this->field_05C4 = 6 - (uint)(this->field_006C != this->field_05B0);
+        this->field_05C4 = CASE_6 - (this->field_006C != this->field_05B0);
       }
-      iVar11 = this->vfunc_D8();
-      return (-(uint)(iVar11 != 0) & 0xfffffffd) + 2;
+      iVar12 = this->vfunc_D8();
+      return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
     }
-    if (iVar11 == 5) {
-      uVar6 = st::fn_004030B2(this,this->field_05B0);
-      uVar6 = st::fn_004022FC(this,(short)uVar6);
-      if (uVar6 == 0xffffffff) {
+    if (SVar2 == CASE_5) {
+      uVar7 = st::fn_004030B2(this,this->field_05B0);
+      uVar7 = st::fn_004022FC(this,(short)uVar7);
+      if (uVar7 == 0xffffffff) {
         local_EAX_1495 =
              st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2fc5,0,0,st::mutable_c_string("%s"),
                                 "STBoatC::WaitLoad swli.regime2=5");
@@ -16674,17 +16792,17 @@ switchD_00474a47_caseD_2:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if (uVar6 == 0) {
-        this->field_05C4 = 6;
+      if (uVar7 == 0) {
+        this->field_05C4 = CASE_6;
       }
     }
     else {
-      if (iVar11 == 6) {
+      if (SVar2 == CASE_6) {
         if (this->field_006E == 0x2f) {
           this->field_0076 = 0;
-          iVar11 = st::fn_006E62D0
+          iVar12 = st::fn_006E62D0
                              (g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
-          if (iVar11 == -4) {
+          if (iVar12 == -4) {
             local_EAX_1592 =
                  st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x2fd1,0,0,st::mutable_c_string("%s")
                                     ,"STBoatC::WaitLoad WAITLOAD_PREPARE ptr=NULL 2");
@@ -16694,16 +16812,16 @@ switchD_00474a47_caseD_2:
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           st::fn_0040164A(param_1,(STFishC *)this->field_0018);
-          this->field_05C4 = 7;
+          this->field_05C4 = CASE_7;
         }
-        iVar11 = this->vfunc_D8();
-        return (-(uint)(iVar11 != 0) & 0xfffffffd) + 2;
+        iVar12 = this->vfunc_D8();
+        return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
       }
-      if (iVar11 != 7) goto LAB_00475068;
+      if (SVar2 != CASE_7) goto LAB_00475068;
     }
   }
-  iVar11 = this->vfunc_D8();
-  return (-(uint)(iVar11 != 0) & 0xfffffffd) + 2;
+  iVar12 = this->vfunc_D8();
+  return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
 }
 
 // 00475530 STBoatC::BackWaitLoad
@@ -16716,7 +16834,8 @@ int __thiscall st::fn_00475530(STBoatC *this,int *param_1)
 
 {
   uint uVar1;
-  undefined4 uVar2;
+  STBoatC_field_05C4State SVar2;
+  undefined4 uVar3;
   int iVar5;
   int local_EAX_72;
   uint uVar6;
@@ -16754,18 +16873,18 @@ LAB_00475545:
     return -(uint)(iVar5 != 0);
   }
   if ((iVar5 == 1) || (iVar5 == 2)) {
-    iVar18 = this->field_05C4;
-    if (iVar18 == 0) {
+    SVar2 = this->field_05C4;
+    if (SVar2 == CASE_0) {
       local_EAX_72 = st::fn_00403DF0(this);
       return local_EAX_72;
     }
-    if (((((iVar18 == 1) || (iVar18 == 2)) || (iVar18 == 3)) || ((iVar18 == 5 || (iVar18 == 6)))) ||
-       (iVar18 == 7)) {
+    if (((((SVar2 == CASE_1) || (SVar2 == CASE_2)) || (SVar2 == CASE_3)) ||
+        ((SVar2 == CASE_5 || (SVar2 == CASE_6)))) || (SVar2 == CASE_7)) {
       this->field_0076 = 1;
       iVar5 = this->vfunc_D8();
       return -(uint)(iVar5 != 0);
     }
-    if (iVar18 == 4) {
+    if (SVar2 == CASE_4) {
       local_1c = st::fn_00402847((STJellyGunC *)this,&local_18,&local_14);
       uVar6 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
       this->field_001C = uVar6;
@@ -16781,7 +16900,7 @@ LAB_00475545:
         do {
           puVar7 = st::fn_0040342C(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
                                       this->field_006C);
-          uVar2 = *puVar7;
+          uVar3 = *puVar7;
           bVar20 = 0;
           sVar19 = 0;
           iVar18 = -1;
@@ -16792,7 +16911,7 @@ LAB_00475545:
           sVar14 = 0;
           sVar13 = 0;
           sVar12 = 0;
-          local_24 = uVar2;
+          local_24 = uVar3;
           if (DAT_0080732c == 1) {
             sVar12 = 0;
             sVar13 = 0;
@@ -16809,9 +16928,9 @@ LAB_00475545:
           }
           else {
             iVar8 = (int)local_20 + local_c + this->field_0045;
-            STPiece<2,2>(local_24) = (short)((uint)uVar2 >> 0x10);
+            STPiece<2,2>(local_24) = (short)((uint)uVar3 >> 0x10);
             iVar9 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
-            STPiece<0,2>(local_24) = (short)uVar2;
+            STPiece<0,2>(local_24) = (short)uVar3;
             iVar10 = (int)(short)local_24 + iVar5 + this->field_0041;
           }
           st::fn_00401433
@@ -16856,14 +16975,18 @@ LAB_00475545:
    STBoatC::UnLoadObj
 
    [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 004803D0 -> 004758E0 @ 0048053F */
+   Evidence: 004803D0 -> 004758E0 @ 0048053F
+
+   [STSwitchEnumApplier] Switch target field_05D6 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_05D6State. Cases: CASE_1=1;CASE_2=2;CASE_5=5 */
 
 int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
 
 {
   undefined1 uVar1;
   undefined1 uVar2;
-  short sVar4;
+  STBoatC_field_05D6State SVar3;
+  short sVar5;
   int iVar6;
   int local_EAX_246;
   uint uVar7;
@@ -16901,21 +17024,21 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     if (this->field_07CA != nullptr) {
-      sVar4 = this->field_03CE;
+      sVar5 = this->field_03CE;
       sVar14 = this->field_03D0;
-      this->field_05CA = sVar4;
+      this->field_05CA = sVar5;
       this->field_05CC = sVar14;
       this->field_05CE = this->field_03D2;
-      if (((sVar4 == -1) && (sVar14 == -1)) && (this->field_03D2 == -1)) {
+      if (((sVar5 == -1) && (sVar14 == -1)) && (this->field_03D2 == -1)) {
         this->field_05D6 = 0;
         return 2;
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar6 = st::fn_00404908(this,sVar4,sVar14,this->field_03D2,this->field_005B,this->field_005D,
+      iVar6 = st::fn_00404908(this,sVar5,sVar14,this->field_03D2,this->field_005B,this->field_005D,
                            (int *)CONCAT22((short)((uint)&this->field_05D0 >> 0x10),this->field_005F
                                           ),0,&this->field_05D0,&this->field_05D2,&this->field_05D4);
       if (iVar6 != 0) {
-        this->field_05D6 = 5;
+        this->field_05D6 = CASE_5;
         st::fn_00404F6B(this,(int)this->field_05D0,(int)this->field_05D2,(int)this->field_05D4);
         st::fn_00403B34(this,0);
         return 2;
@@ -16923,8 +17046,8 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
     }
     return 0;
   }
-  iVar6 = this->field_05D6;
-  if (iVar6 == 5) {
+  SVar3 = this->field_05D6;
+  if (SVar3 == CASE_5) {
     iVar6 = st::fn_00403B34(this,2);
     if (iVar6 == -1) {
       local_EAX_246 =
@@ -16953,7 +17076,7 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
     }
     return 2;
   }
-  if (iVar6 == 0) {
+  if (SVar3 == 0) {
     iVar6 = st::fn_0040406B(this,this->field_005B,this->field_005D,this->field_005F,
                                st::pointer_boundary_cast<undefined2 *>(&this->field_05D0),st::pointer_boundary_cast<undefined2 *>(&this->field_05D2),&this->field_05D4);
     if (iVar6 == 0) {
@@ -16962,17 +17085,17 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
     }
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     iVar10 = CONCAT22(extraout_var,this->field_05D2 * 0xc9) + 100;
-    sVar4 = (*this->vtable->vfunc_10)
+    sVar5 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
                        STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(this->field_0045)),
                        this->field_05D0 * 0xc9 + 100,(short)iVar10,
                        STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_05D4 * 200)) + 100);
-    this->field_05DA = sVar4;
-    uVar7 = st::fn_004030B2(this,sVar4);
+    this->field_05DA = sVar5;
+    uVar7 = st::fn_004030B2(this,sVar5);
     uVar7 = st::fn_004022FC(this,(short)uVar7);
     if (uVar7 != 0xffffffff) {
       if (uVar7 == 0) {
-        this->field_05D6 = 1;
+        this->field_05D6 = CASE_1;
         st::fn_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&local_c);
         uVar1 = local_c->field_0062;
         uVar2 = local_c->field_0061;
@@ -17006,13 +17129,13 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
     }
     return -1;
   }
-  if (iVar6 == 1) {
+  if (SVar3 == CASE_1) {
     st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                  this->field_05D0 * 0xc9 + 100,this->field_05D2 * 0xc9 + 100,
                  this->field_05D4 * 200 + 100,this->field_0061);
-    this->field_05D6 = 2;
+    this->field_05D6 = CASE_2;
   }
-  if (this->field_05D6 == 2) {
+  if (this->field_05D6 == CASE_2) {
     local_20 = st::fn_00402847((STJellyGunC *)this,&local_18,&local_14);
     local_10 = 0;
     if (this->field_02BF != '\0') {
@@ -17038,7 +17161,7 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
           local_1c = uVar9 * 0x41c64e6d + 0x3039;
           sVar14 = 0;
           this->field_001C = local_1c;
-          sVar4 = 0;
+          sVar5 = 0;
           lVar13 = st::fn_0072E288();
           iVar6 = (int)(short)lVar13 + (uVar7 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                   (int)local_24;
@@ -17060,7 +17183,7 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
           sVar16 = 0;
           sVar15 = 0;
           sVar14 = 0;
-          sVar4 = 0;
+          sVar5 = 0;
           iVar6 = (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_24;
           STPiece<2,2>(local_28) = (short)((uint)local_28 >> 0x10);
           iVar10 = ((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_28);
@@ -17068,7 +17191,7 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
         st::fn_00401433
                   (g_traksClass_00802A7C,1,2,7,
                    (uVar7 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_28,
-                   iVar10 + -3,iVar6,sVar4,sVar14,sVar15,sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
+                   iVar10 + -3,iVar6,sVar5,sVar14,sVar15,sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
         local_10 = local_10 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 6;
@@ -17101,22 +17224,23 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
 int __thiscall st::fn_00476120(STBoatC *this,int *param_1)
 
 {
+  STBoatC_field_05D6State SVar1;
   int local_EAX_21;
   int iVar3;
   int iVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_retaddr;
 
-  iVar3 = this->field_05D6;
-  if ((iVar3 == 0) || (iVar3 == 1)) {
+  SVar1 = this->field_05D6;
+  if ((SVar1 == 0) || (SVar1 == CASE_1)) {
     iVar3 = this->vfunc_D8();
     return -(uint)(iVar3 != 0);
   }
-  if (iVar3 == 2) {
+  if (SVar1 == CASE_2) {
     local_EAX_21 = st::fn_004011AE(this,2);
     return local_EAX_21;
   }
-  if (iVar3 == 5) {
+  if (SVar1 == CASE_5) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar3 = this->StopMove(unaff_retaddr);
     return iVar3;
@@ -17379,7 +17503,10 @@ LAB_00476c07:
 #line 4 "decomp/ST.exe/functions/00476CE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::Capture */
+   STBoatC::Capture
+
+   [STSwitchEnumApplier] Switch target field_0615 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0615State. Cases: CASE_0=0;CASE_2=2;CASE_5=5 */
 
 int __thiscall st::fn_00476CE0(STBoatC *this,int param_1)
 
@@ -17582,13 +17709,13 @@ cf_common_exit_00476DBA:
         } while (iVar16 <= iVar7);
       }
       this->field_0611 = CASE_2;
-      this->field_0615 = 0;
+      this->field_0615 = CASE_0;
       return 2;
     }
     return 0;
   }
   if (SVar1 == CASE_2) {
-    if (this->field_0615 == 0) {
+    if (this->field_0615 == CASE_0) {
       iVar16 = (ushort)(this->field_060D * 200) + 300;
       iVar7 = STReplaceLowWord((uint32_t)(iVar16), (uint16_t)(this->field_060B + 1)) * 0xc9;
       iVar13 = STReplaceLowWord((uint32_t)(iVar7), (uint16_t)(this->field_0609 + 1));
@@ -17613,11 +17740,11 @@ cf_common_exit_00476DBA:
         return -1;
       }
       if (uVar9 == 0) {
-        this->field_0615 = 2;
+        this->field_0615 = CASE_2;
         goto cf_common_exit_00477B2E;
       }
     }
-    if (this->field_0615 == 2) {
+    if (this->field_0615 == CASE_2) {
       st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                    (this->field_0609 + 1) * 0xc9,(this->field_060B + 1) * 0xc9,
                    this->field_060D * 200 + 300,this->field_0061);
@@ -17697,7 +17824,7 @@ cf_common_exit_00476DBA:
         if (((pSVar8 == nullptr) || (pSVar8->field_0018 != *(int *)&this->field_0x5ff)) ||
            (iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024), iVar7 == 0)) {
           this->field_0611 = CASE_4;
-          this->field_0615 = 0;
+          this->field_0615 = CASE_0;
         }
         else {
           st::fn_00402AD6(pSVar8,this->field_0018,this->field_0024);
@@ -17756,7 +17883,7 @@ cf_common_exit_00477B2E:
         iVar7 = this->vfunc_D8();
         return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
       }
-      if (this->field_0615 == 0) {
+      if (this->field_0615 == CASE_0) {
         iVar7 = STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_0605 * 0xc9)) + 100;
         uVar6 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
@@ -17779,11 +17906,11 @@ cf_common_exit_00477B2E:
           return -1;
         }
         if (uVar9 == 0) {
-          this->field_0615 = 2;
+          this->field_0615 = CASE_2;
           goto cf_common_exit_00477B2E;
         }
       }
-      if (this->field_0615 == 2) {
+      if (this->field_0615 == CASE_2) {
         st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_0603 * 0xc9 + 100,this->field_0605 * 0xc9 + 100,
                      this->field_0607 * 200 + 100,this->field_0061);
@@ -17884,7 +18011,7 @@ cf_common_exit_00477B2E:
       if (((int)this->field_0041 == (this->field_0609 + 1) * 0xc9) &&
          ((int)this->field_0043 == (this->field_060B + 1) * 0xc9)) {
         this->field_0611 = CASE_4;
-        this->field_0615 = 0;
+        this->field_0615 = CASE_0;
         iVar7 = this->vfunc_D8();
         return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
       }
@@ -17899,7 +18026,7 @@ cf_common_exit_00477B2E:
         local_34 = 0x5dd4;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_2c = CONCAT22(this->field_0032,*(undefined2 *)&this->field_0024);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)*DAT_008117bc)(local_44);
       }
       pSVar8->vfunc_10C();
@@ -17919,7 +18046,7 @@ cf_common_exit_00477B2E:
     if ((this->field_0041 == iVar7) &&
        (iVar7 = (this->field_060B + 1) * 0xc9, this->field_0043 == iVar7)) {
       this->field_0611 = CASE_4;
-      this->field_0615 = 0;
+      this->field_0615 = CASE_0;
     }
     else {
       this->field_0611 = CASE_5;
@@ -17947,24 +18074,28 @@ cf_common_exit_0047746B:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5
 
    [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 00478030 -> 00415ED0 @ 004781BF | 00478030 -> 00415ED0 @ 00478438 */
+   Evidence: 00478030 -> 00415ED0 @ 004781BF | 00478030 -> 00415ED0 @ 00478438
+
+   [STSwitchEnumApplier] Switch target field_0615 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0615State. Cases: CASE_0=0;CASE_2=2;CASE_5=5 */
 
 int __thiscall st::fn_00478030(STBoatC *this,int *param_1)
 
 {
-  undefined2 uVar2;
+  STBoatC_field_0615State SVar1;
+  undefined2 uVar3;
   int local_EAX_36;
   int local_EAX_253;
   int local_EAX_463;
-  STGameObjC *pSVar3;
-  uint uVar4;
+  STGameObjC *pSVar4;
+  uint uVar5;
   int iVar5;
   int local_EAX_1096;
   int local_EAX_1172;
   int iVar6;
   STBoatC *local_8;
 
-  uVar2 = (undefined2)((uint)this >> 0x10);
+  uVar3 = (undefined2)((uint)this >> 0x10);
   local_8 = this;
   switch(this->field_0611) {
   case CASE_0:
@@ -17974,31 +18105,31 @@ int __thiscall st::fn_00478030(STBoatC *this,int *param_1)
   case CASE_1:
     return 0;
   case CASE_2:
-    iVar6 = this->field_0615;
-    if (iVar6 == 0) {
+    SVar1 = this->field_0615;
+    if (SVar1 == CASE_0) {
       return 0;
     }
-    if (iVar6 == 1) {
+    if (SVar1 == 1) {
       return 0;
     }
-    if (iVar6 == 2) {
+    if (SVar1 == CASE_2) {
       return 0;
     }
-    if (iVar6 == 3) {
+    if (SVar1 == 3) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar6 = CONCAT22(uVar2,this->field_0605 * 0xc9) + 100;
-      uVar2 = (*this->vtable->vfunc_10)
+      iVar6 = CONCAT22(uVar3,this->field_0605 * 0xc9) + 100;
+      uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
                          this->field_0603 * 0xc9 + 100,(short)iVar6,
                          (ushort)(this->field_0607 * 200) + 100);
-      this->field_060F = uVar2;
+      this->field_060F = uVar3;
       this->field_0615 = 4;
     }
     if (this->field_0615 == 4) {
-      uVar4 = st::fn_004030B2(this,this->field_060F);
-      uVar4 = st::fn_004022FC(this,(short)uVar4);
-      if (uVar4 == 0xffffffff) {
+      uVar5 = st::fn_004030B2(this,this->field_060F);
+      uVar5 = st::fn_004022FC(this,(short)uVar5);
+      if (uVar5 == 0xffffffff) {
         local_EAX_253 =
              st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x3336,0,0,st::mutable_c_string("%s"),
                                 "STBoatC::BackCapture, CAPTURE_PMOVE");
@@ -18007,14 +18138,14 @@ int __thiscall st::fn_00478030(STBoatC *this,int *param_1)
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if (uVar4 == 0) {
-        this->field_0615 = 5;
+      if (uVar5 == 0) {
+        this->field_0615 = CASE_5;
 LAB_00478373:
         iVar6 = this->vfunc_D8();
         return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
       }
     }
-    if (this->field_0615 == 5) {
+    if (this->field_0615 == CASE_5) {
       st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_0603 * 0xc9 + 100,this->field_0605 * 0xc9 + 100,
                    this->field_0607 * 200 + 100,this->field_0061);
@@ -18042,11 +18173,11 @@ LAB_0047848a:
     }
     break;
   case CASE_3:
-    pSVar3 = st::fn_004028BA
+    pSVar4 = st::fn_004028BA
                        (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
-    if (((pSVar3 != nullptr) && (pSVar3->field_0018 == *(int *)&this->field_0x5ff)) &&
-       (iVar6 = (*pSVar3->vtable->vfunc_108)(this->field_0024), iVar6 != 0)) {
-      st::fn_00405B1E((AnonShape_004CC900_31EE9CAA *)pSVar3);
+    if (((pSVar4 != nullptr) && (pSVar4->field_0018 == *(int *)&this->field_0x5ff)) &&
+       (iVar6 = (*pSVar4->vtable->vfunc_108)(this->field_0024), iVar6 != 0)) {
+      st::fn_00405B1E((AnonShape_004CC900_31EE9CAA *)pSVar4);
     }
     if (((int)this->field_0041 != (this->field_0609 + 1) * 0xc9) ||
        ((int)this->field_0043 != (this->field_060B + 1) * 0xc9)) {
@@ -18054,24 +18185,24 @@ LAB_0047848a:
       return -(uint)(iVar6 != 0);
     }
     this->field_0611 = CASE_4;
-    this->field_0615 = 0;
+    this->field_0615 = CASE_0;
     break;
   case CASE_4:
-    if (this->field_0615 == 0) {
+    if (this->field_0615 == CASE_0) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar6 = CONCAT22(uVar2,this->field_0605 * 0xc9) + 100;
-      uVar2 = (*this->vtable->vfunc_10)
+      iVar6 = CONCAT22(uVar3,this->field_0605 * 0xc9) + 100;
+      uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
                          this->field_0603 * 0xc9 + 100,(short)iVar6,
                          (ushort)(this->field_0607 * 200) + 100);
-      this->field_060F = uVar2;
+      this->field_060F = uVar3;
       this->field_0615 = 1;
     }
     if (this->field_0615 == 1) {
-      uVar4 = st::fn_004030B2(this,this->field_060F);
-      uVar4 = st::fn_004022FC(this,(short)uVar4);
-      if (uVar4 == 0xffffffff) {
+      uVar5 = st::fn_004030B2(this,this->field_060F);
+      uVar5 = st::fn_004022FC(this,(short)uVar5);
+      if (uVar5 == 0xffffffff) {
         iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x3373,0,0,st::mutable_c_string("%s"),
                                    "STBoatC::BackCapture, CAPTURE_OMOVE");
         if (iVar5 == 0) {
@@ -18079,12 +18210,12 @@ LAB_0047848a:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if (uVar4 == 0) {
-        this->field_0615 = 2;
+      if (uVar5 == 0) {
+        this->field_0615 = CASE_2;
         goto LAB_00478373;
       }
     }
-    if (this->field_0615 == 2) {
+    if (this->field_0615 == CASE_2) {
       st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_0603 * 0xc9 + 100,this->field_0605 * 0xc9 + 100,
                    this->field_0607 * 200 + 100,this->field_0061);
@@ -18352,7 +18483,7 @@ cf_common_exit_00478E51:
     if (local_EAX_919 == -1) {
       return -1;
     }
-    if (this->field_082E != 0) {
+    if (this->field_082E != ~CASE_FFFFFFFF) {
       return 2;
     }
     if (this->field_048B != 0xffff) {
@@ -18882,7 +19013,7 @@ LAB_00479ba6:
         if (local_EAX_914 == -1) {
           return -1;
         }
-        if (this->field_082E != 0) {
+        if (this->field_082E != ~CASE_FFFFFFFF) {
           return 2;
         }
         if (this->field_048B != 0xffff) {
@@ -19981,7 +20112,7 @@ undefined4 __thiscall st::fn_0047C050(STBoatC *this,STBoatC *param_1)
         this->field_05D6 = 0;
         return 2;
       }
-      if (this->field_05D6 == 1) {
+      if (this->field_05D6 == CASE_1) {
         sVar1 = this->field_066F;
         sVar2 = this->field_0673;
         sVar3 = this->field_0671;
@@ -20089,7 +20220,7 @@ undefined4 __thiscall st::fn_0047C050(STBoatC *this,STBoatC *param_1)
   if (local_EAX_674 == -1) {
     return 0xffffffff;
   }
-  if (this->field_082E != 0) {
+  if (this->field_082E != ~CASE_FFFFFFFF) {
     return 2;
   }
   if (this->field_048B != 0xffff) {
@@ -20245,7 +20376,15 @@ int __thiscall st::fn_0047CF20(STBoatC *this,int *param_1)
 #line 4 "decomp/ST.exe/functions/0047D080/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::Annih */
+   STBoatC::Annih
+
+   [STSwitchEnumApplier] Switch target field_06A5 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_06A5State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_06A5 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_06A5State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall st::fn_0047D080(STBoatC *this,undefined4 *param_1)
 
@@ -20314,11 +20453,11 @@ LAB_0047d831:
     uVar3 = *(undefined4 *)&pSVar2->field_0x18;
     this->field_06A1 = 0;
     this->field_0697 = uVar3;
-    this->field_06A5 = 0;
+    this->field_06A5 = CASE_0;
   }
   iVar10 = this->field_06A1;
   if (iVar10 == 0) {
-    if (this->field_06A5 == 0) {
+    if (this->field_06A5 == CASE_0) {
       iVar6 = (ushort)(this->field_068F * 200) + 0xfa;
       iVar10 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_068D + 1)) * 0xc9;
       iVar12 = STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(this->field_068B + 1));
@@ -20328,9 +20467,9 @@ LAB_0047d831:
                          CONCAT22((short)((uint)(iVar12 * 0x19) >> 0x10),this->field_0045),
                          (short)(iVar12 * 0xc9),(short)iVar10,iVar6);
       this->field_069B = uVar5;
-      this->field_06A5 = 1;
+      this->field_06A5 = CASE_1;
     }
-    if (this->field_06A5 == 1) {
+    if (this->field_06A5 == CASE_1) {
       uVar7 = st::fn_004030B2(this,this->field_069B);
       uVar7 = st::fn_004022FC(this,(short)uVar7);
       if (uVar7 == 0xffffffff) {
@@ -20343,17 +20482,17 @@ LAB_0047d831:
         return -1;
       }
       if (uVar7 == 0) {
-        this->field_06A5 = 2;
+        this->field_06A5 = CASE_2;
       }
     }
     else {
-      if (this->field_06A5 == 2) {
+      if (this->field_06A5 == CASE_2) {
         st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                      (this->field_068B + 1) * 0xc9,(this->field_068D + 1) * 0xc9,
                      this->field_068F * 200 + 0xfa,this->field_0061);
-        this->field_06A5 = 3;
+        this->field_06A5 = CASE_3;
       }
-      if (this->field_06A5 == 3) {
+      if (this->field_06A5 == CASE_3) {
         local_18 = st::fn_00402847((STJellyGunC *)this,&local_14,&local_10);
         uVar7 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar7;
@@ -20432,7 +20571,7 @@ LAB_0047d831:
               ))) {
             iVar10 = (*pSVar2->vtable[5].slots_00_28[2])();
             if (iVar10 == 1) {
-              this->field_06A5 = 0;
+              this->field_06A5 = CASE_0;
               this->field_06A1 = 1;
               this->field_069D = 0;
               st::fn_00405083((int *)pSVar2);
@@ -20522,37 +20661,46 @@ LAB_0047d7e6:
 #line 4 "decomp/ST.exe/functions/0047DA50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::BackAnnih */
+   STBoatC::BackAnnih
+
+   [STSwitchEnumApplier] Switch target field_06A5 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_06A5State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_06A5 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_06A5State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall st::fn_0047DA50(STBoatC *this,int *param_1)
 
 {
   uint uVar1;
-  undefined4 uVar2;
-  undefined2 uVar4;
-  uint uVar5;
+  STBoatC_field_06A5State SVar2;
+  undefined4 uVar3;
+  undefined2 uVar5;
+  uint uVar6;
   int local_EAX_269;
-  undefined4 *puVar6;
+  undefined4 *puVar7;
   int local_EAX_865;
   int iVar8;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  int iVar7;
+  int iVar9;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  int iVar9;
   int iVar10;
   int iVar11;
-  longlong lVar12;
-  short sVar13;
+  int iVar12;
+  longlong lVar13;
   short sVar14;
   short sVar15;
   short sVar16;
   short sVar17;
   short sVar18;
-  int iVar19;
-  short sVar20;
-  byte bVar21;
+  short sVar19;
+  int iVar20;
+  short sVar21;
+  byte bVar22;
   undefined4 local_2c [2];
   undefined4 local_24;
   short local_20;
@@ -20568,56 +20716,56 @@ int __thiscall st::fn_0047DA50(STBoatC *this,int *param_1)
     iVar8 = st::fn_004014FB(this,(undefined4 *)0x2);
     return iVar8;
   }
-  iVar9 = this->field_06A5;
-  if (((iVar9 == 0) || (iVar9 == 1)) || (iVar9 == 2)) {
+  SVar2 = this->field_06A5;
+  if (((SVar2 == CASE_0) || (SVar2 == CASE_1)) || (SVar2 == CASE_2)) {
     return 0;
   }
-  if (iVar9 == 3) {
+  if (SVar2 == CASE_3) {
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    iVar9 = CONCAT22(extraout_var_00,this->field_0693 * 0xc9) + 100;
+    iVar10 = CONCAT22(extraout_var_00,this->field_0693 * 0xc9) + 100;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar4 = (*this->vtable->vfunc_10)
+    uVar5 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
-                       STReplaceLowWord((uint32_t)(iVar9), (uint16_t)(this->field_0045)),
-                       this->field_0691 * 0xc9 + 100,(short)iVar9,
+                       STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(this->field_0045)),
+                       this->field_0691 * 0xc9 + 100,(short)iVar10,
                        CONCAT22(extraout_var,this->field_0695 * 200) + 100);
-    this->field_069B = uVar4;
-    this->field_06A5 = 4;
+    this->field_069B = uVar5;
+    this->field_06A5 = CASE_4;
   }
-  if (this->field_06A5 == 4) {
-    uVar5 = st::fn_004030B2(this,this->field_069B);
-    uVar5 = st::fn_004022FC(this,(short)uVar5);
-    if (uVar5 == 0xffffffff) {
+  if (this->field_06A5 == CASE_4) {
+    uVar6 = st::fn_004030B2(this,this->field_069B);
+    uVar6 = st::fn_004022FC(this,(short)uVar6);
+    if (uVar6 == 0xffffffff) {
       local_EAX_269 =
            st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x3925,0,0,st::mutable_c_string("%s"),
                               "STBoatC::BackAnnih 1");
       if (local_EAX_269 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar9 = 0x3925;
+      iVar10 = 0x3925;
 LAB_0047ddc3:
       st::fn_006A5E40
-                (0xffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),iVar9);
+                (0xffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),iVar10);
       return 0xffff;
     }
-    if (uVar5 == 0) {
-      this->field_06A5 = 5;
+    if (uVar6 == 0) {
+      this->field_06A5 = CASE_5;
     }
   }
   else {
-    if (this->field_06A5 == 5) {
+    if (this->field_06A5 == CASE_5) {
       st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_0691 * 0xc9 + 100,this->field_0693 * 0xc9 + 100,
                    this->field_0695 * 200 + 100,this->field_0061);
-      this->field_06A5 = 6;
+      this->field_06A5 = CASE_6;
     }
-    if (this->field_06A5 == 6) {
+    if (this->field_06A5 == CASE_6) {
       local_1c = st::fn_00402847((STJellyGunC *)this,&local_18,&local_14);
-      uVar5 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
-      this->field_001C = uVar5;
-      iVar9 = (uVar5 >> 0x10) % 7 - 3;
-      uVar5 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
-      this->field_001C = uVar5;
+      uVar6 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+      this->field_001C = uVar6;
+      iVar10 = (uVar6 >> 0x10) % 7 - 3;
+      uVar6 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+      this->field_001C = uVar6;
       uVar1 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
       this->field_001C = uVar1;
       local_c = (uVar1 >> 0x10) % 7 - 3;
@@ -20625,44 +20773,44 @@ LAB_0047ddc3:
          (local_10 = 0, this->field_02BF != '\0')) {
         local_8 = (undefined4 *)&this->field_0x2b3;
         do {
-          puVar6 = st::fn_0040342C(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
+          puVar7 = st::fn_0040342C(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
                                       this->field_006C);
-          uVar2 = *puVar6;
-          bVar21 = 0;
-          sVar20 = 0;
-          iVar19 = -1;
-          local_20 = *(short *)(puVar6 + 1);
+          uVar3 = *puVar7;
+          bVar22 = 0;
+          sVar21 = 0;
+          iVar20 = -1;
+          local_20 = *(short *)(puVar7 + 1);
+          sVar19 = 0;
           sVar18 = 0;
           sVar17 = 0;
           sVar16 = 0;
           sVar15 = 0;
           sVar14 = 0;
-          sVar13 = 0;
-          local_24 = uVar2;
+          local_24 = uVar3;
           if (DAT_0080732c == 1) {
-            sVar13 = 0;
             sVar14 = 0;
             sVar15 = 0;
             sVar16 = 0;
             sVar17 = 0;
             sVar18 = 0;
-            sVar20 = 0;
-            bVar21 = 0;
-            lVar12 = st::fn_0072E288();
-            iVar7 = (int)local_20 + this->field_0045 + local_c + (int)(short)lVar12;
-            iVar10 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
-            iVar11 = (int)(short)local_24 + iVar9 + this->field_0041;
+            sVar19 = 0;
+            sVar21 = 0;
+            bVar22 = 0;
+            lVar13 = st::fn_0072E288();
+            iVar9 = (int)local_20 + this->field_0045 + local_c + (int)(short)lVar13;
+            iVar11 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
+            iVar12 = (int)(short)local_24 + iVar10 + this->field_0041;
           }
           else {
-            iVar7 = (int)local_20 + local_c + this->field_0045;
-            STPiece<2,2>(local_24) = (short)((uint)uVar2 >> 0x10);
-            iVar10 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
-            STPiece<0,2>(local_24) = (short)uVar2;
-            iVar11 = (int)(short)local_24 + iVar9 + this->field_0041;
+            iVar9 = (int)local_20 + local_c + this->field_0045;
+            STPiece<2,2>(local_24) = (short)((uint)uVar3 >> 0x10);
+            iVar11 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
+            STPiece<0,2>(local_24) = (short)uVar3;
+            iVar12 = (int)(short)local_24 + iVar10 + this->field_0041;
           }
           st::fn_00401433
-                    (g_traksClass_00802A7C,1,2,7,iVar11,iVar10 + ((uVar5 >> 0x10) % 7 - 3),iVar7,
-                     sVar13,sVar14,sVar15,sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
+                    (g_traksClass_00802A7C,1,2,7,iVar12,iVar11 + ((uVar6 >> 0x10) % 7 - 3),iVar9,
+                     sVar14,sVar15,sVar16,sVar17,sVar18,sVar19,iVar20,sVar21,bVar22);
           local_8 = (undefined4 *)((int)local_8 + 6);
           local_10 = local_10 + 1;
         } while (local_10 < (int)(uint)(byte)this->field_02BF);
@@ -20674,17 +20822,17 @@ LAB_0047ddc3:
         if (local_EAX_865 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        iVar9 = 0x394c;
+        iVar10 = 0x394c;
         goto LAB_0047ddc3;
       }
       if (local_1c == 0) {
-        iVar9 = this->vfunc_D8();
-        return -(uint)(iVar9 != 0);
+        iVar10 = this->vfunc_D8();
+        return -(uint)(iVar10 != 0);
       }
     }
   }
-  iVar9 = this->vfunc_D8();
-  return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
+  iVar10 = this->vfunc_D8();
+  return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
 }
 
 // 0047DF00 STBoatC::Dismant
@@ -20966,8 +21114,8 @@ LAB_0047e0a4:
       if (local_EAX_668 == -1) {
         return -1;
       }
-      if (((this->field_082E == 0) && (this->field_048B == 0xffff)) && (this->field_06BF % 10 == 0))
-      {
+      if (((this->field_082E == ~CASE_FFFFFFFF) && (this->field_048B == 0xffff)) &&
+         (this->field_06BF % 10 == 0)) {
         sVar6 = this->field_06A9;
         sVar16 = this->field_06AD;
         sVar14 = this->field_06AB;
@@ -23400,7 +23548,7 @@ undefined4 * __thiscall st::fn_0048FAC0(STBoatC *this,int *param_1)
   STField<undefined4>(puVar2,0x4cd) = *(undefined4 *)&local_14->field_05CA;
   STField<undefined4>(puVar2,0x4d1) = *(undefined4 *)&local_14->field_05CE;
   STField<undefined4>(puVar2,0x4d5) = *(undefined4 *)&local_14->field_05D2;
-  STField<int>(puVar2,0x4d9) = local_14->field_05D6;
+  STField<STBoatC_field_05D6State>(puVar2,0x4d9) = local_14->field_05D6;
   STField<undefined2>(puVar2,0x4dd) = local_14->field_05DA;
   STField<undefined4>(puVar2,0x4df) = *(undefined4 *)&local_14->field_05DC;
   STField<undefined4>(puVar2,0x4e3) = *(undefined4 *)&local_14->field_05E0;
@@ -23731,7 +23879,12 @@ void __thiscall st::fn_004900E0(STBoatC *this,int param_1)
 #line 4 "decomp/ST.exe/functions/00491070/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::ReleaseLoad */
+   STBoatC::ReleaseLoad
+
+   [STSwitchEnumApplier] Switch target field_045D uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_045DState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23
+    */
 
 void __thiscall st::fn_00491070(STBoatC *this,uint param_1)
 
@@ -23784,7 +23937,15 @@ void __thiscall st::fn_00491070(STBoatC *this,uint param_1)
 
    [STPrototypeApplier] Propagated parameter 5.
    Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=00491287 MOV DX,word ptr
-   [EBP + 0x18] */
+   [EBP + 0x18]
+
+   [STSwitchEnumApplier] Switch target field_05C4 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_05C4State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7
+
+   [STSwitchEnumApplier] Switch target field_05C4 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_05C4State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7 */
 
 void __thiscall
 st::fn_00491240
@@ -23860,7 +24021,7 @@ st::fn_00491240
                  0x4fe6);
     }
     if (this->field_05B2 != -1) {
-      this->field_05C4 = 0;
+      this->field_05C4 = CASE_0;
       this->field_05BC = 0;
       st::fn_00404F6B(this,(int)param_2,(int)param_3,(int)this->field_05B2);
       st::fn_004031DE(this,0);
@@ -23869,17 +24030,17 @@ st::fn_00491240
     if ((this->field_0041 == (short)(this->field_05AA * 0xc9 + 100)) &&
        (this->field_0043 == (short)(*(short *)&this->field_0x5ac * 0xc9 + 100))) {
       if (this->field_0045 != (short)(*(short *)&this->field_0x5ae * 200 + 100)) {
-        this->field_05C4 = 3;
+        this->field_05C4 = CASE_3;
         return;
       }
       if (this->field_006C == this->field_05B0) {
-        this->field_05C4 = 6;
+        this->field_05C4 = CASE_6;
         return;
       }
-      this->field_05C4 = 5;
+      this->field_05C4 = CASE_5;
       return;
     }
-    this->field_05C4 = 1;
+    this->field_05C4 = CASE_1;
   }
   else {
     iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x4fcb,0,0,st::mutable_c_string("%s"),
@@ -24323,7 +24484,23 @@ cf_continue_loop_00491C1C:
 
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004749C0 -> 00491FB0 @ 0047501C; /STBoatC+0x18 | 00491FB0 -> 006E62D0 @ 00491FE7 |
-   00491FB0 parameter used as this of STFishC::sub_004162F0 @ 00492004 */
+   00491FB0 parameter used as this of STFishC::sub_004162F0 @ 00492004
+
+   [STSwitchEnumApplier] Switch target field_045D uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_045DState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23
+
+   [STSwitchEnumApplier] Switch target field_0596 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0596State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
+
+   [STSwitchEnumApplier] Switch target field_059A uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_059AState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_7=7;CASE_9=9
+
+   [STSwitchEnumApplier] Switch target field_059A uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_059AState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9 */
 
 void __thiscall st::fn_00491FB0(STBoatC *this,STFishC *param_1)
 
@@ -24331,13 +24508,13 @@ void __thiscall st::fn_00491FB0(STBoatC *this,STFishC *param_1)
   int iVar2;
 
   if ((((this->field_045D == CASE_F) || (this->field_045D == CASE_E)) &&
-      (*(STFishC **)&this->field_0x58e == param_1)) && (this->field_0596 == 2)) {
+      (*(STFishC **)&this->field_0x58e == param_1)) && (this->field_0596 == CASE_2)) {
     st::fn_006E62D0
               (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*(STFishC **)&this->field_0x58e,
                (int *)&param_1);
     st::fn_00405F0B(param_1,&this->field_0588,&this->field_058A,&this->field_058C);
-    this->field_0596 = 3;
-    this->field_059A = 0;
+    this->field_0596 = CASE_3;
+    this->field_059A = CASE_0;
     return;
   }
   iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x50bb,0,0,st::mutable_c_string("%s"),
@@ -24352,7 +24529,15 @@ void __thiscall st::fn_00491FB0(STBoatC *this,STFishC *param_1)
 #line 4 "decomp/ST.exe/functions/00492080/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::NotReadyForLoading */
+   STBoatC::NotReadyForLoading
+
+   [STSwitchEnumApplier] Switch target field_045D uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_045DState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23
+
+   [STSwitchEnumApplier] Switch target field_0596 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0596State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
 
 void __thiscall st::fn_00492080(STBoatC *this,int param_1)
 
@@ -24369,7 +24554,7 @@ void __thiscall st::fn_00492080(STBoatC *this,int param_1)
 
   if ((((this->field_045D != CASE_F) && (this->field_045D != CASE_E)) ||
       (*(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e != (AnonShape_005EFAE0_B406B78B *)param_1
-      )) || (this->field_0596 != 2)) {
+      )) || (this->field_0596 != CASE_2)) {
     iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x50db,0,0,st::mutable_c_string("%s"),
                                "STBoatC::NotReadyForLoading incorrect call");
     if (iVar2 == 0) {
@@ -24387,7 +24572,7 @@ void __thiscall st::fn_00492080(STBoatC *this,int param_1)
                               this->field_0588,this->field_058A,this->field_058C,st::pointer_boundary_cast<undefined2 *>(&local_6),
                               (undefined2 *)((int)&param_1 + 2),st::pointer_boundary_cast<undefined2 *>(&local_8),&local_e,&local_c,st::pointer_boundary_cast<undefined2 *>(&local_a));
     if (iVar3 != -2) {
-      this->field_0596 = 0;
+      this->field_0596 = CASE_0;
       if (iVar3 != -1) {
         local_e = local_6;
         local_c = STPiece<2,2>(param_1);
@@ -24397,7 +24582,7 @@ void __thiscall st::fn_00492080(STBoatC *this,int param_1)
       st::fn_004031DE(this,0);
       return;
     }
-    this->field_0596 = 1;
+    this->field_0596 = CASE_1;
     this->field_0592 = 0;
     return;
   }
@@ -24405,7 +24590,7 @@ void __thiscall st::fn_00492080(STBoatC *this,int param_1)
        st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x50c8,0,0,st::mutable_c_string("%s"),
                           "STBoatC::NotReadyForLoading it`s impossible!");
   if (local_EAX_104 == 0) {
-    this->field_0596 = 1;
+    this->field_0596 = CASE_1;
     this->field_0592 = 0;
     return;
   }
@@ -24422,25 +24607,25 @@ void __thiscall st::fn_00492280(STBoatC *this,int param_1)
 
 {
   STBoatC_field_045DState SVar1;
-  int iVar2;
+  STBoatC_field_059AState SVar2;
   int iVar3;
 
   SVar1 = this->field_045D;
   if ((((SVar1 == CASE_F) || (SVar1 == CASE_E)) && (*(int *)&this->field_0x58e == param_1)) &&
-     (this->field_0596 == 2)) {
-    this->field_0596 = 1;
+     (this->field_0596 == CASE_2)) {
+    this->field_0596 = CASE_1;
     this->field_0592 = 0;
     return;
   }
   if (((SVar1 == CASE_F) || (SVar1 == CASE_E)) &&
-     ((*(int *)&this->field_0x58e == param_1 && (this->field_0596 == 3)))) {
-    iVar2 = this->field_059A;
-    if (((iVar2 == 0) || (iVar2 == 1)) || (iVar2 == 2)) {
-      this->field_059A = 9;
+     ((*(int *)&this->field_0x58e == param_1 && (this->field_0596 == CASE_3)))) {
+    SVar2 = this->field_059A;
+    if (((SVar2 == CASE_0) || (SVar2 == CASE_1)) || (SVar2 == CASE_2)) {
+      this->field_059A = CASE_9;
       return;
     }
-    if ((iVar2 == 3) || (iVar2 == 4)) {
-      this->field_059A = 5;
+    if ((SVar2 == CASE_3) || (SVar2 == CASE_4)) {
+      this->field_059A = CASE_5;
       return;
     }
   }

@@ -199,6 +199,31 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         self.assertNotIn("undefined1 field_0x0;", header)
         self.assertEqual(emitter.materialized_gap_fields, 2)
 
+    def test_semantic_anchor_wins_same_leaf_name_collision(self) -> None:
+        records = self.records() + [
+            {
+                "path": "/SubmarineTitans/Recovered/Owner",
+                "name": "Owner",
+                "class": "StructureDB",
+                "length": 4,
+                "description": "legacy recovered view",
+                "detail": {"components": [
+                    component(0, 0, 4, "unknown_00", "/int")
+                ]},
+            }
+        ]
+        for record in records:
+            if record["path"] == "/Owner":
+                record["description"] = "[ST_SEMANTIC_ANCHOR] canonical identity"
+        issues = []
+        emitter = TypeEmitter(records, issues)
+        self.assertEqual(
+            emitter.canonical_path["/SubmarineTitans/Recovered/Owner"],
+            "/Owner",
+        )
+        self.assertIn("/SubmarineTitans/Recovered/Owner", emitter.skipped_paths)
+        self.assertTrue(any(issue.kind == "type_name_collision" for issue in issues))
+
     def test_byte_pointer_is_a_neutral_storage_view(self) -> None:
         records = self.records() + [
             primitive("/byte", "byte", 1),

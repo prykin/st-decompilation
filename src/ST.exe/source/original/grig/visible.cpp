@@ -223,7 +223,7 @@ void __thiscall st::fn_00557C90(VisibleClassTy *this)
     } while (iVar11 < 3);
     st::fn_007176F0
               (g_sT3DSMAPContext_00807598,st::pointer_boundary_cast<undefined4 *>(this_00->field_003C),this_00->field_0028,
-               this_00->field_002C,(int)&this_00->field_0118,(int)this_00->field_004C,
+               this_00->field_002C,(int)this_00->field_0118,(int)this_00->field_004C,
                this_00->field_0030,this_00->field_0034,(int)&this_00->field_01D8,3,0x10,
                st::machine_word_boundary_cast<undefined4>(&DAT_007c9290),st::machine_word_boundary_cast<undefined4>(&DAT_007c929c));
     pVVar9 = this_00->field_0110;
@@ -680,12 +680,15 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 005597A0 -> 0055BB00 @ 00559860 */
 
 void __thiscall
 st::fn_005597A0
           (VisibleClassTy *this,int param_1,int param_2,char param_3,uint param_4,int param_5,
-          undefined4 param_6,uint param_7)
+          uint param_6,uint param_7)
 
 {
   char cVar1;
@@ -890,12 +893,15 @@ st::fn_00559B30
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 00559EC0 -> 0055BB00 @ 00559F86 */
 
 void __thiscall
 st::fn_00559EC0
           (VisibleClassTy *this,int param_1,int param_2,char param_3,uint param_4,int param_5,
-          undefined4 param_6,uint param_7)
+          uint param_6,uint param_7)
 
 {
   byte bVar1;
@@ -991,12 +997,15 @@ st::fn_00559EC0
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 00494AE0 -> 0055A270 @ 00494C1D; MOVSX at 00494C0D establishes signed source width 2 |
    00494DF0 -> 0055A270 @ 00494E5E; MOVSX at 00494E4E establishes signed source width 2 | 00557C90
-   -> 0055A270 @ 00557F34; MOVSX at 00557F1D establishes signed source width 1 */
+   -> 0055A270 @ 00557F34; MOVSX at 00557F1D establishes signed source width 1
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 0055A270 -> 0055BB00 @ 0055A336 */
 
 void __thiscall
 st::fn_0055A270
           (VisibleClassTy *this,int param_1,int param_2,char param_3,uint param_4,int param_5,
-          undefined4 param_6,uint param_7)
+          uint param_6,uint param_7)
 
 {
   byte bVar1;
@@ -1092,12 +1101,15 @@ st::fn_0055A270
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 00494AE0 -> 0055A620 @ 00494D39; MOVSX at 00494D29 establishes signed source width 2 |
    00494DF0 -> 0055A620 @ 00494EAD; MOVSX at 00494E9D establishes signed source width 2 | 00557C90
-   -> 0055A620 @ 00557F5E; MOVSX at 00557F47 establishes signed source width 1 */
+   -> 0055A620 @ 00557F5E; MOVSX at 00557F47 establishes signed source width 1
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 0055A620 -> 0055BB00 @ 0055A6E6 */
 
 void __thiscall
 st::fn_0055A620
           (VisibleClassTy *this,int param_1,int param_2,char param_3,uint param_4,int param_5,
-          undefined4 param_6,uint param_7)
+          uint param_6,uint param_7)
 
 {
   byte bVar1;

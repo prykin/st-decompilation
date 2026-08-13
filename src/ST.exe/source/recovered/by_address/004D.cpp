@@ -520,7 +520,7 @@ undefined4 __fastcall st::fn_004D2FD0(int param_1)
     } while (iVar2 < 0xc);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  st::fn_004025F9(g_playSystem_00802A38,*(int **)(param_1 + 0x18),local_8,local_c);
+  st::fn_004025F9(g_playSystem_00802A38,*(int **)(param_1 + 0x18),local_8,(uint)local_c);
   st::fn_006AB060(&local_8);
   st::fn_006AB060(local_2c + 3);
   st::fn_006AB060(&local_10);

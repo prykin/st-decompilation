@@ -445,7 +445,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       if (DAT_00808783 == '\x03') {
         if (piVar17[2] != 0) {
           DAT_00808784 = st::machine_word_boundary_cast<undefined4>((void *)piVar17[1]);
-          this_01[0x21].objectLock = st::pointer_boundary_cast<void *>(DAT_00808784);
+          this_01[0x21].field_000C = st::pointer_boundary_cast<void *>(DAT_00808784);
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
                      -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
@@ -457,7 +457,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         }
       }
       else if (piVar17[2] == 0) {
-        if (this_01[0x21].objectLock == nullptr) {
+        if (this_01[0x21].field_000C == nullptr) {
           DAT_00808784 = st::machine_word_boundary_cast<undefined4>((void *)piVar17[1]);
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
@@ -474,7 +474,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
                      -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
         }
         pvVar3 = (void *)piVar17[1];
-        this_01[0x21].objectLock = pvVar3;
+        this_01[0x21].field_000C = pvVar3;
         if (g_pausePanel_008016E0 != nullptr) {
           st::fn_0040504C(g_pausePanel_008016E0,(int)pvVar3);
           g_currentExceptionFrame = local_8c.previous;
@@ -627,7 +627,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
     case 9:
       if (DAT_008117bc != nullptr) {
         memset(&local_48, 0, 0x20); /* compiler bulk-zero initialization */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)*DAT_008117bc)();
       }
     }

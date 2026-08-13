@@ -698,12 +698,16 @@ void __thiscall st::fn_0053E640(SpecPanelTy *this)
 #line 4 "decomp/ST.exe/functions/0053E760/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   SpecPanelTy::SwitchPanel */
+   SpecPanelTy::SwitchPanel
+
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/SpecPanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 void __thiscall st::fn_0053E760(SpecPanelTy *this,int param_1)
 
 {
-  short sVar1;
+  SpecPanelTy_field_0172State SVar1;
   SpecPanelTy *pSVar3;
   int errorCode;
   int iVar4;
@@ -725,8 +729,8 @@ void __thiscall st::fn_0053E760(SpecPanelTy *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  sVar1 = local_8->field_0172;
-  if (sVar1 == 1) {
+  SVar1 = local_8->field_0172;
+  if (SVar1 == CASE_1) {
     if (param_1 != 0) {
       g_currentExceptionFrame = local_4c.previous;
       return;
@@ -745,12 +749,12 @@ void __thiscall st::fn_0053E760(SpecPanelTy *this,int param_1)
     (*(code *)pSVar3->field_0000->field_0018)(0);
   }
   else {
-    if (sVar1 == 2) {
+    if (SVar1 == CASE_2) {
       if (param_1 == 0) {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      local_8->field_0172 = 3;
+      local_8->field_0172 = CASE_3;
       st::fn_00405E2F(CASE_AF);
       if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_4c.previous;
@@ -760,13 +764,13 @@ void __thiscall st::fn_0053E760(SpecPanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    if (sVar1 != 3) {
+    if (SVar1 != CASE_3) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
   }
   if (param_1 == 0) {
-    pSVar3->field_0172 = 4;
+    pSVar3->field_0172 = CASE_4;
     st::fn_00405E2F(CASE_B0);
   }
   g_currentExceptionFrame = local_4c.previous;
@@ -883,7 +887,11 @@ void __thiscall st::fn_0053EA50(SpecPanelTy *this,int param_1)
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=00401401|0053EB70; family_names=SpecPanelTy::GetMessage; ret4=6;
-   direct_offsets={10:3,14:0,18:1,1c:1} */
+   direct_offsets={10:3,14:0,18:1,1c:1}
+
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/SpecPanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
 
@@ -933,14 +941,14 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_ID_NONE) {
-      if (this_00->field_0172 == 3) {
+      if (this_00->field_0172 == CASE_3) {
         iVar6 = st::machine_word_boundary_cast<int>(this_00->field_0050 + (this_00->field_0058 - this_00->field_0048));
         if (iVar6 < this_00->field_0044) {
           this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + -0xf);
         }
         if (this_00->field_0044 <= iVar6) {
           this_00->field_0044 = iVar6;
-          this_00->field_0172 = 1;
+          this_00->field_0172 = CASE_1;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)this_00->field_0000->field_0018)(1);
         }
@@ -950,14 +958,14 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      if (this_00->field_0172 == 4) {
+      if (this_00->field_0172 == CASE_4) {
         iVar6 = this_00->field_0050 + this_00->field_0058;
         if (this_00->field_0044 < iVar6) {
           this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + 0xf);
         }
         if (iVar6 <= this_00->field_0044) {
           this_00->field_0044 = iVar6;
-          this_00->field_0172 = 2;
+          this_00->field_0172 = CASE_2;
         }
         st::fn_006B3640
                   ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
@@ -1219,12 +1227,16 @@ void __thiscall st::fn_0053F220(ProdPanelTy *this)
 #line 4 "decomp/ST.exe/functions/0053F3A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   ProdPanelTy::SwitchPanel */
+   ProdPanelTy::SwitchPanel
+
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/ProdPanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 void __thiscall st::fn_0053F3A0(ProdPanelTy *this,int param_1)
 
 {
-  short sVar1;
+  ProdPanelTy_field_0172State PVar1;
   ProdPanelTy *pPVar3;
   int errorCode;
   int iVar4;
@@ -1246,8 +1258,8 @@ void __thiscall st::fn_0053F3A0(ProdPanelTy *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  sVar1 = local_8->field_0172;
-  if (sVar1 == 1) {
+  PVar1 = local_8->field_0172;
+  if (PVar1 == CASE_1) {
     if (param_1 != 0) {
       g_currentExceptionFrame = local_4c.previous;
       return;
@@ -1256,12 +1268,12 @@ void __thiscall st::fn_0053F3A0(ProdPanelTy *this,int param_1)
     (*(code *)local_8->field_0000->field_0018)(0);
   }
   else {
-    if (sVar1 == 2) {
+    if (PVar1 == CASE_2) {
       if (param_1 == 0) {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      local_8->field_0172 = 3;
+      local_8->field_0172 = CASE_3;
       st::fn_00405E2F(CASE_AF);
       if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_4c.previous;
@@ -1271,13 +1283,13 @@ void __thiscall st::fn_0053F3A0(ProdPanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    if (sVar1 != 3) {
+    if (PVar1 != CASE_3) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
   }
   if (param_1 == 0) {
-    pPVar3->field_0172 = 4;
+    pPVar3->field_0172 = CASE_4;
     st::fn_00405E2F(CASE_B0);
   }
   g_currentExceptionFrame = local_4c.previous;
@@ -1728,7 +1740,11 @@ st::fn_0053FEE0(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,undefined
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=004059D4|005400F0; family_names=ProdPanelTy::GetMessage; ret4=7;
-   direct_offsets={10:1,14:0,18:1,1c:0} */
+   direct_offsets={10:1,14:0,18:1,1c:0}
+
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/ProdPanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 int __thiscall st::fn_005400F0(ProdPanelTy *this,STMessage *message)
 
@@ -1769,14 +1785,14 @@ int __thiscall st::fn_005400F0(ProdPanelTy *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_ID_NONE) {
-      if (this_00->field_0172 == 3) {
+      if (this_00->field_0172 == CASE_3) {
         iVar5 = (this_00->field_0058 - this_00->field_0048) + this_00->field_0050;
         if (iVar5 < this_00->field_0044) {
           this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + -0xf);
         }
         if (this_00->field_0044 <= iVar5) {
           this_00->field_0044 = iVar5;
-          this_00->field_0172 = 1;
+          this_00->field_0172 = CASE_1;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)this_00->field_0000->field_0018)(1);
         }
@@ -1786,14 +1802,14 @@ int __thiscall st::fn_005400F0(ProdPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      if (this_00->field_0172 == 4) {
+      if (this_00->field_0172 == CASE_4) {
         iVar5 = this_00->field_0058 + this_00->field_0050;
         if (this_00->field_0044 < iVar5) {
           this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + 0xf);
         }
         if (iVar5 <= this_00->field_0044) {
           this_00->field_0044 = iVar5;
-          this_00->field_0172 = 2;
+          this_00->field_0172 = CASE_2;
         }
         st::fn_006B3640
                   ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,

@@ -28,7 +28,7 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
   InternalExceptionFrame local_60;
   SoundPosition local_1c;
   byte *local_10;
-  AnonShape_0060EA30_DCEB68AD *local_c;
+  uint local_c;
   STLightC *local_8;
 
   local_60.previous = g_currentExceptionFrame;

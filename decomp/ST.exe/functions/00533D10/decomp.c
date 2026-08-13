@@ -519,7 +519,7 @@ LAB_00534016:
           }
           this_00->field_01A0 = 1;
           message->id = MESS_CURSORCLASSTY_A101;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(message);
           g_currentExceptionFrame = local_8c.previous;
           return 0;

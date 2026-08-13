@@ -1,10 +1,10 @@
 program=ST.exe
-machine_prefilter_candidates=1140
+machine_prefilter_candidates=1119
 machine_store_candidate_functions=0
-machine_indirect_call_candidate_functions=1140
-machine_function_address_reference_functions=48
+machine_indirect_call_candidate_functions=1119
+machine_function_address_reference_functions=46
 machine_indirect_write_functions=0
-skipped_call_only_decompiles=1140
+skipped_call_only_decompiles=1119
 pcode_store_operations=0
 exact_structure_field_stores=0
 trusted_structure_field_stores=0

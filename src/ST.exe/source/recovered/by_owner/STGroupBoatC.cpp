@@ -13,7 +13,11 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=high
 
    [STPrototypeRepairApplier] Propagated return.
-   Evidence: 004232A0 returns STGroupBoatC::sub_004232A0 this @ 004232C9 */
+   Evidence: 004232A0 returns STGroupBoatC::sub_004232A0 this @ 004232C9
+
+   [STSwitchEnumApplier] Switch target field_0020 uses
+   /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_0020State. Cases:
+   CASE_0=0;CASE_14=20;CASE_1AE=430 */
 
 STGroupBoatC * __thiscall st::fn_004232A0(STGroupBoatC *this)
 
@@ -21,7 +25,7 @@ STGroupBoatC * __thiscall st::fn_004232A0(STGroupBoatC *this)
   st::fn_006E60E0(this);
   this->vtable = (STGroupBoatCVTable *)&st_global_00790508;
   this->field_001C = 0;
-  this->field_0020 = 0;
+  this->field_0020 = CASE_0;
   this->field_0029 = 0;
   this->field_002D = nullptr;
   this->field_0027 = 0;
@@ -38,7 +42,12 @@ STGroupBoatC * __thiscall st::fn_004232A0(STGroupBoatC *this)
    table_confidence=high
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 00497AF0 returns STGroupBoatC::STGroupBoatC this @ 00497C6C */
+   Evidence: 00497AF0 returns STGroupBoatC::STGroupBoatC this @ 00497C6C
+
+   [STSwitchEnumApplier] Switch target field_01E6 uses
+   /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_01E6State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21
+    */
 
 STGroupBoatC * __thiscall st::fn_00497AF0(STGroupBoatC *this)
 

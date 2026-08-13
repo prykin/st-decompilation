@@ -120,6 +120,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
 - A library loader returning heterogeneous serialized records must retain a
   neutral `byte *` ABI. Recover a separate payload view at each consumer; do not
   propagate one consumer's structure back into the loader return.
+- A library-static helper may inherit source ownership only between its nearest
+  exact source anchors when both anchors name the same normalized file and all
+  direct callers stay inside that closed interval or independently belong to
+  the same library. Never grow library ownership through an unrestricted call
+  graph; application callbacks and source-boundary crossings remain outside.
 - Decompiler `T * + n` arithmetic is measured in pointee elements unless an
   explicit integer cast proves byte arithmetic. Derive the current rendered
   pointee width before recording a field offset; newly exposed scaled geometry
@@ -255,6 +260,13 @@ Original binaries are local under ignored `bin/` and must not be committed.
   field still matches its recorded script baseline. Preserve every unrelated
   component, preflight every proposed datatype, and never use an overlay hash
   to rebaseline or rebuild the whole structure.
+- Same-leaf semantic-anchor and recovered structure duplicates may be reconciled
+  only when their complete lengths and defined-component geometry match and
+  every differing storage type is a compatible generic/concrete pointer view.
+  A disagreeing semantic field name is retained only when it follows
+  mechanically from the selected concrete pointee type or has current applier
+  provenance; otherwise keep the member offset-only. Category preference is
+  never recovery evidence.
 - Source-tree member syntax must not make the host compiler authoritative for
   recovered object layout. A receiver-aware physical-vtable slot may receive a
   non-virtual forwarding member wrapper over the explicit `vtable` field;

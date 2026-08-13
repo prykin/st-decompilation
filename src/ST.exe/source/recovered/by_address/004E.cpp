@@ -312,7 +312,7 @@ LAB_004e0a4f:
       uVar20 = param_1->field_05B0;
       do {
         if ((int)uVar20 < (int)(uVar20 + 2)) {
-          sVar14 = *(short *)&param_1->field_05B8 + 1;
+          sVar14 = (short)param_1->field_05B8 + 1;
           uVar9 = uVar20;
           do {
             sVar6 = (short)uVar9;

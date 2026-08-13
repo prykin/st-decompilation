@@ -11,10 +11,10 @@ SystemClassTy::SystemClassTy(SystemClassTy *this,AppClassTy *param_1,int param_2
 
 {
   this->systemId = param_2;
-  this->vtable = &SystemClassTyVTable.InitSystem;
+  this->vtable = &SystemClassTyVTable;
   this->app = param_1;
   this->objects = nullptr;
-  this->objectLock = nullptr;
+  this->field_000C = nullptr;
   this->messages = nullptr;
   this->nextMessages = nullptr;
   return this;

@@ -136,8 +136,7 @@ int __thiscall st::fn_00497E00(STGroupBoatC *this,STMessage *message)
     *(uint *)(local_8 + 0x38) = local_c;
     *(uint *)(local_8 + 0x3c) = local_10;
     st::fn_004025F9
-              (g_playSystem_00802A38,(int *)this_00->field_0018,local_8,
-               (AnonShape_0060EA30_DCEB68AD *)(local_10 + local_c));
+              (g_playSystem_00802A38,(int *)this_00->field_0018,local_8,local_10 + local_c);
     st::fn_006AB060(&local_1c);
     st::fn_006AB060(&local_18);
     st::fn_006AB060(&local_8);
@@ -286,7 +285,7 @@ int __thiscall st::fn_00497E00(STGroupBoatC *this,STMessage *message)
         st::fn_00403F80(this_00);
         st::fn_0040331E(this_00,1);
       }
-      if ((this_00->field_0027 == 0) && (this_00->field_0020 == 0)) {
+      if ((this_00->field_0027 == 0) && (this_00->field_0020 == CASE_0)) {
         this_00->field_005D = 1;
       }
       st::fn_006AE110(this_00->field_01DA);
@@ -1944,7 +1943,11 @@ undefined4 __thiscall st::fn_0049A940(STGroupBoatC *this,int param_1)
 #line 4 "decomp/ST.exe/functions/0049AAF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
-   STGroupBoatC::GrpAttack */
+   STGroupBoatC::GrpAttack
+
+   [STSwitchEnumApplier] Switch target field_0020 uses
+   /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_0020State. Cases:
+   CASE_0=0;CASE_14=20;CASE_1AE=430 */
 
 undefined4 __thiscall st::fn_0049AAF0(STGroupBoatC *this,int param_1)
 
@@ -5749,7 +5752,12 @@ LAB_004a0c5b:
    listing references; ret_sites=004A297E RET | 004A2C89 RET | 004A2CD7 RET
    [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
    return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
-   while changing only function arity; restore Ghidra DefaultDataType */
+   while changing only function arity; restore Ghidra DefaultDataType
+
+   [STSwitchEnumApplier] Switch target field_01E6 uses
+   /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_01E6State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21
+    */
 
 void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
 
@@ -9820,7 +9828,12 @@ void __thiscall st::fn_004A80A0(STGroupBoatC *this)
 #line 4 "decomp/ST.exe/functions/004A8340/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
-   STGroupBoatC::GetDepotForAttack */
+   STGroupBoatC::GetDepotForAttack
+
+   [STSwitchEnumApplier] Switch target field_01E6 uses
+   /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_01E6State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21
+    */
 
 void __thiscall
 st::fn_004A8340

@@ -1544,34 +1544,13 @@ int __fastcall st::fn_00416400(STJellyGunC *param_1)
   }
   if ((param_1->field_005A == '\0') && (param_1->field_004D == '\x01')) {
     sVar6 = param_1->field_003A;
-    if (sVar6 < 0) {
-      iVar4 = (short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
-                     (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar4 = (int)(short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
-                          (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f));
-    }
+    iVar4 = STBiasedDiv16(sVar6, 0xc9); /* exact signed 16-bit grid-index division */
     if (param_1->field_0054 == iVar4) {
       sVar6 = param_1->field_003C;
-      if (sVar6 < 0) {
-        iVar4 = (short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
-                       (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar4 = (int)(short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
-                            (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f));
-      }
+      iVar4 = STBiasedDiv16(sVar6, 0xc9); /* exact signed 16-bit grid-index division */
       if (param_1->field_0056 == iVar4) {
         sVar6 = param_1->field_003E;
-        if (sVar6 < 0) {
-          iVar4 = (short)((sVar6 / 200 + (sVar6 >> 0xf)) -
-                         (short)((longlong)(int)sVar6 * 0x51eb851f >> 0x3f)) + -1;
-        }
-        else {
-          iVar4 = (int)(short)((sVar6 / 200 + (sVar6 >> 0xf)) -
-                              (short)((longlong)(int)sVar6 * 0x51eb851f >> 0x3f));
-        }
+        iVar4 = STBiasedDiv16(sVar6, 200); /* exact signed 16-bit grid-index division */
         if (param_1->field_0058 == iVar4) goto LAB_004166c7;
       }
     }
@@ -3443,8 +3422,7 @@ void __thiscall st::fn_0041CE40(void *this,int param_1)
     st::fn_00402C2A
               (g_visibleClass_00802A88,(int)STField<short>(this,0x5b),
                (int)STField<short>(this,0x5d),(char)STField<undefined2>(this,0x5f),
-               STField<undefined *>(this,0x24),param_1,STField<undefined4>(this,0x18),
-               0xffffffff);
+               STField<undefined *>(this,0x24),param_1,STField<uint>(this,0x18),0xffffffff);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(*(int *)this + 8))();
@@ -3503,7 +3481,7 @@ void __thiscall st::fn_0041CFF0(void *this,int param_1)
     st::fn_004020E0
               (g_visibleClass_00802A88,(int)STField<short>(this,0x5b),
                (int)STField<short>(this,0x5d),(char)STField<undefined2>(this,0x5f),
-               STField<uint>(this,0x24),param_1,STField<undefined4>(this,0x18),0xffffffff);
+               STField<uint>(this,0x24),param_1,STField<uint>(this,0x18),0xffffffff);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(*(int *)this + 8))();
@@ -3591,7 +3569,7 @@ void __thiscall st::fn_0041D3E0(void *this,int param_1)
     st::fn_00401CB7
               (g_visibleClass_00802A88,(int)STField<short>(this,0x5b),
                (int)STField<short>(this,0x5d),(char)STField<undefined2>(this,0x5f),
-               STField<uint>(this,0x24),param_1,STField<undefined4>(this,0x18),0xffffffff);
+               STField<uint>(this,0x24),param_1,STField<uint>(this,0x18),0xffffffff);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(*(int *)this + 8))();

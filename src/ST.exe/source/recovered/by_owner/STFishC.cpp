@@ -68,7 +68,11 @@ void __thiscall st::fn_004162F0(STFishC *this,short *param_1,short *param_2,shor
    table_confidence=high
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 0057BD20 returns STFishC::STFishC this @ 0057BD50 */
+   Evidence: 0057BD20 returns STFishC::STFishC this @ 0057BD50
+
+   [STSwitchEnumApplier] Switch target field_023B uses
+   /SubmarineTitans/Recovered/Enums/STFishC_field_023BState. Cases:
+   CASE_0=0;CASE_1=1;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 STFishC * __thiscall st::fn_0057BD20(STFishC *this)
 
@@ -77,7 +81,7 @@ STFishC * __thiscall st::fn_0057BD20(STFishC *this)
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079B524);
   this->vtable = &st_global_0079B3C4;
-  this->field_023B = 0;
+  this->field_023B = CASE_0;
   return this;
 }
 

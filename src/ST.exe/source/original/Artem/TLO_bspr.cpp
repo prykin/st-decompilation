@@ -9,7 +9,12 @@
    [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=int __thiscall
    LoadImages(TLOBaseTy * this) Evidence: every machine RET purges exactly 0 explicit stack bytes;
    current signature describes 4; removed trailing parameter slots have no listing references;
-   ret_sites=004C9DB7 RET | 004CA0F2 RET | 004CA139 RET */
+   ret_sites=004C9DB7 RET | 004CA0F2 RET | 004CA139 RET
+
+   [STSwitchEnumApplier] Switch target field_0245 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115;CASE_FFFFFFFF=4294967295
+    */
 
 int __thiscall st::fn_004C9770(TLOBaseTy *this)
 
@@ -344,9 +349,9 @@ LAB_004ca02a:
   }
   st::fn_00405240((STT3DSprC *)this_01,5,uVar10);
 LAB_004ca0a2:
-  st::fn_00402455(this_00,*(short *)&this_00->field_05B0 * 0xc9 + 100,
-               *(short *)&this_00->field_05B4 * 0xc9 + 100,
-               *(short *)&this_00->field_05B8 * 200 + 100,0,0,0,1);
+  st::fn_00402455(this_00,(short)this_00->field_05B0 * 0xc9 + 100,
+               *(short *)&this_00->field_05B4 * 0xc9 + 100,(short)this_00->field_05B8 * 200 + 100,0,
+               0,0,1);
   g_currentExceptionFrame = local_54.previous;
   return 0;
 }

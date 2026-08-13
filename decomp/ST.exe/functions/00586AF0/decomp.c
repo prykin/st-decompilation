@@ -794,7 +794,7 @@ LAB_00587761:
        )) {
       (*pSVar10->vtable->vfunc_E0)(param_1[0x9e],local_28,local_2c,local_30,&local_24);
       sub_00416240(param_1,local_28[0],local_2c[0],local_30[0]);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*param_1 + 0xd8))();
       return;
     }
@@ -832,7 +832,7 @@ LAB_00588350:
       }
     }
   }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_005884da:
   (**(code **)(*param_1 + 0xd8))();
   return;

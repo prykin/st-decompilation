@@ -403,16 +403,16 @@ int __thiscall st::fn_0054D2F0(STPlaySystemC *this,cMf32 *param_1)
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::SaveObjData
 
-   [STPrototypeApplier] Propagated parameter 3.
-   Evidence: 0060EA30 -> 0054D430 @ 0060EB81
-
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 005F5F20 -> 0054D430 @ 005F62C9; /STColl3C+0x18 | 00621B50 -> 0054D430 @ 00622246;
-   /STMineSetC+0x18 */
+   /STMineSetC+0x18
+
+   [STPrototypeRepairApplier] Propagated parameter 3.
+   Evidence: 0054D430 -> 006F13F0 @ 0054D4A7 | 0060EA30 -> 0054D430 @ 0060EB81; 0060EB66 definite
+   output through FUN_00614950 parameter 1 */
 
 int __thiscall
-st::fn_0054D430
-          (STPlaySystemC *this,int *param_1,byte *param_2,AnonShape_0060EA30_DCEB68AD *param_3)
+st::fn_0054D430(STPlaySystemC *this,int *param_1,byte *param_2,uint param_3)
 
 {
   int iVar2;
@@ -431,7 +431,7 @@ st::fn_0054D430
   iVar2 = st::fn_0072D7F0(local_6c.jumpBuffer,0);
   if (iVar2 == 0) {
     st::external_00000080(local_28,st::mutable_c_string("%s%08ld"),PTR_DAT_007c83b0,param_1);
-    st::fn_006F13F0(local_8->field_0024,0xc,local_28,param_2,(uint)param_3,nullptr,'\x02',
+    st::fn_006F13F0(local_8->field_0024,0xc,local_28,param_2,param_3,nullptr,'\x02',
                   nullptr);
     g_currentExceptionFrame = local_6c.previous;
     return 0;

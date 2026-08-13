@@ -412,7 +412,11 @@ Ghidra-compatible typed form:
 
 The explicit receiver is correct for a `__thiscall` function pointer stored in
 a table. Source extraction may later render it as a real C++ member call.
-Unresolved sites are catalogued as `raw_indirect_call`.
+It is not correct for an ordinary C function table: a call such as
+`table->alloc_rows(context, pool, width, count)` passes every value on the
+stack and must retain its machine-proven `__cdecl`/`__stdcall` callback ABI.
+Unresolved sites are catalogued as `raw_indirect_call`; their generated hint no
+longer assumes that every table is a C++ vtable.
 
 ### ABI high-variable artifacts
 

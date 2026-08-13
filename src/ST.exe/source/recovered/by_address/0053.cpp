@@ -308,7 +308,7 @@ PlayPanelTy * __cdecl st::fn_00539AA0(void)
     this->field_0060 = 0xffffffff;
     this->field_0064 = 4;
     this->field_0068 = nullptr;
-    this->field_0172 = 2;
+    this->field_0172 = CASE_2;
     this->field_0178 = 0;
     this->vtable = &st_global_0079AD48;
     this->field_0040 = 0x1d0;

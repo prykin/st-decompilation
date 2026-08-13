@@ -996,7 +996,7 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
             else {
               local_20 = &this_00->vtable_at_1c;
             }
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)*DAT_008117bc)(local_38);
           }
           st::fn_00401BE0((AiEventClassTy *)&this_00->vtable_at_1c,message);
@@ -1047,7 +1047,7 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
           else {
             local_20 = &this_00->vtable_at_1c;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)*DAT_008117bc)(local_38);
         }
         st::fn_0040281F();

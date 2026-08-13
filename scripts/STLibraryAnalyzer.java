@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
@@ -57,6 +58,7 @@ public class STLibraryAnalyzer extends GhidraScript {
         if (root == null) return;
 
         Map<Address, Evidence> found = new LinkedHashMap<>();
+        Map<Address, Set<SourceAnchor>> sourceAnchors = new HashMap<>();
         Set<Address> inferredCrt = inferCrtCluster();
         for (Data data : DefinedStringIterator.forProgram(currentProgram)) {
             monitor.checkCancelled();
@@ -71,6 +73,10 @@ public class STLibraryAnalyzer extends GhidraScript {
                 Evidence evidence = found.computeIfAbsent(function.getEntryPoint(),
                     ignored -> new Evidence(function));
                 evidence.add(classification, value, ref.getFromAddress());
+                sourceAnchors.computeIfAbsent(function.getEntryPoint(),
+                    ignored -> new TreeSet<>()).add(new SourceAnchor(
+                        classification.library, classification.namespace,
+                        normalizeSource(value)));
             }
         }
 
@@ -93,6 +99,10 @@ public class STLibraryAnalyzer extends GhidraScript {
                     evidence.add(classification,
                         "recovered source-provenance comment: " + path,
                         function.getEntryPoint(), true);
+                    sourceAnchors.computeIfAbsent(function.getEntryPoint(),
+                        ignored -> new TreeSet<>()).add(new SourceAnchor(
+                            classification.library, classification.namespace,
+                            normalizeSource(path)));
                 }
             }
             boolean inCrtBlock = inferredCrt.contains(function.getEntryPoint());
@@ -113,6 +123,8 @@ public class STLibraryAnalyzer extends GhidraScript {
                     function.getEntryPoint(), false);
             }
         }
+
+        int intervalHelpers = inferSourceIntervalHelpers(found, sourceAnchors);
 
         List<Proposal> proposals = new ArrayList<>();
         int conflicts = 0;
@@ -138,6 +150,7 @@ public class STLibraryAnalyzer extends GhidraScript {
             "program=" + currentProgram.getName(),
             "proposals=" + proposals.size(),
             "conflicts=" + conflicts,
+            "source_interval_helpers=" + intervalHelpers,
             "ourlib_proposals=" + proposals.stream()
                 .filter(proposal -> proposal.library.startsWith("OURLIB_")).count(),
             "note=Only rows with apply=1 are consumed by STLibraryApplier."),
@@ -162,6 +175,87 @@ public class STLibraryAnalyzer extends GhidraScript {
                     "Library::Ourlib::" + module);
         }
         return null;
+    }
+
+    /**
+     * MSVC emits the functions of one object file contiguously, but only functions which
+     * directly use an assertion/debug path retain a reference to that source string.  Recover
+     * the static helpers between two exact anchors only when those are also the nearest source
+     * anchors on both sides and every direct caller stays inside that closed interval (or is
+     * already independently classified as the same library).  This deliberately does not grow
+     * an arbitrary call-graph closure: application callbacks invoked indirectly by a library
+     * receive no direct caller edge and code on either side of a source boundary is rejected.
+     */
+    private int inferSourceIntervalHelpers(Map<Address, Evidence> found,
+            Map<Address, Set<SourceAnchor>> sourceAnchors) throws Exception {
+        List<Function> functions = new ArrayList<>();
+        for (Function function : currentProgram.getFunctionManager().getFunctions(true))
+            if (!function.isExternal()) functions.add(function);
+        functions.sort(Comparator.comparing(Function::getEntryPoint));
+
+        SourceAnchor[] exact = new SourceAnchor[functions.size()];
+        for (int index = 0; index < functions.size(); index++) {
+            Set<SourceAnchor> anchors = sourceAnchors.get(
+                functions.get(index).getEntryPoint());
+            if (anchors != null && anchors.size() == 1)
+                exact[index] = anchors.iterator().next();
+        }
+
+        int[] prior = new int[functions.size()], following = new int[functions.size()];
+        int nearest = -1;
+        for (int index = 0; index < functions.size(); index++) {
+            prior[index] = nearest;
+            if (exact[index] != null) nearest = index;
+        }
+        nearest = -1;
+        for (int index = functions.size() - 1; index >= 0; index--) {
+            following[index] = nearest;
+            if (exact[index] != null) nearest = index;
+        }
+
+        int inferred = 0;
+        for (int index = 0; index < functions.size(); index++) {
+            monitor.checkCancelled();
+            if (exact[index] != null || prior[index] < 0 || following[index] < 0)
+                continue;
+            SourceAnchor left = exact[prior[index]], right = exact[following[index]];
+            if (!left.equals(right)) continue;
+            Function function = functions.get(index);
+            Set<Function> callers = function.getCallingFunctions(monitor);
+            if (callers.isEmpty()) continue;
+            boolean closed = true;
+            for (Function caller : callers) {
+                Address entry = caller.getEntryPoint();
+                if (entry.compareTo(functions.get(prior[index]).getEntryPoint()) >= 0 &&
+                        entry.compareTo(functions.get(following[index]).getEntryPoint()) <= 0)
+                    continue;
+                Evidence callerEvidence = found.get(entry);
+                if (!exactLibrary(callerEvidence, left)) {
+                    closed = false;
+                    break;
+                }
+            }
+            if (!closed) continue;
+            Evidence evidence = found.computeIfAbsent(function.getEntryPoint(),
+                ignored -> new Evidence(function));
+            boolean already = exactLibrary(evidence, left);
+            evidence.add(new Classification(left.library, left.namespace),
+                "inferred static helper between nearest exact source anchors: " +
+                    left.source, function.getEntryPoint(), true);
+            if (!already) inferred++;
+        }
+        return inferred;
+    }
+
+    private boolean exactLibrary(Evidence evidence, SourceAnchor anchor) {
+        return evidence != null && evidence.libraries.size() == 1 &&
+            evidence.namespaces.size() == 1 &&
+            evidence.libraries.contains(anchor.library) &&
+            evidence.namespaces.contains(anchor.namespace);
+    }
+
+    private String normalizeSource(String value) {
+        return value.replace('/', '\\').trim().toLowerCase(Locale.ROOT);
     }
 
     private Set<Address> inferCrtCluster() throws Exception {
@@ -262,6 +356,16 @@ public class STLibraryAnalyzer extends GhidraScript {
     private static class Classification {
         final String library, namespace;
         Classification(String library, String namespace) { this.library = library; this.namespace = namespace; }
+    }
+    private record SourceAnchor(String library, String namespace, String source)
+            implements Comparable<SourceAnchor> {
+        @Override
+        public int compareTo(SourceAnchor other) {
+            int value = library.compareTo(other.library);
+            if (value != 0) return value;
+            value = namespace.compareTo(other.namespace);
+            return value != 0 ? value : source.compareTo(other.source);
+        }
     }
     private static class Evidence {
         final Function function;

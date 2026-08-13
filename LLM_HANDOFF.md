@@ -1088,3 +1088,81 @@ Current accepted state:
   export introduced no regression;
 - the full recovery/export which established the new facts took `01:25:41`;
   the final warmed export took `00:02:48` and reused all 10,400 function bodies.
+
+## Source-bracketed static library helpers
+
+The latest accepted export supersedes the state above. `0075FA00` exposed a
+classification gap: it contains a four-stack-argument call through slot `+8`
+of an IJG JPEG function table, but the generic raw-call hint described it as a
+possible `__thiscall` vtable call. The function has no direct source-string
+reference, yet it lies between the nearest exact `jquant1.c` anchors and all of
+its callers belong to that same closed object-file interval.
+
+`STLibraryAnalyzer` now admits this pattern generically. A helper inherits
+library ownership only when the nearest exact source anchors on both sides name
+the same normalized file, it has at least one direct caller, and every caller
+is inside that interval or independently belongs to the same library. This is
+not call-graph closure, so indirectly invoked application callbacks remain
+outside. The pass recovered 96 helpers with zero conflicts. The `jquant1.c`
+cluster added `0075F7D0`, `0075F9D0`, `0075FA00`, `0075FB30`, and `0075FB50`.
+Their bodies are excluded from the LLM game corpus but remain recorded in
+`library_functions.json` with address, call relations, signature, source
+evidence, and tags.
+
+`STDecompExport` also stopped claiming that every `raw_indirect_call` needs an
+explicit receiver. Vtable slots still use receiver-aware `__thiscall`; ordinary
+C function tables retain the calling convention proven by stack cleanup and
+argument setup.
+
+Current accepted state:
+
+- run `3af397a8ad99b62a8119ee85de446470e1ef4cce6dc1d2f18fccdcd589d8f980`;
+- semantic hash `b5781d678f5958c4addf367f089811c7953a2eaaaaa43d6b5cdad943f81cac67`;
+- corpus manifest `9ae4850a02520eb5eb8c2e91af12effda2495f49e69a1916f37c0416407adaa2`;
+- 10,400 function records, 5,624 bodies, zero failed bodies, and 2,737 typed
+  vtable slots;
+- export gate: zero hard regressions and four improving stage-transition
+  warnings; ABI gate: zero errors and warnings;
+- `raw_indirect_call -43`, `raw_pointer_offset -54`, `stack_slot_reuse -52`,
+  `undefined_type -218`, and `unresolved_register_input -23` because 96 linked
+  library bodies no longer pollute game-code quality statistics.
+
+## Exact-layout semantic type reconciliation
+
+The latest accepted export supersedes the state above. A source-tree mismatch
+exposed two distinct Ghidra structures with the same `SystemClassTy` leaf name:
+the semantic anchor `/SystemClassTy`, used by `006E51C0`, and the stronger but
+noncanonical `/SubmarineTitans/Recovered/SystemClassTy` view selected by the
+old source-tree path heuristic. This made the constructor body name `app` and
+`objectLock` while the generated declaration contained `unknown_18` and
+`unknown_0c`.
+
+`STTypeBootstrapAnalyzer/Applier` now reconciles this class of duplicate without
+an image-specific field list. It requires one unique semantic anchor, identical
+complete structure/component geometry, hash-intact baselines on both views, and
+only compatible generic/concrete pointer differences. Concrete pointee types
+win over `void *`; same-nominal recursive pointers retain the canonical path.
+A disagreeing semantic member name survives only when it is mechanically
+derived from the selected pointee type (`AppClassTy * -> app`) or carries active
+applier provenance. Otherwise it becomes an offset-only deterministic name.
+Consequently `objectLock` is now `field_000C`, while the DArray fields, typed
+vptr, `app`, and other agreeing members live on the sole canonical structure.
+
+`STAbiRegressionGate` recognizes the retirement of an accepted legacy class
+path only through the same unique-anchor, same-leaf, exact-geometry and
+compatible-storage proof. A missing path without that proof remains a hard
+class-vptr erasure. `tools/st_source_tree.py` independently prefers an exported
+`[ST_SEMANTIC_ANCHOR]` over category naming, preventing a stale recovered path
+from silently defining the public C++ record.
+
+Current accepted state:
+
+- run `aa7be8cea631072351cbdb06752fd356e417f76b455ea28e695bc48ae5226836`;
+- semantic hash `3165427b06395bf91dcf3848364a7bef1d66e934908cc378f28beb0fdc519489`;
+- corpus manifest `97e595a0f6ecce9db4ae11d8ab69b7cc0dd50f02588284f0bcd0a9922ec3561a`;
+- 10,400 function records, 5,624 bodies, zero failed bodies, and 2,737 typed
+  physical-vtable slots;
+- export gate and ABI gate: zero errors and zero warnings after the accepted
+  stage transition;
+- the generated `SystemClassTy.cpp` translation unit passes the local C++17
+  syntax audit with no diagnostics.

@@ -72,7 +72,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           puVar7 = ccFntTy::CreateTypeSSpr
                              (g_startSystem_0081176C->field_0030,puVar8,iVar14,iVar15,cVar16,uVar10,
                               iVar18,iVar19,iVar20);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(local_8 + 8))(puVar7,uVar22,uVar23);
           this_00->field_1D90 = 0;
         }
@@ -86,7 +86,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           puVar7 = ccFntTy::CreateTypeSSpr
                              (g_startSystem_0081176C->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,
                               0xffffffff,1,-1,-1);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(iVar14 + 8))(puVar7,uVar22,uVar23);
           this_00->field_1D90 = 0;
         }

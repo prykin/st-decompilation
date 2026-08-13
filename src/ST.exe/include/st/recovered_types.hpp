@@ -717,6 +717,7 @@ struct AnonShape_00575CB0_4AFBDFBD;
 struct AnonShape_00575CB0_C367735D;
 struct AnonShape_00577690_10255A81;
 struct AnonShape_005776D0_202C27C7;
+struct AnonShape_00578630_C5BC66E1;
 struct AnonShape_00578630_E75DF825;
 struct AnonShape_00579350_2E014C47;
 struct AnonShape_0057A2C0_A829D396;
@@ -1462,6 +1463,7 @@ struct BulkInitializedRecord_008087C7;
 struct ButtonClassTy;
 struct ButtonClassTyVTable;
 struct CampaignTy;
+struct CampaignTy_Record_00BB_01FB;
 struct CampaignTyVTable;
 struct CBaseRenderer;
 struct ccFntTy;
@@ -1472,6 +1474,7 @@ struct CGenerate_field_5853DArray;
 struct CGenerate_field_5853Element;
 struct ChatGlassTy;
 struct ChooseMapTy;
+struct ChooseMapTy_Record_00BC_01FB;
 struct ChooseMapTyVTable;
 struct CLIENT_ID;
 struct cLoadingTy;
@@ -1502,6 +1505,7 @@ struct FSGSTy_field_1EBEDArray;
 struct FSGSTy_field_1EBEElement;
 struct FSGSTy_field_1FB3DArray;
 struct FSGSTy_field_1FB3Element;
+struct FSGSTy_Record_00BC_01FB;
 struct FSGSTyVTable;
 struct GameSystemC;
 struct GameSystemC_GetMessage_005776D0_MessagePayload_Case_MESS_GAMESYSTEMC_43FF;
@@ -1587,12 +1591,14 @@ struct localerefcount;
 struct MAdvTy;
 struct MAdvTyVTable;
 struct MainMenuTy;
+struct MainMenuTy_Record_00BB_01FB;
 struct MainMenuTyVTable;
 union Misc;
 struct MMMObjTy;
 struct MMObjTy;
 struct MMObjTyVTable;
 struct MMsgTy;
+struct MMsgTy_Record_00BC_01FB;
 struct MMsgTyVTable;
 struct MoneyTy;
 struct MoneyTyVTable;
@@ -1619,6 +1625,7 @@ struct PlayPanelTyVTable;
 struct PlaySystemTy;
 struct PopUpTy;
 struct PrividerTy;
+struct PrividerTy_Record_00BC_01FB;
 struct PrividerTyVTable;
 struct ProdPanelTy;
 struct RadioClassTy;
@@ -1677,11 +1684,14 @@ struct SettMapMTy_field_1F84DArray;
 struct SettMapMTy_field_1F84Element;
 struct SettMapMTy_field_2237DArray;
 struct SettMapMTy_field_2237Element;
+struct SettMapMTy_Record_00BC_01FB;
 struct SettMapMTyVTable;
 struct SettMapSTy;
 struct SettMapTy;
+struct SettMapTy_Record_00BC_01FB;
 struct SettMapTyVTable;
 struct SIDTy;
+struct SIDTy_Record_00BC_01FB;
 struct SIDTyVTable;
 struct SliderClassTy;
 struct SliderClassTyVTable;
@@ -1991,26 +2001,32 @@ struct VTable_007A1D10;
 struct VTable_007A1D68;
 struct VTable_007A1D88;
 struct WaitTy;
+struct WaitTy_Record_00BC_01FB;
 struct WaitTyVTable;
 struct WSAData;
 
 using AiEventClassTy_GetMessage_iVar7Enum = uint32_t;
 using AiEventClassTy_GetMessage_local_EAX_488Enum = uint32_t;
 using AiEventClassTy_sub_0065BD70_SVar1Enum = uint32_t;
+using AiFltClassTy_field_009BState = uint32_t;
 using AiFltClassTy_GetAiMess_iVar11Enum = uint32_t;
 using AiFltClassTy_GetAiMess_iVar12Enum = uint32_t;
 using AiFltClassTy_GetAiMess_iVar20Enum = uint32_t;
 using AiFltClassTy_GetAiMess_switch_0Enum = uint32_t;
 using AiFltClassTy_GetAiMess_switch_2Enum = uint32_t;
 using AiFltClassTy_sub_00660F70_switch_0Enum = uint32_t;
+using AiFltClassTy_sub_00664960_AVar21Enum = uint32_t;
 using AiFltClassTy_sub_00664960_switch_0Enum = uint32_t;
 using AiFltClassTy_sub_00664960_switch_3Enum = uint32_t;
 using AiFltClassTy_sub_00664960_switch_4Enum = uint32_t;
 using AiFltClassTy_sub_00664960_uVar13Enum = uint32_t;
 using AiFltClassTy_sub_00664960_uVar14Enum = uint32_t;
 using AiFltClassTy_sub_00664960_uVar19Enum = uint32_t;
+using AiFltClassTy_sub_00664960_uVar20Enum = uint32_t;
 using AiFltClassTy_sub_00664960_uVar26Enum = uint32_t;
+using AiFltClassTy_sub_00664960_uVar27Enum = uint32_t;
 using AiFltClassTy_sub_00664960_uVar30Enum = uint32_t;
+using AiFltClassTy_sub_00664960_uVar31Enum = uint32_t;
 using AiPlrClassTy_ExecTech_switch_0Enum = uint32_t;
 using AiPlrClassTy_GetMessage_SVar2Enum = uint32_t;
 using AiTactClassTy_ExecClaim_switch_0Enum = uint32_t;
@@ -2033,15 +2049,30 @@ using CampaignTy_GetMessage_switch_2Enum = uint32_t;
 using CampaignTy_GetMessage_switch_3Enum = uint32_t;
 using CampaignTy_InitCampaign_iVar2Enum = uint32_t;
 using CampaignTy_InitCampaign_iVar7Enum = uint32_t;
+using CampaignTy_InitCampaign_iVar9Enum = uint32_t;
 using ccFntTy_CreateTypeSSpr_param_4Enum = uint32_t;
+using ChooseMapTy_CreateCtrls_switch_0Enum = uint32_t;
 using ChooseMapTy_field_1A5FState = uint8_t;
+using ChooseMapTy_GetMessage_SVar3Enum = uint32_t;
 using ChooseMapTy_GetMessage_SVar4Enum = uint32_t;
 using ChooseMapTy_GetMessage_SVar5Enum = uint32_t;
+using ChooseMapTy_GetMessage_switch_1Enum = uint32_t;
+using ChooseMapTy_GetMessage_switch_3Enum = uint32_t;
+using ChooseMapTy_GetMessage_switch_5Enum = uint32_t;
+using ChooseMapTy_GetMessage_switch_7Enum = uint32_t;
+using ChooseMapTy_GetMessage_uVar27Enum = uint32_t;
 using ChooseMapTy_InitChooseMap_CVar1Enum = uint32_t;
 using ChooseMapTy_InitChooseMap_local_cEnum = uint32_t;
 using ChooseMapTy_InitChooseMap_param_2Enum = uint8_t;
+using ChooseMapTy_InitChooseMap_switch_0Enum = uint32_t;
+using ChooseMapTy_InitChooseMap_switch_1Enum = uint32_t;
 using ChooseMapTy_InitChooseMap_uVar11Enum = uint32_t;
 using ChooseMapTy_InitChooseMap_uVar13Enum = uint32_t;
+using ChooseMapTy_InitChooseMap_uVar1Enum = uint32_t;
+using ChooseMapTy_NoneChooseMap_switch_0Enum = uint32_t;
+using ChooseMapTy_PaintChooseMap_switch_0Enum = uint32_t;
+using ChooseMapTy_PrepFiles_switch_0Enum = uint32_t;
+using ChooseMapTy_PrepFiles_switch_2Enum = uint32_t;
 using cLoadingTy_SetState_param_1Enum = uint32_t;
 using ComboTy_GetMessage_SVar2Enum = uint32_t;
 using CPanelTy_CreateBut_uVar2Enum = uint32_t;
@@ -2052,6 +2083,7 @@ using CPanelTy_field_0B9EState = uint8_t;
 using CPanelTy_field_0BF5State = uint32_t;
 using CPanelTy_field_0BFAState = uint8_t;
 using CPanelTy_field_0C11State = uint8_t;
+using CPanelTy_field_0C29State = uint8_t;
 using CPanelTy_field_0C3CState = uint8_t;
 using CPanelTy_GetMessage_iVar5Enum = uint32_t;
 using CPanelTy_GetMessage_iVar6Enum = uint32_t;
@@ -2084,6 +2116,7 @@ using CPanelTy_sub_005050B0_param_1Enum = uint8_t;
 using CursorClassTy_field_00CDState = uint32_t;
 using CursorClassTy_field_00DEState = uint8_t;
 using CursorClassTy_field_0493State = uint8_t;
+using CursorClassTy_field_0494State = uint16_t;
 using CursorClassTy_field_04A2State = uint32_t;
 using CursorClassTy_GetMessage_iVar8Enum = uint32_t;
 using CursorClassTy_GetMessage_iVar9Enum = uint32_t;
@@ -2095,18 +2128,31 @@ using CursorClassTy_GetMessage_switch_11Enum = uint32_t;
 using CursorClassTy_SetGCType_iVar2Enum = uint32_t;
 using CursorClassTy_SetGCType_iVar6Enum = uint32_t;
 using CursorClassTy_SetGCType_param_1Enum = uint16_t;
+using CursorClassTy_TakeCmdToRun_CVar1Enum = uint32_t;
 using CursorClassTy_TakeCmdToRun_sVar1Enum = uint32_t;
+using FSGSTy_CreateCtrls_switch_0Enum = uint32_t;
 using FSGSTy_field_0065State = uint8_t;
 using FSGSTy_field_1A5FState = uint8_t;
 using FSGSTy_GetMessage_iVar21Enum = uint32_t;
+using FSGSTy_GetMessage_iVar43Enum = uint32_t;
 using FSGSTy_GetMessage_iVar44Enum = uint32_t;
 using FSGSTy_GetMessage_iVar45Enum = uint32_t;
+using FSGSTy_GetMessage_SVar5Enum = uint32_t;
 using FSGSTy_GetMessage_SVar6Enum = uint32_t;
 using FSGSTy_GetMessage_switch_14Enum = uint32_t;
 using FSGSTy_GetMessage_switch_15Enum = uint32_t;
+using FSGSTy_GetMessage_switch_1Enum = uint32_t;
+using FSGSTy_GetMessage_switch_2Enum = uint32_t;
+using FSGSTy_GetMessage_switch_3Enum = uint32_t;
 using FSGSTy_GetMessage_switch_8Enum = uint32_t;
 using FSGSTy_NoneFSGS_FVar1Enum = uint32_t;
+using FSGSTy_NoneFSGS_switch_2Enum = uint32_t;
+using FSGSTy_PaintFSGS_switch_0Enum = uint32_t;
 using FSGSTy_SetState_FVar1Enum = uint32_t;
+using FSGSTy_SetState_switch_2Enum = uint32_t;
+using FSGSTy_SetState_switch_3Enum = uint32_t;
+using FSGSTy_sub_0059B820_uVar1Enum = uint32_t;
+using FSGSTy_sub_0059BE50_uVar1Enum = uint32_t;
 using GameSystemC_GetMessage_switch_0Enum = uint32_t;
 using Global_AiAiCalcMinesFields_switch_0Enum = int32_t;
 using Global_CreateAi_switch_0Enum = uint32_t;
@@ -2403,6 +2449,7 @@ using Global_sub_007550C0_switch_0Enum = uint32_t;
 using Global_sub_007575B0_switch_0Enum = uint32_t;
 using HelpPanelTy_ArmProc_switch_0Enum = uint32_t;
 using HelpPanelTy_BwdBut_switch_0Enum = uint32_t;
+using HelpPanelTy_field_0172State = uint16_t;
 using HelpPanelTy_field_01A1State = uint8_t;
 using HelpPanelTy_FwdBut_switch_0Enum = uint32_t;
 using HelpPanelTy_LinkAct_bVar1Enum = uint32_t;
@@ -2413,6 +2460,7 @@ using HoloTy_Init_param_1Enum = uint8_t;
 using InfocPanelTy_Update_uVar5Enum = uint32_t;
 using InfocPanelTy_Update_uVar6Enum = uint32_t;
 using InfocPanelTy_Update_uVar7Enum = uint32_t;
+using IntercomPanelTy_field_0172State = uint16_t;
 using MainMenuTy_AnimationMainMenu_switch_0Enum = uint32_t;
 using MainMenuTy_GetMessage_SVar1Enum = uint32_t;
 using MainMenuTy_GetMessage_switch_0Enum = uint32_t;
@@ -2425,11 +2473,13 @@ using MMObjTy_PaintSprBut_switch_2Enum = uint32_t;
 using MMsgTy_GetMessage_temp_5f8e730a25Enum = uint32_t;
 using MoneyTy_field_0068State = uint8_t;
 using MReportTy_PaintTab_switch_0Enum = uint32_t;
+using MTaskTy_field_006DState = uint8_t;
 using MTaskTy_NoneMTask_switch_0Enum = uint32_t;
 using MTaskTy_PlayScript_iVar10Enum = uint32_t;
 using MTaskTy_PlayScript_iVar24Enum = uint32_t;
 using MTaskTy_PlayScript_iVar9Enum = uint32_t;
 using MTaskTy_PlayScript_switch_1Enum = uint32_t;
+using MTestTy_field_00B3State = uint8_t;
 using OpticClassC_sub_004AB070_param_1Enum = uint32_t;
 using OptPanelTy_field_0172State = uint16_t;
 using OptPanelTy_field_01A4State = uint8_t;
@@ -2441,10 +2491,12 @@ using OptPanelTy_PrepAsses_switch_0Enum = uint32_t;
 using OptPanelTy_PrepAsses_switch_1Enum = uint32_t;
 using OptPanelTy_SetOptControls_switch_3Enum = uint32_t;
 using PausePanelTy_field_0172State = uint16_t;
+using PlayPanelTy_field_0172State = uint16_t;
 using PlayPanelTy_GetMessage_SVar5Enum = uint32_t;
 using PlayPanelTy_GetMessage_uVar10Enum = uint32_t;
 using PlayPanelTy_GetMessage_uVar11Enum = uint32_t;
 using PrividerTy_field_0065State = uint8_t;
+using ProdPanelTy_field_0172State = uint16_t;
 using SectionFlags = uint32_t;
 using SettMapMTy_ChangePlayerTeam_uVar4Enum = uint32_t;
 using SettMapMTy_ChangePlayerTeam_uVar5Enum = uint32_t;
@@ -2479,6 +2531,7 @@ using SettMapTy_GetMessage_switch_4Enum = uint32_t;
 using SoundManagerTy_field_0038State = uint8_t;
 using SoundManagerTy_GetMessage_SVar1Enum = uint32_t;
 using SoundPlayMode = uint8_t;
+using SpecPanelTy_field_0172State = uint16_t;
 using SpriteClassTy_field_004CState = uint8_t;
 using SpriteClassTy_SetImages_param_2Enum = uint8_t;
 using SpriteClassTy_SetImagesPtr_param_2Enum = uint8_t;
@@ -2559,15 +2612,26 @@ using STBoatC_Dismant_local_EAX_51Enum = int32_t;
 using STBoatC_field_0459State = uint32_t;
 using STBoatC_field_045DState = uint32_t;
 using STBoatC_field_04D5State = uint32_t;
+using STBoatC_field_04D9State = uint32_t;
 using STBoatC_field_0508State = uint32_t;
+using STBoatC_field_050CState = uint32_t;
+using STBoatC_field_0528State = uint32_t;
 using STBoatC_field_054CState = uint32_t;
+using STBoatC_field_0550State = uint32_t;
 using STBoatC_field_0580State = uint32_t;
+using STBoatC_field_0596State = uint32_t;
+using STBoatC_field_059AState = uint32_t;
+using STBoatC_field_05C4State = uint32_t;
+using STBoatC_field_05D6State = uint32_t;
 using STBoatC_field_0611State = uint32_t;
+using STBoatC_field_0615State = uint32_t;
 using STBoatC_field_0687State = uint32_t;
+using STBoatC_field_06A5State = uint32_t;
 using STBoatC_field_06C3State = uint32_t;
 using STBoatC_field_06E3State = uint32_t;
 using STBoatC_field_06F3State = uint32_t;
 using STBoatC_field_06F7State = uint32_t;
+using STBoatC_field_082EState = uint32_t;
 using STBoatC_GetCellForLoading_param_6Enum = uint16_t;
 using STBoatC_GetDefenceTarget_param_1Enum = uint32_t;
 using STBoatC_GetInfo16_switch_0Enum = uint32_t;
@@ -2627,11 +2691,15 @@ using STBoatC_UnLoadRC_local_EAX_769Enum = int32_t;
 using STBoatC_WaitLoad_iVar10Enum = int32_t;
 using STColl3C_field_02DDState = uint32_t;
 using STContainerC_GetMessage_switch_1Enum = uint32_t;
+using STCrabC_field_0239State = uint32_t;
+using STCrabC_field_0279State = uint32_t;
 using STCrabC_GetMessage_switch_0Enum = uint32_t;
 using STDcResourcC_field_0255State = uint32_t;
+using STDestC_field_036EState = uint32_t;
 using STExplosion_GetMessage_switch_0Enum = uint32_t;
 using STExplosion_sub_00606050_local_74Enum = uint32_t;
 using STExplosion_sub_00606050_switch_1Enum = uint32_t;
+using STFishC_field_023BState = uint32_t;
 using STFishC_field_0267State = uint32_t;
 using STFishC_GetMessage_switch_1Enum = uint32_t;
 using STFishC_sub_0057D700_switch_1Enum = uint32_t;
@@ -2640,6 +2708,7 @@ using STGroupBoatC_DistributeTargets_dVar4Enum = uint32_t;
 using STGroupBoatC_DistributeTargets_dVar5Enum = uint32_t;
 using STGroupBoatC_DistributeTargets_uVar6Enum = uint32_t;
 using STGroupBoatC_DistributeTargets_uVar7Enum = uint32_t;
+using STGroupBoatC_field_0020State = uint32_t;
 using STGroupBoatC_field_01E6State = uint32_t;
 using STGroupBoatC_sub_00498D20_orderTypeEnum = uint32_t;
 using STJellyGunC_field_0235State = uint32_t;
@@ -2657,6 +2726,8 @@ using STMineSetC_sub_00625730_uVar10Enum = uint32_t;
 using STMineSetC_sub_00625730_uVar9Enum = uint32_t;
 using STMineSetC_sub_00626B50_param_1Enum = uint32_t;
 using STObjectTypeId = uint32_t;
+using STOctopusC_field_0249State = uint32_t;
+using STOctopusC_field_02A5State = uint32_t;
 using STOctopusC_GetMessage_switch_0Enum = uint32_t;
 using STOctopusC_sub_0058B190_iVar6Enum = uint32_t;
 using STOctopusC_sub_0058B190_iVar7Enum = uint32_t;
@@ -2667,6 +2738,7 @@ using STParticleC_sub_00629F90_switch_0Enum = uint32_t;
 using STPlaySystemC_Life_local_14Enum = uint32_t;
 using STPlaySystemC_Life_switch_1Enum = uint32_t;
 using STPlaySystemC_PrepareMail_local_14Enum = uint32_t;
+using STRubbishC_field_01FAState = uint32_t;
 using STRubbishC_LoadImagSpr_param_4Enum = uint32_t;
 using STSharkC_field_0257State = uint32_t;
 using STSprGameObjC_CheckRay_param_7Enum = uint32_t;
@@ -2675,7 +2747,10 @@ using STSprGameObjC_field_0259State = uint32_t;
 using STSprGameObjC_LoadActFrame_dVar5Enum = uint32_t;
 using STSprGameObjC_LoadActFrame_SVar4Enum = uint32_t;
 using STSprGameObjC_LoadLifeFrame_SVar4Enum = uint32_t;
+using STTorpC_field_0259State = uint32_t;
+using STTorpC_GetMessage_GVar5Enum = uint32_t;
 using STTorpC_GetMessage_SVar4Enum = uint32_t;
+using STTorpC_GetMessage_SVar5Enum = uint32_t;
 using STVolcanoC_field_00A9State = uint32_t;
 using SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_5Enum = uint32_t;
 using SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_6Enum = uint32_t;
@@ -2738,11 +2813,13 @@ inline constexpr auto CASE_172 = 370;
 inline constexpr auto CASE_18 = 24;
 inline constexpr auto CASE_19 = 25;
 inline constexpr auto CASE_1A = 26;
+inline constexpr auto CASE_1AE = 430;
 inline constexpr auto CASE_1B = 27;
 inline constexpr auto CASE_1C = 28;
 inline constexpr auto CASE_1D = 29;
 inline constexpr auto CASE_1E = 30;
 inline constexpr auto CASE_1F = 31;
+inline constexpr auto CASE_1F5 = 501;
 inline constexpr auto CASE_1F6 = 502;
 inline constexpr auto CASE_1F7 = 503;
 inline constexpr auto CASE_1F8 = 504;
@@ -4723,6 +4800,7 @@ using STFnType_icall_006E5690_FUN_006e5690_for_GameSystemC_2808fc1e = undefined4
 using STFnType_icall_006E5690_FUN_006e5690_for_InterSystemC_4c0b2f97 = undefined4 __thiscall(InterSystemC *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_006E5690_FUN_006e5690_for_StartSystemTy_507f0ade = undefined4 __thiscall(StartSystemTy *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_006E5950_FUN_006e5950_stdcall_289892b4 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_stdcall_b6bc005a = undefined4 __stdcall(undefined2 arg_1);
 using STFnType_icall_006E5FD0_FUN_006e5fd0_4d52e996 = int __thiscall(void *st_this, STMessage *message);
 using STFnType_icall_006E6130_FUN_006e6130_for_STPlaySystemC_20d12b29 = undefined4 __thiscall(STPlaySystemC *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_006E6130_FUN_006e6130_for_SystemWithNamedObjClassTy_65d83d7f = undefined4 __thiscall(SystemWithNamedObjClassTy *st_this, undefined2 arg_1, undefined2 arg_2);
@@ -6281,6 +6359,7 @@ using icall_006E5690_FUN_006e5690_for_GameSystemC = STFnType_icall_006E5690_FUN_
 using icall_006E5690_FUN_006e5690_for_InterSystemC = STFnType_icall_006E5690_FUN_006e5690_for_InterSystemC_4c0b2f97;
 using icall_006E5690_FUN_006e5690_for_StartSystemTy = STFnType_icall_006E5690_FUN_006e5690_for_StartSystemTy_507f0ade;
 using icall_006E5950_FUN_006e5950_stdcall = STFnType_icall_006E5950_FUN_006e5950_stdcall_289892b4;
+using icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_stdcall = STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_stdcall_b6bc005a;
 using icall_006E5FD0_FUN_006e5fd0 = STFnType_icall_006E5FD0_FUN_006e5fd0_4d52e996;
 using icall_006E6130_FUN_006e6130_for_STPlaySystemC = STFnType_icall_006E6130_FUN_006e6130_for_STPlaySystemC_20d12b29;
 using icall_006E6130_FUN_006e6130_for_SystemWithNamedObjClassTy = STFnType_icall_006E6130_FUN_006e6130_for_SystemWithNamedObjClassTy_65d83d7f;
@@ -6944,7 +7023,7 @@ struct AiFltClassTy {
     uint field_008F; // [STClassLayoutApplier] reads=1, writes=1; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/uint <= 00664996 exact field-to-field MOV propagation
     undefined4 field_0093; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_0097; // [STClassLayoutApplier] reads=1, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    uint field_009B; // [STClassLayoutApplier] reads=19, writes=71; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=79; type_evidence=/uint <= 0066398E CMP/JC establishes /uint through a field-derived value in AiFltClassTy::GetAiMess; 0066398E CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663995 CMP/JC establishes /uint through a field-derived value in AiFltClassTy::GetAiMess; 00663995 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663ABE CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663ACA CMP/JNC through typed class pointer in AiFltClassTy::GetAiMess; 00663B71 CMP/JC establishes /uint through a field-derived value in AiFltClassTy::GetAiMess; 00663B71 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663B78 CMP/JA establishes /uint through a field-derived value in AiFltClassTy::GetAiMess; 00663B78 CMP/JA through typed class pointer in AiFltClassTy::GetAiMess; 00663B90 CMP/JC establishes /uint through a field-derived value in AiFltClassTy::GetAiMess; 00663B90 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663B95 CMP/JA establishes /uint through a field-derived value in AiFltClassTy::GetAiMess; 00663B95 CMP/JA through typed class pointer in AiFltClassTy::GetAiMess; 00663BC5 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663BCD CMP/JA through typed class pointer in AiFltClassTy::GetAiMess; 00663BE6 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663BEB CMP/JA through typed class pointer in AiFltClassTy::GetAiMess; 00663C01 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663C06 CMP/JA through typed class pointer in AiFltClassTy::GetAiMess; 00663C1C CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663C24 CMP/JA through typed class pointer in AiFltClassTy::GetAiMess; 00663C42 CMP/JBE through typed class pointer in AiFltClassTy::GetAiMess; 00663C47 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00665073 CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00665084 CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00665D1F CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00665D2D CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00665D43 CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00666355 CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00666954 CMP/JA through typed class pointer in AiFltClassTy::sub_00664960
+    AiFltClassTy_field_009BState field_009B; // [STClassLayoutApplier] reads=19, writes=71; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=79; type_evidence=/uint <= 0066398E CMP/JC establishes /uint through a field-derived value in AiFltClassTy::GetAiMess; 0066398E CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663995 CMP/JC establishes /uint through a field-derived value in AiFltClassTy::GetAiMess; 00663995 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663ABE CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663ACA CMP/JNC through typed class pointer in AiFltClassTy::GetAiMess; 00663B71 CMP/JC establishes /uint through a field-derived value in AiFltClassTy::GetAiMess; 00663B71 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663B78 CMP/JA establishes /uint through a field-derived value in AiFltClassTy::GetAiMess; 00663B78 CMP/JA through typed class pointer in AiFltClassTy::GetAiMess; 00663B90 CMP/JC establishes /uint through a field-derived value in AiFltClassTy::GetAiMess; 00663B90 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663B95 CMP/JA establishes /uint through a field-derived value in AiFltClassTy::GetAiMess; 00663B95 CMP/JA through typed class pointer in AiFltClassTy::GetAiMess; 00663BC5 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663BCD CMP/JA through typed class pointer in AiFltClassTy::GetAiMess; 00663BE6 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663BEB CMP/JA through typed class pointer in AiFltClassTy::GetAiMess; 00663C01 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663C06 CMP/JA through typed class pointer in AiFltClassTy::GetAiMess; 00663C1C CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00663C24 CMP/JA through typed class pointer in AiFltClassTy::GetAiMess; 00663C42 CMP/JBE through typed class pointer in AiFltClassTy::GetAiMess; 00663C47 CMP/JC through typed class pointer in AiFltClassTy::GetAiMess; 00665073 CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00665084 CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00665D1F CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00665D2D CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00665D43 CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00666355 CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00666954 CMP/JA through typed class pointer in AiFltClassTy::sub_00664960 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 field_009F; // [STClassLayoutApplier] reads=1, writes=38; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=34
     undefined4 field_00A3; // [STClassLayoutApplier] reads=33, writes=69; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=97
     undefined4 field_00A7; // [STClassLayoutApplier] reads=24, writes=41; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=59
@@ -6956,8 +7035,10 @@ struct AiFltClassTy {
     byte _unknown_00B8[7];
     short field_00BF; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; compatible_subwidth_views=2x1|4x4; exact_subword_partition=4->2; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/short <= 00666A52 MOVSX establishes /short
     short field_00C1; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/short <= 00666A49 MOVSX establishes /short
-    undefined2 field_00C3; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=conflict; name_confidence=none; consistent_typed_class_pointer_access; compatible_subwidth_views=2x6|4x8; exact_subword_partition=4->2; inferred_type_conflict=/short|/uint; typed_cross_class_recovery=14; type_evidence=/short <= 00666A42 MOVSX establishes /short; 00666BD0 MOVSX establishes /short; 00666C2A MOVSX establishes /short; 00666CD8 MOVSX establishes /short; 00666D98 MOVSX establishes /short | /uint <= 00666E7C CMP/JA through typed class pointer in AiFltClassTy::sub_00664960; 00666F0F CMP/JA through typed class pointer in AiFltClassTy::sub_00664960
-    short field_00C5; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; compatible_subwidth_views=2x5|4x1; exact_subword_partition=4->2; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=/short <= 00666B0E MOVSX establishes /short; 00666BC7 MOVSX establishes /short; 00666C23 MOVSX establishes /short; 00666CD1 MOVSX establishes /short; 00666D8F MOVSX establishes /short
+    undefined1 field_0xc3; // exact unnamed-byte view referenced by exported code
+    byte _unknown_00C4[1];
+    undefined1 field_0xc5; // exact unnamed-byte view referenced by exported code
+    byte _unknown_00C6[1];
     short field_00C7; // [STClassLayoutApplier] reads=12, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; compatible_subwidth_views=2x9|4x3; exact_subword_partition=4->2; concrete_type_already_present; typed_cross_class_recovery=12; type_evidence=/short <= 00666BC0 MOVSX establishes /short; 00666C1C MOVSX establishes /short; 00666CCA MOVSX establishes /short; 00666D88 MOVSX establishes /short; 00666E17 MOVSX establishes /short; 00666F2E MOVSX establishes /short; 00666F51 MOVSX establishes /short; 00667007 MOVSX establishes /short
     short field_00C9; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; compatible_subwidth_views=2x8|4x2; exact_subword_partition=4->2; concrete_type_already_present; typed_cross_class_recovery=10; type_evidence=/short <= 00666A2B MOVSX establishes /short; 00666BB7 MOVSX establishes /short; 00666C5B MOVSX establishes /short; 00666E10 MOVSX establishes /short; 00666F27 MOVSX establishes /short; 00666F58 MOVSX establishes /short; 00667000 MOVSX establishes /short
     short field_00CB; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; compatible_subwidth_views=2x4|4x3; exact_subword_partition=4->2; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/short <= 00666A24 MOVSX establishes /short; 00666BB0 MOVSX establishes /short; 00666E09 MOVSX establishes /short
@@ -8113,263 +8194,10 @@ struct CPanelTy {
     bool sub_0052B330();
 };
 
-struct CampaignTy {
-    CampaignTyVTable *vtable; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=5
-    byte _unknown_0004[4];
-    undefined4 field_0008; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_000C; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 00593040 [this+0x10] used as receiver of STAppC::sub_006E51B0; name_evidence=message <= 00593040 unique get field in CampaignTy::GetMessage
-    byte _unknown_0014[4];
-    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_001C[1];
-    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001E[7];
-    undefined4 field_0025; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_0029; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_0031; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_0035[8];
-    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_003E[7];
-    undefined4 field_0045; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    undefined4 field_0049; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=3
-    undefined4 field_004D; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_0051; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=3
-    undefined4 field_0055; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=2
-    byte _unknown_0059[4];
-    undefined4 field_005D; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    DWORD field_0061; // [STClassLayoutApplier] reads=13, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/WinDef.h/DWORD|/uint; typed_cross_class_recovery=10; type_evidence=/WinDef.h/DWORD <= 00591BF0 [this+0x61] assigned 00591BF0 return from WINMM.DLL::timeGetTime | /uint <= 00592340 [this+0x61] passed to Library::Ourlib::PALETTE::FUN_00718f40 parameter param_8
-    undefined1 field_0065; // [STClassLayoutApplier] reads=4, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    uint field_0066[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[13], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:13:/uint <= 005925B9 exact pointer walk count=13, stride=4, cursor_displacement=0 | 00592639 exact pointer walk count=13, stride=4, cursor_displacement=0
-    undefined1 field_009A; // [STClassLayoutApplier] reads=25, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=17
-    undefined1 field_0x9b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_009C[31];
-    undefined1 field_00BB; // [STClassLayoutApplier] reads=1, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined1 field_0xbc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00BD[37];
-    undefined1 field_00E2; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_00E3[4];
-    undefined4 field_00E7; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    int field_00EB; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/int <= 00591CDF CMP/JLE establishes /int through a field-derived value in CampaignTy::NoneCampaign
-    byte _unknown_00EF[16];
-    undefined4 field_00FF; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_0103; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_0107[28];
-    uint field_0123; // [STClassLayoutApplier] reads=1, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/uint <= 00591C91 CMP/JC establishes /uint through a field-derived value in CampaignTy::NoneCampaign
-    DWORD field_0127; // [STClassLayoutApplier] reads=1, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/WinDef.h/DWORD <= 00590B40 [this+0x127] assigned 00590B40 return from WINMM.DLL::timeGetTime; 00592470 [this+0x127] assigned 00592470 return from WINMM.DLL::timeGetTime
-    undefined4 field_012B; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_012F[69];
-    undefined1 field_0x174; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0175[3];
-    undefined4 field_0178; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_017C; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined1 field_0x180; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0181[15];
-    undefined4 field_0190; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_0194; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_0198[36];
-    undefined4 field_01BC; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_01C0[73];
-    undefined4 field_0209; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined1 field_0x20d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_020E[19];
-    undefined1 field_0x221; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0222[3];
-    undefined1 field_0x225; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0226[35];
-    undefined1 field_0x249; // exact unnamed-byte view referenced by exported code
-    byte _unknown_024A[3];
-    undefined4 field_024D; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_0251[69];
-    undefined1 field_0x296; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0297[506];
-    undefined1 field_0x491; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0492[32];
-    undefined4 field_04B2; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_04B6[180];
-    undefined4 field_056A; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_056E[286];
-    undefined1 field_0x68c; // exact unnamed-byte view referenced by exported code
-    byte _unknown_068D[32];
-    undefined4 field_06AD; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_06B1[180];
-    undefined4 field_0765; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_0769[286];
-    undefined1 field_0x887; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0888[32];
-    undefined4 field_08A8; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_08AC[180];
-    undefined4 field_0960; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_0964[4342];
-    undefined1 field_1A5A; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1A5B; // [STClassLayoutApplier] reads=18, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=24
-    undefined4 field_1A5F; // [STClassLayoutApplier] reads=1, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_1A63[56];
-    undefined1 field_0x1a9b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1A9C[11];
-    undefined4 field_1AA7; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1AAB[104];
-    undefined4 field_1B13; // [STClassLayoutApplier] reads=3, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_1B17[56];
-    undefined1 field_0x1b4f; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1B50[23];
-    void *field_1B67; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/void <= 00590D02 generic pointer-return assignment in CampaignTy::InitCampaign
-    byte _unknown_1B6B[92];
-    undefined4 field_1BC7; // [STClassLayoutApplier] reads=1, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1BCB; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    undefined4 field_1BCF; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    undefined4 field_1BD3; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    uint field_1BD7[4]; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; bounded_member_array; count=4; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[4], bounded_sites=0, exact_loops=3, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:4:/uint <= 00590C6D MOV dword ptr [ESI + EDI*0x4 + 0x1bd7],EAX | 00591814 exact pointer walk count=4, stride=4, cursor_displacement=0 | 00591A30 exact pointer walk count=4, stride=4, cursor_displacement=0 | 0059273C exact pointer walk count=4, stride=4, cursor_displacement=0
-    undefined1 field_1BE7; // [STClassLayoutApplier] reads=2, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    CampaignTy_field_1BE8State field_1BE8; // [STClassLayoutApplier] reads=8, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
-    undefined4 field_1BEC; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    uint field_1BF0; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/uint <= 00592340 exact address of [this+0x1BF0] passed to Library::Ourlib::PALETTE::FUN_00718f40 parameter param_9
-    int field_1BF4; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/int <= 00592340 exact address of [this+0x1BF4] passed to Library::Ourlib::PALETTE::FUN_00718f40 parameter param_6
-    undefined1 field_0x1bf8; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1BF9[1023];
-    undefined4 field_1FF8; // [STClassLayoutApplier] reads=0, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1FFC; // [STClassLayoutApplier] reads=5, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    int GetMessage(STMessage *message);
-    undefined CloseButtons();
-    void AnimationCampaign();
-    void DoneCampaign();
-    void InitCampaign(undefined4 param_1);
-    void LightPalette();
-    void NoneCampaign();
-    void PaintCampaign();
-    void sub_005925A0();
-    void sub_00592620();
-};
-
 struct ChatGlassTy {
     byte _pad_0000[1];
     byte _storage[1];
     void OutChGlProc(AnonShape_GLOBAL_0080759C_9638EF10 *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, undefined4 *param_8);
-};
-
-struct ChooseMapTy {
-    ChooseMapTyVTable *vtable; // [STClassLayoutApplier] reads=23, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=15
-    byte _unknown_0004[4];
-    undefined4 field_0008; // [STClassLayoutApplier] reads=13, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=32, writes=0; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/StartSystemTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_000C; typed_cross_class_recovery=16; type_evidence=pointer:/StartSystemTy <= 005AF350 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_000C <= consistent nested dereferences through [this+0xC]
-    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005B0BA0 [this+0x10] used as receiver of STAppC::sub_006E51B0
-    byte _unknown_0014[4];
-    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_001C[1];
-    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001E[7];
-    undefined4 field_0025; // [STClassLayoutApplier] reads=0, writes=16; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    undefined4 field_0029; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=62; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=31
-    undefined2 field_0031; // [STClassLayoutApplier] reads=14, writes=52; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x8|4x58; exact_subword_partition=4->2; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=33; type_evidence=/int <= 005B195A CMP/JGE establishes /int through a field-derived value in ChooseMapTy::GetMessage; 005B195A CMP/JGE through typed class pointer in ChooseMapTy::GetMessage; 005B1993 CMP/JGE establishes /int through a field-derived value in ChooseMapTy::GetMessage; 005B1993 CMP/JGE through typed class pointer in ChooseMapTy::GetMessage; 005B1A16 CMP/JGE establishes /int through a field-derived value in ChooseMapTy::GetMessage; 005B1A16 CMP/JGE through typed class pointer in ChooseMapTy::GetMessage | /uint <= 005B121A CMP/JC establishes /uint through a field-derived value in ChooseMapTy::GetMessage; 005B121A CMP/JC through typed class pointer in ChooseMapTy::GetMessage; 005B144E CMP/JC establishes /uint through a field-derived value in ChooseMapTy::GetMessage; 005B144E CMP/JC through typed class pointer in ChooseMapTy::GetMessage; 005B16A9 CMP/JC establishes /uint through a field-derived value in ChooseMapTy::GetMessage; 005B16A9 CMP/JC through typed class pointer in ChooseMapTy::GetMessage; 005B18FB CMP/JNC establishes /uint through a field-derived value in ChooseMapTy::GetMessage; 005B18FB CMP/JNC through typed class pointer in ChooseMapTy::GetMessage
-    undefined2 field_0033; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_0035[8];
-    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_003E[7];
-    undefined4 field_0045; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_0049; // [STClassLayoutApplier] reads=0, writes=10; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_004D; // [STClassLayoutApplier] reads=6, writes=12; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
-    undefined4 field_0051; // [STClassLayoutApplier] reads=0, writes=10; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_0055; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_0059[4];
-    ushort *field_005D; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=pointer:/ushort <= 005AB8B3 dynamic 2-byte dereference of field-derived address in ChooseMapTy::InitChooseMap; 005AC03E dynamic 2-byte dereference of field-derived address in ChooseMapTy::InitChooseMap
-    DWORD field_0061; // [STClassLayoutApplier] reads=6, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/WinDef.h/DWORD <= 005AD390 [this+0x61] assigned 005AD390 return from WINMM.DLL::timeGetTime
-    undefined1 field_0065; // [STClassLayoutApplier] reads=8, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
-    undefined1 field_0x66; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0067[51];
-    undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_009B[33];
-    undefined1 field_0xbc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00BD[4];
-    undefined1 field_0xc1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00C2[15];
-    undefined1 field_0xd1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00D2[162];
-    undefined1 field_0x174; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0175[6373];
-    undefined1 field_1A5A; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    StartSystemTy *field_1A5B; // [STClassLayoutApplier] reads=92, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/MMMObjTy|pointer:/StartSystemTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1A5B|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_MMMObjTy_005B6560|pointer:/ushort; typed_cross_class_recovery=47; type_evidence=pointer:/MMMObjTy <= 005AD050 [this+0x1A5B] used as receiver of MMMObjTy::OutBSlProc | pointer:/StartSystemTy <= 005B0BA0 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1A5B <= consistent nested dereferences through [this+0x1A5B] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_MMMObjTy_005B6560 <= 005B0BA0 [this+0x1A5B] passed to MMMObjTy::PaintSlBut parameter param_1 | pointer:/ushort <= 005AB300 [this+0x1A5B] passed to FUN_006b2330 parameter param_7
-    ChooseMapTy_field_1A5FState field_1A5F; // [STClassLayoutApplier] reads=1, writes=0; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
-    undefined4 field_1A60; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined4 field_1A64; // [STClassLayoutApplier] reads=10, writes=15; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13
-    DWORD field_1A68; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/WinDef.h/DWORD <= 005B07C8 exact field-to-field MOV propagation; 005B1CCE exact field-to-field MOV propagation
-    undefined4 field_1A6C; // [STClassLayoutApplier] reads=28, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=16
-    undefined4 field_1A70; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1A74; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1A78; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1A7C[16];
-    undefined4 field_1A8C; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1A90; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1A94; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1A98; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1A9C[28];
-    undefined4 field_1AB8; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_1ABC[69];
-    undefined4 field_1B01; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1B05; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1B09; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1B0D[16];
-    undefined4 field_1B1D; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1B21; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1B25; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1B29; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1B2D[28];
-    undefined4 field_1B49; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_1B4D[69];
-    undefined4 field_1B92; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1B96; // [STClassLayoutApplier] reads=9, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_1B9A; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_1B9E[16];
-    undefined4 field_1BAE; // [STClassLayoutApplier] reads=7, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_1BB2; // [STClassLayoutApplier] reads=5, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_1BB6; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1BBA[32];
-    undefined4 field_1BDA; // [STClassLayoutApplier] reads=9, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    byte _unknown_1BDE[69];
-    uint field_1C23; // [STClassLayoutApplier] reads=5, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/uint <= 005AB300 exact address of [this+0x1C23] passed to FUN_006b2330 parameter param_2
-    byte _unknown_1C27[84];
-    AnonPointee_ChooseMapTy_1C7B *field_1C7B; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C7B|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy; typed_cross_class_recovery=8; type_evidence=/int <= 005B0BA0 [this+0x1C7B] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C7B <= consistent nested dereferences through [this+0x1C7B] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005AFD00 [this+0x1C7B] passed to FUN_006b4170 parameter param_1; 005B0BA0 [this+0x1C7B] passed to FUN_006b4170 parameter param_1
-    ushort *field_1C7F; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD|pointer:/ushort; typed_cross_class_recovery=4; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD <= 005B0BA0 [this+0x1C7F] passed to FUN_0070b3a0 parameter param_1 | pointer:/ushort <= 005AB5EE generic pointer-return assignment in ChooseMapTy::InitChooseMap
-    undefined4 field_1C83; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    uint field_1C87; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/uint <= 005AB300 exact address of [this+0x1C87] passed to FUN_006b2330 parameter param_2
-    AnonPointee_ChooseMapTy_1C8B *field_1C8B; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C8B|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA|pointer:/ushort; typed_cross_class_recovery=7; type_evidence=/int <= 005B0BA0 [this+0x1C8B] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C8B <= consistent nested dereferences through [this+0x1C8B] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA <= 005AB300 [this+0x1C8B] passed to FUN_006b5b10 parameter param_1 | pointer:/ushort <= 005AB300 [this+0x1C8B] passed to FUN_006b2330 parameter param_7
-    HANDLE field_1C8F; // [STClassLayoutApplier] reads=8, writes=11; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/winnt.h/HANDLE|pointer:/void; typed_cross_class_recovery=10; type_evidence=/winnt.h/HANDLE <= 005AB300 [this+0x1C8F] assigned 005AB300 return from KERNEL32.DLL::FindFirstChangeNotificationA; 005ACB30 [this+0x1C8F] passed to KERNEL32.DLL::FindCloseChangeNotification parameter hChangeHandle; 005AD390 [this+0x1C8F] passed to KERNEL32.DLL::FindNextChangeNotification parameter hChangeHandle; 005AD390 [this+0x1C8F] passed to KERNEL32.DLL::WaitForSingleObject parameter hHandle; 005B0BA0 [this+0x1C8F] assigned 005B0BA0 return from KERNEL32.DLL::FindFirstChangeNotificationA; 005B0BA0 [this+0x1C8F] passed to KERNEL32.DLL::FindCloseChangeNotification parameter hChangeHandle | pointer:/void <= 005AB52E generic pointer-return assignment in ChooseMapTy::InitChooseMap; 005B1C13 generic pointer-return assignment in ChooseMapTy::GetMessage; name_evidence=firstChangeNotificationA <= 005AB300 [this+0x1C8F] assigned 005AB300 return from KERNEL32.DLL::FindFirstChangeNotificationA; 005B0BA0 [this+0x1C8F] assigned 005B0BA0 return from KERNEL32.DLL::FindFirstChangeNotificationA | hChangeHandle <= 005ACB30 [this+0x1C8F] passed to KERNEL32.DLL::FindCloseChangeNotification parameter hChangeHandle; 005AD390 [this+0x1C8F] passed to KERNEL32.DLL::FindNextChangeNotification parameter hChangeHandle; 005B0BA0 [this+0x1C8F] passed to KERNEL32.DLL::FindCloseChangeNotification parameter hChangeHandle | hHandle <= 005AD390 [this+0x1C8F] passed to KERNEL32.DLL::WaitForSingleObject parameter hHandle
-    undefined4 field_1C93; // [STClassLayoutApplier] reads=18, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
-    DArrayTy *field_1C97; // [STClassLayoutApplier] reads=42, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C97|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=25; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C97 <= consistent nested dereferences through [this+0x1C97] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005ACB30 [this+0x1C97] passed to FUN_006b5570 parameter param_1; 005AFD00 [this+0x1C97] passed to FUN_006b5570 parameter param_1; 005AFD00 [this+0x1C97] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005AFE17 generic pointer-return assignment in ChooseMapTy::PrepFiles
-    DArrayTy *field_1C9B; // [STClassLayoutApplier] reads=12, writes=7; type_confidence=existing; name_confidence=high; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=10; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005ACB30 [this+0x1C9B] passed to DArrayDestroy parameter array; 005AFD00 [this+0x1C9B] passed to DArrayDestroy parameter array; 005AFD00 [this+0x1C9B] passed to Library::DKW::TBL::DArrayAppend parameter array; 005AFE27 generic pointer-return assignment in ChooseMapTy::PrepFiles; name_evidence=array <= 005ACB30 [this+0x1C9B] passed to DArrayDestroy parameter array; 005AFD00 [this+0x1C9B] passed to DArrayDestroy parameter array; 005AFD00 [this+0x1C9B] passed to Library::DKW::TBL::DArrayAppend parameter array
-    DArrayTy *field_1C9F; // [STClassLayoutApplier] reads=42, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C9F|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=25; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C9F <= consistent nested dereferences through [this+0x1C9F] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005ACB30 [this+0x1C9F] passed to FUN_006b5570 parameter param_1; 005AFD00 [this+0x1C9F] passed to FUN_006b5570 parameter param_1; 005AFD00 [this+0x1C9F] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005AFE38 generic pointer-return assignment in ChooseMapTy::PrepFiles
-    undefined1 field_1CA3; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined1 field_1CA4; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_1CA5[258];
-    char field_1DA7; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005AB300 exact address of [this+0x1DA7] passed to KERNEL32.DLL::FindFirstChangeNotificationA parameter lpPathName; 005B0BA0 exact address of [this+0x1DA7] passed to KERNEL32.DLL::FindFirstChangeNotificationA parameter lpPathName; 005B0BA0 exact address of [this+0x1DA7] passed to Library::MSVCRT::__makepath parameter _Path
-    undefined1 field_1DA8; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_1DA9[18];
-    undefined2 field_1DBB; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x2|4x1; exact_subword_partition=4->2
-    undefined2 field_1DBD; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_1DBF[496];
-    char field_1FAF; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/byte <= 005AE050 exact address of [this+0x1FAF] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2; 005AFD00 exact address of [this+0x1FAF] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2 | /char <= 005AFD00 exact address of [this+0x1FAF] passed to KERNEL32.DLL::FindFirstFileA parameter lpFileName
-    byte _unknown_1FB0[259];
-    undefined1 field_20B3; // [STClassLayoutApplier] reads=4, writes=18; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x20|4x2; exact_subword_partition=4->1; typed_cross_class_recovery=12
-    undefined1 field_20B4; // [STClassLayoutApplier] reads=14, writes=18; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=17
-    undefined1 field_20B5; // [STClassLayoutApplier] reads=6, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=14
-    undefined1 field_20B6; // [STClassLayoutApplier] reads=2, writes=16; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
-    undefined1 field_20B7; // [STClassLayoutApplier] reads=14, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=18
-    HoloTy *field_20B8; // [STClassLayoutApplier] reads=33, writes=10; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_20B8; typed_cross_class_recovery=24; type_evidence=pointer:/HoloTy <= 005AB300 [this+0x20B8] used as receiver of HoloTy::Init; 005ACB30 [this+0x20B8] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005ACB30 [this+0x20B8] used as receiver of HoloTy::Done; 005AD390 [this+0x20B8] used as receiver of HoloTy::NextFas; 005AF350 [this+0x20B8] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005AF350 [this+0x20B8] used as receiver of HoloTy::Done; 005AF350 [this+0x20B8] used as receiver of HoloTy::Init; 005AF350 [this+0x20B8] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_20B8 <= consistent nested dereferences through [this+0x20B8]
-    HoloTy *field_20BC; // [STClassLayoutApplier] reads=33, writes=10; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_20BC; typed_cross_class_recovery=24; type_evidence=pointer:/HoloTy <= 005AB300 [this+0x20BC] used as receiver of HoloTy::Init; 005ACB30 [this+0x20BC] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005ACB30 [this+0x20BC] used as receiver of HoloTy::Done; 005AD390 [this+0x20BC] used as receiver of HoloTy::NextFas; 005AF350 [this+0x20BC] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005AF350 [this+0x20BC] used as receiver of HoloTy::Done; 005AF350 [this+0x20BC] used as receiver of HoloTy::Init; 005AF350 [this+0x20BC] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_20BC <= consistent nested dereferences through [this+0x20BC]
-    HoloTy *field_20C0; // [STClassLayoutApplier] reads=33, writes=10; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_20C0; typed_cross_class_recovery=24; type_evidence=pointer:/HoloTy <= 005AB300 [this+0x20C0] used as receiver of HoloTy::Init; 005ACB30 [this+0x20C0] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005ACB30 [this+0x20C0] used as receiver of HoloTy::Done; 005AD390 [this+0x20C0] used as receiver of HoloTy::NextFas; 005AF350 [this+0x20C0] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005AF350 [this+0x20C0] used as receiver of HoloTy::Done; 005AF350 [this+0x20C0] used as receiver of HoloTy::Init; 005AF350 [this+0x20C0] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_20C0 <= consistent nested dereferences through [this+0x20C0]
-    int GetMessage(STMessage *message);
-    undefined CloseButtons();
-    void CreateCtrls(char param_1);
-    void DeleteCtrls();
-    void DoneChooseMap();
-    void InitChooseMap(ChooseMapTy_field_1A5FState param_1, ChooseMapTy_InitChooseMap_param_2Enum param_2);
-    void NoneChooseMap();
-    void PaintChooseMap(char param_1);
-    void PrepFiles(uint param_1);
-    void ShowDescription(uint param_1);
-    void sub_005AE840();
-    void sub_005AE950();
-    void sub_005B5BE0(RecoveredSourceFamily_dibcopy *param_1, int *param_2);
 };
 
 struct ComboTy {
@@ -8534,7 +8362,7 @@ struct CursorClassTy {
     undefined1 field_0x11b; // exact unnamed-byte view referenced by exported code
     byte _unknown_011C[887];
     CursorClassTy_field_0493State field_0493; // [STClassLayoutApplier] reads=13, writes=60; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=71 [STSwitchEnumApplier] enum recovered from switch cases
-    undefined2 field_0494; // [STClassLayoutApplier] reads=14, writes=58; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=63
+    CursorClassTy_field_0494State field_0494; // [STClassLayoutApplier] reads=14, writes=58; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=63 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 field_0496; // [STClassLayoutApplier] reads=4, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=6
     STFishC *field_049A; // [STClassLayoutApplier] reads=66, writes=4; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/STFishC|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CursorClassTy_049A|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00435930_AC276C8C; cfg_field_recovery=10; typed_cross_class_recovery=35; type_evidence=pointer:/STFishC <= 00548C40 [this+0x49A] used as receiver of STFishC::sub_004162B0 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CursorClassTy_049A <= consistent nested dereferences through [this+0x49A] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00435930_AC276C8C <= 0054AEE0 [this+0x49A] passed to STAllPlayersC::GetCursorType parameter param_2
     undefined4 field_049E; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
@@ -8652,287 +8480,6 @@ struct EditorClassTy {
     int SendToSliders(int * param_1);
 };
 
-struct FSGSTy {
-    FSGSTyVTable *vtable; // [STClassLayoutApplier] reads=44, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; cfg_field_recovery=2; typed_cross_class_recovery=29
-    byte _unknown_0004[4];
-    undefined4 field_0008; // [STClassLayoutApplier] reads=52, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=26
-    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=120, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=60; type_evidence=pointer:/StartSystemTy <= 005967F0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00597120 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005A0590 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005A07F0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005A0A50 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005A0AF0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005A0C80 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0
-    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005A4350 [this+0x10] used as receiver of STAppC::sub_006E51B0
-    byte _unknown_0014[4];
-    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_001C[1];
-    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001E[11];
-    undefined4 field_0029; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=136; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=72
-    undefined1 field_0x31; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0032[1];
-    undefined1 field_0x33; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0034[1];
-    undefined2 field_0035; // [STClassLayoutApplier] reads=0, writes=31; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x13|4x18; exact_subword_partition=4->2; typed_cross_class_recovery=17
-    undefined2 field_0037; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=3
-    byte _unknown_0039[4];
-    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_003E[7];
-    undefined4 field_0045; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_0049; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_004D; // [STClassLayoutApplier] reads=2, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_0051; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_0055; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_0059[4];
-    ushort *field_005D; // [STClassLayoutApplier] reads=52, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=28; type_evidence=pointer:/ushort <= 00595E40 [this+0x5D] passed to FUN_006bc360 parameter param_1; 00595E40 [this+0x5D] passed to FUN_006c6a60 parameter param_1; 005960F2 dynamic 2-byte dereference of field-derived address in FSGSTy::InitFSGS; 005961DF dynamic 2-byte dereference of field-derived address in FSGSTy::InitFSGS; 00599A6C dynamic 2-byte dereference of field-derived address in FSGSTy::PrepBkgMess; 0059D2D0 dynamic 2-byte dereference of field-derived address in FSGSTy::LicCtrls; 0059EB99 dynamic 2-byte dereference of field-derived address in FSGSTy::JoinGameCtrls; 0059F317 dynamic 2-byte dereference of field-derived address in FSGSTy::LadderCtrls
-    DWORD field_0061; // [STClassLayoutApplier] reads=7, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/WinDef.h/DWORD <= 00597120 [this+0x61] assigned 00597120 return from WINMM.DLL::timeGetTime
-    FSGSTy_field_0065State field_0065; // [STClassLayoutApplier] reads=3, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
-    undefined1 field_0x66; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0067[51];
-    undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_009B[33];
-    undefined1 field_0xbc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00BD[4];
-    undefined1 field_0xc1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00C2[15];
-    undefined1 field_0xd1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00D2[162];
-    undefined1 field_0x174; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0175[6373];
-    undefined1 field_1A5A; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    StartSystemTy *field_1A5B; // [STClassLayoutApplier] reads=131, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/StartSystemTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A5B|pointer:/ushort; cfg_field_recovery=5; typed_cross_class_recovery=66; type_evidence=pointer:/StartSystemTy <= 00595E40 [this+0x1A5B] used as receiver of StartSystemTy::GetIP; 00595E40 [this+0x1A5B] used as receiver of StartSystemTy::sub_005DAF20; 005A4350 [this+0x1A5B] used as receiver of StartSystemTy::InitChat | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A5B <= consistent nested dereferences through [this+0x1A5B] | pointer:/ushort <= 00597E70 [this+0x1A5B] passed to FUN_006b2330 parameter param_7
-    FSGSTy_field_1A5FState field_1A5F; // [STClassLayoutApplier] reads=43, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
-    undefined1 field_1A60; // [STClassLayoutApplier] reads=25, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=17
-    undefined1 field_1A61; // [STClassLayoutApplier] reads=4, writes=34; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=21
-    undefined1 field_1A62; // [STClassLayoutApplier] reads=1, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    DWORD field_1A63; // [STClassLayoutApplier] reads=1, writes=8; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=/WinDef.h/DWORD <= 00597968 exact field-to-field MOV propagation; 005A4350 [this+0x1A63] assigned 005A4350 return from WINMM.DLL::timeGetTime
-    HGDIOBJ field_1A67; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/WinDef.h/HGDIOBJ <= 005967F0 [this+0x1A67] passed to GDI32.DLL::DeleteObject parameter ho; name_evidence=ho <= 005967F0 [this+0x1A67] passed to GDI32.DLL::DeleteObject parameter ho
-    undefined4 field_1A6B; // [STClassLayoutApplier] reads=18, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=12
-    undefined4 field_1A6F; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    ccFntTy *field_1A73; // [STClassLayoutApplier] reads=302, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A73|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4|pointer:/ccFntTy; typed_cross_class_recovery=153; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A73 <= consistent nested dereferences through [this+0x1A73] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 0059D240 [this+0x1A73] passed to FUN_00710790 parameter param_1; 005A4350 [this+0x1A73] passed to FUN_00710790 parameter param_1 | pointer:/ccFntTy <= 00597E70 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 00597E70 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 00599BE0 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 00599BE0 [this+0x1A73] used as receiver of ccFntTy::WrStr; 00599E90 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 00599E90 [this+0x1A73] used as receiver of ccFntTy::WrStr; 0059A320 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 0059A320 [this+0x1A73] used as receiver of ccFntTy::WrStr; 0059A640 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 0059A640 [this+0x1A73] used as receiver of ccFntTy::WrStr; 0059A910 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 0059A910 [this+0x1A73] used as receiver of ccFntTy::WrStr; 0059B2C0 [this+0x1A73] passed to StartServTy::WrTextDDX parameter param_9; 005A0DC0 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A0DC0 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A1160 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A1160 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A1430 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A1430 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A1630 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A1630 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A3AB0 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A3AB0 [this+0x1A73] used as receiver of ccFntTy::WrStr; 005A3AB0 [this+0x1A73] used as receiver of ccFntTy::_TxtToSarr; 005A4350 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A4350 [this+0x1A73] used as receiver of ccFntTy::WrStr; 005A4350 [this+0x1A73] used as receiver of ccFntTy::WrTxt
-    ccFntTy *field_1A77; // [STClassLayoutApplier] reads=12, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A77|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4|pointer:/ccFntTy; typed_cross_class_recovery=9; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A77 <= consistent nested dereferences through [this+0x1A77] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 005A4350 [this+0x1A77] passed to FUN_00710790 parameter param_1 | pointer:/ccFntTy <= 005A1F00 [this+0x1A77] used as receiver of ccFntTy::FormSarr; 005A1F00 [this+0x1A77] used as receiver of ccFntTy::SepColorStrInSarr; 005A4350 [this+0x1A77] used as receiver of ccFntTy::SetSurf; 005A4350 [this+0x1A77] used as receiver of ccFntTy::WrStr
-    ccFntTy *field_1A7B; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/ccFntTy <= 005A3AB0 [this+0x1A7B] passed to FSGSTy::sub_005A39A0 parameter param_1
-    StartServTy *field_1A7F; // [STClassLayoutApplier] reads=32, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/StartServTy|pointer:/ccFntTy; typed_cross_class_recovery=19; type_evidence=pointer:/StartServTy <= 0059B2C0 [this+0x1A7F] used as receiver of StartServTy::WrTextDDX | pointer:/ccFntTy <= 0059B2C0 [this+0x1A7F] passed to StartServTy::WrTextDDX parameter param_9; 005A3AB0 [this+0x1A7F] passed to FSGSTy::sub_005A39A0 parameter param_1
-    ushort *field_1A83; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD|pointer:/ushort; typed_cross_class_recovery=3; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD <= 005A4350 [this+0x1A83] passed to FUN_0070b3a0 parameter param_1 | pointer:/ushort <= 00595F46 generic pointer-return assignment in FSGSTy::InitFSGS
-    ushort *field_1A87; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD|pointer:/ushort; typed_cross_class_recovery=5; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD <= 005A4350 [this+0x1A87] passed to FUN_0070b3a0 parameter param_1 | pointer:/ushort <= 00595F64 generic pointer-return assignment in FSGSTy::InitFSGS
-    ushort *field_1A8B; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD|pointer:/ushort; typed_cross_class_recovery=3; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD <= 005A4350 [this+0x1A8B] passed to FUN_0070b3a0 parameter param_1 | pointer:/ushort <= 00595F85 generic pointer-return assignment in FSGSTy::InitFSGS
-    undefined4 field_1A8F; // [STClassLayoutApplier] reads=13, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=10; type_evidence=/int <= 00596A7B CMP/JL establishes /int through a field-derived value in FSGSTy::DoneFSGS; 00596A7B CMP/JL through typed class pointer in FSGSTy::DoneFSGS; 00597271 CMP/JL through typed class pointer in FSGSTy::NoneFSGS; 005974C3 CMP/JL through typed class pointer in FSGSTy::NoneFSGS | /uint <= 00595E40 exact address of [this+0x1A8F] passed to FUN_006b2330 parameter param_2
-    int field_1A93; // [STClassLayoutApplier] reads=11, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=10; type_evidence=/int <= 00597268 CMP/JGE establishes /int through a field-derived value in FSGSTy::NoneFSGS; 00597268 CMP/JGE through typed class pointer in FSGSTy::NoneFSGS; 005974BB CMP/JLE through typed class pointer in FSGSTy::NoneFSGS
-    AnonPointee_FSGSTy_1A97 *field_1A97; // [STClassLayoutApplier] reads=31, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A97|pointer:/byte|pointer:/int|pointer:/ushort; typed_cross_class_recovery=19; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A97 <= consistent nested dereferences through [this+0x1A97] | pointer:/byte <= 005A1A95 dynamic 1-byte dereference of field-derived address in FSGSTy::SetBanner; 005A1AA1 dynamic 1-byte dereference of field-derived address in FSGSTy::SetBanner; 005A1AB4 dynamic 1-byte dereference of field-derived address in FSGSTy::SetBanner; 005A1C6B dynamic 1-byte dereference of field-derived address in FSGSTy::SetBanner; 005A1C77 dynamic 1-byte dereference of field-derived address in FSGSTy::SetBanner; 005A1C8A dynamic 1-byte dereference of field-derived address in FSGSTy::SetBanner | pointer:/int <= 00597120 [this+0x1A97] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 00595E40 [this+0x1A97] passed to FUN_006b2330 parameter param_7; 005972B4 dynamic 2-byte dereference of field-derived address in FSGSTy::NoneFSGS; 00597510 dynamic 2-byte dereference of field-derived address in FSGSTy::NoneFSGS
-    void *field_1A9B; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/void <= 005A1A0B generic pointer-return assignment in FSGSTy::SetBanner
-    void *field_1A9F; // [STClassLayoutApplier] reads=18, writes=12; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=18; type_evidence=pointer:/void <= 005A1A3C generic pointer-return assignment in FSGSTy::SetBanner
-    int field_1AA3; // [STClassLayoutApplier] reads=1, writes=10; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/int <= 00597A7E CMP/JLE through typed class pointer in FSGSTy::NoneFSGS
-    DWORD field_1AA7; // [STClassLayoutApplier] reads=1, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/WinDef.h/DWORD <= 00597AA3 exact field-to-field MOV propagation; 005A1920 [this+0x1AA7] assigned 005A1920 return from WINMM.DLL::timeGetTime
-    LPCSTR field_1AAB; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=/winnt.h/LPCSTR|pointer:/void; typed_cross_class_recovery=5; type_evidence=/winnt.h/LPCSTR <= 005A4350 [this+0x1AAB] passed to SHELL32.DLL::ShellExecuteA parameter lpFile | pointer:/void <= 005A1D47 generic pointer-return assignment in FSGSTy::SetBanner; name_evidence=lpFile <= 005A4350 [this+0x1AAB] passed to SHELL32.DLL::ShellExecuteA parameter lpFile
-    undefined4 field_1AAF; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1AB3; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined4 field_1AB7; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined1 field_1ABB; // [STClassLayoutApplier] reads=14, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    undefined4 field_1ABC; // [STClassLayoutApplier] reads=78, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=42; type_evidence=/int <= 005969E9 CMP/JL establishes /int through a field-derived value in FSGSTy::DoneFSGS; 005969E9 CMP/JL through typed class pointer in FSGSTy::DoneFSGS; 005A0DEE CMP/JL establishes /int through a field-derived value in FSGSTy::ConnectProc; 005A0DEE CMP/JL through typed class pointer in FSGSTy::ConnectProc; 005A145E CMP/JL establishes /int through a field-derived value in FSGSTy::Download; 005A145E CMP/JL through typed class pointer in FSGSTy::Download; 005A1663 CMP/JL establishes /int through a field-derived value in FSGSTy::Finished; 005A1663 CMP/JL through typed class pointer in FSGSTy::Finished | /uint <= 00595E40 exact address of [this+0x1ABC] passed to FUN_006b2330 parameter param_2; 005999C0 [this+0x1ABC] passed to FUN_006b2410 parameter param_2; 005999C0 [this+0x1ABC] passed to FUN_006b2800 parameter param_2
-    ushort *field_1AC0; // [STClassLayoutApplier] reads=222, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AC0|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/int|pointer:/ushort; typed_cross_class_recovery=114; type_evidence=/int <= 00597E70 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 00599BE0 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 00599E90 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 0059A320 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 0059A640 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 0059A910 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A0DC0 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A1160 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A1430 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A1630 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A39A0 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A3AB0 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A4350 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AC0 <= consistent nested dereferences through [this+0x1AC0] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA <= 005A4350 [this+0x1AC0] passed to FUN_006b5b10 parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 00599BE0 [this+0x1AC0] passed to FUN_006b5ee0 parameter param_1; 00599E90 [this+0x1AC0] passed to FUN_006b5ee0 parameter param_1; 0059A320 [this+0x1AC0] passed to FUN_006b5ee0 parameter param_1; 0059A640 [this+0x1AC0] passed to FUN_006b5ee0 parameter param_1; 0059A910 [this+0x1AC0] passed to FUN_006b5ee0 parameter param_1; 005A39A0 [this+0x1AC0] passed to FUN_006b4170 parameter param_1; 005A3AB0 [this+0x1AC0] passed to FUN_006b4170 parameter param_1; 005A4350 [this+0x1AC0] passed to FUN_006b4170 parameter param_1 | pointer:/int <= 00597E70 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 00599BE0 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 00599E90 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 0059A320 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 0059A640 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 0059A910 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 005A0DC0 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 005A1160 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 005A1430 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 005A1630 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 005A4350 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 00597FCD dynamic 2-byte dereference of field-derived address in FSGSTy::SetState; 00599C25 dynamic 2-byte dereference of field-derived address in FSGSTy::PaintLogLogin; 00599ED5 dynamic 2-byte dereference of field-derived address in FSGSTy::PaintLogNew; 0059A365 dynamic 2-byte dereference of field-derived address in FSGSTy::PaintLogPsw; 0059A685 dynamic 2-byte dereference of field-derived address in FSGSTy::PaintGameNew; 0059A955 dynamic 2-byte dereference of field-derived address in FSGSTy::PaintInfo; 005A0E2F dynamic 2-byte dereference of field-derived address in FSGSTy::ConnectProc; 005A1210 dynamic 2-byte dereference of field-derived address in FSGSTy::CheckUpdate; 005A149F dynamic 2-byte dereference of field-derived address in FSGSTy::Download; 005A172F dynamic 2-byte dereference of field-derived address in FSGSTy::Finished; 005A46ED dynamic 2-byte dereference of field-derived address in FSGSTy::GetMessage; 005A6D72 dynamic 2-byte dereference of field-derived address in FSGSTy::GetMessage
-    undefined4 field_1AC4; // [STClassLayoutApplier] reads=42, writes=11; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=28
-    undefined4 field_1AC8; // [STClassLayoutApplier] reads=38, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=24
-    undefined4 field_1ACC; // [STClassLayoutApplier] reads=22, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13
-    undefined4 field_1AD0; // [STClassLayoutApplier] reads=8, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_1AD4; // [STClassLayoutApplier] reads=14, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
-    undefined4 field_1AD8; // [STClassLayoutApplier] reads=24, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=15
-    undefined4 field_1ADC; // [STClassLayoutApplier] reads=26, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=16
-    undefined4 field_1AE0; // [STClassLayoutApplier] reads=24, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=15
-    LPCSTR field_1AE4; // [STClassLayoutApplier] reads=26, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=16; type_evidence=/winnt.h/LPCSTR <= 005A4350 [this+0x1AE4] passed to SHELL32.DLL::ShellExecuteA parameter lpDirectory; 005A4350 [this+0x1AE4] passed to SHELL32.DLL::ShellExecuteA parameter lpParameters; name_evidence=lpDirectory <= 005A4350 [this+0x1AE4] passed to SHELL32.DLL::ShellExecuteA parameter lpDirectory | lpParameters <= 005A4350 [this+0x1AE4] passed to SHELL32.DLL::ShellExecuteA parameter lpParameters
-    DArrayTy *field_1AE8; // [STClassLayoutApplier] reads=46, writes=23; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AE8|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=35; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AE8 <= consistent nested dereferences through [this+0x1AE8] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059C759 generic pointer-return assignment in FSGSTy::LoginCtrls; 0059CA49 generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059CF39 generic pointer-return assignment in FSGSTy::PswCtrls; 0059E849 generic pointer-return assignment in FSGSTy::NewGameCtrls; 0059EC06 generic pointer-return assignment in FSGSTy::JoinGameCtrls; 0059F260 [this+0x1AE8] passed to FUN_006b5570 parameter param_1; 0059F2CB generic pointer-return assignment in FSGSTy::LadderCtrls; 005A0590 [this+0x1AE8] passed to FUN_006b5570 parameter param_1; 005A07F0 [this+0x1AE8] passed to FUN_006b5570 parameter param_1; 005A0A50 [this+0x1AE8] passed to FUN_006b5570 parameter param_1; 005A0AF0 [this+0x1AE8] passed to FUN_006b5570 parameter param_1; 005A0C80 [this+0x1AE8] passed to FUN_006b5570 parameter param_1; 005A4350 [this+0x1AE8] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
-    DArrayTy *field_1AEC; // [STClassLayoutApplier] reads=30, writes=19; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AEC|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=25; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AEC <= consistent nested dereferences through [this+0x1AEC] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059C76F generic pointer-return assignment in FSGSTy::LoginCtrls; 0059CA65 generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059CF55 generic pointer-return assignment in FSGSTy::PswCtrls; 0059E865 generic pointer-return assignment in FSGSTy::NewGameCtrls; 0059EC21 generic pointer-return assignment in FSGSTy::JoinGameCtrls; 005A0590 [this+0x1AEC] passed to FUN_006b5570 parameter param_1; 005A07F0 [this+0x1AEC] passed to FUN_006b5570 parameter param_1; 005A0A50 [this+0x1AEC] passed to FUN_006b5570 parameter param_1; 005A0AF0 [this+0x1AEC] passed to FUN_006b5570 parameter param_1
-    DArrayTy *field_1AF0; // [STClassLayoutApplier] reads=8, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059CA81 generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059CF71 generic pointer-return assignment in FSGSTy::PswCtrls; 005A0590 [this+0x1AF0] passed to FUN_006b5570 parameter param_1
-    DArrayTy *field_1AF4; // [STClassLayoutApplier] reads=8, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AF4|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=7; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AF4 <= consistent nested dereferences through [this+0x1AF4] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059CF8D generic pointer-return assignment in FSGSTy::PswCtrls; 005A0590 [this+0x1AF4] passed to FUN_006b5570 parameter param_1
-    DArrayTy *field_1AF8; // [STClassLayoutApplier] reads=14, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AF8|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=11; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AF8 <= consistent nested dereferences through [this+0x1AF8] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059CA9D generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059D7BF generic pointer-return assignment in FSGSTy::InfoCtrls; 005A0590 [this+0x1AF8] passed to FUN_006b5570 parameter param_1; 005A3AB0 [this+0x1AF8] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
-    DArrayTy *field_1AFC; // [STClassLayoutApplier] reads=14, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AFC|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=11; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AFC <= consistent nested dereferences through [this+0x1AFC] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059CAB9 generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059D7DB generic pointer-return assignment in FSGSTy::InfoCtrls; 005A0590 [this+0x1AFC] passed to FUN_006b5570 parameter param_1; 005A3AB0 [this+0x1AFC] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
-    DArrayTy *field_1B00; // [STClassLayoutApplier] reads=14, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1B00|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=11; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1B00 <= consistent nested dereferences through [this+0x1B00] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059CAD5 generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059D7F7 generic pointer-return assignment in FSGSTy::InfoCtrls; 005A0590 [this+0x1B00] passed to FUN_006b5570 parameter param_1; 005A3AB0 [this+0x1B00] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
-    uint *field_1B04; // [STClassLayoutApplier] reads=16, writes=13; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/DArrayTy|pointer:/uint; typed_cross_class_recovery=15; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059CAF1 generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059D813 generic pointer-return assignment in FSGSTy::InfoCtrls; 005A0590 [this+0x1B04] passed to FUN_006b5570 parameter param_1; 005A0AF0 [this+0x1B04] passed to FUN_006b5570 parameter param_1; 005A3AB0 [this+0x1B04] passed to FUN_006b5570 parameter param_1; 005A3CC6 generic pointer-return assignment in FSGSTy::SetInfo | pointer:/uint <= 005A3AB0 [this+0x1B04] assigned 005A3AB0 return from ccFntTy::_TxtToSarr; 005A3CAE generic pointer-return assignment in FSGSTy::SetInfo
-    DArrayTy *field_1B08; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 00595E40 [this+0x1B08] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 0059645F generic pointer-return assignment in FSGSTy::InitFSGS; 005967F0 [this+0x1B08] passed to FUN_006b5570 parameter param_1
-    byte *field_1B0C; // [STClassLayoutApplier] reads=17, writes=5; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1B0C|pointer:/byte|pointer:/char; typed_cross_class_recovery=12; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1B0C <= consistent nested dereferences through [this+0x1B0C] | pointer:/byte <= 0059BB3F dynamic 1-byte dereference of field-derived address in FSGSTy::sub_0059B820; 0059BB4D dynamic 1-byte dereference of field-derived address in FSGSTy::sub_0059B820; 0059D753 dynamic 1-byte dereference of field-derived address in FSGSTy::InfoCtrls; 0059D761 dynamic 1-byte dereference of field-derived address in FSGSTy::InfoCtrls; 005A3B36 dynamic 1-byte dereference of field-derived address in FSGSTy::SetInfo; 005A3B44 dynamic 1-byte dereference of field-derived address in FSGSTy::SetInfo; 005A63BF dynamic 1-byte dereference of field-derived address in FSGSTy::GetMessage; 005A63CD dynamic 1-byte dereference of field-derived address in FSGSTy::GetMessage | pointer:/char <= 0059A910 [this+0x1B0C] passed to ccFntTy::WrStr parameter resourceString; name_evidence=resourceString <= 0059A910 [this+0x1B0C] passed to ccFntTy::WrStr parameter resourceString
-    undefined4 field_1B10; // [STClassLayoutApplier] reads=14, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
-    undefined4 field_1B14; // [STClassLayoutApplier] reads=20, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13
-    undefined4 field_1B18; // [STClassLayoutApplier] reads=14, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
-    undefined4 field_1B1C; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_1B20; // [STClassLayoutApplier] reads=49, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=29
-    undefined4 field_1B24; // [STClassLayoutApplier] reads=21, writes=11; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=17
-    undefined4 field_1B28; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1B2C; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    undefined4 field_1B30; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1B34[16];
-    undefined4 field_1B44; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_1B48; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_1B4C; // [STClassLayoutApplier] reads=12, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined4 field_1B50; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1B54[28];
-    undefined4 field_1B70; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    byte _unknown_1B74[69];
-    undefined4 field_1BB9; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1BBD; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    undefined4 field_1BC1; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1BC5[16];
-    undefined4 field_1BD5; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_1BD9; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_1BDD; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1BE1; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1BE5[28];
-    undefined4 field_1C01; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    byte _unknown_1C05[69];
-    undefined4 field_1C4A; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1C4E; // [STClassLayoutApplier] reads=22, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
-    undefined4 field_1C52; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_1C56[16];
-    undefined4 field_1C66; // [STClassLayoutApplier] reads=6, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined4 field_1C6A; // [STClassLayoutApplier] reads=10, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
-    undefined4 field_1C6E; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1C72[32];
-    undefined4 field_1C92; // [STClassLayoutApplier] reads=22, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
-    byte _unknown_1C96[69];
-    undefined4 field_1CDB; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1CDF; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    undefined4 field_1CE3; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1CE7[16];
-    undefined4 field_1CF7; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_1CFB; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_1CFF; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1D03; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1D07[28];
-    undefined4 field_1D23; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    byte _unknown_1D27[69];
-    undefined4 field_1D6C; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1D70; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    undefined4 field_1D74; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1D78[16];
-    undefined4 field_1D88; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_1D8C; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_1D90; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1D94; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1D98[28];
-    undefined4 field_1DB4; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    byte _unknown_1DB8[69];
-    undefined4 field_1DFD; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1E01; // [STClassLayoutApplier] reads=22, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
-    undefined4 field_1E05; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_1E09[16];
-    undefined4 field_1E19; // [STClassLayoutApplier] reads=6, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined4 field_1E1D; // [STClassLayoutApplier] reads=8, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    undefined4 field_1E21; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1E25[32];
-    undefined4 field_1E45; // [STClassLayoutApplier] reads=22, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
-    byte _unknown_1E49[19];
-    undefined1 field_0x1e5c; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1E5D[49];
-    undefined4 field_1E8E; // [STClassLayoutApplier] reads=132, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/ushort; typed_cross_class_recovery=74; type_evidence=/int <= 005A4350 [this+0x1E8E] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA <= 005A4350 [this+0x1E8E] passed to FUN_006b5b10 parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005A4350 [this+0x1E8E] passed to FUN_006b4170 parameter param_1 | pointer:/ushort <= 005A4350 [this+0x1E8E] passed to FUN_006b5440 parameter param_1
-    tagBITMAPINFO *field_1E92; // [STClassLayoutApplier] reads=46, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=27; type_evidence=pointer:/wingdi.h/tagBITMAPINFO <= 0059D30C generic pointer-return assignment in FSGSTy::LicCtrls; 0059EBD9 generic pointer-return assignment in FSGSTy::JoinGameCtrls; 0059F367 generic pointer-return assignment in FSGSTy::LadderCtrls
-    void *field_1E96; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2
-    tagBITMAPINFO *field_1E9A; // [STClassLayoutApplier] reads=28, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=16; type_evidence=pointer:/wingdi.h/tagBITMAPINFO <= 0059EBF5 generic pointer-return assignment in FSGSTy::JoinGameCtrls
-    uint *field_1E9E; // [STClassLayoutApplier] reads=18, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/DArrayTy|pointer:/ushort; typed_cross_class_recovery=13; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005964BD generic pointer-return assignment in FSGSTy::InitFSGS; 005967F0 [this+0x1E9E] passed to FUN_006b5570 parameter param_1; 005A1F00 [this+0x1E9E] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005A4350 [this+0x1E9E] passed to FUN_006b5570 parameter param_1; 005A49FE generic pointer-return assignment in FSGSTy::GetMessage | pointer:/ushort <= 005A21D1 dynamic 2-byte dereference of field-derived address in FSGSTy::AddMessage
-    DArrayTy *field_1EA2; // [STClassLayoutApplier] reads=20, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1EA2|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=12; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1EA2 <= consistent nested dereferences through [this+0x1EA2] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005A07F0 [this+0x1EA2] passed to FUN_006b5570 parameter param_1; 005A4350 [this+0x1EA2] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
-    DArrayTy *field_1EA6; // [STClassLayoutApplier] reads=52, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=29; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005A07F0 [this+0x1EA6] passed to DArrayDestroy parameter array; 005A2380 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array; 005A26C0 [this+0x1EA6] passed to DArrayRemoveAt parameter array; 005A2D70 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005A07F0 [this+0x1EA6] passed to DArrayDestroy parameter array; 005A2380 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array; 005A26C0 [this+0x1EA6] passed to DArrayRemoveAt parameter array; 005A2D70 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array
-    DArrayTy *field_1EAA; // [STClassLayoutApplier] reads=20, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005A07F0 [this+0x1EAA] passed to DArrayDestroy parameter array; 005A2FF0 [this+0x1EAA] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005A07F0 [this+0x1EAA] passed to DArrayDestroy parameter array; 005A2FF0 [this+0x1EAA] passed to Library::DKW::TBL::DArrayAppend parameter array
-    undefined4 field_1EAE; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=4
-    DWORD field_1EB2; // [STClassLayoutApplier] reads=1, writes=2; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/WinDef.h/DWORD <= 0059776B exact field-to-field MOV propagation; 00597A4B exact field-to-field MOV propagation
-    undefined4 field_1EB6; // [STClassLayoutApplier] reads=21, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=18
-    undefined4 field_1EBA; // [STClassLayoutApplier] reads=13, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=12
-    FSGSTy_field_1EBEDArray *field_1EBE; // [STClassLayoutApplier] reads=30, writes=5; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=18; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059EC41 generic pointer-return assignment in FSGSTy::JoinGameCtrls; 005A0AF0 [this+0x1EBE] passed to DArrayDestroy parameter array; 005A3540 [this+0x1EBE] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005A0AF0 [this+0x1EBE] passed to DArrayDestroy parameter array; 005A3540 [this+0x1EBE] passed to Library::DKW::TBL::DArrayAppend parameter array
-    uint field_1EC2; // [STClassLayoutApplier] reads=26, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/SubmarineTitans/Recovered/Enums/CursorClassTy_SetGCType_param_1Enum|/uint; typed_cross_class_recovery=18; type_evidence=/SubmarineTitans/Recovered/Enums/CursorClassTy_SetGCType_param_1Enum <= 005A4350 [this+0x1EC2] passed to CursorClassTy::SetGCType parameter param_1 | /uint <= 005A33B2 CMP/JA establishes /uint through a field-derived value in FSGSTy::CreateGame; 005A33B2 CMP/JA through typed class pointer in FSGSTy::CreateGame; 005A5085 CMP/JA establishes /uint through a field-derived value in FSGSTy::GetMessage; 005A5085 CMP/JA through typed class pointer in FSGSTy::GetMessage; 005A7611 CMP/JA establishes /uint through a field-derived value in FSGSTy::GetMessage; 005A7611 CMP/JA through typed class pointer in FSGSTy::GetMessage; 005A7BED CMP/JA establishes /uint through a field-derived value in FSGSTy::GetMessage; 005A7BED CMP/JA through typed class pointer in FSGSTy::GetMessage
-    undefined4 field_1EC6; // [STClassLayoutApplier] reads=8, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    uint field_1ECA; // [STClassLayoutApplier] reads=2, writes=8; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/uint <= 005A76CC CMP/JNC establishes /uint through a field-derived value in FSGSTy::GetMessage; 005A76CC CMP/JNC through typed class pointer in FSGSTy::GetMessage
-    undefined4 field_1ECE; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    undefined1 field_1ED2; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_1ED3; // [STClassLayoutApplier] reads=8, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=7
-    undefined4 field_1ED7; // [STClassLayoutApplier] reads=8, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=7
-    void *field_1EDB; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=pointer:/void <= 005A41C9 generic pointer-return assignment in FSGSTy::SetLadder
-    uint field_1EDF; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/uint <= 005A4236 CMP/JNC through typed class pointer in FSGSTy::SetLadder
-    uint field_1EE3; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/uint <= 005A6167 CMP/JNC establishes /uint through a field-derived value in FSGSTy::GetMessage; 005A6167 CMP/JNC through typed class pointer in FSGSTy::GetMessage
-    undefined4 field_1EE7; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_1EEB[56];
-    HoloTy *field_1F23; // [STClassLayoutApplier] reads=99, writes=30; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F23; typed_cross_class_recovery=68; type_evidence=pointer:/HoloTy <= 005967F0 [this+0x1F23] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005967F0 [this+0x1F23] used as receiver of HoloTy::Done; 00597120 [this+0x1F23] used as receiver of HoloTy::NextFas; 00597E70 [this+0x1F23] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 00597E70 [this+0x1F23] used as receiver of HoloTy::Done; 00597E70 [this+0x1F23] used as receiver of HoloTy::Init; 00597E70 [this+0x1F23] used as receiver of HoloTy::NextFas; 0059F670 [this+0x1F23] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 0059F670 [this+0x1F23] used as receiver of HoloTy::Done; 0059F670 [this+0x1F23] used as receiver of HoloTy::Init; 0059F670 [this+0x1F23] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F23 <= consistent nested dereferences through [this+0x1F23]
-    HoloTy *field_1F27; // [STClassLayoutApplier] reads=37, writes=12; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F27; cfg_field_recovery=1; typed_cross_class_recovery=27; type_evidence=pointer:/HoloTy <= 005967F0 [this+0x1F27] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005967F0 [this+0x1F27] used as receiver of HoloTy::Done; 00597120 [this+0x1F27] used as receiver of HoloTy::NextFas; 00597E70 [this+0x1F27] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 00597E70 [this+0x1F27] used as receiver of HoloTy::Done; 00597E70 [this+0x1F27] used as receiver of HoloTy::Init; 00597E70 [this+0x1F27] used as receiver of HoloTy::NextFas; 0059F670 [this+0x1F27] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 0059F670 [this+0x1F27] used as receiver of HoloTy::Done; 0059F670 [this+0x1F27] used as receiver of HoloTy::Init; 0059F670 [this+0x1F27] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F27 <= consistent nested dereferences through [this+0x1F27]
-    HoloTy *field_1F2B; // [STClassLayoutApplier] reads=59, writes=18; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F2B; cfg_field_recovery=2; typed_cross_class_recovery=41; type_evidence=pointer:/HoloTy <= 005967F0 [this+0x1F2B] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005967F0 [this+0x1F2B] used as receiver of HoloTy::Done; 00597120 [this+0x1F2B] used as receiver of HoloTy::NextFas; 00597E70 [this+0x1F2B] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 00597E70 [this+0x1F2B] used as receiver of HoloTy::Done; 00597E70 [this+0x1F2B] used as receiver of HoloTy::Init; 00597E70 [this+0x1F2B] used as receiver of HoloTy::NextFas; 0059F670 [this+0x1F2B] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 0059F670 [this+0x1F2B] used as receiver of HoloTy::Done; 0059F670 [this+0x1F2B] used as receiver of HoloTy::Init; 0059F670 [this+0x1F2B] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F2B <= consistent nested dereferences through [this+0x1F2B]
-    HoloTy *field_1F2F; // [STClassLayoutApplier] reads=37, writes=12; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F2F; cfg_field_recovery=1; typed_cross_class_recovery=27; type_evidence=pointer:/HoloTy <= 005967F0 [this+0x1F2F] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005967F0 [this+0x1F2F] used as receiver of HoloTy::Done; 00597120 [this+0x1F2F] used as receiver of HoloTy::NextFas; 00597E70 [this+0x1F2F] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 00597E70 [this+0x1F2F] used as receiver of HoloTy::Done; 00597E70 [this+0x1F2F] used as receiver of HoloTy::Init; 00597E70 [this+0x1F2F] used as receiver of HoloTy::NextFas; 0059F670 [this+0x1F2F] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 0059F670 [this+0x1F2F] used as receiver of HoloTy::Done; 0059F670 [this+0x1F2F] used as receiver of HoloTy::Init; 0059F670 [this+0x1F2F] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F2F <= consistent nested dereferences through [this+0x1F2F]
-    undefined1 field_0x1f33; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1F34[7];
-    undefined4 field_1F3B; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1F3F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1F43; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_1F47[4];
-    undefined4 field_1F4B; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_1F4F[12];
-    undefined4 field_1F5B; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1F5F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1F63; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_1F67[12];
-    undefined4 field_1F73; // [STClassLayoutApplier] reads=0, writes=16; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    undefined4 field_1F77; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1F7B; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1F7F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1F83; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1F87; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1F8B; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    ushort *field_1F8F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/ushort <= 00596019 generic pointer-return assignment in FSGSTy::InitFSGS
-    undefined4 field_1F93; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1F97; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1F9B; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1F9F; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_1FA3[16];
-    FSGSTy_field_1FB3DArray *field_1FB3; // [STClassLayoutApplier] reads=48, writes=5; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=27; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 00596048 generic pointer-return assignment in FSGSTy::InitFSGS; 005967F0 [this+0x1FB3] passed to DArrayDestroy parameter array; 005A4350 [this+0x1FB3] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005967F0 [this+0x1FB3] passed to DArrayDestroy parameter array; 005A4350 [this+0x1FB3] passed to Library::DKW::TBL::DArrayAppend parameter array
-    undefined1 field_0x1fb7; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1FB8[259];
-    undefined4 field_20BB; // [STClassLayoutApplier] reads=0, writes=26; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13
-    undefined4 field_20BF; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    int GetMessage(STMessage *message);
-    undefined CloseButtons();
-    void AddMessage(byte param_1, byte *param_2, char *param_3, byte param_4);
-    void AddPlayer(undefined4 *param_1);
-    void ChangePlayer(byte *param_1);
-    void ChangePlayerPing(undefined4 param_1, int param_2, undefined4 param_3);
-    void ChatCtrls();
-    void CheckUpdate();
-    void ConnectProc(int param_1, int param_2);
-    void CreateCtrls();
-    void CreateGame(int param_1);
-    void DelPlayer(byte *param_1);
-    void DeleteCtrls();
-    void DoLogon();
-    void DoneFSGS();
-    void Download(undefined4 param_1, undefined4 param_2);
-    void Finished(int param_1);
-    void InfoCtrls();
-    void InitFSGS(byte param_1);
-    void JoinChannel();
-    void JoinGameCtrls();
-    void LadderCtrls();
-    void LicCtrls();
-    void LoginCtrls();
-    void NewGameCtrls();
-    void NewIDCtrls();
-    void NoneFSGS();
-    void OutChSlProc(AnonShape_GLOBAL_0080759C_9638EF10 *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, undefined4 *param_8);
-    void OutLadProc(int param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, FSGSTy *param_6, int param_7);
-    void OutSGlProc(AnonShape_GLOBAL_0080759C_9638EF10 *param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, int param_6, int param_7, int param_8);
-    void OutTRGlProc(AnonShape_GLOBAL_0080759C_9638EF10 *param_1, MMMObjTy *param_2, MMMObjTy *param_3, StartServTy *param_4, int param_5, int param_6, int param_7, int param_8);
-    void OutTRGlProc(int param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, int param_6, int param_7, UINT param_8);
-    void PaintFSGS(char param_1);
-    void PaintGameNew();
-    void PaintInfo();
-    void PaintLadder();
-    void PaintLogLogin();
-    void PaintLogNew();
-    void PaintLogPsw();
-    void PrepBkgMess(char param_1);
-    void PswCtrls();
-    void SetBanner(char *param_1, undefined4 param_2, int param_3, uint param_4, undefined4 *param_5);
-    void SetChannelList(int param_1, undefined4 *param_2);
-    void SetGameList(int param_1, int *param_2);
-    void SetInfo(byte *param_1, uint param_2, byte *param_3);
-    void SetLadder(undefined4 param_1, uint param_2, int param_3, undefined4 *param_4);
-    void SetState(byte param_1);
-    void sub_0059B820();
-    void sub_0059BE50();
-    void sub_005A0590();
-    void sub_005A07F0();
-    void sub_005A0A50();
-    void sub_005A0AF0();
-    void sub_005A0C80();
-    void sub_005A39A0(ccFntTy *param_1, char *text, uint param_3, byte *param_4, int param_5, int param_6, int param_7, int param_8);
-};
-
 struct FrmPanelTy {
     FrmPanelTyVTable *vtable; // [STClassLayoutApplier] reads=47, writes=1; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; cfg_field_recovery=5; typed_cross_class_recovery=31
     byte _unknown_0004[8];
@@ -9026,7 +8573,7 @@ struct HelpPanelTy {
     undefined4 field_0064; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     AnonPointee_HelpPanelTy_0068 *field_0068; // [STClassLayoutApplier] reads=62, writes=2; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_0068|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/int|pointer:/ushort; cfg_field_recovery=9; typed_cross_class_recovery=32; type_evidence=/int <= 00510E30 [this+0x68] passed to ccFntTy::SetSurf parameter param_1; 00515310 [this+0x68] passed to ccFntTy::SetSurf parameter param_1; 00515E30 [this+0x68] passed to Library::DKW::WGR::FUN_006b5110 parameter param_1; 00516480 [this+0x68] passed to Library::DKW::WGR::FUN_006b5110 parameter param_1; 00516480 [this+0x68] passed to ccFntTy::SetSurf parameter param_1; 0051D540 [this+0x68] passed to Library::DKW::WGR::FUN_006b5110 parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_0068 <= consistent nested dereferences through [this+0x68] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005123A0 [this+0x68] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_1; 00513030 [this+0x68] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_1; 005135F0 [this+0x68] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_1; 00513A40 [this+0x68] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_1; 00515310 [this+0x68] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_1; 00516480 [this+0x68] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_1 | pointer:/int <= 00510E30 [this+0x68] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 0051137E dynamic 2-byte dereference of field-derived address in HelpPanelTy::InitHelpPanel
     byte _unknown_006C[262];
-    undefined2 field_0172; // [STClassLayoutApplier] reads=24, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=5; typed_cross_class_recovery=25
+    HelpPanelTy_field_0172State field_0172; // [STClassLayoutApplier] reads=24, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=5; typed_cross_class_recovery=25 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 field_0174; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined2 field_0178; // [STClassLayoutApplier] reads=30, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x1|4x34; exact_subword_partition=4->2; cfg_field_recovery=3; typed_cross_class_recovery=18; exact_copy_subfield_views=1
     undefined2 field_017A; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1; exact_copy_subfield_views=1
@@ -9400,7 +8947,7 @@ struct IntercomPanelTy {
     undefined4 field_0064; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_0068; // [STClassLayoutApplier] reads=4, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=3
     byte _unknown_006C[262];
-    undefined2 field_0172; // [STClassLayoutApplier] reads=6, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=8
+    IntercomPanelTy_field_0172State field_0172; // [STClassLayoutApplier] reads=6, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=8 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 field_0174; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined4 field_0178; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_017C; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=2
@@ -9637,170 +9184,6 @@ struct MMObjTy {
     void PaintSprBut(int param_1, uint param_2, int param_3, int param_4, int param_5);
 };
 
-struct MMsgTy {
-    MMsgTyVTable *vtable; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=4
-    byte _unknown_0004[8];
-    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=16, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=3; typed_cross_class_recovery=8; type_evidence=pointer:/StartSystemTy <= 005B6FF0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005B8C70 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0
-    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005B9330 [this+0x10] used as receiver of STAppC::sub_006E51B0; name_evidence=message <= 005B9330 unique get field in MMsgTy::GetMessage
-    byte _unknown_0014[4];
-    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_001C[1];
-    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001E[15];
-    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_0031; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_0035[8];
-    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_003E[31];
-    undefined4 field_005D; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    undefined4 field_0061; // [STClassLayoutApplier] reads=9, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined1 field_0065; // [STClassLayoutApplier] reads=25, writes=17; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=31
-    uint field_0066[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[13], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:13:/uint <= 005B702D exact pointer walk count=13, stride=4, cursor_displacement=0 | 005B7FCE MOV EAX,dword ptr [EBX + EDI*0x4 + 0x66] | 005B8CB8 exact pointer walk count=13, stride=4, cursor_displacement=0 | 005B9066 MOV ECX,dword ptr [ESI + EAX*0x4 + 0x66] | 005B9089 MOV EDX,dword ptr [ESI + EAX*0x4 + 0x66]
-    byte field_009A; // [STClassLayoutApplier] reads=66, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=38; type_evidence=/byte <= 005B814A CMP/JC through typed class pointer in MMsgTy::SetMessage
-    undefined1 field_0x9b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_009C[11];
-    undefined1 field_0xa7; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00A8[20];
-    undefined1 field_0xbc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00BD[4];
-    undefined1 field_0xc1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00C2[15];
-    undefined1 field_0xd1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00D2[15];
-    undefined1 field_0xe1; // exact unnamed-byte view referenced by exported code
-    undefined1 field_00E2; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_00E3[4];
-    undefined4 field_00E7; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    int field_00EB; // [STClassLayoutApplier] reads=3, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/int <= 005B7628 CMP/JLE establishes /int through a field-derived value in MMsgTy::NoneMMsg
-    byte _unknown_00EF[16];
-    undefined4 field_00FF; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_0103; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_0107[28];
-    uint field_0123; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/uint <= 005B7621 CMP/JC establishes /uint through a field-derived value in MMsgTy::NoneMMsg
-    undefined4 field_0127; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_012B; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_012F[69];
-    undefined1 field_0x174; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0175[3];
-    undefined4 field_0178; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_017C; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined1 field_0x180; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0181[15];
-    undefined4 field_0190; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_0194; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_0198[36];
-    undefined4 field_01BC; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_01C0[73];
-    undefined4 field_0209; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_020D; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_0211[16];
-    undefined4 field_0221; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_0225; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_0229[36];
-    undefined4 field_024D; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_0251[69];
-    undefined1 field_0x296; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0297[32];
-    undefined4 field_02B7; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_02BB[1];
-    undefined1 field_0x2bc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02BD[31];
-    undefined1 field_02DC; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_02DD[146];
-    undefined4 field_036F; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_0373[4];
-    undefined4 field_0377; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_037B[278];
-    undefined1 field_0x491; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0492[32];
-    undefined4 field_04B2; // [STClassLayoutApplier] reads=6, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    byte _unknown_04B6[1];
-    undefined1 field_0x4b7; // exact unnamed-byte view referenced by exported code
-    byte _unknown_04B8[31];
-    undefined1 field_04D7; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_04D8[146];
-    undefined4 field_056A; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    byte _unknown_056E[4];
-    undefined4 field_0572; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_0576[278];
-    undefined1 field_0x68c; // exact unnamed-byte view referenced by exported code
-    byte _unknown_068D[32];
-    undefined4 field_06AD; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_06B1[1];
-    undefined1 field_0x6b2; // exact unnamed-byte view referenced by exported code
-    byte _unknown_06B3[31];
-    undefined1 field_06D2; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_06D3[146];
-    undefined4 field_0765; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_0769[4];
-    undefined4 field_076D; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_0771[278];
-    undefined1 field_0x887; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0888[506];
-    undefined1 field_0xa82; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0A83[506];
-    undefined1 field_0xc7d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0C7E[506];
-    undefined1 field_0xe78; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0E79[3041];
-    undefined1 field_1A5A; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=4
-    byte _unknown_1A5B[4];
-    undefined1 field_1A5F; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=5
-    undefined1 field_0x1a60; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1A61[38];
-    undefined1 field_0x1a87; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1A88[506];
-    undefined1 field_0x1c82; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1C83[25];
-    undefined4 field_1C9C; // [STClassLayoutApplier] reads=1, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x1|4x13; typed_cross_class_recovery=8
-    undefined4 field_1CA0; // [STClassLayoutApplier] reads=0, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    undefined4 field_1CA4; // [STClassLayoutApplier] reads=0, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    undefined1 field_1CA8; // [STClassLayoutApplier] reads=0, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    undefined1 field_1CA9; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
-    undefined1 field_1CAA; // [STClassLayoutApplier] reads=3, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_1CAB; // [STClassLayoutApplier] reads=12, writes=11; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=17
-    undefined1 field_0x1caf; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1CB0[32];
-    undefined4 field_1CD0; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    byte _unknown_1CD4[35];
-    undefined1 field_0x1cf7; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1CF8[3];
-    undefined4 field_1CFB; // [STClassLayoutApplier] reads=11, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    int field_1CFF; // [STClassLayoutApplier] reads=10, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/int <= 005B75B6 CMP/JLE establishes /int through a field-derived value in MMsgTy::NoneMMsg; 005B75B6 CMP/JLE through typed class pointer in MMsgTy::NoneMMsg; 005B7927 CMP/JGE through typed class pointer in MMsgTy::NoneMMsg
-    int field_1D03; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=1; type_evidence=/int <= 005B7927 CMP/JGE establishes /int through CFG-recovered field flow in MMsgTy::NoneMMsg; 005B7927 CMP/JGE through typed class pointer in MMsgTy::NoneMMsg
-    byte _unknown_1D07[12];
-    undefined4 field_1D13; // [STClassLayoutApplier] reads=9, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_1D17; // [STClassLayoutApplier] reads=9, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    byte _unknown_1D1B[36];
-    undefined4 field_1D3F; // [STClassLayoutApplier] reads=11, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    byte _unknown_1D43[69];
-    undefined4 field_1D88; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    undefined4 field_1D8C; // [STClassLayoutApplier] reads=16, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=8
-    int field_1D90; // [STClassLayoutApplier] reads=14, writes=10; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=8; typed_cross_class_recovery=12; type_evidence=/int <= 005B7976 CMP/JGE establishes /int through CFG-recovered field flow in MMsgTy::NoneMMsg; 005B7976 CMP/JGE through typed class pointer in MMsgTy::NoneMMsg; 005B7C25 CMP/JGE establishes /int through CFG-recovered field flow in MMsgTy::NoneMMsg; 005B7C25 CMP/JGE through typed class pointer in MMsgTy::NoneMMsg
-    int field_1D94; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=2; typed_cross_class_recovery=2; type_evidence=/int <= 005B7976 CMP/JGE establishes /int through CFG-recovered field flow in MMsgTy::NoneMMsg; 005B7976 CMP/JGE through typed class pointer in MMsgTy::NoneMMsg; 005B7C25 CMP/JGE establishes /int through CFG-recovered field flow in MMsgTy::NoneMMsg; 005B7C25 CMP/JGE through typed class pointer in MMsgTy::NoneMMsg
-    byte _unknown_1D98[12];
-    undefined4 field_1DA4; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=5
-    undefined4 field_1DA8; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=5
-    byte _unknown_1DAC[36];
-    undefined4 field_1DD0; // [STClassLayoutApplier] reads=16, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=8
-    byte _unknown_1DD4[69];
-    undefined1 field_0x1e19; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1E1A[144];
-    int GetMessage(STMessage *message);
-    undefined CloseSprBut();
-    void DoneMMsg();
-    void FUN_005b8f40(undefined4 *param_1);
-    void HidePanel(int param_1, int param_2, int param_3);
-    void HideSprites();
-    void InitMMsg();
-    void NoneMMsg();
-    void PaintMMsg();
-    undefined4 SetMessage(UINT param_1, char param_2, undefined4 *param_3, undefined4 *param_4, undefined4 *param_5, int param_6, UINT param_7);
-    undefined4 SetPanel(UINT param_1, int param_2, int param_3, UINT param_4);
-    void ShowSprites();
-    void StatePanel(int param_1);
-};
-
 struct MReportTy {
     MReportTyVTable *vtable; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=1
     byte _unknown_0004[4];
@@ -9988,7 +9371,7 @@ struct MTaskTy {
     undefined4 field_0061; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_0065; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined4 field_0069; // [STClassLayoutApplier] reads=30, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=17
-    undefined1 field_006D; // [STClassLayoutApplier] reads=8, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
+    MTaskTy_field_006DState field_006D; // [STClassLayoutApplier] reads=8, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9 [STSwitchEnumApplier] enum recovered from switch cases
     undefined1 field_006E; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
     undefined1 field_006F; // [STClassLayoutApplier] reads=8, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
     cMf32 *field_0070; // [STClassLayoutApplier] reads=14, writes=5; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=10; type_evidence=pointer:/cMf32 <= 005DFA30 [this+0x70] passed to Library::Ourlib::MFSARR::mfSarLoad parameter param_1; 005DFA30 [this+0x70] used as receiver of cMf32::RecGet; 005E0470 [this+0x70] passed to cMf32::delete parameter param_1
@@ -10001,18 +9384,14 @@ struct MTaskTy {
     ccFntTy *field_0089; // [STClassLayoutApplier] reads=10, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/WinDef.h/HDC__|pointer:/ccFntTy; typed_cross_class_recovery=8; type_evidence=pointer:/WinDef.h/HDC__ <= 005DFD47 generic pointer-return assignment in MTaskTy::InitMTask | pointer:/ccFntTy <= 005E4300 [this+0x89] used as receiver of ccFntTy::SetSurf; 005E4300 [this+0x89] used as receiver of ccFntTy::WrStr; 005E4570 [this+0x89] used as receiver of ccFntTy::SetSurf; 005E4570 [this+0x89] used as receiver of ccFntTy::WrStr
     ccFntTy *field_008D; // [STClassLayoutApplier] reads=14, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_MTaskTy_008D|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4|pointer:/WinDef.h/HDC__|pointer:/ccFntTy; typed_cross_class_recovery=10; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_MTaskTy_008D <= consistent nested dereferences through [this+0x8D] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 005E4570 [this+0x8D] passed to FUN_00710790 parameter param_1 | pointer:/WinDef.h/HDC__ <= 005DFD70 generic pointer-return assignment in MTaskTy::InitMTask | pointer:/ccFntTy <= 005E4570 [this+0x8D] used as receiver of ccFntTy::SetSurf; 005E4570 [this+0x8D] used as receiver of ccFntTy::WrStr
     undefined1 field_0x91; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0092[17];
-    undefined1 field_0xa3; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00A4[237];
+    byte _unknown_0092[255];
     undefined1 field_0x191; // exact unnamed-byte view referenced by exported code
     byte _unknown_0192[255];
     uint field_0291[5]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=5; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[5], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:5:/uint <= 005E0626 exact pointer walk count=5, stride=4, cursor_displacement=0 | 005E4A4A exact pointer walk count=5, stride=4, cursor_displacement=0
-    uint field_02A5[5]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=5; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[5], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:5:/uint <= 005DFD76 exact pointer walk count=5, stride=4, cursor_displacement=0 | 005E05FD exact pointer walk count=5, stride=4, cursor_displacement=0
+    uint field_02A5[5]; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; bounded_member_array; count=5; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[5], bounded_sites=0, exact_loops=3, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:5:/uint <= 005DFD76 exact pointer walk count=5, stride=4, cursor_displacement=0 | 005E05FD exact pointer walk count=5, stride=4, cursor_displacement=0 | 005E57FA exact pointer walk count=5, stride=4, cursor_displacement=-24
     undefined4 field_02B9; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
     undefined4 field_02BD; // [STClassLayoutApplier] reads=4, writes=1; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; type_evidence=/int <= 005E05C3 CMP/JL establishes /int through a field-derived value in MTaskTy::DoneMTask | /uint <= 005DFA30 exact address of [this+0x2BD] passed to FUN_006b2330 parameter param_2
-    byte _unknown_02C1[2];
-    undefined1 field_0x2c3; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02C4[9];
+    byte _unknown_02C1[12];
     undefined4 field_02CD; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
     undefined4 field_02D1; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_02D5; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
@@ -10053,11 +9432,7 @@ struct MTaskTy {
     undefined4 field_043B; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
     byte _unknown_043F[17];
     undefined1 field_0x450; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0451[2];
-    undefined1 field_0x453; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0454[3];
-    undefined1 field_0x457; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0458[44];
+    byte _unknown_0451[51];
     undefined4 field_0484; // [STClassLayoutApplier] reads=14, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=9; type_evidence=/int <= 005E057A CMP/JL establishes /int through a field-derived value in MTaskTy::DoneMTask; 005E057A CMP/JL through typed class pointer in MTaskTy::DoneMTask; 005E4E42 CMP/JL through typed class pointer in MTaskTy::GetMessage; 005E5052 CMP/JL through typed class pointer in MTaskTy::GetMessage | /uint <= 005DFA30 exact address of [this+0x484] passed to FUN_006b2330 parameter param_2
     undefined4 field_0488; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
     undefined4 field_048C; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
@@ -10170,156 +9545,13 @@ struct MTestTy {
     undefined4 field_00A7; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_00AB; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_00AF; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    undefined1 field_00B3; // [STClassLayoutApplier] reads=4, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    MTestTy_field_00B3State field_00B3; // [STClassLayoutApplier] reads=4, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7 [STSwitchEnumApplier] enum recovered from switch cases
     int GetMessage(STMessage *message);
     void DoneMTest();
     void InitMTest();
     void NoneMTest();
     void PaintMTest();
     int sub_005E5F60();
-};
-
-struct MainMenuTy {
-    MainMenuTyVTable *vtable; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=6
-    byte _unknown_0004[4];
-    undefined4 field_0008; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_000C; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005B4BB0 [this+0x10] used as receiver of STAppC::sub_006E51B0
-    byte _unknown_0014[4];
-    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_001C[1];
-    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001E[7];
-    undefined4 field_0025; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_0029; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_0031; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_0035[8];
-    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_003E[15];
-    undefined4 field_004D; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_0051[12];
-    undefined4 field_005D; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    DWORD field_0061; // [STClassLayoutApplier] reads=13, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/WinDef.h/DWORD|/uint; typed_cross_class_recovery=10; type_evidence=/WinDef.h/DWORD <= 005B3430 [this+0x61] assigned 005B3430 return from WINMM.DLL::timeGetTime | /uint <= 005B3B00 [this+0x61] passed to Library::Ourlib::PALETTE::FUN_00718f40 parameter param_8
-    undefined1 field_0065; // [STClassLayoutApplier] reads=4, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    uint field_0066[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[13], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:13:/uint <= 005B47F9 exact pointer walk count=13, stride=4, cursor_displacement=0 | 005B4879 exact pointer walk count=13, stride=4, cursor_displacement=0
-    byte field_009A; // [STClassLayoutApplier] reads=31, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=22; type_evidence=/byte <= 005B3FC9 CMP/JC through typed class pointer in MainMenuTy::SetMode
-    undefined1 field_0x9b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_009C[7];
-    undefined1 field_0xa3; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00A4[23];
-    undefined1 field_00BB; // [STClassLayoutApplier] reads=1, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_00BC; // [STClassLayoutApplier] reads=0, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_00C0[9];
-    undefined4 field_00C9; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_00CD; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_00D1; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_00D5; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_00D9[9];
-    undefined1 field_00E2; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_00E3[4];
-    undefined4 field_00E7; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    int field_00EB; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/int <= 005B3513 CMP/JLE establishes /int through a field-derived value in MainMenuTy::NoneMainMenu
-    byte _unknown_00EF[16];
-    undefined4 field_00FF; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_0103; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_0107[28];
-    uint field_0123; // [STClassLayoutApplier] reads=1, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/uint <= 005B34C5 CMP/JC establishes /uint through a field-derived value in MainMenuTy::NoneMainMenu
-    DWORD field_0127; // [STClassLayoutApplier] reads=1, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/WinDef.h/DWORD <= 005B3C30 [this+0x127] assigned 005B3C30 return from WINMM.DLL::timeGetTime
-    undefined4 field_012B; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_012F[69];
-    undefined4 field_0174; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_0178; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_017C; // [STClassLayoutApplier] reads=1, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined1 field_0x180; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0181[15];
-    undefined4 field_0190; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    undefined4 field_0194; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_0198[36];
-    undefined4 field_01BC; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_01C0[73];
-    undefined4 field_0209; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_020D[20];
-    undefined1 field_0x221; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0222[3];
-    undefined1 field_0x225; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0226[35];
-    undefined1 field_0x249; // exact unnamed-byte view referenced by exported code
-    byte _unknown_024A[3];
-    undefined4 field_024D; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_0251[69];
-    undefined1 field_0x296; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0297[32];
-    undefined4 field_02B7; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_02BB[9];
-    undefined4 field_02C4; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_02C8; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_02CC; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_02D0; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_02D4; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_02D8[151];
-    undefined4 field_036F; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_0373[286];
-    undefined1 field_0x491; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0492[32];
-    undefined4 field_04B2; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_04B6[9];
-    undefined4 field_04BF; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_04C3; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_04C7; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_04CB; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_04CF[155];
-    undefined4 field_056A; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_056E[286];
-    undefined1 field_0x68c; // exact unnamed-byte view referenced by exported code
-    byte _unknown_068D[32];
-    undefined4 field_06AD; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_06B1[17];
-    undefined4 field_06C2; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_06C6; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_06CA[155];
-    undefined4 field_0765; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_0769[286];
-    undefined1 field_0x887; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0888[32];
-    undefined4 field_08A8; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_08AC[13];
-    undefined4 field_08B9; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_08BD; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_08C1; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_08C5[155];
-    undefined4 field_0960; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_0964[4342];
-    undefined1 field_1A5A; // [STClassLayoutApplier] reads=2, writes=14; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    StartServTy *field_1A5B; // [STClassLayoutApplier] reads=30, writes=0; type_confidence=conflict; name_confidence=high; consistent_this_relative_access; inferred_type_conflict=/winnt.h/LPSTR|pointer:/StartServTy|pointer:/char; typed_cross_class_recovery=15; type_evidence=/winnt.h/LPSTR <= 005B3160 [this+0x1A5B] passed to USER32.DLL::wsprintfA parameter param_1; 005B3D60 [this+0x1A5B] passed to USER32.DLL::wsprintfA parameter param_1 | pointer:/StartServTy <= 005B3D60 [this+0x1A5B] used as receiver of StartServTy::WrTextDDX | pointer:/char <= 005B3160 [this+0x1A5B] passed to StartServTy::WrTextDDX parameter resourceString; 005B3D60 [this+0x1A5B] passed to StartServTy::WrTextDDX parameter resourceString; name_evidence=resourceString <= 005B3160 [this+0x1A5B] passed to StartServTy::WrTextDDX parameter resourceString; 005B3D60 [this+0x1A5B] passed to StartServTy::WrTextDDX parameter resourceString
-    undefined1 field_0x1a5f; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1A60[7];
-    undefined4 field_1A67; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1A6B; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1A6F; // [STClassLayoutApplier] reads=1, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1A73[12];
-    undefined4 field_1A7F; // [STClassLayoutApplier] reads=1, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_1A83[36];
-    uint field_1AA7[10]; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; bounded_member_array; count=10; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[10], bounded_sites=0, exact_loops=3, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:10:/uint <= 005B2A77 MOV dword ptr [ESI + EDI*0x4 + 0x1aa7],EAX | 005B3059 exact pointer walk count=10, stride=4, cursor_displacement=0 | 005B32C1 exact pointer walk count=10, stride=4, cursor_displacement=0 | 005B4922 exact pointer walk count=10, stride=4, cursor_displacement=0
-    undefined4 field_1ACF; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1AD3; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    uint field_1AD7; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/uint <= 005B3B00 exact address of [this+0x1AD7] passed to Library::Ourlib::PALETTE::FUN_00718f40 parameter param_9
-    int field_1ADB; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/int <= 005B3B00 exact address of [this+0x1ADB] passed to Library::Ourlib::PALETTE::FUN_00718f40 parameter param_6
-    undefined1 field_0x1adf; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1AE0[1023];
-    undefined4 field_1EDF; // [STClassLayoutApplier] reads=1, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined1 field_1EE3; // [STClassLayoutApplier] reads=17, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
-    int GetMessage(STMessage *message);
-    undefined CloseButtons();
-    void AnimationMainMenu();
-    void DoneMainMenu();
-    void InitMainMenu(char param_1);
-    void LightPalette();
-    void NoneMainMenu();
-    void PaintMainMenu();
-    void SetMode(char param_1, int param_2);
-    void sub_005B47E0();
-    void sub_005B4860();
 };
 
 struct MoneyTy {
@@ -10689,7 +9921,7 @@ struct PlayPanelTy {
     undefined4 field_0064; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     ushort *field_0068; // [STClassLayoutApplier] reads=28, writes=1; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PlayPanelTy_0068|pointer:/int|pointer:/ushort; cfg_field_recovery=5; typed_cross_class_recovery=15; type_evidence=/int <= 00539B90 [this+0x68] passed to ccFntTy::SetSurf parameter param_1; 0053AC00 [this+0x68] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PlayPanelTy_0068 <= consistent nested dereferences through [this+0x68] | pointer:/int <= 00539B90 [this+0x68] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 00539C91 dynamic 2-byte dereference of field-derived address in PlayPanelTy::InitPlayPanel
     byte _unknown_006C[262];
-    undefined2 field_0172; // [STClassLayoutApplier] reads=5, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=8
+    PlayPanelTy_field_0172State field_0172; // [STClassLayoutApplier] reads=5, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=8 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 field_0174; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_0178; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_017C; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
@@ -10730,7 +9962,7 @@ struct PopUpTy {
     byte _unknown_0004[20];
     uint field_0018; // [STClassLayoutApplier] reads=23, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/uint <= 0052D690 [this+0x18] passed to FUN_006b2800 parameter param_2; 0052D980 [this+0x18] passed to FUN_006b2800 parameter param_2; 0052DB90 [this+0x18] passed to FUN_006b2800 parameter param_2; 0052DD20 [this+0x18] passed to FUN_006b2800 parameter param_2; 0052DD20 exact address of [this+0x18] passed to FUN_006b2330 parameter param_2
     byte _unknown_001C[56];
-    uint field_0054[15]; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; bounded_member_array; count=15; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[15], bounded_sites=0, exact_loops=1, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:15:/uint <= 0052DC34 exact pointer walk count=15, stride=4, cursor_displacement=60
+    uint field_0054[15]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=15; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[15], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:15:/uint <= 0052D053 exact pointer walk count=15, stride=4, cursor_displacement=0 | 0052DC34 exact pointer walk count=15, stride=4, cursor_displacement=60
     ushort *field_0090; // [STClassLayoutApplier] reads=20, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PopUpTy_0090|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/byte|pointer:/int|pointer:/ushort; typed_cross_class_recovery=12; type_evidence=/int <= 0052D200 [this+0x90] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PopUpTy_0090 <= consistent nested dereferences through [this+0x90] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 0052DD20 [this+0x90] passed to FUN_006b4170 parameter param_1; 0052DD20 [this+0x90] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_1 | pointer:/byte <= 0052DD20 [this+0x90] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_5 | pointer:/int <= 0052D690 [this+0x90] passed to FUN_006b4fa0 parameter param_1; 0052DB90 [this+0x90] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 0052D6D5 dynamic 2-byte dereference of field-derived address in PopUpTy::ChangeNumStr; 0052DC04 dynamic 2-byte dereference of field-derived address in PopUpTy::Clear
     ccFntTy *field_0094; // [STClassLayoutApplier] reads=20, writes=5; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=13; type_evidence=pointer:/ccFntTy <= 0052D200 [this+0x94] used as receiver of ccFntTy::SetSurf; 0052D200 [this+0x94] used as receiver of ccFntTy::WrStr; 0052D370 [this+0x94] used as receiver of ccFntTy::FormSarr; 0052D370 [this+0x94] used as receiver of ccFntTy::SepColorStrInSarr; 0052D370 [this+0x94] used as receiver of ccFntTy::_TxtToSarr
     uint *field_0098; // [STClassLayoutApplier] reads=28, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/DArrayTy|pointer:/byte; typed_cross_class_recovery=18; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0052D370 [this+0x98] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 0052DB90 [this+0x98] passed to FUN_006b5570 parameter param_1; 0052DBF1 generic pointer-return assignment in PopUpTy::Clear; 0052DD20 [this+0x98] passed to FUN_006b5570 parameter param_1; 0052DEA4 generic pointer-return assignment in PopUpTy::GetMessage | pointer:/byte <= 0052E098 dynamic 1-byte dereference of field-derived address in PopUpTy::GetMessage
@@ -10743,109 +9975,6 @@ struct PopUpTy {
     int GetMessage(STMessage *message);
     void OutProc(int *param_1, int param_2, undefined4 param_3, int param_4, int param_5, undefined4 param_6, undefined4 param_7, int param_8);
     void OutStr(byte param_1);
-};
-
-struct PrividerTy {
-    PrividerTyVTable *vtable; // [STClassLayoutApplier] reads=3, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=5
-    byte _unknown_0004[4];
-    undefined4 field_0008; // [STClassLayoutApplier] reads=11, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=pointer:/StartSystemTy <= 005BC050 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0
-    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005BC5E0 [this+0x10] used as receiver of STAppC::sub_006E51B0
-    byte _unknown_0014[4];
-    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_001C[1];
-    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001E[7];
-    undefined4 field_0025; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_0029; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=16; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    undefined4 field_0031; // [STClassLayoutApplier] reads=0, writes=16; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    byte _unknown_0035[8];
-    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_003E[7];
-    undefined4 field_0045; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_0049; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_004D; // [STClassLayoutApplier] reads=6, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_0051; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_0055; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_0059[4];
-    ushort *field_005D; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=pointer:/ushort <= 005B9DCC dynamic 2-byte dereference of field-derived address in PrividerTy::InitPrivider; 005B9E88 dynamic 2-byte dereference of field-derived address in PrividerTy::InitPrivider
-    DWORD field_0061; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/WinDef.h/DWORD <= 005BAE00 [this+0x61] assigned 005BAE00 return from WINMM.DLL::timeGetTime
-    PrividerTy_field_0065State field_0065; // [STClassLayoutApplier] reads=3, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
-    undefined1 field_0x66; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0067[51];
-    undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_009B[33];
-    undefined1 field_0xbc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00BD[4];
-    undefined1 field_0xc1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00C2[15];
-    undefined1 field_0xd1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00D2[162];
-    undefined1 field_0x174; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0175[6373];
-    undefined1 field_1A5A; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    StartSystemTy *field_1A5B; // [STClassLayoutApplier] reads=49, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/StartSystemTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1A5B|pointer:/ushort; cfg_field_recovery=1; typed_cross_class_recovery=27; type_evidence=pointer:/StartSystemTy <= 005BC5E0 [this+0x1A5B] used as receiver of StartSystemTy::InitChat | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1A5B <= consistent nested dereferences through [this+0x1A5B] | pointer:/ushort <= 005B9B10 [this+0x1A5B] passed to FUN_006b2330 parameter param_7; 005BC5E0 [this+0x1A5B] passed to FUN_006b2330 parameter param_7
-    undefined1 field_1A5F; // [STClassLayoutApplier] reads=13, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    undefined1 field_1A60; // [STClassLayoutApplier] reads=3, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined4 field_1A61; // [STClassLayoutApplier] reads=10, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    undefined4 field_1A65; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    DWORD field_1A69; // [STClassLayoutApplier] reads=1, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/WinDef.h/DWORD <= 005BB53A exact field-to-field MOV propagation; 005BCDB5 exact field-to-field MOV propagation
-    undefined4 field_1A6D; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined1 field_1A71; // [STClassLayoutApplier] reads=1, writes=16; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
-    undefined1 field_1A72; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1A73; // [STClassLayoutApplier] reads=18, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
-    undefined4 field_1A77; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1A7B; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1A7F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1A83[16];
-    undefined4 field_1A93; // [STClassLayoutApplier] reads=3, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1A97; // [STClassLayoutApplier] reads=3, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1A9B; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1A9F; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1AA3[28];
-    undefined4 field_1ABF; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1AC3[69];
-    undefined4 field_1B08; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1B0C; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1B10; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1B14[16];
-    undefined4 field_1B24; // [STClassLayoutApplier] reads=3, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1B28; // [STClassLayoutApplier] reads=3, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1B2C; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1B30; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1B34[28];
-    undefined4 field_1B50; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1B54[69];
-    undefined4 field_1B99; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1B9D; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1BA1; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_1BA5[16];
-    undefined4 field_1BB5; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1BB9; // [STClassLayoutApplier] reads=1, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1BBD; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1BC1[32];
-    undefined4 field_1BE1; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_1BE5[69];
-    uint field_1C2A[22]; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; bounded_member_array; count=22; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[22], bounded_sites=0, exact_loops=3, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:22:/uint <= 005BA0A4 exact pointer walk count=22, stride=4, cursor_displacement=0 | 005BA67D exact pointer walk count=22, stride=4, cursor_displacement=0 | 005BC255 exact pointer walk count=22, stride=4, cursor_displacement=0 | 005BCF08 MOV ECX,dword ptr [ESI + EDX*0x4 + 0x1c2a]
-    ushort *field_1C82; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C82|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/int|pointer:/ushort; typed_cross_class_recovery=7; type_evidence=/int <= 005BC5E0 [this+0x1C82] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C82 <= consistent nested dereferences through [this+0x1C82] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005BC5E0 [this+0x1C82] passed to FUN_006b4170 parameter param_1 | pointer:/int <= 005BC050 [this+0x1C82] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 005BC28B dynamic 2-byte dereference of field-derived address in PrividerTy::DeleteCtrls
-    undefined4 field_1C86; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    uint field_1C8A; // [STClassLayoutApplier] reads=18, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; type_evidence=/uint <= 005B9B10 exact address of [this+0x1C8A] passed to FUN_006b2330 parameter param_2
-    AnonPointee_PrividerTy_1C8E *field_1C8E; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/ushort; typed_cross_class_recovery=8; type_evidence=/int <= 005B9B10 [this+0x1C8E] passed to ccFntTy::SetSurf parameter param_1; 005BC5E0 [this+0x1C8E] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA <= 005BC5E0 [this+0x1C8E] passed to FUN_006b5b10 parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005BC5E0 [this+0x1C8E] passed to FUN_006b4170 parameter param_1 | pointer:/ushort <= 005B9B10 [this+0x1C8E] passed to FUN_006b2330 parameter param_7
-    DArrayTy *field_1C92; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005B9B89 generic pointer-return assignment in PrividerTy::InitPrivider; 005BA560 [this+0x1C92] passed to FUN_006b5570 parameter param_1
-    HoloTy *field_1C96; // [STClassLayoutApplier] reads=33, writes=10; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C96; typed_cross_class_recovery=24; type_evidence=pointer:/HoloTy <= 005B9B10 [this+0x1C96] used as receiver of HoloTy::Init; 005BA560 [this+0x1C96] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005BA560 [this+0x1C96] used as receiver of HoloTy::Done; 005BAE00 [this+0x1C96] used as receiver of HoloTy::NextFas; 005BC050 [this+0x1C96] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005BC050 [this+0x1C96] used as receiver of HoloTy::Done; 005BC050 [this+0x1C96] used as receiver of HoloTy::Init; 005BC050 [this+0x1C96] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C96 <= consistent nested dereferences through [this+0x1C96]
-    HoloTy *field_1C9A; // [STClassLayoutApplier] reads=43, writes=13; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C9A; cfg_field_recovery=1; typed_cross_class_recovery=33; type_evidence=pointer:/HoloTy <= 005B9B10 [this+0x1C9A] used as receiver of HoloTy::Init; 005BA560 [this+0x1C9A] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005BA560 [this+0x1C9A] used as receiver of HoloTy::Done; 005BAE00 [this+0x1C9A] used as receiver of HoloTy::NextFas; 005BC050 [this+0x1C9A] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005BC050 [this+0x1C9A] used as receiver of HoloTy::Done; 005BC050 [this+0x1C9A] used as receiver of HoloTy::Init; 005BC050 [this+0x1C9A] used as receiver of HoloTy::NextFas; 005BC5E0 [this+0x1C9A] used as receiver of HoloTy::Init | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C9A <= consistent nested dereferences through [this+0x1C9A]
-    int GetMessage(STMessage *message);
-    void CloseButtons(char param_1);
-    void CreateCtrls(char param_1);
-    void DeleteCtrls(char param_1);
-    void DonePrivider();
-    void InitPrivider(char param_1, char param_2);
-    void NonePrivider();
-    void OutListProc(int *param_1, int param_2, undefined4 param_3, int param_4, int param_5, DWORD param_6, DWORD param_7, int param_8);
-    void PaintPrivider(char param_1);
-    void SetMode(char param_1, char param_2);
-    void sub_005BB9F0();
 };
 
 struct ProdPanelTy {
@@ -10875,7 +10004,7 @@ struct ProdPanelTy {
     byte _unknown_0064[4];
     ushort *field_0068; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ProdPanelTy_0068|pointer:/int|pointer:/ushort; typed_cross_class_recovery=7; type_evidence=/int <= 0053EF20 [this+0x68] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ProdPanelTy_0068 <= consistent nested dereferences through [this+0x68] | pointer:/int <= 0053EF20 [this+0x68] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 0053EFB4 dynamic 2-byte dereference of field-derived address in ProdPanelTy::InitProdPanel
     byte _unknown_006C[262];
-    undefined2 field_0172; // [STClassLayoutApplier] reads=35, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=37
+    ProdPanelTy_field_0172State field_0172; // [STClassLayoutApplier] reads=35, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=37 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 field_0174; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     byte _unknown_0178[4];
     ccFntTy *field_017C; // [STClassLayoutApplier] reads=6, writes=4; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=pointer:/ccFntTy <= 0053EF20 [this+0x17C] used as receiver of ccFntTy::SetSurf; 0053EF20 [this+0x17C] used as receiver of ccFntTy::WrStr
@@ -11012,104 +10141,6 @@ struct SAMPanelTy {
     void InitSAMPanel();
 };
 
-struct SIDTy {
-    SIDTyVTable *vtable; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=4
-    byte _unknown_0004[4];
-    undefined4 field_0008; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=pointer:/StartSystemTy <= 005D8A90 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0
-    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005D9470 [this+0x10] used as receiver of STAppC::sub_006E51B0
-    byte _unknown_0014[4];
-    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_001C[1];
-    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001E[15];
-    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=34; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=17
-    undefined4 field_0031; // [STClassLayoutApplier] reads=0, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    byte _unknown_0035[8];
-    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_003E[7];
-    undefined4 field_0045; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_0049; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_004D; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_0051[12];
-    undefined4 field_005D; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    DWORD field_0061; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/WinDef.h/DWORD <= 005D81F0 [this+0x61] assigned 005D81F0 return from WINMM.DLL::timeGetTime
-    undefined1 field_0065; // [STClassLayoutApplier] reads=4, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined1 field_0x66; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0067[51];
-    undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_009B[33];
-    undefined1 field_0xbc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00BD[183];
-    undefined1 field_0x174; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0175[6378];
-    undefined1 field_1A5F; // [STClassLayoutApplier] reads=10, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    undefined4 field_1A60; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1A64; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    int field_1A68; // [STClassLayoutApplier] reads=8, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/int <= 005D82B0 CMP/JLE establishes /int through a field-derived value in SIDTy::NoneSID; 005D82B0 CMP/JLE through typed class pointer in SIDTy::NoneSID; 005D832D CMP/JGE through typed class pointer in SIDTy::NoneSID
-    int field_1A6C; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/int <= 005D832D CMP/JGE through typed class pointer in SIDTy::NoneSID
-    byte _unknown_1A70[12];
-    undefined4 field_1A7C; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1A80; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_1A84[36];
-    undefined4 field_1AA8; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1AAC[69];
-    undefined4 field_1AF1; // [STClassLayoutApplier] reads=16, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    undefined4 field_1AF5; // [STClassLayoutApplier] reads=10, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    uint field_1AF9[2]; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; bounded_member_array; count=2; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[2], bounded_sites=0, exact_loops=3, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:2:/uint <= 005D9561 exact pointer walk count=2, stride=4, cursor_displacement=0 | 005D95FB exact pointer walk count=2, stride=4, cursor_displacement=0 | 005D971F exact pointer walk count=2, stride=4, cursor_displacement=0
-    undefined4 field_1B01; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1B05; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1B09; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1B0D[16];
-    undefined4 field_1B1D; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1B21; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1B25; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1B29; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1B2D[28];
-    undefined4 field_1B49; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1B4D[69];
-    undefined4 field_1B92; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1B96; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1B9A; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1B9E[16];
-    undefined4 field_1BAE; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1BB2; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1BB6; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1BBA; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1BBE[28];
-    undefined4 field_1BDA; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1BDE[69];
-    undefined4 field_1C23; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1C27; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1C2B; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_1C2F[16];
-    undefined4 field_1C3F; // [STClassLayoutApplier] reads=6, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1C43; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1C47; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1C4B[32];
-    undefined4 field_1C6B; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_1C6F[69];
-    uint field_1CB4; // [STClassLayoutApplier] reads=18, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=11; type_evidence=/uint <= 005D7A50 exact address of [this+0x1CB4] passed to FUN_006b2330 parameter param_2
-    ushort *field_1CB8; // [STClassLayoutApplier] reads=28, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CB8|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/ushort; typed_cross_class_recovery=16; type_evidence=/int <= 005D9470 [this+0x1CB8] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CB8 <= consistent nested dereferences through [this+0x1CB8] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005D8BF0 [this+0x1CB8] passed to FUN_006b4170 parameter param_1; 005D9250 [this+0x1CB8] passed to FUN_006b4170 parameter param_1; 005D9470 [this+0x1CB8] passed to FUN_006b4170 parameter param_1; 005D9470 [this+0x1CB8] passed to FUN_006b5ee0 parameter param_1; 005D9470 [this+0x1CB8] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_1 | pointer:/ushort <= 005D7A50 [this+0x1CB8] passed to FUN_006b2330 parameter param_7; 005D7DF9 dynamic 2-byte dereference of field-derived address in SIDTy::InitSID; 005D9250 [this+0x1CB8] passed to FUN_006b5440 parameter param_1; 005D9470 [this+0x1CB8] passed to FUN_006b5440 parameter param_1
-    ushort *field_1CBC; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=conflict; name_confidence=conflict; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CBC|pointer:/int|pointer:/ushort|pointer:/wingdi.h/tagBITMAPINFO; typed_cross_class_recovery=6; duplicate_suggested_field_name; type_evidence=/int <= 005D9470 [this+0x1CBC] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CBC <= consistent nested dereferences through [this+0x1CBC] | pointer:/int <= 005D9470 [this+0x1CBC] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 005D9ADC dynamic 2-byte dereference of field-derived address in SIDTy::GetMessage | pointer:/wingdi.h/tagBITMAPINFO <= 005D9470 [this+0x1CBC] passed to FUN_006b5440 parameter tOBJImage; name_evidence=tOBJImage <= 005D9470 [this+0x1CBC] passed to FUN_006b5440 parameter tOBJImage
-    ushort *field_1CC0; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=conflict; name_confidence=conflict; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC0|pointer:/int|pointer:/ushort|pointer:/wingdi.h/tagBITMAPINFO; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=/int <= 005D9250 [this+0x1CC0] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC0 <= consistent nested dereferences through [this+0x1CC0] | pointer:/int <= 005D9250 [this+0x1CC0] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 005D92BA dynamic 2-byte dereference of field-derived address in SIDTy::PaintExplanation | pointer:/wingdi.h/tagBITMAPINFO <= 005D9250 [this+0x1CC0] passed to FUN_006b5440 parameter tOBJImage; name_evidence=tOBJImage <= 005D9250 [this+0x1CC0] passed to FUN_006b5440 parameter tOBJImage
-    HANDLE field_1CC4; // [STClassLayoutApplier] reads=6, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/winnt.h/HANDLE|pointer:/void; typed_cross_class_recovery=7; type_evidence=/winnt.h/HANDLE <= 005D81F0 [this+0x1CC4] passed to KERNEL32.DLL::FindNextChangeNotification parameter hChangeHandle; 005D81F0 [this+0x1CC4] passed to KERNEL32.DLL::WaitForSingleObject parameter hHandle; 005D8450 [this+0x1CC4] assigned 005D8450 return from KERNEL32.DLL::FindFirstChangeNotificationA; 005D8450 [this+0x1CC4] passed to KERNEL32.DLL::FindCloseChangeNotification parameter hChangeHandle | pointer:/void <= 005D8518 generic pointer-return assignment in SIDTy::CreateCtrls; name_evidence=firstChangeNotificationA <= 005D8450 [this+0x1CC4] assigned 005D8450 return from KERNEL32.DLL::FindFirstChangeNotificationA | hChangeHandle <= 005D81F0 [this+0x1CC4] passed to KERNEL32.DLL::FindNextChangeNotification parameter hChangeHandle; 005D8450 [this+0x1CC4] passed to KERNEL32.DLL::FindCloseChangeNotification parameter hChangeHandle | hHandle <= 005D81F0 [this+0x1CC4] passed to KERNEL32.DLL::WaitForSingleObject parameter hHandle
-    ushort *field_1CC8; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC8|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA|pointer:/byte|pointer:/int|pointer:/ushort; typed_cross_class_recovery=7; type_evidence=/int <= 005D9470 [this+0x1CC8] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC8 <= consistent nested dereferences through [this+0x1CC8] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA <= 005D9470 [this+0x1CC8] passed to FUN_006b5b10 parameter param_1 | pointer:/byte <= 005D9470 [this+0x1CC8] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_5 | pointer:/int <= 005D9470 [this+0x1CC8] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 005D985B dynamic 2-byte dereference of field-derived address in SIDTy::GetMessage
-    DArrayTy *field_1CCC; // [STClassLayoutApplier] reads=30, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CCC|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=19; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CCC <= consistent nested dereferences through [this+0x1CCC] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005D7F80 [this+0x1CCC] passed to FUN_006b5570 parameter param_1; 005D8BF0 [this+0x1CCC] passed to FUN_006b5570 parameter param_1; 005D8BF0 [this+0x1CCC] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005D8C4F generic pointer-return assignment in SIDTy::PrepFiles
-    DArrayTy *field_1CD0; // [STClassLayoutApplier] reads=18, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CD0|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=12; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CD0 <= consistent nested dereferences through [this+0x1CD0] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005D7DD3 generic pointer-return assignment in SIDTy::InitSID; 005D7F80 [this+0x1CD0] passed to FUN_006b5570 parameter param_1; 005D9470 [this+0x1CD0] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
-    char field_1CD4; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; typed_cross_class_recovery=1; type_evidence=/byte <= 005D8BF0 exact address of [this+0x1CD4] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2 | /char <= 005D8450 exact address of [this+0x1CD4] passed to KERNEL32.DLL::FindFirstChangeNotificationA parameter lpPathName; 005D8BF0 exact address of [this+0x1CD4] passed to KERNEL32.DLL::FindFirstFileA parameter lpFileName; 005D8BF0 exact address of [this+0x1CD4] passed to USER32.DLL::wsprintfA parameter param_1; 005D9250 exact address of [this+0x1CD4] passed to USER32.DLL::wsprintfA parameter param_1; 005D9470 exact address of [this+0x1CD4] passed to USER32.DLL::wsprintfA parameter param_1
-    byte _unknown_1CD5[259];
-    int GetMessage(STMessage *message);
-    void CreateCtrls();
-    void DeleteCtrls();
-    void DoneSID();
-    void InitSID();
-    void NoneSID();
-    void PaintExplanation();
-    void PaintSID();
-    void PrepFiles();
-};
-
 struct STAlgaC {
     STAlgaCVTable *vtable; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=1
     byte _unknown_0004[20];
@@ -11135,18 +10166,7 @@ struct STAllPlayersC {
     byte _unknown_0014[8];
     undefined4 field_001C; // [STClassLayoutApplier] reads=14, writes=12; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13
     undefined4 field_0020; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined1 field_0x24; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x25; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x26; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x27; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x28; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x29; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x2a; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x2b; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x2c; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x2d; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x2e; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x2f; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0024[12];
     undefined2 field_0030; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined2 field_0032; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined1 field_0x34; // exact unnamed-byte view referenced by exported code
@@ -11205,20 +10225,9 @@ struct STAllPlayersC {
     undefined4 field_0229; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     byte _unknown_022D[4];
     undefined1 field_0x231; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x232; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x233; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x234; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x235; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x236; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x237; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x238; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x239; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0232[8];
     undefined4 field_023A; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_023E[3];
-    undefined1 field_0x241; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0242[3];
-    undefined1 field_0x245; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0246[24];
+    byte _unknown_023E[32];
     undefined1 field_0x25e; // exact unnamed-byte view referenced by exported code
     byte _unknown_025F[48];
     undefined4 field_028F; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
@@ -11236,9 +10245,7 @@ struct STAllPlayersC {
     undefined1 field_0x2c9; // exact unnamed-byte view referenced by exported code
     byte _unknown_02CA[12];
     undefined4 field_02D6; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_02DA[12];
-    undefined1 field_0x2e6; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02E7[47];
+    byte _unknown_02DA[60];
     undefined1 field_0316; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     byte _unknown_0317[1];
     undefined4 field_0318; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
@@ -11668,14 +10675,14 @@ struct STBHEShellC {
     undefined4 field_0075; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
     byte _unknown_0079[4];
     undefined4 field_007D; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_0081; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/short; typed_cross_class_recovery=3; type_evidence=/int <= 005F27C0 [this+0x81] passed to SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500 parameter param_9 | /short <= 005F5700 [this+0x81] passed to FUN_00601d10 parameter param_4
+    int field_0081; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; full_width_scalar_dominates_contained_low_view; typed_cross_class_recovery=3; type_evidence=/int <= 005F27C0 [this+0x81] passed to SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500 parameter param_9 | /short <= 005F5700 [this+0x81] passed to FUN_00601d10 parameter param_4
     undefined2 field_0085; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
     undefined4 field_0087; // [STClassLayoutApplier] reads=8, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
     byte _unknown_008B[4];
     undefined4 field_008F; // [STClassLayoutApplier] reads=58, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=32; type_evidence=/int <= 005F2C90 CMP/JGE establishes /int through a field-derived value in STBHEShellC::GetMessage; 005F2C90 CMP/JGE through typed class pointer in STBHEShellC::GetMessage; 005F2D79 CMP/JL establishes /int through a field-derived value in STBHEShellC::GetMessage; 005F2D79 CMP/JL through typed class pointer in STBHEShellC::GetMessage; 005F2E01 CMP/JL establishes /int through a field-derived value in STBHEShellC::GetMessage; 005F2E01 CMP/JL through typed class pointer in STBHEShellC::GetMessage; 005F30CD CMP/JL establishes /int through a field-derived value in STBHEShellC::GetMessage; 005F30CD CMP/JL through typed class pointer in STBHEShellC::GetMessage; 005F30F1 CMP/JL establishes /int through a field-derived value in STBHEShellC::GetMessage; 005F30F1 CMP/JL through typed class pointer in STBHEShellC::GetMessage; 005F36F8 CMP/JL establishes /int through a field-derived value in STBHEShellC::sub_005F35F0; 005F36F8 CMP/JL through typed class pointer in STBHEShellC::sub_005F35F0; 005F4691 CMP/JGE establishes /int through a field-derived value in STBHEShellC::sub_005F4680; 005F4691 CMP/JGE through typed class pointer in STBHEShellC::sub_005F4680 | /uint <= 005F27C0 [this+0x8F] passed to ST3DSMAPContext::sub_006EA270 parameter param_1; 005F35F0 [this+0x8F] passed to ST3DSMAPContext::sub_006E98E0 parameter param_1; 005F35F0 [this+0x8F] passed to ST3DSMAPContext::sub_006EA270 parameter param_1; 005F4680 [this+0x8F] passed to ST3DSMAPContext::sub_006EA270 parameter param_1
     int field_0093; // [STClassLayoutApplier] reads=41, writes=13; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x6|4x48; concrete_type_already_present; cfg_field_recovery=4; typed_cross_class_recovery=28; type_evidence=/int <= 005F27C0 [this+0x93] passed to SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500 parameter param_4; 005F2DC9 FILD establishes /int; 005F2E98 CMP/JL establishes /int through a field-derived value in STBHEShellC::GetMessage; 005F2E98 CMP/JL through typed class pointer in STBHEShellC::GetMessage; 005F34C6 exact field-to-field MOV propagation; 005F381C FILD establishes /int; 005F4680 [this+0x93] passed to FUN_006acf0d parameter param_4; 005F471E CMP/JL establishes /int through a field-derived value in STBHEShellC::sub_005F4680; 005F471E CMP/JL through typed class pointer in STBHEShellC::sub_005F4680; 005F4811 FILD establishes /int; 005F5E30 [this+0x93] passed to STBHEShellC::sub_005F5C40 parameter param_1
     int field_0097; // [STClassLayoutApplier] reads=41, writes=13; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x6|4x48; concrete_type_already_present; cfg_field_recovery=4; typed_cross_class_recovery=28; type_evidence=/int <= 005F27C0 [this+0x97] passed to SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500 parameter param_5; 005F2DB3 FILD establishes /int; 005F2E6A CMP/JL establishes /int through a field-derived value in STBHEShellC::GetMessage; 005F2E6A CMP/JL through typed class pointer in STBHEShellC::GetMessage; 005F34CC exact field-to-field MOV propagation; 005F3806 FILD establishes /int; 005F4680 [this+0x97] passed to FUN_006acf0d parameter param_5; 005F46F0 CMP/JL establishes /int through a field-derived value in STBHEShellC::sub_005F4680; 005F46F0 CMP/JL through typed class pointer in STBHEShellC::sub_005F4680; 005F47FB FILD establishes /int; 005F5E30 [this+0x97] passed to STBHEShellC::sub_005F5C40 parameter param_2
-    undefined4 field_009B; // [STClassLayoutApplier] reads=41, writes=13; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x8|4x46; inferred_type_conflict=/int|/short; cfg_field_recovery=5; typed_cross_class_recovery=28; type_evidence=/int <= 005F27C0 [this+0x9B] passed to SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500 parameter param_6; 005F2D91 FILD establishes /int; 005F2E34 CMP/JL establishes /int through a field-derived value in STBHEShellC::GetMessage; 005F2E34 CMP/JL through typed class pointer in STBHEShellC::GetMessage; 005F37EA FILD establishes /int; 005F4680 [this+0x9B] passed to FUN_006acf0d parameter param_6; 005F46BA CMP/JL establishes /int through a field-derived value in STBHEShellC::sub_005F4680; 005F46BA CMP/JL through typed class pointer in STBHEShellC::sub_005F4680; 005F47D9 FILD establishes /int | /short <= 005F3E59 MOVSX establishes /short; 005F4166 MOVSX of exact partial-register field load in STBHEShellC::sub_005F3BF0
+    int field_009B; // [STClassLayoutApplier] reads=41, writes=13; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x8|4x46; full_width_scalar_dominates_contained_low_view; cfg_field_recovery=5; typed_cross_class_recovery=28; type_evidence=/int <= 005F27C0 [this+0x9B] passed to SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500 parameter param_6; 005F2D91 FILD establishes /int; 005F2E34 CMP/JL establishes /int through a field-derived value in STBHEShellC::GetMessage; 005F2E34 CMP/JL through typed class pointer in STBHEShellC::GetMessage; 005F37EA FILD establishes /int; 005F4680 [this+0x9B] passed to FUN_006acf0d parameter param_6; 005F46BA CMP/JL establishes /int through a field-derived value in STBHEShellC::sub_005F4680; 005F46BA CMP/JL through typed class pointer in STBHEShellC::sub_005F4680; 005F47D9 FILD establishes /int | /short <= 005F3E59 MOVSX establishes /short; 005F4166 MOVSX of exact partial-register field load in STBHEShellC::sub_005F3BF0
     int field_009F; // [STClassLayoutApplier] reads=4, writes=10; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x1|4x14; concrete_type_already_present; typed_cross_class_recovery=8; exact_copy_subfield_views=1; type_evidence=/int <= 005F2A74 exact field-to-field MOV propagation; 005F2B73 exact field-to-field MOV propagation; 005F2C58 exact field-to-field MOV propagation; 005F34D2 exact field-to-field MOV propagation; 005F4680 [this+0x9F] passed to FUN_006acf0d parameter param_1; 005F5E48 exact field-to-field MOV propagation
     int field_00A3; // [STClassLayoutApplier] reads=4, writes=10; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x1|4x14; concrete_type_already_present; typed_cross_class_recovery=8; exact_copy_subfield_views=1; type_evidence=/int <= 005F2A7D exact field-to-field MOV propagation; 005F2B7C exact field-to-field MOV propagation; 005F2C61 exact field-to-field MOV propagation; 005F34D8 exact field-to-field MOV propagation; 005F4680 [this+0xA3] passed to FUN_006acf0d parameter param_2; 005F5E51 exact field-to-field MOV propagation
     int field_00A7; // [STClassLayoutApplier] reads=4, writes=10; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x1|4x14; concrete_type_already_present; typed_cross_class_recovery=8; exact_copy_subfield_views=1; type_evidence=/int <= 005F4680 [this+0xA7] passed to FUN_006acf0d parameter param_3
@@ -11741,7 +10748,7 @@ struct STBHEShellC {
     int sub_005F5B80(undefined4 *param_1);
     void sub_005F5C40(int param_1, int param_2, int soundId);
     void sub_005F5D10(int param_1);
-    void sub_005F5E30(int param_1, int param_2, undefined4 param_3);
+    void sub_005F5E30(int param_1, int param_2, int param_3);
 };
 
 struct STBoatC {
@@ -12045,7 +11052,7 @@ struct STBoatC {
     undefined1 field_0x4d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_04D6[2];
     undefined1 field_0x4d8; // exact unnamed-byte view referenced by exported code
-    undefined4 field_04D9; // [STClassLayoutApplier] reads=28, writes=28; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=28; typed_cross_class_recovery=28
+    STBoatC_field_04D9State field_04D9; // [STClassLayoutApplier] reads=28, writes=28; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=28; typed_cross_class_recovery=28 [STSwitchEnumApplier] enum recovered from switch cases
     short field_04DD; // [STClassLayoutApplier] reads=20, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=8; typed_cross_class_recovery=14; type_evidence=/short <= 0046B31F MOVSX establishes /short; 0046BD5D MOVSX establishes /short; 0046BE61 MOVSX establishes /short; 0046BEEB MOVSX establishes /short; 0048DDCA MOVSX establishes /short; 0048DE53 CMP/JL through typed class pointer in FUN_0048dcf0
     short field_04DF; // [STClassLayoutApplier] reads=20, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=8; typed_cross_class_recovery=14; type_evidence=/short <= 0046B1CA exact field-to-field MOV propagation; 0046B316 MOVSX establishes /short; 0046B3F2 CMP/JL through typed class pointer in STBoatC::Build; 0046BD86 MOVSX establishes /short; 0046BE5A MOVSX establishes /short; 0046BEE4 MOVSX establishes /short; 0048DDC3 MOVSX establishes /short; 0048DE64 CMP/JL through typed class pointer in FUN_0048dcf0
     short field_04E1; // [STClassLayoutApplier] reads=16, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=6; typed_cross_class_recovery=12; type_evidence=/short <= 0046B1D8 exact field-to-field MOV propagation; 0046B309 MOVSX establishes /short; 0046B400 CMP/JL through typed class pointer in STBoatC::Build; 0046BD99 MOVSX establishes /short; 0046BE51 MOVSX establishes /short; 0046BEDB MOVSX establishes /short; 0048DDBC MOVSX establishes /short
@@ -12061,7 +11068,7 @@ struct STBoatC {
     undefined4 field_0502; // [STClassLayoutApplier] reads=13, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=6; typed_cross_class_recovery=8
     undefined2 field_0506; // [STClassLayoutApplier] reads=8, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=8; typed_cross_class_recovery=8
     STBoatC_field_0508State field_0508; // [STClassLayoutApplier] reads=1, writes=0; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
-    undefined4 field_050C; // [STClassLayoutApplier] reads=36, writes=33; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=34; typed_cross_class_recovery=35
+    STBoatC_field_050CState field_050C; // [STClassLayoutApplier] reads=36, writes=33; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=34; typed_cross_class_recovery=35 [STSwitchEnumApplier] enum recovered from switch cases
     undefined2 field_0510; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
     undefined2 field_0512; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
     undefined2 field_0514; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
@@ -12073,7 +11080,7 @@ struct STBoatC {
     short field_0520; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=2; type_evidence=/short <= 0046D100 CMP/JLE establishes /short through CFG-recovered field flow in STBoatC::CreateGame; 0046D100 CMP/JLE through typed class pointer in STBoatC::CreateGame
     undefined2 field_0522; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_0524; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=5
-    undefined4 field_0528; // [STClassLayoutApplier] reads=6, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
+    STBoatC_field_0528State field_0528; // [STClassLayoutApplier] reads=6, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9 [STSwitchEnumApplier] enum recovered from switch cases
     short field_052C; // [STClassLayoutApplier] reads=30, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=15; typed_cross_class_recovery=16; type_evidence=/short <= 0046D4FB CMP/JL establishes /short through CFG-recovered field flow in STBoatC::UnLoadRC; 0046D4FB CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046D677 MOVSX establishes /short; 0046D69C CMP/JL establishes /short through CFG-recovered field flow in STBoatC::UnLoadRC; 0046D69C CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046D8AD CMP/JL establishes /short through CFG-recovered field flow in STBoatC::UnLoadRC; 0046D8AD CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046DA38 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::UnLoadRC; 0046DA38 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046DBBA CMP/JL establishes /short through CFG-recovered field flow in STBoatC::UnLoadRC; 0046DBBA CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046DCD9 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::UnLoadRC; 0046DCD9 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046DD66 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::UnLoadRC; 0046DD66 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046E1DE CMP/JL establishes /short through CFG-recovered field flow in STBoatC::UnLoadRC; 0046E1DE CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046E9B9 exact field-to-field MOV propagation; 0048DA9B CMP/JL through typed class pointer in STBoatC::sub_0048D930
     short field_052E; // [STClassLayoutApplier] reads=30, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=15; typed_cross_class_recovery=16; type_evidence=/short <= 0046D50C CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046D670 MOVSX establishes /short; 0046D6AD CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046D8C6 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046DA51 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046DBD3 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046DCF2 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046DD77 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046E1F7 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046E9B1 exact field-to-field MOV propagation; 0048DAA5 CMP/JL through typed class pointer in STBoatC::sub_0048D930
     short field_0530; // [STClassLayoutApplier] reads=30, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=15; typed_cross_class_recovery=16; type_evidence=/short <= 0046D51A CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046D669 MOVSX establishes /short; 0046D6BB CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046D8DC CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046DA67 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046DBE9 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046DD08 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046DD85 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046E20D CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046E9A6 exact field-to-field MOV propagation; 0048DAB3 CMP/JL through typed class pointer in STBoatC::sub_0048D930
@@ -12088,7 +11095,7 @@ struct STBoatC {
     int field_0544; // [STClassLayoutApplier] reads=8, writes=12; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=9; typed_cross_class_recovery=10; type_evidence=/int <= 0046DA19 IDIV implicit dividend in STBoatC::UnLoadRC; 0046E1BF IDIV implicit dividend in STBoatC::UnLoadRC
     int field_0548; // [STClassLayoutApplier] reads=4, writes=8; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=6; typed_cross_class_recovery=6; type_evidence=/int <= 0046E3C7 CMP/JL through typed class pointer in STBoatC::UnLoadRC; 0046F282 CMP/JLE through typed class pointer in STBoatC::BackUnLoadRC
     STBoatC_field_054CState field_054C; // [STClassLayoutApplier] reads=2, writes=0; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
-    undefined4 field_0550; // [STClassLayoutApplier] reads=26, writes=27; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=26; typed_cross_class_recovery=27
+    STBoatC_field_0550State field_0550; // [STClassLayoutApplier] reads=26, writes=27; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=26; typed_cross_class_recovery=27 [STSwitchEnumApplier] enum recovered from switch cases
     short field_0554; // [STClassLayoutApplier] reads=28, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=22; type_evidence=/short <= 0046F650 MOVSX establishes /short; 0046F67F CMP/JL through typed class pointer in STBoatC::ToDok; 0046F7F2 MOVSX establishes /short; 0046F817 CMP/JL through typed class pointer in STBoatC::ToDok; 0046FA48 MOVSX establishes /short; 0046FA8C CMP/JL through typed class pointer in STBoatC::ToDok; 0046FC23 CMP/JL through typed class pointer in STBoatC::ToDok; 0046FDCC CMP/JL through typed class pointer in STBoatC::ToDok; 0046FF01 CMP/JL through typed class pointer in STBoatC::ToDok; 0046FFB6 MOVSX establishes /short; 0046FFF4 CMP/JL through typed class pointer in STBoatC::ToDok; 00470485 CMP/JL through typed class pointer in STBoatC::ToDok; 00470A43 CMP/JL through typed class pointer in STBoatC::ToDok; 00470DCB exact field-to-field MOV propagation; 00470E0E MOVSX establishes /short; 0048DBCF CMP/JL through typed class pointer in STBoatC::sub_0048DBA0
     short field_0556; // [STClassLayoutApplier] reads=28, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=22; type_evidence=/short <= 0045A523 CMP/JL through typed class pointer in STBoatC::GetMessage; 0046F649 MOVSX establishes /short; 0046F690 CMP/JL through typed class pointer in STBoatC::ToDok; 0046F7EB MOVSX establishes /short; 0046F828 CMP/JL through typed class pointer in STBoatC::ToDok; 0046FA41 MOVSX establishes /short; 0046FAA5 CMP/JL through typed class pointer in STBoatC::ToDok; 0046FC3C CMP/JL through typed class pointer in STBoatC::ToDok; 0046FDE5 CMP/JL through typed class pointer in STBoatC::ToDok; 0046FF1A CMP/JL through typed class pointer in STBoatC::ToDok; 0046FFAF MOVSX establishes /short; 0047000D CMP/JL through typed class pointer in STBoatC::ToDok; 0047049E CMP/JL through typed class pointer in STBoatC::ToDok; 00470A5C CMP/JL through typed class pointer in STBoatC::ToDok; 00470DD9 exact field-to-field MOV propagation; 00470E07 MOVSX establishes /short; 0048DBE4 CMP/JL through typed class pointer in STBoatC::sub_0048DBA0
     short field_0558; // [STClassLayoutApplier] reads=28, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=22; type_evidence=/short <= 0045A531 CMP/JL through typed class pointer in STBoatC::GetMessage; 0046F642 MOVSX establishes /short; 0046F69E CMP/JL through typed class pointer in STBoatC::ToDok; 0046F7E4 MOVSX establishes /short; 0046F836 CMP/JL through typed class pointer in STBoatC::ToDok; 0046FA3A MOVSX establishes /short; 0046FABB CMP/JL through typed class pointer in STBoatC::ToDok; 0046FC52 CMP/JL through typed class pointer in STBoatC::ToDok; 0046FDFB CMP/JL through typed class pointer in STBoatC::ToDok; 0046FF30 CMP/JL through typed class pointer in STBoatC::ToDok; 0046FFA8 MOVSX establishes /short; 00470023 CMP/JL through typed class pointer in STBoatC::ToDok; 004704B4 CMP/JL through typed class pointer in STBoatC::ToDok; 00470A72 CMP/JL through typed class pointer in STBoatC::ToDok; 00470DE7 exact field-to-field MOV propagation; 00470E00 MOVSX establishes /short; 0048DBF2 CMP/JL through typed class pointer in STBoatC::sub_0048DBA0
@@ -12116,8 +11123,8 @@ struct STBoatC {
     undefined1 field_0x58e; // exact unnamed-byte view referenced by exported code
     byte _unknown_058F[3];
     int field_0592; // [STClassLayoutApplier] reads=4, writes=9; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=4; typed_cross_class_recovery=7; type_evidence=/int <= 0047370C IDIV implicit dividend in STBoatC::LoadObj
-    undefined4 field_0596; // [STClassLayoutApplier] reads=16, writes=14; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=19
-    undefined4 field_059A; // [STClassLayoutApplier] reads=22, writes=22; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=18; typed_cross_class_recovery=22
+    STBoatC_field_0596State field_0596; // [STClassLayoutApplier] reads=16, writes=14; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=19 [STSwitchEnumApplier] enum recovered from switch cases
+    STBoatC_field_059AState field_059A; // [STClassLayoutApplier] reads=22, writes=22; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=18; typed_cross_class_recovery=22 [STSwitchEnumApplier] enum recovered from switch cases
     undefined2 field_059E; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=4
     undefined2 field_05A0; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     AnonShape_005EFAE0_B406B78B *field_05A2; // [STClassLayoutApplier] reads=10, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=10; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_005EFAE0_B406B78B <= 004749C0 [this+0x5A2] passed to STPlaySystemC::sub_006E62D0 parameter param_1
@@ -12135,7 +11142,7 @@ struct STBoatC {
     undefined2 field_05BA; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_05BC; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=4
     undefined4 field_05C0; // [STClassLayoutApplier] reads=11, writes=12; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=15
-    undefined4 field_05C4; // [STClassLayoutApplier] reads=6, writes=17; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=19
+    STBoatC_field_05C4State field_05C4; // [STClassLayoutApplier] reads=6, writes=17; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=19 [STSwitchEnumApplier] enum recovered from switch cases
     undefined2 field_05C8; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=2
     undefined2 field_05CA; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x3|4x6; exact_subword_partition=4->2; typed_cross_class_recovery=5
     undefined2 field_05CC; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
@@ -12143,7 +11150,7 @@ struct STBoatC {
     short field_05D0; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/short <= 004758E0 exact address of [this+0x5D0] passed to STBoatC::sub_0048DFD0 parameter param_8; 00475984 MOVSX establishes /short; 00475F27 MOVSX establishes /short
     short field_05D2; // [STClassLayoutApplier] reads=8, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x6|4x6; exact_subword_partition=4->2; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/short <= 004758E0 exact address of [this+0x5D2] passed to STBoatC::sub_0048DFD0 parameter param_9; 00475981 MOVSX establishes /short; 00475F24 MOVSX establishes /short
     short field_05D4; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/short <= 004758E0 exact address of [this+0x5D4] passed to STBoatC::sub_0048DFD0 parameter param_10; 0047597E MOVSX establishes /short; 00475F21 MOVSX establishes /short
-    int field_05D6; // [STClassLayoutApplier] reads=9, writes=13; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=3; typed_cross_class_recovery=14; type_evidence=/int <= 00476120 [this+0x5D6] passed to STBoatC::UnLoadObj parameter param_1
+    STBoatC_field_05D6State field_05D6; // [STClassLayoutApplier] reads=9, writes=13; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=3; typed_cross_class_recovery=14; type_evidence=/int <= 00476120 [this+0x5D6] passed to STBoatC::UnLoadObj parameter param_1 [STSwitchEnumApplier] enum recovered from switch cases
     undefined2 field_05DA; // [STClassLayoutApplier] reads=2, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=4
     undefined2 field_05DC; // [STClassLayoutApplier] reads=2, writes=10; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x6|4x6; exact_subword_partition=4->2; cfg_field_recovery=3; typed_cross_class_recovery=6
     short field_05DE; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=3; typed_cross_class_recovery=3; type_evidence=/short <= 00476255 exact field-to-field MOV propagation; 00476427 exact field-to-field MOV propagation; 0047669D exact field-to-field MOV propagation
@@ -12173,7 +11180,7 @@ struct STBoatC {
     short field_060D; // [STClassLayoutApplier] reads=11, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=5; typed_cross_class_recovery=8; type_evidence=/short <= 0047765E MOVSX establishes /short; 00477A5B MOVSX establishes /short; 00477B06 MOVSX establishes /short; 00492F93 exact field-to-field MOV propagation
     undefined2 field_060F; // [STClassLayoutApplier] reads=8, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=8; typed_cross_class_recovery=8
     STBoatC_field_0611State field_0611; // [STClassLayoutApplier] reads=2, writes=0; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
-    undefined4 field_0615; // [STClassLayoutApplier] reads=32, writes=33; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=32; typed_cross_class_recovery=33
+    STBoatC_field_0615State field_0615; // [STClassLayoutApplier] reads=32, writes=33; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=32; typed_cross_class_recovery=33 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 field_0619; // [STClassLayoutApplier] reads=12, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=7; typed_cross_class_recovery=7
     short field_061D; // [STClassLayoutApplier] reads=24, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=13; typed_cross_class_recovery=13; type_evidence=/short <= 0047874D CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Recharge; 0047874D CMP/JL through typed class pointer in STBoatC::Recharge; 00478883 MOVSX establishes /short; 004788EE CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Recharge; 004788EE CMP/JL through typed class pointer in STBoatC::Recharge; 00478A62 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Recharge; 00478A62 CMP/JL through typed class pointer in STBoatC::Recharge; 00478B7A MOVSX establishes /short; 00478C28 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Recharge; 00478C28 CMP/JL through typed class pointer in STBoatC::Recharge; 00478D96 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Recharge; 00478D96 CMP/JL through typed class pointer in STBoatC::Recharge; 00478E8F CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Recharge; 00478E8F CMP/JL through typed class pointer in STBoatC::Recharge; 00479045 MOVSX establishes /short; 00479239 MOVSX establishes /short
     short field_061F; // [STClassLayoutApplier] reads=26, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=14; typed_cross_class_recovery=14; type_evidence=/short <= 00478763 CMP/JL through typed class pointer in STBoatC::Recharge; 00478852 MOVSX establishes /short; 0047887C MOVSX establishes /short; 004788FC CMP/JL through typed class pointer in STBoatC::Recharge; 00478A78 CMP/JL through typed class pointer in STBoatC::Recharge; 00478B76 MOVSX establishes /short; 00478C3A CMP/JL through typed class pointer in STBoatC::Recharge; 00478DA4 CMP/JL through typed class pointer in STBoatC::Recharge; 00478EA5 CMP/JL through typed class pointer in STBoatC::Recharge; 00479042 MOVSX establishes /short; 0047914D exact field-to-field MOV propagation; 00479232 MOVSX establishes /short
@@ -12232,7 +11239,7 @@ struct STBoatC {
     undefined2 field_069B; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
     int field_069D; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=5; typed_cross_class_recovery=5; type_evidence=/int <= 0047D5CC IDIV implicit dividend in STBoatC::Annih
     undefined4 field_06A1; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_06A5; // [STClassLayoutApplier] reads=10, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=14
+    STBoatC_field_06A5State field_06A5; // [STClassLayoutApplier] reads=10, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=14 [STSwitchEnumApplier] enum recovered from switch cases
     short field_06A9; // [STClassLayoutApplier] reads=39, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=19; typed_cross_class_recovery=21; type_evidence=/short <= 0045AB13 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::GetMessage; 0045AB13 CMP/JL through typed class pointer in STBoatC::GetMessage; 0047DFB5 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Dismant; 0047DFB5 CMP/JL through typed class pointer in STBoatC::Dismant; 0047E0CE MOVSX establishes /short; 0047E0F2 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Dismant; 0047E0F2 CMP/JL through typed class pointer in STBoatC::Dismant; 0047E1F3 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Dismant; 0047E1F3 CMP/JL through typed class pointer in STBoatC::Dismant; 0047E37C CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Dismant; 0047E37C CMP/JL through typed class pointer in STBoatC::Dismant; 0047E524 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Dismant; 0047E524 CMP/JL through typed class pointer in STBoatC::Dismant; 0047E628 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Dismant; 0047E628 CMP/JL through typed class pointer in STBoatC::Dismant; 0047EA6E CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Dismant; 0047EA6E CMP/JL through typed class pointer in STBoatC::Dismant; 0047EB97 CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Dismant; 0047EB97 CMP/JL through typed class pointer in STBoatC::Dismant; 0047F295 exact field-to-field MOV propagation; 0047F44B CMP/JL establishes /short through CFG-recovered field flow in STBoatC::Dismant; 0047F44B CMP/JL through typed class pointer in STBoatC::Dismant; 0047FB1E CMP/JL through typed class pointer in STBoatC::BackDismant; 0047FC22 CMP/JL through typed class pointer in STBoatC::BackDismant
     short field_06AB; // [STClassLayoutApplier] reads=39, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=19; typed_cross_class_recovery=21; type_evidence=/short <= 0045A3BF CMP/JL through typed class pointer in STBoatC::GetMessage; 0045AB21 CMP/JL through typed class pointer in STBoatC::GetMessage; 0047DFC6 CMP/JL through typed class pointer in STBoatC::Dismant; 0047E0C7 MOVSX establishes /short; 0047E103 CMP/JL through typed class pointer in STBoatC::Dismant; 0047E204 CMP/JL through typed class pointer in STBoatC::Dismant; 0047E38D CMP/JL through typed class pointer in STBoatC::Dismant; 0047E535 CMP/JL through typed class pointer in STBoatC::Dismant; 0047E639 CMP/JL through typed class pointer in STBoatC::Dismant; 0047EA7F CMP/JL through typed class pointer in STBoatC::Dismant; 0047EBA8 CMP/JL through typed class pointer in STBoatC::Dismant; 0047F29C exact field-to-field MOV propagation; 0047F461 CMP/JL through typed class pointer in STBoatC::Dismant; 0047FB2F CMP/JL through typed class pointer in STBoatC::BackDismant; 0047FC33 CMP/JL through typed class pointer in STBoatC::BackDismant
     short field_06AD; // [STClassLayoutApplier] reads=35, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=17; typed_cross_class_recovery=19; type_evidence=/short <= 0045A3CD CMP/JL through typed class pointer in STBoatC::GetMessage; 0045AB2F CMP/JL through typed class pointer in STBoatC::GetMessage; 0047DFD4 CMP/JL through typed class pointer in STBoatC::Dismant; 0047E0C0 MOVSX establishes /short; 0047E111 CMP/JL through typed class pointer in STBoatC::Dismant; 0047E212 CMP/JL through typed class pointer in STBoatC::Dismant; 0047E39B CMP/JL through typed class pointer in STBoatC::Dismant; 0047E543 CMP/JL through typed class pointer in STBoatC::Dismant; 0047E647 CMP/JL through typed class pointer in STBoatC::Dismant; 0047EA8D CMP/JL through typed class pointer in STBoatC::Dismant; 0047EBB6 CMP/JL through typed class pointer in STBoatC::Dismant; 0047F2A3 exact field-to-field MOV propagation; 0047FB3D CMP/JL through typed class pointer in STBoatC::BackDismant; 0047FC41 CMP/JL through typed class pointer in STBoatC::BackDismant
@@ -12330,7 +11337,7 @@ struct STBoatC {
     undefined4 field_0822; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_0826; // [STClassLayoutApplier] reads=2, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=4
     undefined4 field_082A; // [STClassLayoutApplier] reads=18, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=11; typed_cross_class_recovery=11
-    undefined4 field_082E; // [STClassLayoutApplier] reads=47, writes=40; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=15; typed_cross_class_recovery=67
+    STBoatC_field_082EState field_082E; // [STClassLayoutApplier] reads=47, writes=40; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=15; typed_cross_class_recovery=67 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 field_0832; // [STClassLayoutApplier] reads=4, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=6; typed_cross_class_recovery=6
     int field_0836; // [STClassLayoutApplier] reads=8, writes=17; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=17; type_evidence=/int <= 0046097C CMP/JLE establishes /int through a field-derived value in STBoatC::Defence; 0046097C CMP/JLE through typed class pointer in STBoatC::Defence; 00471B6A CMP/JLE establishes /int through a field-derived value in STBoatC::Guard; 00471B6A CMP/JLE through typed class pointer in STBoatC::Guard
     int GetMessage(STMessage *message);
@@ -12729,7 +11736,7 @@ struct STCrabC {
     byte _unknown_0215[28];
     undefined4 field_0231; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=3
     uint field_0235; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x1|4x6; concrete_type_already_present; cfg_field_recovery=3; typed_cross_class_recovery=4; exact_copy_subfield_views=1; type_evidence=/uint <= 0057883A exact field-to-field MOV propagation
-    undefined4 field_0239; // [STClassLayoutApplier] reads=5, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    STCrabC_field_0239State field_0239; // [STClassLayoutApplier] reads=5, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 field_023D; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=3
     undefined4 field_0241; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=2
     undefined4 field_0245; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=2
@@ -12737,11 +11744,12 @@ struct STCrabC {
     undefined4 field_024D; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=2
     undefined4 field_0251; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=2
     undefined4 field_0255; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=2
-    byte _unknown_0259[20];
+    undefined1 field_0x259; // exact unnamed-byte view referenced by exported code
+    byte _unknown_025A[19];
     int field_026D; // [STClassLayoutApplier] reads=10, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x6|4x6; concrete_type_already_present; cfg_field_recovery=3; typed_cross_class_recovery=6; type_evidence=/int <= 0057885D CMP/JL establishes /int through CFG-recovered field flow in STCrabC::GetMessage; 0057885D CMP/JL through typed class pointer in STCrabC::GetMessage; 0057886C CMP/JGE through typed class pointer in STCrabC::GetMessage; 0057918B CMP/JG establishes /int through a field-derived value in STCrabC::Bad; 0057918B CMP/JG through typed class pointer in STCrabC::Bad; 0057918F CMP/JL establishes /int through a field-derived value in STCrabC::Bad; 0057918F CMP/JL through typed class pointer in STCrabC::Bad
     int field_0271; // [STClassLayoutApplier] reads=10, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x6|4x6; concrete_type_already_present; cfg_field_recovery=3; typed_cross_class_recovery=6; type_evidence=/int <= 0057887A CMP/JL establishes /int through CFG-recovered field flow in STCrabC::GetMessage; 0057887A CMP/JL through typed class pointer in STCrabC::GetMessage; 00578889 CMP/JGE through typed class pointer in STCrabC::GetMessage; 00579199 CMP/JG establishes /int through a field-derived value in STCrabC::Bad; 00579199 CMP/JG through typed class pointer in STCrabC::Bad; 0057919D CMP/JGE establishes /int through a field-derived value in STCrabC::Bad; 0057919D CMP/JGE through typed class pointer in STCrabC::Bad
     int field_0275; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x2|4x7; concrete_type_already_present; cfg_field_recovery=2; typed_cross_class_recovery=5; type_evidence=/int <= 00578897 CMP/JL establishes /int through CFG-recovered field flow in STCrabC::GetMessage; 00578897 CMP/JL through typed class pointer in STCrabC::GetMessage; 005788A6 CMP/JGE through typed class pointer in STCrabC::GetMessage; 005791DC CMP/JL establishes /int through a field-derived value in STCrabC::Bad; 005791DC CMP/JL through typed class pointer in STCrabC::Bad; 005791E0 CMP/JL establishes /int through a field-derived value in STCrabC::Bad; 005791E0 CMP/JL through typed class pointer in STCrabC::Bad
-    undefined4 field_0279; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; cfg_field_recovery=2; typed_cross_class_recovery=3; type_evidence=/int <= 00578BF7 CMP/JG through typed class pointer in STCrabC::GetMessage | /uint <= 005788DD CMP/JA establishes /uint through CFG-recovered field flow in STCrabC::GetMessage; 005788DD CMP/JA through typed class pointer in STCrabC::GetMessage
+    STCrabC_field_0279State field_0279; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; cfg_field_recovery=2; typed_cross_class_recovery=3; type_evidence=/int <= 00578BF7 CMP/JG through typed class pointer in STCrabC::GetMessage | /uint <= 005788DD CMP/JA establishes /uint through CFG-recovered field flow in STCrabC::GetMessage; 005788DD CMP/JA through typed class pointer in STCrabC::GetMessage [STSwitchEnumApplier] enum recovered from switch cases
     int field_027D; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=3; type_evidence=/int <= 00579214 CMP/JL through typed class pointer in STCrabC::Bad
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
@@ -12798,9 +11806,9 @@ struct STDcResourcC {
     byte _unknown_0235[8];
     undefined4 field_023D; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     byte _unknown_0241[4];
-    undefined4 field_0245; // [STClassLayoutApplier] reads=44, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x18|4x26; inferred_type_conflict=/int|/short; cfg_field_recovery=11; typed_cross_class_recovery=22; type_evidence=/int <= 0057FC90 CMP/JGE establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FC90 CMP/JGE through typed class pointer in STDcResourcC::CreateRes; 0057FC98 CMP/JL establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FC98 CMP/JL through typed class pointer in STDcResourcC::CreateRes; 0058065B FILD establishes /int | /short <= 0057E4A2 CMP/JL establishes /short through CFG-recovered field flow in STDcResourcC::GetMessage; 0057E4A2 CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057EC7F CMP/JL establishes /short through CFG-recovered field flow in STDcResourcC::GetMessage; 0057EC7F CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057FD09 CMP/JL through typed class pointer in STDcResourcC::CreateRes
-    undefined4 field_0249; // [STClassLayoutApplier] reads=44, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x18|4x26; inferred_type_conflict=/int|/short; cfg_field_recovery=11; typed_cross_class_recovery=22; type_evidence=/int <= 0057FCAD CMP/JGE establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FCAD CMP/JGE through typed class pointer in STDcResourcC::CreateRes; 0057FCB5 CMP/JL establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FCB5 CMP/JL through typed class pointer in STDcResourcC::CreateRes; 00580645 FILD establishes /int | /short <= 0057E288 CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057E4B0 CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057EC90 CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057FD1A CMP/JL through typed class pointer in STDcResourcC::CreateRes
-    undefined4 field_024D; // [STClassLayoutApplier] reads=40, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x16|4x24; inferred_type_conflict=/int|/short; cfg_field_recovery=10; typed_cross_class_recovery=20; type_evidence=/int <= 0057E757 CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057E75F CMP/JGE through typed class pointer in STDcResourcC::GetMessage; 0057E8BF CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057E8C7 CMP/JGE through typed class pointer in STDcResourcC::GetMessage; 0057EB92 FILD establishes /int; 0057F79A CMP/JL establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057F79A CMP/JL through typed class pointer in STDcResourcC::CreateRes; 0057F7A2 CMP/JGE establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057F7A2 CMP/JGE through typed class pointer in STDcResourcC::CreateRes; 0057F861 FILD establishes /int; 0057F951 CMP/JL establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057F951 CMP/JL through typed class pointer in STDcResourcC::CreateRes; 0057F959 CMP/JGE establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057F959 CMP/JGE through typed class pointer in STDcResourcC::CreateRes; 0057FA17 FILD establishes /int; 0057FB24 CMP/JL establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FB24 CMP/JL through typed class pointer in STDcResourcC::CreateRes; 0057FB2C CMP/JGE establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FB2C CMP/JGE through typed class pointer in STDcResourcC::CreateRes; 0057FBE3 FILD establishes /int; 0057FCC3 CMP/JL establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FCC3 CMP/JL through typed class pointer in STDcResourcC::CreateRes; 0057FCCB CMP/JGE establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FCCB CMP/JGE through typed class pointer in STDcResourcC::CreateRes; 0057FDBD FILD establishes /int; 00580629 FILD establishes /int | /short <= 0057E296 CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057E4BE CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057EC9E CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057F6E0 [this+0x24D] passed to FUN_004961b0 parameter param_3; 0057FD28 CMP/JL through typed class pointer in STDcResourcC::CreateRes
+    int field_0245; // [STClassLayoutApplier] reads=44, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x18|4x26; full_width_scalar_dominates_contained_low_view; cfg_field_recovery=11; typed_cross_class_recovery=22; type_evidence=/int <= 0057FC90 CMP/JGE establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FC90 CMP/JGE through typed class pointer in STDcResourcC::CreateRes; 0057FC98 CMP/JL establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FC98 CMP/JL through typed class pointer in STDcResourcC::CreateRes; 0058065B FILD establishes /int | /short <= 0057E4A2 CMP/JL establishes /short through CFG-recovered field flow in STDcResourcC::GetMessage; 0057E4A2 CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057EC7F CMP/JL establishes /short through CFG-recovered field flow in STDcResourcC::GetMessage; 0057EC7F CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057FD09 CMP/JL through typed class pointer in STDcResourcC::CreateRes
+    int field_0249; // [STClassLayoutApplier] reads=44, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x18|4x26; full_width_scalar_dominates_contained_low_view; cfg_field_recovery=11; typed_cross_class_recovery=22; type_evidence=/int <= 0057FCAD CMP/JGE establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FCAD CMP/JGE through typed class pointer in STDcResourcC::CreateRes; 0057FCB5 CMP/JL establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FCB5 CMP/JL through typed class pointer in STDcResourcC::CreateRes; 00580645 FILD establishes /int | /short <= 0057E288 CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057E4B0 CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057EC90 CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057FD1A CMP/JL through typed class pointer in STDcResourcC::CreateRes
+    int field_024D; // [STClassLayoutApplier] reads=40, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x16|4x24; full_width_scalar_dominates_contained_low_view; cfg_field_recovery=10; typed_cross_class_recovery=20; type_evidence=/int <= 0057E757 CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057E75F CMP/JGE through typed class pointer in STDcResourcC::GetMessage; 0057E8BF CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057E8C7 CMP/JGE through typed class pointer in STDcResourcC::GetMessage; 0057EB92 FILD establishes /int; 0057F79A CMP/JL establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057F79A CMP/JL through typed class pointer in STDcResourcC::CreateRes; 0057F7A2 CMP/JGE establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057F7A2 CMP/JGE through typed class pointer in STDcResourcC::CreateRes; 0057F861 FILD establishes /int; 0057F951 CMP/JL establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057F951 CMP/JL through typed class pointer in STDcResourcC::CreateRes; 0057F959 CMP/JGE establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057F959 CMP/JGE through typed class pointer in STDcResourcC::CreateRes; 0057FA17 FILD establishes /int; 0057FB24 CMP/JL establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FB24 CMP/JL through typed class pointer in STDcResourcC::CreateRes; 0057FB2C CMP/JGE establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FB2C CMP/JGE through typed class pointer in STDcResourcC::CreateRes; 0057FBE3 FILD establishes /int; 0057FCC3 CMP/JL establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FCC3 CMP/JL through typed class pointer in STDcResourcC::CreateRes; 0057FCCB CMP/JGE establishes /int through a field-derived value in STDcResourcC::CreateRes; 0057FCCB CMP/JGE through typed class pointer in STDcResourcC::CreateRes; 0057FDBD FILD establishes /int; 00580629 FILD establishes /int | /short <= 0057E296 CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057E4BE CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057EC9E CMP/JL through typed class pointer in STDcResourcC::GetMessage; 0057F6E0 [this+0x24D] passed to FUN_004961b0 parameter param_3; 0057FD28 CMP/JL through typed class pointer in STDcResourcC::CreateRes
     int field_0251; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=3; typed_cross_class_recovery=3; type_evidence=/int <= 0057E428 CMP/JG establishes /int through CFG-recovered field flow in STDcResourcC::GetMessage; 0057E428 CMP/JG through typed class pointer in STDcResourcC::GetMessage
     STDcResourcC_field_0255State field_0255; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
     int field_0259; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=3; typed_cross_class_recovery=7; type_evidence=/int <= 0057E3BF exact field-to-field MOV propagation; 0057E5D4 exact field-to-field MOV propagation
@@ -12879,7 +11887,7 @@ struct STDestC {
     short field_0257; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/short <= 00602D3E MOVSX establishes /short; 00603151 CMP/JL through typed class pointer in STDestC::sub_00603120
     short field_0259; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/short <= 00602D29 MOVSX establishes /short; 0060315F CMP/JL through typed class pointer in STDestC::sub_00603120
     byte _unknown_025B[275];
-    undefined4 field_036E; // [STClassLayoutApplier] reads=10, writes=12; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
+    STDestC_field_036EState field_036E; // [STClassLayoutApplier] reads=10, writes=12; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 field_0372; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
     byte _unknown_0376[4];
     undefined1 field_037A; // [STClassLayoutApplier] reads=7, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
@@ -12933,7 +11941,9 @@ struct STExplosion {
     byte _unknown_0004[20];
     undefined4 field_0018; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     undefined4 field_001C; // [STClassLayoutApplier] reads=24, writes=24; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=44
-    byte _unknown_0020[465];
+    byte _unknown_0020[437];
+    undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01D6[27];
     undefined4 field_01F1; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=3
     int field_01F5; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=3; type_evidence=/int <= 0060439D CMP/JL establishes /int through a field-derived value in STExplosion::sub_00604350; 0060439D CMP/JL through typed class pointer in STExplosion::sub_00604350
     int field_01F9; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=3; type_evidence=/int <= 006043D3 CMP/JL establishes /int through a field-derived value in STExplosion::sub_00604350; 006043D3 CMP/JL through typed class pointer in STExplosion::sub_00604350
@@ -13098,9 +12108,12 @@ struct STFishC {
     short field_0235; // [STClassLayoutApplier] reads=10, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; type_evidence=/short <= 0057C3B2 exact field-to-field MOV propagation; 0057D455 MOVSX establishes /short; 0057D4B1 MOVSX establishes /short
     short field_0237; // [STClassLayoutApplier] reads=10, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; type_evidence=/short <= 0057C3B9 exact field-to-field MOV propagation; 0057D44E MOVSX establishes /short; 0057D4A8 MOVSX establishes /short
     short field_0239; // [STClassLayoutApplier] reads=9, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=11; type_evidence=/short <= 0057C3C0 exact field-to-field MOV propagation; 0057D4C0 MOVSX establishes /short
-    undefined4 field_023B; // [STClassLayoutApplier] reads=10, writes=24; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=21
+    STFishC_field_023BState field_023B; // [STClassLayoutApplier] reads=10, writes=24; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=21 [STSwitchEnumApplier] enum recovered from switch cases
     uint field_023F; // [STClassLayoutApplier] reads=5, writes=11; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=11; type_evidence=/uint <= 0057CEE0 CMP/JC through typed class pointer in STFishC::LifeFish; 0057CFB4 CMP/JBE through typed class pointer in STFishC::LifeFish
-    byte _unknown_0243[22];
+    undefined1 field_0x243; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0244[19];
+    undefined1 field_0x257; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0258[1];
     undefined1 field_0x259; // exact unnamed-byte view referenced by exported code
     byte _unknown_025A[1];
     int field_025B; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x2|4x4; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/int <= 0057C17B CMP/JL establishes /int through a field-derived value in STFishC::GetMessage; 0057C17B CMP/JL through typed class pointer in STFishC::GetMessage; 0057C18A CMP/JGE establishes /int through a field-derived value in STFishC::GetMessage; 0057C18A CMP/JGE through typed class pointer in STFishC::GetMessage; 0057C373 FILD establishes /int
@@ -13258,44 +12271,12 @@ struct STGameObjC {
     undefined4 field_01CD; // [STClassLayoutApplier] reads=6, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=6
     undefined4 field_01D1; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x2|4x2; typed_cross_class_recovery=3
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x1d6; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x1d7; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x1d8; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x1d9; // exact unnamed-byte view referenced by exported code
-    byte _unknown_01DA[3];
-    undefined1 field_0x1dd; // exact unnamed-byte view referenced by exported code
-    byte _unknown_01DE[15];
+    byte _unknown_01D6[23];
     undefined4 field_01ED; // [STClassLayoutApplier] reads=12, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=12
-    undefined1 field_0x1f1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_01F2[3];
-    undefined1 field_0x1f5; // exact unnamed-byte view referenced by exported code
-    byte _unknown_01F6[3];
-    undefined1 field_0x1f9; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x1fa; // exact unnamed-byte view referenced by exported code
-    byte _unknown_01FB[2];
-    undefined1 field_0x1fd; // exact unnamed-byte view referenced by exported code
-    byte _unknown_01FE[9];
-    undefined1 field_0x207; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0208[3];
-    undefined1 field_0x20b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_020C[3];
-    undefined1 field_0x20f; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x210; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x211; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x212; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0213[2];
+    byte _unknown_01F1[36];
     undefined4 field_0215; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_0219; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=3
-    undefined1 field_0x21d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_021E[3];
-    undefined1 field_0x221; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0222[3];
-    undefined1 field_0x225; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0226[3];
-    undefined1 field_0x229; // exact unnamed-byte view referenced by exported code
-    byte _unknown_022A[3];
-    undefined1 field_0x22d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_022E[7];
+    byte _unknown_021D[24];
     undefined4 field_0235; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=2
     byte _unknown_0239[4];
     undefined4 field_023D; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=2
@@ -13306,27 +12287,11 @@ struct STGameObjC {
     byte _unknown_025D[8];
     undefined4 field_0265; // [STClassLayoutApplier] reads=1, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=2
     undefined4 field_0269; // [STClassLayoutApplier] reads=1, writes=2; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=3
-    undefined1 field_0x26d; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x26e; // exact unnamed-byte view referenced by exported code
-    byte _unknown_026F[3];
-    undefined1 field_0x272; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0273[3];
-    undefined1 field_0x276; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0277[3];
-    undefined1 field_0x27a; // exact unnamed-byte view referenced by exported code
-    byte _unknown_027B[3];
-    undefined1 field_0x27e; // exact unnamed-byte view referenced by exported code
-    byte _unknown_027F[38];
+    byte _unknown_026D[56];
     undefined4 field_02A5; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_02A9; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_02AD; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_02B1[2];
-    undefined1 field_0x2b3; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02B4[3];
-    undefined1 field_0x2b7; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02B8[3];
-    undefined1 field_0x2bb; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02BC[134];
+    byte _unknown_02B1[145];
     undefined4 field_0342; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     byte _unknown_0346[27];
     undefined4 field_0361; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=2
@@ -13427,7 +12392,7 @@ struct STGroupBoatC {
     byte _unknown_000D[11];
     undefined4 field_0018; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     undefined4 field_001C; // [STClassLayoutApplier] reads=6, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
-    undefined4 field_0020; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=2
+    STGroupBoatC_field_0020State field_0020; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=2 [STSwitchEnumApplier] enum recovered from switch cases
     char field_0024; // [STClassLayoutApplier] reads=296, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; cfg_field_recovery=10; typed_cross_class_recovery=154; type_evidence=/char <= 0049AC5D MOVSX establishes /char; 0049AEFE MOVSX establishes /char; 0049B09D MOVSX establishes /char; 0049D4A3 MOVSX establishes /char; 0049F332 MOVSX establishes /char; 004A017C MOVSX establishes /char; 004A1CF5 MOVSX establishes /char
     byte _unknown_0025[2];
     undefined2 field_0027; // [STClassLayoutApplier] reads=29, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/ushort; cfg_field_recovery=2; typed_cross_class_recovery=24; type_evidence=/int <= 00415423 CMP/JL through typed class pointer in STGroupBoatC::Way3DGrpDistribTgt; 0041579E CMP/JL through typed class pointer in STGroupBoatC::Way3DGrpGetDistrPoint; 0049A5A4 IDIV divisor in STGroupBoatC::sub_0049A500; 0049A5BA IDIV divisor in STGroupBoatC::sub_0049A500; 0049A5D2 IDIV divisor in STGroupBoatC::sub_0049A500 | /ushort <= 004153C5 CMP/JBE through typed class pointer in STGroupBoatC::Way3DGrpDistribTgt; 004A74A2 CMP/JNC through typed class pointer in STGroupBoatC::ReMakePatrolPoints; 004A7BAF CMP/JBE establishes /ushort through CFG-recovered field flow in STGroupBoatC::GetPatrolTask; 004A7BAF CMP/JBE through typed class pointer in STGroupBoatC::GetPatrolTask
@@ -14217,7 +13182,8 @@ struct STMBombC {
     undefined1 field_0276; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=2
     undefined1 field_0277; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=2
     undefined4 field_0278; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=2
-    byte _unknown_027C[20];
+    undefined1 field_0x27c; // exact unnamed-byte view referenced by exported code
+    byte _unknown_027D[19];
     int field_0290; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x2|4x6; concrete_type_already_present; cfg_field_recovery=4; typed_cross_class_recovery=4; type_evidence=/int <= 00588F13 CMP/JGE establishes /int through CFG-recovered field flow in STMBombC::GetMessage; 00588F13 CMP/JGE through typed class pointer in STMBombC::GetMessage; 00588F1B CMP/JL through typed class pointer in STMBombC::GetMessage; 00588F9C CMP/JL establishes /int through CFG-recovered field flow in STMBombC::GetMessage; 00588F9C CMP/JL through typed class pointer in STMBombC::GetMessage
     int field_0294; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x2|4x6; concrete_type_already_present; cfg_field_recovery=4; typed_cross_class_recovery=4; type_evidence=/int <= 00588F3B CMP/JGE establishes /int through CFG-recovered field flow in STMBombC::GetMessage; 00588F3B CMP/JGE through typed class pointer in STMBombC::GetMessage; 00588F43 CMP/JL through typed class pointer in STMBombC::GetMessage
     int field_0298; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=2; typed_cross_class_recovery=2; type_evidence=/int <= 00588F66 CMP/JGE establishes /int through CFG-recovered field flow in STMBombC::GetMessage; 00588F66 CMP/JGE through typed class pointer in STMBombC::GetMessage; 00588F6E CMP/JL through typed class pointer in STMBombC::GetMessage
@@ -14534,7 +13500,7 @@ struct STOctopusC {
     undefined4 field_023D; // [STClassLayoutApplier] reads=1, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
     undefined4 field_0241; // [STClassLayoutApplier] reads=1, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
     uint field_0245; // [STClassLayoutApplier] reads=1, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x1|4x5; concrete_type_already_present; typed_cross_class_recovery=4; exact_copy_subfield_views=1; type_evidence=/uint <= 00589E70 exact field-to-field MOV propagation
-    undefined4 field_0249; // [STClassLayoutApplier] reads=5, writes=11; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    STOctopusC_field_0249State field_0249; // [STClassLayoutApplier] reads=5, writes=11; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 field_024D; // [STClassLayoutApplier] reads=1, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
     int field_0251; // [STClassLayoutApplier] reads=6, writes=9; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/int <= 0058B0D7 CMP/JGE establishes /int through a field-derived value in STOctopusC::sub_0058AF70; 0058B0D7 CMP/JGE through typed class pointer in STOctopusC::sub_0058AF70
     int field_0255; // [STClassLayoutApplier] reads=6, writes=9; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/int <= 0058B0ED CMP/JGE establishes /int through a field-derived value in STOctopusC::sub_0058AF70; 0058B0ED CMP/JGE through typed class pointer in STOctopusC::sub_0058AF70
@@ -14553,8 +13519,8 @@ struct STOctopusC {
     byte _unknown_0286[19];
     int field_0299; // [STClassLayoutApplier] reads=8, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x4|4x6; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/int <= 00589EB7 CMP/JL establishes /int through a field-derived value in STOctopusC::GetMessage; 00589EB7 CMP/JL through typed class pointer in STOctopusC::GetMessage; 00589EC6 CMP/JGE establishes /int through a field-derived value in STOctopusC::GetMessage; 00589EC6 CMP/JGE through typed class pointer in STOctopusC::GetMessage; 0058A925 CMP/JG establishes /int through a field-derived value in STOctopusC::Bad; 0058A925 CMP/JG through typed class pointer in STOctopusC::Bad; 0058A929 CMP/JL establishes /int through a field-derived value in STOctopusC::Bad; 0058A929 CMP/JL through typed class pointer in STOctopusC::Bad
     int field_029D; // [STClassLayoutApplier] reads=8, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x4|4x6; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/int <= 00589ED4 CMP/JL establishes /int through a field-derived value in STOctopusC::GetMessage; 00589ED4 CMP/JL through typed class pointer in STOctopusC::GetMessage; 00589EE3 CMP/JGE establishes /int through a field-derived value in STOctopusC::GetMessage; 00589EE3 CMP/JGE through typed class pointer in STOctopusC::GetMessage; 0058A933 CMP/JG establishes /int through a field-derived value in STOctopusC::Bad; 0058A933 CMP/JG through typed class pointer in STOctopusC::Bad; 0058A937 CMP/JGE establishes /int through a field-derived value in STOctopusC::Bad; 0058A937 CMP/JGE through typed class pointer in STOctopusC::Bad
-    undefined4 field_02A1; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x2|4x2; inferred_type_conflict=/int|/short; typed_cross_class_recovery=2; type_evidence=/int <= 00589EF1 CMP/JL establishes /int through a field-derived value in STOctopusC::GetMessage; 00589EF1 CMP/JL through typed class pointer in STOctopusC::GetMessage; 00589F00 CMP/JGE establishes /int through a field-derived value in STOctopusC::GetMessage; 00589F00 CMP/JGE through typed class pointer in STOctopusC::GetMessage | /short <= 00589C10 [this+0x2A1] passed to FUN_004961b0 parameter param_3
-    uint field_02A5; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/uint <= 00589F37 CMP/JA establishes /uint through a field-derived value in STOctopusC::GetMessage; 00589F37 CMP/JA through typed class pointer in STOctopusC::GetMessage
+    int field_02A1; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x2|4x2; full_width_scalar_dominates_contained_low_view; typed_cross_class_recovery=2; type_evidence=/int <= 00589EF1 CMP/JL establishes /int through a field-derived value in STOctopusC::GetMessage; 00589EF1 CMP/JL through typed class pointer in STOctopusC::GetMessage; 00589F00 CMP/JGE establishes /int through a field-derived value in STOctopusC::GetMessage; 00589F00 CMP/JGE through typed class pointer in STOctopusC::GetMessage | /short <= 00589C10 [this+0x2A1] passed to FUN_004961b0 parameter param_3
+    STOctopusC_field_02A5State field_02A5; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/uint <= 00589F37 CMP/JA establishes /uint through a field-derived value in STOctopusC::GetMessage; 00589F37 CMP/JA through typed class pointer in STOctopusC::GetMessage [STSwitchEnumApplier] enum recovered from switch cases
     int field_02A9; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x2|4x4; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/int <= 0058A8EB CMP/JL establishes /int through a field-derived value in STOctopusC::Bad; 0058A8EB CMP/JL through typed class pointer in STOctopusC::Bad
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
@@ -14589,7 +13555,7 @@ struct STParticleC {
     byte _unknown_0000[2];
     undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
     byte _unknown_0003[17];
-    undefined4 field_0014; // [STClassLayoutApplier] reads=38, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x29|4x9; inferred_type_conflict=/byte|/uint; typed_cross_class_recovery=22; type_evidence=/byte <= 006288ED CMP/JNC through typed class pointer in STParticleC::GetMessage | /uint <= 0062A14C SHR establishes /uint through a field-derived value in STParticleC::sub_00629F90
+    uint field_0014; // [STClassLayoutApplier] reads=38, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x29|4x9; full_width_scalar_dominates_contained_low_view; typed_cross_class_recovery=22; type_evidence=/byte <= 006288ED CMP/JNC through typed class pointer in STParticleC::GetMessage | /uint <= 0062A14C SHR establishes /uint through a field-derived value in STParticleC::sub_00629F90
     undefined4 field_0018; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     undefined4 field_001C; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_0020; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=3
@@ -14730,7 +13696,7 @@ struct STPlaySystemC {
     undefined4 * PrepareMail();
     int Save(cMf32 *param_1);
     int SaveObjData(char *text, byte *param_2, uint param_3, byte param_4);
-    int SaveObjData(int *param_1, byte *param_2, AnonShape_0060EA30_DCEB68AD *param_3);
+    int SaveObjData(int *param_1, byte *param_2, uint param_3);
     void SendMail();
     void SetCtrlCmd(undefined1 param_1, uint param_2, char param_3, uint *param_4, uint param_5, undefined4 *param_6, uint param_7);
     int sub_0054EBB0(char *param_1, uint param_2);
@@ -14773,9 +13739,9 @@ struct STRubbishC {
     undefined4 field_0018; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_001C; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     byte _unknown_0020[437];
-    undefined4 field_01D5; // [STClassLayoutApplier] reads=13, writes=6; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x4|4x15; inferred_type_conflict=/int|/short; typed_cross_class_recovery=10; type_evidence=/int <= 0062E7C8 CMP/JL establishes /int through a field-derived value in STRubbishC::GetMessage; 0062E7C8 CMP/JL through typed class pointer in STRubbishC::GetMessage | /short <= 0062E8B5 CMP/JL through typed class pointer in STRubbishC::GetMessage
-    undefined4 field_01D9; // [STClassLayoutApplier] reads=13, writes=6; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x4|4x15; inferred_type_conflict=/int|/short; typed_cross_class_recovery=10; type_evidence=/int <= 0062E7D2 CMP/JL establishes /int through a field-derived value in STRubbishC::GetMessage; 0062E7D2 CMP/JL through typed class pointer in STRubbishC::GetMessage | /short <= 0062E8C6 CMP/JL through typed class pointer in STRubbishC::GetMessage
-    undefined4 field_01DD; // [STClassLayoutApplier] reads=11, writes=6; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x2|4x15; inferred_type_conflict=/int|/short; typed_cross_class_recovery=9; type_evidence=/int <= 0062E7DC CMP/JGE establishes /int through a field-derived value in STRubbishC::GetMessage; 0062E7DC CMP/JGE through typed class pointer in STRubbishC::GetMessage; 0062FF3A CMP/JL establishes /int through a field-derived value in STRubbishC::sub_0062FEA0; 0062FF3A CMP/JL through typed class pointer in STRubbishC::sub_0062FEA0; 0062FF3E CMP/JGE establishes /int through a field-derived value in STRubbishC::sub_0062FEA0; 0062FF3E CMP/JGE through typed class pointer in STRubbishC::sub_0062FEA0 | /short <= 0062E8D4 CMP/JL through typed class pointer in STRubbishC::GetMessage
+    int field_01D5; // [STClassLayoutApplier] reads=13, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x4|4x15; full_width_scalar_dominates_contained_low_view; typed_cross_class_recovery=10; type_evidence=/int <= 0062E7C8 CMP/JL establishes /int through a field-derived value in STRubbishC::GetMessage; 0062E7C8 CMP/JL through typed class pointer in STRubbishC::GetMessage | /short <= 0062E8B5 CMP/JL through typed class pointer in STRubbishC::GetMessage
+    int field_01D9; // [STClassLayoutApplier] reads=13, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x4|4x15; full_width_scalar_dominates_contained_low_view; typed_cross_class_recovery=10; type_evidence=/int <= 0062E7D2 CMP/JL establishes /int through a field-derived value in STRubbishC::GetMessage; 0062E7D2 CMP/JL through typed class pointer in STRubbishC::GetMessage | /short <= 0062E8C6 CMP/JL through typed class pointer in STRubbishC::GetMessage
+    int field_01DD; // [STClassLayoutApplier] reads=11, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x2|4x15; full_width_scalar_dominates_contained_low_view; typed_cross_class_recovery=9; type_evidence=/int <= 0062E7DC CMP/JGE establishes /int through a field-derived value in STRubbishC::GetMessage; 0062E7DC CMP/JGE through typed class pointer in STRubbishC::GetMessage; 0062FF3A CMP/JL establishes /int through a field-derived value in STRubbishC::sub_0062FEA0; 0062FF3A CMP/JL through typed class pointer in STRubbishC::sub_0062FEA0; 0062FF3E CMP/JGE establishes /int through a field-derived value in STRubbishC::sub_0062FEA0; 0062FF3E CMP/JGE through typed class pointer in STRubbishC::sub_0062FEA0 | /short <= 0062E8D4 CMP/JL through typed class pointer in STRubbishC::GetMessage
     int field_01E1; // [STClassLayoutApplier] reads=5, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/int <= 0062FCBC CMP/JGE establishes /int through a field-derived value in STRubbishC::sub_0062FCA0; 0062FCBC CMP/JGE through typed class pointer in STRubbishC::sub_0062FCA0
     undefined4 field_01E5; // [STClassLayoutApplier] reads=1, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined4 field_01E9; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
@@ -14783,7 +13749,7 @@ struct STRubbishC {
     undefined4 field_01F1; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined4 field_01F5; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined1 field_01F9; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_01FA; // [STClassLayoutApplier] reads=1, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    STRubbishC_field_01FAState field_01FA; // [STClassLayoutApplier] reads=1, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
@@ -14943,61 +13909,24 @@ struct STSprGameObjC {
     STSprGameObjCVTable *vtable; // [STClassLayoutApplier] reads=18, writes=2; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=15
     byte _unknown_0004[20];
     undefined4 field_0018; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined1 field_0x1c; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001D[3];
+    byte _unknown_001C[4];
     undefined4 field_0020; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
     uint field_0024; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x6|4x2; concrete_type_already_present; cfg_field_recovery=2; typed_cross_class_recovery=4; type_evidence=/uint <= 0041EADA CMP/JNC establishes /uint through CFG-recovered field flow in STSprGameObjC::GetMessage; 0041EADA CMP/JNC through typed class pointer in STSprGameObjC::GetMessage
-    undefined1 field_0x28; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0029[3];
+    byte _unknown_0028[4];
     undefined4 field_002C; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
-    byte _unknown_0030[2];
-    undefined1 field_0x32; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0033[1];
-    undefined1 field_0x34; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0035[1];
-    undefined1 field_0x36; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0037[1];
-    undefined1 field_0x38; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0039[8];
-    undefined1 field_0x41; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x42; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x43; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x44; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x45; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0046[1];
-    undefined1 field_0x47; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0048[1];
-    undefined1 field_0x49; // exact unnamed-byte view referenced by exported code
-    byte _unknown_004A[1];
-    undefined1 field_0x4b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_004C[2];
-    undefined1 field_0x4e; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x4f; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x50; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0051[1];
-    undefined1 field_0x52; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0053[8];
-    undefined1 field_0x5b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_005C[1];
-    undefined1 field_0x5d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_005E[1];
-    undefined1 field_0x5f; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0060[1];
-    undefined1 field_0x61; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0062[6];
-    undefined1 field_0x68; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0069[3];
-    undefined1 field_0x6c; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x6d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_006E[12];
-    undefined1 field_0x7a; // exact unnamed-byte view referenced by exported code
-    byte _unknown_007B[19];
-    undefined1 field_0x8e; // exact unnamed-byte view referenced by exported code
-    byte _unknown_008F[114];
+    byte _unknown_0030[209];
     undefined4 field_0101; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     undefined4 field_0105; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     undefined4 field_0109; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
-    byte _unknown_010D[32];
+    byte _unknown_010D[16];
+    undefined1 field_0x11d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_011E[3];
+    undefined1 field_0x121; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0122[3];
+    undefined1 field_0x125; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0126[3];
+    undefined1 field_0x129; // exact unnamed-byte view referenced by exported code
+    byte _unknown_012A[3];
     DArrayTy *field_012D; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0041E530 [this+0x12D] passed to DArrayDestroy parameter array; name_evidence=array <= 0041E530 [this+0x12D] passed to DArrayDestroy parameter array
     DArrayTy *field_0131; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0041E530 [this+0x131] passed to DArrayDestroy parameter array; name_evidence=array <= 0041E530 [this+0x131] passed to DArrayDestroy parameter array
     DArrayTy *field_0135; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0041E530 [this+0x135] passed to DArrayDestroy parameter array; name_evidence=array <= 0041E530 [this+0x135] passed to DArrayDestroy parameter array
@@ -15020,10 +13949,40 @@ struct STSprGameObjC {
     undefined4 field_0179; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=2
     undefined4 field_017D; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=2
     undefined4 field_0181; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=2
-    byte _unknown_0185[24];
+    undefined1 field_0x185; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0186[3];
+    undefined1 field_0x189; // exact unnamed-byte view referenced by exported code
+    byte _unknown_018A[3];
+    undefined1 field_0x18d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_018E[3];
+    undefined1 field_0x191; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0192[3];
+    undefined1 field_0x195; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0196[3];
+    undefined1 field_0x199; // exact unnamed-byte view referenced by exported code
+    byte _unknown_019A[3];
     DArrayTy *field_019D; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0041E530 [this+0x19D] passed to DArrayDestroy parameter array; name_evidence=array <= 0041E530 [this+0x19D] passed to DArrayDestroy parameter array
     DArrayTy *field_01A1; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0041E530 [this+0x1A1] passed to DArrayDestroy parameter array; name_evidence=array <= 0041E530 [this+0x1A1] passed to DArrayDestroy parameter array
-    byte _unknown_01A5[48];
+    undefined1 field_0x1a5; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01A6[3];
+    undefined1 field_0x1a9; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01AA[3];
+    undefined1 field_0x1ad; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01AE[3];
+    undefined1 field_0x1b1; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01B2[3];
+    undefined1 field_0x1b5; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01B6[3];
+    undefined1 field_0x1b9; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01BA[3];
+    undefined1 field_0x1bd; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01BE[3];
+    undefined1 field_0x1c1; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01C2[3];
+    undefined1 field_0x1c5; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01C6[3];
+    undefined1 field_0x1c9; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01CA[11];
     undefined4 field_01D5; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=3
     byte _unknown_01D9[20];
     undefined4 field_01ED; // [STClassLayoutApplier] reads=16, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=8
@@ -15037,104 +13996,17 @@ struct STSprGameObjC {
     undefined4 field_0229; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=3
     undefined4 field_022D; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=5; typed_cross_class_recovery=5
     STSprGameObjC_field_0231State field_0231; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1 [STSwitchEnumApplier] enum recovered from switch cases
-    undefined1 field_0x235; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0236[1];
-    undefined1 field_0x237; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0238[1];
-    undefined1 field_0x239; // exact unnamed-byte view referenced by exported code
-    byte _unknown_023A[1];
-    undefined1 field_0x23b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_023C[1];
-    undefined1 field_0x23d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0235[9];
     undefined4 field_023E; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     short field_0242; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/short <= 005F0A8E CMP/JL through typed class pointer in FUN_005f0a30
     short field_0244; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/short <= 005F0AA7 CMP/JL through typed class pointer in FUN_005f0a30
     short field_0246; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/short <= 005F0A49 CMP/JLE through typed class pointer in FUN_005f0a30
-    byte _unknown_0248[1];
-    undefined1 field_0x249; // exact unnamed-byte view referenced by exported code
-    byte _unknown_024A[1];
-    undefined1 field_0x24b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_024C[1];
-    undefined1 field_0x24d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0248[6];
     undefined1 field_024E; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined1 field_024F; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    undefined1 field_0x250; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x251; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0252[1];
-    undefined1 field_0x253; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0254[1];
-    undefined1 field_0x255; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x256; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x257; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x258; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0250[9];
     STSprGameObjC_field_0259State field_0259; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
-    undefined1 field_0x25d; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x25e; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x25f; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0260[1];
-    undefined1 field_0x261; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x262; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x263; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x264; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x265; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0266[1];
-    undefined1 field_0x267; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x268; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x269; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x26a; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x26b; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x26c; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x26d; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x26e; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x26f; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x270; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x271; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x272; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x273; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x274; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x275; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x276; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x277; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x278; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x279; // exact unnamed-byte view referenced by exported code
-    byte _unknown_027A[1];
-    undefined1 field_0x27b; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x27c; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x27d; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x27e; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x27f; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0280[1];
-    undefined1 field_0x281; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x282; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x283; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x284; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x285; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x286; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x287; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x288; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x289; // exact unnamed-byte view referenced by exported code
-    byte _unknown_028A[1];
-    undefined1 field_0x28b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_028C[1];
-    undefined1 field_0x28d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_028E[2];
-    undefined1 field_0x290; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x291; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0292[2];
-    undefined1 field_0x294; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0295[3];
-    undefined1 field_0x298; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x299; // exact unnamed-byte view referenced by exported code
-    byte _unknown_029A[2];
-    undefined1 field_0x29c; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x29d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_029E[3];
-    undefined1 field_0x2a1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02A2[3];
-    undefined1 field_0x2a5; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02A6[3];
-    undefined1 field_0x2a9; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02AA[94];
+    byte _unknown_025D[171];
     undefined4 field_0308; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined1 field_030C; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     byte _unknown_030D[1];
@@ -15309,9 +14181,13 @@ struct STTorpC {
     short field_0231; // [STClassLayoutApplier] reads=6, writes=8; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x9|4x5; exact_subword_partition=4->2; concrete_type_already_present; typed_cross_class_recovery=11; type_evidence=/short <= 0064081F MOVSX establishes /short; 00640B74 MOVSX establishes /short
     undefined2 field_0233; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     undefined1 field_0x235; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0236[3];
+    undefined1 field_0x236; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x237; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x238; // exact unnamed-byte view referenced by exported code
     undefined1 field_0x239; // exact unnamed-byte view referenced by exported code
-    byte _unknown_023A[3];
+    undefined1 field_0x23a; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x23b; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x23c; // exact unnamed-byte view referenced by exported code
     undefined4 field_023D; // [STClassLayoutApplier] reads=6, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=6
     DArrayTy *field_0241; // [STClassLayoutApplier] reads=18, writes=4; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=2; typed_cross_class_recovery=11; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 00640923 generic pointer-return assignment in STTorpC::GetMessage; 006451B0 [this+0x241] passed to Library::DKW::TBL::DArrayAppend parameter array; 006452A0 [this+0x241] passed to Library::DKW::TBL::DArrayAppend parameter array; 006452A0 [this+0x241] passed to Library::DKW::TBL::DArrayPut parameter array; 00645740 generic pointer-return assignment in STTorpC::RestoreTorpData; name_evidence=array <= 006451B0 [this+0x241] passed to Library::DKW::TBL::DArrayAppend parameter array; 006452A0 [this+0x241] passed to Library::DKW::TBL::DArrayAppend parameter array; 006452A0 [this+0x241] passed to Library::DKW::TBL::DArrayPut parameter array | dangerous <= 00645020 unique is field in STTorpC::IsDangerous
     undefined2 field_0245; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
@@ -15324,7 +14200,7 @@ struct STTorpC {
     short field_0253; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=/short <= 0064082D MOVSX establishes /short; 00640B7E MOVSX establishes /short; 00640E27 MOVSX establishes /short; 00642EB2 MOVSX establishes /short
     short field_0255; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=/short <= 00640826 MOVSX establishes /short; 00640B77 MOVSX establishes /short; 00640E39 MOVSX establishes /short; 00642EC4 MOVSX establishes /short
     byte _unknown_0257[2];
-    uint field_0259; // [STClassLayoutApplier] reads=28, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=27; type_evidence=/uint <= 00640ACC CMP/JA through typed class pointer in STTorpC::GetMessage; 00640D6A CMP/JA through typed class pointer in STTorpC::GetMessage; 00640FAC CMP/JA through typed class pointer in STTorpC::GetMessage; 00642726 CMP/JA through typed class pointer in STTorpC::GetMessage
+    STTorpC_field_0259State field_0259; // [STClassLayoutApplier] reads=28, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=27; type_evidence=/uint <= 00640ACC CMP/JA through typed class pointer in STTorpC::GetMessage; 00640D6A CMP/JA through typed class pointer in STTorpC::GetMessage; 00640FAC CMP/JA through typed class pointer in STTorpC::GetMessage; 00642726 CMP/JA through typed class pointer in STTorpC::GetMessage [STSwitchEnumApplier] enum recovered from switch cases
     undefined1 field_025D; // [STClassLayoutApplier] reads=6, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=5; typed_cross_class_recovery=5
     undefined4 field_025E; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x2|4x2; cfg_field_recovery=2; typed_cross_class_recovery=2
     undefined2 field_0262; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=5; typed_cross_class_recovery=5
@@ -15416,212 +14292,10 @@ struct STVolcanoC {
     undefined4 field_00B1; // [STClassLayoutApplier] reads=7, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13
     int GetMessage(STMessage *message);
     undefined4 LoadImagVolcano(int param_1);
-    void sub_00646D40(undefined4 *param_1);
+    byte * sub_00646D40(undefined4 *param_1);
     undefined4 sub_00646DB0(undefined4 *param_1);
     undefined4 sub_006472B0();
     void sub_006479E0();
-};
-
-struct SettMapMTy {
-    SettMapMTyVTable *vtable; // [STClassLayoutApplier] reads=43, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=25
-    byte _unknown_0004[4];
-    undefined4 field_0008; // [STClassLayoutApplier] reads=24, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=12
-    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=16, writes=0; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/StartSystemTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_000C; typed_cross_class_recovery=8; type_evidence=pointer:/StartSystemTy <= 005CC840 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_000C <= consistent nested dereferences through [this+0xC]
-    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005D1400 [this+0x10] used as receiver of STAppC::sub_006E51B0
-    byte _unknown_0014[4];
-    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_001C[1];
-    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001E[7];
-    undefined4 field_0025; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_0029; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=30; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=15
-    undefined4 field_0031; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_0035[8];
-    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_003E[15];
-    undefined4 field_004D; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_0051[12];
-    undefined4 field_005D; // [STClassLayoutApplier] reads=14, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=14
-    undefined4 field_0061; // [STClassLayoutApplier] reads=28, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=15
-    undefined1 field_0065; // [STClassLayoutApplier] reads=18, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
-    undefined1 field_0x66; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0067[51];
-    undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_009B[33];
-    undefined1 field_0xbc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00BD[183];
-    undefined1 field_0x174; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0175[6374];
-    StartSystemTy *field_1A5B; // [STClassLayoutApplier] reads=114, writes=0; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/StartSystemTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_1A5B|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_MMMObjTy_005B6560|pointer:/ushort; typed_cross_class_recovery=57; type_evidence=pointer:/StartSystemTy <= 005CE0E0 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat; 005D1400 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_1A5B <= consistent nested dereferences through [this+0x1A5B] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_MMMObjTy_005B6560 <= 005D1400 [this+0x1A5B] passed to MMMObjTy::PaintSlBut parameter param_1 | pointer:/ushort <= 005C29B0 [this+0x1A5B] passed to FUN_006b2330 parameter param_7; 005CBD00 [this+0x1A5B] passed to FUN_006b2330 parameter param_7; name_evidence=slotStorage <= 005CBD00 [this+0x1A5B] passed to FreeAndNull parameter slotStorage
-    undefined1 field_0x1a5f; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1A60[31];
-    undefined1 field_1A7F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined1 field_1A80; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined1 field_1A81; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1A82; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1A86; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    char field_1A8A; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005C29B0 exact address of [this+0x1A8A] passed to Library::MSVCRT::_strncpy parameter _Dest
-    byte _unknown_1A8B[467];
-    undefined1 field_1C5E; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    uint field_1C5F; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/uint <= 005C2AC0 CMP/JNC establishes /uint through a field-derived value in SettMapMTy::sub_005C29B0; 005C2AC0 CMP/JNC through typed class pointer in SettMapMTy::sub_005C29B0
-    undefined4 field_1C63; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    AnonPointee_SettMapMTy_1C67 *field_1C67; // [STClassLayoutApplier] reads=14, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/ushort; typed_cross_class_recovery=9; type_evidence=/int <= 005C29B0 [this+0x1C67] passed to ccFntTy::SetSurf parameter param_1 | pointer:/ushort <= 005C29B0 [this+0x1C67] passed to FUN_006b2330 parameter param_7
-    undefined4 field_1C6B; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1C6F; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1C73; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1C77[16];
-    undefined4 field_1C87; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1C8B; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1C8F[36];
-    undefined4 field_1CB3; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_1CB7[69];
-    undefined4 field_1CFC; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1D00; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1D04; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1D08[16];
-    undefined4 field_1D18; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1D1C; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1D20[36];
-    undefined4 field_1D44; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_1D48[69];
-    undefined4 field_1D8D; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1D91; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1D95; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1D99[16];
-    undefined4 field_1DA9; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1DAD; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1DB1[36];
-    undefined4 field_1DD5; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_1DD9[69];
-    AnonPointee_SettMapMTy_1E1E *field_1E1E; // [STClassLayoutApplier] reads=26, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/ushort; typed_cross_class_recovery=15; type_evidence=/int <= 005C29B0 [this+0x1E1E] passed to ccFntTy::SetSurf parameter param_1 | pointer:/ushort <= 005C29B0 [this+0x1E1E] passed to FUN_006b2330 parameter param_7
-    uint field_1E22; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/uint <= 005C29B0 exact address of [this+0x1E22] passed to FUN_006b2330 parameter param_2
-    SettMapMTy_field_1E26State field_1E26; // [STClassLayoutApplier] reads=30, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
-    undefined4 field_1E27; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    ushort *field_1E2B; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=pointer:/ushort <= 005C2D24 generic pointer-return assignment in SettMapMTy::sub_005C29B0
-    SettMapMTy_field_1E2FDArray *field_1E2F; // [STClassLayoutApplier] reads=50, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=27; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005C2D01 generic pointer-return assignment in SettMapMTy::sub_005C29B0; 005D1400 [this+0x1E2F] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005D1400 [this+0x1E2F] passed to Library::DKW::TBL::DArrayAppend parameter array
-    char field_1E33; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005D1400 exact address of [this+0x1E33] passed to USER32.DLL::wsprintfA parameter param_1
-    byte _unknown_1E34[259];
-    undefined4 field_1F37; // [STClassLayoutApplier] reads=0, writes=26; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13
-    undefined4 field_1F3B; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    cMf32 *field_1F3F; // [STClassLayoutApplier] reads=8, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=pointer:/cMf32 <= 005CCE10 [this+0x1F3F] passed to CreateOpponentList parameter param_1; 005CD430 [this+0x1F3F] passed to CreateOpponentList parameter param_1
-    cMf32 *field_1F43; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=pointer:/cMf32 <= 005CE0E0 [this+0x1F43] passed to CreateOpponentList parameter param_1
-    undefined4 field_1F47; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    ushort *field_1F4B; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=pointer:/ushort <= 005C2D86 generic pointer-return assignment in SettMapMTy::sub_005C29B0
-    ushort *field_1F4F; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD|pointer:/ushort; typed_cross_class_recovery=3; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD <= 005D1400 [this+0x1F4F] passed to FUN_0070b3a0 parameter param_1 | pointer:/ushort <= 005C2D63 generic pointer-return assignment in SettMapMTy::sub_005C29B0
-    undefined4 field_1F53; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; typed_cross_class_recovery=1; type_evidence=/char <= 005D1400 exact address of [this+0x1F53] passed to FUN_00715360 parameter param_4
-    undefined1 field_0x1f57; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x1f58; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1F59[2];
-    undefined1 field_0x1f5b; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x1f5c; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x1f5d; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x1f5e; // exact unnamed-byte view referenced by exported code
-    undefined1 field_1F5F; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1F60; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_1F64[24];
-    SettMapMTy_field_1F7CDArray *field_1F7C; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005C29B0 [this+0x1F7C] passed to Library::DKW::TBL::DArrayAppend parameter array; 005C3014 generic pointer-return assignment in SettMapMTy::sub_005C29B0; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005C29B0 [this+0x1F7C] passed to Library::DKW::TBL::DArrayAppend parameter array
-    uint field_1F80; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/uint <= 005C29B0 exact address of [this+0x1F80] passed to FUN_006b2330 parameter param_2
-    SettMapMTy_field_1F84DArray *field_1F84; // [STClassLayoutApplier] reads=184, writes=5; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=95; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005C2B7B generic pointer-return assignment in SettMapMTy::sub_005C29B0; 005CD430 [this+0x1F84] passed to DArrayDestroy parameter array; 005CD430 [this+0x1F84] passed to Library::DKW::TBL::DArrayAppend parameter array; 005CD508 generic pointer-return assignment in SettMapMTy::PrepPlList; 005D0150 [this+0x1F84] passed to DArrayRemoveAt parameter array; 005D0A20 [this+0x1F84] passed to DArrayRemoveAt parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005CD430 [this+0x1F84] passed to DArrayDestroy parameter array; 005CD430 [this+0x1F84] passed to Library::DKW::TBL::DArrayAppend parameter array; 005D0150 [this+0x1F84] passed to DArrayRemoveAt parameter array; 005D0A20 [this+0x1F84] passed to DArrayRemoveAt parameter array
-    undefined4 field_1F88; // [STClassLayoutApplier] reads=30, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=16
-    uint field_1F8C[10]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=10; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[10], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:10:/uint <= 005CE6DB exact pointer walk count=10, stride=4, cursor_displacement=0 | 005CEFE6 exact pointer walk count=10, stride=4, cursor_displacement=0
-    byte _unknown_1FB4[280];
-    uint field_20CC[10]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=10; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[10], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:10:/uint <= 005C3EE2 exact pointer walk count=10, stride=4, cursor_displacement=0 | 005C3F67 exact pointer walk count=10, stride=4, cursor_displacement=0 | 005D3C3B MOV EDX,dword ptr [EBX + ESI*0x4 + 0x20cc]
-    ushort *field_20F4; // [STClassLayoutApplier] reads=1, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=pointer:/ushort <= 005C29B0 [this+0x20F4] passed to FUN_006b2330 parameter param_7
-    byte _unknown_20F8[36];
-    undefined1 field_211C; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_211D; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_2121; // [STClassLayoutApplier] reads=26, writes=26; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=26
-    uint field_2125[14]; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; bounded_member_array; count=14; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[14], bounded_sites=0, exact_loops=1, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:14:/uint <= 005CEF9D exact pointer walk count=14, stride=4, cursor_displacement=0
-    undefined4 field_215D; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    undefined1 field_0x2161; // exact unnamed-byte view referenced by exported code
-    byte _unknown_2162[7];
-    undefined4 field_2169; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_216D; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_2171; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_2175[4];
-    undefined4 field_2179; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_217D[12];
-    undefined4 field_2189; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_218D; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_2191; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_2195[12];
-    undefined4 field_21A1; // [STClassLayoutApplier] reads=0, writes=14; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_21A5; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    int field_21A9; // [STClassLayoutApplier] reads=2, writes=8; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/int <= 005D3180 CMP/JLE establishes /int through a field-derived value in SettMapMTy::GetMessage; 005D3180 CMP/JLE through typed class pointer in SettMapMTy::GetMessage
-    undefined4 field_21AD; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_21B1; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_21B5; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_21B9; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    ushort *field_21BD; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/ushort <= 005C2CDA generic pointer-return assignment in SettMapMTy::sub_005C29B0
-    ushort *field_21C1; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/ushort <= 005C2CCE generic pointer-return assignment in SettMapMTy::sub_005C29B0
-    undefined4 field_21C5; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_21C9; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_21CD; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_21D1[16];
-    undefined1 field_21E1; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x6|4x1; exact_subword_partition=4->1; typed_cross_class_recovery=4
-    undefined1 field_21E2; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined1 field_21E3; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined1 field_21E4; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined1 field_21E5; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x6|2x1; exact_subword_partition=2->1; typed_cross_class_recovery=4
-    undefined1 field_21E6; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined1 field_21E7; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    HoloTy *field_21E8; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21E8; typed_cross_class_recovery=5; type_evidence=pointer:/HoloTy <= 005C29B0 [this+0x21E8] used as receiver of HoloTy::Init | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21E8 <= consistent nested dereferences through [this+0x21E8]
-    HoloTy *field_21EC; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21EC; typed_cross_class_recovery=5; type_evidence=pointer:/HoloTy <= 005C29B0 [this+0x21EC] used as receiver of HoloTy::Init | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21EC <= consistent nested dereferences through [this+0x21EC]
-    HoloTy *field_21F0; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F0; typed_cross_class_recovery=5; type_evidence=pointer:/HoloTy <= 005C29B0 [this+0x21F0] used as receiver of HoloTy::Init | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F0 <= consistent nested dereferences through [this+0x21F0]
-    HoloTy *field_21F4; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F4; typed_cross_class_recovery=5; type_evidence=pointer:/HoloTy <= 005C29B0 [this+0x21F4] used as receiver of HoloTy::Init | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F4 <= consistent nested dereferences through [this+0x21F4]
-    HoloTy *field_21F8; // [STClassLayoutApplier] reads=18, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F8; typed_cross_class_recovery=13; type_evidence=pointer:/HoloTy <= 005CBD00 [this+0x21F8] used as receiver of HoloTy::Init; 005CC840 [this+0x21F8] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005CC840 [this+0x21F8] used as receiver of HoloTy::Done; 005CC840 [this+0x21F8] used as receiver of HoloTy::Init; 005CC840 [this+0x21F8] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F8 <= consistent nested dereferences through [this+0x21F8]
-    undefined4 field_21FC; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_2200; // [STClassLayoutApplier] reads=14, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=9; type_evidence=/int <= 005CC8E6 CMP/JL establishes /int through a field-derived value in SettMapMTy::DeleteCtrls; 005CC8E6 CMP/JL through typed class pointer in SettMapMTy::DeleteCtrls | /uint <= 005CBD00 exact address of [this+0x2200] passed to FUN_006b2330 parameter param_2
-    AnonPointee_SettMapMTy_2204 *field_2204; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_2204|pointer:/ushort; typed_cross_class_recovery=6; type_evidence=/int <= 005D1400 [this+0x2204] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_2204 <= consistent nested dereferences through [this+0x2204] | pointer:/ushort <= 005CBD00 [this+0x2204] passed to FUN_006b2330 parameter param_7
-    undefined1 field_2208; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_2209; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_220D; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_2211; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_2215; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_2219; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_221D; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined4 field_2221; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined1 field_2225; // [STClassLayoutApplier] reads=4, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    char *field_2226; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/byte|pointer:/char; typed_cross_class_recovery=6; type_evidence=pointer:/byte <= 005CDFF9 dynamic 1-byte dereference of field-derived address in SettMapMTy::SendPlList | pointer:/char <= 005CDF60 [this+0x2226] passed to FUN_00715360 parameter param_4; name_evidence=allocation <= 005CDF60 [this+0x2226] passed to Library::DKW::LIB::MemRealloc parameter allocation
-    undefined4 field_222A; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined1 field_222E; // [STClassLayoutApplier] reads=6, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
-    DArrayTy *field_222F; // [STClassLayoutApplier] reads=10, writes=5; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005CE0E0 [this+0x222F] passed to DArrayRemoveAt parameter array; 005D1400 [this+0x222F] passed to DArrayDestroy parameter array; 005D1400 [this+0x222F] passed to Library::DKW::TBL::DArrayAppend parameter array; 005D2198 generic pointer-return assignment in SettMapMTy::GetMessage; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005CE0E0 [this+0x222F] passed to DArrayRemoveAt parameter array; 005D1400 [this+0x222F] passed to DArrayDestroy parameter array; 005D1400 [this+0x222F] passed to Library::DKW::TBL::DArrayAppend parameter array
-    undefined4 field_2233; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    SettMapMTy_field_2237DArray *field_2237; // [STClassLayoutApplier] reads=18, writes=5; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=12; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005CBDBA generic pointer-return assignment in SettMapMTy::InitSettMap; 005CC2D0 [this+0x2237] passed to DArrayDestroy parameter array; 005CE0E0 [this+0x2237] passed to DArrayRemoveAt parameter array; 005CE0E0 [this+0x2237] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005CC2D0 [this+0x2237] passed to DArrayDestroy parameter array; 005CE0E0 [this+0x2237] passed to DArrayRemoveAt parameter array; 005CE0E0 [this+0x2237] passed to Library::DKW::TBL::DArrayAppend parameter array
-    uint field_223B; // [STClassLayoutApplier] reads=8, writes=5; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/uint <= 005CE0E0 [this+0x223B] passed to DArrayRemoveAt parameter index; 005CF3C7 CMP/JNC establishes /uint through a field-derived value in SettMapMTy::NoneSettMap; 005CF3C7 CMP/JNC through typed class pointer in SettMapMTy::NoneSettMap; 005CF454 CMP/JNC establishes /uint through a field-derived value in SettMapMTy::NoneSettMap; 005CF454 CMP/JNC through typed class pointer in SettMapMTy::NoneSettMap; 005CF5D4 CMP/JC establishes /uint through a field-derived value in SettMapMTy::NoneSettMap; 005CF5D4 CMP/JC through typed class pointer in SettMapMTy::NoneSettMap; name_evidence=index <= 005CE0E0 [this+0x223B] passed to DArrayRemoveAt parameter index
-    undefined4 field_223F; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined1 field_2243; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined1 field_2244; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    int GetMessage(STMessage *message);
-    undefined4 NoneSettMap();
-    undefined InitSettMap(char param_1);
-    undefined DoneSettMap();
-    undefined CreateCtrls(char param_1);
-    undefined DeleteCtrls();
-    undefined4 vfunc_20();
-    undefined4 vfunc_24();
-    undefined PrepPlList();
-    undefined SetListCtrls();
-    void AddPlList(int param_1);
-    void AddPlayerList(int param_1, uint param_2, int param_3, char *param_4);
-    void ChangePlayerCiv(uint param_1, char param_2);
-    void ChangePlayerColor(uint param_1, char param_2);
-    void ChangePlayerList(int param_1, uint param_2, int param_3, char param_4, char *param_5);
-    void ChangePlayerState(uint param_1);
-    void ChangePlayerTeam(uint param_1, uint param_2, uint param_3);
-    void CheckPlList();
-    void ChgPlList(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4);
-    void DeletePlayer(int param_1);
-    void PrepareAFT(AnonShape_005D4990_5F0525CF *param_1, uint *param_2);
-    void RunGame();
-    void SendDesc(int param_1);
-    void SendPlList(int param_1);
-    void UpdatePing(int param_1, undefined4 param_2);
-    void sub_005B5F00(RecoveredSourceFamily_dibcopy *param_1, int *param_2);
-    void sub_005C29B0(char param_1);
-    void sub_005D00B0(AnonShape_005D00B0_9E7CC102 *param_1, uint param_2);
-    void sub_005D1380();
 };
 
 struct SettMapSTy {
@@ -15684,170 +14358,6 @@ struct SettMapSTy {
     int GetMessage(STMessage *message);
     void PrepPlList();
     void SetListCtrls();
-};
-
-struct SettMapTy {
-    SettMapTyVTable *vtable; // [STClassLayoutApplier] reads=29, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=18
-    byte _unknown_0004[4];
-    undefined4 field_0008; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=24, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; type_evidence=pointer:/StartSystemTy <= 005C6D40 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0
-    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005C8A40 [this+0x10] used as receiver of STAppC::sub_006E51B0
-    byte _unknown_0014[4];
-    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_001C[1];
-    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001E[15];
-    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=48; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=24
-    undefined4 field_0031; // [STClassLayoutApplier] reads=0, writes=14; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    byte _unknown_0035[8];
-    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_003E[7];
-    undefined4 field_0045; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_0049; // [STClassLayoutApplier] reads=0, writes=10; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined4 field_004D; // [STClassLayoutApplier] reads=4, writes=10; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_0051; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_0055; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    byte _unknown_0059[4];
-    undefined4 field_005D; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    DWORD field_0061; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/WinDef.h/DWORD <= 005C5130 [this+0x61] assigned 005C5130 return from WINMM.DLL::timeGetTime
-    undefined1 field_0065; // [STClassLayoutApplier] reads=36, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=22
-    undefined1 field_0x66; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0067[51];
-    undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    byte _unknown_009B[33];
-    undefined1 field_0xbc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00BD[4];
-    undefined1 field_0xc1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00C2[15];
-    undefined1 field_0xd1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00D2[162];
-    undefined1 field_0x174; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0175[6373];
-    undefined1 field_1A5A; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    MMMObjTy *field_1A5B; // [STClassLayoutApplier] reads=24, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; type_evidence=pointer:/MMMObjTy <= 005C4E20 [this+0x1A5B] used as receiver of MMMObjTy::OutBSlProc
-    undefined1 field_0x1a5f; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1A60[31];
-    undefined1 field_1A7F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined1 field_1A80; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined1 field_1A81; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1A82; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1A86; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    char field_1A8A; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005C8A40 exact address of [this+0x1A8A] passed to Library::MSVCRT::_strncpy parameter _Dest
-    byte _unknown_1A8B[467];
-    undefined1 field_1C5E; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    uint field_1C5F; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/uint <= 005CAA20 CMP/JNC establishes /uint through a field-derived value in SettMapTy::GetMessage; 005CAA20 CMP/JNC through typed class pointer in SettMapTy::GetMessage
-    undefined4 field_1C63; // [STClassLayoutApplier] reads=4, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1C67; // [STClassLayoutApplier] reads=16, writes=1; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy; typed_cross_class_recovery=9; type_evidence=/int <= 005C8A40 [this+0x1C67] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005C8A40 [this+0x1C67] passed to FUN_006c7610 parameter param_1
-    undefined1 field_0x1c6b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1C6C[3];
-    undefined4 field_1C6F; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1C73[20];
-    undefined4 field_1C87; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1C8B; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1C8F; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1C93; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1C97[28];
-    undefined4 field_1CB3; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1CB7[69];
-    undefined1 field_0x1cfc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1CFD[3];
-    undefined4 field_1D00; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1D04[20];
-    undefined4 field_1D18; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1D1C; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1D20; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined4 field_1D24; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1D28[28];
-    undefined4 field_1D44; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    byte _unknown_1D48[69];
-    undefined1 field_0x1d8d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1D8E[3];
-    undefined4 field_1D91; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1D95; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1D99[16];
-    undefined4 field_1DA9; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1DAD; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_1DB1; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_1DB5[32];
-    undefined4 field_1DD5; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    byte _unknown_1DD9[69];
-    int field_1E1E; // [STClassLayoutApplier] reads=18, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=10; type_evidence=/int <= 005C8A40 [this+0x1E1E] passed to ccFntTy::SetSurf parameter param_1
-    undefined4 field_1E22; // [STClassLayoutApplier] reads=9, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    SettMapTy_field_1E26State field_1E26; // [STClassLayoutApplier] reads=17, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
-    uint field_1E27; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/uint <= 005C8A40 [this+0x1E27] passed to FUN_005b6350 parameter param_2
-    AnonPointee_SettMapTy_1E2B *field_1E2B; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4
-    DArrayTy *field_1E2F; // [STClassLayoutApplier] reads=98, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=51; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005C4930 [this+0x1E2F] passed to DArrayDestroy parameter array; 005C8A40 [this+0x1E2F] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005C4930 [this+0x1E2F] passed to DArrayDestroy parameter array; 005C8A40 [this+0x1E2F] passed to Library::DKW::TBL::DArrayAppend parameter array
-    char field_1E33; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005C8A40 exact address of [this+0x1E33] passed to USER32.DLL::wsprintfA parameter param_1
-    byte _unknown_1E34[259];
-    undefined4 field_1F37; // [STClassLayoutApplier] reads=0, writes=50; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=25
-    undefined1 field_0x1f3b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1F3C[3];
-    cMf32 *field_1F3F; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/cMf32 <= 005C4930 [this+0x1F3F] passed to cMf32::delete parameter param_1; 005C6030 [this+0x1F3F] passed to cMf32::delete parameter param_1
-    cMf32 *field_1F43; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=pointer:/cMf32 <= 005C4930 [this+0x1F43] passed to cMf32::delete parameter param_1
-    undefined4 field_1F47; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_1F4B; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    AnonShape_GLOBAL_0081175C_57F682DD *field_1F4F; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD <= 005C8A40 [this+0x1F4F] passed to FUN_0070b3a0 parameter param_1
-    DWORD field_1F53; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/WinDef.h/DWORD <= 005C8A40 [this+0x1F53] assigned 005C8A40 return from WINMM.DLL::timeGetTime
-    undefined1 field_1F57; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    uint field_1F58; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/uint <= 005CA675 CMP/JNC establishes /uint through a field-derived value in SettMapTy::GetMessage; 005CA675 CMP/JNC through typed class pointer in SettMapTy::GetMessage
-    byte field_1F5C; // [STClassLayoutApplier] reads=8, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/byte <= 005C8DF8 CMP/JBE through typed class pointer in SettMapTy::GetMessage; 005C8E3B CMP/JBE through typed class pointer in SettMapTy::GetMessage
-    undefined1 field_1F5D; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined1 field_1F5E; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined1 field_1F5F; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    uint field_1F60[7]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=7; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[7], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:7:/uint <= 005C6638 exact pointer walk count=7, stride=4, cursor_displacement=0 | 005C73AA exact pointer walk count=7, stride=4, cursor_displacement=0 | 005C8EDF MOV ECX,dword ptr [EBX + EAX*0x4 + 0x1f60]
-    DArrayTy *field_1F7C; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005C4930 [this+0x1F7C] passed to DArrayDestroy parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005C4930 [this+0x1F7C] passed to DArrayDestroy parameter array
-    undefined4 field_1F80; // [STClassLayoutApplier] reads=11, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    DArrayTy *field_1F84; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005C4930 [this+0x1F84] passed to DArrayDestroy parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005C4930 [this+0x1F84] passed to DArrayDestroy parameter array
-    undefined4 field_1F88; // [STClassLayoutApplier] reads=0, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    uint field_1F8C[10]; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; bounded_member_array; count=10; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[10], bounded_sites=0, exact_loops=1, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:10:/uint <= 005C6DC3 exact pointer walk count=10, stride=4, cursor_displacement=0
-    byte _unknown_1FB4[280];
-    uint field_20CC[10]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=10; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[10], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:10:/uint <= 005C61CC exact pointer walk count=10, stride=4, cursor_displacement=0 | 005C6F8B exact pointer walk count=10, stride=4, cursor_displacement=0
-    void *field_20F4[10]; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; bounded_member_array; count=10; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[10], bounded_sites=0, exact_loops=1, pointer_dereferences=0, element_candidates=[pointer:/void], exact_pointer_candidates=[]; type_evidence=array:10:pointer:/void <= 005C4C2B exact pointer walk count=10, stride=4, cursor_displacement=0
-    undefined1 field_0x211c; // exact unnamed-byte view referenced by exported code
-    undefined4 field_211D; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined1 field_0x2121; // exact unnamed-byte view referenced by exported code
-    byte _unknown_2122[3];
-    uint field_2125[14]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=14; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[14], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:14:/uint <= 005C695F exact pointer walk count=14, stride=4, cursor_displacement=0 | 005C6FB2 exact pointer walk count=14, stride=4, cursor_displacement=0
-    undefined4 field_215D; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined1 field_0x2161; // exact unnamed-byte view referenced by exported code
-    byte _unknown_2162[15];
-    undefined4 field_2171; // [STClassLayoutApplier] reads=0, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    byte _unknown_2175[4];
-    SettMapTy_field_2179State field_2179; // [STClassLayoutApplier] reads=6, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13 [STSwitchEnumApplier] enum recovered from switch cases
-    byte _unknown_217D[20];
-    undefined4 field_2191; // [STClassLayoutApplier] reads=0, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    byte _unknown_2195[12];
-    uint field_21A1; // [STClassLayoutApplier] reads=0, writes=34; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=17; type_evidence=/uint <= 005C942F exact field-to-field MOV propagation; 005CA0F3 exact field-to-field MOV propagation
-    undefined4 field_21A5; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_21A9; // [STClassLayoutApplier] reads=0, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    byte _unknown_21AD[24];
-    undefined4 field_21C5; // [STClassLayoutApplier] reads=0, writes=22; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
-    undefined4 field_21C9; // [STClassLayoutApplier] reads=0, writes=24; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=12
-    undefined4 field_21CD; // [STClassLayoutApplier] reads=0, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
-    byte _unknown_21D1[16];
-    undefined1 field_21E1; // [STClassLayoutApplier] reads=3, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x3|4x7; exact_subword_partition=4->1; typed_cross_class_recovery=7
-    undefined1 field_21E2; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined1 field_21E3; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined1 field_21E4; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined1 field_21E5; // [STClassLayoutApplier] reads=3, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x3|2x7; exact_subword_partition=2->1; typed_cross_class_recovery=7
-    undefined1 field_21E6; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    undefined1 field_21E7; // [STClassLayoutApplier] reads=2, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    HoloTy *field_21E8; // [STClassLayoutApplier] reads=23, writes=8; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21E8; typed_cross_class_recovery=19; type_evidence=pointer:/HoloTy <= 005C4930 [this+0x21E8] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C4930 [this+0x21E8] used as receiver of HoloTy::Done; 005C6D40 [this+0x21E8] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C6D40 [this+0x21E8] used as receiver of HoloTy::Done; 005C6D40 [this+0x21E8] used as receiver of HoloTy::Init; 005C6D40 [this+0x21E8] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21E8 <= consistent nested dereferences through [this+0x21E8]
-    HoloTy *field_21EC; // [STClassLayoutApplier] reads=23, writes=8; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21EC; typed_cross_class_recovery=19; type_evidence=pointer:/HoloTy <= 005C4930 [this+0x21EC] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C4930 [this+0x21EC] used as receiver of HoloTy::Done; 005C6D40 [this+0x21EC] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C6D40 [this+0x21EC] used as receiver of HoloTy::Done; 005C6D40 [this+0x21EC] used as receiver of HoloTy::Init; 005C6D40 [this+0x21EC] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21EC <= consistent nested dereferences through [this+0x21EC]
-    HoloTy *field_21F0; // [STClassLayoutApplier] reads=23, writes=8; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21F0; typed_cross_class_recovery=19; type_evidence=pointer:/HoloTy <= 005C4930 [this+0x21F0] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C4930 [this+0x21F0] used as receiver of HoloTy::Done; 005C6D40 [this+0x21F0] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C6D40 [this+0x21F0] used as receiver of HoloTy::Done; 005C6D40 [this+0x21F0] used as receiver of HoloTy::Init; 005C6D40 [this+0x21F0] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21F0 <= consistent nested dereferences through [this+0x21F0]
-    HoloTy *field_21F4; // [STClassLayoutApplier] reads=23, writes=8; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21F4; typed_cross_class_recovery=19; type_evidence=pointer:/HoloTy <= 005C4930 [this+0x21F4] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C4930 [this+0x21F4] used as receiver of HoloTy::Done; 005C6D40 [this+0x21F4] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C6D40 [this+0x21F4] used as receiver of HoloTy::Done; 005C6D40 [this+0x21F4] used as receiver of HoloTy::Init; 005C6D40 [this+0x21F4] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21F4 <= consistent nested dereferences through [this+0x21F4]
-    HoloTy *field_21F8; // [STClassLayoutApplier] reads=11, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=11; type_evidence=pointer:/HoloTy <= 005C4930 [this+0x21F8] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C4930 [this+0x21F8] used as receiver of HoloTy::Done
-    undefined CloseButtons();
-    int NoneSettMap();
-    undefined4 sub_005C29B0(undefined1 arg_1);
-    undefined DoneSettMap();
-    undefined CreateCtrls(char param_1);
-    undefined DeleteCtrls();
-    undefined4 vfunc_20();
-    undefined4 vfunc_24();
-    int GetMessage(STMessage *message);
-    void PaintSC();
-    void PaintSettMap(char param_1);
 };
 
 struct SliderClassTy {
@@ -15981,7 +14491,7 @@ struct SpecPanelTy {
     byte _unknown_0064[4];
     ushort *field_0068; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SpecPanelTy_0068|pointer:/int|pointer:/ushort; typed_cross_class_recovery=3; type_evidence=/int <= 0053E3F0 [this+0x68] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SpecPanelTy_0068 <= consistent nested dereferences through [this+0x68] | pointer:/int <= 0053E3F0 [this+0x68] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 0053E489 dynamic 2-byte dereference of field-derived address in SpecPanelTy::InitPanel
     byte _unknown_006C[262];
-    undefined2 field_0172; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=6
+    SpecPanelTy_field_0172State field_0172; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=6 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 field_0174; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_0178; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     undefined4 field_017C; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
@@ -16055,12 +14565,12 @@ struct StartSystemTy {
     byte _unknown_0024[4];
     undefined4 field_0028; // [STClassLayoutApplier] reads=7, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
     ushort *field_002C; // [STClassLayoutApplier] reads=42, writes=9; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=49; type_evidence=pointer:/ushort <= 0059100F generic pointer-return assignment in CampaignTy::InitCampaign; 00595F1D generic pointer-return assignment in FSGSTy::InitFSGS; 005AB579 generic pointer-return assignment in ChooseMapTy::InitChooseMap; 005B2CBC generic pointer-return assignment in MainMenuTy::InitMainMenu; 005B9BE5 generic pointer-return assignment in PrividerTy::InitPrivider; 005C2B9F generic pointer-return assignment in SettMapMTy::sub_005C29B0; 005D7B16 dynamic 2-byte dereference of field-derived address in SIDTy::InitSID; 005D7B8A dynamic 2-byte dereference of field-derived address in SIDTy::InitSID; 005D7BFB dynamic 2-byte dereference of field-derived address in SIDTy::InitSID; 005E6846 generic pointer-return assignment in WaitTy::InitWait
-    ccFntTy *field_0030; // [STClassLayoutApplier] reads=58, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=60
-    ccFntTy *field_0034; // [STClassLayoutApplier] reads=180, writes=6; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0034|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4|pointer:/byte|pointer:/ccFntTy|pointer:/ushort; typed_cross_class_recovery=164; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0034 <= consistent nested dereferences through [this+0x34] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 005DD470 [this+0x34] passed to FUN_00710790 parameter param_1; 005DDC70 [this+0x34] passed to FUN_00710790 parameter param_1; 005DE050 [this+0x34] passed to FUN_00710790 parameter param_1; 005DE270 [this+0x34] passed to FUN_00710790 parameter param_1 | pointer:/byte <= 005AE47F dynamic 1-byte dereference of field-derived address in ChooseMapTy::ShowDescription; 005DC272 dynamic 1-byte dereference of field-derived address in StartSystemTy::LoadMapData; 005DC86D dynamic 1-byte dereference of field-derived address in StartSystemTy::SetObjectives | pointer:/ccFntTy <= 005DC050 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC050 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DD470 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DD470 [this+0x34] used as receiver of ccFntTy::WrStr; 005DD850 [this+0x34] used as receiver of ccFntTy::FormSarr; 005DD850 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DE050 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DE050 [this+0x34] used as receiver of ccFntTy::WrStr | pointer:/ushort <= 005AE474 dynamic 2-byte dereference of field-derived address in ChooseMapTy::ShowDescription; 005DC267 dynamic 2-byte dereference of field-derived address in StartSystemTy::LoadMapData; 005DC862 dynamic 2-byte dereference of field-derived address in StartSystemTy::SetObjectives
+    ccFntTy *field_0030; // [STClassLayoutApplier] reads=57, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=59
+    ccFntTy *field_0034; // [STClassLayoutApplier] reads=179, writes=6; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0034|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4|pointer:/byte|pointer:/ccFntTy|pointer:/ushort; typed_cross_class_recovery=163; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0034 <= consistent nested dereferences through [this+0x34] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 005DD470 [this+0x34] passed to FUN_00710790 parameter param_1; 005DDC70 [this+0x34] passed to FUN_00710790 parameter param_1; 005DE050 [this+0x34] passed to FUN_00710790 parameter param_1; 005DE270 [this+0x34] passed to FUN_00710790 parameter param_1 | pointer:/byte <= 005AE47F dynamic 1-byte dereference of field-derived address in ChooseMapTy::ShowDescription; 005DC272 dynamic 1-byte dereference of field-derived address in StartSystemTy::LoadMapData; 005DC86D dynamic 1-byte dereference of field-derived address in StartSystemTy::SetObjectives | pointer:/ccFntTy <= 005DC050 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC050 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DD470 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DD470 [this+0x34] used as receiver of ccFntTy::WrStr; 005DD850 [this+0x34] used as receiver of ccFntTy::FormSarr; 005DD850 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DE050 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DE050 [this+0x34] used as receiver of ccFntTy::WrStr | pointer:/ushort <= 005AE474 dynamic 2-byte dereference of field-derived address in ChooseMapTy::ShowDescription; 005DC267 dynamic 2-byte dereference of field-derived address in StartSystemTy::LoadMapData; 005DC862 dynamic 2-byte dereference of field-derived address in StartSystemTy::SetObjectives
     HDC__ *field_0038; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=pointer:/WinDef.h/HDC__ <= 005BD95A generic pointer-return assignment in MReportTy::InitMReport; 005C14EE generic pointer-return assignment in MReportTy::SetCtrl
     char field_003C; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005DB4F0 exact address of [this+0x3C] passed to Library::Ourlib::MFIMG::mfImtLoad parameter text; 005DB4F0 exact address of [this+0x3C] passed to USER32.DLL::wsprintfA parameter param_1; 005DC050 exact address of [this+0x3C] passed to Library::DKW::TBL::FUN_006b5aa0 parameter text; 005DC050 exact address of [this+0x3C] passed to USER32.DLL::wsprintfA parameter param_1; 005DC730 exact address of [this+0x3C] passed to Library::DKW::TBL::FUN_006b5aa0 parameter text; 005DC730 exact address of [this+0x3C] passed to USER32.DLL::wsprintfA parameter param_1
     byte _unknown_003D[259];
-    undefined4 field_0140; // [STClassLayoutApplier] reads=60, writes=7; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=67
+    undefined4 field_0140; // [STClassLayoutApplier] reads=37, writes=2; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=39
     undefined1 field_0x144; // exact unnamed-byte view referenced by exported code
     byte _unknown_0145[255];
     uint array_0244[6]; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; bounded_member_array; count=6; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[6], bounded_sites=0, exact_loops=1, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:6:/uint <= 005DB2F1 exact pointer walk count=6, stride=4, cursor_displacement=0 | 005DB55C MOV dword ptr [ESI + EDI*0x4 + 0x244],EAX
@@ -16100,7 +14610,7 @@ struct StartSystemTy {
     undefined4 field_02DB; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     byte _unknown_02DF[5];
     undefined2 field_02E4; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    MMsgTy *field_02E6; // [STClassLayoutApplier] reads=168, writes=4; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=170; type_evidence=pointer:/MMsgTy <= 005B6B9C exact typed pointer assignment in MMsgTy::InitMMsg; 005DC050 [this+0x2E6] used as receiver of MMsgTy::StatePanel
+    MMsgTy *field_02E6; // [STClassLayoutApplier] reads=24, writes=4; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=26; type_evidence=pointer:/MMsgTy <= 005B6B9C exact typed pointer assignment in MMsgTy::InitMMsg; 005DC050 [this+0x2E6] used as receiver of MMsgTy::StatePanel
     undefined1 field_02EA; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
     byte field_02EB; // [STClassLayoutApplier] reads=3, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/byte <= 005AB352 CMP/JBE through typed class pointer in ChooseMapTy::InitChooseMap
     undefined4 field_02EC; // [STClassLayoutApplier] reads=15, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=14; type_evidence=/int <= 005AE617 CMP/JL through typed class pointer in ChooseMapTy::ShowDescription; 005C8934 CMP/JL through typed class pointer in SettMapTy::PaintSC; 005DB337 CMP/JL establishes /int through a field-derived value in StartSystemTy::sub_005DB2A0; 005DB337 CMP/JL through typed class pointer in StartSystemTy::sub_005DB2A0; 005E8341 CMP/JL through typed class pointer in WaitTy::ShowDescription | /uint <= 005DB4F0 exact address of [this+0x2EC] passed to FUN_006b2330 parameter param_2
@@ -16152,7 +14662,7 @@ struct StartSystemTy {
     undefined4 field_0540; // [STClassLayoutApplier] reads=28, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=24; type_evidence=/int <= 005ACD56 CMP/JL through typed class pointer in ChooseMapTy::DoneChooseMap; 005AE633 CMP/JL through typed class pointer in ChooseMapTy::ShowDescription; 005C4A92 CMP/JL through typed class pointer in SettMapTy::DoneSettMap; 005DB3A1 CMP/JL establishes /int through a field-derived value in StartSystemTy::sub_005DB2A0; 005DB3A1 CMP/JL through typed class pointer in StartSystemTy::sub_005DB2A0; 005DE07E CMP/JL establishes /int through a field-derived value in StartSystemTy::PaintBinDesc; 005DE07E CMP/JL through typed class pointer in StartSystemTy::PaintBinDesc; 005E7741 CMP/JL through typed class pointer in WaitTy::DoneWait; 005E835E CMP/JL through typed class pointer in WaitTy::ShowDescription | /uint <= 005DB4F0 exact address of [this+0x540] passed to FUN_006b2330 parameter param_2
     AnonPointee_StartSystemTy_0544 *field_0544; // [STClassLayoutApplier] reads=22, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0544|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/ushort; typed_cross_class_recovery=17; type_evidence=/int <= 005DE050 [this+0x544] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0544 <= consistent nested dereferences through [this+0x544] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005DE050 [this+0x544] passed to FUN_006b4170 parameter param_1 | pointer:/ushort <= 005DB4F0 [this+0x544] passed to FUN_006b2330 parameter param_7
     uint *field_0548; // [STClassLayoutApplier] reads=86, writes=23; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/DArrayTy|pointer:/uint|pointer:/ushort; typed_cross_class_recovery=74; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005AB6EB generic pointer-return assignment in ChooseMapTy::InitChooseMap; 005AE101 generic pointer-return assignment in ChooseMapTy::ShowDescription; 005AE4D8 generic pointer-return assignment in ChooseMapTy::ShowDescription; 005AE50C generic pointer-return assignment in ChooseMapTy::ShowDescription; 005AF667 generic pointer-return assignment in ChooseMapTy::DeleteCtrls; 005C6547 generic pointer-return assignment in SettMapTy::CreateCtrls; 005C71C6 generic pointer-return assignment in SettMapTy::DeleteCtrls; 005DB2A0 [this+0x548] passed to FUN_006b5570 parameter param_1; 005DC050 [this+0x548] passed to FUN_005411a0 parameter param_1; 005DC050 [this+0x548] passed to FUN_006b5570 parameter param_1; 005DC050 [this+0x548] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005DC050 [this+0x548] passed to ccFntTy::FormIndentSarr parameter param_1; 005DC2B8 generic pointer-return assignment in StartSystemTy::LoadMapData; 005DC730 [this+0x548] passed to FUN_005411a0 parameter param_1; 005DC730 [this+0x548] passed to FUN_006b5570 parameter param_1; 005DC730 [this+0x548] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005DC730 [this+0x548] passed to ccFntTy::FormIndentSarr parameter param_1; 005DC805 generic pointer-return assignment in StartSystemTy::SetObjectives; 005DC8B3 generic pointer-return assignment in StartSystemTy::SetObjectives; 005E22C9 generic pointer-return assignment in MTaskTy::PlayScript; 005E237E generic pointer-return assignment in MTaskTy::PlayScript; 005E690E generic pointer-return assignment in WaitTy::InitWait; 005E8098 generic pointer-return assignment in WaitTy::ShowDescription; 005EA02C generic pointer-return assignment in WaitTy::DeleteCtrls | pointer:/uint <= 005AE4B2 generic pointer-return assignment in ChooseMapTy::ShowDescription | pointer:/ushort <= 005AB71B dynamic 2-byte dereference of field-derived address in ChooseMapTy::InitChooseMap; 005AE557 dynamic 2-byte dereference of field-derived address in ChooseMapTy::ShowDescription; 005DC49F dynamic 2-byte dereference of field-derived address in StartSystemTy::LoadMapData; 005DCA3B dynamic 2-byte dereference of field-derived address in StartSystemTy::SetObjectives; 005E693E dynamic 2-byte dereference of field-derived address in WaitTy::InitWait; 005E82D2 dynamic 2-byte dereference of field-derived address in WaitTy::ShowDescription; name_evidence=objectives <= 005DC730 unique set field in StartSystemTy::SetObjectives
-    undefined4 field_054C; // [STClassLayoutApplier] reads=27, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=29
+    undefined4 field_054C; // [STClassLayoutApplier] reads=24, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=26
     undefined4 field_0550; // [STClassLayoutApplier] reads=25, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=25
     undefined4 field_0554; // [STClassLayoutApplier] reads=27, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=25; type_evidence=/int <= 005ACE18 CMP/JL through typed class pointer in ChooseMapTy::DoneChooseMap; 005DB432 CMP/JL establishes /int through a field-derived value in StartSystemTy::sub_005DB2A0; 005DB432 CMP/JL through typed class pointer in StartSystemTy::sub_005DB2A0; 005E77E1 CMP/JL through typed class pointer in WaitTy::DoneWait | /uint <= 005DB4F0 exact address of [this+0x554] passed to FUN_006b2330 parameter param_2
     undefined4 field_0558; // [STClassLayoutApplier] reads=27, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=24; type_evidence=/int <= 005ACDFD CMP/JL through typed class pointer in ChooseMapTy::DoneChooseMap; 005DB400 CMP/JL establishes /int through a field-derived value in StartSystemTy::sub_005DB2A0; 005DB400 CMP/JL through typed class pointer in StartSystemTy::sub_005DB2A0; 005DD632 CMP/JL establishes /int through a field-derived value in StartSystemTy::ChatMessage; 005DD632 CMP/JL through typed class pointer in StartSystemTy::ChatMessage; 005E77C5 CMP/JL through typed class pointer in WaitTy::DoneWait | /uint <= 005DB4F0 exact address of [this+0x558] passed to FUN_006b2330 parameter param_2
@@ -16180,18 +14690,21 @@ struct StartSystemTy {
     byte _unknown_0639[69];
     ushort *field_067E; // [STClassLayoutApplier] reads=16, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_067E|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/int|pointer:/ushort; typed_cross_class_recovery=10; type_evidence=/int <= 005DD470 [this+0x67E] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_067E <= consistent nested dereferences through [this+0x67E] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005DD470 [this+0x67E] passed to FUN_006b4170 parameter param_1 | pointer:/int <= 005DADF0 [this+0x67E] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 005DAE53 dynamic 2-byte dereference of field-derived address in StartSystemTy::InitChat; 005DB4F0 [this+0x67E] passed to FUN_006b2330 parameter param_7
     ushort *field_0682; // [STClassLayoutApplier] reads=16, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0682|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA|pointer:/int|pointer:/ushort; typed_cross_class_recovery=13; type_evidence=/int <= 005DD470 [this+0x682] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0682 <= consistent nested dereferences through [this+0x682] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA <= 005DD470 [this+0x682] passed to FUN_006b5b10 parameter param_1 | pointer:/int <= 005DD470 [this+0x682] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 005DB4F0 [this+0x682] passed to FUN_006b2330 parameter param_7; 005DD545 dynamic 2-byte dereference of field-derived address in StartSystemTy::ChatMessage
-    DArrayTy *field_0686; // [STClassLayoutApplier] reads=20, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=22; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005DB2A0 [this+0x686] passed to FUN_006b5570 parameter param_1; 005DBA87 generic pointer-return assignment in StartSystemTy::LoadGraph
+    DArrayTy *field_0686; // [STClassLayoutApplier] reads=5, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005DB2A0 [this+0x686] passed to FUN_006b5570 parameter param_1; 005DBA87 generic pointer-return assignment in StartSystemTy::LoadGraph
     undefined4 field_068A; // [STClassLayoutApplier] reads=7, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
     undefined4 field_068E; // [STClassLayoutApplier] reads=7, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=12
     undefined4 field_0692; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    DArrayTy *field_0696; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005DAC80 [this+0x696] passed to FUN_006b5570 parameter param_1; 005DAC80 [this+0x696] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005DACD6 generic pointer-return assignment in StartSystemTy::GetIP; 005DAF20 [this+0x696] passed to FUN_006b5570 parameter param_1; name_evidence=ip <= 005DAC80 unique get field in StartSystemTy::GetIP
-    void *field_069A; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=13; type_evidence=pointer:/void <= 005E8F66 generic pointer-return assignment in WaitTy::NoneWait
-    uint field_069E; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/uint <= 005CF4BF DIV implicit dividend in SettMapMTy::NoneSettMap
-    uint field_06A2; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=/uint <= 005CF4BF DIV divisor in SettMapMTy::NoneSettMap
-    uint field_06A6; // [STClassLayoutApplier] reads=12, writes=1; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=13; type_evidence=/uint <= 005CF49D CMP/JC through typed class pointer in SettMapMTy::NoneSettMap; 005D4A6F CMP/JNC through typed class pointer in SettMapMTy::PrepareAFT; 005E90AE DIV divisor in WaitTy::NoneWait; 005E9316 CMP/JBE through typed class pointer in WaitTy::NoneWait; 005E933E CMP/JC through typed class pointer in WaitTy::NoneWait
-    undefined4 field_06AA; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    undefined4 field_06AE; // [STClassLayoutApplier] reads=1, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_06B2; // [STClassLayoutApplier] reads=1, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    DArrayTy *field_0696; // [STClassLayoutApplier] reads=6, writes=6; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005DAC80 [this+0x696] passed to FUN_006b5570 parameter param_1; 005DAC80 [this+0x696] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005DACD6 generic pointer-return assignment in StartSystemTy::GetIP; 005DAF20 [this+0x696] passed to FUN_006b5570 parameter param_1; name_evidence=ip <= 005DAC80 unique get field in StartSystemTy::GetIP
+    void *field_069A; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2
+    uint field_069E; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1
+    undefined1 field_0x6a2; // exact unnamed-byte view referenced by exported code
+    byte _unknown_06A3[3];
+    undefined1 field_0x6a6; // exact unnamed-byte view referenced by exported code
+    byte _unknown_06A7[3];
+    undefined1 field_0x6aa; // exact unnamed-byte view referenced by exported code
+    byte _unknown_06AB[3];
+    undefined4 field_06AE; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_06B2; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined4 InitSystem();
     undefined4 DoneSystem();
     undefined4 vfunc_0C(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
@@ -17001,9 +15514,7 @@ struct AnonPointee_ST3DSMAPContext_0004 {
 struct AnonPointee_ST3DSMAPContext_0280 {
     byte _unknown_0000[2];
     undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0003[9];
-    undefined1 field_0xc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_000D[1024];
+    byte _unknown_0003[1034];
     undefined4 field_040D; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
     undefined4 field_0411; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
     undefined4 field_0415; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
@@ -18034,7 +16545,7 @@ struct VisibleClassTy_field_0110Element {
     short field_0004; // [STDArrayElementApplier] evidence_count=3; observed_types={/short=12}; semantic_roles={}; role_sites=; source_names={}; sites=00557C90 pcVar8+0x4 | 00558840 pcVar4+0x4 | 0055B7F0 pcVar1+0x4
     char field_0006; // [STDArrayElementApplier] evidence_count=3; observed_types={/char=28}; semantic_roles={}; role_sites=; source_names={}; sites=00557C90 pcVar8[6] | 00558840 pcVar4[6] | 0055B7F0 pcVar1[6]
     char field_0007; // [STDArrayElementApplier] evidence_count=3; observed_types={/char=12}; semantic_roles={}; role_sites=; source_names={}; sites=00557C90 pcVar8[7] | 00558840 pcVar4[7] | 0055B7F0 pcVar1[7]
-    undefined4 field_0008; // [STDArrayElementApplier] evidence_count=3; observed_types={/int=7, /uint=3, /undefined4=5, pointer:/int=9}; semantic_roles={}; role_sites=; source_names={}; sites=00557C90 pcVar8+0x8 | 00558840 pcVar4+0x8 | 0055B7F0 pcVar1+0x8
+    uint field_0008; // [STDArrayElementApplier] evidence_count=3; observed_types={/int=5, /uint=22, pointer:/int=9}; semantic_roles={}; role_sites=; source_names={}; sites=00557C90 pcVar7+0x8 | 00558840 pcVar3+0x8 | 0055B7F0 pcVar1+0x8
 };
 
 struct AiPlrClassTy_field_06A1DArray {
@@ -19441,42 +17952,8 @@ struct AnonReceiver_006CEC40 {
 };
 
 struct AnonReceiver_006E1EE0 {
-    byte _unknown_0000[40];
-    undefined1 field_0x28; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0029[3];
-    undefined1 field_0x2c; // exact unnamed-byte view referenced by exported code
-    byte _unknown_002D[3];
-    undefined1 field_0x30; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0031[3];
-    undefined1 field_0x34; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0035[3];
-    undefined1 field_0x38; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0039[3];
-    undefined1 field_0x3c; // exact unnamed-byte view referenced by exported code
-    byte _unknown_003D[107];
-    undefined1 field_0xa8; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00A9[3];
-    undefined1 field_0xac; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00AD[27];
-    undefined1 field_0xc8; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00C9[7];
-    undefined1 field_0xd0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00D1[83];
-    undefined1 field_0x124; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0125[395];
-    undefined1 field_0x2b0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02B1[7];
-    undefined1 field_0x2b8; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02B9[7];
-    undefined1 field_0x2c0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02C1[3];
-    undefined1 field_0x2c4; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02C5[3];
-    undefined1 field_0x2c8; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02C9[3];
-    undefined1 field_0x2cc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_02CD[3];
-    bool FUN_006e1ee0(AnonShape_006E1EE0_698AE49A *param_1, undefined4 *param_2, int param_3, int *param_4);
+    byte _unknown_0000[720];
+    bool FUN_006e1ee0(AnonShape_006E1EE0_698AE49A * param_1, undefined4 * param_2, int param_3, int * param_4);
 };
 
 struct AnonReceiver_006EA050 {
@@ -19617,35 +18094,1305 @@ struct AnonReceiver_00728640 {
     void FUN_00728a80(int param_1, int param_2, int param_3);
 };
 
-struct DDXContext {
-    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0001[3];
+struct CampaignTy_Record_00BB_01FB {
+    undefined1 field_0000; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[187]; functions=[00591BF0, 00592470]
+    undefined4 field_0001; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[1202, 1709, 2216]; functions=[00590B40]
+    byte _unknown_0005[34];
+    undefined1 field_0027; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[226]; functions=[00591BF0]
+    SpriteClassTy field_0028; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_00B9; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_014A; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    undefined1 field_01DB; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6746]; functions=[00591BF0]
+    undefined4 field_01DC; // [STClassLayoutApplier] nested evidence_count=4; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6747]; functions=[00590B40, 005916F0, 00591BF0, 00593040]
+    undefined4 field_01E0; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6751]; functions=[00590B40, 005916F0]
+    byte _unknown_01E4[23];
+};
+
+struct CampaignTy {
+    CampaignTyVTable *vtable; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=5
+    byte _unknown_0004[4];
+    undefined4 field_0008; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_000C; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 00593040 [this+0x10] used as receiver of STAppC::sub_006E51B0; name_evidence=message <= 00593040 unique get field in CampaignTy::GetMessage
+    byte _unknown_0014[4];
+    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_001C[1];
+    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_001E[7];
+    undefined4 field_0025; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_0029; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_0031; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_0035[8];
+    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_003E[7];
+    undefined4 field_0045; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    undefined4 field_0049; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=3
+    undefined4 field_004D; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_0051; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=3
+    undefined4 field_0055; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=2
+    byte _unknown_0059[4];
+    undefined4 field_005D; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    DWORD field_0061; // [STClassLayoutApplier] reads=13, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/WinDef.h/DWORD|/uint; typed_cross_class_recovery=10; type_evidence=/WinDef.h/DWORD <= 00591BF0 [this+0x61] assigned 00591BF0 return from WINMM.DLL::timeGetTime | /uint <= 00592340 [this+0x61] passed to Library::Ourlib::PALETTE::FUN_00718f40 parameter param_8
+    undefined1 field_0065; // [STClassLayoutApplier] reads=4, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    uint field_0066[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[13], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:13:/uint <= 005925B9 exact pointer walk count=13, stride=4, cursor_displacement=0 | 00592639 exact pointer walk count=13, stride=4, cursor_displacement=0
+    undefined1 field_009A; // [STClassLayoutApplier] reads=25, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=17
+    undefined1 field_0x9b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_009C[31];
+    CampaignTy_Record_00BB_01FB field_00BB[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=507; [STClassArrayAnalyzer] fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=6, exact_loops=2, boundaries=[188, 231, 255, 291, 372, 376], access_offsets=16, typed_nested_objects=3; type_evidence=array:13:/SubmarineTitans/Recovered/InlineRecordArrays/CampaignTy_Record_00BB_01FB <= 005911DE record cursor owner+0x123, stride=0x1FB, runtime_bound | 005911EA MOV dword ptr [EDI + 0x4],EAX | 005911F0 MOV dword ptr [EDI],EAX | 00591A58 record cursor owner+0xFF, stride=0x1FB, runtime_bound | 00591A5E MOV EAX,dword ptr [ESI + -0x18] | 00591A66 MOV ECX,dword ptr [ESI + 0x4] | 00591A69 MOV EDX,dword ptr [ESI] | 00591A6C MOV ECX,dword ptr [ESI + -0x14] | 00591A70 MOV EDX,dword ptr [ESI + 0x2c] | 00591A81 MOV EAX,dword ptr [ESI + 0x79] | 00591A89 MOV ECX,dword ptr [ESI + 0x95] | 00591A8F MOV EDX,dword ptr [ESI + 0x91] | 00591A96 MOV ECX,dword ptr [ESI + 0x7d] | 00591A9A MOV EDX,dword ptr [ESI + 0xbd] | 00591C80 record cursor owner+0x178, stride=0x1FB, runtime_bound | 00591C89 MOV EDX,dword ptr [ESI + -0x51] | 00591C8C MOV ECX,dword ptr [ESI + -0x55] | 00591C95 MOV AL,byte ptr [ESI + 0xffffff43] | 00591C9F MOV EAX,dword ptr [ESI] | 00591CA6 MOV ECX,dword ptr [ESI + 0x44] | 00591CB0 MOV AL,byte ptr [ESI + 0xffffff6a] | 00591CBA MOV EAX,dword ptr [ESI + 0x91] | 00591CC5 MOV EDX,dword ptr [ESI + 0xd5] | 00591CD2 MOV byte ptr [ESI + 0xffffff43],0x0 | 00591CD9 MOV EAX,dword ptr [ESI + 0xffffff73] | 00591CE4 MOV dword ptr [ESI + 0xffffff73],EAX | 00591CEA MOV ECX,dword ptr [ESI + 0xffffff6f] | 00591CF5 MOV EDX,dword ptr [ESI + -0x75] | 00591CF9 MOV EDX,dword ptr [ESI + -0x79] | 00591CFE MOV EAX,dword ptr [ESI + -0x4d] | 00591D58 record cursor owner+0xE7, stride=0x1FB, runtime_bound | 00591D5E MOV EAX,dword ptr [ESI] | 00591D66 MOV EAX,dword ptr [ESI + 0x44] | 005938A8 record cursor owner+0x174, stride=0x1FB, exact_count=13 | 005938B9 typed nested receiver=/SpriteClassTy at owner+0xE3 | 005938C0 typed nested receiver=/SpriteClassTy at owner+0x174 | 005938CB typed nested receiver=/SpriteClassTy at owner+0x205 | 005938F6 record cursor owner+0xBC, stride=0x1FB, exact_count=13
+    byte _unknown_1A7A[45];
+    undefined4 field_1AA7; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1AAB[104];
+    undefined4 field_1B13; // [STClassLayoutApplier] reads=3, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
+    byte _unknown_1B17[56];
+    undefined1 field_0x1b4f; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1B50[23];
+    void *field_1B67; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/void <= 00590D02 generic pointer-return assignment in CampaignTy::InitCampaign
+    byte _unknown_1B6B[92];
+    undefined4 field_1BC7; // [STClassLayoutApplier] reads=1, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1BCB; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    undefined4 field_1BCF; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    undefined4 field_1BD3; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    uint field_1BD7[4]; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; bounded_member_array; count=4; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[4], bounded_sites=0, exact_loops=3, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:4:/uint <= 00590C6D MOV dword ptr [ESI + EDI*0x4 + 0x1bd7],EAX | 00591814 exact pointer walk count=4, stride=4, cursor_displacement=0 | 00591A30 exact pointer walk count=4, stride=4, cursor_displacement=0 | 0059273C exact pointer walk count=4, stride=4, cursor_displacement=0
+    undefined1 field_1BE7; // [STClassLayoutApplier] reads=2, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    CampaignTy_field_1BE8State field_1BE8; // [STClassLayoutApplier] reads=8, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
+    undefined4 field_1BEC; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    uint field_1BF0; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/uint <= 00592340 exact address of [this+0x1BF0] passed to Library::Ourlib::PALETTE::FUN_00718f40 parameter param_9
+    int field_1BF4; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/int <= 00592340 exact address of [this+0x1BF4] passed to Library::Ourlib::PALETTE::FUN_00718f40 parameter param_6
+    undefined1 field_0x1bf8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1BF9[1023];
+    undefined4 field_1FF8; // [STClassLayoutApplier] reads=0, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1FFC; // [STClassLayoutApplier] reads=5, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    int GetMessage(STMessage *message);
+    undefined CloseButtons();
+    void AnimationCampaign();
+    void DoneCampaign();
+    void InitCampaign(undefined4 param_1);
+    void LightPalette();
+    void NoneCampaign();
+    void PaintCampaign();
+    void sub_005925A0();
+    void sub_00592620();
+};
+
+struct ChooseMapTy_Record_00BC_01FB {
+    byte _unknown_0000[2];
+    undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0003[1];
     undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0005[3];
-    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0009[2];
+    byte _unknown_0005[34];
+    SpriteClassTy field_0027; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_00B8; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_0149; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    undefined1 field_01DA; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6746]; functions=[005AD390]
+    undefined4 field_01DB; // [STClassLayoutApplier] nested evidence_count=10; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6747]; functions=[005AB300, 005ACB30, 005AD050, 005AD390, 005AE050, 005AEAB0, 005AF350, 005AFD00, 005B0BA0, 005B5BE0]
+    undefined1 field_01DF; // [STClassLayoutApplier] nested evidence_count=8; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6751]; functions=[005AB300, 005ACB30, 005AD050, 005AD390, 005AE050, 005AEAB0, 005AFD00, 005B0BA0]
+    undefined4 field_01E0; // [STClassLayoutApplier] nested evidence_count=4; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6752]; functions=[005AE840, 005AE950, 005B0BA0, 005B2790]
+    undefined4 field_01E4; // [STClassLayoutApplier] nested evidence_count=4; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6756]; functions=[005AD390, 005AFD00, 005B0BA0, 005B2790]
+    ulong field_01E8; // [STClassLayoutApplier] nested evidence_count=1; existing exact record-array element
+    undefined4 field_01EC; // [STClassLayoutApplier] nested evidence_count=7; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6764]; functions=[005AD390, 005AE840, 005AE950, 005AF350, 005AFD00, 005B0BA0, 005B2790]
+    undefined4 field_01F0; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6768]; functions=[005AB300]
+    undefined4 field_01F4; // [STClassLayoutApplier] nested evidence_count=4; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6772]; functions=[005AB300, 005AD390, 005AEAB0, 005AF350]
+    byte _unknown_01F8[3];
+};
+
+struct ChooseMapTy {
+    ChooseMapTyVTable *vtable; // [STClassLayoutApplier] reads=23, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=15
+    byte _unknown_0004[4];
+    undefined4 field_0008; // [STClassLayoutApplier] reads=13, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=32, writes=0; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/StartSystemTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_000C; typed_cross_class_recovery=16; type_evidence=pointer:/StartSystemTy <= 005AF350 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_000C <= consistent nested dereferences through [this+0xC]
+    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005B0BA0 [this+0x10] used as receiver of STAppC::sub_006E51B0
+    byte _unknown_0014[4];
+    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_001C[1];
+    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_001E[7];
+    undefined4 field_0025; // [STClassLayoutApplier] reads=0, writes=16; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    undefined4 field_0029; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=62; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=31
+    undefined2 field_0031; // [STClassLayoutApplier] reads=14, writes=52; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x8|4x58; exact_subword_partition=4->2; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=33; type_evidence=/int <= 005B195A CMP/JGE establishes /int through a field-derived value in ChooseMapTy::GetMessage; 005B195A CMP/JGE through typed class pointer in ChooseMapTy::GetMessage; 005B1993 CMP/JGE establishes /int through a field-derived value in ChooseMapTy::GetMessage; 005B1993 CMP/JGE through typed class pointer in ChooseMapTy::GetMessage; 005B1A16 CMP/JGE establishes /int through a field-derived value in ChooseMapTy::GetMessage; 005B1A16 CMP/JGE through typed class pointer in ChooseMapTy::GetMessage | /uint <= 005B121A CMP/JC establishes /uint through a field-derived value in ChooseMapTy::GetMessage; 005B121A CMP/JC through typed class pointer in ChooseMapTy::GetMessage; 005B144E CMP/JC establishes /uint through a field-derived value in ChooseMapTy::GetMessage; 005B144E CMP/JC through typed class pointer in ChooseMapTy::GetMessage; 005B16A9 CMP/JC establishes /uint through a field-derived value in ChooseMapTy::GetMessage; 005B16A9 CMP/JC through typed class pointer in ChooseMapTy::GetMessage; 005B18FB CMP/JNC establishes /uint through a field-derived value in ChooseMapTy::GetMessage; 005B18FB CMP/JNC through typed class pointer in ChooseMapTy::GetMessage
+    undefined2 field_0033; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_0035[8];
+    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_003E[7];
+    undefined4 field_0045; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_0049; // [STClassLayoutApplier] reads=0, writes=10; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_004D; // [STClassLayoutApplier] reads=6, writes=12; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
+    undefined4 field_0051; // [STClassLayoutApplier] reads=0, writes=10; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_0055; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_0059[4];
+    ushort *field_005D; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=pointer:/ushort <= 005AB8B3 dynamic 2-byte dereference of field-derived address in ChooseMapTy::InitChooseMap; 005AC03E dynamic 2-byte dereference of field-derived address in ChooseMapTy::InitChooseMap
+    DWORD field_0061; // [STClassLayoutApplier] reads=6, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/WinDef.h/DWORD <= 005AD390 [this+0x61] assigned 005AD390 return from WINMM.DLL::timeGetTime
+    undefined1 field_0065; // [STClassLayoutApplier] reads=8, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
+    undefined1 field_0x66; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0067[51];
+    undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_009B[33];
+    ChooseMapTy_Record_00BC_01FB array_00BC[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=507; [STClassArrayAnalyzer] fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3; type_evidence=array:13:/SubmarineTitans/Recovered/InlineRecordArrays/ChooseMapTy_Record_00BC_01FB <= 005B27DC record cursor owner+0x174, stride=0x1FB, exact_count=13 | 005B27EF typed nested receiver=/SpriteClassTy at owner+0xE3 | 005B27F6 typed nested receiver=/SpriteClassTy at owner+0x174 | 005B2801 typed nested receiver=/SpriteClassTy at owner+0x205 | 005B2831 record cursor owner+0xBC, stride=0x1FB, exact_count=13
+    byte _unknown_1A7B[17];
+    undefined4 field_1A8C; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1A90; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1A94; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1A98; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1A9C[28];
+    undefined4 field_1AB8; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_1ABC[69];
+    undefined4 field_1B01; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1B05; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1B09; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1B0D[16];
+    undefined4 field_1B1D; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1B21; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1B25; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1B29; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1B2D[28];
+    undefined4 field_1B49; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_1B4D[69];
+    undefined4 field_1B92; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1B96; // [STClassLayoutApplier] reads=9, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_1B9A; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_1B9E[16];
+    undefined4 field_1BAE; // [STClassLayoutApplier] reads=7, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_1BB2; // [STClassLayoutApplier] reads=5, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_1BB6; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1BBA[32];
+    undefined4 field_1BDA; // [STClassLayoutApplier] reads=9, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    byte _unknown_1BDE[69];
+    uint field_1C23; // [STClassLayoutApplier] reads=5, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/uint <= 005AB300 exact address of [this+0x1C23] passed to FUN_006b2330 parameter param_2
+    byte _unknown_1C27[84];
+    AnonPointee_ChooseMapTy_1C7B *field_1C7B; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C7B|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy; typed_cross_class_recovery=8; type_evidence=/int <= 005B0BA0 [this+0x1C7B] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C7B <= consistent nested dereferences through [this+0x1C7B] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005AFD00 [this+0x1C7B] passed to FUN_006b4170 parameter param_1; 005B0BA0 [this+0x1C7B] passed to FUN_006b4170 parameter param_1
+    ushort *field_1C7F; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD|pointer:/ushort; typed_cross_class_recovery=4; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD <= 005B0BA0 [this+0x1C7F] passed to FUN_0070b3a0 parameter param_1 | pointer:/ushort <= 005AB5EE generic pointer-return assignment in ChooseMapTy::InitChooseMap
+    undefined4 field_1C83; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    uint field_1C87; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/uint <= 005AB300 exact address of [this+0x1C87] passed to FUN_006b2330 parameter param_2
+    AnonPointee_ChooseMapTy_1C8B *field_1C8B; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C8B|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA|pointer:/ushort; typed_cross_class_recovery=7; type_evidence=/int <= 005B0BA0 [this+0x1C8B] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C8B <= consistent nested dereferences through [this+0x1C8B] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA <= 005AB300 [this+0x1C8B] passed to FUN_006b5b10 parameter param_1 | pointer:/ushort <= 005AB300 [this+0x1C8B] passed to FUN_006b2330 parameter param_7
+    HANDLE field_1C8F; // [STClassLayoutApplier] reads=8, writes=11; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/winnt.h/HANDLE|pointer:/void; typed_cross_class_recovery=10; type_evidence=/winnt.h/HANDLE <= 005AB300 [this+0x1C8F] assigned 005AB300 return from KERNEL32.DLL::FindFirstChangeNotificationA; 005ACB30 [this+0x1C8F] passed to KERNEL32.DLL::FindCloseChangeNotification parameter hChangeHandle; 005AD390 [this+0x1C8F] passed to KERNEL32.DLL::FindNextChangeNotification parameter hChangeHandle; 005AD390 [this+0x1C8F] passed to KERNEL32.DLL::WaitForSingleObject parameter hHandle; 005B0BA0 [this+0x1C8F] assigned 005B0BA0 return from KERNEL32.DLL::FindFirstChangeNotificationA; 005B0BA0 [this+0x1C8F] passed to KERNEL32.DLL::FindCloseChangeNotification parameter hChangeHandle | pointer:/void <= 005AB52E generic pointer-return assignment in ChooseMapTy::InitChooseMap; 005B1C13 generic pointer-return assignment in ChooseMapTy::GetMessage; name_evidence=firstChangeNotificationA <= 005AB300 [this+0x1C8F] assigned 005AB300 return from KERNEL32.DLL::FindFirstChangeNotificationA; 005B0BA0 [this+0x1C8F] assigned 005B0BA0 return from KERNEL32.DLL::FindFirstChangeNotificationA | hChangeHandle <= 005ACB30 [this+0x1C8F] passed to KERNEL32.DLL::FindCloseChangeNotification parameter hChangeHandle; 005AD390 [this+0x1C8F] passed to KERNEL32.DLL::FindNextChangeNotification parameter hChangeHandle; 005B0BA0 [this+0x1C8F] passed to KERNEL32.DLL::FindCloseChangeNotification parameter hChangeHandle | hHandle <= 005AD390 [this+0x1C8F] passed to KERNEL32.DLL::WaitForSingleObject parameter hHandle
+    undefined4 field_1C93; // [STClassLayoutApplier] reads=18, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
+    DArrayTy *field_1C97; // [STClassLayoutApplier] reads=42, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C97|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=25; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C97 <= consistent nested dereferences through [this+0x1C97] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005ACB30 [this+0x1C97] passed to FUN_006b5570 parameter param_1; 005AFD00 [this+0x1C97] passed to FUN_006b5570 parameter param_1; 005AFD00 [this+0x1C97] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005AFE17 generic pointer-return assignment in ChooseMapTy::PrepFiles
+    DArrayTy *field_1C9B; // [STClassLayoutApplier] reads=12, writes=7; type_confidence=existing; name_confidence=high; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=10; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005ACB30 [this+0x1C9B] passed to DArrayDestroy parameter array; 005AFD00 [this+0x1C9B] passed to DArrayDestroy parameter array; 005AFD00 [this+0x1C9B] passed to Library::DKW::TBL::DArrayAppend parameter array; 005AFE27 generic pointer-return assignment in ChooseMapTy::PrepFiles; name_evidence=array <= 005ACB30 [this+0x1C9B] passed to DArrayDestroy parameter array; 005AFD00 [this+0x1C9B] passed to DArrayDestroy parameter array; 005AFD00 [this+0x1C9B] passed to Library::DKW::TBL::DArrayAppend parameter array
+    DArrayTy *field_1C9F; // [STClassLayoutApplier] reads=42, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C9F|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=25; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_1C9F <= consistent nested dereferences through [this+0x1C9F] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005ACB30 [this+0x1C9F] passed to FUN_006b5570 parameter param_1; 005AFD00 [this+0x1C9F] passed to FUN_006b5570 parameter param_1; 005AFD00 [this+0x1C9F] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005AFE38 generic pointer-return assignment in ChooseMapTy::PrepFiles
+    undefined1 field_1CA3; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
+    undefined1 field_1CA4; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
+    byte _unknown_1CA5[258];
+    char field_1DA7; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005AB300 exact address of [this+0x1DA7] passed to KERNEL32.DLL::FindFirstChangeNotificationA parameter lpPathName; 005B0BA0 exact address of [this+0x1DA7] passed to KERNEL32.DLL::FindFirstChangeNotificationA parameter lpPathName; 005B0BA0 exact address of [this+0x1DA7] passed to Library::MSVCRT::__makepath parameter _Path
+    undefined1 field_1DA8; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
+    byte _unknown_1DA9[18];
+    undefined2 field_1DBB; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x2|4x1; exact_subword_partition=4->2
+    undefined2 field_1DBD; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
+    byte _unknown_1DBF[496];
+    char field_1FAF; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/byte <= 005AE050 exact address of [this+0x1FAF] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2; 005AFD00 exact address of [this+0x1FAF] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2 | /char <= 005AFD00 exact address of [this+0x1FAF] passed to KERNEL32.DLL::FindFirstFileA parameter lpFileName
+    byte _unknown_1FB0[259];
+    undefined1 field_20B3; // [STClassLayoutApplier] reads=4, writes=18; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x20|4x2; exact_subword_partition=4->1; typed_cross_class_recovery=12
+    undefined1 field_20B4; // [STClassLayoutApplier] reads=14, writes=18; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=17
+    undefined1 field_20B5; // [STClassLayoutApplier] reads=6, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=14
+    undefined1 field_20B6; // [STClassLayoutApplier] reads=2, writes=16; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
+    undefined1 field_20B7; // [STClassLayoutApplier] reads=14, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=18
+    HoloTy *field_20B8; // [STClassLayoutApplier] reads=33, writes=10; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_20B8; typed_cross_class_recovery=24; type_evidence=pointer:/HoloTy <= 005AB300 [this+0x20B8] used as receiver of HoloTy::Init; 005ACB30 [this+0x20B8] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005ACB30 [this+0x20B8] used as receiver of HoloTy::Done; 005AD390 [this+0x20B8] used as receiver of HoloTy::NextFas; 005AF350 [this+0x20B8] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005AF350 [this+0x20B8] used as receiver of HoloTy::Done; 005AF350 [this+0x20B8] used as receiver of HoloTy::Init; 005AF350 [this+0x20B8] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_20B8 <= consistent nested dereferences through [this+0x20B8]
+    HoloTy *field_20BC; // [STClassLayoutApplier] reads=33, writes=10; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_20BC; typed_cross_class_recovery=24; type_evidence=pointer:/HoloTy <= 005AB300 [this+0x20BC] used as receiver of HoloTy::Init; 005ACB30 [this+0x20BC] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005ACB30 [this+0x20BC] used as receiver of HoloTy::Done; 005AD390 [this+0x20BC] used as receiver of HoloTy::NextFas; 005AF350 [this+0x20BC] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005AF350 [this+0x20BC] used as receiver of HoloTy::Done; 005AF350 [this+0x20BC] used as receiver of HoloTy::Init; 005AF350 [this+0x20BC] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_20BC <= consistent nested dereferences through [this+0x20BC]
+    HoloTy *field_20C0; // [STClassLayoutApplier] reads=33, writes=10; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_20C0; typed_cross_class_recovery=24; type_evidence=pointer:/HoloTy <= 005AB300 [this+0x20C0] used as receiver of HoloTy::Init; 005ACB30 [this+0x20C0] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005ACB30 [this+0x20C0] used as receiver of HoloTy::Done; 005AD390 [this+0x20C0] used as receiver of HoloTy::NextFas; 005AF350 [this+0x20C0] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005AF350 [this+0x20C0] used as receiver of HoloTy::Done; 005AF350 [this+0x20C0] used as receiver of HoloTy::Init; 005AF350 [this+0x20C0] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_20C0 <= consistent nested dereferences through [this+0x20C0]
+    int GetMessage(STMessage *message);
+    undefined CloseButtons();
+    void CreateCtrls(char param_1);
+    void DeleteCtrls();
+    void DoneChooseMap();
+    void InitChooseMap(undefined1 param_1, ChooseMapTy_InitChooseMap_param_2Enum param_2);
+    void NoneChooseMap();
+    void PaintChooseMap(char param_1);
+    void PrepFiles(uint param_1);
+    void ShowDescription(uint param_1);
+    void sub_005AE840();
+    void sub_005AE950();
+    void sub_005B5BE0(RecoveredSourceFamily_dibcopy *param_1, int *param_2);
+};
+
+struct FSGSTy_Record_00BC_01FB {
+    byte _unknown_0000[2];
+    undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0003[1];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[34];
+    SpriteClassTy field_0027; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_00B8; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_0149; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    undefined1 field_01DA; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6746]; functions=[00597120]
+    StartSystemTy *field_01DB; // [STClassLayoutApplier] nested evidence_count=10; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6747]; functions=[00595E40, 005967F0, 00596CC0, 00597120, 00597E70, 005A0FF0, 005A1160, 005A1630, 005A32F0, 005A4350]; pointer:/FSGSTy <= 00596EDD typed receiver of FSGSTy::OutTRGlProc | pointer:/StartSystemTy <= 00595E40 [this+0x1A5B] used as receiver of StartSystemTy::GetIP; 00595E40 [this+0x1A5B] used as receiver of StartSystemTy::sub_005DAF20; 00595E82 typed receiver of StartSystemTy::sub_005DAF20; 00595E99 typed receiver of StartSystemTy::GetIP; 005A4350 [this+0x1A5B] used as receiver of StartSystemTy::InitChat; 005A447F typed receiver of StartSystemTy::InitChat | pointer:/ushort <= 00597E70 [this+0x1A5B] passed to FUN_006b2330 parameter param_7
+    undefined1 field_01DF; // [STClassLayoutApplier] nested evidence_count=24; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6751]; functions=[00595E40, 00596CC0, 00597120, 00597E70, 0059B740, 0059B820, 0059BE50, 0059C520, 0059F670, 005A0DC0, 005A1430, 005A1630, 005A1F00, 005A2380, 005A26C0, 005A2A60, 005A2C10, 005A2D70, 005A2FF0, 005A3540, 005A3AB0, 005A40F0, 005A4350, 005AA2C0]
+    undefined1 field_01E0; // [STClassLayoutApplier] nested evidence_count=10; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6752]; functions=[00597120, 0059B820, 005A2380, 005A26C0, 005A2A60, 005A2C10, 005A2D70, 005A2FF0, 005A4350, 005AA2C0]
+    undefined1 field_01E1; // [STClassLayoutApplier] nested evidence_count=5; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6753]; functions=[00597120, 005A0FF0, 005A32F0, 005A4350, 005AA2C0]
+    undefined1 field_01E2; // [STClassLayoutApplier] nested evidence_count=4; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6754]; functions=[00595E40, 00597120, 0059C520, 005AA2C0]
+    ulong field_01E3; // [STClassLayoutApplier] nested evidence_count=1; existing exact record-array element
+    void *field_01E7; // [STClassLayoutApplier] nested evidence_count=1; existing exact record-array element
+    undefined4 field_01EB; // [STClassLayoutApplier] nested evidence_count=10; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6763]; functions=[0059B820, 0059BE50, 005A2380, 005A26C0, 005A2D70, 005A2FF0, 005A3540, 005A40F0, 005A4350, 005AA2C0]
+    undefined4 field_01EF; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6767]; functions=[00595E40, 005AA2C0]
+    ccFntTy *field_01F3; // [STClassLayoutApplier] nested evidence_count=23; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6771]; functions=[00595E40, 00597E70, 00599BE0, 00599E90, 0059A320, 0059A640, 0059A910, 0059B2C0, 0059C700, 0059C9F0, 0059CEE0, 0059D240, 0059D720, 0059E7F0, 0059EB00, 0059F260, 005A0DC0, 005A1160, 005A1430, 005A1630, 005A3AB0, 005A4350, 005AA2C0]; pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 0059D240 [this+0x1A73] passed to FUN_00710790 parameter param_1; 005A4350 [this+0x1A73] passed to FUN_00710790 parameter param_1 | pointer:/ccFntTy <= 00597E70 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 00597E70 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 0059801D typed receiver of ccFntTy::SetSurf; 00598044 typed receiver of ccFntTy::WrTxt; 00599BE0 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 00599BE0 [this+0x1A73] used as receiver of ccFntTy::WrStr; 00599C72 typed receiver of ccFntTy::SetSurf; 00599C95 typed receiver of ccFntTy::WrStr; 00599CD1 typed receiver of ccFntTy::SetSurf; 00599CF4 typed receiver of ccFntTy::WrStr; 00599D39 typed receiver of ccFntTy::SetSurf; 00599D5C typed receiver of ccFntTy::WrStr; 00599E90 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 00599E90 [this+0x1A73] used as receiver of ccFntTy::WrStr; 00599F22 typed receiver of ccFntTy::SetSurf; 00599F45 typed receiver of ccFntTy::WrStr; 00599F81 typed receiver of ccFntTy::SetSurf; 00599FA4 typed receiver of ccFntTy::WrStr; 00599FE3 typed receiver of ccFntTy::SetSurf; 0059A006 typed receiver of ccFntTy::WrStr; 0059A042 typed receiver of ccFntTy::SetSurf; 0059A065 typed receiver of ccFntTy::WrStr; 0059A0A1 typed receiver of ccFntTy::SetSurf; 0059A0C4 typed receiver of ccFntTy::WrStr; 0059A103 typed receiver of ccFntTy::SetSurf; 0059A126 typed receiver of ccFntTy::WrStr; 0059A168 typed receiver of ccFntTy::SetSurf; 0059A18B typed receiver of ccFntTy::WrStr; 0059A320 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 0059A320 [this+0x1A73] used as receiver of ccFntTy::WrStr; 0059A3B2 typed receiver of ccFntTy::SetSurf; 0059A3D5 typed receiver of ccFntTy::WrStr; 0059A411 typed receiver of ccFntTy::SetSurf; 0059A434 typed receiver of ccFntTy::WrStr; 0059A473 typed receiver of ccFntTy::SetSurf; 0059A496 typed receiver of ccFntTy::WrStr; 0059A4D8 typed receiver of ccFntTy::SetSurf; 0059A4FB typed receiver of ccFntTy::WrStr; 0059A640 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 0059A640 [this+0x1A73] used as receiver of ccFntTy::WrStr; 0059A6D2 typed receiver of ccFntTy::SetSurf; 0059A6F5 typed receiver of ccFntTy::WrStr; 0059A731 typed receiver of ccFntTy::SetSurf; 0059A754 typed receiver of ccFntTy::WrStr; 0059A796 typed receiver of ccFntTy::SetSurf; 0059A7B9 typed receiver of ccFntTy::WrStr; 0059A910 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 0059A910 [this+0x1A73] used as receiver of ccFntTy::WrStr; 0059A9A2 typed receiver of ccFntTy::SetSurf; 0059A9C5 typed receiver of ccFntTy::WrStr; 0059AA01 typed receiver of ccFntTy::SetSurf; 0059AA19 typed receiver of ccFntTy::WrStr; 0059AA35 typed receiver of ccFntTy::SetSurf; 0059AA57 typed receiver of ccFntTy::WrStr; 0059AA90 typed receiver of ccFntTy::SetSurf; 0059AAB2 typed receiver of ccFntTy::WrStr; 0059AAEE typed receiver of ccFntTy::SetSurf; 0059AB10 typed receiver of ccFntTy::WrStr; 0059AB4C typed receiver of ccFntTy::SetSurf; 0059AB6E typed receiver of ccFntTy::WrStr; 0059ABAD typed receiver of ccFntTy::SetSurf; 0059ABCF typed receiver of ccFntTy::WrStr; 0059ABEE typed receiver of ccFntTy::SetSurf; 0059AC11 typed receiver of ccFntTy::WrStr; 0059AC4D typed receiver of ccFntTy::SetSurf; 0059AC70 typed receiver of ccFntTy::WrStr; 0059ACAF typed receiver of ccFntTy::SetSurf; 0059ACD2 typed receiver of ccFntTy::WrStr; 0059AD14 typed receiver of ccFntTy::SetSurf; 0059AD37 typed receiver of ccFntTy::WrStr; 0059AD76 typed receiver of ccFntTy::SetSurf; 0059AD99 typed receiver of ccFntTy::WrStr; 0059ADD5 typed receiver of ccFntTy::SetSurf; 0059ADF8 typed receiver of ccFntTy::WrStr; 0059AE3A typed receiver of ccFntTy::SetSurf; 0059AE5D typed receiver of ccFntTy::WrStr; 0059AEA2 typed receiver of ccFntTy::SetSurf; 0059AEC5 typed receiver of ccFntTy::WrStr; 0059AEE4 typed receiver of ccFntTy::SetSurf; 0059AF07 typed receiver of ccFntTy::WrStr; 0059AF43 typed receiver of ccFntTy::SetSurf; 0059AF66 typed receiver of ccFntTy::WrStr; 0059AFA5 typed receiver of ccFntTy::SetSurf; 0059AFC8 typed receiver of ccFntTy::WrStr; 0059B00A typed receiver of ccFntTy::SetSurf; 0059B02D typed receiver of ccFntTy::WrStr; 0059B2C0 [this+0x1A73] passed to StartServTy::WrTextDDX parameter param_9; 005A0DC0 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A0DC0 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A0E7F typed receiver of ccFntTy::SetSurf; 005A0F0A typed receiver of ccFntTy::WrTxt; 005A1160 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A1160 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A1260 typed receiver of ccFntTy::SetSurf; 005A128B typed receiver of ccFntTy::WrTxt; 005A1430 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A1430 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A14EF typed receiver of ccFntTy::SetSurf; 005A1548 typed receiver of ccFntTy::WrTxt; 005A1630 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A1630 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A177F typed receiver of ccFntTy::SetSurf; 005A17A6 typed receiver of ccFntTy::WrTxt; 005A3AB0 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A3AB0 [this+0x1A73] used as receiver of ccFntTy::WrStr; 005A3AB0 [this+0x1A73] used as receiver of ccFntTy::_TxtToSarr; 005A3CA7 typed receiver of ccFntTy::_TxtToSarr; 005A3E97 typed receiver of ccFntTy::SetSurf; 005A3EAF typed receiver of ccFntTy::WrStr; 005A4350 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A4350 [this+0x1A73] used as receiver of ccFntTy::WrStr; 005A4350 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A473D typed receiver of ccFntTy::SetSurf; 005A4764 typed receiver of ccFntTy::WrTxt; 005A6DC2 typed receiver of ccFntTy::SetSurf; 005A6DE9 typed receiver of ccFntTy::WrTxt; 005A6F21 typed receiver of ccFntTy::SetSurf; 005A6F3C typed receiver of ccFntTy::WrStr; 005A7116 typed receiver of ccFntTy::SetSurf; 005A7131 typed receiver of ccFntTy::WrStr; 005A750D typed receiver of ccFntTy::SetSurf; 005A7549 typed receiver of ccFntTy::WrStr; 005A77EC typed receiver of ccFntTy::SetSurf; 005A783E typed receiver of ccFntTy::WrStr; 005A796F typed receiver of ccFntTy::SetSurf; 005A7986 typed receiver of ccFntTy::WrStr; 005A7AA4 typed receiver of ccFntTy::SetSurf; 005A7ABB typed receiver of ccFntTy::WrStr; 005A7C52 typed receiver of ccFntTy::SetSurf; 005A7C8D typed receiver of ccFntTy::WrStr; 005A7CB9 typed receiver of ccFntTy::SetSurf; 005A7CF6 typed receiver of ccFntTy::WrStr; 005A80FE typed receiver of ccFntTy::SetSurf; 005A8121 typed receiver of ccFntTy::WrStr; 005A813F typed receiver of ccFntTy::SetSurf; 005A8152 typed receiver of ccFntTy::WrStr; 005A816F typed receiver of ccFntTy::SetSurf; 005A8191 typed receiver of ccFntTy::WrStr; 005A81AF typed receiver of ccFntTy::SetSurf; 005A81DF typed receiver of ccFntTy::WrStr; 005A81FE typed receiver of ccFntTy::SetSurf; 005A8221 typed receiver of ccFntTy::WrStr; 005A8247 typed receiver of ccFntTy::SetSurf; 005A8278 typed receiver of ccFntTy::WrStr; 005A8297 typed receiver of ccFntTy::SetSurf; 005A82BA typed receiver of ccFntTy::WrStr; 005A82E0 typed receiver of ccFntTy::SetSurf; 005A8320 typed receiver of ccFntTy::WrStr; 005A8410 typed receiver of ccFntTy::SetSurf; 005A8433 typed receiver of ccFntTy::WrStr; 005A8452 typed receiver of ccFntTy::SetSurf; 005A8474 typed receiver of ccFntTy::WrStr; 005A8493 typed receiver of ccFntTy::SetSurf; 005A84B6 typed receiver of ccFntTy::WrStr; 005A84D5 typed receiver of ccFntTy::SetSurf; 005A84F8 typed receiver of ccFntTy::WrStr; 005A86FF typed receiver of ccFntTy::SetSurf; 005A8740 typed receiver of ccFntTy::WrStr; 005A8799 typed receiver of ccFntTy::SetSurf; 005A8807 typed receiver of ccFntTy::WrStr; 005A8866 typed receiver of ccFntTy::WrStr; 005A89A5 typed receiver of ccFntTy::SetSurf; 005A89CB typed receiver of ccFntTy::WrStr
+    ccFntTy *field_01F7; // [STClassLayoutApplier] nested evidence_count=5; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6775]; functions=[00595E40, 005967F0, 005A1F00, 005A4350, 005AA2C0]; pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 005A4350 [this+0x1A77] passed to FUN_00710790 parameter param_1 | pointer:/ccFntTy <= 005A1F00 [this+0x1A77] used as receiver of ccFntTy::FormSarr; 005A1F00 [this+0x1A77] used as receiver of ccFntTy::SepColorStrInSarr; 005A20E3 typed receiver of ccFntTy::FormSarr; 005A2138 typed receiver of ccFntTy::SepColorStrInSarr; 005A4350 [this+0x1A77] used as receiver of ccFntTy::SetSurf; 005A4350 [this+0x1A77] used as receiver of ccFntTy::WrStr; 005A73F7 typed receiver of ccFntTy::SetSurf; 005A740E typed receiver of ccFntTy::WrStr
+};
+
+struct FSGSTy {
+    FSGSTyVTable *vtable; // [STClassLayoutApplier] reads=44, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; cfg_field_recovery=2; typed_cross_class_recovery=29
+    byte _unknown_0004[4];
+    undefined4 field_0008; // [STClassLayoutApplier] reads=52, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=26
+    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=120, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=60; type_evidence=pointer:/StartSystemTy <= 005967F0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00597120 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005A0590 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005A07F0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005A0A50 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005A0AF0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005A0C80 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0
+    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005A4350 [this+0x10] used as receiver of STAppC::sub_006E51B0
+    byte _unknown_0014[4];
+    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_001C[1];
+    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_001E[11];
+    undefined4 field_0029; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=136; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=72
+    undefined1 field_0x31; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0032[1];
+    undefined1 field_0x33; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0034[1];
+    undefined2 field_0035; // [STClassLayoutApplier] reads=0, writes=31; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x13|4x18; exact_subword_partition=4->2; typed_cross_class_recovery=17
+    undefined2 field_0037; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=3
+    byte _unknown_0039[4];
+    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_003E[7];
+    undefined4 field_0045; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_0049; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_004D; // [STClassLayoutApplier] reads=2, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_0051; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_0055; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_0059[4];
+    ushort *field_005D; // [STClassLayoutApplier] reads=52, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=28; type_evidence=pointer:/ushort <= 00595E40 [this+0x5D] passed to FUN_006bc360 parameter param_1; 00595E40 [this+0x5D] passed to FUN_006c6a60 parameter param_1; 005960F2 dynamic 2-byte dereference of field-derived address in FSGSTy::InitFSGS; 005961DF dynamic 2-byte dereference of field-derived address in FSGSTy::InitFSGS; 00599A6C dynamic 2-byte dereference of field-derived address in FSGSTy::PrepBkgMess; 0059D2D0 dynamic 2-byte dereference of field-derived address in FSGSTy::LicCtrls; 0059EB99 dynamic 2-byte dereference of field-derived address in FSGSTy::JoinGameCtrls; 0059F317 dynamic 2-byte dereference of field-derived address in FSGSTy::LadderCtrls
+    DWORD field_0061; // [STClassLayoutApplier] reads=7, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/WinDef.h/DWORD <= 00597120 [this+0x61] assigned 00597120 return from WINMM.DLL::timeGetTime
+    FSGSTy_field_0065State field_0065; // [STClassLayoutApplier] reads=3, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
+    undefined1 field_0x66; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0067[51];
+    undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_009B[33];
+    FSGSTy_Record_00BC_01FB array_00BC[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=507; [STClassArrayAnalyzer] fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3; type_evidence=array:13:/SubmarineTitans/Recovered/InlineRecordArrays/FSGSTy_Record_00BC_01FB <= 005AA30C record cursor owner+0x174, stride=0x1FB, exact_count=13 | 005AA31F typed nested receiver=/SpriteClassTy at owner+0xE3 | 005AA326 typed nested receiver=/SpriteClassTy at owner+0x174 | 005AA331 typed nested receiver=/SpriteClassTy at owner+0x205 | 005AA361 record cursor owner+0xBC, stride=0x1FB, exact_count=13
+    ccFntTy *field_1A7B; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/ccFntTy <= 005A3AB0 [this+0x1A7B] passed to FSGSTy::sub_005A39A0 parameter param_1
+    StartServTy *field_1A7F; // [STClassLayoutApplier] reads=32, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/StartServTy|pointer:/ccFntTy; typed_cross_class_recovery=19; type_evidence=pointer:/StartServTy <= 0059B2C0 [this+0x1A7F] used as receiver of StartServTy::WrTextDDX | pointer:/ccFntTy <= 0059B2C0 [this+0x1A7F] passed to StartServTy::WrTextDDX parameter param_9; 005A3AB0 [this+0x1A7F] passed to FSGSTy::sub_005A39A0 parameter param_1
+    ushort *field_1A83; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD|pointer:/ushort; typed_cross_class_recovery=3; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD <= 005A4350 [this+0x1A83] passed to FUN_0070b3a0 parameter param_1 | pointer:/ushort <= 00595F46 generic pointer-return assignment in FSGSTy::InitFSGS
+    ushort *field_1A87; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD|pointer:/ushort; typed_cross_class_recovery=5; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD <= 005A4350 [this+0x1A87] passed to FUN_0070b3a0 parameter param_1 | pointer:/ushort <= 00595F64 generic pointer-return assignment in FSGSTy::InitFSGS
+    ushort *field_1A8B; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD|pointer:/ushort; typed_cross_class_recovery=3; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD <= 005A4350 [this+0x1A8B] passed to FUN_0070b3a0 parameter param_1 | pointer:/ushort <= 00595F85 generic pointer-return assignment in FSGSTy::InitFSGS
+    undefined4 field_1A8F; // [STClassLayoutApplier] reads=13, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=10; type_evidence=/int <= 00596A7B CMP/JL establishes /int through a field-derived value in FSGSTy::DoneFSGS; 00596A7B CMP/JL through typed class pointer in FSGSTy::DoneFSGS; 00597271 CMP/JL through typed class pointer in FSGSTy::NoneFSGS; 005974C3 CMP/JL through typed class pointer in FSGSTy::NoneFSGS | /uint <= 00595E40 exact address of [this+0x1A8F] passed to FUN_006b2330 parameter param_2
+    int field_1A93; // [STClassLayoutApplier] reads=11, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=10; type_evidence=/int <= 00597268 CMP/JGE establishes /int through a field-derived value in FSGSTy::NoneFSGS; 00597268 CMP/JGE through typed class pointer in FSGSTy::NoneFSGS; 005974BB CMP/JLE through typed class pointer in FSGSTy::NoneFSGS
+    AnonPointee_FSGSTy_1A97 *field_1A97; // [STClassLayoutApplier] reads=31, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A97|pointer:/byte|pointer:/int|pointer:/ushort; typed_cross_class_recovery=19; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1A97 <= consistent nested dereferences through [this+0x1A97] | pointer:/byte <= 005A1A95 dynamic 1-byte dereference of field-derived address in FSGSTy::SetBanner; 005A1AA1 dynamic 1-byte dereference of field-derived address in FSGSTy::SetBanner; 005A1AB4 dynamic 1-byte dereference of field-derived address in FSGSTy::SetBanner; 005A1C6B dynamic 1-byte dereference of field-derived address in FSGSTy::SetBanner; 005A1C77 dynamic 1-byte dereference of field-derived address in FSGSTy::SetBanner; 005A1C8A dynamic 1-byte dereference of field-derived address in FSGSTy::SetBanner | pointer:/int <= 00597120 [this+0x1A97] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 00595E40 [this+0x1A97] passed to FUN_006b2330 parameter param_7; 005972B4 dynamic 2-byte dereference of field-derived address in FSGSTy::NoneFSGS; 00597510 dynamic 2-byte dereference of field-derived address in FSGSTy::NoneFSGS
+    void *field_1A9B; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/void <= 005A1A0B generic pointer-return assignment in FSGSTy::SetBanner
+    void *field_1A9F; // [STClassLayoutApplier] reads=18, writes=12; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=18; type_evidence=pointer:/void <= 005A1A3C generic pointer-return assignment in FSGSTy::SetBanner
+    int field_1AA3; // [STClassLayoutApplier] reads=1, writes=10; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/int <= 00597A7E CMP/JLE through typed class pointer in FSGSTy::NoneFSGS
+    DWORD field_1AA7; // [STClassLayoutApplier] reads=1, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/WinDef.h/DWORD <= 00597AA3 exact field-to-field MOV propagation; 005A1920 [this+0x1AA7] assigned 005A1920 return from WINMM.DLL::timeGetTime
+    LPCSTR field_1AAB; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=/winnt.h/LPCSTR|pointer:/void; typed_cross_class_recovery=5; type_evidence=/winnt.h/LPCSTR <= 005A4350 [this+0x1AAB] passed to SHELL32.DLL::ShellExecuteA parameter lpFile | pointer:/void <= 005A1D47 generic pointer-return assignment in FSGSTy::SetBanner; name_evidence=lpFile <= 005A4350 [this+0x1AAB] passed to SHELL32.DLL::ShellExecuteA parameter lpFile
+    undefined4 field_1AAF; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1AB3; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    undefined4 field_1AB7; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined1 field_1ABB; // [STClassLayoutApplier] reads=14, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    undefined4 field_1ABC; // [STClassLayoutApplier] reads=78, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=42; type_evidence=/int <= 005969E9 CMP/JL establishes /int through a field-derived value in FSGSTy::DoneFSGS; 005969E9 CMP/JL through typed class pointer in FSGSTy::DoneFSGS; 005A0DEE CMP/JL establishes /int through a field-derived value in FSGSTy::ConnectProc; 005A0DEE CMP/JL through typed class pointer in FSGSTy::ConnectProc; 005A145E CMP/JL establishes /int through a field-derived value in FSGSTy::Download; 005A145E CMP/JL through typed class pointer in FSGSTy::Download; 005A1663 CMP/JL establishes /int through a field-derived value in FSGSTy::Finished; 005A1663 CMP/JL through typed class pointer in FSGSTy::Finished | /uint <= 00595E40 exact address of [this+0x1ABC] passed to FUN_006b2330 parameter param_2; 005999C0 [this+0x1ABC] passed to FUN_006b2410 parameter param_2; 005999C0 [this+0x1ABC] passed to FUN_006b2800 parameter param_2
+    ushort *field_1AC0; // [STClassLayoutApplier] reads=222, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AC0|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/int|pointer:/ushort; typed_cross_class_recovery=114; type_evidence=/int <= 00597E70 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 00599BE0 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 00599E90 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 0059A320 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 0059A640 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 0059A910 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A0DC0 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A1160 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A1430 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A1630 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A39A0 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A3AB0 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1; 005A4350 [this+0x1AC0] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AC0 <= consistent nested dereferences through [this+0x1AC0] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA <= 005A4350 [this+0x1AC0] passed to FUN_006b5b10 parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 00599BE0 [this+0x1AC0] passed to FUN_006b5ee0 parameter param_1; 00599E90 [this+0x1AC0] passed to FUN_006b5ee0 parameter param_1; 0059A320 [this+0x1AC0] passed to FUN_006b5ee0 parameter param_1; 0059A640 [this+0x1AC0] passed to FUN_006b5ee0 parameter param_1; 0059A910 [this+0x1AC0] passed to FUN_006b5ee0 parameter param_1; 005A39A0 [this+0x1AC0] passed to FUN_006b4170 parameter param_1; 005A3AB0 [this+0x1AC0] passed to FUN_006b4170 parameter param_1; 005A4350 [this+0x1AC0] passed to FUN_006b4170 parameter param_1 | pointer:/int <= 00597E70 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 00599BE0 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 00599E90 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 0059A320 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 0059A640 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 0059A910 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 005A0DC0 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 005A1160 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 005A1430 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 005A1630 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1; 005A4350 [this+0x1AC0] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 00597FCD dynamic 2-byte dereference of field-derived address in FSGSTy::SetState; 00599C25 dynamic 2-byte dereference of field-derived address in FSGSTy::PaintLogLogin; 00599ED5 dynamic 2-byte dereference of field-derived address in FSGSTy::PaintLogNew; 0059A365 dynamic 2-byte dereference of field-derived address in FSGSTy::PaintLogPsw; 0059A685 dynamic 2-byte dereference of field-derived address in FSGSTy::PaintGameNew; 0059A955 dynamic 2-byte dereference of field-derived address in FSGSTy::PaintInfo; 005A0E2F dynamic 2-byte dereference of field-derived address in FSGSTy::ConnectProc; 005A1210 dynamic 2-byte dereference of field-derived address in FSGSTy::CheckUpdate; 005A149F dynamic 2-byte dereference of field-derived address in FSGSTy::Download; 005A172F dynamic 2-byte dereference of field-derived address in FSGSTy::Finished; 005A46ED dynamic 2-byte dereference of field-derived address in FSGSTy::GetMessage; 005A6D72 dynamic 2-byte dereference of field-derived address in FSGSTy::GetMessage
+    undefined4 field_1AC4; // [STClassLayoutApplier] reads=42, writes=11; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=28
+    undefined4 field_1AC8; // [STClassLayoutApplier] reads=38, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=24
+    undefined4 field_1ACC; // [STClassLayoutApplier] reads=22, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13
+    undefined4 field_1AD0; // [STClassLayoutApplier] reads=8, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined4 field_1AD4; // [STClassLayoutApplier] reads=14, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
+    undefined4 field_1AD8; // [STClassLayoutApplier] reads=24, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=15
+    undefined4 field_1ADC; // [STClassLayoutApplier] reads=26, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=16
+    undefined4 field_1AE0; // [STClassLayoutApplier] reads=24, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=15
+    LPCSTR field_1AE4; // [STClassLayoutApplier] reads=26, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=16; type_evidence=/winnt.h/LPCSTR <= 005A4350 [this+0x1AE4] passed to SHELL32.DLL::ShellExecuteA parameter lpDirectory; 005A4350 [this+0x1AE4] passed to SHELL32.DLL::ShellExecuteA parameter lpParameters; name_evidence=lpDirectory <= 005A4350 [this+0x1AE4] passed to SHELL32.DLL::ShellExecuteA parameter lpDirectory | lpParameters <= 005A4350 [this+0x1AE4] passed to SHELL32.DLL::ShellExecuteA parameter lpParameters
+    DArrayTy *field_1AE8; // [STClassLayoutApplier] reads=46, writes=23; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AE8|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=35; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AE8 <= consistent nested dereferences through [this+0x1AE8] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059C759 generic pointer-return assignment in FSGSTy::LoginCtrls; 0059CA49 generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059CF39 generic pointer-return assignment in FSGSTy::PswCtrls; 0059E849 generic pointer-return assignment in FSGSTy::NewGameCtrls; 0059EC06 generic pointer-return assignment in FSGSTy::JoinGameCtrls; 0059F260 [this+0x1AE8] passed to FUN_006b5570 parameter param_1; 0059F2CB generic pointer-return assignment in FSGSTy::LadderCtrls; 005A0590 [this+0x1AE8] passed to FUN_006b5570 parameter param_1; 005A07F0 [this+0x1AE8] passed to FUN_006b5570 parameter param_1; 005A0A50 [this+0x1AE8] passed to FUN_006b5570 parameter param_1; 005A0AF0 [this+0x1AE8] passed to FUN_006b5570 parameter param_1; 005A0C80 [this+0x1AE8] passed to FUN_006b5570 parameter param_1; 005A4350 [this+0x1AE8] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
+    DArrayTy *field_1AEC; // [STClassLayoutApplier] reads=30, writes=19; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AEC|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=25; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AEC <= consistent nested dereferences through [this+0x1AEC] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059C76F generic pointer-return assignment in FSGSTy::LoginCtrls; 0059CA65 generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059CF55 generic pointer-return assignment in FSGSTy::PswCtrls; 0059E865 generic pointer-return assignment in FSGSTy::NewGameCtrls; 0059EC21 generic pointer-return assignment in FSGSTy::JoinGameCtrls; 005A0590 [this+0x1AEC] passed to FUN_006b5570 parameter param_1; 005A07F0 [this+0x1AEC] passed to FUN_006b5570 parameter param_1; 005A0A50 [this+0x1AEC] passed to FUN_006b5570 parameter param_1; 005A0AF0 [this+0x1AEC] passed to FUN_006b5570 parameter param_1
+    DArrayTy *field_1AF0; // [STClassLayoutApplier] reads=8, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059CA81 generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059CF71 generic pointer-return assignment in FSGSTy::PswCtrls; 005A0590 [this+0x1AF0] passed to FUN_006b5570 parameter param_1
+    DArrayTy *field_1AF4; // [STClassLayoutApplier] reads=8, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AF4|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=7; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AF4 <= consistent nested dereferences through [this+0x1AF4] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059CF8D generic pointer-return assignment in FSGSTy::PswCtrls; 005A0590 [this+0x1AF4] passed to FUN_006b5570 parameter param_1
+    DArrayTy *field_1AF8; // [STClassLayoutApplier] reads=14, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AF8|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=11; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AF8 <= consistent nested dereferences through [this+0x1AF8] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059CA9D generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059D7BF generic pointer-return assignment in FSGSTy::InfoCtrls; 005A0590 [this+0x1AF8] passed to FUN_006b5570 parameter param_1; 005A3AB0 [this+0x1AF8] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
+    DArrayTy *field_1AFC; // [STClassLayoutApplier] reads=14, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AFC|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=11; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AFC <= consistent nested dereferences through [this+0x1AFC] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059CAB9 generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059D7DB generic pointer-return assignment in FSGSTy::InfoCtrls; 005A0590 [this+0x1AFC] passed to FUN_006b5570 parameter param_1; 005A3AB0 [this+0x1AFC] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
+    DArrayTy *field_1B00; // [STClassLayoutApplier] reads=14, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1B00|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=11; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1B00 <= consistent nested dereferences through [this+0x1B00] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059CAD5 generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059D7F7 generic pointer-return assignment in FSGSTy::InfoCtrls; 005A0590 [this+0x1B00] passed to FUN_006b5570 parameter param_1; 005A3AB0 [this+0x1B00] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
+    uint *field_1B04; // [STClassLayoutApplier] reads=16, writes=13; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/DArrayTy|pointer:/uint; typed_cross_class_recovery=15; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059CAF1 generic pointer-return assignment in FSGSTy::NewIDCtrls; 0059D813 generic pointer-return assignment in FSGSTy::InfoCtrls; 005A0590 [this+0x1B04] passed to FUN_006b5570 parameter param_1; 005A0AF0 [this+0x1B04] passed to FUN_006b5570 parameter param_1; 005A3AB0 [this+0x1B04] passed to FUN_006b5570 parameter param_1; 005A3CC6 generic pointer-return assignment in FSGSTy::SetInfo | pointer:/uint <= 005A3AB0 [this+0x1B04] assigned 005A3AB0 return from ccFntTy::_TxtToSarr; 005A3CAE generic pointer-return assignment in FSGSTy::SetInfo
+    DArrayTy *field_1B08; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 00595E40 [this+0x1B08] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 0059645F generic pointer-return assignment in FSGSTy::InitFSGS; 005967F0 [this+0x1B08] passed to FUN_006b5570 parameter param_1
+    byte *field_1B0C; // [STClassLayoutApplier] reads=17, writes=5; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1B0C|pointer:/byte|pointer:/char; typed_cross_class_recovery=12; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1B0C <= consistent nested dereferences through [this+0x1B0C] | pointer:/byte <= 0059BB3F dynamic 1-byte dereference of field-derived address in FSGSTy::sub_0059B820; 0059BB4D dynamic 1-byte dereference of field-derived address in FSGSTy::sub_0059B820; 0059D753 dynamic 1-byte dereference of field-derived address in FSGSTy::InfoCtrls; 0059D761 dynamic 1-byte dereference of field-derived address in FSGSTy::InfoCtrls; 005A3B36 dynamic 1-byte dereference of field-derived address in FSGSTy::SetInfo; 005A3B44 dynamic 1-byte dereference of field-derived address in FSGSTy::SetInfo; 005A63BF dynamic 1-byte dereference of field-derived address in FSGSTy::GetMessage; 005A63CD dynamic 1-byte dereference of field-derived address in FSGSTy::GetMessage | pointer:/char <= 0059A910 [this+0x1B0C] passed to ccFntTy::WrStr parameter resourceString; name_evidence=resourceString <= 0059A910 [this+0x1B0C] passed to ccFntTy::WrStr parameter resourceString
+    undefined4 field_1B10; // [STClassLayoutApplier] reads=14, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
+    undefined4 field_1B14; // [STClassLayoutApplier] reads=20, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13
+    undefined4 field_1B18; // [STClassLayoutApplier] reads=14, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
+    undefined4 field_1B1C; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_1B20; // [STClassLayoutApplier] reads=49, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=29
+    undefined4 field_1B24; // [STClassLayoutApplier] reads=21, writes=11; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=17
+    undefined4 field_1B28; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1B2C; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    undefined4 field_1B30; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1B34[16];
+    undefined4 field_1B44; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined4 field_1B48; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined4 field_1B4C; // [STClassLayoutApplier] reads=12, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    undefined4 field_1B50; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1B54[28];
+    undefined4 field_1B70; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    byte _unknown_1B74[69];
+    undefined4 field_1BB9; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1BBD; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    undefined4 field_1BC1; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1BC5[16];
+    undefined4 field_1BD5; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined4 field_1BD9; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined4 field_1BDD; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1BE1; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1BE5[28];
+    undefined4 field_1C01; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    byte _unknown_1C05[69];
+    undefined4 field_1C4A; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1C4E; // [STClassLayoutApplier] reads=22, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
+    undefined4 field_1C52; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_1C56[16];
+    undefined4 field_1C66; // [STClassLayoutApplier] reads=6, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    undefined4 field_1C6A; // [STClassLayoutApplier] reads=10, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
+    undefined4 field_1C6E; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1C72[32];
+    undefined4 field_1C92; // [STClassLayoutApplier] reads=22, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
+    byte _unknown_1C96[69];
+    undefined4 field_1CDB; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1CDF; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    undefined4 field_1CE3; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1CE7[16];
+    undefined4 field_1CF7; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_1CFB; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined4 field_1CFF; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1D03; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1D07[28];
+    undefined4 field_1D23; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    byte _unknown_1D27[69];
+    undefined4 field_1D6C; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1D70; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    undefined4 field_1D74; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1D78[16];
+    undefined4 field_1D88; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined4 field_1D8C; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined4 field_1D90; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1D94; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1D98[28];
+    undefined4 field_1DB4; // [STClassLayoutApplier] reads=20, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    byte _unknown_1DB8[69];
+    undefined4 field_1DFD; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1E01; // [STClassLayoutApplier] reads=22, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
+    undefined4 field_1E05; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_1E09[16];
+    undefined4 field_1E19; // [STClassLayoutApplier] reads=6, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    undefined4 field_1E1D; // [STClassLayoutApplier] reads=8, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    undefined4 field_1E21; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1E25[32];
+    undefined4 field_1E45; // [STClassLayoutApplier] reads=22, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
+    byte _unknown_1E49[19];
+    undefined1 field_0x1e5c; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1E5D[49];
+    undefined4 field_1E8E; // [STClassLayoutApplier] reads=132, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/ushort; typed_cross_class_recovery=74; type_evidence=/int <= 005A4350 [this+0x1E8E] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA <= 005A4350 [this+0x1E8E] passed to FUN_006b5b10 parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005A4350 [this+0x1E8E] passed to FUN_006b4170 parameter param_1 | pointer:/ushort <= 005A4350 [this+0x1E8E] passed to FUN_006b5440 parameter param_1
+    tagBITMAPINFO *field_1E92; // [STClassLayoutApplier] reads=46, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=27; type_evidence=pointer:/wingdi.h/tagBITMAPINFO <= 0059D30C generic pointer-return assignment in FSGSTy::LicCtrls; 0059EBD9 generic pointer-return assignment in FSGSTy::JoinGameCtrls; 0059F367 generic pointer-return assignment in FSGSTy::LadderCtrls
+    void *field_1E96; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2
+    tagBITMAPINFO *field_1E9A; // [STClassLayoutApplier] reads=28, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=16; type_evidence=pointer:/wingdi.h/tagBITMAPINFO <= 0059EBF5 generic pointer-return assignment in FSGSTy::JoinGameCtrls
+    uint *field_1E9E; // [STClassLayoutApplier] reads=18, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/DArrayTy|pointer:/ushort; typed_cross_class_recovery=13; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005964BD generic pointer-return assignment in FSGSTy::InitFSGS; 005967F0 [this+0x1E9E] passed to FUN_006b5570 parameter param_1; 005A1F00 [this+0x1E9E] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005A4350 [this+0x1E9E] passed to FUN_006b5570 parameter param_1; 005A49FE generic pointer-return assignment in FSGSTy::GetMessage | pointer:/ushort <= 005A21D1 dynamic 2-byte dereference of field-derived address in FSGSTy::AddMessage
+    DArrayTy *field_1EA2; // [STClassLayoutApplier] reads=20, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1EA2|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=12; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1EA2 <= consistent nested dereferences through [this+0x1EA2] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005A07F0 [this+0x1EA2] passed to FUN_006b5570 parameter param_1; 005A4350 [this+0x1EA2] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
+    DArrayTy *field_1EA6; // [STClassLayoutApplier] reads=52, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=29; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005A07F0 [this+0x1EA6] passed to DArrayDestroy parameter array; 005A2380 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array; 005A26C0 [this+0x1EA6] passed to DArrayRemoveAt parameter array; 005A2D70 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005A07F0 [this+0x1EA6] passed to DArrayDestroy parameter array; 005A2380 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array; 005A26C0 [this+0x1EA6] passed to DArrayRemoveAt parameter array; 005A2D70 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array
+    DArrayTy *field_1EAA; // [STClassLayoutApplier] reads=20, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005A07F0 [this+0x1EAA] passed to DArrayDestroy parameter array; 005A2FF0 [this+0x1EAA] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005A07F0 [this+0x1EAA] passed to DArrayDestroy parameter array; 005A2FF0 [this+0x1EAA] passed to Library::DKW::TBL::DArrayAppend parameter array
+    undefined4 field_1EAE; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=4
+    DWORD field_1EB2; // [STClassLayoutApplier] reads=1, writes=2; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/WinDef.h/DWORD <= 0059776B exact field-to-field MOV propagation; 00597A4B exact field-to-field MOV propagation
+    undefined4 field_1EB6; // [STClassLayoutApplier] reads=21, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=18
+    undefined4 field_1EBA; // [STClassLayoutApplier] reads=13, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=12
+    FSGSTy_field_1EBEDArray *field_1EBE; // [STClassLayoutApplier] reads=30, writes=5; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=18; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0059EC41 generic pointer-return assignment in FSGSTy::JoinGameCtrls; 005A0AF0 [this+0x1EBE] passed to DArrayDestroy parameter array; 005A3540 [this+0x1EBE] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005A0AF0 [this+0x1EBE] passed to DArrayDestroy parameter array; 005A3540 [this+0x1EBE] passed to Library::DKW::TBL::DArrayAppend parameter array
+    uint field_1EC2; // [STClassLayoutApplier] reads=26, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/SubmarineTitans/Recovered/Enums/CursorClassTy_SetGCType_param_1Enum|/uint; typed_cross_class_recovery=18; type_evidence=/SubmarineTitans/Recovered/Enums/CursorClassTy_SetGCType_param_1Enum <= 005A4350 [this+0x1EC2] passed to CursorClassTy::SetGCType parameter param_1 | /uint <= 005A33B2 CMP/JA establishes /uint through a field-derived value in FSGSTy::CreateGame; 005A33B2 CMP/JA through typed class pointer in FSGSTy::CreateGame; 005A5085 CMP/JA establishes /uint through a field-derived value in FSGSTy::GetMessage; 005A5085 CMP/JA through typed class pointer in FSGSTy::GetMessage; 005A7611 CMP/JA establishes /uint through a field-derived value in FSGSTy::GetMessage; 005A7611 CMP/JA through typed class pointer in FSGSTy::GetMessage; 005A7BED CMP/JA establishes /uint through a field-derived value in FSGSTy::GetMessage; 005A7BED CMP/JA through typed class pointer in FSGSTy::GetMessage
+    undefined4 field_1EC6; // [STClassLayoutApplier] reads=8, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    uint field_1ECA; // [STClassLayoutApplier] reads=2, writes=8; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/uint <= 005A76CC CMP/JNC establishes /uint through a field-derived value in FSGSTy::GetMessage; 005A76CC CMP/JNC through typed class pointer in FSGSTy::GetMessage
+    undefined4 field_1ECE; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    undefined1 field_1ED2; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_1ED3; // [STClassLayoutApplier] reads=8, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=7
+    undefined4 field_1ED7; // [STClassLayoutApplier] reads=8, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=7
+    void *field_1EDB; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=pointer:/void <= 005A41C9 generic pointer-return assignment in FSGSTy::SetLadder
+    uint field_1EDF; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/uint <= 005A4236 CMP/JNC through typed class pointer in FSGSTy::SetLadder
+    uint field_1EE3; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/uint <= 005A6167 CMP/JNC establishes /uint through a field-derived value in FSGSTy::GetMessage; 005A6167 CMP/JNC through typed class pointer in FSGSTy::GetMessage
+    undefined4 field_1EE7; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
+    byte _unknown_1EEB[56];
+    HoloTy *field_1F23; // [STClassLayoutApplier] reads=99, writes=30; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F23; typed_cross_class_recovery=68; type_evidence=pointer:/HoloTy <= 005967F0 [this+0x1F23] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005967F0 [this+0x1F23] used as receiver of HoloTy::Done; 00597120 [this+0x1F23] used as receiver of HoloTy::NextFas; 00597E70 [this+0x1F23] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 00597E70 [this+0x1F23] used as receiver of HoloTy::Done; 00597E70 [this+0x1F23] used as receiver of HoloTy::Init; 00597E70 [this+0x1F23] used as receiver of HoloTy::NextFas; 0059F670 [this+0x1F23] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 0059F670 [this+0x1F23] used as receiver of HoloTy::Done; 0059F670 [this+0x1F23] used as receiver of HoloTy::Init; 0059F670 [this+0x1F23] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F23 <= consistent nested dereferences through [this+0x1F23]
+    HoloTy *field_1F27; // [STClassLayoutApplier] reads=37, writes=12; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F27; cfg_field_recovery=1; typed_cross_class_recovery=27; type_evidence=pointer:/HoloTy <= 005967F0 [this+0x1F27] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005967F0 [this+0x1F27] used as receiver of HoloTy::Done; 00597120 [this+0x1F27] used as receiver of HoloTy::NextFas; 00597E70 [this+0x1F27] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 00597E70 [this+0x1F27] used as receiver of HoloTy::Done; 00597E70 [this+0x1F27] used as receiver of HoloTy::Init; 00597E70 [this+0x1F27] used as receiver of HoloTy::NextFas; 0059F670 [this+0x1F27] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 0059F670 [this+0x1F27] used as receiver of HoloTy::Done; 0059F670 [this+0x1F27] used as receiver of HoloTy::Init; 0059F670 [this+0x1F27] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F27 <= consistent nested dereferences through [this+0x1F27]
+    HoloTy *field_1F2B; // [STClassLayoutApplier] reads=59, writes=18; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F2B; cfg_field_recovery=2; typed_cross_class_recovery=41; type_evidence=pointer:/HoloTy <= 005967F0 [this+0x1F2B] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005967F0 [this+0x1F2B] used as receiver of HoloTy::Done; 00597120 [this+0x1F2B] used as receiver of HoloTy::NextFas; 00597E70 [this+0x1F2B] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 00597E70 [this+0x1F2B] used as receiver of HoloTy::Done; 00597E70 [this+0x1F2B] used as receiver of HoloTy::Init; 00597E70 [this+0x1F2B] used as receiver of HoloTy::NextFas; 0059F670 [this+0x1F2B] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 0059F670 [this+0x1F2B] used as receiver of HoloTy::Done; 0059F670 [this+0x1F2B] used as receiver of HoloTy::Init; 0059F670 [this+0x1F2B] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F2B <= consistent nested dereferences through [this+0x1F2B]
+    HoloTy *field_1F2F; // [STClassLayoutApplier] reads=37, writes=12; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F2F; cfg_field_recovery=1; typed_cross_class_recovery=27; type_evidence=pointer:/HoloTy <= 005967F0 [this+0x1F2F] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005967F0 [this+0x1F2F] used as receiver of HoloTy::Done; 00597120 [this+0x1F2F] used as receiver of HoloTy::NextFas; 00597E70 [this+0x1F2F] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 00597E70 [this+0x1F2F] used as receiver of HoloTy::Done; 00597E70 [this+0x1F2F] used as receiver of HoloTy::Init; 00597E70 [this+0x1F2F] used as receiver of HoloTy::NextFas; 0059F670 [this+0x1F2F] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 0059F670 [this+0x1F2F] used as receiver of HoloTy::Done; 0059F670 [this+0x1F2F] used as receiver of HoloTy::Init; 0059F670 [this+0x1F2F] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F2F <= consistent nested dereferences through [this+0x1F2F]
+    undefined1 field_0x1f33; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1F34[7];
+    undefined4 field_1F3B; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1F3F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1F43; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_1F47[4];
+    undefined4 field_1F4B; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_1F4F[12];
+    undefined4 field_1F5B; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1F5F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1F63; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_1F67[12];
+    undefined4 field_1F73; // [STClassLayoutApplier] reads=0, writes=16; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    undefined4 field_1F77; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1F7B; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1F7F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1F83; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1F87; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1F8B; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    ushort *field_1F8F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/ushort <= 00596019 generic pointer-return assignment in FSGSTy::InitFSGS
+    undefined4 field_1F93; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1F97; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1F9B; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1F9F; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_1FA3[16];
+    FSGSTy_field_1FB3DArray *field_1FB3; // [STClassLayoutApplier] reads=48, writes=5; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=27; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 00596048 generic pointer-return assignment in FSGSTy::InitFSGS; 005967F0 [this+0x1FB3] passed to DArrayDestroy parameter array; 005A4350 [this+0x1FB3] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005967F0 [this+0x1FB3] passed to DArrayDestroy parameter array; 005A4350 [this+0x1FB3] passed to Library::DKW::TBL::DArrayAppend parameter array
+    undefined1 field_0x1fb7; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1FB8[259];
+    undefined4 field_20BB; // [STClassLayoutApplier] reads=0, writes=26; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13
+    undefined4 field_20BF; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    int GetMessage(STMessage *message);
+    undefined CloseButtons();
+    void AddMessage(byte param_1, byte *param_2, char *param_3, byte param_4);
+    void AddPlayer(undefined4 *param_1);
+    void ChangePlayer(byte *param_1);
+    void ChangePlayerPing(undefined4 param_1, int param_2, undefined4 param_3);
+    void ChatCtrls();
+    void CheckUpdate();
+    void ConnectProc(int param_1, int param_2);
+    void CreateCtrls();
+    void CreateGame(int param_1);
+    void DelPlayer(byte *param_1);
+    void DeleteCtrls();
+    void DoLogon();
+    void DoneFSGS();
+    void Download(undefined4 param_1, undefined4 param_2);
+    void Finished(int param_1);
+    void InfoCtrls();
+    void InitFSGS(byte param_1);
+    void JoinChannel();
+    void JoinGameCtrls();
+    void LadderCtrls();
+    void LicCtrls();
+    void LoginCtrls();
+    void NewGameCtrls();
+    void NewIDCtrls();
+    void NoneFSGS();
+    void OutChSlProc(AnonShape_GLOBAL_0080759C_9638EF10 *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, undefined4 *param_8);
+    void OutLadProc(int param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, FSGSTy *param_6, int param_7);
+    void OutSGlProc(AnonShape_GLOBAL_0080759C_9638EF10 *param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, int param_6, int param_7, int param_8);
+    void OutTRGlProc(AnonShape_GLOBAL_0080759C_9638EF10 *param_1, MMMObjTy *param_2, MMMObjTy *param_3, StartServTy *param_4, int param_5, int param_6, int param_7, int param_8);
+    void OutTRGlProc(int param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, int param_6, int param_7, UINT param_8);
+    void PaintFSGS(char param_1);
+    void PaintGameNew();
+    void PaintInfo();
+    void PaintLadder();
+    void PaintLogLogin();
+    void PaintLogNew();
+    void PaintLogPsw();
+    void PrepBkgMess(char param_1);
+    void PswCtrls();
+    void SetBanner(char *param_1, undefined4 param_2, int param_3, uint param_4, undefined4 *param_5);
+    void SetChannelList(int param_1, undefined4 *param_2);
+    void SetGameList(int param_1, int *param_2);
+    void SetInfo(byte *param_1, uint param_2, byte *param_3);
+    void SetLadder(undefined4 param_1, uint param_2, int param_3, undefined4 *param_4);
+    void SetState(byte param_1);
+    void sub_0059B820();
+    void sub_0059BE50();
+    void sub_005A0590();
+    void sub_005A07F0();
+    void sub_005A0A50();
+    void sub_005A0AF0();
+    void sub_005A0C80();
+    void sub_005A39A0(ccFntTy *param_1, char *text, uint param_3, byte *param_4, int param_5, int param_6, int param_7, int param_8);
+};
+
+struct MMsgTy_Record_00BC_01FB {
+    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[695, 1202, 1709]; functions=[005B7EF0]
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[32];
+    undefined1 field_0025; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[732, 1239, 1746]; functions=[005B7EF0]
+    undefined1 field_0026; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[226]; functions=[005B6FF0, 005B7340]
+    SpriteClassTy field_0027; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_00B8; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_0149; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    undefined1 field_01DA; // [STClassLayoutApplier] nested evidence_count=3; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6746]; functions=[005B7540, 005B8C70, 005B9330]
+    byte _unknown_01DB[4];
+    undefined1 field_01DF; // [STClassLayoutApplier] nested evidence_count=3; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6751]; functions=[005B7540, 005B7EF0, 005B95B0]
+    byte _unknown_01E0[27];
+};
+
+struct MMsgTy {
+    MMsgTyVTable *vtable; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=4
+    byte _unknown_0004[8];
+    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=16, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=3; typed_cross_class_recovery=8; type_evidence=pointer:/StartSystemTy <= 005B6FF0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005B8C70 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0
+    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005B9330 [this+0x10] used as receiver of STAppC::sub_006E51B0; name_evidence=message <= 005B9330 unique get field in MMsgTy::GetMessage
+    byte _unknown_0014[4];
+    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_001C[1];
+    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_001E[15];
+    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_0031; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_0035[8];
+    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_003E[31];
+    undefined4 field_005D; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    undefined4 field_0061; // [STClassLayoutApplier] reads=9, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    undefined1 field_0065; // [STClassLayoutApplier] reads=25, writes=17; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=31
+    uint field_0066[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[13], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:13:/uint <= 005B702D exact pointer walk count=13, stride=4, cursor_displacement=0 | 005B7FCE MOV EAX,dword ptr [EBX + EDI*0x4 + 0x66] | 005B8CB8 exact pointer walk count=13, stride=4, cursor_displacement=0 | 005B9066 MOV ECX,dword ptr [ESI + EAX*0x4 + 0x66] | 005B9089 MOV EDX,dword ptr [ESI + EAX*0x4 + 0x66]
+    byte field_009A; // [STClassLayoutApplier] reads=66, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=38; type_evidence=/byte <= 005B814A CMP/JC through typed class pointer in MMsgTy::SetMessage
+    undefined1 field_0x9b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_009C[11];
+    undefined1 field_0xa7; // exact unnamed-byte view referenced by exported code
+    byte _unknown_00A8[20];
+    MMsgTy_Record_00BC_01FB array_00BC[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=507; [STClassArrayAnalyzer] fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=6, exact_loops=2, boundaries=[188, 231, 255, 372], access_offsets=18, typed_nested_objects=3; type_evidence=array:13:/SubmarineTitans/Recovered/InlineRecordArrays/MMsgTy_Record_00BC_01FB <= 005B70C2 record cursor owner+0xE7, stride=0x1FB, runtime_bound | 005B70C8 MOV dword ptr [ESI + 0x4],0x0 | 005B70CF MOV EAX,dword ptr [ESI] | 005B70D6 MOV EDX,dword ptr [ESI + 0x1c] | 005B70D9 MOV ECX,dword ptr [ESI + 0x18] | 005B70DD MOV EDX,dword ptr [ESI + 0x4] | 005B70E3 MOV EAX,dword ptr [ESI + 0x44] | 005B70EC MOV EAX,dword ptr [ESI] | 005B70F3 MOV ECX,dword ptr [ESI + 0x44] | 005B70FD MOV EAX,dword ptr [ESI + 0x91] | 005B7108 MOV EDX,dword ptr [ESI + 0xd5] | 005B7115 MOV AL,byte ptr [ESI + -0x5] | 005B711C MOV EAX,dword ptr [ESI + 0x122] | 005B7128 MOV EAX,dword ptr [ESI + 0x166] | 005B7278 record cursor owner+0xE7, stride=0x1FB, runtime_bound | 005B727E MOV EAX,dword ptr [ESI] | 005B7285 MOV ECX,dword ptr [ESI + 0x1c] | 005B7288 MOV EDX,dword ptr [ESI + 0x18] | 005B7290 MOV EAX,dword ptr [ESI + 0x44] | 005B73E2 record cursor owner+0xFF, stride=0x1FB, runtime_bound | 005B73E8 MOV EAX,dword ptr [ESI + -0x18] | 005B73F0 MOV ECX,dword ptr [ESI + 0x4] | 005B73F3 MOV EDX,dword ptr [ESI] | 005B73F6 MOV ECX,dword ptr [ESI + -0x14] | 005B73FA MOV EDX,dword ptr [ESI + 0x2c] | 005B7405 MOV EAX,dword ptr [ESI + 0x79] | 005B740D MOV ECX,dword ptr [ESI + 0x95] | 005B7413 MOV EDX,dword ptr [ESI + 0x91] | 005B741A MOV ECX,dword ptr [ESI + 0x7d] | 005B741E MOV EDX,dword ptr [ESI + 0xbd] | 005B742C MOV AL,byte ptr [ESI + -0x1d] | 005B7433 MOV EAX,dword ptr [ESI + 0x10a] | 005B743E MOV ECX,dword ptr [ESI + 0x126] | 005B7444 MOV EDX,dword ptr [ESI + 0x122] | 005B744B MOV ECX,dword ptr [ESI + 0x10e] | 005B7452 MOV EDX,dword ptr [ESI + 0x14e] | 005B7608 record cursor owner+0xFF, stride=0x1FB, runtime_bound | 005B7619 MOV EDX,dword ptr [EDI + 0x28] | 005B761C MOV ECX,dword ptr [EDI + 0x24] | 005B7625 MOV EAX,dword ptr [EDI + -0x14] | 005B7631 MOV dword ptr [EDI + -0x14],EAX | 005B7634 MOV ECX,dword ptr [EDI + -0x18] | 005B763C MOV EDX,dword ptr [EDI + 0x4] | 005B7640 MOV EDX,dword ptr [EDI] | 005B7644 MOV EAX,dword ptr [EDI + 0x2c] | 005B95F8 record cursor owner+0x174, stride=0x1FB, exact_count=13 | 005B9609 typed nested receiver=/SpriteClassTy at owner+0xE3 | 005B9610 typed nested receiver=/SpriteClassTy at owner+0x174 | 005B961B typed nested receiver=/SpriteClassTy at owner+0x205 | 005B9646 record cursor owner+0xBC, stride=0x1FB, exact_count=13
+    byte _unknown_1A7B[12];
+    undefined1 field_0x1a87; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1A88[506];
+    undefined1 field_0x1c82; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1C83[25];
+    undefined4 field_1C9C; // [STClassLayoutApplier] reads=1, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x1|4x13; typed_cross_class_recovery=8
+    undefined4 field_1CA0; // [STClassLayoutApplier] reads=0, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    undefined4 field_1CA4; // [STClassLayoutApplier] reads=0, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    undefined1 field_1CA8; // [STClassLayoutApplier] reads=0, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    undefined1 field_1CA9; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
+    undefined1 field_1CAA; // [STClassLayoutApplier] reads=3, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined4 field_1CAB; // [STClassLayoutApplier] reads=12, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=7
+    undefined1 field_0x1caf; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1CB0[32];
+    undefined4 field_1CD0; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    byte _unknown_1CD4[35];
+    undefined1 field_0x1cf7; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1CF8[3];
+    undefined4 field_1CFB; // [STClassLayoutApplier] reads=11, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    int field_1CFF; // [STClassLayoutApplier] reads=10, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/int <= 005B75B6 CMP/JLE establishes /int through a field-derived value in MMsgTy::NoneMMsg; 005B75B6 CMP/JLE through typed class pointer in MMsgTy::NoneMMsg; 005B7927 CMP/JGE through typed class pointer in MMsgTy::NoneMMsg
+    int field_1D03; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=1; type_evidence=/int <= 005B7927 CMP/JGE establishes /int through CFG-recovered field flow in MMsgTy::NoneMMsg; 005B7927 CMP/JGE through typed class pointer in MMsgTy::NoneMMsg
+    byte _unknown_1D07[12];
+    undefined4 field_1D13; // [STClassLayoutApplier] reads=9, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_1D17; // [STClassLayoutApplier] reads=9, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    byte _unknown_1D1B[36];
+    undefined4 field_1D3F; // [STClassLayoutApplier] reads=11, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    byte _unknown_1D43[69];
+    undefined4 field_1D88; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    undefined4 field_1D8C; // [STClassLayoutApplier] reads=16, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=8
+    int field_1D90; // [STClassLayoutApplier] reads=14, writes=10; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=8; typed_cross_class_recovery=12; type_evidence=/int <= 005B7976 CMP/JGE establishes /int through CFG-recovered field flow in MMsgTy::NoneMMsg; 005B7976 CMP/JGE through typed class pointer in MMsgTy::NoneMMsg; 005B7C25 CMP/JGE establishes /int through CFG-recovered field flow in MMsgTy::NoneMMsg; 005B7C25 CMP/JGE through typed class pointer in MMsgTy::NoneMMsg
+    int field_1D94; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=2; typed_cross_class_recovery=2; type_evidence=/int <= 005B7976 CMP/JGE establishes /int through CFG-recovered field flow in MMsgTy::NoneMMsg; 005B7976 CMP/JGE through typed class pointer in MMsgTy::NoneMMsg; 005B7C25 CMP/JGE establishes /int through CFG-recovered field flow in MMsgTy::NoneMMsg; 005B7C25 CMP/JGE through typed class pointer in MMsgTy::NoneMMsg
+    byte _unknown_1D98[12];
+    undefined4 field_1DA4; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=5
+    undefined4 field_1DA8; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=5
+    byte _unknown_1DAC[36];
+    undefined4 field_1DD0; // [STClassLayoutApplier] reads=16, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=8
+    byte _unknown_1DD4[69];
+    undefined1 field_0x1e19; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1E1A[144];
+    int GetMessage(STMessage *message);
+    undefined CloseSprBut();
+    void DoneMMsg();
+    void FUN_005b8f40(undefined4 *param_1);
+    void HidePanel(int param_1, int param_2, int param_3);
+    void HideSprites();
+    void InitMMsg();
+    void NoneMMsg();
+    void PaintMMsg();
+    undefined4 SetMessage(UINT param_1, char param_2, undefined4 *param_3, undefined4 *param_4, undefined4 *param_5, int param_6, UINT param_7);
+    undefined4 SetPanel(UINT param_1, int param_2, int param_3, UINT param_4);
+    void ShowSprites();
+    void StatePanel(int param_1);
+};
+
+struct MainMenuTy_Record_00BB_01FB {
+    undefined1 field_0000; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[187]; functions=[005B3430, 005B3C30]
+    undefined4 field_0001; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[188, 695, 1202, 1709, 2216]; functions=[005B3D60]
+    byte _unknown_0005[9];
+    undefined4 field_000E; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[201, 708, 1215]; functions=[005B3D60]
+    undefined4 field_0012; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[205, 712, 1219, 2233]; functions=[005B3D60]
+    undefined4 field_0016; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[209, 716, 1223, 1730, 2237]; functions=[005B3D60]
+    undefined4 field_001A; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[213, 720, 1227, 1734, 2241]; functions=[005B3D60]
+    undefined4 field_001E; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[724]; functions=[005B3D60]
+    byte _unknown_0022[5];
+    undefined1 field_0027; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[226]; functions=[005B3430]
+    SpriteClassTy field_0028; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_00B9; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_014A; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    undefined1 field_01DB; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6746]; functions=[005B3430, 005B4BB0]
+    StartServTy *field_01DC; // [STClassLayoutApplier] nested evidence_count=5; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6747]; functions=[005B2970, 005B2F90, 005B3160, 005B3D60, 005B4BB0]; /winnt.h/LPSTR <= 005B3160 [this+0x1A5B] passed to USER32.DLL::wsprintfA parameter param_1; 005B3D60 [this+0x1A5B] passed to USER32.DLL::wsprintfA parameter param_1 | pointer:/StartServTy <= 005B3D60 [this+0x1A5B] used as receiver of StartServTy::WrTextDDX; 005B43AD typed receiver of StartServTy::WrTextDDX; 005B44E9 typed receiver of StartServTy::WrTextDDX | pointer:/char <= 005B3160 [this+0x1A5B] passed to StartServTy::WrTextDDX parameter resourceString; 005B3D60 [this+0x1A5B] passed to StartServTy::WrTextDDX parameter resourceString
+    byte _unknown_01E0[8];
+    undefined4 field_01E8; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6759]; functions=[005B2970]
+    undefined4 field_01EC; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6763]; functions=[005B2970]
+    undefined4 field_01F0; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6767]; functions=[005B2970, 005B3430]
+    byte _unknown_01F4[7];
+};
+
+struct MainMenuTy {
+    MainMenuTyVTable *vtable; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=6
+    byte _unknown_0004[4];
+    undefined4 field_0008; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_000C; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005B4BB0 [this+0x10] used as receiver of STAppC::sub_006E51B0
+    byte _unknown_0014[4];
+    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_001C[1];
+    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_001E[7];
+    undefined4 field_0025; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_0029; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_0031; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_0035[8];
+    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_003E[15];
+    undefined4 field_004D; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_0051[12];
+    undefined4 field_005D; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    DWORD field_0061; // [STClassLayoutApplier] reads=13, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/WinDef.h/DWORD|/uint; typed_cross_class_recovery=10; type_evidence=/WinDef.h/DWORD <= 005B3430 [this+0x61] assigned 005B3430 return from WINMM.DLL::timeGetTime | /uint <= 005B3B00 [this+0x61] passed to Library::Ourlib::PALETTE::FUN_00718f40 parameter param_8
+    undefined1 field_0065; // [STClassLayoutApplier] reads=4, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    uint field_0066[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[13], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:13:/uint <= 005B47F9 exact pointer walk count=13, stride=4, cursor_displacement=0 | 005B4879 exact pointer walk count=13, stride=4, cursor_displacement=0
+    byte field_009A; // [STClassLayoutApplier] reads=31, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=22; type_evidence=/byte <= 005B3FC9 CMP/JC through typed class pointer in MainMenuTy::SetMode
+    undefined1 field_0x9b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_009C[7];
+    undefined1 field_0xa3; // exact unnamed-byte view referenced by exported code
+    byte _unknown_00A4[23];
+    MainMenuTy_Record_00BB_01FB field_00BB[13]; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=507; [STClassArrayAnalyzer] fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=6, exact_loops=3, boundaries=[188, 231, 255, 372, 376, 380], access_offsets=17, typed_nested_objects=3; type_evidence=array:13:/SubmarineTitans/Recovered/InlineRecordArrays/MainMenuTy_Record_00BB_01FB <= 005B32EA record cursor owner+0xFF, stride=0x1FB, runtime_bound | 005B32F0 MOV EAX,dword ptr [ESI + -0x18] | 005B32F8 MOV ECX,dword ptr [ESI + 0x4] | 005B32FB MOV EDX,dword ptr [ESI] | 005B32FE MOV ECX,dword ptr [ESI + -0x14] | 005B3302 MOV EDX,dword ptr [ESI + 0x2c] | 005B3313 MOV EAX,dword ptr [ESI + 0x79] | 005B331B MOV ECX,dword ptr [ESI + 0x95] | 005B3321 MOV EDX,dword ptr [ESI + 0x91] | 005B3328 MOV ECX,dword ptr [ESI + 0x7d] | 005B332C MOV EDX,dword ptr [ESI + 0xbd] | 005B34B4 record cursor owner+0x178, stride=0x1FB, runtime_bound | 005B34BD MOV EDX,dword ptr [ESI + -0x51] | 005B34C0 MOV ECX,dword ptr [ESI + -0x55] | 005B34C9 MOV AL,byte ptr [ESI + 0xffffff43] | 005B34D3 MOV EAX,dword ptr [ESI] | 005B34DA MOV ECX,dword ptr [ESI + 0x44] | 005B34E4 MOV AL,byte ptr [ESI + 0xffffff6a] | 005B34EE MOV EAX,dword ptr [ESI + 0x91] | 005B34F9 MOV EDX,dword ptr [ESI + 0xd5] | 005B3506 MOV byte ptr [ESI + 0xffffff43],0x0 | 005B350D MOV EAX,dword ptr [ESI + 0xffffff73] | 005B3518 MOV dword ptr [ESI + 0xffffff73],EAX | 005B351E MOV ECX,dword ptr [ESI + 0xffffff6f] | 005B3529 MOV EDX,dword ptr [ESI + -0x75] | 005B352D MOV EDX,dword ptr [ESI + -0x79] | 005B3532 MOV EAX,dword ptr [ESI + -0x4d] | 005B358C record cursor owner+0xE7, stride=0x1FB, runtime_bound | 005B3592 MOV EAX,dword ptr [ESI] | 005B359A MOV EAX,dword ptr [ESI + 0x44] | 005B3D6F record cursor owner+0x17C, stride=0x1FB, exact_count=13 | 005B3D7A MOV dword ptr [EDX + 0xffffff40],0x0 | 005B3D84 MOV dword ptr [EDX],0x0 | 005B5128 record cursor owner+0x174, stride=0x1FB, exact_count=13 | 005B5139 typed nested receiver=/SpriteClassTy at owner+0xE3 | 005B5140 typed nested receiver=/SpriteClassTy at owner+0x174 | 005B514B typed nested receiver=/SpriteClassTy at owner+0x205 | 005B5176 record cursor owner+0xBC, stride=0x1FB, exact_count=13
+    byte _unknown_1A7A[5];
+    undefined4 field_1A7F; // [STClassLayoutApplier] reads=1, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
+    byte _unknown_1A83[36];
+    uint field_1AA7[10]; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; bounded_member_array; count=10; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[10], bounded_sites=0, exact_loops=3, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:10:/uint <= 005B2A77 MOV dword ptr [ESI + EDI*0x4 + 0x1aa7],EAX | 005B3059 exact pointer walk count=10, stride=4, cursor_displacement=0 | 005B32C1 exact pointer walk count=10, stride=4, cursor_displacement=0 | 005B4922 exact pointer walk count=10, stride=4, cursor_displacement=0
+    undefined4 field_1ACF; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1AD3; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    uint field_1AD7; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/uint <= 005B3B00 exact address of [this+0x1AD7] passed to Library::Ourlib::PALETTE::FUN_00718f40 parameter param_9
+    int field_1ADB; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/int <= 005B3B00 exact address of [this+0x1ADB] passed to Library::Ourlib::PALETTE::FUN_00718f40 parameter param_6
+    undefined1 field_0x1adf; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1AE0[1023];
+    undefined4 field_1EDF; // [STClassLayoutApplier] reads=1, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined1 field_1EE3; // [STClassLayoutApplier] reads=17, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
+    int GetMessage(STMessage *message);
+    undefined CloseButtons();
+    void AnimationMainMenu();
+    void DoneMainMenu();
+    void InitMainMenu(char param_1);
+    void LightPalette();
+    void NoneMainMenu();
+    void PaintMainMenu();
+    void SetMode(char param_1, int param_2);
+    void sub_005B47E0();
+    void sub_005B4860();
+};
+
+struct PrividerTy_Record_00BC_01FB {
+    byte _unknown_0000[2];
+    undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0003[1];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[34];
+    SpriteClassTy field_0027; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_00B8; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_0149; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    undefined1 field_01DA; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6746]; functions=[005BAE00]
+    StartSystemTy *field_01DB; // [STClassLayoutApplier] nested evidence_count=7; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6747]; functions=[005B9B10, 005BA560, 005BA8B0, 005BAAC0, 005BAE00, 005BBA90, 005BC5E0]; pointer:/StartSystemTy <= 005BC5E0 [this+0x1A5B] used as receiver of StartSystemTy::InitChat; 005BC8B7 typed receiver of StartSystemTy::InitChat | pointer:/ushort <= 005B9B10 [this+0x1A5B] passed to FUN_006b2330 parameter param_7; 005BC5E0 [this+0x1A5B] passed to FUN_006b2330 parameter param_7
+    undefined1 field_01DF; // [STClassLayoutApplier] nested evidence_count=6; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6751]; functions=[005B9B10, 005BA8B0, 005BAAC0, 005BAE00, 005BBA90, 005BC5E0]
+    undefined1 field_01E0; // [STClassLayoutApplier] nested evidence_count=3; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6752]; functions=[005B9B10, 005BAE00, 005BC5E0]
+    undefined4 field_01E1; // [STClassLayoutApplier] nested evidence_count=3; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6753]; functions=[005BC050, 005BC5E0, 005BD2E0]
+    undefined4 field_01E5; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6757]; functions=[005BB9F0, 005BD2E0]
+    ulong field_01E9; // [STClassLayoutApplier] nested evidence_count=1; existing exact record-array element
+    undefined4 field_01ED; // [STClassLayoutApplier] nested evidence_count=3; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6765]; functions=[005BAE00, 005BC5E0, 005BD2E0]
+    undefined1 field_01F1; // [STClassLayoutApplier] nested evidence_count=4; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6769]; functions=[005B9B10, 005BAE00, 005BC5E0, 005BD2E0]
+    undefined1 field_01F2; // [STClassLayoutApplier] nested evidence_count=3; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6770]; functions=[005BAAC0, 005BAE00, 005BD2E0]
+    undefined4 field_01F3; // [STClassLayoutApplier] nested evidence_count=5; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6771]; functions=[005BB9F0, 005BBA90, 005BC050, 005BC5E0, 005BD2E0]
+    undefined4 field_01F7; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6775]; functions=[005B9B10]
+};
+
+struct PrividerTy {
+    PrividerTyVTable *vtable; // [STClassLayoutApplier] reads=3, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=5
+    byte _unknown_0004[4];
+    undefined4 field_0008; // [STClassLayoutApplier] reads=11, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=pointer:/StartSystemTy <= 005BC050 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0
+    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005BC5E0 [this+0x10] used as receiver of STAppC::sub_006E51B0
+    byte _unknown_0014[4];
+    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_001C[1];
+    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_001E[7];
+    undefined4 field_0025; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_0029; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=16; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    undefined4 field_0031; // [STClassLayoutApplier] reads=0, writes=16; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    byte _unknown_0035[8];
+    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_003E[7];
+    undefined4 field_0045; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_0049; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_004D; // [STClassLayoutApplier] reads=6, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined4 field_0051; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_0055; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_0059[4];
+    ushort *field_005D; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=pointer:/ushort <= 005B9DCC dynamic 2-byte dereference of field-derived address in PrividerTy::InitPrivider; 005B9E88 dynamic 2-byte dereference of field-derived address in PrividerTy::InitPrivider
+    DWORD field_0061; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/WinDef.h/DWORD <= 005BAE00 [this+0x61] assigned 005BAE00 return from WINMM.DLL::timeGetTime
+    PrividerTy_field_0065State field_0065; // [STClassLayoutApplier] reads=3, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
+    undefined1 field_0x66; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0067[51];
+    undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_009B[33];
+    PrividerTy_Record_00BC_01FB array_00BC[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=507; [STClassArrayAnalyzer] fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3; type_evidence=array:13:/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB <= 005BD32C record cursor owner+0x174, stride=0x1FB, exact_count=13 | 005BD33F typed nested receiver=/SpriteClassTy at owner+0xE3 | 005BD346 typed nested receiver=/SpriteClassTy at owner+0x174 | 005BD351 typed nested receiver=/SpriteClassTy at owner+0x205 | 005BD381 record cursor owner+0xBC, stride=0x1FB, exact_count=13
+    undefined4 field_1A7B; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1A7F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1A83[16];
+    undefined4 field_1A93; // [STClassLayoutApplier] reads=3, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1A97; // [STClassLayoutApplier] reads=3, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1A9B; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1A9F; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1AA3[28];
+    undefined4 field_1ABF; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1AC3[69];
+    undefined4 field_1B08; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1B0C; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1B10; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1B14[16];
+    undefined4 field_1B24; // [STClassLayoutApplier] reads=3, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1B28; // [STClassLayoutApplier] reads=3, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1B2C; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1B30; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1B34[28];
+    undefined4 field_1B50; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1B54[69];
+    undefined4 field_1B99; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1B9D; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1BA1; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_1BA5[16];
+    undefined4 field_1BB5; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1BB9; // [STClassLayoutApplier] reads=1, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1BBD; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1BC1[32];
+    undefined4 field_1BE1; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_1BE5[69];
+    uint field_1C2A[22]; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; bounded_member_array; count=22; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[22], bounded_sites=0, exact_loops=3, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:22:/uint <= 005BA0A4 exact pointer walk count=22, stride=4, cursor_displacement=0 | 005BA67D exact pointer walk count=22, stride=4, cursor_displacement=0 | 005BC255 exact pointer walk count=22, stride=4, cursor_displacement=0 | 005BCF08 MOV ECX,dword ptr [ESI + EDX*0x4 + 0x1c2a]
+    ushort *field_1C82; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C82|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/int|pointer:/ushort; typed_cross_class_recovery=7; type_evidence=/int <= 005BC5E0 [this+0x1C82] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C82 <= consistent nested dereferences through [this+0x1C82] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005BC5E0 [this+0x1C82] passed to FUN_006b4170 parameter param_1 | pointer:/int <= 005BC050 [this+0x1C82] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 005BC28B dynamic 2-byte dereference of field-derived address in PrividerTy::DeleteCtrls
+    undefined4 field_1C86; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    uint field_1C8A; // [STClassLayoutApplier] reads=18, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; type_evidence=/uint <= 005B9B10 exact address of [this+0x1C8A] passed to FUN_006b2330 parameter param_2
+    AnonPointee_PrividerTy_1C8E *field_1C8E; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/ushort; typed_cross_class_recovery=8; type_evidence=/int <= 005B9B10 [this+0x1C8E] passed to ccFntTy::SetSurf parameter param_1; 005BC5E0 [this+0x1C8E] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA <= 005BC5E0 [this+0x1C8E] passed to FUN_006b5b10 parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005BC5E0 [this+0x1C8E] passed to FUN_006b4170 parameter param_1 | pointer:/ushort <= 005B9B10 [this+0x1C8E] passed to FUN_006b2330 parameter param_7
+    DArrayTy *field_1C92; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005B9B89 generic pointer-return assignment in PrividerTy::InitPrivider; 005BA560 [this+0x1C92] passed to FUN_006b5570 parameter param_1
+    HoloTy *field_1C96; // [STClassLayoutApplier] reads=33, writes=10; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C96; typed_cross_class_recovery=24; type_evidence=pointer:/HoloTy <= 005B9B10 [this+0x1C96] used as receiver of HoloTy::Init; 005BA560 [this+0x1C96] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005BA560 [this+0x1C96] used as receiver of HoloTy::Done; 005BAE00 [this+0x1C96] used as receiver of HoloTy::NextFas; 005BC050 [this+0x1C96] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005BC050 [this+0x1C96] used as receiver of HoloTy::Done; 005BC050 [this+0x1C96] used as receiver of HoloTy::Init; 005BC050 [this+0x1C96] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C96 <= consistent nested dereferences through [this+0x1C96]
+    HoloTy *field_1C9A; // [STClassLayoutApplier] reads=43, writes=13; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C9A; cfg_field_recovery=1; typed_cross_class_recovery=33; type_evidence=pointer:/HoloTy <= 005B9B10 [this+0x1C9A] used as receiver of HoloTy::Init; 005BA560 [this+0x1C9A] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005BA560 [this+0x1C9A] used as receiver of HoloTy::Done; 005BAE00 [this+0x1C9A] used as receiver of HoloTy::NextFas; 005BC050 [this+0x1C9A] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005BC050 [this+0x1C9A] used as receiver of HoloTy::Done; 005BC050 [this+0x1C9A] used as receiver of HoloTy::Init; 005BC050 [this+0x1C9A] used as receiver of HoloTy::NextFas; 005BC5E0 [this+0x1C9A] used as receiver of HoloTy::Init | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PrividerTy_1C9A <= consistent nested dereferences through [this+0x1C9A]
+    int GetMessage(STMessage *message);
+    void CloseButtons(char param_1);
+    void CreateCtrls(char param_1);
+    void DeleteCtrls(char param_1);
+    void DonePrivider();
+    void InitPrivider(char param_1, char param_2);
+    void NonePrivider();
+    void OutListProc(int *param_1, int param_2, undefined4 param_3, int param_4, int param_5, DWORD param_6, DWORD param_7, int param_8);
+    void PaintPrivider(char param_1);
+    void SetMode(char param_1, char param_2);
+    void sub_005BB9F0();
+};
+
+struct SIDTy_Record_00BC_01FB {
+    byte _unknown_0000[2];
+    undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0003[1];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[34];
+    SpriteClassTy field_0027; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_00B8; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_0149; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    byte _unknown_01DA[5];
+    undefined1 field_01DF; // [STClassLayoutApplier] nested evidence_count=3; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6751]; functions=[005D9250, 005D9470, 005D9F80]
+    undefined4 field_01E0; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6752]; functions=[005D7A50]
+    undefined4 field_01E4; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6756]; functions=[005D7A50, 005D81F0]
+    int field_01E8; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6760]; functions=[005D7A50, 005D81F0]; /int <= 005D82B0 CMP/JLE establishes /int through a field-derived value in SIDTy::NoneSID; 005D82B0 CMP/JLE through typed class pointer in SIDTy::NoneSID; 005D832D CMP/JGE through typed class pointer in SIDTy::NoneSID
+    int field_01EC; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6764]; functions=[005D81F0]; /int <= 005D832D CMP/JGE through typed class pointer in SIDTy::NoneSID
+    byte _unknown_01F0[11];
+};
+
+struct SIDTy {
+    SIDTyVTable *vtable; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=4
+    byte _unknown_0004[4];
+    undefined4 field_0008; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=pointer:/StartSystemTy <= 005D8A90 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0
+    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005D9470 [this+0x10] used as receiver of STAppC::sub_006E51B0
+    byte _unknown_0014[4];
+    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_001C[1];
+    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_001E[15];
+    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=34; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=17
+    undefined4 field_0031; // [STClassLayoutApplier] reads=0, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    byte _unknown_0035[8];
+    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_003E[7];
+    undefined4 field_0045; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_0049; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_004D; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_0051[12];
+    undefined4 field_005D; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    DWORD field_0061; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/WinDef.h/DWORD <= 005D81F0 [this+0x61] assigned 005D81F0 return from WINMM.DLL::timeGetTime
+    undefined1 field_0065; // [STClassLayoutApplier] reads=4, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined1 field_0x66; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0067[51];
+    undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_009B[33];
+    SIDTy_Record_00BC_01FB array_00BC[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=507; [STClassArrayAnalyzer] fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3; type_evidence=array:13:/SubmarineTitans/Recovered/InlineRecordArrays/SIDTy_Record_00BC_01FB <= 005D9FC8 record cursor owner+0x174, stride=0x1FB, exact_count=13 | 005D9FD9 typed nested receiver=/SpriteClassTy at owner+0xE3 | 005D9FE0 typed nested receiver=/SpriteClassTy at owner+0x174 | 005D9FEB typed nested receiver=/SpriteClassTy at owner+0x205 | 005DA016 record cursor owner+0xBC, stride=0x1FB, exact_count=13
+    byte _unknown_1A7B[1];
+    undefined4 field_1A7C; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1A80; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_1A84[36];
+    undefined4 field_1AA8; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1AAC[69];
+    undefined4 field_1AF1; // [STClassLayoutApplier] reads=16, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    undefined4 field_1AF5; // [STClassLayoutApplier] reads=10, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    uint field_1AF9[2]; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; bounded_member_array; count=2; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[2], bounded_sites=0, exact_loops=3, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:2:/uint <= 005D9561 exact pointer walk count=2, stride=4, cursor_displacement=0 | 005D95FB exact pointer walk count=2, stride=4, cursor_displacement=0 | 005D971F exact pointer walk count=2, stride=4, cursor_displacement=0
+    undefined4 field_1B01; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1B05; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1B09; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1B0D[16];
+    undefined4 field_1B1D; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1B21; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1B25; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1B29; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1B2D[28];
+    undefined4 field_1B49; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1B4D[69];
+    undefined4 field_1B92; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1B96; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1B9A; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1B9E[16];
+    undefined4 field_1BAE; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1BB2; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1BB6; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1BBA; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1BBE[28];
+    undefined4 field_1BDA; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1BDE[69];
+    undefined4 field_1C23; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1C27; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1C2B; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_1C2F[16];
+    undefined4 field_1C3F; // [STClassLayoutApplier] reads=6, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1C43; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1C47; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1C4B[32];
+    undefined4 field_1C6B; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_1C6F[69];
+    uint field_1CB4; // [STClassLayoutApplier] reads=18, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=11; type_evidence=/uint <= 005D7A50 exact address of [this+0x1CB4] passed to FUN_006b2330 parameter param_2
+    ushort *field_1CB8; // [STClassLayoutApplier] reads=28, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CB8|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/ushort; typed_cross_class_recovery=16; type_evidence=/int <= 005D9470 [this+0x1CB8] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CB8 <= consistent nested dereferences through [this+0x1CB8] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005D8BF0 [this+0x1CB8] passed to FUN_006b4170 parameter param_1; 005D9250 [this+0x1CB8] passed to FUN_006b4170 parameter param_1; 005D9470 [this+0x1CB8] passed to FUN_006b4170 parameter param_1; 005D9470 [this+0x1CB8] passed to FUN_006b5ee0 parameter param_1; 005D9470 [this+0x1CB8] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_1 | pointer:/ushort <= 005D7A50 [this+0x1CB8] passed to FUN_006b2330 parameter param_7; 005D7DF9 dynamic 2-byte dereference of field-derived address in SIDTy::InitSID; 005D9250 [this+0x1CB8] passed to FUN_006b5440 parameter param_1; 005D9470 [this+0x1CB8] passed to FUN_006b5440 parameter param_1
+    ushort *field_1CBC; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=conflict; name_confidence=conflict; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CBC|pointer:/int|pointer:/ushort|pointer:/wingdi.h/tagBITMAPINFO; typed_cross_class_recovery=6; duplicate_suggested_field_name; type_evidence=/int <= 005D9470 [this+0x1CBC] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CBC <= consistent nested dereferences through [this+0x1CBC] | pointer:/int <= 005D9470 [this+0x1CBC] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 005D9ADC dynamic 2-byte dereference of field-derived address in SIDTy::GetMessage | pointer:/wingdi.h/tagBITMAPINFO <= 005D9470 [this+0x1CBC] passed to FUN_006b5440 parameter tOBJImage; name_evidence=tOBJImage <= 005D9470 [this+0x1CBC] passed to FUN_006b5440 parameter tOBJImage
+    ushort *field_1CC0; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=conflict; name_confidence=conflict; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC0|pointer:/int|pointer:/ushort|pointer:/wingdi.h/tagBITMAPINFO; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=/int <= 005D9250 [this+0x1CC0] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC0 <= consistent nested dereferences through [this+0x1CC0] | pointer:/int <= 005D9250 [this+0x1CC0] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 005D92BA dynamic 2-byte dereference of field-derived address in SIDTy::PaintExplanation | pointer:/wingdi.h/tagBITMAPINFO <= 005D9250 [this+0x1CC0] passed to FUN_006b5440 parameter tOBJImage; name_evidence=tOBJImage <= 005D9250 [this+0x1CC0] passed to FUN_006b5440 parameter tOBJImage
+    HANDLE field_1CC4; // [STClassLayoutApplier] reads=6, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/winnt.h/HANDLE|pointer:/void; typed_cross_class_recovery=7; type_evidence=/winnt.h/HANDLE <= 005D81F0 [this+0x1CC4] passed to KERNEL32.DLL::FindNextChangeNotification parameter hChangeHandle; 005D81F0 [this+0x1CC4] passed to KERNEL32.DLL::WaitForSingleObject parameter hHandle; 005D8450 [this+0x1CC4] assigned 005D8450 return from KERNEL32.DLL::FindFirstChangeNotificationA; 005D8450 [this+0x1CC4] passed to KERNEL32.DLL::FindCloseChangeNotification parameter hChangeHandle | pointer:/void <= 005D8518 generic pointer-return assignment in SIDTy::CreateCtrls; name_evidence=firstChangeNotificationA <= 005D8450 [this+0x1CC4] assigned 005D8450 return from KERNEL32.DLL::FindFirstChangeNotificationA | hChangeHandle <= 005D81F0 [this+0x1CC4] passed to KERNEL32.DLL::FindNextChangeNotification parameter hChangeHandle; 005D8450 [this+0x1CC4] passed to KERNEL32.DLL::FindCloseChangeNotification parameter hChangeHandle | hHandle <= 005D81F0 [this+0x1CC4] passed to KERNEL32.DLL::WaitForSingleObject parameter hHandle
+    ushort *field_1CC8; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC8|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA|pointer:/byte|pointer:/int|pointer:/ushort; typed_cross_class_recovery=7; type_evidence=/int <= 005D9470 [this+0x1CC8] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC8 <= consistent nested dereferences through [this+0x1CC8] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA <= 005D9470 [this+0x1CC8] passed to FUN_006b5b10 parameter param_1 | pointer:/byte <= 005D9470 [this+0x1CC8] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_5 | pointer:/int <= 005D9470 [this+0x1CC8] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 005D985B dynamic 2-byte dereference of field-derived address in SIDTy::GetMessage
+    DArrayTy *field_1CCC; // [STClassLayoutApplier] reads=30, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CCC|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=19; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CCC <= consistent nested dereferences through [this+0x1CCC] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005D7F80 [this+0x1CCC] passed to FUN_006b5570 parameter param_1; 005D8BF0 [this+0x1CCC] passed to FUN_006b5570 parameter param_1; 005D8BF0 [this+0x1CCC] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005D8C4F generic pointer-return assignment in SIDTy::PrepFiles
+    DArrayTy *field_1CD0; // [STClassLayoutApplier] reads=18, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CD0|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=12; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CD0 <= consistent nested dereferences through [this+0x1CD0] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005D7DD3 generic pointer-return assignment in SIDTy::InitSID; 005D7F80 [this+0x1CD0] passed to FUN_006b5570 parameter param_1; 005D9470 [this+0x1CD0] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
+    char field_1CD4; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; typed_cross_class_recovery=1; type_evidence=/byte <= 005D8BF0 exact address of [this+0x1CD4] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2 | /char <= 005D8450 exact address of [this+0x1CD4] passed to KERNEL32.DLL::FindFirstChangeNotificationA parameter lpPathName; 005D8BF0 exact address of [this+0x1CD4] passed to KERNEL32.DLL::FindFirstFileA parameter lpFileName; 005D8BF0 exact address of [this+0x1CD4] passed to USER32.DLL::wsprintfA parameter param_1; 005D9250 exact address of [this+0x1CD4] passed to USER32.DLL::wsprintfA parameter param_1; 005D9470 exact address of [this+0x1CD4] passed to USER32.DLL::wsprintfA parameter param_1
+    byte _unknown_1CD5[259];
+    int GetMessage(STMessage *message);
+    void CreateCtrls();
+    void DeleteCtrls();
+    void DoneSID();
+    void InitSID();
+    void NoneSID();
+    void PaintExplanation();
+    void PaintSID();
+    void PrepFiles();
+};
+
+struct SettMapMTy_Record_00BC_01FB {
+    byte _unknown_0000[2];
+    undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0003[1];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[34];
+    SpriteClassTy field_0027; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_00B8; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_0149; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    byte _unknown_01DA[1];
+    StartSystemTy *field_01DB; // [STClassLayoutApplier] nested evidence_count=7; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6747]; functions=[005B5F00, 005C29B0, 005CBD00, 005CE0E0, 005D1400, 005D4850, 005D4990]; pointer:/StartSystemTy <= 005CE0E0 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat; 005CE3C5 typed receiver of StartSystemTy::AddToChat; 005D1400 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat; 005D271A typed receiver of StartSystemTy::AddToChat | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_MMMObjTy_005B6560 <= 005D1400 [this+0x1A5B] passed to MMMObjTy::PaintSlBut parameter param_1 | pointer:/ushort <= 005C29B0 [this+0x1A5B] passed to FUN_006b2330 parameter param_7; 005CBD00 [this+0x1A5B] passed to FUN_006b2330 parameter param_7
+    byte _unknown_01DF[28];
+};
+
+struct SettMapMTy {
+    SettMapMTyVTable *vtable; // [STClassLayoutApplier] reads=43, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=25
+    byte _unknown_0004[4];
+    undefined4 field_0008; // [STClassLayoutApplier] reads=24, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=12
+    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=16, writes=0; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/StartSystemTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_000C; typed_cross_class_recovery=8; type_evidence=pointer:/StartSystemTy <= 005CC840 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_000C <= consistent nested dereferences through [this+0xC]
+    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005D1400 [this+0x10] used as receiver of STAppC::sub_006E51B0
+    byte _unknown_0014[4];
+    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_001C[1];
+    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_001E[7];
+    undefined4 field_0025; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_0029; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=30; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=15
+    undefined4 field_0031; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_0035[8];
+    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_003E[15];
+    undefined4 field_004D; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_0051[12];
+    undefined4 field_005D; // [STClassLayoutApplier] reads=14, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=14
+    undefined4 field_0061; // [STClassLayoutApplier] reads=28, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=15
+    undefined1 field_0065; // [STClassLayoutApplier] reads=18, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
+    undefined1 field_0x66; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0067[51];
+    undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_009B[33];
+    SettMapMTy_Record_00BC_01FB array_00BC[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=507; [STClassArrayAnalyzer] fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3; type_evidence=array:13:/SubmarineTitans/Recovered/InlineRecordArrays/SettMapMTy_Record_00BC_01FB <= 005D4B8C record cursor owner+0x174, stride=0x1FB, exact_count=13 | 005D4B9F typed nested receiver=/SpriteClassTy at owner+0xE3 | 005D4BA6 typed nested receiver=/SpriteClassTy at owner+0x174 | 005D4BB1 typed nested receiver=/SpriteClassTy at owner+0x205 | 005D4BE1 record cursor owner+0xBC, stride=0x1FB, exact_count=13
+    byte _unknown_1A7B[4];
+    undefined1 field_1A7F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined1 field_1A80; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined1 field_1A81; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1A82; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1A86; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    char field_1A8A; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005C29B0 exact address of [this+0x1A8A] passed to Library::MSVCRT::_strncpy parameter _Dest
+    byte _unknown_1A8B[467];
+    undefined1 field_1C5E; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    uint field_1C5F; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/uint <= 005C2AC0 CMP/JNC establishes /uint through a field-derived value in SettMapMTy::sub_005C29B0; 005C2AC0 CMP/JNC through typed class pointer in SettMapMTy::sub_005C29B0
+    undefined4 field_1C63; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    AnonPointee_SettMapMTy_1C67 *field_1C67; // [STClassLayoutApplier] reads=14, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/ushort; typed_cross_class_recovery=9; type_evidence=/int <= 005C29B0 [this+0x1C67] passed to ccFntTy::SetSurf parameter param_1 | pointer:/ushort <= 005C29B0 [this+0x1C67] passed to FUN_006b2330 parameter param_7
+    undefined4 field_1C6B; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1C6F; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1C73; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1C77[16];
+    undefined4 field_1C87; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1C8B; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1C8F[36];
+    undefined4 field_1CB3; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_1CB7[69];
+    undefined4 field_1CFC; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1D00; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1D04; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1D08[16];
+    undefined4 field_1D18; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1D1C; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1D20[36];
+    undefined4 field_1D44; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_1D48[69];
+    undefined4 field_1D8D; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1D91; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1D95; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1D99[16];
+    undefined4 field_1DA9; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1DAD; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1DB1[36];
+    undefined4 field_1DD5; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_1DD9[69];
+    AnonPointee_SettMapMTy_1E1E *field_1E1E; // [STClassLayoutApplier] reads=26, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/ushort; typed_cross_class_recovery=15; type_evidence=/int <= 005C29B0 [this+0x1E1E] passed to ccFntTy::SetSurf parameter param_1 | pointer:/ushort <= 005C29B0 [this+0x1E1E] passed to FUN_006b2330 parameter param_7
+    uint field_1E22; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/uint <= 005C29B0 exact address of [this+0x1E22] passed to FUN_006b2330 parameter param_2
+    SettMapMTy_field_1E26State field_1E26; // [STClassLayoutApplier] reads=30, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
+    undefined4 field_1E27; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    ushort *field_1E2B; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=pointer:/ushort <= 005C2D24 generic pointer-return assignment in SettMapMTy::sub_005C29B0
+    SettMapMTy_field_1E2FDArray *field_1E2F; // [STClassLayoutApplier] reads=50, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=27; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005C2D01 generic pointer-return assignment in SettMapMTy::sub_005C29B0; 005D1400 [this+0x1E2F] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005D1400 [this+0x1E2F] passed to Library::DKW::TBL::DArrayAppend parameter array
+    char field_1E33; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005D1400 exact address of [this+0x1E33] passed to USER32.DLL::wsprintfA parameter param_1
+    byte _unknown_1E34[259];
+    undefined4 field_1F37; // [STClassLayoutApplier] reads=0, writes=26; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13
+    undefined4 field_1F3B; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    cMf32 *field_1F3F; // [STClassLayoutApplier] reads=8, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=pointer:/cMf32 <= 005CCE10 [this+0x1F3F] passed to CreateOpponentList parameter param_1; 005CD430 [this+0x1F3F] passed to CreateOpponentList parameter param_1
+    cMf32 *field_1F43; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=pointer:/cMf32 <= 005CE0E0 [this+0x1F43] passed to CreateOpponentList parameter param_1
+    undefined4 field_1F47; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    ushort *field_1F4B; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=pointer:/ushort <= 005C2D86 generic pointer-return assignment in SettMapMTy::sub_005C29B0
+    ushort *field_1F4F; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD|pointer:/ushort; typed_cross_class_recovery=3; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD <= 005D1400 [this+0x1F4F] passed to FUN_0070b3a0 parameter param_1 | pointer:/ushort <= 005C2D63 generic pointer-return assignment in SettMapMTy::sub_005C29B0
+    undefined4 field_1F53; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; typed_cross_class_recovery=1; type_evidence=/char <= 005D1400 exact address of [this+0x1F53] passed to FUN_00715360 parameter param_4
+    undefined1 field_0x1f57; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x1f58; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1F59[2];
+    undefined1 field_0x1f5b; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x1f5c; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x1f5d; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x1f5e; // exact unnamed-byte view referenced by exported code
+    undefined1 field_1F5F; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1F60; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
+    byte _unknown_1F64[24];
+    SettMapMTy_field_1F7CDArray *field_1F7C; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005C29B0 [this+0x1F7C] passed to Library::DKW::TBL::DArrayAppend parameter array; 005C3014 generic pointer-return assignment in SettMapMTy::sub_005C29B0; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005C29B0 [this+0x1F7C] passed to Library::DKW::TBL::DArrayAppend parameter array
+    uint field_1F80; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/uint <= 005C29B0 exact address of [this+0x1F80] passed to FUN_006b2330 parameter param_2
+    SettMapMTy_field_1F84DArray *field_1F84; // [STClassLayoutApplier] reads=184, writes=5; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=95; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005C2B7B generic pointer-return assignment in SettMapMTy::sub_005C29B0; 005CD430 [this+0x1F84] passed to DArrayDestroy parameter array; 005CD430 [this+0x1F84] passed to Library::DKW::TBL::DArrayAppend parameter array; 005CD508 generic pointer-return assignment in SettMapMTy::PrepPlList; 005D0150 [this+0x1F84] passed to DArrayRemoveAt parameter array; 005D0A20 [this+0x1F84] passed to DArrayRemoveAt parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005CD430 [this+0x1F84] passed to DArrayDestroy parameter array; 005CD430 [this+0x1F84] passed to Library::DKW::TBL::DArrayAppend parameter array; 005D0150 [this+0x1F84] passed to DArrayRemoveAt parameter array; 005D0A20 [this+0x1F84] passed to DArrayRemoveAt parameter array
+    undefined4 field_1F88; // [STClassLayoutApplier] reads=30, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=16
+    uint field_1F8C[10]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=10; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[10], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:10:/uint <= 005CE6DB exact pointer walk count=10, stride=4, cursor_displacement=0 | 005CEFE6 exact pointer walk count=10, stride=4, cursor_displacement=0
+    byte _unknown_1FB4[280];
+    uint field_20CC[10]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=10; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[10], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:10:/uint <= 005C3EE2 exact pointer walk count=10, stride=4, cursor_displacement=0 | 005C3F67 exact pointer walk count=10, stride=4, cursor_displacement=0 | 005D3C3B MOV EDX,dword ptr [EBX + ESI*0x4 + 0x20cc]
+    ushort *field_20F4; // [STClassLayoutApplier] reads=1, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=pointer:/ushort <= 005C29B0 [this+0x20F4] passed to FUN_006b2330 parameter param_7
+    byte _unknown_20F8[36];
+    undefined1 field_211C; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_211D; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_2121; // [STClassLayoutApplier] reads=26, writes=26; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=26
+    uint field_2125[14]; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; bounded_member_array; count=14; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[14], bounded_sites=0, exact_loops=1, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:14:/uint <= 005CEF9D exact pointer walk count=14, stride=4, cursor_displacement=0
+    undefined4 field_215D; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    undefined1 field_0x2161; // exact unnamed-byte view referenced by exported code
+    byte _unknown_2162[7];
+    undefined4 field_2169; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_216D; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_2171; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_2175[4];
+    undefined4 field_2179; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_217D[12];
+    undefined4 field_2189; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_218D; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_2191; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_2195[12];
+    undefined4 field_21A1; // [STClassLayoutApplier] reads=0, writes=14; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined4 field_21A5; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    int field_21A9; // [STClassLayoutApplier] reads=2, writes=8; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/int <= 005D3180 CMP/JLE establishes /int through a field-derived value in SettMapMTy::GetMessage; 005D3180 CMP/JLE through typed class pointer in SettMapMTy::GetMessage
+    undefined4 field_21AD; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_21B1; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_21B5; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_21B9; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    ushort *field_21BD; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/ushort <= 005C2CDA generic pointer-return assignment in SettMapMTy::sub_005C29B0
+    ushort *field_21C1; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/ushort <= 005C2CCE generic pointer-return assignment in SettMapMTy::sub_005C29B0
+    undefined4 field_21C5; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_21C9; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_21CD; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_21D1[16];
+    undefined1 field_21E1; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x6|4x1; exact_subword_partition=4->1; typed_cross_class_recovery=4
+    undefined1 field_21E2; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined1 field_21E3; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined1 field_21E4; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined1 field_21E5; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x6|2x1; exact_subword_partition=2->1; typed_cross_class_recovery=4
+    undefined1 field_21E6; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined1 field_21E7; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    HoloTy *field_21E8; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21E8; typed_cross_class_recovery=5; type_evidence=pointer:/HoloTy <= 005C29B0 [this+0x21E8] used as receiver of HoloTy::Init | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21E8 <= consistent nested dereferences through [this+0x21E8]
+    HoloTy *field_21EC; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21EC; typed_cross_class_recovery=5; type_evidence=pointer:/HoloTy <= 005C29B0 [this+0x21EC] used as receiver of HoloTy::Init | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21EC <= consistent nested dereferences through [this+0x21EC]
+    HoloTy *field_21F0; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F0; typed_cross_class_recovery=5; type_evidence=pointer:/HoloTy <= 005C29B0 [this+0x21F0] used as receiver of HoloTy::Init | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F0 <= consistent nested dereferences through [this+0x21F0]
+    HoloTy *field_21F4; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F4; typed_cross_class_recovery=5; type_evidence=pointer:/HoloTy <= 005C29B0 [this+0x21F4] used as receiver of HoloTy::Init | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F4 <= consistent nested dereferences through [this+0x21F4]
+    HoloTy *field_21F8; // [STClassLayoutApplier] reads=18, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F8; typed_cross_class_recovery=13; type_evidence=pointer:/HoloTy <= 005CBD00 [this+0x21F8] used as receiver of HoloTy::Init; 005CC840 [this+0x21F8] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005CC840 [this+0x21F8] used as receiver of HoloTy::Done; 005CC840 [this+0x21F8] used as receiver of HoloTy::Init; 005CC840 [this+0x21F8] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_21F8 <= consistent nested dereferences through [this+0x21F8]
+    undefined4 field_21FC; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_2200; // [STClassLayoutApplier] reads=14, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=9; type_evidence=/int <= 005CC8E6 CMP/JL establishes /int through a field-derived value in SettMapMTy::DeleteCtrls; 005CC8E6 CMP/JL through typed class pointer in SettMapMTy::DeleteCtrls | /uint <= 005CBD00 exact address of [this+0x2200] passed to FUN_006b2330 parameter param_2
+    AnonPointee_SettMapMTy_2204 *field_2204; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_2204|pointer:/ushort; typed_cross_class_recovery=6; type_evidence=/int <= 005D1400 [this+0x2204] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapMTy_2204 <= consistent nested dereferences through [this+0x2204] | pointer:/ushort <= 005CBD00 [this+0x2204] passed to FUN_006b2330 parameter param_7
+    undefined1 field_2208; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_2209; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_220D; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_2211; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_2215; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_2219; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_221D; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    undefined4 field_2221; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined1 field_2225; // [STClassLayoutApplier] reads=4, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    char *field_2226; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/byte|pointer:/char; typed_cross_class_recovery=6; type_evidence=pointer:/byte <= 005CDFF9 dynamic 1-byte dereference of field-derived address in SettMapMTy::SendPlList | pointer:/char <= 005CDF60 [this+0x2226] passed to FUN_00715360 parameter param_4; name_evidence=allocation <= 005CDF60 [this+0x2226] passed to Library::DKW::LIB::MemRealloc parameter allocation
+    undefined4 field_222A; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined1 field_222E; // [STClassLayoutApplier] reads=6, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    DArrayTy *field_222F; // [STClassLayoutApplier] reads=10, writes=5; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005CE0E0 [this+0x222F] passed to DArrayRemoveAt parameter array; 005D1400 [this+0x222F] passed to DArrayDestroy parameter array; 005D1400 [this+0x222F] passed to Library::DKW::TBL::DArrayAppend parameter array; 005D2198 generic pointer-return assignment in SettMapMTy::GetMessage; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005CE0E0 [this+0x222F] passed to DArrayRemoveAt parameter array; 005D1400 [this+0x222F] passed to DArrayDestroy parameter array; 005D1400 [this+0x222F] passed to Library::DKW::TBL::DArrayAppend parameter array
+    undefined4 field_2233; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    SettMapMTy_field_2237DArray *field_2237; // [STClassLayoutApplier] reads=18, writes=5; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=12; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005CBDBA generic pointer-return assignment in SettMapMTy::InitSettMap; 005CC2D0 [this+0x2237] passed to DArrayDestroy parameter array; 005CE0E0 [this+0x2237] passed to DArrayRemoveAt parameter array; 005CE0E0 [this+0x2237] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005CC2D0 [this+0x2237] passed to DArrayDestroy parameter array; 005CE0E0 [this+0x2237] passed to DArrayRemoveAt parameter array; 005CE0E0 [this+0x2237] passed to Library::DKW::TBL::DArrayAppend parameter array
+    uint field_223B; // [STClassLayoutApplier] reads=8, writes=5; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/uint <= 005CE0E0 [this+0x223B] passed to DArrayRemoveAt parameter index; 005CF3C7 CMP/JNC establishes /uint through a field-derived value in SettMapMTy::NoneSettMap; 005CF3C7 CMP/JNC through typed class pointer in SettMapMTy::NoneSettMap; 005CF454 CMP/JNC establishes /uint through a field-derived value in SettMapMTy::NoneSettMap; 005CF454 CMP/JNC through typed class pointer in SettMapMTy::NoneSettMap; 005CF5D4 CMP/JC establishes /uint through a field-derived value in SettMapMTy::NoneSettMap; 005CF5D4 CMP/JC through typed class pointer in SettMapMTy::NoneSettMap; name_evidence=index <= 005CE0E0 [this+0x223B] passed to DArrayRemoveAt parameter index
+    undefined4 field_223F; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined1 field_2243; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined1 field_2244; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    int GetMessage(STMessage *message);
+    undefined4 NoneSettMap();
+    undefined InitSettMap(char param_1);
+    undefined DoneSettMap();
+    undefined CreateCtrls(char param_1);
+    undefined DeleteCtrls();
+    undefined4 vfunc_20();
+    undefined4 vfunc_24();
+    undefined PrepPlList();
+    undefined SetListCtrls();
+    void AddPlList(int param_1);
+    void AddPlayerList(int param_1, uint param_2, int param_3, char *param_4);
+    void ChangePlayerCiv(uint param_1, char param_2);
+    void ChangePlayerColor(uint param_1, char param_2);
+    void ChangePlayerList(int param_1, uint param_2, int param_3, char param_4, char *param_5);
+    void ChangePlayerState(uint param_1);
+    void ChangePlayerTeam(uint param_1, uint param_2, uint param_3);
+    void CheckPlList();
+    void ChgPlList(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4);
+    void DeletePlayer(int param_1);
+    void PrepareAFT(AnonShape_005D4990_5F0525CF *param_1, uint *param_2);
+    void RunGame();
+    void SendDesc(int param_1);
+    void SendPlList(int param_1);
+    void UpdatePing(int param_1, undefined4 param_2);
+    void sub_005B5F00(RecoveredSourceFamily_dibcopy *param_1, int *param_2);
+    void sub_005C29B0(char param_1);
+    void sub_005D00B0(AnonShape_005D00B0_9E7CC102 *param_1, uint param_2);
+    void sub_005D1380();
+};
+
+struct SettMapTy_Record_00BC_01FB {
+    byte _unknown_0000[2];
+    undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0003[1];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[34];
+    SpriteClassTy field_0027; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_00B8; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_0149; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    undefined1 field_01DA; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6746]; functions=[005C5130]
+    MMMObjTy *field_01DB; // [STClassLayoutApplier] nested evidence_count=4; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6747]; functions=[005C4930, 005C4E20, 005C6030, 005C8A40]; pointer:/MMMObjTy <= 005C4E20 [this+0x1A5B] used as receiver of MMMObjTy::OutBSlProc; 005C4EDE typed receiver of MMMObjTy::OutBSlProc; 005C4FB2 typed receiver of MMMObjTy::OutBSlProc
+    byte _unknown_01DF[28];
+};
+
+struct SettMapTy {
+    SettMapTyVTable *vtable; // [STClassLayoutApplier] reads=29, writes=3; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=18
+    byte _unknown_0004[4];
+    undefined4 field_0008; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    StartSystemTy *field_000C; // [STClassLayoutApplier] reads=24, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; type_evidence=pointer:/StartSystemTy <= 005C6D40 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0
+    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 005C8A40 [this+0x10] used as receiver of STAppC::sub_006E51B0
+    byte _unknown_0014[4];
+    undefined4 field_0018; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_001C[1];
+    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_001E[15];
+    undefined4 field_002D; // [STClassLayoutApplier] reads=0, writes=48; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=24
+    undefined4 field_0031; // [STClassLayoutApplier] reads=0, writes=14; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    byte _unknown_0035[8];
+    undefined1 field_0x3d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_003E[7];
+    undefined4 field_0045; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_0049; // [STClassLayoutApplier] reads=0, writes=10; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_004D; // [STClassLayoutApplier] reads=4, writes=10; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    undefined4 field_0051; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_0055; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte _unknown_0059[4];
+    undefined4 field_005D; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    DWORD field_0061; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/WinDef.h/DWORD <= 005C5130 [this+0x61] assigned 005C5130 return from WINMM.DLL::timeGetTime
+    undefined1 field_0065; // [STClassLayoutApplier] reads=36, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=22
+    undefined1 field_0x66; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0067[51];
+    undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    byte _unknown_009B[33];
+    SettMapTy_Record_00BC_01FB array_00BC[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=507; [STClassArrayAnalyzer] fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3; type_evidence=array:13:/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB <= 005D77EC record cursor owner+0x174, stride=0x1FB, exact_count=13 | 005D77FF typed nested receiver=/SpriteClassTy at owner+0xE3 | 005D7806 typed nested receiver=/SpriteClassTy at owner+0x174 | 005D7811 typed nested receiver=/SpriteClassTy at owner+0x205 | 005D7841 record cursor owner+0xBC, stride=0x1FB, exact_count=13
+    byte _unknown_1A7B[4];
+    undefined1 field_1A7F; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined1 field_1A80; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined1 field_1A81; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1A82; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1A86; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    char field_1A8A; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005C8A40 exact address of [this+0x1A8A] passed to Library::MSVCRT::_strncpy parameter _Dest
+    byte _unknown_1A8B[467];
+    undefined1 field_1C5E; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    uint field_1C5F; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/uint <= 005CAA20 CMP/JNC establishes /uint through a field-derived value in SettMapTy::GetMessage; 005CAA20 CMP/JNC through typed class pointer in SettMapTy::GetMessage
+    undefined4 field_1C63; // [STClassLayoutApplier] reads=4, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1C67; // [STClassLayoutApplier] reads=16, writes=1; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy; typed_cross_class_recovery=9; type_evidence=/int <= 005C8A40 [this+0x1C67] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005C8A40 [this+0x1C67] passed to FUN_006c7610 parameter param_1
+    undefined1 field_0x1c6b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1C6C[3];
+    undefined4 field_1C6F; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1C73[20];
+    undefined4 field_1C87; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1C8B; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1C8F; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1C93; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1C97[28];
+    undefined4 field_1CB3; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1CB7[69];
+    undefined1 field_0x1cfc; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1CFD[3];
+    undefined4 field_1D00; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1D04[20];
+    undefined4 field_1D18; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1D1C; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_1D20; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_1D24; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1D28[28];
+    undefined4 field_1D44; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    byte _unknown_1D48[69];
+    undefined1 field_0x1d8d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1D8E[3];
+    undefined4 field_1D91; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1D95; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1D99[16];
+    undefined4 field_1DA9; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1DAD; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_1DB1; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    byte _unknown_1DB5[32];
+    undefined4 field_1DD5; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    byte _unknown_1DD9[69];
+    int field_1E1E; // [STClassLayoutApplier] reads=18, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=10; type_evidence=/int <= 005C8A40 [this+0x1E1E] passed to ccFntTy::SetSurf parameter param_1
+    undefined4 field_1E22; // [STClassLayoutApplier] reads=9, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    SettMapTy_field_1E26State field_1E26; // [STClassLayoutApplier] reads=17, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
+    uint field_1E27; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/uint <= 005C8A40 [this+0x1E27] passed to FUN_005b6350 parameter param_2
+    AnonPointee_SettMapTy_1E2B *field_1E2B; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4
+    DArrayTy *field_1E2F; // [STClassLayoutApplier] reads=98, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=51; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005C4930 [this+0x1E2F] passed to DArrayDestroy parameter array; 005C8A40 [this+0x1E2F] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005C4930 [this+0x1E2F] passed to DArrayDestroy parameter array; 005C8A40 [this+0x1E2F] passed to Library::DKW::TBL::DArrayAppend parameter array
+    char field_1E33; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005C8A40 exact address of [this+0x1E33] passed to USER32.DLL::wsprintfA parameter param_1
+    byte _unknown_1E34[259];
+    undefined4 field_1F37; // [STClassLayoutApplier] reads=0, writes=50; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=25
+    undefined1 field_0x1f3b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1F3C[3];
+    cMf32 *field_1F3F; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/cMf32 <= 005C4930 [this+0x1F3F] passed to cMf32::delete parameter param_1; 005C6030 [this+0x1F3F] passed to cMf32::delete parameter param_1
+    cMf32 *field_1F43; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=pointer:/cMf32 <= 005C4930 [this+0x1F43] passed to cMf32::delete parameter param_1
+    undefined4 field_1F47; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_1F4B; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
+    AnonShape_GLOBAL_0081175C_57F682DD *field_1F4F; // [STClassLayoutApplier] reads=6, writes=1; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD <= 005C8A40 [this+0x1F4F] passed to FUN_0070b3a0 parameter param_1
+    DWORD field_1F53; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/WinDef.h/DWORD <= 005C8A40 [this+0x1F53] assigned 005C8A40 return from WINMM.DLL::timeGetTime
+    undefined1 field_1F57; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    uint field_1F58; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/uint <= 005CA675 CMP/JNC establishes /uint through a field-derived value in SettMapTy::GetMessage; 005CA675 CMP/JNC through typed class pointer in SettMapTy::GetMessage
+    byte field_1F5C; // [STClassLayoutApplier] reads=8, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/byte <= 005C8DF8 CMP/JBE through typed class pointer in SettMapTy::GetMessage; 005C8E3B CMP/JBE through typed class pointer in SettMapTy::GetMessage
+    undefined1 field_1F5D; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined1 field_1F5E; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined1 field_1F5F; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    uint field_1F60[7]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=7; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[7], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:7:/uint <= 005C6638 exact pointer walk count=7, stride=4, cursor_displacement=0 | 005C73AA exact pointer walk count=7, stride=4, cursor_displacement=0 | 005C8EDF MOV ECX,dword ptr [EBX + EAX*0x4 + 0x1f60]
+    DArrayTy *field_1F7C; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005C4930 [this+0x1F7C] passed to DArrayDestroy parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005C4930 [this+0x1F7C] passed to DArrayDestroy parameter array
+    undefined4 field_1F80; // [STClassLayoutApplier] reads=11, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
+    DArrayTy *field_1F84; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005C4930 [this+0x1F84] passed to DArrayDestroy parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005C4930 [this+0x1F84] passed to DArrayDestroy parameter array
+    undefined4 field_1F88; // [STClassLayoutApplier] reads=0, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    uint field_1F8C[10]; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; bounded_member_array; count=10; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[10], bounded_sites=0, exact_loops=1, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:10:/uint <= 005C6DC3 exact pointer walk count=10, stride=4, cursor_displacement=0
+    byte _unknown_1FB4[280];
+    uint field_20CC[10]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=10; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[10], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:10:/uint <= 005C61CC exact pointer walk count=10, stride=4, cursor_displacement=0 | 005C6F8B exact pointer walk count=10, stride=4, cursor_displacement=0
+    void *field_20F4[10]; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; bounded_member_array; count=10; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[10], bounded_sites=0, exact_loops=1, pointer_dereferences=0, element_candidates=[pointer:/void], exact_pointer_candidates=[]; type_evidence=array:10:pointer:/void <= 005C4C2B exact pointer walk count=10, stride=4, cursor_displacement=0
+    undefined1 field_0x211c; // exact unnamed-byte view referenced by exported code
+    undefined4 field_211D; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    undefined1 field_0x2121; // exact unnamed-byte view referenced by exported code
+    byte _unknown_2122[3];
+    uint field_2125[14]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=14; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[14], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:14:/uint <= 005C695F exact pointer walk count=14, stride=4, cursor_displacement=0 | 005C6FB2 exact pointer walk count=14, stride=4, cursor_displacement=0
+    undefined4 field_215D; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined1 field_0x2161; // exact unnamed-byte view referenced by exported code
+    byte _unknown_2162[15];
+    undefined4 field_2171; // [STClassLayoutApplier] reads=0, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    byte _unknown_2175[4];
+    SettMapTy_field_2179State field_2179; // [STClassLayoutApplier] reads=6, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13 [STSwitchEnumApplier] enum recovered from switch cases
+    byte _unknown_217D[20];
+    undefined4 field_2191; // [STClassLayoutApplier] reads=0, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    byte _unknown_2195[12];
+    uint field_21A1; // [STClassLayoutApplier] reads=0, writes=34; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=17; type_evidence=/uint <= 005C942F exact field-to-field MOV propagation; 005CA0F3 exact field-to-field MOV propagation
+    undefined4 field_21A5; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined4 field_21A9; // [STClassLayoutApplier] reads=0, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    byte _unknown_21AD[24];
+    undefined4 field_21C5; // [STClassLayoutApplier] reads=0, writes=22; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
+    undefined4 field_21C9; // [STClassLayoutApplier] reads=0, writes=24; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=12
+    undefined4 field_21CD; // [STClassLayoutApplier] reads=0, writes=20; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
+    byte _unknown_21D1[16];
+    undefined1 field_21E1; // [STClassLayoutApplier] reads=3, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x3|4x7; exact_subword_partition=4->1; typed_cross_class_recovery=7
+    undefined1 field_21E2; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    undefined1 field_21E3; // [STClassLayoutApplier] reads=5, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
+    undefined1 field_21E4; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined1 field_21E5; // [STClassLayoutApplier] reads=3, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x3|2x7; exact_subword_partition=2->1; typed_cross_class_recovery=7
+    undefined1 field_21E6; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined1 field_21E7; // [STClassLayoutApplier] reads=2, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    HoloTy *field_21E8; // [STClassLayoutApplier] reads=23, writes=8; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21E8; typed_cross_class_recovery=19; type_evidence=pointer:/HoloTy <= 005C4930 [this+0x21E8] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C4930 [this+0x21E8] used as receiver of HoloTy::Done; 005C6D40 [this+0x21E8] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C6D40 [this+0x21E8] used as receiver of HoloTy::Done; 005C6D40 [this+0x21E8] used as receiver of HoloTy::Init; 005C6D40 [this+0x21E8] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21E8 <= consistent nested dereferences through [this+0x21E8]
+    HoloTy *field_21EC; // [STClassLayoutApplier] reads=23, writes=8; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21EC; typed_cross_class_recovery=19; type_evidence=pointer:/HoloTy <= 005C4930 [this+0x21EC] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C4930 [this+0x21EC] used as receiver of HoloTy::Done; 005C6D40 [this+0x21EC] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C6D40 [this+0x21EC] used as receiver of HoloTy::Done; 005C6D40 [this+0x21EC] used as receiver of HoloTy::Init; 005C6D40 [this+0x21EC] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21EC <= consistent nested dereferences through [this+0x21EC]
+    HoloTy *field_21F0; // [STClassLayoutApplier] reads=23, writes=8; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21F0; typed_cross_class_recovery=19; type_evidence=pointer:/HoloTy <= 005C4930 [this+0x21F0] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C4930 [this+0x21F0] used as receiver of HoloTy::Done; 005C6D40 [this+0x21F0] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C6D40 [this+0x21F0] used as receiver of HoloTy::Done; 005C6D40 [this+0x21F0] used as receiver of HoloTy::Init; 005C6D40 [this+0x21F0] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21F0 <= consistent nested dereferences through [this+0x21F0]
+    HoloTy *field_21F4; // [STClassLayoutApplier] reads=23, writes=8; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/HoloTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21F4; typed_cross_class_recovery=19; type_evidence=pointer:/HoloTy <= 005C4930 [this+0x21F4] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C4930 [this+0x21F4] used as receiver of HoloTy::Done; 005C6D40 [this+0x21F4] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C6D40 [this+0x21F4] used as receiver of HoloTy::Done; 005C6D40 [this+0x21F4] used as receiver of HoloTy::Init; 005C6D40 [this+0x21F4] used as receiver of HoloTy::NextFas | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SettMapTy_21F4 <= consistent nested dereferences through [this+0x21F4]
+    HoloTy *field_21F8; // [STClassLayoutApplier] reads=11, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=11; type_evidence=pointer:/HoloTy <= 005C4930 [this+0x21F8] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1; 005C4930 [this+0x21F8] used as receiver of HoloTy::Done
+    undefined CloseButtons();
+    int NoneSettMap();
+    undefined4 sub_005C29B0(undefined1 arg_1);
+    undefined DoneSettMap();
+    undefined CreateCtrls(char param_1);
+    undefined DeleteCtrls();
+    undefined4 vfunc_20();
+    undefined4 vfunc_24();
+    int GetMessage(STMessage *message);
+    void PaintSC();
+    void PaintSettMap(char param_1);
+};
+
+struct WaitTy_Record_00BC_01FB {
+    byte _unknown_0000[2];
+    undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0003[1];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[34];
+    SpriteClassTy field_0027; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_00B8; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    SpriteClassTy field_0149; // [STClassLayoutApplier] nested evidence_count=2; existing exact record-array element | exact repeated typed receiver construction
+    undefined1 field_01DA; // [STClassLayoutApplier] nested evidence_count=1; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6746]; functions=[005E84D0]
+    undefined4 field_01DB; // [STClassLayoutApplier] nested evidence_count=6; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6747]; functions=[005E6770, 005E7570, 005E79B0, 005E84D0, 005E9D70, 005EA680]
+    undefined1 field_01DF; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6751]; functions=[005E84D0, 005E9D70]
+    undefined4 field_01E0; // [STClassLayoutApplier] nested evidence_count=3; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6752]; functions=[005E9970, 005E9A40, 005EAD30]
+    undefined4 field_01E4; // [STClassLayoutApplier] nested evidence_count=9; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6756]; functions=[005E6770, 005E7570, 005E79B0, 005E84D0, 005E9830, 005E9B50, 005E9D70, 005EA680, 005EAD30]
+    undefined4 field_01E8; // [STClassLayoutApplier] nested evidence_count=4; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6760]; functions=[005E6770, 005E79B0, 005E84D0, 005EAD30]
+    ulong field_01EC; // [STClassLayoutApplier] nested evidence_count=1; existing exact record-array element
+    undefined4 field_01F0; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6768]; functions=[005E84D0, 005EAD30]
+    undefined1 field_01F4; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6772]; functions=[005E84D0, 005EAD30]
+    undefined1 field_01F5; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6773]; functions=[005E84D0, 005EAD30]
+    undefined1 field_01F6; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6774]; functions=[005E84D0, 005EAD30]
+    undefined4 field_01F7; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6775]; functions=[005E84D0, 005EAD30]
+};
+
+struct DDXContext {
+    byte _unknown_0000[11];
     byte field_000B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
     uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
     byte _unknown_0010[8];
     undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     int field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined1 field_0x24; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0025[7];
-    undefined1 field_0x2c; // exact unnamed-byte view referenced by exported code
-    byte _unknown_002D[3];
+    byte _unknown_0024[12];
     int *field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-    undefined1 field_0x34; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0035[3];
-    undefined1 field_0x38; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0039[3];
+    byte _unknown_0034[8];
     undefined4 field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     int *field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-    undefined1 field_0x48; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0049[11];
-    undefined1 field_0x54; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0055[1119];
+    byte _unknown_0048[1132];
     HPALETTE field_04B4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/WinDef.h/HPALETTE=1}
 };
 
@@ -19933,13 +19680,13 @@ struct ST3DSMAPContext {
     void sub_006DD610(uint param_2, double param_3, double param_4);
     void sub_006DD790(float param_1);
     void sub_006DD800(float param_1);
-    void sub_006DD870();
+    undefined sub_006DD870();
     void sub_006DDA90(float param_1, float param_2);
     void sub_006DDAE0(int param_1, int param_2, int param_3, ushort *param_4);
     void sub_006DDB70();
     void sub_006DDBB0();
     void sub_006DDBE0();
-    void sub_006E1320(double *param_1, double *param_2, int *param_3, int *param_4, int *param_5);
+    void sub_006E1320(double * param_1, double * param_2, int * param_3, int * param_4, int * param_5);
     undefined4 sub_006E1460(double param_2, double param_3);
     undefined4 sub_006E1C20(float param_1, int param_2, float param_3, float *param_4, float *param_5);
     int sub_006E25D0(int *param_2, float *param_3, double param_4, double param_5, double param_6, int param_7);
@@ -19952,14 +19699,14 @@ struct ST3DSMAPContext {
     void sub_006E6710(float param_1, float param_2, uint param_3, undefined4 param_4, int param_5);
     void sub_006E6780(int param_1);
     undefined4 sub_006E68C0(int param_1, int param_2, int *param_3, int *param_4);
-    void sub_006E6AF0(AnonShape_006E6AF0_D2F012A7 *param_1);
+    undefined sub_006E6AF0(AnonShape_006E6AF0_D2F012A7 * param_1);
     void sub_006E6FB0(RecoveredSourceFamily_dibcopy *param_1, int param_2, int param_3, int param_4);
     void sub_006E8580(int *param_1);
     void sub_006E8630(undefined4 param_1);
     char * sub_006E8640(char *text, char *param_2);
     undefined4 sub_006E8660(int *param_1, uint param_2, uint param_3, uint param_4, uint param_5, uint param_6, uint param_7, uint param_8);
     int sub_006E88C0(int *param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8, byte param_9, undefined4 param_10, undefined4 param_11, undefined4 param_12);
-    undefined4 sub_006E8EA0(AnonShape_006E8EA0_96B71903 *param_1);
+    undefined4 sub_006E8EA0(AnonShape_006E8EA0_96B71903 * param_1);
     ushort * sub_006E9000(int param_1, ushort param_2, ushort param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, int param_7);
     void sub_006E91D0(int *param_1);
     undefined4 sub_006E98E0(uint param_1, uint param_2, int param_3, int param_4, int param_5);
@@ -21299,17 +21046,13 @@ struct AnonNested_0075EF30_01BA_0FEC5BB1 {
 };
 
 struct AnonNested_0075F7D0_01BA_88B72737 {
-    byte _unknown_0000[8];
-    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0009[7];
+    byte _unknown_0000[16];
     int *field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={pointer:/int=2}
     int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
 };
 
 struct AnonNested_0075FA00_01BA_0DE014D6 {
-    byte _unknown_0000[4];
-    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0005[15];
+    byte _unknown_0000[20];
     int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
     undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=3, /undefined4=1}
     undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=2}
@@ -26047,6 +25790,36 @@ struct AnonShape_005776D0_202C27C7 {
     int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
 };
 
+struct AnonShape_00578630_C5BC66E1 {
+    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x1; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x3; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[7];
+    undefined1 field_0xc; // exact unnamed-byte view referenced by exported code
+    byte _unknown_000D[27];
+    uint field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0048; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_004C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_0050; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_0052; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_0054; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_0056; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_0058; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_005A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 field_0x5c; // exact unnamed-byte view referenced by exported code
+    byte _unknown_005D[3];
+    uint field_0060; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+};
+
 struct AnonShape_00578630_E75DF825 {
     byte _unknown_0000[16];
     undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
@@ -26407,9 +26180,7 @@ struct AnonShape_005859A0_2F00015D {
     undefined1 field_0x3e; // exact unnamed-byte view referenced by exported code
     byte _unknown_003F[3];
     undefined1 field_0x42; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x43; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x44; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x45; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0043[3];
     undefined4 field_0046; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined1 field_0x4a; // exact unnamed-byte view referenced by exported code
     byte _unknown_004B[3];
@@ -26483,9 +26254,9 @@ struct AnonShape_00588BC0_84BDD66C {
     undefined1 field_0x44; // exact unnamed-byte view referenced by exported code
     byte _unknown_0045[1];
     undefined1 field_0x46; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x47; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0047[1];
     undefined1 field_0x48; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x49; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0049[1];
     undefined1 field_0x4a; // exact unnamed-byte view referenced by exported code
     byte _unknown_004B[1];
     undefined1 field_0x4c; // exact unnamed-byte view referenced by exported code
@@ -26554,9 +26325,7 @@ struct AnonShape_00589C10_CECA1FB4 {
     undefined1 field_0x2c; // exact unnamed-byte view referenced by exported code
     byte _unknown_002D[3];
     undefined1 field_0x30; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x31; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x32; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x33; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0031[3];
     undefined1 field_0x34; // exact unnamed-byte view referenced by exported code
     byte _unknown_0035[3];
     undefined1 field_0x38; // exact unnamed-byte view referenced by exported code
@@ -26780,9 +26549,7 @@ struct AnonShape_0058C760_5C56630E {
     undefined1 field_0x3e; // exact unnamed-byte view referenced by exported code
     byte _unknown_003F[3];
     undefined1 field_0x42; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x43; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x44; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x45; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0043[3];
     undefined1 field_0x46; // exact unnamed-byte view referenced by exported code
     byte _unknown_0047[3];
     undefined1 field_0x4a; // exact unnamed-byte view referenced by exported code
@@ -26833,11 +26600,10 @@ struct AnonShape_0058D7C0_99A937C6 {
     undefined1 field_0x3c; // exact unnamed-byte view referenced by exported code
     byte _unknown_003D[3];
     undefined1 field_0x40; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x41; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0041[1];
     undefined4 field_0042; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined1 field_0x46; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x47; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0048[2];
+    byte _unknown_0047[3];
     undefined1 field_0x4a; // exact unnamed-byte view referenced by exported code
     byte _unknown_004B[3];
     undefined4 field_004E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
@@ -28475,19 +28241,11 @@ struct AnonShape_006029C0_E1371936 {
 };
 
 struct AnonShape_00602BE0_B1CC517D {
-    byte _unknown_0000[24];
-    undefined1 field_0x18; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0019[25];
-    undefined1 field_0x32; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0033[418];
-    undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
-    byte _unknown_01D6[23];
+    byte _unknown_0000[493];
     uint field_01ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
     byte _unknown_01F1[32];
     void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=2}
-    byte _unknown_0215[28];
-    undefined1 field_0x231; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0232[35];
+    byte _unknown_0215[64];
     short field_0255; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
     short field_0257; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
     short field_0259; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
@@ -28499,11 +28257,7 @@ struct AnonShape_00602BE0_B1CC517D {
     int field_0397; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
     undefined4 field_039B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1}
     char field_039F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2}
-    byte _unknown_03A0[5];
-    undefined1 field_0x3a5; // exact unnamed-byte view referenced by exported code
-    byte _unknown_03A6[1];
-    undefined1 field_0x3a7; // exact unnamed-byte view referenced by exported code
-    byte _unknown_03A8[3];
+    byte _unknown_03A0[11];
     undefined4 *field_03AB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined4=1}
     byte _unknown_03AF[1];
 };
@@ -31550,16 +31304,7 @@ struct AnonShape_006BF710_259ECA93 {
     byte _unknown_0000[12];
     int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined1 field_0x14; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0015[3];
-    undefined1 field_0x18; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0019[215];
-    undefined1 field_0xf0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00F1[43];
-    undefined1 field_0x11c; // exact unnamed-byte view referenced by exported code
-    byte _unknown_011D[3];
-    undefined1 field_0x120; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0121[159];
+    byte _unknown_0014[428];
     int *field_01C0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
     byte _unknown_01C4[32];
     int field_01E4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
@@ -31707,16 +31452,10 @@ struct AnonShape_006C3570_37024033 {
 struct AnonShape_006C3D80_5E5410BE {
     byte _unknown_0000[4];
     uint field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0009[3];
-    undefined1 field_0xc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_000D[3];
+    byte _unknown_0008[8];
     int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined1 field_0x18; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0019[3];
-    undefined1 field_0x1c; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001D[3];
+    byte _unknown_0018[8];
     int field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
@@ -32737,16 +32476,9 @@ struct AnonShape_006E1050_52F5A113 {
 };
 
 struct AnonShape_006E1EE0_698AE49A {
-    byte _unknown_0000[4];
-    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0005[1];
-    undefined1 field_0x6; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0007[1];
-    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0009[19];
+    byte _unknown_0000[28];
     uint field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined1 field_0x20; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0021[3];
+    byte _unknown_0020[4];
     int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
     undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/byte=1}
     byte _unknown_002C[16];
@@ -32792,9 +32524,7 @@ struct AnonShape_006E3680_4519C52B {
 };
 
 struct AnonShape_006E4480_50BB219F {
-    byte _unknown_0000[4];
-    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0005[3];
+    byte _unknown_0000[8];
     DArrayTy *field_0008; // [STPointerShapeApplier] evidence_count=7; fixed-offset dereference; observed_types={/int=3}
 };
 
@@ -32837,11 +32567,7 @@ struct AnonShape_006E5740_EEA77B11 {
 };
 
 struct AnonShape_006E6AF0_D2F012A7 {
-    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0002[2];
-    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0005[7];
+    byte _unknown_0000[12];
     undefined1 field_0xc; // exact unnamed-byte view referenced by exported code
     byte _unknown_000D[1];
     short field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
@@ -32961,13 +32687,9 @@ struct AnonShape_006EBE40_77FE2AA7 {
 };
 
 struct AnonShape_006EC010_0B2ED2E5 {
-    byte _unknown_0000[8];
-    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0009[15];
+    byte _unknown_0000[24];
     int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_001C[68];
-    undefined1 field_0x60; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0061[3];
+    byte _unknown_001C[72];
     int field_0064; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
 };
 
@@ -33164,8 +32886,7 @@ struct AnonShape_0071A990_7656000F {
 };
 
 struct AnonShape_0071B760_B33E06ED {
-    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0001[28];
+    byte _unknown_0000[29];
     byte field_001D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=4}
     byte _unknown_001E[12];
     byte field_002A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=4}
@@ -34502,11 +34223,7 @@ struct AnonShape_00759190_45B6ED67 {
 };
 
 struct AnonShape_0075A040_811C231E {
-    byte _unknown_0000[28];
-    undefined1 field_0x1c; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001D[179];
-    undefined1 field_0xd0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00D1[89];
+    byte _unknown_0000[298];
     int field_012A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
     byte _unknown_012E[104];
     int field_0196; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
@@ -35000,19 +34717,13 @@ struct AnonShape_0075F590_570A7014 {
 };
 
 struct AnonShape_0075F7D0_BDBF0616 {
-    byte _unknown_0000[112];
-    undefined1 field_0x70; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0071[329];
+    byte _unknown_0000[442];
     AnonNested_0075F7D0_01BA_88B72737 *field_01BA; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_01BE[2];
 };
 
 struct AnonShape_0075FA00_902A830E {
-    byte _unknown_0000[80];
-    undefined1 field_0x50; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0051[31];
-    undefined1 field_0x70; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0071[329];
+    byte _unknown_0000[442];
     AnonNested_0075FA00_01BA_0DE014D6 *field_01BA; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_01BE[2];
 };
@@ -36492,31 +36203,6 @@ struct STPosition32 {
     int x; // First coordinate; low 16 bits consumed.
     int y; // Second coordinate; low 16 bits consumed.
     int z; // Third coordinate; low 16 bits consumed.
-};
-
-struct SystemClassTy {
-    SystemClassTyVTable *vtable; // Confirmed vtable at 0079E188.
-    DArrayTy *messages; // Confirmed DArray allocated by InitSystem.
-    DArrayTy *nextMessages; // Confirmed DArray allocated by InitSystem.
-    void *unknown_0c; // Used as synchronization/iteration state; exact type unresolved.
-    DArrayTy *objects; // Confirmed object DArray.
-    int systemId; // Confirmed system identifier.
-    void *unknown_18; // Constructor argument; exact semantic type unresolved.
-    SystemClassTy *parentSystem; // Assigned by AppClassTy::AddChildSystem.
-    int InitSystem();
-    void DoneSystem();
-    int CreateObjectFull(int objectType, void *outObject, void *outRecord, int createArgument, int objectId);
-    void CreateObject(int objectType, void *outObject, void *outRecord, int objectId);
-    void CreateObjectSimple(int objectType, int objectId);
-    int CreateSystemObjects();
-    int SendMessage(STMessage *message);
-    int Life();
-    int GetMessage(STMessage *message);
-    int FindFirstObject(int param_1, int * param_2);
-    int GetToAllObjects(undefined4 param_1);
-    int PostMessage(undefined4 * param_1);
-    int PostNextMessage(undefined4 * param_1);
-    int _CreateObject(int param_1, undefined4 * param_2, int * param_3, undefined4 param_4);
 };
 
 struct SystemClassTyVTable {
@@ -40442,6 +40128,31 @@ struct WaitTyVTable {
     undefined __thiscall (*CloseButtons)(WaitTy *st_this); // slot 0x8 -> 0040110E WaitTy::CloseButtons
 };
 
+struct SystemClassTy {
+    SystemClassTyVTable *vtable; // Confirmed vtable at 0079E188.
+    DArrayTy *messages; // Confirmed DArray allocated by InitSystem.
+    DArrayTy *nextMessages; // Confirmed DArray allocated by InitSystem.
+    void *field_000C; // [STTypeBootstrapApplier] Exact-layout views disagreed on the semantic name; retained as offset-only storage.
+    DArrayTy *objects; // Confirmed object DArray.
+    int systemId; // Confirmed system identifier.
+    AppClassTy *app; // [STTypeBootstrapApplier] Member name derived mechanically from concrete pointee type /AppClassTy *.
+    SystemClassTy *parentSystem; // Assigned by AppClassTy::AddChildSystem.
+    int InitSystem();
+    void DoneSystem();
+    int CreateObjectFull(int objectType, void *outObject, void *outRecord, int createArgument, int objectId);
+    void CreateObject(int objectType, void *outObject, void *outRecord, int objectId);
+    void CreateObjectSimple(int objectType, int objectId);
+    int CreateSystemObjects();
+    int SendMessage(STMessage *message);
+    int Life();
+    int GetMessage(STMessage *message);
+    int FindFirstObject(int param_1, int * param_2);
+    int GetToAllObjects(undefined4 param_1);
+    int PostMessage(undefined4 * param_1);
+    int PostNextMessage(undefined4 * param_1);
+    int _CreateObject(int param_1, undefined4 * param_2, int * param_3, undefined4 param_4);
+};
+
 struct SystemWithNamedObjClassTy {
     SystemWithNamedObjClassTyVTable *vtable; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=1
     byte _unknown_0004[28];
@@ -40691,9 +40402,9 @@ struct TLOBaseTy {
     uint field_04E0[40]; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; bounded_member_array; count=40; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[40], bounded_sites=0, exact_loops=1, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:40:/uint <= 004C0F32 exact pointer walk count=40, stride=4, cursor_displacement=0
     byte _unknown_0580[44];
     TLOBaseTy_field_05ACState field_05AC; // [STClassLayoutApplier] reads=11, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access [STSwitchEnumApplier] enum recovered from switch cases
-    undefined4 field_05B0; // [STClassLayoutApplier] reads=49, writes=1; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x18|4x32; inferred_type_conflict=/int|/short; cfg_field_recovery=9; typed_cross_class_recovery=35; type_evidence=/int <= 004B8414 CMP/JGE establishes /int through CFG-recovered field flow in TLOBaseTy::SetState; 004B8414 CMP/JGE through typed class pointer in TLOBaseTy::SetState; 004B8458 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004B8618 CMP/JGE establishes /int through CFG-recovered field flow in TLOBaseTy::SetState; 004B8618 CMP/JGE through typed class pointer in TLOBaseTy::SetState; 004B865F CMP/JL through typed class pointer in TLOBaseTy::SetState; 004BACFE CMP/JGE through typed class pointer in TLOBaseTy::GetMessage; 004BAD42 CMP/JL through typed class pointer in TLOBaseTy::GetMessage; 004C3C00 [this+0x5B0] passed to FUN_006aced8 parameter param_3; 004E0ADD CMP/JGE through typed class pointer in FUN_004e0830 | /short <= 004B8385 CMP/JL establishes /short through CFG-recovered field flow in TLOBaseTy::SetState; 004B8385 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004B8493 CMP/JL establishes /short through CFG-recovered field flow in TLOBaseTy::SetState; 004B8493 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004B8589 CMP/JL establishes /short through CFG-recovered field flow in TLOBaseTy::SetState; 004B8589 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004BC236 MOVSX of exact partial-register field load in TLOBaseTy::GetMessage; 004BC298 MOVSX of exact partial-register field load in TLOBaseTy::GetMessage; 004BC301 CMP/JL through typed class pointer in TLOBaseTy::GetMessage
+    int field_05B0; // [STClassLayoutApplier] reads=49, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x18|4x32; full_width_scalar_dominates_contained_low_view; cfg_field_recovery=9; typed_cross_class_recovery=35; type_evidence=/int <= 004B8414 CMP/JGE establishes /int through CFG-recovered field flow in TLOBaseTy::SetState; 004B8414 CMP/JGE through typed class pointer in TLOBaseTy::SetState; 004B8458 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004B8618 CMP/JGE establishes /int through CFG-recovered field flow in TLOBaseTy::SetState; 004B8618 CMP/JGE through typed class pointer in TLOBaseTy::SetState; 004B865F CMP/JL through typed class pointer in TLOBaseTy::SetState; 004BACFE CMP/JGE through typed class pointer in TLOBaseTy::GetMessage; 004BAD42 CMP/JL through typed class pointer in TLOBaseTy::GetMessage; 004C3C00 [this+0x5B0] passed to FUN_006aced8 parameter param_3; 004E0ADD CMP/JGE through typed class pointer in FUN_004e0830 | /short <= 004B8385 CMP/JL establishes /short through CFG-recovered field flow in TLOBaseTy::SetState; 004B8385 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004B8493 CMP/JL establishes /short through CFG-recovered field flow in TLOBaseTy::SetState; 004B8493 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004B8589 CMP/JL establishes /short through CFG-recovered field flow in TLOBaseTy::SetState; 004B8589 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004BC236 MOVSX of exact partial-register field load in TLOBaseTy::GetMessage; 004BC298 MOVSX of exact partial-register field load in TLOBaseTy::GetMessage; 004BC301 CMP/JL through typed class pointer in TLOBaseTy::GetMessage
     undefined4 field_05B4; // [STClassLayoutApplier] reads=52, writes=1; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x19|4x34; inferred_type_conflict=/int|/short|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_05B4; cfg_field_recovery=10; typed_cross_class_recovery=36; type_evidence=/int <= 004B8407 CMP/JGE establishes /int through CFG-recovered field flow in TLOBaseTy::SetState; 004B8407 CMP/JGE through typed class pointer in TLOBaseTy::SetState; 004B860B CMP/JGE establishes /int through CFG-recovered field flow in TLOBaseTy::SetState; 004B860B CMP/JGE through typed class pointer in TLOBaseTy::SetState; 004B8672 CMP/JL establishes /int through CFG-recovered field flow in TLOBaseTy::SetState; 004B8672 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004BACED CMP/JGE through typed class pointer in TLOBaseTy::GetMessage; 004BAD52 CMP/JL through typed class pointer in TLOBaseTy::GetMessage; 004C3C00 [this+0x5B4] passed to FUN_006aced8 parameter param_4; 004C4285 CMP/JLE establishes /int through a field-derived value in TLOBaseTy::fireFindCheckTarget; 004C4285 CMP/JLE through typed class pointer in TLOBaseTy::fireFindCheckTarget | /short <= 004B8393 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004B84A1 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004B8597 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004BC30B CMP/JL through typed class pointer in TLOBaseTy::GetMessage | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_05B4 <= consistent nested dereferences through [this+0x5B4]
-    undefined4 field_05B8; // [STClassLayoutApplier] reads=41, writes=1; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x20|4x22; inferred_type_conflict=/int|/short; cfg_field_recovery=6; typed_cross_class_recovery=29; type_evidence=/int <= 004C70A3 CMP/JL establishes /int through a field-derived value in TLOBaseTy::sub_004C7070; 004C70A3 CMP/JL through typed class pointer in TLOBaseTy::sub_004C7070; 004C78AF CMP/JGE establishes /int through a field-derived value in TLOBaseTy::sub_004C7860; 004C78AF CMP/JGE through typed class pointer in TLOBaseTy::sub_004C7860 | /short <= 004B83A1 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004B84AF CMP/JL through typed class pointer in TLOBaseTy::SetState; 004B85A5 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004C70DB CMP/JL establishes /short through a field-derived value in TLOBaseTy::sub_004C7070; 004C70E0 CMP/JGE establishes /short through a field-derived value in TLOBaseTy::sub_004C7070; 004C7131 CMP/JL establishes /short through a field-derived value in TLOBaseTy::sub_004C7070; 004C7136 CMP/JGE establishes /short through a field-derived value in TLOBaseTy::sub_004C7070
+    int field_05B8; // [STClassLayoutApplier] reads=41, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x20|4x22; full_width_scalar_dominates_contained_low_view; cfg_field_recovery=6; typed_cross_class_recovery=29; type_evidence=/int <= 004C70A3 CMP/JL establishes /int through a field-derived value in TLOBaseTy::sub_004C7070; 004C70A3 CMP/JL through typed class pointer in TLOBaseTy::sub_004C7070; 004C78AF CMP/JGE establishes /int through a field-derived value in TLOBaseTy::sub_004C7860; 004C78AF CMP/JGE through typed class pointer in TLOBaseTy::sub_004C7860 | /short <= 004B83A1 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004B84AF CMP/JL through typed class pointer in TLOBaseTy::SetState; 004B85A5 CMP/JL through typed class pointer in TLOBaseTy::SetState; 004C70DB CMP/JL establishes /short through a field-derived value in TLOBaseTy::sub_004C7070; 004C70E0 CMP/JGE establishes /short through a field-derived value in TLOBaseTy::sub_004C7070; 004C7131 CMP/JL establishes /short through a field-derived value in TLOBaseTy::sub_004C7070; 004C7136 CMP/JGE establishes /short through a field-derived value in TLOBaseTy::sub_004C7070
     int field_05BC; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=1; type_evidence=/int <= 004BA4FE CMP/JL establishes /int through CFG-recovered field flow in TLOBaseTy::GetMessage; 004BA4FE CMP/JL through typed class pointer in TLOBaseTy::GetMessage
     undefined4 field_05C0; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
     byte _unknown_05C4[15];
@@ -40841,7 +40552,7 @@ struct TLOEmbryoTy {
     undefined4 field_0008; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     undefined4 field_000C; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=2
     byte _unknown_0010[8];
-    undefined4 field_0018; // [STClassLayoutApplier] reads=12, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/uint|pointer:/int; cfg_field_recovery=1; typed_cross_class_recovery=6; type_evidence=/uint <= 0041C3F0 [this+0x18] passed to VisibleClassTy::SetZoneAst parameter param_6 | pointer:/int <= 0041C3F0 [this+0x18] passed to VisibleClassTy::sub_00558DC0 parameter param_6; 004D11D0 [this+0x18] passed to FUN_004d76e0 parameter param_3
+    undefined4 field_0018; // [STClassLayoutApplier] reads=12, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/uint|pointer:/int; cfg_field_recovery=1; typed_cross_class_recovery=6; type_evidence=/uint <= 0041C3F0 [this+0x18] passed to VisibleClassTy::SetZoneAst parameter param_6; 0041C3F0 [this+0x18] passed to VisibleClassTy::sub_005594A0 parameter param_6 | pointer:/int <= 0041C3F0 [this+0x18] passed to VisibleClassTy::sub_00558DC0 parameter param_6; 004D11D0 [this+0x18] passed to FUN_004d76e0 parameter param_3
     byte _unknown_001C[4];
     undefined4 field_0020; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined4 field_0024; // [STClassLayoutApplier] reads=66, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x12|4x54; inferred_type_conflict=/uint|pointer:/int; cfg_field_recovery=2; typed_cross_class_recovery=33; type_evidence=/uint <= 0041C3F0 [this+0x24] passed to VisibleClassTy::SetZoneAst parameter param_4 | pointer:/int <= 0041C3F0 [this+0x24] passed to VisibleClassTy::sub_00558DC0 parameter param_4
@@ -40879,8 +40590,8 @@ struct TLOEmbryoTy {
     undefined4 field_0251; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=3
     byte _unknown_0255[4];
     int field_0259; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/SubmarineTitans/Recovered/Enums/Global_sub_004B7520_param_2Enum|/int; cfg_field_recovery=1; typed_cross_class_recovery=7; type_evidence=/SubmarineTitans/Recovered/Enums/Global_sub_004B7520_param_2Enum <= 004D11D0 [this+0x259] passed to FUN_004b7520 parameter param_2 | /int <= 004D1CDE CMP/JL establishes /int through a field-derived value in TLOEmbryoTy::Create; 004D1CDE CMP/JL through typed class pointer in TLOEmbryoTy::Create; 004D1CE3 CMP/JLE establishes /int through a field-derived value in TLOEmbryoTy::Create; 004D1CE3 CMP/JLE through typed class pointer in TLOEmbryoTy::Create; 004D1E90 CMP/JL establishes /int through a field-derived value in TLOEmbryoTy::Create; 004D1E90 CMP/JL through typed class pointer in TLOEmbryoTy::Create; 004D1E99 CMP/JG establishes /int through a field-derived value in TLOEmbryoTy::Create; 004D1E99 CMP/JG through typed class pointer in TLOEmbryoTy::Create; 004D5EDB CMP/JL through typed class pointer in TLOEmbryoTy::GetMessage; 004D5EE0 CMP/JLE through typed class pointer in TLOEmbryoTy::GetMessage
-    undefined4 field_025D; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x4|4x4; inferred_type_conflict=/int|/short; typed_cross_class_recovery=4; type_evidence=/int <= 004D1366 CMP/JGE establishes /int through a field-derived value in TLOEmbryoTy::Create; 004D1366 CMP/JGE through typed class pointer in TLOEmbryoTy::Create; 004D1408 CMP/JL establishes /int through a field-derived value in TLOEmbryoTy::Create | /short <= 004D138E CMP/JL establishes /short through a field-derived value in TLOEmbryoTy::Create; 004D139A CMP/JGE establishes /short through a field-derived value in TLOEmbryoTy::Create
-    undefined4 field_0261; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x4|4x4; inferred_type_conflict=/int|/short; typed_cross_class_recovery=4; type_evidence=/int <= 004D1352 CMP/JGE establishes /int through a field-derived value in TLOEmbryoTy::Create; 004D1352 CMP/JGE through typed class pointer in TLOEmbryoTy::Create; 004D141C CMP/JL establishes /int through a field-derived value in TLOEmbryoTy::Create | /short <= 004D139F CMP/JL establishes /short through a field-derived value in TLOEmbryoTy::Create; 004D13A4 CMP/JGE establishes /short through a field-derived value in TLOEmbryoTy::Create
+    int field_025D; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x4|4x4; full_width_scalar_dominates_contained_low_view; typed_cross_class_recovery=4; type_evidence=/int <= 004D1366 CMP/JGE establishes /int through a field-derived value in TLOEmbryoTy::Create; 004D1366 CMP/JGE through typed class pointer in TLOEmbryoTy::Create; 004D1408 CMP/JL establishes /int through a field-derived value in TLOEmbryoTy::Create | /short <= 004D138E CMP/JL establishes /short through a field-derived value in TLOEmbryoTy::Create; 004D139A CMP/JGE establishes /short through a field-derived value in TLOEmbryoTy::Create
+    int field_0261; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x4|4x4; full_width_scalar_dominates_contained_low_view; typed_cross_class_recovery=4; type_evidence=/int <= 004D1352 CMP/JGE establishes /int through a field-derived value in TLOEmbryoTy::Create; 004D1352 CMP/JGE through typed class pointer in TLOEmbryoTy::Create; 004D141C CMP/JL establishes /int through a field-derived value in TLOEmbryoTy::Create | /short <= 004D139F CMP/JL establishes /short through a field-derived value in TLOEmbryoTy::Create; 004D13A4 CMP/JGE establishes /short through a field-derived value in TLOEmbryoTy::Create
     short field_0265; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/short <= 004D13AD CMP/JL through typed class pointer in TLOEmbryoTy::Create
     byte _unknown_0267[53];
     undefined4 field_029C; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
@@ -40968,7 +40679,9 @@ struct TLOFakeTy {
     undefined4 field_0028; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     byte _unknown_002C[425];
     undefined4 field_01D5; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_01D9[100];
+    byte _unknown_01D9[88];
+    undefined1 field_0x231; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0232[11];
     undefined4 field_023D; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     byte _unknown_0241[4];
     int field_0245; // [STClassLayoutApplier] reads=9, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=/int <= 004D0D5E CMP/JLE through typed class pointer in TLOFakeTy::GetMessage; 004D0DB3 CMP/JL through typed class pointer in TLOFakeTy::GetMessage
@@ -41283,18 +40996,18 @@ struct VisibleClassTy {
     int field_010C; // [STClassLayoutApplier] reads=94, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=93; type_evidence=/int <= 0054AB05 CMP/JGE through typed class pointer in SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0; 0057E79C CMP/JGE through typed class pointer in STDcResourcC::GetMessage; 0057E904 CMP/JGE through typed class pointer in STDcResourcC::GetMessage
     VisibleClassTy_field_0110DArray *field_0110; // [STClassLayoutApplier] reads=22, writes=6; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=14; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 00557A27 generic pointer-return assignment in VisibleClassTy::InitData; 00558140 [this+0x110] passed to DArrayDestroy parameter array; 0055BB00 [this+0x110] passed to Library::DKW::TBL::DArrayAppend parameter array; 0055BBC0 [this+0x110] passed to DArrayRemoveAt parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 00558140 [this+0x110] passed to DArrayDestroy parameter array; 0055BB00 [this+0x110] passed to Library::DKW::TBL::DArrayAppend parameter array; 0055BBC0 [this+0x110] passed to DArrayRemoveAt parameter array
     undefined4 field_0114; // [STClassLayoutApplier] reads=64, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=36
-    undefined4 field_0118; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_011C[188];
+    uint field_0118[16]; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; bounded_member_array; count=16; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[16], bounded_sites=0, exact_loops=1, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:16:/uint <= 00557D2A exact pointer walk count=16, stride=4, cursor_displacement=0
+    byte _unknown_0158[128];
     undefined4 field_01D8; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
     int GetMessage(STMessage *message);
     void Init();
     void InitData();
     byte * PrepareToSave(uint *param_1);
     void SetZoneAst(int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7);
-    void SetZoneDes(int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7);
-    void SetZoneMin1(int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7);
-    void SetZoneMin2(int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7);
-    void SetZoneTsh(int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7);
+    void SetZoneDes(int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7);
+    void SetZoneMin1(int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7);
+    void SetZoneMin2(int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7);
+    void SetZoneTsh(int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7);
     uint VisHoleCreate(int param_1, int param_2, undefined *param_3, uint param_4, undefined *param_5, undefined4 param_6);
     void VisHoleExec();
     undefined4 sub_0041CDA0(int param_1, int param_2, int param_3, uint param_4);
@@ -41302,7 +41015,7 @@ struct VisibleClassTy {
     VisibleClassTy_sub_00558C00_param_1Enum sub_00558C00(VisibleClassTy_sub_00558C00_param_1Enum param_1, int param_2, int param_3, int *param_4, int *param_5);
     void sub_00558DC0(int param_1, int param_2, undefined *param_3, int *param_4, uint param_5, int *param_6, uint param_7);
     void sub_00559110(int param_1, undefined *param_2, int param_3, uint param_4, int param_5, int param_6, uint param_7);
-    void sub_005594A0(int param_1, int param_2, char param_3, undefined *param_4, int param_5, undefined4 param_6, uint param_7);
+    void sub_005594A0(int param_1, int param_2, char param_3, undefined *param_4, int param_5, uint param_6, uint param_7);
     void sub_00559620(int param_1, int param_2, char param_3, undefined *param_4, int param_5, int param_6, uint param_7);
     void sub_005599D0(int param_1, int param_2, char param_3, uint param_4, int param_5, int param_6);
     void sub_00559D60(int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6);
@@ -41312,7 +41025,7 @@ struct VisibleClassTy {
     undefined4 sub_0055AD00(int param_1, int param_2, undefined4 param_3, uint param_4, int param_5);
     undefined4 sub_0055B1C0(int param_1, int param_2, undefined4 param_3, uint param_4);
     void sub_0055B7F0(int param_1, undefined *param_2);
-    void sub_0055BB00(byte param_1, short param_2, short param_3, char param_4, uint param_5, byte param_6, undefined4 param_7);
+    void sub_0055BB00(byte param_1, short param_2, short param_3, char param_4, uint param_5, byte param_6, uint param_7);
     void sub_0055BBC0(byte param_1, short param_2, short param_3, char param_4, uint param_5, byte param_6, int param_7);
     undefined4 sub_005F1D80(int param_1, int param_2, int param_3);
 };
@@ -41349,28 +41062,9 @@ struct WaitTy {
     byte _unknown_0067[51];
     undefined1 field_009A; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     byte _unknown_009B[33];
-    undefined1 field_0xbc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00BD[4];
-    undefined1 field_0xc1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00C2[15];
-    undefined1 field_0xd1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00D2[162];
-    undefined1 field_0x174; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0175[6373];
-    undefined1 field_1A5A; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    StartSystemTy *field_1A5B; // [STClassLayoutApplier] reads=72, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/MMMObjTy|pointer:/StartSystemTy|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1A5B|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_MMMObjTy_005B6560|pointer:/ushort; typed_cross_class_recovery=48; type_evidence=pointer:/MMMObjTy <= 005E79B0 [this+0x1A5B] used as receiver of MMMObjTy::OutRGlProc; 005E9D70 [this+0x1A5B] used as receiver of MMMObjTy::OutRGlProc | pointer:/StartSystemTy <= 005EA680 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1A5B <= consistent nested dereferences through [this+0x1A5B] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_MMMObjTy_005B6560 <= 005EA680 [this+0x1A5B] passed to MMMObjTy::PaintSlBut parameter param_1 | pointer:/ushort <= 005E6770 [this+0x1A5B] passed to FUN_006b2330 parameter param_7
-    undefined1 field_1A5F; // [STClassLayoutApplier] reads=5, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined4 field_1A60; // [STClassLayoutApplier] reads=0, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    undefined4 field_1A64; // [STClassLayoutApplier] reads=30, writes=10; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=23
-    undefined4 field_1A68; // [STClassLayoutApplier] reads=5, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
-    DWORD field_1A6C; // [STClassLayoutApplier] reads=1, writes=3; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/WinDef.h/DWORD <= 005E883E exact field-to-field MOV propagation; 005E9209 exact field-to-field MOV propagation
-    undefined4 field_1A70; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=5
-    undefined1 field_1A74; // [STClassLayoutApplier] reads=0, writes=5; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=5
-    undefined1 field_1A75; // [STClassLayoutApplier] reads=1, writes=6; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=7
-    undefined1 field_1A76; // [STClassLayoutApplier] reads=7, writes=6; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=13
-    undefined4 field_1A77; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=4
+    WaitTy_Record_00BC_01FB array_00BC[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=507; [STClassArrayAnalyzer] fixed inline record array from exact cursor loops: counts=[13], factory_counts=[13], stride=0x1FB, loops=2, exact_loops=2, boundaries=[188, 372], access_offsets=0, typed_nested_objects=3; type_evidence=array:13:/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB <= 005EAD7C record cursor owner+0x174, stride=0x1FB, exact_count=13 | 005EAD8F typed nested receiver=/SpriteClassTy at owner+0xE3 | 005EAD96 typed nested receiver=/SpriteClassTy at owner+0x174 | 005EADA1 typed nested receiver=/SpriteClassTy at owner+0x205 | 005EADD1 record cursor owner+0xBC, stride=0x1FB, exact_count=13
     DWORD field_1A7B; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=/WinDef.h/DWORD <= 005E8E4B exact field-to-field MOV propagation; 005E9080 exact field-to-field MOV propagation; 005E938D exact field-to-field MOV propagation
-    uint field_1A7F; // [STClassLayoutApplier] reads=6, writes=2; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/uint <= 005E8FD7 exact field-to-field MOV propagation; 005E9333 CMP/JNC through typed class pointer in WaitTy::NoneWait
+    uint field_1A7F; // [STClassLayoutApplier] reads=6, writes=2; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/uint <= 005E9333 CMP/JNC through typed class pointer in WaitTy::NoneWait
     byte *field_1A83; // [STClassLayoutApplier] reads=6, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=pointer:/byte <= 005E9036 dynamic 1-byte dereference of field-derived address in WaitTy::NoneWait; 005E906D dynamic 1-byte dereference of field-derived address in WaitTy::NoneWait; 005E9321 dynamic 1-byte dereference of field-derived address in WaitTy::NoneWait
     undefined4 field_1A87; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
     undefined4 field_1A8B; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
@@ -42325,22 +42019,6 @@ inline undefined4 ButtonClassTy::vfunc_08() {
     return (vtable->vfunc_08)(this);
 }
 
-inline int CampaignTy::GetMessage(STMessage *message) {
-    return (vtable->GetMessage)(this, message);
-}
-
-inline undefined CampaignTy::CloseButtons() {
-    return (vtable->CloseButtons)(this);
-}
-
-inline int ChooseMapTy::GetMessage(STMessage *message) {
-    return (vtable->GetMessage)(this, message);
-}
-
-inline undefined ChooseMapTy::CloseButtons() {
-    return (vtable->CloseButtons)(this);
-}
-
 inline undefined4 DebugSystemC::vfunc_04() {
     return (vtable->vfunc_04)(this);
 }
@@ -42371,14 +42049,6 @@ inline int EditorClassTy::_Draw(int *param_1) {
 
 inline undefined4 EditorClassTy::vfunc_08(undefined2 arg_1) {
     return (vtable->vfunc_08)(this, arg_1);
-}
-
-inline int FSGSTy::GetMessage(STMessage *message) {
-    return (vtable->GetMessage)(this, message);
-}
-
-inline undefined FSGSTy::CloseButtons() {
-    return (vtable->CloseButtons)(this);
 }
 
 inline int FrmPanelTy::GetMessage(STMessage *message) {
@@ -42505,28 +42175,12 @@ inline undefined MMObjTy::CloseButtons() {
     return (vtable->CloseButtons)(this);
 }
 
-inline int MMsgTy::GetMessage(STMessage *message) {
-    return (vtable->GetMessage)(this, message);
-}
-
-inline undefined MMsgTy::CloseSprBut() {
-    return (vtable->CloseSprBut)(this);
-}
-
 inline int MReportTy::GetMessage(STMessage *message) {
     return (vtable->GetMessage)(this, message);
 }
 
 inline int MTestTy::GetMessage(STMessage *message) {
     return (vtable->GetMessage)(this, message);
-}
-
-inline int MainMenuTy::GetMessage(STMessage *message) {
-    return (vtable->GetMessage)(this, message);
-}
-
-inline undefined MainMenuTy::CloseButtons() {
-    return (vtable->CloseButtons)(this);
 }
 
 inline int MoneyTy::GetMessage(STMessage *message) {
@@ -42546,10 +42200,6 @@ inline int PausePanelTy::GetMessage(STMessage *message) {
 }
 
 inline int PlayPanelTy::GetMessage(STMessage *message) {
-    return (vtable->GetMessage)(this, message);
-}
-
-inline int PrividerTy::GetMessage(STMessage *message) {
     return (vtable->GetMessage)(this, message);
 }
 
@@ -42579,10 +42229,6 @@ inline undefined SAMPanelTy::ShiftControls(int param_1) {
 
 inline undefined SAMPanelTy::Update() {
     return (vtable->Update)(this);
-}
-
-inline int SIDTy::GetMessage(STMessage *message) {
-    return (vtable->GetMessage)(this, message);
 }
 
 inline int STAlgaC::GetMessage(STMessage *message) {
@@ -44889,6 +44535,102 @@ inline int STVolcanoC::GetMessage(STMessage *message) {
     return (vtable->GetMessage)(this, message);
 }
 
+inline int SliderClassTy::GetMessage(STMessage *message) {
+    return (vtable->GetMessage)(this, message);
+}
+
+inline int SoundManagerTy::GetMessage(STMessage *message) {
+    return (vtable->GetMessage)(this, message);
+}
+
+inline undefined4 SpriteClassTy::SetImages(undefined4 param_1, undefined1 param_2, uint param_3, char *param_4, uint param_5, int param_6) {
+    return (vtable->SetImages)(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline undefined4 SpriteClassTy::SetImagesReg(int *param_1, byte param_2, uint param_3, byte *param_4, uint param_5) {
+    return (vtable->SetImagesReg)(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline undefined4 SpriteClassTy::SetImagesPtr(short *param_1, undefined1 param_2, uint param_3) {
+    return (vtable->SetImagesPtr)(this, param_1, param_2, param_3);
+}
+
+inline undefined4 StartSystemTy::InitSystem() {
+    return (vtable->InitSystem)(this);
+}
+
+inline undefined4 StartSystemTy::DoneSystem() {
+    return (vtable->DoneSystem)(this);
+}
+
+inline undefined4 StartSystemTy::vfunc_0C(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4) {
+    return (vtable->vfunc_0C)(this, arg_1, arg_2, arg_3, arg_4);
+}
+
+inline undefined4 StartSystemTy::vfunc_10(undefined2 arg_1, undefined2 arg_2) {
+    return (vtable->vfunc_10)(this, arg_1, arg_2);
+}
+
+inline undefined StartSystemTy::CreateSystemObjects() {
+    return (vtable->CreateSystemObjects)(this);
+}
+
+inline int StartSystemTy::GetMessage(int *param_1) {
+    return (vtable->GetMessage)(this, param_1);
+}
+
+inline int STWorldObject::GetObjectTypeId() {
+    return (vtable->GetObjectTypeId)(this);
+}
+
+inline int CampaignTy::GetMessage(STMessage *message) {
+    return (vtable->GetMessage)(this, message);
+}
+
+inline undefined CampaignTy::CloseButtons() {
+    return (vtable->CloseButtons)(this);
+}
+
+inline int ChooseMapTy::GetMessage(STMessage *message) {
+    return (vtable->GetMessage)(this, message);
+}
+
+inline undefined ChooseMapTy::CloseButtons() {
+    return (vtable->CloseButtons)(this);
+}
+
+inline int FSGSTy::GetMessage(STMessage *message) {
+    return (vtable->GetMessage)(this, message);
+}
+
+inline undefined FSGSTy::CloseButtons() {
+    return (vtable->CloseButtons)(this);
+}
+
+inline int MMsgTy::GetMessage(STMessage *message) {
+    return (vtable->GetMessage)(this, message);
+}
+
+inline undefined MMsgTy::CloseSprBut() {
+    return (vtable->CloseSprBut)(this);
+}
+
+inline int MainMenuTy::GetMessage(STMessage *message) {
+    return (vtable->GetMessage)(this, message);
+}
+
+inline undefined MainMenuTy::CloseButtons() {
+    return (vtable->CloseButtons)(this);
+}
+
+inline int PrividerTy::GetMessage(STMessage *message) {
+    return (vtable->GetMessage)(this, message);
+}
+
+inline int SIDTy::GetMessage(STMessage *message) {
+    return (vtable->GetMessage)(this, message);
+}
+
 inline int SettMapMTy::GetMessage(STMessage *message) {
     return (vtable->GetMessage)(this, message);
 }
@@ -44959,54 +44701,6 @@ inline undefined4 SettMapTy::vfunc_20() {
 
 inline undefined4 SettMapTy::vfunc_24() {
     return (vtable->vfunc_24)(this);
-}
-
-inline int SliderClassTy::GetMessage(STMessage *message) {
-    return (vtable->GetMessage)(this, message);
-}
-
-inline int SoundManagerTy::GetMessage(STMessage *message) {
-    return (vtable->GetMessage)(this, message);
-}
-
-inline undefined4 SpriteClassTy::SetImages(undefined4 param_1, undefined1 param_2, uint param_3, char *param_4, uint param_5, int param_6) {
-    return (vtable->SetImages)(this, param_1, param_2, param_3, param_4, param_5, param_6);
-}
-
-inline undefined4 SpriteClassTy::SetImagesReg(int *param_1, byte param_2, uint param_3, byte *param_4, uint param_5) {
-    return (vtable->SetImagesReg)(this, param_1, param_2, param_3, param_4, param_5);
-}
-
-inline undefined4 SpriteClassTy::SetImagesPtr(short *param_1, undefined1 param_2, uint param_3) {
-    return (vtable->SetImagesPtr)(this, param_1, param_2, param_3);
-}
-
-inline undefined4 StartSystemTy::InitSystem() {
-    return (vtable->InitSystem)(this);
-}
-
-inline undefined4 StartSystemTy::DoneSystem() {
-    return (vtable->DoneSystem)(this);
-}
-
-inline undefined4 StartSystemTy::vfunc_0C(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4) {
-    return (vtable->vfunc_0C)(this, arg_1, arg_2, arg_3, arg_4);
-}
-
-inline undefined4 StartSystemTy::vfunc_10(undefined2 arg_1, undefined2 arg_2) {
-    return (vtable->vfunc_10)(this, arg_1, arg_2);
-}
-
-inline undefined StartSystemTy::CreateSystemObjects() {
-    return (vtable->CreateSystemObjects)(this);
-}
-
-inline int StartSystemTy::GetMessage(int *param_1) {
-    return (vtable->GetMessage)(this, param_1);
-}
-
-inline int STWorldObject::GetObjectTypeId() {
-    return (vtable->GetObjectTypeId)(this);
 }
 
 inline int SystemClassTy::InitSystem() {

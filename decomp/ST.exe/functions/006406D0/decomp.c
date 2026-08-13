@@ -812,7 +812,7 @@ switchD_00640c2d_caseD_a2:
         if (this_00->field_0285 == '\x01') {
           local_c4 = (int)(local_c4 + (local_c4 >> 0x1f & 3U)) >> 2;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar14 = (**(code **)(*local_30 + 0x2c))();
         if (iVar14 == 0x68) {
           uVar9 = this_00->field_0245;

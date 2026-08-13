@@ -5692,7 +5692,7 @@ void __thiscall st::fn_0050F430(CPanelTy *this,byte param_1)
   case 0x1d:
   case 0x3d:
     if ((g_bldBoatPanel_0080167C != nullptr) &&
-       (g_bldBoatPanel_0080167C->field_0172 == 2)) {
+       (g_bldBoatPanel_0080167C->field_0172 == CASE_2)) {
       st::fn_00401A73(g_bldBoatPanel_0080167C,'\x01');
     }
     st::fn_00402798(this_00);
@@ -5719,7 +5719,7 @@ void __thiscall st::fn_0050F430(CPanelTy *this,byte param_1)
   case 0x21:
   case 0x41:
     if ((g_researchPanel_008016E8 != nullptr) &&
-       (g_researchPanel_008016E8->field_0172 == 2)) {
+       (g_researchPanel_008016E8->field_0172 == CASE_2)) {
       st::fn_00401A73(g_researchPanel_008016E8,'\x01');
     }
     st::fn_00402798(this_00);
@@ -5856,8 +5856,8 @@ void __thiscall st::fn_0050F430(CPanelTy *this,byte param_1)
     g_currentExceptionFrame = local_e8.previous;
     return;
   case 0x44:
-    if ((g_bldLabPanel_00801680 != nullptr) && (g_bldLabPanel_00801680->field_0172 == 2))
-    {
+    if ((g_bldLabPanel_00801680 != nullptr) &&
+       (g_bldLabPanel_00801680->field_0172 == CASE_2)) {
       st::fn_00401A73(g_bldLabPanel_00801680,'\x01');
     }
     st::fn_00402798(this_00);

@@ -106,6 +106,15 @@ static inline int32_t STSignExtend24(Value value) {
     uint32_t raw = static_cast<uint32_t>(STRawWord(value)) & 0x00ffffffu;
     return static_cast<int32_t>(raw << 8) >> 8;
 }
+/* Exact source convention: signed /, narrowed to 16 bits, then negative values
+   are biased down once. This intentionally differs from floor division at exact
+   negative multiples. */
+template <typename Value, typename Divisor>
+static inline int16_t STBiasedDiv16(Value value, Divisor divisor) {
+    int32_t source = static_cast<int32_t>(value);
+    int16_t quotient = static_cast<int16_t>(source / static_cast<int32_t>(divisor));
+    return static_cast<int16_t>(quotient - (source < 0 ? 1 : 0));
+}
 template <typename Value>
 static inline long double fsin(Value value) {
     return std::sin(static_cast<long double>(value));

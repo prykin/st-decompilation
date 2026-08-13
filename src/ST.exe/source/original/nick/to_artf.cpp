@@ -164,7 +164,7 @@ int __thiscall st::fn_005EAF10(STArtiafactC *this,STMessage *message)
           return 0;
         }
         local_10 = st::fn_00404CDC((STAllPlayersC *)local_8,(uint *)&local_c);
-        st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
+        st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,(uint)local_c);
         st::fn_006AB060(&local_10);
         g_currentExceptionFrame = local_60.previous;
         return 0;

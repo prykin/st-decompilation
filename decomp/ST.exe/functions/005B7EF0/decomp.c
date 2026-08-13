@@ -103,7 +103,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         puVar6 = ccFntTy::CreateTypeSSpr
                            (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,uVar14,
                             iVar16,iVar17,iVar18);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(local_10 + 8))(puVar6,uVar21,uVar22);
       }
       else {
@@ -116,7 +116,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         puVar6 = ccFntTy::CreateTypeSSpr
                            (g_startSystem_0081176C->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,
                             0xffffffff,1,-1,-1);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar10 + 8))(puVar6,uVar21,uVar22);
       }
       bVar3 = 0;

@@ -12,7 +12,11 @@
    VTable: 0079AC48 (store 00510CB9)
    Evidence: final_vptr=0079AC48; returns_this=true; calls_before=1; field_writes_after=38;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=medium;
-   exact_factory_tail=00510C50->00403035->00510C80; allocation_size=596 */
+   exact_factory_tail=00510C50->00403035->00510C80; allocation_size=596
+
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/HelpPanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 HelpPanelTy * __thiscall st::fn_00510C80(HelpPanelTy *this)
 
@@ -27,7 +31,7 @@ HelpPanelTy * __thiscall st::fn_00510C80(HelpPanelTy *this)
   this->field_0060 = 0xffffffff;
   this->field_0064 = 3;
   this->field_0068 = nullptr;
-  this->field_0172 = 2;
+  this->field_0172 = CASE_2;
   this->field_0178 = 0;
   this->field_017A = 0;
   this->vtable = &st_global_0079AC48;

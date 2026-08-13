@@ -9,15 +9,18 @@
    table_confidence=high
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 0062ED10 returns STRubbishC::STRubbishC this @ 0062ED60 */
+   Evidence: 0062ED10 returns STRubbishC::STRubbishC this @ 0062ED60
+
+   [STSwitchEnumApplier] Switch target field_01FA uses
+   /SubmarineTitans/Recovered/Enums/STRubbishC_field_01FAState. Cases: CASE_0=0;CASE_1=1;CASE_2=2 */
 
 STRubbishC * __thiscall st::fn_0062ED10(STRubbishC *this)
 
 {
   st::fn_00401933((STGameObjC *)this);
-  this->field_01D5 = 0xffffffff;
-  this->field_01D9 = 0xffffffff;
-  this->field_01DD = 0xffffffff;
+  this->field_01D5 = -1;
+  this->field_01D9 = -1;
+  this->field_01DD = -1;
   this->vtable = &st_global_0079D098;
   this->field_01E1 = 0;
   this->field_01E5 = 0;
@@ -26,7 +29,7 @@ STRubbishC * __thiscall st::fn_0062ED10(STRubbishC *this)
   this->field_01F1 = 0;
   this->field_01F5 = 0;
   this->field_01F9 = 0;
-  this->field_01FA = 0;
+  this->field_01FA = CASE_0;
   return this;
 }
 

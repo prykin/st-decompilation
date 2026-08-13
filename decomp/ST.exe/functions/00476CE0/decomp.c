@@ -526,7 +526,7 @@ cf_common_exit_00477B2E:
         local_34 = 0x5dd4;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_2c = CONCAT22(this->field_0032,*(undefined2 *)&this->field_0024);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)*DAT_008117bc)(local_44);
       }
       pSVar8->vfunc_10C();

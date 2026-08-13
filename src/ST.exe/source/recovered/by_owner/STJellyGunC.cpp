@@ -115,7 +115,11 @@ LAB_004160cd:
    table_confidence=high
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 005823D0 returns STJellyGunC::STJellyGunC this @ 0058243D */
+   Evidence: 005823D0 returns STJellyGunC::STJellyGunC this @ 0058243D
+
+   [STSwitchEnumApplier] Switch target field_0235 uses
+   /SubmarineTitans/Recovered/Enums/STJellyGunC_field_0235State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 STJellyGunC * __thiscall st::fn_005823D0(STJellyGunC *this)
 
@@ -128,7 +132,7 @@ STJellyGunC * __thiscall st::fn_005823D0(STJellyGunC *this)
   memset(&this->field_0x256, 0, 0x3e); /* compiler bulk-zero initialization */
   this->field_0241 = 0xff;
   this->field_0231 = 0;
-  this->field_0235 = 0;
+  this->field_0235 = CASE_0;
   this->field_0239 = 0;
   this->field_023D = 0;
   *(undefined4 *)&this->field_0x247 = 0;
@@ -281,7 +285,7 @@ STJellyGunC_field_0235State __thiscall st::fn_00583E30(STJellyGunC *this)
         }
       }
     }
-    SVar1 = 0;
+    SVar1 = CASE_0;
   }
   return SVar1;
 }

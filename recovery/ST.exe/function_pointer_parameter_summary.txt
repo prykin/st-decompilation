@@ -1,5 +1,5 @@
 program=ST.exe
-functions_scanned=5720
+functions_scanned=5624
 direct_calls_seen=42464
 indirect_parameter_calls=30
 indirect_parameter_candidates=25

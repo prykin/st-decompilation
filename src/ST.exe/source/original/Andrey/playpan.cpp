@@ -413,12 +413,16 @@ void __thiscall st::fn_0053A380(PlayPanelTy *this)
 #line 4 "decomp/ST.exe/functions/0053A6B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\playpan.cpp
-   PlayPanelTy::SwitchOptPanel */
+   PlayPanelTy::SwitchOptPanel
+
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/PlayPanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 void __thiscall st::fn_0053A6B0(PlayPanelTy *this,int param_1)
 
 {
-  short sVar1;
+  PlayPanelTy_field_0172State PVar1;
   PlayPanelTy *pPVar3;
   int errorCode;
   int iVar4;
@@ -440,8 +444,8 @@ void __thiscall st::fn_0053A6B0(PlayPanelTy *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  sVar1 = local_8->field_0172;
-  if (sVar1 == 1) {
+  PVar1 = local_8->field_0172;
+  if (PVar1 == CASE_1) {
     if (param_1 != 0) {
       g_currentExceptionFrame = local_4c.previous;
       return;
@@ -449,12 +453,12 @@ void __thiscall st::fn_0053A6B0(PlayPanelTy *this,int param_1)
     ShiftControls(local_8,0);
   }
   else {
-    if (sVar1 == 2) {
+    if (PVar1 == CASE_2) {
       if (param_1 == 0) {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      local_8->field_0172 = 3;
+      local_8->field_0172 = CASE_3;
       st::fn_00405E2F(CASE_AF);
       if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_4c.previous;
@@ -464,13 +468,13 @@ void __thiscall st::fn_0053A6B0(PlayPanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    if (sVar1 != 3) {
+    if (PVar1 != CASE_3) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
   }
   if (param_1 == 0) {
-    pPVar3->field_0172 = 4;
+    pPVar3->field_0172 = CASE_4;
     st::fn_00405E2F(CASE_B0);
   }
   g_currentExceptionFrame = local_4c.previous;
@@ -1066,14 +1070,14 @@ LAB_0053b2ea:
       return 0;
     }
     if (SVar5 == MESS_ID_NONE) {
-      if (this_00->field_0172 == 3) {
+      if (this_00->field_0172 == CASE_3) {
         iVar8 = this_00->field_0050;
         if (this_00->field_0044 < iVar8) {
           this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + 0x1e);
         }
         if (iVar8 <= this_00->field_0044) {
           this_00->field_0044 = iVar8;
-          this_00->field_0172 = 1;
+          this_00->field_0172 = CASE_1;
           st::fn_004038BE(this_00,1);
         }
         st::fn_006B3640
@@ -1082,14 +1086,14 @@ LAB_0053b2ea:
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }
-      if (this_00->field_0172 == 4) {
+      if (this_00->field_0172 == CASE_4) {
         iVar8 = this_00->field_0050 - this_00->field_0048;
         if (iVar8 < this_00->field_0044) {
           this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + -0x1e);
         }
         if (this_00->field_0044 <= iVar8) {
           this_00->field_0044 = iVar8;
-          this_00->field_0172 = 2;
+          this_00->field_0172 = CASE_2;
         }
         st::fn_006B3640
                   ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,

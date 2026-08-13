@@ -3,7 +3,7 @@ info	decompile_failures	0	0	0	ok	Every body_exported function must have decompil
 info	generated_enum_bitwise_composition	0	0	0	ok	Strict internal invariant, not a baseline delta: generated enum CASE_*|CASE_* compositions must be repaired before export
 info	tagged_message_vtable_slot_untyped	0	0	0	ok	-
 info	function_count	10400	10400	0	ok	policy=nondecreasing
-info	body_function_count	5720	5720	0	ok	policy=per-address nondecreasing
+info	body_function_count	5624	5624	0	ok	policy=per-address nondecreasing
 info	new_library_body_exclusions	0	0	0	ok	-
 info	covered_executable_bytes	2825525	2825525	0	ok	policy=nondecreasing
 info	unclaimed_meaningful_bytes	98460	98460	0	ok	policy=nonincreasing
@@ -16,10 +16,10 @@ info	quality:call_clobber_piece	270	270	0	ok	policy=nonincreasing; blocking=fals
 info	quality:dynamic_array_indexing	77	77	0	ok	policy=nonincreasing; blocking=false
 info	quality:flattened_global_record_array	36	36	0	ok	policy=nonincreasing; blocking=false
 info	quality:generic_global_aggregate	101	101	0	ok	policy=nonincreasing; blocking=false
-info	quality:raw_indirect_call	1853	1853	0	ok	policy=nonincreasing; blocking=true
-info	quality:raw_pointer_offset	2178	2178	0	ok	policy=nonincreasing; blocking=false
+info	quality:raw_indirect_call	1810	1810	0	ok	policy=nonincreasing; blocking=true
+info	quality:raw_pointer_offset	2124	2124	0	ok	policy=nonincreasing; blocking=false
 info	quality:return_width_artifact	292	292	0	ok	policy=nonincreasing; blocking=true
-info	quality:stack_slot_reuse	4277	4276	-1	improved	policy=nonincreasing; blocking=false
+info	quality:stack_slot_reuse	4224	4224	0	ok	policy=nonincreasing; blocking=false
 info	quality:string_based_aggregate_address	7	7	0	ok	policy=nonincreasing; blocking=false
-info	quality:undefined_type	18171	18171	0	ok	policy=nonincreasing; blocking=false
-info	quality:unresolved_register_input	474	474	0	ok	policy=nonincreasing; blocking=true
+info	quality:undefined_type	17953	17953	0	ok	policy=nonincreasing; blocking=false
+info	quality:unresolved_register_input	451	451	0	ok	policy=nonincreasing; blocking=true

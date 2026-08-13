@@ -17,7 +17,7 @@ FUN_006e4340(void *this,int *param_1,undefined4 param_2,undefined4 param_3,undef
   local_c = param_3;
   local_10 = param_2;
   local_8 = param_4;
-  FUN_006e42c0(this,(int *)&local_14);
+  Library::Ourlib::SAPP::FUN_006e42c0(this,(int *)&local_14);
   return;
 }
 

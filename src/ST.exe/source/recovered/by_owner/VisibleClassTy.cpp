@@ -92,7 +92,7 @@ VisibleClassTy * __thiscall st::fn_005577C0(VisibleClassTy *this)
   this->field_0110 = nullptr;
   this->field_0114 = 0;
   this->field_00F8 = 1;
-  memset(&this->field_0118, 0, 0xc0); /* compiler bulk-zero initialization */
+  memset(this->field_0118, 0, 0xc0); /* compiler bulk-zero initialization */
   iVar2 = 0;
   memset(&this->field_01D8, 0, 0xc0); /* compiler bulk-zero initialization */
   this->field_00FC[0] = 0;
@@ -311,7 +311,7 @@ st::fn_00558DC0
       (g_bulkInitializedRecords_008087C7[(int)param_4].field_0022 < 8)))) {
     if ((param_7 & 0x1000) != 0) {
       st::fn_00403B02(this,0,(short)param_1,(short)param_2,(char)param_3,(uint)param_4,(byte)param_5,
-                   st::machine_word_boundary_cast<undefined4>(param_6));
+                   (uint)param_6);
     }
     if (*(char *)((int)(piVar4 + 0x3f) + (int)this) != '\0') {
       iVar2 = uVar10 * 2 + 1;
@@ -575,12 +575,15 @@ st::fn_00559110
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 005594A0 -> 0055BB00 @ 00559511 */
 
 void __thiscall
 st::fn_005594A0
           (VisibleClassTy *this,int param_1,int param_2,char param_3,undefined *param_4,int param_5,
-          undefined4 param_6,uint param_7)
+          uint param_6,uint param_7)
 
 {
   int iVar1;
@@ -1419,19 +1422,28 @@ void __thiscall st::fn_0055B7F0(VisibleClassTy *this,int param_1,undefined *para
    [STReturnSemanticsApplier] repair_unsafe_eax_rollback.
    Evidence: restore the earlier evidence-backed void type after an unsafe automated rollback;
    post-CALL EAX reads alone do not prove a source-level return value; machine CFG audit: used=0,
-   ignored=4, unknown=3 */
+   ignored=4, unknown=3
+
+   [STPrototypeApplier] Propagated parameter 7.
+   Evidence: 00558DC0 -> 0055BB00 @ 00558E28; VisibleClassTy::sub_00558DC0 parameter param_6 |
+   005594A0 -> 0055BB00 @ 00559511; VisibleClassTy::sub_005594A0 parameter param_6 | 005597A0 ->
+   0055BB00 @ 00559860; VisibleClassTy::SetZoneDes parameter param_6 | 00559B30 -> 0055BB00 @
+   00559BF0; VisibleClassTy::SetZoneAst parameter param_6 | 00559EC0 -> 0055BB00 @ 00559F86;
+   VisibleClassTy::SetZoneTsh parameter param_6 | 0055A270 -> 0055BB00 @ 0055A336;
+   VisibleClassTy::SetZoneMin1 parameter param_6 | 0055A620 -> 0055BB00 @ 0055A6E6;
+   VisibleClassTy::SetZoneMin2 parameter param_6 */
 
 void __thiscall
 st::fn_0055BB00
           (VisibleClassTy *this,byte param_1,short param_2,short param_3,char param_4,uint param_5,
-          byte param_6,undefined4 param_7)
+          byte param_6,uint param_7)
 
 {
   undefined4 local_10;
   short local_c;
   char cStack_a;
   byte bStack_9;
-  undefined4 local_8;
+  uint local_8;
 
   if ((((this->field_0114 != 0) && (this->field_0110 != nullptr)) &&
       (param_5 < 8)) &&

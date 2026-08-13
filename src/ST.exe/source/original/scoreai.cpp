@@ -60,7 +60,7 @@ void st::fn_0055F410
   int local_e4;
   int local_dc;
   void *local_d4;
-  int *local_d0;
+  int *local_d0_mg1;
   int local_cc;
   int local_c4;
   int local_c0;
@@ -90,7 +90,7 @@ void st::fn_0055F410
   int local_38;
   int local_34;
   void *local_30;
-  int local_28;
+  int local_28_mg1;
   short *local_24;
   undefined1 *local_1c;
   void *local_14;
@@ -538,18 +538,19 @@ LAB_0055fc71:
                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   iVar18 = *(int *)(local_3c * 8 + 0x7c963c);
                 }
-                local_d0 = st::fn_00561240(iVar13,iVar18,piVar23[5]);
-                if (1 < *local_d0) {
-                  local_144 = (iVar14 << 0x10) / *local_d0;
+                local_d0_mg1 = st::fn_00561240(iVar13,iVar18,piVar23[5]);
+                if (1 < *local_d0_mg1) {
+                  local_144 = (iVar14 << 0x10) / *local_d0_mg1;
                   iVar13 = 0;
-                  pvVar22 = (void *)((int)DAT_00803380 + (local_d0[3] + iVar21) * DAT_008033a4 * 2);
+                  pvVar22 = (void *)((int)DAT_00803380 +
+                                    (local_d0_mg1[3] + iVar21) * DAT_008033a4 * 2);
                   local_b0 = 0;
-                  if (0 < local_d0[4]) {
+                  if (0 < local_d0_mg1[4]) {
                     do {
-                      iVar14 = st::machine_word_boundary_cast<int>(local_d0[3] + iVar21 + local_b0);
+                      iVar14 = st::machine_word_boundary_cast<int>(local_d0_mg1[3] + iVar21 + local_b0);
                       if ((-1 < iVar14) && (iVar14 < DAT_008033a8)) {
-                        local_ac = st::machine_word_boundary_cast<int>(local_d0[local_b0 * 2 + 6] + local_88);
-                        for (iVar14 = st::machine_word_boundary_cast<int>(local_d0[local_b0 * 2 + 5] + local_88); iVar14 <= local_ac;
+                        local_ac = st::machine_word_boundary_cast<int>(local_d0_mg1[local_b0 * 2 + 6] + local_88);
+                        for (iVar14 = st::machine_word_boundary_cast<int>(local_d0_mg1[local_b0 * 2 + 5] + local_88); iVar14 <= local_ac;
                             iVar14 = iVar14 + 1) {
                           if (((-1 < iVar14) && (iVar14 < DAT_008033a4)) &&
                              (iVar13 = iVar13 + local_144, 0x10000 < iVar13)) {
@@ -567,10 +568,10 @@ LAB_0055fc71:
                       local_b0 = local_b0 + 1;
                       pvVar22 = (void *)((int)pvVar22 + DAT_008033a4 * 2);
                       iVar21 = local_c0;
-                    } while (local_b0 < local_d0[4]);
+                    } while (local_b0 < local_d0_mg1[4]);
                   }
                 }
-                st::fn_006AB060(&local_d0);
+                st::fn_006AB060(&local_d0_mg1);
                 iVar13 = DAT_008033a4;
               }
             }
@@ -661,9 +662,9 @@ LAB_0056016e:
         piVar23 = piVar23 + 1;
       }
       for (; local_84 = piVar12, iVar14 < 0xd; iVar14 = iVar14 + 1) {
-        local_28 = st::fn_0055EE70(pbVar4,iVar14,1);
+        local_28_mg1 = st::fn_0055EE70(pbVar4,iVar14,1);
         iVar13 = 0;
-        if (0 < local_28) {
+        if (0 < local_28_mg1) {
           do {
             iVar18 = (char)pbVar4[iVar13 * 2] + DAT_00803304;
             iVar21 = (char)pbVar4[iVar13 * 2 + 1] + DAT_00803308;
@@ -674,9 +675,9 @@ LAB_0056016e:
               local_13c[iVar14] = st::machine_word_boundary_cast<int>(local_13c[iVar14] + 1);
             }
             iVar13 = iVar13 + 1;
-          } while (iVar13 < local_28);
+          } while (iVar13 < local_28_mg1);
         }
-        local_13c[iVar14] = (local_13c[iVar14] * 100) / local_28;
+        local_13c[iVar14] = (local_13c[iVar14] * 100) / local_28_mg1;
         piVar12 = local_84;
       }
       iVar13 = -30000;
@@ -714,7 +715,7 @@ LAB_0056016e:
         piVar23 = local_164;
       } while (iVar13 < 0x10);
       for (; local_164 = piVar23, local_8c = iVar14, iVar14 < 0x14; iVar14 = iVar14 + 2) {
-        local_28 = st::fn_0055EE70(pbVar4,iVar14,1);
+        local_28_mg1 = st::fn_0055EE70(pbVar4,iVar14,1);
         iVar21 = DAT_00803384 - DAT_0080339c;
         iVar13 = 0x14 - DAT_00803384;
         if (iVar21 < iVar13) {
@@ -731,7 +732,7 @@ LAB_0056016e:
         }
         DAT_00803388 = (iVar13 - iVar18) / 2;
         local_50 = 0;
-        if (0 < local_28) {
+        if (0 < local_28_mg1) {
           do {
             local_94 = (char)local_a4[local_50 * 2] + DAT_00803304;
             if (((-1 < local_94) && (local_94 < DAT_008033a4)) &&
@@ -783,7 +784,7 @@ LAB_0056016e:
             }
             local_50 = local_50 + 2;
             iVar14 = local_8c;
-          } while (local_50 < local_28);
+          } while (local_50 < local_28_mg1);
         }
         piVar23 = local_164;
         pbVar4 = local_a4;
@@ -1342,7 +1343,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
   int local_dc;
   int local_d4;
   void *local_cc;
-  int *local_c8;
+  int *local_c8_mg1;
   int local_c4;
   int local_b8;
   int local_b0;
@@ -1371,7 +1372,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
   int local_38;
   int local_34;
   void *local_30;
-  int local_28;
+  int local_28_mg1;
   undefined1 *local_1c;
   void *local_14;
   undefined1 *puStack_10;
@@ -1835,18 +1836,19 @@ LAB_005637bc:
                   iVar16 = *(int *)(&DAT_007a4c24 + piVar10[4] * 8);
                   iVar6 = *(int *)(&DAT_007a4c20 + piVar10[4] * 8);
                 }
-                local_c8 = st::fn_00561240(iVar16,iVar6,iVar21);
-                if (1 < *local_c8) {
-                  local_13c = (iVar17 << 0x10) / *local_c8;
+                local_c8_mg1 = st::fn_00561240(iVar16,iVar6,iVar21);
+                if (1 < *local_c8_mg1) {
+                  local_13c = (iVar17 << 0x10) / *local_c8_mg1;
                   iVar16 = 0;
-                  pvVar22 = (void *)((int)DAT_00803380 + (local_c8[3] + iVar11) * DAT_008033a4 * 2);
+                  pvVar22 = (void *)((int)DAT_00803380 +
+                                    (local_c8_mg1[3] + iVar11) * DAT_008033a4 * 2);
                   local_ac = 0;
-                  if (0 < local_c8[4]) {
+                  if (0 < local_c8_mg1[4]) {
                     do {
-                      iVar17 = st::machine_word_boundary_cast<int>(local_c8[3] + iVar11 + local_ac);
+                      iVar17 = st::machine_word_boundary_cast<int>(local_c8_mg1[3] + iVar11 + local_ac);
                       if ((-1 < iVar17) && (iVar17 < DAT_008033a8)) {
-                        local_a8 = st::machine_word_boundary_cast<int>(local_c8[local_ac * 2 + 6] + local_84);
-                        for (iVar17 = st::machine_word_boundary_cast<int>(local_c8[local_ac * 2 + 5] + local_84); iVar17 <= local_a8;
+                        local_a8 = st::machine_word_boundary_cast<int>(local_c8_mg1[local_ac * 2 + 6] + local_84);
+                        for (iVar17 = st::machine_word_boundary_cast<int>(local_c8_mg1[local_ac * 2 + 5] + local_84); iVar17 <= local_a8;
                             iVar17 = iVar17 + 1) {
                           if (((-1 < iVar17) && (iVar17 < DAT_008033a4)) &&
                              (iVar16 = iVar16 + local_13c, 0x10000 < iVar16)) {
@@ -1864,10 +1866,10 @@ LAB_005637bc:
                       local_ac = local_ac + 1;
                       pvVar22 = (void *)((int)pvVar22 + DAT_008033a4 * 2);
                       iVar11 = local_b8;
-                    } while (local_ac < local_c8[4]);
+                    } while (local_ac < local_c8_mg1[4]);
                   }
                 }
-                st::fn_006AB060(&local_c8);
+                st::fn_006AB060(&local_c8_mg1);
                 iVar16 = DAT_008033a4;
               }
             }
@@ -1940,9 +1942,9 @@ LAB_005637bc:
         piVar10 = piVar10 + 1;
       }
       for (; local_80 = piVar13, iVar17 < 0xe; iVar17 = iVar17 + 1) {
-        local_28 = st::fn_0055EE70(pbVar4,iVar17,1);
+        local_28_mg1 = st::fn_0055EE70(pbVar4,iVar17,1);
         iVar16 = 0;
-        if (0 < local_28) {
+        if (0 < local_28_mg1) {
           do {
             iVar11 = (char)pbVar4[iVar16 * 2] + DAT_00803304;
             iVar21 = (char)pbVar4[iVar16 * 2 + 1] + DAT_00803308;
@@ -1953,9 +1955,9 @@ LAB_005637bc:
               local_134[iVar17] = st::machine_word_boundary_cast<int>(local_134[iVar17] + 1);
             }
             iVar16 = iVar16 + 1;
-          } while (iVar16 < local_28);
+          } while (iVar16 < local_28_mg1);
         }
-        local_134[iVar17] = (local_134[iVar17] * 100) / local_28;
+        local_134[iVar17] = (local_134[iVar17] * 100) / local_28_mg1;
         piVar13 = local_80;
       }
       iVar16 = -30000;
@@ -1993,7 +1995,7 @@ LAB_005637bc:
         piVar10 = local_160;
       } while (iVar16 < 0x10);
       while (local_160 = piVar10, local_88 = iVar17, iVar17 < 0x16) {
-        local_28 = st::fn_0055EE70(local_a0,iVar17,1);
+        local_28_mg1 = st::fn_0055EE70(local_a0,iVar17,1);
         iVar16 = DAT_00803384 - DAT_0080339c;
         iVar21 = 0x16 - DAT_00803384;
         if (iVar16 < iVar21) {
@@ -2008,7 +2010,7 @@ LAB_005637bc:
         }
         DAT_00803388 = iVar16 / 2;
         local_50 = 0;
-        if (0 < local_28) {
+        if (0 < local_28_mg1) {
           do {
             iVar16 = (char)local_a0[local_50 * 2] + DAT_00803304;
             if (((-1 < iVar16) && (iVar16 < DAT_008033a4)) &&
@@ -2059,7 +2061,7 @@ LAB_005637bc:
               }
             }
             local_50 = local_50 + 3;
-          } while (local_50 < local_28);
+          } while (local_50 < local_28_mg1);
         }
         piVar10 = local_160;
         iVar17 = local_88 + 3;

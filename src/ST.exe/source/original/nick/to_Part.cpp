@@ -193,25 +193,9 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
                                    (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
     }
     iVar10 = this_00->field_004A;
-    sVar4 = (short)(iVar10 >> 0x1f);
-    if (iVar10 < 0) {
-      iVar10 = (short)(((short)(iVar10 / 0xc9) + sVar4) -
-                      (short)((longlong)iVar10 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar10 = (int)(short)(((short)(iVar10 / 0xc9) + sVar4) -
-                           (short)((longlong)iVar10 * 0x28c1979 >> 0x3f));
-    }
+    iVar10 = STBiasedDiv16(iVar10, 0xc9); /* exact signed 16-bit grid-index division */
     iVar9 = this_00->field_0046;
-    sVar4 = (short)(iVar9 >> 0x1f);
-    if (iVar9 < 0) {
-      iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar4) - (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar4) -
-                          (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
-    }
+    iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
     if (((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
        ((st::fn_00403F53
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
@@ -315,25 +299,9 @@ LAB_006283bd:
                                    (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
     }
     iVar10 = this_00->field_004A;
-    sVar4 = (short)(iVar10 >> 0x1f);
-    if (iVar10 < 0) {
-      iVar10 = (short)(((short)(iVar10 / 0xc9) + sVar4) -
-                      (short)((longlong)iVar10 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar10 = (int)(short)(((short)(iVar10 / 0xc9) + sVar4) -
-                           (short)((longlong)iVar10 * 0x28c1979 >> 0x3f));
-    }
+    iVar10 = STBiasedDiv16(iVar10, 0xc9); /* exact signed 16-bit grid-index division */
     iVar9 = this_00->field_0046;
-    sVar4 = (short)(iVar9 >> 0x1f);
-    if (iVar9 < 0) {
-      iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar4) - (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar4) -
-                          (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
-    }
+    iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
         (st::fn_00403F53
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
@@ -392,22 +360,9 @@ LAB_006282e0:
                                        (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
         }
         iVar10 = this_00->field_004A;
-        sVar4 = (short)(iVar10 >> 0x1f);
-        if (iVar10 < 0) {
-          iVar10 = (short)(((short)(iVar10 / 0xc9) + sVar4) -
-                          (short)((longlong)iVar10 * 0x28c1979 >> 0x3f)) + -1;
-        }
-        else {
-          iVar10 = (int)(short)(((short)(iVar10 / 0xc9) + sVar4) -
-                               (short)((longlong)iVar10 * 0x28c1979 >> 0x3f));
-        }
+        iVar10 = STBiasedDiv16(iVar10, 0xc9); /* exact signed 16-bit grid-index division */
         iVar9 = this_00->field_0046;
-        if (iVar9 < 0) {
-          iVar9 = (short)(iVar9 / 0xc9) + -1;
-        }
-        else {
-          iVar9 = (int)(short)(iVar9 / 0xc9);
-        }
+        iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
         if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
             (st::fn_00403F53
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
@@ -453,7 +408,7 @@ LAB_006282e0:
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    switch((uint)this_00->field_0014 >> 8 & 0xff) {
+    switch(this_00->field_0014 >> 8 & 0xff) {
     case 0:
     case 1:
     case 2:
@@ -493,25 +448,9 @@ LAB_006282e0:
                                    (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
     }
     iVar10 = this_00->field_004A;
-    sVar4 = (short)(iVar10 >> 0x1f);
-    if (iVar10 < 0) {
-      iVar10 = (short)(((short)(iVar10 / 0xc9) + sVar4) -
-                      (short)((longlong)iVar10 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar10 = (int)(short)(((short)(iVar10 / 0xc9) + sVar4) -
-                           (short)((longlong)iVar10 * 0x28c1979 >> 0x3f));
-    }
+    iVar10 = STBiasedDiv16(iVar10, 0xc9); /* exact signed 16-bit grid-index division */
     iVar9 = this_00->field_0046;
-    sVar4 = (short)(iVar9 >> 0x1f);
-    if (iVar9 < 0) {
-      iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar4) - (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar4) -
-                          (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
-    }
+    iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
         (st::fn_00403F53
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
@@ -561,7 +500,7 @@ switchD_006280c4_default:
   g_currentExceptionFrame = local_7c.previous;
   return 0;
 switchD_006288e6_caseD_0:
-  if (*(byte *)&this_00->field_0014 < 4) {
+  if ((byte)this_00->field_0014 < 4) {
     st::fn_006EA270(g_sT3DSMAPContext_00807598,this_00->field_00C6,1,iVar10 + 3);
     g_currentExceptionFrame = local_7c.previous;
     return 0;
@@ -608,7 +547,7 @@ undefined4 __thiscall st::fn_00629070(STParticleC *this,int param_1)
   uint local_c;
   char **local_8;
 
-  local_24 = (uint)this->field_0014 >> 8 & 0xff;
+  local_24 = st::machine_word_boundary_cast<uint>(this->field_0014 >> 8 & 0xff);
   ppcVar13 = nullptr;
   local_8 = nullptr;
   switch(local_24) {
@@ -618,18 +557,18 @@ undefined4 __thiscall st::fn_00629070(STParticleC *this,int param_1)
     if (iVar12 == 4) {
       ppcVar13 = &PTR_s_partdw01_007d0798;
       local_8 = &PTR_s_partdw01_007d0798;
-      iVar12 = (uint)*(byte *)&this->field_0014 * 8;
+      iVar12 = (uint)(byte)this->field_0014 * 8;
       local_10 = *(int *)(&DAT_007d0af0 + iVar12) / 2;
       local_c = *(int *)(&DAT_007d0af4 + iVar12) / 2 - 0xe;
     }
     else {
       if (local_24 == 0) {
-        iVar10 = (uint)*(byte *)&this->field_0014 * 8;
+        iVar10 = (uint)(byte)this->field_0014 * 8;
         iVar2 = *(int *)(&DAT_007d0a70 + iVar10);
         iVar10 = *(int *)("%" + iVar10);
       }
       else {
-        iVar10 = (uint)*(byte *)&this->field_0014 * 8;
+        iVar10 = (uint)(byte)this->field_0014 * 8;
         iVar2 = *(int *)(&DAT_007d0bf0 + iVar10);
         iVar10 = *(int *)(&DAT_007d0bf4 + iVar10);
       }
@@ -664,7 +603,7 @@ undefined4 __thiscall st::fn_00629070(STParticleC *this,int param_1)
   case 4:
     ppcVar13 = &PTR_s_stoun0_007d09d8;
     local_8 = &PTR_s_stoun0_007d09d8;
-    iVar12 = *(int *)(&DAT_007d0a00 + (uint)*(byte *)&this->field_0014 * 4);
+    iVar12 = *(int *)(&DAT_007d0a00 + (uint)(byte)this->field_0014 * 4);
     goto LAB_00629242;
   case 8:
     ppcVar13 = &PTR_s_gr1part0_007d0870;
@@ -675,14 +614,14 @@ undefined4 __thiscall st::fn_00629070(STParticleC *this,int param_1)
   case 0x10:
     ppcVar13 = &PTR_s_partsi01_007d08c4;
     local_8 = &PTR_s_partsi01_007d08c4;
-    iVar12 = (uint)*(byte *)&this->field_0014 * 8;
+    iVar12 = (uint)(byte)this->field_0014 * 8;
     local_10 = *(int *)(&DAT_007d0af0 + iVar12) / 2;
     local_c = *(int *)(&DAT_007d0af4 + iVar12) / 2 - 0xe;
     break;
   case 0x20:
     ppcVar13 = &PTR_s_part_s0_007d0924;
     local_8 = &PTR_s_part_s0_007d0924;
-    iVar12 = (uint)*(byte *)&this->field_0014 * 8;
+    iVar12 = (uint)(byte)this->field_0014 * 8;
     local_10 = *(int *)(&DAT_007d0b70 + iVar12) / 2;
     local_c = *(int *)(&DAT_007d0b74 + iVar12) / 2 - 0xe;
     break;
@@ -702,7 +641,7 @@ LAB_00629242:
   if (ppcVar13 == nullptr) {
     return 0xffffffff;
   }
-  local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(*(undefined1 *)&this->field_0014));
+  local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)((char)this->field_0014));
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_1c = this;
@@ -769,25 +708,9 @@ LAB_00629242:
                                     (short)((longlong)iVar12 * 0x51eb851f >> 0x3f));
     }
     iVar12 = pSVar8->field_004A;
-    sVar5 = (short)(iVar12 >> 0x1f);
-    if (iVar12 < 0) {
-      iVar12 = (short)(((short)(iVar12 / 0xc9) + sVar5) -
-                      (short)((longlong)iVar12 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar12 = (int)(short)(((short)(iVar12 / 0xc9) + sVar5) -
-                           (short)((longlong)iVar12 * 0x28c1979 >> 0x3f));
-    }
+    iVar12 = STBiasedDiv16(iVar12, 0xc9); /* exact signed 16-bit grid-index division */
     iVar10 = pSVar8->field_0046;
-    sVar5 = (short)(iVar10 >> 0x1f);
-    if (iVar10 < 0) {
-      iVar10 = (short)(((short)(iVar10 / 0xc9) + sVar5) -
-                      (short)((longlong)iVar10 * 0x28c1979 >> 0x3f)) + -1;
-    }
-    else {
-      iVar10 = (int)(short)(((short)(iVar10 / 0xc9) + sVar5) -
-                           (short)((longlong)iVar10 * 0x28c1979 >> 0x3f));
-    }
+    iVar10 = STBiasedDiv16(iVar10, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
         (st::fn_00403F53
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar10,iVar12,
@@ -879,7 +802,7 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   text = PTR_s_expl_sb1_007d0c44;
-  if (3 < *(byte *)&local_18->field_0014) {
+  if (3 < (byte)local_18->field_0014) {
     text = PTR_s_expl_sb0_007d0c40;
   }
   puVar8 = st::fn_00709AF0
@@ -924,25 +847,9 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
                                      (short)((longlong)iVar11 * 0x51eb851f >> 0x3f));
       }
       iVar11 = pSVar7->field_004A;
-      sVar4 = (short)(iVar11 >> 0x1f);
-      if (iVar11 < 0) {
-        iVar11 = (short)(((short)(iVar11 / 0xc9) + sVar4) -
-                        (short)((longlong)iVar11 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar11 = (int)(short)(((short)(iVar11 / 0xc9) + sVar4) -
-                             (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
-      }
+      iVar11 = STBiasedDiv16(iVar11, 0xc9); /* exact signed 16-bit grid-index division */
       iVar9 = pSVar7->field_0046;
-      sVar4 = (short)(iVar9 >> 0x1f);
-      if (iVar9 < 0) {
-        iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar4) -
-                       (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar4) -
-                            (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
-      }
+      iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
       if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
           (st::fn_00403F53
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar11,
@@ -978,7 +885,7 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
         pSVar7->field_00C1 = 0;
       }
     }
-    if (*(byte *)&pSVar7->field_0014 < 4) {
+    if ((byte)pSVar7->field_0014 < 4) {
       puVar8 = st::fn_00709AF0
                          (PTR_00806764,CASE_1D,st::mutable_c_string("expl_s1"),0xffffffff,0,1,0,nullptr
                          );

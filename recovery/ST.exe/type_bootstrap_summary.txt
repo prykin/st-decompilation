@@ -1,6 +1,6 @@
 program=ST.exe
-proposals=4
+proposals=3
 auto_apply=3
-actions={canonical_system=1, ensure_darray=1, ensure_message=1, replace_duplicate=1}
+actions={canonical_system=1, ensure_darray=1, ensure_message=1}
 note=no executable address, enum value, or stack offset is seeded by this pass
 note=types are structural consequences of independently observed families

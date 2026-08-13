@@ -387,7 +387,11 @@ void __thiscall st::fn_0056EF50(STAppC *this)
 
    [STSwitchEnumApplier] Switch target field_1180 uses
    /SubmarineTitans/Recovered/Enums/STAppC_field_1180State. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_6=6;CASE_8=8;CASE_9=9;CASE_B=11 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_6=6;CASE_8=8;CASE_9=9;CASE_B=11
+
+   [STSwitchEnumApplier] Switch target field_1180 uses
+   /SubmarineTitans/Recovered/Enums/STAppC_field_1180State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_6=6;CASE_8=8;CASE_9=9;CASE_B=11;CASE_C=12 */
 
 void __thiscall st::fn_0056F040(STAppC *this)
 

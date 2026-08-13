@@ -16,12 +16,11 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
 
 {
   uint uVar1;
-  undefined1 *puVar2;
-  STMessageId SVar3;
-  AnonShape_00604A90_035626E6 *pAVar4;
-  short sVar6;
-  STGameObjC *this_00;
-  STGameObjC *this_01;
+  STMessageId SVar2;
+  AnonShape_00604A90_035626E6 *pAVar3;
+  short sVar5;
+  STExplosion *this_00;
+  STExplosion *this_01;
   int local_EAX_36;
   int iVar7;
   int local_EAX_288;
@@ -33,18 +32,18 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
   AnonReceiver_00636260 *this_02;
   int local_EAX_1496;
   int iVar8;
-  int iVar9;
-  AnonShape_00604A90_035626E6 *pAVar10;
-  byte *puVar11;
-  byte **slotStorage;
+  int iVar6;
+  AnonShape_00604A90_035626E6 *pAVar7;
+  byte *puVar8;
+  void **slotStorage;
   InternalExceptionFrame local_54;
-  STGameObjC *local_10;
+  STExplosion *local_10;
   byte *local_c;
-  AnonShape_0060EA30_DCEB68AD *local_8;
+  uint local_8;
 
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  local_10 = (STGameObjC *)this;
+  local_10 = this;
   local_EAX_36 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (local_EAX_36 != 0) {
@@ -57,51 +56,50 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar7 = st::fn_00403EBD(local_10,message);
+  iVar7 = st::fn_00403EBD((STGameObjC *)local_10,message);
   this_01 = local_10;
   if (iVar7 == 0xffff) {
     return 0xffff;
   }
-  SVar3 = message->id;
-  if (SVar3 < MESS_TORPHIT) {
-    if (SVar3 != MESS_SHARED_010F) {
-      if (SVar3 == MESS_ID_NONE) {
-        if (0 < *(int *)&this_00->field_0x2b7) {
-          iVar9 = (g_playSystem_00802A38->field_00E4 - *(int *)&this_00->field_0x26e) +
-                  *(int *)&this_00->field_0x2b7;
-          if ((iVar9 == 0xf) && (this_00->field_0x26d != '\0')) {
-            if (*(int *)&this_00->field_0x2bb == 0) {
+  SVar2 = message->id;
+  if (SVar2 < MESS_TORPHIT) {
+    if (SVar2 != MESS_SHARED_010F) {
+      if (SVar2 == MESS_ID_NONE) {
+        if (0 < this_00->field_02B7) {
+          iVar6 = (g_playSystem_00802A38->field_00E4 - this_00->field_026E) + this_00->field_02B7;
+          if ((iVar6 == 0xf) && (this_00->field_026D != '\0')) {
+            if (this_00->field_02BB == nullptr) {
               this_02 = (AnonReceiver_00636260 *)st::fn_00401E92();
-              *(AnonReceiver_00636260 **)&this_00->field_0x2bb = this_02;
+              this_00->field_02BB = (HoloTy *)this_02;
               if (this_02 != nullptr) {
                 st::fn_00405790
-                          (this_02,*(uint *)&this_00->field_0x1f1,*(int *)&this_00->field_0x1f5,
-                           *(int *)&this_00->field_0x1f9 + -0x28,0x96,0x1e,5,0);
+                          (this_02,this_00->field_01F1,this_00->field_01F5,
+                           st::machine_word_boundary_cast<int>(this_00->field_01F9 + -0x28),0x96,0x1e,5,0);
               }
             }
           }
-          else if ((0xf < iVar9) &&
-                  ((*(int **)&this_00->field_0x2bb != nullptr &&
-                   (iVar9 = st::fn_00403C4C(*(int **)&this_00->field_0x2bb), iVar9 != 0)))) {
-            st::fn_00401B40(*(AnonShape_006366D0_80B1100F **)&this_00->field_0x2bb);
-            st::fn_0072E2B0(*(HoloTy **)&this_00->field_0x2bb);
-            *(undefined4 *)&this_00->field_0x2b7 = 0xffffffff;
-            *(undefined4 *)&this_00->field_0x2bb = 0;
+          else if ((0xf < iVar6) &&
+                  ((this_00->field_02BB != nullptr &&
+                   (iVar6 = st::fn_00403C4C((int *)this_00->field_02BB), iVar6 != 0)))) {
+            st::fn_00401B40((AnonShape_006366D0_80B1100F *)this_00->field_02BB);
+            st::fn_0072E2B0(this_00->field_02BB);
+            this_00->field_02B7 = -1;
+            this_00->field_02BB = nullptr;
           }
         }
-        if (this_00->field_0x26d == '\0') {
-          local_EAX_1496 = st::fn_00401E9C((STExplosion *)this_00);
+        if (this_00->field_026D == '\0') {
+          local_EAX_1496 = st::fn_00401E9C(this_00);
           if (local_EAX_1496 != 0) {
             st::fn_00404250((int)this_00);
-            this_00->field_0x26d = 1;
+            this_00->field_026D = 1;
           }
         }
         else {
           st::fn_00405D76((STExplosionC *)this_00);
         }
         st::fn_00404714((AnonShape_006048E0_C1705B76 *)this_00);
-        iVar9 = st::fn_0040470F(this_00,0);
-        if (iVar9 != 0) {
+        iVar6 = st::fn_0040470F(this_00,0);
+        if (iVar6 != 0) {
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
@@ -109,150 +107,110 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      if (SVar3 == MESS_ID_CREATE) {
+      if (SVar2 == MESS_ID_CREATE) {
         uVar1 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
         this_00->field_001C = uVar1;
         _DAT_00811790 = (uVar1 >> 0x10) % 0x33;
-        pAVar4 = (AnonShape_00604A90_035626E6 *)(message->arg0).u32;
-        if (*(int *)&pAVar4->field_0xc == 0) {
-          pAVar10 = pAVar4;
-          puVar11 = (byte *)&this_00->field_0x1d5;
-          memmove(puVar11, pAVar10, 0x40); /* compiler REP MOVS byte copy */
-          st::fn_004047A0((STExplosion *)local_10);
-          puVar2 = st::pointer_boundary_cast<undefined1 *>(&this_01->field_0x272);
-          local_EAX_288 = st::fn_00401E9C((STExplosion *)this_01);
+        pAVar3 = (AnonShape_00604A90_035626E6 *)(message->arg0).u32;
+        if (*(int *)&pAVar3->field_0xc == 0) {
+          pAVar7 = pAVar3;
+          puVar8 = (byte *)&this_00->field_0x1d5;
+          memmove(puVar8, pAVar7, 0x40); /* compiler REP MOVS byte copy */
+          st::fn_004047A0(local_10);
+          puVar8 = (byte *)(&this_01->field_0272);
+          local_EAX_288 = st::fn_00401E9C(this_01);
           if (local_EAX_288 != 0) {
-            this_01->field_0x26d = 1;
+            this_01->field_026D = 1;
           }
-          switch(*(undefined4 *)&pAVar4->field_0x18) {
+          switch(*(undefined4 *)&pAVar3->field_0x18) {
           case 0:
-            iVar9 = *(int *)&pAVar4->field_0x1c;
-            sVar6 = (short)(iVar9 >> 0x1f);
-            if (iVar9 < 0) {
-              iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar6) -
-                             (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) + -1;
+            iVar6 = *(int *)&pAVar3->field_0x1c;
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
+            *puVar8 = iVar6 + -2;
+            this_01->field_027A = 5;
+            iVar6 = *(int *)&pAVar3->field_0x20;
+            if (iVar6 < 0) {
+              iVar6 = (short)(iVar6 / 0xc9) + -1;
             }
             else {
-              iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar6) -
-                                  (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
+              iVar6 = (int)(short)(iVar6 / 0xc9);
             }
-            *(int *)puVar2 = iVar9 + -2;
-            *(undefined4 *)&this_01->field_0x27a = 5;
-            iVar9 = *(int *)&pAVar4->field_0x20;
-            if (iVar9 < 0) {
-              iVar9 = (short)(iVar9 / 0xc9) + -1;
-            }
-            else {
-              iVar9 = (int)(short)(iVar9 / 0xc9);
-            }
-            *(int *)&this_01->field_0x276 = iVar9 + -2;
-            *(undefined4 *)&this_01->field_0x27e = 5;
+            this_01->field_0276 = iVar6 + -2;
+            this_01->field_027E = 5;
             local_EAX_481 =
-                 st::fn_00404CA0((STExplosion *)this_01,*(int *)&pAVar4->field_0x1c,
-                              *(int *)&pAVar4->field_0x20,*(int *)&pAVar4->field_0x24,
-                              *(int *)&pAVar4->field_0x28,*(uint **)&pAVar4->field_0x34,
-                              *(undefined4 *)&pAVar4->field_0x38,*(int *)&pAVar4->field_0x3c,
-                              *(undefined4 *)&pAVar4->field_0x30,this_01->field_0x26d);
+                 st::fn_00404CA0(this_01,*(int *)&pAVar3->field_0x1c,*(int *)&pAVar3->field_0x20,
+                              *(int *)&pAVar3->field_0x24,*(int *)&pAVar3->field_0x28,
+                              *(uint **)&pAVar3->field_0x34,*(undefined4 *)&pAVar3->field_0x38,
+                              *(int *)&pAVar3->field_0x3c,*(undefined4 *)&pAVar3->field_0x30,
+                              this_01->field_026D);
             this_01->field_0269 = local_EAX_481;
             g_currentExceptionFrame = local_54.previous;
             return 0;
           case 1:
-            iVar9 = *(int *)&pAVar4->field_0x1c;
-            sVar6 = (short)(iVar9 >> 0x1f);
-            if (iVar9 < 0) {
-              iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar6) -
-                             (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) + -1;
-            }
-            else {
-              iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar6) -
-                                  (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
-            }
+            iVar6 = *(int *)&pAVar3->field_0x1c;
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             break;
           case 2:
-            iVar9 = *(int *)&pAVar4->field_0x1c;
-            sVar6 = (short)(iVar9 >> 0x1f);
-            if (iVar9 < 0) {
-              iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar6) -
-                             (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) + -1;
+            iVar6 = *(int *)&pAVar3->field_0x1c;
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
+            *puVar8 = iVar6 + -2;
+            this_01->field_027A = 5;
+            iVar6 = *(int *)&pAVar3->field_0x20;
+            if (iVar6 < 0) {
+              iVar6 = (short)(iVar6 / 0xc9) + -1;
             }
             else {
-              iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar6) -
-                                  (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
+              iVar6 = (int)(short)(iVar6 / 0xc9);
             }
-            *(int *)puVar2 = iVar9 + -2;
-            *(undefined4 *)&this_01->field_0x27a = 5;
-            iVar9 = *(int *)&pAVar4->field_0x20;
-            if (iVar9 < 0) {
-              iVar9 = (short)(iVar9 / 0xc9) + -1;
-            }
-            else {
-              iVar9 = (int)(short)(iVar9 / 0xc9);
-            }
-            *(int *)&this_01->field_0x276 = iVar9 + -2;
-            *(undefined4 *)&this_01->field_0x27e = 5;
+            this_01->field_0276 = iVar6 + -2;
+            this_01->field_027E = 5;
             local_EAX_859 =
-                 st::fn_00402824(this_01,*(int *)&pAVar4->field_0x1c,*(int *)&pAVar4->field_0x20,
-                                    *(int *)&pAVar4->field_0x24);
+                 st::fn_00402824(this_01,*(int *)&pAVar3->field_0x1c,*(int *)&pAVar3->field_0x20,
+                                    *(int *)&pAVar3->field_0x24);
             this_01->field_0269 = local_EAX_859;
             g_currentExceptionFrame = local_54.previous;
             return 0;
           case 3:
-            iVar9 = *(int *)&pAVar4->field_0x1c;
-            sVar6 = (short)(iVar9 >> 0x1f);
-            if (iVar9 < 0) {
-              iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar6) -
-                             (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) + -1;
+            iVar6 = *(int *)&pAVar3->field_0x1c;
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
+            *puVar8 = iVar6 + -2;
+            this_01->field_027A = 5;
+            iVar6 = *(int *)&pAVar3->field_0x20;
+            if (iVar6 < 0) {
+              iVar6 = (short)(iVar6 / 0xc9) + -1;
             }
             else {
-              iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar6) -
-                                  (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
+              iVar6 = (int)(short)(iVar6 / 0xc9);
             }
-            *(int *)puVar2 = iVar9 + -2;
-            *(undefined4 *)&this_01->field_0x27a = 5;
-            iVar9 = *(int *)&pAVar4->field_0x20;
-            if (iVar9 < 0) {
-              iVar9 = (short)(iVar9 / 0xc9) + -1;
-            }
-            else {
-              iVar9 = (int)(short)(iVar9 / 0xc9);
-            }
-            *(int *)&this_01->field_0x276 = iVar9 + -2;
-            *(undefined4 *)&this_01->field_0x27e = 5;
+            this_01->field_0276 = iVar6 + -2;
+            this_01->field_027E = 5;
             local_EAX_1048 =
-                 st::fn_0040453E(this_01,*(uint *)&pAVar4->field_0x1c,
-                                    *(uint *)&pAVar4->field_0x20,*(int **)&pAVar4->field_0x24,
-                                    *(int *)&pAVar4->field_0x28);
+                 st::fn_0040453E(this_01,*(uint *)&pAVar3->field_0x1c,
+                                    *(uint *)&pAVar3->field_0x20,*(int **)&pAVar3->field_0x24,
+                                    *(int *)&pAVar3->field_0x28);
             this_01->field_0269 = local_EAX_1048;
             g_currentExceptionFrame = local_54.previous;
             return 0;
           case 4:
-            iVar9 = *(int *)&pAVar4->field_0x1c;
-            sVar6 = (short)(iVar9 >> 0x1f);
-            if (iVar9 < 0) {
-              iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar6) -
-                             (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) + -1;
+            iVar6 = *(int *)&pAVar3->field_0x1c;
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
+            *puVar8 = iVar6 + -2;
+            this_01->field_027A = 5;
+            iVar6 = *(int *)&pAVar3->field_0x20;
+            if (iVar6 < 0) {
+              iVar6 = (short)(iVar6 / 0xc9) + -1;
             }
             else {
-              iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar6) -
-                                  (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
+              iVar6 = (int)(short)(iVar6 / 0xc9);
             }
-            *(int *)puVar2 = iVar9 + -2;
-            *(undefined4 *)&this_01->field_0x27a = 5;
-            iVar9 = *(int *)&pAVar4->field_0x20;
-            if (iVar9 < 0) {
-              iVar9 = (short)(iVar9 / 0xc9) + -1;
-            }
-            else {
-              iVar9 = (int)(short)(iVar9 / 0xc9);
-            }
-            *(int *)&this_01->field_0x276 = iVar9 + -2;
-            *(undefined4 *)&this_01->field_0x27e = 5;
+            this_01->field_0276 = iVar6 + -2;
+            this_01->field_027E = 5;
             local_EAX_1235 =
-                 st::fn_004028D3(this_01,*(uint *)&pAVar4->field_0x1c,
-                                    *(uint **)&pAVar4->field_0x20,*(uint *)&pAVar4->field_0x24,
-                                    *(undefined4 *)&pAVar4->field_0x28,
-                                    *(undefined4 *)&pAVar4->field_0x34,*(int *)&pAVar4->field_0x38,
-                                    *(undefined4 *)&pAVar4->field_0x3c,0,this_01->field_0x26d);
+                 st::fn_004028D3(this_01,*(uint *)&pAVar3->field_0x1c,
+                                    *(uint **)&pAVar3->field_0x20,*(uint *)&pAVar3->field_0x24,
+                                    *(undefined4 *)&pAVar3->field_0x28,
+                                    *(undefined4 *)&pAVar3->field_0x34,*(int *)&pAVar3->field_0x38,
+                                    *(undefined4 *)&pAVar3->field_0x3c,0,this_01->field_026D);
             this_01->field_0269 = local_EAX_1235;
             g_currentExceptionFrame = local_54.previous;
             return 0;
@@ -260,62 +218,61 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
             g_currentExceptionFrame = local_54.previous;
             return 0;
           }
-          *(int *)puVar2 = iVar9 + -2;
-          *(undefined4 *)&this_01->field_0x27a = 5;
-          iVar9 = *(int *)&pAVar4->field_0x20;
-          if (iVar9 < 0) {
-            iVar9 = (short)(iVar9 / 0xc9) + -1;
+          *puVar8 = iVar6 + -2;
+          this_01->field_027A = 5;
+          iVar6 = *(int *)&pAVar3->field_0x20;
+          if (iVar6 < 0) {
+            iVar6 = (short)(iVar6 / 0xc9) + -1;
           }
           else {
-            iVar9 = (int)(short)(iVar9 / 0xc9);
+            iVar6 = (int)(short)(iVar6 / 0xc9);
           }
-          *(int *)&this_01->field_0x276 = iVar9 + -2;
-          *(undefined4 *)&this_01->field_0x27e = 5;
+          this_01->field_0276 = iVar6 + -2;
+          this_01->field_027E = 5;
           local_EAX_670 =
-               st::fn_00402E73(this_01,*(int *)&pAVar4->field_0x1c,*(int *)&pAVar4->field_0x20,
-                                  *(int *)&pAVar4->field_0x24,*(undefined4 *)&pAVar4->field_0x28);
+               st::fn_00402E73(this_01,*(int *)&pAVar3->field_0x1c,*(int *)&pAVar3->field_0x20,
+                                  *(int *)&pAVar3->field_0x24,*(undefined4 *)&pAVar3->field_0x28);
           this_01->field_0269 = local_EAX_670;
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        st::fn_00402C3E(this_00,pAVar4);
+        st::fn_00402C3E(this_00,pAVar3);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      if (SVar3 != MESS_SHARED_0003) {
+      if (SVar2 != MESS_SHARED_0003) {
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      st::fn_00401118((STExplosion *)this_00);
-      if (this_00->field_0x26d != '\0') {
-        st::fn_0040514B((STExplosion *)this_00);
+      st::fn_00401118(this_00);
+      if (this_00->field_026D != '\0') {
+        st::fn_0040514B(this_00);
       }
-      if (*(AnonShape_006366D0_80B1100F **)&this_00->field_0x2bb !=
-          nullptr) {
-        st::fn_00401B40(*(AnonShape_006366D0_80B1100F **)&this_00->field_0x2bb);
-        st::fn_0072E2B0(*(HoloTy **)&this_00->field_0x2bb);
-        *(undefined4 *)&this_00->field_0x2bb = 0;
+      if (this_00->field_02BB != nullptr) {
+        st::fn_00401B40((AnonShape_006366D0_80B1100F *)this_00->field_02BB);
+        st::fn_0072E2B0(this_00->field_02BB);
+        this_00->field_02BB = nullptr;
       }
-      st::fn_00403F3A((STExplosion *)this_00);
+      st::fn_00403F3A(this_00);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    local_c = (byte *)st::fn_0040565F((STExplosionC *)this_00,(uint *)&local_8);
+    local_c = (byte *)st::fn_0040565F((STExplosionC *)this_00,&local_8);
     if (local_c == nullptr) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     st::fn_004025F9(g_playSystem_00802A38,(int *)this_00->field_0018,local_c,local_8);
-    slotStorage = &local_c;
+    slotStorage = st::pointer_boundary_cast<void **>(&local_c);
   }
   else {
-    if (SVar3 != MESS_ID_ALLCREATE) {
-      if (SVar3 == MESS_STOCTOPUSC_0112) {
+    if (SVar2 != MESS_ID_ALLCREATE) {
+      if (SVar2 == MESS_STOCTOPUSC_0112) {
         st::fn_0040470F(this_00,0x112);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      if (SVar3 != MESS_STSPRGAMEOBJC_0113) {
+      if (SVar2 != MESS_STSPRGAMEOBJC_0113) {
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -323,12 +280,12 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    slotStorage = (byte **)&this_00->field_0x2b3;
-    if (*(int **)&this_00->field_0x2b3 == nullptr) {
+    slotStorage = &this_00->field_02B3;
+    if (this_00->field_02B3 == nullptr) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    st::fn_004031BB(this_00,*(int **)&this_00->field_0x2b3);
+    st::fn_004031BB(this_00,st::pointer_boundary_cast<int *>(this_00->field_02B3));
   }
   st::fn_006AB060(slotStorage);
   g_currentExceptionFrame = local_54.previous;
@@ -665,35 +622,11 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
     pVVar3 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != nullptr) {
       iVar6 = pSVar4->field_0292;
-      sVar2 = (short)(iVar6 >> 0x1f);
-      if (iVar6 < 0) {
-        local_14 = (short)(((short)(iVar6 / 200) + sVar2) -
-                          (short)((longlong)iVar6 * 0x51eb851f >> 0x3f)) + -1;
-      }
-      else {
-        local_14 = (int)(short)(((short)(iVar6 / 200) + sVar2) -
-                               (short)((longlong)iVar6 * 0x51eb851f >> 0x3f));
-      }
+      local_14 = STBiasedDiv16(iVar6, 200); /* exact signed 16-bit grid-index division */
       iVar6 = pSVar4->field_028E;
-      sVar2 = (short)(iVar6 >> 0x1f);
-      if (iVar6 < 0) {
-        iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar2) -
-                       (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar2) -
-                            (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
-      }
+      iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
       iVar9 = pSVar4->field_028A;
-      sVar2 = (short)(iVar9 >> 0x1f);
-      if (iVar9 < 0) {
-        iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar2) -
-                       (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar2) -
-                            (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
-      }
+      iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
       if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
           (st::fn_00403F53
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar6,

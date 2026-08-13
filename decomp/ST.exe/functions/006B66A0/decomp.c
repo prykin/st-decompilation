@@ -22,14 +22,14 @@ int FUN_006b66a0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undef
   ppuStack_14 = &param_1;
   piStack_1c = (int *)*param_1;
   uStack_18 = 0;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar2 = (**(code **)(*piStack_1c + 0x58))();
   if (iVar2 == -0x7788ffe2) {
     Library::MSVCRT::FUN_0072da40();
     if (&stack0x00000000 == (undefined1 *)0x1c) {
       return -2;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (**(code **)(*(int *)*puVar1 + 0x58))((int *)*puVar1,&piStack_1c,&param_1);
     if (iVar2 == 0) {
       puVar1[0xf] = param_3;
