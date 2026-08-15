@@ -1730,17 +1730,17 @@ st::fn_00427F20(void *this,float param_1,float param_2,float param_3,int param_4
         iVar11 = local_34;
       }
       *(int *)((int)g_runtimeRecords_007F4D74 - iVar8) = iVar13;
-      *(int *)((int)&g_runtimeRecords_007F4D74->field_0000 + iVar8) = iVar13;
+      STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar8).field_0000 = iVar13;
       *(int *)((int)g_runtimeRecords_007F4D74 + (0xc - iVar8)) = iVar11;
-      *(int *)((int)&g_runtimeRecords_007F4D74->field_000C + iVar8) = iVar11;
+      STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar8).field_000C = iVar11;
       if (param_5 < iVar6) {
         *(undefined4 *)((int)g_runtimeRecords_007F4D74 + (4 - iVar8)) =
              *(undefined4 *)((int)g_runtimeRecords_007F4D74 + (0xc - iVar8));
-        *(undefined4 *)((int)&g_runtimeRecords_007F4D74->field_0004 + iVar8) =
-             *(undefined4 *)((int)&g_runtimeRecords_007F4D74->field_000C + iVar8);
+        STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar8).field_0004 =
+             STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar8).field_000C;
         ((undefined4 *)((int)g_runtimeRecords_007F4D74 - iVar8))[2] =
              *(undefined4 *)((int)g_runtimeRecords_007F4D74 - iVar8);
-        iVar11 = *(int *)((int)&g_runtimeRecords_007F4D74->field_0000 + iVar8);
+        iVar11 = STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar8).field_0000;
       }
       else {
         iVar11 = piVar3[5];
@@ -1752,10 +1752,10 @@ st::fn_00427F20(void *this,float param_1,float param_2,float param_3,int param_4
           iVar11 = local_2c;
         }
         *(int *)((int)g_runtimeRecords_007F4D74 + (4 - iVar8)) = iVar13;
-        *(int *)((int)&g_runtimeRecords_007F4D74->field_0004 + iVar8) = iVar13;
+        STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar8).field_0004 = iVar13;
         *(int *)((int)g_runtimeRecords_007F4D74 + (8 - iVar8)) = iVar11;
       }
-      *(int *)((int)&g_runtimeRecords_007F4D74->field_0008 + iVar8) = iVar11;
+      STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar8).field_0008 = iVar11;
       iVar6 = iVar6 + 1;
       iVar8 = iVar8 + 0x10;
       piVar3 = piVar3 + 4;

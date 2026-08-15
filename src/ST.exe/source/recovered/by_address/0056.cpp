@@ -329,8 +329,8 @@ int st::fn_00562170(int *param_1,int param_2)
     local_14 = 0;
     do {
       iVar1 = st::fn_006DB910(DAT_00803304,DAT_00803308,
-                           *(int *)((int)&g_runtimeRecords_00803310->field_0000 + local_14),
-                           *(int *)((int)&g_runtimeRecords_00803310->field_0004 + local_14));
+                           STObjectAtByteOffset(g_runtimeRecords_00803310, local_14).field_0000,
+                           STObjectAtByteOffset(g_runtimeRecords_00803310, local_14).field_0004);
       if (0 < param_2) {
         local_c = local_c + param_2;
         iVar5 = param_2;
@@ -780,8 +780,8 @@ void st::fn_00562E10(undefined4 param_1,undefined4 param_2,undefined4 *param_3,i
     iVar7 = 0;
     puVar5 = param_3;
     do {
-      iVar4 = st::fn_006ACF90(*(int *)((int)&g_runtimeRecords_00803300->field_0000 + iVar7),
-                           *(int *)((int)&g_runtimeRecords_00803300->field_0004 + iVar7),iVar1,iVar2
+      iVar4 = st::fn_006ACF90(STObjectAtByteOffset(g_runtimeRecords_00803300, iVar7).field_0000,
+                           STObjectAtByteOffset(g_runtimeRecords_00803300, iVar7).field_0004,iVar1,iVar2
                           );
       if (iVar4 < DAT_00803378 / 2 + iVar3 / 2) {
         *puVar5 = 0xffffffff;
@@ -795,8 +795,8 @@ void st::fn_00562E10(undefined4 param_1,undefined4 param_2,undefined4 *param_3,i
     iVar7 = iVar6 * 0x14;
     puVar5 = param_3 + iVar6;
     do {
-      iVar4 = st::fn_006ACF90(*(int *)((int)&g_runtimeRecords_00803300->field_0000 + iVar7),
-                           *(int *)((int)&g_runtimeRecords_00803300->field_0004 + iVar7),iVar1,iVar2
+      iVar4 = st::fn_006ACF90(STObjectAtByteOffset(g_runtimeRecords_00803300, iVar7).field_0000,
+                           STObjectAtByteOffset(g_runtimeRecords_00803300, iVar7).field_0004,iVar1,iVar2
                           );
       if (iVar4 < DAT_008032ec / 2 + iVar3 / 2) {
         *puVar5 = 0xffffffff;
@@ -833,8 +833,8 @@ void st::fn_00564DD0(undefined4 param_1,undefined4 param_2,undefined4 *param_3,u
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = param_3;
     do {
-      iVar4 = st::fn_006ACF90(*(int *)((int)&g_runtimeRecords_00803300->field_0000 + iVar6),
-                           *(int *)((int)&g_runtimeRecords_00803300->field_0004 + iVar6),iVar1,iVar2
+      iVar4 = st::fn_006ACF90(STObjectAtByteOffset(g_runtimeRecords_00803300, iVar6).field_0000,
+                           STObjectAtByteOffset(g_runtimeRecords_00803300, iVar6).field_0004,iVar1,iVar2
                           );
       if (iVar4 < DAT_00803378 / 2 + iVar3 / 4) {
         *param_4 = 0xffffffff;
@@ -849,8 +849,8 @@ void st::fn_00564DD0(undefined4 param_1,undefined4 param_2,undefined4 *param_3,u
     iVar6 = iVar5 * 0x14;
     param_3 = param_3 + iVar5;
     do {
-      iVar4 = st::fn_006ACF90(*(int *)((int)&g_runtimeRecords_00803300->field_0000 + iVar6),
-                           *(int *)((int)&g_runtimeRecords_00803300->field_0004 + iVar6),iVar1,iVar2
+      iVar4 = st::fn_006ACF90(STObjectAtByteOffset(g_runtimeRecords_00803300, iVar6).field_0000,
+                           STObjectAtByteOffset(g_runtimeRecords_00803300, iVar6).field_0004,iVar1,iVar2
                           );
       if (iVar4 < DAT_008032ec / 2 + iVar3 / 4) {
         *param_3 = 0xffffffff;

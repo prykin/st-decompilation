@@ -262,6 +262,15 @@ Original binaries are local under ignored `bin/` and must not be committed.
   functions, and record-aligned pointer advances. A global which is itself a
   repeated SIB table base, or a cursor advanced by a sub-record delta, remains
   neutral. Dynamic `alloca` backing proves no static element count.
+- A writable global word is a runtime bit-string pointer when its exact loaded
+  value is the memory base of repeated x86 `BT`/`BTS`/`BTR`/`BTC` instructions
+  in at least two functions. Represent that storage neutrally as `byte *`; the
+  instruction's dword access unit does not make the source pointee a dword.
+- When Ghidra retains a byte induction variable over an already proven
+  structure pointer, export `*(T *)((int)&base->member + byteOffset)` as the
+  exact `STObjectAtByteOffset(base, byteOffset).member` view only when the cast
+  width matches that named component. Do not invent `base[index]` until every
+  definition proves that the offset is an exact multiple of the record size.
 - An exact machine-word field copy may transfer an independently observed
   contained subfield width to the corresponding byte offset at the other end.
   Stage transfers from one snapshot and carry geometry only—never signedness or

@@ -89,8 +89,7 @@ LAB_0041329b:
             if (((param_6 < 0) &&
                 (uVar6 = iVar10 + DAT_007f4d2c * iVar11 + iVar3 * iVar5, iVar7 = local_8,
                 *(short *)(DAT_007f4cf0 + uVar6 * 2) == 0)) &&
-               (uVar6 = uVar6 ^ 7,
-               (*(byte *)(DAT_007f4cfc + ((int)uVar6 >> 3)) >> (uVar6 & 7) & 1) == 0))
+               (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) == 0))
             goto LAB_00413319;
           }
 LAB_0041330a:
@@ -151,16 +150,15 @@ LAB_00413585:
            (((DAT_007f4d30 <= iVar11 ||
              (uVar6 = iVar10 + DAT_007f4d2c * iVar11 + iVar3 * iVar4,
              *(short *)(DAT_007f4cf0 + uVar6 * 2) != 0)) ||
-            (uVar6 = uVar6 ^ 7,
-            (*(byte *)(DAT_007f4cfc + ((int)uVar6 >> 3)) >> (uVar6 & 7) & 1) != 0)))) {
+            (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) != 0)))) {
 LAB_004135d8:
           pcVar9 = pcVar9 + 4;
           goto LAB_0041350c;
         }
         pcVar9 = pcVar9 + 4;
-        *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + param_6) = iVar10;
-        *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + param_6) = iVar11;
-        *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + param_6) = iVar4;
+        STObjectAtByteOffset(g_runtimeRecords_007F4D3C, param_6).field_0000 = iVar10;
+        STObjectAtByteOffset(g_runtimeRecords_007F4D3C, param_6).field_0004 = iVar11;
+        STObjectAtByteOffset(g_runtimeRecords_007F4D3C, param_6).field_0008 = iVar4;
         param_6 = param_6 + 0x14;
         param_4 = param_4 + 1;
       } while (param_4 < DAT_007f4d20);
@@ -172,9 +170,9 @@ cf_common_exit_00413620:
 LAB_00413319:
   param_6 = param_6 + iVar4;
   pcVar9 = pcVar9 + 4;
-  *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + local_1c) = iVar10;
-  *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + local_1c) = iVar11;
-  *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + local_1c) = iVar5;
+  STObjectAtByteOffset(g_runtimeRecords_007F4D3C, local_1c).field_0000 = iVar10;
+  STObjectAtByteOffset(g_runtimeRecords_007F4D3C, local_1c).field_0004 = iVar11;
+  STObjectAtByteOffset(g_runtimeRecords_007F4D3C, local_1c).field_0008 = iVar5;
   local_1c = local_1c + 0x14;
   param_4 = param_4 + 1;
   local_8 = local_8 + 1;
@@ -213,8 +211,8 @@ LAB_00413426:
           ((iVar11 < DAT_007f4d30 && (param_6 = param_6 + -0x10000, param_6 < 0)))) &&
          ((uVar6 = iVar10 + DAT_007f4d2c * iVar11 + iVar3 * iVar7,
           *(short *)(DAT_007f4cf0 + uVar6 * 2) == 0 &&
-          (uVar6 = uVar6 ^ 7, (*(byte *)(DAT_007f4cfc + ((int)uVar6 >> 3)) >> (uVar6 & 7) & 1) == 0)
-          ))) goto LAB_00413496;
+          (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) == 0))))
+      goto LAB_00413496;
 LAB_00413487:
       pcVar8 = pcVar9 + 7;
       pcVar9 = pcVar9 + 4;
@@ -225,9 +223,9 @@ LAB_00413487:
 LAB_00413496:
   param_6 = param_6 + iVar4;
   pcVar9 = pcVar9 + 4;
-  *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + local_1c) = iVar10;
-  *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + local_1c) = iVar11;
-  *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + local_1c) = iVar7;
+  STObjectAtByteOffset(g_runtimeRecords_007F4D3C, local_1c).field_0000 = iVar10;
+  STObjectAtByteOffset(g_runtimeRecords_007F4D3C, local_1c).field_0004 = iVar11;
+  STObjectAtByteOffset(g_runtimeRecords_007F4D3C, local_1c).field_0008 = iVar7;
   local_1c = local_1c + 0x14;
   param_4 = param_4 + 1;
   if (DAT_007f4d20 <= param_4) goto cf_common_exit_00413620;

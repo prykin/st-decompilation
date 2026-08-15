@@ -1,10 +1,10 @@
 program=ST.exe
-functions_scanned=5616
-direct_calls_seen=36943
+functions_scanned=5555
+direct_calls_seen=36888
 globals_with_evidence=1192
-proposals=82
-type_auto_apply=0
-name_auto_apply=0
+proposals=83
+type_auto_apply=1
+name_auto_apply=1
 conflicts=0
 globals_with_call_boundary_evidence=309
 globals_with_trusted_pointer_return_store=90

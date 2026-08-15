@@ -2863,12 +2863,11 @@ undefined4 __thiscall st::fn_004C7460(TLOBaseTy *this)
       pAVar2 = this->field_0607;
       iVar4 = 0;
       do {
-        st::fn_004035DF(this,*(Global_sub_004C7260_param_1Enum *)
-                                 ((int)&pAVar2->field_0000 + iVar4),
-                           *(int *)((int)&pAVar2->field_0004 + iVar4),st::pointer_boundary_cast<undefined4 *>(&local_1c),st::pointer_boundary_cast<undefined4 *>(&local_20),&local_24,
+        st::fn_004035DF(this,STObjectAtByteOffset(pAVar2, iVar4).field_0000,
+                           STObjectAtByteOffset(pAVar2, iVar4).field_0004,st::pointer_boundary_cast<undefined4 *>(&local_1c),st::pointer_boundary_cast<undefined4 *>(&local_20),&local_24,
                            st::pointer_boundary_cast<undefined4 *>(&local_28));
         pAVar2 = this->field_0607;
-        iVar3 = *(int *)((int)&pAVar2->field_0008 + iVar4);
+        iVar3 = STObjectAtByteOffset(pAVar2, iVar4).field_0008;
         iVar4 = iVar4 + 0x27;
         local_8 = local_8 + iVar3 * local_1c;
         local_14 = local_14 + iVar3 * local_20;

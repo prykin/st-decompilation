@@ -107,7 +107,7 @@ AllocationRecord_0067D1D0 * __cdecl st::fn_0067D1D0(AllocationRecord_0067D1D0 *p
     local_8->field_0106 = pAVar1;
     pAVar4 = (AllocationRecord_0067D1D0 *)local_8;
     do {
-      if (*(int *)((int)&pAVar4->field_00C2 + iVar5) != 0) {
+      if (STObjectAtByteOffset(pAVar4, iVar5).field_00C2 != 0) {
         pDVar2 = st::fn_006B0060(nullptr,
                               (uint *)(&param_1->field_0x12a + *(int *)(&pAVar4->field_0xc6 + iVar5)
                                       ));

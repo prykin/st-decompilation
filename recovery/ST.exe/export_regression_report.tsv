@@ -3,27 +3,26 @@ info	decompile_failures	0	0	0	ok	Every body_exported function must have decompil
 info	generated_enum_bitwise_composition	0	0	0	ok	Strict internal invariant, not a baseline delta: generated enum CASE_*|CASE_* compositions must be repaired before export
 info	tagged_message_vtable_slot_untyped	0	0	0	ok	-
 info	function_count	10407	10407	0	ok	policy=nondecreasing
-info	body_function_count	5616	5555	-61	stage_transition	Bodies intentionally excluded after explicit LIBRARY classification: 006C7240 | 006C7B20 | 006C7CB0 | 00751F90 | 00757250 | 007572F0 | 00757330 | 00757350 | 00757710 | 007579A0 | 00757C90 | 00757CD0
-info	new_library_body_exclusions	0	61	61	stage_transition	006C7240 | 006C7B20 | 006C7CB0 | 00751F90 | 00757250 | 007572F0 | 00757330 | 00757350 | 00757710 | 007579A0 | 00757C90 | 00757CD0
+info	body_function_count	5555	5555	0	ok	policy=per-address nondecreasing
+info	new_library_body_exclusions	0	0	0	ok	-
 info	covered_executable_bytes	2825571	2825571	0	ok	policy=nondecreasing
-info	unclaimed_meaningful_bytes	98414	83886	-14528	improved	policy=nonincreasing
+info	unclaimed_meaningful_bytes	83886	83886	0	ok	policy=nonincreasing
 info	typed_vtable_slots	3192	3192	0	ok	Exact per-slot type erasure is the hard regression criterion
 info	dispatch_vtable_count	1	1	0	ok	Physical vtable layouts and polymorphic dispatch interfaces are counted separately
 info	typed_vtable_slot_erasure	0	0	0	ok	-
 info	function_addresses_removed	0	0	0	ok	-
 info	semantic_name_downgrades	0	0	0	ok	-
-warning	quality:anonymous_shape_type	4049	3947	-102	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
 info	quality:call_clobber_piece	271	271	0	ok	policy=nonincreasing; blocking=false
-warning	quality:casted_generic_field	3927	3880	-47	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+warning	quality:casted_generic_field	3880	3838	-42	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
 info	quality:dynamic_array_indexing	77	77	0	ok	policy=nonincreasing; blocking=false
 info	quality:flattened_global_record_array	36	36	0	ok	policy=nonincreasing; blocking=false
-warning	quality:generic_data_symbol	14605	14591	-14	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
-warning	quality:generic_field_name	61875	61567	-308	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+warning	quality:generic_data_symbol	14591	14543	-48	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+warning	quality:generic_field_name	61567	61636	69	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
 info	quality:generic_global_aggregate	101	101	0	ok	policy=nonincreasing; blocking=false
-info	quality:raw_indirect_call	1803	1760	-43	improved	policy=nonincreasing; blocking=true
-info	quality:raw_pointer_offset	2121	2075	-46	improved	policy=nonincreasing; blocking=false
+info	quality:raw_indirect_call	1760	1760	0	ok	policy=nonincreasing; blocking=true
+info	quality:raw_pointer_offset	2075	2075	0	ok	policy=nonincreasing; blocking=false
 info	quality:return_width_artifact	292	292	0	ok	policy=nonincreasing; blocking=true
-info	quality:stack_slot_reuse	751	726	-25	improved	policy=nonincreasing; blocking=false
+info	quality:stack_slot_reuse	726	726	0	ok	policy=nonincreasing; blocking=false
 info	quality:string_based_aggregate_address	7	7	0	ok	policy=nonincreasing; blocking=false
-info	quality:undefined_type	17973	17776	-197	improved	policy=nonincreasing; blocking=false
-info	quality:unresolved_register_input	413	407	-6	improved	policy=nonincreasing; blocking=true
+info	quality:undefined_type	17776	17775	-1	improved	policy=nonincreasing; blocking=false
+info	quality:unresolved_register_input	407	407	0	ok	policy=nonincreasing; blocking=true

@@ -23,8 +23,8 @@ void FUN_00562e10(undefined4 param_1,undefined4 param_2,undefined4 *param_3,int 
     iVar7 = 0;
     puVar5 = param_3;
     do {
-      iVar4 = FUN_006acf90(*(int *)((int)&g_runtimeRecords_00803300->field_0000 + iVar7),
-                           *(int *)((int)&g_runtimeRecords_00803300->field_0004 + iVar7),iVar1,iVar2
+      iVar4 = FUN_006acf90(STObjectAtByteOffset(g_runtimeRecords_00803300, iVar7).field_0000,
+                           STObjectAtByteOffset(g_runtimeRecords_00803300, iVar7).field_0004,iVar1,iVar2
                           );
       if (iVar4 < DAT_00803378 / 2 + iVar3 / 2) {
         *puVar5 = 0xffffffff;
@@ -38,8 +38,8 @@ void FUN_00562e10(undefined4 param_1,undefined4 param_2,undefined4 *param_3,int 
     iVar7 = iVar6 * 0x14;
     puVar5 = param_3 + iVar6;
     do {
-      iVar4 = FUN_006acf90(*(int *)((int)&g_runtimeRecords_00803300->field_0000 + iVar7),
-                           *(int *)((int)&g_runtimeRecords_00803300->field_0004 + iVar7),iVar1,iVar2
+      iVar4 = FUN_006acf90(STObjectAtByteOffset(g_runtimeRecords_00803300, iVar7).field_0000,
+                           STObjectAtByteOffset(g_runtimeRecords_00803300, iVar7).field_0004,iVar1,iVar2
                           );
       if (iVar4 < DAT_008032ec / 2 + iVar3 / 2) {
         *puVar5 = 0xffffffff;

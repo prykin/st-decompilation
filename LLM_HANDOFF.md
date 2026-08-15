@@ -1307,3 +1307,47 @@ Current accepted state:
 - compared with the preceding corpus, raw indirect calls decreased by 43,
   raw pointer offsets by 46, unresolved register inputs by six, and undefined
   type occurrences by 197.
+
+## Runtime bit strings and byte-inducted record members
+
+The latest accepted export supersedes the state above. `STGlobalDataAnalyzer`
+now recognizes a runtime bit-string pointer from the complete machine chain
+`MOV exact_global_value -> base register -> BT/BTS/BTR/BTC [base], bitIndex`.
+Automatic application requires at least three exact sites spanning two
+functions. The access unit used by the x86 instruction is not treated as a C
+pointee width: the neutral source storage is `byte *`. This recovered
+`DAT_007F4CFC` as `g_bitset_007F4CFC : byte *` from 16 exact sites across nine
+functions, with no address or class allow-list. The formerly casted accesses
+now render as ordinary byte indexing. The nearby `linearIndex ^ 7` is real: it
+reverses the low three bit-position bits before `>> 3` selects the byte.
+
+`STDecompExport` also recovers an already proven structure member when Ghidra
+keeps the loop induction variable in bytes. An exact expression such as
+`*(int *)((int)&records->field_0004 + byteOffset)` now becomes
+`STObjectAtByteOffset(records, byteOffset).field_0004` only when `records` is a
+one-star pointer to one unambiguous concrete structure and the cast width equals
+that named member's width. The helper is address-equivalent for every offset;
+it deliberately does not invent `records[index]` until every definition proves
+divisibility by the record size. This normalized 112 sites in 16 functions,
+including the `RuntimeRecord_007F4D3C_0014` reads and writes shown in the
+current `Grpway3d` family.
+
+The old `*(undefined4 *)(*(int *)(param_1 + 0x1ba) + 0x1c) = 1` example belonged
+to callback `0075F720`, now independently classified as statically linked
+`DKW_JPG`. Its implementation is intentionally absent from the accepted
+decompiler corpus and disappeared from the regenerated source tree; callers
+retain only the address-stable library declaration.
+
+Current accepted state:
+
+- run `a59b126a2ff456ddf0b30a483d1b1f08aa42964a2a1e351a74eecd1f52095010`;
+- semantic hash `85b30777b4e7846236f50c68efa495664e45729dd519a55e96d62dab6dc011cc`;
+- corpus manifest `bafff15b18472b78d359a6f66c94c43ef1c82e46c0d54e8743becf606190b059`;
+- 10,407 function records, 5,555 exported bodies, zero failed bodies, and 3,192
+  typed physical-vtable slots;
+- export receipt `passed`, with zero hard regressions and three non-blocking
+  stage-transition warnings; ABI gate errors/warnings remain zero;
+- generated source contains 5,555 bodies in 321 translation units; the fixed
+  64-error Apple Clang audit passes 187 units and retains 1,531 errors, 1,514
+  mapped to stable function addresses. The generated declaration surface and
+  all 37 source-generator unit tests pass.

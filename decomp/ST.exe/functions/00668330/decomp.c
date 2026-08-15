@@ -36,7 +36,7 @@ AllocationRecord_00668330 * __cdecl FUN_00668330(AllocationRecord_00668330 *para
     pAVar1->field_0018 = 2;
     local_8 = (AnonShape_00668330_F270680B *)pAVar1;
     do {
-      if (*(int *)((int)&pAVar1->field_01EB + iVar3) != 0) {
+      if (STObjectAtByteOffset(pAVar1, iVar3).field_01EB != 0) {
         pDVar2 = FUN_006b0060(nullptr,
                               (uint *)(&param_1->field_0x25f +
                                       *(int *)(&pAVar1->field_0x1ef + iVar3)));

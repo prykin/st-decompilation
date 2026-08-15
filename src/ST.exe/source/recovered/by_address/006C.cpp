@@ -2807,44 +2807,6 @@ void st::fn_006C7030(AnonShape_006C7030_23487746 *param_1)
   return;
 }
 
-// 006C7240 FUN_006c7240
-#line 4 "decomp/ST.exe/functions/006C7240/decomp.c"
-undefined4 st::fn_006C7240(AnonShape_006C7240_F2C56622 *param_1,int param_2,int param_3)
-
-{
-  RecoveredSourceFamily_dibcopy *pRVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-
-  pRVar1 = (RecoveredSourceFamily_dibcopy *)param_1->field_003A;
-  iVar2 = pRVar1->field_0008;
-  if (iVar2 < 0) {
-    iVar2 = -iVar2;
-  }
-  iVar4 = param_3 + param_1->field_001E + *(int *)&param_1->field_0x4;
-  if (iVar4 < iVar2) {
-    iVar3 = st::machine_word_boundary_cast<int>(param_1->field_001A + *(int *)param_1);
-    iVar2 = param_1->field_0022;
-    if (pRVar1->field_0004 < iVar2 + iVar3) {
-      iVar2 = st::machine_word_boundary_cast<int>(pRVar1->field_0004 - iVar3);
-    }
-    if ((param_1->field_005E & 1) == 0) {
-      st::fn_006B55F0
-                (pRVar1,param_1->field_003E,iVar3,iVar4,(byte *)param_1->field_002E,param_2,0,0,
-                 iVar2,1);
-      return 0;
-    }
-    st::fn_006B5110
-              ((int)pRVar1,param_1->field_003E,iVar3,iVar4,(BITMAPINFO *)param_1->field_002E,param_2
-               ,0,0,iVar2,1,param_1->field_0061);
-  }
-  else if ((param_1->field_0016 != '\0') && (param_1->field_0x18 == '\0')) {
-    return 0xffffffff;
-  }
-  return 0;
-}
-
 // 006C72F0 FUN_006c72f0
 #line 4 "decomp/ST.exe/functions/006C72F0/decomp.c"
 void st::fn_006C72F0(AnonShape_006C72F0_54F06289 *param_1)
@@ -3232,35 +3194,6 @@ void st::fn_006C7980(int *param_1)
   return;
 }
 
-// 006C7B20 FUN_006c7b20
-#line 4 "decomp/ST.exe/functions/006C7B20/decomp.c"
-undefined4 st::fn_006C7B20(AnonShape_006C7B20_5A99C851 *param_1,int param_2,int param_3)
-
-{
-  RecoveredSourceFamily_dibcopy *pRVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-
-  pRVar1 = (RecoveredSourceFamily_dibcopy *)param_1->field_002E;
-  iVar3 = pRVar1->field_0008;
-  if (iVar3 < 0) {
-    iVar3 = -iVar3;
-  }
-  iVar4 = param_3 + *(int *)&param_1->field_0x4;
-  if (iVar4 < iVar3) {
-    iVar3 = *(int *)&param_1->field_0x8;
-    iVar2 = *(int *)param_1;
-    if (pRVar1->field_0004 < iVar3 + iVar2) {
-      iVar3 = st::machine_word_boundary_cast<int>(pRVar1->field_0004 - iVar2);
-    }
-    st::fn_006B55F0
-              (pRVar1,param_1->field_0032,iVar2,iVar4,param_1->field_0022,param_2,0,0,iVar3,1);
-    return 0;
-  }
-  return 0xffffffff;
-}
-
 // 006C7B90 FUN_006c7b90
 #line 1 "decomp/ST.exe/functions/006C7B90/decomp.c"
 
@@ -3324,26 +3257,6 @@ undefined1 * st::fn_006C7BB0(int *param_1,undefined1 *param_2,int *param_3)
     *param_3 = iVar1;
   }
   return param_2;
-}
-
-// 006C7CB0 FUN_006c7cb0
-#line 4 "decomp/ST.exe/functions/006C7CB0/decomp.c"
-uint st::fn_006C7CB0(int param_1,undefined4 *param_2,uint param_3)
-
-{
-  BOOL BVar1;
-  byte *puVar3;
-
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  BVar1 = st::external_0000000D(*(void **)(param_1 + 0x2a),param_3);
-  if (BVar1 != 0) {
-    return 0xfffffffb;
-  }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  puVar3 = (byte *)(*(undefined4 **)(param_1 + 0x2a));
-  memmove(param_2, puVar3, param_3); /* compiler REP MOVS byte copy */
-  *(uint *)(param_1 + 0x2a) = *(int *)(param_1 + 0x2a) + param_3;
-  return param_3;
 }
 
 // 006C7D00 FUN_006c7d00

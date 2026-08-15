@@ -24,8 +24,8 @@ int FUN_00562170(int *param_1,int param_2)
     local_14 = 0;
     do {
       iVar1 = FUN_006db910(DAT_00803304,DAT_00803308,
-                           *(int *)((int)&g_runtimeRecords_00803310->field_0000 + local_14),
-                           *(int *)((int)&g_runtimeRecords_00803310->field_0004 + local_14));
+                           STObjectAtByteOffset(g_runtimeRecords_00803310, local_14).field_0000,
+                           STObjectAtByteOffset(g_runtimeRecords_00803310, local_14).field_0004);
       if (0 < param_2) {
         local_c = local_c + param_2;
         iVar5 = param_2;

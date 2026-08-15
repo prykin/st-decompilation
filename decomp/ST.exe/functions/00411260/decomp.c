@@ -113,7 +113,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
             if ((((-1 < local_50) && (local_50 < iVar7)) && (-1 < local_58)) &&
                ((local_58 < DAT_007f4d30 &&
                 (uVar6 = local_60 * local_38 + local_50 + iVar7 * local_58 ^ 7, iVar7 = DAT_007f4d2c
-                , (*(byte *)(DAT_007f4cfc + ((int)uVar6 >> 3)) >> (uVar6 & 7) & 1) != 0)))) {
+                , (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) != 0)))) {
               local_68 = local_68 + 1;
               local_24[local_74] = 1;
               iVar7 = DAT_007f4d2c;
@@ -140,15 +140,15 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
               do {
                 local_50 = (char)local_54[uVar3 * 2] + param_1;
                 local_58 = *(char *)((int)local_54 + uVar3 * 4 + 1) + param_2;
-                *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + iVar9) = local_50;
-                *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + iVar9) = local_58;
-                *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + iVar9) = local_60;
+                STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar9).field_0000 = local_50;
+                STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar9).field_0004 = local_58;
+                STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar9).field_0008 = local_60;
                 iVar9 = iVar9 + 0x14;
                 if (((-1 < local_50) && (local_50 < DAT_007f4d2c)) &&
                    ((-1 < local_58 && (local_58 < DAT_007f4d30)))) {
                   uVar4 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
-                  pbVar8 = (byte *)(DAT_007f4cfc + ((int)uVar4 >> 3));
-                  *pbVar8 = *pbVar8 | '\x01' << (uVar4 & 7);
+                  g_bitset_007F4CFC[(int)uVar4 >> 3] =
+                       g_bitset_007F4CFC[(int)uVar4 >> 3] | '\x01' << (uVar4 & 7);
                 }
                 iVar7 = iVar7 + (uVar2 * 0x10000) / local_28;
                 uVar3 = iVar7 >> 0x10;
@@ -174,15 +174,15 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
                 iVar3 = (int)(iVar2 + local_3c) % uVar2;
                 local_50 = (char)psVar1[iVar3 * 2] + param_1;
                 local_58 = *(char *)((int)psVar1 + iVar3 * 4 + 1) + param_2;
-                *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + iVar7) = local_50;
-                *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + iVar7) = local_58;
-                *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + iVar7) = local_60;
+                STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar7).field_0000 = local_50;
+                STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar7).field_0004 = local_58;
+                STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar7).field_0008 = local_60;
                 iVar7 = iVar7 + 0x14;
                 if ((((-1 < local_50) && (local_50 < DAT_007f4d2c)) && (-1 < local_58)) &&
                    (local_58 < DAT_007f4d30)) {
                   uVar4 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
-                  pbVar8 = (byte *)(DAT_007f4cfc + ((int)uVar4 >> 3));
-                  *pbVar8 = *pbVar8 | '\x01' << (uVar4 & 7);
+                  g_bitset_007F4CFC[(int)uVar4 >> 3] =
+                       g_bitset_007F4CFC[(int)uVar4 >> 3] | '\x01' << (uVar4 & 7);
                   psVar1 = local_54;
                 }
                 local_b0 = local_b0 + -1;
@@ -208,17 +208,17 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
             }
             if ((!bVar5) ||
                (uVar6 = iVar3 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7,
-               (*(byte *)(DAT_007f4cfc + ((int)uVar6 >> 3)) >> (uVar6 & 7) & 1) == 0)) {
-              *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + local_a8) = local_50;
-              *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + local_a8) = local_58;
-              *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + local_a8) = local_60;
+               (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) == 0)) {
+              STObjectAtByteOffset(g_runtimeRecords_007F4D3C, local_a8).field_0000 = local_50;
+              STObjectAtByteOffset(g_runtimeRecords_007F4D3C, local_a8).field_0004 = local_58;
+              STObjectAtByteOffset(g_runtimeRecords_007F4D3C, local_a8).field_0008 = local_60;
               local_2c = local_2c + 1;
               local_a8 = local_a8 + 0x14;
               local_28 = local_28 + -1;
               if (bVar5) {
                 uVar6 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
-                pbVar8 = (byte *)(DAT_007f4cfc + ((int)uVar6 >> 3));
-                *pbVar8 = *pbVar8 | '\x01' << (uVar6 & 7);
+                g_bitset_007F4CFC[(int)uVar6 >> 3] =
+                     g_bitset_007F4CFC[(int)uVar6 >> 3] | '\x01' << (uVar6 & 7);
               }
             }
             uVar4 = uVar4 + 1;
@@ -288,9 +288,9 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
     pRVar10 = g_runtimeRecords_007F4D3C;
     if (0 < DAT_007f4d20) {
       do {
-        local_50 = *(int *)((int)&pRVar10->field_0000 + iVar7);
-        local_58 = *(int *)((int)&pRVar10->field_0004 + iVar7);
-        local_60 = *(int *)((int)&pRVar10->field_0008 + iVar7);
+        local_50 = STObjectAtByteOffset(pRVar10, iVar7).field_0000;
+        local_58 = STObjectAtByteOffset(pRVar10, iVar7).field_0004;
+        local_60 = STObjectAtByteOffset(pRVar10, iVar7).field_0008;
         if ((((local_50 < 0) || (DAT_007f4d2c <= local_50)) || (local_58 < 0)) ||
            ((DAT_007f4d30 <= local_58 ||
             (*(short *)(DAT_007f4cf0 +
@@ -302,11 +302,11 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
             goto LAB_00411975;
           }
           uVar4 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
-          pbVar8 = (byte *)(DAT_007f4cfc + ((int)uVar4 >> 3));
-          *pbVar8 = *pbVar8 | '\x01' << (uVar4 & 7);
-          *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + iVar7) = local_50;
-          *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + iVar7) = local_58;
-          *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + iVar7) = local_60;
+          g_bitset_007F4CFC[(int)uVar4 >> 3] =
+               g_bitset_007F4CFC[(int)uVar4 >> 3] | '\x01' << (uVar4 & 7);
+          STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar7).field_0000 = local_50;
+          STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar7).field_0004 = local_58;
+          STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar7).field_0008 = local_60;
           pRVar10 = g_runtimeRecords_007F4D3C;
         }
         local_2c = local_2c + 1;

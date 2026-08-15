@@ -69,8 +69,8 @@ src/ST.exe/
     └── issues.jsonl
 ```
 
-The current accepted corpus produces 5,624 bodies in 321 translation units.
-1,044 bodies have a recovered original path; the other 4,580 are grouped by
+The current accepted corpus produces 5,555 bodies in 321 translation units.
+1,044 bodies have a recovered original path; the other 4,511 are grouped by
 owner or address page without pretending that this was their original file.
 
 ## Identity and ABI policy
@@ -196,7 +196,7 @@ before layout assertions or a real link are meaningful.
 It intentionally does not link. A full object build is expected to fail today
 and is now useful evidence rather than a missing-infrastructure failure. The
 current Apple Clang C++17 probe, with a limit of 64 diagnostics per translation
-unit, passes 185 of 321 units and records 1,598 errors, 1,581 of them mapped to
+unit, passes 187 of 321 units and records 1,531 errors, 1,514 of them mapped to
 a function address. No syntax diagnostic remains. The cap makes this a
 monotonic comparison baseline, not the
 uncapped total of all errors. Remaining diagnostics principally identify:

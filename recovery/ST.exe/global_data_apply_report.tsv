@@ -16,6 +16,7 @@ address	status	proposed_name	detail
 007EDCAB	disabled		apply flags are 0
 007EE1AC	disabled		apply flags are 0
 007EE1B0	disabled		apply flags are 0
+007F4CFC	applied	g_bitset_007F4CFC	type=applied(/byte *32); name=applied(g_bitset_007F4CFC)
 007F4D00	disabled	g_runtimeRecord_007F4D3C_0014_007F4D00	apply flags are 0
 007F4D04	disabled		apply flags are 0
 007F4D6C	disabled		apply flags are 0

@@ -191,6 +191,11 @@ static inline Field &STField(Base base, size_t byteOffset) {
     else address = static_cast<uintptr_t>(base);
     return *reinterpret_cast<Field *>(address + byteOffset);
 }
+template <typename Record, typename Offset>
+static inline Record &STObjectAtByteOffset(Record *base, Offset byteOffset) {
+    return *reinterpret_cast<Record *>(
+        reinterpret_cast<uintptr_t>(base) + static_cast<intptr_t>(byteOffset));
+}
 template <typename High, typename Low> static inline auto CONCAT11(High high, Low low) { return STConcat<1, 1>(high, low); }
 template <typename High, typename Low> static inline auto CONCAT12(High high, Low low) { return STConcat<1, 2>(high, low); }
 template <typename High, typename Low> static inline auto CONCAT13(High high, Low low) { return STConcat<1, 3>(high, low); }

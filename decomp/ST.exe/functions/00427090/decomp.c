@@ -53,17 +53,17 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_00427090
                          DAT_007f4d80 + param_1,CASE_0,~CASE_0);
     iVar7 = g_runtimeRecords_007F4D74[param_1].field_0000;
     for (iVar8 = param_1; iVar8 <= param_2; iVar8 = iVar8 + 1) {
-      iVar1 = *(int *)((int)&g_runtimeRecords_007F4D74->field_0000 + iVar3);
+      iVar1 = STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar3).field_0000;
       if (iVar1 < iVar7) {
         iVar4 = sub_004248D0(this,(int)pvVar2,iVar4,iVar1 + DAT_007f4d7c,DAT_007f4d80 + iVar8,CASE_0
                              ,~CASE_0);
       }
       if ((iVar8 < param_2) &&
-         (iVar7 = *(int *)((int)&g_runtimeRecords_007F4D74->field_0000 + iVar3) + DAT_007f4d7c,
+         (iVar7 = STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar3).field_0000 + DAT_007f4d7c,
          iVar7 < *(int *)((int)&g_runtimeRecords_007F4D74[1].field_0000 + iVar3) + DAT_007f4d7c)) {
         iVar4 = sub_004248D0(this,(int)pvVar2,iVar4,iVar7,DAT_007f4d80 + iVar8,CASE_1,~CASE_0);
       }
-      iVar7 = *(int *)((int)&g_runtimeRecords_007F4D74->field_0000 + iVar3);
+      iVar7 = STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar3).field_0000;
       iVar3 = iVar3 + 0x10;
     }
     local_c = param_2 * 0x10;
@@ -77,13 +77,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_00427090
     pRVar9 = g_runtimeRecords_007F4D74;
     if (param_1 < param_2) {
       do {
-        iVar7 = *(int *)((int)&pRVar9->field_000C + local_c);
+        iVar7 = STObjectAtByteOffset(pRVar9, local_c).field_000C;
         if ((iVar7 < *(int *)((int)pRVar9 + local_c + -4)) && (param_2 != iVar10)) {
           param_3 = sub_004248D0(this,(int)pvVar2,param_3,iVar7 + DAT_007f4d7c,
                                  DAT_007f4d80 + param_2,CASE_3,~CASE_0);
           pRVar9 = g_runtimeRecords_007F4D74;
         }
-        iVar7 = *(int *)((int)&pRVar9->field_000C + local_c);
+        iVar7 = STObjectAtByteOffset(pRVar9, local_c).field_000C;
         if (*(int *)((int)pRVar9 + local_c + -4) < iVar7) {
           param_3 = sub_004248D0(this,(int)pvVar2,param_3,iVar7 + DAT_007f4d7c,
                                  DAT_007f4d80 + param_2,CASE_2,~CASE_0);
@@ -114,18 +114,18 @@ LAB_004278f1:
                            DAT_007f4d80 + param_1,CASE_0,~CASE_0);
       iVar7 = g_runtimeRecords_007F4D74[param_1].field_0000;
       for (iVar8 = param_1; iVar8 <= param_2; iVar8 = iVar8 + 1) {
-        iVar1 = *(int *)((int)&g_runtimeRecords_007F4D74->field_0000 + iVar3);
+        iVar1 = STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar3).field_0000;
         if (iVar1 < iVar7) {
           iVar4 = sub_004248D0(this,(int)pvVar2,iVar4,iVar1 + DAT_007f4d7c,DAT_007f4d80 + iVar8,
                                CASE_0,~CASE_0);
         }
         if ((iVar8 < param_2) &&
-           (iVar7 = *(int *)((int)&g_runtimeRecords_007F4D74->field_0000 + iVar3) + DAT_007f4d7c,
+           (iVar7 = STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar3).field_0000 + DAT_007f4d7c,
            iVar7 < *(int *)((int)&g_runtimeRecords_007F4D74[1].field_0000 + iVar3) + DAT_007f4d7c))
         {
           iVar4 = sub_004248D0(this,(int)pvVar2,iVar4,iVar7,DAT_007f4d80 + iVar8,CASE_1,~CASE_0);
         }
-        iVar7 = *(int *)((int)&g_runtimeRecords_007F4D74->field_0000 + iVar3);
+        iVar7 = STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar3).field_0000;
         iVar3 = iVar3 + 0x10;
       }
       local_c = param_2 * 0x10;
@@ -139,14 +139,14 @@ LAB_004278f1:
       pRVar9 = g_runtimeRecords_007F4D74;
       if (param_1 < param_2) {
         do {
-          iVar7 = *(int *)((int)&pRVar9->field_0004 + local_c);
+          iVar7 = STObjectAtByteOffset(pRVar9, local_c).field_0004;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((iVar7 < *(int *)(local_c + -0xc + (int)pRVar9)) && (param_2 != iVar10)) {
             param_3 = sub_004248D0(this,(int)pvVar2,param_3,iVar7 + DAT_007f4d7c,
                                    DAT_007f4d80 + param_2,CASE_3,~CASE_0);
             pRVar9 = g_runtimeRecords_007F4D74;
           }
-          iVar7 = *(int *)((int)&pRVar9->field_0004 + local_c);
+          iVar7 = STObjectAtByteOffset(pRVar9, local_c).field_0004;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(int *)(local_c + -0xc + (int)pRVar9) < iVar7) {
             param_3 = sub_004248D0(this,(int)pvVar2,param_3,iVar7 + DAT_007f4d7c,
@@ -176,17 +176,17 @@ LAB_004278f1:
                          DAT_007f4d80 + param_1,CASE_0,~CASE_0);
     iVar7 = g_runtimeRecords_007F4D74[param_1].field_0008;
     for (iVar8 = param_1; iVar8 <= param_2; iVar8 = iVar8 + 1) {
-      iVar1 = *(int *)((int)&g_runtimeRecords_007F4D74->field_0008 + iVar3);
+      iVar1 = STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar3).field_0008;
       if (iVar1 < iVar7) {
         iVar4 = sub_004248D0(this,(int)pvVar2,iVar4,iVar1 + DAT_007f4d7c,DAT_007f4d80 + iVar8,CASE_0
                              ,~CASE_0);
       }
       if ((iVar8 < param_2) &&
-         (iVar7 = *(int *)((int)&g_runtimeRecords_007F4D74->field_0008 + iVar3) + DAT_007f4d7c,
+         (iVar7 = STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar3).field_0008 + DAT_007f4d7c,
          iVar7 < *(int *)((int)&g_runtimeRecords_007F4D74[1].field_0008 + iVar3) + DAT_007f4d7c)) {
         iVar4 = sub_004248D0(this,(int)pvVar2,iVar4,iVar7,DAT_007f4d80 + iVar8,CASE_1,~CASE_0);
       }
-      iVar7 = *(int *)((int)&g_runtimeRecords_007F4D74->field_0008 + iVar3);
+      iVar7 = STObjectAtByteOffset(g_runtimeRecords_007F4D74, iVar3).field_0008;
       iVar3 = iVar3 + 0x10;
     }
     local_c = param_2 * 0x10;
@@ -199,13 +199,13 @@ LAB_004278f1:
     pRVar9 = g_runtimeRecords_007F4D74;
     if (param_1 < param_2) {
       do {
-        iVar7 = *(int *)((int)&pRVar9->field_000C + local_c);
+        iVar7 = STObjectAtByteOffset(pRVar9, local_c).field_000C;
         if ((iVar7 < *(int *)(local_c + -4 + (int)pRVar9)) && (param_2 != iVar10)) {
           param_3 = sub_004248D0(this,(int)pvVar2,param_3,iVar7 + DAT_007f4d7c,
                                  DAT_007f4d80 + param_2,CASE_3,~CASE_0);
           pRVar9 = g_runtimeRecords_007F4D74;
         }
-        iVar7 = *(int *)((int)&pRVar9->field_000C + local_c);
+        iVar7 = STObjectAtByteOffset(pRVar9, local_c).field_000C;
         if (*(int *)(local_c + -4 + (int)pRVar9) < iVar7) {
           param_3 = sub_004248D0(this,(int)pvVar2,param_3,iVar7 + DAT_007f4d7c,
                                  DAT_007f4d80 + param_2,CASE_2,~CASE_0);

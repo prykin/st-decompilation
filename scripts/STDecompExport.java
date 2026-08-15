@@ -90,7 +90,7 @@ public class STDecompExport extends GhidraScript {
     private static final int COVERAGE_PADDING_RUN = 16;
     private static final int COVERAGE_MAX_RANGE = 0x10000;
     private static final String FUNCTION_ANALYSIS_CACHE_SCHEMA = "2";
-    private static final int FUNCTION_ANALYSIS_SCHEMA = 21;
+    private static final int FUNCTION_ANALYSIS_SCHEMA = 22;
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
@@ -246,6 +246,16 @@ public class STDecompExport extends GhidraScript {
     private static final String SIMPLE_RECORD_INDEX =
         "(?:\\([^()\\r\\n]+\\)\\s*)*[A-Za-z_$][A-Za-z0-9_$]*" +
         "(?:(?:->|\\.)[A-Za-z_$][A-Za-z0-9_$]*|\\[[^]\\r\\n]+\\])*";
+    private static final Pattern TYPED_MEMBER_BYTE_OFFSET_FORWARD = Pattern.compile(
+        "\\*\\s*\\(\\s*(?<cast>[A-Za-z_$][A-Za-z0-9_$:<> ]*\\s*\\*)\\s*\\)\\s*" +
+        "\\(\\s*\\(int\\)\\s*&\\s*(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*" +
+        "->\\s*(?<field>[A-Za-z_$][A-Za-z0-9_$]*)\\s*\\+\\s*" +
+        "(?<offset>" + SIMPLE_RECORD_INDEX + ")\\s*\\)");
+    private static final Pattern TYPED_MEMBER_BYTE_OFFSET_REVERSE = Pattern.compile(
+        "\\*\\s*\\(\\s*(?<cast>[A-Za-z_$][A-Za-z0-9_$:<> ]*\\s*\\*)\\s*\\)\\s*" +
+        "\\(\\s*(?<offset>" + SIMPLE_RECORD_INDEX + ")\\s*\\+\\s*" +
+        "\\(int\\)\\s*&\\s*(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*" +
+        "->\\s*(?<field>[A-Za-z_$][A-Za-z0-9_$]*)\\s*\\)");
     private static final Pattern GLOBAL_RECORD_ADDRESS_FORWARD = Pattern.compile(
         "(?<index>" + SIMPLE_RECORD_INDEX + ")\\s*\\*\\s*" +
         "(?<stride>0x[0-9A-Fa-f]+|[0-9]+)\\s*\\+\\s*" +
@@ -340,6 +350,7 @@ public class STDecompExport extends GhidraScript {
     private Map<String, DArrayDescriptor> darrayDescriptors = Map.of();
     private Set<Long> globalRecordStrides = Set.of();
     private List<GlobalRecordDescriptor> globalRecordDescriptors = List.of();
+    private Map<String, Structure> globalPointerStructures = Map.of();
     private Map<String, Integer> narrowReturnWidths = Map.of();
     private Map<String, List<RenderedCallableDependency>> renderedCallableMembers;
     private Map<String, List<ghidra.program.model.data.Structure>> renderedStructureTypes;
@@ -372,6 +383,7 @@ public class STDecompExport extends GhidraScript {
         functionAnalysisSourceHash = sha256Text(FUNCTION_ANALYSIS_LOGIC_ID);
         darrayDescriptors = recoveredDArrayDescriptors();
         globalRecordDescriptors = recoveredGlobalRecordDescriptors();
+        globalPointerStructures = recoveredGlobalPointerStructures();
         globalRecordStrides = globalRecordDescriptors.stream()
             .map(GlobalRecordDescriptor::stride).collect(java.util.stream.Collectors.toUnmodifiableSet());
         narrowReturnWidths = recoveredNarrowReturnWidths();
@@ -1150,8 +1162,10 @@ public class STDecompExport extends GhidraScript {
             normalizeAffineSelfCancellation(virtualCalls.code);
         NormalizedCode gridIndexing =
             normalizeGridCellIndexing(affineCancellation.code);
+        NormalizedCode objectByteOffsets =
+            normalizeTypedMemberByteOffsets(gridIndexing.code);
         NormalizedCode recordAddresses =
-            normalizeGlobalRecordAddresses(gridIndexing.code);
+            normalizeGlobalRecordAddresses(objectByteOffsets.code);
         NormalizedCode narrowReturns =
             normalizeNarrowReturnPieceAssignments(recordAddresses.code);
         NormalizedCode lowPieces =
@@ -1169,7 +1183,8 @@ public class STDecompExport extends GhidraScript {
             stackObjects.replacements +
             darrayAliases.replacements + darrayAddresses.replacements +
             virtualCalls.replacements + affineCancellation.replacements +
-            gridIndexing.replacements + recordAddresses.replacements +
+            gridIndexing.replacements + objectByteOffsets.replacements +
+            recordAddresses.replacements +
             narrowReturns.replacements + lowPieces.replacements +
             partialPieces.replacements + typedFields.replacements;
         for (int index = 0; index < lines.length; index++) {
@@ -2114,6 +2129,52 @@ public class STDecompExport extends GhidraScript {
         };
         rewrite.replace(GLOBAL_RECORD_ADDRESS_FORWARD, replacement);
         rewrite.replace(GLOBAL_RECORD_ADDRESS_REVERSE, replacement);
+        return new NormalizedCode(rewrite.code, rewrite.replacements);
+    }
+
+    /**
+     * Ghidra sometimes keeps an induction variable in bytes even after both
+     * endpoints have the same recovered structure type:
+     *
+     *   *(int *)((int)&records->field_0004 + byteOffset)
+     *
+     * The cast is not missing layout evidence: it is the decompiler spelling
+     * for a pointer walk over equally-sized records.  Preserve the exact byte
+     * arithmetic, but recover the already-proven member selection as:
+     *
+     *   STObjectAtByteOffset(records, byteOffset).field_0004
+     *
+     * This is deliberately not rewritten to records[index].  Divisibility of
+     * a live byte offset is a separate induction proof, while the helper below
+     * is bit-for-bit equivalent for every offset.  Only one-star pointers to a
+     * unique concrete Structure and an exact same-width named component are
+     * eligible.
+     */
+    private NormalizedCode normalizeTypedMemberByteOffsets(String code) {
+        if (code == null || code.isEmpty() || !code.contains("(int)&") ||
+                !code.contains("->")) return new NormalizedCode(code, 0);
+        Map<String, PointerDeclaration> declarations = pointerDeclarations(code);
+        RewriteAccumulator rewrite = new RewriteAccumulator(code);
+        ReplacementFunction replacement = matcher -> {
+            String base = matcher.group("base");
+            Structure structure = null;
+            PointerDeclaration declaration = declarations.get(base);
+            if (declaration != null && declaration.stars == 1)
+                structure = uniqueStructure(declaration.type);
+            if (structure == null) structure = globalPointerStructures.get(base);
+            if (structure == null) return null;
+            DataTypeComponent component = componentByName(structure,
+                matcher.group("field"));
+            if (component == null || component.getLength() < 1) return null;
+            String cast = matcher.group("cast").trim();
+            int star = cast.lastIndexOf('*');
+            if (star < 1 || renderedTypeWidth(cast.substring(0, star).trim()) !=
+                    component.getLength()) return null;
+            return "STObjectAtByteOffset(" + base + ", " +
+                oneLine(matcher.group("offset")) + ")." + matcher.group("field");
+        };
+        rewrite.replace(TYPED_MEMBER_BYTE_OFFSET_FORWARD, replacement);
+        rewrite.replace(TYPED_MEMBER_BYTE_OFFSET_REVERSE, replacement);
         return new NormalizedCode(rewrite.code, rewrite.replacements);
     }
 
@@ -3232,6 +3293,31 @@ public class STDecompExport extends GhidraScript {
         }
         result.sort(Comparator.comparingLong(GlobalRecordDescriptor::base));
         return List.copyOf(result);
+    }
+
+    /** Index global pointer symbols by their concrete pointee structure for
+     * source-level byte-offset member recovery.  Ambiguous rendered names are
+     * discarded rather than selected by data or namespace iteration order. */
+    private Map<String, Structure> recoveredGlobalPointerStructures() {
+        Map<String, Structure> result = new LinkedHashMap<>();
+        Set<String> ambiguous = new HashSet<>();
+        DataIterator iterator = listing.getDefinedData(true);
+        while (iterator.hasNext()) {
+            Data data = iterator.next();
+            DataType type = unwrapTypeDef(data.getDataType());
+            if (!(type instanceof Pointer pointer)) continue;
+            DataType pointed = unwrapTypeDef(pointer.getDataType());
+            if (!(pointed instanceof Structure structure)) continue;
+            Symbol symbol = symbols.getPrimarySymbol(data.getAddress());
+            if (symbol == null || !symbol.getName().matches(
+                    "[A-Za-z_$][A-Za-z0-9_$]*")) continue;
+            String name = symbol.getName();
+            Structure old = result.putIfAbsent(name, structure);
+            if (old != null && !old.getPathName().equals(structure.getPathName()))
+                ambiguous.add(name);
+        }
+        for (String name : ambiguous) result.remove(name);
+        return Map.copyOf(result);
     }
 
     private boolean containsRecoveredGlobalRecordStride(String line) {
@@ -5809,6 +5895,11 @@ public class STDecompExport extends GhidraScript {
             "    else address = static_cast<uintptr_t>(base);\n" +
             "    return *reinterpret_cast<Field *>(address + byteOffset);\n" +
             "}\n" +
+            "template <typename Record, typename Offset>\n" +
+            "static inline Record &STObjectAtByteOffset(Record *base, Offset byteOffset) {\n" +
+            "    return *reinterpret_cast<Record *>(\n" +
+            "        reinterpret_cast<uintptr_t>(base) + static_cast<intptr_t>(byteOffset));\n" +
+            "}\n" +
             "template <typename High, typename Low> static inline auto CONCAT11(High high, Low low) { return STConcat<1, 1>(high, low); }\n" +
             "template <typename High, typename Low> static inline auto CONCAT12(High high, Low low) { return STConcat<1, 2>(high, low); }\n" +
             "template <typename High, typename Low> static inline auto CONCAT13(High high, Low low) { return STConcat<1, 3>(high, low); }\n" +
@@ -5873,6 +5964,9 @@ public class STDecompExport extends GhidraScript {
             new CompileRule("runtime_typed_byte_offset_field", "compatibility_shim",
                 "implemented", Pattern.compile("\\bSTField\\s*<"),
                 "replace the typed byte-offset view with a named member after owner/layout proof"),
+            new CompileRule("runtime_typed_object_byte_offset", "compatibility_shim",
+                "implemented", Pattern.compile("\\bSTObjectAtByteOffset\\s*\\("),
+                "replace the exact byte induction variable with a recovered record index"),
             new CompileRule("residual_partial_piece_syntax", "hard_blocker", "unresolved",
                 Pattern.compile("(?:\\._[0-9]+_[0-9]+_|\\.\\*[0-9]+_[0-9]+\\*)"),
                 "extend the exact lvalue piece rewrite or recover the containing aggregate"),

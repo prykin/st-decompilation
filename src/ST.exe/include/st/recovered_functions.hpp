@@ -17745,8 +17745,8 @@ int fn_006C7000(AnonShape_006C7000_4A8D1200 *param_1);
 void fn_006C7030(AnonShape_006C7030_23487746 *param_1);
 // 006C7070 Library::DKW::GPC::FUN_006c7070 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006C7070(int * param_1, undefined4 * param_2, int param_3);
-// 006C7240 FUN_006c7240
-undefined4 fn_006C7240(AnonShape_006C7240_F2C56622 *param_1,int param_2,int param_3);
+// 006C7240 Library::DKW::GPC::FUN_006c7240 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_006C7240(AnonShape_006C7240_F2C56622 * param_1, int param_2, int param_3);
 // 006C72F0 FUN_006c72f0
 void fn_006C72F0(AnonShape_006C72F0_54F06289 *param_1);
 // 006C7430 FUN_006c7430
@@ -17765,16 +17765,16 @@ DWORD fn_006C7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2);
 void fn_006C7980(int *param_1);
 // 006C79A0 Library::DKW::GPC::FUN_006c79a0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006C79A0(int * param_1, undefined4 * param_2, int param_3);
-// 006C7B20 FUN_006c7b20
-undefined4 fn_006C7B20(AnonShape_006C7B20_5A99C851 *param_1,int param_2,int param_3);
+// 006C7B20 Library::DKW::GPC::FUN_006c7b20 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_006C7B20(AnonShape_006C7B20_5A99C851 * param_1, int param_2, int param_3);
 // 006C7B90 FUN_006c7b90
 void fn_006C7B90(int *param_1,int param_2,int param_3);
 // 006C7BB0 FUN_006c7bb0
 undefined1 * fn_006C7BB0(int *param_1,undefined1 *param_2,int *param_3);
 // 006C7C50 Library::DKW::GPC::FUN_006c7c50 [statically linked library; implementation excluded]
 int * __stdcall fn_006C7C50(undefined4 param_1, uint param_2);
-// 006C7CB0 FUN_006c7cb0
-uint fn_006C7CB0(int param_1,undefined4 *param_2,uint param_3);
+// 006C7CB0 Library::DKW::GPC::FUN_006c7cb0 [statically linked library; implementation excluded]
+uint __stdcall fn_006C7CB0(int param_1, undefined4 * param_2, uint param_3);
 // 006C7D00 FUN_006c7d00
 void fn_006C7D00(undefined4 *param_1,undefined4 param_2,undefined4 param_3);
 // 006C7D20 FUN_006c7d20
@@ -21859,8 +21859,8 @@ undefined4 * __stdcall fn_00751CB0(undefined4 * param_1, ushort * param_2, undef
 undefined4 __stdcall fn_00751E70(LPCSTR param_1, uint param_2, int param_3, uint * param_4, int param_5);
 // 00751F30 Library::DKW::GPC::FUN_00751f30 [statically linked library; implementation excluded]
 int * __stdcall fn_00751F30(undefined4 param_1, uint param_2);
-// 00751F90 FUN_00751f90
-UINT fn_00751F90(int param_1,LPVOID lpBuffer,UINT uBytes);
+// 00751F90 Library::DKW::GPC::FUN_00751f90 [statically linked library; implementation excluded]
+UINT __stdcall fn_00751F90(int param_1, LPVOID lpBuffer, UINT uBytes);
 // 00751FC0 Library::DKW::GPC::FUN_00751fc0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_00751FC0(undefined4 param_1);
 // 00752030 FUN_00752030
@@ -22058,17 +22058,17 @@ undefined __stdcall fn_00756E90(int * param_1);
 undefined __stdcall fn_00757070(undefined4 * param_1);
 // 007570F0 Library::DKW::JPG::FUN_007570f0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007570F0(int param_1);
-// 00757250 FUN_00757250
-void fn_00757250(AnonShape_00757250_D85D8BF6 *param_1);
+// 00757250 Library::DKW::JPG::FUN_00757250 [statically linked library; implementation excluded]
+undefined __stdcall fn_00757250(AnonShape_00757250_D85D8BF6 * param_1);
 // 00757280 FUN_00757280
 void fn_00757280(undefined4 *param_1,undefined4 param_2);
-// 007572F0 FUN_007572f0
+// 007572F0 Library::DKW::JPG::FUN_007572f0 [statically linked library; implementation excluded]
 void fn_007572F0(void);
 // 00757300 Library::DKW::JPG::FUN_00757300 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00757300(int param_1);
-// 00757330 FUN_00757330
-void fn_00757330(int param_1,int param_2);
-// 00757350 FUN_00757350
+// 00757330 Library::DKW::JPG::FUN_00757330 [statically linked library; implementation excluded]
+undefined __stdcall fn_00757330(int param_1, int param_2);
+// 00757350 Library::DKW::JPG::FUN_00757350 [statically linked library; implementation excluded]
 void fn_00757350(void);
 // 00757360 FUN_00757360
 int fn_00757360(AnonShape_00757360_9C23D284 *param_1,AnonShape_00757360_9B4621C9 *param_2);
@@ -22086,32 +22086,32 @@ uint fn_007575B0(AnonShape_007575B0_A94973CA *param_1,ushort *param_2,ushort *pa
 DWORD fn_00757670(AnonShape_00757670_86D3B9A7 *param_1,int param_2);
 // 007576C0 FUN_007576c0
 void fn_007576C0(undefined4 *param_1);
-// 00757710 FUN_00757710
-void fn_00757710(AnonShape_00757710_B64D966B *param_1);
+// 00757710 Library::DKW::JPG::FUN_00757710 [statically linked library; implementation excluded]
+undefined __stdcall fn_00757710(AnonShape_00757710_B64D966B * param_1);
 // 00757750 Library::DKW::JPG::FUN_00757750 [statically linked library; implementation excluded]
 uint __stdcall fn_00757750(uint param_1);
 // 007578F0 Library::DKW::JPG::FUN_007578f0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007578F0(int * param_1);
-// 007579A0 FUN_007579a0
-void fn_007579A0(int param_1);
+// 007579A0 Library::DKW::JPG::FUN_007579a0 [statically linked library; implementation excluded]
+undefined __stdcall fn_007579A0(int param_1);
 // 007579C0 Library::DKW::JPG::FUN_007579c0 [statically linked library; implementation excluded]
 int __stdcall fn_007579C0(int * param_1);
 // 00757AA0 Library::DKW::JPG::FUN_00757aa0 [statically linked library; implementation excluded]
 undefined __stdcall fn_00757AA0(int param_1);
-// 00757C90 FUN_00757c90
-void fn_00757C90(AnonShape_00757C90_A505B8DD *param_1);
-// 00757CD0 FUN_00757cd0
-undefined4 fn_00757CD0(AnonShape_00757D90_5427B306 *param_1,int param_2);
+// 00757C90 Library::DKW::JPG::FUN_00757c90 [statically linked library; implementation excluded]
+undefined __stdcall fn_00757C90(AnonShape_00757C90_A505B8DD * param_1);
+// 00757CD0 Library::DKW::JPG::FUN_00757cd0 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_00757CD0(AnonShape_00757D90_5427B306 * param_1, int param_2);
 // 00757D90 FUN_00757d90
 undefined4 fn_00757D90(AnonShape_00757D90_5427B306 *param_1);
 // 00757E60 FUN_00757e60
 void fn_00757E60(AnonShape_00759190_45B6ED67 *param_1);
-// 00757EF0 FUN_00757ef0
-undefined4 fn_00757EF0(AnonShape_00757EF0_9651DBEA *param_1);
-// 00758010 FUN_00758010
-undefined4 fn_00758010(AnonShape_00758010_64471088 *param_1);
-// 00758100 FUN_00758100
-undefined4 fn_00758100(AnonShape_00758100_FF0E5C9C *param_1);
+// 00757EF0 Library::DKW::JPG::FUN_00757ef0 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_00757EF0(AnonShape_00757EF0_9651DBEA * param_1);
+// 00758010 Library::DKW::JPG::FUN_00758010 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_00758010(AnonShape_00758010_64471088 * param_1);
+// 00758100 Library::DKW::JPG::FUN_00758100 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_00758100(AnonShape_00758100_FF0E5C9C * param_1);
 // 00758170 Library::DKW::JPG::FUN_00758170 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00758170(undefined4 * param_1);
 // 00758490 Library::DKW::JPG::FUN_00758490 [statically linked library; implementation excluded]
@@ -22130,10 +22130,10 @@ undefined4 __stdcall fn_00758DF0(undefined4 * param_1);
 undefined4 __stdcall fn_00758FA0(int param_1);
 // 00759080 Library::DKW::JPG::FUN_00759080 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00759080(int param_1);
-// 00759120 FUN_00759120
-undefined4 fn_00759120(AnonShape_00759120_E4E2134C *param_1);
-// 00759190 FUN_00759190
-void fn_00759190(AnonShape_00759190_45B6ED67 *param_1);
+// 00759120 Library::DKW::JPG::FUN_00759120 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_00759120(AnonShape_00759120_E4E2134C * param_1);
+// 00759190 Library::DKW::JPG::FUN_00759190 [statically linked library; implementation excluded]
+undefined __stdcall fn_00759190(AnonShape_00759190_45B6ED67 * param_1);
 // 007591D0 Library::DKW::JPG::FUN_007591d0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007591D0(undefined4 * param_1);
 // 00759290 Library::DKW::JPG::FUN_00759290 [statically linked library; implementation excluded]
@@ -22162,8 +22162,8 @@ int __stdcall fn_00759A80(undefined4 param_1, int * param_2, uint param_3, uint 
 void __stdcall fn_00759BF0(undefined4 param_1, int * param_2, int param_3);
 // 00759CA0 Library::DKW::JPG::FUN_00759ca0 [statically linked library; implementation excluded]
 undefined __stdcall fn_00759CA0(int * param_1, int param_2);
-// 00759D90 FUN_00759d90
-void fn_00759D90(int *param_1);
+// 00759D90 Library::DKW::JPG::FUN_00759d90 [statically linked library; implementation excluded]
+undefined __stdcall fn_00759D90(int * param_1);
 // 00759DD0 FUN_00759dd0
 void fn_00759DD0(int *param_1);
 // 00759E00 FUN_00759e00
@@ -22190,38 +22190,36 @@ undefined __stdcall fn_0075A040(AnonShape_0075A040_811C231E * param_1);
 undefined __stdcall fn_0075A0F0(int param_1, int param_2);
 // 0075A180 FUN_0075a180
 void fn_0075A180(AnonShape_0075A180_7E367FD8 *param_1);
-// 0075A2D0 FUN_0075a2d0
-void fn_0075A2D0(AnonShape_0075A2D0_C70BF9F5 *param_1,undefined4 param_2,undefined4 param_3,
-                 undefined4 param_4);
-// 0075A350 FUN_0075a350
-void fn_0075A350(AnonShape_0075A350_15A0BA61 *param_1,undefined4 param_2,uint *param_3,uint param_4
-                 );
+// 0075A2D0 Library::DKW::JPG::FUN_0075a2d0 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075A2D0(AnonShape_0075A2D0_C70BF9F5 * param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4);
+// 0075A350 Library::DKW::JPG::FUN_0075a350 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075A350(AnonShape_0075A350_15A0BA61 * param_1, undefined4 param_2, uint * param_3, uint param_4);
 // 0075A490 FUN_0075a490
 void fn_0075A490(AnonShape_0075A180_7E367FD8 *param_1);
 // 0075A590 FUN_0075a590
 void fn_0075A590(AnonShape_0075A180_7E367FD8 *param_1);
-// 0075A640 FUN_0075a640
-void fn_0075A640(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+// 0075A640 Library::DKW::JPG::FUN_0075a640 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075A640(int param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4);
 // 0075A670 FUN_0075a670
 void fn_0075A670(int *param_1,undefined4 *param_2);
-// 0075A780 FUN_0075a780
-void fn_0075A780(AnonShape_0075A7A0_BCCC082B *param_1);
+// 0075A780 Library::DKW::JPG::FUN_0075a780 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075A780(AnonShape_0075A7A0_BCCC082B * param_1);
 // 0075A7A0 FUN_0075a7a0
 void fn_0075A7A0(AnonShape_0075A7A0_BCCC082B *param_1);
-// 0075A800 FUN_0075a800
-void fn_0075A800(AnonShape_0075A800_65F17FFC *param_1);
-// 0075A860 FUN_0075a860
-undefined4 fn_0075A860(AnonShape_0075A860_7232E9BC *param_1,int *param_2);
-// 0075AAA0 FUN_0075aaa0
-undefined4 fn_0075AAA0(void);
-// 0075AAB0 FUN_0075aab0
-undefined4 fn_0075AAB0(AnonShape_0075AAB0_12234AD6 *param_1);
-// 0075ACB0 FUN_0075acb0
-int fn_0075ACB0(AnonShape_0075ACB0_25ECA7C9 *param_1,int *param_2);
+// 0075A800 Library::DKW::JPG::FUN_0075a800 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075A800(AnonShape_0075A800_65F17FFC * param_1);
+// 0075A860 Library::DKW::JPG::FUN_0075a860 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_0075A860(AnonShape_0075A860_7232E9BC * param_1, int * param_2);
+// 0075AAA0 Library::DKW::JPG::FUN_0075aaa0 [statically linked library; implementation excluded]
+undefined fn_0075AAA0(void);
+// 0075AAB0 Library::DKW::JPG::FUN_0075aab0 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_0075AAB0(AnonShape_0075AAB0_12234AD6 * param_1);
+// 0075ACB0 Library::DKW::JPG::FUN_0075acb0 [statically linked library; implementation excluded]
+int __stdcall fn_0075ACB0(AnonShape_0075ACB0_25ECA7C9 * param_1, int * param_2);
 // 0075AE60 FUN_0075ae60
 undefined4 fn_0075AE60(undefined4 *param_1);
-// 0075AF80 FUN_0075af80
-int fn_0075AF80(AnonShape_0075AF80_4192DD78 *param_1,int *param_2);
+// 0075AF80 Library::DKW::JPG::FUN_0075af80 [statically linked library; implementation excluded]
+int __stdcall fn_0075AF80(AnonShape_0075AF80_4192DD78 * param_1, int * param_2);
 // 0075B540 FUN_0075b540
 void fn_0075B540(undefined4 *param_1,int param_2,int *param_3);
 // 0075B720 FUN_0075b720
@@ -22234,24 +22232,24 @@ uint fn_0075B800(undefined4 *param_1,AnonShape_0075C180_8EED234B *param_2,int pa
 void fn_0075B8E0(undefined4 *param_1);
 // 0075B920 Library::DKW::JPG::FUN_0075b920 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075B920(int * param_1);
-// 0075BA30 FUN_0075ba30
-undefined4 fn_0075BA30(AnonShape_0075BA30_FEA40A39 *param_1,undefined4 *param_2);
+// 0075BA30 Library::DKW::JPG::FUN_0075ba30 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_0075BA30(AnonShape_0075BA30_FEA40A39 * param_1, undefined4 * param_2);
 // 0075BE40 FUN_0075be40
 undefined4 fn_0075BE40(AnonShape_0075BE40_B9FD5FDF *param_1);
 // 0075BED0 FUN_0075bed0
 void fn_0075BED0(undefined4 *param_1);
 // 0075BF40 Library::DKW::JPG::FUN_0075bf40 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075BF40(undefined4 * param_1);
-// 0075C180 FUN_0075c180
-undefined4 fn_0075C180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2);
+// 0075C180 Library::DKW::JPG::FUN_0075c180 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_0075C180(AnonShape_0075C180_8EED234B * param_1, undefined4 * param_2);
 // 0075C3B0 FUN_0075c3b0
 undefined4 fn_0075C3B0(AnonShape_0075BE40_B9FD5FDF *param_1);
-// 0075C440 FUN_0075c440
-undefined4 fn_0075C440(AnonShape_0075C440_EFE38C9F *param_1,int *param_2);
-// 0075C680 FUN_0075c680
-undefined4 fn_0075C680(AnonShape_0075C680_AC52F0A7 *param_1,undefined4 *param_2);
-// 0075C790 FUN_0075c790
-undefined4 fn_0075C790(AnonShape_0075C790_3F1CCBA9 *param_1,int *param_2);
+// 0075C440 Library::DKW::JPG::FUN_0075c440 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_0075C440(AnonShape_0075C440_EFE38C9F * param_1, int * param_2);
+// 0075C680 Library::DKW::JPG::FUN_0075c680 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_0075C680(AnonShape_0075C680_AC52F0A7 * param_1, undefined4 * param_2);
+// 0075C790 Library::DKW::JPG::FUN_0075c790 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_0075C790(AnonShape_0075C790_3F1CCBA9 * param_1, int * param_2);
 // 0075CB40 FUN_0075cb40
 void fn_0075CB40(undefined4 *param_1);
 // 0075CBC0 Library::DKW::JPG::FUN_0075cbc0 [statically linked library; implementation excluded]
@@ -22260,80 +22258,70 @@ undefined __stdcall fn_0075CBC0(int param_1);
 void fn_0075CDF0(int *param_1,int param_2);
 // 0075CE80 Library::DKW::JPG::FUN_0075ce80 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075CE80(int * param_1, int param_2);
-// 0075CF90 FUN_0075cf90
-void fn_0075CF90(AnonShape_0075CF90_FD450D17 *param_1,undefined4 param_2,undefined4 param_3,
-                 undefined4 param_4,int param_5,int *param_6,int param_7);
-// 0075D010 FUN_0075d010
-void fn_0075D010(AnonShape_0075D010_01B960D8 *param_1,undefined4 param_2,undefined4 param_3,
-                 undefined4 param_4,undefined4 param_5,int *param_6);
-// 0075D0B0 FUN_0075d0b0
-void fn_0075D0B0(AnonShape_0075D0B0_63617DB8 *param_1);
+// 0075CF90 Library::DKW::JPG::FUN_0075cf90 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075CF90(AnonShape_0075CF90_FD450D17 * param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, int param_5, int * param_6, int param_7);
+// 0075D010 Library::DKW::JPG::FUN_0075d010 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075D010(AnonShape_0075D010_01B960D8 * param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, int * param_6);
+// 0075D0B0 Library::DKW::JPG::FUN_0075d0b0 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075D0B0(AnonShape_0075D0B0_63617DB8 * param_1);
 // 0075D150 Library::DKW::JPG::FUN_0075d150 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075D150(int * param_1);
-// 0075D350 FUN_0075d350
-void fn_0075D350(AnonShape_0075D350_C315D9E6 *param_1);
-// 0075D370 FUN_0075d370
-void fn_0075D370(AnonShape_0075D370_6C1A68B3 *param_1,int *param_2,int *param_3,undefined4 param_4,
-                 int param_5,int *param_6,int param_7);
-// 0075D470 FUN_0075d470
-void fn_0075D470(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4);
-// 0075D480 FUN_0075d480
-void fn_0075D480(void);
-// 0075D490 FUN_0075d490
-void fn_0075D490(AnonShape_0075D490_1FEB0A4F *param_1,int param_2,undefined4 *param_3,
-                 undefined4 *param_4);
-// 0075D590 FUN_0075d590
-void fn_0075D590(AnonShape_0075D590_939A8180 *param_1,undefined4 param_2,int param_3,
-                 undefined4 *param_4);
-// 0075D5F0 FUN_0075d5f0
-void fn_0075D5F0(undefined4 *param_1,undefined4 param_2,undefined4 *param_3,undefined4 *param_4);
-// 0075D680 FUN_0075d680
-void fn_0075D680(int param_1,int param_2,int param_3,undefined4 *param_4);
-// 0075D740 FUN_0075d740
-void fn_0075D740(int param_1,int param_2,int param_3,int *param_4);
+// 0075D350 Library::DKW::JPG::FUN_0075d350 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075D350(AnonShape_0075D350_C315D9E6 * param_1);
+// 0075D370 Library::DKW::JPG::FUN_0075d370 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075D370(AnonShape_0075D370_6C1A68B3 * param_1, int * param_2, int * param_3, undefined4 param_4, int param_5, int * param_6, int param_7);
+// 0075D470 Library::DKW::JPG::FUN_0075d470 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075D470(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 * param_4);
+// 0075D480 Library::DKW::JPG::FUN_0075d480 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075D480(void);
+// 0075D490 Library::DKW::JPG::FUN_0075d490 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075D490(AnonShape_0075D490_1FEB0A4F * param_1, int param_2, undefined4 * param_3, undefined4 * param_4);
+// 0075D590 Library::DKW::JPG::FUN_0075d590 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075D590(AnonShape_0075D590_939A8180 * param_1, undefined4 param_2, int param_3, undefined4 * param_4);
+// 0075D5F0 Library::DKW::JPG::FUN_0075d5f0 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075D5F0(undefined4 * param_1, undefined4 param_2, undefined4 * param_3, undefined4 * param_4);
+// 0075D680 Library::DKW::JPG::FUN_0075d680 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075D680(int param_1, int param_2, int param_3, undefined4 * param_4);
+// 0075D740 Library::DKW::JPG::FUN_0075d740 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075D740(int param_1, int param_2, int param_3, int * param_4);
 // 0075D890 Library::DKW::JPG::FUN_0075d890 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075D890(undefined4 * param_1);
 // 0075DA80 FUN_0075da80
 void fn_0075DA80(AnonShape_0075DA80_57A0CDEF *param_1);
-// 0075DB50 FUN_0075db50
-void fn_0075DB50(AnonShape_0075DB50_5854A0B6 *param_1,int *param_2,int param_3,undefined4 *param_4,
-                 int param_5);
-// 0075DC70 FUN_0075dc70
-void fn_0075DC70(int param_1,int *param_2,int param_3,int *param_4,int param_5);
-// 0075DD00 FUN_0075dd00
-void fn_0075DD00(int param_1,int *param_2,int param_3,int param_4,int param_5);
-// 0075DD30 FUN_0075dd30
-void fn_0075DD30(AnonShape_0075DB50_5854A0B6 *param_1,int *param_2,int param_3,undefined4 *param_4,
-                 int param_5);
-// 0075DE80 FUN_0075de80
+// 0075DB50 Library::DKW::JPG::FUN_0075db50 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075DB50(AnonShape_0075DB50_5854A0B6 * param_1, int * param_2, int param_3, undefined4 * param_4, int param_5);
+// 0075DC70 Library::DKW::JPG::FUN_0075dc70 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075DC70(int param_1, int * param_2, int param_3, int * param_4, int param_5);
+// 0075DD00 Library::DKW::JPG::FUN_0075dd00 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075DD00(int param_1, int * param_2, int param_3, int param_4, int param_5);
+// 0075DD30 Library::DKW::JPG::FUN_0075dd30 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075DD30(AnonShape_0075DB50_5854A0B6 * param_1, int * param_2, int param_3, undefined4 * param_4, int param_5);
+// 0075DE80 Library::DKW::JPG::FUN_0075de80 [statically linked library; implementation excluded]
 void fn_0075DE80(void);
 // 0075DE90 FUN_0075de90
 void fn_0075DE90(AnonShape_0075DF10_BA4C6604 *param_1);
 // 0075DF10 FUN_0075df10
 void fn_0075DF10(AnonShape_0075DF10_BA4C6604 *param_1);
-// 0075DFE0 FUN_0075dfe0
-void fn_0075DFE0(AnonShape_0075DFE0_9F2D3E56 *param_1);
-// 0075E000 FUN_0075e000
-void fn_0075E000(AnonShape_0075E000_A9FEDC0C *param_1,undefined4 param_2,int *param_3,
-                 undefined4 param_4,int param_5,int *param_6,int param_7);
-// 0075E0C0 FUN_0075e0c0
-void fn_0075E0C0(int param_1,undefined4 param_2,int *param_3,undefined4 param_4,int param_5,
-                 int *param_6);
-// 0075E100 FUN_0075e100
-void fn_0075E100(int param_1,int *param_2,int param_3,undefined4 *param_4);
-// 0075E260 FUN_0075e260
-void fn_0075E260(int param_1,int *param_2,int param_3,undefined4 *param_4);
+// 0075DFE0 Library::DKW::JPG::FUN_0075dfe0 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075DFE0(AnonShape_0075DFE0_9F2D3E56 * param_1);
+// 0075E000 Library::DKW::JPG::FUN_0075e000 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075E000(AnonShape_0075E000_A9FEDC0C * param_1, undefined4 param_2, int * param_3, undefined4 param_4, int param_5, int * param_6, int param_7);
+// 0075E0C0 Library::DKW::JPG::FUN_0075e0c0 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075E0C0(int param_1, undefined4 param_2, int * param_3, undefined4 param_4, int param_5, int * param_6);
+// 0075E100 Library::DKW::JPG::FUN_0075e100 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075E100(int param_1, int * param_2, int param_3, undefined4 * param_4);
+// 0075E260 Library::DKW::JPG::FUN_0075e260 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075E260(int param_1, int * param_2, int param_3, undefined4 * param_4);
 // 0075E460 Library::DKW::JPG::FUN_0075e460 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075E460(int * param_1);
 // 0075E580 Library::DKW::JPG::FUN_0075e580 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075E580(undefined4 * param_1);
 // 0075E630 Library::DKW::JPG::FUN_0075e630 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075E630(int * param_1, int param_2);
-// 0075E750 FUN_0075e750
-void fn_0075E750(AnonShape_0075E750_D250320C *param_1,undefined4 *param_2,undefined4 param_3,
-                 int param_4);
-// 0075E7D0 FUN_0075e7d0
-void fn_0075E7D0(AnonShape_0075E7D0_08EF6D02 *param_1,int param_2,int *param_3,int param_4);
+// 0075E750 Library::DKW::JPG::FUN_0075e750 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075E750(AnonShape_0075E750_D250320C * param_1, undefined4 * param_2, undefined4 param_3, int param_4);
+// 0075E7D0 Library::DKW::JPG::FUN_0075e7d0 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075E7D0(AnonShape_0075E7D0_08EF6D02 * param_1, int param_2, int * param_3, int param_4);
 // 0075E890 FUN_0075e890
 void fn_0075E890(AnonShape_0075E890_C23EB446 *param_1,int param_2,int param_3,int param_4);
 // 0075E980 FUN_0075e980
@@ -22341,10 +22329,10 @@ void fn_0075E980(int param_1,int param_2,int *param_3,int param_4,int param_5);
 // 0075EB40 FUN_0075eb40
 void fn_0075EB40(AnonShape_0075EB40_977462DD *param_1,int param_2,int param_3,int param_4,
                  int param_5,int param_6,byte *param_7);
-// 0075EC80 FUN_0075ec80
-void fn_0075EC80(AnonShape_0075EC80_53406127 *param_1,int param_2,int *param_3,byte *param_4);
-// 0075EF30 FUN_0075ef30
-void fn_0075EF30(AnonShape_0075EF30_9859F226 *param_1);
+// 0075EC80 Library::DKW::JPG::FUN_0075ec80 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075EC80(AnonShape_0075EC80_53406127 * param_1, int param_2, int * param_3, byte * param_4);
+// 0075EF30 Library::DKW::JPG::FUN_0075ef30 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075EF30(AnonShape_0075EF30_9859F226 * param_1);
 // 0075EF60 FUN_0075ef60
 void fn_0075EF60(int *param_1,int param_2);
 // 0075EFE0 FUN_0075efe0
@@ -22357,10 +22345,10 @@ int * fn_0075F520(int param_1,int param_2);
 int * fn_0075F560(int param_1,int param_2);
 // 0075F590 FUN_0075f590
 void fn_0075F590(AnonShape_0075F590_570A7014 *param_1,int *param_2,int param_3);
-// 0075F710 FUN_0075f710
+// 0075F710 Library::DKW::JPG::FUN_0075f710 [statically linked library; implementation excluded]
 void fn_0075F710(void);
-// 0075F720 FUN_0075f720
-void fn_0075F720(int param_1);
+// 0075F720 Library::DKW::JPG::FUN_0075f720 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075F720(int param_1);
 // 0075F740 Library::DKW::JPG::FUN_0075f740 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075F740(int * param_1);
 // 0075F7D0 Library::DKW::JPG::FUN_0075f7d0 [statically linked library; implementation excluded]

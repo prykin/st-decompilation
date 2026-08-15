@@ -13,7 +13,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   short sVar3;
   int iVar4;
   int iVar5;
-  undefined1 *puVar6;
+  byte *pbVar6;
   RuntimeRecord_007F4D3C_0014 *pRVar7;
   int iVar8;
   int iVar9;
@@ -71,20 +71,20 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   local_8 = 0xffffffff;
   iVar9 = DAT_007f4d30 * DAT_007f4d2c;
   DAT_007f4d24 = 0;
-  DAT_007f4cfc = &stack0xffffff84 + iVar8 + iVar5;
+  g_bitset_007F4CFC = &stack0xffffff84 + iVar8 + iVar5;
   g_runtimeRecords_007F4D3C = (RuntimeRecord_007F4D3C_0014 *)(&stack0xffffff84 + iVar5);
   if (STField<ushort>(param_1,0x27) != DAT_007f4d4c) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     DAT_007f4d4c = *(uint *)(STField<int>(param_1,0x29) + 0xc);
     local_28 = 0;
-    DAT_007f4cfc = &stack0xffffff84 + iVar8 + iVar5;
-    puVar6 = &stack0xffffff84 + iVar8 + iVar5;
+    g_bitset_007F4CFC = &stack0xffffff84 + iVar8 + iVar5;
+    pbVar6 = &stack0xffffff84 + iVar8 + iVar5;
     g_runtimeRecords_007F4D3C = (RuntimeRecord_007F4D3C_0014 *)(&stack0xffffff84 + iVar5);
     pRVar7 = (RuntimeRecord_007F4D3C_0014 *)(&stack0xffffff84 + iVar5);
     if (0 < (int)DAT_007f4d4c) {
       do {
         g_runtimeRecords_007F4D3C = pRVar7;
-        DAT_007f4cfc = puVar6;
+        g_bitset_007F4CFC = pbVar6;
         iVar14 = STField<int>(param_1,0x29);
         if (local_28 < *(uint *)(iVar14 + 0xc)) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -111,20 +111,20 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
                   (((sVar2 < g_pathingGrid.sizeY && (sVar3 = pSVar11->field_004B, -1 < sVar3)) &&
                    (sVar3 < g_pathingGrid.sizeZ)))))) {
                 uVar15 = sVar3 * iVar9 + sVar2 * DAT_007f4d2c + (int)sVar1 ^ 7;
-                DAT_007f4cfc[(int)uVar15 >> 3] =
-                     DAT_007f4cfc[(int)uVar15 >> 3] | '\x01' << (uVar15 & 7);
+                g_bitset_007F4CFC[(int)uVar15 >> 3] =
+                     g_bitset_007F4CFC[(int)uVar15 >> 3] | '\x01' << (uVar15 & 7);
               }
             }
             else {
               uVar15 = iVar4 * iVar9 + iVar14 + iVar13 * DAT_007f4d2c ^ 7;
-              DAT_007f4cfc[(int)uVar15 >> 3] =
-                   DAT_007f4cfc[(int)uVar15 >> 3] | '\x01' << (uVar15 & 7);
+              g_bitset_007F4CFC[(int)uVar15 >> 3] =
+                   g_bitset_007F4CFC[(int)uVar15 >> 3] | '\x01' << (uVar15 & 7);
             }
             DAT_007f4d24 = DAT_007f4d24 + 1;
           }
         }
         local_28 = local_28 + 1;
-        puVar6 = DAT_007f4cfc;
+        pbVar6 = g_bitset_007F4CFC;
         pRVar7 = g_runtimeRecords_007F4D3C;
       } while ((int)local_28 < (int)DAT_007f4d4c);
     }
@@ -176,9 +176,9 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
             else {
               local_20 = iVar4 * iVar9 + iVar14 + iVar13 * DAT_007f4d2c;
             }
-            if (((byte)DAT_007f4cfc[(int)(local_20 ^ 7) >> 3] >> ((local_20 ^ 7) & 7) & 1) != 0) {
-              DAT_007f4cfc[(int)(local_20 ^ 7) >> 3] =
-                   DAT_007f4cfc[(int)(local_20 ^ 7) >> 3] & ~('\x01' << ((local_20 ^ 7) & 7));
+            if ((g_bitset_007F4CFC[(int)(local_20 ^ 7) >> 3] >> ((local_20 ^ 7) & 7) & 1) != 0) {
+              g_bitset_007F4CFC[(int)(local_20 ^ 7) >> 3] =
+                   g_bitset_007F4CFC[(int)(local_20 ^ 7) >> 3] & ~('\x01' << ((local_20 ^ 7) & 7));
               DAT_007f4d24 = DAT_007f4d24 + -1;
             }
           }
@@ -293,10 +293,10 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
               local_20 = iVar4 * iVar9 + iVar14 + iVar13 * DAT_007f4d2c;
             }
             piVar16 = (int *)(local_20 ^ 7);
-            if (((byte)DAT_007f4cfc[(int)piVar16 >> 3] >> ((uint)piVar16 & 7) & 1) != 0) {
+            if ((g_bitset_007F4CFC[(int)piVar16 >> 3] >> ((uint)piVar16 & 7) & 1) != 0) {
               piVar16 = (int *)(local_20 ^ 7);
-              DAT_007f4cfc[(int)piVar16 >> 3] =
-                   DAT_007f4cfc[(int)piVar16 >> 3] & ~('\x01' << ((uint)piVar16 & 7));
+              g_bitset_007F4CFC[(int)piVar16 >> 3] =
+                   g_bitset_007F4CFC[(int)piVar16 >> 3] & ~('\x01' << ((uint)piVar16 & 7));
               DAT_007f4d24 = DAT_007f4d24 + -1;
             }
           }

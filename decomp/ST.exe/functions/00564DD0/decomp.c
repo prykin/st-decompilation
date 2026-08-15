@@ -23,8 +23,8 @@ void FUN_00564dd0(undefined4 param_1,undefined4 param_2,undefined4 *param_3,unde
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = param_3;
     do {
-      iVar4 = FUN_006acf90(*(int *)((int)&g_runtimeRecords_00803300->field_0000 + iVar6),
-                           *(int *)((int)&g_runtimeRecords_00803300->field_0004 + iVar6),iVar1,iVar2
+      iVar4 = FUN_006acf90(STObjectAtByteOffset(g_runtimeRecords_00803300, iVar6).field_0000,
+                           STObjectAtByteOffset(g_runtimeRecords_00803300, iVar6).field_0004,iVar1,iVar2
                           );
       if (iVar4 < DAT_00803378 / 2 + iVar3 / 4) {
         *param_4 = 0xffffffff;
@@ -39,8 +39,8 @@ void FUN_00564dd0(undefined4 param_1,undefined4 param_2,undefined4 *param_3,unde
     iVar6 = iVar5 * 0x14;
     param_3 = param_3 + iVar5;
     do {
-      iVar4 = FUN_006acf90(*(int *)((int)&g_runtimeRecords_00803300->field_0000 + iVar6),
-                           *(int *)((int)&g_runtimeRecords_00803300->field_0004 + iVar6),iVar1,iVar2
+      iVar4 = FUN_006acf90(STObjectAtByteOffset(g_runtimeRecords_00803300, iVar6).field_0000,
+                           STObjectAtByteOffset(g_runtimeRecords_00803300, iVar6).field_0004,iVar1,iVar2
                           );
       if (iVar4 < DAT_008032ec / 2 + iVar3 / 4) {
         *param_3 = 0xffffffff;

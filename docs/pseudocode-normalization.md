@@ -533,6 +533,7 @@ without pretending to recover their semantic field:
 value._2_2_                         -> STPiece<2,2>(value)
 "Program: "._8_2_                 -> STLiteralPiece<8,2>("Program: ")
 *(T *)((int)base + byteOffset)     -> STField<T>(base, byteOffset)
+*(T *)((int)&records->field + off) -> STObjectAtByteOffset(records, off).field
 ```
 
 `STPiece` is a read/write proxy over the exact lvalue bytes. `STLiteralPiece`
@@ -540,6 +541,13 @@ is read-only and reconstructs the same little-endian value from literal
 storage. `STField` preserves the exact access width and byte offset while
 removing the host-invalid 32-bit pointer-to-`int` spelling. These helpers do not
 assert a containing class, alignment, or original field name.
+
+`STObjectAtByteOffset` has a narrower precondition than `STField`: `records`
+must already be a one-star pointer to one unambiguous concrete structure, the
+member must already exist by name in that structure, and the explicit cast
+width must equal the member width. The helper preserves the byte induction
+variable exactly. It deliberately does not emit `records[off / sizeof(*records)]`
+until all definitions of `off` prove exact divisibility by the record size.
 
 The same generated header defines only the observed `CONCAT*`, `SUB*`, carry,
 calling-convention, decompiler-scalar, and opaque `code` compatibility surface.

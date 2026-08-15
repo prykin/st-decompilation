@@ -115,6 +115,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             collectCStringScanEvidence(function, instruction, mnemonic, operands);
             collectPointerDereferenceEvidence(function, instruction, mnemonic,
                 operands, registers);
+            collectBitStringEvidence(function, instruction, mnemonic, operands,
+                registers);
             if ("PUSH".equals(mnemonic)) {
                 pushes.add(globalValue(instruction, 0, operands.length == 0 ? "" : operands[0],
                     registers, false));
@@ -250,6 +252,48 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             for (String site : ev.pointerDerefSites)
                 add(entry.getKey(), type, "", false, false,
                     "repeated aligned DWORD dereference of exact global value; " + site);
+        }
+        for (Map.Entry<Address, Evidence> entry : entries) {
+            Evidence ev = entry.getValue();
+            if (ev.bitStringSites.size() < 3 || ev.bitStringFunctions.size() < 2)
+                continue;
+            // BT/BTS/BTR/BTC with the exact global value as the memory base is
+            // direct machine evidence for a runtime bit string.  The x86
+            // instruction addresses bits across successive bytes even though
+            // the physical access unit may be a dword, so byte * is the only
+            // neutral C storage view which preserves the indexing contract.
+            for (String site : ev.bitStringSites)
+                add(entry.getKey(), "pointer:/byte", "bitset", false, false,
+                    "exact x86 bit-string memory base; " + site);
+        }
+    }
+
+    /**
+     * Recover a runtime bit-string global from the instruction which consumes
+     * it, rather than from a guessed allocation type.  Register provenance is
+     * already killed by arithmetic and calls in updateRegisters(), so the
+     * surviving value here is an exact MOV of one global pointer (possibly
+     * copied through full registers) into the sole memory-base register.
+     */
+    private void collectBitStringEvidence(Function function,
+            Instruction instruction, String mnemonic, String[] operands,
+            Map<String, GlobalValue> registers) {
+        if (!Set.of("BT", "BTS", "BTR", "BTC").contains(mnemonic) ||
+                operands.length < 2) return;
+        String memory = operands[0].toUpperCase(Locale.ROOT);
+        int open = memory.indexOf('['), close = memory.lastIndexOf(']');
+        if (open < 0 || close <= open) return;
+        String address = memory.substring(open + 1, close);
+        for (Map.Entry<String, GlobalValue> entry : registers.entrySet()) {
+            GlobalValue value = entry.getValue();
+            if (value == null || value.addressOf ||
+                    !soleUnscaledBase(address, entry.getKey())) continue;
+            Evidence ev = evidence.computeIfAbsent(value.address,
+                ignored -> new Evidence());
+            String functionAddress = addr(function.getEntryPoint());
+            ev.bitStringFunctions.add(functionAddress);
+            ev.bitStringSites.add(functionAddress + " " + instruction.toString() +
+                " @ " + addr(instruction.getAddress()));
         }
     }
 
@@ -871,6 +915,9 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             reasons.add("library_context_votes=" + ev.libraryContexts);
             reasons.add("pointer_dereferences=" + ev.pointerDereferences +
                 "; aligned_dword_geometry=" + ev.pointerDerefWordCompatible);
+            if (!ev.bitStringSites.isEmpty())
+                reasons.add("exact_x86_bit_string_sites=" + ev.bitStringSites.size() +
+                    "; functions=" + ev.bitStringFunctions.size());
             if (contextualAnonymous)
                 reasons.add("dominant_library_context=" + context.family +
                     "; context_votes=" + context.count + "/" + context.total);
@@ -1391,7 +1438,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             callBoundaryTypes = new TreeMap<>(), libraryContexts = new TreeMap<>();
         final Set<String> sites = new TreeSet<>(), strongNames = new TreeSet<>(),
             typedStoreSites = new TreeSet<>(), callBoundarySites = new TreeSet<>(),
-            initializedStringNames = new TreeSet<>(), pointerDerefSites = new TreeSet<>();
+            initializedStringNames = new TreeSet<>(), pointerDerefSites = new TreeSet<>(),
+            bitStringSites = new TreeSet<>(), bitStringFunctions = new TreeSet<>();
         int strongCount, addressEvidence, typedStores, libraryContextCalls,
             initializedStringPointers, cstringScans, pointerDereferences;
         boolean pointerDerefWordCompatible = true;

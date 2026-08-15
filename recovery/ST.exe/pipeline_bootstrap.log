@@ -12,8 +12,8 @@ No proposal flags are changed by the pipeline. Review-only rows remain disabled.
 == startup ABI validation ==
 [01] STEvidenceLedger.java <- fingerprint | <repo>/recovery
 Computing semantic Program fingerprint...
-Semantic Program fingerprint: eaca06938975d4924ae26d60827c5723b4e130b929c429e0ae6001341d3adf80
-[02] STAbiRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | startup | eaca06938975d4924ae26d60827c5723b4e130b929c429e0ae6001341d3adf80
+Semantic Program fingerprint: 85b30777b4e7846236f50c68efa495664e45729dd519a55e96d62dab6dc011cc
+[02] STAbiRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | startup | 85b30777b4e7846236f50c68efa495664e45729dd519a55e96d62dab6dc011cc
 ABI regression gate: phase=startup, typed_vtable_slots=3192, class_vptrs=100, fixture_functions=9, errors=0, warnings=0, report=<local-home>/st/recovery/ST.exe/abi_regression_report.tsv
 
 == critical export ABI stabilization ==
@@ -68,25 +68,26 @@ Candidates=1, likely stale=1, already approved overrides=0, review=0
 == evidence checkpoint ==
 [16] STEvidenceLedger.java <- record | <repo>/recovery
 Computing semantic Program fingerprint...
-Evidence ledger recorded: program modification=3, semantic_sha256=eaca06938975d4924ae26d60827c5723b4e130b929c429e0ae6001341d3adf80, artifacts=98
+Evidence ledger recorded: program modification=3, semantic_sha256=85b30777b4e7846236f50c68efa495664e45729dd519a55e96d62dab6dc011cc, artifacts=98
 Persisted analyzer cache entries: 4
 
 == LLM corpus export ==
 [17] STEvidenceLedger.java <- verify | <repo>/recovery
 Computing semantic Program fingerprint...
-Evidence ledger verified: program modification=3, semantic_sha256=eaca06938975d4924ae26d60827c5723b4e130b929c429e0ae6001341d3adf80, artifacts=98
+Evidence ledger verified: program modification=3, semantic_sha256=85b30777b4e7846236f50c68efa495664e45729dd519a55e96d62dab6dc011cc, artifacts=98
 [18] STDecompExport.java <- <repo>/decomp
 Exporting ST.exe to <local-home>/st/decomp/ST.exe via transactional staging
-Functions reused without decompilation: 10304/10407
-Function quality/idiom analyses reused: 5533/5555
+Ignored stale function-analysis cache rows: 5555
+Functions reused without decompilation: 10397/10407
+Function quality/idiom analyses reused: 0/5555
 STDecompExport complete: <local-home>/st/decomp/ST.exe
 [19] STExportRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe
-Export regression gate: status=passed, errors=0, warnings=4, report=<local-home>/st/recovery/ST.exe/export_regression_report.tsv
-[20] STAbiRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | accepted-refresh | eaca06938975d4924ae26d60827c5723b4e130b929c429e0ae6001341d3adf80
+Export regression gate: status=passed, errors=0, warnings=3, report=<local-home>/st/recovery/ST.exe/export_regression_report.tsv
+[20] STAbiRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | accepted-refresh | 85b30777b4e7846236f50c68efa495664e45729dd519a55e96d62dab6dc011cc
 ABI regression gate: phase=accepted-refresh, typed_vtable_slots=3192, class_vptrs=100, fixture_functions=9, errors=0, warnings=0, report=<local-home>/st/recovery/ST.exe/abi_regression_report.tsv
 ST recovery pipeline complete.
-Total pipeline time: 00:05:05
+Total pipeline time: 00:02:52
 Pipeline report: <local-home>/st/recovery/ST.exe/pipeline_report.tsv
 Program changed after pipeline: false
-Latest archived run: 764a61cc55c16959d155d14a95d4d6a2a9fd7eedaf39230d417e6e7f8dcacd62
+Latest archived run: a59b126a2ff456ddf0b30a483d1b1f08aa42964a2a1e351a74eecd1f52095010
 ST recovery launcher completed.
