@@ -24,7 +24,6 @@ FUN_00600580(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   uint uVar7;
   int iVar8;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = STBiasedDiv16(param_1, 0xc9); /* exact signed 16-bit grid-index division */
   iVar5 = STBiasedDiv16(param_2, 0xc9); /* exact signed 16-bit grid-index division */
   iVar6 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */

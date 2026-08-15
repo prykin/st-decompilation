@@ -14,7 +14,7 @@ int __fastcall FUN_0074f107(int *param_1)
   else {
     local_c = param_1;
     local_8 = param_1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*param_1 + 0x2c))(param_1,&local_c);
     if (-1 < iVar1) {
       EnterCriticalSection((LPCRITICAL_SECTION)(param_1 + 7));

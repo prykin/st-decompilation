@@ -1,6 +1,8 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 00496CC0 -> 00497370 @ 00496D62; FUN_00496cc0 parameter param_5 */
 
@@ -9,7 +11,7 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,uint param_4,void *
 {
   byte bVar1;
   dword dVar2;
-  AnonShape_00497110_465BC742 *this;
+  void *this;
   int iVar3;
   uint uVar3;
   int iVar4;
@@ -24,6 +26,8 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,uint param_4,void *
   uint *puVar13;
   DArrayTy *pDVar14;
   bool bVar15;
+  int aiStack_84 [4];
+  undefined4 uStack_74;
   uint local_60;
   char local_5c;
   undefined3 uStack_5b;
@@ -41,30 +45,26 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,uint param_4,void *
   undefined *puStack_c;
   undefined4 local_8;
 
-  pDVar14 = g_array_007FB270;
   puStack_c = &DAT_00790718;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
-  local_1c = &stack0xffffff90;
   local_28 = 0xffffffff;
   dVar2 = g_array_007FB270->count;
-  local_8 = 0;
-  ExceptionList = &local_14;
   local_44 = dVar2;
-  Library::MSVCRT::FUN_0072da40();
-  local_38 = &stack0xffffff90;
-  local_1c = &stack0xffffff90;
-  Library::MSVCRT::FUN_0072da40();
+  uStack_74 = 0x4973c3;
+  local_38 = &stack0xffffff90 + dVar2 * -0x18;
+  aiStack_84[dVar2 * -6 + 4] = 0x4973de;
+  local_1c = &stack0xffffff90 + dVar2 * -0x1c;
+  local_3c = (int *)(&stack0xffffff90 + dVar2 * -0x1c);
   local_8 = 0xffffffff;
   local_30 = 0;
   local_40 = 0;
   local_34 = 0;
-  local_3c = (int *)&stack0xffffff90;
-  local_1c = &stack0xffffff90;
+  ExceptionList = &local_14;
   if (0 < (int)dVar2) {
-    puVar11 = &local_60;
-    local_3c = (int *)&stack0xffffff90;
-    local_1c = &stack0xffffff90;
+    puVar11 = &local_60 + dVar2 * -6;
+    pDVar14 = g_array_007FB270;
+    ExceptionList = &local_14;
     do {
       if (local_34 < pDVar14->count) {
         puVar12 = DArrayAt<uint>(pDVar14, local_34);
@@ -105,25 +105,35 @@ LAB_004974ca:
           bVar15 = g_bulkInitializedRecords_008087C7[param_3 & 0xff].field_0023 !=
                    g_bulkInitializedRecords_008087C7[uVar3 & 0xff].field_0023;
         }
-        if ((bVar15) &&
-           (iVar3 = FUN_006aced8(*puVar12 * 0xc9 + 100,puVar12[1] * 0xc9 + 100,param_1 * 0xc9 + 100,
-                                 param_2 * 0xc9 + 100), pDVar14 = g_array_007FB270, iVar3 < 0xbc7))
-        {
-          puVar13 = puVar11 + -4;
-          memmove(puVar13, puVar12, 0x18); /* compiler REP MOVS byte copy */
-          uVar3 = thunk_FUN_0060ca20(puVar11[1]);
-          uVar3 = ((int)uVar3 < 0) - 1 & uVar3;
-          *puVar11 = uVar3;
-          local_40 = local_40 + uVar3;
-          local_30 = local_30 + 1;
-          puVar11 = puVar11 + 6;
+        if (bVar15) {
+          aiStack_84[dVar2 * -7 + 4] = param_2 * 0xc9 + 100;
+          aiStack_84[dVar2 * -7 + 3] = param_1 * 0xc9 + 100;
+          aiStack_84[dVar2 * -7 + 2] = puVar12[1] * 0xc9 + 100;
+          aiStack_84[dVar2 * -7 + 1] = *puVar12 * 0xc9 + 100;
+          aiStack_84[dVar2 * -7] = 0x497515;
+          iVar3 = FUN_006aced8(aiStack_84[dVar2 * -7 + 1],aiStack_84[dVar2 * -7 + 2],
+                               aiStack_84[dVar2 * -7 + 3],aiStack_84[dVar2 * -7 + 4]);
           pDVar14 = g_array_007FB270;
+          if (iVar3 < 0xbc7) {
+            puVar13 = puVar11 + -4;
+            memmove(puVar13, puVar12, 0x18); /* compiler REP MOVS byte copy */
+            uVar3 = puVar11[1];
+            aiStack_84[dVar2 * -7 + 4] = 0x497531;
+            uVar3 = thunk_FUN_0060ca20(uVar3);
+            uVar3 = ((int)uVar3 < 0) - 1 & uVar3;
+            *puVar11 = uVar3;
+            local_40 = local_40 + uVar3;
+            local_30 = local_30 + 1;
+            puVar11 = puVar11 + 6;
+            pDVar14 = g_array_007FB270;
+          }
         }
       }
       local_34 = local_34 + 1;
     } while ((int)local_34 < (int)local_44);
   }
   if (local_30 != 0) {
+    aiStack_84[dVar2 * -7 + 4] = 0x497571;
     iVar4 = thunk_FUN_0060ca20((int)param_5);
     iVar7 = local_30;
     local_20 = local_30;
@@ -138,7 +148,12 @@ LAB_004974ca:
           piVar10 = piVar10 + 1;
         } while (iVar6 < local_30);
       }
-      thunk_FUN_004977c0((int)local_38,local_3c,local_30);
+      aiStack_84[dVar2 * -7 + 4] = local_30;
+      aiStack_84[dVar2 * -7 + 3] = (int)local_3c;
+      aiStack_84[dVar2 * -7 + 2] = (int)local_38;
+      aiStack_84[dVar2 * -7 + 1] = 0x4975cf;
+      thunk_FUN_004977c0(aiStack_84[dVar2 * -7 + 2],(int *)aiStack_84[dVar2 * -7 + 3],
+                         aiStack_84[dVar2 * -7 + 4]);
       while (0 < iVar4) {
         iVar6 = local_30 - iVar7;
         if (iVar6 < local_30) {
@@ -179,23 +194,35 @@ LAB_004974ca:
       }
     }
     iVar9 = local_30;
+    aiStack_84[dVar2 * -7 + 4] = 0x497638;
     iVar7 = thunk_FUN_0060ca20((int)param_5);
-    thunk_FUN_0060ca40(param_5,iVar7 - iVar4);
+    aiStack_84[dVar2 * -7 + 4] = iVar7 - iVar4;
+    aiStack_84[dVar2 * -7 + 3] = 0x497642;
+    thunk_FUN_0060ca40(param_5,aiStack_84[dVar2 * -7 + 4]);
     if (0 < iVar9) {
       piVar10 = (int *)(local_38 + 0x10);
       do {
-        this = (AnonShape_00497110_465BC742 *)piVar10[1];
+        this = (void *)piVar10[1];
+        aiStack_84[dVar2 * -7 + 4] = 0x497656;
         iVar4 = thunk_FUN_0060ca20((int)this);
         if (iVar4 != *piVar10) {
+          aiStack_84[dVar2 * -7 + 4] = 0x497661;
           iVar4 = thunk_FUN_0060ca20((int)this);
-          thunk_FUN_0060ca40(this,iVar4 - *piVar10);
-          thunk_FUN_00497110(param_5,this);
+          aiStack_84[dVar2 * -7 + 4] = iVar4 - *piVar10;
+          aiStack_84[dVar2 * -7 + 3] = 0x49766b;
+          thunk_FUN_0060ca40(this,aiStack_84[dVar2 * -7 + 4]);
+          aiStack_84[dVar2 * -7 + 4] = (int)this;
+          aiStack_84[dVar2 * -7 + 3] = (int)param_5;
+          aiStack_84[dVar2 * -7 + 2] = 0x497678;
+          thunk_FUN_00497110((AnonShape_00497110_11FEE69C *)aiStack_84[dVar2 * -7 + 3],
+                             (AnonShape_00497110_465BC742 *)aiStack_84[dVar2 * -7 + 4]);
         }
         piVar10 = piVar10 + 6;
         iVar9 = iVar9 + -1;
       } while (iVar9 != 0);
     }
   }
+  aiStack_84[dVar2 * -7 + 4] = 0x497686;
   iVar9 = thunk_FUN_0060ca20((int)param_5);
   if (0 < iVar9) {
     local_28 = 1;

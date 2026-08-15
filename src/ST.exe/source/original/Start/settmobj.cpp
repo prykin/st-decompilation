@@ -3398,6 +3398,7 @@ LAB_005d1245:
 int __thiscall st::fn_005D1400(SettMapMTy *this,STMessage *message)
 
 {
+  byte stack_bytes_neg_680[0x451]; /* exact EBP-relative stack object */
   char cVar1;
   char cVar2;
   byte bVar3;
@@ -4362,7 +4363,7 @@ LAB_005d1b17:
             goto LAB_005d28da;
           }
         }
-        memset(&stack0xfffff980, 0, 0x451); /* compiler bulk-zero initialization */
+        memset(stack_bytes_neg_680, 0, 0x451); /* compiler bulk-zero initialization */
         pcVar29 = &CHAR_00h_00807e1d;
         if (DAT_008067a0 == '\0') {
           pcVar29 = &CHAR_00h_00807ddd;
@@ -4379,7 +4380,7 @@ LAB_005d1b17:
         uVar30 = ~uVar30;
         pSVar10 = this_00->array_00BC[0xc].field_01DB;
         pcVar29 = pcVar35 + -uVar30;
-        pcVar35 = st::pointer_boundary_cast<char *>(&stack0xfffff980);
+        pcVar35 = st::pointer_boundary_cast<char *>(stack_bytes_neg_680);
         memmove(pcVar35, pcVar29, uVar30); /* compiler REP MOVS byte copy */
         uVar32 = 0;
         pDVar9 = pSVar10->field_0686;
@@ -4403,7 +4404,7 @@ LAB_005d1b17:
         pcVar35 = local_640;
         memmove(pcVar35, pcVar29, uVar30); /* compiler REP MOVS byte copy */
         local_10 = local_640;
-        st::fn_00402BBC(pSVar10,(int)&stack0xfffff980);
+        st::fn_00402BBC(pSVar10,(int)stack_bytes_neg_680);
         if (this_00->field_2208 == '\0') {
           pSVar20 = this_00->field_1F84;
           if (pSVar20 != nullptr) {
@@ -4465,7 +4466,7 @@ LAB_005d27c3:
                   }
                   else if (pcVar29[0x4a] == local_5) {
 LAB_005d28a0:
-                    st::fn_00715360(g_int_00811764,*(int *)(pcVar29 + 6),'\x1b',st::pointer_boundary_cast<char *>(&stack0xfffff980),0x451,
+                    st::fn_00715360(g_int_00811764,*(int *)(pcVar29 + 6),'\x1b',st::pointer_boundary_cast<char *>(stack_bytes_neg_680),0x451,
                                  1,0xffffffff);
                   }
                 }
@@ -4476,7 +4477,7 @@ LAB_005d28a0:
           }
         }
         else {
-          st::fn_00715360(g_int_00811764,0,'\x1b',st::pointer_boundary_cast<char *>(&stack0xfffff980),0x451,1,0xffffffff);
+          st::fn_00715360(g_int_00811764,0,'\x1b',st::pointer_boundary_cast<char *>(stack_bytes_neg_680),0x451,1,0xffffffff);
         }
       }
 LAB_005d28da:

@@ -22,7 +22,6 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
 
   pAVar6 = param_1;
   local_c = 0;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {
     return 0;
   }
@@ -47,14 +46,12 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
       piVar9 = (int *)&param_1->field_0x24;
       STField<undefined4>(this,0x1e1) = param_1->field_0020;
       STField<undefined1>(this,0x1f9) = param_1->field_0038;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_0062FA80_0B91B2B9 *)0x5;
       do {
         if ((*piVar9 != 0) && (iVar7 = STRubbishC::RubbishCreatePart(this), -1 < iVar7)) {
           local_c = local_c + 1;
         }
         piVar9 = piVar9 + 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_0062FA80_0B91B2B9 *)&param_1[-1].field_0x3b;
       } while (param_1 != nullptr);
       STField<undefined4>(this,0x1fa) = *(undefined4 *)&pAVar6->field_0x39;
@@ -64,7 +61,6 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
       local_8 = 0x3d;
       puVar10 = (undefined4 *)&pAVar6[1].field_0x1;
       piVar9 = (int *)((int)this + 0x1e5);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_0062FA80_0B91B2B9 *)0x5;
       do {
         puVar12 = (byte *)*piVar9;
@@ -77,7 +73,6 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
           *(undefined4 *)(*piVar9 + 0x10) = uVar4;
         }
         piVar9 = piVar9 + 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_0062FA80_0B91B2B9 *)&param_1[-1].field_0x3b;
       } while (param_1 != nullptr);
       return local_8;

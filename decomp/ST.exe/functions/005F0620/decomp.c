@@ -30,7 +30,7 @@ void __fastcall FUN_005f0620(AnonShape_005F0620_60AA17CE *param_1)
     }
     local_c = param_1->field_02A3;
     local_a = param_1->field_02AB;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*DAT_008117bc)(local_24);
   }
 switchD_005f064c_default:

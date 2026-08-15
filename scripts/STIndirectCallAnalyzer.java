@@ -282,7 +282,11 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                 Function entry = raw == null ? null : currentProgram.getFunctionManager().getFunctionAt(raw);
                 Function target = resolveThunk(entry);
                 boolean trusted = trusted(target);
-                Synthetic synthetic = trusted ? null : syntheticSignature(target, structure);
+                // A leaf virtual implementation is allowed to ignore ECX.  The exact
+                // physical-table slot still proves the receiver ABI; requiring a semantic
+                // ECX read here leaves common constant getters (for example a type-id slot)
+                // as void * even though every machine call is receiver-dispatched.
+                Synthetic synthetic = trusted ? null : dispatchSignature(target, structure);
                 FunctionPointerFamily family = raw == null ? null :
                     targetFamilies.get(addr(raw));
                 if (family == null && target != null)

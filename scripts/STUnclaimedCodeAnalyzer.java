@@ -1,7 +1,9 @@
 // Recover exact function entries which Ghidra left outside every function.
 // Strong automatic evidence is deliberately limited to CALL/data references to a direct JMP
-// entry and raw non-executable pointers to a direct JMP chain.  Direct data targets, SEH
-// funclets, jump-only shared tails, and merely code-looking bytes remain review-only.
+// entry, raw non-executable pointers to a direct JMP chain, and an exact x86
+// `MOV [memory], imm32` callback-address store whose target is a standalone instruction entry
+// (or a complete RET stub).  Other direct data targets, SEH funclets, jump-only shared tails,
+// and merely code-looking bytes remain review-only.
 // @author OpenAI
 // @category SubmarineTitans.Recovery
 // @menupath Tools.Submarine Titans.Analyze Unclaimed Code
@@ -50,6 +52,7 @@ public class STUnclaimedCodeAnalyzer extends GhidraScript {
     private int rawExecutablePointers;
     private int rawJumpPointers;
     private int orphanJumpEntries;
+    private int storedCallbackEntries;
 
     @Override
     protected void run() throws Exception {
@@ -73,6 +76,7 @@ public class STUnclaimedCodeAnalyzer extends GhidraScript {
         references = currentProgram.getReferenceManager();
 
         collectReferencedOrphanJumps();
+        collectStoredCallbackEntries();
         collectRawNonExecutablePointers();
         finalizeCandidates();
         List<Candidate> rows = candidates.values().stream()
@@ -91,7 +95,89 @@ public class STUnclaimedCodeAnalyzer extends GhidraScript {
         println("Unclaimed-code analysis complete: " + directory.toAbsolutePath().normalize());
         println("Candidates=" + rows.size() + ", direct JMP thunks=" + thunks +
             ", thunk targets=" + targets + ", create_apply=" + enabled +
+            ", stored callbacks=" + storedCallbackEntries +
             ", review-only=" + review);
+    }
+
+    /**
+     * Recover callback entries which are absent from the FunctionManager but are installed by
+     * an exact x86 memory-immediate store.  This is materially stronger than a generic DATA
+     * reference: the instruction itself proves that the executable address is being retained
+     * as a value in an object/table field.  In particular this recovers tiny `RET n` callbacks
+     * which ordinary prologue heuristics cannot recognize.
+     *
+     * The target still has to be a standalone instruction boundary.  A target reached by the
+     * previous instruction's fallthrough is an interior label and remains review-only.  No
+     * semantic callback signature or owner is inferred here; later field/library analyzers
+     * consume the newly explicit function identity.
+     */
+    private void collectStoredCallbackEntries() throws Exception {
+        InstructionIterator iterator = listing.getInstructions(true);
+        while (iterator.hasNext()) {
+            monitor.checkCancelled();
+            Instruction instruction = iterator.next();
+            Function installer = functions.getFunctionContaining(instruction.getAddress());
+            if (installer == null || installer.isExternal()) continue;
+            Address target = storedImmediateCodeAddress(instruction);
+            if (target == null || functions.getFunctionContaining(target) != null) continue;
+            if (!standaloneCallbackEntry(target)) continue;
+
+            Candidate candidate = candidate(target);
+            if (candidate.kind.equals("direct_jump_thunk")) continue;
+            candidate.kind = "stored_callback_entry";
+            candidate.createApply = true;
+            candidate.dataReferences++;
+            candidate.anchors.add("D:" + addr(instruction.getAddress()) + ">" + addr(target));
+            candidate.reasons.add("exact MOV [memory], imm32 callback-address store in " +
+                installer.getName(true));
+            storedCallbackEntries++;
+        }
+    }
+
+    private Address storedImmediateCodeAddress(Instruction instruction) {
+        try {
+            byte[] bytes = instruction.getBytes();
+            // C7 /0 id: MOV r/m32, imm32.  Reject register destinations and prefixed/other
+            // encodings so the final four bytes are unambiguously the stored address.
+            if (bytes.length < 6 || (bytes[0] & 0xff) != 0xc7) return null;
+            int modrm = bytes[1] & 0xff;
+            if ((modrm & 0x38) != 0 || (modrm & 0xc0) == 0xc0) return null;
+            int offset = littleEndianInt(bytes, bytes.length - 4);
+            Address target = addressForOffset(Integer.toUnsignedLong(offset));
+            if (!isExecutable(target)) return null;
+            boolean exactReference = false;
+            for (Reference reference : instruction.getReferencesFrom()) {
+                if (target.equals(reference.getToAddress()) &&
+                        (reference.getReferenceType().isData() ||
+                            !reference.getReferenceType().isFlow())) {
+                    exactReference = true;
+                    break;
+                }
+            }
+            return exactReference ? target : null;
+        }
+        catch (Exception exception) {
+            return null;
+        }
+    }
+
+    private boolean standaloneCallbackEntry(Address target) {
+        try {
+            Data data = listing.getDefinedDataContaining(target);
+            if (data != null) return false;
+            Instruction previous = listing.getInstructionBefore(target);
+            if (previous != null && target.equals(previous.getFallThrough())) return false;
+            Instruction first = listing.getInstructionAt(target);
+            if (first != null) return true;
+            int opcode = memory.getByte(target) & 0xff;
+            // A no-op callback often compiles to RET or RET imm16 and has no prologue for a
+            // conventional entry finder to notice.  The exact callback store supplies the
+            // missing entry evidence; the return opcode supplies the complete body contract.
+            return opcode == 0xc3 || opcode == 0xc2;
+        }
+        catch (Exception exception) {
+            return false;
+        }
     }
 
     private void collectReferencedOrphanJumps() throws Exception {
@@ -343,7 +429,9 @@ public class STUnclaimedCodeAnalyzer extends GhidraScript {
             if (row.kind.equals("seh_filter") || row.kind.equals("seh_funclet") ||
                     row.kind.equals("data_referenced_code"))
                 row.createApply = false;
-            row.confidence = row.createApply ? "exact_control_flow" : "review";
+            row.confidence = row.createApply ?
+                (row.kind.equals("stored_callback_entry") ?
+                    "exact_callback_store" : "exact_control_flow") : "review";
         }
     }
 
@@ -434,14 +522,16 @@ public class STUnclaimedCodeAnalyzer extends GhidraScript {
             out.write("create_apply: " + rows.stream().filter(row -> row.createApply).count() + "\n");
             out.write("review_only: " + rows.stream().filter(row -> !row.createApply).count() + "\n");
             out.write("orphan_direct_jump_entries_seen: " + orphanJumpEntries + "\n");
+            out.write("exact_stored_callback_entries: " + storedCallbackEntries + "\n");
             out.write("raw_nonexec_executable_pointer_values: " + rawExecutablePointers + "\n");
             out.write("raw_nonexec_direct_jump_pointer_values: " + rawJumpPointers + "\n");
             for (Map.Entry<String, Long> entry : kinds.entrySet())
                 out.write(entry.getKey() + ": " + entry.getValue() + "\n");
             out.write("\nSafety boundary:\n");
-            out.write("  create_apply=1 requires an exact referenced direct-JMP chain.\n");
-            out.write("  Raw direct targets, MSVC EH filters/funclets, jump-only tails, and\n");
-            out.write("  merely plausible instruction bytes remain review-only.\n");
+            out.write("  create_apply=1 requires an exact referenced direct-JMP chain or an\n");
+            out.write("  exact MOV [memory], imm32 callback store to a standalone entry/RET stub.\n");
+            out.write("  Other raw direct targets, MSVC EH filters/funclets, jump-only tails,\n");
+            out.write("  and merely plausible instruction bytes remain review-only.\n");
         }
     }
 

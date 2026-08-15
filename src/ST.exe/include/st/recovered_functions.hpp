@@ -2100,7 +2100,7 @@ undefined4 __fastcall fn_00402608(STGameObjC * objPtr);
 // 0040260D JumpManagC::GetMessage
 int __thiscall fn_0040260D(JumpManagC * st_this, STMessage * message);
 // 00402612 STFishC::sub_0057D5F0
-undefined4 __thiscall fn_00402612(STFishC * st_this, uint param_1);
+STFishC_field_023BState __thiscall fn_00402612(STFishC * st_this, uint param_1);
 // 00402617 thunk_FUN_00571e40
 undefined4 __thiscall fn_00402617(void * st_this, LPDWORD lpcbData);
 // 0040261C CampaignTy::LightPalette
@@ -12205,7 +12205,7 @@ void __thiscall fn_0057CD70(STFishC *st_this);
 // 0057D420 FUN_0057d420
 undefined4 __fastcall fn_0057D420(STFishC *param_1);
 // 0057D5F0 STFishC::sub_0057D5F0
-undefined4 __thiscall fn_0057D5F0(STFishC *st_this,uint param_1);
+STFishC_field_023BState __thiscall fn_0057D5F0(STFishC *st_this,uint param_1);
 // 0057D700 STFishC::sub_0057D700
 undefined4 __thiscall
 fn_0057D700(STFishC *st_this,uint *param_1,uint *param_2,int *param_3,int *param_4);
@@ -16808,11 +16808,11 @@ int * __cdecl fn_006A3BE0(uint param_1);
 int * __cdecl fn_006A3C10(uint param_1,uint param_2,char *text,int param_4);
 // 006A3C50 FUN_006a3c50
 int * __cdecl fn_006A3C50(uint param_1,int param_2);
-// 006A3C80 Library::MSVCRT::FUN_006a3c80
+// 006A3C80 Library::MSVCRT::FUN_006a3c80 [statically linked library; implementation excluded]
 int * __cdecl fn_006A3C80(uint param_1, int param_2, uint param_3, char * param_4, int param_5);
 // 006A3D10 FUN_006a3d10
 int * __cdecl fn_006A3D10(uint param_1);
-// 006A3D40 Library::MSVCRT::FUN_006a3d40
+// 006A3D40 Library::MSVCRT::FUN_006a3d40 [statically linked library; implementation excluded]
 int * __cdecl fn_006A3D40(uint param_1, uint param_2, char * param_3, int param_4);
 // 006A4090 FUN_006a4090
 void __cdecl fn_006A4090(int param_1,int param_2);
@@ -16820,27 +16820,27 @@ void __cdecl fn_006A4090(int param_1,int param_2);
 undefined4 * __cdecl fn_006A40C0(int param_1,int param_2,uint param_3,char *param_4,int param_5);
 // 006A4130 FUN_006a4130
 int * __cdecl fn_006A4130(int *param_1,uint param_2);
-// 006A4160 Library::MSVCRT::FUN_006a4160
+// 006A4160 Library::MSVCRT::FUN_006a4160 [statically linked library; implementation excluded]
 int * __cdecl fn_006A4160(undefined4 * param_1, uint param_2, uint param_3, char * param_4, int param_5);
-// 006A41E0 Library::MSVCRT::FUN_006a41e0
+// 006A41E0 Library::MSVCRT::FUN_006a41e0 [statically linked library; implementation excluded]
 int * __cdecl fn_006A41E0(undefined4 * param_1, uint param_2, uint param_3, char * param_4, int param_5, int param_6);
-// 006A47F0 Library::MSVCRT::FUN_006a47f0
+// 006A47F0 Library::MSVCRT::FUN_006a47f0 [statically linked library; implementation excluded]
 undefined * __stdcall fn_006A47F0(int param_1);
 // 006A48E0 FUN_006a48e0
 int * __cdecl fn_006A48E0(undefined4 *param_1,uint param_2);
 // 006A4910 FUN_006a4910
 int * __cdecl fn_006A4910(undefined4 *param_1,uint param_2,uint param_3,char *param_4,int param_5);
-// 006A4950 Library::MSVCRT::FUN_006a4950
+// 006A4950 Library::MSVCRT::FUN_006a4950 [statically linked library; implementation excluded]
 undefined __cdecl fn_006A4950(int * param_1);
-// 006A49C0 Library::MSVCRT::FUN_006a49c0
+// 006A49C0 Library::MSVCRT::FUN_006a49c0 [statically linked library; implementation excluded]
 undefined __cdecl fn_006A49C0(int * param_1, int param_2);
 // 006A4EF0 FUN_006a4ef0
 void __cdecl fn_006A4EF0(int param_1);
-// 006A4F20 Library::MSVCRT::FUN_006a4f20
+// 006A4F20 Library::MSVCRT::FUN_006a4f20 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_006A4F20(int param_1, int param_2);
 // 006A5050 FUN_006a5050
 undefined4 __cdecl fn_006A5050(undefined4 param_1);
-// 006A5080 Library::MSVCRT::FUN_006a5080
+// 006A5080 Library::MSVCRT::FUN_006a5080 [statically linked library; implementation excluded]
 undefined __cdecl fn_006A5080(int param_1, undefined4 param_2);
 // 006A5100 FUN_006a5100
 undefined * __cdecl fn_006A5100(undefined *param_1);
@@ -16910,15 +16910,15 @@ fn_006A76D0(int param_1,int param_2,int param_3,int param_4,int param_5,int para
 int fn_006A7D50(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7
                 ,int param_8,int param_9,int param_10,undefined4 *param_11,int param_12,
                 uint param_13);
-// 006A8270 Library::DKW::WAY::FUN_006a8270
+// 006A8270 Library::DKW::WAY::FUN_006a8270 [statically linked library; implementation excluded]
 short * __stdcall fn_006A8270(int param_1, int param_2, uint param_3, undefined4 * param_4, short * param_5, short * param_6, short * param_7, short * param_8, short * param_9, short * param_10, int param_11, int * param_12, uint param_13);
-// 006A88F0 Library::DKW::WAY::FUN_006a88f0
+// 006A88F0 Library::DKW::WAY::FUN_006a88f0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006A88F0(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, int param_7, int param_8, int param_9, int param_10, int param_11, int * param_12, undefined4 * param_13);
-// 006A9190 Library::DKW::WAY::FUN_006a9190
+// 006A9190 Library::DKW::WAY::FUN_006a9190 [statically linked library; implementation excluded]
 short * __stdcall fn_006A9190(int param_1, int param_2, int param_3, int param_4, short * param_5, short * param_6, short * param_7, short * param_8, short * param_9, short * param_10, int param_11, int * param_12, undefined4 * param_13, short * param_14, uint param_15);
-// 006AAC10 Library::DKW::LIB::MemAllocClear
+// 006AAC10 Library::DKW::LIB::MemAllocClear [statically linked library; implementation excluded]
 void * __stdcall fn_006AAC10(uint size);
-// 006AAC70 Library::DKW::LIB::MemAlloc
+// 006AAC70 Library::DKW::LIB::MemAlloc [statically linked library; implementation excluded]
 void * __stdcall fn_006AAC70(uint size);
 // 006AACB0 FUN_006aacb0
 void fn_006AACB0(void);
@@ -16941,14 +16941,15 @@ int __fastcall fn_006ACC70(DArrayTy *array,uint index,void *outElement);
 // 006ACC95 FUN_006acc95
 void __fastcall fn_006ACC95(uint param_1);
 // 006ACCD0 FUN_006accd0
-void fn_006ACCD0(undefined4 *param_1,undefined4 *param_2,int param_3,callback_006ACCD0_p3 *param_4);
+void fn_006ACCD0(RuntimeRecord_007F4D3C_0014 *param_1,undefined4 *param_2,int param_3,
+                 callback_006ACCD0_p3 *param_4);
 // 006ACE70 FUN_006ace70
 void __fastcall fn_006ACE70(undefined4 param_1,uint param_2);
 // 006ACED8 FUN_006aced8
 int __cdecl fn_006ACED8(int param_1,int param_2,int param_3,int param_4);
 // 006ACF0D FUN_006acf0d
 int __cdecl fn_006ACF0D(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
-// 006ACF50 Library::DKW::LIB::MemRealloc
+// 006ACF50 Library::DKW::LIB::MemRealloc [statically linked library; implementation excluded]
 void * __stdcall fn_006ACF50(void * allocation, uint newSize);
 // 006ACF90 FUN_006acf90
 int fn_006ACF90(int param_1,int param_2,int param_3,int param_4);
@@ -16980,24 +16981,24 @@ int __cdecl fn_006ADB90(char *sourceFile,int sourceLine,int errorCode,byte *para
 undefined4 __cdecl fn_006ADC30(int *param_1);
 // 006AE110 DArrayDestroy
 void fn_006AE110(DArrayTy *array);
-// 006AE140 Library::DKW::TBL::DArrayPut
+// 006AE140 Library::DKW::TBL::DArrayPut [statically linked library; implementation excluded]
 int __stdcall fn_006AE140(DArrayTy * array, uint index, void * element);
-// 006AE1C0 Library::DKW::TBL::DArrayAppend
+// 006AE1C0 Library::DKW::TBL::DArrayAppend [statically linked library; implementation excluded]
 int __stdcall fn_006AE1C0(DArrayTy * array, void * element);
 // 006AE230 FUN_006ae230
 undefined4 fn_006AE230(uint *param_1);
-// 006AE290 Library::DKW::TBL::DArrayCreate
+// 006AE290 Library::DKW::TBL::DArrayCreate [statically linked library; implementation excluded]
 DArrayTy * __stdcall fn_006AE290(DArrayTy * array, uint initialCapacity, uint elementSize, uint growCapacity);
-// 006AE310 Library::DKW::TBL::FUN_006ae310
+// 006AE310 Library::DKW::TBL::FUN_006ae310 [statically linked library; implementation excluded]
 uint * __stdcall fn_006AE310(uint * param_1, uint param_2, uint param_3, uint param_4, uint param_5);
 // 006AE3B0 FUN_006ae3b0
 int fn_006AE3B0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7
                 ,uint param_8,int param_9,int param_10,undefined4 *param_11,int param_12);
-// 006AE7D0 Library::DKW::WAY::FUN_006ae7d0
+// 006AE7D0 Library::DKW::WAY::FUN_006ae7d0 [statically linked library; implementation excluded]
 short * __stdcall fn_006AE7D0(int param_1, int param_2, short * param_3, short * param_4, short * param_5, short * param_6, short * param_7, short * param_8, short * param_9, short * param_10, int * param_11, undefined4 * param_12, short * param_13);
-// 006AFBA0 Library::DKW::WAY::FUN_006afba0
+// 006AFBA0 Library::DKW::WAY::FUN_006afba0 [statically linked library; implementation excluded]
 short * __stdcall fn_006AFBA0(int param_1, int param_2, short * param_3, short * param_4, short * param_5, short * param_6, short * param_7, short * param_8, short * param_9, short * param_10, int * param_11, byte param_12);
-// 006AFE40 Library::DKW::TBL::FUN_006afe40
+// 006AFE40 Library::DKW::TBL::FUN_006afe40 [statically linked library; implementation excluded]
 int __fastcall fn_006AFE40(int * param_1, uint * param_2);
 // 006AFF50 FUN_006aff50
 uint __cdecl fn_006AFF50(int param_1);
@@ -17074,7 +17075,7 @@ void __cdecl fn_006B1090(uint *param_1);
 void __cdecl fn_006B1110(uint *param_1,int param_2,int param_3);
 // 006B1190 DArrayGetNext
 int __fastcall fn_006B1190(DArrayTy *array,byte *outElement);
-// 006B11D0 Library::DKW::TBL::FUN_006b11d0
+// 006B11D0 Library::DKW::TBL::FUN_006b11d0 [statically linked library; implementation excluded]
 int __stdcall fn_006B11D0(uint * param_1, uint param_2, undefined4 * param_3);
 // 006B1280 FUN_006b1280
 int __cdecl fn_006B1280(int param_1);
@@ -17086,13 +17087,13 @@ undefined4 __cdecl fn_006B12BC(int param_1,int param_2,int param_3);
 longlong __cdecl fn_006B12CC(int param_1);
 // 006B12DC FUN_006b12dc
 undefined4 __cdecl fn_006B12DC(int param_1,int param_2);
-// 006B1300 Library::DKW::DDX::FUN_006b1300
+// 006B1300 Library::DKW::DDX::FUN_006b1300 [statically linked library; implementation excluded]
 int __stdcall fn_006B1300(int * param_1, DDXContext * param_2);
 // 006B13E0 FUN_006b13e0
 void fn_006B13E0(int *param_1);
-// 006B1470 Library::DKW::DDX::FUN_006b1470
+// 006B1470 Library::DKW::DDX::FUN_006b1470 [statically linked library; implementation excluded]
 int __stdcall fn_006B1470(int * param_1);
-// 006B1680 Library::DKW::DDX::FUN_006b1680
+// 006B1680 Library::DKW::DDX::FUN_006b1680 [statically linked library; implementation excluded]
 int __stdcall fn_006B1680(int * param_1, DDXContext * param_2);
 // 006B1940 FUN_006b1940
 undefined4 fn_006B1940(int param_1);
@@ -17114,16 +17115,16 @@ uint fn_006B1C80(int param_1,uint param_2);
 // 006B1CC0 FUN_006b1cc0
 void fn_006B1CC0(DDXContext_008075A8 *param_1,int param_2,undefined4 param_3,undefined4 param_4,
                  undefined4 *param_5);
-// 006B1D20 Library::DKW::DDX::FUN_006b1d20
+// 006B1D20 Library::DKW::DDX::FUN_006b1d20 [statically linked library; implementation excluded]
 undefined __stdcall fn_006B1D20(int param_1, int param_2, undefined4 * param_3);
-// 006B1D50 Library::DKW::DDX::FUN_006b1d50
+// 006B1D50 Library::DKW::DDX::FUN_006b1d50 [statically linked library; implementation excluded]
 int __stdcall fn_006B1D50(uint param_1, uint * param_2, uint param_3, uint param_4, int * param_5, uint param_6, uint param_7, uint param_8, uint param_9, int param_10);
 // 006B2020 FUN_006b2020
 void fn_006B2020(AnonShape_006B2020_F949DD3E *param_1,uint param_2,uint param_3);
 // 006B21E0 FUN_006b21e0
 void fn_006B21E0(uint param_1,uint *param_2,uint param_3,uint param_4,int *param_5,uint param_6,
                  uint param_7,uint param_8,uint param_9);
-// 006B2220 Library::DKW::DDX::FUN_006b2220
+// 006B2220 Library::DKW::DDX::FUN_006b2220 [statically linked library; implementation excluded]
 int __stdcall fn_006B2220(int * param_1, uint * param_2, uint param_3, uint param_4, undefined4 * param_5, int * param_6, uint param_7, uint param_8);
 // 006B2300 FUN_006b2300
 int fn_006B2300(uint param_1,uint *param_2,uint param_3,int *param_4,uint param_5,uint param_6);
@@ -17138,15 +17139,15 @@ void fn_006B23E0(int param_1,uint *param_2);
 void fn_006B2410(DDXContext_008075A8 *param_1,uint param_2,uint param_3);
 // 006B2450 FUN_006b2450
 int fn_006B2450(int *param_1,int param_2);
-// 006B2480 Library::DKW::DDX::FUN_006b2480
+// 006B2480 Library::DKW::DDX::FUN_006b2480 [statically linked library; implementation excluded]
 uint __stdcall fn_006B2480(int * param_1, uint param_2, int param_3, uint param_4, uint param_5, uint param_6);
-// 006B2560 Library::DKW::DDX::FUN_006b2560
+// 006B2560 Library::DKW::DDX::FUN_006b2560 [statically linked library; implementation excluded]
 uint __stdcall fn_006B2560(int * param_1, uint param_2, int param_3, uint param_4, uint param_5);
-// 006B2590 Library::DKW::DDX::FUN_006b2590
+// 006B2590 Library::DKW::DDX::FUN_006b2590 [statically linked library; implementation excluded]
 uint __stdcall fn_006B2590(int * param_1, uint param_2, int param_3, uint param_4);
-// 006B2660 Library::DKW::DDX::FUN_006b2660
+// 006B2660 Library::DKW::DDX::FUN_006b2660 [statically linked library; implementation excluded]
 uint __stdcall fn_006B2660(int param_1, uint param_2, int param_3);
-// 006B2710 Library::DKW::DDX::FUN_006b2710
+// 006B2710 Library::DKW::DDX::FUN_006b2710 [statically linked library; implementation excluded]
 undefined __stdcall fn_006B2710(int param_1, uint param_2, uint param_3, uint param_4);
 // 006B27B0 FUN_006b27b0
 void fn_006B27B0(int param_1,uint param_2,uint *param_3,uint *param_4);
@@ -17156,31 +17157,31 @@ void fn_006B2800(DDXContext_008075A8 *param_1,uint param_2,uint param_3,uint par
 uint fn_006B2850(int param_1,uint param_2,int param_3);
 // 006B28C0 FUN_006b28c0
 bool fn_006B28C0(DDXContext_008075A8 *param_1,uint param_2,int param_3);
-// 006B2930 Library::DKW::DDX::FUN_006b2930
+// 006B2930 Library::DKW::DDX::FUN_006b2930 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006B2930(int * param_1, uint param_2, uint param_3, undefined4 * param_4, int * param_5, uint param_6, uint param_7, uint param_8);
 // 006B3020 FUN_006b3020
 void fn_006B3020(int param_1,uint param_2,uint param_3);
-// 006B3040 Library::DKW::DDX::FUN_006b3040
+// 006B3040 Library::DKW::DDX::FUN_006b3040 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006B3040(int param_1, uint param_2);
 // 006B3070 FUN_006b3070
 void fn_006B3070(AnonShape_006B2020_F949DD3E *param_1,uint param_2,int param_3,int param_4);
 // 006B30D0 FUN_006b30d0
 undefined4 fn_006B30D0(int param_1,uint param_2,int param_3);
-// 006B3120 Library::DKW::DDX::FUN_006b3120
+// 006B3120 Library::DKW::DDX::FUN_006b3120 [statically linked library; implementation excluded]
 int __stdcall fn_006B3120(uint * param_1, uint * param_2);
 // 006B33F0 FUN_006b33f0
 int fn_006B33F0(DDXContext_008075A8 *param_1,uint param_2);
-// 006B3430 Library::DKW::DDX::FUN_006b3430
+// 006B3430 Library::DKW::DDX::FUN_006b3430 [statically linked library; implementation excluded]
 int __stdcall fn_006B3430(int * param_1, uint param_2);
-// 006B34D0 Library::DKW::DDX::FUN_006b34d0
+// 006B34D0 Library::DKW::DDX::FUN_006b34d0 [statically linked library; implementation excluded]
 int __stdcall fn_006B34D0(uint * param_1, uint param_2, uint param_3, uint param_4, uint param_5);
 // 006B35D0 FUN_006b35d0
 undefined4 fn_006B35D0(int *param_1,uint param_2);
-// 006B3640 Library::DKW::DDX::FUN_006b3640
+// 006B3640 Library::DKW::DDX::FUN_006b3640 [statically linked library; implementation excluded]
 int __stdcall fn_006B3640(int * param_1, uint param_2, uint param_3, uint param_4, uint param_5);
-// 006B3730 Library::DKW::DDX::FUN_006b3730
+// 006B3730 Library::DKW::DDX::FUN_006b3730 [statically linked library; implementation excluded]
 int __stdcall fn_006B3730(uint * param_1, uint param_2, uint param_3, uint param_4, uint param_5);
-// 006B3840 Library::DKW::DDX::FUN_006b3840
+// 006B3840 Library::DKW::DDX::FUN_006b3840 [statically linked library; implementation excluded]
 int __stdcall fn_006B3840(uint * param_1, uint param_2, uint param_3);
 // 006B3930 FUN_006b3930
 bool fn_006B3930(int param_1,uint param_2,int *param_3);
@@ -17194,9 +17195,9 @@ void fn_006B3AF0(int *param_1,uint param_2);
 void fn_006B3BB0(int *param_1,uint param_2);
 // 006B3CA0 FUN_006b3ca0
 void fn_006B3CA0(undefined4 param_1,int *param_2);
-// 006B3CC0 Library::DKW::DDX::FUN_006b3cc0
+// 006B3CC0 Library::DKW::DDX::FUN_006b3cc0 [statically linked library; implementation excluded]
 undefined __stdcall fn_006B3CC0(int * param_1);
-// 006B3DD0 Library::DKW::DDX::FUN_006b3dd0
+// 006B3DD0 Library::DKW::DDX::FUN_006b3dd0 [statically linked library; implementation excluded]
 int __stdcall fn_006B3DD0(uint param_1, undefined4 param_2, undefined4 param_3, uint param_4, uint param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8, undefined4 param_9, undefined4 param_10, undefined4 param_11, uint param_12, uint param_13);
 // 006B3F40 FUN_006b3f40
 void fn_006B3F40(AnonShape_006B3F40_BF05F5FE *param_1,int param_2,int param_3);
@@ -17213,22 +17214,22 @@ void fn_006B4120(int *param_1);
 // 006B4170 FUN_006b4170
 void fn_006B4170(RecoveredSourceFamily_dibcopy *param_1,int param_2,int lprcSrc2,int param_4,
                  int param_5,int param_6,byte param_7);
-// 006B42D0 Library::DKW::DDX::FUN_006b42d0
+// 006B42D0 Library::DKW::DDX::FUN_006b42d0 [statically linked library; implementation excluded]
 int __stdcall fn_006B42D0(DDXContext * param_1, int param_2, int param_3, BITMAPINFO * param_4, uint * param_5, int param_6, int param_7, DWORD param_8, DWORD param_9);
 // 006B4447 Library::DKW::DDX::thunk_FUN_006b4563
 undefined fn_006B4447(void);
 // 006B449D Library::DKW::DDX::thunk_FUN_006b4563
 undefined fn_006B449D(void);
-// 006B4563 Library::DKW::DDX::FUN_006b4563
+// 006B4563 Library::DKW::DDX::FUN_006b4563 [statically linked library; implementation excluded]
 undefined fn_006B4563(void);
 // 006B4640 FUN_006b4640
 int fn_006B4640(DDXContext *param_1,int param_2,int param_3,BITMAPINFO *param_4,uint *param_5);
-// 006B4680 Library::DKW::DDX::FUN_006b4680
+// 006B4680 Library::DKW::DDX::FUN_006b4680 [statically linked library; implementation excluded]
 int __stdcall fn_006B4680(int * param_1, int param_2, int param_3, BITMAPINFO * param_4, uint * param_5, int param_6, int param_7, DWORD param_8, DWORD param_9, uint param_10);
 // 006B48A0 FUN_006b48a0
 int fn_006B48A0(int *param_1,int param_2,int param_3,BITMAPINFO *param_4,uint *param_5,uint param_6
                 );
-// 006B48E0 Library::DKW::DDX::FUN_006b48e0
+// 006B48E0 Library::DKW::DDX::FUN_006b48e0 [statically linked library; implementation excluded]
 int __stdcall fn_006B48E0(int param_1, int param_2, int param_3, AnonPointee_MReportTy_0073 * param_4, int param_5, int param_6, int param_7, uint param_8, int param_9, ushort * param_10, byte param_11, uint param_12);
 // 006B4B20 FUN_006b4b20
 undefined4 fn_006B4B20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int param_3,byte param_4);
@@ -17244,24 +17245,24 @@ int fn_006B5050(AnonShape_006B5050_99986F91 *param_1);
 int fn_006B5090(int param_1,int param_2,int param_3,int param_4);
 // 006B50C0 FUN_006b50c0
 int fn_006B50C0(int param_1,int param_2,int param_3,uint param_4,undefined4 *param_5,int param_6);
-// 006B5110 Library::DKW::WGR::FUN_006b5110
+// 006B5110 Library::DKW::WGR::FUN_006b5110 [statically linked library; implementation excluded]
 undefined __stdcall fn_006B5110(int param_1, int param_2, int param_3, int param_4, BITMAPINFO * param_5, int param_6, int param_7, int param_8, int param_9, int param_10, byte param_11);
 // 006B5440 FUN_006b5440
 void fn_006B5440(ushort *param_1,int param_2,int param_3,int param_4,tagBITMAPINFO *tOBJImage,
                  int param_6,byte param_7);
 // 006B5480 FUN_006b5480
 undefined4 fn_006B5480(AnonShape_006B5480_2C1D4FBF *param_1);
-// 006B54F0 Library::DKW::TBL::SArrayCreate
+// 006B54F0 Library::DKW::TBL::SArrayCreate [statically linked library; implementation excluded]
 DArrayTy * __stdcall fn_006B54F0(DArrayTy * array, uint initialCapacity, uint growCapacity);
 // 006B5570 FUN_006b5570
 void fn_006B5570(DArrayTy *param_1);
 // 006B55C0 FUN_006b55c0
 int fn_006B55C0(int param_1,int param_2,int param_3,int param_4);
-// 006B55F0 Library::DKW::WGR::FUN_006b55f0
+// 006B55F0 Library::DKW::WGR::FUN_006b55f0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006B55F0(RecoveredSourceFamily_dibcopy * param_1, int param_2, int param_3, int param_4, byte * param_5, int param_6, int param_7, int param_8, int param_9, int param_10);
 // 006B5A50 FUN_006b5a50
 uint __fastcall fn_006B5A50(DArrayTy *param_1,AnonShape_006B5A50_BD82F60D *param_2);
-// 006B5AA0 Library::DKW::TBL::FUN_006b5aa0
+// 006B5AA0 Library::DKW::TBL::FUN_006b5aa0 [statically linked library; implementation excluded]
 int __stdcall fn_006B5AA0(DArrayTy * param_1, char * text);
 // 006B5B10 FUN_006b5b10
 void fn_006B5B10(AnonShape_006E6FB0_BC494FEA *param_1,int param_2,int param_3,int param_4,
@@ -17271,7 +17272,7 @@ void fn_006B5EE0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,
                  int param_5,int param_6,byte param_7,int param_8);
 // 006B5F80 FUN_006b5f80
 void fn_006B5F80(int *param_1,int param_2,int param_3,int param_4,int param_5);
-// 006B6020 Library::DKW::TBL::FUN_006b6020
+// 006B6020 Library::DKW::TBL::FUN_006b6020 [statically linked library; implementation excluded]
 uint __stdcall fn_006B6020(DArrayTy * param_1, uint param_2, char * param_3);
 // 006B60B0 FUN_006b60b0
 char * fn_006B60B0(char *param_1,char *param_2);
@@ -17286,57 +17287,54 @@ void fn_006B61A0(undefined4 *param_1,byte *param_2);
 // 006B6230 FUN_006b6230
 undefined4
 fn_006B6230(int *param_1,char *param_2,undefined4 param_3,undefined4 param_4,undefined4 *param_5);
-// 006B62D0 Library::DKW::DDX::FUN_006b62d0
+// 006B62D0 Library::DKW::DDX::FUN_006b62d0 [statically linked library; implementation excluded]
 int __stdcall fn_006B62D0(undefined4 * param_1);
-// 006B6350 Library::DKW::DDX::FUN_006b6350
+// 006B6350 Library::DKW::DDX::FUN_006b6350 [statically linked library; implementation excluded]
 int __stdcall fn_006B6350(int * param_1, char * param_2, int * param_3);
-// 006B64B0 Library::DKW::DDX::FUN_006b64b0
+// 006B64B0 Library::DKW::DDX::FUN_006b64b0 [statically linked library; implementation excluded]
 void __stdcall fn_006B64B0(undefined4 * param_1);
 // 006B6500 FUN_006b6500
 uint fn_006B6500(int *param_1,int param_2);
-// 006B6530 FUN_006b6530
-undefined4
-fn_006B6530(AnonShape_006B6530_C4BC1053 *param_1,undefined4 param_2,byte param_3,
-            undefined4 *param_4);
-// 006B65F0 Library::DKW::DDX::FUN_006b65f0
+// 006B6530 Library::DKW::DDX::FUN_006b6530 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_006B6530(AnonShape_006B6530_C4BC1053 * param_1, undefined4 param_2, byte param_3, undefined4 * param_4);
+// 006B65F0 Library::DKW::DDX::FUN_006b65f0 [statically linked library; implementation excluded]
 int __stdcall fn_006B65F0(int * param_1, undefined4 * param_2);
 // 006B66A0 FUN_006b66a0
 int fn_006B66A0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
                 char *param_5);
-// 006B6750 Library::DKW::DDX::FUN_006b6750
+// 006B6750 Library::DKW::DDX::FUN_006b6750 [statically linked library; implementation excluded]
 int __stdcall fn_006B6750(int * param_1, uint param_2, undefined4 param_3, undefined4 param_4);
-// 006B6830 Library::DKW::DDX::FUN_006b6830
+// 006B6830 Library::DKW::DDX::FUN_006b6830 [statically linked library; implementation excluded]
 int __stdcall fn_006B6830(undefined4 * param_1);
 // 006B68C0 FUN_006b68c0
 void fn_006B68C0(undefined4 *param_1);
-// 006B68E0 Library::DKW::DDX::FUN_006b68e0
+// 006B68E0 Library::DKW::DDX::FUN_006b68e0 [statically linked library; implementation excluded]
 int __stdcall fn_006B68E0(int * param_1, undefined4 * param_2);
-// 006B6970 Library::DKW::DDX::FUN_006b6970
+// 006B6970 Library::DKW::DDX::FUN_006b6970 [statically linked library; implementation excluded]
 undefined __stdcall fn_006B6970(undefined4 * param_1);
-// 006B69B0 Library::DKW::DDX::FUN_006b69b0
+// 006B69B0 Library::DKW::DDX::FUN_006b69b0 [statically linked library; implementation excluded]
 int __stdcall fn_006B69B0(int * param_1, int * param_2, uint param_3, undefined4 param_4, undefined4 param_5);
-// 006B6A50 Library::DKW::DDX::FUN_006b6a50
+// 006B6A50 Library::DKW::DDX::FUN_006b6a50 [statically linked library; implementation excluded]
 int __stdcall fn_006B6A50(int * param_1, undefined4 * param_2, in_addr param_3, undefined4 * param_4);
-// 006B6D50 Library::DKW::DDX::FUN_006b6d50
+// 006B6D50 Library::DKW::DDX::FUN_006b6d50 [statically linked library; implementation excluded]
 int __stdcall fn_006B6D50(int * param_1, int param_2);
 // 006B7070 FUN_006b7070
 void fn_006B7070(int *param_1);
 // 006B7140 FUN_006b7140
 int fn_006B7140(int *param_1);
-// 006B7170 FUN_006b7170
-undefined4
-fn_006B7170(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,int *param_5);
-// 006B7190 Library::DKW::DDX::FUN_006b7190
+// 006B7170 Library::DKW::DDX::FUN_006b7170 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_006B7170(undefined4 param_1, int param_2, undefined4 param_3, undefined4 param_4, int * param_5);
+// 006B7190 Library::DKW::DDX::FUN_006b7190 [statically linked library; implementation excluded]
 int __stdcall fn_006B7190(int * param_1);
-// 006B73E0 Library::DKW::DDX::FUN_006b73e0
+// 006B73E0 Library::DKW::DDX::FUN_006b73e0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006B73E0(int param_1, int param_2);
-// 006B7400 Library::DKW::DDX::FUN_006b7400
+// 006B7400 Library::DKW::DDX::FUN_006b7400 [statically linked library; implementation excluded]
 int __stdcall fn_006B7400(int * param_1, int param_2, int * param_3, int * param_4, int * param_5, int param_6, int param_7);
-// 006B7510 Library::DKW::DDX::FUN_006b7510
+// 006B7510 Library::DKW::DDX::FUN_006b7510 [statically linked library; implementation excluded]
 int __stdcall fn_006B7510(int * param_1, int param_2, int * param_3, int param_4, int param_5);
 // 006B75C0 FUN_006b75c0
 int fn_006B75C0(int *param_1,int param_2,int *param_3);
-// 006B7650 Library::DKW::DDX::FUN_006b7650
+// 006B7650 Library::DKW::DDX::FUN_006b7650 [statically linked library; implementation excluded]
 int __stdcall fn_006B7650(int * param_1, int param_2, undefined4 param_3, undefined4 param_4);
 // 006B76D0 FUN_006b76d0
 void fn_006B76D0(int *param_1);
@@ -17350,15 +17348,15 @@ char * fn_006B77E0(char *param_1,byte *param_2);
 undefined4 fn_006B7830(AnonShape_006B7830_769CA2DF *param_1,uint param_2);
 // 006B78C0 FUN_006b78c0
 char * fn_006B78C0(char *param_1,char *param_2);
-// 006B7920 Library::DKW::SND::FUN_006b7920
+// 006B7920 Library::DKW::SND::FUN_006b7920 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006B7920(undefined4 * param_1, DWORD_PTR param_2);
-// 006B7E00 Library::DKW::SND::FUN_006b7e00
+// 006B7E00 Library::DKW::SND::FUN_006b7e00 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006B7E00(int param_1, uint param_2, undefined4 * param_3, undefined4 * param_4);
-// 006B7F00 Library::DKW::SND::FUN_006b7f00
+// 006B7F00 Library::DKW::SND::FUN_006b7f00 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006B7F00(int param_1, uint param_2, undefined4 param_3, undefined4 param_4);
-// 006B7FF0 Library::DKW::SND::FUN_006b7ff0
+// 006B7FF0 Library::DKW::SND::FUN_006b7ff0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006B7FF0(int param_1, uint param_2, undefined4 * param_3);
-// 006B80E0 Library::DKW::SND::FUN_006b80e0
+// 006B80E0 Library::DKW::SND::FUN_006b80e0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006B80E0(int param_1, uint param_2, undefined4 param_3);
 // 006B81D0 FUN_006b81d0
 void fn_006B81D0(undefined4 *param_1);
@@ -17368,30 +17366,30 @@ undefined4 fn_006B8200(AnonShape_006B8200_800652FF *param_1,uint param_2,uint pa
 char * fn_006B8240(char *param_1,int param_2);
 // 006B8280 FUN_006b8280
 char * fn_006B8280(char *param_1,char *param_2);
-// 006B82E0 Library::DKW::DDX::FUN_006b82e0
+// 006B82E0 Library::DKW::DDX::FUN_006b82e0 [statically linked library; implementation excluded]
 int __stdcall fn_006B82E0(DDXContext * param_1, int param_2, int param_3, byte * param_4, int param_5, int param_6, uint param_7, byte * param_8);
 // 006B84D0 FUN_006b84d0
 void fn_006B84D0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,int param_4,
                  byte *param_5);
-// 006B85D0 Library::DKW::DDX::FUN_006b85d0
+// 006B85D0 Library::DKW::DDX::FUN_006b85d0 [statically linked library; implementation excluded]
 int __stdcall fn_006B85D0(uint * param_1, uint param_2, BITMAPINFO * param_3, uint param_4, int param_5, BITMAPINFO * param_6, uint param_7);
 // 006B8850 FUN_006b8850
 void fn_006B8850(AnonShape_006B8850_E5DFE1E1 *param_1);
-// 006B88D0 Library::DKW::DDX::FUN_006b88d0
+// 006B88D0 Library::DKW::DDX::FUN_006b88d0 [statically linked library; implementation excluded]
 int __stdcall fn_006B88D0(undefined4 * param_1, DDXContext * param_2, uint param_3, BITMAPINFO * param_4, uint param_5, int param_6, BITMAPINFO * param_7, uint param_8);
-// 006B89B0 Library::DKW::DDX::FUN_006b89b0
+// 006B89B0 Library::DKW::DDX::FUN_006b89b0 [statically linked library; implementation excluded]
 int __stdcall fn_006B89B0(byte * param_1, int param_2);
 // 006B8A30 FUN_006b8a30
 void fn_006B8A30(int *param_1);
-// 006B8A60 Library::DKW::DDX::FUN_006b8a60
+// 006B8A60 Library::DKW::DDX::FUN_006b8a60 [statically linked library; implementation excluded]
 int __stdcall fn_006B8A60(byte * param_1);
-// 006B8B10 Library::DKW::DDX::FUN_006b8b10
+// 006B8B10 Library::DKW::DDX::FUN_006b8b10 [statically linked library; implementation excluded]
 int __stdcall fn_006B8B10(int * param_1);
 // 006B8BC0 FUN_006b8bc0
 void fn_006B8BC0(int *param_1,int param_2,int param_3,int param_4);
-// 006B8C60 Library::DKW::DDX::FUN_006b8c60
+// 006B8C60 Library::DKW::DDX::FUN_006b8c60 [statically linked library; implementation excluded]
 int __stdcall fn_006B8C60(byte * param_1, int param_2, int param_3, int param_4);
-// 006B8D50 Library::DKW::DDX::FUN_006b8d50
+// 006B8D50 Library::DKW::DDX::FUN_006b8d50 [statically linked library; implementation excluded]
 int __stdcall fn_006B8D50(int * param_1, int param_2, int param_3, int param_4, int param_5);
 // 006B8E30 FUN_006b8e30
 int fn_006B8E30(int *param_1);
@@ -17406,7 +17404,7 @@ void fn_006B94E0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int par
                  int param_5,int param_6,int param_7,int param_8);
 // 006B96F0 FUN_006b96f0
 int fn_006B96F0(int *param_1,uint *param_2,uint param_3,int param_4,uint param_5);
-// 006B9770 Library::DKW::STR::FUN_006b9770
+// 006B9770 Library::DKW::STR::FUN_006b9770 [statically linked library; implementation excluded]
 uint __stdcall fn_006B9770(byte * param_1, int * param_2, int param_3);
 // 006B9890 FUN_006b9890
 void fn_006B9890(int *param_1);
@@ -17414,17 +17412,17 @@ void fn_006B9890(int *param_1);
 undefined4 fn_006B98C0(int *param_1,int *param_2);
 // 006B9910 FUN_006b9910
 undefined4 * fn_006B9910(undefined4 *param_1,int param_2);
-// 006B9940 Library::DKW::DDX::FUN_006b9940
+// 006B9940 Library::DKW::DDX::FUN_006b9940 [statically linked library; implementation excluded]
 int __stdcall fn_006B9940(undefined4 * param_1, undefined4 param_2, undefined4 param_3, int * param_4);
-// 006B9A40 Library::DKW::DDX::FUN_006b9a40
+// 006B9A40 Library::DKW::DDX::FUN_006b9a40 [statically linked library; implementation excluded]
 int __stdcall fn_006B9A40(int param_1, int * param_2);
-// 006B9AA0 FUN_006b9aa0
-undefined4 fn_006B9AA0(AnonShape_006B9AA0_FC1882B5 *param_1,undefined4 *param_2);
+// 006B9AA0 Library::DKW::DDX::FUN_006b9aa0 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_006B9AA0(AnonShape_006B9AA0_FC1882B5 * param_1, undefined4 * param_2);
 // 006B9B20 FUN_006b9b20
 int fn_006B9B20(undefined4 *param_1,HWND param_2,int *param_3);
-// 006B9B40 Library::DKW::DDX::FUN_006b9b40
+// 006B9B40 Library::DKW::DDX::FUN_006b9b40 [statically linked library; implementation excluded]
 DWORD __stdcall fn_006B9B40(DDXContext * param_1, uint param_2, int param_3, int param_4, int param_5, int param_6, int param_7, int param_8, byte param_9, int param_10);
-// 006BA530 Library::DKW::DDX::FUN_006ba530
+// 006BA530 Library::DKW::DDX::FUN_006ba530 [statically linked library; implementation excluded]
 int __stdcall fn_006BA530(undefined4 * param_1, undefined4 param_2, uint param_3, int param_4, int param_5, int param_6, int param_7, int param_8, int param_9, byte param_10, int param_11);
 // 006BA600 FUN_006ba600
 void fn_006BA600(undefined4 *param_1);
@@ -17434,17 +17432,17 @@ void fn_006BA740(int param_1);
 void fn_006BA760(int param_1);
 // 006BA780 FUN_006ba780
 void fn_006BA780(DDXContext *param_1,int param_2);
-// 006BA7B0 Library::DKW::DDX::FUN_006ba7b0
+// 006BA7B0 Library::DKW::DDX::FUN_006ba7b0 [statically linked library; implementation excluded]
 void __stdcall fn_006BA7B0(AnonShape_006BA7B0_E82BD3A2 * param_1, undefined4 param_2, undefined4 param_3, undefined4 * param_4);
-// 006BA7E0 Library::DKW::DDX::FUN_006ba7e0
+// 006BA7E0 Library::DKW::DDX::FUN_006ba7e0 [statically linked library; implementation excluded]
 int __stdcall fn_006BA7E0(uint param_1, uint * param_2, uint param_3);
-// 006BA9E0 Library::DKW::DDX::FUN_006ba9e0
+// 006BA9E0 Library::DKW::DDX::FUN_006ba9e0 [statically linked library; implementation excluded]
 int __stdcall fn_006BA9E0(DDXContext * param_1, int param_2, int param_3, int param_4, int param_5, undefined4 param_6);
-// 006BAB60 Library::DKW::DDX::FUN_006bab60
+// 006BAB60 Library::DKW::DDX::FUN_006bab60 [statically linked library; implementation excluded]
 int __stdcall fn_006BAB60(DDXContext * param_1, undefined4 param_2);
-// 006BAC60 Library::DKW::DDX::FUN_006bac60
+// 006BAC60 Library::DKW::DDX::FUN_006bac60 [statically linked library; implementation excluded]
 int __stdcall fn_006BAC60(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, int param_7);
-// 006BB370 Library::DKW::DDX::FUN_006bb370
+// 006BB370 Library::DKW::DDX::FUN_006bb370 [statically linked library; implementation excluded]
 int __stdcall fn_006BB370(DDXContext * param_1, int param_2, int param_3);
 // 006BB690 FUN_006bb690
 undefined4 fn_006BB690(AnonShape_006BB690_EB7315D1 *param_1);
@@ -17471,9 +17469,9 @@ undefined4 fn_006BBE40(int *param_1,uint *param_2,int *param_3,uint param_4);
 undefined4 fn_006BBED0(int *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 param_4);
 // 006BBF50 FUN_006bbf50
 void fn_006BBF50(int *param_1,undefined4 param_2);
-// 006BBFA0 Library::DKW::WGR::FUN_006bbfa0
+// 006BBFA0 Library::DKW::WGR::FUN_006bbfa0 [statically linked library; implementation excluded]
 BITMAPINFO * __stdcall fn_006BBFA0(BITMAPINFO * param_1, undefined4 * param_2, HPALETTE param_3);
-// 006BC260 Library::DKW::WGR::FUN_006bc260
+// 006BC260 Library::DKW::WGR::FUN_006bc260 [statically linked library; implementation excluded]
 int * __stdcall fn_006BC260(char * iconFilename);
 // 006BC360 FUN_006bc360
 int fn_006BC360(ushort *param_1,undefined4 *param_2,int *param_3);
@@ -17503,13 +17501,13 @@ void fn_006BD230(void);
 void fn_006BD260(void);
 // 006BD4B0 FUN_006bd4b0
 void fn_006BD4B0(void);
-// 006BD740 Library::DKW::DDX::FUN_006bd740
+// 006BD740 Library::DKW::DDX::FUN_006bd740 [statically linked library; implementation excluded]
 int __stdcall fn_006BD740(int * param_1);
-// 006BEA40 Library::DKW::DDX::FUN_006bea40
+// 006BEA40 Library::DKW::DDX::FUN_006bea40 [statically linked library; implementation excluded]
 int __stdcall fn_006BEA40(int * param_1, uint param_2);
-// 006BF710 Library::DKW::DDX::FUN_006bf710
+// 006BF710 Library::DKW::DDX::FUN_006bf710 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006BF710(AnonShape_006BF710_259ECA93 * param_1, int param_2, int param_3, int param_4, int param_5, int param_6, byte * param_7, int * param_8);
-// 006BF9F0 Library::DKW::DDX::FUN_006bf9f0
+// 006BF9F0 Library::DKW::DDX::FUN_006bf9f0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006BF9F0(int * param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5);
 // 006BFB30 FUN_006bfb30
 void fn_006BFB30(int *param_1);
@@ -17530,18 +17528,18 @@ void fn_006C0800(short *param_1,byte param_2,undefined4 param_3,undefined4 param
                  undefined4 param_9,undefined4 param_10,int param_11);
 // 006C08E0 FUN_006c08e0
 void fn_006C08E0(void);
-// 006C0FB0 Library::DKW::SND::FUN_006c0fb0
+// 006C0FB0 Library::DKW::SND::FUN_006c0fb0 [statically linked library; implementation excluded]
 int __stdcall fn_006C0FB0(uint * param_1, byte param_2, uint param_3, uint param_4, uint param_5, uint param_6, uint param_7, uint param_8, uint param_9, uint param_10, int param_11, int param_12);
 // 006C1390 FUN_006c1390
 int fn_006C1390(uint *param_1,byte param_2,uint param_3,uint param_4,uint param_5,int param_6,
                 int param_7);
-// 006C13D0 Library::DKW::SND::FUN_006c13d0
+// 006C13D0 Library::DKW::SND::FUN_006c13d0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006C13D0(undefined4 * param_1, char * param_2, undefined4 param_3, undefined4 * param_4);
-// 006C14B0 Library::DKW::SND::FUN_006c14b0
+// 006C14B0 Library::DKW::SND::FUN_006c14b0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006C14B0(undefined4 param_1);
-// 006C14F0 Library::DKW::SND::FUN_006c14f0
+// 006C14F0 Library::DKW::SND::FUN_006c14f0 [statically linked library; implementation excluded]
 undefined __stdcall fn_006C14F0(int * param_1);
-// 006C1530 Library::DKW::SND::FUN_006c1530
+// 006C1530 Library::DKW::SND::FUN_006c1530 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006C1530(undefined4 param_1, int param_2);
 // 006C18B0 FUN_006c18b0
 void fn_006C18B0(uint param_1);
@@ -17549,17 +17547,17 @@ void fn_006C18B0(uint param_1);
 undefined4 fn_006C18D0(int param_1);
 // 006C1950 FUN_006c1950
 undefined4 fn_006C1950(int param_1,byte param_2);
-// 006C19D0 Library::DKW::SND::FUN_006c19d0
+// 006C19D0 Library::DKW::SND::FUN_006c19d0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006C19D0(int param_1, uint param_2);
-// 006C1AD0 Library::DKW::SND::FUN_006c1ad0
+// 006C1AD0 Library::DKW::SND::FUN_006c1ad0 [statically linked library; implementation excluded]
 int __stdcall fn_006C1AD0(uint param_1, int param_2);
 // 006C1BA0 FUN_006c1ba0
 void fn_006C1BA0(int param_1);
 // 006C1C90 FUN_006c1c90
 void fn_006C1C90(int param_1);
-// 006C1CE0 Library::DKW::SND::FUN_006c1ce0
+// 006C1CE0 Library::DKW::SND::FUN_006c1ce0 [statically linked library; implementation excluded]
 int __stdcall fn_006C1CE0(int param_1, undefined4 param_2);
-// 006C1D80 Library::DKW::SND::FUN_006c1d80
+// 006C1D80 Library::DKW::SND::FUN_006c1d80 [statically linked library; implementation excluded]
 int __stdcall fn_006C1D80(int param_1, undefined4 param_2);
 // 006C1E20 FUN_006c1e20
 void fn_006C1E20(void);
@@ -17571,12 +17569,12 @@ undefined4 fn_006C1F90(int param_1);
 void fn_006C2050(void);
 // 006C2140 FUN_006c2140
 void fn_006C2140(undefined4 param_1);
-// 006C2160 Library::DKW::SND::FUN_006c2160
+// 006C2160 Library::DKW::SND::FUN_006c2160 [statically linked library; implementation excluded]
 int __stdcall fn_006C2160(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8, undefined4 param_9);
 // 006C21E0 FUN_006c21e0
 int fn_006C21E0(uint *param_1,byte param_2,uint param_3,uint param_4,uint param_5,uint param_6,
                 uint param_7,uint param_8,uint param_9,int param_10,int param_11);
-// 006C2220 Library::DKW::SND::FUN_006c2220
+// 006C2220 Library::DKW::SND::FUN_006c2220 [statically linked library; implementation excluded]
 int __stdcall fn_006C2220(int param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, float param_5, float param_6);
 // 006C2390 FUN_006c2390
 void fn_006C2390(AnonShape_006C2390_A203A467 *param_1);
@@ -17585,7 +17583,7 @@ undefined4 fn_006C23F0(short *param_1);
 // 006C2460 FUN_006c2460
 void fn_006C2460(int param_1,DWORD param_2,byte param_3,uint param_4,undefined4 param_5,
                  undefined4 param_6,int param_7);
-// 006C2530 Library::DKW::SND::FUN_006c2530
+// 006C2530 Library::DKW::SND::FUN_006c2530 [statically linked library; implementation excluded]
 int __stdcall fn_006C2530(uint param_1, DWORD param_2, byte param_3, uint param_4, uint param_5, uint param_6, int param_7, int param_8);
 // 006C2980 FUN_006c2980
 char * fn_006C2980(char *param_1,char *param_2);
@@ -17595,15 +17593,15 @@ undefined4 fn_006C2A00(LPVOID lpBuffer);
 uint fn_006C2A80(int *param_1,DDXContext *param_2);
 // 006C2AC0 FUN_006c2ac0
 void fn_006C2AC0(int *param_1);
-// 006C2AE0 Library::DKW::DV::FUN_006c2ae0
+// 006C2AE0 Library::DKW::DV::FUN_006c2ae0 [statically linked library; implementation excluded]
 int __stdcall fn_006C2AE0(int * param_1, undefined4 param_2, uint param_3);
 // 006C2C80 FUN_006c2c80
 void fn_006C2C80(int *param_1);
-// 006C2CC0 Library::DKW::DV::FUN_006c2cc0
+// 006C2CC0 Library::DKW::DV::FUN_006c2cc0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006C2CC0(int * param_1, int * param_2, int * param_3);
-// 006C2D30 Library::DKW::DV::FUN_006c2d30
+// 006C2D30 Library::DKW::DV::FUN_006c2d30 [statically linked library; implementation excluded]
 undefined __stdcall fn_006C2D30(int * param_1, int param_2, int param_3, int param_4, int param_5);
-// 006C2D90 Library::DKW::DV::FUN_006c2d90
+// 006C2D90 Library::DKW::DV::FUN_006c2d90 [statically linked library; implementation excluded]
 int __stdcall fn_006C2D90(int * param_1);
 // 006C3340 FUN_006c3340
 void fn_006C3340(int param_1);
@@ -17617,17 +17615,17 @@ void fn_006C3570(AnonShape_006C3570_37024033 *param_1);
 DWORD fn_006C3630(LPDWORD lpThreadId);
 // 006C3720 FUN_006c3720
 undefined4 fn_006C3720(WPARAM param_1);
-// 006C3800 Library::DKW::DV::FUN_006c3800
+// 006C3800 Library::DKW::DV::FUN_006c3800 [statically linked library; implementation excluded]
 HRESULT __stdcall fn_006C3800(undefined4 * param_1, DDXContext * param_2, HWND param_3, undefined4 param_4);
-// 006C38D0 Library::DKW::DV::FUN_006c38d0
+// 006C38D0 Library::DKW::DV::FUN_006c38d0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006C38D0(undefined4 * param_1, int param_2);
-// 006C38F0 FUN_006c38f0
-undefined4 fn_006C38F0(int param_1,int param_2,int param_3,undefined4 param_4);
+// 006C38F0 Library::DKW::DV::FUN_006c38f0 [statically linked library; implementation excluded]
+undefined4 __stdcall fn_006C38F0(int param_1, int param_2, int param_3, undefined4 param_4);
 // 006C3AA0 FUN_006c3aa0
 void fn_006C3AA0(int *param_1);
-// 006C3B00 Library::DKW::DV::FUN_006c3b00
+// 006C3B00 Library::DKW::DV::FUN_006c3b00 [statically linked library; implementation excluded]
 DWORD __stdcall fn_006C3B00(LPVOID param_1, LPCSTR param_2, uint param_3);
-// 006C3D80 Library::DKW::DV::FUN_006c3d80
+// 006C3D80 Library::DKW::DV::FUN_006c3d80 [statically linked library; implementation excluded]
 undefined __stdcall fn_006C3D80(AnonShape_006C3D80_5E5410BE * param_1);
 // 006C3F00 FUN_006c3f00
 undefined4 fn_006C3F00(int param_1);
@@ -17637,37 +17635,37 @@ void fn_006C3F80(AnonShape_006C3F80_1EACF9F3 *param_1,undefined4 param_2,undefin
 // 006C3FC0 FUN_006c3fc0
 void fn_006C3FC0(AnonShape_006C3FC0_72DDFA27 *param_1,undefined4 param_2,undefined4 param_3,
                  undefined4 param_4,undefined4 param_5);
-// 006C4000 Library::DKW::DV::FUN_006c4000
+// 006C4000 Library::DKW::DV::FUN_006c4000 [statically linked library; implementation excluded]
 int __stdcall fn_006C4000(AnonShape_006C3FC0_72DDFA27 * param_1);
-// 006C4110 Library::DKW::DV::FUN_006c4110
+// 006C4110 Library::DKW::DV::FUN_006c4110 [statically linked library; implementation excluded]
 int __stdcall fn_006C4110(AnonShape_006C3FC0_72DDFA27 * param_1);
-// 006C4230 Library::DKW::WGR::FUN_006c4230
+// 006C4230 Library::DKW::WGR::FUN_006c4230 [statically linked library; implementation excluded]
 DWORD __stdcall fn_006C4230(LPCSTR param_1, LPCVOID param_2, LPCVOID param_3);
-// 006C4350 Library::DKW::DDX::FUN_006c4350
+// 006C4350 Library::DKW::DDX::FUN_006c4350 [statically linked library; implementation excluded]
 int __stdcall fn_006C4350(int param_1, undefined4 * param_2, undefined4 param_3, undefined4 param_4, uint param_5, int param_6);
-// 006C43B0 Library::DKW::DDX::FUN_006c43b0
+// 006C43B0 Library::DKW::DDX::FUN_006c43b0 [statically linked library; implementation excluded]
 int __stdcall fn_006C43B0(int param_1, int param_2, int param_3, int param_4, int param_5, int * param_6);
 // 006C4480 FUN_006c4480
 void fn_006C4480(AnonShape_006C4480_8B824940 *param_1,undefined4 *param_2);
-// 006C44E0 Library::DKW::DDX::FUN_006c44e0
+// 006C44E0 Library::DKW::DDX::FUN_006c44e0 [statically linked library; implementation excluded]
 int __stdcall fn_006C44E0(DDXContext * param_1, undefined4 * param_2);
-// 006C4630 Library::DKW::DDX::FUN_006c4630
+// 006C4630 Library::DKW::DDX::FUN_006c4630 [statically linked library; implementation excluded]
 int __stdcall fn_006C4630(DDXContext * param_1, int * param_2, undefined4 * param_3);
-// 006C4880 Library::DKW::DDX::FUN_006c4880
+// 006C4880 Library::DKW::DDX::FUN_006c4880 [statically linked library; implementation excluded]
 LPBITMAPINFO __stdcall fn_006C4880(DDXContext * param_1, int param_2, int param_3, int param_4, UINT param_5, uint param_6);
 // 006C49B0 FUN_006c49b0
 char * fn_006C49B0(char *param_1);
 // 006C4A00 FUN_006c4a00
 void fn_006C4A00(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-// 006C4A20 Library::DKW::FLC::FUN_006c4a20
+// 006C4A20 Library::DKW::FLC::FUN_006c4a20 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006C4A20(undefined4 param_1);
 // 006C4A70 FUN_006c4a70
 void fn_006C4A70(undefined4 *param_1);
 // 006C4AA0 FUN_006c4aa0
 void fn_006C4AA0(AnonShape_006C4AA0_6E9A3AA4 *param_1);
-// 006C4AC0 Library::DKW::FLC::FUN_006c4ac0
+// 006C4AC0 Library::DKW::FLC::FUN_006c4ac0 [statically linked library; implementation excluded]
 int __stdcall fn_006C4AC0(int * param_1);
-// 006C5000 Library::DKW::DDX::FUN_006c5000
+// 006C5000 Library::DKW::DDX::FUN_006c5000 [statically linked library; implementation excluded]
 int __stdcall fn_006C5000(DDXContext * param_1, int param_2, int param_3, int param_4, int param_5, int param_6, int param_7, uint param_8, int param_9, int param_10, byte param_11);
 // 006C5210 FUN_006c5210
 int fn_006C5210(AnonShape_006C5210_E9B30C00 *param_1,undefined4 param_2,int param_3,int param_4,
@@ -17675,13 +17673,13 @@ int fn_006C5210(AnonShape_006C5210_E9B30C00 *param_1,undefined4 param_2,int para
 // 006C52E0 FUN_006c52e0
 int fn_006C52E0(AnonShape_006C52E0_B18BC6D0 *param_1,int param_2,undefined4 param_3,int param_4,
                 undefined4 param_5);
-// 006C53B0 Library::DKW::DDX::FUN_006c53b0
+// 006C53B0 Library::DKW::DDX::FUN_006c53b0 [statically linked library; implementation excluded]
 int __stdcall fn_006C53B0(int param_1, int param_2, int param_3, int param_4, int param_5, undefined4 param_6);
 // 006C55B6 Library::DKW::DDX::thunk_FUN_006c5951
 undefined fn_006C55B6(void);
 // 006C56EB Library::DKW::DDX::thunk_FUN_006c5951
 undefined fn_006C56EB(void);
-// 006C5951 Library::DKW::DDX::FUN_006c5951
+// 006C5951 Library::DKW::DDX::FUN_006c5951 [statically linked library; implementation excluded]
 undefined fn_006C5951(void);
 // 006C59E0 FUN_006c59e0
 uint __cdecl fn_006C59E0(uint param_1);
@@ -17717,13 +17715,13 @@ void fn_006C6290(AnonShape_006C6290_2B502C58 *param_1,byte *param_2,int param_3,
 int fn_006C6410(AnonShape_006B94E0_A7E74DF0 *param_1,int param_2);
 // 006C6450 FUN_006c6450
 undefined4 fn_006C6450(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2);
-// 006C6470 Library::DKW::DDX::FUN_006c6470
+// 006C6470 Library::DKW::DDX::FUN_006c6470 [statically linked library; implementation excluded]
 int __stdcall fn_006C6470(int param_1, int param_2, int param_3, undefined4 * param_4, int param_5, int param_6, undefined4 param_7);
-// 006C6660 Library::DKW::DDX::FUN_006c6660
+// 006C6660 Library::DKW::DDX::FUN_006c6660 [statically linked library; implementation excluded]
 int __stdcall fn_006C6660(DDXContext * param_1, int param_2, int param_3, uint param_4, uint param_5, int param_6, undefined4 param_7);
 // 006C6850 FUN_006c6850
 void fn_006C6850(int param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6);
-// 006C68F0 Library::DKW::DDX::FUN_006c68f0
+// 006C68F0 Library::DKW::DDX::FUN_006c68f0 [statically linked library; implementation excluded]
 int __stdcall fn_006C68F0(AnonShape_GLOBAL_0080759C_9638EF10 * param_1, int param_2, int param_3, int param_4, int param_5, int param_6);
 // 006C6A60 FUN_006c6a60
 void fn_006C6A60(ushort *param_1);
@@ -17745,7 +17743,7 @@ void fn_006C6FC0(AnonShape_006C6FC0_B2C34C14 *param_1);
 int fn_006C7000(AnonShape_006C7000_4A8D1200 *param_1);
 // 006C7030 FUN_006c7030
 void fn_006C7030(AnonShape_006C7030_23487746 *param_1);
-// 006C7070 Library::DKW::GPC::FUN_006c7070
+// 006C7070 Library::DKW::GPC::FUN_006c7070 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006C7070(int * param_1, undefined4 * param_2, int param_3);
 // 006C7240 FUN_006c7240
 undefined4 fn_006C7240(AnonShape_006C7240_F2C56622 *param_1,int param_2,int param_3);
@@ -17765,7 +17763,7 @@ void fn_006C76B0(int *param_1,int param_2,int param_3);
 DWORD fn_006C7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2);
 // 006C7980 FUN_006c7980
 void fn_006C7980(int *param_1);
-// 006C79A0 Library::DKW::GPC::FUN_006c79a0
+// 006C79A0 Library::DKW::GPC::FUN_006c79a0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006C79A0(int * param_1, undefined4 * param_2, int param_3);
 // 006C7B20 FUN_006c7b20
 undefined4 fn_006C7B20(AnonShape_006C7B20_5A99C851 *param_1,int param_2,int param_3);
@@ -17773,7 +17771,7 @@ undefined4 fn_006C7B20(AnonShape_006C7B20_5A99C851 *param_1,int param_2,int para
 void fn_006C7B90(int *param_1,int param_2,int param_3);
 // 006C7BB0 FUN_006c7bb0
 undefined1 * fn_006C7BB0(int *param_1,undefined1 *param_2,int *param_3);
-// 006C7C50 Library::DKW::GPC::FUN_006c7c50
+// 006C7C50 Library::DKW::GPC::FUN_006c7c50 [statically linked library; implementation excluded]
 int * __stdcall fn_006C7C50(undefined4 param_1, uint param_2);
 // 006C7CB0 FUN_006c7cb0
 uint fn_006C7CB0(int param_1,undefined4 *param_2,uint param_3);
@@ -17781,7 +17779,7 @@ uint fn_006C7CB0(int param_1,undefined4 *param_2,uint param_3);
 void fn_006C7D00(undefined4 *param_1,undefined4 param_2,undefined4 param_3);
 // 006C7D20 FUN_006c7d20
 int fn_006C7D20(AnonShape_006C7D20_41F6C243 *param_1,int param_2,int *param_3);
-// 006C7DC0 Library::DKW::GPC::FUN_006c7dc0
+// 006C7DC0 Library::DKW::GPC::FUN_006c7dc0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006C7DC0(undefined4 param_1);
 // 006C7E30 FUN_006c7e30
 uint fn_006C7E30(int param_1,undefined4 *param_2,uint param_3);
@@ -17811,9 +17809,9 @@ int __thiscall fn_006C82A3(void *st_this,uint param_1);
 uint __fastcall fn_006C82BB(undefined4 param_1,uint param_2);
 // 006C8334 FUN_006c8334
 uint __cdecl fn_006C8334(uint param_1);
-// 006C83B0 Library::DKW::DDX::FUN_006c83b0
+// 006C83B0 Library::DKW::DDX::FUN_006c83b0 [statically linked library; implementation excluded]
 int __stdcall fn_006C83B0(int * param_1, int param_2, int param_3, int * param_4);
-// 006C8680 Library::DKW::TBL::FUN_006c8680
+// 006C8680 Library::DKW::TBL::FUN_006c8680 [statically linked library; implementation excluded]
 uint * __stdcall fn_006C8680(uint * param_1, uint * param_2);
 // 006C87C0 FUN_006c87c0
 uint fn_006C87C0(DArrayTy *param_1,uint param_2);
@@ -17827,9 +17825,9 @@ void fn_006C8910(uint *param_1,int *param_2);
 uint fn_006C8950(uint param_1,uint param_2,byte param_3);
 // 006C8990 FUN_006c8990
 float10 fn_006C8990(byte *param_1,int *param_2,undefined4 *param_3);
-// 006C8D80 Library::DKW::FIO::FUN_006c8d80
+// 006C8D80 Library::DKW::FIO::FUN_006c8d80 [statically linked library; implementation excluded]
 int __stdcall fn_006C8D80(int * param_1, char * param_2, int param_3);
-// 006C8E20 Library::DKW::FIO::FUN_006c8e20
+// 006C8E20 Library::DKW::FIO::FUN_006c8e20 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006C8E20(int * param_1);
 // 006C8E60 FUN_006c8e60
 void fn_006C8E60(int *param_1,byte param_2,byte param_3);
@@ -17842,9 +17840,9 @@ undefined4 * fn_006CE6C0(ushort *param_1,uint param_2,ushort param_3);
 // 006CE700 FUN_006ce700
 void fn_006CE700(AnonShape_006CE700_6E2936C3 *param_1,AnonShape_006CE700_F21E5976 *param_2,
                  int param_3);
-// 006CE770 Library::DKW::DDX::FUN_006ce770
+// 006CE770 Library::DKW::DDX::FUN_006ce770 [statically linked library; implementation excluded]
 int __stdcall fn_006CE770(uint param_1, undefined4 * param_2);
-// 006CE8C0 Library::DKW::DDX::FUN_006ce8c0
+// 006CE8C0 Library::DKW::DDX::FUN_006ce8c0 [statically linked library; implementation excluded]
 int __stdcall fn_006CE8C0(int param_1, HDC param_2);
 // 006CEA60 CopyRows
 void fn_006CEA60(byte *destination,int destinationPitch,byte *source,int sourcePitch,uint rowBytes,
@@ -17889,7 +17887,7 @@ undefined4 fn_006CFD90(byte *param_1,int param_2,int param_3);
 byte * fn_006CFE10(byte *param_1,int param_2);
 // 006CFEB0 FUN_006cfeb0
 undefined4 __cdecl fn_006CFEB0(int *param_1,int *param_2,int *param_3);
-// 006CFF10 Library::DKW::DDX::FUN_006cff10
+// 006CFF10 Library::DKW::DDX::FUN_006cff10 [statically linked library; implementation excluded]
 int __stdcall fn_006CFF10(int * param_1, uint * param_2, uint param_3, uint param_4, uint param_5, uint param_6, uint param_7, uint param_8, uint param_9);
 // 006D0020 FUN_006d0020
 void fn_006D0020(HDC hdc,undefined4 param_2,undefined4 param_3,LPRECT lprc,int param_5,int param_6,
@@ -17927,7 +17925,7 @@ UINT fn_006D07D0(int param_1,HPALETTE param_2,int param_3);
 void fn_006D0820(int param_1,int param_2,int param_3,int param_4,
                  AnonShape_006D0820_E08F8169 *param_5,int param_6,int *param_7,int param_8,
                  int param_9,int param_10,int param_11,HPALETTE param_12);
-// 006D0A20 Library::DKW::DDX::FUN_006d0a20
+// 006D0A20 Library::DKW::DDX::FUN_006d0a20 [statically linked library; implementation excluded]
 int __stdcall fn_006D0A20(uint param_1, int * param_2, int param_3, int param_4, BITMAPINFO * param_5, uint * param_6, int param_7, int param_8, DWORD param_9, DWORD param_10);
 // 006D0CC0 FUN_006d0cc0
 int fn_006D0CC0(uint param_1,int *param_2,BITMAPINFO *param_3,uint *param_4);
@@ -17957,7 +17955,7 @@ void fn_006D13C0(uint *param_1,int param_2,byte *param_3,int param_4,int param_5
 void fn_006D14C0(ushort *param_1,int param_2,int param_3,uint *param_4);
 // 006D1610 FUN_006d1610
 void fn_006D1610(undefined8 *param_1,undefined8 *param_2,int param_3,uint param_4,int param_5);
-// 006D16A0 Library::DKW::WGR::FUN_006d16a0
+// 006D16A0 Library::DKW::WGR::FUN_006d16a0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006D16A0(undefined4 * param_1, int param_2, int param_3, int param_4, uint param_5, AnonShape_0070B770_3BA0472D * param_6, int param_7, int param_8, int param_9, uint param_10, int param_11, int param_12);
 // 006D1A10 FUN_006d1a10
 void fn_006D1A10(undefined4 *param_1,int param_2,int param_3,int param_4,
@@ -17997,7 +17995,7 @@ void fn_006D2820(byte *param_1,RecoveredSourceFamily_dibcopy *param_2,byte *para
 // 006D3300 FUN_006d3300
 void fn_006D3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_5,int param_6,
                  byte *param_7,int param_8,byte *param_9,int param_10,int param_11,int param_12);
-// 006D3730 Library::DKW::DDX::FUN_006d3730
+// 006D3730 Library::DKW::DDX::FUN_006d3730 [statically linked library; implementation excluded]
 int __stdcall fn_006D3730(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, int param_7);
 // 006D39F0 FUN_006d39f0
 void fn_006D39F0(undefined4 *param_1,int param_2,byte *param_3,int param_4,int param_5,int param_6,
@@ -18005,7 +18003,7 @@ void fn_006D39F0(undefined4 *param_1,int param_2,byte *param_3,int param_4,int p
 // 006D3A50 FUN_006d3a50
 void fn_006D3A50(undefined2 *param_1,int param_2,byte *param_3,int param_4,int param_5,int param_6,
                  int param_7);
-// 006D3AC0 Library::DKW::WGR::FUN_006d3ac0
+// 006D3AC0 Library::DKW::WGR::FUN_006d3ac0 [statically linked library; implementation excluded]
 int * __stdcall fn_006D3AC0(HANDLE param_1);
 // 006D3C30 FUN_006d3c30
 void fn_006D3C30(AnonShape_006D3C30_0FAA5DE6 *param_1,int param_2,int param_3,int param_4,
@@ -18015,32 +18013,32 @@ void fn_006D3D80(int param_1,int param_2,int param_3,byte *param_4,int param_5,i
                  int param_7,int param_8,byte *param_9,int param_10,int param_11,int param_12,
                  int param_13,int param_14,int param_15,int param_16,int param_17,int param_18,
                  int param_19,byte *param_20,byte *param_21);
-// 006D4220 Library::DKW::FMM::FUN_006d4220
+// 006D4220 Library::DKW::FMM::FUN_006d4220 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006D4220(undefined4 * param_1, LPCSTR param_2, DWORD param_3, undefined4 param_4);
-// 006D4380 Library::DKW::FMM::FUN_006d4380
+// 006D4380 Library::DKW::FMM::FUN_006d4380 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006D4380(undefined4 * param_1, LPCSTR param_2, uint param_3);
-// 006D4510 Library::DKW::FMM::FUN_006d4510
+// 006D4510 Library::DKW::FMM::FUN_006d4510 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006D4510(undefined4 * param_1, LPCSTR param_2, int param_3);
 // 006D46A0 FUN_006d46a0
 void fn_006D46A0(undefined4 *param_1,DWORD param_2);
-// 006D4740 Library::DKW::FMM::FUN_006d4740
+// 006D4740 Library::DKW::FMM::FUN_006d4740 [statically linked library; implementation excluded]
 DWORD __stdcall fn_006D4740(int param_1, int param_2);
-// 006D4860 Library::DKW::FMM::FUN_006d4860
+// 006D4860 Library::DKW::FMM::FUN_006d4860 [statically linked library; implementation excluded]
 DWORD __stdcall fn_006D4860(int param_1, int param_2, undefined4 * param_3, uint param_4);
 // 006D4930 FUN_006d4930
 DWORD fn_006D4930(AnonShape_006D4930_676532DD *param_1,LPDWORD lpNumberOfBytesRead,
                   undefined4 *param_3,DWORD nNumberOfBytesToRead);
-// 006D49F0 Library::DKW::FMM::FUN_006d49f0
+// 006D49F0 Library::DKW::FMM::FUN_006d49f0 [statically linked library; implementation excluded]
 DWORD __stdcall fn_006D49F0(int param_1, DWORD param_2, undefined4 * param_3, uint param_4);
-// 006D4A40 Library::DKW::FMM::FUN_006d4a40
+// 006D4A40 Library::DKW::FMM::FUN_006d4a40 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006D4A40(int param_1, int param_2, undefined4 * param_3);
-// 006D4AA0 Library::DKW::FMM::FUN_006d4aa0
+// 006D4AA0 Library::DKW::FMM::FUN_006d4aa0 [statically linked library; implementation excluded]
 DWORD __stdcall fn_006D4AA0(int param_1, int param_2, undefined4 param_3);
-// 006D4B30 Library::DKW::FMM::FUN_006d4b30
+// 006D4B30 Library::DKW::FMM::FUN_006d4b30 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006D4B30(int param_1, int param_2);
-// 006D4BA0 Library::DKW::FMM::FUN_006d4ba0
+// 006D4BA0 Library::DKW::FMM::FUN_006d4ba0 [statically linked library; implementation excluded]
 DWORD __stdcall fn_006D4BA0(int param_1, int param_2, undefined4 param_3);
-// 006D4C50 Library::DKW::FMM::FUN_006d4c50
+// 006D4C50 Library::DKW::FMM::FUN_006d4c50 [statically linked library; implementation excluded]
 DWORD __stdcall fn_006D4C50(int param_1, int param_2, int param_3);
 // 006D4CF0 FUN_006d4cf0
 undefined4 __cdecl fn_006D4CF0(AnonShape_006D4CF0_8A8947BE *param_1,int *param_2);
@@ -18215,7 +18213,7 @@ void fn_006D7520(int param_1,undefined4 param_2,undefined4 param_3);
 void fn_006D7530(int param_1);
 // 006D7540 FUN_006d7540
 void fn_006D7540(int param_1);
-// 006D7550 Library::DKW::WGR::FUN_006d7550
+// 006D7550 Library::DKW::WGR::FUN_006d7550 [statically linked library; implementation excluded]
 LPBITMAPINFO __stdcall fn_006D7550(HDC param_1, int param_2, int param_3, int param_4, UINT param_5, uint param_6, HPALETTE param_7);
 // 006D7770 FUN_006d7770
 void fn_006D7770(AnonShape_006D7770_4ECBDE32 *param_1);
@@ -18226,7 +18224,7 @@ void fn_006D7830(undefined1 *param_1,int param_2,undefined4 *param_3,int param_4
 void fn_006D7A30(int param_1,int param_2,uint param_3,uint param_4,int param_5,byte param_6);
 // 006D7CA0 FUN_006d7ca0
 void fn_006D7CA0(byte *param_1,int param_2,int param_3,int param_4,int param_5);
-// 006D7CF0 Library::DKW::WGR::FUN_006d7cf0
+// 006D7CF0 Library::DKW::WGR::FUN_006d7cf0 [statically linked library; implementation excluded]
 HPALETTE __stdcall fn_006D7CF0(LOGPALETTE * param_1);
 // 006D7D9A FUN_006d7d9a
 uint __cdecl fn_006D7D9A(AnonShape_006D7D9A_A5401417 *param_1);
@@ -18234,13 +18232,13 @@ uint __cdecl fn_006D7D9A(AnonShape_006D7D9A_A5401417 *param_1);
 uint fn_006D7FDA(void);
 // 006D8036 FUN_006d8036
 uint fn_006D8036(void);
-// 006D80C0 Library::DKW::GPC::FUN_006d80c0
+// 006D80C0 Library::DKW::GPC::FUN_006d80c0 [statically linked library; implementation excluded]
 uint __stdcall fn_006D80C0(int param_1);
 // 006D8120 FUN_006d8120
 uint __cdecl fn_006D8120(AnonShape_006D8120_534053F7 *param_1);
 // 006D822B FUN_006d822b
 int fn_006D822B(void);
-// 006D8260 Library::DKW::DDX::FUN_006d8260
+// 006D8260 Library::DKW::DDX::FUN_006d8260 [statically linked library; implementation excluded]
 int __stdcall fn_006D8260(undefined4 * param_1, uint param_2, undefined * param_3, undefined4 param_4);
 // 006D86E0 FUN_006d86e0
 void fn_006D86E0(AnonShape_006D86E0_D6D32C07 *param_1,int param_2,
@@ -18268,7 +18266,7 @@ fn_006DA660(undefined4 param_1,undefined4 param_2,char *param_3,byte *param_4,in
 // 006DAC70 FUN_006dac70
 void fn_006DAC70(undefined1 *param_1,int param_2,byte *param_3,int param_4,byte param_5,int param_6
                  ,int param_7,byte param_8);
-// 006DAD00 Library::DKW::DDX::FUN_006dad00
+// 006DAD00 Library::DKW::DDX::FUN_006dad00 [statically linked library; implementation excluded]
 int __stdcall fn_006DAD00(int param_1, int param_2, int param_3, int param_4, int param_5, undefined4 param_6, int param_7, int param_8, int param_9, int param_10, undefined1 param_11);
 // 006DAEA0 FUN_006daea0
 int fn_006DAEA0(int param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6,
@@ -18296,7 +18294,7 @@ uint fn_006DB5F0(int param_1,int param_2);
 undefined4 fn_006DB610(int param_1,int param_2);
 // 006DB630 FUN_006db630
 undefined4 fn_006DB630(int param_1,int param_2,int param_3);
-// 006DB640 Library::DKW::STR::FUN_006db640
+// 006DB640 Library::DKW::STR::FUN_006db640 [statically linked library; implementation excluded]
 int __stdcall fn_006DB640(int param_1);
 // 006DB6D0 FUN_006db6d0
 int fn_006DB6D0(int param_1);
@@ -18345,7 +18343,7 @@ void fn_006DC310(void);
 void __fastcall fn_006DC320(AnonShape_006DC320_0C876EFA *param_1);
 // 006DCD60 FUN_006dcd60
 void __fastcall fn_006DCD60(int param_1);
-// 006DD050 Library::Ourlib::STREND::FUN_006dd050
+// 006DD050 Library::Ourlib::STREND::FUN_006dd050 [statically linked library; implementation excluded]
 undefined __thiscall fn_006DD050(ST3DSMAPContext * param_1, uint param_2, double param_3, double param_4);
 // 006DD530 ST3DSMAPContext::sub_006DD530
 void __thiscall
@@ -18353,15 +18351,15 @@ fn_006DD530(ST3DSMAPContext *st_this,float *param_1,float *param_2,float *param_
 // 006DD610 ST3DSMAPContext::sub_006DD610
 void __thiscall
 fn_006DD610(ST3DSMAPContext *st_this,uint param_2,double param_3,double param_4);
-// 006DD660 Library::Ourlib::STREND::FUN_006dd660
+// 006DD660 Library::Ourlib::STREND::FUN_006dd660 [statically linked library; implementation excluded]
 undefined __thiscall fn_006DD660(void * st_this, int param_1, int param_2, int param_3, int param_4);
-// 006DD6E0 Library::Ourlib::STREND::FUN_006dd6e0
+// 006DD6E0 Library::Ourlib::STREND::FUN_006dd6e0 [statically linked library; implementation excluded]
 undefined __thiscall fn_006DD6E0(void * st_this, int param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8);
 // 006DD790 ST3DSMAPContext::sub_006DD790
 void __thiscall fn_006DD790(ST3DSMAPContext *st_this,float param_1);
 // 006DD800 ST3DSMAPContext::sub_006DD800
 void __thiscall fn_006DD800(ST3DSMAPContext *st_this,float param_1);
-// 006DD870 ST3DSMAPContext::sub_006DD870
+// 006DD870 ST3DSMAPContext::sub_006DD870 [statically linked library; implementation excluded]
 undefined __thiscall fn_006DD870(ST3DSMAPContext * st_this);
 // 006DDA90 ST3DSMAPContext::sub_006DDA90
 void __thiscall fn_006DDA90(ST3DSMAPContext *st_this,float param_1,float param_2);
@@ -18379,13 +18377,13 @@ undefined4 fn_006DDBD0(void);
 void __thiscall fn_006DDBE0(ST3DSMAPContext *st_this);
 // 006DDD50 ST3DSMAPContext::sub_006DDD50
 uint __fastcall fn_006DDD50(ST3DSMAPContext *param_1);
-// 006DE570 Library::Ourlib::STREND::FUN_006de570
+// 006DE570 Library::Ourlib::STREND::FUN_006de570 [statically linked library; implementation excluded]
 int __thiscall fn_006DE570(void * st_this, int param_1, int param_2);
-// 006DE9C0 ST3DSMAPContext::sub_006DE9C0
+// 006DE9C0 ST3DSMAPContext::sub_006DE9C0 [statically linked library; implementation excluded]
 undefined4 __fastcall fn_006DE9C0(ST3DSMAPContext * param_1);
 // 006E1050 ST3DSMAPContext::sub_006E1050
 void __fastcall fn_006E1050(ST3DSMAPContext *param_1);
-// 006E1320 ST3DSMAPContext::sub_006E1320
+// 006E1320 ST3DSMAPContext::sub_006E1320 [statically linked library; implementation excluded]
 void __thiscall fn_006E1320(ST3DSMAPContext * st_this, double * param_1, double * param_2, int * param_3, int * param_4, int * param_5);
 // 006E1440 FUN_006e1440
 void __thiscall fn_006E1440(void *st_this);
@@ -18400,7 +18398,7 @@ fn_006E1C20
 // 006E1DD0 FUN_006e1dd0
 undefined4 __thiscall
 fn_006E1DD0(void *st_this,int param_1,int param_2,float *param_3,float *param_4,float *param_5);
-// 006E1EE0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
+// 006E1EE0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0 [statically linked library; implementation excluded]
 bool __thiscall fn_006E1EE0(AnonReceiver_006E1EE0 * st_this, AnonShape_006E1EE0_698AE49A * param_1, undefined4 * param_2, int param_3, int * param_4);
 // 006E25D0 ST3DSMAPContext::sub_006E25D0
 int __thiscall
@@ -18412,20 +18410,20 @@ void __thiscall
 fn_006E2970
           (ST3DSMAPContext *st_this,float param_1,float param_2,undefined4 param_3,int *param_4,
           int *param_5);
-// 006E29D0 Library::Ourlib::STREND::FUN_006e29d0
+// 006E29D0 Library::Ourlib::STREND::FUN_006e29d0 [statically linked library; implementation excluded]
 undefined __thiscall fn_006E29D0(void * st_this, float * param_1, int param_2, int param_3, int param_4);
 // 006E2B60 FUN_006e2b60
 void __thiscall
 fn_006E2B60(void *st_this,AnonShape_006E2B60_E36B924C *param_1,int param_2,int param_3,int *param_4);
-// 006E2C30 Library::Ourlib::STREND::FUN_006e2c30
+// 006E2C30 Library::Ourlib::STREND::FUN_006e2c30 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006E2C30(void * st_this, int * param_1);
 // 006E2D00 ST3DSMAPContext::sub_006E2D00
 ushort __thiscall fn_006E2D00(ST3DSMAPContext *st_this,int param_1,int param_2);
 // 006E2D50 FUN_006e2d50
 void fn_006E2D50(int *param_1,int *param_2,int param_3,int param_4,int param_5,int param_6);
-// 006E2F90 Library::Ourlib::STREND::FUN_006e2f90
+// 006E2F90 Library::Ourlib::STREND::FUN_006e2f90 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006E2F90(void * st_this, int param_1, int param_2, int param_3, int param_4, uint param_5, int param_6, int param_7);
-// 006E3100 Library::Ourlib::STREND::FUN_006e3100
+// 006E3100 Library::Ourlib::STREND::FUN_006e3100 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006E3100(void * st_this, int param_1, int param_2, int param_3, int param_4, uint param_5, int param_6);
 // 006E3210 ST3DSMAPContext::sub_006E3210
 float10 __thiscall fn_006E3210(ST3DSMAPContext *param_1,int param_2,int param_3);
@@ -18438,80 +18436,80 @@ undefined4 __cdecl fn_006E3450(DArrayTy *param_1,int param_2,int *param_3,undefi
 // 006E34C0 AppClassTy::AppClassTy
 AppClassTy * __thiscall
 fn_006E34C0(AppClassTy *st_this,undefined4 param_1,undefined4 param_2);
-// 006E3510 AppClassTy::InitApp
+// 006E3510 AppClassTy::InitApp [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006E3510(AppClassTy * st_this, undefined4 param_1);
 // 006E3680 FUN_006e3680
 void fn_006E3680(DArrayTy *param_1);
-// 006E36E0 AppClassTy::DoneApp
+// 006E36E0 AppClassTy::DoneApp [statically linked library; implementation excluded]
 undefined __thiscall fn_006E36E0(AppClassTy * st_this);
-// 006E3810 AppClassTy::CreateObject
+// 006E3810 AppClassTy::CreateObject [statically linked library; implementation excluded]
 int __thiscall fn_006E3810(AppClassTy * st_this, STObjectTypeId param_1, undefined4 param_2);
-// 006E3970 AppClassTy::DeleteObject
+// 006E3970 AppClassTy::DeleteObject [statically linked library; implementation excluded]
 undefined __thiscall fn_006E3970(AppClassTy * st_this, int param_1);
-// 006E3A70 Library::Ourlib::SAPP::FUN_006e3a70
+// 006E3A70 Library::Ourlib::SAPP::FUN_006e3a70 [statically linked library; implementation excluded]
 undefined __thiscall fn_006E3A70(void * st_this, int param_1, int * param_2, undefined4 * param_3);
 // 006E3A90 FUN_006e3a90
 void __thiscall fn_006E3A90(void *st_this,int param_1,undefined4 *param_2);
-// 006E3AB0 AppClassTy::PostMessage
+// 006E3AB0 AppClassTy::PostMessage [statically linked library; implementation excluded]
 int __thiscall fn_006E3AB0(AppClassTy * st_this, undefined4 * param_1);
-// 006E3B50 AppClassTy::PostNextMessage
+// 006E3B50 AppClassTy::PostNextMessage [statically linked library; implementation excluded]
 int __thiscall fn_006E3B50(AppClassTy * st_this, undefined4 * param_1);
-// 006E3BF0 AppClassTy::SendMessageToAllSystemsInArr
+// 006E3BF0 AppClassTy::SendMessageToAllSystemsInArr [statically linked library; implementation excluded]
 int __thiscall fn_006E3BF0(AppClassTy * st_this, int param_1, int param_2);
 // 006E3DB0 FUN_006e3db0
 int fn_006E3DB0(int param_1);
-// 006E3DD0 AppClassTy::SendMessage
+// 006E3DD0 AppClassTy::SendMessage [statically linked library; implementation excluded]
 int __thiscall fn_006E3DD0(AppClassTy * st_this, uint param_1, int param_2, int param_3);
-// 006E40E0 AppClassTy::SendMessageToAllChild
+// 006E40E0 AppClassTy::SendMessageToAllChild [statically linked library; implementation excluded]
 int __thiscall fn_006E40E0(AppClassTy * st_this, int param_1, int param_2);
-// 006E41D0 AppClassTy::AddDecodeMessage
+// 006E41D0 AppClassTy::AddDecodeMessage [statically linked library; implementation excluded]
 int __thiscall fn_006E41D0(AppClassTy * st_this, undefined4 * param_1);
 // 006E4290 FUN_006e4290
 int fn_006E4290(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-// 006E42C0 Library::Ourlib::SAPP::FUN_006e42c0
+// 006E42C0 Library::Ourlib::SAPP::FUN_006e42c0 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006E42C0(void * st_this, int * param_1);
 // 006E4340 FUN_006e4340
 void __thiscall
 fn_006E4340(void *st_this,int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-// 006E4370 AppClassTy::DecodeMessage
+// 006E4370 AppClassTy::DecodeMessage [statically linked library; implementation excluded]
 int __thiscall fn_006E4370(AppClassTy * st_this, STAppC_MainWindowProc_param_2Enum param_1, uint param_2, uint param_3);
-// 006E4480 Library::Ourlib::SAPP::FUN_006e4480
+// 006E4480 Library::Ourlib::SAPP::FUN_006e4480 [statically linked library; implementation excluded]
 int __stdcall fn_006E4480(AnonShape_006E4480_50BB219F * param_1, int param_2);
-// 006E44E0 Library::Ourlib::SAPP::FUN_006e44e0
+// 006E44E0 Library::Ourlib::SAPP::FUN_006e44e0 [statically linked library; implementation excluded]
 int __thiscall fn_006E44E0(void * st_this, int param_1);
-// 006E4540 Library::Ourlib::SAPP::FUN_006e4540
+// 006E4540 Library::Ourlib::SAPP::FUN_006e4540 [statically linked library; implementation excluded]
 int __stdcall fn_006E4540(DArrayTy * param_1, int param_2);
 // 006E45A0 FUN_006e45a0
 int __thiscall fn_006E45A0(void *st_this,int param_1);
-// 006E45C0 Library::Ourlib::SAPP::FUN_006e45c0
+// 006E45C0 Library::Ourlib::SAPP::FUN_006e45c0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006E45C0(AnonShape_006E45C0_FB272364 * param_1);
 // 006E4620 FUN_006e4620
 undefined4 __thiscall fn_006E4620(void *st_this,int param_1);
-// 006E4650 AppClassTy::AddSystem
+// 006E4650 AppClassTy::AddSystem [statically linked library; implementation excluded]
 int __thiscall fn_006E4650(AppClassTy * st_this, int * param_1, int param_2);
-// 006E47E0 AppClassTy::AddSystem
+// 006E47E0 AppClassTy::AddSystem [statically linked library; implementation excluded]
 int __thiscall fn_006E47E0(AppClassTy * st_this, int * param_1, int param_2);
-// 006E4960 AppClassTy::AddChildSystem
+// 006E4960 AppClassTy::AddChildSystem [statically linked library; implementation excluded]
 int __thiscall fn_006E4960(AppClassTy * st_this, SystemClassTy * parentSystem, SystemClassTy * childSystem, int checkDuplicateId);
 // 006E4B80 FUN_006e4b80
 void __thiscall fn_006E4B80(void *st_this,int param_1);
-// 006E4BB0 Library::Ourlib::SAPP::FUN_006e4bb0
+// 006E4BB0 Library::Ourlib::SAPP::FUN_006e4bb0 [statically linked library; implementation excluded]
 undefined __stdcall fn_006E4BB0(int * param_1);
 // 006E4C30 FUN_006e4c30
 void __thiscall fn_006E4C30(void *st_this,int param_1);
-// 006E4C90 Library::Ourlib::SAPP::FUN_006e4c90
+// 006E4C90 Library::Ourlib::SAPP::FUN_006e4c90 [statically linked library; implementation excluded]
 void __stdcall fn_006E4C90(DebugSystemC * param_1, DArrayTy * param_2);
 // 006E4D20 FUN_006e4d20
 void __thiscall fn_006E4D20(void *st_this,DebugSystemC *param_1);
 // 006E4D40 FUN_006e4d40
 uint __thiscall fn_006E4D40(void *st_this,int param_1);
-// 006E4D70 AppClassTy::LifeToAllSystem
+// 006E4D70 AppClassTy::LifeToAllSystem [statically linked library; implementation excluded]
 int __thiscall fn_006E4D70(AppClassTy * st_this, int param_1);
-// 006E4EE0 Library::Ourlib::SAPP::FUN_006e4ee0
+// 006E4EE0 Library::Ourlib::SAPP::FUN_006e4ee0 [statically linked library; implementation excluded]
 int __fastcall fn_006E4EE0(int * param_1);
 // 006E4FA0 FUN_006e4fa0
 void fn_006E4FA0(DWORD dwMilliseconds);
-// 006E4FC0 AppClassTy::RunApp
+// 006E4FC0 AppClassTy::RunApp [statically linked library; implementation excluded]
 WPARAM __thiscall fn_006E4FC0(AppClassTy * st_this);
 // 006E5150 STAppC::sub_006E5150
 undefined4 __thiscall fn_006E5150(STAppC *st_this,STMessage *param_1);
@@ -18520,7 +18518,7 @@ DWORD __thiscall fn_006E51B0(STAppC *st_this);
 // 006E51C0 SystemClassTy::SystemClassTy
 SystemClassTy * __thiscall
 fn_006E51C0(SystemClassTy *st_this,AppClassTy *param_1,int param_2);
-// 006E51F0 SystemClassTy::InitSystem
+// 006E51F0 SystemClassTy::InitSystem [statically linked library; implementation excluded]
 int __thiscall fn_006E51F0(SystemClassTy * st_this);
 // 006E52D0 FUN_006e52d0
 void __fastcall fn_006E52D0(AnonShape_006E52D0_AF06BCD2 *param_1);
@@ -18529,11 +18527,11 @@ undefined4 __thiscall
 fn_006E5360(StartSystemTy *st_this,int param_1,int *param_2,undefined4 *param_3);
 // 006E5380 FUN_006e5380
 void __thiscall fn_006E5380(void *st_this,int param_1,undefined4 *param_2);
-// 006E53A0 SystemClassTy::FindFirstObject
+// 006E53A0 SystemClassTy::FindFirstObject [statically linked library; implementation excluded]
 int __thiscall fn_006E53A0(SystemClassTy * st_this, int param_1, int * param_2);
-// 006E54B0 SystemClassTy::_CreateObject
+// 006E54B0 SystemClassTy::_CreateObject [statically linked library; implementation excluded]
 int __thiscall fn_006E54B0(SystemClassTy * st_this, int param_1, undefined4 * param_2, int * param_3, undefined4 param_4);
-// 006E5580 SystemClassTy::CreateObject
+// 006E5580 SystemClassTy::CreateObject [statically linked library; implementation excluded]
 int __thiscall fn_006E5580(SystemClassTy * st_this, STObjectTypeId param_1, undefined4 * param_2, int * param_3, undefined4 param_4, undefined4 param_5);
 // 006E5670 FUN_006e5670
 void __thiscall
@@ -18546,19 +18544,19 @@ void __thiscall fn_006E56B0(StartSystemTy *st_this,uint param_1);
 void __fastcall fn_006E5740(AnonShape_006E5740_EEA77B11 *param_1);
 // 006E57B0 STPlaySystemC::sub_006E57B0
 void __thiscall fn_006E57B0(STPlaySystemC *st_this,int param_1);
-// 006E5810 SystemClassTy::PostMessage
+// 006E5810 SystemClassTy::PostMessage [statically linked library; implementation excluded]
 int __thiscall fn_006E5810(SystemClassTy * st_this, undefined4 * param_1);
-// 006E58B0 SystemClassTy::PostNextMessage
+// 006E58B0 SystemClassTy::PostNextMessage [statically linked library; implementation excluded]
 int __thiscall fn_006E58B0(SystemClassTy * st_this, undefined4 * param_1);
-// 006E5950 Library::Ourlib::SAPP::FUN_006e5950
+// 006E5950 Library::Ourlib::SAPP::FUN_006e5950 [statically linked library; implementation excluded]
 int __stdcall fn_006E5950(int param_1);
-// 006E5970 SystemClassTy::SendMessage
+// 006E5970 SystemClassTy::SendMessage [statically linked library; implementation excluded]
 int __thiscall fn_006E5970(SystemClassTy * st_this, uint param_1, int param_2, int param_3);
-// 006E5C70 SystemClassTy::GetToAllObjects
+// 006E5C70 SystemClassTy::GetToAllObjects [statically linked library; implementation excluded]
 int __thiscall fn_006E5C70(SystemClassTy * st_this, undefined4 param_1);
-// 006E5D90 SystemClassTy::Life
+// 006E5D90 SystemClassTy::Life [statically linked library; implementation excluded]
 int __thiscall fn_006E5D90(SystemClassTy * st_this);
-// 006E5F00 SystemClassTy::GetMessage
+// 006E5F00 SystemClassTy::GetMessage [statically linked library; implementation excluded]
 int __thiscall fn_006E5F00(SystemClassTy * st_this, STMessage * message);
 // 006E5FB0 sub_006E5FB0
 void * __thiscall fn_006E5FB0(void *st_this);
@@ -18591,14 +18589,14 @@ void __thiscall fn_006E6130(void *st_this,undefined4 param_1,undefined4 param_2)
 // 006E6150 FUN_006e6150
 void __thiscall
 fn_006E6150(void *st_this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-// 006E6170 SystemWithNamedObjClassTy::CreateObject
+// 006E6170 SystemWithNamedObjClassTy::CreateObject [statically linked library; implementation excluded]
 int __thiscall fn_006E6170(SystemWithNamedObjClassTy * st_this, STObjectTypeId param_1, undefined4 * param_2, int * param_3, undefined4 param_4, undefined4 param_5);
-// 006E6200 Library::Ourlib::SAPP::FUN_006e6200
+// 006E6200 Library::Ourlib::SAPP::FUN_006e6200 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006E6200(void * st_this, int param_1, undefined4 * param_2, undefined4 * param_3, int * param_4, undefined4 param_5, undefined4 param_6);
 // 006E62D0 STPlaySystemC::sub_006E62D0
 undefined4 __thiscall
 fn_006E62D0(STPlaySystemC *st_this,AnonShape_005EFAE0_B406B78B *param_1,int *param_2);
-// 006E6330 SystemWithNamedObjClassTy::SendMessage
+// 006E6330 SystemWithNamedObjClassTy::SendMessage [statically linked library; implementation excluded]
 int __thiscall fn_006E6330(SystemWithNamedObjClassTy * st_this, int param_1);
 // 006E6400 ST3DSMAPContext::sub_006E6400
 void __thiscall
@@ -18621,7 +18619,7 @@ fn_006E65C0(void *st_this,undefined4 param_1,char param_2,float param_3,float pa
             ushort param_6,ushort param_7);
 // 006E6620 FUN_006e6620
 void __fastcall fn_006E6620(int param_1);
-// 006E6630 Library::Ourlib::ST3DSMAP::FUN_006e6630
+// 006E6630 Library::Ourlib::ST3DSMAP::FUN_006e6630 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006E6630(void * st_this, int param_1, undefined1 param_2, undefined1 param_3, undefined1 param_4);
 // 006E66F0 FUN_006e66f0
 void __thiscall fn_006E66F0(void *st_this,int param_1);
@@ -18644,7 +18642,7 @@ byte __thiscall fn_006E6870(void *st_this,int param_1,int param_2);
 undefined4 __thiscall
 fn_006E68C0
           (ST3DSMAPContext *st_this,int param_1,int param_2,int *param_3,int *param_4);
-// 006E6AF0 ST3DSMAPContext::sub_006E6AF0
+// 006E6AF0 ST3DSMAPContext::sub_006E6AF0 [statically linked library; implementation excluded]
 undefined __thiscall fn_006E6AF0(ST3DSMAPContext * st_this, AnonShape_006E6AF0_D2F012A7 * param_1);
 // 006E6FB0 ST3DSMAPContext::sub_006E6FB0
 void __thiscall
@@ -18683,21 +18681,21 @@ fn_006E89B0(void *st_this,int *param_1,undefined4 param_2,int param_3,undefined4
             undefined4 param_10,undefined4 param_11);
 // 006E8AA0 FUN_006e8aa0
 int __thiscall fn_006E8AA0(void *st_this,uint *param_1,uint param_2);
-// 006E8B00 Library::Ourlib::ST3DSMAP::FUN_006e8b00
+// 006E8B00 Library::Ourlib::ST3DSMAP::FUN_006e8b00 [statically linked library; implementation excluded]
 undefined __thiscall fn_006E8B00(void * st_this, uint param_1, uint param_2);
-// 006E8BA0 Library::Ourlib::ST3DSMAP::SprClose
+// 006E8BA0 Library::Ourlib::ST3DSMAP::SprClose [statically linked library; implementation excluded]
 undefined __thiscall fn_006E8BA0(void * st_this, uint param_1);
 // 006E8C50 FUN_006e8c50
 void fn_006E8C50(void);
-// 006E8C80 Library::Ourlib::ST3DSMAP::SprGlowLineMove
+// 006E8C80 Library::Ourlib::ST3DSMAP::SprGlowLineMove [statically linked library; implementation excluded]
 undefined __thiscall fn_006E8C80(void * st_this, uint param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7);
-// 006E8D20 Library::Ourlib::ST3DSMAP::SprGlowLineSetColors
+// 006E8D20 Library::Ourlib::ST3DSMAP::SprGlowLineSetColors [statically linked library; implementation excluded]
 undefined __thiscall fn_006E8D20(void * st_this, uint param_1, undefined4 param_2, undefined4 param_3);
-// 006E8D90 Library::Ourlib::ST3DSMAP::SprGlowLineSetPat
+// 006E8D90 Library::Ourlib::ST3DSMAP::SprGlowLineSetPat [statically linked library; implementation excluded]
 undefined __thiscall fn_006E8D90(void * st_this, uint param_1, undefined4 param_2);
-// 006E8DF0 Library::Ourlib::ST3DSMAP::SprWireObjMove
+// 006E8DF0 Library::Ourlib::ST3DSMAP::SprWireObjMove [statically linked library; implementation excluded]
 undefined __thiscall fn_006E8DF0(void * st_this, uint param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, int param_5, int param_6, int param_7);
-// 006E8EA0 ST3DSMAPContext::sub_006E8EA0
+// 006E8EA0 ST3DSMAPContext::sub_006E8EA0 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006E8EA0(ST3DSMAPContext * st_this, AnonShape_006E8EA0_96B71903 * param_1);
 // 006E9000 ST3DSMAPContext::sub_006E9000
 ushort * __thiscall
@@ -18710,27 +18708,27 @@ undefined4 * __thiscall fn_006E9080(void *st_this,uint param_1,uint param_2,uint
 void fn_006E91A0(void);
 // 006E91D0 ST3DSMAPContext::sub_006E91D0
 void __thiscall fn_006E91D0(ST3DSMAPContext *st_this,int *param_1);
-// 006E9210 Library::Ourlib::ST3DSMAP::SprSetSplit
+// 006E9210 Library::Ourlib::ST3DSMAP::SprSetSplit [statically linked library; implementation excluded]
 undefined __thiscall fn_006E9210(void * st_this, uint param_1);
-// 006E92C0 Library::Ourlib::ST3DSMAP::SprSetDZ
+// 006E92C0 Library::Ourlib::ST3DSMAP::SprSetDZ [statically linked library; implementation excluded]
 undefined __thiscall fn_006E92C0(void * st_this, uint param_1, float param_2);
-// 006E9350 Library::Ourlib::ST3DSMAP::SprSetMask
+// 006E9350 Library::Ourlib::ST3DSMAP::SprSetMask [statically linked library; implementation excluded]
 undefined __thiscall fn_006E9350(void * st_this, uint param_1, uint param_2, int entries);
 // 006E93C0 FUN_006e93c0
 void __thiscall fn_006E93C0(void *st_this,uint param_1,int param_2,uint param_3);
 // 006E9490 FUN_006e9490
 uint * __thiscall fn_006E9490(void *st_this,uint *param_1,int param_2,int param_3);
-// 006E9520 Library::Ourlib::ST3DSMAP::SprSetShadow
+// 006E9520 Library::Ourlib::ST3DSMAP::SprSetShadow [statically linked library; implementation excluded]
 undefined __thiscall fn_006E9520(void * st_this, uint param_1, uint param_2, uint param_3, uint param_4);
-// 006E96D0 Library::Ourlib::ST3DSMAP::FUN_006e96d0
+// 006E96D0 Library::Ourlib::ST3DSMAP::FUN_006e96d0 [statically linked library; implementation excluded]
 undefined __thiscall fn_006E96D0(void * st_this, uint param_1);
-// 006E9720 Library::Ourlib::ST3DSMAP::FUN_006e9720
+// 006E9720 Library::Ourlib::ST3DSMAP::FUN_006e9720 [statically linked library; implementation excluded]
 void __thiscall fn_006E9720(void * st_this, uint param_1, uint param_2);
-// 006E9770 Library::Ourlib::ST3DSMAP::SprSetColorsTbl
+// 006E9770 Library::Ourlib::ST3DSMAP::SprSetColorsTbl [statically linked library; implementation excluded]
 undefined __thiscall fn_006E9770(void * st_this, uint param_1, uint param_2);
-// 006E97C0 Library::Ourlib::ST3DSMAP::SprSetShadedColorsTbl
+// 006E97C0 Library::Ourlib::ST3DSMAP::SprSetShadedColorsTbl [statically linked library; implementation excluded]
 undefined __thiscall fn_006E97C0(void * st_this, uint param_1, ushort * param_2);
-// 006E9830 Library::Ourlib::ST3DSMAP::SprSetHotSpot
+// 006E9830 Library::Ourlib::ST3DSMAP::SprSetHotSpot [statically linked library; implementation excluded]
 void __thiscall fn_006E9830(void * st_this, uint param_1, uint param_2, uint param_3);
 // 006E98E0 ST3DSMAPContext::sub_006E98E0
 undefined4 __thiscall
@@ -18738,7 +18736,7 @@ fn_006E98E0
           (ST3DSMAPContext *st_this,uint param_1,uint param_2,int param_3,int param_4,int param_5);
 // 006E9A10 FUN_006e9a10
 void fn_006E9A10(uint *param_1,int param_2,uint param_3);
-// 006E9AF0 Library::Ourlib::ST3DSMAP::SprSetIms
+// 006E9AF0 Library::Ourlib::ST3DSMAP::SprSetIms [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006E9AF0(void * st_this, uint param_1, uint param_2, uint param_3, uint param_4, uint param_5, uint param_6, uint param_7, int param_8);
 // 006E9CB0 ST3DSMAPContext::sub_006E9CB0
 uint * __thiscall fn_006E9CB0(ST3DSMAPContext *st_this,uint *param_1,uint param_2);
@@ -18753,34 +18751,34 @@ void __thiscall
 fn_006E9EF0
           (ST3DSMAPContext *st_this,uint param_1,uint param_2,int param_3,int param_4,uint param_5,
           ushort param_6);
-// 006EA050 Library::Ourlib::ST3DSMAP::SprSetSeqAnim
+// 006EA050 Library::Ourlib::ST3DSMAP::SprSetSeqAnim [statically linked library; implementation excluded]
 void __thiscall fn_006EA050(void * st_this, uint param_1, int param_2, uint param_3, int param_4);
 // 006EA190 FUN_006ea190
 uint __thiscall fn_006EA190(void *st_this,uint param_1,uint param_2,int param_3);
 // 006EA270 ST3DSMAPContext::sub_006EA270
 void __thiscall
 fn_006EA270(ST3DSMAPContext *st_this,uint param_1,uint param_2,uint param_3);
-// 006EA2F0 Library::Ourlib::ST3DSMAP::SprRstLev
+// 006EA2F0 Library::Ourlib::ST3DSMAP::SprRstLev [statically linked library; implementation excluded]
 void __thiscall fn_006EA2F0(void * st_this, uint param_1);
 // 006EA340 FUN_006ea340
 void __thiscall fn_006EA340(void *st_this,uint param_1,int param_2,uint param_3);
-// 006EA3E0 Library::Ourlib::ST3DSMAP::SprSetLevAfter
+// 006EA3E0 Library::Ourlib::ST3DSMAP::SprSetLevAfter [statically linked library; implementation excluded]
 undefined __thiscall fn_006EA3E0(void * st_this, uint param_1, int param_2);
-// 006EA460 Library::Ourlib::ST3DSMAP::SprSetLevBefore
+// 006EA460 Library::Ourlib::ST3DSMAP::SprSetLevBefore [statically linked library; implementation excluded]
 undefined __thiscall fn_006EA460(void * st_this, uint param_1, int param_2);
-// 006EA4E0 Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
+// 006EA4E0 Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand [statically linked library; implementation excluded]
 uint __thiscall fn_006EA4E0(void * st_this, uint param_1, int param_2, undefined4 param_3, undefined4 param_4);
-// 006EA560 Library::Ourlib::ST3DSMAP::SprSetStretch
+// 006EA560 Library::Ourlib::ST3DSMAP::SprSetStretch [statically linked library; implementation excluded]
 uint __thiscall fn_006EA560(void * st_this, uint param_1, int param_2);
 // 006EA5E0 ST3DSMAPContext::sub_006EA5E0
 byte __thiscall
 fn_006EA5E0(ST3DSMAPContext *st_this,uint param_1,int param_2,int param_3);
-// 006EA680 Library::Ourlib::ST3DSMAP::SprSetShadowTbl
+// 006EA680 Library::Ourlib::ST3DSMAP::SprSetShadowTbl [statically linked library; implementation excluded]
 void __thiscall fn_006EA680(void * st_this, uint param_1, ushort * param_2);
 // 006EA6D0 ST3DSMAPContext::sub_006EA6D0
 void __thiscall
 fn_006EA6D0(ST3DSMAPContext *st_this,uint param_1,int param_2,int param_3);
-// 006EA790 Library::Ourlib::ST3DSMAP::SprSetMShadowTbl
+// 006EA790 Library::Ourlib::ST3DSMAP::SprSetMShadowTbl [statically linked library; implementation excluded]
 void __thiscall fn_006EA790(void * st_this, uint param_1, ushort * param_2, int param_3);
 // 006EA800 ST3DSMAPContext::sub_006EA800
 void __thiscall
@@ -18789,25 +18787,25 @@ fn_006EA800(ST3DSMAPContext *st_this,uint param_1,int param_2,int param_3);
 void __thiscall
 fn_006EA8A0
           (ST3DSMAPContext *st_this,uint param_1,int param_2,uint param_3,ushort *param_4);
-// 006EA960 Library::Ourlib::ST3DSMAP::SprMove
+// 006EA960 Library::Ourlib::ST3DSMAP::SprMove [statically linked library; implementation excluded]
 undefined __thiscall fn_006EA960(void * st_this, uint param_1, float param_2, float param_3, float param_4);
-// 006EAAA0 Library::Ourlib::ST3DSMAP::SprShow
+// 006EAAA0 Library::Ourlib::ST3DSMAP::SprShow [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006EAAA0(void * st_this, uint param_1, int param_2);
-// 006EAB60 Library::Ourlib::ST3DSMAP::SprHide
+// 006EAB60 Library::Ourlib::ST3DSMAP::SprHide [statically linked library; implementation excluded]
 undefined __thiscall fn_006EAB60(void * st_this, uint param_1);
-// 006EABF0 Library::Ourlib::ST3DSMAP::SprSetVisible
+// 006EABF0 Library::Ourlib::ST3DSMAP::SprSetVisible [statically linked library; implementation excluded]
 uint __thiscall fn_006EABF0(void * st_this, uint param_1, int param_2);
-// 006EACE0 Library::Ourlib::ST3DSMAP::SprGetMaxDims
+// 006EACE0 Library::Ourlib::ST3DSMAP::SprGetMaxDims [statically linked library; implementation excluded]
 undefined __thiscall fn_006EACE0(void * st_this, uint param_1, uint * param_2, uint * param_3);
 // 006EAD40 FUN_006ead40
 void __thiscall
 fn_006EAD40(void *st_this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
             undefined4 param_5,undefined4 param_6,undefined4 param_7);
-// 006EAD90 Library::Ourlib::ST3DSPR::FUN_006ead90
+// 006EAD90 Library::Ourlib::ST3DSPR::FUN_006ead90 [statically linked library; implementation excluded]
 int __thiscall fn_006EAD90(void * st_this, int param_1, int param_2, int param_3, int param_4, undefined4 * param_5, int * param_6);
-// 006EAFF0 Library::Ourlib::ST3DSPR::FUN_006eaff0
+// 006EAFF0 Library::Ourlib::ST3DSPR::FUN_006eaff0 [statically linked library; implementation excluded]
 int __thiscall fn_006EAFF0(void * st_this, int param_1, int param_2, undefined4 * param_3, int * param_4);
-// 006EB230 Library::Ourlib::ST3DSPR::SprInRect
+// 006EB230 Library::Ourlib::ST3DSPR::SprInRect [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006EB230(void * st_this, uint param_1, int param_2, int param_3, int param_4, int param_5);
 // 006EB310 ST3DSMAPContext::sub_006EB310
 uint __thiscall fn_006EB310(ST3DSMAPContext *st_this,uint param_1);
@@ -18820,109 +18818,109 @@ int fn_006EB4B0(int param_1,int param_2);
 uint fn_006EB540(int param_1);
 // 006EB570 FUN_006eb570
 undefined4 fn_006EB570(int *param_1,AnonShape_006EB570_80B255F3 *param_2);
-// 006EBE40 Library::Ourlib::ST3DSPR::FUN_006ebe40
+// 006EBE40 Library::Ourlib::ST3DSPR::FUN_006ebe40 [statically linked library; implementation excluded]
 undefined __fastcall fn_006EBE40(AnonShape_006EBE40_77FE2AA7 * param_1);
-// 006EC010 Library::Ourlib::ST3DSPR::FUN_006ec010
+// 006EC010 Library::Ourlib::ST3DSPR::FUN_006ec010 [statically linked library; implementation excluded]
 int __fastcall fn_006EC010(undefined4 * param_1);
-// 006ECC70 Library::Ourlib::ST3DSPR::FUN_006ecc70
+// 006ECC70 Library::Ourlib::ST3DSPR::FUN_006ecc70 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006ECC70(void * st_this, int * param_1, uint * param_2);
-// 006ECFC0 FUN_006ecfc0
-int __cdecl fn_006ECFC0(AnonShape_006ECFC0_6CF214D7 *param_1,AnonShape_006ECFC0_1618ABFE *param_2);
-// 006ED100 Library::Ourlib::ST3DSPR::FUN_006ed100
+// 006ECFC0 Library::Ourlib::ST3DSPR::FUN_006ecfc0 [statically linked library; implementation excluded]
+int __cdecl fn_006ECFC0(AnonShape_006ECFC0_6CF214D7 * param_1, AnonShape_006ECFC0_1618ABFE * param_2);
+// 006ED100 Library::Ourlib::ST3DSPR::FUN_006ed100 [statically linked library; implementation excluded]
 int __fastcall fn_006ED100(ST3DSMAPContext * param_1);
-// 006EF300 Library::Ourlib::MFSTMAP::mfTmapGetParam
+// 006EF300 Library::Ourlib::MFSTMAP::mfTmapGetParam [statically linked library; implementation excluded]
 int __cdecl fn_006EF300(undefined4 param_1, char * param_2, undefined2 * param_3, undefined2 * param_4, undefined1 * param_5, undefined1 * param_6, undefined1 * param_7);
 // 006EF3E0 FUN_006ef3e0
 undefined1 * __cdecl fn_006EF3E0(LPCSTR param_1,undefined4 param_2);
-// 006EF410 Library::Ourlib::MFSTMAP::FUN_006ef410
+// 006EF410 Library::Ourlib::MFSTMAP::FUN_006ef410 [statically linked library; implementation excluded]
 int __cdecl fn_006EF410(int param_1);
-// 006EF440 Library::Ourlib::MFSTMAP::_mfTMapSetTxtParam
+// 006EF440 Library::Ourlib::MFSTMAP::_mfTMapSetTxtParam [statically linked library; implementation excluded]
 int __cdecl fn_006EF440(int param_1, int param_2, char * param_3, char * param_4);
-// 006EF530 Library::Ourlib::MFSTMAP::_mfTMapSetMeshParam
+// 006EF530 Library::Ourlib::MFSTMAP::_mfTMapSetMeshParam [statically linked library; implementation excluded]
 int __cdecl fn_006EF530(int param_1, int param_2, char * param_3);
-// 006EF640 Library::Ourlib::MFSTMAP::mfTMapLoad
+// 006EF640 Library::Ourlib::MFSTMAP::mfTMapLoad [statically linked library; implementation excluded]
 short * __cdecl fn_006EF640(int param_1, char * param_2, cMf32 * param_3, cMf32 * param_4, undefined * param_5);
-// 006EF9D0 Library::Ourlib::MFSTMAP::mfTMapNewTxtr
+// 006EF9D0 Library::Ourlib::MFSTMAP::mfTMapNewTxtr [statically linked library; implementation excluded]
 short * __cdecl fn_006EF9D0(short * param_1, int param_2, int param_3, undefined * param_4);
-// 006EFB70 Library::Ourlib::MFSTMAP::mfTMapErase
+// 006EFB70 Library::Ourlib::MFSTMAP::mfTMapErase [statically linked library; implementation excluded]
 undefined __cdecl fn_006EFB70(int * param_1);
-// 006EFC50 Library::Ourlib::MFSTMAP::mfTMapCreate
+// 006EFC50 Library::Ourlib::MFSTMAP::mfTMapCreate [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_006EFC50(int param_1, int param_2, cMf32 * param_3, int param_4, undefined1 param_5);
-// 006EFDB0 Library::Ourlib::MFSTMAP::mfTMapSave
+// 006EFDB0 Library::Ourlib::MFSTMAP::mfTMapSave [statically linked library; implementation excluded]
 int __cdecl fn_006EFDB0(short * param_1, int param_2, char * text, char param_4);
-// 006EFF90 Library::Ourlib::MFSTMAP::mfTMapAddObj
+// 006EFF90 Library::Ourlib::MFSTMAP::mfTMapAddObj [statically linked library; implementation excluded]
 int __cdecl fn_006EFF90(short * param_1, int param_2, int param_3, int param_4, uint param_5, ushort param_6);
-// 006F01A0 Library::Ourlib::MFSTMAP::mfTMapDelObj
+// 006F01A0 Library::Ourlib::MFSTMAP::mfTMapDelObj [statically linked library; implementation excluded]
 int __cdecl fn_006F01A0(short * param_1, int param_2, int param_3, int param_4);
-// 006F02D0 Library::Ourlib::MFSTMAP::FUN_006f02d0
+// 006F02D0 Library::Ourlib::MFSTMAP::FUN_006f02d0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_006F02D0(int * param_1, int param_2, int param_3, int param_4, int param_5);
-// 006F0360 Library::Ourlib::MFSTMAP::mfTMapOptimize
+// 006F0360 Library::Ourlib::MFSTMAP::mfTMapOptimize [statically linked library; implementation excluded]
 int __cdecl fn_006F0360(short * param_1, undefined * param_2);
-// 006F0620 Library::Ourlib::MFSTMAP::FUN_006f0620
+// 006F0620 Library::Ourlib::MFSTMAP::FUN_006f0620 [statically linked library; implementation excluded]
 int * __cdecl fn_006F0620(short * param_1);
-// 006F0700 Library::Ourlib::MFSTMAP::FUN_006f0700
+// 006F0700 Library::Ourlib::MFSTMAP::FUN_006f0700 [statically linked library; implementation excluded]
 int * __cdecl fn_006F0700(int param_1, int param_2);
 // 006F07E0 FUN_006f07e0
 void __cdecl fn_006F07E0(int *param_1);
-// 006F0800 Library::Ourlib::MFSTMAP::FUN_006f0800
+// 006F0800 Library::Ourlib::MFSTMAP::FUN_006f0800 [statically linked library; implementation excluded]
 int __cdecl fn_006F0800(int param_1, int * param_2);
-// 006F0A50 Library::Ourlib::MFSTMAP::FUN_006f0a50
+// 006F0A50 Library::Ourlib::MFSTMAP::FUN_006f0a50 [statically linked library; implementation excluded]
 int __cdecl fn_006F0A50(short * param_1, int * param_2, int param_3, int param_4, int param_5, int param_6, int param_7);
-// 006F0C00 Library::Ourlib::MFSTMAP::AuxTMapRefreshAll
+// 006F0C00 Library::Ourlib::MFSTMAP::AuxTMapRefreshAll [statically linked library; implementation excluded]
 int __cdecl fn_006F0C00(short * param_1, int * param_2);
-// 006F0CD0 Library::Ourlib::MFSTMAP::FUN_006f0cd0
+// 006F0CD0 Library::Ourlib::MFSTMAP::FUN_006f0cd0 [statically linked library; implementation excluded]
 ushort * __cdecl fn_006F0CD0(undefined4 param_1, char * param_2, int param_3);
-// 006F0D70 Library::Ourlib::MFSTMAP::mf3DXGetParam
+// 006F0D70 Library::Ourlib::MFSTMAP::mf3DXGetParam [statically linked library; implementation excluded]
 int __cdecl fn_006F0D70(undefined4 param_1, char * param_2, undefined2 * param_3);
 // 006F0E30 FUN_006f0e30
 int __cdecl fn_006F0E30(byte *param_1,byte *param_2);
 // 006F0EA0 FUN_006f0ea0
 int fn_006F0EA0(int param_1);
-// 006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0
+// 006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0 [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_006F0EC0(uint param_1, byte * param_2, int param_3, uint param_4, uint param_5);
-// 006F1170 cMf32::delete
+// 006F1170 cMf32::delete [statically linked library; implementation excluded]
 undefined __cdecl fn_006F1170(cMf32 * param_1);
-// 006F1220 cMf32::Flush
+// 006F1220 cMf32::Flush [statically linked library; implementation excluded]
 int __thiscall fn_006F1220(cMf32 * st_this);
-// 006F12B0 cMf32::ToBeg
+// 006F12B0 cMf32::ToBeg [statically linked library; implementation excluded]
 undefined __thiscall fn_006F12B0(cMf32 * st_this, undefined4 param_1, undefined4 param_2);
-// 006F1350 cMf32::ToEnd
+// 006F1350 cMf32::ToEnd [statically linked library; implementation excluded]
 undefined __thiscall fn_006F1350(cMf32 * st_this, undefined4 param_1, undefined4 param_2);
-// 006F13F0 cMf32::RecPut
+// 006F13F0 cMf32::RecPut [statically linked library; implementation excluded]
 int __thiscall fn_006F13F0(cMf32 * st_this, byte param_1, char * param_2, byte * param_3, uint param_4, undefined4 * param_5, char param_6, uint * param_7);
-// 006F1700 cMf32::RecPutNoname
+// 006F1700 cMf32::RecPutNoname [statically linked library; implementation excluded]
 uint __thiscall fn_006F1700(cMf32 * st_this, undefined4 * param_1, uint param_2);
-// 006F17C0 cMf32::RecDel
+// 006F17C0 cMf32::RecDel [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006F17C0(cMf32 * st_this, byte param_1, char * param_2);
-// 006F1910 cMf32::RecRen
+// 006F1910 cMf32::RecRen [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006F1910(cMf32 * st_this, undefined1 param_1, char * param_2, char * param_3, int param_4);
-// 006F1B70 cMf32::vmAddrRecGet
+// 006F1B70 cMf32::vmAddrRecGet [statically linked library; implementation excluded]
 DWORD __thiscall fn_006F1B70(cMf32 * st_this, byte param_1, char * param_2, int param_3);
 // 006F1CB0 FUN_006f1cb0
 int __thiscall fn_006F1CB0(void *st_this,int param_1);
-// 006F1CE0 cMf32::RecGet
+// 006F1CE0 cMf32::RecGet [statically linked library; implementation excluded]
 ushort * __thiscall fn_006F1CE0(cMf32 * st_this, byte param_1, char * text, int * param_3, int param_4);
-// 006F20E0 cMf32::RecMemFree
+// 006F20E0 cMf32::RecMemFree [statically linked library; implementation excluded]
 undefined __thiscall fn_006F20E0(cMf32 * st_this, uint * param_1);
 // 006F21A0 FUN_006f21a0
 void __thiscall fn_006F21A0(void *st_this,uint param_1);
-// 006F21C0 cMf32::RecChk
+// 006F21C0 cMf32::RecChk [statically linked library; implementation excluded]
 int __thiscall fn_006F21C0(cMf32 * st_this, byte param_1, char * param_2);
-// 006F2310 cMf32::RecGetParam
+// 006F2310 cMf32::RecGetParam [statically linked library; implementation excluded]
 undefined4 * __thiscall fn_006F2310(cMf32 * st_this, byte param_1, char * param_2, undefined4 * param_3, int param_4);
-// 006F24A0 cMf32::RecGetLen
+// 006F24A0 cMf32::RecGetLen [statically linked library; implementation excluded]
 int __thiscall fn_006F24A0(cMf32 * st_this, byte param_1, char * text, int param_3);
-// 006F2600 cMf32::RecGetOrigLen
+// 006F2600 cMf32::RecGetOrigLen [statically linked library; implementation excluded]
 int __thiscall fn_006F2600(cMf32 * st_this, byte param_1, char * param_2, undefined1 * param_3, int param_4);
-// 006F2790 cMf32::RecNameGetNext
+// 006F2790 cMf32::RecNameGetNext [statically linked library; implementation excluded]
 undefined4 * __thiscall fn_006F2790(cMf32 * st_this);
-// 006F2860 cMf32::RecKeyGetNext
+// 006F2860 cMf32::RecKeyGetNext [statically linked library; implementation excluded]
 undefined4 * __thiscall fn_006F2860(cMf32 * st_this, undefined4 * param_1);
-// 006F2940 cMf32::RecNameGetPrev
+// 006F2940 cMf32::RecNameGetPrev [statically linked library; implementation excluded]
 undefined4 * __thiscall fn_006F2940(cMf32 * st_this);
-// 006F2A10 cMf32::RecKeyGetPrev
+// 006F2A10 cMf32::RecKeyGetPrev [statically linked library; implementation excluded]
 undefined4 * __thiscall fn_006F2A10(cMf32 * st_this, undefined4 * param_1);
-// 006F2AF0 cMf32::KeyRecGet
+// 006F2AF0 cMf32::KeyRecGet [statically linked library; implementation excluded]
 longlong __thiscall fn_006F2AF0(cMf32 * st_this, undefined1 param_1, char * param_2, ushort * param_3);
 // 006F2C00 FUN_006f2c00
 LPSTR __cdecl fn_006F2C00(char *text,int param_2,undefined4 param_3);
@@ -18932,15 +18930,15 @@ uint __cdecl fn_006F2CB0(uint *param_1,char *param_2);
 int __cdecl fn_006F2CE0(byte *param_1,byte *param_2);
 // 006F2D10 FUN_006f2d10
 uint __cdecl fn_006F2D10(byte *param_1,byte *param_2);
-// 006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad
+// 006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad [statically linked library; implementation excluded]
 ushort * __cdecl fn_006F2D90(cMf32 * param_1, char * text, byte param_3, int param_4);
-// 006F2E40 Library::Ourlib::MFAOBJ::mfAObjEnum
+// 006F2E40 Library::Ourlib::MFAOBJ::mfAObjEnum [statically linked library; implementation excluded]
 int __cdecl fn_006F2E40(cMf32 * param_1, char * param_2, undefined * param_3, STPlaySystemC * param_4, byte param_5);
-// 006F2FB0 Library::Ourlib::MFAOBJ::mfAObjLen
+// 006F2FB0 Library::Ourlib::MFAOBJ::mfAObjLen [statically linked library; implementation excluded]
 int __cdecl fn_006F2FB0(undefined4 param_1, char * param_2, int param_3);
-// 006F3050 Library::Ourlib::MFAOBJ::mfAObjParam
+// 006F3050 Library::Ourlib::MFAOBJ::mfAObjParam [statically linked library; implementation excluded]
 int __cdecl fn_006F3050(undefined4 param_1, char * param_2, undefined2 * param_3, undefined2 * param_4);
-// 006F3110 Library::Ourlib::MFAOBJ::mfAObjSave
+// 006F3110 Library::Ourlib::MFAOBJ::mfAObjSave [statically linked library; implementation excluded]
 int __cdecl fn_006F3110(undefined4 param_1, char * param_2, byte * param_3, uint param_4, char param_5);
 // 006F31D0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
 void __thiscall
@@ -19176,43 +19174,43 @@ fn_00709470
           (ST3DSMAPContext *st_this,int *param_1,int param_2,int param_3,int param_4,byte param_5);
 // 00709670 FUN_00709670
 void __thiscall fn_00709670(void *st_this,uint param_1,int param_2,int param_3,byte param_4);
-// 007097C0 Library::Ourlib::MFRLOAD::mfRLoadCreate
+// 007097C0 Library::Ourlib::MFRLOAD::mfRLoadCreate [statically linked library; implementation excluded]
 int * __cdecl fn_007097C0(int param_1);
-// 007098A0 Library::Ourlib::MFRLOAD::FUN_007098a0
+// 007098A0 Library::Ourlib::MFRLOAD::FUN_007098a0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_007098A0(AnonShape_007098A0_B7562D88 * param_1, char param_2, byte * param_3, int param_4, int * param_5, uint * param_6);
-// 00709990 Library::Ourlib::MFRLOAD::FUN_00709990
+// 00709990 Library::Ourlib::MFRLOAD::FUN_00709990 [statically linked library; implementation excluded]
 int __cdecl fn_00709990(AnonShape_00709990_0FAEF1E0 * param_1, int param_2, uint * param_3);
 // 00709A10 FUN_00709a10
 void __cdecl fn_00709A10(void *param_1,Global_sub_00709A10_param_2Enum param_2,uint *param_3);
-// 00709AF0 Library::Ourlib::MFRLOAD::mfRLoad
+// 00709AF0 Library::Ourlib::MFRLOAD::mfRLoad [statically linked library; implementation excluded]
 ushort * __cdecl fn_00709AF0(int * param_1, Global_mfRLoad_param_2Enum param_2, char * text, uint param_4, byte param_5, int param_6, int param_7, undefined4 * param_8);
-// 00709E10 Library::Ourlib::MFRLOAD::mfRLoadAddReff
+// 00709E10 Library::Ourlib::MFRLOAD::mfRLoadAddReff [statically linked library; implementation excluded]
 int __cdecl fn_00709E10(int param_1, char param_2, byte * param_3, int param_4);
-// 00709F40 Library::Ourlib::MFRLOAD::_mfRLoadAddReff
+// 00709F40 Library::Ourlib::MFRLOAD::_mfRLoadAddReff [statically linked library; implementation excluded]
 int __cdecl fn_00709F40(int param_1, int param_2);
-// 0070A050 Library::Ourlib::MFRLOAD::mfRLoadRelease
+// 0070A050 Library::Ourlib::MFRLOAD::mfRLoadRelease [statically linked library; implementation excluded]
 int __cdecl fn_0070A050(int param_1, char param_2, byte * param_3, int param_4);
-// 0070A1B0 Library::Ourlib::MFRLOAD::_mfRLoadRelease
+// 0070A1B0 Library::Ourlib::MFRLOAD::_mfRLoadRelease [statically linked library; implementation excluded]
 int __cdecl fn_0070A1B0(int param_1, int * param_2);
 // 0070A300 FUN_0070a300
 void __cdecl fn_0070A300(int *param_1);
-// 0070A370 Library::Ourlib::MFRLOAD::mfRLoadRefreshAll
+// 0070A370 Library::Ourlib::MFRLOAD::mfRLoadRefreshAll [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0070A370(int param_1);
-// 0070A460 Library::Ourlib::MFRLOAD::FUN_0070a460
+// 0070A460 Library::Ourlib::MFRLOAD::FUN_0070a460 [statically linked library; implementation excluded]
 bool __cdecl fn_0070A460(uint * param_1, char * param_2);
-// 0070A4A0 Library::Ourlib::MFRLOAD::mfRLoadRefresh
+// 0070A4A0 Library::Ourlib::MFRLOAD::mfRLoadRefresh [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0070A4A0(int param_1, char param_2, char * param_3);
-// 0070A5A0 Library::Ourlib::MFIMG::mfImgLoad
+// 0070A5A0 Library::Ourlib::MFIMG::mfImgLoad [statically linked library; implementation excluded]
 ushort * __cdecl fn_0070A5A0(cMf32 * param_1, byte param_2, char * text, byte param_4, int param_5);
-// 0070A650 Library::Ourlib::MFIMG::mfImgGetLen
+// 0070A650 Library::Ourlib::MFIMG::mfImgGetLen [statically linked library; implementation excluded]
 int __cdecl fn_0070A650(undefined4 param_1, byte param_2, char * param_3, int param_4);
-// 0070A6F0 Library::Ourlib::MFIMG::mfImgGetWidth
+// 0070A6F0 Library::Ourlib::MFIMG::mfImgGetWidth [statically linked library; implementation excluded]
 int __cdecl fn_0070A6F0(cMf32 * param_1, byte param_2, char * text, int param_4);
-// 0070A7B0 Library::Ourlib::MFIMG::mfImgGetHeight
+// 0070A7B0 Library::Ourlib::MFIMG::mfImgGetHeight [statically linked library; implementation excluded]
 int __cdecl fn_0070A7B0(undefined4 param_1, byte param_2, char * param_3, int param_4);
-// 0070A870 Library::Ourlib::MFIMG::mfImgGetTransp
+// 0070A870 Library::Ourlib::MFIMG::mfImgGetTransp [statically linked library; implementation excluded]
 int __cdecl fn_0070A870(undefined4 param_1, byte param_2, char * param_3, int param_4);
-// 0070A930 Library::Ourlib::MFIMG::mfImgGetNumIms
+// 0070A930 Library::Ourlib::MFIMG::mfImgGetNumIms [statically linked library; implementation excluded]
 int __cdecl fn_0070A930(undefined4 param_1, byte param_2, char * param_3, int param_4);
 // 0070A9F0 FUN_0070a9f0
 ushort * __cdecl fn_0070A9F0(cMf32 *param_1,char *text,byte param_3,int param_4);
@@ -19226,25 +19224,25 @@ ushort * __cdecl fn_0070AA50(cMf32 *param_1,char *text,byte param_3,int param_4)
 ushort * __cdecl fn_0070AA70(cMf32 *param_1,char *text,byte param_3,int param_4);
 // 0070AA90 FUN_0070aa90
 ushort * __cdecl fn_0070AA90(cMf32 *param_1,char *param_2,byte param_3,int param_4);
-// 0070AAB0 Library::Ourlib::MFIMG::FUN_0070aab0
+// 0070AAB0 Library::Ourlib::MFIMG::FUN_0070aab0 [statically linked library; implementation excluded]
 ushort * __cdecl fn_0070AAB0(cMf32 * param_1, char * param_2, byte param_3, int param_4);
-// 0070AAD0 Library::Ourlib::MFIMG::mfGifLoadToDib
+// 0070AAD0 Library::Ourlib::MFIMG::mfGifLoadToDib [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0070AAD0(undefined4 param_1, char * param_2, int param_3);
-// 0070ABF0 Library::Ourlib::MFIMG::FUN_0070abf0
+// 0070ABF0 Library::Ourlib::MFIMG::FUN_0070abf0 [statically linked library; implementation excluded]
 ushort * __cdecl fn_0070ABF0(cMf32 * param_1, char * param_2, byte param_3, int param_4);
-// 0070AC10 Library::Ourlib::MFIMG::mfPcxLoadToDib
+// 0070AC10 Library::Ourlib::MFIMG::mfPcxLoadToDib [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0070AC10(undefined4 param_1, char * param_2, int param_3);
-// 0070AD40 Library::Ourlib::MFIMG::FUN_0070ad40
+// 0070AD40 Library::Ourlib::MFIMG::FUN_0070ad40 [statically linked library; implementation excluded]
 ushort * __cdecl fn_0070AD40(cMf32 * param_1, char * param_2, byte param_3, int param_4);
-// 0070AD60 Library::Ourlib::MFIMG::mfJpgLoadToDib
+// 0070AD60 Library::Ourlib::MFIMG::mfJpgLoadToDib [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0070AD60(undefined4 param_1, char * param_2, int param_3, uint param_4, uint * param_5, int param_6, int param_7);
-// 0070AE60 Library::Ourlib::MFIMG::mfImtLoad
+// 0070AE60 Library::Ourlib::MFIMG::mfImtLoad [statically linked library; implementation excluded]
 char * __cdecl fn_0070AE60(cMf32 * param_1, char * text, byte param_3, int param_4, undefined4 * param_5, int param_6);
 // 0070B1D0 FUN_0070b1d0
 void __cdecl fn_0070B1D0(int *param_1);
-// 0070B220 Library::Ourlib::MFIMG::mfImtGetNumIms
+// 0070B220 Library::Ourlib::MFIMG::mfImtGetNumIms [statically linked library; implementation excluded]
 int __cdecl fn_0070B220(undefined4 param_1, char * param_2, int param_3);
-// 0070B2E0 Library::Ourlib::MFIMG::mfImtGetModeIms
+// 0070B2E0 Library::Ourlib::MFIMG::mfImtGetModeIms [statically linked library; implementation excluded]
 uint __cdecl fn_0070B2E0(undefined4 param_1, char * param_2, int param_3);
 // 0070B3A0 FUN_0070b3a0
 BITMAPINFO * __cdecl fn_0070B3A0(AnonShape_GLOBAL_0081175C_57F682DD *param_1,int param_2);
@@ -19256,7 +19254,7 @@ void __cdecl fn_0070B3D0(int param_1);
 undefined4 __cdecl fn_0070B3E0(AnonShape_0070B3E0_DA0C9F15 *param_1);
 // 0070B410 FUN_0070b410
 undefined4 __cdecl fn_0070B410(AnonShape_0070B410_2733CA30 *param_1);
-// 0070B430 Library::Ourlib::MFIMG::mfQmtLoad
+// 0070B430 Library::Ourlib::MFIMG::mfQmtLoad [statically linked library; implementation excluded]
 short * __cdecl fn_0070B430(cMf32 * param_1, char * param_2, byte param_3, byte param_4, short * param_5);
 // 0070B600 FUN_0070b600
 void __cdecl fn_0070B600(int *param_1);
@@ -19272,36 +19270,36 @@ void __cdecl fn_0070B680(undefined2 *param_1);
 undefined4 __cdecl fn_0070B690(short *param_1);
 // 0070B6B0 FUN_0070b6b0
 undefined4 __cdecl fn_0070B6B0(AnonShape_0070B6B0_34698A53 *param_1);
-// 0070B6D0 Library::Ourlib::MFIMG::FUN_0070b6d0
+// 0070B6D0 Library::Ourlib::MFIMG::FUN_0070b6d0 [statically linked library; implementation excluded]
 int __cdecl fn_0070B6D0(byte * param_1);
-// 0070B770 Library::Ourlib::MFIMG::FUN_0070b770
+// 0070B770 Library::Ourlib::MFIMG::FUN_0070b770 [statically linked library; implementation excluded]
 int __cdecl fn_0070B770(AnonShape_0070B770_3BA0472D * param_1, int param_2);
-// 0070B900 Library::Ourlib::MFIMG::imgGetDibFromFile
+// 0070B900 Library::Ourlib::MFIMG::imgGetDibFromFile [statically linked library; implementation excluded]
 int * __cdecl fn_0070B900(byte * param_1, int param_2, int param_3, int param_4, int param_5, uint param_6, int param_7, uint * param_8, int param_9);
 // 0070BE00 FUN_0070be00
 int * __cdecl
 fn_0070BE00(byte *param_1,int param_2,int param_3,int param_4,int param_5,uint param_6,int param_7,
             uint *param_8,int param_9);
-// 0070BE80 Library::Ourlib::MFIMG::imgGetSprFromFile
+// 0070BE80 Library::Ourlib::MFIMG::imgGetSprFromFile [statically linked library; implementation excluded]
 int __cdecl fn_0070BE80(byte * param_1, int param_2, int param_3, int param_4, int param_5, byte param_6, uint param_7);
 // 0070BF70 FUN_0070bf70
 int __cdecl
 fn_0070BF70(byte *param_1,int param_2,int param_3,int param_4,int param_5,byte param_6,uint param_7
             );
-// 0070BFE0 Library::Ourlib::MFIMG::imgGetPcxGifJpgFromFile
+// 0070BFE0 Library::Ourlib::MFIMG::imgGetPcxGifJpgFromFile [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0070BFE0(byte * param_1, undefined2 * param_2, undefined2 * param_3, DWORD * param_4);
 // 0070C210 FUN_0070c210
 undefined4 * __cdecl
 fn_0070C210(byte *param_1,undefined2 *param_2,undefined2 *param_3,DWORD *param_4);
-// 0070C270 Library::Ourlib::MFIMG::FUN_0070c270
+// 0070C270 Library::Ourlib::MFIMG::FUN_0070c270 [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0070C270(int param_1);
-// 0070C390 Library::Ourlib::MFIMG::FUN_0070c390
+// 0070C390 Library::Ourlib::MFIMG::FUN_0070c390 [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0070C390(int param_1);
-// 0070C400 Library::Ourlib::MFIMG::FUN_0070c400
+// 0070C400 Library::Ourlib::MFIMG::FUN_0070c400 [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0070C400(byte * param_1, int param_2);
-// 0070C4D0 Library::Ourlib::MFIMG::FUN_0070c4d0
+// 0070C4D0 Library::Ourlib::MFIMG::FUN_0070c4d0 [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0070C4D0(int param_1, int param_2, int param_3, int param_4, int param_5, uint param_6);
-// 0070C690 Library::Ourlib::MFIMG::FUN_0070c690
+// 0070C690 Library::Ourlib::MFIMG::FUN_0070c690 [statically linked library; implementation excluded]
 int __cdecl fn_0070C690(int param_1, int param_2, int param_3, int param_4, int param_5, byte param_6, uint param_7);
 // 0070C860 FUN_0070c860
 int __cdecl fn_0070C860(int *param_1,uint param_2,int param_3,int param_4);
@@ -19326,29 +19324,29 @@ undefined4 __cdecl fn_0070CDC0(byte *param_1);
 uint * __cdecl fn_0070CE00(uint *param_1,char *param_2);
 // 0070CE40 FUN_0070ce40
 char * __cdecl fn_0070CE40(char *param_1,char *param_2);
-// 0070CEB0 ccFntTy::operator_new
+// 0070CEB0 ccFntTy::operator_new [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0070CEB0(uint param_1, cMf32 * param_2, char * text, byte param_4);
-// 0070D1F0 ccFntTy::operator_new
+// 0070D1F0 ccFntTy::operator_new [statically linked library; implementation excluded]
 HDC __cdecl fn_0070D1F0(uint param_1, LOGFONTA * param_2, uint * param_3, byte * param_4, int param_5, byte * param_6, int param_7, int param_8, uint param_9, uint param_10, uint param_11, undefined * param_12);
-// 0070DF00 ccFntTy::operator_new
+// 0070DF00 ccFntTy::operator_new [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0070DF00(uint param_1, ccFntTy * param_2);
-// 0070E030 Library::Ourlib::MFCFNT::FUN_0070e030
+// 0070E030 Library::Ourlib::MFCFNT::FUN_0070e030 [statically linked library; implementation excluded]
 uint __stdcall fn_0070E030(int * param_1, uint param_2, int param_3);
-// 00710560 ccFntTy::operator_delete
+// 00710560 ccFntTy::operator_delete [statically linked library; implementation excluded]
 undefined __cdecl fn_00710560(uint * param_1);
 // 00710790 FUN_00710790
 void __cdecl fn_00710790(AnonShape_00710790_4CBB90D4 *param_1);
-// 007108B0 ccFntTy::Save
+// 007108B0 ccFntTy::Save [statically linked library; implementation excluded]
 undefined4 * __thiscall fn_007108B0(ccFntTy * st_this, undefined4 * param_1);
 // 007109F0 FUN_007109f0
 void __thiscall fn_007109F0(void *st_this,AnonShape_007109F0_BD33A2FF *param_1);
-// 00710A90 ccFntTy::SetSurf
+// 00710A90 ccFntTy::SetSurf [statically linked library; implementation excluded]
 int __thiscall fn_00710A90(ccFntTy * st_this, int param_1, int param_2, int param_3, uint param_4, int param_5, int local_14);
-// 00710BA0 ccFntTy::CreateSurf
+// 00710BA0 ccFntTy::CreateSurf [statically linked library; implementation excluded]
 undefined4 * __thiscall fn_00710BA0(ccFntTy * st_this, int param_1, uint param_2, int param_3, int param_4, int param_5, int param_6, int param_7);
-// 00710D80 ccFntTy::GetSurfAsSpr
+// 00710D80 ccFntTy::GetSurfAsSpr [statically linked library; implementation excluded]
 int __thiscall fn_00710D80(ccFntTy * st_this, byte param_1, int param_2, int param_3, int param_4, int param_5);
-// 00710F00 ccFntTy::EraseSufr
+// 00710F00 ccFntTy::EraseSufr [statically linked library; implementation excluded]
 int __thiscall fn_00710F00(ccFntTy * st_this);
 // 00710FB0 FUN_00710fb0
 void __thiscall fn_00710FB0(void *st_this,byte *param_1);
@@ -19356,63 +19354,63 @@ void __thiscall fn_00710FB0(void *st_this,byte *param_1);
 int __thiscall fn_00711110(void *st_this,char *resourceString);
 // 007111C0 FUN_007111c0
 int __thiscall fn_007111C0(void *st_this,char *resourceString);
-// 00711260 Library::Ourlib::MFCFNT::FUN_00711260
+// 00711260 Library::Ourlib::MFCFNT::FUN_00711260 [statically linked library; implementation excluded]
 int __thiscall fn_00711260(void * st_this, uint * param_1);
-// 007112E0 Library::Ourlib::MFCFNT::FUN_007112e0
+// 007112E0 Library::Ourlib::MFCFNT::FUN_007112e0 [statically linked library; implementation excluded]
 int __thiscall fn_007112E0(void * st_this, uint * param_1);
 // 00711370 FUN_00711370
 int __thiscall fn_00711370(void *st_this,uint *param_1);
 // 007113E0 FUN_007113e0
 int __thiscall fn_007113E0(void *st_this,uint *param_1);
-// 00711470 Library::Ourlib::MFCFNT::FUN_00711470
+// 00711470 Library::Ourlib::MFCFNT::FUN_00711470 [statically linked library; implementation excluded]
 int __stdcall fn_00711470(uint * param_1);
-// 007114C0 Library::Ourlib::MFCFNT::FUN_007114c0
+// 007114C0 Library::Ourlib::MFCFNT::FUN_007114c0 [statically linked library; implementation excluded]
 int __thiscall fn_007114C0(void * st_this, uint * param_1);
-// 00711530 Library::Ourlib::MFCFNT::FUN_00711530
+// 00711530 Library::Ourlib::MFCFNT::FUN_00711530 [statically linked library; implementation excluded]
 int __thiscall fn_00711530(void * st_this, int * param_1);
-// 00711580 Library::Ourlib::MFCFNT::FUN_00711580
+// 00711580 Library::Ourlib::MFCFNT::FUN_00711580 [statically linked library; implementation excluded]
 int __thiscall fn_00711580(void * st_this, int * param_1);
 // 007115E0 FUN_007115e0
 int __thiscall fn_007115E0(void *st_this,AnonShape_007115E0_FC3147FF *param_1,int param_2,int param_3);
 // 00711670 FUN_00711670
 int __thiscall fn_00711670(void *st_this,AnonShape_00711670_5F8DCCF2 *param_1,int param_2,int param_3);
-// 007116F0 ccFntTy::WrCh
+// 007116F0 ccFntTy::WrCh [statically linked library; implementation excluded]
 int __thiscall fn_007116F0(ccFntTy * st_this, byte * param_1, uint param_2);
-// 00711880 ccFntTy::WrChXY
+// 00711880 ccFntTy::WrChXY [statically linked library; implementation excluded]
 int __thiscall fn_00711880(ccFntTy * st_this, byte * param_1, int param_2, int param_3, uint param_4);
-// 007119C0 ccFntTy::WrStr
+// 007119C0 ccFntTy::WrStr [statically linked library; implementation excluded]
 int __thiscall fn_007119C0(ccFntTy * st_this, char * resourceString, int param_2, int param_3, uint param_4);
-// 00711B70 ccFntTy::WrTxt
+// 00711B70 ccFntTy::WrTxt [statically linked library; implementation excluded]
 int __thiscall fn_00711B70(ccFntTy * st_this, char * resourceString, int param_2, int param_3, uint param_4, int param_5, int param_6);
-// 00711DA0 ccFntTy::WrArr
+// 00711DA0 ccFntTy::WrArr [statically linked library; implementation excluded]
 int __thiscall fn_00711DA0(ccFntTy * st_this, int * param_1, int param_2, int param_3, undefined4 param_4);
-// 00711F70 ccFntTy::WrSarr
+// 00711F70 ccFntTy::WrSarr [statically linked library; implementation excluded]
 int __thiscall fn_00711F70(ccFntTy * st_this, int param_1, int param_2, int param_3, int param_4, int param_5, undefined4 param_6);
-// 007121A0 Library::Ourlib::MFCFNT::FUN_007121a0
+// 007121A0 Library::Ourlib::MFCFNT::FUN_007121a0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_007121A0(int param_1, int param_2, int param_3);
-// 007121F0 ccFntTy::FormSarr
+// 007121F0 ccFntTy::FormSarr [statically linked library; implementation excluded]
 uint * __thiscall fn_007121F0(ccFntTy * st_this, uint * param_1, char * text, int param_3, int param_4, uint param_5, int param_6);
-// 007126E0 ccFntTy::FormIndentSarr
+// 007126E0 ccFntTy::FormIndentSarr [statically linked library; implementation excluded]
 uint * __thiscall fn_007126E0(ccFntTy * st_this, DArrayTy * param_1, char * text, uint * param_3, int param_4, int param_5, uint param_6, char * param_7, int param_8);
-// 007129D0 ccFntTy::SepColorStrInSarr
+// 007129D0 ccFntTy::SepColorStrInSarr [statically linked library; implementation excluded]
 uint * __thiscall fn_007129D0(ccFntTy * st_this, uint * param_1, uint * param_2);
-// 00712C10 ccFntTy::FormText
+// 00712C10 ccFntTy::FormText [statically linked library; implementation excluded]
 char * __thiscall fn_00712C10(ccFntTy * st_this, char * param_1, uint * param_2, char * text, int param_4, int param_5);
-// 00712D30 ccFntTy::FormIndentText
+// 00712D30 ccFntTy::FormIndentText [statically linked library; implementation excluded]
 char * __thiscall fn_00712D30(ccFntTy * st_this, char * param_1, uint * param_2, char * text, uint * param_4, int param_5, char * param_6, int param_7);
-// 00712E60 ccFntTy::VisLineSarr
+// 00712E60 ccFntTy::VisLineSarr [statically linked library; implementation excluded]
 int __thiscall fn_00712E60(ccFntTy * st_this, int param_1, int param_2);
-// 00712F80 ccFntTy::_TxtToSarr
+// 00712F80 ccFntTy::_TxtToSarr [statically linked library; implementation excluded]
 uint * __thiscall fn_00712F80(ccFntTy * st_this, uint * param_1);
-// 00713080 ccFntTy::_SarrToTxt
+// 00713080 ccFntTy::_SarrToTxt [statically linked library; implementation excluded]
 char * __thiscall fn_00713080(ccFntTy * st_this, char * param_1, int param_2);
-// 00713200 ccFntTy::GetFittingStr
+// 00713200 ccFntTy::GetFittingStr [statically linked library; implementation excluded]
 char * __thiscall fn_00713200(ccFntTy * st_this, char * param_1, uint * param_2, uint * param_3, int param_4, undefined4 * param_5);
-// 00713480 ccFntTy::CreateTypeSSpr
+// 00713480 ccFntTy::CreateTypeSSpr [statically linked library; implementation excluded]
 undefined4 * __thiscall fn_00713480(ccFntTy * st_this, uint * param_1, int param_2, int param_3, ccFntTy_CreateTypeSSpr_param_4Enum param_4, uint param_5, int param_6, int param_7, int param_8);
-// 00713B00 cTypingTy::TypingInit
+// 00713B00 cTypingTy::TypingInit [statically linked library; implementation excluded]
 int __thiscall fn_00713B00(cTypingTy * st_this, uint * param_1, void * param_2, int param_3, undefined4 param_4, undefined4 param_5, int param_6, int param_7, uint param_8, uint param_9, int param_10, int param_11, int param_12, undefined4 param_13);
-// 00713F30 cTypingTy::TypingInitSarr
+// 00713F30 cTypingTy::TypingInitSarr [statically linked library; implementation excluded]
 int __thiscall fn_00713F30(cTypingTy * st_this, DArrayTy * param_1, void * param_2, int param_3, undefined4 param_4, undefined4 param_5, int param_6, int param_7, uint param_8, uint param_9, int param_10, int param_11, int param_12, undefined4 param_13);
 // 00714060 FUN_00714060
 void __fastcall fn_00714060(int *param_1);
@@ -19440,43 +19438,43 @@ int __thiscall fn_00714F00(void *st_this,char *source,size_t param_2);
 int __thiscall fn_00714F70(void *st_this,char *param_1);
 // 00714FB0 FUN_00714fb0
 undefined4 __thiscall fn_00714FB0(void *st_this,int param_1,uint *param_2,char *param_3);
-// 00715050 Library::Ourlib::MFDARR::mfDarLoad
+// 00715050 Library::Ourlib::MFDARR::mfDarLoad [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00715050(cMf32 * param_1, char * param_2, int param_3);
-// 00715170 Library::Ourlib::MFDARR::mfDarSave
+// 00715170 Library::Ourlib::MFDARR::mfDarSave [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00715170(uint * param_1, int param_2, char * param_3, char param_4);
-// 00715280 Library::Ourlib::MFDARR::mfDarGetNum
+// 00715280 Library::Ourlib::MFDARR::mfDarGetNum [statically linked library; implementation excluded]
 int __cdecl fn_00715280(int param_1, char * param_2, int param_3);
 // 00715360 FUN_00715360
 int __cdecl
 fn_00715360(int *param_1,int param_2,char param_3,char *param_4,uint param_5,int param_6,
             undefined4 param_7);
-// 007154E0 Library::Ourlib::CONNECT::cnUnPackMess
+// 007154E0 Library::Ourlib::CONNECT::cnUnPackMess [statically linked library; implementation excluded]
 byte * __cdecl fn_007154E0(byte * param_1, uint param_2, byte * param_3, int * param_4, uint * param_5);
-// 00715630 Library::Ourlib::CONNECT::FUN_00715630
+// 00715630 Library::Ourlib::CONNECT::FUN_00715630 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00715630(int * param_1, int param_2, uint * param_3, int * param_4, undefined4 * param_5, uint * param_6, int param_7, int param_8);
 // 00715820 SpriteClassTy::SpriteClassTy
 SpriteClassTy * __thiscall fn_00715820(SpriteClassTy *st_this);
-// 007158A0 SpriteClassTy::InitSprite
+// 007158A0 SpriteClassTy::InitSprite [statically linked library; implementation excluded]
 undefined4 __thiscall fn_007158A0(SpriteClassTy * st_this, int * param_1, uint param_2, char param_3, undefined4 * param_4, int param_5, int param_6);
-// 00715AB0 SpriteClassTy::CloseSprite
+// 00715AB0 SpriteClassTy::CloseSprite [statically linked library; implementation excluded]
 undefined4 __thiscall fn_00715AB0(SpriteClassTy * st_this);
-// 00715C60 SpriteClassTy::SetImagesReg
+// 00715C60 SpriteClassTy::SetImagesReg [statically linked library; implementation excluded]
 undefined4 __thiscall fn_00715C60(SpriteClassTy * st_this, int * param_1, SpriteClassTy_SetImagesReg_param_2Enum param_2, uint param_3, byte * param_4, uint param_5);
-// 00716040 SpriteClassTy::SetImages
+// 00716040 SpriteClassTy::SetImages [statically linked library; implementation excluded]
 undefined4 __thiscall fn_00716040(SpriteClassTy * st_this, cMf32 * param_1, SpriteClassTy_SetImages_param_2Enum param_2, uint param_3, char * param_4, uint param_5, int param_6);
-// 00716480 SpriteClassTy::SetImagesPtr
+// 00716480 SpriteClassTy::SetImagesPtr [statically linked library; implementation excluded]
 undefined4 __thiscall fn_00716480(SpriteClassTy * st_this, short * param_1, SpriteClassTy_SetImagesPtr_param_2Enum param_2, uint param_3);
 // 00716820 FUN_00716820
 int * __cdecl fn_00716820(int *param_1,int param_2,int param_3);
-// 00716850 Library::Ourlib::MFTSPR::mfTSprLoad
+// 00716850 Library::Ourlib::MFTSPR::mfTSprLoad [statically linked library; implementation excluded]
 int * __cdecl fn_00716850(int param_1, char * param_2, char param_3, byte param_4, int param_5);
 // 00716DB0 FUN_00716db0
 void __cdecl fn_00716DB0(int *param_1);
-// 00716E60 Library::Ourlib::MFTSPR::mfTSprGetNumFas
+// 00716E60 Library::Ourlib::MFTSPR::mfTSprGetNumFas [statically linked library; implementation excluded]
 int __cdecl fn_00716E60(undefined4 param_1, char * param_2, char param_3, int param_4);
-// 00716FD0 Library::Ourlib::MFTSPR::mfTSprLoadAsSSpr
+// 00716FD0 Library::Ourlib::MFTSPR::mfTSprLoadAsSSpr [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_00716FD0(int param_1, char * param_2, byte param_3, int param_4);
-// 007171C0 Library::Ourlib::MFTSPR::mfRSprLoadAsQSpr
+// 007171C0 Library::Ourlib::MFTSPR::mfRSprLoadAsQSpr [statically linked library; implementation excluded]
 short * __cdecl fn_007171C0(int param_1, char * param_2, byte param_3, int param_4);
 // 00717380 FUN_00717380
 void __fastcall fn_00717380(AnonShape_00717380_FEFD061B *param_1);
@@ -19486,7 +19484,7 @@ byte * fn_007175D0(byte *param_1,int param_2,int param_3,byte param_4);
 byte * fn_00717620(byte *param_1,int param_2,int param_3,byte param_4,byte param_5);
 // 00717680 FUN_00717680
 byte * fn_00717680(int param_1,byte *param_2,int param_3,int param_4,byte param_5,byte param_6);
-// 007176F0 Library::Ourlib::STDARK::FUN_007176f0
+// 007176F0 Library::Ourlib::STDARK::FUN_007176f0 [statically linked library; implementation excluded]
 undefined __thiscall fn_007176F0(void * st_this, undefined4 * param_1, int param_2, int param_3, int param_4, int param_5, undefined4 param_6, undefined4 param_7, int param_8, undefined4 param_9, undefined4 param_10, undefined4 param_11, undefined4 param_12);
 // 00717870 ST3DSMAPContext::sub_00717870
 void __thiscall fn_00717870(ST3DSMAPContext *st_this);
@@ -19499,9 +19497,9 @@ fn_00717910(void *st_this,byte *param_1,int param_2,int param_3,byte *param_4,in
             ,uint param_7,uint param_8);
 // 00717970 FUN_00717970
 undefined4 __fastcall fn_00717970(ST3DSMAPContext *param_1);
-// 00717FC0 Library::Ourlib::MFPLT::mfPltPtrTy
+// 00717FC0 Library::Ourlib::MFPLT::mfPltPtrTy [statically linked library; implementation excluded]
 ushort * __cdecl fn_00717FC0(int param_1, char * param_2, byte param_3, int param_4);
-// 00718080 Library::Ourlib::MFPLT::mfPltNum
+// 00718080 Library::Ourlib::MFPLT::mfPltNum [statically linked library; implementation excluded]
 int __cdecl fn_00718080(undefined4 param_1, char * param_2, int param_3);
 // 00718130 FUN_00718130
 void __cdecl fn_00718130(byte *param_1,float *param_2);
@@ -19512,21 +19510,21 @@ ulonglong __fastcall
 fn_007183C0(undefined4 param_1,undefined4 param_2,float *param_3,undefined1 *param_4);
 // 007184B0 FUN_007184b0
 void __cdecl fn_007184B0(float *param_1,float *param_2);
-// 00718500 Library::Ourlib::PALETTE::FUN_00718500
+// 00718500 Library::Ourlib::PALETTE::FUN_00718500 [statically linked library; implementation excluded]
 int __cdecl fn_00718500(undefined4 param_1, int param_2, int param_3, byte param_4, byte param_5, byte param_6, int param_7);
-// 00718780 Library::Ourlib::PALETTE::FUN_00718780
+// 00718780 Library::Ourlib::PALETTE::FUN_00718780 [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_00718780(int param_1, int param_2, int param_3, int param_4, int param_5, undefined4 * param_6);
-// 00718A40 Library::Ourlib::PALETTE::FUN_00718a40
+// 00718A40 Library::Ourlib::PALETTE::FUN_00718a40 [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_00718A40(int param_1, int param_2, int param_3, uint param_4, byte param_5, byte param_6, undefined4 * param_7);
-// 00718D50 Library::Ourlib::PALETTE::FUN_00718d50
+// 00718D50 Library::Ourlib::PALETTE::FUN_00718d50 [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_00718D50(int param_1, uint param_2, int param_3, uint param_4, byte param_5, uint param_6, undefined4 * param_7);
-// 00718F40 Library::Ourlib::PALETTE::FUN_00718f40
+// 00718F40 Library::Ourlib::PALETTE::FUN_00718f40 [statically linked library; implementation excluded]
 int __cdecl fn_00718F40(DDXContext * param_1, undefined4 * param_2, uint param_3, UINT param_4, int param_5, int * param_6, int param_7, uint param_8, uint * param_9);
-// 00719080 Library::Ourlib::PALETTE::FUN_00719080
+// 00719080 Library::Ourlib::PALETTE::FUN_00719080 [statically linked library; implementation excluded]
 int __cdecl fn_00719080(undefined4 * param_1, undefined4 * param_2, uint param_3, UINT param_4, int param_5, int param_6);
-// 00719190 Library::Ourlib::PALETTE::FUN_00719190
+// 00719190 Library::Ourlib::PALETTE::FUN_00719190 [statically linked library; implementation excluded]
 int __cdecl fn_00719190(undefined4 * param_1, undefined4 * param_2, uint param_3, UINT param_4, int param_5, int * param_6, int param_7, uint param_8, uint * param_9);
-// 007192D0 Library::Ourlib::PALETTE::FUN_007192d0
+// 007192D0 Library::Ourlib::PALETTE::FUN_007192d0 [statically linked library; implementation excluded]
 int __cdecl fn_007192D0(undefined4 * param_1, undefined4 * param_2, uint param_3, UINT param_4, int param_5, int param_6);
 // 007193F0 FUN_007193f0
 void fn_007193F0(void);
@@ -19571,46 +19569,46 @@ undefined4 __cdecl fn_00719BB0(MCIDEVICEID *param_1);
 void __cdecl fn_00719C60(DWORD_PTR dwParam2);
 // 00719C90 FUN_00719c90
 int __cdecl fn_00719C90(MCIERROR mcierr,MCIDEVICEID *param_2);
-// 00719D00 Library::Ourlib::MFWAV::mfWavLoad
+// 00719D00 Library::Ourlib::MFWAV::mfWavLoad [statically linked library; implementation excluded]
 ushort * __cdecl fn_00719D00(cMf32 * param_1, char * soundName, byte param_3, ushort * param_4);
-// 00719DF0 Library::Ourlib::MFWAV::mfWavGetType
+// 00719DF0 Library::Ourlib::MFWAV::mfWavGetType [statically linked library; implementation excluded]
 int __cdecl fn_00719DF0(undefined4 param_1, char * param_2, int param_3);
-// 00719EA0 Library::Ourlib::MFWAV::GetPcmFromWavFile
+// 00719EA0 Library::Ourlib::MFWAV::GetPcmFromWavFile [statically linked library; implementation excluded]
 int * __cdecl fn_00719EA0(LPCSTR param_1, int * param_2);
-// 0071A030 Library::Ourlib::MFWAV::mfWavSave
+// 0071A030 Library::Ourlib::MFWAV::mfWavSave [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0071A030(byte * param_1, uint param_2, byte param_3, int param_4, char * param_5, char param_6);
-// 0071A110 Library::Ourlib::MFWAV::mfWavSaveFile
+// 0071A110 Library::Ourlib::MFWAV::mfWavSaveFile [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0071A110(LPCSTR param_1, byte param_2, int param_3, char * param_4, char param_5);
 // 0071A230 FUN_0071a230
 void __cdecl fn_0071A230(cMf32 *param_1,char *param_2);
 // 0071A250 FUN_0071a250
 void __cdecl fn_0071A250(cMf32 *param_1,char *param_2,char *param_3,int param_4);
-// 0071A270 Library::Ourlib::MFWAV::mfSndLibLoad
+// 0071A270 Library::Ourlib::MFWAV::mfSndLibLoad [statically linked library; implementation excluded]
 byte * __cdecl fn_0071A270(int param_1, char * param_2, byte param_3, byte param_4);
 // 0071A4B0 FUN_0071a4b0
 void __cdecl fn_0071A4B0(int *param_1);
-// 0071A530 Library::Ourlib::MFWAV::FUN_0071a530
+// 0071A530 Library::Ourlib::MFWAV::FUN_0071a530 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0071A530(int param_1, byte * param_2, int param_3);
-// 0071A5E0 Library::Ourlib::MFWAV::mfSndTblLoad
+// 0071A5E0 Library::Ourlib::MFWAV::mfSndTblLoad [statically linked library; implementation excluded]
 int * __cdecl fn_0071A5E0(int param_1, char * text, byte param_3);
 // 0071A8D0 FUN_0071a8d0
 void __cdecl fn_0071A8D0(int *param_1);
 // 0071A990 FUN_0071a990
 uint * __cdecl
 fn_0071A990(AnonShape_0071A990_7656000F *param_1,int soundId,int param_3,undefined1 *param_4);
-// 0071AA10 Library::Ourlib::MFSARR::mfSarLoad
+// 0071AA10 Library::Ourlib::MFSARR::mfSarLoad [statically linked library; implementation excluded]
 uint * __cdecl fn_0071AA10(cMf32 * param_1, char * param_2, int param_3);
-// 0071AB30 Library::Ourlib::MFSARR::mfSarSave
+// 0071AB30 Library::Ourlib::MFSARR::mfSarSave [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0071AB30(uint * param_1, int param_2, char * param_3, char param_4);
-// 0071AC40 Library::Ourlib::MFSARR::tSArrCat
+// 0071AC40 Library::Ourlib::MFSARR::tSArrCat [statically linked library; implementation excluded]
 undefined __cdecl fn_0071AC40(int param_1, int param_2);
-// 0071AD00 Library::Ourlib::MFANY::mfAnyLoad
+// 0071AD00 Library::Ourlib::MFANY::mfAnyLoad [statically linked library; implementation excluded]
 ushort * __cdecl fn_0071AD00(cMf32 * param_1, char * param_2, byte param_3, int param_4);
-// 0071ADB0 Library::Ourlib::MFANY::mfAnySave
+// 0071ADB0 Library::Ourlib::MFANY::mfAnySave [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0071ADB0(byte * param_1, uint param_2, int param_3, char * param_4, char param_5);
-// 0071AE80 Library::Ourlib::MFANY::ReadAllFile
+// 0071AE80 Library::Ourlib::MFANY::ReadAllFile [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0071AE80(LPCSTR param_1, DWORD * param_2);
-// 0071B010 Library::Ourlib::MFANY::mfAnySaveFile
+// 0071B010 Library::Ourlib::MFANY::mfAnySaveFile [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0071B010(LPCSTR param_1, int param_2, char * param_3, char param_4);
 // 0071B100 FUN_0071b100
 int __cdecl fn_0071B100(HKEY hKey,PHKEY phkResult);
@@ -19618,57 +19616,57 @@ int __cdecl fn_0071B100(HKEY hKey,PHKEY phkResult);
 void * __cdecl fn_0071B190(void);
 // 0071B1B0 FUN_0071b1b0
 undefined4 * __fastcall fn_0071B1B0(undefined4 *param_1);
-// 0071B220 InputClassTy::Create
+// 0071B220 InputClassTy::Create [statically linked library; implementation excluded]
 int __thiscall fn_0071B220(InputClassTy * st_this);
-// 0071B520 InputClassTy::Done
+// 0071B520 InputClassTy::Done [statically linked library; implementation excluded]
 int __thiscall fn_0071B520(InputClassTy * st_this);
-// 0071B630 Library::Ourlib::SINPUT::FUN_0071b630
+// 0071B630 Library::Ourlib::SINPUT::FUN_0071b630 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_0071B630(void * st_this, undefined4 * param_1, undefined4 * param_2, int * param_3);
-// 0071B760 Library::Ourlib::SINPUT::FUN_0071b760
+// 0071B760 Library::Ourlib::SINPUT::FUN_0071b760 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_0071B760(uint param_1, byte param_2, AnonShape_0071B760_B33E06ED * param_3, AnonShape_0071B760_D695FB3E * param_4, uint * param_5, undefined4 * param_6);
-// 0071B970 Library::Ourlib::SINPUT::FUN_0071b970
+// 0071B970 Library::Ourlib::SINPUT::FUN_0071b970 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_0071B970(uint * param_1, byte * param_2);
-// 0071B9C0 InputClassTy::None
+// 0071B9C0 InputClassTy::None [statically linked library; implementation excluded]
 int __thiscall fn_0071B9C0(InputClassTy * st_this);
-// 0071C1D0 InputClassTy::AddAcc
+// 0071C1D0 InputClassTy::AddAcc [statically linked library; implementation excluded]
 int __thiscall fn_0071C1D0(InputClassTy * st_this, uint * param_1);
-// 0071C530 InputClassTy::DelAcc
+// 0071C530 InputClassTy::DelAcc [statically linked library; implementation excluded]
 undefined __thiscall fn_0071C530(InputClassTy * st_this, byte * param_1);
-// 0071C7C0 Library::Ourlib::SINPUT::FUN_0071c7c0
+// 0071C7C0 Library::Ourlib::SINPUT::FUN_0071c7c0 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_0071C7C0(void * st_this, int * param_1);
-// 0071C830 Library::Ourlib::SINPUT::FUN_0071c830
+// 0071C830 Library::Ourlib::SINPUT::FUN_0071c830 [statically linked library; implementation excluded]
 undefined __fastcall fn_0071C830(AnonShape_0071C830_6B4541B2 * param_1);
-// 0071C870 Library::Ourlib::SINPUT::FUN_0071c870
+// 0071C870 Library::Ourlib::SINPUT::FUN_0071c870 [statically linked library; implementation excluded]
 undefined __fastcall fn_0071C870(AnonShape_0071C870_66664424 * param_1);
-// 0071C8C0 InputClassTy::AddToMouse
+// 0071C8C0 InputClassTy::AddToMouse [statically linked library; implementation excluded]
 int __thiscall fn_0071C8C0(InputClassTy * st_this, int param_1, uint param_2);
-// 0071C9F0 Library::Ourlib::SINPUT::FUN_0071c9f0
+// 0071C9F0 Library::Ourlib::SINPUT::FUN_0071c9f0 [statically linked library; implementation excluded]
 undefined __thiscall fn_0071C9F0(void * st_this, int param_1);
-// 0071CA50 InputClassTy::GetMessage
+// 0071CA50 InputClassTy::GetMessage [statically linked library; implementation excluded]
 int __thiscall fn_0071CA50(InputClassTy * st_this, STMessage * message);
 // 0071CF60 FUN_0071cf60
 undefined4 __fastcall fn_0071CF60(int *param_1);
 // 0071CF80 FUN_0071cf80
 undefined4 __fastcall fn_0071CF80(void *param_1);
-// 0071CFD0 ButtonClassTy::GetMessage
+// 0071CFD0 ButtonClassTy::GetMessage [statically linked library; implementation excluded]
 int __thiscall fn_0071CFD0(ButtonClassTy * st_this, STMessage * message);
 // 0071E000 CreateButton
 ButtonClassTy * __cdecl fn_0071E000(void);
 // 0071E040 RadioClassTy::RadioClassTy
 RadioClassTy * __thiscall fn_0071E040(RadioClassTy *st_this);
-// 0071E060 Library::Ourlib::SBUTTON::FUN_0071e060
+// 0071E060 Library::Ourlib::SBUTTON::FUN_0071e060 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_0071E060(void * st_this, int param_1, int param_2);
-// 0071E0E0 RadioClassTy::GetMessage
+// 0071E0E0 RadioClassTy::GetMessage [statically linked library; implementation excluded]
 int __thiscall fn_0071E0E0(RadioClassTy * st_this, STMessage * message);
 // 0071E6D0 CreateRadio
 RadioClassTy * __cdecl fn_0071E6D0(void);
 // 0071E6F0 ViewerClassTy::ViewerClassTy
 ViewerClassTy * __thiscall fn_0071E6F0(ViewerClassTy *st_this);
-// 0071E730 ViewerClassTy::_Draw
+// 0071E730 ViewerClassTy::_Draw [statically linked library; implementation excluded]
 int __thiscall fn_0071E730(ViewerClassTy * st_this);
 // 0071E860 FUN_0071e860
 int __thiscall fn_0071E860(void *st_this,ushort param_1,ushort param_2,ushort param_3,ushort param_4);
-// 0071E8B0 ViewerClassTy::GetMessage
+// 0071E8B0 ViewerClassTy::GetMessage [statically linked library; implementation excluded]
 int __thiscall fn_0071E8B0(ViewerClassTy * st_this, STMessage * message);
 // 0071F210 CreateViewer
 ViewerClassTy * __cdecl fn_0071F210(void);
@@ -19680,7 +19678,7 @@ uint __thiscall fn_0071F2B0(void *st_this,ushort param_1,ushort param_2);
 int __thiscall fn_0071F2F0(void *st_this,ushort param_1,ushort param_2,ushort param_3,ushort param_4);
 // 0071F340 FUN_0071f340
 int __fastcall fn_0071F340(int *param_1);
-// 0071F3A0 ListClassTy::GetMessage
+// 0071F3A0 ListClassTy::GetMessage [statically linked library; implementation excluded]
 int __thiscall fn_0071F3A0(ListClassTy * st_this, STMessage * message);
 // 00720960 CreateList
 ListClassTy * __cdecl fn_00720960(void);
@@ -19688,37 +19686,37 @@ ListClassTy * __cdecl fn_00720960(void);
 EditorClassTy * __thiscall fn_007209B0(EditorClassTy *st_this);
 // 007209D0 FUN_007209d0
 int __thiscall fn_007209D0(void *st_this,undefined4 param_1);
-// 00720A50 EditorClassTy::_Draw
+// 00720A50 EditorClassTy::_Draw [statically linked library; implementation excluded]
 int __thiscall fn_00720A50(EditorClassTy * st_this, int * param_1);
-// 00720D30 Library::Ourlib::SEDIT::FUN_00720d30
+// 00720D30 Library::Ourlib::SEDIT::FUN_00720d30 [statically linked library; implementation excluded]
 int __fastcall fn_00720D30(AnonShape_00720D30_DF382E7D * param_1);
-// 00720DE0 Library::Ourlib::SEDIT::FUN_00720de0
+// 00720DE0 Library::Ourlib::SEDIT::FUN_00720de0 [statically linked library; implementation excluded]
 int __fastcall fn_00720DE0(int param_1);
-// 00720E70 Library::Ourlib::SEDIT::FUN_00720e70
+// 00720E70 Library::Ourlib::SEDIT::FUN_00720e70 [statically linked library; implementation excluded]
 undefined __thiscall fn_00720E70(void * st_this, int param_1, int param_2);
-// 00721080 Library::Ourlib::SEDIT::FUN_00721080
+// 00721080 Library::Ourlib::SEDIT::FUN_00721080 [statically linked library; implementation excluded]
 undefined __thiscall fn_00721080(void * st_this, int param_1, uint param_2);
-// 00721340 Library::Ourlib::SEDIT::FUN_00721340
+// 00721340 Library::Ourlib::SEDIT::FUN_00721340 [statically linked library; implementation excluded]
 uint __fastcall fn_00721340(AnonShape_00721340_81196542 * param_1);
-// 00721520 Library::Ourlib::SEDIT::FUN_00721520
+// 00721520 Library::Ourlib::SEDIT::FUN_00721520 [statically linked library; implementation excluded]
 undefined __thiscall fn_00721520(void * st_this, int param_1, uint param_2);
-// 00721790 Library::Ourlib::SEDIT::FUN_00721790
+// 00721790 Library::Ourlib::SEDIT::FUN_00721790 [statically linked library; implementation excluded]
 int __fastcall fn_00721790(AnonShape_00721790_E0636AC6 * param_1);
-// 007217E0 Library::Ourlib::SEDIT::FUN_007217e0
+// 007217E0 Library::Ourlib::SEDIT::FUN_007217e0 [statically linked library; implementation excluded]
 int __fastcall fn_007217E0(AnonShape_007217E0_1A4AB243 * param_1);
-// 00721830 Library::Ourlib::SEDIT::FUN_00721830
+// 00721830 Library::Ourlib::SEDIT::FUN_00721830 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_00721830(void * st_this, char * param_1);
-// 007219A0 Library::Ourlib::SEDIT::FUN_007219a0
+// 007219A0 Library::Ourlib::SEDIT::FUN_007219a0 [statically linked library; implementation excluded]
 int __fastcall fn_007219A0(AnonShape_007219A0_88F70163 * param_1);
-// 00721A20 Library::Ourlib::SEDIT::FUN_00721a20
+// 00721A20 Library::Ourlib::SEDIT::FUN_00721a20 [statically linked library; implementation excluded]
 void __thiscall fn_00721A20(void * st_this, int param_1);
-// 00721BF0 EditorClassTy::SendToSliders
+// 00721BF0 EditorClassTy::SendToSliders [statically linked library; implementation excluded]
 int __thiscall fn_00721BF0(EditorClassTy * st_this, int * param_1);
-// 00721CD0 Library::Ourlib::SEDIT::FUN_00721cd0
+// 00721CD0 Library::Ourlib::SEDIT::FUN_00721cd0 [statically linked library; implementation excluded]
 undefined __thiscall fn_00721CD0(void * st_this, int param_1);
-// 00722070 Library::Ourlib::SEDIT::FUN_00722070
+// 00722070 Library::Ourlib::SEDIT::FUN_00722070 [statically linked library; implementation excluded]
 undefined __thiscall fn_00722070(void * st_this, int param_1);
-// 00722410 EditorClassTy::GetMessage
+// 00722410 EditorClassTy::GetMessage [statically linked library; implementation excluded]
 int __thiscall fn_00722410(EditorClassTy * st_this, STMessage * message);
 // 007233B0 CreateEditor
 EditorClassTy * __cdecl fn_007233B0(void);
@@ -19726,7 +19724,7 @@ EditorClassTy * __cdecl fn_007233B0(void);
 int __thiscall fn_007233D0(void *st_this,undefined4 param_1);
 // 007233F0 FUN_007233f0
 int __fastcall fn_007233F0(AnonShape_007233F0_CA87FFD3 *param_1);
-// 00723420 TabClassTy::GetMessage
+// 00723420 TabClassTy::GetMessage [statically linked library; implementation excluded]
 int __thiscall fn_00723420(TabClassTy * st_this, STMessage * message);
 // 007242D0 FUN_007242d0
 void * __cdecl fn_007242D0(void);
@@ -19736,7 +19734,7 @@ SliderClassTy * __thiscall fn_00724310(SliderClassTy *st_this);
 int __thiscall fn_00724330(void *st_this,int param_1);
 // 00724360 FUN_00724360
 void __fastcall fn_00724360(AnonShape_00724360_3CA25F92 *param_1);
-// 007244B0 SliderClassTy::GetMessage
+// 007244B0 SliderClassTy::GetMessage [statically linked library; implementation excluded]
 int __thiscall fn_007244B0(SliderClassTy * st_this, STMessage * message);
 // 00724D00 CreateSlider
 SliderClassTy * __cdecl fn_00724D00(void);
@@ -19752,17 +19750,17 @@ void __thiscall fn_00724E20(void *st_this,int param_1,int param_2);
 bool __thiscall fn_00724F00(void *st_this,int param_1,int param_2);
 // 00724FA0 FUN_00724fa0
 int __thiscall fn_00724FA0(void *st_this,int param_1,int param_2);
-// 00725020 TrackbarClassTy::GetMessage
+// 00725020 TrackbarClassTy::GetMessage [statically linked library; implementation excluded]
 int __thiscall fn_00725020(TrackbarClassTy * st_this, STMessage * message);
 // 00725520 CreateTrackbar
 TrackbarClassTy * __cdecl fn_00725520(void);
-// 00725550 Library::Ourlib::MFPLA::mfPlaPtrTy
+// 00725550 Library::Ourlib::MFPLA::mfPlaPtrTy [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_00725550(cMf32 * param_1, char * param_2, int param_3);
 // 00725680 FUN_00725680
 void __cdecl fn_00725680(int *param_1);
-// 007256A0 Library::Ourlib::MFPLA::mfPlaGetClust
+// 007256A0 Library::Ourlib::MFPLA::mfPlaGetClust [statically linked library; implementation excluded]
 int __cdecl fn_007256A0(undefined4 param_1, char * param_2, int param_3);
-// 00725760 Library::Ourlib::ST3DPAUS::FUN_00725760
+// 00725760 Library::Ourlib::ST3DPAUS::FUN_00725760 [statically linked library; implementation excluded]
 int __thiscall fn_00725760(void * st_this, int param_1, int param_2);
 // 00725910 FUN_00725910
 int __cdecl
@@ -19770,37 +19768,37 @@ fn_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,un
             byte param_6);
 // 00725C20 FUN_00725c20
 undefined4 __cdecl fn_00725C20(LPCSTR lpPathName,undefined4 param_2,char param_3);
-// 00725C60 Library::Ourlib::MFSPR::mfSSprLoad
+// 00725C60 Library::Ourlib::MFSPR::mfSSprLoad [statically linked library; implementation excluded]
 char * __cdecl fn_00725C60(cMf32 * param_1, char * param_2, byte param_3, int param_4);
 // 00725E30 FUN_00725e30
 void __cdecl fn_00725E30(int *param_1);
-// 00725E80 Library::Ourlib::MFSPR::mfSSprGetNumFas
+// 00725E80 Library::Ourlib::MFSPR::mfSSprGetNumFas [statically linked library; implementation excluded]
 int __cdecl fn_00725E80(undefined4 param_1, char * param_2, int param_3);
-// 00725F50 Library::Ourlib::MFSPR::mfMSprLoad
+// 00725F50 Library::Ourlib::MFSPR::mfMSprLoad [statically linked library; implementation excluded]
 short * __cdecl fn_00725F50(undefined4 param_1, char * param_2, uint param_3, byte param_4, int param_5);
 // 00726260 FUN_00726260
 void __cdecl fn_00726260(uint *param_1);
-// 007262B0 Library::Ourlib::MFSPR::mfMSprGetNumFas
+// 007262B0 Library::Ourlib::MFSPR::mfMSprGetNumFas [statically linked library; implementation excluded]
 int __cdecl fn_007262B0(undefined4 param_1, char * param_2, int param_3);
-// 00726390 Library::Ourlib::MFSPR::mfMSprGetNumPl
+// 00726390 Library::Ourlib::MFSPR::mfMSprGetNumPl [statically linked library; implementation excluded]
 int __cdecl fn_00726390(undefined4 param_1, char * param_2, int param_3);
-// 00726470 Library::Ourlib::MFSPR::mfMSprGetWidth
+// 00726470 Library::Ourlib::MFSPR::mfMSprGetWidth [statically linked library; implementation excluded]
 int __cdecl fn_00726470(undefined4 param_1, char * param_2, int param_3);
-// 00726550 Library::Ourlib::MFSPR::mfMSprGetHeigh
+// 00726550 Library::Ourlib::MFSPR::mfMSprGetHeigh [statically linked library; implementation excluded]
 int __cdecl fn_00726550(undefined4 param_1, char * param_2, int param_3);
-// 00726630 Library::Ourlib::MFSPR::mfUSprLoad
+// 00726630 Library::Ourlib::MFSPR::mfUSprLoad [statically linked library; implementation excluded]
 int * __cdecl fn_00726630(int param_1, char * param_2, byte param_3, int param_4);
 // 00726870 FUN_00726870
 void __cdecl fn_00726870(int *param_1);
-// 007268C0 Library::Ourlib::MFSPR::mfUSprGetNumFas
+// 007268C0 Library::Ourlib::MFSPR::mfUSprGetNumFas [statically linked library; implementation excluded]
 int __cdecl fn_007268C0(undefined4 param_1, char * param_2, int param_3);
-// 007269A0 Library::Ourlib::MFSPR::mfUSprGetSect
+// 007269A0 Library::Ourlib::MFSPR::mfUSprGetSect [statically linked library; implementation excluded]
 uint __cdecl fn_007269A0(undefined4 param_1, char * param_2, int param_3);
-// 00726A80 Library::Ourlib::MFSPR::mfQSprLoad
+// 00726A80 Library::Ourlib::MFSPR::mfQSprLoad [statically linked library; implementation excluded]
 short * __cdecl fn_00726A80(undefined4 param_1, char * param_2, byte param_3, int param_4);
 // 00726BD0 FUN_00726bd0
 void __cdecl fn_00726BD0(int *param_1);
-// 00726C00 Library::Ourlib::MFSPR::mfQSprGetNumFas
+// 00726C00 Library::Ourlib::MFSPR::mfQSprGetNumFas [statically linked library; implementation excluded]
 int __cdecl fn_00726C00(undefined4 param_1, char * param_2, int param_3);
 // 00726CE0 FUN_00726ce0
 void __thiscall fn_00726CE0(void *st_this,int param_1);
@@ -19885,7 +19883,7 @@ fn_0072AB80(byte *param_1,int param_2,ushort *param_3,uint *param_4,int *param_5
 int __thiscall
 fn_0072AC20(void *st_this,byte *param_1,byte *param_2,uint *param_3,int param_4,int *param_5,
             int param_6,byte param_7,int param_8,int param_9,uint param_10);
-// 0072ACA0 Library::Ourlib::DDSPRCUR::FUN_0072aca0
+// 0072ACA0 Library::Ourlib::DDSPRCUR::FUN_0072aca0 [statically linked library; implementation excluded]
 DWORD __stdcall fn_0072ACA0(int * param_1, uint * param_2, int param_3, int param_4, int param_5);
 // 0072AE80 FUN_0072ae80
 void fn_0072AE80(void);
@@ -19899,7 +19897,7 @@ void fn_0072B090(undefined4 param_1,undefined4 param_2);
 void fn_0072B0B0(void);
 // 0072B700 FUN_0072b700
 undefined4 * __fastcall fn_0072B700(undefined4 *param_1);
-// 0072B780 ControlClassTy::GetMessage
+// 0072B780 ControlClassTy::GetMessage [statically linked library; implementation excluded]
 int __thiscall fn_0072B780(ControlClassTy * st_this, STMessage * message);
 // 0072C624 D3DRM.DLL::D3DRMVectorModulus
 undefined fn_0072C624(void);
@@ -19931,765 +19929,765 @@ int __stdcall fn_0072D6DC(WORD wVersionRequired, LPWSADATA lpWSAData);
 void __thiscall fn_0072D6F4(CFsgsConnection * st_this, ulong param_1, char * param_2);
 // 0072D6FA FSGS.DLL::CFsgsConnection::OnStartGameReply
 void __thiscall fn_0072D6FA(CFsgsConnection * st_this, ulong param_1);
-// 0072D7F0 Library::MSVCRT::__setjmp3
+// 0072D7F0 Library::MSVCRT::__setjmp3 [statically linked library; implementation excluded]
 int __cdecl fn_0072D7F0(int * env, int count, ...);
-// 0072D86C Library::MSVCRT::__global_unwind2
+// 0072D86C Library::MSVCRT::__global_unwind2 [statically linked library; implementation excluded]
 undefined __cdecl fn_0072D86C(PVOID param_1);
-// 0072D8AE Library::MSVCRT::__local_unwind2
+// 0072D8AE Library::MSVCRT::__local_unwind2 [statically linked library; implementation excluded]
 undefined __cdecl fn_0072D8AE(int param_1, int param_2);
-// 0072D942 Library::MSVCRT::FUN_0072d942
+// 0072D942 Library::MSVCRT::FUN_0072d942 [statically linked library; implementation excluded]
 undefined __stdcall fn_0072D942(void);
-// 0072DA21 Library::MSVCRT::__seh_longjmp_unwind@4
+// 0072DA21 Library::MSVCRT::__seh_longjmp_unwind@4 [statically linked library; implementation excluded]
 undefined __stdcall fn_0072DA21(int param_1);
-// 0072DA40 Library::MSVCRT::FUN_0072da40
-undefined __stdcall fn_0072DA40(void);
-// 0072DA70 Library::MSVCRT::FUN_0072da70
+// 0072DA40 Library::MSVCRT::__alloca_probe [statically linked library; implementation excluded]
+void __stdcall fn_0072DA40(void);
+// 0072DA70 Library::MSVCRT::FUN_0072da70 [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0072DA70(undefined4 * param_1, AnonPointee_TLOBaseTy_0607 * param_2, uint param_3);
-// 0072DDB0 Library::MSVCRT::FUN_0072ddb0
+// 0072DDB0 Library::MSVCRT::FUN_0072ddb0 [statically linked library; implementation excluded]
 undefined __stdcall fn_0072DDB0(void);
-// 0072DDE0 Library::MSVCRT::FUN_0072dde0
+// 0072DDE0 Library::MSVCRT::FUN_0072dde0 [statically linked library; implementation excluded]
 undefined __stdcall fn_0072DDE0(void);
-// 0072DDF0 Library::MSVCRT::FUN_0072ddf0
+// 0072DDF0 Library::MSVCRT::FUN_0072ddf0 [statically linked library; implementation excluded]
 undefined __stdcall fn_0072DDF0(void);
-// 0072DE40 Library::MSVCRT::FUN_0072de40
+// 0072DE40 Library::MSVCRT::FUN_0072de40 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0072DE40(undefined4 param_1);
-// 0072DE60 Library::MSVCRT::__itoa
+// 0072DE60 Library::MSVCRT::__itoa [statically linked library; implementation excluded]
 char * __cdecl fn_0072DE60(int _Value, char * _Dest, int _Radix);
-// 0072DEB0 Library::MSVCRT::xtoa
+// 0072DEB0 Library::MSVCRT::xtoa [statically linked library; implementation excluded]
 undefined __cdecl fn_0072DEB0(uint param_1, char * param_2, uint param_3, int param_4);
-// 0072DF80 Library::MSVCRT::__ltoa
+// 0072DF80 Library::MSVCRT::__ltoa [statically linked library; implementation excluded]
 char * __cdecl fn_0072DF80(long _Value, char * _Dest, int _Radix);
-// 0072DFC0 Library::MSVCRT::__ultoa
+// 0072DFC0 Library::MSVCRT::__ultoa [statically linked library; implementation excluded]
 char * __cdecl fn_0072DFC0(ulong _Value, char * _Dest, int _Radix);
-// 0072DFE0 Library::MSVCRT::__i64toa
+// 0072DFE0 Library::MSVCRT::__i64toa [statically linked library; implementation excluded]
 char * __cdecl fn_0072DFE0(longlong _Val, char * _DstBuf, int _Radix);
-// 0072E030 Library::MSVCRT::x64toa
+// 0072E030 Library::MSVCRT::x64toa [statically linked library; implementation excluded]
 undefined __stdcall fn_0072E030(undefined8 param_1, char * param_2, uint param_3, int param_4);
-// 0072E130 Library::MSVCRT::__ui64toa
+// 0072E130 Library::MSVCRT::__ui64toa [statically linked library; implementation excluded]
 char * __cdecl fn_0072E130(ulonglong _Val, char * _DstBuf, int _Radix);
-// 0072E150 Library::MSVCRT::FUN_0072e150
+// 0072E150 Library::MSVCRT::FUN_0072e150 [statically linked library; implementation excluded]
 float10 __cdecl fn_0072E150(uint param_1, uint param_2);
-// 0072E288 Library::MSVCRT::__ftol
+// 0072E288 Library::MSVCRT::__ftol [statically linked library; implementation excluded]
 longlong __stdcall fn_0072E288(void);
-// 0072E2B0 Library::MSVCRT::FUN_0072e2b0
+// 0072E2B0 Library::MSVCRT::FUN_0072e2b0 [statically linked library; implementation excluded]
 undefined __cdecl fn_0072E2B0(HoloTy * param_1);
-// 0072E340 Library::MSVCRT::_strncpy
+// 0072E340 Library::MSVCRT::_strncpy [statically linked library; implementation excluded]
 char * __cdecl fn_0072E340(char * _Dest, char * _Source, size_t _Count);
-// 0072E440 Library::MSVCRT::__alldiv
+// 0072E440 Library::MSVCRT::__alldiv [statically linked library; implementation excluded]
 undefined8 __stdcall fn_0072E440(uint param_1, uint param_2, uint param_3, uint param_4);
-// 0072E4F0 Library::MSVCRT::__allmul
+// 0072E4F0 Library::MSVCRT::__allmul [statically linked library; implementation excluded]
 longlong __stdcall fn_0072E4F0(uint param_1, int param_2, uint param_3, int param_4);
-// 0072E530 Library::MSVCRT::FUN_0072e530
+// 0072E530 Library::MSVCRT::FUN_0072e530 [statically linked library; implementation excluded]
 undefined __cdecl fn_0072E530(uint param_1);
-// 0072E560 Library::MSVCRT::FUN_0072e560
+// 0072E560 Library::MSVCRT::FUN_0072e560 [statically linked library; implementation excluded]
 uint * __stdcall fn_0072E560(uint * param_1, char param_2);
-// 0072E566 Library::MSVCRT::FUN_0072e566
+// 0072E566 Library::MSVCRT::FUN_0072e566 [statically linked library; implementation excluded]
 uint * __cdecl fn_0072E566(uint * param_1);
-// 0072E620 Library::MSVCRT::__strcmpi
+// 0072E620 Library::MSVCRT::__strcmpi [statically linked library; implementation excluded]
 int __cdecl fn_0072E620(char * _Str1, char * _Str2);
-// 0072E6B0 Library::MSVCRT::FUN_0072e6b0
+// 0072E6B0 Library::MSVCRT::FUN_0072e6b0 [statically linked library; implementation excluded]
 undefined __cdecl fn_0072E6B0(DWORD param_1);
-// 0072E6C0 Library::MSVCRT::FUN_0072e6c0
+// 0072E6C0 Library::MSVCRT::FUN_0072e6c0 [statically linked library; implementation excluded]
 uint __stdcall fn_0072E6C0(void);
-// 0072E6F0 Library::MSVCRT::_strncmp
+// 0072E6F0 Library::MSVCRT::_strncmp [statically linked library; implementation excluded]
 int __cdecl fn_0072E6F0(char * _Str1, char * _Str2, size_t _MaxCount);
-// 0072E730 Library::MSVCRT::FUN_0072e730
+// 0072E730 Library::MSVCRT::FUN_0072e730 [statically linked library; implementation excluded]
 undefined __cdecl fn_0072E730(byte * param_1, byte * param_2, byte * param_3, byte * param_4, byte * param_5);
-// 0072E980 Library::MSVCRT::FUN_0072e980
+// 0072E980 Library::MSVCRT::FUN_0072e980 [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0072E980(LPCSTR param_1, char * param_2, undefined4 param_3);
-// 0072EA70 Library::MSVCRT::FUN_0072ea70
+// 0072EA70 Library::MSVCRT::FUN_0072ea70 [statically linked library; implementation excluded]
 undefined __cdecl fn_0072EA70(LPCSTR param_1, char * param_2);
-// 0072EA90 Library::MSVCRT::FUN_0072ea90
+// 0072EA90 Library::MSVCRT::FUN_0072ea90 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0072EA90(int * param_1);
-// 0072EB70 Library::MSVCRT::FUN_0072eb70
+// 0072EB70 Library::MSVCRT::FUN_0072eb70 [statically linked library; implementation excluded]
 int __cdecl fn_0072EB70(char * param_1, int * param_2);
-// 0072EC30 Library::MSVCRT::FUN_0072ec30
+// 0072EC30 Library::MSVCRT::FUN_0072ec30 [statically linked library; implementation excluded]
 int __cdecl fn_0072EC30(int param_1);
-// 0072ECE0 Library::MSVCRT::FUN_0072ece0
+// 0072ECE0 Library::MSVCRT::FUN_0072ece0 [statically linked library; implementation excluded]
 int __cdecl fn_0072ECE0(int param_1);
-// 0072ED00 Library::MSVCRT::FUN_0072ed00
+// 0072ED00 Library::MSVCRT::FUN_0072ed00 [statically linked library; implementation excluded]
 undefined __stdcall fn_0072ED00(void);
-// 0072ED50 Library::MSVCRT::_strncat
+// 0072ED50 Library::MSVCRT::_strncat [statically linked library; implementation excluded]
 char * __cdecl fn_0072ED50(char * _Dest, char * _Source, size_t _Count);
-// 0072EE80 Library::MSVCRT::FUN_0072ee80
+// 0072EE80 Library::MSVCRT::FUN_0072ee80 [statically linked library; implementation excluded]
 int __cdecl fn_0072EE80(char * param_1, byte * param_2);
-// 0072EF40 Library::MSVCRT::FUN_0072ef40
+// 0072EF40 Library::MSVCRT::FUN_0072ef40 [statically linked library; implementation excluded]
 undefined __stdcall fn_0072EF40(void);
-// 0072EF80 Library::MSVCRT::FUN_0072ef80
+// 0072EF80 Library::MSVCRT::FUN_0072ef80 [statically linked library; implementation excluded]
 undefined __cdecl fn_0072EF80(UINT param_1);
-// 0072EFA0 Library::MSVCRT::__exit
+// 0072EFA0 Library::MSVCRT::__exit [statically linked library; implementation excluded]
 [[noreturn]] void __cdecl fn_0072EFA0(int _Code);
-// 0072EFC0 Library::MSVCRT::FUN_0072efc0
+// 0072EFC0 Library::MSVCRT::FUN_0072efc0 [statically linked library; implementation excluded]
 undefined __stdcall fn_0072EFC0(void);
-// 0072EFE0 Library::MSVCRT::FUN_0072efe0
+// 0072EFE0 Library::MSVCRT::FUN_0072efe0 [statically linked library; implementation excluded]
 undefined __stdcall fn_0072EFE0(void);
-// 0072F000 Library::MSVCRT::FUN_0072f000
+// 0072F000 Library::MSVCRT::FUN_0072f000 [statically linked library; implementation excluded]
 undefined __cdecl fn_0072F000(UINT param_1, int param_2, int param_3);
-// 0072F0E0 Library::MSVCRT::__initterm
+// 0072F0E0 Library::MSVCRT::__initterm [statically linked library; implementation excluded]
 undefined __cdecl fn_0072F0E0(int * param_1, int * param_2);
-// 0072F110 Library::MSVCRT::__makepath
+// 0072F110 Library::MSVCRT::__makepath [statically linked library; implementation excluded]
 void __cdecl fn_0072F110(char * _Path, char * _Drive, char * _Dir, char * _Filename, char * _Ext);
-// 0072F260 Library::MSVCRT::FUN_0072f260
+// 0072F260 Library::MSVCRT::FUN_0072f260 [statically linked library; implementation excluded]
 uint * __cdecl fn_0072F260(int param_1, char * resourceString);
-// 0072F5D0 Library::MSVCRT::FUN_0072f5d0
+// 0072F5D0 Library::MSVCRT::FUN_0072f5d0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0072F5D0(int param_1, uint * param_2);
-// 0072F770 Library::MSVCRT::FUN_0072f770
+// 0072F770 Library::MSVCRT::FUN_0072f770 [statically linked library; implementation excluded]
 uint * __stdcall fn_0072F770(void);
-// 0072F870 Library::MSVCRT::FUN_0072f870
+// 0072F870 Library::MSVCRT::FUN_0072f870 [statically linked library; implementation excluded]
 uint * __cdecl fn_0072F870(uint * param_1, uint * param_2, undefined4 * param_3, undefined4 * param_4);
-// 0072FA00 Library::MSVCRT::FUN_0072fa00
+// 0072FA00 Library::MSVCRT::FUN_0072fa00 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_0072FA00(void);
-// 0072FA10 Library::MSVCRT::__strcats
+// 0072FA10 Library::MSVCRT::__strcats [statically linked library; implementation excluded]
 undefined __cdecl fn_0072FA10(uint * param_1, int param_2);
-// 0072FA60 Library::MSVCRT::FUN_0072fa60
+// 0072FA60 Library::MSVCRT::FUN_0072fa60 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0072FA60(char * param_1, byte * param_2);
-// 0072FBC0 Library::MSVCRT::___lc_lctostr
+// 0072FBC0 Library::MSVCRT::___lc_lctostr [statically linked library; implementation excluded]
 undefined __cdecl fn_0072FBC0(uint * param_1, uint * param_2);
-// 0072FC30 Library::MSVCRT::_gmtime
+// 0072FC30 Library::MSVCRT::_gmtime [statically linked library; implementation excluded]
 tm * __cdecl fn_0072FC30(time_t * _Time);
-// 0072FE00 Library::MSVCRT::FUN_0072fe00
+// 0072FE00 Library::MSVCRT::FUN_0072fe00 [statically linked library; implementation excluded]
 int __cdecl fn_0072FE00(byte * param_1);
-// 0072FF00 Library::MSVCRT::FUN_0072ff00
+// 0072FF00 Library::MSVCRT::FUN_0072ff00 [statically linked library; implementation excluded]
 undefined __cdecl fn_0072FF00(byte * param_1);
-// 0072FF20 Library::MSVCRT::FUN_0072ff20
+// 0072FF20 Library::MSVCRT::FUN_0072ff20 [statically linked library; implementation excluded]
 undefined8 __cdecl fn_0072FF20(byte * param_1);
-// 00730050 Library::MSVCRT::FUN_00730050
+// 00730050 Library::MSVCRT::FUN_00730050 [statically linked library; implementation excluded]
 int __cdecl fn_00730050(int * param_1, byte * param_2);
-// 007300E0 Library::MSVCRT::FUN_007300e0
+// 007300E0 Library::MSVCRT::FUN_007300e0 [statically linked library; implementation excluded]
 int __cdecl fn_007300E0(undefined1 * param_1, int param_2, byte * param_3, undefined4 * param_4);
-// 007301E0 Library::MSVCRT::FUN_007301e0
+// 007301E0 Library::MSVCRT::FUN_007301e0 [statically linked library; implementation excluded]
 char * __cdecl fn_007301E0(undefined4 param_1, undefined4 param_2, int param_3, char * param_4);
-// 00730310 Library::MSVCRT::FUN_00730310
+// 00730310 Library::MSVCRT::FUN_00730310 [statically linked library; implementation excluded]
 float10 __cdecl fn_00730310(byte * param_1, int * param_2);
-// 00730450 Library::MSVCRT::FUN_00730450
+// 00730450 Library::MSVCRT::FUN_00730450 [statically linked library; implementation excluded]
 float10 __cdecl fn_00730450(uint param_1, uint param_2);
-// 00730590 Library::MSVCRT::FUN_00730590
+// 00730590 Library::MSVCRT::FUN_00730590 [statically linked library; implementation excluded]
 uint * __cdecl fn_00730590(uint * param_1, char * param_2);
-// 00730610 Library::MSVCRT::FUN_00730610
+// 00730610 Library::MSVCRT::FUN_00730610 [statically linked library; implementation excluded]
 uint __cdecl fn_00730610(int param_1, uint param_2);
-// 007306D0 Library::MSVCRT::FUN_007306d0
+// 007306D0 Library::MSVCRT::FUN_007306d0 [statically linked library; implementation excluded]
 int __cdecl fn_007306D0(int param_1);
-// 007306E0 Library::MSVCRT::FUN_007306e0
+// 007306E0 Library::MSVCRT::FUN_007306e0 [statically linked library; implementation excluded]
 uint __cdecl fn_007306E0(uint param_1);
-// 00730810 Library::MSVCRT::FUN_00730810
+// 00730810 Library::MSVCRT::FUN_00730810 [statically linked library; implementation excluded]
 undefined __cdecl fn_00730810(undefined1 * param_1, uint param_2, uint param_3, undefined * param_4);
-// 00730A50 Library::MSVCRT::shortsort
+// 00730A50 Library::MSVCRT::shortsort [statically linked library; implementation excluded]
 undefined __cdecl fn_00730A50(undefined1 * param_1, undefined1 * param_2, int param_3, undefined * param_4);
-// 00730AC0 Library::MSVCRT::swap
+// 00730AC0 Library::MSVCRT::swap [statically linked library; implementation excluded]
 undefined __cdecl fn_00730AC0(undefined1 * param_1, undefined1 * param_2, int param_3);
-// 00730B10 Library::MSVCRT::FUN_00730b10
+// 00730B10 Library::MSVCRT::FUN_00730b10 [statically linked library; implementation excluded]
 char * __cdecl fn_00730B10(char * param_1, int param_2, int * param_3);
-// 00730C40 Library::MSVCRT::FUN_00730c40
+// 00730C40 Library::MSVCRT::FUN_00730c40 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00730C40(undefined1 * param_1, int param_2);
-// 00730D40 Library::MSVCRT::FUN_00730d40
+// 00730D40 Library::MSVCRT::FUN_00730d40 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00730D40(undefined4 param_1);
-// 00730D60 Library::MSVCRT::FUN_00730d60
+// 00730D60 Library::MSVCRT::FUN_00730d60 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00730D60(void);
-// 00730D70 Library::MSVCRT::__callnewh
+// 00730D70 Library::MSVCRT::__callnewh [statically linked library; implementation excluded]
 int __cdecl fn_00730D70(size_t _Size);
-// 00730DA0 Library::MSVCRT::FUN_00730da0
+// 00730DA0 Library::MSVCRT::FUN_00730da0 [statically linked library; implementation excluded]
 undefined __cdecl fn_00730DA0(uint param_1);
-// 00730DC0 Library::MSVCRT::__nh_malloc_base
+// 00730DC0 Library::MSVCRT::__nh_malloc_base [statically linked library; implementation excluded]
 int * __cdecl fn_00730DC0(uint param_1, int param_2);
-// 00730E20 Library::MSVCRT::FUN_00730e20
+// 00730E20 Library::MSVCRT::FUN_00730e20 [statically linked library; implementation excluded]
 int * __cdecl fn_00730E20(uint param_1);
-// 00730E80 Library::MSVCRT::FUN_00730e80
+// 00730E80 Library::MSVCRT::FUN_00730e80 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00730E80(void);
-// 00730E90 Library::MSVCRT::FUN_00730e90
+// 00730E90 Library::MSVCRT::FUN_00730e90 [statically linked library; implementation excluded]
 undefined __stdcall fn_00730E90(void);
-// 00730EA0 Library::MSVCRT::FUN_00730ea0
+// 00730EA0 Library::MSVCRT::FUN_00730ea0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00730EA0(int param_1, uint param_2);
-// 00730F00 Library::MSVCRT::__CrtSetReportFile
+// 00730F00 Library::MSVCRT::__CrtSetReportFile [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00730F00(int param_1, int param_2);
-// 00730F80 Library::MSVCRT::FUN_00730f80
+// 00730F80 Library::MSVCRT::FUN_00730f80 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00730F80(undefined4 param_1);
-// 00730FA0 Library::MSVCRT::FUN_00730fa0
+// 00730FA0 Library::MSVCRT::FUN_00730fa0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00730FA0(int param_1, int param_2, int param_3, undefined4 param_4, byte * param_5);
-// 00731330 Library::MSVCRT::FUN_00731330
+// 00731330 Library::MSVCRT::FUN_00731330 [statically linked library; implementation excluded]
 bool __stdcall fn_00731330(void);
-// 00731640 Library::MSVCRT::FUN_00731640
+// 00731640 Library::MSVCRT::FUN_00731640 [statically linked library; implementation excluded]
 LPVOID __cdecl fn_00731640(LPVOID param_1, uint param_2);
-// 007316D0 Library::MSVCRT::FUN_007316d0
+// 007316D0 Library::MSVCRT::FUN_007316d0 [statically linked library; implementation excluded]
 int * __cdecl fn_007316D0(int * param_1, uint param_2);
-// 007318A0 Library::MSVCRT::FUN_007318a0
+// 007318A0 Library::MSVCRT::FUN_007318a0 [statically linked library; implementation excluded]
 undefined __cdecl fn_007318A0(LPVOID param_1);
-// 007318F0 Library::MSVCRT::FUN_007318f0
+// 007318F0 Library::MSVCRT::FUN_007318f0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_007318F0(void);
-// 00731950 Library::MSVCRT::FUN_00731950
+// 00731950 Library::MSVCRT::FUN_00731950 [statically linked library; implementation excluded]
 undefined __stdcall fn_00731950(void);
-// 00731960 Library::MSVCRT::FUN_00731960
+// 00731960 Library::MSVCRT::FUN_00731960 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00731960(int param_1);
-// 007319B0 Library::MSVCRT::FUN_007319b0
+// 007319B0 Library::MSVCRT::FUN_007319b0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007319B0(void);
-// 00731A50 Library::MSVCRT::FUN_00731a50
+// 00731A50 Library::MSVCRT::FUN_00731a50 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00731A50(void);
-// 00731A60 Library::MSVCRT::FUN_00731a60
+// 00731A60 Library::MSVCRT::FUN_00731a60 [statically linked library; implementation excluded]
 bool __cdecl fn_00731A60(uint param_1);
-// 00731A80 Library::MSVCRT::FUN_00731a80
+// 00731A80 Library::MSVCRT::FUN_00731a80 [statically linked library; implementation excluded]
 bool __stdcall fn_00731A80(void);
-// 00731AE0 Library::MSVCRT::FUN_00731ae0
+// 00731AE0 Library::MSVCRT::FUN_00731ae0 [statically linked library; implementation excluded]
 uint __cdecl fn_00731AE0(int param_1);
-// 00731B40 Library::MSVCRT::FUN_00731b40
+// 00731B40 Library::MSVCRT::FUN_00731b40 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00731B40(int param_1, int param_2);
-// 00731BA0 Library::MSVCRT::FUN_00731ba0
+// 00731BA0 Library::MSVCRT::FUN_00731ba0 [statically linked library; implementation excluded]
 undefined __cdecl fn_00731BA0(uint * param_1, int param_2);
-// 00732170 Library::MSVCRT::FUN_00732170
+// 00732170 Library::MSVCRT::FUN_00732170 [statically linked library; implementation excluded]
 int * __cdecl fn_00732170(int param_1);
-// 007326B0 Library::MSVCRT::FUN_007326b0
+// 007326B0 Library::MSVCRT::FUN_007326b0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_007326B0(void);
-// 007327C0 Library::MSVCRT::FUN_007327c0
+// 007327C0 Library::MSVCRT::FUN_007327c0 [statically linked library; implementation excluded]
 int __cdecl fn_007327C0(int param_1);
-// 007329B0 Library::MSVCRT::FUN_007329b0
+// 007329B0 Library::MSVCRT::FUN_007329b0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_007329B0(uint * param_1, int param_2, int param_3);
-// 00732FA0 Library::MSVCRT::FUN_00732fa0
+// 00732FA0 Library::MSVCRT::FUN_00732fa0 [statically linked library; implementation excluded]
 undefined __stdcall fn_00732FA0(void);
-// 007330D0 Library::MSVCRT::FUN_007330d0
+// 007330D0 Library::MSVCRT::FUN_007330d0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_007330D0(void);
-// 007336F0 Library::MSVCRT::entry
+// 007336F0 Library::MSVCRT::entry [statically linked library; implementation excluded]
 undefined __stdcall fn_007336F0(void);
-// 00733850 Library::MSVCRT::__amsg_exit
+// 00733850 Library::MSVCRT::__amsg_exit [statically linked library; implementation excluded]
 void __cdecl fn_00733850(int param_1);
-// 00733880 Library::MSVCRT::FUN_00733880
+// 00733880 Library::MSVCRT::FUN_00733880 [statically linked library; implementation excluded]
 undefined __cdecl fn_00733880(int param_1);
-// 007338AC Library::MSVCRT::_longjmp
+// 007338AC Library::MSVCRT::_longjmp [statically linked library; implementation excluded]
 [[noreturn]] void __cdecl fn_007338AC(int * _Buf, int _Value);
-// 00733930 Library::MSVCRT::FUN_00733930
+// 00733930 Library::MSVCRT::FUN_00733930 [statically linked library; implementation excluded]
 int __cdecl fn_00733930(int param_1, int param_2);
-// 00733AD0 Library::MSVCRT::ctrlevent_capture
+// 00733AD0 Library::MSVCRT::ctrlevent_capture [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00733AD0(int param_1);
-// 00733B40 Library::MSVCRT::FUN_00733b40
+// 00733B40 Library::MSVCRT::FUN_00733b40 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00733B40(int param_1);
-// 00733D00 Library::MSVCRT::siglookup
+// 00733D00 Library::MSVCRT::siglookup [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_00733D00(int param_1);
-// 00733D60 Library::MSVCRT::FUN_00733d60
+// 00733D60 Library::MSVCRT::FUN_00733d60 [statically linked library; implementation excluded]
 int __cdecl fn_00733D60(int * param_1);
-// 00733DC0 Library::MSVCRT::FUN_00733dc0
+// 00733DC0 Library::MSVCRT::FUN_00733dc0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00733DC0(int * param_1);
-// 00733E80 Library::MSVCRT::FUN_00733e80
+// 00733E80 Library::MSVCRT::FUN_00733e80 [statically linked library; implementation excluded]
 undefined __stdcall fn_00733E80(void);
-// 00733E90 Library::MSVCRT::FUN_00733e90
+// 00733E90 Library::MSVCRT::FUN_00733e90 [statically linked library; implementation excluded]
 int __cdecl fn_00733E90(int param_1);
-// 00733F70 Library::MSVCRT::FUN_00733f70
+// 00733F70 Library::MSVCRT::FUN_00733f70 [statically linked library; implementation excluded]
 int __cdecl fn_00733F70(int * param_1, char * text);
-// 00734020 Library::MSVCRT::FUN_00734020
+// 00734020 Library::MSVCRT::FUN_00734020 [statically linked library; implementation excluded]
 int __cdecl fn_00734020(int param_1);
-// 00734030 Library::MSVCRT::FUN_00734030
+// 00734030 Library::MSVCRT::FUN_00734030 [statically linked library; implementation excluded]
 uint __cdecl fn_00734030(uint param_1);
-// 00734160 Library::MSVCRT::FUN_00734160
+// 00734160 Library::MSVCRT::FUN_00734160 [statically linked library; implementation excluded]
 uint __cdecl fn_00734160(int * param_1);
-// 007341F0 Library::MSVCRT::FUN_007341f0
+// 007341F0 Library::MSVCRT::FUN_007341f0 [statically linked library; implementation excluded]
 undefined __cdecl fn_007341F0(int * param_1);
-// 00734210 Library::MSVCRT::FUN_00734210
+// 00734210 Library::MSVCRT::FUN_00734210 [statically linked library; implementation excluded]
 undefined __stdcall fn_00734210(void);
-// 00734220 Library::MSVCRT::FUN_00734220
+// 00734220 Library::MSVCRT::FUN_00734220 [statically linked library; implementation excluded]
 undefined __cdecl fn_00734220(byte * param_1, undefined4 * param_2, uint param_3);
-// 00734240 Library::MSVCRT::FUN_00734240
+// 00734240 Library::MSVCRT::FUN_00734240 [statically linked library; implementation excluded]
 uint __cdecl fn_00734240(byte * param_1, undefined4 * param_2, uint param_3, uint param_4);
-// 00734570 Library::MSVCRT::FUN_00734570
+// 00734570 Library::MSVCRT::FUN_00734570 [statically linked library; implementation excluded]
 undefined __cdecl fn_00734570(byte * param_1, undefined4 * param_2, uint param_3);
-// 0073459A Library::MSVCRT::FUN_0073459a
+// 0073459A Library::MSVCRT::FUN_0073459a [statically linked library; implementation excluded]
 undefined __fastcall fn_0073459A(undefined4 param_1);
-// 007345D0 Library::MSVCRT::__strnset
+// 007345D0 Library::MSVCRT::__strnset [statically linked library; implementation excluded]
 char * __cdecl fn_007345D0(char * _Dest, int _Val, size_t _Count);
-// 00734600 Library::MSVCRT::FUN_00734600
+// 00734600 Library::MSVCRT::FUN_00734600 [statically linked library; implementation excluded]
 uint __cdecl fn_00734600(int param_1);
-// 00734650 Library::MSVCRT::FUN_00734650
+// 00734650 Library::MSVCRT::FUN_00734650 [statically linked library; implementation excluded]
 uint __cdecl fn_00734650(int param_1);
-// 00734690 Library::MSVCRT::FUN_00734690
+// 00734690 Library::MSVCRT::FUN_00734690 [statically linked library; implementation excluded]
 uint __cdecl fn_00734690(int param_1);
-// 007346D0 Library::MSVCRT::FUN_007346d0
+// 007346D0 Library::MSVCRT::FUN_007346d0 [statically linked library; implementation excluded]
 uint __cdecl fn_007346D0(int param_1);
-// 00734710 Library::MSVCRT::FUN_00734710
+// 00734710 Library::MSVCRT::FUN_00734710 [statically linked library; implementation excluded]
 uint __cdecl fn_00734710(int param_1);
-// 00734760 Library::MSVCRT::FUN_00734760
+// 00734760 Library::MSVCRT::FUN_00734760 [statically linked library; implementation excluded]
 uint __cdecl fn_00734760(int param_1);
-// 007347A0 Library::MSVCRT::FUN_007347a0
+// 007347A0 Library::MSVCRT::FUN_007347a0 [statically linked library; implementation excluded]
 uint __cdecl fn_007347A0(int param_1);
-// 007347E0 Library::MSVCRT::FUN_007347e0
+// 007347E0 Library::MSVCRT::FUN_007347e0 [statically linked library; implementation excluded]
 uint __cdecl fn_007347E0(int param_1);
-// 00734830 Library::MSVCRT::FUN_00734830
+// 00734830 Library::MSVCRT::FUN_00734830 [statically linked library; implementation excluded]
 uint __cdecl fn_00734830(int param_1);
-// 00734880 Library::MSVCRT::FUN_00734880
+// 00734880 Library::MSVCRT::FUN_00734880 [statically linked library; implementation excluded]
 uint __cdecl fn_00734880(int param_1);
-// 007348D0 Library::MSVCRT::FUN_007348d0
+// 007348D0 Library::MSVCRT::FUN_007348d0 [statically linked library; implementation excluded]
 uint __cdecl fn_007348D0(int param_1);
-// 00734910 Library::MSVCRT::FUN_00734910
+// 00734910 Library::MSVCRT::FUN_00734910 [statically linked library; implementation excluded]
 bool __cdecl fn_00734910(uint param_1);
-// 00734920 Library::MSVCRT::FUN_00734920
+// 00734920 Library::MSVCRT::FUN_00734920 [statically linked library; implementation excluded]
 uint __cdecl fn_00734920(uint param_1);
-// 00734930 Library::MSVCRT::FUN_00734930
+// 00734930 Library::MSVCRT::FUN_00734930 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00734930(int param_1);
-// 00734990 Library::MSVCRT::FUN_00734990
+// 00734990 Library::MSVCRT::FUN_00734990 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00734990(int param_1);
-// 007349F0 Library::MSVCRT::__setdefaultprecision
+// 007349F0 Library::MSVCRT::__setdefaultprecision [statically linked library; implementation excluded]
 undefined __stdcall fn_007349F0(void);
-// 00734A10 Library::MSVCRT::FUN_00734a10
+// 00734A10 Library::MSVCRT::FUN_00734a10 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00734A10(void);
-// 00734A70 Library::MSVCRT::__ms_p5_mp_test_fdiv
+// 00734A70 Library::MSVCRT::__ms_p5_mp_test_fdiv [statically linked library; implementation excluded]
 undefined __stdcall fn_00734A70(void);
-// 00734AC0 Library::MSVCRT::FUN_00734ac0
+// 00734AC0 Library::MSVCRT::FUN_00734ac0 [statically linked library; implementation excluded]
 undefined __cdecl fn_00734AC0(char * param_1);
-// 00734B70 Library::MSVCRT::__cropzeros
+// 00734B70 Library::MSVCRT::__cropzeros [statically linked library; implementation excluded]
 void __cdecl fn_00734B70(char * _Buf);
-// 00734C50 Library::MSVCRT::__positive
+// 00734C50 Library::MSVCRT::__positive [statically linked library; implementation excluded]
 int __cdecl fn_00734C50(double * arg);
-// 00734C80 Library::MSVCRT::__fassign
+// 00734C80 Library::MSVCRT::__fassign [statically linked library; implementation excluded]
 void __cdecl fn_00734C80(int flag, char * argument, char * number);
-// 00734CD0 Library::MSVCRT::FUN_00734cd0
+// 00734CD0 Library::MSVCRT::FUN_00734cd0 [statically linked library; implementation excluded]
 undefined1 * __cdecl fn_00734CD0(undefined4 param_1, undefined1 * param_2, int param_3, int param_4);
-// 00734E90 Library::MSVCRT::FUN_00734e90
+// 00734E90 Library::MSVCRT::FUN_00734e90 [statically linked library; implementation excluded]
 char * __cdecl fn_00734E90(undefined4 param_1, char * param_2, size_t param_3);
-// 00735020 Library::MSVCRT::FUN_00735020
+// 00735020 Library::MSVCRT::FUN_00735020 [statically linked library; implementation excluded]
 undefined __cdecl fn_00735020(undefined4 param_1, char * param_2, size_t param_3, int param_4);
-// 00735120 Library::MSVCRT::__cftoe_g
+// 00735120 Library::MSVCRT::__cftoe_g [statically linked library; implementation excluded]
 undefined1 * __cdecl fn_00735120(undefined4 param_1, undefined1 * param_2, int param_3, int param_4);
-// 00735160 Library::MSVCRT::__cftof_g
+// 00735160 Library::MSVCRT::__cftof_g [statically linked library; implementation excluded]
 char * __cdecl fn_00735160(undefined4 param_1, char * param_2, size_t param_3);
-// 00735190 Library::MSVCRT::__cfltcvt
+// 00735190 Library::MSVCRT::__cfltcvt [statically linked library; implementation excluded]
 errno_t __cdecl fn_00735190(double * arg, char * buffer, size_t sizeInBytes, int format, int precision, int caps);
-// 007351F0 Library::MSVCRT::__shift
+// 007351F0 Library::MSVCRT::__shift [statically linked library; implementation excluded]
 undefined __cdecl fn_007351F0(char * param_1, int param_2);
-// 00735220 Library::MSVCRT::__aulldiv
+// 00735220 Library::MSVCRT::__aulldiv [statically linked library; implementation excluded]
 undefined8 __stdcall fn_00735220(uint param_1, uint param_2, uint param_3, uint param_4);
-// 00735290 Library::MSVCRT::__aullrem
+// 00735290 Library::MSVCRT::__aullrem [statically linked library; implementation excluded]
 undefined8 __stdcall fn_00735290(uint param_1, uint param_2, uint param_3, uint param_4);
-// 00735310 Library::MSVCRT::FUN_00735310
+// 00735310 Library::MSVCRT::FUN_00735310 [statically linked library; implementation excluded]
 float10 __cdecl fn_00735310(double param_1);
-// 00735330 Library::MSVCRT::FUN_00735330
+// 00735330 Library::MSVCRT::FUN_00735330 [statically linked library; implementation excluded]
 float10 __cdecl fn_00735330(int param_1, undefined4 param_2, undefined4 param_3);
-// 00735390 Library::MSVCRT::FUN_00735390
+// 00735390 Library::MSVCRT::FUN_00735390 [statically linked library; implementation excluded]
 float10 __cdecl fn_00735390(int param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5);
-// 00735400 Library::MSVCRT::FUN_00735400
+// 00735400 Library::MSVCRT::FUN_00735400 [statically linked library; implementation excluded]
 float10 __cdecl fn_00735400(uint param_1, uint param_2, uint param_3, undefined4 param_4, uint param_5, undefined4 param_6, uint param_7);
-// 007354C0 Library::MSVCRT::FUN_007354c0
+// 007354C0 Library::MSVCRT::FUN_007354c0 [statically linked library; implementation excluded]
 float10 __cdecl fn_007354C0(uint param_1, uint param_2, uint param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, uint param_7, undefined4 param_8, uint param_9);
-// 00735590 Library::MSVCRT::FUN_00735590
+// 00735590 Library::MSVCRT::FUN_00735590 [statically linked library; implementation excluded]
 undefined __cdecl fn_00735590(uint * param_1, uint * param_2, uint param_3, uint param_4, uint * param_5, uint * param_6);
-// 00735A60 Library::MSVCRT::FUN_00735a60
+// 00735A60 Library::MSVCRT::FUN_00735a60 [statically linked library; implementation excluded]
 bool __cdecl fn_00735A60(uint param_1, double * param_2, uint param_3);
-// 00735DE0 Library::MSVCRT::__umatherr
+// 00735DE0 Library::MSVCRT::__umatherr [statically linked library; implementation excluded]
 float10 __cdecl fn_00735DE0(int param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8);
-// 00735E80 Library::MSVCRT::__set_errno
+// 00735E80 Library::MSVCRT::__set_errno [statically linked library; implementation excluded]
 errno_t __cdecl fn_00735E80(int _Value);
-// 00735EC0 Library::MSVCRT::__get_fname
+// 00735EC0 Library::MSVCRT::__get_fname [statically linked library; implementation excluded]
 undefined * __cdecl fn_00735EC0(int param_1);
-// 00735F00 Library::MSVCRT::FUN_00735f00
+// 00735F00 Library::MSVCRT::FUN_00735f00 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00735F00(uint param_1);
-// 00735F80 Library::MSVCRT::FUN_00735f80
+// 00735F80 Library::MSVCRT::FUN_00735f80 [statically linked library; implementation excluded]
 float10 __cdecl fn_00735F80(undefined4 param_1, undefined4 param_2, short param_3);
-// 00735FC0 Library::MSVCRT::FUN_00735fc0
+// 00735FC0 Library::MSVCRT::FUN_00735fc0 [statically linked library; implementation excluded]
 int __cdecl fn_00735FC0(undefined4 param_1, undefined8 param_2);
-// 00735FF0 Library::MSVCRT::FUN_00735ff0
+// 00735FF0 Library::MSVCRT::FUN_00735ff0 [statically linked library; implementation excluded]
 undefined __cdecl fn_00735FF0(undefined4 param_1, uint param_2, short param_3);
-// 00736030 Library::MSVCRT::FUN_00736030
+// 00736030 Library::MSVCRT::FUN_00736030 [statically linked library; implementation excluded]
 float10 __cdecl fn_00736030(undefined4 param_1, undefined4 param_2, short param_3);
-// 00736070 Library::MSVCRT::FUN_00736070
+// 00736070 Library::MSVCRT::FUN_00736070 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00736070(int param_1, uint param_2);
-// 007360F0 Library::MSVCRT::FUN_007360f0
+// 007360F0 Library::MSVCRT::FUN_007360f0 [statically linked library; implementation excluded]
 float10 __cdecl fn_007360F0(uint param_1, uint param_2, int * param_3);
-// 00736230 Library::MSVCRT::FUN_00736230
+// 00736230 Library::MSVCRT::FUN_00736230 [statically linked library; implementation excluded]
 int __stdcall fn_00736230(void);
-// 00736250 Library::MSVCRT::FUN_00736250
+// 00736250 Library::MSVCRT::FUN_00736250 [statically linked library; implementation excluded]
 int __stdcall fn_00736250(void);
-// 00736270 Library::MSVCRT::FUN_00736270
+// 00736270 Library::MSVCRT::FUN_00736270 [statically linked library; implementation excluded]
 int __stdcall fn_00736270(void);
-// 007362B0 Library::MSVCRT::FUN_007362b0
+// 007362B0 Library::MSVCRT::FUN_007362b0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007362B0(void);
-// 00736330 Library::MSVCRT::FUN_00736330
+// 00736330 Library::MSVCRT::FUN_00736330 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00736330(UINT param_1);
-// 00736630 Library::MSVCRT::getSystemCP
+// 00736630 Library::MSVCRT::getSystemCP [statically linked library; implementation excluded]
 UINT __cdecl fn_00736630(UINT param_1);
-// 00736690 Library::MSVCRT::FUN_00736690
+// 00736690 Library::MSVCRT::FUN_00736690 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00736690(undefined4 param_1);
-// 00736710 Library::MSVCRT::setSBCS
+// 00736710 Library::MSVCRT::setSBCS [statically linked library; implementation excluded]
 undefined __cdecl fn_00736710(void);
-// 00736790 Library::MSVCRT::FUN_00736790
+// 00736790 Library::MSVCRT::FUN_00736790 [statically linked library; implementation excluded]
 undefined __stdcall fn_00736790(void);
-// 00736AA0 Library::MSVCRT::FUN_00736aa0
+// 00736AA0 Library::MSVCRT::FUN_00736aa0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00736AA0(void);
-// 00736AC0 Library::MSVCRT::FUN_00736ac0
+// 00736AC0 Library::MSVCRT::FUN_00736ac0 [statically linked library; implementation excluded]
 undefined __stdcall fn_00736AC0(void);
-// 00736AF0 Library::MSVCRT::FUN_00736af0
+// 00736AF0 Library::MSVCRT::FUN_00736af0 [statically linked library; implementation excluded]
 byte * __cdecl fn_00736AF0(byte * param_1, byte * param_2, size_t param_3);
-// 00736C10 Library::MSVCRT::_strlen
+// 00736C10 Library::MSVCRT::_strlen [statically linked library; implementation excluded]
 size_t __cdecl fn_00736C10(char * _Str);
-// 00736C90 Library::MSVCRT::FUN_00736c90
+// 00736C90 Library::MSVCRT::FUN_00736c90 [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_00736C90(LPCSTR param_1, char * param_2, undefined4 param_3, undefined4 * param_4);
-// 00737020 Library::MSVCRT::FUN_00737020
+// 00737020 Library::MSVCRT::FUN_00737020 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_00737020(void);
-// 00737110 Library::MSVCRT::FUN_00737110
+// 00737110 Library::MSVCRT::FUN_00737110 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00737110(uint param_1);
-// 00737200 Library::MSVCRT::FUN_00737200
+// 00737200 Library::MSVCRT::FUN_00737200 [statically linked library; implementation excluded]
 undefined __cdecl fn_00737200(undefined4 * param_1);
-// 007372A0 Library::MSVCRT::FUN_007372a0
+// 007372A0 Library::MSVCRT::FUN_007372a0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_007372A0(undefined4 * param_1);
-// 00737400 Library::MSVCRT::FUN_00737400
+// 00737400 Library::MSVCRT::FUN_00737400 [statically linked library; implementation excluded]
 undefined __cdecl fn_00737400(int param_1, int * param_2);
-// 007374C0 Library::MSVCRT::FUN_007374c0
+// 007374C0 Library::MSVCRT::FUN_007374c0 [statically linked library; implementation excluded]
 uint __cdecl fn_007374C0(char * param_1, uint param_2, uint param_3, int * param_4);
-// 007376E0 Library::MSVCRT::FUN_007376e0
+// 007376E0 Library::MSVCRT::FUN_007376e0 [statically linked library; implementation excluded]
 int __cdecl fn_007376E0(int * param_1, byte * param_2, undefined4 * param_3);
-// 00738AC0 Library::MSVCRT::FUN_00738ac0
+// 00738AC0 Library::MSVCRT::FUN_00738ac0 [statically linked library; implementation excluded]
 uint __cdecl fn_00738AC0(uint param_1);
-// 00738B20 Library::MSVCRT::__inc
+// 00738B20 Library::MSVCRT::__inc [statically linked library; implementation excluded]
 uint __cdecl fn_00738B20(int * param_1);
-// 00738B80 Library::MSVCRT::FUN_00738b80
+// 00738B80 Library::MSVCRT::FUN_00738b80 [statically linked library; implementation excluded]
 undefined __cdecl fn_00738B80(uint param_1, int * param_2);
-// 00738BA0 Library::MSVCRT::__whiteout
+// 00738BA0 Library::MSVCRT::__whiteout [statically linked library; implementation excluded]
 uint __cdecl fn_00738BA0(int * param_1, int * param_2);
-// 00738BE0 Library::MSVCRT::FUN_00738be0
+// 00738BE0 Library::MSVCRT::FUN_00738be0 [statically linked library; implementation excluded]
 byte * __cdecl fn_00738BE0(byte * param_1, byte * param_2);
-// 00738C70 Library::MSVCRT::___init_time
+// 00738C70 Library::MSVCRT::___init_time [statically linked library; implementation excluded]
 int __cdecl fn_00738C70(threadlocinfo * _LocInfo);
-// 00738D50 Library::MSVCRT::FUN_00738d50
+// 00738D50 Library::MSVCRT::FUN_00738d50 [statically linked library; implementation excluded]
 uint __cdecl fn_00738D50(int * param_1);
-// 007392E0 Library::MSVCRT::___free_lc_time
+// 007392E0 Library::MSVCRT::___free_lc_time [statically linked library; implementation excluded]
 undefined __cdecl fn_007392E0(undefined4 * param_1);
-// 007395F0 Library::MSVCRT::FUN_007395f0
+// 007395F0 Library::MSVCRT::FUN_007395f0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_007395F0(void);
-// 007398A0 Library::MSVCRT::fix_grouping
+// 007398A0 Library::MSVCRT::fix_grouping [statically linked library; implementation excluded]
 undefined __cdecl fn_007398A0(char * param_1);
-// 00739920 Library::MSVCRT::FUN_00739920
+// 00739920 Library::MSVCRT::FUN_00739920 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00739920(void);
-// 00739A50 Library::MSVCRT::FUN_00739a50
+// 00739A50 Library::MSVCRT::FUN_00739a50 [statically linked library; implementation excluded]
 uint __cdecl fn_00739A50(int param_1);
-// 00739C60 Library::MSVCRT::fix_grouping
+// 00739C60 Library::MSVCRT::fix_grouping [statically linked library; implementation excluded]
 undefined __cdecl fn_00739C60(char * param_1);
-// 00739CE0 Library::MSVCRT::FUN_00739ce0
+// 00739CE0 Library::MSVCRT::FUN_00739ce0 [statically linked library; implementation excluded]
 undefined __cdecl fn_00739CE0(int param_1);
-// 00739D80 Library::MSVCRT::FUN_00739d80
+// 00739D80 Library::MSVCRT::FUN_00739d80 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00739D80(void);
-// 0073A120 Library::MSVCRT::FUN_0073a120
+// 0073A120 Library::MSVCRT::FUN_0073a120 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_0073A120(void);
-// 0073A130 Library::MSVCRT::_strcmp
+// 0073A130 Library::MSVCRT::_strcmp [statically linked library; implementation excluded]
 int __cdecl fn_0073A130(char * _Str1, char * _Str2);
-// 0073A1C0 Library::MSVCRT::FUN_0073a1c0
+// 0073A1C0 Library::MSVCRT::FUN_0073a1c0 [statically linked library; implementation excluded]
 int __cdecl fn_0073A1C0(byte * param_1, byte * param_2);
-// 0073A200 Library::MSVCRT::FUN_0073a200
+// 0073A200 Library::MSVCRT::FUN_0073a200 [statically linked library; implementation excluded]
 byte * __cdecl fn_0073A200(byte * param_1, byte * param_2);
-// 0073A240 Library::MSVCRT::FUN_0073a240
+// 0073A240 Library::MSVCRT::FUN_0073a240 [statically linked library; implementation excluded]
 uint * __cdecl fn_0073A240(uint * param_1, uint * param_2);
-// 0073A250 Library::MSVCRT::FUN_0073a250
+// 0073A250 Library::MSVCRT::FUN_0073a250 [statically linked library; implementation excluded]
 uint * __cdecl fn_0073A250(uint * param_1, uint * param_2);
-// 0073A330 Library::MSVCRT::FUN_0073a330
+// 0073A330 Library::MSVCRT::FUN_0073a330 [statically linked library; implementation excluded]
 undefined4 * __cdecl fn_0073A330(undefined4 * param_1, undefined4 * param_2, uint param_3);
-// 0073A670 Library::MSVCRT::FUN_0073a670
+// 0073A670 Library::MSVCRT::FUN_0073a670 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0073A670(char * param_1, undefined2 * param_2, int param_3);
-// 0073A870 Library::MSVCRT::FUN_0073a870
+// 0073A870 Library::MSVCRT::FUN_0073a870 [statically linked library; implementation excluded]
 undefined __cdecl fn_0073A870(int param_1, int param_2, int * param_3);
-// 0073A900 Library::MSVCRT::FUN_0073a900
+// 0073A900 Library::MSVCRT::FUN_0073a900 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073A900(void);
-// 0073A9C0 Library::MSVCRT::FUN_0073a9c0
+// 0073A9C0 Library::MSVCRT::FUN_0073a9c0 [statically linked library; implementation excluded]
 bool __stdcall fn_0073A9C0(char * param_1);
-// 0073ACF0 Library::MSVCRT::FUN_0073acf0
+// 0073ACF0 Library::MSVCRT::FUN_0073acf0 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073ACF0(void);
-// 0073AD70 Library::MSVCRT::FUN_0073ad70
+// 0073AD70 Library::MSVCRT::FUN_0073ad70 [statically linked library; implementation excluded]
 bool __stdcall fn_0073AD70(char * param_1);
-// 0073AE90 Library::MSVCRT::FUN_0073ae90
+// 0073AE90 Library::MSVCRT::FUN_0073ae90 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073AE90(void);
-// 0073AEE0 Library::MSVCRT::FUN_0073aee0
+// 0073AEE0 Library::MSVCRT::FUN_0073aee0 [statically linked library; implementation excluded]
 bool __stdcall fn_0073AEE0(char * param_1);
-// 0073AF90 Library::MSVCRT::FUN_0073af90
+// 0073AF90 Library::MSVCRT::FUN_0073af90 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073AF90(void);
-// 0073AFC0 Library::MSVCRT::FUN_0073afc0
+// 0073AFC0 Library::MSVCRT::FUN_0073afc0 [statically linked library; implementation excluded]
 int __cdecl fn_0073AFC0(byte * param_1);
-// 0073B060 Library::MSVCRT::FUN_0073b060
+// 0073B060 Library::MSVCRT::FUN_0073b060 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0073B060(short param_1);
-// 0073B0B0 Library::MSVCRT::FUN_0073b0b0
+// 0073B0B0 Library::MSVCRT::FUN_0073b0b0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0073B0B0(int param_1, int param_2);
-// 0073B140 Library::MSVCRT::FUN_0073b140
+// 0073B140 Library::MSVCRT::FUN_0073b140 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_0073B140(void);
-// 0073B190 Library::MSVCRT::crtGetLocaleInfoA
+// 0073B190 Library::MSVCRT::crtGetLocaleInfoA [statically linked library; implementation excluded]
 int __stdcall fn_0073B190(uint param_1, uint param_2, char * param_3, int param_4);
-// 0073B320 Library::MSVCRT::FUN_0073b320
+// 0073B320 Library::MSVCRT::FUN_0073b320 [statically linked library; implementation excluded]
 int __cdecl fn_0073B320(char * param_1);
-// 0073B3A0 Library::MSVCRT::_GetPrimaryLen
+// 0073B3A0 Library::MSVCRT::_GetPrimaryLen [statically linked library; implementation excluded]
 int __cdecl fn_0073B3A0(char * param_1);
-// 0073B410 Library::MSVCRT::_memset
+// 0073B410 Library::MSVCRT::_memset [statically linked library; implementation excluded]
 void * __cdecl fn_0073B410(void * _Dst, int _Val, size_t _Size);
-// 0073B470 Library::MSVCRT::FUN_0073b470
+// 0073B470 Library::MSVCRT::FUN_0073b470 [statically linked library; implementation excluded]
 uint __cdecl fn_0073B470(uint param_1, int * param_2);
-// 0073B6F0 Library::MSVCRT::FUN_0073b6f0
+// 0073B6F0 Library::MSVCRT::FUN_0073b6f0 [statically linked library; implementation excluded]
 int __cdecl fn_0073B6F0(int * param_1, byte * param_2, undefined4 * param_3);
-// 0073C420 Library::MSVCRT::FUN_0073c420
+// 0073C420 Library::MSVCRT::FUN_0073c420 [statically linked library; implementation excluded]
 undefined __cdecl fn_0073C420(uint param_1, int * param_2, int * param_3);
-// 0073C4A0 Library::MSVCRT::FUN_0073c4a0
+// 0073C4A0 Library::MSVCRT::FUN_0073c4a0 [statically linked library; implementation excluded]
 undefined __cdecl fn_0073C4A0(uint param_1, int param_2, int * param_3, int * param_4);
-// 0073C4E0 Library::MSVCRT::FUN_0073c4e0
+// 0073C4E0 Library::MSVCRT::FUN_0073c4e0 [statically linked library; implementation excluded]
 undefined __cdecl fn_0073C4E0(char * param_1, int param_2, int * param_3, int * param_4);
-// 0073C530 Library::MSVCRT::FUN_0073c530
+// 0073C530 Library::MSVCRT::FUN_0073c530 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0073C530(int * param_1);
-// 0073C550 Library::MSVCRT::FUN_0073c550
+// 0073C550 Library::MSVCRT::FUN_0073c550 [statically linked library; implementation excluded]
 undefined8 __cdecl fn_0073C550(int * param_1);
-// 0073C570 Library::MSVCRT::FUN_0073c570
+// 0073C570 Library::MSVCRT::FUN_0073c570 [statically linked library; implementation excluded]
 undefined2 __cdecl fn_0073C570(int * param_1);
-// 0073C590 Library::MSVCRT::FUN_0073c590
+// 0073C590 Library::MSVCRT::FUN_0073c590 [statically linked library; implementation excluded]
 undefined * __stdcall fn_0073C590(void);
-// 0073C610 Library::MSVCRT::FUN_0073c610
+// 0073C610 Library::MSVCRT::FUN_0073c610 [statically linked library; implementation excluded]
 undefined __cdecl fn_0073C610(uint * param_1, uint * param_2);
-// 0073C780 Library::MSVCRT::FUN_0073c780
+// 0073C780 Library::MSVCRT::FUN_0073c780 [statically linked library; implementation excluded]
 undefined * __cdecl fn_0073C780(byte * param_1);
-// 0073C850 Library::MSVCRT::FUN_0073c850
+// 0073C850 Library::MSVCRT::FUN_0073c850 [statically linked library; implementation excluded]
 BOOL __cdecl fn_0073C850(DWORD param_1, LPCSTR param_2, int param_3, LPWORD param_4, UINT param_5, LCID param_6, int param_7);
-// 0073CA10 Library::MSVCRT::FUN_0073ca10
+// 0073CA10 Library::MSVCRT::FUN_0073ca10 [statically linked library; implementation excluded]
 int __cdecl fn_0073CA10(LCID param_1, uint param_2, char * param_3, int param_4, LPWSTR param_5, int param_6, UINT param_7, int param_8);
-// 0073CD20 Library::MSVCRT::FUN_0073cd20
+// 0073CD20 Library::MSVCRT::FUN_0073cd20 [statically linked library; implementation excluded]
 int __cdecl fn_0073CD20(char * param_1, int param_2);
-// 0073CD70 Library::MSVCRT::FUN_0073cd70
+// 0073CD70 Library::MSVCRT::FUN_0073cd70 [statically linked library; implementation excluded]
 uint __cdecl fn_0073CD70(int * param_1);
-// 0073CF50 Library::MSVCRT::FUN_0073cf50
+// 0073CF50 Library::MSVCRT::FUN_0073cf50 [statically linked library; implementation excluded]
 int __cdecl fn_0073CF50(undefined1 * param_1, int param_2, byte * param_3);
-// 0073D050 Library::MSVCRT::FUN_0073d050
+// 0073D050 Library::MSVCRT::FUN_0073d050 [statically linked library; implementation excluded]
 int __cdecl fn_0073D050(undefined4 param_1, undefined4 param_2, undefined4 param_3);
-// 0073D110 Library::MSVCRT::__XcptFilter
+// 0073D110 Library::MSVCRT::__XcptFilter [statically linked library; implementation excluded]
 int __cdecl fn_0073D110(ulong _ExceptionNum, _EXCEPTION_POINTERS * _ExceptionPtr);
-// 0073D2C0 Library::MSVCRT::xcptlookup
+// 0073D2C0 Library::MSVCRT::xcptlookup [statically linked library; implementation excluded]
 int * __cdecl fn_0073D2C0(int param_1);
-// 0073D320 Library::MSVCRT::FUN_0073d320
+// 0073D320 Library::MSVCRT::FUN_0073d320 [statically linked library; implementation excluded]
 byte * __stdcall fn_0073D320(void);
-// 0073D3E0 Library::MSVCRT::FUN_0073d3e0
+// 0073D3E0 Library::MSVCRT::FUN_0073d3e0 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073D3E0(void);
-// 0073D530 Library::MSVCRT::FUN_0073d530
+// 0073D530 Library::MSVCRT::FUN_0073d530 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073D530(void);
-// 0073D610 Library::MSVCRT::FUN_0073d610
+// 0073D610 Library::MSVCRT::FUN_0073d610 [statically linked library; implementation excluded]
 undefined __cdecl fn_0073D610(byte * param_1, undefined4 * param_2, byte * param_3, int * param_4, int * param_5);
-// 0073DA40 Library::MSVCRT::FUN_0073da40
+// 0073DA40 Library::MSVCRT::FUN_0073da40 [statically linked library; implementation excluded]
 LPSTR __stdcall fn_0073DA40(void);
-// 0073DC60 Library::MSVCRT::FUN_0073dc60
+// 0073DC60 Library::MSVCRT::FUN_0073dc60 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073DC60(void);
-// 0073DF70 Library::MSVCRT::__ioterm
+// 0073DF70 Library::MSVCRT::__ioterm [statically linked library; implementation excluded]
 void __cdecl fn_0073DF70(void);
-// 0073DFD0 Library::MSVCRT::__FF_MSGBANNER
+// 0073DFD0 Library::MSVCRT::__FF_MSGBANNER [statically linked library; implementation excluded]
 void __cdecl fn_0073DFD0(void);
-// 0073E020 Library::MSVCRT::FUN_0073e020
+// 0073E020 Library::MSVCRT::FUN_0073e020 [statically linked library; implementation excluded]
 undefined __cdecl fn_0073E020(int param_1);
-// 0073E1E0 Library::MSVCRT::__GET_RTERRMSG
+// 0073E1E0 Library::MSVCRT::__GET_RTERRMSG [statically linked library; implementation excluded]
 wchar_t * __cdecl fn_0073E1E0(int param_1);
-// 0073E230 Library::MSVCRT::__rt_probe_read4@4
+// 0073E230 Library::MSVCRT::__rt_probe_read4@4 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_0073E230(void);
-// 0073E2C0 Library::MSVCRT::FUN_0073e2c0
+// 0073E2C0 Library::MSVCRT::FUN_0073e2c0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0073E2C0(uint param_1);
-// 0073E370 Library::MSVCRT::FUN_0073e370
+// 0073E370 Library::MSVCRT::FUN_0073e370 [statically linked library; implementation excluded]
 int __cdecl fn_0073E370(uint param_1, char * param_2, uint param_3);
-// 0073E620 Library::MSVCRT::FUN_0073e620
+// 0073E620 Library::MSVCRT::FUN_0073e620 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073E620(void);
-// 0073E750 Library::MSVCRT::FUN_0073e750
+// 0073E750 Library::MSVCRT::FUN_0073e750 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073E750(void);
-// 0073E770 Library::MSVCRT::__cintrindisp2
+// 0073E770 Library::MSVCRT::__cintrindisp2 [statically linked library; implementation excluded]
 undefined __fastcall fn_0073E770(undefined4 param_1, int param_2);
-// 0073E7AE Library::MSVCRT::__cintrindisp1
+// 0073E7AE Library::MSVCRT::__cintrindisp1 [statically linked library; implementation excluded]
 undefined __fastcall fn_0073E7AE(undefined4 param_1, int param_2);
-// 0073E7E4 Library::MSVCRT::__ctrandisp2
+// 0073E7E4 Library::MSVCRT::__ctrandisp2 [statically linked library; implementation excluded]
 undefined __cdecl fn_0073E7E4(uint param_1, int param_2, uint param_3, int param_4);
-// 0073E81E Library::MSVCRT::FUN_0073e81e
+// 0073E81E Library::MSVCRT::FUN_0073e81e [statically linked library; implementation excluded]
 undefined __stdcall fn_0073E81E(void);
-// 0073E825 Library::MSVCRT::FUN_0073e825
+// 0073E825 Library::MSVCRT::FUN_0073e825 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073E825(void);
-// 0073E955 Library::MSVCRT::__ctrandisp1
+// 0073E955 Library::MSVCRT::__ctrandisp1 [statically linked library; implementation excluded]
 undefined __cdecl fn_0073E955(uint param_1, int param_2);
-// 0073E981 Library::MSVCRT::__fload
+// 0073E981 Library::MSVCRT::__fload [statically linked library; implementation excluded]
 float10 __cdecl fn_0073E981(uint param_1, int param_2);
-// 0073E9C0 Library::MSVCRT::__trandisp1
+// 0073E9C0 Library::MSVCRT::__trandisp1 [statically linked library; implementation excluded]
 undefined __fastcall fn_0073E9C0(undefined4 param_1, int param_2);
-// 0073EA27 Library::MSVCRT::__trandisp2
+// 0073EA27 Library::MSVCRT::__trandisp2 [statically linked library; implementation excluded]
 undefined __fastcall fn_0073EA27(undefined4 param_1, int param_2);
-// 0073F396 Library::MSVCRT::FUN_0073f396
+// 0073F396 Library::MSVCRT::FUN_0073f396 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0073F396(undefined4 param_1, uint param_2, ushort param_3);
-// 0073F59C Library::MSVCRT::FUN_0073f59c
+// 0073F59C Library::MSVCRT::FUN_0073f59c [statically linked library; implementation excluded]
 float10 __stdcall fn_0073F59C(void);
-// 0073F920 Library::MSVCRT::FUN_0073f920
+// 0073F920 Library::MSVCRT::FUN_0073f920 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073F920(void);
-// 0073F940 Library::MSVCRT::FUN_0073f940
+// 0073F940 Library::MSVCRT::FUN_0073f940 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073F940(void);
-// 0073F960 Library::MSVCRT::FUN_0073f960
+// 0073F960 Library::MSVCRT::FUN_0073f960 [statically linked library; implementation excluded]
 uint __cdecl fn_0073F960(uint param_1, uint param_2);
-// 0073F9B0 Library::MSVCRT::__controlfp
+// 0073F9B0 Library::MSVCRT::__controlfp [statically linked library; implementation excluded]
 uint __cdecl fn_0073F9B0(uint _NewValue, uint _Mask);
-// 0073F9D0 Library::MSVCRT::FUN_0073f9d0
+// 0073F9D0 Library::MSVCRT::FUN_0073f9d0 [statically linked library; implementation excluded]
 undefined __stdcall fn_0073F9D0(void);
-// 0073FA30 Library::MSVCRT::FUN_0073fa30
+// 0073FA30 Library::MSVCRT::FUN_0073fa30 [statically linked library; implementation excluded]
 uint __cdecl fn_0073FA30(uint param_1);
-// 0073FBB0 Library::MSVCRT::FUN_0073fbb0
+// 0073FBB0 Library::MSVCRT::FUN_0073fbb0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0073FBB0(uint param_1);
-// 0073FD10 Library::MSVCRT::FUN_0073fd10
+// 0073FD10 Library::MSVCRT::FUN_0073fd10 [statically linked library; implementation excluded]
 uint __cdecl fn_0073FD10(uint param_1);
-// 0073FDC0 Library::MSVCRT::FUN_0073fdc0
+// 0073FDC0 Library::MSVCRT::FUN_0073fdc0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_0073FDC0(int param_1, int param_2);
-// 0073FE50 Library::MSVCRT::__IncMan
+// 0073FE50 Library::MSVCRT::__IncMan [statically linked library; implementation excluded]
 int __cdecl fn_0073FE50(int param_1, int param_2);
-// 0073FF00 Library::MSVCRT::FUN_0073ff00
+// 0073FF00 Library::MSVCRT::FUN_0073ff00 [statically linked library; implementation excluded]
 int __cdecl fn_0073FF00(int param_1, int param_2);
-// 0073FFE0 Library::MSVCRT::__CopyMan
+// 0073FFE0 Library::MSVCRT::__CopyMan [statically linked library; implementation excluded]
 undefined __cdecl fn_0073FFE0(undefined4 * param_1, undefined4 * param_2);
-// 00740030 Library::MSVCRT::__FillZeroMan
+// 00740030 Library::MSVCRT::__FillZeroMan [statically linked library; implementation excluded]
 undefined __cdecl fn_00740030(int param_1);
-// 00740060 Library::MSVCRT::__IsZeroMan
+// 00740060 Library::MSVCRT::__IsZeroMan [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00740060(int param_1);
-// 007400A0 Library::MSVCRT::__ShrMan
+// 007400A0 Library::MSVCRT::__ShrMan [statically linked library; implementation excluded]
 undefined __cdecl fn_007400A0(int param_1, int param_2);
-// 00740190 Library::MSVCRT::FUN_00740190
+// 00740190 Library::MSVCRT::FUN_00740190 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00740190(ushort * param_1, uint * param_2, int * param_3);
-// 007403E0 Library::MSVCRT::FUN_007403e0
+// 007403E0 Library::MSVCRT::FUN_007403e0 [statically linked library; implementation excluded]
 undefined __cdecl fn_007403E0(ushort * param_1, uint * param_2);
-// 00740400 Library::MSVCRT::FUN_00740400
+// 00740400 Library::MSVCRT::FUN_00740400 [statically linked library; implementation excluded]
 undefined __cdecl fn_00740400(ushort * param_1, uint * param_2);
-// 00740420 Library::MSVCRT::FUN_00740420
+// 00740420 Library::MSVCRT::FUN_00740420 [statically linked library; implementation excluded]
 bool __cdecl fn_00740420(ushort * param_1, undefined4 * param_2);
-// 007404E0 Library::MSVCRT::FUN_007404e0
+// 007404E0 Library::MSVCRT::FUN_007404e0 [statically linked library; implementation excluded]
 undefined __cdecl fn_007404E0(uint * param_1, byte * param_2);
-// 00740520 Library::MSVCRT::FUN_00740520
+// 00740520 Library::MSVCRT::FUN_00740520 [statically linked library; implementation excluded]
 undefined __cdecl fn_00740520(undefined4 * param_1, byte * param_2);
-// 00740560 Library::MSVCRT::FUN_00740560
+// 00740560 Library::MSVCRT::FUN_00740560 [statically linked library; implementation excluded]
 undefined __cdecl fn_00740560(uint * param_1, byte * param_2);
-// 007405A0 Library::MSVCRT::FUN_007405a0
+// 007405A0 Library::MSVCRT::FUN_007405a0 [statically linked library; implementation excluded]
 undefined __cdecl fn_007405A0(char * param_1, int param_2, int param_3);
-// 007406A0 Library::MSVCRT::__fptrap
+// 007406A0 Library::MSVCRT::__fptrap [statically linked library; implementation excluded]
 void __cdecl fn_007406A0(void);
-// 007406B0 Library::MSVCRT::__matherr
+// 007406B0 Library::MSVCRT::__matherr [statically linked library; implementation excluded]
 int __cdecl fn_007406B0(_exception * _Except);
-// 007406C0 Library::MSVCRT::FID_conflict:__open
+// 007406C0 Library::MSVCRT::FID_conflict:__open [statically linked library; implementation excluded]
 int __cdecl fn_007406C0(char * _Filename, int _OpenFlag, ...);
-// 00740700 Library::MSVCRT::FUN_00740700
+// 00740700 Library::MSVCRT::FUN_00740700 [statically linked library; implementation excluded]
 uint __cdecl fn_00740700(LPCSTR param_1, uint param_2, undefined4 param_3, uint param_4);
-// 00740BF0 Library::MSVCRT::__dosmaperr
+// 00740BF0 Library::MSVCRT::__dosmaperr [statically linked library; implementation excluded]
 void __cdecl fn_00740BF0(ulong param_1);
-// 00740C80 Library::MSVCRT::FUN_00740c80
+// 00740C80 Library::MSVCRT::FUN_00740c80 [statically linked library; implementation excluded]
 int __stdcall fn_00740C80(void);
-// 00740DB0 Library::MSVCRT::__set_osfhnd
+// 00740DB0 Library::MSVCRT::__set_osfhnd [statically linked library; implementation excluded]
 int __cdecl fn_00740DB0(int param_1, intptr_t param_2);
-// 00740E60 Library::MSVCRT::FUN_00740e60
+// 00740E60 Library::MSVCRT::FUN_00740e60 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00740E60(uint param_1);
-// 00740F30 Library::MSVCRT::FUN_00740f30
+// 00740F30 Library::MSVCRT::FUN_00740f30 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00740F30(uint param_1);
-// 00740F90 Library::MSVCRT::FUN_00740f90
+// 00740F90 Library::MSVCRT::FUN_00740f90 [statically linked library; implementation excluded]
 uint __cdecl fn_00740F90(HANDLE param_1, uint param_2);
-// 00741080 Library::MSVCRT::__isatty
+// 00741080 Library::MSVCRT::__isatty [statically linked library; implementation excluded]
 int __cdecl fn_00741080(int _FileHandle);
-// 007410B0 Library::MSVCRT::FUN_007410b0
+// 007410B0 Library::MSVCRT::FUN_007410b0 [statically linked library; implementation excluded]
 uint __cdecl fn_007410B0(LPWSTR param_1, byte * param_2, uint param_3);
-// 00741210 Library::MSVCRT::__allshl
+// 00741210 Library::MSVCRT::__allshl [statically linked library; implementation excluded]
 longlong __fastcall fn_00741210(byte param_1, int param_2);
-// 00741230 Library::MSVCRT::FUN_00741230
+// 00741230 Library::MSVCRT::FUN_00741230 [statically linked library; implementation excluded]
 uint __cdecl fn_00741230(uint param_1, int * param_2);
-// 00741370 Library::MSVCRT::FUN_00741370
+// 00741370 Library::MSVCRT::FUN_00741370 [statically linked library; implementation excluded]
 undefined1 * __stdcall fn_00741370(void);
-// 007414A0 Library::MSVCRT::FUN_007414a0
+// 007414A0 Library::MSVCRT::FUN_007414a0 [statically linked library; implementation excluded]
 undefined1 * __stdcall fn_007414A0(void);
-// 007415D0 Library::MSVCRT::FUN_007415d0
+// 007415D0 Library::MSVCRT::FUN_007415d0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_007415D0(void);
-// 00741940 Library::MSVCRT::FUN_00741940
+// 00741940 Library::MSVCRT::FUN_00741940 [statically linked library; implementation excluded]
 undefined __cdecl fn_00741940(byte * param_1, uint param_2, byte * param_3, int * param_4);
-// 00741960 Library::MSVCRT::FUN_00741960
+// 00741960 Library::MSVCRT::FUN_00741960 [statically linked library; implementation excluded]
 int __cdecl fn_00741960(byte * param_1, uint param_2, byte * param_3, int * param_4, undefined * param_5);
-// 00741AA0 Library::MSVCRT::FUN_00741aa0
+// 00741AA0 Library::MSVCRT::FUN_00741aa0 [statically linked library; implementation excluded]
 undefined __cdecl fn_00741AA0(undefined1 param_1, int * param_2, int * param_3, uint * param_4, int param_5);
-// 007420C0 Library::MSVCRT::FID_conflict:_store_str
+// 007420C0 Library::MSVCRT::FID_conflict:_store_str [statically linked library; implementation excluded]
 undefined __cdecl fn_007420C0(char * param_1, int * param_2, int * param_3);
-// 00742110 Library::MSVCRT::FUN_00742110
+// 00742110 Library::MSVCRT::FUN_00742110 [statically linked library; implementation excluded]
 undefined __cdecl fn_00742110(int param_1, uint param_2, int * param_3, uint * param_4);
-// 007421C0 Library::MSVCRT::FID_conflict:_store_number
+// 007421C0 Library::MSVCRT::FID_conflict:_store_number [statically linked library; implementation excluded]
 undefined __cdecl fn_007421C0(int param_1, int * param_2, uint * param_3);
-// 00742270 Library::MSVCRT::FUN_00742270
+// 00742270 Library::MSVCRT::FUN_00742270 [statically linked library; implementation excluded]
 undefined __cdecl fn_00742270(byte * param_1, int param_2, int * param_3, uint * param_4, int param_5);
-// 00742790 Library::MSVCRT::FUN_00742790
+// 00742790 Library::MSVCRT::FUN_00742790 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00742790(int param_1, LCID param_2, LCTYPE param_3, int * param_4);
-// 00742A20 Library::MSVCRT::FUN_00742a20
+// 00742A20 Library::MSVCRT::FUN_00742a20 [statically linked library; implementation excluded]
 undefined * __stdcall fn_00742A20(void);
-// 00742A30 Library::MSVCRT::FUN_00742a30
+// 00742A30 Library::MSVCRT::FUN_00742a30 [statically linked library; implementation excluded]
 BOOL __cdecl fn_00742A30(DWORD param_1, LPCWSTR param_2, int param_3, LPWORD param_4, UINT param_5, LCID param_6);
-// 00742CA0 Library::MSVCRT::FUN_00742ca0
+// 00742CA0 Library::MSVCRT::FUN_00742ca0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00742CA0(byte * param_1, char * param_2, int param_3);
-// 00742D50 Library::MSVCRT::FUN_00742d50
+// 00742D50 Library::MSVCRT::FUN_00742d50 [statically linked library; implementation excluded]
 DWORD __cdecl fn_00742D50(uint param_1, LONG param_2, DWORD param_3);
-// 00742E40 Library::MSVCRT::FUN_00742e40
+// 00742E40 Library::MSVCRT::FUN_00742e40 [statically linked library; implementation excluded]
 undefined __cdecl fn_00742E40(undefined4 * param_1);
-// 00742F10 Library::MSVCRT::FUN_00742f10
+// 00742F10 Library::MSVCRT::FUN_00742f10 [statically linked library; implementation excluded]
 int __cdecl fn_00742F10(LPSTR param_1, uint param_2);
-// 00742FB0 Library::MSVCRT::FUN_00742fb0
+// 00742FB0 Library::MSVCRT::FUN_00742fb0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00742FB0(int param_1, uint param_2, ushort param_3, int param_4, uint param_5, short * param_6);
-// 007434D0 Library::MSVCRT::FUN_007434d0
+// 007434D0 Library::MSVCRT::FUN_007434d0 [statically linked library; implementation excluded]
 uint __cdecl fn_007434D0(undefined2 * param_1, undefined4 * param_2, byte * param_3, int param_4, int param_5, int param_6, int param_7);
-// 00744000 Library::MSVCRT::FUN_00744000
+// 00744000 Library::MSVCRT::FUN_00744000 [statically linked library; implementation excluded]
 uint __cdecl fn_00744000(undefined4 * param_1, undefined4 * param_2, byte * param_3, int param_4);
-// 00744050 Library::MSVCRT::FUN_00744050
+// 00744050 Library::MSVCRT::FUN_00744050 [statically linked library; implementation excluded]
 int __cdecl fn_00744050(uint param_1, char * param_2, DWORD param_3);
-// 007444B0 Library::MSVCRT::FUN_007444b0
+// 007444B0 Library::MSVCRT::FUN_007444b0 [statically linked library; implementation excluded]
 undefined __cdecl fn_007444B0(uint param_1);
-// 007444D0 Library::MSVCRT::FUN_007444d0
+// 007444D0 Library::MSVCRT::FUN_007444d0 [statically linked library; implementation excluded]
 undefined __cdecl fn_007444D0(uint param_1);
-// 007444F0 Library::MSVCRT::FUN_007444f0
+// 007444F0 Library::MSVCRT::FUN_007444f0 [statically linked library; implementation excluded]
 undefined __cdecl fn_007444F0(uint param_1);
-// 00744510 Library::MSVCRT::FUN_00744510
+// 00744510 Library::MSVCRT::FUN_00744510 [statically linked library; implementation excluded]
 undefined __cdecl fn_00744510(uint param_1);
-// 00744530 Library::MSVCRT::FUN_00744530
+// 00744530 Library::MSVCRT::FUN_00744530 [statically linked library; implementation excluded]
 undefined __cdecl fn_00744530(uint param_1);
-// 00744550 Library::MSVCRT::FUN_00744550
+// 00744550 Library::MSVCRT::FUN_00744550 [statically linked library; implementation excluded]
 undefined __cdecl fn_00744550(uint param_1);
-// 00744570 Library::MSVCRT::FUN_00744570
+// 00744570 Library::MSVCRT::FUN_00744570 [statically linked library; implementation excluded]
 undefined __cdecl fn_00744570(uint param_1);
-// 00744590 Library::MSVCRT::FUN_00744590
+// 00744590 Library::MSVCRT::FUN_00744590 [statically linked library; implementation excluded]
 undefined __cdecl fn_00744590(uint param_1);
-// 007445B0 Library::MSVCRT::FUN_007445b0
+// 007445B0 Library::MSVCRT::FUN_007445b0 [statically linked library; implementation excluded]
 undefined __cdecl fn_007445B0(uint param_1);
-// 007445D0 Library::MSVCRT::FUN_007445d0
+// 007445D0 Library::MSVCRT::FUN_007445d0 [statically linked library; implementation excluded]
 undefined __cdecl fn_007445D0(uint param_1);
-// 007445F0 Library::MSVCRT::__ismbbkana
+// 007445F0 Library::MSVCRT::__ismbbkana [statically linked library; implementation excluded]
 int __cdecl fn_007445F0(uint _C);
-// 00744630 Library::MSVCRT::FUN_00744630
+// 00744630 Library::MSVCRT::FUN_00744630 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00744630(uint param_1, uint param_2, byte param_3);
-// 007446A0 Library::MSVCRT::FUN_007446a0
+// 007446A0 Library::MSVCRT::FUN_007446a0 [statically linked library; implementation excluded]
 int __stdcall fn_007446A0(void);
-// 00744750 Library::MSVCRT::FUN_00744750
+// 00744750 Library::MSVCRT::FUN_00744750 [statically linked library; implementation excluded]
 undefined __cdecl fn_00744750(uint param_1, _exception * param_2, ushort * param_3);
-// 007448D0 Library::MSVCRT::___addl
+// 007448D0 Library::MSVCRT::___addl [statically linked library; implementation excluded]
 undefined4 __cdecl fn_007448D0(uint param_1, uint param_2, uint * param_3);
-// 00744910 Library::MSVCRT::___add_12
+// 00744910 Library::MSVCRT::___add_12 [statically linked library; implementation excluded]
 undefined __cdecl fn_00744910(uint * param_1, uint * param_2);
-// 007449C0 Library::MSVCRT::___shl_12
+// 007449C0 Library::MSVCRT::___shl_12 [statically linked library; implementation excluded]
 undefined __cdecl fn_007449C0(uint * param_1);
-// 00744A20 Library::MSVCRT::___shr_12
+// 00744A20 Library::MSVCRT::___shr_12 [statically linked library; implementation excluded]
 undefined __cdecl fn_00744A20(uint * param_1);
-// 00744A90 Library::MSVCRT::FUN_00744a90
+// 00744A90 Library::MSVCRT::FUN_00744a90 [statically linked library; implementation excluded]
 undefined __cdecl fn_00744A90(char * param_1, int param_2, uint * param_3);
-// 00744BD0 Library::MSVCRT::FUN_00744bd0
+// 00744BD0 Library::MSVCRT::FUN_00744bd0 [statically linked library; implementation excluded]
 int __cdecl fn_00744BD0(uint param_1, int param_2);
-// 00744E40 Library::MSVCRT::FUN_00744e40
+// 00744E40 Library::MSVCRT::FUN_00744e40 [statically linked library; implementation excluded]
 undefined __stdcall fn_00744E40(void);
-// 00744E70 Library::MSVCRT::FUN_00744e70
+// 00744E70 Library::MSVCRT::FUN_00744e70 [statically linked library; implementation excluded]
 undefined __stdcall fn_00744E70(void);
-// 007451F0 Library::MSVCRT::FUN_007451f0
+// 007451F0 Library::MSVCRT::FUN_007451f0 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_007451F0(int * param_1);
-// 007454F0 Library::MSVCRT::FUN_007454f0
+// 007454F0 Library::MSVCRT::FUN_007454f0 [statically linked library; implementation excluded]
 undefined __cdecl fn_007454F0(int param_1, int param_2, uint param_3, int param_4, int param_5, int param_6, int param_7, int param_8, int param_9, int param_10, int param_11);
-// 007456F0 Library::MSVCRT::FUN_007456f0
+// 007456F0 Library::MSVCRT::FUN_007456f0 [statically linked library; implementation excluded]
 int __cdecl fn_007456F0(LCID param_1, LCTYPE param_2, LPWSTR param_3, int param_4, UINT param_5);
-// 00745890 Library::MSVCRT::FUN_00745890
+// 00745890 Library::MSVCRT::FUN_00745890 [statically linked library; implementation excluded]
 int __cdecl fn_00745890(LCID param_1, LCTYPE param_2, LPSTR param_3, int param_4, UINT param_5);
-// 00745A40 Library::MSVCRT::FUN_00745a40
+// 00745A40 Library::MSVCRT::FUN_00745a40 [statically linked library; implementation excluded]
 undefined __cdecl fn_00745A40(int * param_1, int * param_2);
-// 00745E80 Library::MSVCRT::FUN_00745e80
+// 00745E80 Library::MSVCRT::FUN_00745e80 [statically linked library; implementation excluded]
 undefined __cdecl fn_00745E80(int * param_1, uint param_2, int param_3);
-// 00745F50 Library::MSVCRT::FUN_00745f50
+// 00745F50 Library::MSVCRT::FUN_00745f50 [statically linked library; implementation excluded]
 int __cdecl fn_00745F50(uint param_1, int param_2);
-// 00746050 Library::MSVCRT::FID_conflict:__getenv_lk
+// 00746050 Library::MSVCRT::FID_conflict:__getenv_lk [statically linked library; implementation excluded]
 char * __cdecl fn_00746050(char * _VarName);
-// 00746120 Library::MSVCRT::__mbsnbicoll
+// 00746120 Library::MSVCRT::__mbsnbicoll [statically linked library; implementation excluded]
 int __cdecl fn_00746120(uchar * _Str1, uchar * _Str2, size_t _MaxCount);
-// 00746170 Library::MSVCRT::FUN_00746170
+// 00746170 Library::MSVCRT::FUN_00746170 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00746170(void);
-// 00746220 Library::MSVCRT::FUN_00746220
+// 00746220 Library::MSVCRT::FUN_00746220 [statically linked library; implementation excluded]
 int __cdecl fn_00746220(LCID param_1, DWORD param_2, byte * param_3, int param_4, byte * param_5, int param_6, UINT param_7);
-// 00746620 Library::MSVCRT::FUN_00746620
+// 00746620 Library::MSVCRT::FUN_00746620 [statically linked library; implementation excluded]
 int __cdecl fn_00746620(char * param_1, int param_2);
-// 00746670 Library::MSVCRT::FUN_00746670
+// 00746670 Library::MSVCRT::FUN_00746670 [statically linked library; implementation excluded]
 undefined4 __cdecl fn_00746670(uint * param_1, int param_2);
-// 00746950 Library::MSVCRT::findenv
+// 00746950 Library::MSVCRT::findenv [statically linked library; implementation excluded]
 int __cdecl fn_00746950(uchar * param_1, size_t param_2);
-// 007469D0 Library::MSVCRT::copy_environ
+// 007469D0 Library::MSVCRT::copy_environ [statically linked library; implementation excluded]
 int * __cdecl fn_007469D0(int * param_1);
-// 00746AC0 Library::MSVCRT::FUN_00746ac0
+// 00746AC0 Library::MSVCRT::FUN_00746ac0 [statically linked library; implementation excluded]
 uint * __cdecl fn_00746AC0(uint * param_1, uint param_2);
-// 00746B90 Library::MSVCRT::FUN_00746b90
+// 00746B90 Library::MSVCRT::FUN_00746b90 [statically linked library; implementation excluded]
 undefined __stdcall fn_00746B90(LPVOID * param_1);
 // 00746BAB FUN_00746bab
 HRESULT fn_00746BAB(LPUNKNOWN param_1,IID *param_2,void **param_3,int *param_4);
@@ -21807,7 +21805,7 @@ void fn_00750590(undefined1 *param_1,int param_2,byte *param_3,int param_4,int p
 // 00750660 FUN_00750660
 void fn_00750660(undefined1 *param_1,int param_2,undefined1 *param_3,int param_4,
                  undefined1 *param_5,int param_6,int param_7,int param_8,int param_9);
-// 007506F0 Library::DKW::DDX::FUN_007506f0
+// 007506F0 Library::DKW::DDX::FUN_007506f0 [statically linked library; implementation excluded]
 int __stdcall fn_007506F0(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, int param_7, int param_8, int param_9);
 // 007508F0 FUN_007508f0
 undefined4 fn_007508F0(undefined4 *param_1);
@@ -21817,9 +21815,9 @@ void fn_00750920(byte *param_1,undefined4 *param_2,undefined2 param_3,undefined4
 void fn_00750940(byte *param_1,undefined4 *param_2,undefined2 param_3,undefined4 param_4);
 // 00750970 FUN_00750970
 void fn_00750970(byte *param_1,undefined4 *param_2,uint param_3);
-// 00750990 Library::DKW::DB::FUN_00750990
+// 00750990 Library::DKW::DB::FUN_00750990 [statically linked library; implementation excluded]
 int __stdcall fn_00750990(byte * param_1, undefined4 * param_2);
-// 00750BA0 Library::DKW::DB::FUN_00750ba0
+// 00750BA0 Library::DKW::DB::FUN_00750ba0 [statically linked library; implementation excluded]
 undefined __stdcall fn_00750BA0(int param_1, int param_2);
 // 00750F10 FUN_00750f10
 undefined4 fn_00750F10(void);
@@ -21827,17 +21825,17 @@ undefined4 fn_00750F10(void);
 void fn_00750F20(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_2,undefined4 param_3);
 // 00750FB0 FUN_00750fb0
 void fn_00750FB0(AnonShape_00750FB0_15A3AC3E *param_1,undefined4 param_2,undefined4 param_3);
-// 00751050 Library::DKW::DB::FUN_00751050
+// 00751050 Library::DKW::DB::FUN_00751050 [statically linked library; implementation excluded]
 uint __stdcall fn_00751050(uint * param_1, ushort * param_2, undefined4 * param_3, uint param_4);
 // 00751100 FUN_00751100
 int fn_00751100(uint *param_1,ushort *param_2);
 // 00751140 FUN_00751140
 int fn_00751140(char *param_1,int param_2,undefined4 param_3,undefined4 param_4);
-// 00751170 Library::DKW::PK::FUN_00751170
+// 00751170 Library::DKW::PK::FUN_00751170 [statically linked library; implementation excluded]
 int __stdcall fn_00751170(byte * param_1, int param_2, undefined1 * param_3, int param_4);
-// 007514F0 Library::DKW::PK::FUN_007514f0
+// 007514F0 Library::DKW::PK::FUN_007514f0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007514F0(int * param_1, byte param_2);
-// 007515E0 Library::DKW::PK::FUN_007515e0
+// 007515E0 Library::DKW::PK::FUN_007515e0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007515E0(int * param_1, byte * param_2, int param_3);
 // 007516F0 FUN_007516f0
 int fn_007516F0(int param_1,byte *param_2);
@@ -21847,7 +21845,7 @@ DWORD fn_00751980(int *param_1,ushort *param_2,undefined4 *param_3,uint param_4)
 int __cdecl fn_007519D0(ushort *param_1,byte *param_2);
 // 00751B10 FUN_00751b10
 undefined4 fn_00751B10(int *param_1,uint param_2);
-// 00751B60 Library::DKW::DB::FUN_00751b60
+// 00751B60 Library::DKW::DB::FUN_00751b60 [statically linked library; implementation excluded]
 int __stdcall fn_00751B60(int param_1, ushort * param_2, undefined4 * param_3);
 // 00751BA0 FUN_00751ba0
 DWORD fn_00751BA0(int *param_1,ushort *param_2,undefined4 *param_3,uint param_4);
@@ -21855,15 +21853,15 @@ DWORD fn_00751BA0(int *param_1,ushort *param_2,undefined4 *param_3,uint param_4)
 DWORD fn_00751BF0(int *param_1,ushort *param_2,undefined4 *param_3,uint param_4);
 // 00751C40 FUN_00751c40
 int fn_00751C40(undefined4 param_1,uint param_2,int param_3,uint *param_4,int param_5);
-// 00751CB0 Library::DKW::WGR::FUN_00751cb0
+// 00751CB0 Library::DKW::WGR::FUN_00751cb0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_00751CB0(undefined4 * param_1, ushort * param_2, undefined4 * param_3, ushort * param_4, int param_5, int param_6);
-// 00751E70 Library::DKW::JPG::FUN_00751e70
+// 00751E70 Library::DKW::JPG::FUN_00751e70 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00751E70(LPCSTR param_1, uint param_2, int param_3, uint * param_4, int param_5);
-// 00751F30 Library::DKW::GPC::FUN_00751f30
+// 00751F30 Library::DKW::GPC::FUN_00751f30 [statically linked library; implementation excluded]
 int * __stdcall fn_00751F30(undefined4 param_1, uint param_2);
 // 00751F90 FUN_00751f90
 UINT fn_00751F90(int param_1,LPVOID lpBuffer,UINT uBytes);
-// 00751FC0 Library::DKW::GPC::FUN_00751fc0
+// 00751FC0 Library::DKW::GPC::FUN_00751fc0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_00751FC0(undefined4 param_1);
 // 00752030 FUN_00752030
 UINT fn_00752030(int param_1,LPVOID lpBuffer,UINT uBytes);
@@ -21871,7 +21869,7 @@ UINT fn_00752030(int param_1,LPVOID lpBuffer,UINT uBytes);
 LONG fn_00752060(int param_1);
 // 00752080 FUN_00752080
 LONG fn_00752080(int param_1,LONG lOffset);
-// 007520A0 Library::DKW::WGR::FUN_007520a0
+// 007520A0 Library::DKW::WGR::FUN_007520a0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_007520A0(LPCSTR param_1, int param_2, int param_3, int param_4, int param_5);
 // 007521B0 FUN_007521b0
 undefined4
@@ -21887,11 +21885,11 @@ byte * fn_00752A60(int param_1,int param_2,int param_3,int param_4,int param_5,c
 // 00752CF0 FUN_00752cf0
 void fn_00752CF0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char param_4,
                  uint *param_5);
-// 00752D50 Library::DKW::TBL::FUN_00752d50
+// 00752D50 Library::DKW::TBL::FUN_00752d50 [statically linked library; implementation excluded]
 uint __stdcall fn_00752D50(int param_1, uint param_2, char * param_3);
 // 00752E10 FUN_00752e10
 int fn_00752E10(int param_1);
-// 00752E40 Library::DKW::SND::FUN_00752e40
+// 00752E40 Library::DKW::SND::FUN_00752e40 [statically linked library; implementation excluded]
 int * __stdcall fn_00752E40(int * param_1, int * param_2);
 // 00753020 FUN_00753020
 void fn_00753020(int param_1,int param_2);
@@ -21902,21 +21900,21 @@ int fn_00753090(int param_1,int param_2,int param_3,int param_4,int param_5,int 
                 ,int param_8);
 // 007530F0 FUN_007530f0
 undefined4 * fn_007530F0(undefined4 *param_1,LPCSTR param_2,DWORD param_3,undefined4 param_4);
-// 00753170 Library::DKW::FMM::FUN_00753170
+// 00753170 Library::DKW::FMM::FUN_00753170 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_00753170(undefined4 * param_1, LPCSTR param_2);
-// 007531E0 Library::DKW::FMM::FUN_007531e0
+// 007531E0 Library::DKW::FMM::FUN_007531e0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_007531E0(undefined4 * param_1, LPCSTR param_2, int param_3);
 // 00753260 FUN_00753260
 void fn_00753260(undefined4 *param_1);
 // 007532A0 FUN_007532a0
 void fn_007532A0(undefined4 *param_1);
-// 00753300 Library::DKW::DB::FUN_00753300
+// 00753300 Library::DKW::DB::FUN_00753300 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_00753300(byte * param_1, undefined4 * param_2, undefined2 param_3, int param_4, undefined4 param_5, uint param_6);
 // 007535F0 FUN_007535f0
 int fn_007535F0(char *_Drive);
-// 007537C0 Library::DKW::DB::FUN_007537c0
+// 007537C0 Library::DKW::DB::FUN_007537c0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_007537C0(LPCSTR param_1, undefined4 * param_2, undefined2 param_3);
-// 00753920 Library::DKW::DB::FUN_00753920
+// 00753920 Library::DKW::DB::FUN_00753920 [statically linked library; implementation excluded]
 int * __stdcall fn_00753920(LPCSTR param_1, undefined4 * param_2, int param_3);
 // 00753AE0 FUN_00753ae0
 int * fn_00753AE0(LPCSTR param_1,undefined4 *param_2);
@@ -21926,17 +21924,17 @@ void fn_00753B00(LPCSTR param_1,undefined4 *param_2,undefined2 param_3);
 int fn_00753B40(AnonShape_00753C80_4C8E695D *param_1);
 // 00753B80 FUN_00753b80
 undefined4 * fn_00753B80(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_2,int param_3);
-// 00753BC0 Library::DKW::DB::FUN_00753bc0
+// 00753BC0 Library::DKW::DB::FUN_00753bc0 [statically linked library; implementation excluded]
 int __stdcall fn_00753BC0(int param_1, undefined4 * param_2, undefined4 * param_3);
 // 00753C80 FUN_00753c80
 int fn_00753C80(AnonShape_00753C80_4C8E695D *param_1,int param_2);
 // 00753CE0 FUN_00753ce0
 void fn_00753CE0(AnonShape_00753CE0_1943F9C2 *param_1,uint param_2);
-// 00753D90 Library::DKW::DB::FUN_00753d90
+// 00753D90 Library::DKW::DB::FUN_00753d90 [statically linked library; implementation excluded]
 uint __stdcall fn_00753D90(uint param_1, ushort * param_2, undefined4 param_3);
-// 00753DF0 Library::DKW::FMM::FUN_00753df0
+// 00753DF0 Library::DKW::FMM::FUN_00753df0 [statically linked library; implementation excluded]
 uint __stdcall fn_00753DF0(int param_1, uint param_2, undefined4 * param_3, uint param_4);
-// 00753EA0 Library::DKW::DB::FUN_00753ea0
+// 00753EA0 Library::DKW::DB::FUN_00753ea0 [statically linked library; implementation excluded]
 int __stdcall fn_00753EA0(uint param_1, ushort * param_2, undefined4 * param_3);
 // 00753F10 FUN_00753f10
 int __cdecl
@@ -21969,14 +21967,14 @@ fn_00754390(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,undefined4 *par
 // 007543F0 FUN_007543f0
 undefined4
 fn_007543F0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefined4 *param_3);
-// 00754530 Library::DKW::JPG::FUN_00754530
+// 00754530 Library::DKW::JPG::FUN_00754530 [statically linked library; implementation excluded]
 int __stdcall fn_00754530(int param_1, uint * param_2, int param_3, uint param_4, undefined4 param_5, uint param_6);
 // 00754AF0 FUN_00754af0
 void fn_00754AF0(AnonShape_00754AF0_86EFDBFA *param_1,int param_2,uint param_3);
 // 00754B80 FUN_00754b80
 void fn_00754B80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param_3,int *param_4,
                  undefined4 param_5,int param_6,uint *param_7);
-// 00754EC0 Library::DKW::DB::FUN_00754ec0
+// 00754EC0 Library::DKW::DB::FUN_00754ec0 [statically linked library; implementation excluded]
 DWORD __stdcall fn_00754EC0(int param_1);
 // 00754F40 FUN_00754f40
 undefined4 fn_00754F40(LPCSTR param_1);
@@ -21987,9 +21985,9 @@ void fn_007550C0(AnonShape_007550C0_25940DF4 *param_1,undefined4 *param_2);
 // 00755180 FUN_00755180
 int fn_00755180(AnonShape_00755180_CB9F7747 *param_1,LPCSTR param_2,undefined4 *param_3,int param_4
                 );
-// 007552D0 Library::DKW::FMM::FUN_007552d0
+// 007552D0 Library::DKW::FMM::FUN_007552d0 [statically linked library; implementation excluded]
 int __stdcall fn_007552D0(int param_1, int param_2, int param_3);
-// 00755330 Library::DKW::FMM::FUN_00755330
+// 00755330 Library::DKW::FMM::FUN_00755330 [statically linked library; implementation excluded]
 int __stdcall fn_00755330(int param_1, int param_2, int param_3);
 // 007553F0 FUN_007553f0
 undefined4
@@ -22002,7 +22000,7 @@ uint fn_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,int param_
 uint fn_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3);
 // 00755970 FUN_00755970
 int fn_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_3);
-// 00755A80 Library::DKW::FMM::FUN_00755a80
+// 00755A80 Library::DKW::FMM::FUN_00755a80 [statically linked library; implementation excluded]
 int __stdcall fn_00755A80(int param_1, uint param_2);
 // 00755BC0 FUN_00755bc0
 int fn_00755BC0(AnonShape_00755BC0_D59C64DD *param_1,int param_2);
@@ -22014,60 +22012,64 @@ uint fn_00755DA0(uint param_1,undefined4 *param_2);
 int fn_00755E10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 param_3);
 // 007561D0 FUN_007561d0
 void fn_007561D0(AnonShape_00753C80_4C8E695D *param_1,int param_2);
-// 00756200 Library::DKW::JPG::FUN_00756200
+// 00756200 Library::DKW::JPG::FUN_00756200 [statically linked library; implementation excluded]
 undefined __stdcall fn_00756200(undefined4 * param_1, int param_2, int param_3);
-// 007562C0 Library::DKW::JPG::FUN_007562c0
+// 007562C0 Library::DKW::JPG::FUN_007562c0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007562C0(int * param_1);
 // 007562D0 FUN_007562d0
 void fn_007562D0(int *param_1);
-// 007562E0 Library::DKW::JPG::FUN_007562e0
+// 007562E0 Library::DKW::JPG::FUN_007562e0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007562E0(int param_1, int param_2, undefined4 param_3);
-// 00756340 Library::DKW::JPG::FUN_00756340
+// 00756340 Library::DKW::JPG::FUN_00756340 [statically linked library; implementation excluded]
 int __stdcall fn_00756340(int * param_1, int param_2);
-// 007563C0 Library::DKW::JPG::FUN_007563c0
+// 007563C0 Library::DKW::JPG::FUN_007563c0 [statically linked library; implementation excluded]
 int __stdcall fn_007563C0(int param_1);
-// 00756480 Library::DKW::JPG::FUN_00756480
+// 00756480 Library::DKW::JPG::FUN_00756480 [statically linked library; implementation excluded]
 undefined __stdcall fn_00756480(AnonShape_00756480_42788A49 * param_1);
-// 007565B0 Library::DKW::JPG::FUN_007565b0
+// 007565B0 Library::DKW::JPG::FUN_007565b0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_007565B0(int param_1);
-// 00756600 Library::DKW::JPG::FUN_00756600
+// 00756600 Library::DKW::JPG::FUN_00756600 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00756600(int param_1);
-// 00756650 Library::DKW::JPG::FUN_00756650
+// 00756650 Library::DKW::JPG::FUN_00756650 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00756650(int * param_1);
-// 00756720 Library::DKW::JPG::FUN_00756720
+// 00756720 Library::DKW::JPG::FUN_00756720 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00756720(int * param_1);
-// 00756800 Library::DKW::JPG::FUN_00756800
+// 00756800 Library::DKW::JPG::FUN_00756800 [statically linked library; implementation excluded]
 int __stdcall fn_00756800(AnonShape_00756800_BE569F2C * param_1);
-// 007568D0 Library::DKW::JPG::FUN_007568d0
+// 007568D0 Library::DKW::JPG::FUN_007568d0 [statically linked library; implementation excluded]
 int __stdcall fn_007568D0(int param_1, undefined4 param_2, undefined4 param_3);
-// 00756960 Library::DKW::JPG::FUN_00756960
+// 00756960 Library::DKW::JPG::FUN_00756960 [statically linked library; implementation excluded]
 uint __stdcall fn_00756960(int param_1, undefined4 param_2, uint param_3);
-// 00756A10 Library::DKW::JPG::FUN_00756a10
+// 00756A10 Library::DKW::JPG::FUN_00756a10 [statically linked library; implementation excluded]
 undefined __stdcall fn_00756A10(int param_1, int param_2);
-// 00756A80 Library::DKW::JPG::FUN_00756a80
+// 00756A80 Library::DKW::JPG::FUN_00756a80 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00756A80(int param_1);
-// 00756B20 Library::DKW::JPG::FUN_00756b20
+// 00756B20 Library::DKW::JPG::FUN_00756b20 [statically linked library; implementation excluded]
 undefined __stdcall fn_00756B20(int param_1);
-// 00756D40 Library::DKW::JPG::FUN_00756d40
+// 00756D40 Library::DKW::JPG::FUN_00756d40 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00756D40(AnonShape_00756D40_7190B7CA * param_1);
-// 00756DD0 Library::DKW::JPG::FUN_00756dd0
+// 00756DD0 Library::DKW::JPG::FUN_00756dd0 [statically linked library; implementation excluded]
 undefined __stdcall fn_00756DD0(int param_1);
-// 00756E50 Library::DKW::JPG::FUN_00756e50
+// 00756E50 Library::DKW::JPG::FUN_00756e50 [statically linked library; implementation excluded]
 undefined __stdcall fn_00756E50(int * param_1);
-// 00756E90 Library::DKW::JPG::FUN_00756e90
+// 00756E90 Library::DKW::JPG::FUN_00756e90 [statically linked library; implementation excluded]
 undefined __stdcall fn_00756E90(int * param_1);
-// 00757070 Library::DKW::JPG::FUN_00757070
+// 00757070 Library::DKW::JPG::FUN_00757070 [statically linked library; implementation excluded]
 undefined __stdcall fn_00757070(undefined4 * param_1);
-// 007570F0 Library::DKW::JPG::FUN_007570f0
+// 007570F0 Library::DKW::JPG::FUN_007570f0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007570F0(int param_1);
 // 00757250 FUN_00757250
 void fn_00757250(AnonShape_00757250_D85D8BF6 *param_1);
 // 00757280 FUN_00757280
 void fn_00757280(undefined4 *param_1,undefined4 param_2);
-// 00757300 Library::DKW::JPG::FUN_00757300
+// 007572F0 FUN_007572f0
+void fn_007572F0(void);
+// 00757300 Library::DKW::JPG::FUN_00757300 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00757300(int param_1);
 // 00757330 FUN_00757330
 void fn_00757330(int param_1,int param_2);
+// 00757350 FUN_00757350
+void fn_00757350(void);
 // 00757360 FUN_00757360
 int fn_00757360(AnonShape_00757360_9C23D284 *param_1,AnonShape_00757360_9B4621C9 *param_2);
 // 00757430 FUN_00757430
@@ -22086,15 +22088,15 @@ DWORD fn_00757670(AnonShape_00757670_86D3B9A7 *param_1,int param_2);
 void fn_007576C0(undefined4 *param_1);
 // 00757710 FUN_00757710
 void fn_00757710(AnonShape_00757710_B64D966B *param_1);
-// 00757750 Library::DKW::JPG::FUN_00757750
+// 00757750 Library::DKW::JPG::FUN_00757750 [statically linked library; implementation excluded]
 uint __stdcall fn_00757750(uint param_1);
-// 007578F0 Library::DKW::JPG::FUN_007578f0
+// 007578F0 Library::DKW::JPG::FUN_007578f0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007578F0(int * param_1);
 // 007579A0 FUN_007579a0
 void fn_007579A0(int param_1);
-// 007579C0 Library::DKW::JPG::FUN_007579c0
+// 007579C0 Library::DKW::JPG::FUN_007579c0 [statically linked library; implementation excluded]
 int __stdcall fn_007579C0(int * param_1);
-// 00757AA0 Library::DKW::JPG::FUN_00757aa0
+// 00757AA0 Library::DKW::JPG::FUN_00757aa0 [statically linked library; implementation excluded]
 undefined __stdcall fn_00757AA0(int param_1);
 // 00757C90 FUN_00757c90
 void fn_00757C90(AnonShape_00757C90_A505B8DD *param_1);
@@ -22110,55 +22112,55 @@ undefined4 fn_00757EF0(AnonShape_00757EF0_9651DBEA *param_1);
 undefined4 fn_00758010(AnonShape_00758010_64471088 *param_1);
 // 00758100 FUN_00758100
 undefined4 fn_00758100(AnonShape_00758100_FF0E5C9C *param_1);
-// 00758170 Library::DKW::JPG::FUN_00758170
+// 00758170 Library::DKW::JPG::FUN_00758170 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00758170(undefined4 * param_1);
-// 00758490 Library::DKW::JPG::FUN_00758490
+// 00758490 Library::DKW::JPG::FUN_00758490 [statically linked library; implementation excluded]
 undefined __stdcall fn_00758490(int param_1);
-// 00758530 Library::DKW::JPG::FUN_00758530
+// 00758530 Library::DKW::JPG::FUN_00758530 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00758530(undefined4 * param_1, undefined4 param_2, uint param_3);
-// 00758800 Library::DKW::JPG::FUN_00758800
+// 00758800 Library::DKW::JPG::FUN_00758800 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00758800(int param_1);
-// 00758A60 Library::DKW::JPG::FUN_00758a60
+// 00758A60 Library::DKW::JPG::FUN_00758a60 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00758A60(int param_1);
-// 00758BC0 Library::DKW::JPG::FUN_00758bc0
+// 00758BC0 Library::DKW::JPG::FUN_00758bc0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00758BC0(undefined4 * param_1);
-// 00758DF0 Library::DKW::JPG::FUN_00758df0
+// 00758DF0 Library::DKW::JPG::FUN_00758df0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00758DF0(undefined4 * param_1);
-// 00758FA0 Library::DKW::JPG::FUN_00758fa0
+// 00758FA0 Library::DKW::JPG::FUN_00758fa0 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00758FA0(int param_1);
-// 00759080 Library::DKW::JPG::FUN_00759080
+// 00759080 Library::DKW::JPG::FUN_00759080 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_00759080(int param_1);
 // 00759120 FUN_00759120
 undefined4 fn_00759120(AnonShape_00759120_E4E2134C *param_1);
 // 00759190 FUN_00759190
 void fn_00759190(AnonShape_00759190_45B6ED67 *param_1);
-// 007591D0 Library::DKW::JPG::FUN_007591d0
+// 007591D0 Library::DKW::JPG::FUN_007591d0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007591D0(undefined4 * param_1);
-// 00759290 Library::DKW::JPG::FUN_00759290
+// 00759290 Library::DKW::JPG::FUN_00759290 [statically linked library; implementation excluded]
 int __stdcall fn_00759290(int * param_1, int param_2, uint param_3);
-// 007593C0 Library::DKW::JPG::FUN_007593c0
+// 007593C0 Library::DKW::JPG::FUN_007593c0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007593C0(void);
-// 007593E0 Library::DKW::JPG::FUN_007593e0
+// 007593E0 Library::DKW::JPG::FUN_007593e0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_007593E0(int * param_1, int param_2, uint param_3);
-// 00759480 Library::DKW::JPG::FUN_00759480
+// 00759480 Library::DKW::JPG::FUN_00759480 [statically linked library; implementation excluded]
 int __stdcall fn_00759480(int * param_1, int param_2, uint param_3, uint param_4);
-// 00759530 Library::DKW::JPG::FUN_00759530
+// 00759530 Library::DKW::JPG::FUN_00759530 [statically linked library; implementation excluded]
 int __stdcall fn_00759530(int * param_1, int param_2, int param_3, uint param_4);
-// 007595F0 Library::DKW::JPG::FUN_007595f0
+// 007595F0 Library::DKW::JPG::FUN_007595f0 [statically linked library; implementation excluded]
 undefined __stdcall fn_007595F0(int * param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6);
-// 00759660 Library::DKW::JPG::FUN_00759660
+// 00759660 Library::DKW::JPG::FUN_00759660 [statically linked library; implementation excluded]
 undefined __stdcall fn_00759660(int * param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6);
-// 007596D0 FUN_007596d0
-void fn_007596D0(int *param_1);
-// 00759860 Library::DKW::JPG::FUN_00759860
+// 007596D0 Library::DKW::JPG::FUN_007596d0 [statically linked library; implementation excluded]
+undefined __stdcall fn_007596D0(int * param_1);
+// 00759860 Library::DKW::JPG::FUN_00759860 [statically linked library; implementation excluded]
 int __stdcall fn_00759860(undefined4 param_1, int * param_2, uint param_3, uint param_4, int param_5);
-// 007599D0 Library::DKW::JPG::FUN_007599d0
+// 007599D0 Library::DKW::JPG::FUN_007599d0 [statically linked library; implementation excluded]
 void __stdcall fn_007599D0(undefined4 param_1, int * param_2, int param_3);
-// 00759A80 Library::DKW::JPG::FUN_00759a80
+// 00759A80 Library::DKW::JPG::FUN_00759a80 [statically linked library; implementation excluded]
 int __stdcall fn_00759A80(undefined4 param_1, int * param_2, uint param_3, uint param_4, int param_5);
-// 00759BF0 Library::DKW::JPG::FUN_00759bf0
+// 00759BF0 Library::DKW::JPG::FUN_00759bf0 [statically linked library; implementation excluded]
 void __stdcall fn_00759BF0(undefined4 param_1, int * param_2, int param_3);
-// 00759CA0 Library::DKW::JPG::FUN_00759ca0
+// 00759CA0 Library::DKW::JPG::FUN_00759ca0 [statically linked library; implementation excluded]
 undefined __stdcall fn_00759CA0(int * param_1, int param_2);
 // 00759D90 FUN_00759d90
 void fn_00759D90(int *param_1);
@@ -22180,11 +22182,11 @@ void fn_00759EB0(int param_1,int param_2,int param_3,int param_4,int param_5,uin
 void fn_00759F00(undefined4 *param_1,undefined4 *param_2,uint param_3);
 // 00759F30 FUN_00759f30
 void fn_00759F30(undefined4 *param_1,AnonShape_0075FEE0_E0ABA202 *param_2);
-// 00759F50 Library::DKW::JPG::FUN_00759f50
+// 00759F50 Library::DKW::JPG::FUN_00759f50 [statically linked library; implementation excluded]
 undefined __stdcall fn_00759F50(int * param_1, int param_2);
-// 0075A040 Library::DKW::JPG::FUN_0075a040
+// 0075A040 Library::DKW::JPG::FUN_0075a040 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075A040(AnonShape_0075A040_811C231E * param_1);
-// 0075A0F0 Library::DKW::JPG::FUN_0075a0f0
+// 0075A0F0 Library::DKW::JPG::FUN_0075a0f0 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075A0F0(int param_1, int param_2);
 // 0075A180 FUN_0075a180
 void fn_0075A180(AnonShape_0075A180_7E367FD8 *param_1);
@@ -22210,6 +22212,8 @@ void fn_0075A7A0(AnonShape_0075A7A0_BCCC082B *param_1);
 void fn_0075A800(AnonShape_0075A800_65F17FFC *param_1);
 // 0075A860 FUN_0075a860
 undefined4 fn_0075A860(AnonShape_0075A860_7232E9BC *param_1,int *param_2);
+// 0075AAA0 FUN_0075aaa0
+undefined4 fn_0075AAA0(void);
 // 0075AAB0 FUN_0075aab0
 undefined4 fn_0075AAB0(AnonShape_0075AAB0_12234AD6 *param_1);
 // 0075ACB0 FUN_0075acb0
@@ -22228,7 +22232,7 @@ uint fn_0075B800(undefined4 *param_1,AnonShape_0075C180_8EED234B *param_2,int pa
                  int param_5);
 // 0075B8E0 FUN_0075b8e0
 void fn_0075B8E0(undefined4 *param_1);
-// 0075B920 Library::DKW::JPG::FUN_0075b920
+// 0075B920 Library::DKW::JPG::FUN_0075b920 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075B920(int * param_1);
 // 0075BA30 FUN_0075ba30
 undefined4 fn_0075BA30(AnonShape_0075BA30_FEA40A39 *param_1,undefined4 *param_2);
@@ -22236,7 +22240,7 @@ undefined4 fn_0075BA30(AnonShape_0075BA30_FEA40A39 *param_1,undefined4 *param_2)
 undefined4 fn_0075BE40(AnonShape_0075BE40_B9FD5FDF *param_1);
 // 0075BED0 FUN_0075bed0
 void fn_0075BED0(undefined4 *param_1);
-// 0075BF40 Library::DKW::JPG::FUN_0075bf40
+// 0075BF40 Library::DKW::JPG::FUN_0075bf40 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075BF40(undefined4 * param_1);
 // 0075C180 FUN_0075c180
 undefined4 fn_0075C180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2);
@@ -22250,11 +22254,11 @@ undefined4 fn_0075C680(AnonShape_0075C680_AC52F0A7 *param_1,undefined4 *param_2)
 undefined4 fn_0075C790(AnonShape_0075C790_3F1CCBA9 *param_1,int *param_2);
 // 0075CB40 FUN_0075cb40
 void fn_0075CB40(undefined4 *param_1);
-// 0075CBC0 Library::DKW::JPG::FUN_0075cbc0
+// 0075CBC0 Library::DKW::JPG::FUN_0075cbc0 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075CBC0(int param_1);
 // 0075CDF0 FUN_0075cdf0
 void fn_0075CDF0(int *param_1,int param_2);
-// 0075CE80 Library::DKW::JPG::FUN_0075ce80
+// 0075CE80 Library::DKW::JPG::FUN_0075ce80 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075CE80(int * param_1, int param_2);
 // 0075CF90 FUN_0075cf90
 void fn_0075CF90(AnonShape_0075CF90_FD450D17 *param_1,undefined4 param_2,undefined4 param_3,
@@ -22264,7 +22268,7 @@ void fn_0075D010(AnonShape_0075D010_01B960D8 *param_1,undefined4 param_2,undefin
                  undefined4 param_4,undefined4 param_5,int *param_6);
 // 0075D0B0 FUN_0075d0b0
 void fn_0075D0B0(AnonShape_0075D0B0_63617DB8 *param_1);
-// 0075D150 Library::DKW::JPG::FUN_0075d150
+// 0075D150 Library::DKW::JPG::FUN_0075d150 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075D150(int * param_1);
 // 0075D350 FUN_0075d350
 void fn_0075D350(AnonShape_0075D350_C315D9E6 *param_1);
@@ -22287,7 +22291,7 @@ void fn_0075D5F0(undefined4 *param_1,undefined4 param_2,undefined4 *param_3,unde
 void fn_0075D680(int param_1,int param_2,int param_3,undefined4 *param_4);
 // 0075D740 FUN_0075d740
 void fn_0075D740(int param_1,int param_2,int param_3,int *param_4);
-// 0075D890 Library::DKW::JPG::FUN_0075d890
+// 0075D890 Library::DKW::JPG::FUN_0075d890 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075D890(undefined4 * param_1);
 // 0075DA80 FUN_0075da80
 void fn_0075DA80(AnonShape_0075DA80_57A0CDEF *param_1);
@@ -22301,6 +22305,8 @@ void fn_0075DD00(int param_1,int *param_2,int param_3,int param_4,int param_5);
 // 0075DD30 FUN_0075dd30
 void fn_0075DD30(AnonShape_0075DB50_5854A0B6 *param_1,int *param_2,int param_3,undefined4 *param_4,
                  int param_5);
+// 0075DE80 FUN_0075de80
+void fn_0075DE80(void);
 // 0075DE90 FUN_0075de90
 void fn_0075DE90(AnonShape_0075DF10_BA4C6604 *param_1);
 // 0075DF10 FUN_0075df10
@@ -22317,11 +22323,11 @@ void fn_0075E0C0(int param_1,undefined4 param_2,int *param_3,undefined4 param_4,
 void fn_0075E100(int param_1,int *param_2,int param_3,undefined4 *param_4);
 // 0075E260 FUN_0075e260
 void fn_0075E260(int param_1,int *param_2,int param_3,undefined4 *param_4);
-// 0075E460 Library::DKW::JPG::FUN_0075e460
+// 0075E460 Library::DKW::JPG::FUN_0075e460 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075E460(int * param_1);
-// 0075E580 Library::DKW::JPG::FUN_0075e580
+// 0075E580 Library::DKW::JPG::FUN_0075e580 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075E580(undefined4 * param_1);
-// 0075E630 Library::DKW::JPG::FUN_0075e630
+// 0075E630 Library::DKW::JPG::FUN_0075e630 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075E630(int * param_1, int param_2);
 // 0075E750 FUN_0075e750
 void fn_0075E750(AnonShape_0075E750_D250320C *param_1,undefined4 *param_2,undefined4 param_3,
@@ -22351,38 +22357,44 @@ int * fn_0075F520(int param_1,int param_2);
 int * fn_0075F560(int param_1,int param_2);
 // 0075F590 FUN_0075f590
 void fn_0075F590(AnonShape_0075F590_570A7014 *param_1,int *param_2,int param_3);
+// 0075F710 FUN_0075f710
+void fn_0075F710(void);
 // 0075F720 FUN_0075f720
 void fn_0075F720(int param_1);
-// 0075F740 Library::DKW::JPG::FUN_0075f740
+// 0075F740 Library::DKW::JPG::FUN_0075f740 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075F740(int * param_1);
-// 0075F7D0 Library::DKW::JPG::FUN_0075f7d0
+// 0075F7D0 Library::DKW::JPG::FUN_0075f7d0 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075F7D0(AnonShape_0075F7D0_BDBF0616 * param_1);
-// 0075F8E0 Library::DKW::JPG::FUN_0075f8e0
+// 0075F8E0 Library::DKW::JPG::FUN_0075f8e0 [statically linked library; implementation excluded]
 int __stdcall fn_0075F8E0(int param_1, int * param_2);
-// 0075F9D0 Library::DKW::JPG::FUN_0075f9d0
+// 0075F9D0 Library::DKW::JPG::FUN_0075f9d0 [statically linked library; implementation excluded]
 int __stdcall fn_0075F9D0(undefined4 param_1, undefined4 param_2, int param_3, int param_4);
-// 0075FA00 Library::DKW::JPG::FUN_0075fa00
+// 0075FA00 Library::DKW::JPG::FUN_0075fa00 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075FA00(AnonShape_0075FA00_902A830E * param_1);
-// 0075FB30 Library::DKW::JPG::FUN_0075fb30
+// 0075FB30 Library::DKW::JPG::FUN_0075fb30 [statically linked library; implementation excluded]
 int __stdcall fn_0075FB30(AnonShape_0075FA00_902A830E * param_1, undefined4 param_2, int param_3, int param_4);
-// 0075FB50 Library::DKW::JPG::FUN_0075fb50
+// 0075FB50 Library::DKW::JPG::FUN_0075fb50 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075FB50(int * param_1);
-// 0075FBA0 Library::DKW::JPG::FUN_0075fba0
+// 0075FBA0 Library::DKW::JPG::FUN_0075fba0 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075FBA0(int * param_1);
-// 0075FCA0 FUN_0075fca0
-void fn_0075FCA0(undefined4 *param_1);
-// 0075FD10 FUN_0075fd10
-int * fn_0075FD10(undefined4 *param_1,int param_2);
-// 0075FD80 FUN_0075fd80
-void fn_0075FD80(AnonShape_0075FD80_7EE67BE7 *param_1,int param_2,int *param_3,int param_4);
-// 0075FE30 FUN_0075fe30
-void fn_0075FE30(AnonShape_0075FE30_46CD87E7 *param_1,int param_2,int *param_3,int param_4);
-// 0075FEE0 FUN_0075fee0
-void fn_0075FEE0(AnonShape_0075FEE0_E0ABA202 *param_1,int param_2,undefined4 *param_3,int *param_4);
-// 0075FFF0 FUN_0075fff0
-void fn_0075FFF0(AnonShape_0075FFF0_30A040AA *param_1,int param_2,int *param_3,int param_4);
-// 00760100 FUN_00760100
-void fn_00760100(AnonShape_00760100_BE153D7B *param_1,int param_2,int *param_3,int param_4);
+// 0075FCA0 Library::DKW::JPG::FUN_0075fca0 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075FCA0(undefined4 * param_1);
+// 0075FD10 Library::DKW::JPG::FUN_0075fd10 [statically linked library; implementation excluded]
+int * __stdcall fn_0075FD10(undefined4 * param_1, int param_2);
+// 0075FD80 Library::DKW::JPG::FUN_0075fd80 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075FD80(AnonShape_0075FD80_7EE67BE7 * param_1, int param_2, int * param_3, int param_4);
+// 0075FE30 Library::DKW::JPG::FUN_0075fe30 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075FE30(AnonShape_0075FE30_46CD87E7 * param_1, int param_2, int * param_3, int param_4);
+// 0075FEE0 Library::DKW::JPG::FUN_0075fee0 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075FEE0(AnonShape_0075FEE0_E0ABA202 * param_1, int param_2, undefined4 * param_3, int * param_4);
+// 0075FFF0 Library::DKW::JPG::FUN_0075fff0 [statically linked library; implementation excluded]
+undefined __stdcall fn_0075FFF0(AnonShape_0075FFF0_30A040AA * param_1, int param_2, int * param_3, int param_4);
+// 00760100 Library::DKW::JPG::FUN_00760100 [statically linked library; implementation excluded]
+undefined __stdcall fn_00760100(AnonShape_00760100_BE153D7B * param_1, int param_2, int * param_3, int param_4);
+// 007602B0 Library::DKW::JPG::FUN_007602b0 [statically linked library; implementation excluded]
+void fn_007602B0(void);
+// 007602C0 Library::DKW::JPG::FUN_007602c0 [statically linked library; implementation excluded]
+undefined fn_007602C0(void);
 // 007602E0 FUN_007602e0
 int * fn_007602E0(undefined4 param_1,uint param_2);
 // 00760300 FUN_00760300
@@ -22393,7 +22405,7 @@ int * fn_00760320(undefined4 param_1,uint param_2);
 void fn_00760340(undefined4 param_1,int *param_2);
 // 00760360 FUN_00760360
 undefined4 fn_00760360(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-// 00760370 Library::DKW::JPG::FUN_00760370
+// 00760370 Library::DKW::JPG::FUN_00760370 [statically linked library; implementation excluded]
 undefined __stdcall fn_00760370(void);
 // 00760390 FUN_00760390
 undefined4 fn_00760390(void);
@@ -25969,7 +25981,7 @@ inline int STFishC::sub_0057BF20() {
     return st::fn_0057BF20(this);
 }
 
-inline undefined4 STFishC::sub_0057D5F0(uint param_1) {
+inline STFishC_field_023BState STFishC::sub_0057D5F0(uint param_1) {
     return st::fn_0057D5F0(this, param_1);
 }
 

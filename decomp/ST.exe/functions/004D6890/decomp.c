@@ -22,7 +22,7 @@ void __thiscall FUN_004d6890(void *this,AnonShape_004D6890_0C7826D6 *param_1)
   uVar3 = STField<undefined1>(this,0x21d);
   param_1->field_0002 = 2;
   param_1->field_0001 = uVar3;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar3 = (**(code **)(*(int *)this + 0x7c))();
   param_1->field_001B = uVar3;
   param_1->field_0003 = STField<undefined4>(this,0x259);

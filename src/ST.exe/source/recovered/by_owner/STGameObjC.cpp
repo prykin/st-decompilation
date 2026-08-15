@@ -149,7 +149,7 @@ st::fn_004845E0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum param_1,int
       if (this->field_0024 != this_00[9]) {
         return 0;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(*this_00 + 0xec))();
       if (iVar5 != 0) {
         iVar5 = this_00[8];
@@ -177,7 +177,7 @@ st::fn_004845E0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum param_1,int
       return 5;
     }
     iVar5 = this->field_06F7;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((((iVar5 != 9) && (iVar5 != 0x15)) &&
         ((this->field_0716 < this->field_0712 &&
          ((local_EAX_4151 = st::fn_00401F5A(iVar5), local_EAX_4151 != 3 &&
@@ -185,23 +185,23 @@ st::fn_004845E0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum param_1,int
        (this->field_0024 == this_00[9])) {
       return 0x18;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar5 = (**(code **)(*this_00 + 0x2c))();
     if ((((iVar5 == 0x62) && (this->field_0024 == this_00[9])) &&
         (local_EAX_4220 = st::fn_00403594((TLOBaseTy *)this), 0 < local_EAX_4220)) &&
        (local_EAX_4242 = st::fn_00401F5A(this->field_06F7), local_EAX_4242 == 3)) {
       return 0x1b;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar5 = (**(code **)(*this_00 + 0x2c))();
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (((iVar5 == 0x37) || (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x6c)) &&
        (iVar5 = st::fn_00401EAB(this_00,this->field_0024), iVar5 == 1)) {
       return 0x1d;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar5 = (**(code **)(*this_00 + 0x2c))();
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (((iVar5 == 0x16) || (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x25)) &&
        (STField<int>(this_00,0x732) == 1)) {
       bVar8 = *(byte *)(this_00 + 9);
@@ -239,7 +239,6 @@ LAB_004857a5:
       if (bVar9) goto LAB_0048589a;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar1));
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar8));
       if (DAT_00808a8f == '\0') {
         if (bVar1 == bVar8) {
@@ -269,11 +268,10 @@ LAB_0048586d:
                 g_bulkInitializedRecords_008087C7[bVar1].field_0023;
       }
       if (!bVar9) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (**(code **)(*this_00 + 0xec))();
         return (-(ushort)(iVar5 != 1) & 0xfffd) + 3;
       }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0048589a:
       param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar8));
       local_EAX_4800 = st::fn_00405AE7(this_00,this->field_0024);
@@ -281,15 +279,15 @@ LAB_0048589a:
     }
     iVar5 = this->field_06F7;
     if (((iVar5 == 8) || (iVar5 == 0x14)) || (iVar5 == 0x1a)) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(*this_00 + 0x2c))();
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((iVar5 != 0x38) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x39)) &&
          ((iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x4f &&
           (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x5e)))) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (**(code **)(*this_00 + 0x2c))();
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar5 == 0x3b) || (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x60)) &&
            ((this->field_0024 == this_00[9] &&
             (0 < this->field_07DA + this->field_07D6 + this->field_07D2)))) {
@@ -299,7 +297,6 @@ LAB_0048589a:
         bVar1 = *(byte *)&this->field_0024;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
         if (DAT_00808a8f != '\0') {
           iVar5 = (uint)bVar1 * 9;
@@ -335,7 +332,7 @@ LAB_00485d55:
           return 0;
         }
         if (this_00[8] == 0x14) {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_00485d68:
           iVar5 = (**(code **)(*this_00 + 0xec))();
           if (iVar5 == 1) {
@@ -347,19 +344,19 @@ LAB_00485d68:
       if (this->field_0024 != this_00[9]) {
         return 0;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(*this_00 + 0x88))(local_10);
       if (0 < iVar5) {
         return 0x12;
       }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_00485f6a:
       iVar5 = (**(code **)(*this_00 + 0xec))();
     }
     else {
       if (((iVar5 == 7) || (iVar5 == 0x13)) || (iVar5 == 0x1b)) {
         if (this->field_07CA != 0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar5 = (**(code **)(*this_00 + 0x2c))();
           if ((iVar5 == 0x52) || (iVar5 == 0x5f)) {
             st::fn_006E62D0
@@ -377,7 +374,6 @@ LAB_00485f6a:
           bVar1 = *(byte *)&this->field_0024;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f == '\0') {
             if (bVar8 == bVar1) {
@@ -409,7 +405,7 @@ LAB_00485f1f:
           if (bVar9) {
             return 0;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           if ((this_00[8] == 0x14) && (iVar5 = (**(code **)(*this_00 + 0xec))(), iVar5 == 1)) {
             return 3;
           }
@@ -422,7 +418,6 @@ LAB_00485f1f:
         bVar1 = *(byte *)&this->field_0024;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
         if (DAT_00808a8f == '\0') {
           if (bVar8 == bVar1) {
@@ -456,20 +451,20 @@ LAB_0048602b:
         }
         if (this_00[8] == 0x14) {
           if (iVar5 != 0x1b) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar5 = (**(code **)(*this_00 + 0xbc))();
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             if ((iVar5 == 1) && (iVar5 = (**(code **)(*this_00 + 0x7c))(), iVar5 < 100)) {
               return 0x17;
             }
             goto LAB_00485d68;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar5 = (**(code **)(*this_00 + 0xbc))();
           if (iVar5 == 1) {
             return 0x1a;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar5 = (**(code **)(*this_00 + 0xec))();
           if (iVar5 == 1) {
             return 3;
@@ -484,7 +479,6 @@ LAB_00485caa:
           bVar1 = *(byte *)&this->field_0024;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f == '\0') {
             if (bVar8 == bVar1) goto LAB_00485d4a;
@@ -515,7 +509,6 @@ LAB_00486163:
           bVar1 = *(byte *)&this->field_0024;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f != '\0') {
             bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
@@ -547,12 +540,12 @@ LAB_004859d8:
           if (!bVar9) {
             iVar5 = this_00[8];
             if (iVar5 == 0x14) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               iVar5 = (**(code **)(*this_00 + 0xec))();
               return (-(ushort)(iVar5 != 1) & 0xfffd) + 3;
             }
             if ((iVar5 == 1000) || (iVar5 == 0x3e9)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               iVar5 = (**(code **)(*this_00 + 0xec))();
               return (-(ushort)(iVar5 != 1) & 0xfffc) + 4;
             }
@@ -560,9 +553,9 @@ LAB_004859d8:
           if ((this_00[8] != 1000) && (this_00[8] != 0x3e9)) {
             return 0;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar5 = (**(code **)(*this_00 + 0x2c))();
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           if ((iVar5 != 0x3b) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x60)) {
             return 0;
           }
@@ -574,7 +567,6 @@ LAB_004859d8:
             bVar1 = *(byte *)&this->field_0024;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
             if (DAT_00808a8f == '\0') {
               if (bVar8 == bVar1) {
@@ -613,7 +605,7 @@ LAB_00485c58:
               }
               return 0;
             }
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             if ((this_00[8] == 0x14) && (iVar5 = (**(code **)(*this_00 + 0xec))(), iVar5 == 1)) {
               return 3;
             }
@@ -623,7 +615,6 @@ LAB_00485c58:
           bVar1 = *(byte *)&this->field_0024;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f == '\0') {
             if (bVar8 == bVar1) goto LAB_00485d4a;
@@ -646,7 +637,6 @@ LAB_00485c58:
         bVar1 = *(byte *)&this->field_0024;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
         if (DAT_00808a8f == '\0') {
           if (bVar8 == bVar1) {
@@ -678,7 +668,7 @@ LAB_00485b29:
         if (bVar9) {
           return 0;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((this_00[8] == 0x14) && (iVar5 = (**(code **)(*this_00 + 0xec))(), iVar5 == 1)) {
           return 3;
         }
@@ -687,7 +677,7 @@ LAB_00485b29:
       if ((iVar5 != 1000) && (iVar5 != 0x3e9)) {
         return 0;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(*this_00 + 0xec))();
     }
     if (iVar5 == 1) {
@@ -748,14 +738,13 @@ LAB_00485b29:
       if ((iVar3 != 0x15) && (this->field_07A2 < 1)) {
         return 1;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(*this_00 + 0x2c))();
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((iVar5 != 0x16) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x25)) ||
          (STField<int>(this_00,0x732) != 1)) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)(uint)*(byte *)(this_00 + 9);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (STGameObjC_sub_004845E0_param_1Enum)*(byte *)&this->field_0024;
         if (DAT_00808a8f != '\0') {
           bVar9 = g_bulkInitializedRecords_008087C7[param_1].field_0023 !=
@@ -855,7 +844,6 @@ LAB_00484a0b:
       if (!bVar9) {
         return 2;
       }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_00484a28:
       param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar8));
       local_EAX_1102 = st::fn_00405AE7(this_00,this->field_0024);
@@ -865,7 +853,6 @@ LAB_00484a28:
     bVar1 = *(byte *)&this->field_0024;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
     if (DAT_00808a8f != '\0') {
       bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
@@ -908,9 +895,9 @@ LAB_004847df:
     if (iVar5 != 1000) {
       return 1;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar5 = (**(code **)(*this_00 + 0x2c))();
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((iVar5 != 0x3b) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x60)) {
       return 1;
     }
@@ -931,7 +918,7 @@ LAB_004847df:
         if (this->field_0712 <= this->field_0716) {
           return 1;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (**(code **)(*this_00 + 0x2c))();
         if (iVar5 != 0x33) {
           return 1;
@@ -979,7 +966,7 @@ LAB_004847df:
         if (((iVar5 != 6) && (iVar5 != 0x12)) && (iVar5 != 0x22)) {
           return 1;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (**(code **)(*this_00 + 0x108))(this->field_0024);
         if (iVar5 != 1) {
           return 1;
@@ -1024,9 +1011,9 @@ LAB_004847df:
     if (this->field_072A < 1) {
       return 1;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar5 = (**(code **)(*this_00 + 0x2c))();
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((iVar5 != 0x16) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x25)) {
       return 0xc;
     }
@@ -1035,7 +1022,6 @@ LAB_004847df:
     }
     bVar8 = *(byte *)(this_00 + 9);
     bVar1 = *(byte *)&this->field_0024;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (STGameObjC_sub_004845E0_param_1Enum)bVar8;
     local_8 = (uint)bVar1;
     if (DAT_00808a8f != '\0') {
@@ -1066,7 +1052,6 @@ LAB_004853c7:
     bVar9 = iVar5 < 0;
 LAB_004853d2:
     if (!bVar9) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STGameObjC_sub_004845E0_param_1Enum)bVar8;
       if (DAT_00808a8f != '\0') {
         return 0xc;
@@ -1105,7 +1090,7 @@ LAB_004853d2:
     if (this_00[8] != 0x14) {
       return 1;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar5 = (**(code **)(*this_00 + 0x7c))();
     if (99 < iVar5) {
       return 1;
@@ -1114,7 +1099,6 @@ LAB_004853d2:
     bVar1 = *(byte *)&this->field_0024;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
     if (DAT_00808a8f != '\0') {
       bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
@@ -1146,7 +1130,7 @@ LAB_00485002:
     if (bVar9) {
       return 1;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar5 = (**(code **)(*this_00 + 0xbc))();
     if (iVar5 != 1) {
       return 1;
@@ -1198,16 +1182,16 @@ LAB_00485002:
         if (((iVar5 != 8) && (iVar5 != 0x14)) && (iVar5 != 0x1a)) {
           return 1;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (**(code **)(*this_00 + 0x2c))();
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((((iVar5 != 0x38) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x39)) &&
             (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x4f)) &&
            (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x5e)) {
           return 1;
         }
         if (this->field_0024 == this_00[9]) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar5 = (**(code **)(*this_00 + 0x88))(local_10);
           return ((0 < iVar5) - 1 & 0xffef) + 0x12;
         }
@@ -1226,9 +1210,9 @@ LAB_00485002:
         if (((iVar5 != 8) && (iVar5 != 0x14)) && (iVar5 != 0x1a)) {
           return 1;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (**(code **)(*this_00 + 0x2c))();
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((iVar5 != 0x3b) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x60)) {
           return 1;
         }
@@ -1261,7 +1245,6 @@ LAB_00485002:
       bVar1 = *(byte *)&this->field_0024;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
       if (DAT_00808a8f == '\0') {
         if (bVar8 == bVar1) {
@@ -1290,13 +1273,13 @@ LAB_00484e9f:
         bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
                 g_bulkInitializedRecords_008087C7[bVar8].field_0023;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((!bVar9) || (iVar5 = (**(code **)(*this_00 + 0x120))(), iVar5 == 1)) goto LAB_00484ed2;
     }
     if ((this_00[8] != 0x172) && (this_00[8] != 0x1a4)) {
       return 1;
     }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_00484ed2:
     iVar5 = (**(code **)(*this_00 + 0xbc))();
     if (iVar5 != 1) {
@@ -1322,7 +1305,7 @@ LAB_00484ed2:
         return 1;
       }
       if ((STGameObjC *)this_00 != this) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (**(code **)(*this_00 + 0x2c))();
         if (iVar5 != 0x62) {
           return 1;
@@ -1349,9 +1332,9 @@ LAB_00484ed2:
         return 1;
       }
       if ((STGameObjC *)this_00 != this) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (**(code **)(*this_00 + 0x2c))();
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((iVar5 != 0x37) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x6c)) {
           return 1;
         }

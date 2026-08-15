@@ -2454,6 +2454,12 @@ class SourceTreeGenerator:
         transformed = self._materialize_exact_output_lifetimes(
             address, function, transformed
         )
+        transformed = self._materialize_promoted_parameter_slots(
+            address, function, transformed
+        )
+        transformed = self._materialize_raw_stack_arena(
+            address, function, transformed
+        )
         transformed = self._repair_exact_field_names(address, function, transformed)
         transformed = self._repair_exact_pointer_boundaries(
             address, function, transformed
@@ -3291,6 +3297,121 @@ class SourceTreeGenerator:
             ))
         return "".join(lines)
 
+    def _materialize_promoted_parameter_slots(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Declare Ghidra's full incoming slot for a narrow ABI parameter.
+
+        A 32-bit x86 caller allocates a machine-word stack slot even when the
+        recovered source parameter is ``char`` or ``short``.  Ghidra names a
+        full-width SSA view of that same slot ``_param_N``.  Replacing it with
+        the narrow formal would lose the caller's integer promotion; leaving it
+        undeclared makes the generated source ill-formed.  After the stronger
+        exact-output lifetime repair has had first refusal, materialize only a
+        remaining narrow, stack-backed formal as its C integer promotion.
+
+        This is an ABI presentation boundary, not new semantic type evidence:
+        pointer parameters, machine-width formals, synthetic locals, and names
+        without an exact exported parameter ordinal are deliberately ignored.
+        """
+        masked = code_mask(body)
+        declarations: list[str] = []
+        claimed: set[str] = set()
+        for parameter in function.get("parameters", ()):
+            name = str(parameter.get("name") or "")
+            synthetic = "_" + name
+            if not re.fullmatch(r"param_[0-9]+", name) or not re.search(
+                    rf"\b{re.escape(synthetic)}\b", masked):
+                continue
+            storage = str(parameter.get("storage") or "")
+            length = int(parameter.get("length") or 0)
+            display = re.sub(r"\s+", "", str(parameter.get("type") or ""))
+            if not storage.startswith("Stack[") or length not in {1, 2} or "*" in display:
+                continue
+            # Under the target's 32-bit MSVC integer promotions, every 8- and
+            # 16-bit integer domain (including unsigned short) fits in int.
+            promoted = "int"
+            declarations.append(
+                f"  {promoted} {synthetic} = static_cast<{promoted}>({name});\n"
+            )
+            claimed.add(synthetic)
+            self.issues.append(Issue(
+                "promoted_parameter_slot_materialization",
+                f"{synthetic}: {display or '<unknown>'}[{length}] -> {promoted} x86 stack slot",
+                address,
+            ))
+        if not declarations:
+            return body
+        opening = code_mask(body).find("{")
+        if opening < 0:
+            return body
+        insertion = opening + 1
+        materialized = "\n" + "".join(declarations)
+        self.stats["promoted_parameter_slot_materializations"] += len(claimed)
+        return body[:insertion] + materialized + body[insertion:]
+
+    def _materialize_raw_stack_arena(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Give unresolved EBP-relative addresses one exact local byte arena.
+
+        ``&stack0xfffffff0`` is Ghidra's address of an unnamed stack byte at
+        EBP-0x10.  Such names are not C declarations.  One aligned byte arena
+        preserves every relative offset without pretending that the overlapping
+        bytes form a recovered struct or initialized object.  The exported
+        frame size supplies the lower bound; explicitly referenced positive
+        incoming offsets extend the arena when necessary.
+        """
+        pattern = re.compile(r"&\s*stack0x([0-9A-Fa-f]{8})\b")
+        masked = code_mask(body)
+        matches = list(pattern.finditer(masked))
+        if not matches:
+            return body
+
+        def signed_offset(value: str) -> int:
+            raw = int(value, 16)
+            return raw - 0x100000000 if raw & 0x80000000 else raw
+
+        offsets = [signed_offset(match.group(1)) for match in matches]
+        frame_size = max(0, int(function.get("stack_frame_size") or 0))
+        lower = min(offsets + [-frame_size, 0])
+        upper = max(offsets + [0]) + 4
+        lower &= ~3
+        upper = (upper + 3) & ~3
+        size = upper - lower
+        if size <= 0 or size > 1024 * 1024:
+            self.issues.append(Issue(
+                "raw_stack_arena_unresolved",
+                f"refused implausible EBP-relative arena [{lower}, {upper})",
+                address,
+            ))
+            return body
+
+        def replacement(match: re.Match[str]) -> str:
+            offset = signed_offset(match.group(1))
+            return f"(st_stack_frame + {offset - lower})"
+
+        rewritten = transform_code(body, lambda piece: pattern.sub(replacement, piece))
+        opening = code_mask(rewritten).find("{")
+        if opening < 0:
+            return body
+        declaration = f"\n  alignas(4) byte st_stack_frame[{size}];\n"
+        rewritten = rewritten[:opening + 1] + declaration + rewritten[opening + 1:]
+        self.stats["raw_stack_arena_functions"] += 1
+        self.stats["raw_stack_address_materializations"] += len(matches)
+        self.issues.append(Issue(
+            "raw_stack_arena_materialization",
+            f"{len(matches)} address use(s), exact EBP span [{lower}, {upper})",
+            address,
+        ))
+        return rewritten
+
     def _materialize_exact_output_lifetimes(
         self,
         address: str,
@@ -3605,8 +3726,11 @@ class SourceTreeGenerator:
         ]
         for function in sorted(self.functions, key=lambda item: item["address"]):
             address = function["address"].upper()
+            provenance = f"// {address} {function['qualified_name']}"
+            if function.get("library") and not function.get("body_exported"):
+                provenance += " [statically linked library; implementation excluded]"
             if function.get("body_exported") and address in self.body_declarations:
-                lines.append(f"// {address} {function['qualified_name']}")
+                lines.append(provenance)
                 lines.append(self.body_declarations[address] + ";")
                 continue
             signature = str(function["signature"])
@@ -3628,7 +3752,7 @@ class SourceTreeGenerator:
                     for index, item in enumerate(function.get("parameters", ()))
                 ) or "void"
                 signature = f"undefined4 {replacement}({parameters})"
-            lines.append(f"// {function['address'].upper()} {function['qualified_name']}")
+            lines.append(provenance)
             lines.append(signature + ";")
         for address in sorted(self.external_signatures):
             signatures = {item for item in self.external_signatures[address] if item}

@@ -195,7 +195,7 @@ LAB_0058c38c:
   }
 cf_common_exit_0058C391:
   STT3DSprC::ShowCurFase((STT3DSprC *)&param_1->field_0x1d5,'\x0e');
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)param_1 + 0xd8))();
   return;
 }

@@ -16,7 +16,7 @@ void __fastcall FUN_004e0250(AnonShape_004E0250_5A3B9236 *param_1)
   if (this == nullptr) {
     return;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(*this + 0x2c))();
   param_1->field_04DC = iVar1;
   switch(param_1->field_05AC) {

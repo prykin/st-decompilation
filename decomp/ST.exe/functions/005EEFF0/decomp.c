@@ -15,7 +15,6 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
   int local_8;
 
   pVVar3 = g_visibleClass_00802A88;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
     if (STField<int>(this,0x2d6) < 0) {
       thunk_FUN_005ec9f0(0);
@@ -31,7 +30,6 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
       return;
     }
     iVar5 = STField<int>(this,0x27f);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = STBiasedDiv16(iVar5, 200); /* exact signed 16-bit grid-index division */
     iVar5 = STField<int>(this,0x27b);
     iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
@@ -47,7 +45,7 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
            (pVVar3->field_0034 <= local_c)))))))) ||
        ((pVVar3->field_004C == nullptr ||
         (pVVar3->field_004C[local_8 + local_c * pVVar3->field_0030] != 0)))) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0xd8))();
       STT3DSprC::sub_004AD3C0
                 ((STT3DSprC *)((int)this + 0x1d5),
@@ -74,7 +72,6 @@ joined_r0x005ef316:
       return;
     }
     iVar5 = STField<int>(this,0x27f);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = STBiasedDiv16(iVar5, 200); /* exact signed 16-bit grid-index division */
     iVar5 = STField<int>(this,0x27b);
     iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
@@ -88,7 +85,7 @@ joined_r0x005ef316:
           ((local_8 = g_centeredOffsets5[param_1] + local_8, local_8 < 0 ||
            (pVVar3->field_0034 <= local_8)))))) || (pVVar3->field_004C == nullptr)) ||
        (pVVar3->field_004C[local_c + local_8 * pVVar3->field_0030] != 0)) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0xd8))();
       cVar1 = STField<char>(this,0x2b9);
       goto joined_r0x005ef316;

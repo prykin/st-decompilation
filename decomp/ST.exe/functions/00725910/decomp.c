@@ -29,7 +29,7 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
   char local_108 [260];
   char *pcVar8_mg2;
 
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (*(code *)param_4)(hFindFile,param_3,1,param_5);
   if (iVar3 == 0) {
     uVar6 = 0xffffffff;
@@ -118,7 +118,7 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
           pcVar8 = pcVar12 + -1;
           memmove(pcVar8, pCVar9, uVar6); /* compiler REP MOVS byte copy */
           uVar7 = 0;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar3 = (*(code *)param_4)(local_108,&local_248,0,param_5);
           if (iVar3 != 0) {
             FindClose(pvVar4);
@@ -227,7 +227,7 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
       } while (BVar5 != 0);
       FindClose(pvVar4);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (*(code *)param_4)(hFindFile,param_3,2,param_5);
   }
   return iVar3;

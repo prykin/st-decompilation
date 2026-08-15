@@ -60,11 +60,9 @@ cf_break_loop_004B1816:
     }
   }
   local_8 = nullptr;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == 0xdd) {
     local_8 = &DAT_007907ac;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   else if (param_4 == 0xde) {
     local_8 = &DAT_007907d0;
   }
@@ -75,7 +73,6 @@ cf_break_loop_004B1816:
       do {
         iVar5 = param_2 + -1;
         if (iVar5 < param_2 + 2) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = iVar5 * 0xc;
           do {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -97,7 +94,6 @@ cf_break_loop_004B1816:
               }
             }
             iVar5 = iVar5 + 1;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_4 = param_4 + 0xc;
           } while (iVar5 < param_2 + 2);
         }

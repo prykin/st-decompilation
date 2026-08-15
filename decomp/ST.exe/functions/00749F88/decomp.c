@@ -25,20 +25,20 @@ int FUN_00749f88(LPCRITICAL_SECTION lpCriticalSection,int param_2,int param_3)
         return iVar2;
       }
       this = &lpCriticalSection[-1].OwningThread;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)((int)lpCriticalSection[-1].OwningThread + 0x28))(1);
       FUN_0074a81d(this,0);
       piVar1 = *(int **)((int)lpCriticalSection[4].OwningThread + 0x9c);
       if (piVar1 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar1 + 0x14))(piVar1);
       }
       if (iVar3 == 0) {
         lpCriticalSection[3].OwningThread = (HANDLE)0x0;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)((int)*this + 0x70))();
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar3 = (**(code **)((int)*this + 0x7c))();
       LeaveCriticalSection((LPCRITICAL_SECTION)lpCriticalSection_00);
       return iVar3;

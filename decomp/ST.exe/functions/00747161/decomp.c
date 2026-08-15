@@ -16,28 +16,26 @@ int FUN_00747161(int *param_1,int param_2,int param_3)
   EnterCriticalSection(lpCriticalSection);
   param_1[5] = param_2;
   param_1[6] = param_3;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   if ((param_1[2] == 0) && (iVar3 = (**(code **)(*param_1 + 0x14))(param_1), iVar3 < 0)) {
     LeaveCriticalSection(lpCriticalSection);
     return iVar3;
   }
   if (param_1[2] != 2) {
     piVar1 = param_1 + -3;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (**(code **)(param_1[-3] + 0x18))();
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = nullptr;
     if (0 < iVar3) {
       do {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         piVar4 = (int *)(**(code **)(*piVar1 + 0x1c))(param_1);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((piVar4[6] != 0) && (iVar5 = (**(code **)(*piVar4 + 0x1c))(param_2,param_3), iVar5 < 0))
         {
           LeaveCriticalSection(lpCriticalSection);
           return iVar5;
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)((int)param_1 + 1);
       } while ((int)param_1 < iVar3);
     }

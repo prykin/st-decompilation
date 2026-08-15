@@ -33,7 +33,6 @@ FUN_006a2770(int *param_1,int param_2,int param_3,int param_4,ushort *param_5,un
       thunk_FUN_006a23a0(param_1,uVar4,iVar3,param_4,(short *)param_5,param_6,param_7);
       local_8 = local_8 + 2;
     } while ((int)local_8 < 0x7df88c);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (ushort *)&DAT_007df888;
     piVar5 = &DAT_007df86c;
     do {
@@ -44,7 +43,6 @@ FUN_006a2770(int *param_1,int param_2,int param_3,int param_4,ushort *param_5,un
       thunk_FUN_006a1620(param_1,iVar3 + param_2,iVar1 + param_3,param_4,0xff,puVar2,param_6,param_7
                         );
       piVar5 = piVar5 + 2;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = param_5 + 2;
     } while ((int)piVar5 < 0x7df88c);
     return 0;

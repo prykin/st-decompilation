@@ -69,7 +69,7 @@ STAllPlayersC::AddObjsToGroup
         iVar5 = thunk_FUN_00423d80(local_c,groupContent);
         if (iVar5 == 1) {
           local_5 = 0;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(local_c->vtable + 8))(0x65,&local_5);
         }
         if (uVar8 == param_2) {
@@ -103,7 +103,7 @@ STAllPlayersC::AddObjsToGroup
       Library::DKW::TBL::DArrayPut(array,uVar8 & 0xffff,&local_10);
       STGroupC::AddObjs(local_10,groupContent,0);
       local_5 = 2;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(local_10->vtable + 8))(0x65,&local_5);
       if (param_4 != nullptr) {
         *param_4 = (short)uVar8;
@@ -113,7 +113,7 @@ STAllPlayersC::AddObjsToGroup
       DArrayGetElement(local_14,(uint)param_2,&local_c);
       STGroupC::AddObjs(local_c,groupContent,1);
       local_5 = 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(local_c->vtable + 8))(0x65,&local_5);
     }
     dVar1 = array->count;

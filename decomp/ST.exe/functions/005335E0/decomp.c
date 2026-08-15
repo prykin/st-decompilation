@@ -185,7 +185,7 @@ void FUN_005335e0(void)
   }
   local_8[10] = 0xc001;
   local_8[0xd] = 0;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)*local_8)(local_8 + 6);
   g_currentExceptionFrame = local_54.previous;
   return;

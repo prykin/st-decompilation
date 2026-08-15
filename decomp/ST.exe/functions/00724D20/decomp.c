@@ -11,7 +11,7 @@ undefined4 __fastcall FUN_00724d20(int *param_1)
   if ((param_1[7] & 0xf0000000U) == 0) {
                     /* WARNING: Could not recover jumptable at 0x00724d2b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar1 = (**(code **)(*param_1 + 8))();
     return uVar1;
   }

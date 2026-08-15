@@ -520,6 +520,51 @@ vtable slots. The export gate accepted all 96 explicit library exclusions with
 zero hard regressions; its four warnings are improving stage transitions. The
 ABI gate reports zero errors and warnings.
 
+### Q-050 Recover fixed and dynamic stack-storage semantics
+
+Status: implemented, runtime-confirmed, and accepted. The canonical VC6 x86
+stack probe is now discovered from its complete machine body rather than an
+image address or old symbol. `STUtilityFunctionApplier` attaches Ghidra's
+built-in `alloca_probe` call-fixup, so callers are decompiled with a dynamic ESP
+adjustment instead of treating the helper as an ordinary zero-argument call.
+The semantic Program ledger and address-stable caller fingerprints include the
+non-empty fixup, while absent fixups remain sparse and do not invalidate the
+rest of the corpus.
+
+`STStackObjectAnalyzer/Applier` separately classifies exact fixed
+EBP-relative `REP STOS` spans and dynamic probe sites. The accepted scan found
+249 fixed zero spans and 105 dynamic-allocation sites across 5,624 game-owned
+bodies. Of the fixed spans, 232 intersect another Listing local: Ghidra cannot
+represent both lexical lifetimes over the same physical stack bytes, so these
+remain review/presentation evidence rather than destructive variable
+replacement. Eight raw fixed roots now render as deterministic
+`stack_bytes_neg_OFFSET[N]` byte-storage objects. Residual raw-stack references
+remain in 95 functions and are kept distinct as dynamic allocation, SEH,
+slot-reuse, or not-yet-classified debt.
+
+Concrete machine examples establish the boundary. `006971B0` computes
+`field_583B * 4`, calls the recovered stack probe, stores the resulting ESP, and
+indexes the allocation in four-byte units; Ghidra now emits the
+`alloca_probe` injection but still reports that it cannot fully track the
+dynamic spacebase. `005D1400` reserves a fixed frame and zeroes exactly
+`0x451` bytes at EBP-relative `-0x67c` (Ghidra stack offset `-0x680`), while a
+later lexical local begins 0x40 bytes inside that span. `006D63E0` uses a raw
+slot as compiler SEH/saved-stack bookkeeping and is deliberately not promoted
+to an ordinary source array.
+
+Accepted state: run
+`7e8d052cb16c9d3925800a76e4d63e96dd362b1478285fb2b4a1d0570a564daa`,
+semantic hash `cf7c5c8b081950dd4d95667fcf9e953005336dea1034ffd5ef7ee7addc89db12`,
+manifest `af110f689c9bdfe2ab4a221a87b7d6da60ce4076f792ac2f3e0f5dcf01619a9c`;
+10,400 functions, 5,624 bodies, zero failed bodies, and 3,192 typed vtable
+slots. The corrective export reused 10,398/10,400 bodies, passed both gates
+with zero errors/warnings, and took `00:04:50`. The regenerated 64-error-per-TU
+compiler audit passes 185/321 units with 1,598 errors, 1,581 address-mapped—47
+fewer errors and two additional passing units than the preceding 1,645-error
+baseline. A subsequent unchanged export reused 10,400/10,400 bodies and
+5,624/5,624 quality analyses, left `Program changed=false`, and completed in
+`00:01:56`.
+
 ## Definition of done for one queue item
 
 - No embedded ST image address or hand-authored type/name allow-list in the

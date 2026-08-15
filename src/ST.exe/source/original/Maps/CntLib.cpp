@@ -120,7 +120,7 @@ LAB_0069177d:
       do {
         if (((param_3 == 0) || (local_c != 0)) || (local_8 != 0)) {
           if (param_4 != nullptr) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (*(code *)param_4)(0);
           }
           uVar8 = local_8;

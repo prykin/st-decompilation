@@ -34,16 +34,16 @@ LAB_0074e3ab:
         return uVar4;
       }
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar4 = (**(code **)(*param_3 + 0x18))(param_3,param_2,param_1);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_3 + 8))(param_3);
     if ((int)uVar4 < 0) {
       return uVar4;
     }
   }
   *param_5 = *param_1;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)*param_1 + 4))((int *)*param_1);
   return 0;
 }

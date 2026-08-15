@@ -118,7 +118,7 @@ STAllPlayersC::PointPick
     RemoveActiveTV(playerId);
     return;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar4 = (**(code **)(*piVar2 + 0xec))();
   if (iVar4 != 1) {
     return;
@@ -130,7 +130,6 @@ STAllPlayersC::PointPick
       if (uVar4 != 0x1ae) {
         return;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_4 == 1) {
         return;
       }
@@ -265,7 +264,6 @@ cf_common_exit_0043440E:
     if (0x3e9 < (uint)uVar4) {
       return;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_4 == 1) {
       return;
     }
@@ -396,7 +394,6 @@ cf_common_exit_00434CB8:
   }
   if (uVar4 != 0x1a4) {
     if (uVar4 == 0x14) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((param_4 == 1) && (playerId != (char)piVar2[9])) {
         return;
       }
@@ -404,7 +401,6 @@ cf_common_exit_00434CB8:
         iVar4 = g_packedRecords_A62x8[playerId].field96_0x163;
         if (iVar4 != 0) {
           if (iVar4 == 0x3c) {
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             if (param_4 == 1) {
               if (*(int *)&g_packedRecords_A62x8[playerId].field97_0x167 != (int)(char)piVar2[9]) {
                 return;
@@ -453,7 +449,6 @@ cf_common_exit_00434CB8:
               }
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             if (param_4 == 1) {
               return;
             }
@@ -491,7 +486,6 @@ LAB_0043429d:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (param_4 == 1) {
           return;
         }
@@ -539,7 +533,6 @@ LAB_0043415b:
       return;
     }
   }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_004345cf:
   if (param_4 == 1) {
     return;

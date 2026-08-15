@@ -21,7 +21,6 @@ FUN_00492550(void *this,short param_1,short param_2,short param_3,undefined2 *pa
       iVar3 = param_2 + -1;
       iVar2 = param_2 + 1;
       if (iVar3 <= iVar2) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         _param_1 = g_worldGrid.sizeX * iVar3;
         do {
           if ((((-1 < iVar3) && (iVar3 <= g_worldGrid.sizeY + -1)) &&
@@ -34,7 +33,6 @@ FUN_00492550(void *this,short param_1,short param_2,short param_3,undefined2 *pa
             *param_6 = param_3;
             return 1;
           }
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_1 = _param_1 + g_worldGrid.sizeX;
           iVar3 = iVar3 + 1;
         } while (iVar3 <= iVar2);

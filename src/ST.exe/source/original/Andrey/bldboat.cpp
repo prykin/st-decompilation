@@ -179,7 +179,7 @@ switchD_004eed0b_default:
   local_24 = 1;
   local_20 = 1;
   local_44 = local_64;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;

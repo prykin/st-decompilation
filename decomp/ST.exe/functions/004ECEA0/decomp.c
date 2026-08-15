@@ -97,7 +97,7 @@ undefined4 __fastcall FUN_004ecea0(AnonShape_004D9C80_80F657D3 *param_1)
                (float)(*(int *)(&DAT_0079aac8 + iVar3) + (int)param_1->field_0045) * _DAT_007904f8 *
                _DAT_007904f0 + _DAT_007904fc);
     thunk_FUN_004ad460((void *)param_1->field_05FF,1);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)param_1 + 0x90))(3,0x42a);
     return 0;
   }

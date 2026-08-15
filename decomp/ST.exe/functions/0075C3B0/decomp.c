@@ -16,7 +16,7 @@ undefined4 FUN_0075c3b0(AnonShape_0075BE40_B9FD5FDF *param_1)
        *(int *)(param_1->field_01A6 + 0x5c) +
        ((int)(*(int *)(iVar1 + 0xc) + (*(int *)(iVar1 + 0xc) >> 0x1f & 7U)) >> 3);
   *(undefined4 *)(iVar1 + 0xc) = 0;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar2 = (**(code **)(param_1->field_01A6 + 8))(param_1);
   if (iVar2 == 0) {
     return 0;

@@ -116,9 +116,7 @@ AiEventClassTy::__CreateObjPl
         local_34[0] = 3;
         local_34[1] = 0;
         thunk_FUN_006756d0((short *)&local_2c,(short *)&local_24,(short *)&local_18,local_34);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = (short *)(local_2c + 1);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (short *)(local_24 + 1);
       }
       iVar5 = thunk_FUN_00675b10((int)param_3,(int)param_4,(short)param_5,(short *)&param_3,

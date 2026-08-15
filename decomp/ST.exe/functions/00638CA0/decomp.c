@@ -106,7 +106,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     }
     sub_00416240(this,STField<ushort>(this,0x27a),STField<short>(this,0x27e),
                  STField<ushort>(this,0x282));
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar4 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == nullptr) {
@@ -115,13 +115,11 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     iVar8 = STField<int>(this,0x282);
     sVar3 = (short)(iVar8 >> 0x1f);
     if (iVar8 < 0) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STMessage *)
                 ((short)(((short)(iVar8 / 200) + sVar3) -
                         (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STMessage *)
                 (int)(short)(((short)(iVar8 / 200) + sVar3) -
                             (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
@@ -191,7 +189,7 @@ joined_r0x00639236:
     if (iVar8 + -1 == iVar6) {
       STField<undefined1>(this,0x26f) = 3;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar4 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == nullptr) {
@@ -200,13 +198,11 @@ joined_r0x00639236:
     iVar8 = STField<int>(this,0x282);
     sVar3 = (short)(iVar8 >> 0x1f);
     if (iVar8 < 0) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STMessage *)
                 ((short)(((short)(iVar8 / 200) + sVar3) -
                         (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STMessage *)
                 (int)(short)(((short)(iVar8 / 200) + sVar3) -
                             (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));

@@ -26,12 +26,9 @@ FUN_0043e9a0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param_3,
   local_c = param_6 + -1 + local_8;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_6 = (int)param_4;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_4 = param_7 + -1 + _param_6;
   iVar2 = (int)param_5;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_5 = param_8 + -1 + iVar2;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = 0;
   if (local_8 < 0) {
     local_8 = 0;
@@ -45,26 +42,21 @@ FUN_0043e9a0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param_3,
     _param_6 = 0;
   }
   if (g_worldGrid.sizeY + -1 < _param_4) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_4 = g_worldGrid.sizeY + -1;
   }
   if (iVar2 < 0) {
     iVar2 = 0;
   }
   if (g_worldGrid.sizeZ + -1 < _param_5) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_5 = g_worldGrid.sizeZ + -1;
   }
   iVar4 = g_worldGrid.sizeX * _param_6 + local_8 + (iVar2 + -1) * (int)g_worldGrid.planeStride;
   if (iVar2 <= _param_5) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_5 = _param_5 - iVar2;
     iVar2 = STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(g_worldGrid.sizeX));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_5 = _param_5 + 1;
     iVar6 = local_c;
     iVar7 = local_8;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
     do {
       iVar4 = iVar4 + g_worldGrid.planeStride;
@@ -79,26 +71,25 @@ FUN_0043e9a0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param_3,
             do {
               piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar2);
               pSVar3 = g_worldGrid.cells;
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               if ((((piVar1 != nullptr) && (piVar1[9] == (int)param_1)) && (piVar1 != nullptr)
                   ) && ((pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0x2c))(),
                         pSVar3 == (STWorldCell *)param_2 &&
                         (pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0xf8))(),
                         pSVar3 != nullptr)))) {
                 if (param_9 == 0) {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0043eb0f:
                   if ((param_10 == -1) ||
                      (pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0x6c))(),
                      pSVar3 == (STWorldCell *)(int)param_10)) {
-                    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_3 = param_3 + 1;
                   }
                 }
                 else {
                   pSVar3 = (STWorldCell *)(param_2 - CASE_38);
                   switch(param_2) {
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   case CASE_38:
                   case CASE_39:
                   case CASE_4F:
@@ -119,7 +110,6 @@ LAB_0043eb0f:
           iVar5 = iVar5 + -1;
         } while (iVar5 != 0);
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_5 = _param_5 + -1;
     } while (_param_5 != 0);
   }

@@ -408,7 +408,7 @@ void __thiscall st::fn_00554AD0(cLoadingTy *this,uint *param_1)
                ,iVar4,iVar3,pcVar2->field_001C,pcVar2->field_0034,0);
     st::fn_006BB370(g_dDXContext_0080759C,0,0);
     if ((code *)pcVar2->field_0058 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pcVar2->field_0058)(pcVar2->field_0054);
     }
     g_currentExceptionFrame = local_4c.previous;
@@ -490,7 +490,7 @@ void __thiscall st::fn_00554C80(cLoadingTy *this,char *resourceString)
     }
     st::fn_006BB370(g_dDXContext_0080759C,0,0);
     if ((code *)pcVar2->field_0058 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pcVar2->field_0058)(pcVar2->field_0054);
     }
     g_currentExceptionFrame = local_4c.previous;
@@ -779,7 +779,7 @@ st::fn_00555040
       return;
     }
     if ((code *)pcVar9->field_0058 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pcVar9->field_0058)(pcVar9->field_0054);
       g_currentExceptionFrame = local_50.previous;
       return;
@@ -898,7 +898,7 @@ joined_r0x00555393:
     return;
   default:
     if ((code *)local_8->field_0058 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)local_8->field_0058)(local_8->field_0054);
     }
   }

@@ -69,7 +69,7 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
           iVar5 = 0;
         }
         uVar6 = local_10;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar5 != 0) && (param_8 != nullptr)) &&
            (iVar5 = (*(code *)param_8)(0,local_10,this,param_9), iVar5 != 0)) {
           g_currentExceptionFrame = local_5c.previous;

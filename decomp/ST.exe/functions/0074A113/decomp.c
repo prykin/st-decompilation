@@ -13,7 +13,7 @@ long __thiscall CBaseRenderer::EndOfStream(CBaseRenderer *this)
      ) {
     SetEvent(*(HANDLE *)(this + 0x5c));
     if (*(int *)(this + 100) != 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0x60))();
     }
   }

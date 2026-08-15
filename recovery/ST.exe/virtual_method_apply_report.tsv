@@ -478,7 +478,6 @@ target_address	status	proposed_name	detail
 006E52D0	disabled		all apply flags are 0
 006E5670	disabled		all apply flags are 0
 006E5690	disabled		all apply flags are 0
-006E5950	disabled		all apply flags are 0
 006E6130	disabled		all apply flags are 0
 006E6150	disabled		all apply flags are 0
 0071CF60	disabled	ButtonClassTy::vfunc_4	all apply flags are 0

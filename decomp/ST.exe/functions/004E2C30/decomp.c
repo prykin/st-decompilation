@@ -73,7 +73,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
     local_48 = (undefined2)param_1;
     uVar6 = thunk_FUN_004e60d0((int)pbVar1,param_1);
     local_46 = (short)uVar6;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*DAT_008117bc)(local_60);
     memset(local_60, 0, 0x20); /* compiler bulk-zero initialization */
     local_4c = *(undefined2 *)&this->field_0024;
@@ -97,7 +97,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
           local_48 = (undefined2)uVar2;
           uVar6 = thunk_FUN_004e60d0((int)this->field_0024,uVar2);
           local_46 = (short)uVar6 + 1;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)*DAT_008117bc)(local_60);
         }
       }

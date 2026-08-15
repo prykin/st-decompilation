@@ -85,7 +85,7 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
     local_1c = 1;
     local_18 = 1;
     local_3c = local_5c;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)local_c->field_000C + 8))(5,&local_8,0,local_6c,0);
     g_currentExceptionFrame = local_b0.previous;
     return local_8;

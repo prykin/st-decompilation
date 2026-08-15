@@ -1,7 +1,8 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* WARNING: Restarted to delay deadcode elimination for space: stack */
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
    and decompilation contains no value return */
@@ -12,72 +13,67 @@ void FUN_006daed0(undefined4 *param_1,int param_2,int param_3,int param_4,int pa
 {
   int iVar1;
   int iVar2;
-  int *piVar3;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
-  int iVar4;
-  bool bVar5;
+  int iVar3;
+  int *piVar4;
+  int iVar5;
+  bool bVar6;
   int local_8;
 
-  piVar3 = (int *)&stack0xffffffe8;
-  Library::MSVCRT::FUN_0072da40();
-  iVar1 = -(param_7 >> 1);
-  iVar2 = -2;
-  iVar4 = param_3;
+  iVar1 = param_3 * -4;
+  piVar4 = (int *)(&stack0xffffffe8 + iVar1);
+  iVar2 = -(param_7 >> 1);
+  iVar3 = -2;
+  iVar5 = param_3;
   if (0 < param_3) {
     do {
-      for (; iVar1 < 1; iVar1 = iVar1 + param_3) {
-        iVar2 = iVar2 + 2;
+      for (; iVar2 < 1; iVar2 = iVar2 + param_3) {
+        iVar3 = iVar3 + 2;
       }
-      *piVar3 = iVar2;
-      iVar1 = iVar1 - param_7;
-      piVar3 = piVar3 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
+      *piVar4 = iVar3;
+      iVar2 = iVar2 - param_7;
+      piVar4 = piVar4 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
   }
   local_8 = param_4;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_7 = -(param_8 >> 1);
-  iVar1 = param_5 - param_6;
+  iVar2 = param_5 - param_6;
   do {
     if (param_7 < 1) {
       do {
-        iVar1 = iVar1 + param_6;
-        bVar5 = SCARRY4(param_7,param_4);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+        iVar2 = iVar2 + param_6;
+        bVar6 = SCARRY4(param_7,param_4);
         param_7 = param_7 + param_4;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      } while (param_7 == 0 || bVar5 != param_7 < 0);
+      } while (param_7 == 0 || bVar6 != param_7 < 0);
     }
-    piVar3 = (int *)&stack0xffffffe8;
-    iVar2 = param_3;
+    piVar4 = (int *)(&stack0xffffffe8 + iVar1);
+    iVar3 = param_3;
     if (((uint)param_1 & 2) == 0) {
 joined_r0x006daf6b:
-      while (1 < iVar2) {
-        *param_1 = CONCAT22(*(undefined2 *)(iVar1 + piVar3[1]),*(undefined2 *)(iVar1 + *piVar3));
+      while (1 < iVar3) {
+        *param_1 = CONCAT22(*(undefined2 *)(iVar2 + piVar4[1]),*(undefined2 *)(iVar2 + *piVar4));
         param_1 = param_1 + 1;
-        piVar3 = piVar3 + 2;
-        iVar2 = iVar2 + -2;
+        piVar4 = piVar4 + 2;
+        iVar3 = iVar3 + -2;
       }
-      if (iVar2 + -2 != -2) {
-        *(undefined2 *)param_1 = *(undefined2 *)(iVar1 + *piVar3);
+      if (iVar3 + -2 != -2) {
+        *(undefined2 *)param_1 = *(undefined2 *)(iVar2 + *piVar4);
         param_1 = (undefined4 *)((int)param_1 + 2);
       }
     }
     else {
-      piVar3 = (int *)&stack0xffffffec;
-      *(undefined2 *)param_1 = *(undefined2 *)(iVar1 + unaff_EDI);
+      piVar4 = (int *)(&stack0xffffffec + iVar1);
+      *(undefined2 *)param_1 = *(undefined2 *)(iVar2 + *(int *)(&stack0xffffffe8 + iVar1));
       param_1 = (undefined4 *)((int)param_1 + 2);
-      iVar2 = param_3 + -1;
-      if (iVar2 != 0 && 0 < param_3) goto joined_r0x006daf6b;
+      iVar3 = param_3 + -1;
+      if (iVar3 != 0 && 0 < param_3) goto joined_r0x006daf6b;
     }
     param_1 = (undefined4 *)((int)param_1 + param_2 + param_3 * -2);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_7 = param_7 - param_8;
-    iVar2 = local_8 + -1;
-    bVar5 = local_8 < 1;
-    local_8 = iVar2;
-    if (iVar2 == 0 || bVar5) {
+    iVar3 = local_8 + -1;
+    bVar6 = local_8 < 1;
+    local_8 = iVar3;
+    if (iVar3 == 0 || bVar6) {
       return;
     }
   } while( true );

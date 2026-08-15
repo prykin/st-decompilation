@@ -27,7 +27,7 @@ int FUN_006d5820(AnonShape_006D5820_330472AB *param_1,undefined4 *param_2)
   piVar2 = (int *)param_1->field_0004;
   if (piVar2 != piVar3) {
     if (piVar2 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar2 + 8))(piVar2);
     }
     if (param_1->field_0048 == -0x294) {
@@ -37,10 +37,10 @@ int FUN_006d5820(AnonShape_006D5820_330472AB *param_1,undefined4 *param_2)
       piVar3 = (int *)(param_1->field_0048 + 0x2a0);
     }
     param_1->field_0004 = piVar3;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar3 + 4))(piVar3);
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)param_1->field_0004 + 4))((int *)param_1->field_0004);
   *param_2 = param_1->field_0004;
   LeaveCriticalSection(lpCriticalSection);

@@ -38,7 +38,7 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
   param_2->palVersion = 0x300;
   param_2->palNumEntries = 0x100;
   piVar1 = (int *)param_1->field_003C;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   if ((piVar1 == nullptr) ||
      (iVar7 = (**(code **)(*piVar1 + 0x10))(piVar1,0,0,0x100,param_2->palPalEntry), iVar7 != 0)) {
     pHVar2 = GetDC((HWND)0x0);

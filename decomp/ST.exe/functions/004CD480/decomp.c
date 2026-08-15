@@ -56,7 +56,7 @@ LAB_004cd4c0:
     }
     else {
       if (local_EAX_235 == 2) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)param_1 + 0x90))(6,0x7b);
         thunk_FUN_004cd450(param_1);
         return 1;
@@ -78,7 +78,7 @@ LAB_004cd4c0:
     }
     else {
       if (uVar1 == 2) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)param_1 + 0x90))(6,0x7e);
         thunk_FUN_004cd450(param_1);
         return 2;
@@ -88,7 +88,7 @@ LAB_004cd4c0:
       uVar6 = 0x7f;
     }
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(iVar3 + 0x90))(6,uVar6);
 cf_common_exit_004CD624:
   thunk_FUN_004cd450(param_1);

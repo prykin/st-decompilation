@@ -55,7 +55,6 @@ LAB_006362c5:
     *(int *)&this->field_0x8 = param_6;
     memset(local_50, 0, 0x32); /* compiler bulk-zero initialization */
     Library::DKW::TBL::DArrayPut(array,param_5 * param_6 - 1,local_50);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
     local_c = _DAT_0079c5a4 / (float)param_5;
     if (0 < param_5) {
@@ -107,7 +106,6 @@ LAB_006362c5:
             this = local_8;
           } while (param_4 != 0);
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 1;
       } while ((int)param_1 < param_5);
     }

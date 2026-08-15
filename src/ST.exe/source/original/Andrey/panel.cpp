@@ -327,7 +327,7 @@ st::fn_00538690(PanelTy *this,undefined4 param_1,int param_2,int param_3,int par
       local_68 = st::fn_0070AA70(g_cMf32_00806790,param_14,0,1);
       local_64 = st::fn_0070A6F0(g_cMf32_00806790,0x12,param_14,1);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)pPVar2->field_000C + 8))(2,&local_8,0,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_8;
@@ -394,7 +394,7 @@ LAB_00538a14:
     errorCode = (int *)st::fn_0072D7F0(local_58.jumpBuffer,0);
     if (errorCode == nullptr) {
       iVar5 = 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_4)(param_1);
       text = st::fn_006F2C00(param_3,1,uVar4);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_2,text,errorCode,iVar5);
@@ -484,7 +484,7 @@ LAB_00538bd9:
       st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_8);
       st::fn_00710A90(param_4,pPVar2->field_0068,0,iVar3,uVar4,local_18->field_0008,
                        local_18->field_000C);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_1);
       iVar5 = -1;
       iVar3 = -2;
@@ -650,7 +650,7 @@ LAB_00538ff6:
     local_14 = this;
     local_EAX_145 = st::fn_0072D7F0(local_58.jumpBuffer,0);
     if (local_EAX_145 == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar7 = (*(code *)param_5)(param_1);
       text = st::fn_006F2C00(param_3,1,uVar7);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_2,text,nullptr,1);

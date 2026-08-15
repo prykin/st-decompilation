@@ -71,7 +71,7 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
     local_58[4] = (int *)0x110;
     local_58[5] = local_38;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)*param_1)(local_58);
   return local_40;
 }

@@ -10,6 +10,8 @@
 int __thiscall st::fn_004C3570(TLOBaseTy *this)
 
 {
+  alignas(4) byte st_stack_frame[100];
+
   AnonPointee_TLOBaseTy_0291 *pAVar1;
   TLOBaseTy *this_00;
   short sVar3;
@@ -74,15 +76,15 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
               }
               pAVar1 = (AnonPointee_TLOBaseTy_0291 *)puVar8[3];
               if (pAVar1 != nullptr) {
-                if (&stack0x00000000 != (undefined1 *)0x14) {
+                if ((st_stack_frame + 96) != (undefined1 *)0x14) {
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_14 = CONCAT22(uStack_12,this_00->field_0041);
                 }
-                if (&stack0x00000000 != (undefined1 *)0x10) {
+                if ((st_stack_frame + 96) != (undefined1 *)0x10) {
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_10 = CONCAT22(uStack_e,this_00->field_0043);
                 }
-                if (&stack0x00000000 != &DAT_0000000c) {
+                if ((st_stack_frame + 96) != &DAT_0000000c) {
                   local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(this_00->field_0045));
                 }
                 sVar3 = (*this_00->vtable->vfunc_10)
@@ -210,6 +212,8 @@ LAB_004c3985:
 int __thiscall st::fn_004C3C00(TLOBaseTy *this,int param_1,int param_2)
 
 {
+  alignas(4) byte st_stack_frame[200];
+
   byte bVar1;
   byte bVar2;
   byte bVar3;
@@ -287,15 +291,15 @@ int __thiscall st::fn_004C3C00(TLOBaseTy *this,int param_1,int param_2)
   ppTVar16 = &local_60->vtable + param_1 * 0x20;
   STField<AnonShape_005EFAE0_B406B78B *>(ppTVar16,0x28d) = nullptr;
   STField<AnonPointee_TLOBaseTy_0291 *>(ppTVar16,0x291) = nullptr;
-  if (&stack0x00000000 != (undefined1 *)0x2c) {
+  if ((st_stack_frame + 196) != (undefined1 *)0x2c) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_2c = CONCAT22(uStack_2a,local_60->field_0041);
   }
-  if (&stack0x00000000 != (undefined1 *)0x34) {
+  if ((st_stack_frame + 196) != (undefined1 *)0x34) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_34 = CONCAT22(uStack_32,local_60->field_0043);
   }
-  if (&stack0x00000000 != (undefined1 *)0x30) {
+  if ((st_stack_frame + 196) != (undefined1 *)0x30) {
     local_30 = STReplaceLowWord((uint32_t)(local_30), (uint16_t)(local_60->field_0045));
   }
   local_10 = ppTVar16;
@@ -450,7 +454,7 @@ LAB_004c41a5:
                                         iVar9 = *(int *)&local_8->field_0x215;
                                       }
                                       else {
-                                        iVar9 = (*local_8->vtable->vfunc_7C)();
+                                        iVar9 = local_8->vfunc_7C();
                                       }
                                       iVar15 = local_18;
                                       iVar17 = local_28;

@@ -173,7 +173,7 @@ LAB_00440c19:
     do {
       uVar15 = local_1c;
       DArrayGetElement(local_80,local_1c,&local_7c);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((local_7c != nullptr) &&
           (iVar5 = (**(code **)(*(int *)local_7c + 0xc))(), iVar5 == 4)) &&
          (local_7c->field_0027 != 0)) {

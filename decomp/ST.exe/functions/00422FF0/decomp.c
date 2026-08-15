@@ -7,7 +7,7 @@ void __thiscall FUN_00422ff0(void *this,byte param_1)
   STGameObjC *objPtr;
   int iVar1;
 
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   objPtr = (STGameObjC *)(**(code **)(*(int *)this + 4))();
   if (((STField<int>(this,0x20) == 0x14) && (iVar1 = thunk_FUN_0045ff10(objPtr), iVar1 == 0x14))
      && (objPtr->field_05C0 == 3)) {

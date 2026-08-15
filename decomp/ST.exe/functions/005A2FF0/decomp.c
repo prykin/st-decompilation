@@ -14,13 +14,13 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int local_EAX_63;
-  DArrayTy *pDVar6;
+  FSGSTy_field_1EAADArray *pFVar6;
   int iVar3;
   undefined4 uVar7;
   int iVar6;
   dword dVar8;
-  char *_Str2;
-  char *_Str1;
+  FSGSTy_field_1EAAElement *element_1eaa;
+  FSGSTy_field_1EAAElement *element_1eaa_2;
   uint uVar9;
   InternalExceptionFrame local_50;
   FSGSTy *local_c;
@@ -46,36 +46,36 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
       this_01 = local_c;
       local_c->field_1EAA->count = 0;
       for (; param_1 != 0; param_1 = param_1 + -1) {
-        Library::DKW::TBL::DArrayAppend(this_01->field_1EAA,param_2);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_01->field_1EAA,param_2);
         param_2 = param_2 + 0x1a;
       }
       do {
-        pDVar6 = this_01->field_1EAA;
+        pFVar6 = this_01->field_1EAA;
         local_8 = 0;
-        dVar8 = pDVar6->count;
+        dVar8 = pFVar6->count;
         uVar9 = 0;
         if (dVar8 != 1) {
           do {
             if (uVar9 < dVar8) {
-              _Str1 = DArrayAt<char>(pDVar6, uVar9);
+              element_1eaa_2 = DArrayAt<FSGSTy_field_1EAAElement>(pFVar6, uVar9);
             }
             else {
-              _Str1 = nullptr;
+              element_1eaa_2 = nullptr;
             }
             uVar1 = uVar9 + 1;
             if (uVar1 < dVar8) {
-              _Str2 = DArrayAt<char>(pDVar6, uVar1);
+              element_1eaa = DArrayAt<FSGSTy_field_1EAAElement>(pFVar6, uVar1);
             }
             else {
-              _Str2 = nullptr;
+              element_1eaa = nullptr;
             }
-            iVar3 = Library::MSVCRT::__strcmpi(_Str1,_Str2);
+            iVar3 = Library::MSVCRT::__strcmpi(element_1eaa_2,element_1eaa);
             if (0 < iVar3) {
               FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)this_01->field_1EAA,uVar9,uVar1);
               local_8 = 1;
             }
-            pDVar6 = this_01->field_1EAA;
-            dVar8 = pDVar6->count;
+            pFVar6 = this_01->field_1EAA;
+            dVar8 = pFVar6->count;
             uVar9 = uVar1;
           } while (uVar1 < dVar8 - 1);
         }

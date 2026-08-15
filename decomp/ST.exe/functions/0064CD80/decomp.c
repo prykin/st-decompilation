@@ -51,7 +51,7 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     } while ((int)uVar10 < 4);
     if (pAVar2->field_008C == '\0') {
       pAVar2->field_0088 = DAT_00808754;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar7 = (*(code *)pAVar2->field_0000->field_0018)();
       uVar10 = iVar7 * 2 + 2;
       pAVar2->field_00D2 = uVar10;

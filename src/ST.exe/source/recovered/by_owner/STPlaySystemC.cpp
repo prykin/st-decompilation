@@ -135,7 +135,6 @@ void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
       }
       if (DAT_0080735e != '\0') {
         bVar4 = 0;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = nullptr;
         if (DAT_00808aaf != 0) {
           do {
@@ -149,7 +148,6 @@ void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
               }
             }
             bVar4 = bVar4 + 1;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = (int *)(uint)bVar4;
           } while (bVar4 < DAT_00808aaf);
           return;
@@ -191,7 +189,7 @@ void __thiscall st::fn_006E57B0(STPlaySystemC *this,int param_1)
           pvVar2 = pDVar1->data;
         }
         if ((STField<undefined4 *>(pvVar2,4))[1] == param_1) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)*STField<undefined4 *>(pvVar2,4))(local_24);
           st::fn_006B0C70(this->field_0010,index);
         }

@@ -12,6 +12,7 @@ import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.security.MessageDigest;
 
@@ -29,11 +30,13 @@ public class STRecoveryLauncher extends GhidraScript {
             .resolve(currentProgram.getName());
         Files.createDirectories(programRecovery);
         Path bootstrap = programRecovery.resolve("pipeline_bootstrap.log");
+        Path stagedBootstrap = bootstrap.resolveSibling(
+            bootstrap.getFileName() + ".tmp");
         Path pipelineSource = repository.resolve("scripts/STRecoveryPipeline.java");
 
         PrintWriter previousWriter = writer;
         PrintWriter previousErrorWriter = errorWriter;
-        BufferedWriter file = Files.newBufferedWriter(bootstrap,
+        BufferedWriter file = Files.newBufferedWriter(stagedBootstrap,
             StandardCharsets.UTF_8, StandardOpenOption.CREATE,
             StandardOpenOption.TRUNCATE_EXISTING);
         Object logLock = new Object();
@@ -73,7 +76,12 @@ public class STRecoveryLauncher extends GhidraScript {
             errorWriter = previousErrorWriter;
             file.close();
         }
-        if (failure != null) rethrow(failure);
+        if (failure == null) promote(stagedBootstrap, bootstrap);
+        else {
+            printerr("Incomplete bootstrap log retained at ignored staging path: " +
+                stagedBootstrap);
+            rethrow(failure);
+        }
     }
 
     private Path inferredRepository() {
@@ -97,6 +105,16 @@ public class STRecoveryLauncher extends GhidraScript {
         for (byte value : digest.digest())
             result.append(String.format("%02x", value & 0xff));
         return result.toString();
+    }
+
+    private void promote(Path staged, Path target) throws Exception {
+        try {
+            Files.move(staged, target, StandardCopyOption.REPLACE_EXISTING,
+                StandardCopyOption.ATOMIC_MOVE);
+        }
+        catch (java.nio.file.AtomicMoveNotSupportedException exception) {
+            Files.move(staged, target, StandardCopyOption.REPLACE_EXISTING);
+        }
     }
 
     private static String message(Throwable throwable) {

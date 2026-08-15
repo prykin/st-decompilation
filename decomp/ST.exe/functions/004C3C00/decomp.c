@@ -248,7 +248,7 @@ LAB_004c41a5:
                                         iVar9 = *(int *)&local_8->field_0x215;
                                       }
                                       else {
-                                        iVar9 = (*local_8->vtable->vfunc_7C)();
+                                        iVar9 = local_8->vfunc_7C();
                                       }
                                       iVar15 = local_18;
                                       iVar17 = local_28;

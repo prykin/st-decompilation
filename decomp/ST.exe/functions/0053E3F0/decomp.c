@@ -88,7 +88,7 @@ SpecPanelTy::InitPanel
     uVar12 = 0xc000;
     uVar11 = 0xbfff;
     pCVar8 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar11 = (*(code *)pAVar2->field_0004)
                        (0,1,param_7,param_8,0,1,1,pCVar8,uVar11,uVar12,uVar13,uVar14,uVar15,uVar17,
                         uVar18);

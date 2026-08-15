@@ -63,17 +63,14 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 1) {
     DArrayDestroy(local_8->field_020E);
     pSVar13->field_020E = nullptr;
     pSVar13->field_0212 = 0;
     FreeAndNull(&pSVar13->field_021E);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
   }
   pSVar16 = local_8;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
     memset(&pSVar13->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
     iVar11 = 0;
@@ -327,7 +324,6 @@ LAB_0049aec9:
     DistributeTargets(pSVar16,(uint *)pSVar16->field_0029);
     pSVar13 = local_8;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 2) && (pSVar13->field_0212 == 0)) {
     g_currentExceptionFrame = local_70.previous;
     return 0;

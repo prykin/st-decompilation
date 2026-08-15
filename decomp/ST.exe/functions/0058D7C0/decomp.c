@@ -330,7 +330,7 @@ LAB_0058e0f9:
       thunk_FUN_004ad5e0((STT3DSprC *)&this_00->field_01D5);
       g_currentExceptionFrame = local_80.previous;
       return 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     case MESS_STSPRGAMEOBJC_0113:
       (**(code **)this_00->field_01D5)();
       g_currentExceptionFrame = local_80.previous;

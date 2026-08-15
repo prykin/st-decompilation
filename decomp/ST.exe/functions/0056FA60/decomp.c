@@ -17,6 +17,7 @@
 int __thiscall STAppC::GetMessage(STAppC *this,STMessage *message)
 
 {
+  byte stack_bytes_neg_9A4[0x318]; /* exact EBP-relative stack object */
   char cVar1;
   STAppC_field_1180State SVar2;
   byte bVar3;
@@ -694,7 +695,7 @@ cf_common_exit_0057073B:
       }
       local_44[4] = 0x7100;
       if ((DAT_00807330 & 2) != 0) {
-        memset(&stack0xfffff65c, 0, 0x318); /* compiler bulk-zero initialization */
+        memset(stack_bytes_neg_9A4, 0, 0x318); /* compiler bulk-zero initialization */
         iVar19 = 0;
         Library::MSVCRT::FUN_0072e730(&pSVar11->field_0x7c0a,local_14,local_24c,local_44c,local_54c);
         Library::MSVCRT::__makepath
@@ -702,7 +703,7 @@ cf_common_exit_0057073B:
                    PTR_s_CAMPAIGN_VPS_0079b03c,nullptr);
         local_c = (DArrayTy *)
                   thunk_FUN_00683c70(&pSVar11->field_7D1A,
-                                     (AnonShape_00683C70_22193481 *)&stack0xfffff65c,&local_50,
+                                     (AnonShape_00683C70_22193481 *)stack_bytes_neg_9A4,&local_50,
                                      nullptr,nullptr);
         if ((local_50 == 0x40) && (local_c != nullptr)) {
           uVar26 = local_c->iteratorIndex;

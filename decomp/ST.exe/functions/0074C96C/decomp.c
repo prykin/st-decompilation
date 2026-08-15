@@ -32,7 +32,7 @@ undefined4 __thiscall FUN_0074c96c(void *this,int param_1)
     STField<undefined4 *>(this,0x90) = puVar2;
     if (puVar2 == nullptr) {
       if (STField<int *>(this,0x8c) != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*STField<int *>(this,0x8c) + 0xc))(1);
       }
       STField<undefined4>(this,0x8c) = 0;

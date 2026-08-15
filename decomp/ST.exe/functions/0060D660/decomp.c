@@ -48,7 +48,6 @@ int __thiscall STFieldC::sub_0060D660(STFieldC *this,int *param_1)
   piVar7 = param_1 + iVar6 * 0x11;
   if (0 < (int)this->field_023C) {
     local_14 = 0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = piVar7;
     do {
       pvVar1 = this->field_0244;
@@ -80,7 +79,6 @@ int __thiscall STFieldC::sub_0060D660(STFieldC *this,int *param_1)
           }
         }
         piVar7 = (int *)((int)param_1 + *param_1);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = piVar7;
       }
       local_10 = local_10 + 1;

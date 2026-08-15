@@ -57,6 +57,10 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
     private static final Pattern DESTINATION_REGISTER = Pattern.compile(
         "(?i)^[A-Z]+\\s+(EAX|EBX|ECX|EDX|ESI|EDI)(?:\\s*,|$)");
     private final Map<Address, Evidence> indexed = new TreeMap<>();
+    private final Map<Address, Map<Integer, RuntimeRecordEvidence>> runtimeRecords =
+        new TreeMap<>();
+    private final Map<Address, RuntimeLooseEvidence> runtimeLooseRecords = new TreeMap<>();
+    private final Map<Address, Set<Integer>> runtimePointerDeltas = new TreeMap<>();
     private final Map<String, InitRange> zeroInitializedRanges = new TreeMap<>();
 
     @Override
@@ -67,9 +71,11 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
         File selected = outputDirectory(); if (selected == null) return;
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         scanIndexedGlobals();
+        scanRuntimeRecordPointers();
         scanBulkZeroInitialization();
         List<Row> rows = new ArrayList<>();
         rows.addAll(resourceStringBuffers());
+        rows.addAll(runtimeRecordPointers());
         Set<Address> claimedRecordFields = new HashSet<>();
         rows.addAll(bulkInitializedRecordArrays(claimedRecordFields));
         rows.addAll(squareByteMatrices(claimedRecordFields));
@@ -108,7 +114,429 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
         writeSummary(directory.resolve("global_aggregate_summary.txt"), rows);
         println("Global-aggregate analysis complete: " + directory.toAbsolutePath().normalize());
         println("Indexed candidates=" + indexed.size() + ", proposals=" + rows.size() +
+            ", runtime pointer bases=" + runtimeRecords.size() +
             ", apply=" + rows.stream().filter(row -> row.apply).count());
+    }
+
+    /**
+     * Recover globals which publish runtime-sized scratch record arrays.  The
+     * backing storage may come from alloca or the heap, so this cannot be
+     * represented as an image-backed array at the global address itself.
+     */
+    private void scanRuntimeRecordPointers() throws Exception {
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            if (function.isExternal() || function.isThunk()) continue;
+            Map<String, Integer> scales = new HashMap<>();
+            Map<String, Address> pointerGlobals = new HashMap<>();
+            Map<String, Integer> pointerBiases = new HashMap<>();
+            Map<String, Address> indexGlobals = new HashMap<>();
+            InstructionIterator instructions = currentProgram.getListing()
+                .getInstructions(function.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction instruction = instructions.next();
+                String upper = instruction.toString().toUpperCase(Locale.ROOT);
+                collectRuntimeRecordAccess(function, instruction, upper, scales,
+                    pointerGlobals, pointerBiases, indexGlobals);
+                collectRuntimePointerMutation(instruction, pointerGlobals, pointerBiases);
+                updateRuntimeOrigins(instruction, upper, pointerGlobals, pointerBiases,
+                    indexGlobals);
+                updateDerivedScales(instruction, upper, scales);
+                // Listing order follows the conditional fall-through.  Killing
+                // origins at every conditional branch loses ordinary pointer
+                // walks whose loop body contains tests before later members.
+                // The fall-through state is still valid; only a transfer with
+                // no fall-through (or a terminal) breaks the linear proof.
+                if (instruction.getFlowType().isTerminal() ||
+                        (instruction.getFlowType().isJump() &&
+                         instruction.getFallThrough() == null)) {
+                    pointerGlobals.clear();
+                    pointerBiases.clear();
+                    indexGlobals.clear();
+                }
+            }
+        }
+        mergeRuntimeLooseEvidence();
+        for (Map.Entry<Address, Map<Integer, RuntimeRecordEvidence>> entry :
+                runtimeRecords.entrySet()) {
+            Set<Integer> deltas = runtimePointerDeltas.getOrDefault(entry.getKey(), Set.of());
+            for (RuntimeRecordEvidence evidence : entry.getValue().values())
+                evidence.pointerDeltas.addAll(deltas);
+        }
+    }
+
+    /**
+     * A published record pointer may advance by whole records.  A cursor which
+     * advances by bytes or words must stay neutral: assigning it a record
+     * pointee would make source-level pointer arithmetic misrepresent the
+     * machine delta.
+     */
+    private void collectRuntimePointerMutation(Instruction instruction,
+            Map<String, Address> pointerGlobals, Map<String, Integer> pointerBiases) {
+        if (instruction.getNumOperands() == 0) return;
+        Address target = exactGlobalReference(instruction, 0);
+        if (target == null || !pointerCandidate(target)) return;
+        String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+        Integer delta = null;
+        if (("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) &&
+                instruction.getNumOperands() >= 2) {
+            int amount = integer(instruction.getDefaultOperandRepresentation(1));
+            if (amount >= 0) delta = "SUB".equals(mnemonic) ? -amount : amount;
+        }
+        else if ("INC".equals(mnemonic)) delta = 1;
+        else if ("DEC".equals(mnemonic)) delta = -1;
+        else if ("MOV".equals(mnemonic) && instruction.getNumOperands() >= 2) {
+            String source = plainRegister(instruction.getDefaultOperandRepresentation(1));
+            if (!source.isBlank() && target.equals(pointerGlobals.get(source)))
+                delta = pointerBiases.getOrDefault(source, 0);
+        }
+        if (delta != null && delta != 0)
+            runtimePointerDeltas.computeIfAbsent(target, ignored -> new TreeSet<>()).add(delta);
+    }
+
+    private void mergeRuntimeLooseEvidence() {
+        for (Map.Entry<Address, RuntimeLooseEvidence> entry :
+                runtimeLooseRecords.entrySet()) {
+            Map<Integer, RuntimeRecordEvidence> candidates = runtimeRecords.get(entry.getKey());
+            if (candidates == null) continue;
+            RuntimeLooseEvidence loose = entry.getValue();
+            for (RuntimeRecordEvidence candidate : candidates.values()) {
+                int addedSites = 0, addedReads = 0, addedWrites = 0;
+                for (RuntimeFieldEvidence source : loose.fields.values()) {
+                    int width = source.width();
+                    if (width < 1 || source.offset + width > candidate.stride) continue;
+                    RuntimeFieldEvidence target = candidate.fields.computeIfAbsent(
+                        source.offset, RuntimeFieldEvidence::new);
+                    target.absorb(source);
+                    addedSites += source.sites();
+                    addedReads += source.reads;
+                    addedWrites += source.writes;
+                }
+                if (addedSites == 0) continue;
+                candidate.functions.addAll(loose.functions);
+                candidate.sites += addedSites;
+                candidate.reads += addedReads;
+                candidate.writes += addedWrites;
+            }
+        }
+    }
+
+    private void collectRuntimeRecordAccess(Function function, Instruction instruction,
+            String rendered, Map<String, Integer> scales,
+            Map<String, Address> pointerGlobals, Map<String, Integer> pointerBiases,
+            Map<String, Address> indexGlobals) {
+        int open = rendered.indexOf('['), close = rendered.lastIndexOf(']');
+        if (open < 0 || close <= open) return;
+        String expression = rendered.substring(open + 1, close);
+        List<String> bases = pointerGlobals.keySet().stream()
+            .filter(register -> unscaledRegisterTerm(expression, register))
+            .sorted().toList();
+        if (bases.size() != 1) return;
+        String baseRegister = bases.get(0);
+        String indexExpression = expression.replaceAll(
+            "(?i)(?<![A-Z0-9_])" + Pattern.quote(baseRegister) +
+            "(?![A-Z0-9_])(?:\\s*\\*\\s*(?:0X0*1|0*1))?", "");
+        int stride = affineExpressionScale(indexExpression, scales);
+        int offset = pointerBiases.getOrDefault(baseRegister, 0) +
+            constantDisplacement(indexExpression);
+        int width = memoryWidth(rendered);
+        if (offset < 0 || width < 1 || offset + width > 0x1000) return;
+
+        Address global = pointerGlobals.get(baseRegister);
+        Data data = currentProgram.getListing().getDefinedDataAt(global);
+        Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(global);
+        if (data == null || data.getLength() != currentProgram.getDefaultPointerSize() ||
+                symbol == null || !(synthetic(symbol.getName()) || owned(global))) return;
+        String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+        String firstOperand = instruction.getNumOperands() == 0 ? "" :
+            instruction.getDefaultOperandRepresentation(0);
+        boolean write = firstOperand.contains("[") &&
+            !Set.of("CMP", "TEST", "PUSH", "CALL", "JMP", "LEA")
+                .contains(mnemonic);
+        if (stride < 8 || stride > 0x1000) {
+            // One additional register may be a byte offset/walker over the
+            // records.  Its constant displacement is still the member offset;
+            // the independently indexed sites below establish the stride.
+            if (registerCount(indexExpression) > 1) return;
+            RuntimeLooseEvidence loose = runtimeLooseRecords.computeIfAbsent(global,
+                ignored -> new RuntimeLooseEvidence());
+            RuntimeFieldEvidence field = loose.fields.computeIfAbsent(offset,
+                RuntimeFieldEvidence::new);
+            field.widths.merge(width, 1, Integer::sum);
+            if (write) { field.writes++; loose.writes++; }
+            else { field.reads++; loose.reads++; }
+            loose.functions.add(function.getEntryPoint());
+            loose.sites++;
+            if (field.examples.size() < 8)
+                field.examples.add(addr(function.getEntryPoint()) + "@" +
+                    addr(instruction.getAddress()) + " " + instruction);
+            return;
+        }
+        if (offset + width > stride) return;
+        RuntimeRecordEvidence evidence = runtimeRecords
+            .computeIfAbsent(global, ignored -> new TreeMap<>())
+            .computeIfAbsent(stride, RuntimeRecordEvidence::new);
+        RuntimeFieldEvidence field = evidence.fields.computeIfAbsent(offset,
+            RuntimeFieldEvidence::new);
+        field.widths.merge(width, 1, Integer::sum);
+        if (write) { field.writes++; evidence.writes++; }
+        else { field.reads++; evidence.reads++; }
+        evidence.functions.add(function.getEntryPoint());
+        evidence.sites++;
+        if (field.examples.size() < 8)
+            field.examples.add(addr(function.getEntryPoint()) + "@" +
+                addr(instruction.getAddress()) + " " + instruction);
+
+        Set<Address> indexSources = new TreeSet<>();
+        Matcher registers = Pattern.compile(
+            "(?i)\\b(EAX|EBX|ECX|EDX|ESI|EDI)\\b").matcher(indexExpression);
+        while (registers.find()) {
+            Address source = indexGlobals.get(registers.group(1).toUpperCase(Locale.ROOT));
+            if (source != null) indexSources.add(source);
+        }
+        if (indexSources.size() == 1)
+            evidence.indexGlobals.merge(indexSources.iterator().next(), 1, Integer::sum);
+    }
+
+    private boolean unscaledRegisterTerm(String expression, String register) {
+        Matcher matcher = Pattern.compile("(?i)(?<![A-Z0-9_])" +
+            Pattern.quote(register) + "(?![A-Z0-9_])").matcher(expression);
+        if (!matcher.find()) return false;
+        int cursor = matcher.end();
+        while (cursor < expression.length() && Character.isWhitespace(expression.charAt(cursor)))
+            cursor++;
+        if (cursor >= expression.length() || expression.charAt(cursor) != '*') return true;
+        String tail = expression.substring(cursor);
+        return tail.matches("(?i)^\\*\\s*(?:0X0*1|0*1)(?:$|[^0-9A-F].*)");
+    }
+
+    private int registerCount(String expression) {
+        int count = 0;
+        Matcher matcher = Pattern.compile(
+            "(?i)\\b(EAX|EBX|ECX|EDX|ESI|EDI)\\b").matcher(expression);
+        while (matcher.find()) count++;
+        return count;
+    }
+
+    private int constantDisplacement(String expression) {
+        int result = 0;
+        Matcher matcher = Pattern.compile(
+            "(?i)([+-])\\s*(0X[0-9A-F]+|[0-9]+)(?!\\s*\\*)")
+            .matcher(expression);
+        while (matcher.find()) {
+            int value = integer(matcher.group(2));
+            if (value < 0) return -1;
+            result += "-".equals(matcher.group(1)) ? -value : value;
+        }
+        return result;
+    }
+
+    private void updateRuntimeOrigins(Instruction instruction, String rendered,
+            Map<String, Address> pointerGlobals, Map<String, Integer> pointerBiases,
+            Map<String, Address> indexGlobals) {
+        String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+        Matcher destination = DESTINATION_REGISTER.matcher(rendered);
+        String target = destination.find() ? destination.group(1).toUpperCase(Locale.ROOT) : "";
+        if (target.isBlank()) {
+            if ("CALL".equals(mnemonic)) {
+                for (String register : List.of("EAX", "ECX", "EDX")) {
+                    pointerGlobals.remove(register);
+                    pointerBiases.remove(register);
+                    indexGlobals.remove(register);
+                }
+            }
+            return;
+        }
+        String[] operands = splitInstructionOperands(rendered);
+        if ("MOV".equals(mnemonic) && operands.length >= 2) {
+            String sourceRegister = plainRegister(operands[1]);
+            Address exact = sourceRegister.isBlank() ?
+                exactGlobalReference(instruction, 1) : null;
+            Address pointer = sourceRegister.isBlank() ? exact :
+                pointerGlobals.get(sourceRegister);
+            Address index = sourceRegister.isBlank() ? exact :
+                indexGlobals.get(sourceRegister);
+            if (pointer != null && pointerCandidate(pointer)) {
+                pointerGlobals.put(target, pointer);
+                pointerBiases.put(target, sourceRegister.isBlank() ? 0 :
+                    pointerBiases.getOrDefault(sourceRegister, 0));
+            }
+            else {
+                pointerGlobals.remove(target);
+                pointerBiases.remove(target);
+            }
+            if (index != null && scalarIndexCandidate(index)) indexGlobals.put(target, index);
+            else indexGlobals.remove(target);
+            return;
+        }
+        if ("LEA".equals(mnemonic) && operands.length >= 2) {
+            String pointerSource = uniquePointerRegister(operands[1], pointerGlobals);
+            if (!pointerSource.isBlank() && registerCount(operands[1]) == 1) {
+                pointerGlobals.put(target, pointerGlobals.get(pointerSource));
+                pointerBiases.put(target,
+                    pointerBiases.getOrDefault(pointerSource, 0) +
+                    constantDisplacement(operands[1]));
+                indexGlobals.remove(target);
+                return;
+            }
+            Address index = uniqueOrigin(operands[1], indexGlobals);
+            if (index != null) indexGlobals.put(target, index);
+            else indexGlobals.remove(target);
+            pointerGlobals.remove(target);
+            pointerBiases.remove(target);
+            return;
+        }
+        if (("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) &&
+                operands.length >= 2 && pointerGlobals.containsKey(target)) {
+            int amount = integer(operands[1]);
+            if (amount >= 0) {
+                int signed = "SUB".equals(mnemonic) ? -amount : amount;
+                pointerBiases.put(target,
+                    pointerBiases.getOrDefault(target, 0) + signed);
+                return;
+            }
+        }
+        if (!Set.of("CMP", "TEST", "PUSH").contains(mnemonic)) {
+            pointerGlobals.remove(target);
+            pointerBiases.remove(target);
+            if (!Set.of("ADD", "SUB", "IMUL", "SHL", "SHR", "SAR", "SAL")
+                    .contains(mnemonic)) indexGlobals.remove(target);
+        }
+    }
+
+    private String uniquePointerRegister(String expression,
+            Map<String, Address> pointerGlobals) {
+        Set<String> values = new TreeSet<>();
+        Matcher matcher = Pattern.compile(
+            "(?i)\\b(EAX|EBX|ECX|EDX|ESI|EDI)\\b").matcher(expression);
+        while (matcher.find()) {
+            String register = matcher.group(1).toUpperCase(Locale.ROOT);
+            if (pointerGlobals.containsKey(register)) values.add(register);
+        }
+        return values.size() == 1 ? values.iterator().next() : "";
+    }
+
+    private String[] splitInstructionOperands(String instruction) {
+        int space = instruction.indexOf(' ');
+        return space < 0 ? new String[0] :
+            instruction.substring(space + 1).split("\\s*,\\s*");
+    }
+
+    private String plainRegister(String operand) {
+        String value = operand == null ? "" : operand.trim().toUpperCase(Locale.ROOT);
+        return value.matches("EAX|EBX|ECX|EDX|ESI|EDI") ? value : "";
+    }
+
+    private Address exactGlobalReference(Instruction instruction, int operandIndex) {
+        Address result = null;
+        for (Reference reference : instruction.getReferencesFrom()) {
+            if (!reference.isMemoryReference() || reference.getOperandIndex() != operandIndex)
+                continue;
+            Address target = reference.getToAddress();
+            if (target == null || !currentProgram.getMemory().contains(target)) continue;
+            if (result != null && !result.equals(target)) return null;
+            result = target;
+        }
+        return result;
+    }
+
+    private Address uniqueOrigin(String expression, Map<String, Address> origins) {
+        Set<Address> values = new TreeSet<>();
+        Matcher matcher = Pattern.compile(
+            "(?i)\\b(EAX|EBX|ECX|EDX|ESI|EDI)\\b").matcher(expression);
+        while (matcher.find()) {
+            Address value = origins.get(matcher.group(1).toUpperCase(Locale.ROOT));
+            if (value != null) values.add(value);
+        }
+        return values.size() == 1 ? values.iterator().next() : null;
+    }
+
+    private boolean pointerCandidate(Address address) {
+        Data data = currentProgram.getListing().getDefinedDataAt(address);
+        Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(address);
+        return data != null && data.getLength() == currentProgram.getDefaultPointerSize() &&
+            symbol != null && (synthetic(symbol.getName()) || owned(address));
+    }
+
+    private boolean scalarIndexCandidate(Address address) {
+        Data data = currentProgram.getListing().getDefinedDataAt(address);
+        Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(address);
+        return data != null && data.getLength() == 4 && symbol != null &&
+            (synthetic(symbol.getName()) || owned(address));
+    }
+
+    private List<Row> runtimeRecordPointers() {
+        List<Row> result = new ArrayList<>();
+        Set<Address> emittedCounts = new HashSet<>();
+        for (Map.Entry<Address, Map<Integer, RuntimeRecordEvidence>> entry :
+                runtimeRecords.entrySet()) {
+            // If the address itself is repeatedly used as an image-backed SIB
+            // base, this word is the first element of a static table rather
+            // than one scalar which publishes a runtime pointer.  A pointer
+            // loaded from element zero must not retype the table base.
+            Evidence directIndexed = indexed.get(entry.getKey());
+            if (directIndexed != null && directIndexed.sites.size() >= 3) continue;
+            RuntimeRecordEvidence best = entry.getValue().values().stream()
+                .filter(RuntimeRecordEvidence::eligible)
+                .max(Comparator.comparingInt((RuntimeRecordEvidence value) ->
+                    value.fields.size()).thenComparingInt(value -> value.sites))
+                .orElse(null);
+            if (best == null) continue;
+            long competitors = entry.getValue().values().stream()
+                .filter(candidate -> candidate.eligible() &&
+                    candidate.fields.size() == best.fields.size() &&
+                    candidate.sites == best.sites).count();
+            if (competitors != 1) continue;
+            Address address = entry.getKey();
+            Data data = currentProgram.getListing().getDefinedDataAt(address);
+            Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(address);
+            if (data == null || symbol == null) continue;
+            List<RuntimeFieldEvidence> fields = best.selectedFields();
+            String suffix = addr(address);
+            String path = "/SubmarineTitans/Recovered/GlobalAggregates/" +
+                "RuntimeRecord_" + suffix + "_" + String.format("%04X", best.stride);
+            String record = "record:" + path + "@" + best.stride + "{" +
+                fields.stream().map(this::runtimeFieldSpec)
+                    .reduce((left, right) -> left + "|" + right).orElse("") + "}";
+            Address countGlobal = best.indexGlobals.entrySet().stream()
+                .filter(value -> value.getValue() >= 3)
+                .max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(null);
+            String evidence = "runtime pointer indexed with unique affine stride=" +
+                hex(best.stride) + "; fields=" + fields.size() +
+                "; functions=" + best.functions.size() + "; sites=" + best.sites +
+                "; reads=" + best.reads + "; writes=" + best.writes +
+                (best.pointerDeltas.isEmpty() ? "" :
+                    "; pointer_deltas=" + best.pointerDeltas) +
+                (countGlobal == null ? "" : "; index_global=" + addr(countGlobal));
+            result.add(new Row(true, suffix, symbol.getName(),
+                symbol.getSource().toString(), data.getDataType().getPathName(),
+                data.getLength(), "g_runtimeRecords_" + suffix,
+                "pointer:" + record, currentProgram.getDefaultPointerSize(),
+                "runtime_record_pointer", "high", evidence));
+            if (countGlobal != null && emittedCounts.add(countGlobal)) {
+                Data countData = currentProgram.getListing().getDefinedDataAt(countGlobal);
+                Symbol countSymbol = currentProgram.getSymbolTable()
+                    .getPrimarySymbol(countGlobal);
+                if (countData != null && countData.getLength() == 4 &&
+                        countSymbol != null && synthetic(countSymbol.getName()))
+                    result.add(new Row(true, addr(countGlobal), countSymbol.getName(),
+                        countSymbol.getSource().toString(),
+                        countData.getDataType().getPathName(), countData.getLength(),
+                        "g_runtimeRecordCount_" + addr(countGlobal), "/int", 4,
+                        "runtime_record_count", "high", evidence));
+            }
+        }
+        return result;
+    }
+
+    private String runtimeFieldSpec(RuntimeFieldEvidence field) {
+        int width = field.width();
+        String type = width == 1 ? "/byte" : width == 2 ? "/short" :
+            width == 4 ? "/int" : "/longlong";
+        return field.offset + "," + String.format("field_%04X", field.offset) +
+            "," + type;
     }
 
     /**
@@ -903,6 +1331,16 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
                 "\nAutomatic: " + rows.stream().filter(row -> row.apply).count() + "\n\n");
             for (Row row : rows) out.write(row.address + " " + row.id + " " + row.confidence +
                 " apply=" + (row.apply ? 1 : 0) + " - " + row.evidence + "\n");
+            out.write("\nRuntime pointer candidates:\n");
+            for (Map.Entry<Address, Map<Integer, RuntimeRecordEvidence>> entry :
+                    runtimeRecords.entrySet())
+                for (RuntimeRecordEvidence value : entry.getValue().values())
+                    out.write(addr(entry.getKey()) + " stride=" + hex(value.stride) +
+                        " fields=" + value.fields.size() + " functions=" +
+                        value.functions.size() + " sites=" + value.sites + " reads=" +
+                        value.reads + " writes=" + value.writes + " eligible=" +
+                        (value.eligible() ? 1 : 0) + " indexes=" + value.indexGlobals +
+                        " pointer_deltas=" + value.pointerDeltas + "\n");
         }
     }
 
@@ -938,6 +1376,75 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
         final Set<Address> functions = new TreeSet<>();
         final List<String> sites = new ArrayList<>();
         int reads, writes;
+    }
+    private static class RuntimeRecordEvidence {
+        final int stride;
+        final Map<Integer, RuntimeFieldEvidence> fields = new TreeMap<>();
+        final Set<Address> functions = new TreeSet<>();
+        final Map<Address, Integer> indexGlobals = new TreeMap<>();
+        final Set<Integer> pointerDeltas = new TreeSet<>();
+        int sites, reads, writes;
+        RuntimeRecordEvidence(int stride) { this.stride = stride; }
+        List<RuntimeFieldEvidence> selectedFields() {
+            List<RuntimeFieldEvidence> all = fields.values().stream()
+                .filter(field -> field.width() > 0)
+                .sorted(Comparator.comparingInt(value -> value.offset)).toList();
+            boolean completeUniformPartition = !all.isEmpty();
+            int cursor = 0;
+            int uniformWidth = all.isEmpty() ? -1 : all.get(0).width();
+            for (RuntimeFieldEvidence field : all) {
+                if (field.widths.size() != 1 || field.width() != uniformWidth ||
+                        field.offset != cursor) {
+                    completeUniformPartition = false;
+                    break;
+                }
+                cursor += uniformWidth;
+            }
+            if (cursor != stride) completeUniformPartition = false;
+            if (completeUniformPartition) return all;
+            return all.stream().filter(field -> field.sites() >= 2).toList();
+        }
+        boolean eligible() {
+            List<RuntimeFieldEvidence> usable = selectedFields();
+            if (usable.size() < 3 || functions.size() < 2 || sites < 12 ||
+                    reads == 0 || writes == 0) return false;
+            if (pointerDeltas.stream().anyMatch(delta ->
+                    Math.floorMod(delta, stride) != 0)) return false;
+            int end = 0;
+            for (RuntimeFieldEvidence field : usable.stream()
+                    .sorted(Comparator.comparingInt(value -> value.offset)).toList()) {
+                int width = field.width();
+                if (field.offset < end || field.offset + width > stride) return false;
+                end = field.offset + width;
+            }
+            return true;
+        }
+    }
+    private static class RuntimeFieldEvidence {
+        final int offset;
+        final Map<Integer, Integer> widths = new TreeMap<>();
+        final List<String> examples = new ArrayList<>();
+        int reads, writes;
+        RuntimeFieldEvidence(int offset) { this.offset = offset; }
+        int width() {
+            return widths.keySet().stream().filter(value ->
+                value == 1 || value == 2 || value == 4 || value == 8)
+                .mapToInt(Integer::intValue).max().orElse(-1);
+        }
+        int sites() { return reads + writes; }
+        void absorb(RuntimeFieldEvidence source) {
+            source.widths.forEach((width, count) ->
+                widths.merge(width, count, Integer::sum));
+            reads += source.reads;
+            writes += source.writes;
+            for (String example : source.examples)
+                if (examples.size() < 8 && !examples.contains(example)) examples.add(example);
+        }
+    }
+    private static class RuntimeLooseEvidence {
+        final Map<Integer, RuntimeFieldEvidence> fields = new TreeMap<>();
+        final Set<Address> functions = new TreeSet<>();
+        int sites, reads, writes;
     }
     private static class InitRange {
         final Address base;

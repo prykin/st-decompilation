@@ -35,7 +35,7 @@ undefined4 __thiscall FUN_004b9bb0(void *this,int param_1,ushort param_2,undefin
         local_a = param_3;
         local_14 = 0x5dd1;
         local_c = param_2;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)*DAT_008117bc)(local_24);
         return 0;
       }

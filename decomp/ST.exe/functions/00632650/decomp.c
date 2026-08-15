@@ -44,9 +44,7 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
   if (*(int *)this != 0) {
     thunk_FUN_00635fd0(this);
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 1;
   }
   memset(local_40, 0, 0x39); /* compiler bulk-zero initialization */

@@ -35,9 +35,9 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
           uVar12 = param_1->field_02C6;
           uVar10 = param_1->field_02C2;
           uVar8 = param_1->field_02BE;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar4 = (**(code **)(*(int *)param_1 + 0x138))();
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)(*(int *)param_1 + 0x130))();
           thunk_FUN_004ebda0(this,*(int *)&param_1->field_0x18,iVar6,iVar4,uVar8,uVar10,uVar12);
           thunk_FUN_005f05a0(param_1,(ushort)this[1].vtable,*(undefined2 *)&this[1].field_0xe);

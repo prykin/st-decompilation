@@ -187,7 +187,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
       thunk_FUN_004ad5e0((STT3DSprC *)this_01);
     }
     else {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*this_01)();
     }
   }

@@ -1098,7 +1098,6 @@ cf_common_join_004C01F3:
   case CASE_33:
     puVar22 = (undefined2 *)((int)param_1 + 0x2b);
     local_8 = (int *)((int)param_1 + 0x1d);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = nullptr;
     piVar25 = &this->field_04D8;
     do {
@@ -1117,7 +1116,6 @@ cf_common_join_004C01F3:
         bVar5 = LookupRecordByte(*(char *)&this->field_0024);
         *(byte *)((int)param_1 + 0x25 + (int)piVar4) = bVar5;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)((int)param_1 + 1);
       piVar25 = piVar25 + 10;
       local_8 = local_8 + 1;
@@ -1234,7 +1232,6 @@ cf_common_join_004C01F3:
       STField<undefined2>(param_1,0x2b) = 0xffff;
       STField<undefined2>(param_1,0x3a) = 0;
       TVar3 = this->field_05AC;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = nullptr;
       if (TVar3 == CASE_35) {
         do {
@@ -1258,7 +1255,6 @@ cf_common_join_004C01F3:
               STField<short>(piVar4,0x3a) = STField<short>(piVar4,0x3a) + 1;
             }
           }
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (int *)((int)param_1 + 1);
         } while ((int)param_1 < 0x9b);
       }
@@ -1286,7 +1282,6 @@ cf_common_join_004C01F3:
               STField<short>(piVar4,0x3a) = STField<short>(piVar4,0x3a) + 1;
             }
           }
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (int *)((int)param_1 + 1);
           local_c = local_c + 1;
         } while (*local_c != 0);
@@ -1542,7 +1537,6 @@ switchD_004bef7c_caseD_52:
   case CASE_6D:
     local_c = (int *)((int)param_1 + 0x1d);
     iVar21 = 0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = &this->field_04D8;
     do {
       if (param_1[-2] != 0) {
@@ -1552,7 +1546,6 @@ switchD_004bef7c_caseD_52:
         *(char *)(iVar21 + 0x2f + (int)piVar4) = (char)param_1[2];
       }
       iVar21 = iVar21 + 1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 1;
       local_c = local_c + 1;
     } while (iVar21 < 2);

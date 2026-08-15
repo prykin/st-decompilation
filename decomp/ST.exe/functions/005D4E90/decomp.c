@@ -111,7 +111,7 @@ LAB_005d5030:
             }
           }
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)pSVar5->field_000C + 0x18))(&pSVar5->field_0x1d);
         iVar8 = local_10;
       }

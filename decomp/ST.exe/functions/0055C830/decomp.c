@@ -109,7 +109,6 @@ LAB_0055cf74:
         bVar1 = *pbVar6_mg1;
         pbVar6_mg1 = pbVar6_mg1 + 1;
       } while (bVar1 != 0);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = Library::DKW::LIB::MemAlloc(~uVar4 + ~uVar5 + 4);
       if (param_2 != nullptr) {
         wsprintfA((LPSTR)param_2,"%s %s",pcVar3_mg2,param_4);
@@ -191,7 +190,6 @@ LAB_0055c9c5:
         bVar1 = *pbVar9_mg0;
         pbVar9_mg0 = pbVar9_mg0 + 1;
       } while (bVar1 != 0);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = Library::DKW::LIB::MemAlloc(~uVar4 + ~uVar5 + 4);
       if (param_2 != nullptr) {
         pcVar4_mg6 = LoadResourceString(0x2576,g_hINSTANCE_00807618);

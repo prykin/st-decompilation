@@ -50,7 +50,7 @@ void __thiscall st::fn_00422E20(void *this,byte param_1)
   undefined4 extraout_ECX_03;
   Global_sub_0043FC50_param_1Enum GVar3;
 
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   objPtr = (STGameObjC *)(**(code **)(*(int *)this + 4))();
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uVar2 = extraout_ECX;
@@ -121,7 +121,7 @@ void __thiscall st::fn_00422FF0(void *this,byte param_1)
   STGameObjC *objPtr;
   int iVar1;
 
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   objPtr = (STGameObjC *)(**(code **)(*(int *)this + 4))();
   if (((STField<int>(this,0x20) == 0x14) && (iVar1 = st::fn_00402EDC(objPtr), iVar1 == 0x14))
      && (objPtr->field_05C0 == 3)) {
@@ -305,7 +305,7 @@ void __thiscall st::fn_00423320(void *this,undefined4 param_1)
 
   if (STField<undefined4 *>(this,0x1c) != nullptr) {
     local_14 = param_1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*STField<undefined4 *>(this,0x1c))(local_24);
   }
   return;
@@ -424,7 +424,7 @@ undefined4 __thiscall st::fn_00423C70(void *this,short param_1)
       local_14 = 1;
       local_12 = param_1;
       local_10 = this_00->field_0018;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*STField<undefined4 *>(this,0x1c))(local_28);
     }
     uVar2 = 0;
@@ -456,7 +456,7 @@ undefined4 __thiscall st::fn_00423D80(void *this,DArrayTy *groupContent)
     index = 0;
     do {
       st::fn_006ACC70(groupContent,index,&local_c);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*(int *)this + 4))(local_c);
       if (iVar2 == 0) {
         local_8 = 1;
@@ -1262,6 +1262,8 @@ undefined4 st::fn_0042A9C0(char param_1)
 void st::fn_0042A9F0(char param_1)
 
 {
+  int _param_1 = static_cast<int>(param_1);
+
   int iVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
@@ -1272,7 +1274,6 @@ void st::fn_0042A9F0(char param_1)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   st::fn_004032E7(in_ECX,param_1,1,0,0);
   iVar1 = (int)param_1;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   auto _param_1 = 5;
   puVar2 = &g_packedRecords_A62x8[iVar1].field102_0x16d;
   do {
@@ -1287,7 +1288,6 @@ void st::fn_0042A9F0(char param_1)
     }
     STField<undefined4>(puVar2,0x46) = 0;
     puVar2 = puVar2 + 4;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_1 = _param_1 + -1;
   } while (_param_1 != 0);
   puVar2 = &g_packedRecords_A62x8[iVar1].field204_0x211;
@@ -1336,6 +1336,8 @@ void st::fn_0042AAC0(int param_1,uint param_2,int param_3)
 int st::fn_0042B5B0(char param_1,ushort param_2)
 
 {
+  int _param_1 = static_cast<int>(param_1);
+
   uint uVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;
@@ -1412,6 +1414,8 @@ int st::fn_0042B5B0(char param_1,ushort param_2)
 STGroupBoatC * st::fn_0042B760(char param_1,ushort param_2)
 
 {
+  int _param_1 = static_cast<int>(param_1);
+
   uint uVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;

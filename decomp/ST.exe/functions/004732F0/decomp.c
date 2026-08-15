@@ -110,7 +110,6 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
 
   uVar4 = 0;
   local_c = nullptr;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) ||
      (pSVar12 = this, param_1 == (AnonShape_005EFAE0_B406B78B *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
@@ -121,7 +120,6 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
     sVar16 = this->field_03BA;
     sVar17 = this->field_03BC;
     sVar18 = *(short *)&this->field_0x3be;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = *(AnonShape_005EFAE0_B406B78B **)&this->field_0x3c0;
     psVar1 = &this->field_0588;
     this->field_058A = sVar17;
@@ -144,11 +142,11 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
       }
       STFishC::sub_004162F0(local_c,psVar1,&this->field_058A,&this->field_058C);
     }
-    iVar11 = (*local_c->vtable->vfunc_F8)();
+    iVar11 = local_c->vfunc_F8();
     if (iVar11 == 0) {
       return 0;
     }
-    iVar11 = (*local_c->vtable->vfunc_A4)();
+    iVar11 = local_c->vfunc_A4();
     if (iVar11 == 1) {
       return 0;
     }
@@ -208,8 +206,9 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
                               (g_playSystem_00802A38,
                                *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,(int *)&local_c),
           iVar11 == -4)) ||
-         ((iVar11 = (*local_c->vtable->vfunc_A4)(), iVar11 == 1 ||
-          (iVar11 = (*local_c->vtable->vfunc_C0)(), iVar11 == 1)))) goto cf_common_exit_004743A5;
+         ((iVar11 = local_c->vfunc_A4(), iVar11 == 1 ||
+          (iVar11 = local_c->vfunc_C0(), iVar11 == 1))))
+      goto cf_common_exit_004743A5;
       STFishC::sub_004162F0(local_c,&this->field_0588,&this->field_058A,&this->field_058C);
       iVar11 = GetCellForLoading(this,this->field_005B,this->field_005D,this->field_005F,
                                  this->field_0588,this->field_058A,this->field_058C,&local_6,
@@ -278,8 +277,8 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
          iVar11 == -4)) {
         return 0;
       }
-      iVar11 = (*local_c->vtable->vfunc_A4)();
-      if ((iVar11 == 1) || (iVar11 = (*local_c->vtable->vfunc_C0)(), iVar11 == 1)) {
+      iVar11 = local_c->vfunc_A4();
+      if ((iVar11 == 1) || (iVar11 = local_c->vfunc_C0(), iVar11 == 1)) {
 cf_common_exit_004743A5:
         sub_00492420(this);
         return 0;
@@ -354,8 +353,8 @@ LAB_004736e2:
        iVar11 == -4)) {
       return 0;
     }
-    iVar11 = (*local_c->vtable->vfunc_A4)();
-    if ((iVar11 == 1) || (iVar11 = (*local_c->vtable->vfunc_C0)(), iVar11 == 1)) {
+    iVar11 = local_c->vfunc_A4();
+    if ((iVar11 == 1) || (iVar11 = local_c->vfunc_C0(), iVar11 == 1)) {
       sub_00492420(this);
       iVar11 = this->vfunc_D8();
       return -(uint)(iVar11 != 0);
@@ -521,8 +520,8 @@ cf_common_exit_0047405D:
                   STGridAt3D(g_worldGrid, sVar16, sVar18, sVar17).objects[0];
       }
       if (((local_c != nullptr) && (local_c->field_0018 == *(int *)&this->field_0x58e)) &&
-         ((iVar11 = (*local_c->vtable->vfunc_A4)(), iVar11 != 1 &&
-          (iVar11 = (*local_c->vtable->vfunc_C0)(), iVar11 != 1)))) {
+         ((iVar11 = local_c->vfunc_A4(), iVar11 != 1 &&
+          (iVar11 = local_c->vfunc_C0(), iVar11 != 1)))) {
         local_c->vfunc_B4();
         this->field_07CA = *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e;
         this->field_07CE = 0;

@@ -37,7 +37,7 @@ void __cdecl FUN_00676ce0(DArrayTy *param_1,undefined *param_2)
         else {
           pvVar4 = nullptr;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (*(code *)param_2)(pvVar4,pvVar6);
         if (iVar5 < 0) {
           FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)param_1,uVar7,uVar1);

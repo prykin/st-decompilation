@@ -11,7 +11,6 @@ void __thiscall ST3DSMAPContext::sub_006DDA90(ST3DSMAPContext *this,float param_
 
 {
   if (param_1 < _DAT_0079034c) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0.0;
   }
   if (_DAT_0079dfd0 < param_2) {

@@ -9,6 +9,7 @@ int __thiscall
 CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byte *param_2)
 
 {
+  byte stack_bytes_neg_90[0x20]; /* exact EBP-relative stack object */
   int iVar1;
   CGenerate *this_00;
   int local_EAX_536;
@@ -74,7 +75,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
     local_20 = local_44 / 0x640;
     local_44 = local_44 / 3;
     local_8 = Library::DKW::LIB::MemAlloc(local_28 * 4);
-    memset(&stack0xffffff70, 0, 0x20); /* compiler bulk-zero initialization */
+    memset(stack_bytes_neg_90, 0, 0x20); /* compiler bulk-zero initialization */
     iVar3 = 0;
     local_54 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x40,10);
     local_78 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x40,10);
@@ -147,14 +148,14 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       sub_0069FF90(this);
       local_EAX_1032 =
            thunk_FUN_00695180((AnonShape_0052EFB0_8161B92D *)&local_6c,
-                              (RecoveredRecord_CGenerate_00695180 *)&stack0xffffff70,(int)&local_38,
+                              (RecoveredRecord_CGenerate_00695180 *)stack_bytes_neg_90,(int)&local_38,
                               local_c);
       if (local_EAX_1032 == 0) {
         sub_00694B90(this);
       }
       else {
         local_c = 1;
-        thunk_FUN_00695140(&local_6c,(undefined4 *)&stack0xffffff70);
+        thunk_FUN_00695140(&local_6c,(undefined4 *)stack_bytes_neg_90);
         sub_00694C30(this);
       }
       local_3c = timeGetTime();
@@ -165,7 +166,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       DAT_00853dd4 = Library::DKW::LIB::MemAlloc(this->field_0008[1] * *this->field_0008 * 0x28);
       thunk_FUN_00575640((short *)this->field_000C,DAT_00853dd4,(short *)0x1);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      sub_00694CD0(this,(AnonShape_00694CD0_AC50FDB9 *)&stack0xffffff70);
+      sub_00694CD0(this,(AnonShape_00694CD0_AC50FDB9 *)stack_bytes_neg_90);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       sub_006A0470(this);
       sub_0069FF90(this);

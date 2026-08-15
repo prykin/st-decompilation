@@ -58,7 +58,7 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
     st::fn_007158A0
               ((SpriteClassTy *)&param_1->field_0x48,(int *)g_ddxContext_008075A8,param_11,'\a',
                nullptr,0,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)&param_1->field_0x48 + 4))(PTR_00806784,7,0,text,0xffffffff);
     *(int *)&param_1->field_0x64 = param_3;
     *(int *)&param_1->field_0x68 = param_4;
@@ -82,7 +82,7 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
       st::fn_007158A0
                 ((SpriteClassTy *)&param_1->field_0x16a,(int *)g_ddxContext_008075A8,param_11 - 1,
                  '\a',nullptr,0,0);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)&param_1->field_0x16a + 4))(PTR_00806784,7,0,param_12,0xffffffff);
       param_1->field_0186 = param_3 + param_13;
       param_1->field_0172 = 0;
@@ -102,7 +102,7 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
       puVar2 = (uint *)st::fn_006B0140(param_18,g_hINSTANCE_00807618);
       puVar3 = st::fn_00713480
                          (param_19,puVar2,param_20,param_21,cVar6,uVar7,param_22,param_23,param_24);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(iVar5 + 8))(puVar3,uVar8,uVar9);
     }
     param_1->field_00E1 = 0;

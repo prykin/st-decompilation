@@ -159,6 +159,11 @@ public class STGlobalAggregateApplier extends GhidraScript {
     }
 
     private DataType resolve(String specification) {
+        if (specification.startsWith("pointer:")) {
+            DataType pointed = resolve(specification.substring("pointer:".length()));
+            return pointed == null ? null : new ghidra.program.model.data.PointerDataType(
+                pointed, currentProgram.getDefaultPointerSize(), dataTypes);
+        }
         if (specification.startsWith("array:")) {
             String rest = specification.substring("array:".length());
             int colon = rest.indexOf(':');
@@ -206,7 +211,7 @@ public class STGlobalAggregateApplier extends GhidraScript {
                 structure.replaceAtOffset(field.offset, field.type,
                     field.type.getLength(), field.name, null);
             structure.setDescription(MARKER +
-                " Generated constant record layout from indexed machine-code accesses.");
+                " Generated record layout from indexed machine-code accesses.");
             DataType added = dataTypes.addDataType(structure,
                 DataTypeConflictHandler.REPLACE_HANDLER);
             return added instanceof Structure ? added : null;

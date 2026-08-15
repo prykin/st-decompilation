@@ -33,34 +33,29 @@ ST3DSMAPContext::sub_006E1C20
   fVar1 = (float)((int)param_1 * 0x10000 - local_24) * (float)_DAT_0079b148;
   fVar2 = (float)(param_2 * 0x10000 - local_20) * (float)_DAT_0079b148;
   fVar3 = param_3 * (float)_DAT_0079df60;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = fVar3;
   switch(this->field_00A8) {
   case CASE_0:
     fVar2 = fVar2 * (float)this->field_00F0;
     fVar1 = fVar1 * (float)this->field_00E8;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = fVar3 + (fVar1 + fVar2) * (float)_DAT_0079df60;
     fVar3 = fVar3 + (fVar2 * (float)_DAT_0079df60 - fVar1 * (float)_DAT_0079df60);
     break;
   case CASE_1:
     fVar1 = fVar1 * (float)this->field_00E8;
     fVar2 = fVar2 * (float)this->field_00F0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = -fVar3 + (fVar1 - fVar2) * (float)_DAT_0079df60;
     fVar3 = fVar3 + (fVar1 + fVar2) * (float)_DAT_0079df60;
     break;
   case CASE_2:
     fVar2 = fVar2 * (float)this->field_00F0;
     fVar1 = fVar1 * (float)this->field_00E8;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = -fVar3 - (fVar1 + fVar2) * (float)_DAT_0079df60;
     fVar3 = -fVar3 + (fVar1 - fVar2) * (float)_DAT_0079df60;
     break;
   case CASE_3:
     fVar2 = fVar2 * (float)this->field_00F0;
     fVar1 = fVar1 * (float)this->field_00E8;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = fVar3 + (fVar2 * (float)_DAT_0079df60 - fVar1 * (float)_DAT_0079df60);
     fVar3 = -fVar3 - (fVar1 + fVar2) * (float)_DAT_0079df60;
   }

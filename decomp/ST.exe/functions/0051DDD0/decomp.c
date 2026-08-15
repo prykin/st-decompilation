@@ -898,7 +898,7 @@ switchD_0051dfcc_caseD_7:
     this_00->field_0030 = (undefined2)UVar27;
     this_00->field_0032 = STPiece<2,2>(UVar27);
     if (g_cursorClass_00802A30 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
     }
   }
@@ -911,7 +911,7 @@ switchD_0051dfcc_caseD_7:
   *(undefined2 *)&this_00->field_0x2c = 0;
   *(undefined2 *)&this_00->field_0x2e = 2;
   *(undefined4 **)&this_00->field_0030 = local_10;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
   g_currentExceptionFrame = local_84.previous;
   return 0;

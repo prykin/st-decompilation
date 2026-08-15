@@ -24,7 +24,7 @@ int FUN_007486dd(AnonShape_007480A5_22FE1AF9 *param_1)
   if (iVar2 == 0) {
     piVar1 = *(int **)&param_1[1].field_0x28;
     if (piVar1 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar1 + 8))(piVar1);
       *(undefined4 *)&param_1[1].field_0x28 = 0;
     }

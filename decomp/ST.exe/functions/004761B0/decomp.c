@@ -24,7 +24,6 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
   int iVar5;
   undefined2 arg_2;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     iVar7 = 0;

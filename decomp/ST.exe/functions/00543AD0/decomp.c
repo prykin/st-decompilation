@@ -42,7 +42,7 @@ CursorClassTy::SetImages
   local_8->field_00B9 = -(int)param_4;
   local_8->field_00A9 = param_1;
   local_8->field_00BD = -param_5;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(local_8->field_0018 + 4))(PTR_00806784,7,0,text,0xffffffff);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   Library::DKW::DDX::FUN_006b85d0

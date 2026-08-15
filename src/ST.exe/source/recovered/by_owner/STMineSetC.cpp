@@ -194,7 +194,6 @@ byte __thiscall st::fn_006226C0(STMineSetC *this,uint param_1,int param_2)
     }
   }
   pAVar1 = this->field_0211;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((((int)param_1 < (int)pAVar1->field_0048) || ((int)pAVar1->field_0058 < (int)param_1)) ||
       ((param_2 < (int)pAVar1->field_0044 || ((int)pAVar1->field_0054 < param_2)))) ||
      (((param_1 = st::fn_006DDBD0(), pVVar2 = g_visibleClass_00802A88, param_1 != 0 &&
@@ -208,7 +207,6 @@ byte __thiscall st::fn_006226C0(STMineSetC *this,uint param_1,int param_2)
          && ((iVar4 = (int)&local_8->vtable + g_centeredOffsets5[iVar4], -1 < iVar4 &&
              ((iVar4 < pVVar2->field_0034 && (pVVar2->field_004C != nullptr)))))) &&
         (pVVar2->field_004C[param_2 + iVar4 * pVVar2->field_0030] == 0)))))))) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
   }
   return (byte)param_1;

@@ -68,13 +68,13 @@ void __thiscall st::fn_006DBAB0(ST3DSMAPContext *this)
     st::fn_006AB060(&this->field_0008);
     st::fn_006AB060(&this->field_0010);
     st::fn_006AB060(&this->field_0018);
-    st::fn_006AB060(&this->field_0158);
+    st::fn_006AB060(&this->field_0x158);
     st::fn_006AB060(&this->field_0154);
     st::fn_006AB060(&this->field_001C);
     st::fn_006AB060(&this->field_0350);
     st::fn_006AB060(&this->field_0354);
     st::fn_006AB060(&this->field_02B0);
-    st::fn_006B9890(st::pointer_boundary_cast<int *>(&this->field_0294));
+    st::fn_006B9890((int *)&this->field_0x294);
     st::fn_006E6620((int)this);
     this->field_0014 = nullptr;
     this->field_0004 = nullptr;
@@ -478,7 +478,6 @@ void __thiscall st::fn_006DDA90(ST3DSMAPContext *this,float param_1,float param_
 
 {
   if (param_1 < _DAT_0079034c) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0.0;
   }
   if (_DAT_0079dfd0 < param_2) {
@@ -648,6 +647,7 @@ void __thiscall st::fn_006DDBE0(ST3DSMAPContext *this)
 
 // 006DDD50 ST3DSMAPContext::sub_006DDD50
 #line 4 "decomp/ST.exe/functions/006DDD50/decomp.c"
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 005745E0 -> 006DDD50 @ 005746B4; data at 0080760C | 005745E0 -> 006DDD50 @ 005746CF;
@@ -685,6 +685,10 @@ uint __fastcall st::fn_006DDD50(ST3DSMAPContext *param_1)
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar19;
   int iVar20;
   ushort *puVar21;
+  undefined1 auStack_122c [252];
+  undefined4 uStack_1130;
+  undefined4 auStack_112c [1023];
+  undefined4 uStack_130;
   int local_120;
   int local_11c;
   float local_ec [2];
@@ -729,25 +733,23 @@ uint __fastcall st::fn_006DDD50(ST3DSMAPContext *param_1)
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar16;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar17;
 
+  local_14 = ExceptionList;
   puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079dff8);
   puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
-  local_14 = ExceptionList;
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffed4);
   if (((param_1->field_0004 == nullptr) ||
       (uVar7 = st::machine_word_boundary_cast<uint>(param_1->field_0004->field_000C & 0x1100), uVar7 != 0x100)) &&
      ((param_1->field_02DC == 0 || (uVar7 = 0, param_1->field_02D8 != 0)))) {
     ExceptionList = &local_14;
     param_1->field_02D8 = 1;
-    local_8 = 0;
-    st::fn_0072DA40();
-    local_3c = (undefined4 *)&stack0xfffffed4;
-    local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffed4);
-    st::fn_0072DA40();
+    uStack_130 = 0x6dddc9;
+    local_3c = auStack_112c;
+    uStack_1130 = 0x6ddddb;
+    local_1c = auStack_122c;
+    local_cc = auStack_122c;
     local_8 = 0xffffffff;
     if (((int)param_1->field_00A8 < 0) || (3 < (int)param_1->field_00A8)) {
       local_90 = param_1->field_013C;
-      while (local_90 = local_90 + -1, local_cc = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffed4), local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffed4),
-            0 < local_90) {
+      while (local_90 = local_90 + -1, 0 < local_90) {
         pRVar18 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&param_1->field_0140;
         pRVar10 = *(RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 **)pRVar18;
         local_11c = local_90;
@@ -782,8 +784,9 @@ uint __fastcall st::fn_006DDD50(ST3DSMAPContext *param_1)
       local_84 = 0;
       local_80 = 0;
       STPiece<0,4>(local_68) = temp_5f0ea6b32c;
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffed4);
-      local_cc = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffed4);
+      local_3c = auStack_112c;
+      local_1c = auStack_122c;
+      local_cc = auStack_122c;
       for (pRVar16 = temp_5f0ea6b32c; pRVar16 != nullptr;
           pRVar16 = pRVar16->next) {
         st::fn_006E25D0(param_1,local_7c,&local_88,
@@ -1152,6 +1155,8 @@ undefined4 __thiscall
 st::fn_006E1460(ST3DSMAPContext *this,double param_2,double param_3)
 
 {
+  alignas(4) byte st_stack_frame[256];
+
   double dVar1;
   int iVar2;
   uint uVar3;
@@ -1203,7 +1208,7 @@ st::fn_006E1460(ST3DSMAPContext *this,double param_2,double param_3)
   puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079e138);
   puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff0c);
+  local_1c = (st_stack_frame + 8);
   local_94 = 0;
   local_68 = 0;
   local_7c = 0;
@@ -1503,34 +1508,29 @@ st::fn_006E1C20
   fVar1 = (float)((int)param_1 * 0x10000 - local_24) * (float)_DAT_0079b148;
   fVar2 = (float)(param_2 * 0x10000 - local_20) * (float)_DAT_0079b148;
   fVar3 = param_3 * (float)_DAT_0079df60;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = fVar3;
   switch(this->field_00A8) {
   case CASE_0:
     fVar2 = fVar2 * (float)this->field_00F0;
     fVar1 = fVar1 * (float)this->field_00E8;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = fVar3 + (fVar1 + fVar2) * (float)_DAT_0079df60;
     fVar3 = fVar3 + (fVar2 * (float)_DAT_0079df60 - fVar1 * (float)_DAT_0079df60);
     break;
   case CASE_1:
     fVar1 = fVar1 * (float)this->field_00E8;
     fVar2 = fVar2 * (float)this->field_00F0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = -fVar3 + (fVar1 - fVar2) * (float)_DAT_0079df60;
     fVar3 = fVar3 + (fVar1 + fVar2) * (float)_DAT_0079df60;
     break;
   case CASE_2:
     fVar2 = fVar2 * (float)this->field_00F0;
     fVar1 = fVar1 * (float)this->field_00E8;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = -fVar3 - (fVar1 + fVar2) * (float)_DAT_0079df60;
     fVar3 = -fVar3 + (fVar1 - fVar2) * (float)_DAT_0079df60;
     break;
   case CASE_3:
     fVar2 = fVar2 * (float)this->field_00F0;
     fVar1 = fVar1 * (float)this->field_00E8;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = fVar3 + (fVar2 * (float)_DAT_0079df60 - fVar1 * (float)_DAT_0079df60);
     fVar3 = -fVar3 - (fVar1 + fVar2) * (float)_DAT_0079df60;
   }
@@ -1702,7 +1702,6 @@ float10 __thiscall st::fn_006E3210(ST3DSMAPContext *param_1,int param_2,int para
       iVar4 = param_3 / iVar2;
       iVar6 = param_3 % iVar2;
       if ((-1 < iVar4) && (iVar4 < iVar1)) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = 5;
         piVar7 = (int *)(&param_1->field_0280[1].field_0xc +
                         (param_1->field_0288 * 5 + iVar3 + iVar1 * iVar4) * 4);
@@ -1715,7 +1714,6 @@ float10 __thiscall st::fn_006E3210(ST3DSMAPContext *param_1,int param_2,int para
                    (float10)_DAT_0079dfa8 + (float10)param_1->field_0394;
           }
           piVar7 = st::pointer_boundary_cast<int *>(piVar7 + -param_1->field_0288);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = param_3 + -1;
         } while (0 < param_3);
       }
@@ -1955,12 +1953,10 @@ st::fn_006E68C0
     break;
   case CASE_2:
     iVar1 = ((iVar6 - iVar5) - param_2) + -1 + param_1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = ((iVar6 - param_1) - param_2) + -1 + iVar5;
     goto LAB_006e6a01;
   case CASE_3:
     iVar1 = ((iVar6 - param_1) - param_2) + -1 + iVar5;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = ((iVar6 - iVar5) - param_1) + -1 + param_2;
 LAB_006e6a01:
     fVar3 = (float)param_2 * fVar2 * fVar4;
@@ -2947,7 +2943,7 @@ st::fn_006E9000
   pAVar1->field_001C = param_2;
   pAVar1->field_0020 = param_1;
   pAVar1->field_0024 = param_7;
-  st::fn_006B9910(&this->field_0294,(int)pAVar1);
+  st::fn_006B9910((undefined4 *)&this->field_0x294,(int)pAVar1);
   iVar2 = st::fn_006E8EA0(this,pAVar1);
   if (iVar2 != 0) {
     this->field_0134 = 1;
@@ -2975,7 +2971,7 @@ void __thiscall st::fn_006E91D0(ST3DSMAPContext *this,int *param_1)
   if (iVar1 != 0) {
     this->field_0134 = 1;
   }
-  st::fn_006B98C0(st::pointer_boundary_cast<int *>(&this->field_0294),param_1);
+  st::fn_006B98C0((int *)&this->field_0x294,param_1);
   st::fn_006A5E90((short *)param_1);
   return;
 }
@@ -3548,12 +3544,10 @@ st::fn_00709470
   int local_c;
   int local_8;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_3 == 0) {
     iVar7 = 0;
     iVar11 = 0;
     local_8 = 0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
     piVar8 = param_1;
     iVar13 = param_2;
@@ -3578,7 +3572,6 @@ st::fn_00709470
     iVar13 = 32000;
     iVar7 = -32000;
     local_8 = 32000;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 32000;
     iVar11 = -32000;
     if (0 < param_2) {
@@ -3600,7 +3593,6 @@ st::fn_00709470
             }
             iVar3 = (int)*(short *)(iVar3 + 0x10);
             if (iVar3 < param_3) {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_3 = iVar3;
             }
             if (iVar11 < iVar3 + sVar2) {
@@ -3653,7 +3645,6 @@ st::fn_00709470
           st::fn_006B84D0(pRVar5,0,param_4 - local_8,param_4 - param_3,pbVar6);
         }
         piVar8 = piVar8 + -1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + -1;
       } while (param_2 != 0);
     }
@@ -3704,7 +3695,6 @@ st::fn_007178C0(ST3DSMAPContext *this,int param_1,int param_2,int param_3)
   byte *pbVar1;
   uint uVar2;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == this->field_04BA) {
     uVar2 = st::machine_word_boundary_cast<uint>(this->field_04B2 * param_3 + param_2 ^ 7);
     pbVar1 = (byte *)((int)this->field_046E + ((int)uVar2 >> 3));

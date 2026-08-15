@@ -142,7 +142,7 @@ STAppC::MainWindowProc
           return local_8;
         }
         local_bc = 0xa100;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(local_cc);
         g_currentExceptionFrame = local_4c.previous;
         return local_8;

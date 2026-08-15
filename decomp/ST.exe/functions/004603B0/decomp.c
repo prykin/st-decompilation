@@ -76,7 +76,7 @@ LAB_004604c9:
                     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                     uVar6 = extraout_var;
                     uVar11 = 1;
-/* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+/* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
 LAB_00460581:
                     iVar7 = (**(code **)(iVar4 + 0x18))
                                       (CONCAT22(uVar6,STField<undefined2>(this,0x47)),
@@ -89,7 +89,7 @@ LAB_00460581:
                   }
                   else if (sVar1 == 4) {
                     STField<undefined2>(this,0x469) = 0xffff;
-                    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */
+                    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable or function-table callback call with the machine-proven calling convention */
                     iVar7 = (**(code **)(*(int *)this + 0x18))
                                       (CONCAT22(extraout_var_02,STField<undefined2>(this,0x47)),
                                        CONCAT22(extraout_var,STField<undefined2>(this,0x49)),3);
@@ -108,7 +108,7 @@ LAB_00460581:
                     sVar1 = (short)iVar7;
                     STField<short>(this,0x469) = sVar1;
                     uVar6 = (undefined2)((uint)iVar7 >> 0x10);
-                    /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+                    /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
                     iVar7 = (**(code **)(*(int *)this + 0x18))
                                       (CONCAT22(uVar6,STField<undefined2>(this,0x47)),
                                        STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(STField<undefined2>(this,0x49))),
@@ -165,7 +165,7 @@ LAB_00460581:
   if ((STField<int>(this,0x82e) == 2) && (iVar7 = thunk_FUN_00483f10(this), iVar7 == 1)) {
     sVar1 = STField<short>(this,0x469);
     STField<short>(this,0x469) = -sVar1;
-    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar7 = (**(code **)(*(int *)this + 0x18))
                       (CONCAT22(extraout_var_01,STField<undefined2>(this,0x47)),
                        STField<undefined2>(this,0x49),-sVar1 + STField<short>(this,0x4b));
@@ -193,7 +193,7 @@ LAB_00460581:
       STField<undefined4>(this,0x82e) = 0;
     }
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar7 = (**(code **)(*(int *)this + 0xd8))();
   return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
 }

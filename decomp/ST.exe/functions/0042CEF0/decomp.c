@@ -22,7 +22,6 @@ STAllPlayersC::DelObjFromSaveTmps(STAllPlayersC *this,int param_1,char param_2,s
   uVar5 = (uint)DAT_0080874d;
   if (0x1a4 < param_1) {
     if (param_1 < 0x1b9) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((param_1 == 0x1b8) || (param_1 == 0x1ae)) goto LAB_0042d011;
     }
     else if ((999 < param_1) && (param_1 < 0x3ea)) {
@@ -36,9 +35,7 @@ STAllPlayersC::DelObjFromSaveTmps(STAllPlayersC *this,int param_1,char param_2,s
           if (0 < iVar2) {
             do {
               DArrayGetElement((DArrayTy *)*piVar4,uVar5,&param_1);
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               if ((short)param_1 == param_3) {
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = 0xffff;
                 Library::DKW::TBL::DArrayPut((DArrayTy *)*piVar4,uVar5,&param_1);
                 *(short *)(piVar4 + 1) = (short)piVar4[1] + -1;
@@ -69,7 +66,6 @@ LAB_0042cf42:
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_1 != 0x1a4) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == 0x14) {
       piVar4 = &g_packedRecords_A62x8[uVar5].field204_0x211;
       local_8 = 10;
@@ -80,9 +76,7 @@ LAB_0042cf42:
           if (0 < iVar2) {
             do {
               DArrayGetElement((DArrayTy *)*piVar4,uVar5,&param_1);
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               if ((short)param_1 == param_3) {
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = 0xffff;
                 Library::DKW::TBL::DArrayPut((DArrayTy *)*piVar4,uVar5,&param_1);
                 *(short *)(piVar4 + 1) = (short)piVar4[1] + -1;

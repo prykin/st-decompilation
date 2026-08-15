@@ -29,7 +29,8 @@ FUN_004934b0(void *this,short *param_1,short *param_2,short *param_3,int *param_
     if (0 < (int)dVar1) {
       do {
         DArrayGetElement(array,local_14,&local_10);
-        if ((local_10 != nullptr) && (iVar3 = (*local_10->vtable->vfunc_F8)(), iVar3 == 1)) {
+        if ((local_10 != nullptr) &&
+           (iVar3 = local_10->vfunc_F8(), iVar3 == 1)) {
           STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
           iVar2 = FUN_006aadd0((int)STField<short>(this,0x47),(int)STField<short>(this,0x49),
                                (int)STField<short>(this,0x4b),(int)local_6,(int)local_8,

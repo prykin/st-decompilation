@@ -27,13 +27,11 @@ void FUN_00496b30(uint param_1,int param_2,int param_3)
     }
     uVar1 = *piVar2 - 7;
     if ((int)uVar1 < 0) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 0;
       iVar5 = -uVar1;
     }
     else {
       iVar5 = 0;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = uVar1;
     }
     local_8 = piVar2[1] + 8;

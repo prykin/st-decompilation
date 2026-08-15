@@ -72,7 +72,7 @@ LAB_004e645f:
           pDVar7 != nullptr && (uVar10 = 0, pDVar7->count != 0)))) {
         do {
           DArrayGetElement(pDVar7,uVar10,&local_8);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           if ((local_8 != nullptr) &&
              (((iVar12 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar12 == 0x36 ||
                (iVar12 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar12 == 0x5d)) ||
@@ -90,7 +90,7 @@ LAB_004e645f:
           pDVar7 != nullptr && (uVar10 = 0, pDVar7->count != 0)))) {
         do {
           DArrayGetElement(pDVar7,uVar10,&local_8);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           if ((local_8 != nullptr) &&
              (((iVar12 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar12 == 5 ||
                (iVar12 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar12 == 0x21)) ||

@@ -44,7 +44,6 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
       local_18 = 3;
       do {
         local_14 = 3;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)0xffffff37;
         do {
           iVar10 = -200;
@@ -59,7 +58,7 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
               *(short *)(*piVar11 + 4) = (short)iVar10 + STField<short>(piVar5,0x45);
               puVar2 = (undefined2 *)*piVar11;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
-              /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+              /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
               uVar6 = (**(code **)(*piVar5 + 0x10))
                                 (CONCAT22(uVar9,STField<undefined2>(piVar5,0x41)),
                                  CONCAT22(uVar6,STField<undefined2>(piVar5,0x43)),
@@ -74,7 +73,6 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
             iVar10 = iVar10 + 200;
             local_10 = local_10 + -1;
           } while (local_10 != 0);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (int *)((int)param_1 + 0xc9);
           local_14 = local_14 + -1;
         } while (local_14 != 0);
@@ -88,7 +86,6 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
       local_10 = 2;
       do {
         local_14 = 2;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)0xffffff9c;
         do {
           iVar10 = -100;
@@ -104,7 +101,7 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
               *(short *)(*piVar11 + 4) = (short)iVar10 + STField<short>(piVar5,0x45);
               puVar2 = (undefined2 *)*piVar11;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
-              /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+              /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
               uVar6 = (**(code **)(*piVar5 + 0x10))
                                 (CONCAT22(uVar9,STField<undefined2>(piVar5,0x41)),
                                  CONCAT22(uVar6,STField<undefined2>(piVar5,0x43)),
@@ -119,7 +116,6 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
             iVar10 = iVar10 + 200;
             local_18 = local_18 + -1;
           } while (-1 < local_18);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (int *)((int)param_1 + 0xc9);
           local_14 = local_14 + -1;
         } while (local_14 != 0);

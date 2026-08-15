@@ -380,11 +380,11 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
          ((*(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 0x2000000) != 0)) {
         *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 =
              *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 0xfdfffffe;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030 + 0x50))
                   (g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030,
                    *(undefined4 *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x4,8);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030 + 0x4c))
                   (g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030);
       }
@@ -396,7 +396,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
            ((*(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 1) != 0)) {
           *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 =
                *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 0xfdfffffe;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030 + 0x50))
                     (g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030,
                      *(undefined4 *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x4,8);

@@ -40,7 +40,7 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
               (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
                (int *)&param_1);
     if ((param_1 != nullptr) && (param_1[6] == *(int *)&this->field_0x58e)) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*param_1 + 0xac))(this->field_0018);
       iVar4 = this->vfunc_D8();
       return -(uint)(iVar4 != 0);

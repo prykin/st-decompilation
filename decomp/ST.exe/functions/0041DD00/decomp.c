@@ -12,7 +12,6 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
   float fVar4;
   float fVar5;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == STField<int>(this,0x21d)) {
     return;
   }
@@ -20,7 +19,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
   if (param_1 != 1) {
     STT3DSprC::UnLoadSequence((STT3DSprC *)((int)this + 0x1d5),0);
     STT3DSprC::UnLoadSequence((STT3DSprC *)((int)this + 0x1d5),0xf);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (((0 < STField<int>(this,0x105)) && (STField<uint>(this,0x24) == (uint)DAT_0080874d))
        && ((iVar3 = (**(code **)(*(int *)this + 0x2c))(), iVar3 == 0xb ||
            ((iVar3 = (**(code **)(*(int *)this + 0x2c))(), iVar3 == 0x23 ||
@@ -51,7 +50,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
                  CONCAT22(CONCAT11(3,(char)((uint)STField<undefined4>(this,0x18) >> 0x10)),
                           STField<undefined2>(this,0x18)));
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (**(code **)(*(int *)this + 0x2c))();
     switch(uVar2) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -121,7 +120,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
                CONCAT22(CONCAT11(3,(char)((uint)STField<undefined4>(this,0x18) >> 0x10)),
                         STField<undefined2>(this,0x18)));
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*(int *)this + 0x2c))();
   switch(uVar2) {
   case 0x3c:

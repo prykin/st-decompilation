@@ -96,7 +96,7 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   PTR_0081194c = param_2;
   local_18 = 0;
   if (param_1 != nullptr) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     local_18 = (**(code **)param_2)(param_1);
     if (local_18 == 0) {
       st::fn_006A5E40

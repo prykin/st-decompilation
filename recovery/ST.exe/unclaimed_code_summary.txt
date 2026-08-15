@@ -3,12 +3,14 @@ Candidates: 166
 create_apply: 0
 review_only: 166
 orphan_direct_jump_entries_seen: 0
+exact_stored_callback_entries: 0
 raw_nonexec_executable_pointer_values: 1111
 raw_nonexec_direct_jump_pointer_values: 0
 data_referenced_code: 8
 seh_filter: 158
 
 Safety boundary:
-  create_apply=1 requires an exact referenced direct-JMP chain.
-  Raw direct targets, MSVC EH filters/funclets, jump-only tails, and
-  merely plausible instruction bytes remain review-only.
+  create_apply=1 requires an exact referenced direct-JMP chain or an
+  exact MOV [memory], imm32 callback store to a standalone entry/RET stub.
+  Other raw direct targets, MSVC EH filters/funclets, jump-only tails,
+  and merely plausible instruction bytes remain review-only.

@@ -483,7 +483,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079ADB8	InterSystemC	3	0xC	0079ADC4	006E5670	FUN_006e5670	006E5670	FUN_006e5670	false	false	006E5670	FUN_006e5670	false	006E5670	FUN_006e5670		InterSystemC::vfunc_0C	0	0
 0079ADB8	InterSystemC	4	0x10	0079ADC8	006E5690	FUN_006e5690	006E5690	FUN_006e5690	false	false	006E5690	FUN_006e5690	false	006E5690	FUN_006e5690		InterSystemC::vfunc_10	0	0
 0079ADB8	InterSystemC	5	0x14	0079ADCC	00401DCA	InterSystemC::CreateSystemObjects	00401DCA	InterSystemC::CreateSystemObjects	false	false	00401DCA	InterSystemC::CreateSystemObjects	true	00542480	InterSystemC::CreateSystemObjects	InterSystemC	InterSystemC::CreateSystemObjects	0	0
-0079ADB8	InterSystemC	6	0x18	0079ADD0	006E5950	FUN_006e5950	006E5950	FUN_006e5950	false	false	006E5950	FUN_006e5950	false	006E5950	FUN_006e5950		InterSystemC::vfunc_18	0	0
+0079ADB8	InterSystemC	6	0x18	0079ADD0	006E5950	Library::Ourlib::SAPP::FUN_006e5950	006E5950	Library::Ourlib::SAPP::FUN_006e5950	false	false	006E5950	Library::Ourlib::SAPP::FUN_006e5950	false	006E5950	Library::Ourlib::SAPP::FUN_006e5950		InterSystemC::vfunc_18	0	0
 0079ADB8	InterSystemC	7	0x1C	0079ADD4	006E5D90	SystemClassTy::Life	006E5D90	SystemClassTy::Life	false	false	006E5D90	SystemClassTy::Life	false	006E5D90	SystemClassTy::Life		SystemClassTy::Life	0	0
 0079ADB8	InterSystemC	8	0x20	0079ADD8	00402A63	InterSystemC::GetMessage	00402A63	InterSystemC::GetMessage	false	false	00402A63	InterSystemC::GetMessage	true	00542F40	InterSystemC::GetMessage	InterSystemC	InterSystemC::GetMessage	0	0
 0079ADF4		0	0x0	0079ADF4	00716040	SpriteClassTy::SetImages	00716040	SpriteClassTy::SetImages	false	false	00716040	SpriteClassTy::SetImages	false	00716040	SpriteClassTy::SetImages		SpriteClassTy::SetImages	0	0
@@ -557,7 +557,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079B1B4	BaseSystemC	3	0xC	0079B1C0	006E5670	FUN_006e5670	006E5670	FUN_006e5670	false	false	006E5670	FUN_006e5670	false	006E5670	FUN_006e5670		BaseSystemC::vfunc_0C	0	0
 0079B1B4	BaseSystemC	4	0x10	0079B1C4	006E5690	FUN_006e5690	006E5690	FUN_006e5690	false	false	006E5690	FUN_006e5690	false	006E5690	FUN_006e5690		BaseSystemC::vfunc_10	0	0
 0079B1B4	BaseSystemC	5	0x14	0079B1C8	00403EF4	BaseSystemC::CreateSystemObjects	00403EF4	BaseSystemC::CreateSystemObjects	false	false	00403EF4	BaseSystemC::CreateSystemObjects	true	00576AD0	BaseSystemC::CreateSystemObjects	BaseSystemC	BaseSystemC::CreateSystemObjects	0	0
-0079B1B4	BaseSystemC	6	0x18	0079B1CC	006E5950	FUN_006e5950	006E5950	FUN_006e5950	false	false	006E5950	FUN_006e5950	false	006E5950	FUN_006e5950		BaseSystemC::vfunc_18	0	0
+0079B1B4	BaseSystemC	6	0x18	0079B1CC	006E5950	Library::Ourlib::SAPP::FUN_006e5950	006E5950	Library::Ourlib::SAPP::FUN_006e5950	false	false	006E5950	Library::Ourlib::SAPP::FUN_006e5950	false	006E5950	Library::Ourlib::SAPP::FUN_006e5950		BaseSystemC::vfunc_18	0	0
 0079B1B4	BaseSystemC	7	0x1C	0079B1D0	006E5D90	SystemClassTy::Life	006E5D90	SystemClassTy::Life	false	false	006E5D90	SystemClassTy::Life	false	006E5D90	SystemClassTy::Life		SystemClassTy::Life	0	0
 0079B1B4	BaseSystemC	8	0x20	0079B1D4	006E5F00	SystemClassTy::GetMessage	006E5F00	SystemClassTy::GetMessage	false	false	006E5F00	SystemClassTy::GetMessage	false	006E5F00	SystemClassTy::GetMessage		SystemClassTy::GetMessage	0	0
 0079B1E0	GameSystemC	0	0x0	0079B1E0	00404589	GameSystemC::InitSystem	00404589	GameSystemC::InitSystem	false	false	00404589	GameSystemC::InitSystem	true	00576EF0	GameSystemC::InitSystem	GameSystemC	GameSystemC::InitSystem	0	0
@@ -566,7 +566,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079B1E0	GameSystemC	3	0xC	0079B1EC	006E5670	FUN_006e5670	006E5670	FUN_006e5670	false	false	006E5670	FUN_006e5670	false	006E5670	FUN_006e5670		GameSystemC::vfunc_0C	0	0
 0079B1E0	GameSystemC	4	0x10	0079B1F0	006E5690	FUN_006e5690	006E5690	FUN_006e5690	false	false	006E5690	FUN_006e5690	false	006E5690	FUN_006e5690		GameSystemC::vfunc_10	0	0
 0079B1E0	GameSystemC	5	0x14	0079B1F4	004019CE	GameSystemC::CreateSystemObjects	004019CE	GameSystemC::CreateSystemObjects	false	false	004019CE	GameSystemC::CreateSystemObjects	true	00576E10	GameSystemC::CreateSystemObjects	GameSystemC	GameSystemC::CreateSystemObjects	0	0
-0079B1E0	GameSystemC	6	0x18	0079B1F8	006E5950	FUN_006e5950	006E5950	FUN_006e5950	false	false	006E5950	FUN_006e5950	false	006E5950	FUN_006e5950		GameSystemC::vfunc_18	0	0
+0079B1E0	GameSystemC	6	0x18	0079B1F8	006E5950	Library::Ourlib::SAPP::FUN_006e5950	006E5950	Library::Ourlib::SAPP::FUN_006e5950	false	false	006E5950	Library::Ourlib::SAPP::FUN_006e5950	false	006E5950	Library::Ourlib::SAPP::FUN_006e5950		GameSystemC::vfunc_18	0	0
 0079B1E0	GameSystemC	7	0x1C	0079B1FC	00402F95	thunk_FUN_00577440	00402F95	thunk_FUN_00577440	false	false	00402F95	thunk_FUN_00577440	true	00577440	FUN_00577440		GameSystemC::vfunc_1C	0	0
 0079B1E0	GameSystemC	8	0x20	0079B200	0040482C	GameSystemC::GetMessage	0040482C	GameSystemC::GetMessage	false	false	0040482C	GameSystemC::GetMessage	true	005776D0	GameSystemC::GetMessage	GameSystemC	GameSystemC::GetMessage	0	0
 0079B20C	DebugSystemC	0	0x0	0079B20C	006E51F0	SystemClassTy::InitSystem	006E51F0	SystemClassTy::InitSystem	false	false	006E51F0	SystemClassTy::InitSystem	false	006E51F0	SystemClassTy::InitSystem		SystemClassTy::InitSystem	0	0
@@ -575,7 +575,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079B20C	DebugSystemC	3	0xC	0079B218	006E5670	FUN_006e5670	006E5670	FUN_006e5670	false	false	006E5670	FUN_006e5670	false	006E5670	FUN_006e5670		DebugSystemC::vfunc_0C	0	0
 0079B20C	DebugSystemC	4	0x10	0079B21C	006E5690	FUN_006e5690	006E5690	FUN_006e5690	false	false	006E5690	FUN_006e5690	false	006E5690	FUN_006e5690		DebugSystemC::vfunc_10	0	0
 0079B20C	DebugSystemC	5	0x14	0079B220	00403DAA	DebugSystemC::CreateSystemObjects	00403DAA	DebugSystemC::CreateSystemObjects	false	false	00403DAA	DebugSystemC::CreateSystemObjects	true	00578200	DebugSystemC::CreateSystemObjects	DebugSystemC	DebugSystemC::CreateSystemObjects	0	0
-0079B20C	DebugSystemC	6	0x18	0079B224	006E5950	FUN_006e5950	006E5950	FUN_006e5950	false	false	006E5950	FUN_006e5950	false	006E5950	FUN_006e5950		DebugSystemC::vfunc_18	0	0
+0079B20C	DebugSystemC	6	0x18	0079B224	006E5950	Library::Ourlib::SAPP::FUN_006e5950	006E5950	Library::Ourlib::SAPP::FUN_006e5950	false	false	006E5950	Library::Ourlib::SAPP::FUN_006e5950	false	006E5950	Library::Ourlib::SAPP::FUN_006e5950		DebugSystemC::vfunc_18	0	0
 0079B20C	DebugSystemC	7	0x1C	0079B228	006E5D90	SystemClassTy::Life	006E5D90	SystemClassTy::Life	false	false	006E5D90	SystemClassTy::Life	false	006E5D90	SystemClassTy::Life		SystemClassTy::Life	0	0
 0079B20C	DebugSystemC	8	0x20	0079B22C	006E5F00	SystemClassTy::GetMessage	006E5F00	SystemClassTy::GetMessage	false	false	006E5F00	SystemClassTy::GetMessage	false	006E5F00	SystemClassTy::GetMessage		SystemClassTy::GetMessage	0	0
 0079B238	STCrabC	0	0x0	0079B238	00405871	STCrabC::GetMessage	00405871	STCrabC::GetMessage	false	false	00405871	STCrabC::GetMessage	true	00578630	STCrabC::GetMessage	STCrabC	STCrabC::GetMessage	0	0
@@ -1355,7 +1355,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079C1E8	StartSystemTy	3	0xC	0079C1F4	006E5670	FUN_006e5670	006E5670	FUN_006e5670	false	false	006E5670	FUN_006e5670	false	006E5670	FUN_006e5670		StartSystemTy::vfunc_0C	0	0
 0079C1E8	StartSystemTy	4	0x10	0079C1F8	006E5690	FUN_006e5690	006E5690	FUN_006e5690	false	false	006E5690	FUN_006e5690	false	006E5690	FUN_006e5690		StartSystemTy::vfunc_10	0	0
 0079C1E8	StartSystemTy	5	0x14	0079C1FC	00402171	StartSystemTy::CreateSystemObjects	00402171	StartSystemTy::CreateSystemObjects	false	false	00402171	StartSystemTy::CreateSystemObjects	true	005DCD90	StartSystemTy::CreateSystemObjects	StartSystemTy	StartSystemTy::CreateSystemObjects	0	0
-0079C1E8	StartSystemTy	6	0x18	0079C200	006E5950	FUN_006e5950	006E5950	FUN_006e5950	false	false	006E5950	FUN_006e5950	false	006E5950	FUN_006e5950		StartSystemTy::vfunc_18	0	0
+0079C1E8	StartSystemTy	6	0x18	0079C200	006E5950	Library::Ourlib::SAPP::FUN_006e5950	006E5950	Library::Ourlib::SAPP::FUN_006e5950	false	false	006E5950	Library::Ourlib::SAPP::FUN_006e5950	false	006E5950	Library::Ourlib::SAPP::FUN_006e5950		StartSystemTy::vfunc_18	0	0
 0079C1E8	StartSystemTy	7	0x1C	0079C204	006E5D90	SystemClassTy::Life	006E5D90	SystemClassTy::Life	false	false	006E5D90	SystemClassTy::Life	false	006E5D90	SystemClassTy::Life		SystemClassTy::Life	0	0
 0079C1E8	StartSystemTy	8	0x20	0079C208	004046CE	StartSystemTy::GetMessage	004046CE	StartSystemTy::GetMessage	false	false	004046CE	StartSystemTy::GetMessage	true	005DCE90	StartSystemTy::GetMessage	StartSystemTy	StartSystemTy::GetMessage	0	0
 0079C238	MTaskTy	0	0x0	0079C238	004020F4	MTaskTy::GetMessage	004020F4	MTaskTy::GetMessage	false	false	004020F4	MTaskTy::GetMessage	true	005E4570	MTaskTy::GetMessage	MTaskTy	MTaskTy::GetMessage	0	0
@@ -2650,7 +2650,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079E188	SystemClassTy	3	0xC	0079E194	006E5670	FUN_006e5670	006E5670	FUN_006e5670	false	false	006E5670	FUN_006e5670	false	006E5670	FUN_006e5670		SystemClassTy::vfunc_0C	0	0
 0079E188	SystemClassTy	4	0x10	0079E198	006E5690	FUN_006e5690	006E5690	FUN_006e5690	false	false	006E5690	FUN_006e5690	false	006E5690	FUN_006e5690		SystemClassTy::vfunc_10	0	0
 0079E188	SystemClassTy	5	0x14	0079E19C	00734210	Library::MSVCRT::FUN_00734210	00734210	Library::MSVCRT::FUN_00734210	false	false	00734210	Library::MSVCRT::FUN_00734210	false	00734210	Library::MSVCRT::FUN_00734210		SystemClassTy::vfunc_14	0	0
-0079E188	SystemClassTy	6	0x18	0079E1A0	006E5950	FUN_006e5950	006E5950	FUN_006e5950	false	false	006E5950	FUN_006e5950	false	006E5950	FUN_006e5950		SystemClassTy::vfunc_18	0	0
+0079E188	SystemClassTy	6	0x18	0079E1A0	006E5950	Library::Ourlib::SAPP::FUN_006e5950	006E5950	Library::Ourlib::SAPP::FUN_006e5950	false	false	006E5950	Library::Ourlib::SAPP::FUN_006e5950	false	006E5950	Library::Ourlib::SAPP::FUN_006e5950		SystemClassTy::vfunc_18	0	0
 0079E188	SystemClassTy	7	0x1C	0079E1A4	006E5D90	SystemClassTy::Life	006E5D90	SystemClassTy::Life	false	false	006E5D90	SystemClassTy::Life	false	006E5D90	SystemClassTy::Life		SystemClassTy::Life	0	0
 0079E188	SystemClassTy	8	0x20	0079E1A8	006E5F00	SystemClassTy::GetMessage	006E5F00	SystemClassTy::GetMessage	false	false	006E5F00	SystemClassTy::GetMessage	false	006E5F00	SystemClassTy::GetMessage		SystemClassTy::GetMessage	0	0
 0079E1AC		0	0x0	0079E1AC	006E5FD0	FUN_006e5fd0	006E5FD0	FUN_006e5fd0	false	false	006E5FD0	FUN_006e5fd0	false	006E5FD0	FUN_006e5fd0		FUN_006e5fd0	0	0

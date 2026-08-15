@@ -127,12 +127,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
             *puVar8 = iVar6 + -2;
             this_01->field_027A = 5;
             iVar6 = *(int *)&pAVar3->field_0x20;
-            if (iVar6 < 0) {
-              iVar6 = (short)(iVar6 / 0xc9) + -1;
-            }
-            else {
-              iVar6 = (int)(short)(iVar6 / 0xc9);
-            }
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar6 + -2;
             this_01->field_027E = 5;
             local_EAX_481 =
@@ -154,12 +149,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
             *puVar8 = iVar6 + -2;
             this_01->field_027A = 5;
             iVar6 = *(int *)&pAVar3->field_0x20;
-            if (iVar6 < 0) {
-              iVar6 = (short)(iVar6 / 0xc9) + -1;
-            }
-            else {
-              iVar6 = (int)(short)(iVar6 / 0xc9);
-            }
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar6 + -2;
             this_01->field_027E = 5;
             local_EAX_859 =
@@ -174,12 +164,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
             *puVar8 = iVar6 + -2;
             this_01->field_027A = 5;
             iVar6 = *(int *)&pAVar3->field_0x20;
-            if (iVar6 < 0) {
-              iVar6 = (short)(iVar6 / 0xc9) + -1;
-            }
-            else {
-              iVar6 = (int)(short)(iVar6 / 0xc9);
-            }
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar6 + -2;
             this_01->field_027E = 5;
             local_EAX_1048 =
@@ -195,12 +180,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
             *puVar8 = iVar6 + -2;
             this_01->field_027A = 5;
             iVar6 = *(int *)&pAVar3->field_0x20;
-            if (iVar6 < 0) {
-              iVar6 = (short)(iVar6 / 0xc9) + -1;
-            }
-            else {
-              iVar6 = (int)(short)(iVar6 / 0xc9);
-            }
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar6 + -2;
             this_01->field_027E = 5;
             local_EAX_1235 =
@@ -219,12 +199,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
           *puVar8 = iVar6 + -2;
           this_01->field_027A = 5;
           iVar6 = *(int *)&pAVar3->field_0x20;
-          if (iVar6 < 0) {
-            iVar6 = (short)(iVar6 / 0xc9) + -1;
-          }
-          else {
-            iVar6 = (int)(short)(iVar6 / 0xc9);
-          }
+          iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
           this_01->field_0276 = iVar6 + -2;
           this_01->field_027E = 5;
           local_EAX_670 =

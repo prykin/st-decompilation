@@ -66,7 +66,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       }
       Library::DKW::TBL::DArrayAppend((DArrayTy *)pSVar2->field_002D,&param_1);
       local_5 = 0xff;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(pSVar2->vtable + 8))(0x65,&local_5);
     }
     uVar4 = thunk_FUN_00423120((int)this_00);
@@ -125,7 +125,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       local_28 = 0;
       local_26 = (short)param_1;
       local_24 = this_00->field_0018;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)**(undefined4 **)pSVar2->field_001C)(local_3c);
     }
     g_currentExceptionFrame = local_80.previous;

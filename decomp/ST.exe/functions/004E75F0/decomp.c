@@ -15,7 +15,6 @@ void FUN_004e75f0(int param_1)
   iVar2 = param_1;
   if ((-1 < param_1) && (param_1 < 8)) {
     bVar3 = LookupRecordByte((char)param_1);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
     if (0 < *(int *)(&DAT_007995bc + (bVar3 - 1) * 0x4bf)) {
       puVar5 = (uint *)(&DAT_007995bc + (bVar3 - 1) * 0x4bf);
@@ -31,7 +30,6 @@ void FUN_004e75f0(int param_1)
         }
         piVar1 = (int *)((int)puVar5 + 5);
         puVar5 = (uint *)((int)puVar5 + 5);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 1;
       } while (0 < *piVar1);
     }

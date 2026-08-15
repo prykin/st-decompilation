@@ -159,7 +159,7 @@ switchD_004806bc_caseD_a:
             STField<int>(param_1,0x74a) = iVar3 + -1;
           }
           if (STField<int>(param_1,0x74a) == (int)PTR_00806724->entryCount / 2 + 1) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (*(code *)**(undefined4 **)this)();
           }
           sVar13 = PTR_00806724->entryCount;
@@ -262,7 +262,7 @@ LAB_00480b30:
                 STField<int>(param_1,0x74a) = iVar3 + -1;
               }
               if (STField<int>(param_1,0x74a) == (int)PTR_00806724->entryCount / 2 + 1) {
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 (*(code *)**(undefined4 **)this)();
               }
             }
@@ -281,7 +281,7 @@ LAB_00480b30:
         STT3DSprC::sub_004ACE30(this,0,0);
       }
       if (STField<int>(param_1,0x74a) == (int)PTR_00806724->entryCount / 2 + 1) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (*(code *)**(undefined4 **)this)();
       }
       if (STField<int>(param_1,0x74a) <= (int)PTR_00806724->entryCount / 2) goto LAB_00480c7f;

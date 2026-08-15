@@ -188,7 +188,7 @@ LAB_00639dab:
     TraksClassTy::TraksCreate
               (g_traksClass_00802A7C,0,1,uVar11 >> 0x10 & 1,STField<int>(this,0x266),
                STField<int>(this,0x26a),STField<int>(this,0x26e) - iVar10,0,0,0,0,0,0,-1,0,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar12 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == nullptr) {
@@ -269,7 +269,7 @@ LAB_0063a27d:
     STField<uint>(this,0x28e) = g_playSystem_00802A38->field_00E4;
     sub_00416240(this,STField<ushort>(this,0x266),STField<short>(this,0x26a),
                  STField<ushort>(this,0x26e));
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar12 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != nullptr) {
@@ -351,7 +351,7 @@ LAB_0063a27d:
     }
     sub_00416240(this,STField<ushort>(this,0x266),STField<short>(this,0x26a),
                  STField<ushort>(this,0x26e));
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar12 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == nullptr) {
@@ -406,7 +406,7 @@ LAB_0063a728:
                  STField<int>(this,0x26a),STField<int>(this,0x26e),uVar6 & 1,uVar6 & 1,0,0,0,0
                  ,-1,0,0);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar12 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == nullptr) {
@@ -441,7 +441,7 @@ LAB_0063a728:
     if (uVar10 == 0) {
       sub_00416240(this,STField<ushort>(this,0x266),STField<short>(this,0x26a),
                    STField<ushort>(this,0x26e));
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0xd8))();
       pVVar12 = g_visibleClass_00802A88;
       if (g_visibleClass_00802A88 != nullptr) {
@@ -550,7 +550,7 @@ LAB_0063a728:
     }
     sub_00416240(this,STField<ushort>(this,0x266),STField<short>(this,0x26a),
                  STField<ushort>(this,0x26e));
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar12 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == nullptr) {
@@ -597,7 +597,7 @@ LAB_0063a728:
       STField<undefined1>(this,0x265) = 8;
       sub_00416240(this,STField<ushort>(this,0x266),STField<short>(this,0x26a),
                    STField<ushort>(this,0x26e));
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0xd8))();
       return 0;
     }
@@ -618,7 +618,7 @@ LAB_0063a728:
     if (iVar10 + -1 == iVar9) {
       STField<undefined1>(this,0x265) = 0xd;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0xd8))();
     return 0;
   case 9:
@@ -725,7 +725,6 @@ LAB_0063a728:
                    (STField<int>(this,0x2a4) * iVar10) / 0xc9,
                    (STField<int>(this,0x2a8) * iVar10) / 0xc9);
         lVar16 = Library::MSVCRT::__ftol();
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (STMessage *)((short)lVar16 + 0x2d);
       }
       uVar11 = STField<int>(this,0x367) + 1;

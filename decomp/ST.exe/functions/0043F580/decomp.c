@@ -22,11 +22,9 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
 
   local_8 = (int)param_3;
   iVar7 = (int)param_5;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_3 = param_6 + -1 + local_8;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_6 = (int)param_4;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_4 = param_7 + -1 + _param_6;
   iVar3 = param_8 + -1 + iVar7;
   if (local_8 < 0) {
@@ -34,7 +32,6 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
   }
   iVar5 = local_8;
   if (g_worldGrid.sizeX + -1 < _param_3) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_3 = g_worldGrid.sizeX + -1;
   }
   if (_param_6 < 0) {
@@ -42,7 +39,6 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
     _param_6 = 0;
   }
   if (g_worldGrid.sizeY + -1 < _param_4) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_4 = g_worldGrid.sizeY + -1;
   }
   if (iVar7 < 0) {
@@ -54,7 +50,6 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
   local_c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   iVar6 = g_worldGrid.sizeX * _param_6 + iVar5 + (iVar7 + -1) * (int)g_worldGrid.planeStride;
   if (iVar7 <= iVar3) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_8 = (iVar3 - iVar7) + 1;
     do {
       iVar6 = iVar6 + g_worldGrid.planeStride;
@@ -65,13 +60,12 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
         do {
           local_10 = local_10 + g_worldGrid.sizeX;
           if (iVar5 <= _param_3) {
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_7 = (_param_3 - local_8) + 1;
             iVar7 = local_10 * 8 + -8;
             do {
               piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar7);
               if ((piVar2 != nullptr) && (piVar2[9] == (int)param_1)) {
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 (**(code **)(*piVar2 + 0x74))(local_24);
                 pbVar8 = local_24;
                 pbVar4 = param_2;
@@ -96,7 +90,6 @@ LAB_0043f6e8:
                   Library::DKW::TBL::DArrayAppend(local_c,(void *)((int)piVar2 + 0x32));
                 }
               }
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_7 = _param_7 + -1;
               iVar6 = local_14;
               iVar5 = local_8;
@@ -106,7 +99,6 @@ LAB_0043f6e8:
           iVar3 = iVar3 + -1;
         } while (iVar3 != 0);
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_8 = _param_8 + -1;
     } while (_param_8 != 0);
   }

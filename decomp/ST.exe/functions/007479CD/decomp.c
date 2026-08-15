@@ -39,13 +39,12 @@ uint FUN_007479cd(AnonShape_00747AA5_87CB4B56 *param_1,uint param_2,LPVOID *para
       else {
         *param_4 = 0;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = nullptr;
       while (param_2 != 0) {
         FUN_0074b91d(local_4c);
         iVar4 = pAVar1->field_0004;
         pAVar1->field_0004 = iVar4 + 1;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (**(code **)(*pAVar1->field_0008 + 0x34))(iVar4,local_4c);
         if (iVar4 != 0) {
 LAB_00747a71:
@@ -58,9 +57,7 @@ LAB_00747a71:
         param_3 = param_3 + 1;
         puVar6 = (byte *)(local_4c);
         memmove(puVar5, puVar6, 0x48); /* compiler REP MOVS byte copy */
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_00747AA5_87CB4B56 *)&param_1->field_0x1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 - 1;
         local_8 = 0;
         local_c = 0;

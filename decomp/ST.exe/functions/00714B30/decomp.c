@@ -43,7 +43,6 @@ undefined4 __thiscall FUN_00714b30(void *this,int param_1)
     iVar3 = *(int *)(iVar1 + 0x76);
   }
   if (*(int *)(iVar1 + 0x7a) == 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
     if (0 < iVar2) {
       do {
@@ -51,7 +50,6 @@ undefined4 __thiscall FUN_00714b30(void *this,int param_1)
         if (iVar5 == 0) {
           return 0xfffffffc;
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 1;
       } while (param_1 < iVar2);
     }

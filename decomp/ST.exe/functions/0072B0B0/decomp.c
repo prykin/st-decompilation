@@ -95,7 +95,7 @@ void FUN_0072b0b0(void)
         local_8 = 0xffffffff;
       }
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(**(int **)(*DAT_00857134 + 0x44) + 0x80))(*(int **)(*DAT_00857134 + 0x44),0);
     local_54.x = DAT_00857134[1];
     local_54.y = DAT_00857134[2];
@@ -118,7 +118,7 @@ void FUN_0072b0b0(void)
         local_4c = local_90 + LVar2;
         local_48 = local_8c + LVar3;
         piVar1 = *(int **)(*DAT_00857134 + 0x34);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         local_3c = (**(code **)(*piVar1 + 0x14))
                              (piVar1,&local_54,*(undefined4 *)(*DAT_00857134 + 0x44),&local_98,
                               0x1000000,0);
@@ -135,11 +135,11 @@ void FUN_0072b0b0(void)
                      ,local_2c);
             iVar4 = local_84;
             local_8 = 0xffffffff;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(**(int **)(*DAT_00857134 + 0x44) + 0x80))
                       (*(int **)(*DAT_00857134 + 0x44),0);
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(**(int **)(*DAT_00857134 + 0x34) + 0x80))(*(int **)(*DAT_00857134 + 0x34),0);
         }
       }
@@ -175,7 +175,7 @@ void FUN_0072b0b0(void)
       local_48 = iVar4 + LVar3;
       piVar1 = *(int **)(*DAT_00857134 + 0x34);
       local_8c = iVar4;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(*piVar1 + 0x14))
                         (piVar1,&local_54,*(undefined4 *)(*DAT_00857134 + 0x44),&local_98,0x1000000,
                          0);
@@ -189,10 +189,10 @@ void FUN_0072b0b0(void)
                    (byte *)(local_94 * (int)local_20 + local_98 + local_24),(int)local_20,
                    local_68 - local_5c,iVar4 - local_80);
           local_8 = 0xffffffff;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(**(int **)(*DAT_00857134 + 0x44) + 0x80))(*(int **)(*DAT_00857134 + 0x44),0);
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(**(int **)(*DAT_00857134 + 0x34) + 0x80))(*(int **)(*DAT_00857134 + 0x34),0);
       }
       local_3c = local_3c | uVar6;

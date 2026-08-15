@@ -110,17 +110,17 @@ cf_common_exit_004EB94E:
     uVar2 = LookupRecordByte(STField<char>(this,0x24));
     uVar2 = (int)(byte)uVar2;
     if (uVar2 == 1) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0x90))(6,0x6e);
     }
     else {
       if (uVar2 == 2) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)this + 0x90))(6,0x6f);
         return 0;
       }
       if (uVar2 == 3) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)this + 0x90))(6,0x70);
         return 0;
       }

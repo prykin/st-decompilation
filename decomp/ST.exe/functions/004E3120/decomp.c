@@ -34,7 +34,7 @@ undefined4 __thiscall TLOBaseTy::sub_004E3120(TLOBaseTy *this)
       local_10 = uVar1;
       uVar2 = thunk_FUN_004e60d0((int)this->field_0024,*(int *)&this->field_0x369);
       local_a = (short)uVar2 + 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*DAT_008117bc)(local_24);
     }
     this->field_04D0 = CASE_0;

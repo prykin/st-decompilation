@@ -17,7 +17,6 @@ void __cdecl FUN_006e8460(int param_1,int param_2,uint param_3,byte param_4)
 
   iVar1 = DAT_00856d84;
   lVar6 = Library::MSVCRT::__ftol();
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (int)lVar6;
   lVar6 = Library::MSVCRT::__ftol();
   iVar4 = (int)lVar6;
@@ -30,25 +29,20 @@ void __cdecl FUN_006e8460(int param_1,int param_2,uint param_3,byte param_4)
   if (iVar1 < iVar4) {
     iVar3 = (iVar1 - DAT_00856da0) + iVar4;
     if (param_1 <= iVar3 + 1) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = iVar3 + 2;
     }
     if ((DAT_00856da0 - iVar4) + iVar1 <= (int)(param_1 + param_3)) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = ((DAT_00856da0 - iVar4) - param_3) + -1 + iVar1;
     }
   }
   else {
     if (param_1 < iVar1 - iVar4) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = iVar1 - iVar4;
     }
     if (iVar1 + iVar4 <= (int)(param_1 + -1 + param_3)) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (iVar1 - param_3) + iVar4;
     }
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = 0;
   if (0 < (int)param_3) {
     do {
@@ -61,7 +55,6 @@ void __cdecl FUN_006e8460(int param_1,int param_2,uint param_3,byte param_4)
         *pbVar5 = param_4;
         pbVar5 = pbVar5 + 1;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + 1;
     } while (param_2 < (int)param_3);
   }

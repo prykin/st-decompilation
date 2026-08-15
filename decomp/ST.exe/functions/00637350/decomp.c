@@ -81,7 +81,6 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
     do {
       iVar8 = iVar4;
       iVar15 = local_1c;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_9 = uVar7;
       if (local_1c < local_14) {
         do {
@@ -102,7 +101,6 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
                  ((g_playSystem_00802A38 == nullptr ||
                   (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)))) {
                 bVar1 = *(byte *)&this[1].vtable;
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_8 = STReplaceLowByte((uint32_t)(param_8), (uint8_t)(bVar1));
                 if (DAT_00808a8f == '\0') {
                   if (bVar1 == (byte)param_5) {

@@ -39,7 +39,7 @@ python3 tools/st_compile_audit.py
 ```
 
 It verifies every file listed by `source_manifest.json`, invokes the selected
-C++ compiler separately for all 318 translation units, and maps diagnostics
+C++ compiler separately for all 321 translation units, and maps diagnostics
 back to stable function addresses through the generated `#line` directives.
 The default report is local under `.st-local/source-compile-audit/ST.exe/` and
 therefore never enters Git. `--compiler`, `--jobs`, `--error-limit`,
@@ -69,8 +69,8 @@ src/ST.exe/
     └── issues.jsonl
 ```
 
-The current accepted corpus produces 5,720 bodies in 318 translation units.
-1,044 bodies have a recovered original path; the other 4,676 are grouped by
+The current accepted corpus produces 5,624 bodies in 321 translation units.
+1,044 bodies have a recovered original path; the other 4,580 are grouped by
 owner or address page without pretending that this was their original file.
 
 ## Identity and ABI policy
@@ -93,6 +93,13 @@ being selected by name.
 This free-function boundary also handles ownerless `__thiscall`: ECX remains
 the explicit first parameter. The generated header maps the otherwise illegal
 C++ parameter token `this` to `st_this`; it does not assert a class owner.
+
+Functions classified as statically linked libraries keep address-stable
+declarations because recovered game callers still need a compile-time boundary,
+but receive no generated implementation. Their declaration comment explicitly
+states `statically linked library; implementation excluded`; the corresponding
+implementation must come from a selected replacement library or compatibility
+port rather than stale decompiler output.
 
 `types.jsonl` is rendered by exact datatype path. Records are forward-declared
 and then emitted in by-value dependency order. Pointer and callback cycles do
@@ -141,6 +148,21 @@ plain POD declaration would otherwise lose:
   `_local_N` as stack-slot reuse, the generator may turn that assignment into
   `auto` only if every use remains in the same lexical block and no switch label
   can jump over the initializer. Unsafe scopes remain explicit audit rows.
+- when Ghidra retains the full `_param_N` machine-slot view of an otherwise
+  recovered 8- or 16-bit stack parameter, the generator materializes that view
+  as the target's ordinary `int` promotion. This applies only to an exact
+  exported parameter ordinal and never to pointers or full-width parameters.
+- an exact fixed raw-stack root covered by a machine-proven bulk zero span is
+  already named by the exporter as `stack_bytes_neg_OFFSET[N]`. This is a real
+  storage extent, but its byte element type does not assert an original record
+  or array declaration. It may overlap another decompiler local whose lexical
+  lifetime occupies the same physical bytes;
+- residual `&stack0xXXXXXXXX` tokens include dynamic-`alloca`, SEH bookkeeping,
+  reused slots, and unclassified EBP-relative addresses. The generator places
+  all residual references in one uninitialized, aligned local byte arena whose
+  bounds preserve their exported relative offsets and stack-frame extent. It
+  does not infer an aggregate or initialize bytes which the machine code did
+  not initialize.
 
 Nested field chains and indexed/by-value receivers are resolved only through
 component types already present in `types.jsonl`. Neither mechanism infers a
@@ -174,7 +196,7 @@ before layout assertions or a real link are meaningful.
 It intentionally does not link. A full object build is expected to fail today
 and is now useful evidence rather than a missing-infrastructure failure. The
 current Apple Clang C++17 probe, with a limit of 64 diagnostics per translation
-unit, passes 178 of 318 units and records 2,213 errors, 2,196 of them mapped to
+unit, passes 185 of 321 units and records 1,598 errors, 1,581 of them mapped to
 a function address. No syntax diagnostic remains. The cap makes this a
 monotonic comparison baseline, not the
 uncapped total of all errors. Remaining diagnostics principally identify:

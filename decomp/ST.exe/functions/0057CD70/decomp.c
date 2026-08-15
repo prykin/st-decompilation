@@ -24,16 +24,18 @@ void __thiscall STFishC::LifeFish(STFishC *this)
 
 {
   undefined4 *this_00;
+  STFishC_field_023BState SVar1;
   int iVar3;
   uint uVar4;
   int iVar2;
   int iVar4;
   int local_EAX_271;
   int local_EAX_344;
-  STFishC_field_023BState SVar5;
+  STFishC_field_023BState SVar5_mg2;
   int local_EAX_471;
-  int iVar6;
-  char cVar7;
+  int iVar5;
+  STFishC_field_023BState SVar5_mg1;
+  char cVar6;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   uint local_8;
@@ -60,8 +62,8 @@ void __thiscall STFishC::LifeFish(STFishC *this)
   }
   iVar4 = thunk_FUN_004ad650((STT3DSprC *)this_00);
   FUN_006e6870((void *)this->field_0211,iVar4,iVar3);
-  SVar5 = this->field_023B;
-  if (SVar5 == CASE_4) {
+  SVar1 = this->field_023B;
+  if (SVar1 == CASE_4) {
     iVar3 = this->vfunc_20();
     if (iVar3 == -1) {
       local_EAX_271 =
@@ -72,21 +74,21 @@ void __thiscall STFishC::LifeFish(STFishC *this)
       }
     }
     else if (iVar3 == 1) {
-      cVar7 = '\0';
+      cVar6 = '\0';
       if (this->field_0267 == CASE_E7) {
-        cVar7 = -2;
+        cVar6 = -2;
       }
       else if (this->field_0267 == CASE_E9) {
-        cVar7 = -1;
+        cVar6 = -1;
       }
-      thunk_FUN_00417ff0(this,cVar7 + 7);
-      thunk_FUN_00418010(this,cVar7 + 6);
+      thunk_FUN_00417ff0(this,cVar6 + 7);
+      thunk_FUN_00418010(this,cVar6 + 6);
       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
                 ((AnonReceiver_004167A0 *)this,this->field_0235,this->field_0237,this->field_0239);
       this->field_023B = CASE_1;
     }
   }
-  else if (SVar5 == CASE_1) {
+  else if (SVar1 == CASE_1) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar3 = (*this->vtable->MoveStep)((STGameObjC *)this,unaff_EDI);
     if (iVar3 != 0) {
@@ -106,12 +108,12 @@ void __thiscall STFishC::LifeFish(STFishC *this)
         if (this->field_023F < 0xf) goto LAB_0057cfe0;
         uVar4 = 1;
       }
-      SVar5 = sub_0057D5F0(this,uVar4);
-      this->field_023B = SVar5;
+      SVar5_mg2 = sub_0057D5F0(this,uVar4);
+      this->field_023B = SVar5_mg2;
       this->field_023F = 0;
     }
   }
-  else if (SVar5 == 2) {
+  else if (SVar1 == 2) {
     iVar3 = thunk_FUN_00417830((AnonShape_00417830_9254190A *)this);
     if (iVar3 == 0) {
       this->field_023B = CASE_0;
@@ -127,10 +129,10 @@ void __thiscall STFishC::LifeFish(STFishC *this)
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  else if (SVar5 == CASE_5) {
+  else if (SVar1 == CASE_5) {
     iVar3 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,'\b');
-    iVar6 = thunk_FUN_004ac910(this_00,'\b');
-    if (iVar6 == iVar3 + -1) {
+    iVar5 = thunk_FUN_004ac910(this_00,'\b');
+    if (iVar5 == iVar3 + -1) {
       STT3DSprC::StopShow((STT3DSprC *)this_00,8);
       sub_0057BF20(this);
       this->field_023B = CASE_3;
@@ -139,8 +141,8 @@ void __thiscall STFishC::LifeFish(STFishC *this)
   }
   else if ((0xf < this->field_023F) && (iVar3 = this->vfunc_20(), iVar3 == 1)) {
     this->field_023F = 0;
-    SVar5 = sub_0057D5F0(this,1);
-    this->field_023B = SVar5;
+    SVar5_mg1 = sub_0057D5F0(this,1);
+    this->field_023B = SVar5_mg1;
   }
 LAB_0057cfe0:
   switch(this->field_0267) {

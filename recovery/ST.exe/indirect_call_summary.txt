@@ -2,9 +2,9 @@ ST indirect-call prototypes
 
 Indirect call sites: 4223
 Proposals: 2867
-Automatic: 2318
+Automatic: 2773
 Dispatch interface audits: 1
 Dispatch tail ABI prototypes: 19
-Synthetic ABI prototypes: 2287
-Resolved-target ABI families: 747
+Synthetic ABI prototypes: 2742
+Resolved-target ABI families: 806
 Family-propagated slots: 0

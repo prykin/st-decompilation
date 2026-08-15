@@ -1303,7 +1303,7 @@ switchD_005b4c27_default:
     if (SVar1 == 0x6902) {
       if (this_00->field_1EE3 == '\0') {
         st::fn_0040560F(this_00);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)this_00->field_000C + 0x10))(0x309,0);
         goto cf_common_exit_005B4EEC;
       }

@@ -67,7 +67,6 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
   STWorldObject *local_8;
 
   local_8 = nullptr;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -949,7 +948,6 @@ joined_r0x0047ada9:
                ((iVar11 = (*local_8->vtable[5].slots_00_28[2])(), iVar11 != 0 &&
                 ((*(int *)&local_8[0x21].field_0x10 == 0 && (*(int *)&local_8[0x10].field_0x5 != 6))
                 )))) goto LAB_0047a385;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = g_playSystem_00802A38->field_00E4;
           }
           else {
@@ -980,7 +978,6 @@ LAB_0047a385:
               *(uint *)&this->field_0x663 = (this->field_0635 != 1) + 4;
               goto cf_common_exit_0047A369;
             }
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = g_playSystem_00802A38->field_00E4;
           }
           CmdToObj(this,CASE_3,(uint *)&param_1);

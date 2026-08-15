@@ -8,10 +8,10 @@ void __thiscall FUN_005f0150(void *this,AnonShape_005F0150_6EC63067 *param_1)
   undefined1 uVar2;
   undefined4 uVar3;
 
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar3 = (**(code **)(*(int *)this + 0x2c))();
   *(undefined4 *)param_1 = uVar3;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*(int *)this + 0xc))();
   param_1->field_0x4 = uVar2;
   param_1->field_0005 = 4;
@@ -22,21 +22,21 @@ void __thiscall FUN_005f0150(void *this,AnonShape_005F0150_6EC63067 *param_1)
   }
   iVar1 = STField<int>(this,0x2b1);
   if (((iVar1 != 0) && (iVar1 != 1)) && (iVar1 != 2)) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (**(code **)(*(int *)this + 0x134))();
     param_1->field_0x1c = uVar2;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar3 = (**(code **)(*(int *)this + 0x13c))();
     param_1->field_0021 = uVar3;
     return;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*(int *)this + 0x134))();
   param_1->field_0x1c = uVar2;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar3 = (**(code **)(*(int *)this + 0x138))();
   param_1->field_001D = uVar3;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar3 = (**(code **)(*(int *)this + 0x13c))();
   param_1->field_0021 = uVar3;
   return;

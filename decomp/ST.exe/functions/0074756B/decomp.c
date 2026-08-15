@@ -14,13 +14,13 @@ undefined4 * __thiscall FUN_0074756b(void *this,AnonShape_0074756B_58F08DE7 *par
   FUN_0074de63((undefined4 *)((int)this + 0x18));
   *(VTable_007A1108 **)this = &VTable_007A1108;
   piVar1 = (int *)(STField<int>(this,0xc) + 0xc);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*piVar1 + 4))(piVar1);
   if (param_1 == nullptr) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (**(code **)(*STField<int *>(this,0xc) + 0x14))();
     STField<undefined4>(this,0x10) = uVar2;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (**(code **)(*STField<int *>(this,0xc) + 0x18))();
     STField<undefined4>(this,8) = uVar2;
   }

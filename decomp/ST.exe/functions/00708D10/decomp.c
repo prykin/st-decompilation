@@ -99,7 +99,6 @@ LAB_00708dda:
   local_14 = this;
   while( true ) {
     if (local_30 == 1) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = param_6 + param_7;
     }
     if (DAT_00856fc8 == DAT_00857008) {

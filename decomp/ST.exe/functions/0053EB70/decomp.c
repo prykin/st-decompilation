@@ -54,7 +54,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_SHARED_C000) {
     if (SVar1 == MESS_SHARED_BFFF) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)this_00->field_0000->field_001C)(0);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_4c.previous;
@@ -69,7 +69,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
         if (this_00->field_0044 <= iVar6) {
           this_00->field_0044 = iVar6;
           this_00->field_0172 = CASE_1;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)this_00->field_0000->field_0018)(1);
         }
         Library::DKW::DDX::FUN_006b3640
@@ -106,7 +106,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
     uVar9 = 0;
     uVar8 = 0x274e;
     pCVar7 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)pAVar2->field_0010)(message,pCVar7,uVar8,uVar9,uVar10);
   }
   g_currentExceptionFrame = local_4c.previous;

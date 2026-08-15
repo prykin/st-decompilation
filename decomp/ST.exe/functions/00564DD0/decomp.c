@@ -11,8 +11,8 @@ void FUN_00564dd0(undefined4 param_1,undefined4 param_2,undefined4 *param_3,unde
   int iVar5;
   int iVar6;
 
-  iVar1 = *(int *)(DAT_00803300 + (int)param_4 * 0x14);
-  iVar2 = *(int *)(DAT_00803300 + (int)param_4 * 0x14 + 4);
+  iVar1 = g_runtimeRecords_00803300[(int)param_4].field_0000;
+  iVar2 = g_runtimeRecords_00803300[(int)param_4].field_0004;
   iVar3 = DAT_008032ec;
   if ((int)param_4 < DAT_0080337c) {
     iVar3 = DAT_00803378;
@@ -23,8 +23,9 @@ void FUN_00564dd0(undefined4 param_1,undefined4 param_2,undefined4 *param_3,unde
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = param_3;
     do {
-      iVar4 = FUN_006acf90(*(int *)(iVar6 + DAT_00803300),*(int *)(iVar6 + 4 + DAT_00803300),iVar1,
-                           iVar2);
+      iVar4 = FUN_006acf90(*(int *)((int)&g_runtimeRecords_00803300->field_0000 + iVar6),
+                           *(int *)((int)&g_runtimeRecords_00803300->field_0004 + iVar6),iVar1,iVar2
+                          );
       if (iVar4 < DAT_00803378 / 2 + iVar3 / 4) {
         *param_4 = 0xffffffff;
       }
@@ -36,17 +37,16 @@ void FUN_00564dd0(undefined4 param_1,undefined4 param_2,undefined4 *param_3,unde
   }
   if (iVar5 < DAT_00803398) {
     iVar6 = iVar5 * 0x14;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = param_3 + iVar5;
     do {
-      iVar4 = FUN_006acf90(*(int *)(iVar6 + DAT_00803300),*(int *)(iVar6 + 4 + DAT_00803300),iVar1,
-                           iVar2);
+      iVar4 = FUN_006acf90(*(int *)((int)&g_runtimeRecords_00803300->field_0000 + iVar6),
+                           *(int *)((int)&g_runtimeRecords_00803300->field_0004 + iVar6),iVar1,iVar2
+                          );
       if (iVar4 < DAT_008032ec / 2 + iVar3 / 4) {
         *param_3 = 0xffffffff;
       }
       iVar5 = iVar5 + 1;
       iVar6 = iVar6 + 0x14;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_3 + 1;
     } while (iVar5 < DAT_00803398);
   }

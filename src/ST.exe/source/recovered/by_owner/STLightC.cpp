@@ -275,19 +275,15 @@ int __thiscall st::fn_0061D9C0(STLightC *this,ushort *param_1,int *param_2,int p
 
   local_8 = 0;
   local_c = 0;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_3 == 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0x10;
     this->field_0093 = *(int *)param_1;
     this->field_0097 = *(undefined4 *)(param_1 + 2);
     this->field_009B = *(void **)(param_1 + 4);
     this->field_009F = *(void **)(param_1 + 6);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + 8;
   }
   else {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
   }
   uVar6 = this->field_0093;
@@ -299,14 +295,12 @@ int __thiscall st::fn_0061D9C0(STLightC *this,ushort *param_1,int *param_2,int p
     puVar8 = puVar8 + 2;
     puVar1 = puVar1 + 1;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = param_3 + uVar6 * 4;
   for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
     *(char *)puVar1 = (char)*puVar8;
     puVar8 = (ushort *)((int)puVar8 + 1);
     puVar1 = (undefined4 *)((int)puVar1 + 1);
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = param_1 + uVar6 * 2;
   iVar4 = this->field_0093;
   if (0 < iVar4) {
@@ -322,7 +316,6 @@ int __thiscall st::fn_0061D9C0(STLightC *this,ushort *param_1,int *param_2,int p
   *param_2 = local_8;
   pvVar2 = st::fn_006AAC70(local_c);
   this->field_009F = pvVar2;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = (int *)((int)pvVar2 + this->field_0093 * 4);
   local_c = 0;
   if (0 < this->field_0093) {
@@ -336,16 +329,13 @@ int __thiscall st::fn_0061D9C0(STLightC *this,ushort *param_1,int *param_2,int p
         puVar8 = puVar8 + 2;
         puVar1 = puVar1 + 1;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_3 + iVar4 * 0x14;
       for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
         *(char *)puVar1 = (char)*puVar8;
         puVar8 = (ushort *)((int)puVar8 + 1);
         puVar1 = (undefined4 *)((int)puVar1 + 1);
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + iVar4 * 10;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + iVar4 * 5;
       local_c = local_c + 1;
     } while ((int)local_c < this->field_0093);

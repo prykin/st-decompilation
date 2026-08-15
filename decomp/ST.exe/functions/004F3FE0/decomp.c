@@ -66,7 +66,7 @@ cf_common_join_004F4070:
     local_14 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (iVar4 == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_2);
       text = FUN_006f2c00(param_4,1,uVar4);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,text,nullptr,1);

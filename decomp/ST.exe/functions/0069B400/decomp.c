@@ -27,13 +27,10 @@ CGenerate::sub_0069B400(CGenerate *this,int param_1,int param_2,int param_3,int 
   if (this->field_5847 != 1 && -1 < this->field_5847 + -1) {
     local_10 = (int *)(param_5 + 0x18);
     do {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = 0;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = 0;
       if (0 < iVar6) {
         iVar4 = (this->field_5833 * param_2 + this->field_582F * local_c + param_1) * 2;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = iVar6;
         do {
           if (0 < iVar3) {
@@ -44,11 +41,9 @@ CGenerate::sub_0069B400(CGenerate *this,int param_1,int param_2,int param_3,int 
               if (0 < sVar1) {
                 iVar2 = iVar2 + sVar1;
                 if (sVar1 == 4) {
-                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_4 = param_4 + 1;
                 }
                 else {
-                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_3 = param_3 + 1;
                 }
               }
@@ -57,7 +52,6 @@ CGenerate::sub_0069B400(CGenerate *this,int param_1,int param_2,int param_3,int 
             } while (iVar5 != 0);
           }
           iVar4 = iVar4 + this->field_5833 * 2;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_5 = param_5 + -1;
         } while (param_5 != 0);
       }

@@ -13,7 +13,7 @@ int __thiscall FUN_0074ef87(void *this,int *param_1)
 
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x1c);
   EnterCriticalSection(lpCriticalSection);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(*param_1 + 0x14))(param_1,&local_c,&local_14);
   if (iVar1 < 0) {
     LeaveCriticalSection(lpCriticalSection);

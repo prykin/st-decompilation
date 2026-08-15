@@ -40,7 +40,6 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
     param_1->field_0451 = 0;
     local_8 = 0;
     if (0 < param_1->field_0455) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_00575460_06C413C6 *)&param_1->field_0x459;
       do {
         iVar1 = *(int *)param_1;
@@ -61,7 +60,6 @@ LAB_0057554f:
           *element_00 = 0;
         }
         local_8 = local_8 + 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_00575460_06C413C6 *)&param_1->field_0x4;
       } while (local_8 < pAVar4->field_0455);
     }

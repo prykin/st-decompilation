@@ -2,6 +2,7 @@ function_address	label_address	proposed_name	status	detail
 0040AE40	0040B258	cf_branch_target_0040B258	disabled	apply=0
 0040AE40	0040B481	cf_join_0040B481	disabled	apply=0
 0040AE40	0040B56A	cf_join_0040B56A	disabled	apply=0
+0040C080	0040C4D0	cf_join_0040C4D0	disabled	apply=0
 0040C080	0040C875	cf_join_0040C875	disabled	apply=0
 0040C080	0040C8F3	cf_branch_target_0040C8F3	disabled	apply=0
 0040C080	0040C90D	cf_join_0040C90D	disabled	apply=0
@@ -897,14 +898,15 @@ function_address	label_address	proposed_name	status	detail
 004B33D0	004B49B4	cf_join_004B49B4	disabled	apply=0
 004B33D0	004B4BD1	cf_join_004B4BD1	disabled	apply=0
 004B33D0	004B4C78	cf_join_004B4C78	disabled	apply=0
+004B33D0	004B4C99	cf_join_004B4C99	disabled	apply=0
 004B33D0	004B4E09	cf_join_004B4E09	disabled	apply=0
 004B33D0	004B4F35	cf_join_004B4F35	disabled	apply=0
 004B33D0	004B4F55	cf_join_004B4F55	disabled	apply=0
 004B33D0	004B50F4	cf_join_004B50F4	disabled	apply=0
-004B33D0	004B5101	cf_join_004B5101	disabled	apply=0
 004B33D0	004B51DA	cf_join_004B51DA	disabled	apply=0
 004B33D0	004B52B6	cf_join_004B52B6	disabled	apply=0
 004B33D0	004B5614	cf_join_004B5614	disabled	apply=0
+004B33D0	004B5635	cf_join_004B5635	disabled	apply=0
 004B33D0	004B5648	cf_common_join_004B5648	unchanged	label is already primary
 004B33D0	004B56E4	cf_join_004B56E4	disabled	apply=0
 004B33D0	004B5727	cf_join_004B5727	disabled	apply=0
@@ -1966,9 +1968,10 @@ function_address	label_address	proposed_name	status	detail
 005D9470	005D9CCB	cf_common_exit_005D9CCB	unchanged	label is already primary
 005DAF20	005DAF91	cf_join_005DAF91	disabled	apply=0
 005DAF20	005DAFAB	cf_join_005DAFAB	disabled	apply=0
-005DB030	005DB18E	cf_branch_target_005DB18E	disabled	apply=0
+005DB030	005DB1A9	cf_branch_target_005DB1A9	disabled	apply=0
 005DB030	005DB1AB	cf_common_exit_005DB1AB	unchanged	label is already primary
-005DB030	005DB1E1	cf_common_exit_005DB1E1	unchanged	label is already primary
+005DB030	005DB1B0	cf_join_005DB1B0	disabled	apply=0
+005DB030	005DB1E1	cf_join_005DB1E1	disabled	apply=0
 005DC050	005DC22D	cf_join_005DC22D	disabled	apply=0
 005DC050	005DC430	cf_join_005DC430	disabled	apply=0
 005DC730	005DC828	cf_join_005DC828	disabled	apply=0
@@ -2102,9 +2105,11 @@ function_address	label_address	proposed_name	status	detail
 00608E90	00609326	cf_common_exit_00609326	disabled	apply=0
 0060AEF0	0060B2CE	cf_join_0060B2CE	disabled	apply=0
 0060AEF0	0060B48B	cf_join_0060B48B	disabled	apply=0
+0060AEF0	0060B60E	cf_join_0060B60E	disabled	apply=0
 0060AEF0	0060B643	cf_join_0060B643	disabled	apply=0
 0060AEF0	0060B649	cf_continue_loop_0060B649	unchanged	label is already primary
 0060C320	0060C5F5	cf_join_0060C5F5	disabled	apply=0
+0060EF40	0060F21B	cf_join_0060F21B	disabled	apply=0
 0060EF40	0060F230	cf_join_0060F230	disabled	apply=0
 0060F940	0060FE02	cf_join_0060FE02	disabled	apply=0
 006101B0	0061033A	cf_join_0061033A	disabled	apply=0
@@ -2688,6 +2693,7 @@ function_address	label_address	proposed_name	status	detail
 0069BDC0	0069C1DF	cf_join_0069C1DF	disabled	apply=0
 0069C360	0069C428	cf_join_0069C428	disabled	apply=0
 0069C8B0	0069CA03	cf_join_0069CA03	disabled	apply=0
+0069CB50	0069CE71	cf_join_0069CE71	disabled	apply=0
 0069CB50	0069D203	cf_join_0069D203	disabled	apply=0
 0069CB50	0069D43D	cf_join_0069D43D	disabled	apply=0
 0069CB50	0069D44D	cf_join_0069D44D	disabled	apply=0
@@ -2697,6 +2703,7 @@ function_address	label_address	proposed_name	status	detail
 0069CB50	0069D626	cf_join_0069D626	disabled	apply=0
 0069CB50	0069D684	cf_join_0069D684	disabled	apply=0
 0069CB50	0069D7B2	cf_join_0069D7B2	disabled	apply=0
+0069CB50	0069DCBC	cf_join_0069DCBC	disabled	apply=0
 0069E4D0	0069E69C	cf_join_0069E69C	disabled	apply=0
 0069E4D0	0069E887	cf_join_0069E887	disabled	apply=0
 0069E4D0	0069EAB9	cf_join_0069EAB9	disabled	apply=0
@@ -2724,13 +2731,8 @@ function_address	label_address	proposed_name	status	detail
 006AD4D0	006AD9D3	cf_join_006AD9D3	disabled	apply=0
 006AE3B0	006AE66D	cf_branch_target_006AE66D	disabled	apply=0
 006AE3B0	006AE68B	cf_join_006AE68B	disabled	apply=0
-006B3120	006B334D	cf_join_006B334D	disabled	apply=0
-006B3120	006B3351	cf_join_006B3351	disabled	apply=0
 006B4B20	006B4C1B	cf_join_006B4C1B	disabled	apply=0
 006B4B20	006B4EF4	cf_join_006B4EF4	disabled	apply=0
-006B7190	006B719C	cf_join_006B719C	disabled	apply=0
-006B7190	006B72B1	cf_branch_target_006B72B1	disabled	apply=0
-006B7190	006B7373	cf_join_006B7373	disabled	apply=0
 006B92B0	006B9365	cf_join_006B9365	disabled	apply=0
 006B92B0	006B93A5	cf_join_006B93A5	disabled	apply=0
 006B92B0	006B93A7	cf_join_006B93A7	disabled	apply=0
@@ -2745,11 +2747,6 @@ function_address	label_address	proposed_name	status	detail
 006BC630	006BC8A6	cf_join_006BC8A6	disabled	apply=0
 006BCD10	006BCD2A	cf_branch_target_006BCD2A	disabled	apply=0
 006BCD10	006BD0AD	cf_break_loop_006BD0AD	disabled	apply=0
-006BEA40	006BED50	cf_join_006BED50	disabled	apply=0
-006BEA40	006BEF52	cf_join_006BEF52	disabled	apply=0
-006BEA40	006BF0FB	cf_join_006BF0FB	disabled	apply=0
-006BEA40	006BF163	cf_join_006BF163	disabled	apply=0
-006BEA40	006BF619	cf_common_join_006BF619	unchanged	label is already primary
 006BFE70	006C0125	cf_join_006C0125	disabled	apply=0
 006BFE70	006C0455	cf_join_006C0455	disabled	apply=0
 006C08E0	006C0AF5	cf_join_006C0AF5	disabled	apply=0
@@ -2764,9 +2761,6 @@ function_address	label_address	proposed_name	status	detail
 006C08E0	006C0F40	cf_continue_loop_006C0F40	unchanged	label is already primary
 006C3340	006C33BB	cf_join_006C33BB	disabled	apply=0
 006C3480	006C34E5	cf_join_006C34E5	disabled	apply=0
-006C38F0	006C3A62	cf_join_006C3A62	disabled	apply=0
-006C3D80	006C3EBA	cf_join_006C3EBA	disabled	apply=0
-006C3D80	006C3EE7	cf_join_006C3EE7	disabled	apply=0
 006C5E00	006C5EF3	cf_join_006C5EF3	disabled	apply=0
 006C5E00	006C5F55	cf_join_006C5F55	disabled	apply=0
 006C5F90	006C6077	cf_join_006C6077	disabled	apply=0
@@ -2873,19 +2867,13 @@ function_address	label_address	proposed_name	status	detail
 006DC320	006DCA21	cf_join_006DCA21	disabled	apply=0
 006DC320	006DCAFD	cf_join_006DCAFD	disabled	apply=0
 006DDD50	006DE503	cf_common_join_006DE503	unchanged	label is already primary
-006DE9C0	006DEFD4	cf_join_006DEFD4	disabled	apply=0
-006E1EE0	006E22A2	cf_join_006E22A2	disabled	apply=0
 006E2D50	006E2E31	cf_continue_loop_006E2E31	unchanged	label is already primary
 006E2D50	006E2F66	cf_continue_loop_006E2F66	unchanged	label is already primary
-006E4EE0	006E4F26	cf_join_006E4F26	disabled	apply=0
 006E6710	006E673A	cf_join_006E673A	disabled	apply=0
 006E6710	006E674E	cf_join_006E674E	disabled	apply=0
 006E67C0	006E67EA	cf_join_006E67EA	disabled	apply=0
 006E67C0	006E67FE	cf_join_006E67FE	disabled	apply=0
 006E68C0	006E6A01	cf_join_006E6A01	disabled	apply=0
-006E6AF0	006E6C0D	cf_join_006E6C0D	disabled	apply=0
-006E6AF0	006E6D68	cf_join_006E6D68	disabled	apply=0
-006E6AF0	006E6F08	cf_join_006E6F08	disabled	apply=0
 006E6FB0	006E77B9	cf_join_006E77B9	disabled	apply=0
 006E6FB0	006E7F2D	cf_join_006E7F2D	disabled	apply=0
 006E6FB0	006E7FF9	cf_join_006E7FF9	disabled	apply=0
@@ -2894,8 +2882,6 @@ function_address	label_address	proposed_name	status	detail
 006EB570	006EB7D3	cf_join_006EB7D3	disabled	apply=0
 006EB570	006EB87F	cf_break_loop_006EB87F	disabled	apply=0
 006EB570	006EBDE1	cf_join_006EBDE1	disabled	apply=0
-006EC010	006EC68D	cf_join_006EC68D	disabled	apply=0
-006EC010	006ECC3A	cf_join_006ECC3A	disabled	apply=0
 006F31D0	006F32F9	cf_join_006F32F9	disabled	apply=0
 006F31D0	006F34A4	cf_join_006F34A4	disabled	apply=0
 006F31D0	006F3562	cf_join_006F3562	disabled	apply=0
@@ -3331,11 +3317,8 @@ function_address	label_address	proposed_name	status	detail
 00707810	00708526	cf_join_00708526	disabled	apply=0
 00708650	007088A4	cf_join_007088A4	disabled	apply=0
 00708D10	00708DDA	cf_join_00708DDA	disabled	apply=0
-007098A0	00709921	cf_join_00709921	disabled	apply=0
-007098A0	00709926	cf_join_00709926	disabled	apply=0
 00711110	00711153	cf_join_00711153	disabled	apply=0
 007111C0	00711200	cf_join_00711200	disabled	apply=0
-00711260	00711298	cf_join_00711298	disabled	apply=0
 007140E0	00714ACB	cf_common_exit_00714ACB	unchanged	label is already primary
 00714FB0	00714FDF	cf_join_00714FDF	disabled	apply=0
 00714FB0	00715017	cf_join_00715017	disabled	apply=0
@@ -3345,9 +3328,6 @@ function_address	label_address	proposed_name	status	detail
 007182F0	00718362	cf_join_00718362	disabled	apply=0
 007182F0	00718374	cf_join_00718374	disabled	apply=0
 007182F0	007183B0	cf_join_007183B0	disabled	apply=0
-00720E70	00720F4E	cf_break_loop_00720F4E	unchanged	label is already primary
-00721080	0072111D	cf_join_0072111D	disabled	apply=0
-00721080	0072122F	cf_join_0072122F	disabled	apply=0
 00726D80	0072716F	cf_join_0072716F	disabled	apply=0
 00726D80	00727219	cf_join_00727219	disabled	apply=0
 00727230	007275F0	cf_join_007275F0	disabled	apply=0
@@ -3407,8 +3387,6 @@ function_address	label_address	proposed_name	status	detail
 007553F0	00755464	cf_join_00755464	disabled	apply=0
 00755560	007557FA	cf_join_007557FA	disabled	apply=0
 00755560	0075580A	cf_join_0075580A	disabled	apply=0
-00756480	00756548	cf_join_00756548	disabled	apply=0
-00756480	00756569	cf_common_exit_00756569	unchanged	label is already primary
 00757CD0	00757CE8	cf_join_00757CE8	disabled	apply=0
 0075A350	0075A413	cf_join_0075A413	disabled	apply=0
 0075B720	0075B7AC	cf_join_0075B7AC	disabled	apply=0
@@ -3436,4 +3414,3 @@ function_address	label_address	proposed_name	status	detail
 0075EFE0	0075F229	cf_join_0075F229	disabled	apply=0
 0075EFE0	0075F2A7	cf_join_0075F2A7	disabled	apply=0
 0075EFE0	0075F317	cf_join_0075F317	disabled	apply=0
-0075FCA0	0075FCEF	cf_join_0075FCEF	disabled	apply=0

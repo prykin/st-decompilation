@@ -1144,7 +1144,7 @@ void st::fn_00543410(undefined4 param_1,undefined4 param_2,int param_3,undefined
 {
   if (-1 < param_3 + -1) {
     do {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)param_4)();
       param_3 = param_3 + -1;
     } while (param_3 != 0);
@@ -1721,7 +1721,6 @@ void st::fn_0054EDF0(undefined4 *param_1,uint *param_2,uint param_3,uint param_4
       st::fn_0040422D(in_ECX,DAT_0080874d,0,cVar2,param_2,param_4,nullptr,0);
       return;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = nullptr;
     uVar1 = st::fn_00401FFF(g_allPlayers_007FA174,st::pointer_boundary_cast<undefined4 *>(&param_1),&param_3);
     if (uVar1 != 0xffffffff) {

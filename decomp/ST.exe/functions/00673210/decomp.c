@@ -52,7 +52,7 @@ int FUN_00673210(int param_1)
           break;
         }
         if ((code *)PTR_0081194c->field_0014 != nullptr) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)PTR_0081194c->field_0014)(DAT_0085753c,0);
         }
         thunk_FUN_00672f00();

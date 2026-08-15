@@ -25,7 +25,7 @@ undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
     STField<int *>(this,0x8c) = this_00;
     if (local_8 < 0) {
       if (this_00 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*this_00 + 0xc))(1);
       }
     }
@@ -40,12 +40,12 @@ undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
       STField<undefined4 *>(this,0x90) = puVar1;
       if ((local_8 < 0) || (puVar1 == nullptr)) {
         if (STField<int *>(this,0x8c) != nullptr) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*STField<int *>(this,0x8c) + 0xc))(1);
         }
         STField<undefined4>(this,0x8c) = 0;
         if (STField<int *>(this,0x90) != nullptr) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*STField<int *>(this,0x90) + 0xc))(1);
         }
         STField<undefined4>(this,0x90) = 0;

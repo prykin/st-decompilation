@@ -51,11 +51,9 @@ FUN_0058d160(short param_1,short param_2,short param_3,short param_4,int param_5
         if ((short)(param_1 * 0xc9 + 100) <= iVar7) break;
         iVar8 = 1;
       }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0058d1fe:
       param_6 = 0;
       iVar9 = (int)*(short *)(iVar4 + 0x43);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_7 = iVar10;
     }
     else {
@@ -69,15 +67,12 @@ LAB_0058d1fe:
         if ((short)(param_2 * 0xc9 + 100) <= iVar9) break;
         iVar10 = 1;
       }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0058d252:
       param_7 = 0;
       iVar7 = (int)*(short *)(iVar4 + 0x41);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = iVar8;
     }
     sVar1 = *(short *)(iVar4 + 0x45);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = STBiasedDiv16(sVar1, 200); /* exact signed 16-bit grid-index division */
     sVar5 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
     sVar6 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
@@ -101,7 +96,6 @@ LAB_0058d252:
     }
     iVar3 = thunk_FUN_004961b0(sVar6,sVar5,(short)param_5);
     if (iVar3 != 0) break;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (param_5 + 1) % 5;
     local_8 = local_8 + 1;
     if (4 < local_8) {

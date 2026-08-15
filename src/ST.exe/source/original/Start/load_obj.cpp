@@ -464,7 +464,7 @@ switchD_005ab66b_caseD_6:
         st::fn_007158A0
                   ((SpriteClassTy *)puVar8,(int *)g_ddxContext_008075A8,0x31,'\a',nullptr,
                    0,0);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*puVar8 + 4))
                   ((SpriteClassTy *)puVar8,PTR_00806784,7,0,(byte *)"MM_SLDUP",0xffffffff);
         this_01->field_1A8C = 0x2f8;
@@ -473,7 +473,7 @@ switchD_005ab66b_caseD_6:
         st::fn_007158A0
                   ((SpriteClassTy *)&this_01->field_1B01,(int *)g_ddxContext_008075A8,0x31,'\a',
                    nullptr,0,0);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(this_01->field_1B01 + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
         this_01->field_1B1D = 0x2f8;
         this_01->field_1B21 = 0x1b8;
@@ -481,7 +481,7 @@ switchD_005ab66b_caseD_6:
         st::fn_007158A0
                   ((SpriteClassTy *)&this_01->field_1B92,(int *)g_ddxContext_008075A8,0x31,'\a',
                    nullptr,0,0);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(this_01->field_1B92 + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
         iVar23 = 1;
         this_01->field_1BAE = 0x2fe;

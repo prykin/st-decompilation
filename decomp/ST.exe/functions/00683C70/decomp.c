@@ -427,7 +427,7 @@ LAB_006840bc:
           }
           local_f0 = &DAT_0084810c;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar8 = (*(code *)param_5)(&local_fc);
         if (iVar8 != 0) {
           RaiseInternalException

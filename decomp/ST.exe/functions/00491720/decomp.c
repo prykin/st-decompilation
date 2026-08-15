@@ -41,7 +41,7 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
     }
     local_14 = (*ppuVar1)[0x12];
     local_12 = (*ppuVar1)[0x19];
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*DAT_008117bc)(local_2c);
   }
   param_1->field_05C0 = 0;

@@ -23,14 +23,14 @@ undefined4 __fastcall FUN_0074a8eb(int *param_1)
     else {
       piVar3 = (int *)(iVar1 + 0xc);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)(iVar1 + 0xc) + 4))(iVar1 + 0xc);
     FUN_00747406(param_1,0x16,piVar3,0);
     uVar2 = 1;
     param_1[0x18] = 1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 0x70))();
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)(param_1[0x1e] + 0xc) + 8))(param_1[0x1e] + 0xc);
     LeaveCriticalSection(lpCriticalSection);
   }

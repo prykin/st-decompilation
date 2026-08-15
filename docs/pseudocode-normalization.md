@@ -35,8 +35,14 @@ Optimized 32-bit MSVC code often reads an incoming `[EBP+N]` argument, lets that
 value die, writes an unrelated loop cursor or pointer back to the same word, and
 then reads the new lifetime. Ghidra may spell the result as assignments to
 `param_N`/`_param_N`, even after the ABI parameter itself has the correct scalar
-type. The exporter detects the machine read → overwrite → read sequence and
-inserts:
+type. A bare read → write → read sequence is insufficient: source-level
+parameters are routinely clamped, scaled, and otherwise mutated in place. The
+exporter now requires a full overwrite whose register value traces through
+transparent `MOV`/`MOVSX`/`MOVZX` operations to a different incoming argument
+slot. Arithmetic, `LEA`, and registers used only to address a memory operand do
+not carry value identity. Read/modify/write instructions and
+same-parameter-origin transforms are left alone. Only the proven foreign-origin
+lifetime receives:
 
 ```c
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot;
@@ -46,6 +52,17 @@ inserts:
 This is not a request to change the ABI signature. A later source extractor
 should introduce a distinct local at the first overwrite. The same sites are
 catalogued in `pseudocode_idioms.jsonl` and `decomp_quality_issues.jsonl`.
+
+### Dynamic stack buffers
+
+The verified MSVC `__alloca_probe` call-fixup preserves runtime-sized stack
+allocation in p-code. Ghidra can nevertheless render the resulting current-ESP
+value as `&stack0xffff....`; that spelling is a symbolic stack coordinate, not
+a static local or an address from the executable image. `STStackObjectAnalyzer`
+keeps these sites as `dynamic_alloca` review rows because no fixed Listing array
+can represent their runtime extent. The generated source tree may use a local
+byte-storage compatibility view, but recovery must not infer a fixed array count
+from that presentation.
 
 ### Integer-only lifetimes rendered as pointers
 

@@ -15,10 +15,10 @@ undefined4 FUN_0074aa28(int param_1)
   lpCriticalSection = (LPCRITICAL_SECTION)(*(int *)(param_1 + 0xcc) + 0x94);
   EnterCriticalSection(lpCriticalSection);
   FUN_00748946(param_1);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(**(int **)(param_1 + 0xcc) + 0x84))();
   LeaveCriticalSection(lpCriticalSection);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar1 = (**(code **)(**(int **)(param_1 + 0xcc) + 100))();
   LeaveCriticalSection(lpCriticalSection_00);
   return uVar1;

@@ -60,10 +60,10 @@ undefined4 __fastcall FUN_004e46f0(int *param_1)
           local_12 = STField<undefined2>(param_1,0x32);
           local_18 = 0x5d99;
           local_14 = 1;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)**(undefined4 **)pSVar4->field_001C)(local_28);
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*param_1 + 0x90))(4,0x3cf);
       }
     }

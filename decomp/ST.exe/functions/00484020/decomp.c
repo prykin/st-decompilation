@@ -43,17 +43,14 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
   int local_8;
 
   local_38 = 0;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (_param_1 == 6) {
     local_8 = 0x2c;
     local_c = &DAT_007a9538;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   else if (_param_1 == 7) {
     local_8 = 0x2c;
     local_c = &DAT_007a9640;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   else if (_param_1 == 8) {
     local_8 = 0x98;
     local_c = &DAT_007a9748;
@@ -64,7 +61,6 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
   }
   sVar3 = STField<short>(this,0x800);
   sVar4 = STField<short>(this,0x802);
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_1 = STReplaceLowWord((uint32_t)(this), (uint16_t)(sVar4));
   sVar1 = STField<short>(this,0x804);
   if (((((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar4 < 0)) ||
@@ -117,7 +113,7 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
                    ((iVar5 < 1 ||
                     (uVar6 = (int)param_1 - (int)(short)iVar11, uVar10 = (int)uVar6 >> 0x1f,
                     (int)(((uVar6 ^ uVar10) - uVar10) * 10) / iVar5 < 4)))) {
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   local_20 = (**(code **)(*(int *)this + 0x10))
                                        (iVar9,local_c,iVar11,local_14,local_18,_param_1);
                   local_2c = 0;

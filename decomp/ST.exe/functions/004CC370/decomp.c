@@ -36,7 +36,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
     }
     goto cf_common_exit_004CC6D2;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar5 = (**(code **)(*(int *)param_1 + 0x7c))();
   if ((3 < iVar5 / 0x14) && (*(int *)&param_1->field_0x43c == 1)) {
     TLOBaseTy::sub_004CC900((TLOBaseTy *)param_1);
@@ -109,7 +109,7 @@ cf_error_exit_004CC50A:
   STT3DSprC::StartShow((STT3DSprC *)param_1->field_0603,0xe,g_playSystem_00802A38->field_00E4);
   thunk_FUN_004ad460((void *)param_1->field_0603,1);
   if ((*(int *)&param_1->field_0x43c == 3) || (*(int *)&param_1->field_0x43c == 4)) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)param_1 + 0x90))(3,0x363);
   }
   if (*(int *)&param_1->field_0x43c == 2) {
@@ -117,7 +117,7 @@ cf_error_exit_004CC50A:
     if (*(int *)(&DAT_00795f18 + ((uint)(byte)local_EAX_774 + param_1->field_0235 * 3) * 4) != 0) {
       iVar5 = *(int *)param_1;
       local_EAX_824 = LookupRecordByte(param_1->field_023D);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(iVar5 + 0x90))
                 (3,*(undefined4 *)
                     (&DAT_00795f18 + ((uint)(byte)local_EAX_824 + param_1->field_0235 * 3) * 4));

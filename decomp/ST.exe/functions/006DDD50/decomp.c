@@ -1,6 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 005745E0 -> 006DDD50 @ 005746B4; data at 0080760C | 005745E0 -> 006DDD50 @ 005746CF;
@@ -38,6 +39,10 @@ uint __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar19;
   int iVar20;
   ushort *puVar21;
+  undefined1 auStack_122c [252];
+  undefined4 uStack_1130;
+  undefined4 auStack_112c [1023];
+  undefined4 uStack_130;
   int local_120;
   int local_11c;
   float local_ec [2];
@@ -82,25 +87,23 @@ uint __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar16;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar17;
 
+  local_14 = ExceptionList;
   puStack_c = &DAT_0079dff8;
   puStack_10 = &LAB_0072d964;
-  local_14 = ExceptionList;
-  local_1c = &stack0xfffffed4;
   if (((param_1->field_0004 == nullptr) ||
       (uVar7 = param_1->field_0004->field_000C & 0x1100, uVar7 != 0x100)) &&
      ((param_1->field_02DC == 0 || (uVar7 = 0, param_1->field_02D8 != 0)))) {
     ExceptionList = &local_14;
     param_1->field_02D8 = 1;
-    local_8 = 0;
-    Library::MSVCRT::FUN_0072da40();
-    local_3c = (undefined4 *)&stack0xfffffed4;
-    local_1c = &stack0xfffffed4;
-    Library::MSVCRT::FUN_0072da40();
+    uStack_130 = 0x6dddc9;
+    local_3c = auStack_112c;
+    uStack_1130 = 0x6ddddb;
+    local_1c = auStack_122c;
+    local_cc = auStack_122c;
     local_8 = 0xffffffff;
     if (((int)param_1->field_00A8 < 0) || (3 < (int)param_1->field_00A8)) {
       local_90 = param_1->field_013C;
-      while (local_90 = local_90 + -1, local_cc = &stack0xfffffed4, local_1c = &stack0xfffffed4,
-            0 < local_90) {
+      while (local_90 = local_90 + -1, 0 < local_90) {
         pRVar18 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&param_1->field_0140;
         pRVar10 = *(RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 **)pRVar18;
         local_11c = local_90;
@@ -135,8 +138,9 @@ uint __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
       local_84 = 0;
       local_80 = 0;
       STPiece<0,4>(local_68) = temp_5f0ea6b32c;
-      local_1c = &stack0xfffffed4;
-      local_cc = &stack0xfffffed4;
+      local_3c = auStack_112c;
+      local_1c = auStack_122c;
+      local_cc = auStack_122c;
       for (pRVar16 = temp_5f0ea6b32c; pRVar16 != nullptr;
           pRVar16 = pRVar16->next) {
         sub_006E25D0(param_1,local_7c,&local_88,

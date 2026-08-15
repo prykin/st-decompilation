@@ -67,7 +67,7 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
                (float)(int)STField<short>(param_1,0x43) * _DAT_007904f8 * _DAT_007904f0,
                fVar1 + _DAT_007904fc);
     thunk_FUN_004ad460(STField<void *>(param_1,0x5ff),1);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 0x90))(3,0x3f4);
     return 0;
   }

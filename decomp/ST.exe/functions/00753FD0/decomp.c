@@ -16,7 +16,7 @@ int FUN_00753fd0(AnonShape_00753FD0_4E1BB8DD *context)
   context->field_0018 = context->field_0004;
   iVar1 = 0;
   if (((context->field_003F & 0x80) == 0) && (*(int *)context != 0)) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)context)();
   }
   context->field_0020 = iVar1 + 1;

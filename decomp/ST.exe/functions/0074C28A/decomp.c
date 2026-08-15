@@ -19,7 +19,7 @@ int FUN_0074c28a(AnonShape_007470E5_0A8F5E67 *param_1)
     if ((*(int *)&pAVar3[2].field_0x20 == 0) ||
        (*(int *)(*(int *)&pAVar3[2].field_0x20 + 0x18) == 0)) {
       if ((*(int **)&pAVar3[2].field_0x24 != nullptr) && (*(int *)&pAVar3[1].field_0x14 == 0)) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(**(int **)&pAVar3[2].field_0x24 + 0x4c))();
         *(undefined4 *)&pAVar3[1].field_0x14 = 1;
       }
@@ -27,7 +27,7 @@ int FUN_0074c28a(AnonShape_007470E5_0A8F5E67 *param_1)
     else if (*(int *)(*(int *)&pAVar3[2].field_0x24 + 0x18) != 0) {
       if (*puVar1 == 0) {
         EnterCriticalSection((LPCRITICAL_SECTION)&pAVar3[2].field_0008);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         param_1 = (AnonShape_007470E5_0A8F5E67 *)
                   (**(code **)(*(int *)&pAVar3[-1].field_0x24 + 0x38))();
         LeaveCriticalSection((LPCRITICAL_SECTION)&pAVar3[2].field_0008);

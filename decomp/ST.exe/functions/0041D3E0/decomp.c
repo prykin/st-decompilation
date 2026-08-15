@@ -15,7 +15,7 @@ void __thiscall FUN_0041d3e0(void *this,int param_1)
                (int)STField<short>(this,0x5d),(char)STField<undefined2>(this,0x5f),
                STField<uint>(this,0x24),param_1,STField<uint>(this,0x18),0xffffffff);
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(*(int *)this + 8))();
   if ((iVar1 == 1) && (STField<uint>(this,0x24) == (uint)DAT_0080874d)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

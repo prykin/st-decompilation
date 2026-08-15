@@ -25,7 +25,6 @@ int FUN_00695180(AnonShape_0052EFB0_8161B92D *param_1,RecoveredRecord_CGenerate_
   if (param_1->field_000C != iVar1) {
     return 0;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == 0) {
     return 1;
   }

@@ -236,13 +236,10 @@ STAllPlayersC::PutOnPlaceGuardBoats
         if (-1 < (int)local_24) {
           local_1c = 0;
           do {
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = local_20_mg0;
             if (9 < (int)local_20_mg0) {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 10;
             }
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
               psVar14 = local_6a;
@@ -280,7 +277,6 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 else {
                   STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 local_8 = local_8 + 1;
               } while (param_6 < (int)_param_4);
@@ -300,13 +296,10 @@ STAllPlayersC::PutOnPlaceGuardBoats
           if (-1 < (int)local_20_mg0) {
             local_8 = 0;
             do {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = local_1c;
               if (0xe < (int)local_1c) {
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_4 = 0xf;
               }
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = 0;
               if (0 < (int)_param_4) {
                 puVar13 = &local_be;
@@ -335,7 +328,6 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   else {
                     STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                   }
-                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
                   uVar15 = uVar15 + 1;
                   puVar13 = puVar13 + 3;
@@ -354,13 +346,10 @@ STAllPlayersC::PutOnPlaceGuardBoats
           if (-1 < (int)local_24) {
             local_1c = 0;
             do {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = local_20_mg0;
               if (9 < (int)local_20_mg0) {
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_4 = 10;
               }
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = 0;
               if (0 < (int)_param_4) {
                 psVar14 = local_6a;
@@ -399,7 +388,6 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   else {
                     STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                   }
-                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
                   local_8 = local_8 + 1;
                 } while (param_6 < (int)_param_4);
@@ -418,13 +406,10 @@ STAllPlayersC::PutOnPlaceGuardBoats
             local_1c = 0;
             local_8 = dVar12;
             do {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = local_8;
               if (0xe < (int)local_8) {
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_4 = 0xf;
               }
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = 0;
               if (0 < (int)_param_4) {
                 puVar13 = &local_be;
@@ -453,7 +438,6 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   else {
                     STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                   }
-                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
                   uVar15 = uVar15 + 1;
                   puVar13 = puVar13 + 3;
@@ -479,13 +463,10 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 *piVar16 = 0;
                 piVar16 = piVar16 + 1;
               }
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = dVar12;
               if (99 < (int)dVar12) {
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_4 = 100;
               }
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = 0;
               uVar15 = local_8;
               if (0 < (int)_param_4) {
@@ -626,7 +607,6 @@ LAB_00448bc0:
                   else {
                     STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                   }
-                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
                   uVar15 = uVar15 + 1;
                 } while (param_6 < (int)_param_4);
@@ -650,13 +630,10 @@ LAB_00448bc0:
         if (-1 < (int)local_20_mg0) {
           local_8 = 0;
           do {
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = local_1c;
             if (0xe < (int)local_1c) {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 0xf;
             }
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
               puVar13 = &local_be;
@@ -684,7 +661,6 @@ LAB_00448bc0:
                 else {
                   STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 uVar15 = uVar15 + 1;
                 puVar13 = puVar13 + 3;
@@ -703,13 +679,10 @@ LAB_00448bc0:
         if (-1 < (int)local_24) {
           local_1c = 0;
           do {
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = local_20_mg0;
             if (0x13 < (int)local_20_mg0) {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 0x14;
             }
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
               psVar14 = local_6a;
@@ -749,7 +722,6 @@ LAB_00448bc0:
                 else {
                   STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 local_8 = local_8 + 1;
               } while (param_6 < (int)_param_4);
@@ -767,13 +739,10 @@ LAB_00448bc0:
         if (-1 < (int)local_20_mg0) {
           local_8 = 0;
           do {
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = local_1c;
             if (0xe < (int)local_1c) {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 0xf;
             }
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
               puVar13 = &local_be;
@@ -801,7 +770,6 @@ LAB_00448bc0:
                 else {
                   STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 uVar15 = uVar15 + 1;
                 puVar13 = puVar13 + 3;
@@ -820,13 +788,10 @@ LAB_00448bc0:
         if (-1 < (int)local_24) {
           local_1c = 0;
           do {
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = local_20_mg0;
             if (0x13 < (int)local_20_mg0) {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 0x14;
             }
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
               psVar14 = local_6a;
@@ -864,7 +829,6 @@ LAB_00448bc0:
                 else {
                   STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 local_8 = local_8 + 1;
               } while (param_6 < (int)_param_4);

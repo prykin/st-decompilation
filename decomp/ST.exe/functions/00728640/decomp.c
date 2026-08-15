@@ -29,16 +29,15 @@ void __thiscall FUN_00728640(void *this,int param_1,int param_2,int param_3)
   int local_c;
   int local_8;
 
-  iVar5 = (int)*(short *)(DAT_00857110 + 2 + DAT_00857114 * 8);
   local_c = STField<int>(this,0x28);
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = param_1 + iVar5 * param_2;
-  local_8 = iVar5 * local_c + STField<int>(this,0xc);
+  param_1 = param_1 + g_runtimeRecords_00857110[g_runtimeRecordCount_00857114].field_0002 * param_2;
+  local_8 = g_runtimeRecords_00857110[g_runtimeRecordCount_00857114].field_0002 * local_c +
+            STField<int>(this,0xc);
   local_28 = 1;
-  iVar5 = FUN_007287e0(&local_28,DAT_00857114);
+  iVar5 = FUN_007287e0(&local_28,g_runtimeRecordCount_00857114);
   if (iVar5 != 0) {
     local_44 = -1;
-    iVar5 = FUN_007287e0(&local_44,DAT_00857114);
+    iVar5 = FUN_007287e0(&local_44,g_runtimeRecordCount_00857114);
     if (iVar5 != 0) {
       do {
         iVar6 = local_1c >> 0x10;
@@ -115,7 +114,6 @@ LAB_0072876c:
         else {
           local_38 = local_38 + local_34;
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + param_2;
         local_8 = local_8 + local_c;
       } while( true );

@@ -9,6 +9,7 @@
 undefined4 * CreateBossData(void)
 
 {
+  byte stack_bytes_neg_494[0x318]; /* exact EBP-relative stack object */
   char cVar1;
   int iVar3;
   int iVar4;
@@ -51,7 +52,7 @@ undefined4 * CreateBossData(void)
   }
   memset(local_34, 0, 0x18); /* compiler bulk-zero initialization */
   iVar5 = 0;
-  memset(&stack0xfffffb6c, 0, 0x318); /* compiler bulk-zero initialization */
+  memset(stack_bytes_neg_494, 0, 0x318); /* compiler bulk-zero initialization */
   uVar6 = 0xffffffff;
   pcVar8 = &CHAR_00h_00807680;
   do {
@@ -104,10 +105,10 @@ undefined4 * CreateBossData(void)
   } while (cVar1 != '\0');
   uVar6 = ~uVar6;
   pcVar8 = pcVar11 + -uVar6;
-  pcVar11 = &stack0xfffffb6c;
+  pcVar11 = stack_bytes_neg_494;
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
-  FUN_006b78c0(&stack0xfffffb6c,&stack0xfffffb6c);
+  FUN_006b78c0(stack_bytes_neg_494,stack_bytes_neg_494);
   uVar6 = 0xffffffff;
   pcVar8 = &CHAR_00h_00807680;
   do {
@@ -173,7 +174,7 @@ undefined4 * CreateBossData(void)
   pcVar11 = pcVar10 + -1;
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   local_8 = (AllocationRecord_00648620 *)
-            thunk_FUN_00683c70(local_17c,(AnonShape_00683C70_22193481 *)&stack0xfffffb6c,&local_1c,
+            thunk_FUN_00683c70(local_17c,(AnonShape_00683C70_22193481 *)stack_bytes_neg_494,&local_1c,
                                local_34,nullptr);
   if (local_8 != nullptr) {
     local_10 = EventDataPack(*(AllocationRecord_0065CD10 **)&local_8->field_0x4e,&local_14);

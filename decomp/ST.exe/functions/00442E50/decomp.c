@@ -273,7 +273,7 @@ LAB_00442f1f:
     do {
       uVar16 = local_24;
       DArrayGetElement(pDVar8,local_24,&local_1c);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((local_1c != nullptr) &&
          (iVar11 = (**(code **)(local_1c->vtable + 0xc))(), iVar11 == 8)) {
         local_48 = (DArrayTy *)STGroupC::GetGroupContent(local_1c);

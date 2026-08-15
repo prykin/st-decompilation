@@ -40,7 +40,6 @@ undefined4 __thiscall TLOBaseTy::sub_004C56B0(TLOBaseTy *this,void *param_1)
   if (*(int *)((int)&this->field_02CC + iVar6 + 1) < *(int *)((int)&this->field_02D0 + iVar6 + 1)) {
     pvVar1 = (void *)((int)param_1 + this->field_0235 * 2);
     if ((&DAT_00792ca0)[(int)pvVar1 * 3] == 0xb3) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = nullptr;
       if (((AnonShape_005EFAE0_B406B78B *)this->field_04E0[3] != nullptr)
          && (iVar4 = STPlaySystemC::sub_006E62D0

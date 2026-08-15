@@ -68,12 +68,10 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   if (piVar2 == piVar8) {
     if (0 < (int)piVar8) {
       piVar2 = local_ec;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = piVar8;
       do {
         uVar4 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
         STField<uint>(this,0x1c) = uVar4;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = (int *)((int)param_3 + -1);
         *piVar2 = (uVar4 >> 0x10) % 6 + 10;
         piVar2 = piVar2 + 1;
@@ -87,7 +85,6 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
     local_9c.id = MESS_ID_CREATE;
     local_8 = 0;
     if (0 < (int)piVar8) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = local_ec;
       local_10 = (undefined4 *)((int)this + 0x219);
       do {
@@ -184,7 +181,6 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
         local_54 = uVar1;
         local_50 = uVar5;
         STParticleC::GetMessage((STParticleC *)*local_10,&local_9c);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
         local_8 = local_8 + 1;
         local_10 = puVar10 + 1;

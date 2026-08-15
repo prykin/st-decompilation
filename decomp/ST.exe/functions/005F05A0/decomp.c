@@ -16,12 +16,12 @@ void __thiscall FUN_005f05a0(void *this,ushort param_1,undefined2 param_2)
 
   if (DAT_008117bc != nullptr) {
     memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     local_e = (**(code **)(*(int *)this + 0x144))();
     local_c = param_1;
     local_a = param_2;
     local_14 = 0x5dda;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*DAT_008117bc)(local_24);
   }
   return;

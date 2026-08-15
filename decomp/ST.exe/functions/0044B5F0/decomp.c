@@ -49,7 +49,6 @@ STAllPlayersC::SelectObjects
   local_c = nullptr;
   local_8 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   switch(param_1) {
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_0:
     param_3 = 0;
     iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
@@ -57,13 +56,12 @@ STAllPlayersC::SelectObjects
     if (0 < iVar1) {
       do {
         piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))) {
           Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
       } while ((int)param_3 < iVar1);
     }
@@ -71,9 +69,7 @@ STAllPlayersC::SelectObjects
   case CASE_1:
     GetGObjFromZone(this,objPtr,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,(int *)&local_8,
                     nullptr);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = local_8->count;
     if (0 < (int)param_2) {
       do {
@@ -82,17 +78,13 @@ STAllPlayersC::SelectObjects
             (iVar9 = pSVar7->vfunc_F8(), iVar9 == 0)) ||
            (iVar9 = pSVar7->vfunc_EC(), iVar9 == 0)) {
           DArrayRemoveAt(local_8,param_3);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 - 1;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = param_3 - 1;
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
       } while ((int)param_3 < (int)param_2);
     }
     break;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_2:
     param_3 = 0;
     iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
@@ -100,7 +92,7 @@ STAllPlayersC::SelectObjects
     if (0 < iVar1) {
       do {
         piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            (((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
              (*(uint *)(&DAT_00800f10 + (iVar4 + 0x41U >> 5) * 4) &
@@ -111,12 +103,10 @@ STAllPlayersC::SelectObjects
              (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
           Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
       } while ((int)param_3 < iVar1);
     }
     break;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_3:
     param_3 = 0;
     iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
@@ -124,7 +114,7 @@ STAllPlayersC::SelectObjects
     if (0 < iVar1) {
       do {
         piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
             ((&DAT_00801000)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 &&
@@ -132,12 +122,10 @@ STAllPlayersC::SelectObjects
              (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
           Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
       } while ((int)param_3 < iVar1);
     }
     break;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_4:
     param_3 = 0;
     iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
@@ -145,7 +133,7 @@ STAllPlayersC::SelectObjects
     if (0 < iVar1) {
       do {
         piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
             (iVar4 = (**(code **)(*piVar5 + 0x2c))(),
             ((&DAT_00800fa0)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0)) &&
@@ -153,12 +141,10 @@ STAllPlayersC::SelectObjects
             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))) {
           Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
       } while ((int)param_3 < iVar1);
     }
     break;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_5:
     param_3 = 0;
     iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
@@ -166,7 +152,7 @@ STAllPlayersC::SelectObjects
     if (0 < iVar1) {
       do {
         piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
             ((&DAT_00801010)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 &&
@@ -174,7 +160,6 @@ STAllPlayersC::SelectObjects
              (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
           Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
       } while ((int)param_3 < iVar1);
     }
@@ -187,15 +172,13 @@ STAllPlayersC::SelectObjects
                       (int *)&local_c,nullptr);
       cVar10 = -1;
       iVar9 = 0;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       SVar6 = (**(code **)(*piVar5 + 0x2c))();
       local_8 = (DArrayTy *)
                 GetTOBJListFromDArr(this,uVar3,(AnonShape_0043EED0_93C25F9A *)local_c,SVar6,iVar9,
                                     cVar10);
       DArrayDestroy(local_c);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = 0;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = local_8->count;
       if (0 < (int)param_2) {
         do {
@@ -204,12 +187,9 @@ STAllPlayersC::SelectObjects
               (iVar9 = pSVar7->vfunc_F8(), iVar9 == 0)) ||
              (iVar9 = pSVar7->vfunc_EC(), iVar9 == 0)) {
             DArrayRemoveAt(local_8,param_3);
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 - 1;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_3 = param_3 - 1;
           }
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = param_3 + 1;
         } while ((int)param_3 < (int)param_2);
       }
@@ -223,7 +203,6 @@ STAllPlayersC::SelectObjects
            this_00 != nullptr)))) {
       DArrayDestroy(local_8);
       local_8 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this_00);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = local_8->count;
       index = 0;
       if (0 < (int)param_2) {
@@ -233,7 +212,6 @@ STAllPlayersC::SelectObjects
           iVar9 = pSVar7->vfunc_EC();
           if (iVar9 == 0) {
             DArrayRemoveAt(local_8,index);
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 - 1;
             index = index - 1;
           }

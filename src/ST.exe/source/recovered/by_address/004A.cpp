@@ -134,16 +134,12 @@ void st::fn_004A8E00(int param_1,int param_2,int param_3)
   int iVar1;
 
   switch(DAT_008073fc) {
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case 0:
     param_1 = param_1 - param_3;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 - param_3;
     break;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case 1:
     param_1 = param_1 + param_3;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 - param_3;
     break;
   case 2:
@@ -151,26 +147,20 @@ void st::fn_004A8E00(int param_1,int param_2,int param_3)
     goto LAB_004a8e4a;
   case 3:
     iVar1 = -param_3;
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_004a8e4a:
     param_1 = param_1 + iVar1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 + param_3;
   }
   if (param_1 < 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
   }
   if (param_2 < 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
   }
   if (*PTR_00806750 + -1 < param_1) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = *PTR_00806750 + -1;
   }
   if (PTR_00806750[1] + -1 < param_2) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = st::machine_word_boundary_cast<int>(PTR_00806750[1] + -1);
   }
   DAT_008073d8 = param_1;
@@ -1912,6 +1902,8 @@ st::fn_004AE0B0(short param_1,int param_2,int param_3,Global_sub_004AE0B0_param_
             int param_5,undefined4 *param_6,int *param_7,int *param_8,int param_9,int *param_10)
 
 {
+  int _param_1 = static_cast<int>(param_1);
+
   STWorldObject *pSVar1;
   int *piVar2;
   byte bVar3;
@@ -2112,7 +2104,6 @@ LAB_004ae41c:
     }
     else if (param_4 == 0x4d) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1971_0x9e2;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_10 = (int *)&g_packedRecords_A62x8[param_5].field1971_0x9e2;
       if (pDVar12 != nullptr) {
         iVar11 = DAT_00795118 / 0xc9;
@@ -2135,7 +2126,6 @@ LAB_004ae41c:
     }
     else if (param_4 == 0x43) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1974_0x9ee;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_10 = (int *)&g_packedRecords_A62x8[param_5].field1974_0x9ee;
       if (pDVar12 != nullptr) {
         iVar11 = DAT_007950f0 / 0xc9;
@@ -2158,7 +2148,6 @@ LAB_004ae41c:
     }
     else if (param_4 == 0x73) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1975_0x9f2;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_10 = (int *)&g_packedRecords_A62x8[param_5].field1975_0x9f2;
       if (pDVar12 != nullptr) {
         iVar11 = DAT_007951b0 / 0xc9;
@@ -2181,7 +2170,6 @@ LAB_004ae41c:
     }
     else if (param_4 == 0x65) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1972_0x9e6;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_10 = (int *)&g_packedRecords_A62x8[param_5].field1972_0x9e6;
       if (pDVar12 != nullptr) {
         iVar11 = DAT_00795178 / 0xc9;
@@ -2234,7 +2222,6 @@ LAB_004ae41c:
             (iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
             0x5a < iVar11)) ||
            ((piVar2 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != piVar2)))))))) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (((_param_1 + 1 < (int)sVar15) &&
             ((((((sVar5 = (short)(_param_1 + 1), -1 < sVar5 && (sVar5 < sVar15)) && (-1 < sVar4)) &&
                ((sVar4 < g_worldGrid.sizeY && (-1 < sVar14)))) && (sVar14 < g_worldGrid.sizeZ)) &&
@@ -2250,7 +2237,6 @@ LAB_004ae41c:
               ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
           local_c = 1;
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         else if (((param_2 + 1 < (int)g_worldGrid.sizeY) &&
                  (((-1 < param_1 && (param_1 < sVar15)) &&
                   (sVar4 = (short)(param_2 + 1), -1 < sVar4)))) &&

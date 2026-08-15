@@ -38,40 +38,40 @@ FUN_006da660(undefined4 param_1,undefined4 param_2,char *param_3,byte *param_4,i
               if (bVar4 == 0xaa) {
                     /* WARNING: Could not recover jumptable at 0x006da9bd. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 (**(code **)(&DAT_006dabfb + uVar9 * 4))();
                 return;
               }
               if (bVar4 == 0x55) {
                     /* WARNING: Could not recover jumptable at 0x006da9dc. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 (**(code **)(&DAT_006dac1f + uVar9 * 4))();
                 return;
               }
                     /* WARNING: Could not recover jumptable at 0x006da9b6. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(&DAT_006dac43 + uVar9 * 4))();
               return;
             }
             if (bVar4 == 0xaa) {
                     /* WARNING: Could not recover jumptable at 0x006da85a. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(&DAT_006dab8f + iVar7 * 4))();
               return;
             }
             if (bVar4 == 0x55) {
                     /* WARNING: Could not recover jumptable at 0x006da879. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(&DAT_006dabb3 + iVar7 * 4))();
               return;
             }
                     /* WARNING: Could not recover jumptable at 0x006da853. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(&DAT_006dabd7 + iVar7 * 4))();
             return;
           }
@@ -80,40 +80,40 @@ FUN_006da660(undefined4 param_1,undefined4 param_2,char *param_3,byte *param_4,i
             if (bVar4 == 0xaa) {
                     /* WARNING: Could not recover jumptable at 0x006da7bd. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(&DAT_006dab23 + uVar9 * 4))();
               return;
             }
             if (bVar4 == 0x55) {
                     /* WARNING: Could not recover jumptable at 0x006da7d1. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(&DAT_006dab47 + uVar9 * 4))();
               return;
             }
                     /* WARNING: Could not recover jumptable at 0x006da7b6. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(&DAT_006dab6b + uVar9 * 4))();
             return;
           }
           if (bVar4 == 0xaa) {
                     /* WARNING: Could not recover jumptable at 0x006da6c3. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(&DAT_006daab7 + iVar7 * 4))();
             return;
           }
           if (bVar4 == 0x55) {
                     /* WARNING: Could not recover jumptable at 0x006da6d7. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(&DAT_006daadb + iVar7 * 4))();
             return;
           }
                     /* WARNING: Could not recover jumptable at 0x006da6bc. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(&DAT_006daaff + iVar7 * 4))();
           return;
         }

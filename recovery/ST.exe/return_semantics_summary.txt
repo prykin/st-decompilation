@@ -1,7 +1,7 @@
 ST return semantics
 
 Mode: repair-only
-Functions: 5624
+Functions: 5555
 Proposals: 0
 Automatic: 0
 leaf_void: 0

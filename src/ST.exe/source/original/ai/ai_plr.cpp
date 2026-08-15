@@ -183,6 +183,8 @@ byte * __thiscall st::fn_00678BE0(AiPlrClassTy *this,uint *param_1)
 int __thiscall st::fn_00679300(AiPlrClassTy *this,byte *param_1)
 
 {
+  alignas(4) byte st_stack_frame[140];
+
   DArrayTy *pDVar1;
   AiPlrClassTy *pAVar3;
   int iVar4;
@@ -238,7 +240,7 @@ LAB_00679378:
       pAVar7 = (AnonShape_0068FD00_A5257008 *)&pAVar7->field_0x4;
     }
     STPiece<0,4>(local_3c[0]) = 0x71;
-    if (&stack0x00000000 != (undefined1 *)0x3c) {
+    if ((st_stack_frame + 136) != (undefined1 *)0x3c) {
       st::fn_004010E1(this_00,local_3c);
     }
     st::fn_0040432C(g_playSystem_00802A38,*(uint *)&this_00->field_0x8);
@@ -257,6 +259,8 @@ LAB_00679378:
 int __thiscall st::fn_00679470(AiPlrClassTy *this)
 
 {
+  alignas(4) byte st_stack_frame[136];
+
   uint index;
   DArrayTy *pDVar1;
   AiPlrClassTy *pAVar3;
@@ -318,7 +322,7 @@ LAB_00679519:
       this_00 = (AiTactClassTy *)*puVar4;
     }
     if (this_00 != nullptr) {
-      if (&stack0x00000000 != (undefined1 *)0x3c) {
+      if ((st_stack_frame + 132) != (undefined1 *)0x3c) {
         st::fn_004010E1(this_00,local_3c);
       }
       st::fn_0040432C(g_playSystem_00802A38,*(uint *)&this_00->field_0x8);
@@ -411,6 +415,8 @@ st::fn_0067B3C0(AiPlrClassTy *this,int param_1,int param_2,int param_3,char para
 void __thiscall st::fn_0067B520(AiPlrClassTy *this)
 
 {
+  alignas(4) byte st_stack_frame[208];
+
   short sVar1;
   AiPlrClassTy *this_00;
   bool bVar13;
@@ -531,7 +537,7 @@ LAB_0067b724:
                         STPiece<0,4>(local_4c[0]) = 0x73;
                         local_4c[0].field_0009 = 1;
                         local_4c[0].field_000A = st::machine_word_boundary_cast<undefined4>(pvVar8);
-                        if (&stack0x00000000 != (undefined1 *)0x4c) {
+                        if ((st_stack_frame + 204) != (undefined1 *)0x4c) {
                           st::fn_004010E1((AiTactClassTy *)local_8,local_4c);
                           uVar7 = local_c;
                         }
@@ -729,14 +735,14 @@ void __thiscall st::fn_0067C180(AiPlrClassTy *this)
                   piVar5 = nullptr;
                 }
                 piVar5 = (int *)*piVar5;
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 if ((piVar5 != nullptr) && (iVar6 = (**(code **)(*piVar5 + 0xf8))(), iVar6 != 0))
                 {
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   iVar6 = (**(code **)(*piVar5 + 0x2c))();
                   pIVar7 = st::fn_0040410B(iVar6);
                   if ((((uint)pIVar7 & 3) != 0) || (((uint)pIVar7 & 0x630000) != 0)) {
-                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                     iVar6 = (**(code **)(*piVar5 + 0xd4))();
                     local_14 = local_14 + iVar6;
                   }
@@ -763,7 +769,7 @@ void __thiscall st::fn_0067C180(AiPlrClassTy *this)
                   }
                   pSVar1 = (STFishC *)*puVar8;
                   if ((pSVar1 != nullptr) &&
-                     (iVar6 = (*pSVar1->vtable->vfunc_F8)(), iVar6 != 0)) {
+                     (iVar6 = pSVar1->vfunc_F8(), iVar6 != 0)) {
                     memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
                     STPiece<0,2>(local_3c) = (undefined2)local_8;
                     dVar9 = pSVar1->slot_2C();
@@ -832,7 +838,8 @@ LAB_0067c61b:
                       }
                       pSVar1 = (STFishC *)*puVar8;
                       if (((pSVar1 != nullptr) &&
-                          (iVar6 = (*pSVar1->vtable->vfunc_F8)(), iVar13 = local_18, iVar6 != 0)) &&
+                          (iVar6 = pSVar1->vfunc_F8(), iVar13 = local_18,
+                          iVar6 != 0)) &&
                          (puVar11 = st::fn_00405CAE(this_00->field_06AD,uVar14),
                          iVar13 = local_18, puVar11 == nullptr)) {
                         uVar3 = (undefined2)local_8;

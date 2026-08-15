@@ -42,9 +42,7 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
     if ((-1 < param_4) && (param_4 < 0x100)) {
       local_110[param_4] = (byte)param_4;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == nullptr) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (byte *)FUN_006b4fa0((int *)param_1);
     }
     local_10 = *(int *)(param_1 + 4);
@@ -73,7 +71,6 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
     if (iVar7 != 0) {
       local_514[0].palVersion = 0x300;
       local_514[0].palNumEntries = 0x100;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = CreatePalette(local_514);
     }
     iVar6 = 0;
@@ -100,7 +97,6 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
       do {
         for (; uVar1 != 0; uVar1 = uVar1 - 1) {
           *param_2 = local_110[*param_2];
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 + 1;
         }
         iVar6 = iVar6 + -1;

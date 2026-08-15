@@ -86,7 +86,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
           this_00->field_002E = 2;
           this_00->field_0030 = iVar2;
           if (g_cursorClass_00802A30 != nullptr) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
           }
         }
@@ -96,7 +96,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
           this_00->field_002C = 0;
           this_00->field_002E = 2;
           this_00->field_0030 = iVar12;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
           g_currentExceptionFrame = local_58.previous;
           return 0;

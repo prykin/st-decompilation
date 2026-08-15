@@ -32,12 +32,12 @@ void __thiscall TLOEmbryoTy::sub_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
                  (char)this->field_005F,(undefined *)this->field_0024,this->field_0105,
                  this->field_0018,0xffffffff);
     }
-    uVar2 = (*this->vtable->vfunc_2C)();
+    uVar2 = this->vfunc_2C();
     switch(uVar2) {
     case 5:
     case 0x11:
     case 0x21:
-      (*this->vtable->vfunc_94)();
+      this->vfunc_94();
       break;
     case 0xb:
     case 0x23:

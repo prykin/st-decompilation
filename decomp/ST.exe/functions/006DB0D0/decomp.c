@@ -1,83 +1,91 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* WARNING: Restarted to delay deadcode elimination for space: stack */
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 
 void FUN_006db0d0(undefined4 *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
                  int param_7,uint param_8,int param_9)
 
 {
-  int iVar1;
+  int *piVar1;
   int iVar2;
-  int *piVar3;
-  byte *pbVar4;
-  int iVar5;
-  bool bVar6;
-  int local_8;
+  int iVar3;
+  int *piVar4;
+  undefined1 *puVar5;
+  byte *pbVar6;
+  int iVar7;
+  bool bVar8;
+  int iStack_1c;
 
-  piVar3 = (int *)&stack0xffffffe8;
-  Library::MSVCRT::FUN_0072da40();
-  iVar2 = -1;
-  iVar1 = -(param_7 >> 1);
-  iVar5 = param_3;
+  puVar5 = &stack0xfffffffc;
+  iStack_1c = 0x6db0ed;
+  piVar4 = (int *)(&stack0xffffffe8 + param_3 * -4);
+  iVar3 = -1;
+  iVar2 = -(param_7 >> 1);
+  iVar7 = param_3;
   if (0 < param_3) {
     do {
-      for (; iVar1 < 1; iVar1 = iVar1 + param_3) {
-        iVar2 = iVar2 + 1;
+      for (; iVar2 < 1; iVar2 = iVar2 + param_3) {
+        iVar3 = iVar3 + 1;
       }
-      *piVar3 = iVar2;
-      iVar1 = iVar1 - param_7;
-      piVar3 = piVar3 + 1;
-      iVar5 = iVar5 + -1;
-    } while (iVar5 != 0);
+      *piVar4 = iVar3;
+      iVar2 = iVar2 - param_7;
+      piVar4 = piVar4 + 1;
+      iVar7 = iVar7 + -1;
+    } while (iVar7 != 0);
   }
-  local_8 = param_4;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_7 = -(param_8 >> 1);
-  pbVar4 = (byte *)(param_5 - param_6);
+  pbVar6 = (byte *)(param_5 - param_6);
   do {
-    if (param_7 < 1) {
+    iVar2 = *(int *)(puVar5 + 0x20);
+    if (iVar2 < 1) {
       do {
-        pbVar4 = pbVar4 + param_6;
-        bVar6 = SCARRY4(param_7,param_4);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_7 = param_7 + param_4;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      } while (param_7 == 0 || bVar6 != param_7 < 0);
+        pbVar6 = pbVar6 + *(int *)(puVar5 + 0x1c);
+        bVar8 = SCARRY4(iVar2,*(int *)(puVar5 + 0x14));
+        iVar2 = iVar2 + *(int *)(puVar5 + 0x14);
+      } while (iVar2 == 0 || bVar8 != iVar2 < 0);
     }
-    piVar3 = (int *)&stack0xffffffe8;
-    iVar1 = param_3;
+    *(int *)(puVar5 + 0x20) = iVar2;
+    iVar2 = *(int *)(puVar5 + 0x10);
+    piVar4 = *(int **)(puVar5 + -8);
+    (&iStack_1c)[-param_3] = (int)puVar5;
+    iVar3 = *(int *)(puVar5 + 0x28);
+    iVar7 = iVar2;
     if (((uint)param_1 & 2) == 0) {
 joined_r0x006db171:
-      while (1 < iVar1) {
-        *param_1 = CONCAT22(*(undefined2 *)(param_9 + (uint)pbVar4[piVar3[1]] * 2),
+      while (1 < iVar7) {
+        piVar1 = piVar4 + 1;
+        iVar2 = *piVar4;
+        piVar4 = piVar4 + 2;
+        *param_1 = CONCAT22(*(undefined2 *)(iVar3 + (uint)pbVar6[*piVar1] * 2),
                             *(undefined2 *)
                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                             (param_9 +
-                             CONCAT22((short)((uint)*piVar3 >> 0x10),(ushort)pbVar4[*piVar3]) * 2));
+                             (iVar3 + CONCAT22((short)((uint)iVar2 >> 0x10),(ushort)pbVar6[iVar2]) *
+                                      2));
         param_1 = param_1 + 1;
-        piVar3 = piVar3 + 2;
-        iVar1 = iVar1 + -2;
+        iVar7 = iVar7 + -2;
       }
-      if (iVar1 + -2 != -2) {
-        *(undefined2 *)param_1 = *(undefined2 *)(param_9 + (uint)pbVar4[*piVar3] * 2);
+      if (iVar7 + -2 != -2) {
+        *(undefined2 *)param_1 = *(undefined2 *)(iVar3 + (uint)pbVar6[*piVar4] * 2);
         param_1 = (undefined4 *)((int)param_1 + 2);
       }
     }
     else {
-      piVar3 = (int *)&stack0xffffffec;
-      *(undefined2 *)param_1 = *(undefined2 *)(param_9 + (uint)*pbVar4 * 2);
+      piVar4 = piVar4 + 1;
+      *(undefined2 *)param_1 = *(undefined2 *)(iVar3 + (uint)*pbVar6 * 2);
       param_1 = (undefined4 *)((int)param_1 + 2);
-      iVar1 = param_3 + -1;
-      if (iVar1 != 0 && 0 < param_3) goto joined_r0x006db171;
+      iVar7 = iVar2 + -1;
+      if (iVar7 != 0 && 0 < iVar2) goto joined_r0x006db171;
     }
-    param_1 = (undefined4 *)((int)param_1 + param_2 + param_3 * -2);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_7 = param_7 - param_8;
-    iVar1 = local_8 + -1;
-    bVar6 = local_8 < 1;
-    local_8 = iVar1;
-    if (iVar1 == 0 || bVar6) {
+    puVar5 = (undefined1 *)(&iStack_1c)[-param_3];
+    param_1 = (undefined4 *)
+              ((int)param_1 +
+              *(int *)(puVar5 + 0xc) + (-*(int *)(puVar5 + 0x10) - *(int *)(puVar5 + 0x10)));
+    *(int *)(puVar5 + 0x20) = *(int *)(puVar5 + 0x20) - *(int *)(puVar5 + 0x24);
+    iVar2 = *(int *)(puVar5 + -4);
+    iVar3 = iVar2 + -1;
+    *(int *)(puVar5 + -4) = iVar3;
+    if (iVar3 == 0 || iVar2 < 1) {
       return;
     }
   } while( true );

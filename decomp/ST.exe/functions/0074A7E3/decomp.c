@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_0074a7e3(int *param_1)
   param_1[0x1d] = 0;
   if (param_1[0x19] == 1) {
     param_1[0x19] = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 0x44))();
     timeEndPeriod(1);
   }

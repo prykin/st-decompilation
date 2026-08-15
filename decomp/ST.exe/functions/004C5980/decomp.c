@@ -17,7 +17,7 @@ int __thiscall FUN_004c5980(void *this,short param_1,short param_2,short param_3
   int local_8;
 
   iVar7 = 2 - (uint)(*(int *)(&DAT_00791e30 + STField<int>(this,0x235) * 4) != 1);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (**(code **)(*(int *)this + 0xf8))();
   if ((iVar3 == 0) && (iVar3 = thunk_FUN_004ac910((void *)((int)this + 0x1d5),'\x04'), 0x10 < iVar3)
      ) {

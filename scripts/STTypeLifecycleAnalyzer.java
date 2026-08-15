@@ -294,7 +294,9 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
     }
 
     private boolean viewOrDerivative(DataType type) {
-        if (text(type.getDescription()).contains(VIEW)) return true;
+        String description = text(type.getDescription());
+        if (description.contains(VIEW) || disposableAnonymous(type, description))
+            return true;
         return derivedFromView(type);
     }
 

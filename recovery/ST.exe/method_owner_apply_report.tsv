@@ -1,6 +1,7 @@
 address	status	proposed_name	detail
 00402E14	disabled	AiEventClassTy::sub_00402E14	all apply flags are 0
 00405687	disabled	CursorClassTy::sub_00405687	all apply flags are 0
+0040EB90	disabled	RuntimeRecord_007F4D3C_0014::sub_0040EB90	all apply flags are 0
 00415B30	disabled		all apply flags are 0
 00415ED0	disabled	STJellyGunC::sub_00415ED0	all apply flags are 0
 00416240	disabled		all apply flags are 0
@@ -763,6 +764,7 @@ address	status	proposed_name	detail
 006A0C90	disabled	CGenerate::sub_006A0C90	all apply flags are 0
 006A0E30	disabled	CGenerate::sub_006A0E30	all apply flags are 0
 006A5E90	disabled	InternalExceptionFrame::sub_006A5E90	all apply flags are 0
+006ACF90	disabled	RuntimeRecord_00803300_0014::sub_006ACF90	all apply flags are 0
 006B0020	disabled		all apply flags are 0
 006B08F0	disabled	DDXContext::sub_006B08F0	all apply flags are 0
 006B0A20	disabled	DDXContext::sub_006B0A20	all apply flags are 0
@@ -803,7 +805,6 @@ address	status	proposed_name	detail
 006DD610	disabled	ST3DSMAPContext::sub_006DD610	all apply flags are 0
 006DD790	disabled	ST3DSMAPContext::sub_006DD790	all apply flags are 0
 006DD800	disabled	ST3DSMAPContext::sub_006DD800	all apply flags are 0
-006DD870	disabled	ST3DSMAPContext::sub_006DD870	all apply flags are 0
 006DDA90	disabled	ST3DSMAPContext::sub_006DDA90	all apply flags are 0
 006DDAE0	disabled	ST3DSMAPContext::sub_006DDAE0	all apply flags are 0
 006DDB70	disabled	ST3DSMAPContext::sub_006DDB70	all apply flags are 0
@@ -811,9 +812,7 @@ address	status	proposed_name	detail
 006DDBD0	disabled	ST3DSMAPContext::sub_006DDBD0	all apply flags are 0
 006DDBE0	disabled	ST3DSMAPContext::sub_006DDBE0	all apply flags are 0
 006DDD50	disabled	ST3DSMAPContext::sub_006DDD50	all apply flags are 0
-006DE9C0	disabled	ST3DSMAPContext::sub_006DE9C0	all apply flags are 0
 006E1050	disabled	ST3DSMAPContext::sub_006E1050	all apply flags are 0
-006E1320	disabled	ST3DSMAPContext::sub_006E1320	all apply flags are 0
 006E1440	disabled	ST3DSMAPContext::sub_006E1440	all apply flags are 0
 006E1460	disabled	ST3DSMAPContext::sub_006E1460	all apply flags are 0
 006E1C20	disabled	ST3DSMAPContext::sub_006E1C20	all apply flags are 0
@@ -853,7 +852,6 @@ address	status	proposed_name	detail
 006E6710	disabled	ST3DSMAPContext::sub_006E6710	all apply flags are 0
 006E6780	disabled	ST3DSMAPContext::sub_006E6780	all apply flags are 0
 006E68C0	disabled	ST3DSMAPContext::sub_006E68C0	all apply flags are 0
-006E6AF0	disabled	ST3DSMAPContext::sub_006E6AF0	all apply flags are 0
 006E6FB0	disabled	ST3DSMAPContext::sub_006E6FB0	all apply flags are 0
 006E8580	disabled	ST3DSMAPContext::sub_006E8580	all apply flags are 0
 006E8630	disabled	ST3DSMAPContext::sub_006E8630	all apply flags are 0
@@ -861,7 +859,6 @@ address	status	proposed_name	detail
 006E8660	disabled	ST3DSMAPContext::sub_006E8660	all apply flags are 0
 006E88C0	disabled	ST3DSMAPContext::sub_006E88C0	all apply flags are 0
 006E89B0	disabled	ST3DSMAPContext::sub_006E89B0	all apply flags are 0
-006E8EA0	disabled	ST3DSMAPContext::sub_006E8EA0	all apply flags are 0
 006E9000	disabled	ST3DSMAPContext::sub_006E9000	all apply flags are 0
 006E91D0	disabled	ST3DSMAPContext::sub_006E91D0	all apply flags are 0
 006E98E0	disabled	ST3DSMAPContext::sub_006E98E0	all apply flags are 0

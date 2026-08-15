@@ -43,14 +43,11 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
     sVar3 = this->field_06AB;
     if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
         ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = nullptr;
     }
     else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
         (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != *(int *)&this->field_0x6af
         )) || ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
@@ -90,14 +87,11 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
     sVar3 = this->field_06AB;
     if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
         ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = nullptr;
     }
     else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
         (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != *(int *)&this->field_0x6af
         )) || ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||

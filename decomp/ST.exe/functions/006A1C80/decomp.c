@@ -27,11 +27,10 @@ FUN_006a1c80(int *param_1,uint param_2,int param_3,int param_4,int param_5,undef
       bVar1 = false;
     }
     if (param_5 == 1) {
-      /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_2 = ~CONCAT22(local_8,uStack_a) >> 0xd & 1;
     }
     else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
     }
     if ((bVar1) || (param_2 != 0)) {

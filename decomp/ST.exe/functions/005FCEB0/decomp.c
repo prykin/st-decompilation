@@ -24,7 +24,7 @@ void __fastcall FUN_005fceb0(AnonShape_005FCEB0_FA1F7938 *param_1)
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_e = *(undefined2 *)(local_8 + 0x32);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*DAT_008117bc)(local_28);
   }
   return;

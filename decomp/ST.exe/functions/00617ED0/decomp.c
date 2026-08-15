@@ -36,7 +36,6 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
           Library::DKW::TBL::DArrayAppend(STField<DArrayTy *>(this,0x66),&local_18);
         }
         param_2 = param_2 + 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + -1;
       } while (param_1 != 0);
     }

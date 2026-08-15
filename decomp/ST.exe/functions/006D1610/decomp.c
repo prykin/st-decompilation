@@ -30,7 +30,6 @@ void FUN_006d1610(undefined8 *param_1,undefined8 *param_2,int param_3,uint param
         Library::MSVCRT::FUN_0072da70((undefined4 *)destination,source,param_4);
         source = (AnonPointee_TLOBaseTy_0607 *)((int)source - param_3);
         destination = destination + -param_3;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = param_5 + -1;
       } while (param_5 != 0);
     }

@@ -78,7 +78,7 @@ int __thiscall st::fn_0057BF60(STFishC *this,STMessage *message)
       st::fn_00402A90((STT3DSprC *)&this_00->field_01D5);
       g_currentExceptionFrame = local_80.previous;
       return 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     case MESS_STSPRGAMEOBJC_0113:
       (**(code **)this_00->field_01D5)();
       g_currentExceptionFrame = local_80.previous;
@@ -375,16 +375,18 @@ void __thiscall st::fn_0057CD70(STFishC *this)
 
 {
   undefined4 *this_00;
+  STFishC_field_023BState SVar1;
   int iVar3;
   uint uVar4;
   int iVar2;
   int iVar4;
   int local_EAX_271;
   int local_EAX_344;
-  STFishC_field_023BState SVar5;
+  STFishC_field_023BState SVar5_mg2;
   int local_EAX_471;
-  int iVar6;
-  char cVar7;
+  int iVar5;
+  STFishC_field_023BState SVar5_mg1;
+  char cVar6;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   uint local_8;
@@ -411,8 +413,8 @@ void __thiscall st::fn_0057CD70(STFishC *this)
   }
   iVar4 = st::fn_004052CC((STT3DSprC *)this_00);
   st::fn_006E6870((void *)this->field_0211,iVar4,iVar3);
-  SVar5 = this->field_023B;
-  if (SVar5 == CASE_4) {
+  SVar1 = this->field_023B;
+  if (SVar1 == CASE_4) {
     iVar3 = this->vfunc_20();
     if (iVar3 == -1) {
       local_EAX_271 =
@@ -423,21 +425,21 @@ void __thiscall st::fn_0057CD70(STFishC *this)
       }
     }
     else if (iVar3 == 1) {
-      cVar7 = '\0';
+      cVar6 = '\0';
       if (this->field_0267 == CASE_E7) {
-        cVar7 = -2;
+        cVar6 = -2;
       }
       else if (this->field_0267 == CASE_E9) {
-        cVar7 = -1;
+        cVar6 = -1;
       }
-      st::fn_00405C90(this,cVar7 + 7);
-      st::fn_00405105(this,cVar7 + 6);
+      st::fn_00405C90(this,cVar6 + 7);
+      st::fn_00405105(this,cVar6 + 6);
       st::fn_00404318
                 ((AnonReceiver_004167A0 *)this,this->field_0235,this->field_0237,this->field_0239);
       this->field_023B = CASE_1;
     }
   }
-  else if (SVar5 == CASE_1) {
+  else if (SVar1 == CASE_1) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar3 = (*this->vtable->MoveStep)((STGameObjC *)this,unaff_EDI);
     if (iVar3 != 0) {
@@ -457,12 +459,12 @@ void __thiscall st::fn_0057CD70(STFishC *this)
         if (this->field_023F < 0xf) goto LAB_0057cfe0;
         uVar4 = 1;
       }
-      SVar5 = st::fn_00402612(this,uVar4);
-      this->field_023B = SVar5;
+      SVar5_mg2 = st::fn_00402612(this,uVar4);
+      this->field_023B = SVar5_mg2;
       this->field_023F = 0;
     }
   }
-  else if (SVar5 == 2) {
+  else if (SVar1 == 2) {
     iVar3 = st::fn_0040314D((AnonShape_00417830_9254190A *)this);
     if (iVar3 == 0) {
       this->field_023B = CASE_0;
@@ -478,10 +480,10 @@ void __thiscall st::fn_0057CD70(STFishC *this)
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  else if (SVar5 == CASE_5) {
+  else if (SVar1 == CASE_5) {
     iVar3 = st::fn_004022AC((STT3DSprC *)this_00,'\b');
-    iVar6 = st::fn_004042AF(this_00,'\b');
-    if (iVar6 == iVar3 + -1) {
+    iVar5 = st::fn_004042AF(this_00,'\b');
+    if (iVar5 == iVar3 + -1) {
       st::fn_00404264((STT3DSprC *)this_00,8);
       st::fn_004032BA(this);
       this->field_023B = CASE_3;
@@ -490,8 +492,8 @@ void __thiscall st::fn_0057CD70(STFishC *this)
   }
   else if ((0xf < this->field_023F) && (iVar3 = this->vfunc_20(), iVar3 == 1)) {
     this->field_023F = 0;
-    SVar5 = st::fn_00402612(this,1);
-    this->field_023B = SVar5;
+    SVar5_mg1 = st::fn_00402612(this,1);
+    this->field_023B = SVar5_mg1;
   }
 LAB_0057cfe0:
   switch(this->field_0267) {

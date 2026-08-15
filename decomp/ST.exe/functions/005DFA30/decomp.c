@@ -199,7 +199,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&pMVar3->field_02D1,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(pMVar3->field_02D1 + 4))(PTR_00806784,7,0,"MT_SLDUP",0xffffffff);
   pMVar3->field_02ED = 0;
   pMVar3->field_02F1 = 0;
@@ -210,7 +210,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&pMVar3->field_0362,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(pMVar3->field_0362 + 4))(PTR_00806784,7,0,"MT_SLDDN",0xffffffff);
   pMVar3->field_037E = 0;
   pMVar3->field_0382 = 0;
@@ -221,7 +221,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&pMVar3->field_03F3,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(pMVar3->field_03F3 + 4))(PTR_00806784,7,0,"MT_SLDT",0xffffffff);
   pMVar3->field_040F = 0;
   pMVar3->field_0413 = 0;
@@ -236,7 +236,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&pMVar3->field_048C,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(pMVar3->field_048C + 4))(PTR_00806784,7,0,"MT_SLDUP",0xffffffff);
   pMVar3->field_04A8 = 0;
   pMVar3->field_04AC = 0;
@@ -247,7 +247,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&pMVar3->field_051D,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(pMVar3->field_051D + 4))(PTR_00806784,7,0,"MT_SLDDN",0xffffffff);
   pMVar3->field_0539 = 0;
   pMVar3->field_053D = 0;
@@ -258,7 +258,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&pMVar3->field_05AE,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(pMVar3->field_05AE + 4))(PTR_00806784,7,0,"MT_SLDT",0xffffffff);
   pMVar3->field_05CA = 0;
   pMVar3->field_05CE = 0;

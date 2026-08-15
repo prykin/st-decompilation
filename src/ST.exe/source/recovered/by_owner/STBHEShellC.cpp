@@ -190,7 +190,6 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
   undefined4 local_8;
 
   local_8 = 0;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == '\0') {
     this->field_00D1 = (short)this->field_0093;
     sVar2 = (short)this->field_009B;
@@ -212,7 +211,6 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
       local_8 = 1;
     }
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   else if (param_4 == '\x01') {
     iVar4 = st::fn_006ACED8(this->field_0093,this->field_0097,param_1,param_2);
     this->field_00EF = iVar4;
@@ -295,7 +293,6 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
       }
     }
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   else if ((param_4 == '\x02') && (iVar6 = this->field_00EF, iVar6 != 0)) {
     uVar7 = this->field_00FF;
     this->field_00C9 = 2;
@@ -339,7 +336,6 @@ st::fn_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param_3,int par
   int iVar4;
 
   uVar1 = 0xffffffff;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == 0) {
     *param_1 = (int)this->field_00D1;
     *param_2 = (int)this->field_00D3;
@@ -348,7 +344,6 @@ st::fn_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param_3,int par
     uVar1 = (uint)(this->field_00EF <= iVar2);
   }
   else {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_4 == 1) {
       iVar4 = g_playSystem_00802A38->field_00E4 - this->field_00FB;
       iVar2 = this->field_00E7;
@@ -362,7 +357,6 @@ st::fn_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param_3,int par
       }
       return (uint)(iVar4 == this->field_00E7);
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_4 == 2) {
       iVar2 = g_playSystem_00802A38->field_00E4 - this->field_00FB;
       *param_1 = (this->field_00D7 * iVar2) / 10000 + (int)this->field_00D1;
@@ -506,7 +500,6 @@ st::fn_005F4C50
       iVar1 = iVar7 / this->field_0121;
       iVar7 = iVar7 + -0x96;
       puVar4[4] = iVar1 + g_playSystem_00802A38->field_00E4 + param_6;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = param_4 + -1;
       puVar4 = puVar4 + 1;
     } while (param_4 != 0);
@@ -517,12 +510,9 @@ st::fn_005F4C50
   pSVar2 = (STBHEShellC_field_0169DArray *)
            st::fn_006AE290(nullptr,iVar6 * param_5,0x23,10);
   this->field_0169 = pSVar2;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((pSVar2 != nullptr) && (param_4 = 0, 0 < this->field_010D)) {
     do {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 0.0;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = 0;
       iVar6 = st::machine_word_boundary_cast<int>(this->field_0109 * param_4);
       if (0 < this->field_0109) {
@@ -530,7 +520,6 @@ st::fn_005F4C50
           puVar4 = (undefined4 *)local_2c;
           memset(puVar4, 0, 0x23); /* compiler bulk-zero initialization */
           puVar4 = (undefined4 *)((byte *)puVar4 + 0x20);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (param_4 == 0) {
             fcos((float10)param_1);
             lVar8 = st::fn_0072E288();
@@ -539,7 +528,6 @@ st::fn_005F4C50
             local_1a = iVar7;
             lVar8 = st::fn_0072E288();
             local_16 = (int)lVar8;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = param_1 + local_8;
           }
           else {
@@ -567,12 +555,10 @@ st::fn_005F4C50
           }
           local_2c[0] = uVar5 == 0;
           st::fn_006AE1C0((DArrayTy *)this->field_0169,local_2c);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = param_3 + 1;
           iVar6 = iVar6 + 1;
         } while (param_3 < this->field_0109);
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = param_4 + 1;
     } while (param_4 < this->field_010D);
   }
@@ -985,7 +971,7 @@ LAB_005f5d4b:
     }
     if (param_1 == 2) {
       if ((int *)this->field_0034 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar1 = (**(code **)(*(int *)this->field_0034 + 0xe0))
                           (this->field_0038,(int)&param_1 + 2,&local_6,&local_8,&local_c);
         if (iVar1 == 0) {

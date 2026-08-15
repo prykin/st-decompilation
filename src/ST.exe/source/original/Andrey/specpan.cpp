@@ -40,7 +40,7 @@ st::fn_0053D7A0(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte param_2
     errorCode = (int *)st::fn_0072D7F0(local_58.jumpBuffer,0);
     if (errorCode == nullptr) {
       iVar5 = 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_4)(param_1);
       text = st::fn_006F2C00(param_3,1,uVar4);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_2,text,errorCode,iVar5);
@@ -117,7 +117,7 @@ st::fn_0053D920
       st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_8);
       st::fn_00710A90(param_4,pUVar2->field_0068,0,iVar3,uVar4,local_18->field_0008,
                        local_18->field_000C);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_1);
       iVar5 = -1;
       iVar3 = -2;
@@ -256,7 +256,7 @@ st::fn_0053DCC0(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte param_2
     local_14 = this;
     iVar4 = st::fn_0072D7F0(local_58.jumpBuffer,0);
     if (iVar4 == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar7 = (*(code *)param_5)(param_1);
       text = st::fn_006F2C00(param_3,1,uVar7);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_2,text,nullptr,1);
@@ -426,7 +426,7 @@ st::fn_0053DEA0(UPanelTy *this,undefined4 param_1,int param_2,int param_3,int pa
       local_ac = st::fn_0070AA70(g_cMf32_00806790,param_12,0,1);
       local_a8 = st::fn_0070A6F0(g_cMf32_00806790,0x12,param_12,1);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)pUVar2->field_000C + 8))(2,&local_c,0,local_1d0,0);
     g_currentExceptionFrame = local_54.previous;
     return local_c;
@@ -527,7 +527,7 @@ st::fn_0053E1C0(UPanelTy *this,byte param_1,byte param_2,int param_3,int param_4
     local_1c = 1;
     local_18 = 1;
     local_3c = local_5c;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)local_c->field_000C + 8))(5,&local_8,0,local_6c,0);
     g_currentExceptionFrame = local_b0.previous;
     return local_8;
@@ -631,7 +631,7 @@ st::fn_0053E3F0
     uVar12 = 0xc000;
     uVar11 = 0xbfff;
     pCVar8 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar11 = (*(code *)pAVar2->field_0004)
                        (0,1,param_7,param_8,0,1,1,pCVar8,uVar11,uVar12,uVar13,uVar14,uVar15,uVar17,
                         uVar18);
@@ -741,11 +741,11 @@ void __thiscall st::fn_0053E760(SpecPanelTy *this,int param_1)
       local_8->field_002E = 2;
       local_8->field_0030 = local_8->field_0178;
       if (g_cursorClass_00802A30 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_8->field_0x18);
       }
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)pSVar3->field_0000->field_0018)(0);
   }
   else {
@@ -811,7 +811,7 @@ undefined4 __thiscall st::fn_0053E920(SpecPanelTy *this,char param_1)
       iVar4 = 0;
     }
     else {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)local_8->field_0000->field_0020)();
       iVar4 = 1;
     }
@@ -934,7 +934,7 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_SHARED_C000) {
     if (SVar1 == MESS_SHARED_BFFF) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)this_00->field_0000->field_001C)(0);
       st::fn_00405E2F(0xae);
       g_currentExceptionFrame = local_4c.previous;
@@ -949,7 +949,7 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
         if (this_00->field_0044 <= iVar6) {
           this_00->field_0044 = iVar6;
           this_00->field_0172 = CASE_1;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)this_00->field_0000->field_0018)(1);
         }
         st::fn_006B3640
@@ -986,7 +986,7 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
     uVar9 = 0;
     uVar8 = 0x274e;
     pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)pAVar2->field_0010)(message,pCVar7,uVar8,uVar9,uVar10);
   }
   g_currentExceptionFrame = local_4c.previous;
@@ -1264,7 +1264,7 @@ void __thiscall st::fn_0053F3A0(ProdPanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)local_8->field_0000->field_0018)(0);
   }
   else {
@@ -1330,7 +1330,7 @@ undefined4 __thiscall st::fn_0053F650(ProdPanelTy *this,char param_1)
       iVar4 = 0;
     }
     else {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)local_8->field_0000->field_001C)();
       iVar4 = 1;
     }
@@ -1618,7 +1618,7 @@ st::fn_0053FCD0(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,undefined
     piVar4 = (int *)st::fn_0072D7F0(local_58.jumpBuffer,0);
     if (piVar4 == nullptr) {
       iVar9 = 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar5 = (*(code *)param_2)(param_1);
       iVar8 = 2;
       pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_BLDTAB"),0);
@@ -1695,7 +1695,7 @@ st::fn_0053FEE0(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,undefined
     piVar4 = (int *)st::fn_0072D7F0(local_58.jumpBuffer,0);
     if (piVar4 == nullptr) {
       iVar9 = 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar5 = (*(code *)param_2)(param_1);
       iVar8 = 2;
       pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_MFTABS"),0);
@@ -1793,7 +1793,7 @@ int __thiscall st::fn_005400F0(ProdPanelTy *this,STMessage *message)
         if (this_00->field_0044 <= iVar5) {
           this_00->field_0044 = iVar5;
           this_00->field_0172 = CASE_1;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)this_00->field_0000->field_0018)(1);
         }
         st::fn_006B3640

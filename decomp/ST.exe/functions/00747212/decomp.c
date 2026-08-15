@@ -23,7 +23,7 @@ int __thiscall FUN_00747212(int param_1,uint *param_2)
     iVar4 = -0x7ffbfded;
   }
   else {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar4 = (**(code **)(*piVar2 + 0xc))(piVar2,param_2);
     if (-1 < iVar4) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

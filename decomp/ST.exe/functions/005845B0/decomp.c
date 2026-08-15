@@ -19,7 +19,6 @@ FUN_005845b0(int param_1,uint param_2,int param_3,int param_4,int param_5,int pa
   *param_7 = 0;
   *param_8 = 0;
   *param_9 = 0;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((int)((param_2 ^ (int)param_2 >> 0x1f) - ((int)param_2 >> 0x1f)) < param_3) &&
      (param_10 = param_10 * 0x41c64e6d + 0x3039, (param_10 & 0x10000) == 0)) {
 LAB_00584666:
@@ -65,7 +64,6 @@ LAB_005846f7:
   if (piVar2 == nullptr) {
     piVar2 = &DAT_007cb5c8;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_10 = 0;
   do {
     iVar3 = (*piVar2 + param_1 * 9) * 6;
@@ -93,7 +91,6 @@ LAB_005846f7:
         return 1;
       }
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_10 = param_10 + 1;
     piVar2 = piVar2 + 1;
     if (8 < (int)param_10) {

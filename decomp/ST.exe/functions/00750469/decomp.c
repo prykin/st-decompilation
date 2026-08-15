@@ -24,7 +24,7 @@ undefined4 __thiscall FUN_00750469(void *this,uint param_1,int param_2,int *para
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (((iVar2 != 0) && (*(int *)(iVar2 + 0x1c) <= param_2)) &&
        ((*(int *)(iVar2 + 0x1c) < param_2 || (*(uint *)(iVar2 + 0x18) <= param_1)))) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)(iVar3 + 0xc) + 4))(iVar3 + 0xc);
       *param_3 = iVar2;
       goto LAB_0075051f;
@@ -41,7 +41,7 @@ LAB_0075052c:
         (STField<uint>(this,0x68) + param_1 < *(uint *)(iVar3 + 0x18))))) goto LAB_0075052c;
   }
   else {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)(iVar3 + 0xc) + 4))(iVar3 + 0xc);
   }
   *param_3 = iVar3;

@@ -329,7 +329,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
   }
   else {
     if (SVar2 == MESS_STSPRGAMEOBJC_0113) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)this_00->field_01D5)();
       g_currentExceptionFrame = local_a0.previous;
       return 0;

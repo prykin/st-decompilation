@@ -217,7 +217,7 @@ cLoadingTy::SetState
       return;
     }
     if ((code *)pcVar9->field_0058 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pcVar9->field_0058)(pcVar9->field_0054);
       g_currentExceptionFrame = local_50.previous;
       return;
@@ -336,7 +336,7 @@ joined_r0x00555393:
     return;
   default:
     if ((code *)local_8->field_0058 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)local_8->field_0058)(local_8->field_0054);
     }
   }

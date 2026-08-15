@@ -22,11 +22,9 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
       cVar1 = (char)param_1->field_0024;
     }
     if ((param_4 != '\b') && ((param_4 < '\0' || (cVar1 = param_4, '\b' < param_4)))) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = -1;
       cVar1 = param_4;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = cVar1;
     dVar2 = array->count;
     uVar6 = 0;
@@ -40,7 +38,6 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
         }
         this = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (((this != nullptr) && (iVar4 = this->vfunc_F8(), iVar4 != 0))
            && ((param_4 < '\0' || (iVar4 = this->vfunc_6C(), param_4 == iVar4)))) {
           iVar4 = (*this->vtable->vfunc_2C)();

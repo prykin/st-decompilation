@@ -15,7 +15,7 @@ void __fastcall FUN_0074c6ba(undefined4 *param_1)
   param_1[3] = &VTable_007A1820;
   param_1[4] = &VTable_007A1808;
   if (piVar1 != nullptr) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 8))(piVar1);
   }
   FUN_00747bb4((int)param_1);

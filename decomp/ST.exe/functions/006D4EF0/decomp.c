@@ -19,7 +19,7 @@ int FUN_006d4ef0(undefined4 *param_1,undefined4 param_2,int param_3)
   }
   *param_1 = puVar1;
   if (local_8 == 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (**(code **)*puVar1)(puVar1,&DAT_007a1368,param_2);
     return iVar2;
   }

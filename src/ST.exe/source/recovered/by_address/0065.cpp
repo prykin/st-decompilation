@@ -2758,11 +2758,9 @@ int __fastcall st::fn_0065DC00(AiFltClassTy *param_1,undefined4 param_2,uint par
       cVar1 = (char)param_1->field_0024;
     }
     if ((param_4 != '\b') && ((param_4 < '\0' || (cVar1 = param_4, '\b' < param_4)))) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = -1;
       cVar1 = param_4;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = cVar1;
     dVar2 = array->count;
     uVar6 = 0;
@@ -2776,7 +2774,6 @@ int __fastcall st::fn_0065DC00(AiFltClassTy *param_1,undefined4 param_2,uint par
         }
         this = st::fn_004028BA
                          (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (((this != nullptr) && (iVar4 = this->vfunc_F8(), iVar4 != 0))
            && ((param_4 < '\0' || (iVar4 = this->vfunc_6C(), param_4 == iVar4)))) {
           iVar4 = (*this->vtable->vfunc_2C)();
@@ -2833,11 +2830,9 @@ st::fn_0065DD30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param
       cVar2 = (char)param_1->field_0024;
     }
     if ((param_5 != '\b') && ((param_5 < '\0' || (cVar2 = param_5, '\b' < param_5)))) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = -1;
       cVar2 = param_5;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = cVar2;
     uVar4 = local_1c->count;
     local_14 = 0;
@@ -2901,7 +2896,6 @@ LAB_0065deea:
 LAB_0065deef:
             if (iVar9 != 0) goto cf_common_join_0065DF91;
           }
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (((param_5 == -1) || (iVar9 = this->vfunc_6C(), param_5 == iVar9)) &&
              (((param_10 < 1 || ((param_11 < 1 || (param_12 < 1)))) ||
               ((st::fn_004018C5((STFishC *)this,&local_6,&local_8,&local_a),
@@ -2988,11 +2982,9 @@ st::fn_0065E070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint pa
     cVar3 = (char)*(undefined4 *)(param_1 + 0x24);
   }
   if ((param_6 != '\b') && ((param_6 < '\0' || (cVar3 = param_6, '\b' < param_6)))) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_6 = -1;
     cVar3 = param_6;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_6 = cVar3;
   local_10 = local_4c;
   local_c = 0;
@@ -3064,7 +3056,6 @@ LAB_0065e261:
               if (iVar9 != 0) goto cf_continue_loop_0065E27E;
             }
             cVar3 = param_6;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             if ((param_6 == -1) || (iVar9 = this->vfunc_6C(), cVar3 == iVar9)) {
               local_14 = local_14 + 1;
             }
@@ -3195,7 +3186,6 @@ st::fn_0065E450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
     return 0;
   }
   GVar4 = array->count;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = 0;
   if (0 < (int)GVar4) {
     do {
@@ -3235,7 +3225,6 @@ LAB_0065e5a7:
       }
                     /* WARNING: This code block may not be properly labeled as switch case */
       GVar4 = array->count;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_3 + 1;
     } while ((int)param_3 < (int)GVar4);
   }
@@ -3410,13 +3399,10 @@ st::fn_0065E9A0(void *this,short *param_1,short *param_2,uint param_3,uint param
   if (uVar2 != 0) {
     local_8 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)uVar2 * 0x2c));
     DAT_00811900 = 0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((char)param_6 == '\b') {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = STReplaceLowByte((uint32_t)(param_6), (uint8_t)((char)psVar4));
     }
     else if (((char)param_6 < '\0') || ('\b' < (char)param_6)) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = STReplaceLowByte((uint32_t)(param_6), (uint8_t)(0xff));
     }
     st::fn_004012F8(st::machine_word_boundary_cast<undefined4>(psVar4),param_3,param_4,param_5,(char)param_6,0,0,0,-1,-1,-1,st::pointer_boundary_cast<undefined *>(st::fn_0040559C),
@@ -3483,13 +3469,10 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
       else {
         local_c = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)uVar1 * 0x2c));
         DAT_00811900 = 0;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((char)param_7 == '\b') {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(cVar6));
         }
         else if (((char)param_7 < '\0') || ('\b' < (char)param_7)) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(0xff));
         }
         st::fn_004012F8(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,st::pointer_boundary_cast<undefined *>(st::fn_0040559C),
@@ -3504,7 +3487,7 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
               if (local_c[iVar2 * 0xb + 3] != 0) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 STPiece<0,2>(param_2) = CONCAT11(1,cVar6);
-                /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22((short)local_c[iVar2 * 0xb + 4],(undefined2)param_2);
                 st::fn_006AE1C0((DArrayTy *)param_3,&param_2);
                 local_8 = local_8 + 1;
@@ -3521,7 +3504,7 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
               if (*(int *)(iVar3 + 0xc + (int)local_c) != 0) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 STPiece<0,2>(param_2) = CONCAT11(1,cVar6);
-                /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22(*(undefined2 *)(iVar3 + 0x10 + (int)local_c),(undefined2)param_2);
                 st::fn_006AE1C0((DArrayTy *)param_3,&param_2);
                 local_8 = local_8 + 1;

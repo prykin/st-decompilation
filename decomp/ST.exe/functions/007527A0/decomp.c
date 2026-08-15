@@ -32,9 +32,7 @@ FUN_007527a0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char
   byte *local_1c;
   int local_c;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = FUN_006b4fa0((int *)param_1);
   }
   iVar1 = param_1->field_0004;
@@ -116,7 +114,6 @@ FUN_007527a0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char
   local_c = 0;
   if (0 < iVar1) {
     do {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = (uint *)(iVar10 + local_c);
       iVar8 = local_c >> 3;
       local_1c = (byte *)(iVar8 + (int)puVar3);
@@ -160,7 +157,6 @@ FUN_007527a0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char
             }
             break;
           }
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_5 = (uint *)((int)param_5 - uVar13);
           local_1c = local_1c + iVar15;
           iVar11 = iVar11 + 1;

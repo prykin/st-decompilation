@@ -21,7 +21,7 @@ short FUN_0043e460(char param_1)
     do {
       sVar5 = sVar4;
       piVar3 = *(int **)(*(int *)(iVar1 + 0x1c) + iVar7 * 4);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((piVar3 != nullptr) && (iVar6 = (**(code **)(*piVar3 + 0xf8))(), iVar6 == 1)) {
         sVar5 = sVar5 + 1;
       }

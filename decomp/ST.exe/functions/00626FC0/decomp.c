@@ -14,7 +14,7 @@ void __thiscall FUN_00626fc0(void *this,char *param_1)
     *param_1 = ((STField<uint>(this,0x262) != (uint)DAT_0080874d) - 1U & 0xfe) + 3;
   }
   param_1[1] = '\x01';
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*(int *)this + 0x2c))();
   *(undefined4 *)(param_1 + 2) = uVar2;
   bVar1 = LookupRecordByte(STField<char>(this,0x24));

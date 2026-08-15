@@ -61,7 +61,8 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
                 rows.add(new Row(verified, addr(function.getEntryPoint()),
                     function.getName(true), function.getName(), function.getSymbol().getSource().toString(),
                     function.getPrototypeString(true, true), function.getCallingConventionName(),
-                    parameterBaseline(function), rule, verified ? "body pattern verified" :
+                    parameterBaseline(function), callFixup(function), rule,
+                    verified ? "body pattern verified" :
                     "missing body tokens: " + String.join(",", missing)));
             }
         }
@@ -84,6 +85,13 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
         Set<Long> occupied = new HashSet<>();
         String darrayPointer = darrayPointerSpecification();
 
+        addDiscovered(result, occupied, discoverAllocaProbe(),
+            "msvc_alloca_probe", "__alloca_probe", "__stdcall", "/void",
+            new String[0], new String[0],
+            "MSVC x86 dynamic-stack probe; the canonical name activates Ghidra's " +
+                "built-in alloca_probe call-fixup so EAX-sized stack allocations remain " +
+                "dynamic local storage instead of raw stack0x address artifacts",
+            "alloca_probe");
         addDiscovered(result, occupied, discoverFreeAndNull(),
             "free_and_null", "FreeAndNull", "__stdcall", "/void",
             new String[] { "pointer:/void" }, new String[] { "slotStorage" },
@@ -191,9 +199,63 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
     private void addDiscovered(List<Rule> result, Set<Long> occupied, Function function,
             String id, String name, String convention, String returnType,
             String[] parameterTypes, String[] parameterNames, String semantics) {
+        addDiscovered(result, occupied, function, id, name, convention, returnType,
+            parameterTypes, parameterNames, semantics, "");
+    }
+
+    private void addDiscovered(List<Rule> result, Set<Long> occupied, Function function,
+            String id, String name, String convention, String returnType,
+            String[] parameterTypes, String[] parameterNames, String semantics,
+            String callFixup) {
         if (function == null || !occupied.add(function.getEntryPoint().getOffset())) return;
         result.add(new Rule(function.getEntryPoint().getOffset(), id, name, convention,
-            returnType, parameterTypes, parameterNames, new String[0], semantics));
+            returnType, parameterTypes, parameterNames, new String[0], semantics,
+            callFixup));
+    }
+
+    /**
+     * Recognize the VC6-era x86 stack probe from its complete machine contract.
+     * The helper receives the allocation byte count in EAX, probes each 0x1000-byte
+     * page, moves ESP below the requested extent, restores ECX, and returns through
+     * the original return address.  There is deliberately no ST address or current
+     * symbol-name dependency: the canonical name is needed because x86win.cspec
+     * attaches its alloca_probe p-code injection by target name.
+     */
+    private Function discoverAllocaProbe() {
+        List<Function> matches = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (!smallInternal(function, 64) || callInstructionCount(function) != 0 ||
+                    !hasBareReturn(function)) continue;
+            String body = machineText(function).toUpperCase(Locale.ROOT);
+            if (body.contains("PUSH ECX") &&
+                    body.contains("CMP EAX,0X1000") &&
+                    body.contains("LEA ECX,[ESP + 0X8]") &&
+                    body.contains("SUB ECX,0X1000") &&
+                    body.contains("SUB EAX,0X1000") &&
+                    body.contains("SUB ECX,EAX") &&
+                    body.contains("MOV ESP,ECX") &&
+                    body.contains("MOV ECX,DWORD PTR [EAX]") &&
+                    body.contains("MOV EAX,DWORD PTR [EAX + 0X4]") &&
+                    body.endsWith("PUSH EAX\nRET\n"))
+                matches.add(function);
+        }
+        return unique(matches);
+    }
+
+    private boolean hasBareReturn(Function function) {
+        int returns = 0;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            if (!instruction.getMnemonicString().toUpperCase(Locale.ROOT).startsWith("RET"))
+                continue;
+            if (instruction.getScalar(0) != null) return false;
+            returns++;
+        }
+        return returns == 1;
     }
 
     private Function discoverFreeAndNull() throws Exception {
@@ -743,6 +805,11 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
         return String.join(";", values);
     }
 
+    private String callFixup(Function function) {
+        String value = function.getCallFixup();
+        return value == null ? "" : value;
+    }
+
     private String typeSpec(ghidra.program.model.data.DataType type) {
         if (type instanceof ghidra.program.model.data.Pointer pointer &&
                 pointer.getDataType() != null)
@@ -754,15 +821,18 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\tfunction_address\tsemantic_id\texpected_qualified_name\t" +
                 "expected_name\texpected_name_source\texpected_signature\texpected_convention\t" +
-                "expected_parameters\tproposed_name\tproposed_convention\tproposed_return_type\t" +
-                "proposed_parameter_types\tproposed_parameter_names\tconfidence\tsemantics\tevidence\n");
+                "expected_parameters\texpected_call_fixup\tproposed_name\tproposed_convention\tproposed_return_type\t" +
+                "proposed_parameter_types\tproposed_parameter_names\tproposed_call_fixup\t" +
+                "confidence\tsemantics\tevidence\n");
             for (Row row : rows) out.write((row.apply ? "1" : "0") + "\t" + row.address +
                 "\t" + tsv(row.rule.id) + "\t" + tsv(row.qualifiedName) + "\t" +
                 tsv(row.name) + "\t" + row.nameSource + "\t" + tsv(row.signature) + "\t" +
-                row.convention + "\t" + tsv(row.parameters) + "\t" + row.rule.name + "\t" +
+                row.convention + "\t" + tsv(row.parameters) + "\t" +
+                tsv(row.callFixup) + "\t" + row.rule.name + "\t" +
                 row.rule.convention + "\t" + row.rule.returnType + "\t" +
                 tsv(String.join(";", row.rule.parameterTypes)) + "\t" +
-                tsv(String.join(";", row.rule.parameterNames)) + "\thigh\t" +
+                tsv(String.join(";", row.rule.parameterNames)) + "\t" +
+                tsv(row.rule.callFixup) + "\thigh\t" +
                 tsv(row.rule.semantics) + "\t" + tsv(row.evidence) + "\n");
         }
     }
@@ -796,12 +866,19 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
 
     private record Rule(long address, String id, String name, String convention,
             String returnType, String[] parameterTypes, String[] parameterNames,
-            String[] tokens, String semantics) {}
+            String[] tokens, String semantics, String callFixup) {
+        Rule(long address, String id, String name, String convention,
+                String returnType, String[] parameterTypes, String[] parameterNames,
+                String[] tokens, String semantics) {
+            this(address, id, name, convention, returnType, parameterTypes,
+                parameterNames, tokens, semantics, "");
+        }
+    }
     private record Row(boolean apply, String address, String qualifiedName, String name,
             String nameSource, String signature, String convention, String parameters,
-            Rule rule, String evidence) {
+            String callFixup, Rule rule, String evidence) {
         static Row missing(Rule rule, String address) {
-            return new Row(false, address, "", "", "", "", "", "", rule,
+            return new Row(false, address, "", "", "", "", "", "", "", rule,
                 "function missing");
         }
     }

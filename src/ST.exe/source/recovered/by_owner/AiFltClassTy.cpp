@@ -228,7 +228,7 @@ void __thiscall st::fn_0065F980(AiFltClassTy *this)
     local_8 = *(undefined2 *)&this->field_00B3;
     local_14 = 0x5de5;
     local_c = this;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*DAT_008117bc)(local_24);
     this->field_00B3 = 0;
     return;
@@ -1053,6 +1053,7 @@ void __thiscall st::fn_00664760(AiFltClassTy *this)
 void __fastcall st::fn_00664960(AiFltClassTy *param_1)
 
 {
+  byte stack_bytes_neg_9C[0x34]; /* exact EBP-relative stack object */
   int iVar1;
   byte bVar2;
   ushort uVar3;
@@ -2513,7 +2514,7 @@ LAB_006655ba:
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (CONCAT22(extraout_var_00,uVar14) != 0 && -1 < extraout_var_00) {
         uVar20 = param_1->field_0280;
-        memset(&stack0xffffff64, 0, 0x34); /* compiler bulk-zero initialization */
+        memset(stack_bytes_neg_9C, 0, 0x34); /* compiler bulk-zero initialization */
         local_9c = 0x72;
         local_94 = 2;
         local_98 = uVar20;
@@ -2521,7 +2522,7 @@ LAB_006655ba:
         if ((AiTactClassTy *)param_1->field_0284 != nullptr) {
           st::fn_004010E1
                     ((AiTactClassTy *)param_1->field_0284,
-                     (AnonShape_0068FD00_A5257008 *)&stack0xffffff64);
+                     (AnonShape_0068FD00_A5257008 *)stack_bytes_neg_9C);
         }
         st::fn_006AE110(local_90);
       }

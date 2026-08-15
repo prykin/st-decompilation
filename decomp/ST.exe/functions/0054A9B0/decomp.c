@@ -143,7 +143,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
       return;
     }
     SpriteClassTy::InitSprite(pSVar6,(int *)g_ddxContext_008075A8,1,'\a',nullptr,0,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)pAVar4->field_04EB + 4))
               (PTR_00806784,7,0,"CUR_CONFIRM2D",0xffffffff);
     *(undefined4 *)(pAVar4->field_04EB + 0x40) = 0x19;

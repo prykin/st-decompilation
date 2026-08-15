@@ -13,7 +13,6 @@ void __thiscall FUN_0056abc0(void *this,char *param_1)
   char *pcVar7;
   bool bVar8;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {
     if (STField<char>(this,0x1474) != '\0') {
       if (g_visibleClass_00802A88 != nullptr) {
@@ -35,7 +34,6 @@ void __thiscall FUN_0056abc0(void *this,char *param_1)
   else if ((STField<char>(this,0x1474) == '\0') &&
           (STField<undefined1>(this,0x1474) = 1, g_visibleClass_00802A88 != nullptr
           )) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (char *)((int)this + 0x11c9);
     bVar3 = 0;
     puVar5 = nullptr;
@@ -78,7 +76,6 @@ LAB_0056acb1:
       }
       bVar3 = bVar3 + 1;
       puVar5 = puVar5 + 1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 0x51;
       pbVar6 = pbVar6 + 0x51;
       if (7 < bVar3) {

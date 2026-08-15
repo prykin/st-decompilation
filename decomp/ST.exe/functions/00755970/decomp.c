@@ -24,7 +24,6 @@ int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_
   do {
     *(int *)(pAVar2->field_000C + 0x1c) = local_8;
     iVar7 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)pAVar2,iVar7,local_8);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
     pAVar6 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
     pAVar3 = nullptr;
@@ -33,7 +32,7 @@ int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_
         pAVar8 = pAVar3;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (*(int *)(pAVar2->field_000C + 0x30) == 0xff) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar4 = (**(code **)(pAVar2->field_000C + 4))(param_2);
         }
         else {
@@ -50,7 +49,7 @@ int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         sVar1 = *(short *)(pAVar2->field_000C + 0x34);
         if (sVar1 == 0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar5 = (**(code **)(pAVar2->field_000C + 8))((int)&pAVar8[1].field_0008 + iVar7);
         }
         else {
@@ -60,7 +59,6 @@ int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_
         *(AnonShape_00755970_4FB144E0 **)
          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
          (pAVar2->field_000C + 0x44 + *(int *)(pAVar2->field_000C + 0x1c) * 8) = pAVar3;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = pAVar8;
       } while ((int)pAVar3 < (int)*(short *)(iVar7 + 8));
     }

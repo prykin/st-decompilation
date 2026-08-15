@@ -1,13 +1,15 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+
 int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
 
 {
   byte bVar1;
   byte bVar2;
   byte bVar3;
-  undefined1 *puVar4;
+  void **ppvVar4;
   short sVar5;
   int iVar6;
   int iVar8;
@@ -19,11 +21,12 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   int iVar13;
   short sVar14;
   int iVar15;
-  undefined4 *puVar16;
+  uint *puVar16;
   STWorldObject *this_00;
   undefined4 *puVar17;
   bool bVar18;
-  uint local_90 [11];
+  uint auStack_69c [383];
+  undefined4 uStack_a0;
   int local_64;
   int local_60;
   int local_58;
@@ -42,7 +45,6 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   puStack_c = &DAT_0079c9a0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
-  local_1c = &stack0xffffff64;
   iVar13 = 0;
   local_50 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   if (local_50 < 1) {
@@ -53,13 +55,13 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
     local_64 = STBiasedDiv16(sVar14, 0xc9); /* exact signed 16-bit grid-index division */
     sVar14 = STField<short>(this,0x21c);
     iVar15 = STBiasedDiv16(sVar14, 0xc9); /* exact signed 16-bit grid-index division */
-    local_8 = 0;
-    ExceptionList = &local_14;
-    Library::MSVCRT::FUN_0072da40();
+    uStack_a0 = 0x5fec55;
+    local_1c = (undefined1 *)auStack_69c;
     local_8 = 0xffffffff;
     local_44 = 0;
-    local_1c = &stack0xffffff64;
-    puVar4 = &stack0xffffff64;
+    ExceptionList = &local_14;
+    ppvVar4 = &local_14;
+    puVar16 = auStack_69c;
     if (0 < local_50) {
       do {
         iVar6 = local_50 - local_44;
@@ -134,18 +136,18 @@ LAB_005fee45:
                   iVar8 = 0;
                   if (0 < iVar13) {
                     do {
-                      if (((uint)*(ushort *)&this_00[1].field_0xe == local_90[iVar8 * 6 + -3]) &&
-                         (this_00[1].vtable == (STWorldObjectVTable *)local_90[iVar8 * 6 + -1]))
+                      if (((uint)*(ushort *)&this_00[1].field_0xe == auStack_69c[iVar8 * 6]) &&
+                         (this_00[1].vtable == (STWorldObjectVTable *)auStack_69c[iVar8 * 6 + 2]))
                       goto LAB_005fef0e;
                       iVar8 = iVar8 + 1;
                     } while (iVar8 < iVar13);
                   }
-                  local_90[iVar13 * 6 + -1] = (uint)this_00[1].vtable;
-                  local_90[iVar13 * 6 + -3] = (uint)*(ushort *)&this_00[1].field_0xe;
+                  auStack_69c[iVar13 * 6 + 2] = (uint)this_00[1].vtable;
+                  auStack_69c[iVar13 * 6] = (uint)*(ushort *)&this_00[1].field_0xe;
                   uVar9 = this_00->GetObjectTypeId();
-                  local_90[iVar13 * 6 + -2] = uVar9;
-                  local_90[iVar13 * 6] = *(uint *)&this_00[0xe].field_0x1d;
-                  local_90[iVar13 * 6 + 1] = *(uint *)((int)&this_00[0xe].value_20 + 1);
+                  auStack_69c[iVar13 * 6 + 1] = uVar9;
+                  auStack_69c[iVar13 * 6 + 3] = *(uint *)&this_00[0xe].field_0x1d;
+                  auStack_69c[iVar13 * 6 + 4] = *(uint *)((int)&this_00[0xe].value_20 + 1);
                   iVar13 = iVar13 + 1;
                 }
               }
@@ -154,17 +156,19 @@ LAB_005fef0e:
           }
         }
         local_44 = local_44 + 1;
-        puVar4 = local_1c;
+        ppvVar4 = ExceptionList;
+        puVar16 = (uint *)local_1c;
       } while (local_44 < local_50);
     }
-    local_1c = puVar4;
+    local_1c = (undefined1 *)puVar16;
+    ExceptionList = ppvVar4;
     if (iVar13 != 0) {
       STField<int>(this,0x237) = iVar13;
       pvVar10 = Library::DKW::LIB::MemAlloc(iVar13 * 0x18);
       STField<void *>(this,0x23b) = pvVar10;
       pvVar10 = Library::DKW::LIB::MemAlloc(iVar13 * 4);
       STField<void *>(this,0x23f) = pvVar10;
-      puVar16 = (undefined4 *)&stack0xffffff64;
+      puVar16 = auStack_69c;
       puVar17 = STField<undefined4 *>(this,0x23b);
       for (iVar15 = (iVar13 * 3 & 0x1fffffffU) << 1; iVar15 != 0; iVar15 = iVar15 + -1) {
         *puVar17 = *puVar16;

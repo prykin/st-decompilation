@@ -54,7 +54,6 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
   int local_c;
   int local_8;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (undefined4 *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     sVar15 = this->field_0423;
@@ -131,7 +130,6 @@ LAB_0047d831:
         local_8 = (uVar1 >> 0x10) % 7 - 3;
         if ((this->field_074A <= (int)PTR_00806724->entryCount / 2) &&
            (local_c = 0, this->field_02BF != '\0')) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar8 = thunk_FUN_0041dc40(local_28,(short)*param_1,*(ushort *)(param_1 + 1),
@@ -172,7 +170,6 @@ LAB_0047d831:
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,iVar13,iVar12 + ((uVar7 >> 0x10) % 7 - 3),iVar11,
                        sVar15,sVar16,sVar17,sVar18,sVar19,sVar20,iVar6,sVar21,bVar22);
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = (undefined4 *)((int)param_1 + 6);
             local_c = local_c + 1;
           } while (local_c < (int)(uint)(byte)this->field_02BF);
@@ -206,7 +203,6 @@ LAB_0047d831:
             }
           }
           sub_004952E0(this);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (undefined4 *)g_playSystem_00802A38->field_00E4;
           CmdToObj(this,CASE_3,(uint *)&param_1);
         }
@@ -237,7 +233,6 @@ LAB_0047d241:
           goto LAB_0047d7e6;
         }
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (undefined4 *)g_playSystem_00802A38->field_00E4;
       CmdToObj(this,CASE_3,(uint *)&param_1);
     }

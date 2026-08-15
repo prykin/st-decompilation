@@ -163,7 +163,7 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
           }
                     /* WARNING: Could not recover jumptable at 0x0044d04b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar5 = (*(code *)(&switchD_0044d04b::switchdataD_0044d1d0)
                             [*(byte *)((int)&PTR_caseD_3_0044d1d4 + uVar5 + 3)])();
           return uVar5;

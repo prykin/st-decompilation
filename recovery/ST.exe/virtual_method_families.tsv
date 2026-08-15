@@ -185,7 +185,6 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 0079ADB8:3	0079ADB8	3	0xC	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	2			-
 0079ADB8:4	0079ADB8	4	0x10	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	2			-
 0079ADB8:5	0079ADB8	5	0x14	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy	4	CreateSystemObjects	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy	-
-0079ADB8:6	0079ADB8	6	0x18	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy	1			-
 0079ADB8:8	0079ADB8	8	0x20	0079ADB8 | 0079C1E8	InterSystemC | StartSystemTy	2	GetMessage	InterSystemC | StartSystemTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079AE38:0	0079AE38	0	0x0	0079AE38	STPlaySystemC	1	InitSystem	STPlaySystemC	-
 0079AE38:1	0079AE38	1	0x4	0079AE38	STPlaySystemC	1	DoneSystem	STPlaySystemC	-
@@ -231,7 +230,6 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 0079B1E0:3	0079B1E0	3	0xC	0079B1E0	GameSystemC	1			-
 0079B1E0:4	0079B1E0	4	0x10	0079B1E0	GameSystemC	1			-
 0079B1E0:5	0079B1E0	5	0x14	0079B1E0	GameSystemC	1	CreateSystemObjects	GameSystemC	-
-0079B1E0:6	0079B1E0	6	0x18	0079B1E0	GameSystemC	1			-
 0079B1E0:7	0079B1E0	7	0x1C	0079B1E0	GameSystemC	1			-
 0079B1E0:8	0079B1E0	8	0x20	0079B1E0	GameSystemC	1	GetMessage	GameSystemC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079BFE4:0	0079BFE4	0	0x0	0079BFE4	MAdvTy	1	GetMessage	MAdvTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false

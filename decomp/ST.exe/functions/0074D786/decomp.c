@@ -84,12 +84,10 @@ longlong FUN_0074d786(uint param_1,uint param_2,uint param_3,uint param_4,uint p
   local_34 = (uint)local_EDXEAX_175;
   uVar1 = lVar12 + (uVar1 >> 0x20);
   local_28 = (uint)(uVar1 >> 0x20);
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_7 == 0 && param_8 == 0) goto LAB_0074d94d;
   if (bVar2) {
     uVar7 = -param_7;
     uVar6 = -(param_8 + (param_7 != 0));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (((int)param_8 < 0) || (((int)param_8 < 1 && (param_7 == 0)))) goto LAB_0074d8cc;
 LAB_0074d8c2:
     local_1c = 0xffffffff;
@@ -155,7 +153,6 @@ LAB_0074d94d:
       }
     }
     else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_8 = 0x40;
       do {
         local_EDXEAX_650 = Library::MSVCRT::__allshl(1,iVar8);
@@ -171,9 +168,7 @@ LAB_0074d94d:
           local_EDXEAX_650 = local_EDXEAX_650 + 1;
         }
         iVar8 = (int)((ulonglong)local_EDXEAX_650 >> 0x20);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = (uint)local_EDXEAX_650;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_8 = param_8 - 1;
       } while (param_8 != 0);
       if (bVar2) {

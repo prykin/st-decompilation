@@ -300,7 +300,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   if ((g_allPlayers_007FA174 != nullptr) &&
      (local_188 = this, local_EAX_52 = sub_0065BD70(this,message,0), -1 < local_EAX_52)) {
     local_194 = local_EAX_52;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar7 = (*(code *)this->field_0000->field_0018)();
     this->field_052B = uVar7;
     if ((local_EAX_52 != 0x456) ||
@@ -380,7 +380,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                   case 0x5dc:
                                     iVar37 = thunk_FUN_00651010((short *)&local_16c);
                                     if (iVar37 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -408,7 +408,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                   case 0x5dd:
                                     local_EAX_18546 = thunk_FUN_00651120((int)&local_16c);
                                     if (local_EAX_18546 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -454,7 +454,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                   case 0x5de:
                                     local_EAX_18755 = thunk_FUN_00651160((int)&local_16c);
                                     if (local_EAX_18755 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -500,7 +500,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                   case 0x5df:
                                     local_EAX_18964 = thunk_FUN_00651160((int)&local_16c);
                                     if (local_EAX_18964 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -549,7 +549,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                   case 0x5e0:
                                     local_EAX_19222 = thunk_FUN_006511a0((int)&local_16c);
                                     if (local_EAX_19222 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -582,7 +582,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                   case 0x5e1:
                                     local_EAX_19384 = thunk_FUN_006511a0((int)&local_16c);
                                     if (local_EAX_19384 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -615,7 +615,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                   case 0x5e2:
                                     local_EAX_19546 = thunk_FUN_006511e0((int)&local_16c);
                                     if (local_EAX_19546 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -676,7 +676,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                   case 0x5e3:
                                     local_EAX_19855 = thunk_FUN_00651250((int)&local_16c);
                                     if (local_EAX_19855 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -720,7 +720,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                   case 0x5e4:
                                     iVar37 = thunk_FUN_00651290((short *)&local_16c);
                                     if (iVar37 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -800,7 +800,7 @@ LAB_006577ae:
                                   case 0x5e5:
                                     local_EAX_20759 = thunk_FUN_006514d0((short *)&local_16c);
                                     if (local_EAX_20759 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -872,7 +872,7 @@ LAB_00657a41:
                                   case 0x5e6:
                                     iVar37 = thunk_FUN_006513c0((short *)&local_16c);
                                     if (iVar37 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -950,7 +950,7 @@ LAB_006578fe:
                                                   RecoveredRecord_AiEventClassTy_006515B0 *)
                                                   &local_16c);
                                     if (iVar37 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1035,7 +1035,7 @@ LAB_00657bce:
                                   case 0x5e8:
                                     local_EAX_21479 = thunk_FUN_00651730((int)&local_16c);
                                     if (local_EAX_21479 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1093,7 +1093,7 @@ LAB_00657ccf:
                                     iVar37 = thunk_FUN_00651770((AnonShape_00651770_8F77396F *)
                                                                 &local_16c);
                                     if (iVar37 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1151,7 +1151,7 @@ LAB_00657dd9:
                                   case 0x5ea:
                                     local_EAX_22002 = thunk_FUN_006517c0((short *)&local_16c);
                                     if (local_EAX_22002 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1223,7 +1223,7 @@ LAB_00657f1c:
                                   case 0x5eb:
                                     local_EAX_22325 = thunk_FUN_00651880((int)&local_16c);
                                     if (local_EAX_22325 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1293,7 +1293,7 @@ LAB_0065806e:
                                   case 0x5ec:
                                     local_EAX_22663 = thunk_FUN_006518c0((int)&local_16c);
                                     if (local_EAX_22663 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1351,7 +1351,7 @@ LAB_00658177:
                                   case 0x5ed:
                                     iVar37 = thunk_FUN_00651df0((short *)&local_16c);
                                     if (iVar37 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1431,7 +1431,7 @@ LAB_00658b70:
                                          thunk_FUN_00651ed0((RecoveredRecord_AiEventClassTy_00651ED0
                                                              *)&local_16c);
                                     if (local_EAX_25481 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1518,7 +1518,7 @@ LAB_00658d01:
                                   case 0x5ef:
                                     local_EAX_25882 = thunk_FUN_00652030((short *)&local_16c);
                                     if (local_EAX_25882 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1598,7 +1598,7 @@ LAB_00658e8e:
                                   case 0x5f0:
                                     local_EAX_26279 = thunk_FUN_00652100((short *)&local_16c);
                                     if (local_EAX_26279 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1669,7 +1669,7 @@ LAB_00658fc8:
                                   case 0x5f1:
                                     local_EAX_22928 = thunk_FUN_00651900((short *)&local_16c);
                                     if (local_EAX_22928 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1743,7 +1743,7 @@ LAB_006582b3:
                                   case 0x5f2:
                                     iVar37 = thunk_FUN_006519e0((short *)&local_16c);
                                     if (iVar37 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1820,7 +1820,7 @@ LAB_00658416:
                                   case 0x5f3:
                                     iVar37 = thunk_FUN_00651b40((short *)&local_16c);
                                     if (iVar37 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1888,7 +1888,7 @@ LAB_00658543:
                                   case 0x5f4:
                                     iVar37 = thunk_FUN_00651bd0((short *)&local_16c);
                                     if (iVar37 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -1956,7 +1956,7 @@ LAB_00658670:
                                   case 0x5f5:
                                     iVar37 = thunk_FUN_00651cd0((short *)&local_16c);
                                     if (iVar37 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -2034,7 +2034,7 @@ LAB_006587e2:
                                   case 0x5f6:
                                     local_EAX_24571 = thunk_FUN_00651db0((int)&local_16c);
                                     if (local_EAX_24571 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -2092,7 +2092,7 @@ LAB_006588eb:
                                   case 0x5f7:
                                     iVar37 = thunk_FUN_00651c60((short *)&local_16c);
                                     if (iVar37 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -2154,7 +2154,7 @@ LAB_006589fe:
                                   case 0x5f8:
                                     local_EAX_26593 = thunk_FUN_006521c0((short *)&local_16c);
                                     if (local_EAX_26593 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -2237,7 +2237,7 @@ LAB_00659143:
                                          thunk_FUN_00652460((RecoveredRecord_AiEventClassTy_00652460
                                                              *)&local_16c);
                                     if (local_EAX_27539 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -2315,7 +2315,7 @@ LAB_006594ec:
                                   case 0x5fa:
                                     local_EAX_27909 = thunk_FUN_00652540((short *)&local_16c);
                                     if (local_EAX_27909 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -2392,7 +2392,7 @@ LAB_00659640:
                                          thunk_FUN_006525e0((AnonShape_006525E0_52237033 *)
                                                             &local_16c);
                                     if (local_EAX_28249 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -2467,7 +2467,7 @@ LAB_00659785:
                                          thunk_FUN_00652670((AnonShape_00652670_DFEA616F *)
                                                             &local_16c);
                                     if (local_EAX_28574 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -2542,7 +2542,7 @@ LAB_006598ca:
                                                   RecoveredRecord_AiEventClassTy_00652300 *)
                                                   &local_16c);
                                     if (iVar36 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -2648,7 +2648,7 @@ LAB_0065937a:
                                                   RecoveredRecord_AiEventClassTy_00652700 *)
                                                   &local_16c);
                                     if (iVar37 != 0) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
@@ -2751,7 +2751,7 @@ LAB_00659a1c:
                                 thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg25,uVar16,iVar37);
                               }
                               else {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 == 8) && (pDStack_164 == (DArrayTy *)0x9)) {
                                   iVar37 = -1;
@@ -2884,7 +2884,7 @@ LAB_00659a1c:
                             case 0x59b:
                               iVar37 = thunk_FUN_006503b0((short *)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -2921,7 +2921,7 @@ LAB_00659a1c:
                               iVar37 = thunk_FUN_00650480((RecoveredRecord_AiEventClassTy_00650480 *
                                                           )&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -2951,7 +2951,7 @@ LAB_00659a1c:
                               iVar37 = thunk_FUN_00650600((RecoveredRecord_AiEventClassTy_00650600 *
                                                           )&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -2982,7 +2982,7 @@ LAB_00659a1c:
                             case 0x5aa:
                               iVar37 = thunk_FUN_00650760((short *)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3008,7 +3008,7 @@ LAB_00659a1c:
                             case 0x5ab:
                               iVar37 = thunk_FUN_00650760((short *)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3034,7 +3034,7 @@ LAB_00659a1c:
                             case 0x5ac:
                               iVar37 = thunk_FUN_00650820((short *)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3071,7 +3071,7 @@ LAB_00659a1c:
                             case 0x5ad:
                               iVar37 = thunk_FUN_006508c0((short *)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3097,7 +3097,7 @@ LAB_00659a1c:
                             case 0x5ae:
                               iVar37 = thunk_FUN_006509e0((int)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3122,7 +3122,7 @@ LAB_00659a1c:
                             case 0x5af:
                               iVar37 = thunk_FUN_00650a20((AnonShape_00650A20_4A198923 *)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3157,7 +3157,7 @@ LAB_00659a1c:
                             case 0x5b0:
                               iVar37 = thunk_FUN_00650a90((int)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3192,7 +3192,7 @@ LAB_00659a1c:
                             case 0x5b1:
                               iVar37 = thunk_FUN_006507e0((int)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3217,7 +3217,7 @@ LAB_00659a1c:
                             case 0x5b2:
                               iVar37 = thunk_FUN_006507e0((int)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3242,7 +3242,7 @@ LAB_00659a1c:
                             case 0x5b3:
                               iVar37 = thunk_FUN_00650940((short *)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3269,7 +3269,7 @@ LAB_00659a1c:
                               iVar37 = thunk_FUN_00650b10((RecoveredRecord_AiEventClassTy_00650B10 *
                                                           )&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3314,7 +3314,7 @@ LAB_00659a1c:
                             case 0x5b5:
                               iVar37 = thunk_FUN_00650f50((int)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3357,7 +3357,7 @@ LAB_00659a1c:
                             case 0x5b6:
                               local_EAX_17905 = thunk_FUN_00650f90((short *)&local_16c);
                               if (local_EAX_17905 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3400,7 +3400,7 @@ LAB_00659a1c:
                               iVar37 = thunk_FUN_00650bd0((RecoveredRecord_AiEventClassTy_00650BD0 *
                                                           )&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3444,7 +3444,7 @@ LAB_00659a1c:
                               iVar37 = thunk_FUN_00650cf0((RecoveredRecord_AiEventClassTy_00650CF0 *
                                                           )&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3488,7 +3488,7 @@ LAB_00659a1c:
                               iVar37 = thunk_FUN_00650e10((RecoveredRecord_AiEventClassTy_00650E10 *
                                                           )&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -3559,7 +3559,7 @@ LAB_00659a1c:
                                 thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg31,uVar16,iVar37);
                               }
                               else {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 == 8) && (pDStack_164 == (DArrayTy *)0x9)) {
                                   iVar37 = -1;
@@ -3617,7 +3617,7 @@ LAB_00659a1c:
                                     }
                                     else {
                                       if (pDStack_164 == (DArrayTy *)0x9) {
-                                        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                         iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                         if (iVar37 == 8) {
                                           pDVar10 = local_15c;
@@ -3717,7 +3717,7 @@ LAB_00659a1c:
                                   }
                                   else {
                                     if (pDStack_164 == (DArrayTy *)0x9) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if (iVar37 == 8) {
                                         pDVar10 = local_15c;
@@ -3784,7 +3784,7 @@ LAB_00659a1c:
                                   }
                                   else {
                                     if (pDStack_164 == (DArrayTy *)0x9) {
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if (iVar37 == 8) {
                                         *(uint **)(&this_00->field_0xde + (int)local_15c * 4) =
@@ -4022,7 +4022,7 @@ switchD_00652b42_switchD:
                             case 0x528:
                               local_EAX_2959 = thunk_FUN_0064eb20((int)&local_16c);
                               if (local_EAX_2959 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -4052,7 +4052,7 @@ switchD_00652b42_switchD:
                             case 0x529:
                               iVar37 = thunk_FUN_0064eb60((int)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
@@ -4083,7 +4083,7 @@ switchD_00652b42_switchD:
                             case 0x52a:
                               iVar37 = thunk_FUN_0064eba0((int)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_EAX_3277 =
@@ -4114,7 +4114,7 @@ switchD_00652b42_switchD:
                               if (local_EAX_3358 == 0) goto cf_common_join_00652A99;
                               if (g_popUp_008016D8 != nullptr) {
                                 if (pDStack_164 == (DArrayTy *)0x9) {
-                                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                   iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                   if (iVar37 == 8) {
                                     thunk_FUN_0052d320(g_popUp_008016D8,(char *)local_15c,8);
@@ -4144,7 +4144,7 @@ switchD_00652b42_switchD:
                               local_EAX_3527 = thunk_FUN_0064ec30((int)&local_16c);
                               if (local_EAX_3527 == 0) goto cf_common_join_00652A99;
                               if (pDStack_164 == (DArrayTy *)0x9) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar37 == 8) {
                                   if (DAT_00801694 != nullptr) {
@@ -4179,7 +4179,7 @@ switchD_00652b42_switchD:
                                    thunk_FUN_0064ec80((AnonShape_0064EC80_53C284F2 *)&local_16c);
                               if (local_EAX_3752 == 0) goto cf_common_join_00652A99;
                               if (pDStack_164 == (DArrayTy *)0x9) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar37 == 8) {
 LAB_006536dd:
@@ -4209,7 +4209,7 @@ LAB_006536dd:
                               local_EAX_3907 = thunk_FUN_0064ecd0((int)&local_16c);
                               if (local_EAX_3907 == 0) goto cf_common_join_00652A99;
                               if (pDStack_164 == (DArrayTy *)0x9) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar37 == 8) {
 LAB_00653778:
@@ -4237,7 +4237,7 @@ LAB_00653778:
                               local_EAX_4052 = thunk_FUN_0064ed20((int)&local_16c);
                               if (local_EAX_4052 == 0) goto cf_common_join_00652A99;
                               if (pDStack_164 == (DArrayTy *)0x9) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar37 == 8) {
                                   SoundClassTy::PlaySound
@@ -4269,7 +4269,7 @@ LAB_00653778:
                               local_EAX_4219 = thunk_FUN_0064ed70((int)&local_16c);
                               if (local_EAX_4219 == 0) goto cf_common_join_00652A99;
                               if (pDStack_164 == (DArrayTy *)0x9) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar37 == 8) {
                                   if (g_cPanel_00801688 != nullptr) {
@@ -4300,7 +4300,7 @@ LAB_00653778:
                             case 0x546:
                               iVar37 = thunk_FUN_0064edc0((int)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_EAX_4445 =
@@ -4339,7 +4339,7 @@ LAB_00653778:
                             case 0x548:
                               iVar37 = thunk_FUN_0064ee00((int)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_10 = (AiFltClassTy *)
@@ -4383,7 +4383,7 @@ LAB_00653778:
                             case 0x549:
                               iVar37 = thunk_FUN_0064ee40((short *)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_EAX_4850 =
@@ -4413,7 +4413,7 @@ LAB_00653778:
                             case 0x54a:
                               iVar37 = thunk_FUN_0064ee90((int)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_10 = (AiFltClassTy *)
@@ -4450,7 +4450,7 @@ LAB_00653bb7:
                                         uVar32 = local_14;
                                         goto cf_common_join_00659A73;
                                       }
-                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                       (*(code *)this_00->field_0000->field_0030)(3,0x100,local_1c0);
                                       uVar32 = local_14;
                                     }
@@ -4463,7 +4463,7 @@ LAB_00653bb7:
                             case 0x54c:
                               iVar37 = thunk_FUN_0064eed0((int)&local_16c);
                               if (iVar37 != 0) {
-                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_10 = (AiFltClassTy *)
@@ -4481,7 +4481,7 @@ LAB_00653bb7:
                                           memset(local_1c0, 0, 0x20); /* compiler bulk-zero initialization */
                                           iVar37 = 0;
                                           local_1b0 = (local_EAX_488 != 0x54b) + 0x100;
-                                          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                           (*(code *)this_00->field_0000->field_0030)
                                                     (3,0x100,local_1c0);
                                           uVar32 = local_14;
@@ -4503,7 +4503,7 @@ LAB_00653bb7:
                           case 0x54e:
                             iVar37 = thunk_FUN_0064ef50((int)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_5668 =
@@ -4533,7 +4533,7 @@ LAB_00653bb7:
                           case 0x55a:
                             iVar37 = thunk_FUN_0064f080((int)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
@@ -4563,7 +4563,7 @@ LAB_00653bb7:
                           case 0x55b:
                             local_EAX_5904 = thunk_FUN_0064f0c0((int)&local_16c);
                             if (local_EAX_5904 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_5961 =
@@ -4599,7 +4599,7 @@ LAB_00653bb7:
                           case 0x55c:
                             iVar37 = thunk_FUN_0064f110((short *)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_6159 =
@@ -4624,7 +4624,7 @@ LAB_00653bb7:
                           case 0x55d:
                             local_EAX_6230 = thunk_FUN_0064f160((int)&local_16c);
                             if (local_EAX_6230 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_6287 =
@@ -4652,7 +4652,7 @@ LAB_006540b9:
                                  thunk_FUN_0064f1b0((RecoveredRecord_AiEventClassTy_0064F1B0 *)
                                                     &local_16c);
                             if (local_EAX_6392 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_6449 =
@@ -4702,7 +4702,7 @@ LAB_006540b9:
                             local_EAX_6742 =
                                  thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)&local_16c);
                             if (local_EAX_6742 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_6799 =
@@ -4738,7 +4738,7 @@ LAB_006540b9:
                           case 0x560:
                             iVar37 = thunk_FUN_0064f000((int)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_6968 =
@@ -4764,7 +4764,7 @@ LAB_00654386:
                           case 0x561:
                             iVar37 = thunk_FUN_0064f040((int)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_7118 =
@@ -4796,7 +4796,7 @@ LAB_00654386:
                             local_EAX_7204 =
                                  thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)&local_16c);
                             if (local_EAX_7204 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_7261 =
@@ -4833,7 +4833,7 @@ LAB_00654386:
                           case 0x563:
                             iVar37 = thunk_FUN_0064f000((int)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_7431 =
@@ -4862,7 +4862,7 @@ LAB_00654386:
                           case 0x564:
                             iVar37 = thunk_FUN_0064f040((int)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_7569 =
@@ -4894,7 +4894,7 @@ LAB_00654386:
                           case 0x566:
                             iVar37 = thunk_FUN_0064f320((int)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if (((iVar37 != 8) ||
                                   ((local_15c != (DArrayTy *)0x9 && (pDStack_164 != (DArrayTy *)0x9)
@@ -4949,7 +4949,7 @@ LAB_00654386:
                           case 0x567:
                             iVar37 = thunk_FUN_0064f360((int)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_10 = (AiFltClassTy *)
@@ -4991,7 +4991,7 @@ LAB_00654386:
                           case 0x568:
                             iVar37 = thunk_FUN_0064f3b0((int)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_8204 =
@@ -5023,7 +5023,7 @@ LAB_00654386:
                           case 0x578:
                             local_EAX_8314 = thunk_FUN_0064f430((int)&local_16c);
                             if (local_EAX_8314 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
@@ -5052,7 +5052,7 @@ LAB_00654386:
                           case 0x579:
                             local_EAX_8446 = thunk_FUN_0064f470((int)&local_16c);
                             if (local_EAX_8446 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
@@ -5096,7 +5096,7 @@ LAB_00654386:
                             iVar37 = thunk_FUN_0064f500((RecoveredRecord_AiEventClassTy_0064F500 *)
                                                         &local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_8 = local_15c;
@@ -5334,7 +5334,7 @@ LAB_00655324:
                           case 0x582:
                             iVar37 = thunk_FUN_0064f5a0((int)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
@@ -5518,7 +5518,7 @@ LAB_00655871:
                             iVar37 = thunk_FUN_0064f780((RecoveredRecord_AiEventClassTy_0064F780 *)
                                                         &local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
@@ -5592,7 +5592,7 @@ LAB_006559e3:
                           case 0x58e:
                             iVar37 = thunk_FUN_0064f900((short *)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
@@ -5645,7 +5645,7 @@ LAB_006559e3:
                             iVar37 = thunk_FUN_0064f950((RecoveredRecord_AiEventClassTy_0064F950 *)
                                                         &local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
@@ -5711,7 +5711,7 @@ LAB_006559e3:
                           case 0x590:
                             iVar37 = thunk_FUN_0064fb00((short *)&local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
@@ -5748,7 +5748,7 @@ LAB_006559e3:
                             iVar37 = thunk_FUN_0064fb80((RecoveredRecord_AiEventClassTy_0064FB80 *)
                                                         &local_16c);
                             if (iVar37 != 0) {
-                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)

@@ -81,10 +81,8 @@ st::fn_00727DA0
   }
   uVar6 = 0;
   pAVar11 = (AnonShape_00727DA0_C4265AA0 *)0x80000000;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = 0;
   pAVar9 = (AnonShape_00727DA0_C4265AA0 *)0x7fff0000;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (AnonShape_00727DA0_C4265AA0 *)0x80000000;
   piVar14 = st::pointer_boundary_cast<int *>(&DAT_008570ac);
   do {
@@ -92,13 +90,11 @@ st::fn_00727DA0
     if ((int)pAVar1 < (int)pAVar9) {
       pAVar9 = pAVar1;
       pAVar11 = param_1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = uVar6;
     }
     if ((int)pAVar11 < (int)pAVar1) {
       pAVar11 = pAVar1;
       DAT_00857070 = uVar6;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = pAVar1;
     }
     piVar14 = piVar14 + 4;
@@ -115,9 +111,7 @@ st::fn_00727DA0
       if (iVar5 != 0) {
         if (*(int *)&this->field_0x124 == 6) {
           iVar5 = *(int *)&this->field_0x28 * DAT_00857098;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (AnonShape_00727DA0_C4265AA0 *)(*(int *)&this->field_0xc + iVar5);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = *(int *)&this->field_0x14 + iVar5 * 2;
           if (DAT_00857098 < *(int *)&this->field_0x3c) {
             do {
@@ -198,10 +192,8 @@ st::fn_00727DA0
                 local_60.field_001C = local_60.field_001C + STPiece<32,4>(local_60);
               }
               DAT_00857098 = DAT_00857098 + 1;
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_1 = (AnonShape_00727DA0_C4265AA0 *)
                         (&param_1->field_0x0 + *(int *)&this->field_0x28);
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_2 = param_2 + *(int *)&this->field_0x28 * 2;
             } while (DAT_00857098 < *(int *)&this->field_0x3c);
             return;

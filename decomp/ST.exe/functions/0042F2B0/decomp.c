@@ -70,15 +70,15 @@ STAllPlayersC::UnRegisterObject
                0x6cd);
   }
   if (param_4[8] == 0x14) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar11 = (**(code **)(*param_4 + 0x2c))();
     if ((*(uint *)(&DAT_00801480 + (iVar11 + 0x41U >> 5) * 4) & 1 << ((byte)(iVar11 + 0x41U) & 0x1f)
         ) == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar11 = (**(code **)(*param_4 + 0x2c))();
       if ((*(uint *)(&DAT_00800f10 + (iVar11 + 0x41U >> 5) * 4) &
           1 << ((byte)(iVar11 + 0x41U) & 0x1f)) == 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar11 = (**(code **)(*param_4 + 0x2c))();
         if ((*(uint *)(&DAT_00801450 + (iVar11 + 0x41U >> 5) * 4) &
             1 << ((byte)(iVar11 + 0x41U) & 0x1f)) == 0) goto LAB_0042f42f;
@@ -105,17 +105,17 @@ STAllPlayersC::UnRegisterObject
   }
 LAB_0042f42f:
   if (param_4[8] == 1000) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar11 = (**(code **)(*param_4 + 0x2c))();
     if ((*(uint *)(&DAT_00800f90 + (iVar11 - 0x32U >> 5) * 4) & 1 << ((byte)(iVar11 - 0x32U) & 0x1f)
         ) == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar11 = (**(code **)(*param_4 + 0x2c))();
       if ((*(uint *)(&DAT_00801360 + (iVar11 - 0x32U >> 5) * 4) &
           1 << ((byte)(iVar11 - 0x32U) & 0x1f)) == 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar11 = (**(code **)(*param_4 + 0x2c))();
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((*(uint *)(&DAT_008014a0 + (iVar11 - 0x32U >> 5) * 4) &
              1 << ((byte)(iVar11 - 0x32U) & 0x1f)) == 0) &&
            (iVar11 = (**(code **)(*param_4 + 0x2c))(),
@@ -150,34 +150,34 @@ LAB_0042f547:
     if (pMVar3 != nullptr) {
       MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)(ushort)g_packedRecords_A62x8[iVar11].field4_0xd);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar7 = (**(code **)(*param_4 + 0x2c))();
     if (iVar7 != 0x19) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar7 = (**(code **)(*param_4 + 0x2c))();
       if (((&DAT_00801000)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar7 = (**(code **)(*param_4 + 0x2c))();
         if (((&DAT_00801010)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar7 = (**(code **)(*param_4 + 0x2c))();
           if (((&DAT_00800f00)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar7 = (**(code **)(*param_4 + 0x2c))();
             if (((&DAT_00801370)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               iVar7 = (**(code **)(*param_4 + 0x2c))();
               if (((&DAT_00800fa0)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0)
               {
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar7 = (**(code **)(*param_4 + 0x2c))();
                 if (((&DAT_00800ff0)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0
                    ) {
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   iVar7 = (**(code **)(*param_4 + 0x2c))();
                   if ((*(uint *)(&DAT_00801460 + (iVar7 + 0x41U >> 5) * 4) &
                       1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0) {
-                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                     iVar7 = (**(code **)(*param_4 + 0x2c))();
                     if (((&DAT_00800fe0)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f))
                         == 0) {
@@ -285,7 +285,7 @@ LAB_0042f547:
     if (pMVar3 != nullptr) {
       MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)(ushort)g_packedRecords_A62x8[iVar11].field4_0xd);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar7 = (**(code **)(*param_4 + 0x2c))();
     if (iVar7 == 0x33) {
       g_packedRecords_A62x8[iVar11].field94_0x15b = g_packedRecords_A62x8[iVar11].field94_0x15b + -1
@@ -295,34 +295,34 @@ LAB_0042f547:
       g_packedRecords_A62x8[iVar11].field95_0x15f = g_packedRecords_A62x8[iVar11].field95_0x15f + -1
       ;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar7 = (**(code **)(*param_4 + 0x2c))();
     if (((&DAT_00801420)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar7 = (**(code **)(*param_4 + 0x2c))();
       if (((&DAT_008013e0)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar7 = (**(code **)(*param_4 + 0x2c))();
         if (((&DAT_00800ee0)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar7 = (**(code **)(*param_4 + 0x2c))();
           if (((&DAT_00801490)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar7 = (**(code **)(*param_4 + 0x2c))();
             if (((&DAT_00800f20)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               iVar7 = (**(code **)(*param_4 + 0x2c))();
               if (((&DAT_00800ef0)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0)
               {
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar7 = (**(code **)(*param_4 + 0x2c))();
                 if (((&DAT_00801430)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0
                    ) {
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   iVar7 = (**(code **)(*param_4 + 0x2c))();
                   if (((&DAT_00801440)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) ==
                       0) {
-                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                     iVar7 = (**(code **)(*param_4 + 0x2c))();
                     if (((&DAT_00800f60)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f))
                         == 0) {
@@ -469,7 +469,7 @@ LAB_0042f547:
     uVar12 = param_2;
   }
   Library::DKW::TBL::DArrayPut(pDVar10,uVar12 & 0xffff,&local_c);
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_00430018:
   iVar11 = (**(code **)(*param_4 + 0x2c))();
   pDVar10 = local_20;

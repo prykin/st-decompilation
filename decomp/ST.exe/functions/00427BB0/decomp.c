@@ -14,7 +14,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
 {
   byte bVar1;
   void *pvVar2;
-  int *piVar3;
+  RuntimeRecord_007F4D74_0010 *pRVar3;
   int iVar4;
   byte bVar5;
   int iVar6;
@@ -23,22 +23,20 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
   int local_14;
   int local_8;
 
-  piVar3 = (int *)(param_1 * 0x10 + DAT_007f4d74);
+  pRVar3 = g_runtimeRecords_007F4D74 + param_1;
   iVar6 = (DAT_007f4d80 + param_1) * *(int *)&this->field_0x37c + *(int *)&this->field_0x38c;
   bVar1 = 0;
   local_8 = 0x7fffffff;
   if (param_1 <= param_2) {
     do {
       iVar4 = param_1;
-      local_14 = *piVar3;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = piVar3[3];
+      local_14 = pRVar3->field_0000;
+      param_1 = pRVar3->field_000C;
       if (param_3 == -1) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = piVar3[1];
+        param_1 = pRVar3->field_0004;
       }
       else if (param_3 == 1) {
-        local_14 = piVar3[2];
+        local_14 = pRVar3->field_0008;
       }
       if (param_1 < local_14) {
         if (local_8 != 0x7fffffff) {
@@ -107,9 +105,8 @@ LAB_00427cca:
           }
         }
       }
-      piVar3 = piVar3 + 4;
+      pRVar3 = pRVar3 + 1;
       iVar6 = iVar6 + *(int *)&this->field_0x37c;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = iVar4 + 1;
     } while (iVar4 + 1 <= param_2);
     if (local_8 != 0x7fffffff) {

@@ -62,7 +62,7 @@ cf_common_exit_004E2B69:
   local_c = (undefined2)param_2;
   uVar3 = thunk_FUN_004e60d0((int)pbVar1,param_2);
   local_a = (short)uVar3 + 1;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)*DAT_008117bc)(local_24);
   return 0;
 }

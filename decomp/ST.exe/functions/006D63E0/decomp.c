@@ -53,7 +53,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((*(uint *)(*(int *)(*(int *)&this->field_0x288 + 0x28) + 0xc) & 0x100) == 0) {
     ExceptionList = &local_14;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar4 = (**(code **)(*param_1 + 0xc))(param_1,&local_bc);
     if (iVar4 < 0) {
       ExceptionList = local_14;
@@ -101,9 +101,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
       iVar4 = *(int *)(iVar4 + 0x28);
       piVar3 = *(int **)(iVar4 + 0x40);
       local_a8 = iVar7;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (*(code **)(iVar4 + 0x4e4) != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar4 + 0x4e4))
                   (*(undefined4 *)(iVar4 + 0x4ec),iVar7,local_a4,local_a0,local_9c);
       }
@@ -123,7 +123,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
           iVar4 = 0;
           local_d0 = iVar7;
           do {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar7 = (**(code **)(*piVar3 + 100))(piVar3,&local_d0,local_98,0x21,0);
             if (iVar7 == 0) goto LAB_006d666f;
             if (iVar7 != -0x7789fe3e) break;
@@ -180,14 +180,14 @@ LAB_006d666f:
             local_8 = 0xffffffff;
           }
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar3 + 0x80))(piVar3,0);
       }
       else {
         piVar3 = *(int **)(*(int *)(iVar4 + 0x28) + 0x40);
         local_b8 = 0;
         do {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar4 = (**(code **)(*piVar3 + 0x44))(piVar3,local_b4);
           if (iVar4 == 0) goto LAB_006d68c8;
           if (iVar4 == -0x7789fe3e) {
@@ -216,7 +216,7 @@ LAB_006d68c8:
                         ,(BITMAPINFO *)(iVar8 + 0x30),0,0xcc0020);
           iVar8 = 0;
           do {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar4 = (**(code **)(*piVar3 + 0x68))(piVar3,local_b4[0]);
             if (iVar4 == 0) break;
             if (iVar4 == -0x7789fe3e) {

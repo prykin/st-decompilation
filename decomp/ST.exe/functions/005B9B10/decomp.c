@@ -90,7 +90,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     puVar6 = &this_02->array_00BC[0xc].field_01F7;
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)puVar6,(int *)g_ddxContext_008075A8,0x31,'\a',nullptr,0,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*puVar6 + 4))
               ((SpriteClassTy *)puVar6,PTR_00806784,7,0,(byte *)"MM_SLDUP",0xffffffff);
     this_02->field_1A93 = 0x289;
@@ -99,7 +99,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_02->field_1B08,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(this_02->field_1B08 + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
     this_02->field_1B24 = 0x289;
     this_02->field_1B28 = 0x176;
@@ -107,7 +107,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_02->field_1B99,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(this_02->field_1B99 + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
     iVar4 = 1;
     this_02->field_1BB5 = 0x28e;

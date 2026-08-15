@@ -10,7 +10,7 @@ uint __thiscall FUN_004dd770(void *this,int param_1)
   if (STField<int>(this,0x4d4) == param_1) {
     STField<undefined4>(this,0x4d0) = 1;
     TLOBaseTy::RotateSpr(this,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0x90))(3,0x415);
   }
   return 0;

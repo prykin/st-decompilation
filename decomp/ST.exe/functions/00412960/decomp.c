@@ -19,9 +19,7 @@ int FUN_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int
      (((-1 < param_2 && (param_2 < DAT_007f4d30)) && ((-1 < param_3 && (param_3 < DAT_007f4d34))))))
   {
     if (0 < param_4) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 - (DAT_007f4d38 * param_4 >> 0x10);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + (DAT_007f4d28 * param_4 >> 0x10);
     }
     DAT_007f4d28 = Library::DKW::STR::FUN_006db640(param_5 - param_7->field_0004);
@@ -31,7 +29,6 @@ int FUN_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int
       iVar3 = -30000;
       pAVar5 = param_7 + 1;
       iVar6 = 30000;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = -30000;
       iVar4 = DAT_007f4d20;
       if (0 < DAT_007f4d20) {
@@ -48,7 +45,6 @@ int FUN_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int
             iVar6 = iVar1;
           }
           if (param_4 < iVar1) {
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_4 = iVar1;
           }
           pAVar5 = (AnonShape_00412960_B35D15BC *)&pAVar5[1].field_0004;

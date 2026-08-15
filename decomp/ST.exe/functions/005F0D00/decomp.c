@@ -30,7 +30,7 @@ void __thiscall STArtiafactC::sub_005F0D00(STArtiafactC *this)
       local_c = (ushort)(byte)this->field_030E;
     }
     local_14 = 0x5ddc;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*DAT_008117bc)(local_24);
   }
   return;

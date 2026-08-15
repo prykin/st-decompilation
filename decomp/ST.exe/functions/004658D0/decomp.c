@@ -24,7 +24,7 @@ int __thiscall FUN_004658d0(void *this,int param_1)
     STBoatC::sub_00481520
               (this,STField<int>(this,199),STField<int>(this,0xcb),STField<int>(this,0xcf));
     thunk_FUN_004601f0(this,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (**(code **)(*(int *)this + 0xd8))();
     return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
   }

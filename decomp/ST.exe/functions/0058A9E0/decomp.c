@@ -150,7 +150,7 @@ void __fastcall FUN_0058a9e0(AnonShape_0058A9E0_DB5690D0 *param_1)
   STT3DSprC::SetCurShad((STT3DSprC *)puVar1,'\x0e',uVar9);
   STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x0e');
   param_1->field_024D = param_1->field_024D + 1;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)param_1 + 0xd8))();
   return;
 }

@@ -22,13 +22,13 @@ FUN_0058d5e0(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,
        ((int)STField<short>(puVar1,0x43) <= param_4 * 0xc9)) {
       if (param_6 == 1) {
         if ((puVar1[8] == 0x10e) || (puVar1[8] == 0x118)) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)*puVar1)(param_5);
           iVar3 = iVar3 + 1;
         }
       }
       else if (((param_6 == 0) && (puVar1[8] != 0x32)) && (puVar1[8] != 0x8c)) goto LAB_0058d697;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*puVar1)(param_5);
       iVar3 = iVar3 + 1;
     }

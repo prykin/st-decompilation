@@ -855,7 +855,7 @@ cf_common_exit_00464526:
 LAB_00464147:
                 if ((((local_14 != nullptr) &&
                      (local_14->field_0018 == STField<int>(this,0x7f4))) &&
-                    (iVar16 = (*local_14->vtable->vfunc_F8)(), iVar16 != 0)) &&
+                    (iVar16 = local_14->vfunc_F8(), iVar16 != 0)) &&
                    ((*(int *)&local_14->field_0x20 != 0x1ae ||
                     (iVar16 = (*local_14->vtable->vfunc_F4)(STField<undefined4>(this,0x24)),
                     iVar16 != 0)))) {
@@ -948,7 +948,7 @@ LAB_0046461c:
                              (g_playSystem_00802A38,
                               STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&local_c);
           pSVar15 = this;
-          if (((iVar16 == -4) || (iVar16 = (*local_c->vtable->vfunc_F8)(), iVar16 == 0)) ||
+          if (((iVar16 == -4) || (iVar16 = local_c->vfunc_F8(), iVar16 == 0)) ||
              ((*(int *)&local_c->field_0x20 == 0x1ae &&
               (iVar16 = (*local_c->vtable->vfunc_F4)(STField<undefined4>(this,0x24)), iVar16 == 0
               )))) {
@@ -1072,7 +1072,7 @@ LAB_00463d56:
           iVar16 = STPlaySystemC::sub_006E62D0
                              (g_playSystem_00802A38,
                               STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&local_14);
-          if (((iVar16 != -4) && (iVar16 = (*local_14->vtable->vfunc_F8)(), iVar16 != 0)) &&
+          if (((iVar16 != -4) && (iVar16 = local_14->vfunc_F8(), iVar16 != 0)) &&
              ((*(int *)&local_14->field_0x20 != 0x1ae ||
               (iVar16 = (*local_14->vtable->vfunc_F4)(STField<undefined4>(this,0x24)),
               iVar16 != 0)))) {
@@ -1084,7 +1084,7 @@ LAB_00463d56:
           }
         }
         else {
-          iVar16 = (*local_14->vtable->vfunc_F8)();
+          iVar16 = local_14->vfunc_F8();
           if ((iVar16 != 0) &&
              ((*(int *)&local_14->field_0x20 != 0x1ae ||
               (iVar16 = (*local_14->vtable->vfunc_F4)(STField<undefined4>(this,0x24)),
@@ -1154,7 +1154,7 @@ LAB_00463b9d:
                     STGridAt3D(g_worldGrid, sVar7, sVar6, sVar9).objects[0];
         }
         if ((local_c != nullptr) && (local_c->field_0018 == STField<int>(this,0x7f4))) {
-          iVar16 = (*local_c->vtable->vfunc_F8)();
+          iVar16 = local_c->vfunc_F8();
           if (iVar16 != 0) {
             if (*(int *)&local_c->field_0x20 != 0x1ae) {
               return 2;
@@ -1171,7 +1171,7 @@ LAB_00463b9d:
         iVar16 = STPlaySystemC::sub_006E62D0
                            (g_playSystem_00802A38,
                             STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&local_c);
-        if ((iVar16 != -4) && (iVar16 = (*local_c->vtable->vfunc_F8)(), iVar16 != 0)) {
+        if ((iVar16 != -4) && (iVar16 = local_c->vfunc_F8(), iVar16 != 0)) {
           if (*(int *)&local_c->field_0x20 == 0x1ae) {
             iVar16 = (*local_c->vtable->vfunc_F4)(STField<undefined4>(this,0x24));
 joined_r0x00463a7a:
@@ -1219,7 +1219,7 @@ LAB_004639e6:
           iVar16 = STPlaySystemC::sub_006E62D0
                              (g_playSystem_00802A38,
                               STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&local_c);
-          if ((iVar16 != -4) && (iVar16 = (*local_c->vtable->vfunc_F8)(), iVar16 != 0)) {
+          if ((iVar16 != -4) && (iVar16 = local_c->vfunc_F8(), iVar16 != 0)) {
             if (*(int *)&local_c->field_0x20 == 0x1ae) {
               iVar16 = (*local_c->vtable->vfunc_F4)(STField<undefined4>(this,0x24));
               goto joined_r0x00463a7a;
@@ -1228,7 +1228,7 @@ LAB_004639e6:
           }
         }
         else {
-          iVar16 = (*local_c->vtable->vfunc_F8)();
+          iVar16 = local_c->vfunc_F8();
           if ((iVar16 != 0) &&
              ((*(int *)&local_c->field_0x20 != 0x1ae ||
               (iVar16 = (*local_c->vtable->vfunc_F4)(STField<undefined4>(this,0x24)), iVar16 != 0

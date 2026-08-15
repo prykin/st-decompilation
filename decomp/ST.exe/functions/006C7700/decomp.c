@@ -32,7 +32,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
   char local_5;
 
   local_c = nullptr;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   DVar2 = (*(code *)param_1->field_0036)(param_1,&local_94,0x80);
   if (DVar2 != 0x80) {
     if (-1 < (int)DVar2) {
@@ -58,14 +58,12 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
     }
     iVar7 = LVar3 + -0x80;
     local_10 = iVar7;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((param_2 == 0) && (bVar1)) {
       LVar3 = _llseek(param_1->field_0026,0,2);
       if (LVar3 == -1) {
         DVar2 = GetLastError();
         return DVar2;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = LVar3 - iVar7;
     }
   }
@@ -84,7 +82,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
       else {
         _llseek(param_1->field_0026,iVar7 + -0x301 + param_2,0);
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       DVar2 = (*(code *)param_1->field_0036)(param_1,&local_5,1);
       if (DVar2 != 1) {
         if (-1 < (int)DVar2) {
@@ -93,9 +91,8 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
         return DVar2;
       }
       if (local_5 == '\f') {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = 0x100;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         DVar2 = (*(code *)param_1->field_0036)(param_1,local_c,0x300);
         if (DVar2 != 0x300) {
           if (-1 < (int)DVar2) {
@@ -114,7 +111,6 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
       return 0xfffffffe;
     }
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = uVar5;
   if (uVar5 == 0x10) {
     piVar6 = local_84;

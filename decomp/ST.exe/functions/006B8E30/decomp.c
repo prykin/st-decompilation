@@ -29,12 +29,12 @@ int FUN_006b8e30(int *param_1)
   local_1c = param_1[6] + local_24;
   local_18 = param_1[7] + local_20;
   while( true ) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(**(int **)(*param_1 + 0x40) + 0x14))
                       (*(int **)(*param_1 + 0x40),&local_24,param_1[0xf],&local_14,0x1000000,0);
     if (iVar1 == 0) break;
     if (iVar1 == -0x7789fe3e) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)param_1[0xf] + 0x6c))((int *)param_1[0xf]);
       FUN_006cec40((AnonShape_006CEC40_BB23E716 *)*param_1);
     }

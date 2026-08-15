@@ -39,15 +39,14 @@ int FUN_006bb9d0(AnonShape_006BB9D0_BD42D958 *param_1,int param_2,int param_3,in
   local_34 = 0;
   BVar3 = IntersectRect(&local_44,&local_24,&local_14);
   if (BVar3 != 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = nullptr;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     while (piVar1 = (int *)pAVar2->field_0040,
           iVar4 = (**(code **)(*piVar1 + 0x14))
                             (piVar1,&local_44,param_6,&local_34,param_9 | 0x1000000,0), iVar4 != 0)
     {
       if (iVar4 == -0x7789fe3e) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*param_6 + 0x6c))(param_6);
         FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar2);
       }
@@ -56,7 +55,6 @@ int FUN_006bb9d0(AnonShape_006BB9D0_BD42D958 *param_1,int param_2,int param_3,in
            (param_1 != nullptr)) break;
         Sleep(2);
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_006BB9D0_BD42D958 *)&param_1->field_0x1;
       if (1 < (int)param_1) break;
     }

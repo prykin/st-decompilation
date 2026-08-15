@@ -48,6 +48,7 @@ import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.Variable;
+import ghidra.program.model.lang.Register;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.Symbol;
 import ghidra.program.model.pcode.PcodeOp;
@@ -200,6 +201,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private int exactReinterpretAccesses;
     private int indexedTailRepairs;
     private int propagatedCallTypeTargets;
+    private int machineNestedMemberAccesses;
+    private int machineNestedPointerFields;
     private final Map<String, TargetEvidence> generatedBackingTargets =
         new LinkedHashMap<>();
     private final Set<String> missingGeneratedBackingTargets = new HashSet<>();
@@ -273,6 +276,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             ", call type edges=" + callTypeEdges.size() +
             ", call type seeds=" + callTypeSeeds.size() +
             ", propagated call targets=" + propagatedCallTypeTargets +
+            ", machine nested accesses=" + machineNestedMemberAccesses +
+            ", machine nested pointer fields=" + machineNestedPointerFields +
             ", targets=" + analysis.targets.size() +
             ", target_apply=" + analysis.targets.stream().filter(row -> row.apply).count() +
             ", anonymous_types=" + analysis.types.stream().filter(row -> row.apply).count() +
@@ -387,6 +392,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             stableStorages, functionTargets);
         collectNestedAccesses(function, c, locals, stableStorages, functionTargets,
             renderedPointerWidths);
+        collectMachineGeneratedMemberPointees(function, locals, stableStorages,
+            functionTargets);
         Map<String, PointerAlias> aliases = collectPointerAliases(function, c, locals,
             stableStorages, functionTargets, renderedPointerWidths);
         collectCountedPointerTableRoles(function, c, locals, stableStorages,
@@ -921,6 +928,291 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 "[" + index + "]");
             nestedPointerAccesses++;
         }
+    }
+
+    /**
+     * Recover the pointee of a weak member in an already script-owned generated
+     * record from the machine chain which the decompiler commonly obscures:
+     *
+     * <pre>
+     *     MOV savedParent,[EBP+arg]
+     *     MOV child,[savedParent+member]
+     *     MOV value,[child+fixedOffset]
+     * </pre>
+     *
+     * A loaded child word is promoted to a pointer only when it is itself used
+     * as the base of a later memory operand.  Merely loading or storing a dword
+     * never proves pointer semantics.  The ordinary nested-layout decision still
+     * requires at least two fixed child fields and the normal hash/manual guards,
+     * so this pass cannot turn an isolated integer field into a structure.
+     */
+    private void collectMachineGeneratedMemberPointees(Function function,
+            Map<String, Variable> locals, Set<String> stableStorages,
+            Map<String, TargetEvidence> functionTargets) {
+        Map<Long, TargetEvidence> stackParents = new LinkedHashMap<>();
+        Map<String, TargetEvidence> parentRegisters = new LinkedHashMap<>();
+        int pointerSize = currentProgram.getDefaultPointerSize();
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter()) continue;
+            TargetEvidence target = canonicalTarget(function, locals, stableStorages,
+                functionTargets, parameter.getName());
+            Structure owner = target == null ? null :
+                structureFromPointer(target.expectedType);
+            if (owner == null || !target.scriptOwned ||
+                    !generatedAnonymousOwned(owner)) continue;
+            if (parameter.hasStackStorage())
+                stackParents.put((long)parameter.getStackOffset() + pointerSize, target);
+            Register register = parameter.getRegister();
+            if (register != null)
+                parentRegisters.put(rootRegister(register.getName()), target);
+        }
+        if (stackParents.isEmpty() && parentRegisters.isEmpty()) return;
+
+        Map<String, MachineMemberPointer> memberPointers = new LinkedHashMap<>();
+        Map<String, MachineNestedValue> nestedValues = new LinkedHashMap<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+
+            // Consume the old register state before applying this instruction's
+            // destination definition.  This is essential for MOV EDX,[EDX].
+            for (int operand = 0; operand < instruction.getNumOperands(); operand++) {
+                MachineMemory memory = machineMemory(instruction, operand);
+                if (memory == null) continue;
+                MachineMemberPointer member = memory.fixed ?
+                    memberPointers.get(memory.baseRegister) : null;
+                if (member != null && memory.width > 0) {
+                    long childOffset = member.childBaseOffset + memory.displacement;
+                    if (validNestedOffsets(member.parentOffset, childOffset,
+                            memory.width)) {
+                        recordNestedField(function, member.parent,
+                            member.parentOffset, childOffset, memory.width,
+                            "/undefined" + memory.width,
+                            "machine member-pointer dereference " +
+                            addr(instruction.getAddress()));
+                        machineNestedMemberAccesses++;
+                    }
+                }
+                for (String register : memory.registers) {
+                    MachineNestedValue value = nestedValues.get(register);
+                    if (value == null || memory.width < 1 || memory.width > 16)
+                        continue;
+                    recordNestedField(function, value.member.parent,
+                        value.member.parentOffset, value.childOffset, pointerSize,
+                        "pointer:" + machineScalarType(memory.width),
+                        "machine-loaded child reused as memory base " +
+                        addr(instruction.getAddress()));
+                    machineNestedPointerFields++;
+                }
+            }
+
+            String destination = machineRegisterOperand(instruction, 0);
+            String source = machineRegisterOperand(instruction, 1);
+            MachineMemory sourceMemory = instruction.getNumOperands() > 1 ?
+                machineMemory(instruction, 1) : null;
+            MachineMemory destinationMemory = instruction.getNumOperands() > 0 ?
+                machineMemory(instruction, 0) : null;
+
+            TargetEvidence copiedParent = source == null ? null :
+                parentRegisters.get(source);
+            MachineMemberPointer copiedMember = source == null ? null :
+                memberPointers.get(source);
+            MachineNestedValue copiedNested = source == null ? null :
+                nestedValues.get(source);
+            MachineMemberPointer loadedMember = null;
+            MachineNestedValue loadedNested = null;
+            TargetEvidence loadedParent = null;
+            if (sourceMemory != null && sourceMemory.fixed) {
+                if ("EBP".equals(sourceMemory.baseRegister))
+                    loadedParent = stackParents.get(sourceMemory.displacement);
+                TargetEvidence parent =
+                    parentRegisters.get(sourceMemory.baseRegister);
+                if (parent != null && validNestedOffsets(sourceMemory.displacement,
+                        0, pointerSize) && weakGeneratedMember(parent,
+                            sourceMemory.displacement))
+                    loadedMember = new MachineMemberPointer(parent,
+                        sourceMemory.displacement, 0);
+                MachineMemberPointer member =
+                    memberPointers.get(sourceMemory.baseRegister);
+                if (member != null) {
+                    long childOffset = member.childBaseOffset +
+                        sourceMemory.displacement;
+                    if (validNestedOffsets(member.parentOffset, childOffset,
+                            pointerSize))
+                        loadedNested = new MachineNestedValue(member, childOffset);
+                }
+            }
+
+            // A register value stored into a weak generated member becomes a
+            // tentative alias of that member.  It is recorded only if a later
+            // dereference supplies the independent nested-layout evidence.
+            if ("MOV".equals(mnemonic) && destinationMemory != null &&
+                    destinationMemory.fixed && source != null) {
+                TargetEvidence parent =
+                    parentRegisters.get(destinationMemory.baseRegister);
+                if (parent != null && validNestedOffsets(
+                        destinationMemory.displacement, 0, pointerSize) &&
+                        weakGeneratedMember(parent,
+                            destinationMemory.displacement))
+                    memberPointers.put(source, new MachineMemberPointer(parent,
+                        destinationMemory.displacement, 0));
+            }
+
+            if (destination != null && machineWritesFirstOperand(mnemonic)) {
+                parentRegisters.remove(destination);
+                memberPointers.remove(destination);
+                nestedValues.remove(destination);
+                if (Set.of("MOV", "MOVSX", "MOVZX").contains(mnemonic)) {
+                    if (copiedParent != null) parentRegisters.put(destination, copiedParent);
+                    if (copiedMember != null) memberPointers.put(destination, copiedMember);
+                    if (copiedNested != null) nestedValues.put(destination, copiedNested);
+                    if (loadedParent != null) parentRegisters.put(destination, loadedParent);
+                    if (loadedMember != null) memberPointers.put(destination, loadedMember);
+                    if (loadedNested != null) nestedValues.put(destination, loadedNested);
+                }
+                else if ("LEA".equals(mnemonic) && sourceMemory != null &&
+                        sourceMemory.fixed) {
+                    MachineMemberPointer member =
+                        memberPointers.get(sourceMemory.baseRegister);
+                    if (member != null)
+                        memberPointers.put(destination, new MachineMemberPointer(
+                            member.parent, member.parentOffset,
+                            member.childBaseOffset + sourceMemory.displacement));
+                    MachineNestedValue value =
+                        nestedValues.get(sourceMemory.baseRegister);
+                    if (value != null) {
+                        recordNestedField(function, value.member.parent,
+                            value.member.parentOffset, value.childOffset,
+                            pointerSize, "pointer:/void",
+                            "machine-loaded child used in address calculation " +
+                            addr(instruction.getAddress()));
+                        machineNestedPointerFields++;
+                    }
+                }
+            }
+
+            if (instruction.getFlowType().isCall()) {
+                for (String volatileRegister : Set.of("EAX", "ECX", "EDX")) {
+                    parentRegisters.remove(volatileRegister);
+                    memberPointers.remove(volatileRegister);
+                    nestedValues.remove(volatileRegister);
+                }
+            }
+            // A linear Listing walk must not carry a path-specific loaded child
+            // through a control-flow join.  Long-lived saved parent registers
+            // remain tracked (ordinary x86 code keeps them across branches), but
+            // member and child aliases must be re-established in each block.
+            if (instruction.getFlowType().isJump() ||
+                    instruction.getFlowType().isTerminal()) {
+                memberPointers.clear();
+                nestedValues.clear();
+            }
+        }
+    }
+
+    private MachineMemory machineMemory(Instruction instruction, int operand) {
+        if (instruction == null || operand < 0 ||
+                operand >= instruction.getNumOperands()) return null;
+        String rendered = instruction.getDefaultOperandRepresentation(operand);
+        if (rendered == null || !rendered.contains("[")) return null;
+        String upper = rendered.toUpperCase(Locale.ROOT).trim();
+        int open = upper.indexOf('['), close = upper.lastIndexOf(']');
+        if (open < 0 || close <= open) return null;
+        String expression = upper.substring(open + 1, close).replace(" ", "");
+        Set<String> registers = new LinkedHashSet<>();
+        for (Object object : instruction.getOpObjects(operand))
+            if (object instanceof Register register)
+                registers.add(rootRegister(register.getName()));
+        Matcher fixed = Pattern.compile(
+            "^([A-Z][A-Z0-9]*)(?:([+-])(0X[0-9A-F]+|[0-9]+))?$")
+            .matcher(expression);
+        String base = "";
+        long displacement = 0;
+        boolean exact = fixed.matches();
+        if (exact) {
+            base = rootRegister(fixed.group(1));
+            if (fixed.group(3) != null) {
+                displacement = parseUnsigned(fixed.group(3));
+                if ("-".equals(fixed.group(2))) displacement = -displacement;
+            }
+        }
+        return new MachineMemory(base, displacement, exact, registers,
+            machineMemoryWidth(upper));
+    }
+
+    private int machineMemoryWidth(String rendered) {
+        if (rendered.startsWith("QWORD PTR")) return 8;
+        if (rendered.startsWith("DWORD PTR")) return 4;
+        if (rendered.startsWith("WORD PTR")) return 2;
+        if (rendered.startsWith("BYTE PTR")) return 1;
+        return -1;
+    }
+
+    private boolean weakGeneratedMember(TargetEvidence parent, long offset) {
+        Structure owner = structureFromPointer(parent.expectedType);
+        if (owner == null || !generatedAnonymousOwned(owner) || offset < 0 ||
+                offset > Integer.MAX_VALUE) return false;
+        DataTypeComponent component = owner.getComponentContaining((int)offset);
+        if (component == null) return true;
+        if (component.getOffset() != offset) return false;
+        DataType type = untypedef(component.getDataType());
+        if (Undefined.isUndefined(type)) return true;
+        if (type instanceof Pointer pointer) {
+            DataType pointed = untypedef(pointer.getDataType());
+            if (pointed instanceof Structure) return false;
+            String name = pointed == null ? "" :
+                pointed.getName().toLowerCase(Locale.ROOT);
+            return name.matches(
+                "(?:void|byte|char|uchar|short|ushort|word|u?int|long|ulong|undefined[1248]?)");
+        }
+        String name = type.getName().toLowerCase(Locale.ROOT);
+        return name.matches(
+            "(?:u?int|long|ulong|dword|word|qword|undefined[1248]?)");
+    }
+
+    private String machineScalarType(int width) {
+        return switch (width) {
+            case 1 -> "/byte";
+            case 2 -> "/ushort";
+            case 4 -> "/uint";
+            case 8 -> "/ulonglong";
+            default -> "/undefined" + width;
+        };
+    }
+
+    private String machineRegisterOperand(Instruction instruction, int operand) {
+        if (instruction == null || operand < 0 ||
+                operand >= instruction.getNumOperands()) return null;
+        String rendered = instruction.getDefaultOperandRepresentation(operand);
+        if (rendered == null || !rendered.trim().matches("[A-Za-z][A-Za-z0-9]*"))
+            return null;
+        Object[] objects = instruction.getOpObjects(operand);
+        if (objects.length != 1 || !(objects[0] instanceof Register register))
+            return null;
+        return rootRegister(register.getName());
+    }
+
+    private String rootRegister(String name) {
+        String value = name == null ? "" : name.toUpperCase(Locale.ROOT);
+        return switch (value) {
+            case "EAX", "AX", "AL", "AH" -> "EAX";
+            case "EBX", "BX", "BL", "BH" -> "EBX";
+            case "ECX", "CX", "CL", "CH" -> "ECX";
+            case "EDX", "DX", "DL", "DH" -> "EDX";
+            case "ESI", "SI" -> "ESI";
+            case "EDI", "DI" -> "EDI";
+            case "EBP", "BP" -> "EBP";
+            case "ESP", "SP" -> "ESP";
+            default -> value;
+        };
+    }
+
+    private boolean machineWritesFirstOperand(String mnemonic) {
+        return Set.of("MOV", "MOVSX", "MOVZX", "LEA", "POP", "XOR", "SUB",
+            "SBB", "ADD", "ADC", "AND", "OR", "IMUL", "SHL", "SHR",
+            "SAR", "SAL", "INC", "DEC", "NEG", "NOT").contains(mnemonic);
     }
 
     private Map<String, PointerAlias> collectPointerAliases(Function function, String c,
@@ -3685,6 +3977,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             "typed_field_consumer_hints=" + typedFieldConsumerHints,
             "exact_reinterpret_accesses=" + exactReinterpretAccesses,
             "indexed_generated_tail_repairs=" + indexedTailRepairs,
+            "machine_nested_member_accesses=" + machineNestedMemberAccesses,
+            "machine_nested_pointer_fields=" + machineNestedPointerFields,
             "targets=" + analysis.targets.size(),
             "target_apply=" + analysis.targets.stream().filter(row -> row.apply).count(),
             "existing_type_targets=" + analysis.targets.stream()
@@ -3773,6 +4067,11 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private record SemanticChoice(String specification, String reason) {}
     private record PointerAlias(TargetEvidence parent, long parentOffset, long childBaseOffset,
         int elementWidth, String elementType) {}
+    private record MachineMemberPointer(TargetEvidence parent, long parentOffset,
+        long childBaseOffset) {}
+    private record MachineNestedValue(MachineMemberPointer member, long childOffset) {}
+    private record MachineMemory(String baseRegister, long displacement, boolean fixed,
+        Set<String> registers, int width) {}
     private record IndexedMember(String baseName, String indexText, long index,
         String memberName, long memberOffset, long absoluteOffset,
         TargetEvidence target, Structure owner) {

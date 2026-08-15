@@ -244,7 +244,7 @@ LAB_004dad15:
               local_38 = (undefined2)iVar3;
               uVar5 = thunk_FUN_004e60d0(uVar7,iVar3);
               local_36 = (short)uVar5 + 1;
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)*DAT_008117bc)(local_50);
             }
             iVar3 = iVar3 + 1;

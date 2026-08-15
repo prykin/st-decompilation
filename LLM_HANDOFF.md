@@ -1166,3 +1166,144 @@ Current accepted state:
   stage transition;
 - the generated `SystemClassTy.cpp` translation unit passes the local C++17
   syntax audit with no diagnostics.
+
+## Runtime-published record buffers and exact stack-slot provenance
+
+The latest accepted export supersedes the state above. `0040FC40` belongs to
+the recovered source path `E:\\__titans\\wlad\\Grpway3d.cpp`; this is source
+provenance extracted from the binary, not evidence that an original source file
+exists in the repository. The generated projection is
+`src/ST.exe/source/original/wlad/Grpway3d.cpp` and contains
+`st::fn_0040FC40`.
+
+`STGlobalAggregateAnalyzer/Applier` now distinguishes a static image table from
+a pointer-sized global which publishes runtime-allocated record storage. Exact
+cross-function affine accesses recover a unique stride, complete non-overlapping
+field partition, and an optional paired count/index global. A candidate is
+rejected when the global address itself is used as an indexed image base or when
+the observed cursor addresses only a sub-record. This generic rule recovered
+`007F4D3C` as a pointer to a five-dword, `0x14`-byte record and `007F4D14` as its
+count/index. `0040FC40` therefore renders its fixed-index writes as
+`g_runtimeRecords_007F4D3C[g_runtimeRecordCount_007F4D14].field_000*` without an
+address-specific rewrite.
+
+Exporter `stack_slot_reuse` evidence is now exact value provenance. Only a full
+overwrite fed through transparent `MOV`/`MOVSX`/`MOVZX` operations from a
+different incoming argument slot qualifies. Arithmetic, `LEA`, and registers
+used merely to address an indexed load do not propagate argument identity. This
+removed the false hints on the ordinary coordinate transforms and clamps of
+`param_1`, `param_2`, and `param_3` in `0040FC40`.
+
+The remaining `&stack0xfffffec8` spelling in that function is a different
+problem. The machine code calls the verified MSVC `__alloca_probe` contract and
+creates a runtime-sized byte arena (`uVar15 * 5`), so there is no fixed
+EBP-relative Listing local which Ghidra can safely install. It remains an
+explicit `dynamic_alloca/runtime_extent_review` row in
+`stack_object_proposals.tsv` and a `raw_stack_arena_materialization` source-tree
+audit issue. The nearby `local_1c`, `puStack_10`, `puStack_c`, and `local_8`
+values are compiler SEH frame state, not members of the runtime record.
+
+Current accepted state:
+
+- semantic hash `85825c1954aa70e84afb9b6b0ee81de4918eb8fc27aa50edd524c4ef6adc9a25`;
+- corpus manifest `f8afc8cb96e8f1167325c02cfb7b94bdd9c1c37d68270371a47d55e0d50d44b3`;
+- 10,407 function records, 5,616 bodies, zero failed bodies, and 3,192 typed
+  physical-vtable slots;
+- export and ABI gates: zero errors and zero warnings;
+- the warmed exporter reused all 10,407 function bodies, deliberately rescanned
+  all body annotations after the provenance-rule version bump, and completed as
+  part of a `00:04:59` export pipeline;
+- the regenerated source projection contains 5,616 functions in 321 translation
+  units; its remaining 13,489 audit rows are review debt, not silent source
+  fabrication.
+
+## Nested machine-pointer safety and crash recovery
+
+The latest accepted export supersedes the state above. A broad nested-pointer
+experiment exposed an operand-model bug rather than new object geometry:
+Ghidra's `Instruction.getOpObjects()` includes the base register of a memory
+operand. The old machine pass could therefore read `MOV [EBX+offset],EAX` as if
+operand zero defined `EBX`, carry the wrong alias through later instructions,
+and propose oversized anonymous child layouts.
+
+`STPointerShapeAnalyzer` now accepts a register operand only when its complete
+rendered spelling is one standalone register. Nested member promotion still
+requires the exact chain `load owner field -> retain child value -> use child as
+a later memory base`, the normal minimum field evidence, and generated/manual
+layout guards. A corrected read-only scan reported 432 machine nested accesses,
+83 pointer-field promotions, 121 anonymous types and zero failures; the former
+3,567-byte false child proposal disappeared, while new child layouts were at
+most 200 bytes.
+
+The rejected pass had also rewritten 185 pointer-parameter provenance comments
+despite leaving their types equivalent. `STPointerShapeApplier` is now
+idempotent for this case: an existing owned marker is retained unless the type
+actually changes. Optional exact `proposed_comment`, `proposed_source`, field
+comment and type-description columns exist solely for stale-baseline-checked
+accepted-state repair. `STTypeLifecycleAnalyzer/Applier` can retire an
+unreferenced direct Pointer/Array wrapper chain before retiring its hash-owned
+anonymous base type.
+
+After a host reboot, the interrupted pipeline was not accepted. The Ghidra
+database was compared by a cached diagnostic export against the retained
+accepted corpus: all 184 changed function metadata records differed only in
+those 185 comments, and `types.jsonl` contained one unused derived pointer type.
+Restoring the accepted comments and removing that unused derivative returned
+the database to the exact accepted semantic fingerprint.
+
+`STRecoveryLauncher` now writes bootstrap output to the ignored
+`pipeline_bootstrap.log.tmp` and atomically promotes it only after the child
+pipeline succeeds. A hard kill or reboot therefore preserves the last complete
+tracked bootstrap log instead of replacing it with an unaccepted prefix.
+
+Current accepted state:
+
+- semantic hash `d8cf2c583b3cca628fa0ac32d31b35296501673e7352af2595b6254532386f3c`;
+- corpus manifest `bc31c81fe820965357669a9b4f882d53b75541bf93525a7169f01d93f6bee3d2`;
+- 10,407 function records, 5,616 bodies, zero failed bodies, and 3,192 typed
+  physical-vtable slots;
+- export receipt `passed`, with zero hard regressions and three warnings;
+- the recovery scripts compile against Ghidra 12.1.2/JDK 21, and a final
+  semantic fingerprint check exactly matches the accepted receipt.
+
+## Address-installed library callbacks and fragmented padding
+
+The latest accepted export supersedes the state above. `STUnclaimedCodeAnalyzer`
+recovered complete callback entries which Ghidra had omitted because their
+addresses are installed with exact x86 `MOV [memory], imm32` instructions rather
+than reached by direct `CALL`s. Several are compiler-emitted `RET 4` no-op
+callbacks; others are ordinary indirect-only functions. Their identities are
+real and remain in `functions/<ADDRESS>/` even when their implementations are
+excluded as linked-library code.
+
+The existing library interval rule intentionally required matching normalized
+source basenames. That could not classify a callback placed at the boundary of
+two JPEG object files even though both sides and every exact callback installer
+belonged to `DKW_JPG`. `STLibraryAnalyzer` now keeps source provenance strict but
+adds a separate module-only proof: the nearest exact anchors around the callback
+must agree on library/namespace, every exact installer/direct caller/executable
+non-flow owner must be independently bounded by its own nearest anchors for the
+same module or already carry an independent exact classification, and the
+reference must decode as the same exact memory-immediate store. It never assigns
+either neighboring source filename. The accepted pass added 61 library callback
+classifications (57 `DKW_JPG`, four `DKW_GPC`) with no conflicts.
+
+Recovering tiny functions split long compiler-alignment runs into raw fragments
+shorter than the normal padding-run threshold. `STDecompExport` now classifies
+any fragment containing only known `00`/`90`/`CC` padding bytes as `padding`
+regardless of its raw discovery kind or length. Such ranges remain represented
+in `unclaimed_ranges.jsonl` with `exported=false` and no longer create noisy
+`unclaimed/<START>_<END>/` directories.
+
+Current accepted state:
+
+- run `764a61cc55c16959d155d14a95d4d6a2a9fd7eedaf39230d417e6e7f8dcacd62`;
+- semantic hash `eaca06938975d4924ae26d60827c5723b4e130b929c429e0ae6001341d3adf80`;
+- corpus manifest `cd691ccf658e7f7982233f5c82f6e7647e2773f4b0e2583952f2e958af486db1`;
+- 10,407 function records, 5,555 exported bodies, zero failed bodies, and 3,192
+  typed physical-vtable slots;
+- export receipt `passed`, with zero hard regressions and four non-blocking
+  library stage-transition warnings; ABI gate errors/warnings remain zero;
+- compared with the preceding corpus, raw indirect calls decreased by 43,
+  raw pointer offsets by 46, unresolved register inputs by six, and undefined
+  type occurrences by 197.

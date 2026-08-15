@@ -66,10 +66,10 @@ address	name	current_type	raw_target	classification	target_name	target_data_type
 0068AB30	PTR_caseD_3_0068ab30	/pointer	00684DC8	code_pointer	FUN_00683c70			0	0	0		0
 006BB310	PTR_caseD_20_006bb310	/pointer	006BB086	code_pointer	Library::DKW::DDX::FUN_006bac60			0	0	0		0
 006BB340	PTR_caseD_20_006bb340	/pointer	006BB1C3	code_pointer	Library::DKW::DDX::FUN_006bac60			0	0	0		0
-006BF65C	PTR_caseD_20_006bf65c	/pointer	006BEF0D	code_pointer	FUN_006bea40			0	0	0		0
-006BF68C	PTR_caseD_20_006bf68c	/pointer	006BF0B6	code_pointer	FUN_006bea40			0	0	0		0
-006BF6BC	PTR_caseD_20_006bf6bc	/pointer	006BF1E1	code_pointer	FUN_006bea40			0	0	0		0
-006BF6EC	PTR_caseD_20_006bf6ec	/pointer	006BF32D	code_pointer	FUN_006bea40			0	0	0		0
+006BF65C	PTR_caseD_20_006bf65c	/pointer	006BEF0D	code_pointer	Library::DKW::DDX::FUN_006bea40			0	0	0		0
+006BF68C	PTR_caseD_20_006bf68c	/pointer	006BF0B6	code_pointer	Library::DKW::DDX::FUN_006bea40			0	0	0		0
+006BF6BC	PTR_caseD_20_006bf6bc	/pointer	006BF1E1	code_pointer	Library::DKW::DDX::FUN_006bea40			0	0	0		0
+006BF6EC	PTR_caseD_20_006bf6ec	/pointer	006BF32D	code_pointer	Library::DKW::DDX::FUN_006bea40			0	0	0		0
 006CE6B4	PTR_caseD_3_006ce6b4	/pointer	006CD0D8	code_pointer	FUN_006c8ec0			0	0	0		0
 006F9A94	PTR_caseD_4_006f9a94	/pointer	006F9672	code_pointer	FUN_006f94d0			0	0	0		0
 006F9AA4	PTR_caseD_4_006f9aa4	/pointer	006F975E	code_pointer	FUN_006f94d0			0	0	0		0

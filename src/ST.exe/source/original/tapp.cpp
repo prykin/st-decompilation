@@ -1383,7 +1383,7 @@ st::fn_0056CBD0
           return local_8;
         }
         local_bc = 0xa100;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(local_cc);
         g_currentExceptionFrame = local_4c.previous;
         return local_8;
@@ -2146,6 +2146,7 @@ void __thiscall st::fn_0056DB80(STAppC *this)
 int __thiscall st::fn_0056FA60(STAppC *this,STMessage *message)
 
 {
+  byte stack_bytes_neg_9A4[0x318]; /* exact EBP-relative stack object */
   char cVar1;
   STAppC_field_1180State SVar2;
   byte bVar3;
@@ -2823,7 +2824,7 @@ cf_common_exit_0057073B:
       }
       local_44[4] = 0x7100;
       if ((DAT_00807330 & 2) != 0) {
-        memset(&stack0xfffff65c, 0, 0x318); /* compiler bulk-zero initialization */
+        memset(stack_bytes_neg_9A4, 0, 0x318); /* compiler bulk-zero initialization */
         iVar19 = 0;
         st::fn_0072E730(st::pointer_boundary_cast<byte *>(&pSVar11->field_0x7c0a),local_14,local_24c,local_44c,local_54c);
         st::fn_0072F110
@@ -2831,7 +2832,7 @@ cf_common_exit_0057073B:
                    st_global_0079B03C,nullptr);
         local_c = (DArrayTy *)
                   st::fn_00404403(st::pointer_boundary_cast<LPCSTR>(&pSVar11->field_7D1A),
-                                     (AnonShape_00683C70_22193481 *)&stack0xfffff65c,st::pointer_boundary_cast<undefined4 *>(&local_50),
+                                     (AnonShape_00683C70_22193481 *)stack_bytes_neg_9A4,st::pointer_boundary_cast<undefined4 *>(&local_50),
                                      nullptr,nullptr);
         if ((local_50 == 0x40) && (local_c != nullptr)) {
           uVar26 = local_c->iteratorIndex;

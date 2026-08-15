@@ -175,7 +175,7 @@ LAB_006739cd:
     }
     if (cVar2 == ']') {
       DAT_00811914 = DAT_00811914 + 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       pcVar6 = (char *)(**(code **)&PTR_0081194c->field_0x10)(DAT_00857528);
       if (pcVar6 == nullptr) {
         *DAT_00811948 = 0;
@@ -245,7 +245,7 @@ LAB_006739cd:
       }
       thunk_FUN_00672b60((char *)DAT_00811948,PTR_0081194c);
       if ((code *)PTR_0081194c->field_0014 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (*(code *)PTR_0081194c->field_0014)(DAT_00811948,1);
       }
       DAT_007d2d24 = DAT_007d2d24 | 0x80;

@@ -85,10 +85,8 @@ void FUN_006b4170(RecoveredSourceFamily_dibcopy *param_1,int param_2,int lprcSrc
   if ((0 < param_5) && (0 < param_6)) {
     ExceptionList = &local_14;
     puVar1 = &stack0xffffffa0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0) {
       ExceptionList = &local_14;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = FUN_006b4fa0((int *)param_1);
       puVar1 = local_1c;
     }

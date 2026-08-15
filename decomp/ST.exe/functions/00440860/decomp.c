@@ -20,9 +20,7 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
   uVar7 = param_3;
   piVar3 = param_2;
   objPtr = (char)param_2;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = (int *)GetObjPtr(this,objPtr,(ushort)param_3,CASE_1);
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((STGameObjC *)param_2 == nullptr) {
     iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x21d0,0,0,"%s",
                                "STAllPlayersC::_ChangeMD");
@@ -44,9 +42,9 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
        ) && (dVar1 = array->count, dVar1 != 0)) && (uVar7 = 0, 0 < (int)dVar1)) {
     do {
       DArrayGetElement(array,uVar7,&param_2);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((param_2 != nullptr) && (iVar6 = (**(code **)(*param_2 + 0xc))(), iVar6 == 8)) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*param_2 + 0x10))(param_1,param_3);
       }
       uVar7 = uVar7 + 1;

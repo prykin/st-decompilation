@@ -54,7 +54,7 @@ undefined4 __fastcall FUN_006d54c0(AnonShape_006D54C0_FBA73A61 *param_1)
     do {
       local_10 = FUN_006bbe40(local_8,&local_1c,(int *)&local_14,0);
       if (local_10 == 0) {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_006d5620:
         (**(code **)(*local_8 + 0x80))(local_8,0);
         break;
@@ -63,13 +63,13 @@ LAB_006d5620:
         if (local_10 == 0) goto LAB_006d5620;
         break;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*local_8 + 0x6c))(local_8);
       local_c = local_c + 1;
     } while (local_c < 2);
   }
   if (local_8 != nullptr) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*local_8 + 8))(local_8);
     local_8 = nullptr;
   }

@@ -47,7 +47,6 @@ byte * FUN_00752a60(int param_1,int param_2,int param_3,int param_4,int param_5,
             iVar3 = iVar3 + 1;
           } while (iVar3 < param_3);
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + param_2;
         pbVar8 = pbVar8 + iVar10;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -87,7 +86,6 @@ LAB_00752b4c:
             } while( true );
           }
         }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_00752cba:
         param_1 = param_1 + param_2;
         local_1c = local_1c + 1;

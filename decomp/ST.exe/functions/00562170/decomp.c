@@ -20,18 +20,20 @@ int FUN_00562170(int *param_1,int param_2)
   local_c = 0;
   local_8 = 0;
   local_10 = nullptr;
-  if (0 < DAT_0080338c) {
+  if (0 < g_runtimeRecordCount_0080338C) {
     local_14 = 0;
     do {
-      iVar1 = FUN_006db910(DAT_00803304,DAT_00803308,*(int *)(local_14 + DAT_00803310),
-                           *(int *)(local_14 + 4 + DAT_00803310));
+      iVar1 = FUN_006db910(DAT_00803304,DAT_00803308,
+                           *(int *)((int)&g_runtimeRecords_00803310->field_0000 + local_14),
+                           *(int *)((int)&g_runtimeRecords_00803310->field_0004 + local_14));
       if (0 < param_2) {
         local_c = local_c + param_2;
         iVar5 = param_2;
         piVar6 = param_1;
         do {
-          iVar4 = FUN_006db910(DAT_00803304,DAT_00803308,*(int *)(DAT_00803300 + *piVar6 * 0x14),
-                               *(int *)(DAT_00803300 + 4 + *piVar6 * 0x14));
+          iVar4 = FUN_006db910(DAT_00803304,DAT_00803308,
+                               g_runtimeRecords_00803300[*piVar6].field_0000,
+                               g_runtimeRecords_00803300[*piVar6].field_0004);
           uVar1 = iVar4 - iVar1 >> 0x1f;
           iVar3 = (iVar4 - iVar1 ^ uVar1) - uVar1;
           if (0xb4 < iVar3) {
@@ -45,26 +47,27 @@ int FUN_00562170(int *param_1,int param_2)
       }
       local_10 = (int *)((int)local_10 + 1);
       local_14 = local_14 + 0x14;
-    } while ((int)local_10 < DAT_0080338c);
+    } while ((int)local_10 < g_runtimeRecordCount_0080338C);
   }
   iVar7 = 1;
-  iVar5 = *(int *)(DAT_00803300 + 0xc + *param_1 * 0x14);
+  iVar5 = g_runtimeRecords_00803300[*param_1].field_000C;
   local_10 = param_1;
   if (1 < param_2) {
     do {
       local_10 = local_10 + 1;
       iVar3 = *local_10;
-      iVar5 = iVar5 + *(int *)(DAT_00803300 + 0xc + iVar3 * 0x14);
+      iVar5 = iVar5 + g_runtimeRecords_00803300[iVar3].field_000C;
       local_EAX_292 =
-           FUN_006db910(DAT_00803304,DAT_00803308,*(int *)(DAT_00803300 + iVar3 * 0x14),
-                        *(int *)(DAT_00803300 + iVar3 * 0x14 + 4));
+           FUN_006db910(DAT_00803304,DAT_00803308,g_runtimeRecords_00803300[iVar3].field_0000,
+                        g_runtimeRecords_00803300[iVar3].field_0004);
       if (0 < iVar7) {
         local_c = local_c + iVar7;
         piVar6 = param_1;
         local_14 = iVar7;
         do {
-          iVar2 = FUN_006db910(DAT_00803304,DAT_00803308,*(int *)(DAT_00803300 + *piVar6 * 0x14),
-                               *(int *)(DAT_00803300 + 4 + *piVar6 * 0x14));
+          iVar2 = FUN_006db910(DAT_00803304,DAT_00803308,
+                               g_runtimeRecords_00803300[*piVar6].field_0000,
+                               g_runtimeRecords_00803300[*piVar6].field_0004);
           uVar1 = iVar2 - local_EAX_292 >> 0x1f;
           iVar3 = (iVar2 - local_EAX_292 ^ uVar1) - uVar1;
           if (0xb4 < iVar3) {

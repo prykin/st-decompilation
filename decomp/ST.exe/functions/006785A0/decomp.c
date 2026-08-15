@@ -105,7 +105,7 @@ LAB_00678692:
                (iVar7 = local_14, (int)param_5 + (int)param_8 <= (int)local_c)))))))))) {
           iVar7 = 0;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar7 != 0) && (param_9 != nullptr)) &&
            (iVar7 = (*(code *)param_9)(0,local_10,this,param_10), iVar7 != 0)) {
           g_currentExceptionFrame = local_6c.previous;

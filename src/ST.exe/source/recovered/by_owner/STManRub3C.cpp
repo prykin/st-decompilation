@@ -88,7 +88,6 @@ byte * __thiscall st::fn_0062D670(STManRub3C *this,uint *param_1)
   pbVar7 = local_10;
   memmove(pbVar7, puVar5, 0x98); /* compiler REP MOVS byte copy */
   *param_1 = 0x98;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = nullptr;
   do {
     switch(param_1) {
@@ -117,7 +116,6 @@ byte * __thiscall st::fn_0062D670(STManRub3C *this,uint *param_1)
       memmove(puVar8, puVar6, local_c); /* compiler REP MOVS byte copy */
       st::fn_006AB060(&local_14);
     }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 switchD_0062d6cc_default:
     param_1 = (uint *)((int)param_1 + 1);
     if (3 < (int)param_1) {
@@ -151,7 +149,6 @@ int __thiscall st::fn_0062D840(STManRub3C *this,undefined4 *param_1)
   else {
     puVar6 = (byte *)(&this->field_001C);
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (undefined4 *)0x98;
   puVar4 = (byte *)(puVar1);
   memmove(puVar6, puVar4, 0x98); /* compiler REP MOVS byte copy */
@@ -179,7 +176,6 @@ int __thiscall st::fn_0062D840(STManRub3C *this,undefined4 *param_1)
     iVar2 = st::fn_00404AA7((int *)ppDVar7,piVar5);
 switchD_0062d881_default:
     piVar5 = (int *)((int)piVar5 + iVar2);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (undefined4 *)((int)param_1 + iVar2);
     iVar3 = iVar3 + 1;
     if (3 < iVar3) {

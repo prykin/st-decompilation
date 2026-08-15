@@ -86,7 +86,7 @@ cf_common_join_004F3AC3:
                        local_18[2],local_18[3]);
       iVar9 = -1;
       iVar8 = -1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_2);
       iVar7 = -1;
       iVar5 = -2;

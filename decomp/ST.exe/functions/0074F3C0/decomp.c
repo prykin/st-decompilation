@@ -71,11 +71,11 @@ cf_common_exit_0074F489:
   LeaveCriticalSection(lpCriticalSection_00);
   uVar5 = 0;
   if (p_Var7 != (LPCRITICAL_SECTION)0x0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar5 = (**(code **)(*param_1 + 0x54))();
   }
   if (uVar6 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar5 = (**(code **)(*param_1 + 0x50))();
   }
   return uVar5;

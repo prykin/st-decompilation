@@ -51,7 +51,6 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
     return 0;
   }
   GVar4 = array->count;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = 0;
   if (0 < (int)GVar4) {
     do {
@@ -91,7 +90,6 @@ LAB_0065e5a7:
       }
                     /* WARNING: This code block may not be properly labeled as switch case */
       GVar4 = array->count;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_3 + 1;
     } while ((int)param_3 < (int)GVar4);
   }

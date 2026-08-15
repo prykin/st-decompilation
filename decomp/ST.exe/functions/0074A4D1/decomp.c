@@ -9,13 +9,13 @@ uint __thiscall FUN_0074a4d1(void *this,undefined4 param_1)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_retaddr;
 
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar1 = (**(code **)(*(int *)this + 0x98))(param_1);
   if ((int)uVar1 < 0) {
     return -(uint)(uVar1 != 0x8004022b) & uVar1;
   }
   if (STField<int>(this,0x14) == 1) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0x50))();
     STField<undefined4>(this,0xb4) = 0;
     EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 0x7c));
@@ -25,31 +25,31 @@ uint __thiscall FUN_0074a4d1(void *this,undefined4 param_1)
     }
     STField<undefined4>(this,0xb4) = 1;
     EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 0x94));
-    /* ST_PSEUDO[unresolved_register_input,raw_indirect_call]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[unresolved_register_input,raw_indirect_call]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0x34))(unaff_retaddr);
     LeaveCriticalSection((LPCRITICAL_SECTION)((int)this + 0x94));
     LeaveCriticalSection((LPCRITICAL_SECTION)((int)this + 0x7c));
     SetEvent(STField<HANDLE>(this,0x5c));
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar2 = (**(code **)(*(int *)this + 0x2c))();
   if (iVar2 < 0) {
     STField<undefined4>(this,0xb4) = 0;
   }
   else {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0x50))();
     STField<undefined4>(this,0xb4) = 0;
     EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 0x7c));
     if (STField<int>(this,0x14) != 0) {
       EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 0x94));
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0xa8))(STField<undefined4>(this,0x6c));
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0x70))();
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0x60))();
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0x6c))();
       LeaveCriticalSection((LPCRITICAL_SECTION)((int)this + 0x94));
     }

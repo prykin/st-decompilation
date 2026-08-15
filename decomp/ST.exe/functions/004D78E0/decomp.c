@@ -24,7 +24,6 @@ undefined4 FUN_004d78e0(char param_1)
   iVar5 = 0;
   local_c = 0;
   local_8 = 0;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_1 = 0;
   iVar3 = 6;
   piVar2 = &g_packedRecords_A62x8[iVar1].field1601_0x7da;
@@ -32,7 +31,6 @@ undefined4 FUN_004d78e0(char param_1)
     if (piVar2[8] != 0) {
       iVar4 = iVar4 + *piVar2;
       iVar5 = iVar5 + piVar2[0xd];
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_1 = _param_1 + piVar2[0xe];
       local_8 = local_8 + piVar2[0xf];
       local_c = local_c + piVar2[0x10];
@@ -77,7 +75,6 @@ undefined4 FUN_004d78e0(char param_1)
         piVar2[-0xc] = iVar1;
       }
       iVar1 = piVar2[1];
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((iVar1 < piVar2[-0xb]) || (_param_1 == iVar1)) {
         piVar2[-0xb] = iVar1;
       }

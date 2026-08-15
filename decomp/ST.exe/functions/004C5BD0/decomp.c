@@ -32,10 +32,8 @@ FUN_004c5bd0(void *this,float param_1,short *param_2,short *param_3,short *param
   ST3DSMAPContext::sub_006DD530
             (STField<ST3DSMAPContext *>(this,0x211),&param_1,(float *)&param_2,(float *)&param_3);
   lVar8 = Library::MSVCRT::__ftol();
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (float)(int)(short)lVar8;
   lVar8 = Library::MSVCRT::__ftol();
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (float)(int)(short)lVar8;
   lVar8 = Library::MSVCRT::__ftol();
   fVar3 = (float)(int)STField<short>(this,0x43) - param_1;

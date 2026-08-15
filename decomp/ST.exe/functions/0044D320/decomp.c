@@ -44,7 +44,6 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
   local_10 = local_14->count;
   pbVar3 = Library::DKW::LIB::MemAlloc(0xc);
   if (param_1 < 0x1001) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == 0x1000) {
       pbVar3[0] = 1;
       pbVar3[1] = 2;
@@ -60,7 +59,6 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
       pbVar3[0xb] = 0xb;
     }
     else if (param_1 < 0x41) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 0x40) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
@@ -140,7 +138,6 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
       }
     }
     else if (param_1 < 0x201) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 0x200) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
@@ -173,7 +170,6 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
         pbVar3[0xb] = 0;
       }
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0x400) {
       pbVar3[0] = 1;
       pbVar3[1] = 2;
@@ -208,7 +204,6 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
     goto LAB_0044d710;
   }
   if (param_1 < 0x100001) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == 0x100000) {
       pbVar3[0] = 1;
       pbVar3[1] = 2;
@@ -217,7 +212,6 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
       goto LAB_0044d6f8;
     }
     if (param_1 < 0x20001) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 0x20000) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
@@ -232,7 +226,6 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
         pbVar3[10] = 1;
         pbVar3[0xb] = 0x12;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       else if (param_1 == 0x2000) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
@@ -266,7 +259,6 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
       }
     }
     else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 0x40000) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
@@ -293,7 +285,6 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
   }
   else {
     if (param_1 < 0x800001) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 0x800000) {
 LAB_0044d6cc:
         pbVar3[0] = 1;
@@ -356,7 +347,6 @@ LAB_0044d6f8:
     pbVar3[10] = 0;
     pbVar3[0xb] = 0x18;
   }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0044d710:
   param_1 = 0;
   if (0 < (int)local_10) {
@@ -611,7 +601,6 @@ switchD_0044dcfe_caseD_19:
         }
         else if (GVar2 == 0x2000000) goto switchD_0044dcfe_caseD_19;
       }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 cf_continue_loop_0044DDCF:
       param_1 = param_1 + CASE_1;
     } while ((int)param_1 < (int)local_10);

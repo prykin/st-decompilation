@@ -16,16 +16,15 @@ undefined4 __thiscall FUN_004e8b10(void *this,uint param_1)
       (7 < g_bulkInitializedRecords_008087C7[param_1].field_0022)))) {
     return 0;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (**(code **)(*(int *)this + 0x2c))();
   if (iVar3 == 0x37) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == STField<uint>(this,0x24)) {
       return 1;
     }
     return 0;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (**(code **)(*(int *)this + 0x2c))();
   if (iVar3 != 0x6c) {
     return 0;
@@ -38,7 +37,6 @@ undefined4 __thiscall FUN_004e8b10(void *this,uint param_1)
   if (iVar3 == 0) {
     return 1;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (uint)STField<byte>(this,0x24);
   if (DAT_00808a8f != '\0') {
     bVar5 = g_bulkInitializedRecords_008087C7[param_1].field_0023 !=

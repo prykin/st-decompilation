@@ -27,7 +27,7 @@ LAB_005f5d4b:
     }
     if (param_1 == 2) {
       if ((int *)this->field_0034 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar1 = (**(code **)(*(int *)this->field_0034 + 0xe0))
                           (this->field_0038,(int)&param_1 + 2,&local_6,&local_8,&local_c);
         if (iVar1 == 0) {

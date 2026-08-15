@@ -20,10 +20,10 @@ void __thiscall sub_0041C5A0(void *this)
                  STField<undefined *>(this,0x24),STField<int>(this,0x105),
                  STField<int>(this,0x18),0xffffffff);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar1 = (**(code **)(*(int *)this + 0x2c))();
     switch(uVar1) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     case 5:
     case 0x11:
     case 0x21:

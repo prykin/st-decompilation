@@ -42,7 +42,7 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
         local_e = STField<undefined2>(this,0x32);
         local_14 = 0x5d99;
         local_10 = 1;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (*(code *)**(undefined4 **)pSVar3->field_001C)(local_24);
       }
       if (STField<uint>(this,0x24) == (uint)*(byte *)(STField<int>(this,0x10) + 0x112d)) {
@@ -51,17 +51,17 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
           uVar3 = LookupRecordByte(STField<char>(this,0x23d));
           uVar3 = (int)(byte)uVar3;
           if (uVar3 == 1) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*(int *)this + 0x90))(4,0x21e);
             return param_2;
           }
           if (uVar3 == 2) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*(int *)this + 0x90))(4,0x2e4);
             return param_2;
           }
           if (uVar3 == 3) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*(int *)this + 0x90))(4,0x3a5);
             return param_2;
           }
@@ -70,12 +70,12 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
           local_EAX_269 = LookupRecordByte(STField<char>(this,0x23d));
           local_EAX_269 = (int)(byte)local_EAX_269;
           if (local_EAX_269 == 1) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*(int *)this + 0x90))(4,0x27c);
             return param_2;
           }
           if (local_EAX_269 == 2) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*(int *)this + 0x90))(4,0x34b);
             return param_2;
           }
@@ -87,32 +87,32 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
       case 0x39:
         iVar1 = *(int *)this;
         bVar2 = LookupRecordByte(STField<char>(this,0x23d));
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar1 + 0x90))(3,(-(uint)(bVar2 != 2) & 0xffffff3a) + 0x2ea);
         return param_2;
       case 0x3b:
         iVar1 = *(int *)this;
         bVar2 = LookupRecordByte(STField<char>(this,0x23d));
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar1 + 0x90))(3,(-(uint)(bVar2 != 2) & 0xffffff3a) + 0x2f7);
         return param_2;
       case 0x4f:
         iVar1 = *(int *)this;
         bVar2 = LookupRecordByte(STField<char>(this,0x23d));
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar1 + 0x90))(3,(-(uint)(bVar2 != 2) & 0xffffff32) + 0x350);
         return param_2;
       case 0x52:
         iVar1 = *(int *)this;
         bVar2 = LookupRecordByte(STField<char>(this,0x23d));
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar1 + 0x90))(3,(-(uint)(bVar2 != 2) & 0xffffff3b) + 0x35d);
         return param_2;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       case 0x5e:
         (**(code **)(*(int *)this + 0x90))(3,0x3ab);
         return param_2;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       case 0x60:
         (**(code **)(*(int *)this + 0x90))(3,0x3ba);
         return param_2;

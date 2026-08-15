@@ -598,7 +598,7 @@ LAB_004d1df8:
       st::fn_00405240
                 ((STT3DSprC *)this_00,*(char *)&this_01->field_02F0 - 1,
                  g_playSystem_00802A38->field_00E4);
-      (*(*this_00)->vfunc_00)();
+      (*(*this_00)->vfunc_00)((TLOEmbryoTy *)this_00);
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar12 = extraout_EDX_00;
     }
@@ -614,7 +614,7 @@ LAB_004d1df8:
                      *(int *)(&DAT_007e24fc + iVar11),*(int *)(&DAT_007e3160 + iVar11));
   iVar11 = st::fn_00402077(STReplaceLowByte((uint32_t)(this_01->field_0259), (uint8_t)(*(undefined1 *)&this_01->field_0024)),this_01->field_0259);
   if (iVar11 != 0) {
-    iVar11 = (*this_01->vtable->vfunc_2C)();
+    iVar11 = this_01->vfunc_2C();
     st::fn_00405E39(STReplaceLowByte((uint32_t)(iVar11), (uint8_t)(*(undefined1 *)&this_01->field_0024)),
                        iVar11);
   }

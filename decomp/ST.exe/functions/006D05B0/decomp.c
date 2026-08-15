@@ -51,7 +51,6 @@ LAB_006d05f0:
       }
       param_3 = (uint *)((int)param_3 + param_4);
       param_1 = (undefined4 *)((int)param_1 + param_2);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = param_6 + -1;
     } while (param_6 != 0);
   }

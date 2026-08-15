@@ -29,7 +29,7 @@ int FUN_006c52e0(AnonShape_006C52E0_B18BC6D0 *param_1,int param_2,undefined4 par
   uVar3 = 0;
   local_10 = param_3;
   while( true ) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*param_1->field_0040 + 0x14))
                       (param_1->field_0040,&local_14,0,0,uVar2 | 0x1000400,local_78);
     if (iVar1 == 0) break;

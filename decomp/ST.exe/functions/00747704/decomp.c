@@ -48,7 +48,7 @@ uint FUN_00747704(AnonShape_00747822_A1E67AF6 *param_1,uint param_2,int *param_3
         iVar5 = pAVar2->field_0004;
         if (pAVar2->field_0008 == iVar5) break;
         pAVar2->field_0004 = iVar5 + 1;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (**(code **)(*pAVar2->field_000C + 0x1c))(iVar5);
         if (iVar5 == 0) {
           return 0x80040203;
@@ -57,7 +57,7 @@ uint FUN_00747704(AnonShape_00747822_A1E67AF6 *param_1,uint param_2,int *param_3
         if (iVar6 == 0) {
           piVar1 = (int *)(iVar5 + 0xc);
           *param_3 = (int)piVar1;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar1 + 4))(piVar1);
           local_8 = local_8 + 1;
           param_3 = param_3 + 1;

@@ -40,7 +40,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
       local_14 = 1;
       local_12 = param_1;
       local_10 = this_00->field_0018;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*STField<undefined4 *>(this,0x1c))(local_28);
     }
     uVar2 = 0;

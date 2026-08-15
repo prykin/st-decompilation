@@ -29,7 +29,6 @@ float10 __thiscall ST3DSMAPContext::sub_006E3210(ST3DSMAPContext *param_1,int pa
       iVar4 = param_3 / iVar2;
       iVar6 = param_3 % iVar2;
       if ((-1 < iVar4) && (iVar4 < iVar1)) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = 5;
         piVar7 = (int *)(&param_1->field_0280[1].field_0xc +
                         (param_1->field_0288 * 5 + iVar3 + iVar1 * iVar4) * 4);
@@ -42,7 +41,6 @@ float10 __thiscall ST3DSMAPContext::sub_006E3210(ST3DSMAPContext *param_1,int pa
                    (float10)_DAT_0079dfa8 + (float10)param_1->field_0394;
           }
           piVar7 = piVar7 + -param_1->field_0288;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = param_3 + -1;
         } while (0 < param_3);
       }

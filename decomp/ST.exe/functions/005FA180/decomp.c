@@ -28,7 +28,7 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
       cVar2 = thunk_FUN_004ad610((int)puVar1);
       if (cVar2 != '\0') {
         thunk_FUN_005fa0b0((STColl3C *)param_1);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (*(code *)**(undefined4 **)puVar1)();
       }
     }

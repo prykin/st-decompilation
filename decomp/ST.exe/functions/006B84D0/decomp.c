@@ -25,9 +25,7 @@ void FUN_006b84d0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3
   uint local_c;
   uint local_8;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = FUN_006b4fa0((int *)param_1);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -46,11 +44,9 @@ void FUN_006b84d0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3
            ((uint)param_1->field_000E * local_24[2] + 0x1f >> 3 & 0x1ffffffc);
   if (local_18 < 0) {
     local_18 = -local_18;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = pRVar4;
   }
   else {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (RecoveredSourceFamily_dibcopy *)-(int)pRVar4;
   }
   local_14 = param_3 + sVar1;

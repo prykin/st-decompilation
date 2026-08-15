@@ -16,14 +16,12 @@ undefined4 __thiscall FUN_0074fea4(void *this,uint param_1,int param_2,int param
         return 0;
       }
       bVar2 = CARRY4(param_1,STField<uint>(this,0x68));
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + STField<uint>(this,0x68);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + STField<int>(this,0x6c) + (uint)bVar2;
     }
     local_c = 0;
     local_8 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 0xc))(piVar1,&local_c);
     if ((param_2 <= local_8) && ((param_2 < local_8 || (param_1 <= local_c)))) {
       return 1;

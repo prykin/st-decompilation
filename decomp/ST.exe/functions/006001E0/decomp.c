@@ -74,7 +74,7 @@ LAB_0060033c:
       if (uVar4 != 2) {
         return uVar4;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((STField<int *>(this,0x1e9) != nullptr) &&
          (iVar3 = (**(code **)(*STField<int *>(this,0x1e9) + 0xe0))
                             (STField<undefined4>(this,0x1ed),(int)&param_1 + 2,&local_6,&local_8,

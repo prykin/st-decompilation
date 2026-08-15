@@ -23,7 +23,7 @@ undefined4 __thiscall FUN_00423d80(void *this,DArrayTy *groupContent)
     index = 0;
     do {
       DArrayGetElement(groupContent,index,&local_c);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*(int *)this + 4))(local_c);
       if (iVar2 == 0) {
         local_8 = 1;

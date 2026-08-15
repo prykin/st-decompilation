@@ -248,9 +248,9 @@ switchD_0064aa67_caseD_1:
       sVar4 = *(short *)(local_10 + 1);
       if ((sVar4 == 1) && ((*param_1 == '\x06' || (*param_1 == '\x03')))) {
         if ((param_1[5] == '\x06') || (param_1[5] == '\x03')) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           pcVar8 = (char *)(**(code **)(*local_38 + 8))(param_1);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
           local_18 = pbVar9;
           if ((pcVar8 == nullptr) || (pbVar9 == nullptr)) {
@@ -336,9 +336,9 @@ cf_common_exit_0064BBB1:
       case '\x04':
         cVar3 = param_1[5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)*local_38)(param_1);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar10 = (**(code **)*local_38)(param_1 + 5);
           local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           switch(*(undefined2 *)(local_10 + 1)) {
@@ -382,10 +382,10 @@ cf_common_exit_0064BBB1:
           }
           goto cf_error_exit_0064B714;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         local_18 = (byte *)(**(code **)*local_38)(param_1);
         local_c = (int *)(float)(int)local_18;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
         local_14 = (float)fVar19;
         local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
@@ -424,10 +424,10 @@ cf_common_exit_0064BBB1:
             }
             goto cf_error_exit_0064B714;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
           local_c = (int *)(float)fVar19;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
           local_14 = (float)fVar19;
           local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
@@ -454,10 +454,10 @@ cf_common_exit_0064BBB1:
           }
           break;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
         local_c = (int *)(float)fVar19;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         local_18 = (byte *)(**(code **)*local_38)(param_1 + 5);
         local_14 = (float)(int)local_18;
         local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
@@ -526,9 +526,9 @@ switchD_0064aa67_caseD_3:
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)*local_38)(param_1);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar10 = (**(code **)*local_38)(param_1 + 5);
           local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           sVar4 = *(short *)(local_10 + 1);
@@ -584,9 +584,9 @@ LAB_0064ae25:
         goto cf_error_exit_0064C2A4;
       }
       if ((param_1[5] != '\x04') && (param_1[5] != '\x01')) goto LAB_0064ae25;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar14 = (**(code **)*local_38)(param_1);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar15 = (**(code **)*local_38)(param_1 + 5);
       local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
       sVar4 = *(short *)(local_10 + 1);
@@ -614,7 +614,7 @@ cf_error_exit_0064B368:
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar14 = (**(code **)*local_38)(param_1);
         *local_8 = (float)~uVar14;
         goto cf_common_exit_0064B36F;
@@ -626,27 +626,27 @@ cf_error_exit_0064B368:
                   (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x171);
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar6 = (**(code **)*local_38)(param_1);
         iVar6 = 2 - (uint)(iVar6 != 0);
         pcVar8 = param_1 + iVar6 * 5;
         cVar3 = param_1[iVar6 * 5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar11 = (float)(**(code **)*local_38)(pcVar8);
           *local_8 = fVar11;
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
           local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(pcVar8);
           *local_8 = (float)fVar19;
           goto cf_common_exit_0064B291;
         }
         if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           pcVar8 = (char *)(**(code **)(*local_38 + 8))(pcVar8);
           if (pcVar8 == nullptr) {
             st::fn_006A5E40
@@ -697,9 +697,9 @@ cf_error_exit_0064B368:
       cVar3 = *param_1;
       if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
         if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)*local_38)(param_1);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar10 = (**(code **)*local_38)(param_1 + 5);
           local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           switch(*(undefined2 *)(local_10 + 1)) {
@@ -729,10 +729,10 @@ cf_error_exit_0064B368:
       }
       if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
         if ((param_1[5] == '\x05') || (param_1[5] == '\x02')) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
           local_20 = (float)fVar19;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
           local_24 = (float)fVar19;
           local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
@@ -782,9 +782,9 @@ cf_error_exit_0064B368:
       }
       if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
         if ((param_1[5] == '\x06') || (param_1[5] == '\x03')) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
           if ((pbVar9 == nullptr) || (pbVar7 == nullptr)) {
             st::fn_006A5E40
@@ -849,7 +849,7 @@ LAB_0064ab59:
         goto cf_error_exit_0064C2A4;
       }
       local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar6 = (**(code **)*local_38)(param_1);
       *local_8 = (float)(uint)(iVar6 == 0);
       goto cf_common_exit_0064B36F;
@@ -873,7 +873,7 @@ LAB_0064b80a:
                       (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),399);
           }
           if ((*param_1 == '\x06') || (*param_1 == '\x03')) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
             if (pbVar9 == nullptr) {
               st::fn_006A5E40
@@ -902,7 +902,7 @@ LAB_0064b80a:
               iVar6 = -0x78;
               goto cf_error_exit_0064C2A4;
             }
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
             if (pbVar9 == nullptr) {
               st::fn_006A5E40
@@ -922,9 +922,9 @@ LAB_0064b80a:
           }
           if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
             if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               iVar6 = (**(code **)*local_38)(param_1);
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               iVar10 = (**(code **)*local_38)(param_1 + 5);
               if (iVar10 < 2) {
                 iVar10 = 2;
@@ -958,13 +958,13 @@ LAB_0064b80a:
             cVar3 = *param_1;
             local_c = nullptr;
             if (cVar3 == '\x04') {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0064b8f1:
               local_18 = (byte *)(**(code **)*local_38)(param_1);
               local_c = (int *)(float)(int)local_18;
 LAB_0064b901:
               if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
                 local_c = (int *)(float)fVar19;
               }
@@ -999,14 +999,14 @@ LAB_0064b901:
         cVar3 = *param_1;
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)*local_38)(param_1);
           *local_8 = (float)-iVar6;
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
           local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
           *local_8 = (float)-fVar19;
           goto cf_common_exit_0064B36F;
@@ -1026,12 +1026,12 @@ LAB_0064b901:
             cVar3 = *param_1;
             local_c = nullptr;
             if (cVar3 == '\x04') {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0064b659:
               local_c = (int *)(**(code **)*local_38)(param_1);
 LAB_0064b663:
               if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
                 st::fn_00730450
                           (SUB84((double)fVar19,0),(uint)((ulonglong)(double)fVar19 >> 0x20));
@@ -1069,10 +1069,10 @@ LAB_0064b663:
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
         local_18 = (byte *)(float)fVar19;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar6 = (**(code **)*local_38)(param_1 + 5);
         if (iVar6 < 2) {
           iVar6 = 2;
@@ -1103,7 +1103,7 @@ LAB_0064bd33:
                 (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x1ca);
     }
     if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       local_18 = (byte *)(**(code **)*local_38)(param_1);
       local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
       *local_8 = (float)(int)local_18;
@@ -1122,7 +1122,7 @@ LAB_0064bd33:
                 (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x1d8);
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
       local_18 = (byte *)(float)fVar19;
       local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
@@ -1146,7 +1146,7 @@ LAB_0064bd33:
                 (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x1e6);
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
       local_18 = (byte *)(float)fVar19;
       local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
@@ -1171,7 +1171,7 @@ LAB_0064bd33:
       local_38[0x21] = -1;
       st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     local_18 = (byte *)(**(code **)(*local_38 + 8))(param_1);
     if (local_18 == nullptr) {
       st::fn_006A5E40
@@ -1198,7 +1198,7 @@ LAB_0064bd33:
       do {
         cVar3 = (char)*local_c;
         if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           pcVar13 = (char *)(**(code **)(*local_38 + 8))(local_c);
           local_78 = pcVar13;
           if (pcVar13 == nullptr) {
@@ -1225,7 +1225,7 @@ LAB_0064bd33:
           pcVar8 = local_28;
         }
         else if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar12 = (**(code **)*local_38)(local_c);
           local_7c = uVar12;
           if ((int)pcVar8 <= local_2c) {
@@ -1241,7 +1241,7 @@ LAB_0064bd33:
           local_20 = (float)((int)local_20 + 0xc);
         }
         else if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(local_c);
           local_34 = (float)fVar19;
           if ((int)pcVar8 <= (int)local_24) {
@@ -1289,7 +1289,7 @@ LAB_0064bd33:
       local_c = &local_74;
       do {
         if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)*local_38)(param_1);
           *local_c = iVar6;
         }
@@ -1324,7 +1324,7 @@ LAB_0064bd33:
       local_c = &local_50;
       do {
         if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)*local_38)(param_1);
           *local_c = iVar6;
         }

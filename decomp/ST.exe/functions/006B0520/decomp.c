@@ -34,7 +34,6 @@ FUN_006b0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT param_
              *(ushort *)&param_1[1].field_0x14 |
              (ushort)((int)((uint)*pbVar3 << 8) >> ((byte)param_1[1].field_001C & 0x1f)) &
              *(ushort *)&param_1[1].field_0x10;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = param_4 + -1;
         iVar2 = iVar2 + 2;
         pbVar3 = pbVar3 + 4;
@@ -61,7 +60,6 @@ FUN_006b0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT param_
              *(uint *)&param_1[1].field_0x14 |
              ((uint)*pbVar3 << 0x10) >> ((byte)param_1[1].field_001C & 0x1f) &
              *(uint *)&param_1[1].field_0x10;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = param_4 + -1;
         pbVar3 = pbVar3 + 4;
         iVar2 = iVar2 + 4;

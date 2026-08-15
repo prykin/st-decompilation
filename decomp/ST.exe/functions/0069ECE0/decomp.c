@@ -145,7 +145,6 @@ void __thiscall FUN_0069ece0(void *this,int param_1,int param_2)
       iVar4 = local_8;
       uVar1 = thunk_FUN_006950f0(local_8);
       thunk_FUN_006a0ae0(this,iVar3,local_c,0,iVar4,uVar1);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + -1;
     } while (param_1 != 0);
   }

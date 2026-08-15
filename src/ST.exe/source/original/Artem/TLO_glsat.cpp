@@ -90,7 +90,7 @@ undefined4 __fastcall st::fn_004D9000(AnonShape_004D9000_7AA66E43 *param_1)
                (float)(*(int *)(&DAT_00798df0 + iVar3) + (int)param_1->field_0045) * _DAT_007904f8 *
                _DAT_007904f0 + _DAT_007904fc);
     st::fn_00402982((void *)param_1->field_05FF,1);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)param_1 + 0x90))(3,0x41d);
     return 0;
   }

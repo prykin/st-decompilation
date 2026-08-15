@@ -45,15 +45,15 @@ void FUN_006c0800(short *param_1,byte param_2,undefined4 param_3,undefined4 para
   if (iVar2 != 0) {
     piVar1 = (int *)(&DAT_00855004)[param_11 * 0x31];
     if (piVar1 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar1 + 0x48))(piVar1);
       piVar1 = (int *)(&DAT_00855008)[param_11 * 0x31];
       if (piVar1 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar1 + 8))(piVar1);
         (&DAT_00855008)[param_11 * 0x31] = 0;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)(&DAT_00855004)[param_11 * 0x31] + 8))
                 ((int *)(&DAT_00855004)[param_11 * 0x31]);
     }

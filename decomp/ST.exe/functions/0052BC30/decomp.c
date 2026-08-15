@@ -60,7 +60,7 @@ LAB_0052bc8f:
     this->field_00A5 = param_5;
   }
   if ((g_tradePanel_00802A44 != nullptr) && (g_tradePanel_00802A44->field_0172 == 1)) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)&g_tradePanel_00802A44->field_0000[1].field_0xc)();
   }
   return;

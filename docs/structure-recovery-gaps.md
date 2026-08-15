@@ -63,16 +63,16 @@ the old widespread `unaff_*` family substantially. The remaining work is no
 longer one missing global type database. It is concentrated in semantic
 ownership and optimized per-use representation:
 
-- 4,156 of 5,720 bodies still have a default Ghidra function symbol; qualified
+- 4,065 of 5,624 bodies still have a default Ghidra function symbol; qualified
   `FUN_`/`sub_`-style names remain a separate semantic-naming queue;
-- placeholder `field_XXXX` forms remain in 2,439 bodies;
-- 915 bodies still contain at least one `goto`;
+- placeholder `field_XXXX` forms remain in 2,407 bodies;
+- 895 bodies still contain at least one `goto`;
 - 200 physical vtable candidates are known, 101 are high-confidence, and five
   owner conflicts remain;
 - virtual-method analysis leaves 212 placeholder names and 120 multi-owner
   targets unresolved;
-- indirect-call application currently proves only a small subset of the full
-  audit; roughly half the raw-call functions lie in the late runtime address
+- indirect-call application currently proves only a subset of the full audit;
+  741 bodies retain 1,806 raw calls, many in the late runtime address
   range and should be checked against library classification before game types
   are invented for them.
 
@@ -86,14 +86,14 @@ historical; use the regenerated `decomp_quality_summary.json` and
 
 | Raw form / cause | Matches | Functions | General treatment |
 | --- | ---: | ---: | --- |
-| Direct nested dereference (`*(T *)(*(U *)(base+a)+b)`) | 969 | 432 | `STPointerShapeAnalyzer` now records `a` as a pointer field and recovers a child layout at `b`. `STClassLayoutAnalyzer` does the same for fields reached from `this`. |
+| Direct nested dereference (`*(T *)(*(U *)(base+a)+b)`) | 969 | 432 | `STPointerShapeAnalyzer` records `a` as a pointer field and recovers a child layout at `b`; its machine fallback additionally requires the loaded child word to become a later memory base. A register embedded in `[reg+offset]` is never treated as the operand's register destination. `STClassLayoutAnalyzer` does the same for fields reached from `this`. |
 | Three-or-more-level direct dereference | 31 | 21 | `STRecursivePointeeAnalyzer/Applier` now handles the strict linked-list subset: one generated owner field, repeated self-link traversal, and at least two non-conflicting partial generated views. COM/table chains and geometry-only matches remain review-only because vtable or external-interface typing is stronger evidence. |
 | Pointer loaded into a scalar temporary and dereferenced later | 549 | 354 | Pointer aliases are now followed even when Ghidra calls the loaded value `int`, `uint`, or `undefined4`; simple copies/casts are propagated. |
 | Inlined `DArrayTy` addressing (`elementSize * index + data`) | 541 | 271 | Recognized as the existing `DArrayTy`, both for persistent pointer targets and class pointer fields. It is not emitted as another anonymous structure. |
 | Raw constant access relative to `this` | 11,219 | 1,122 | Direct fields belong to `STClassLayoutAnalyzer`; nested pointee fields are now recovered too. Residue usually means a wrong owner/calling convention, a preserved manual class, or conflicting/overlapping widths. |
 | Raw constant access relative to a parameter | 5,319 | 1,058 | `STPointerShapeAnalyzer`; automatic application requires a persistent, replaceable Ghidra parameter and sufficient consistent evidence. |
 | Raw constant access relative to a temporary | 7,191 | 928 | Aliases with a persistent origin are redirected to that origin. A genuinely transient High Variable remains report-only because Listing-variable typing cannot safely represent an SSA split. |
-| Variable index/stride in an address | 2,912 | 731 | This is an array/record problem rather than a fixed field. `STGlobalRecordAnalyzer` infers complete runtime-record geometry from a guarded accessor plus independent call-site and boundary evidence; `STGlobalAggregateAnalyzer` audits other SIB-indexed ranges and installs only bounded arrays/matrices. Unknown strides still require an array-element/record proof before application. |
+| Variable index/stride in an address | 2,912 | 731 | This is an array/record problem rather than a fixed field. `STGlobalRecordAnalyzer` infers complete runtime-record geometry from a guarded accessor plus independent call-site and boundary evidence. `STGlobalAggregateAnalyzer` handles bounded image arrays/matrices and global words which publish runtime record storage: the latter require one affine stride, repeated cross-function reads/writes, non-overlapping exact-width fields, and only record-aligned pointer advances. A repeated SIB use of the global address itself identifies an image table instead, and dynamic `alloca` backing never supplies a static count. Unknown strides remain review-only. |
 | Fixed member array flattened into adjacent class fields | review current export | review current export | `STClassArrayAnalyzer` proves count/stride from an unsigned bound or an exact decrementing pointer walk, then `STClassLayoutAnalyzer/Applier` installs one native array while preserving manual layouts. |
 | Absolute indexed global record | 49 | 32 | `STGlobalRecordAnalyzer` derives a candidate base, stride, and count from machine flow and accepts them only when independent total-size and boundary evidence agree. Other bases/strides remain separate candidates; an address plus a multiplication alone never proves record boundaries or count. |
 | Raw indirect/vtable call | 2,658 | 856 | `STVTable*` and `STVirtualMethod*` recover physical table ownership and slots. `STIndirectCall*` refines trusted physical slots and may install neutral thiscall/stdcall ABIs from non-contradictory machine evidence; `STHiddenThis*` handles ownerless ECX receivers. When longer related tables prove a polymorphic tail beyond a physical base table, the inferred `<Owner>DispatchVTable` and tail ABIs are audit-only: they never replace the class vptr or mutate synthetic slot types. A raw call by itself is not enough to invent a semantic class or callback signature. |
@@ -124,6 +124,10 @@ historical; use the regenerated `decomp_quality_summary.json` and
 - Variable indexing (`base + index * stride + field`) cannot be treated as one very
   large structure. The stride, base, field set, bounds, and preferably allocation or
   producer evidence must agree before an array-of-records type is safe.
+- A global containing a pointer to runtime scratch records is distinct from an
+  array stored at the global address. Its data item stays pointer-sized and its
+  recovered record is the pointee. Interior byte/dword cursors are rejected when
+  their observed pointer advance is not a multiple of the record stride.
 - Negative offsets can mean `container_of`, an interior pointer, an array look-behind,
   or decompiler algebra. They are not automatically folded into a structure whose
   address would begin before the observed pointer.

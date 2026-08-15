@@ -1,8 +1,9 @@
 ST utility-function semantics
 
-Rules: 16
-Verified: 16
+Rules: 17
+Verified: 17
 
+0072DA40 __alloca_probe: apply - body pattern verified
 006AB060 FreeAndNull: apply - body pattern verified
 006AE110 DArrayDestroy: apply - body pattern verified
 006AE290 DArrayCreate: apply - body pattern verified

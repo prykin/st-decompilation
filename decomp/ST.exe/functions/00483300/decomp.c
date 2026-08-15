@@ -63,7 +63,7 @@ LAB_00483342:
     if (3 < (int)(((uVar4 ^ uVar6) - uVar6) * 10) / iVar2) {
       return ((short)local_8 <= sVar1) + 6;
     }
-    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable or function-table callback call with the machine-proven calling convention */
     sVar1 = (**(code **)(*param_1 + 0x10))
                       (STField<undefined2>(param_1,0x41),
                        CONCAT22(extraout_var,STField<undefined2>(param_1,0x43)),

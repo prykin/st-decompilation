@@ -113,7 +113,7 @@ LAB_005d5030:
             }
           }
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)pSVar5->field_000C + 0x18))(&pSVar5->field_0x1d);
         iVar8 = local_10;
       }
@@ -403,6 +403,8 @@ LAB_005d5426:
 int __thiscall st::fn_005D5560(SettMapSTy *this,STMessage *message)
 
 {
+  alignas(4) byte st_stack_frame[368];
+
   SettMapTy_field_1E26State SVar1;
   byte bVar2;
   STMessageId SVar4;
@@ -906,7 +908,7 @@ LAB_005d5ff8:
                   } while (cVar27 != '\0');
                   uVar30 = ~uVar30;
                   pcVar34 = pcVar34 + -uVar30;
-                  local_8 = st::pointer_boundary_cast<char *>(&stack0xfffffe9c);
+                  local_8 = (st_stack_frame + 8);
                   goto LAB_005d5b7e;
                 }
               }
@@ -923,15 +925,15 @@ LAB_005d5ff8:
                 } while (cVar27 != '\0');
                 uVar30 = ~uVar30;
                 pcVar34 = pcVar34 + -uVar30;
-                local_8 = st::pointer_boundary_cast<char *>(&stack0xfffffe9c);
+                local_8 = (st_stack_frame + 8);
 LAB_005d5b7e:
-                pcVar16 = st::pointer_boundary_cast<char *>(&stack0xfffffe9c);
+                pcVar16 = (st_stack_frame + 8);
                 for (uVar29 = uVar30 >> 2; uVar29 != 0; uVar29 = uVar29 - 1) {
                   *(undefined4 *)pcVar16 = *(undefined4 *)pcVar34;
                   pcVar34 = pcVar34 + 4;
                   pcVar16 = pcVar16 + 4;
                 }
-                for (uVar30 = uVar30 & 3; local_8 = st::pointer_boundary_cast<char *>(&stack0xfffffe9c), uVar30 != 0;
+                for (uVar30 = uVar30 & 3; local_8 = (st_stack_frame + 8), uVar30 != 0;
                     uVar30 = uVar30 - 1) {
                   *pcVar16 = *pcVar34;
                   pcVar34 = pcVar34 + 1;
@@ -939,7 +941,7 @@ LAB_005d5b7e:
                 }
               }
               bVar23 = STField<byte>(pvVar14,2);
-              puVar31 = (byte *)&stack0xfffffe9c;
+              puVar31 = (byte *)(st_stack_frame + 8);
               pcVar16 = &CHAR_00h_00808ab0 + (uint)DAT_00808aaf * 0x9c;
               memmove(pcVar16, puVar31, 0x9c); /* compiler REP MOVS byte copy */
               if (bVar23 < 8) {

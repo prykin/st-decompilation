@@ -11,25 +11,25 @@ void __fastcall FUN_0074ffd2(AnonShape_0074FFD2_D127A427 *param_1)
   local_8 = param_1->field_0020;
   while (local_8 != 0) {
     iVar2 = FUN_0074dec2(&local_8);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)(iVar2 + 0xc) + 8))(iVar2 + 0xc);
   }
   FUN_0074de91(&param_1->field_0020);
   local_8 = param_1->field_0038;
   while (local_8 != 0) {
     iVar2 = FUN_0074dec2(&local_8);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)(iVar2 + 0xc) + 8))(iVar2 + 0xc);
   }
   FUN_0074de91(&param_1->field_0038);
   piVar1 = param_1->field_0060;
   if (piVar1 != nullptr) {
     if (param_1->field_0054 != 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar1 + 0x18))(piVar1,param_1->field_0054);
       param_1->field_0054 = 0;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1->field_0060 + 8))(param_1->field_0060);
   }
   FUN_0074d204((undefined4 *)&param_1->field_0x50);

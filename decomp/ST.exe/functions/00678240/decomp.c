@@ -121,7 +121,7 @@ LAB_00678362:
         }
         pDVar7 = g_array_007FA158;
         uVar9 = local_10;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar8 != 0) && (param_11 != nullptr)) &&
            (iVar8 = (*(code *)param_11)(param_1,local_10,this,param_12), pDVar7 = g_array_007FA158,
            uVar9 = local_10, iVar8 != 0)) {

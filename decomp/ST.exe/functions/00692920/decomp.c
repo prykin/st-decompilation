@@ -40,7 +40,6 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
         param_3 = (undefined4 *)param_4;
         puVar8 = param_2;
         do {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (undefined4 *)(param_4 + -1);
           puVar6 = puVar8;
           puVar7 = (undefined4 *)
@@ -59,7 +58,6 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = (undefined4 *)((int)param_3 + -1);
           puVar8 = (undefined4 *)((int)puVar8 + (int)puVar1);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = (int)param_2;
         } while (param_3 != nullptr);
       }
@@ -70,7 +68,6 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = param_4;
       do {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (undefined4 *)(param_4 + -1);
         puVar3 = (undefined1 *)
                  (((uint)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
@@ -90,7 +87,6 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
         param_3 = (undefined4 *)((int)param_3 + (int)puVar1);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = param_5 + -1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int)param_2;
       } while (param_5 != 0);
     }

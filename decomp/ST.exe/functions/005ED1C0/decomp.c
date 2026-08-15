@@ -37,7 +37,6 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
       if (0x17 < *param_4) {
         *param_4 = *param_4 + -0x18;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (*param_4 == STField<int>(this,0x273) / 0xf) {
         STField<undefined4>(this,0x28b) = 0;
       }
@@ -86,7 +85,6 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
     if (0x17 < *param_4) {
       *param_4 = *param_4 + -0x18;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (*param_4 == STField<int>(this,0x273) / 0xf) {
       STField<undefined4>(this,0x28b) = 0;
     }

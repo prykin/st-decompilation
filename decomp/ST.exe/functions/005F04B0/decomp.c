@@ -13,7 +13,7 @@ void __thiscall FUN_005f04b0(void *this,int *param_1)
                     (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1,(int *)&param_1);
   piVar2 = param_1;
   if (iVar3 != -4) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (**(code **)(*param_1 + 0x2c))();
     if (((iVar3 == 0x1b) || (iVar3 == 7)) || (iVar3 == 0x13)) {
       STField<undefined1>(this,0x24e) = 1;

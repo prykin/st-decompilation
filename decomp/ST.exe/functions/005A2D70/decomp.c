@@ -51,7 +51,7 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
       PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',local_8->field_1E9A);
       this_01->field_1EA6->count = 0;
       local_b = 1;
-      Library::DKW::TBL::DArrayAppend(this_01->field_1EA6,local_38);
+      Library::DKW::TBL::DArrayAppend((DArrayTy *)this_01->field_1EA6,local_38);
       this_01->field_002D = 0x28;
       puVar1 = &this_01->field_0x1d;
       *(dword *)&this_01->field_0x31 = this_01->field_1EA6->count;

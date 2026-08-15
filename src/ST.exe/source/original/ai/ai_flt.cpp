@@ -186,7 +186,7 @@ void __thiscall st::fn_0065D760(AiFltClassTy *this,uint objPtr,int param_2)
     return;
   }
   if (g_allPlayers_007FA174 != nullptr) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar7 = (**(code **)(*(int *)objPtr + 0x2c))();
     if ((iVar7 < 0x32) || (0x73 < iVar7)) {
       bVar2 = false;
@@ -194,7 +194,7 @@ void __thiscall st::fn_0065D760(AiFltClassTy *this,uint objPtr,int param_2)
     else {
       bVar2 = true;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (((bVar2) && (pAVar3->field_007B != 1)) ||
        (iVar7 = (**(code **)(*(int *)objPtr + 0x2c))(), iVar7 == 0x78)) {
       st::fn_006A5E40
@@ -202,7 +202,7 @@ void __thiscall st::fn_0065D760(AiFltClassTy *this,uint objPtr,int param_2)
     }
     array = st::fn_006AE290(nullptr,1,2,1);
     st::fn_006AE1C0(array,(void *)(objPtr + 0x32));
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar7 = (**(code **)(*(int *)objPtr + 0x2c))();
     if ((iVar7 < 1) || (0x28 < iVar7)) {
       bVar2 = false;

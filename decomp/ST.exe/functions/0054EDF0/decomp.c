@@ -22,7 +22,6 @@ void FUN_0054edf0(undefined4 *param_1,uint *param_2,uint param_3,uint param_4)
       STPlaySystemC::SetCtrlCmd(in_ECX,DAT_0080874d,0,cVar2,param_2,param_4,nullptr,0);
       return;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = nullptr;
     uVar1 = STAllPlayersC::PrepareToCmd(g_allPlayers_007FA174,&param_1,&param_3);
     if (uVar1 != 0xffffffff) {

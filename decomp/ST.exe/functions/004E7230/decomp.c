@@ -20,9 +20,7 @@ void FUN_004e7230(int param_1,int param_2,undefined4 *param_3,undefined4 *param_
   memset(param_4, 0, 0x1c); /* compiler bulk-zero initialization */
   if ((((-1 < param_1) && (param_1 < 8)) && (-1 < param_2)) && (param_2 < 3)) {
     bVar3 = LookupRecordByte((char)param_1);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     iVar4 = iVar4 + (bVar3 - 1) * 3;
     if (0 < *(int *)(&DAT_007995bc + iVar4 * 0x195)) {
@@ -38,7 +36,6 @@ void FUN_004e7230(int param_1,int param_2,undefined4 *param_3,undefined4 *param_
            (local_EAX_197 = thunk_FUN_004e5f90(iVar2,*puVar7), local_EAX_197 == 0)) {
           *(uint *)(iVar4 + (int)param_4) = *puVar7;
           *param_4 = (uint)(byte)puVar7[1];
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 + 1;
           param_4 = param_4 + 1;
           if (6 < param_2) {
@@ -47,7 +44,6 @@ void FUN_004e7230(int param_1,int param_2,undefined4 *param_3,undefined4 *param_
         }
         piVar1 = (int *)((int)puVar7 + 5);
         puVar7 = (uint *)((int)puVar7 + 5);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 1;
       } while (0 < *piVar1);
     }

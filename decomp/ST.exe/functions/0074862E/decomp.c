@@ -21,7 +21,7 @@ int FUN_0074862e(int param_1,undefined4 *param_2)
       return iVar1;
     }
     *param_2 = *ppvVar2;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)*ppvVar2 + 4))(*ppvVar2);
     LeaveCriticalSection(lpCriticalSection);
     iVar1 = 0;

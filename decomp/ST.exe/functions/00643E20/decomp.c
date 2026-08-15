@@ -113,7 +113,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
           param_1->field_027C = 0xfa;
           return 0;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar9 = (**(code **)(*local_8 + 0xe0))
                           (param_1->field_0278,&local_10,&local_14,&local_18,&local_24);
         if (iVar9 != 0) {
@@ -140,7 +140,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
           param_1->field_027C = 0xfa;
           return 0;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*local_8 + 0xe4))(param_1->field_0278);
       }
       puVar1 = &param_1->field_0x1d5;

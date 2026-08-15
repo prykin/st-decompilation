@@ -13,12 +13,12 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
 {
   byte bVar1;
   int iVar3;
-  byte *pbVar3;
+  char *pcVar3;
   int iVar5;
   int iVar4;
   uint uVar6;
   byte *pbVar7;
-  byte *pbVar8;
+  char *pcVar8;
   bool bVar9;
   InternalExceptionFrame local_54;
   uint local_10;
@@ -34,22 +34,22 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
     if (iVar3 == 0) {
       uVar6 = 0;
       local_c = (AnonShape_00413AF0_B6B4EE9A *)local_8->field_1EA6;
-      local_10 = ((DArrayTy *)local_c)->count;
+      local_10 = ((FSGSTy_field_1EA6DArray *)local_c)->count;
       if (local_10 != 0) {
         if (local_10 == 0) {
-          pbVar8 = nullptr;
+          pcVar8 = nullptr;
           goto LAB_005a2aea;
         }
         do {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          pbVar8 = (byte *)(((DArrayTy *)local_c)->elementSize * uVar6 +
-                           (int)((DArrayTy *)local_c)->data);
+          pcVar8 = &((FSGSTy_field_1EA6DArray *)local_c)->data->field_0000 +
+                   ((FSGSTy_field_1EA6DArray *)local_c)->elementSize * uVar6;
 LAB_005a2aea:
-          pbVar3 = pbVar8;
+          pcVar3 = pcVar8;
           pbVar7 = param_1;
-          if (pbVar8 != nullptr) {
+          if (pcVar8 != nullptr) {
             do {
-              bVar1 = *pbVar3;
+              bVar1 = *pcVar3;
               bVar9 = bVar1 < *pbVar7;
               if (bVar1 != *pbVar7) {
 LAB_005a2b17:
@@ -57,16 +57,16 @@ LAB_005a2b17:
                 goto LAB_005a2b1c;
               }
               if (bVar1 == 0) break;
-              bVar1 = pbVar3[1];
+              bVar1 = pcVar3[1];
               bVar9 = bVar1 < pbVar7[1];
               if (bVar1 != pbVar7[1]) goto LAB_005a2b17;
-              pbVar3 = pbVar3 + 2;
+              pcVar3 = pcVar3 + 2;
               pbVar7 = pbVar7 + 2;
             } while (bVar1 != 0);
             iVar5 = 0;
 LAB_005a2b1c:
             if (iVar5 == 0) {
-              *(undefined4 *)(pbVar8 + 0x25) = *(undefined4 *)(param_1 + 0x25);
+              *(undefined4 *)(pcVar8 + 0x25) = *(undefined4 *)(param_1 + 0x25);
               break;
             }
           }

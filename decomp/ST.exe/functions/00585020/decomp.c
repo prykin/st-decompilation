@@ -127,7 +127,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
                    *(uint *)&param_1->field_0x24,(undefined *)0x5,500);
       }
       param_1->field_0231 = 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)param_1 + 0xd8))();
       return;
     }
@@ -164,7 +164,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
         thunk_FUN_00584ad0(param_1);
         return;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)param_1 + 0xd8))();
       return;
     }
@@ -204,7 +204,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
     }
   }
   sub_00416240(param_1,param_1->field_0041,param_1->field_0043,(ushort)uVar5);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)param_1 + 0xd8))();
   return;
 }

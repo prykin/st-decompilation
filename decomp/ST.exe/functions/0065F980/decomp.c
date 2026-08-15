@@ -23,7 +23,7 @@ void __thiscall AiFltClassTy::sub_0065F980(AiFltClassTy *this)
     local_8 = *(undefined2 *)&this->field_00B3;
     local_14 = 0x5de5;
     local_c = this;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*DAT_008117bc)(local_24);
     this->field_00B3 = 0;
     return;

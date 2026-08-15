@@ -80,7 +80,7 @@ int __fastcall FUN_007295f0(AnonShape_007295F0_722683CC *param_1)
   if (local_2c != 0) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     piVar4 = *(int **)(param_1->field_0004 + 0x40);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar4 + 0x80))(piVar4,0);
   }
   ExceptionList = local_14;

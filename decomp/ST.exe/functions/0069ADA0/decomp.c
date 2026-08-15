@@ -154,7 +154,6 @@ void __thiscall CGenerate::sub_0069ADA0(CGenerate *this,int param_1,int param_2)
   if (0 < param_2) {
     do {
       pbVar5 = this->field_000C;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
       if (0 < *(short *)(pbVar5 + 2)) {
         do {
@@ -173,7 +172,6 @@ void __thiscall CGenerate::sub_0069ADA0(CGenerate *this,int param_1,int param_2)
             } while (iVar8 < *(short *)this->field_000C);
           }
           pbVar5 = this->field_000C;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 + 1;
         } while (param_2 < *(short *)(pbVar5 + 2));
       }

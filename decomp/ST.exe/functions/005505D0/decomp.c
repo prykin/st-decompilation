@@ -55,7 +55,6 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
       }
       if (DAT_0080735e != '\0') {
         bVar4 = 0;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = nullptr;
         if (DAT_00808aaf != 0) {
           do {
@@ -69,7 +68,6 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
               }
             }
             bVar4 = bVar4 + 1;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = (int *)(uint)bVar4;
           } while (bVar4 < DAT_00808aaf);
           return;

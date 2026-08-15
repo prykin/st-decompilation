@@ -262,7 +262,6 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       goto cf_common_exit_00714ACB;
     }
     if (((int)this_00->field_005C < 0) && (STField<int>(this,0x74) < -4)) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = '\x01';
     }
     if (-1 < STField<int>(this,0x7c)) {
@@ -289,7 +288,6 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         STField<int>(this,0x84) = iVar10;
         STField<int>(this,0xac) = STField<int>(this,0xac) + 1;
         STField<int>(this,0x90) = iVar10 + STField<int>(this,0x58);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (param_2 == '\0') {
           uVar6 = STField<int>(this,8) * 2 + 10;
           puVar12 = (byte *)(STField<undefined4 *>(this,0x88));
@@ -340,7 +338,6 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     puVar12 = (byte *)(STField<undefined4 *>(this,0x88));
     memset(puVar12, 0, uVar6); /* compiler bulk-zero initialization */
     uVar5 = 0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == '\x01') {
       iVar10 = STField<int>(this,0x84);
       pcVar7 = STField<char *>(this,0x90);
@@ -475,7 +472,6 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       }
     }
     if (param_1 == 0) goto cf_common_exit_00714ACB;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == '\x01') {
       FUN_006b4170(local_c,local_10,0,0,STField<int>(this,0x5c),STField<int>(this,0x60),
                    (byte)STField<undefined4>(this,0xa0));

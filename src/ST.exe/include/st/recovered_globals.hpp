@@ -164,12 +164,9 @@ extern undefined4 DAT_006dabd7;
 extern undefined4 DAT_006dabfb;
 extern undefined4 DAT_006dac1f;
 extern undefined4 DAT_006dac43;
-extern undefined4 DAT_007572f0;
-extern undefined4 DAT_00757350;
 extern undefined4 DAT_00790020;
 extern undefined4 DAT_00790030;
 extern undefined4 DAT_00790040;
-extern undefined4 DAT_00790050;
 extern undefined4 DAT_00790060;
 extern undefined4 DAT_00790070;
 extern undefined4 DAT_00790080;
@@ -303,7 +300,6 @@ extern undefined4 DAT_0079aab8;
 extern undefined4 DAT_0079aac0;
 extern undefined4 DAT_0079aac4;
 extern undefined4 DAT_0079aac8;
-extern undefined4 DAT_0079afb0;
 extern undefined4 DAT_0079afc0;
 extern undefined4 DAT_0079afd0;
 extern undefined4 DAT_0079aff0;
@@ -320,10 +316,8 @@ extern undefined4 DAT_0079cec0;
 extern undefined4 DAT_0079d088;
 extern undefined4 DAT_0079d1c8;
 extern undefined1 DAT_0079d77c;
-extern undefined4 DAT_0079d788;
 extern undefined4 DAT_0079d798;
 extern undefined4 DAT_0079d7b8;
-extern undefined4 DAT_0079d7f8;
 extern undefined4 DAT_0079d808;
 extern undefined4 DAT_0079d818;
 extern undefined4 DAT_0079d828;
@@ -441,13 +435,11 @@ extern undefined1 DAT_007a1df8;
 extern undefined1 DAT_007a1e08;
 extern undefined1 DAT_007a1e18;
 extern undefined1 DAT_007a1e28;
-extern undefined4 DAT_007a1e68;
 extern undefined4 DAT_007a1e94;
 extern undefined4 DAT_007a1fd4;
 extern undefined4 DAT_007a2014;
 extern undefined4 DAT_007a2054;
 extern undefined4 DAT_007a2094;
-extern undefined1 DAT_007a2198;
 extern undefined1 DAT_007a22b8;
 extern undefined4 DAT_007a4b60;
 extern undefined4 DAT_007a4b88;
@@ -974,7 +966,6 @@ extern undefined4 DAT_007f4d04;
 extern undefined4 DAT_007f4d08;
 extern undefined4 DAT_007f4d0c;
 extern undefined4 DAT_007f4d10;
-extern undefined4 DAT_007f4d14;
 extern undefined4 DAT_007f4d18;
 extern undefined4 DAT_007f4d1c;
 extern undefined4 DAT_007f4d20;
@@ -984,13 +975,11 @@ extern undefined4 DAT_007f4d2c;
 extern undefined4 DAT_007f4d30;
 extern undefined4 DAT_007f4d34;
 extern undefined4 DAT_007f4d38;
-extern undefined4 DAT_007f4d3c;
 extern undefined4 DAT_007f4d40;
 extern undefined4 DAT_007f4d44;
 extern undefined4 DAT_007f4d48;
 extern undefined4 DAT_007f4d4c;
 extern undefined4 DAT_007f4d6c;
-extern undefined4 DAT_007f4d74;
 extern undefined4 DAT_007f4d78;
 extern undefined4 DAT_007f4d7c;
 extern undefined4 DAT_007f4d80;
@@ -1136,14 +1125,10 @@ extern undefined4 DAT_00803148;
 extern undefined4 DAT_008032e8;
 extern undefined4 DAT_008032ec;
 extern undefined4 DAT_008032f0;
-extern undefined4 DAT_008032f4;
-extern undefined4 DAT_008032f8;
 extern undefined4 DAT_008032fc;
-extern undefined4 DAT_00803300;
 extern undefined4 DAT_00803304;
 extern undefined4 DAT_00803308;
 extern undefined4 DAT_0080330c;
-extern undefined4 DAT_00803310;
 extern undefined4 DAT_00803314;
 extern undefined4 DAT_00803320;
 extern undefined4 DAT_00803324;
@@ -1165,7 +1150,6 @@ extern undefined4 DAT_0080337c;
 extern undefined4 DAT_00803380;
 extern undefined4 DAT_00803384;
 extern undefined4 DAT_00803388;
-extern undefined4 DAT_0080338c;
 extern undefined4 DAT_00803390;
 extern undefined4 DAT_00803398;
 extern undefined4 DAT_0080339c;
@@ -1705,8 +1689,6 @@ extern undefined4 DAT_008570fc;
 extern undefined4 DAT_00857104;
 extern undefined4 DAT_00857108;
 extern undefined4 DAT_0085710c;
-extern undefined4 DAT_00857110;
-extern undefined4 DAT_00857114;
 extern undefined4 DAT_0085711c;
 extern undefined4 DAT_00857120;
 extern undefined4 DAT_00857124;
@@ -1819,6 +1801,7 @@ extern undefined *PTR_DAT_0079ae30;
 extern undefined *PTR_DAT_0079aec8;
 extern undefined *PTR_DAT_0079aecc;
 extern undefined *PTR_DAT_0079b050;
+extern undefined *PTR_DAT_0079b19c;
 extern undefined *PTR_DAT_0079bfec;
 extern undefined *PTR_DAT_0079c068;
 extern undefined *PTR_DAT_0079c06c;
@@ -1938,6 +1921,7 @@ extern char *PTR_s_SMALL_MAP_0079d840;
 extern char *PTR_s_STATETIMER_GAME_0079b064;
 extern char *PTR_s_STRATEGS_0079acfc;
 extern char *PTR_s_STRATEGS_0079b04c;
+extern char *PTR_s_STRATEGS_0079b198;
 extern char *PTR_s_STRATEGS_0079c100;
 extern char *PTR_s_STRATEG_0079d668;
 extern char *PTR_s_STRATEG_0079d72c;
@@ -2655,6 +2639,16 @@ extern PopUpTy *g_popUp_008016D8;
 extern ProdPanelTy *g_researchPanel_008016E8;
 extern char g_resourceStringBuffer[4100];
 extern uint g_resourceStringBufferOffset;
+extern int g_runtimeRecordCount_007F4D14;
+extern int g_runtimeRecordCount_0080338C;
+extern int g_runtimeRecordCount_00857114;
+extern RuntimeRecord_007F4D3C_0014 *g_runtimeRecords_007F4D3C;
+extern RuntimeRecord_007F4D74_0010 *g_runtimeRecords_007F4D74;
+extern RuntimeRecord_008032F4_0014 *g_runtimeRecords_008032F4;
+extern RuntimeRecord_008032F8_0014 *g_runtimeRecords_008032F8;
+extern RuntimeRecord_00803300_0014 *g_runtimeRecords_00803300;
+extern RuntimeRecord_00803310_0014 *g_runtimeRecords_00803310;
+extern RuntimeRecord_00857110_0008 *g_runtimeRecords_00857110;
 extern SAMPanelTy *g_sAMPanel_008016EC;
 extern ST3DSMAPContext *g_sT3DSMAPContext_00807598;
 extern ST3DSMAPContext *g_sT3DSMAPContext_0080760C;
@@ -2729,6 +2723,9 @@ extern STAppCVTable st_global_0079B0A8; // image symbol: STAppCVTable
 extern char *st_global_0079B0CC; // image symbol: PTR_s_SAVEGAME\_0079b0cc
 extern char *st_global_0079B114; // image symbol: PTR_s_UPDATES\_0079b114
 extern STAlgaCVTable st_global_0079B188; // image symbol: STAlgaCVTable
+extern char *st_global_0079B18C; // image symbol: PTR_s_SAVEGAME\_0079b18c
+extern char *st_global_0079B190; // image symbol: PTR_s_SYSTEM\_0079b190
+extern undefined *st_global_0079B194; // image symbol: PTR_CHAR_._0079b194
 extern BaseSystemCVTable st_global_0079B1B4; // image symbol: BaseSystemCVTable
 extern GameSystemCVTable st_global_0079B1E0; // image symbol: GameSystemCVTable
 extern DebugSystemCVTable st_global_0079B20C; // image symbol: DebugSystemCVTable
@@ -2938,4 +2935,3 @@ extern byte st_image_00750541; // exact image address, semantic type unresolved
 extern byte st_image_0075054A; // exact image address, semantic type unresolved
 extern byte st_image_00750553; // exact image address, semantic type unresolved
 extern byte st_image_0075055C; // exact image address, semantic type unresolved
-extern byte st_image_0075AAA0; // exact image address, semantic type unresolved

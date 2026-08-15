@@ -115,9 +115,13 @@ int __thiscall st::fn_0057BF20(STFishC *this)
 #line 4 "decomp/ST.exe/functions/0057D5F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STFishC.
    Evidence: this_call_owners=[STFishC]; agreed_this_calls=1; incoming_this_accesses=9;
-   incoming_edx_uses=0 */
+   incoming_edx_uses=0
 
-undefined4 __thiscall st::fn_0057D5F0(STFishC *this,uint param_1)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 0057D5F0 returns stored into /STFishC+0x23b @ 0057CEF5 | 0057D5F0 returns stored into
+   /STFishC+0x23b @ 0057CFDA */
+
+STFishC_field_023BState __thiscall st::fn_0057D5F0(STFishC *this,uint param_1)
 
 {
   int iVar1;
@@ -131,11 +135,11 @@ undefined4 __thiscall st::fn_0057D5F0(STFishC *this,uint param_1)
     iVar1 = st::fn_00402ECD(this,&param_1,(uint *)local_c,(int *)local_10,&local_8);
     if (iVar1 != 1) {
       if (iVar1 != 2) {
-        return 0;
+        return CASE_0;
       }
       iVar1 = st::fn_004021E9(this,this->field_006C,(short)local_8);
       if (iVar1 != 0) {
-        return 0;
+        return CASE_0;
       }
       return 2;
     }
@@ -145,9 +149,9 @@ undefined4 __thiscall st::fn_0057D5F0(STFishC *this,uint param_1)
   }
   iVar1 = st::fn_00401B86(this);
   if (iVar1 != 0) {
-    return 1;
+    return CASE_1;
   }
-  return 0;
+  return CASE_0;
 }
 
 // 0057D700 STFishC::sub_0057D700

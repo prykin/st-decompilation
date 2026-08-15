@@ -347,7 +347,7 @@ LAB_00510fa9:
     if (iVar24 < 0x127) {
                     /* WARNING: Could not recover jumptable at 0x0051146f. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)(&PTR_LAB_00511560)[iVar27])();
       return;
     }
@@ -695,7 +695,7 @@ void __thiscall st::fn_00511DF0(HelpPanelTy *this,int param_1)
       local_8->field_0030 = (undefined2)iVar2;
       local_8->field_0032 = STPiece<2,2>(iVar2);
       if (g_cursorClass_00802A30 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_8->field_0x18);
       }
     }
@@ -1658,7 +1658,7 @@ void __thiscall st::fn_005135F0(HelpPanelTy *this)
       local_c->field_0030 = (undefined2)iVar5;
       local_c->field_0032 = STPiece<2,2>(iVar5);
       if (g_cursorClass_00802A30 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_c->field_0x18);
       }
     }
@@ -1744,7 +1744,7 @@ void __thiscall st::fn_00513810(HelpPanelTy *this)
         local_c->field_0030 = (undefined2)iVar5;
         local_c->field_0032 = STPiece<2,2>(iVar5);
         if (g_cursorClass_00802A30 != nullptr) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(&local_c->field_0x18);
         }
       }
@@ -1841,7 +1841,7 @@ void __thiscall st::fn_00513A40(HelpPanelTy *this)
       this_00->field_0030 = (undefined2)iVar2;
       this_00->field_0032 = STPiece<2,2>(iVar2);
       if (g_cursorClass_00802A30 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
       }
     }
@@ -3163,7 +3163,7 @@ void __thiscall st::fn_00516300(HelpPanelTy *this)
       local_8->field_0030 = (undefined2)iVar2;
       local_8->field_0032 = STPiece<2,2>(iVar2);
       if (g_cursorClass_00802A30 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_8->field_0x18);
       }
     }
@@ -3259,7 +3259,7 @@ void __thiscall st::fn_00516480(HelpPanelTy *this,uint param_1,char param_2)
       local_14->field_0030 = (undefined2)iVar13;
       local_14->field_0032 = STPiece<2,2>(iVar13);
       if (g_cursorClass_00802A30 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_14->field_0x18);
       }
     }
@@ -3507,7 +3507,7 @@ void __thiscall st::fn_00516A40(HelpPanelTy *this,uint param_1,byte param_2,char
       local_44->field_0030 = (undefined2)iVar16;
       local_44->field_0032 = STPiece<2,2>(iVar16);
       if (g_cursorClass_00802A30 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_44->field_0x18);
       }
     }
@@ -3828,6 +3828,8 @@ LAB_00516f6b:
 void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char param_3)
 
 {
+  alignas(4) byte st_stack_frame[148];
+
   char cVar1;
   HelpPanelTy_field_01A1State HVar2;
   HelpPanelTy *this_00;
@@ -3914,7 +3916,7 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
   } while (uVar9 < 0xb);
   if (pAVar10 != nullptr) {
     pIVar21_mg0 = g_currentExceptionFrame;
-    g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff80;
+    g_currentExceptionFrame = (InternalExceptionFrame *)(st_stack_frame + 16);
     iVar4 = st::fn_0072D7F0(local_7c,0);
     this_00 = local_20;
     if (iVar4 == 0) {
@@ -3942,7 +3944,7 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
           local_20->field_0030 = (undefined2)iVar15;
           local_20->field_0032 = STPiece<2,2>(iVar15);
           if (g_cursorClass_00802A30 != nullptr) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_20->field_0x18);
           }
         }
@@ -4406,7 +4408,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
           local_40->field_0030 = (undefined2)iVar13;
           local_40->field_0032 = STPiece<2,2>(iVar13);
           if (g_cursorClass_00802A30 != nullptr) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_40->field_0x18);
           }
         }
@@ -4888,7 +4890,7 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
           local_40->field_0030 = (undefined2)iVar10;
           local_40->field_0032 = STPiece<2,2>(iVar10);
           if (g_cursorClass_00802A30 != nullptr) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_40->field_0x18);
           }
         }
@@ -5423,7 +5425,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
           local_44->field_0030 = (undefined2)iVar14;
           local_44->field_0032 = STPiece<2,2>(iVar14);
           if (g_cursorClass_00802A30 != nullptr) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_44->field_0x18);
           }
         }
@@ -5968,7 +5970,7 @@ void __thiscall st::fn_0051C980(HelpPanelTy *this,int param_1,int param_2,char p
           local_14->field_0030 = (undefined2)iVar11;
           local_14->field_0032 = STPiece<2,2>(iVar11);
           if (g_cursorClass_00802A30 != nullptr) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_14->field_0x18);
           }
         }
@@ -6221,7 +6223,7 @@ void __thiscall st::fn_0051D360(HelpPanelTy *this,int param_1,char param_2)
         local_c->field_0030 = (undefined2)iVar2;
         local_c->field_0032 = STPiece<2,2>(iVar2);
         if (g_cursorClass_00802A30 != nullptr) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(&local_c->field_0x18);
         }
       }
@@ -6322,7 +6324,7 @@ void __thiscall st::fn_0051D540(HelpPanelTy *this,void *param_1,int param_2,char
     local_10->field_0030 = (undefined2)iVar6;
     local_10->field_0032 = STPiece<2,2>(iVar6);
     if (g_cursorClass_00802A30 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x18);
     }
   }
@@ -7311,7 +7313,7 @@ switchD_0051dfcc_caseD_7:
     this_00->field_0030 = (undefined2)UVar27;
     this_00->field_0032 = STPiece<2,2>(UVar27);
     if (g_cursorClass_00802A30 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
     }
   }
@@ -7324,7 +7326,7 @@ switchD_0051dfcc_caseD_7:
   *(undefined2 *)&this_00->field_0x2c = 0;
   *(undefined2 *)&this_00->field_0x2e = 2;
   *(undefined4 **)&this_00->field_0030 = local_10;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
   g_currentExceptionFrame = local_84.previous;
   return 0;

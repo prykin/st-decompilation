@@ -49,7 +49,6 @@ FUN_0069bc10(void *this,int param_1,int *param_2,int param_3,int param_4,int *pa
       }
       iVar3 = FUN_006acf90(iVar7,iVar5,*STField<int *>(this,8),(STField<int *>(this,8))[1]);
       local_10 = local_10 + iVar3;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + 1;
       bVar1 = local_1c < param_3;
       iVar5 = local_c;

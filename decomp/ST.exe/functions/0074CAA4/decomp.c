@@ -22,7 +22,7 @@ int __thiscall FUN_0074caa4(void *this,int *param_1,int *param_2)
   }
   else {
     piVar1 = *(int **)(STField<int>(this,0x8c) + 0x9c);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (**(code **)(*piVar1 + 0x10))(piVar1,&local_14);
     if (iVar2 < 0) {
       return iVar2;
@@ -36,7 +36,7 @@ int __thiscall FUN_0074caa4(void *this,int *param_1,int *param_2)
   if (local_10 < 1) {
     param_2[1] = 1;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar2 = (**(code **)(*param_1 + 0xc))(param_1,param_2,&local_24);
   if (-1 < iVar2) {
     if (((local_24 < local_14) || (local_20 < local_10)) || (local_1c < local_c)) {

@@ -50,7 +50,7 @@ import ghidra.program.model.symbol.Symbol;
 import ghidra.program.model.symbol.SymbolIterator;
 
 public class STEvidenceLedger extends GhidraScript {
-    private static final String SEMANTIC_FINGERPRINT_SCHEMA = "1";
+    private static final String SEMANTIC_FINGERPRINT_SCHEMA = "2";
 
     @Override
     protected void run() throws Exception {
@@ -252,6 +252,7 @@ public class STEvidenceLedger extends GhidraScript {
                 function.getSymbol().getSource().toString(),
                 function.getSignature().getPrototypeString(true),
                 clean(function.getCallingConventionName()),
+                clean(function.getCallFixup()),
                 Boolean.toString(function.isThunk()),
                 thunkTarget == null ? "" : thunkTarget.getEntryPoint().toString(),
                 Boolean.toString(function.isExternal()),

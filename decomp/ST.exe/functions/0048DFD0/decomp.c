@@ -513,7 +513,6 @@ STBoatC::sub_0048DFD0
   if ((param_1 == param_4) && (param_2 == param_5)) {
     uVar6 = local_2c->field_001C * 0x41c64e6d + 0x3039;
     local_2c->field_001C = uVar6;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_3 = uVar6 >> 0x10 & 7;
   }
   else {
@@ -530,11 +529,9 @@ STBoatC::sub_0048DFD0
       iVar15 = iVar8;
     }
     if (iVar15 == 0x168) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_3 = 0;
     }
     else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_3 = iVar15 / 0x2d;
     }
   }
@@ -683,7 +680,6 @@ STBoatC::sub_0048DFD0
       local_14 = 0;
       do {
         local_2c = nullptr;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = local_3fc + _param_3 * 0x15;
         do {
           local_f4 = *param_6;
@@ -793,7 +789,6 @@ joined_r0x0048f3a9:
             }
           }
           local_2c = (STBoatC *)((int)&local_2c->vtable + 1);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_6 = param_6 + 1;
         } while ((int)local_2c < 0x15);
         local_14 = local_14 + 1;

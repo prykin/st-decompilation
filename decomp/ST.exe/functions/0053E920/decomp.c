@@ -33,7 +33,7 @@ undefined4 __thiscall SpecPanelTy::SetPanel(SpecPanelTy *this,char param_1)
       iVar4 = 0;
     }
     else {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)local_8->field_0000->field_0020)();
       iVar4 = 1;
     }

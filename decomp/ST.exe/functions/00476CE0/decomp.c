@@ -69,7 +69,6 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   int local_c;
   int local_8;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -252,7 +251,6 @@ cf_common_exit_00476DBA:
     }
     if (this->field_0615 == 3) {
       local_8 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_10,&local_c);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 0;
       if (this->field_02BF != '\0') {
         do {
@@ -305,7 +303,6 @@ cf_common_exit_00476DBA:
                        (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_18,0,0,0,0,0,0
                        ,-1,0,0);
           }
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = param_1 + 1;
         } while ((short)param_1 < (short)(ushort)(byte)this->field_02BF);
       }
@@ -420,7 +417,6 @@ cf_common_exit_00477B2E:
         local_8 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_c,&local_10);
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar15 = STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(this->field_02BF));
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = 0;
         if (this->field_02BF != '\0') {
           do {
@@ -478,7 +474,6 @@ cf_common_exit_00477B2E:
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar15 = extraout_EDX_01;
             }
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = param_1 + 1;
           } while ((short)param_1 < (short)(ushort)(byte)this->field_02BF);
         }

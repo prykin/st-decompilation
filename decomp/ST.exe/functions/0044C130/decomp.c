@@ -77,7 +77,6 @@ STAllPlayersC::GetTOBJImage
     local_c = nullptr;
     local_154[0] = '\0';
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     STBoatC::GetVisualInfo(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {
@@ -89,7 +88,6 @@ STAllPlayersC::GetTOBJImage
     local_c = nullptr;
     local_154[0] = '\0';
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     STBoatC::GetVisualInfo(param_1,SVar2,0xd,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {
@@ -101,7 +99,6 @@ STAllPlayersC::GetTOBJImage
     local_c = nullptr;
     local_154[0] = '\0';
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     STBoatC::GetVisualInfo(param_1,SVar2,0xc,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {
@@ -193,7 +190,6 @@ STAllPlayersC::GetTOBJImage
       local_c = nullptr;
       local_154[0] = '\0';
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
       thunk_FUN_004c2950(param_1,SVar2,GVar8,&local_c,local_154,(undefined1 *)&local_8,&param_2);
       if (local_154[0] != '\0') {
@@ -201,7 +197,6 @@ STAllPlayersC::GetTOBJImage
                            (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
                             nullptr);
         if ((int)(*(int *)puVar3 - CASE_1) < (int)param_2) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = *(int *)puVar3 - CASE_1;
         }
         *local_10 = *(int *)(STField<int>(puVar3,0x21) + param_2 * 4);
@@ -219,7 +214,6 @@ STAllPlayersC::GetTOBJImage
     local_c = nullptr;
     local_154[0] = '\0';
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     thunk_FUN_00580910(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     break;
@@ -242,7 +236,6 @@ STAllPlayersC::GetTOBJImage
     local_c = nullptr;
     local_154[0] = '\0';
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     thunk_FUN_0057a140(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     goto joined_r0x0044c40d;
@@ -250,7 +243,6 @@ STAllPlayersC::GetTOBJImage
     local_c = nullptr;
     local_154[0] = '\0';
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     thunk_FUN_005ec740(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     break;
@@ -258,7 +250,6 @@ STAllPlayersC::GetTOBJImage
     local_c = nullptr;
     local_154[0] = '\0';
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     thunk_FUN_005fcf50(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
 joined_r0x0044c40d:

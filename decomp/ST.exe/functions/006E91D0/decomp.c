@@ -19,7 +19,7 @@ void __thiscall ST3DSMAPContext::sub_006E91D0(ST3DSMAPContext *this,int *param_1
   if (iVar1 != 0) {
     this->field_0134 = 1;
   }
-  FUN_006b98c0(&this->field_0294,param_1);
+  FUN_006b98c0((int *)&this->field_0x294,param_1);
   FUN_006a5e90((short *)param_1);
   return;
 }

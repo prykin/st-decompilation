@@ -18,17 +18,18 @@ undefined4 FUN_007287e0(int *param_1,int param_2)
       else {
         iVar2 = 0;
       }
-      iVar1 = (int)*(short *)(DAT_00857110 + 2 + iVar2 * 8) -
-              (int)*(short *)(DAT_00857110 + 2 + param_2 * 8);
+      iVar1 = (int)g_runtimeRecords_00857110[iVar2].field_0002 -
+              (int)g_runtimeRecords_00857110[param_2].field_0002;
       param_1[1] = iVar1;
       if (0 < iVar1) {
         param_1[2] = iVar2;
-        param_1[3] = (int)*(short *)(DAT_00857110 + param_2 * 8) << 0x10;
-        param_1[4] = (((int)*(short *)(DAT_00857110 + iVar2 * 8) -
-                      (int)*(short *)(DAT_00857110 + param_2 * 8)) * 0x10000) / param_1[1];
-        param_1[5] = (int)*(short *)(DAT_00857110 + 4 + param_2 * 8) << 0x10;
-        param_1[6] = (((int)*(short *)(DAT_00857110 + 4 + iVar2 * 8) -
-                      (int)*(short *)(DAT_00857110 + 4 + param_2 * 8)) * 0x10000) / param_1[1];
+        param_1[3] = (int)g_runtimeRecords_00857110[param_2].field_0000 << 0x10;
+        param_1[4] = (((int)g_runtimeRecords_00857110[iVar2].field_0000 -
+                      (int)g_runtimeRecords_00857110[param_2].field_0000) * 0x10000) / param_1[1];
+        param_1[5] = (int)(short)g_runtimeRecords_00857110[param_2].field_0004 << 0x10;
+        param_1[6] = (((int)(short)g_runtimeRecords_00857110[iVar2].field_0004 -
+                      (int)(short)g_runtimeRecords_00857110[param_2].field_0004) * 0x10000) /
+                     param_1[1];
         return 1;
       }
       param_2 = iVar2;

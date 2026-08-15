@@ -31,7 +31,6 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
   local_8 = STField<DArrayTy *>(this,0x38);
   if ((local_8 != nullptr) && (iVar7 = STField<int>(this,0x34), iVar7 != 0)) {
     iVar2 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_4 == 1) {
       if (*(char *)(iVar7 + iVar2) != '\0') {
         return;

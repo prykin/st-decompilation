@@ -13,7 +13,7 @@ int __thiscall FUN_006904d0(void *this,undefined *param_1,undefined4 param_2)
   if (0 < *(int *)(iVar1 + 0xc)) {
     bVar3 = *(int *)(iVar1 + 0xc) != 0;
     do {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((((bVar3) && (iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c), iVar1 != 0))
           && (iVar1 = *(int *)(iVar1 + 4), iVar1 != 0)) &&
          (iVar1 = (*(code *)param_1)(iVar1,param_2), iVar1 != 0)) {

@@ -16,21 +16,20 @@ void FUN_0075da80(AnonShape_0075DA80_57A0CDEF *param_1)
   int local_8;
 
   pAVar1 = param_1->field_01B6;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
   pAVar1->field_0008 = uVar2;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
   pAVar1->field_000C = uVar2;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
   pAVar1->field_0010 = uVar2;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
   pAVar1->field_0014 = uVar2;
   iVar3 = 0;
   local_8 = 0x5b6900;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (AnonShape_0075DA80_57A0CDEF *)0xff1daf00;
   iVar5 = -0xb2f480;
   iVar4 = 0x2c8d00;
@@ -42,7 +41,6 @@ void FUN_0075da80(AnonShape_0075DA80_57A0CDEF *param_1)
     local_8 = local_8 + -0xb6d2;
     *(int *)(pAVar1->field_0014 + iVar3) = iVar4;
     iVar4 = iVar4 + -0x581a;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_0075DA80_57A0CDEF *)&param_1[0x105].field_0xf6;
     iVar3 = iVar3 + 4;
   } while (-0x2b34e7 < iVar4);

@@ -859,7 +859,7 @@ void __thiscall st::fn_00591BF0(CampaignTy *this)
       local_68 = 0x68ff;
       local_48 = 0x697f;
       local_50 = local_70;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this_00->field_000C + 8))(5,this_00->field_0066,0,local_80,0);
       iVar14 = this_00->field_00BB[0xc].field_01DC;
       if (*(int *)(iVar14 + 0x2e6) != 0) {

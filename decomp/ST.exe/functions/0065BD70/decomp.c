@@ -411,7 +411,7 @@ LAB_0065c4bb:
 cf_common_exit_0065C65B:
   this->field_05A7 = g_playSystem_00802A38->field_00E4 / 0x19;
   this->field_05AB = g_playSystem_00802A38->field_00E4;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar5 = (*(code *)this->field_0000->field_0014)();
   this->field_05AF = uVar5;
   return local_c;

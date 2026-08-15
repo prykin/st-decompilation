@@ -131,7 +131,6 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1)
   int local_8;
 
   local_8 = 0;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -1235,7 +1234,6 @@ LAB_00468493:
               }
               if (this->field_04D9 == CASE_3) {
                 local_10 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = nullptr;
                 if (this->field_02BF != '\0') {
                   local_c = (undefined4 *)&this->field_0x2b3;
@@ -1291,7 +1289,6 @@ LAB_00468493:
                                (uVar9 >> 0x10) % 7 + (int)this->field_0041 + -3 +
                                (int)(short)local_24,iVar16 + -3,iVar8,sVar12,sVar18,sVar19,sVar20,
                                sVar21,sVar22,iVar23,sVar24,bVar25);
-                    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_1 = (int *)((int)param_1 + 1);
                     local_c = (undefined4 *)((int)local_c + 6);
                   } while ((int)param_1 < (int)(uint)(byte)this->field_02BF);
@@ -1359,7 +1356,6 @@ LAB_00468493:
                   }
                   if (this->field_04D9 == CASE_3) {
                     local_10 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,&local_18);
-                    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_1 = nullptr;
                     if (this->field_02BF != '\0') {
                       local_c = (undefined4 *)&this->field_0x2b3;
@@ -1417,7 +1413,6 @@ LAB_00468493:
                                    (uVar9 >> 0x10) % 7 + (int)this->field_0041 + -3 +
                                    (int)(short)local_24,iVar16 + -3,iVar8,sVar12,sVar18,sVar19,
                                    sVar20,sVar21,sVar22,iVar23,sVar24,bVar25);
-                        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                         param_1 = (int *)((int)param_1 + 1);
                         local_c = (undefined4 *)((int)local_c + 6);
                       } while ((int)param_1 < (int)(uint)(byte)this->field_02BF);

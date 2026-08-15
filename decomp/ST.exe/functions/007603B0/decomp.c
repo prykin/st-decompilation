@@ -31,7 +31,6 @@ void FUN_007603b0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *param_3
 
   local_14 = param_2->field_0050;
   iVar6 = STField<int>(param_1,0x132) + 0x80;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = local_134;
   local_2c = iVar6;
   local_10 = param_3;
@@ -93,7 +92,6 @@ void FUN_007603b0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *param_3
       iVar6 = local_2c;
     }
     local_10 = local_10 + 1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + 1;
     local_1c = local_1c + -1;
   } while (local_1c != 0);

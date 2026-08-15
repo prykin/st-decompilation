@@ -125,7 +125,7 @@ LAB_005795a9:
   STT3DSprC::SetCurFase((STT3DSprC *)this,'\x0e',param_1->field_0231 + uVar3 * 6);
   STT3DSprC::ShowCurFase((STT3DSprC *)this,'\x0e');
   param_1->field_023D = param_1->field_023D + 1;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)param_1 + 0xd8))();
   return;
 }

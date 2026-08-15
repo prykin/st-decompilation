@@ -63,7 +63,7 @@ LAB_0041f738:
     goto LAB_0041f793;
   }
   if (iVar7 != 0x14) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
     switch(uVar4) {
     case 0x3e:
@@ -95,7 +95,7 @@ switchD_0041f763_caseD_7:
       goto LAB_0041f793;
     }
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
   switch(uVar4) {
   case 7:
@@ -116,7 +116,7 @@ switchD_0041f763_caseD_9:
   local_c = 4;
 LAB_0041f793:
   if (param_1->field_0211 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar4 = (**(code **)(*(int *)param_1 + 0x6c))();
     switch(uVar4) {
     case 0:

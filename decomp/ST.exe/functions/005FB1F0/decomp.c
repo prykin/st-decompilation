@@ -54,7 +54,6 @@ FUN_005fb1f0(void *this,short param_1,short param_2,short param_3,short param_4,
                          (int)(iVar7 * uVar5 + iVar9 * uVar4) / 10000,
                          (int)param_6 - (int)STField<short>(this,0x45),uVar3,uVar8,uVar6,
                          (int *)&DAT_007ce794,0x7ce7a0,(uint *)&param_3,&local_c,&local_10);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_4 = (int)(_param_3 * uVar5 + local_c * uVar4) / 10000;
       iVar7 = (int)(local_c * uVar5 - _param_3 * uVar4) / 10000;
       ST3DSMAPContext::sub_006DD530

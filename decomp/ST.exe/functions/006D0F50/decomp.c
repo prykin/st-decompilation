@@ -122,7 +122,6 @@ LAB_006d1089:
         param_1 = (AnonShape_006D0F50_D22E7C78 *)((int)param_1 + (param_2 - param_5));
         iVar1 = param_6 + -1;
         bVar3 = param_6 < 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = iVar1;
         if (iVar1 == 0 || bVar3) {
           return;

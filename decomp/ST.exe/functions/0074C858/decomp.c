@@ -20,7 +20,7 @@ undefined4 __thiscall FUN_0074c858(int param_1,undefined4 param_2,undefined4 par
     uVar1 = 0x40103;
   }
   else {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar1 = (**(code **)(**(int **)(param_1 + 0xa0) + 0x34))(param_2,param_3);
     LeaveCriticalSection(lpCriticalSection);
   }

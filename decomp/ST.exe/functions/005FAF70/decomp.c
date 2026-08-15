@@ -23,7 +23,7 @@ FUN_005faf70(void *this,int param_1,undefined4 param_2,int param_3,int param_4,i
 {
   short sVar1;
 
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   sVar1 = (**(code **)(*(int *)this + 0x10))(param_1,param_2,param_3,param_4,param_5,param_6);
   return (int)sVar1;
 }

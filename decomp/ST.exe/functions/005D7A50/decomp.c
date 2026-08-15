@@ -34,7 +34,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     puVar4 = &local_8->array_00BC[0xc].field_01E0;
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)puVar4,(int *)g_ddxContext_008075A8,0x2f,'\a',nullptr,0,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*puVar4 + 4))
               ((SpriteClassTy *)puVar4,PTR_00806784,7,0,(byte *)"MM_SID",0xffffffff);
     this_00->field_1A7C = 0x2e;
@@ -119,7 +119,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_00->field_1B01,(int *)g_ddxContext_008075A8,0x2d,'\a',
                nullptr,0,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(this_00->field_1B01 + 4))(PTR_00806784,7,0,"SID_SLDUP",0xffffffff);
     this_00->field_1B1D = 0x22b;
     this_00->field_1B21 = 0x1be;
@@ -130,7 +130,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_00->field_1B92,(int *)g_ddxContext_008075A8,0x2d,'\a',
                nullptr,0,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(this_00->field_1B92 + 4))(PTR_00806784,7,0,"SID_SLDDN",0xffffffff);
     this_00->field_1BAE = 0x22b;
     this_00->field_1BB2 = 0x211;
@@ -141,7 +141,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_00->field_1C23,(int *)g_ddxContext_008075A8,0x2d,'\a',
                nullptr,0,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(this_00->field_1C23 + 4))(PTR_00806784,7,0,"SID_SLDT",0xffffffff);
     this_00->field_1C3F = 0x22f;
     this_00->field_1C43 = 0x1d3;

@@ -279,7 +279,7 @@ LAB_0052bc8f:
     this->field_00A5 = param_5;
   }
   if ((g_tradePanel_00802A44 != nullptr) && (g_tradePanel_00802A44->field_0172 == 1)) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)&g_tradePanel_00802A44->field_0000[1].field_0xc)();
   }
   return;
@@ -307,10 +307,8 @@ void __thiscall st::fn_0052BDA0(MoneyTy *this,char param_1,int param_2)
   uint uVar6;
   CHAR local_c [8];
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == DAT_0080874d) {
     if (DAT_00808a97 != -1) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = DAT_00808a97 - param_2;
     }
     this->field_009E = param_2;

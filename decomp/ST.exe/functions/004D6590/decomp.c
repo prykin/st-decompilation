@@ -23,7 +23,6 @@ FUN_004d6590(void *this,float param_1,short *param_2,short *param_3,short *param
   uVar2 = STField<undefined4>(this,0x265);
   uVar3 = STField<undefined4>(this,0x261);
   iVar8 = (int)param_1 * 0xc;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (float)((int)((2 - (uint)(STField<int>(this,0x2c) != 1)) * 0xc9) / 2);
   *param_2 = *(short *)(iVar8 + STField<int>(this,0x360)) +
              (short)STField<undefined4>(this,0x25d) * 0xc9 + SUB42(param_1,0);
@@ -34,10 +33,8 @@ FUN_004d6590(void *this,float param_1,short *param_2,short *param_3,short *param
   ST3DSMAPContext::sub_006DD530
             (STField<ST3DSMAPContext *>(this,0x211),&param_1,(float *)&param_3,(float *)&param_4);
   lVar9 = Library::MSVCRT::__ftol();
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (float)(int)(short)lVar9;
   lVar9 = Library::MSVCRT::__ftol();
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (float)(int)(short)lVar9;
   lVar9 = Library::MSVCRT::__ftol();
   fVar4 = (float)(int)STField<short>(this,0x43) - param_1;

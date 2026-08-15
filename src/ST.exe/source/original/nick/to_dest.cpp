@@ -131,7 +131,7 @@ int __thiscall st::fn_00601F80(STDestC *this,STMessage *message)
       }
       else if (SVar1 == MESS_STSPRGAMEOBJC_0113) {
         if (-1 < local_8->field_039B) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)local_8->field_01D5)();
           g_currentExceptionFrame = local_54.previous;
           return 0;

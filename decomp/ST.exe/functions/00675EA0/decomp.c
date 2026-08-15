@@ -33,7 +33,7 @@ void __cdecl _AddObjGrpExch(uint param_1,int *param_2)
     g_currentExceptionFrame = local_48.previous;
     return;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar4 = (**(code **)(*param_2 + 0x2c))();
   if ((iVar4 < 1) || (0x28 < iVar4)) {
     bVar2 = false;

@@ -12,7 +12,6 @@ undefined4 __cdecl FUN_00635da0(int param_1,int param_2,int param_3)
 
   iVar4 = STBiasedDiv16(param_1, 0xc9); /* exact signed 16-bit grid-index division */
   iVar5 = STBiasedDiv16(param_2, 0xc9); /* exact signed 16-bit grid-index division */
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   if ((((iVar4 < g_sT3DSMAPContext_00807598->field_0048) ||
        (g_sT3DSMAPContext_00807598->field_0058 < iVar4)) ||

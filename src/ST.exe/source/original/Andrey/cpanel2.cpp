@@ -1342,6 +1342,8 @@ switchD_0050389f_default:
 void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
 
 {
+  alignas(4) byte st_stack_frame[168];
+
   byte bVar1;
   bool bVar3;
   CPanelTy *this_00;
@@ -1425,7 +1427,7 @@ void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
   switch((uint)bVar1) {
   case 1:
     local_5 = 0;
-    st::fn_00403C33((undefined4 *)0xa,(uint *)&stack0xfffffffb,0,0xffffffff);
+    st::fn_00403C33((undefined4 *)0xa,(uint *)(st_stack_frame + 159),0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 2:

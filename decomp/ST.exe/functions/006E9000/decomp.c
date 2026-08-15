@@ -37,7 +37,7 @@ ST3DSMAPContext::sub_006E9000
   pAVar1->field_001C = param_2;
   pAVar1->field_0020 = param_1;
   pAVar1->field_0024 = param_7;
-  FUN_006b9910(&this->field_0294,(int)pAVar1);
+  FUN_006b9910((undefined4 *)&this->field_0x294,(int)pAVar1);
   iVar2 = sub_006E8EA0(this,pAVar1);
   if (iVar2 != 0) {
     this->field_0134 = 1;

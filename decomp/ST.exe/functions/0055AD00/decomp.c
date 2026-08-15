@@ -65,7 +65,6 @@ LAB_0055ae0a:
         }
         if ((bVar9) && (*local_8 != nullptr)) {
           if (param_5 < 0) {
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_5 = 0;
           }
           iVar4 = -param_5 + param_1;

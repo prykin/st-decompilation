@@ -1,138 +1,131 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0055DEE0 -> 0055EE70 @ 0055DF1B */
 
 int FUN_0055ee70(byte *param_1,int param_2,int param_3)
 
 {
-  char *pcVar1;
-  int iVar2;
-  char *pcVar3;
-  int iVar4;
+  int iVar1;
+  char *pcVar2;
+  int iVar3;
+  char *pcVar4;
   int iVar5;
-  undefined1 *puVar6;
-  int iVar7;
-  byte *pbVar8;
-  char *pcVar9;
+  int iVar6;
+  undefined1 *puVar7;
+  int iVar8;
+  byte *pbVar9;
   char *pcVar10;
-  byte *pbVar11;
+  char *pcVar11;
   byte *pbVar12;
+  byte *pbVar13;
   int local_34;
   int local_28;
-  void *local_14;
-  undefined1 *puStack_10;
-  undefined *puStack_c;
-  undefined4 local_8;
 
-  puStack_c = &DAT_0079afb0;
-  puStack_10 = &LAB_0072d964;
-  local_14 = ExceptionList;
-  pbVar8 = &stack0xffffffb0;
-  pcVar9 = &stack0xffffffb0;
-  pcVar10 = &stack0xffffffb0;
-  pbVar11 = &stack0xffffffb0;
-  puVar6 = &stack0xffffffb0;
-  local_8 = 0;
-  ExceptionList = &local_14;
-  Library::MSVCRT::FUN_0072da40();
-  iVar4 = 0;
-  iVar2 = param_2 * -2 + 3;
+  iVar5 = param_2 * -4;
+  pbVar9 = &stack0xffffffb0 + iVar5;
+  pcVar10 = &stack0xffffffb0 + iVar5;
+  pcVar11 = &stack0xffffffb0 + iVar5;
+  pbVar12 = &stack0xffffffb0 + iVar5;
+  puVar7 = &stack0xffffffb0 + iVar5;
+  iVar6 = 0;
+  iVar3 = param_2 * -2 + 3;
   local_28 = 0;
   do {
-    iVar7 = local_28;
-    iVar5 = param_2;
-    *puVar6 = (char)iVar5;
-    puVar6[1] = -(char)iVar4;
-    local_28 = iVar7 + 1;
-    puVar6 = puVar6 + 2;
-    if (iVar2 < 0) {
-      iVar2 = iVar2 + 6 + iVar4 * 4;
-      param_2 = iVar5;
+    iVar8 = local_28;
+    iVar1 = param_2;
+    *puVar7 = (char)iVar1;
+    puVar7[1] = -(char)iVar6;
+    local_28 = iVar8 + 1;
+    puVar7 = puVar7 + 2;
+    if (iVar3 < 0) {
+      iVar3 = iVar3 + 6 + iVar6 * 4;
+      param_2 = iVar1;
     }
     else {
-      iVar2 = iVar2 + 10 + (iVar4 - iVar5) * 4;
-      param_2 = iVar5 + -1;
+      iVar3 = iVar3 + 10 + (iVar6 - iVar1) * 4;
+      param_2 = iVar1 + -1;
     }
-    iVar4 = iVar4 + 1;
-  } while (iVar4 < param_2);
-  if ((iVar4 == param_2) && (param_2 != iVar5)) {
-    (&stack0xffffffb0)[local_28 * 2] = (char)param_2;
-    (&stack0xffffffb1)[local_28 * 2] = -(char)iVar4;
-    local_28 = iVar7 + 2;
+    iVar6 = iVar6 + 1;
+  } while (iVar6 < param_2);
+  if ((iVar6 == param_2) && (param_2 != iVar1)) {
+    (&stack0xffffffb0)[local_28 * 2 + iVar5] = (char)param_2;
+    (&stack0xffffffb1)[local_28 * 2 + iVar5] = -(char)iVar6;
+    local_28 = iVar8 + 2;
   }
-  if (0 < iVar7) {
-    pcVar1 = &stack0xffffffb0 + local_28 * 2;
-    pcVar3 = &stack0xffffffb0 + iVar7 * 2;
-    local_28 = local_28 + iVar7;
+  if (0 < iVar8) {
+    pcVar2 = &stack0xffffffb0 + local_28 * 2 + iVar5;
+    pcVar4 = &stack0xffffffb0 + iVar8 * 2 + iVar5;
+    local_28 = local_28 + iVar8;
     do {
-      *pcVar1 = -pcVar3[1];
-      pcVar1[1] = -*pcVar3;
-      pcVar1 = pcVar1 + 2;
-      pcVar3 = pcVar3 + -2;
-      iVar7 = iVar7 + -1;
-    } while (iVar7 != 0);
+      *pcVar2 = -pcVar4[1];
+      pcVar2[1] = -*pcVar4;
+      pcVar2 = pcVar2 + 2;
+      pcVar4 = pcVar4 + -2;
+      iVar8 = iVar8 + -1;
+    } while (iVar8 != 0);
   }
-  iVar2 = 0;
-  iVar4 = 0;
+  iVar3 = 0;
+  iVar5 = 0;
   local_34 = 0;
-  pbVar12 = param_1;
+  pbVar13 = param_1;
   do {
-    if (iVar4 < 1) {
-      *pbVar12 = *pbVar8;
-      pbVar12[1] = pbVar8[1];
-      iVar4 = iVar4 + param_3;
-      iVar2 = iVar2 + 1;
-      pbVar12 = pbVar12 + 2;
+    if (iVar5 < 1) {
+      *pbVar13 = *pbVar9;
+      pbVar13[1] = pbVar9[1];
+      iVar5 = iVar5 + param_3;
+      iVar3 = iVar3 + 1;
+      pbVar13 = pbVar13 + 2;
     }
-    iVar4 = iVar4 + -1;
+    iVar5 = iVar5 + -1;
     local_34 = local_34 + 1;
-    pbVar8 = pbVar8 + 2;
+    pbVar9 = pbVar9 + 2;
   } while (local_34 < local_28);
-  iVar5 = 0;
-  pbVar8 = param_1 + iVar2 * 2;
+  iVar6 = 0;
+  pbVar9 = param_1 + iVar3 * 2;
   do {
-    if (iVar4 < 1) {
-      *pbVar8 = pcVar9[1];
-      pbVar8[1] = -*pcVar9;
-      iVar4 = iVar4 + param_3;
-      iVar2 = iVar2 + 1;
-      pbVar8 = pbVar8 + 2;
+    if (iVar5 < 1) {
+      *pbVar9 = pcVar10[1];
+      pbVar9[1] = -*pcVar10;
+      iVar5 = iVar5 + param_3;
+      iVar3 = iVar3 + 1;
+      pbVar9 = pbVar9 + 2;
     }
-    iVar4 = iVar4 + -1;
-    iVar5 = iVar5 + 1;
-    pcVar9 = pcVar9 + 2;
-  } while (iVar5 < local_28);
-  iVar5 = 0;
-  pbVar8 = param_1 + iVar2 * 2;
-  do {
-    if (iVar4 < 1) {
-      *pbVar8 = -*pcVar10;
-      pbVar8[1] = -pcVar10[1];
-      iVar4 = iVar4 + param_3;
-      iVar2 = iVar2 + 1;
-      pbVar8 = pbVar8 + 2;
-    }
-    iVar4 = iVar4 + -1;
-    iVar5 = iVar5 + 1;
+    iVar5 = iVar5 + -1;
+    iVar6 = iVar6 + 1;
     pcVar10 = pcVar10 + 2;
-  } while (iVar5 < local_28);
-  iVar5 = 0;
-  pbVar8 = param_1 + iVar2 * 2;
+  } while (iVar6 < local_28);
+  iVar6 = 0;
+  pbVar9 = param_1 + iVar3 * 2;
   do {
-    if (iVar4 < 1) {
-      *pbVar8 = -pbVar11[1];
-      pbVar8[1] = *pbVar11;
-      iVar4 = iVar4 + param_3;
-      iVar2 = iVar2 + 1;
-      pbVar8 = pbVar8 + 2;
+    if (iVar5 < 1) {
+      *pbVar9 = -*pcVar11;
+      pbVar9[1] = -pcVar11[1];
+      iVar5 = iVar5 + param_3;
+      iVar3 = iVar3 + 1;
+      pbVar9 = pbVar9 + 2;
     }
-    iVar4 = iVar4 + -1;
-    iVar5 = iVar5 + 1;
-    pbVar11 = pbVar11 + 2;
-  } while (iVar5 < local_28);
-  ExceptionList = local_14;
-  return iVar2;
+    iVar5 = iVar5 + -1;
+    iVar6 = iVar6 + 1;
+    pcVar11 = pcVar11 + 2;
+  } while (iVar6 < local_28);
+  iVar6 = 0;
+  pbVar9 = param_1 + iVar3 * 2;
+  do {
+    if (iVar5 < 1) {
+      *pbVar9 = -pbVar12[1];
+      pbVar9[1] = *pbVar12;
+      iVar5 = iVar5 + param_3;
+      iVar3 = iVar3 + 1;
+      pbVar9 = pbVar9 + 2;
+    }
+    iVar5 = iVar5 + -1;
+    iVar6 = iVar6 + 1;
+    pbVar12 = pbVar12 + 2;
+  } while (iVar6 < local_28);
+  return iVar3;
 }
 

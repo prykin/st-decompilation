@@ -15,7 +15,7 @@ int __fastcall FUN_00747f3b(AnonShape_00747AA5_87CB4B56 *param_1)
 {
   int iVar1;
 
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(*param_1->field_0008 + 0x10))();
   return (uint)(iVar1 != *(int *)(param_1 + 1));
 }

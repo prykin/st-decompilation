@@ -13,15 +13,15 @@ undefined4 __fastcall FUN_0074a77d(int *param_1)
   if (param_1[0x19] != 1) {
     param_1[0x19] = 1;
     timeBeginPeriod(1);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 0x40))();
     if (param_1[0x1b] == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar1 = (**(code **)(*param_1 + 0x60))();
       LeaveCriticalSection(lpCriticalSection);
       return uVar1;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (**(code **)(*param_1 + 0x54))(param_1[0x1b]);
     if (iVar2 == 0) {
       SetEvent((HANDLE)param_1[0x15]);

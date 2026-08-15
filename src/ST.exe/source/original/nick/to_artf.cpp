@@ -72,7 +72,7 @@ int __thiscall st::fn_005EAF10(STArtiafactC *this,STMessage *message)
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
-          (*local_8->vtable_at_1d5->vfunc_00)();
+          (*local_8->vtable_at_1d5->vfunc_00)((STArtiafactC *)&local_8->vtable_at_1d5);
           g_currentExceptionFrame = local_60.previous;
           return 0;
         default:

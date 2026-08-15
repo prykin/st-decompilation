@@ -25,7 +25,7 @@ int __fastcall FUN_004d6f70(int *param_1)
   if (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d)) {
     thunk_FUN_004d8b70((char)param_1[9]);
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (**(code **)(*param_1 + 0xc4))();
   return (uint)(99 < iVar3);
 }

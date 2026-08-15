@@ -18,7 +18,7 @@ void __fastcall FUN_00491600(AnonShape_00491600_23458133 *param_1)
   undefined2 local_c;
   undefined2 local_a;
 
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)param_1 + 0x100))(param_1->field_01D1 | 0xd);
   thunk_FUN_00495ff0(param_1->field_005B,param_1->field_005D,param_1->field_005F,param_1->field_008E
                      ,(AnonShape_00495FF0_59081BDD *)param_1);
@@ -38,7 +38,7 @@ void __fastcall FUN_00491600(AnonShape_00491600_23458133 *param_1)
     pAVar1 = param_1->field_05A6;
     local_c = pAVar1->field_0024;
     local_a = pAVar1->field_0032;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*DAT_008117bc)(local_24);
   }
   return;

@@ -103,7 +103,6 @@ LAB_006f50a4:
     }
     iVar9 = param_8 + -1;
     bVar3 = param_8 < 1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_8 = iVar9;
     if (iVar9 == 0 || bVar3) {
       return param_9;
@@ -156,7 +155,6 @@ LAB_006f51f6:
         while( true ) {
           iVar9 = param_8 + -1;
           bVar3 = param_8 < 1;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_8 = iVar9;
           if (iVar9 == 0 || bVar3) {
             return param_9;

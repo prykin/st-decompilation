@@ -21,7 +21,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
     iVar5 = param_1 * 5 + 0x9b;
     piVar1 = (int *)((int)this + iVar5 * 8);
     iVar5 = *(int *)(&DAT_007e091c + *(int *)((int)this + iVar5 * 8) * 4) / 100;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar6 = (**(code **)(*(int *)this + 0x2c))();
     iVar6 = thunk_FUN_004b72e0(STField<char>(this,0x24),iVar6);
     if ((iVar6 != 0) &&
@@ -32,21 +32,18 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar6 = *(int *)((int)this + param_1 * 0x28 + 0x4e8);
     if ((uint)(iVar6 + iVar5) <= g_playSystem_00802A38->field_00E4) {
-      /* ST_PSEUDO[stack_slot_reuse,raw_pointer_offset]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; candidate structure field after proof; otherwise retain buffer arithmetic */
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       param_1 = ((g_playSystem_00802A38->field_00E4 - iVar6) *
                 *(int *)((int)this + param_1 * 0x28 + 0x4e4)) /
                 *(uint *)(&DAT_007e091c + *piVar1 * 4);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(*(int *)this + 0x2c))();
       iVar5 = thunk_FUN_004b72e0(STField<char>(this,0x24),iVar5);
       if ((iVar5 != 0) &&
          (iVar5 = thunk_FUN_004b79c0(STField<char>(this,0x24),STField<int>(this,0x18)),
          iVar5 == 0)) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int)(param_1 + ((int)param_1 >> 0x1f & 3U)) >> 2;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (param_1 == 0) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 1;
         }
         if (DAT_00811798 != nullptr) {
@@ -56,14 +53,12 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
       iVar5 = *(int *)((int)this + uVar3 * 0x28 + 0x4e0);
       iVar6 = *(int *)((int)this + uVar3 * 0x28 + 0x4e4);
       if (iVar6 < (int)(iVar5 + param_1)) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = iVar6 - iVar5;
       }
       do {
         local_8 = 0;
         local_c = 0;
         iVar5 = *(int *)(&DAT_007e085c + *piVar1 * 4);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int)(iVar5 * param_1) / iVar6;
         iVar5 = iVar5 - (iVar5 * *(int *)((int)this + uVar3 * 0x28 + 0x4dc)) / iVar6;
         iVar6 = *(int *)((int)this + uVar3 * 0x28 + 0x4ec);
@@ -75,12 +70,9 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
           local_c = 0;
         }
         iVar6 = *(int *)((int)this + uVar3 * 0x28 + 0x4f4);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((iVar5 < iVar6 + param_2) && (param_2 = iVar5 - iVar6, param_2 < 0)) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = 0;
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((((local_8 == 0) ||
              (iVar5 = thunk_FUN_004d7b10(STField<char>(this,0x24),4), local_8 <= iVar5)) &&
             ((local_c == 0 ||
@@ -117,7 +109,6 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
         }
         iVar6 = *(int *)((int)this + uVar3 * 0x28 + 0x4e4);
         bVar2 = iVar6 / 100 < (int)param_1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = iVar6 / 100;
       } while (bVar2);
       *(uint *)((int)this + uVar3 * 0x28 + 0x4e8) = g_playSystem_00802A38->field_00E4;
@@ -125,11 +116,11 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
         STField<uint>(this,0x524) = g_playSystem_00802A38->field_00E4;
         bVar4 = LookupRecordByte(STField<char>(this,0x23d));
         if (bVar4 == 2) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*(int *)this + 0x90))(3,0x2c8);
           return *(int *)((int)this + uVar3 * 0x28 + 0x4e0);
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)this + 0x90))(3,0x200);
       }
     }

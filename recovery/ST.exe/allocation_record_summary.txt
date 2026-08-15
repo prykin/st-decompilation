@@ -1,12 +1,12 @@
 program=ST.exe
-functions_with_allocator_calls=237
-allocation_roots=458
-returned_allocation_roots=82
+functions_with_allocator_calls=230
+allocation_roots=446
+returned_allocation_roots=80
 exact_fixed_copy_roots=9
 field_complete_roots=9
 manual_or_imported_baselines=0
 overlap_or_geometry_conflicts=0
-string_moves=1036
+string_moves=1019
 allocation_destination_moves=150
 parameter_source_moves=80
 exact_copy_segments=23

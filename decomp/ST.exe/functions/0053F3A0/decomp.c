@@ -40,7 +40,7 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)local_8->field_0000->field_0018)(0);
   }
   else {

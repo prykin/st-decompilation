@@ -50,7 +50,7 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
     }
     if (((SVar5 != 0xffffffff) && (iVar2 = param_1->vfunc_0C(), iVar2 == 3)) &&
        ((param_1->field_0020 != 0x172 && (param_1->field_0020 != 0x1a4)))) {
-      uVar3 = (*param_1->vtable->vfunc_C4)();
+      uVar3 = param_1->vfunc_C4();
       if (1 < (int)uVar3) {
         uVar3 = (int)(uVar3 * param_1->field_0225) / 100;
       }

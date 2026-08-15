@@ -20,12 +20,10 @@ byte * FUN_006cfe10(byte *param_1,int param_2)
     if ((int)uVar4 < (int)uVar3) {
       uVar3 = uVar4;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 + uVar3 * -0x10;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pbVar7 = param_1 + *(ushort *)(param_1 + uVar3 * 2 + 0x14) + 0x16;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = pbVar7;
   uVar3 = 0;
   iVar6 = param_2 * iVar2;

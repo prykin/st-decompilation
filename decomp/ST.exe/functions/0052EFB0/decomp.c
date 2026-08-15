@@ -73,7 +73,7 @@ OptPanelTy::PaintDblBut
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       iVar10 = 1;
       piVar9 = nullptr;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar3 = (*(code *)param_4)(param_1);
       iVar8 = 1;
       pCVar4 = thunk_FUN_00571240("BUT_SWITCH",0);
@@ -101,7 +101,7 @@ OptPanelTy::PaintDblBut
                        (iVar10 - iVar6) + -10,iVar8);
       iVar11 = -1;
       iVar10 = -1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar5 = (*(code *)param_5)(param_1);
       iVar8 = -1;
       iVar6 = 0;

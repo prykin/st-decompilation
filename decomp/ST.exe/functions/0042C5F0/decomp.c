@@ -28,7 +28,6 @@ STAllPlayersC::DelObjFromTmps
 
   local_c = 0xffffffff;
   if (param_2 < 0x1a5) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1a4) {
       iVar8 = 0;
       iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
@@ -55,9 +54,7 @@ STAllPlayersC::DelObjFromTmps
       } while (iVar8 < 5);
       return local_c;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x14) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
       iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
       do {
@@ -80,7 +77,6 @@ STAllPlayersC::DelObjFromTmps
                   STField<undefined4>(puVar1,10) = 0;
                   *puVar1 = 0;
                 }
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 if (param_2 == 0) {
                   thunk_FUN_0043fc50(CASE_1,0);
                   GVar10 = CASE_2;
@@ -96,14 +92,12 @@ STAllPlayersC::DelObjFromTmps
             } while ((int)uVar9 < (int)dVar4);
           }
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + 1;
         if (4 < param_2) {
           return local_c;
         }
       } while( true );
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x5a) {
       iVar8 = 0;
       iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
@@ -130,7 +124,6 @@ STAllPlayersC::DelObjFromTmps
       } while (iVar8 < 5);
       return local_c;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x172) {
       iVar8 = 0;
       iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
@@ -159,7 +152,6 @@ STAllPlayersC::DelObjFromTmps
     }
   }
   else if (param_2 < 0x1b9) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1b8) {
       iVar8 = 0;
       iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
@@ -186,7 +178,6 @@ STAllPlayersC::DelObjFromTmps
       } while (iVar8 < 5);
       return local_c;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1ae) {
       iVar8 = 0;
       iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
@@ -215,7 +206,6 @@ STAllPlayersC::DelObjFromTmps
     }
   }
   else if ((999 < param_2) && (param_2 < 0x3ea)) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
     do {
@@ -238,7 +228,6 @@ STAllPlayersC::DelObjFromTmps
                 STField<undefined4>(puVar1,10) = 0;
                 *puVar1 = 0;
               }
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               if (param_2 == 0) {
                 thunk_FUN_0043fc50(CASE_4,0);
                 GVar10 = CASE_5;
@@ -254,7 +243,6 @@ STAllPlayersC::DelObjFromTmps
           } while ((int)uVar9 < (int)dVar4);
         }
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + 1;
       if (4 < param_2) {
         return local_c;

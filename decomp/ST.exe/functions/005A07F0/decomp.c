@@ -61,11 +61,11 @@ void __thiscall FSGSTy::sub_005A07F0(FSGSTy *this)
   }
   this->field_1AEC = nullptr;
   if (this->field_1EA6 != nullptr) {
-    DArrayDestroy(this->field_1EA6);
+    DArrayDestroy((DArrayTy *)this->field_1EA6);
   }
   this->field_1EA6 = nullptr;
   if (this->field_1EAA != nullptr) {
-    DArrayDestroy(this->field_1EAA);
+    DArrayDestroy((DArrayTy *)this->field_1EAA);
   }
   this->field_1EAA = nullptr;
   if (this->field_1E8E != 0) {

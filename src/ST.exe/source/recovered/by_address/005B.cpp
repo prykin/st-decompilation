@@ -249,14 +249,12 @@ void __thiscall st::fn_005B8F90(void *this,uint param_1)
   byte bVar2;
 
   uVar1 = param_1;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 != 0) && (param_1 = 0, STField<char>(this,0x9a) != '\0')) {
     do {
       if (*(char *)(param_1 + uVar1) != '\0') {
         *(undefined4 *)(param_1 * 0x1fb + 0xbc + (int)this) = 0;
       }
       bVar2 = (char)param_1 + 1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (uint)bVar2;
     } while (bVar2 < STField<byte>(this,0x9a));
   }
@@ -347,7 +345,7 @@ void __fastcall st::fn_005BBA40(AnonShape_005BB9F0_E38C41BB *param_1)
   if (param_1->field_1A73 != 0) {
     param_1->field_0025 = param_1->field_1A73;
     param_1->field_0031 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
   }
   return;

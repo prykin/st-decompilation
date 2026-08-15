@@ -25,11 +25,16 @@ undefined4 FUN_00412de0(int param_1,int param_2,int param_3)
   local_18 = 0;
   if (0 < DAT_007f4d20) {
     do {
-      local_c = (*(int *)(iVar8 + DAT_007f4d3c) * DAT_007f4d38 + 0x8000 +
-                 DAT_007f4d28 * *(int *)(iVar8 + 4 + DAT_007f4d3c) >> 0x10) + iVar1 >> 2;
-      local_10 = ((DAT_007f4d38 * *(int *)(iVar8 + 4 + DAT_007f4d3c) -
-                  *(int *)(iVar8 + DAT_007f4d3c) * DAT_007f4d28) + 0x8000 >> 0x10) + iVar2 >> 2;
-      local_8 = *(int *)(iVar8 + 8 + DAT_007f4d3c) + iVar3 >> 2;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      local_c = (*(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + iVar8) * DAT_007f4d38 +
+                 0x8000 + DAT_007f4d28 *
+                          *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + iVar8) >> 0x10) +
+                iVar1 >> 2;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      local_10 = ((DAT_007f4d38 * *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + iVar8) -
+                  *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + iVar8) * DAT_007f4d28) +
+                  0x8000 >> 0x10) + iVar2 >> 2;
+      local_8 = *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + iVar8) + iVar3 >> 2;
       if (local_8 < 0) {
         local_8 = 0;
       }
@@ -49,9 +54,9 @@ undefined4 FUN_00412de0(int param_1,int param_2,int param_3)
       uVar7 = local_8 * iVar5 + local_c + DAT_007f4d2c * local_10 ^ 7;
       pbVar4 = (byte *)(DAT_007f4cfc + ((int)uVar7 >> 3));
       *pbVar4 = *pbVar4 | '\x01' << (uVar7 & 7);
-      *(int *)(iVar8 + DAT_007f4d3c) = local_c;
-      *(int *)(iVar8 + 4 + DAT_007f4d3c) = local_10;
-      *(int *)(iVar8 + 8 + DAT_007f4d3c) = local_8;
+      *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + iVar8) = local_c;
+      *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + iVar8) = local_10;
+      *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + iVar8) = local_8;
       local_18 = local_18 + 1;
       iVar8 = iVar8 + 0x14;
     } while (local_18 < DAT_007f4d20);

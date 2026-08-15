@@ -14,6 +14,8 @@ address	aggregate_id	status	detail
 007ED534	indexed_global_candidate	disabled	apply=0
 007ED640	indexed_global_candidate	disabled	apply=0
 007F1234	indexed_global_candidate	disabled	apply=0
+007F4D3C	runtime_record_pointer	unchanged	desired aggregate already present
+007F4D74	runtime_record_pointer	unchanged	desired aggregate already present
 007FB24C	indexed_global_candidate	disabled	apply=0
 00800BD0	indexed_global_candidate	disabled	apply=0
 00800EE0	indexed_global_candidate	disabled	apply=0
@@ -32,6 +34,10 @@ address	aggregate_id	status	detail
 00801430	indexed_global_candidate	disabled	apply=0
 00801440	indexed_global_candidate	disabled	apply=0
 00801490	indexed_global_candidate	disabled	apply=0
+008032F4	runtime_record_pointer	unchanged	desired aggregate already present
+008032F8	runtime_record_pointer	unchanged	desired aggregate already present
+00803300	runtime_record_pointer	unchanged	desired aggregate already present
+00803310	runtime_record_pointer	unchanged	desired aggregate already present
 00807570	indexed_global_candidate	disabled	apply=0
 008087C7	bulk_initialized_record_array	unchanged	desired aggregate already present
 00808A4F	binary_relation_matrix	conflict	Could not create Data at address 00808a4f
@@ -66,5 +72,6 @@ address	aggregate_id	status	detail
 008145B8	indexed_global_candidate	disabled	apply=0
 00854FF8	indexed_global_candidate	disabled	apply=0
 008568E0	win32_resource_string_cursor	unchanged	desired aggregate already present
+00857110	runtime_record_pointer	unchanged	desired aggregate already present
 00857A60	win32_resource_string_buffer	unchanged	desired aggregate already present
 0085A1A0	indexed_global_candidate	disabled	apply=0

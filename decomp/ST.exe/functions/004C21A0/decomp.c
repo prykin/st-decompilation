@@ -36,12 +36,10 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
   }
   if (local_c < _DAT_0079034c) {
     lVar6 = Library::MSVCRT::__ftol();
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (short)lVar6 + -1;
   }
   else {
     lVar6 = Library::MSVCRT::__ftol();
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int)(short)lVar6;
   }
   pAVar1 = local_8;
@@ -55,7 +53,7 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
     iVar5 = param_2[8];
     if (iVar5 == 0x14) {
       iVar5 = *param_2;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_004c2260:
       iVar5 = (**(code **)(iVar5 + 0xec))();
       if (iVar5 != 0) {
@@ -64,7 +62,7 @@ LAB_004c2260:
       goto cf_common_exit_004C261B;
     }
     if ((iVar5 != 1000) && (iVar5 != 0x3e9)) goto cf_common_exit_004C261B;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar5 = (**(code **)(*param_2 + 0xec))();
 joined_r0x004c2294:
     if (iVar5 == 0) goto cf_common_exit_004C261B;
@@ -84,7 +82,7 @@ LAB_004c2616:
           break;
         }
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       else if (((local_8->field_0245 == 4) &&
                ((iVar3 = (**(code **)(*param_2 + 0x2c))(), iVar3 == 0x37 ||
                 (iVar3 = (**(code **)(*param_2 + 0x2c))(), iVar3 == 0x6c)))) &&
@@ -109,7 +107,7 @@ LAB_004c2616:
         goto LAB_004c2260;
       }
       if ((iVar5 != 1000) && (iVar5 != 0x3e9)) break;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(*param_2 + 0xec))();
       goto joined_r0x004c2294;
     }
@@ -135,7 +133,7 @@ LAB_004c2616:
       sVar4 = 0x14;
     }
     break;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case CASE_17:
     if (((param_2 != nullptr) && (local_8->field_0245 == 4)) &&
        (((iVar5 = (**(code **)(*param_2 + 0x2c))(), iVar5 == 0x37 ||

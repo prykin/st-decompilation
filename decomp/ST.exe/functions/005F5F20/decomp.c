@@ -68,7 +68,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
       g_currentExceptionFrame = local_60.previous;
       return 0;
     case MESS_STSPRGAMEOBJC_0113:
-      (*local_8->vtable_at_1d5->vfunc_00)();
+      (*local_8->vtable_at_1d5->vfunc_00)((STColl3C *)&local_8->vtable_at_1d5);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     case MESS_HITKILL:

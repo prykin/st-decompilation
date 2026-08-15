@@ -37,7 +37,7 @@ int __thiscall FUN_004dfc70(void *this,int *param_1)
             puVar8 = &local_18;
             puVar7 = &local_8;
             puVar6 = &local_20;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             SVar2 = (**(code **)(*param_1 + 0x2c))();
             iVar3 = STAllPlayersC::GetBoatWeaponInfo(SVar2,puVar6,puVar7,puVar8);
             if (iVar3 == 2) {
@@ -46,17 +46,17 @@ LAB_004dfd49:
               local_c = local_c + (int)(0x5dc / (longlong)(int)local_8);
             }
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           else if (((param_1[8] == 1000) &&
                    (iVar3 = (**(code **)(*param_1 + 0x2c))(),
                    *(int *)(&DAT_007926b0 + iVar3 * 4) != 0)) &&
                   (iVar3 = (**(code **)(*param_1 + 0x2c))(),
                   *(int *)(&DAT_00793c98 + iVar3 * 8) == 2)) {
             iVar9 = 0;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar3 = (**(code **)(*param_1 + 0x2c))();
             local_8 = thunk_FUN_004e8230((int)piVar1,iVar3 + -0x32,iVar9);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar3 = (**(code **)(*param_1 + 0x2c))();
             local_18 = *(undefined4 *)(&DAT_00793ea8 + iVar3 * 8);
             goto LAB_004dfd49;

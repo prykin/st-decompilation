@@ -52,7 +52,7 @@ LAB_00538ff6:
     local_14 = this;
     local_EAX_145 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (local_EAX_145 == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar7 = (*(code *)param_5)(param_1);
       text = FUN_006f2c00(param_3,1,uVar7);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,text,nullptr,1);

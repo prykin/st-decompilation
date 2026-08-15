@@ -98,12 +98,12 @@ LAB_00482f52:
   local_8 = (RecoveredRecord_STBoatC_00482DB0 *)local_14;
 LAB_00482fa9:
   this = local_8;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar13 = (**(code **)(*(int *)local_8 + 0xf8))();
   if (iVar13 == 0) {
     return 4;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   if ((*(int *)&this->field_0x20 == 0x1ae) &&
      (iVar13 = (**(code **)(*(int *)this + 0xf4))(param_1[9]), iVar13 == 0)) {
     return 4;

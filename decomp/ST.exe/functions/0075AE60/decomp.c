@@ -22,7 +22,7 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
     return 0;
   }
   if (*(int *)(iVar7 + 0x70) == 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar3 = (**(code **)*param_1)(param_1,1,param_1[7] * 0x18);
     *(undefined4 *)(iVar7 + 0x70) = uVar3;
   }
@@ -30,7 +30,6 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
   local_c = 0;
   if (0 < (int)param_1[7]) {
     local_8 = (undefined4 *)(param_1[0x34] + 0x4c);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = nullptr;
     do {
       psVar1 = (short *)*local_8;
@@ -71,7 +70,6 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
       } while (iVar5 != 0);
       iVar7 = iVar7 + 0x18;
       local_c = local_c + 1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 0x40;
       local_8 = local_8 + 0x15;
     } while (local_c < (int)puVar2[7]);

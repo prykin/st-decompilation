@@ -8,7 +8,7 @@
 void __thiscall FUN_0074ab73(int param_1,undefined4 param_2)
 
 {
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(**(int **)(param_1 + 0xd8) + 0xb0))(param_2);
   return;
 }

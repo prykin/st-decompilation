@@ -31,7 +31,6 @@ undefined4 FUN_0042c300(char param_1,uint param_2,int param_3,char param_4,uint 
 
   iVar1 = param_3;
   iVar3 = 0;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
     iVar3 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
     if (param_3 == 0) {
@@ -64,7 +63,6 @@ LAB_0042c3a0:
   if (((*piVar2 == 0x3c) || (*piVar2 == 0x19a)) && (piVar2[1] == (int)param_4)) {
     array = STField<DArrayTy *>(piVar2,10);
     index = 0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = array->count;
     if (0 < (int)param_2) {
       do {

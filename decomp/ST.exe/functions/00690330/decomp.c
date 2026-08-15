@@ -17,7 +17,7 @@ undefined4 __thiscall FUN_00690330(void *this,uint param_1,undefined4 param_2)
       iVar1 = 0;
     }
     if (*(undefined4 **)(iVar1 + 4) != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar2 = (**(code **)**(undefined4 **)(iVar1 + 4))(param_2);
       return uVar2;
     }

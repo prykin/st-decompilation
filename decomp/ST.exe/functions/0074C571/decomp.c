@@ -15,7 +15,7 @@ int FUN_0074c571(AnonShape_0074C571_537DB7FB *param_1)
     iVar1 = -0x7ffbfdf7;
   }
   else {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(param_1->field_00CC->field_0000 + 0x60))();
     if (-1 < iVar1) {
       iVar1 = FUN_0074896b((int)param_1);

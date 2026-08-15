@@ -49,7 +49,6 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
      (*(int *)(&DAT_007e1218 + (STField<int>(this,0x235) * 3 + STField<int>(this,0x239)) * 4)
       != 0)) {
     memset(local_294, 0, 0x26c); /* compiler bulk-zero initialization */
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = local_294;
     iVar4 = 0;
     do {
@@ -63,7 +62,6 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
         }
       }
       iVar4 = iVar4 + 1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 1;
     } while (iVar4 < 0x9b);
     thunk_FUN_004e7eb0((int)piVar1,STField<int>(this,0x24),
@@ -75,12 +73,12 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
       if (uVar2 == 1) {
         iVar4 = *(int *)this;
         uVar7 = 0x74;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_004ccd43:
         (**(code **)(iVar4 + 0x90))(6,uVar7);
       }
       else if (uVar2 == 2) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)this + 0x90))(6,0x75);
       }
       else if (uVar2 == 3) {
@@ -91,7 +89,6 @@ LAB_004ccd43:
     }
     if (DAT_008117bc != nullptr) {
       memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = local_294;
       local_18 = 0x5de9;
       local_14 = SUB42(piVar1,0);
@@ -99,7 +96,6 @@ LAB_004ccd43:
       do {
         local_EAX_374 = LookupRecordByte(STField<char>(this,0x24));
         local_EAX_374 = (int)(byte)local_EAX_374;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((*(char *)(*(int *)(&DAT_007bfc00 + local_EAX_374 * 4) + iVar4) == '\0') &&
            (*param_1 == 0)) {
           iVar2 = thunk_FUN_004e60d0((int)piVar1,iVar4);
@@ -108,12 +104,11 @@ LAB_004ccd43:
             local_10 = (undefined2)iVar4;
             uVar7 = thunk_FUN_004e60d0((int)piVar1,iVar4);
             local_e = (short)uVar7 + 1;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)*DAT_008117bc)(local_28);
           }
         }
         iVar4 = iVar4 + 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 1;
       } while (iVar4 < 0x9b);
     }
@@ -181,7 +176,6 @@ LAB_004ccedc:
     }
   }
   if (STField<int>(this,0x408) != 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = nullptr;
     if (STField<int>(this,0x24) != STField<int>(this,0x23d)) {
       local_EAX_948 = LookupRecordByte((char)STField<int>(this,0x23d));
@@ -247,7 +241,7 @@ LAB_004cd038:
   if ((((iVar4 != 0x4d) || (STField<int>(this,0x4d0) == 2)) &&
       ((iVar4 != 0x4c || (STField<int>(this,0x4d0) == 2)))) &&
      ((iVar4 != 0x43 || (STField<int>(this,0x4d0) == 2)))) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar4 = (**(code **)(*(int *)this + 0x2c))();
     thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(iVar4), (uint8_t)(STField<undefined1>(this,0x24))),iVar4);
   }

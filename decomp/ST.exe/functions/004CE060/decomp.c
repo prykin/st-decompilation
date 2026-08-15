@@ -19,7 +19,7 @@ int __thiscall FUN_004ce060(void *this,int param_1)
       iVar1 = STPlaySystemC::sub_006E62D0
                         (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar2,
                          (int *)&local_c);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((iVar1 == 0) && (local_c != nullptr)) &&
          (iVar1 = (**(code **)(*local_c + 0x2c))(), iVar1 == param_1)) {
         local_8 = local_8 + 1;

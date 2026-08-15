@@ -20,7 +20,7 @@ void __thiscall FUN_005501d0(void *this,void *command)
     local_14 = 0x4400;
   }
   local_10 = command;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*STField<int *>(this,0x1c) + 0x20))(local_24);
   return;
 }

@@ -127,7 +127,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
       g_currentExceptionFrame = local_88.previous;
       return 0;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)this_00->field_01D5)();
     g_currentExceptionFrame = local_88.previous;
     return 0;

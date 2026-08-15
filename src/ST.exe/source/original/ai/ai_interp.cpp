@@ -2398,7 +2398,7 @@ cf_common_exit_0066DCED:
           (*this_00->vtable->slot_20)(local_c,(int)local_58);
         }
         if (-1 < iVar17) {
-          uVar23 = (*g_fish_00811984->vtable->vfunc_11C)();
+          uVar23 = g_fish_00811984->vfunc_11C();
           (*this_00->vtable->slot_20)(iVar17,uVar23);
           local_14 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(4));
           *local_14 = (uint)local_10;
@@ -2488,7 +2488,7 @@ cf_common_exit_0066DCED:
           (*this_00->vtable->slot_20)(local_c,(int)local_54);
         }
         if (-1 < iVar17) {
-          uVar23 = (*g_fish_00811984->vtable->vfunc_11C)();
+          uVar23 = g_fish_00811984->vfunc_11C();
           (*this_00->vtable->slot_20)(iVar17,uVar23);
           local_14 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(4));
           *local_14 = (uint)local_10;
@@ -2559,7 +2559,7 @@ cf_common_exit_0066DCED:
         (*this_00->vtable->slot_20)(local_c,(int)STPiece<2,2>(local_28));
       }
       if (-1 < iVar17) {
-        uVar23 = (*g_fish_00811984->vtable->vfunc_11C)();
+        uVar23 = g_fish_00811984->vfunc_11C();
         (*this_00->vtable->slot_20)(iVar17,uVar23);
       }
     }
@@ -2622,7 +2622,7 @@ cf_common_exit_0066DCED:
         (*this_00->vtable->slot_20)(local_c,(int)STPiece<2,2>(local_1c));
       }
       if (-1 < iVar17) {
-        uVar23 = (*g_fish_00811984->vtable->vfunc_11C)();
+        uVar23 = g_fish_00811984->vfunc_11C();
         (*this_00->vtable->slot_20)(iVar17,uVar23);
       }
     }
@@ -2702,7 +2702,7 @@ cf_common_exit_0066DCED:
           (*this_00->vtable->slot_20)(local_c,(int)STPiece<2,2>(local_10));
         }
         if (-1 < iVar17) {
-          uVar23 = (*g_fish_00811984->vtable->vfunc_11C)();
+          uVar23 = g_fish_00811984->vfunc_11C();
           (*this_00->vtable->slot_20)(iVar17,uVar23);
           local_14 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(4));
           *local_14 = (uint)local_1c;

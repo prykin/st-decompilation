@@ -89,9 +89,7 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
     }
     iVar3 = 0;
     if (0 < iVar2) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = local_cc;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = (int)this + 0x219;
       do {
         memset(local_5c, 0, 0x46); /* compiler bulk-zero initialization */
@@ -125,9 +123,7 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
         local_1a = iVar3;
         STParticleC::GetMessage(*(STParticleC **)param_3,&local_7c);
         iVar3 = iVar3 + 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 4;
       } while (iVar3 < iVar2);
     }

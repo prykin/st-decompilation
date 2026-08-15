@@ -17,7 +17,7 @@ undefined4 FUN_006b0be0(int param_1,tagPALETTEENTRY *param_2,UINT iStart,UINT cE
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((param_1 != 0) && (piVar1 = *(int **)(param_1 + 0x3c), piVar1 != nullptr)) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (**(code **)(*piVar1 + 0x10))(piVar1,0,iStart,cEntries,param_2);
     hdc = GetDC((HWND)0x0);
     GetSystemPaletteEntries(hdc,iStart,cEntries,(LPPALETTEENTRY)&local_404);

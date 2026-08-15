@@ -90,6 +90,33 @@ class SourceTreeCallParsingTests(unittest.TestCase):
             "destination",
         )
 
+    def test_library_declaration_marks_excluded_implementation(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("."), Path("receipt.json")
+        )
+        generator.type_emitter = TypeEmitter([], generator.issues)
+        generator.functions = [{
+            "address": "0075FEE0",
+            "name": "FUN_0075fee0",
+            "qualified_name": "Library::DKW::JPG::FUN_0075fee0",
+            "signature": (
+                "void __stdcall FUN_0075fee0(int param_1, int param_2)"
+            ),
+            "parameters": [],
+            "library": True,
+            "body_exported": False,
+        }]
+        header = generator._emit_function_declarations()
+        self.assertIn(
+            "// 0075FEE0 Library::DKW::JPG::FUN_0075fee0 "
+            "[statically linked library; implementation excluded]",
+            header,
+        )
+        self.assertIn(
+            "void __stdcall fn_0075FEE0(int param_1, int param_2);",
+            header,
+        )
+
 
 def primitive(path: str, name: str, length: int) -> dict:
     return {
@@ -575,6 +602,79 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         )
         actual = generator._materialize_tagged_lifetimes("00102030", body)
         self.assertNotIn("auto _local_8", actual)
+
+    def test_read_first_narrow_parameter_gets_machine_word_slot(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        function = {
+            "parameters": [{
+                "name": "param_1", "type": "short", "length": 2,
+                "storage": "Stack[0x4]:2",
+            }],
+        }
+        body = (
+            "int fn(short param_1) {\n"
+            "  if (_param_1 < 0x19b) return _param_1;\n"
+            "  return 0;\n"
+            "}\n"
+        )
+        actual = generator._materialize_promoted_parameter_slots(
+            "00102030", function, body
+        )
+        self.assertIn(
+            "int _param_1 = static_cast<int>(param_1);", actual
+        )
+        self.assertEqual(
+            generator.stats["promoted_parameter_slot_materializations"], 1
+        )
+
+    def test_full_width_parameter_does_not_get_synthetic_slot(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        function = {
+            "parameters": [{
+                "name": "param_1", "type": "int", "length": 4,
+                "storage": "Stack[0x4]:4",
+            }],
+        }
+        body = "int fn(int param_1) { return _param_1; }\n"
+        self.assertEqual(
+            generator._materialize_promoted_parameter_slots(
+                "00102030", function, body
+            ),
+            body,
+        )
+
+    def test_unsigned_short_parameter_promotes_to_signed_int_slot(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        function = {
+            "parameters": [{
+                "name": "param_1", "type": "ushort", "length": 2,
+                "storage": "Stack[0x4]:2",
+            }],
+        }
+        body = "int fn(ushort param_1) { return _param_1; }\n"
+        actual = generator._materialize_promoted_parameter_slots(
+            "00102030", function, body
+        )
+        self.assertIn("int _param_1 = static_cast<int>(param_1);", actual)
+        self.assertNotIn("uint _param_1", actual)
+
+    def test_raw_stack_addresses_share_exact_relative_arena(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        function = {"stack_frame_size": 0x20}
+        body = (
+            "void fn() {\n"
+            "  use(&stack0xfffffff0);\n"
+            "  copy(&stack0xffffffe0,&stack0xfffffff0);\n"
+            "}\n"
+        )
+        actual = generator._materialize_raw_stack_arena(
+            "00102030", function, body
+        )
+        self.assertIn("alignas(4) byte st_stack_frame[36];", actual)
+        self.assertIn("use((st_stack_frame + 16));", actual)
+        self.assertIn("copy((st_stack_frame + 0),(st_stack_frame + 16));", actual)
+        self.assertNotIn("stack0x", actual)
+        self.assertEqual(generator.stats["raw_stack_address_materializations"], 3)
 
     def test_exact_utility_output_splits_dead_stack_parameter_lifetime(self) -> None:
         generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))

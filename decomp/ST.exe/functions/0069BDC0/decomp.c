@@ -1,6 +1,8 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=3; incoming_stack_parameter_uses=19; direct_non_thunk_callers=0;
@@ -68,7 +70,6 @@ CGenerate::sub_0069BDC0
             ((this->field_5837 - param_3) / param_4 + 2);
     ExceptionList = &local_14;
     local_78 = Library::DKW::LIB::MemAlloc(uVar6 * 0x40);
-    piVar8 = (int *)&stack0xffffff6c;
     puVar10 = local_78;
     for (iVar5 = (uVar6 & 0x3ffffff) << 4; iVar5 != 0; iVar5 = iVar5 + -1) {
       *puVar10 = 0;
@@ -121,14 +122,13 @@ CGenerate::sub_0069BDC0
     }
     iVar5 = local_40;
     if (-1 < (int)local_3c) {
-      local_8 = 0;
-      Library::MSVCRT::FUN_0072da40();
-      local_5c = (int *)&stack0xffffff6c;
+      iVar5 = param_1 * -4;
+      local_5c = (int *)(&stack0xffffff6c + iVar5);
+      piVar8 = (int *)(&stack0xffffff6c + iVar5);
+      *(undefined4 *)(&stack0xffffff68 + iVar5) = 0x69bfdd;
       local_1c = &stack0xffffff6c;
-      Library::MSVCRT::FUN_0072da40();
-      local_8 = 0xffffffff;
       local_58 = (int *)&stack0xffffff6c;
-      local_1c = &stack0xffffff6c;
+      local_8 = 0xffffffff;
       Library::MSVCRT::FUN_00730810((undefined1 *)local_78,local_3c,0x40,thunk_FUN_0069b8d0);
       local_28 = (local_50 * param_5) / 100;
       local_60 = 0;

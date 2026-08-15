@@ -18,7 +18,6 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
   STField<undefined4>(this,0xc) = 0;
   STField<undefined4>(this,4) = 0;
   STField<int>(this,8) = param_1;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
     *(undefined4 *)this = 0;
   }
@@ -76,7 +75,7 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
         case 0xd:
           piVar2 = (int *)*piVar8;
           *(int **)(puVar7 + 4) = piVar2;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar2 + 4))(piVar2);
           break;
         case 0x11:

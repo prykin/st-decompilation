@@ -17,7 +17,7 @@ undefined4 FUN_0074cf2d(int param_1,undefined4 param_2)
     uVar2 = 0x80040209;
   }
   else {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (**(code **)(*piVar1 + 0x30))(piVar1,param_2);
   }
   return uVar2;

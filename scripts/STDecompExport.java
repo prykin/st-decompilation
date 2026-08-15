@@ -90,12 +90,12 @@ public class STDecompExport extends GhidraScript {
     private static final int COVERAGE_PADDING_RUN = 16;
     private static final int COVERAGE_MAX_RANGE = 0x10000;
     private static final String FUNCTION_ANALYSIS_CACHE_SCHEMA = "2";
-    private static final int FUNCTION_ANALYSIS_SCHEMA = 19;
+    private static final int FUNCTION_ANALYSIS_SCHEMA = 21;
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
         "st-function-analysis-v" + FUNCTION_ANALYSIS_SCHEMA +
-            "-legacy-scalar-parentheses";
+            "-exact-stack-slot-origin";
     private static final Pattern NARROW_RETURN_PIECE_ASSIGNMENT = Pattern.compile(
         "(?<variable>[A-Za-z_$][A-Za-z0-9_$]*)\\._0_(?<width>[12])_\\s*=\\s*" +
         "(?<callee>[A-Za-z_$][A-Za-z0-9_$]*(?:::[A-Za-z_$][A-Za-z0-9_$]*)*)" +
@@ -139,6 +139,10 @@ public class STDecompExport extends GhidraScript {
         "/* compiler bulk-zero initialization */";
     private static final Pattern BULK_ZERO_MEMSET_LINE = Pattern.compile(
         "^(?<indent>[ \\t]*)memset\\((?<pointer>[A-Za-z_$][A-Za-z0-9_$]*),[ \\t]*0,[ \\t]*" +
+        "(?<bytes>0x[0-9A-Fa-f]+|[0-9]+)\\);[ \\t]*" +
+        Pattern.quote(BULK_ZERO_MARKER) + "[ \\t]*$");
+    private static final Pattern RAW_STACK_ZERO_OBJECT = Pattern.compile(
+        "(?m)^(?<indent>[ \\t]*)memset\\(&stack0x(?<offset>[0-9A-Fa-f]{8}),[ \\t]*0,[ \\t]*" +
         "(?<bytes>0x[0-9A-Fa-f]+|[0-9]+)\\);[ \\t]*" +
         Pattern.quote(BULK_ZERO_MARKER) + "[ \\t]*$");
     private static final Pattern BULK_ZERO_POINTER_ADVANCE = Pattern.compile(
@@ -776,13 +780,16 @@ public class STDecompExport extends GhidraScript {
             List<String> comments = collectComments(function);
             callRelationRows.addAll(functionCallRelations(function));
             Path decompPath = dir.resolve("decomp.c");
-            String fingerprint = functionFingerprint(function, tags, callers, callees,
-                stringsUsed, globalsUsed, comments, calledFunctions, decompPath);
+            FunctionFingerprints fingerprints = functionFingerprints(function, tags, callers,
+                callees, stringsUsed, globalsUsed, comments, calledFunctions, decompPath);
+            String fingerprint = fingerprints.canonical;
             Path fingerprintPath = dir.resolve("fingerprint.sha256");
             Path metaPath = dir.resolve("meta.json");
             String storedFingerprint = Files.exists(fingerprintPath) ?
                 Files.readString(fingerprintPath, StandardCharsets.UTF_8).trim() : "";
-            boolean reusable = Files.exists(metaPath) && fingerprint.equals(storedFingerprint) &&
+            boolean reusable = Files.exists(metaPath) &&
+                (fingerprint.equals(storedFingerprint) ||
+                    fingerprints.paddedCallFixup.equals(storedFingerprint)) &&
                 (!bodyExported ||
                     (Files.exists(decompPath) && Files.exists(dir.resolve("listing.asm")) &&
                         cachedDecompileSucceeded(metaPath)));
@@ -809,6 +816,11 @@ public class STDecompExport extends GhidraScript {
                 for (String callee : callees) {
                     graphRows.add(jsonObject(field("from", functionId(function)), field("to", callee)));
                 }
+                // Canonical fingerprints omit absent optional dependencies.  Accept the
+                // exactly equivalent historical form which padded an empty call-fixup,
+                // then migrate it in place without forcing a decompile of unrelated code.
+                if (!fingerprint.equals(storedFingerprint))
+                    writeText(fingerprintPath, fingerprint + System.lineSeparator());
                 reused++;
                 continue;
             }
@@ -843,8 +855,8 @@ public class STDecompExport extends GhidraScript {
                 // its rendered virtual member still depends on the nested FunctionDefinition.
                 // Recompute after writing so a first export records those scoped dependencies
                 // immediately instead of requiring a second pass.
-                fingerprint = functionFingerprint(function, tags, callers, callees,
-                    stringsUsed, globalsUsed, comments, calledFunctions, decompPath);
+                fingerprint = functionFingerprints(function, tags, callers, callees,
+                    stringsUsed, globalsUsed, comments, calledFunctions, decompPath).canonical;
                 catalogAndCache(function, cCode, fingerprint, currentFunctionAnalysis);
                 writeFunctionListing(function, dir.resolve("listing.asm"));
             }
@@ -1128,7 +1140,8 @@ public class STDecompExport extends GhidraScript {
             normalizeLegacyBulkCopyLiveouts(legacyScalarLifetimes.code);
         NormalizedCode bulkZero = normalizeBulkZeroLoops(legacyBulkCopy.code);
         NormalizedCode bulkCopy = normalizeBulkCopyLoops(bulkZero.code);
-        NormalizedCode darrayAliases = normalizeDArrayElementAliases(bulkCopy.code);
+        NormalizedCode stackObjects = normalizeRawStackZeroObjects(bulkCopy.code);
+        NormalizedCode darrayAliases = normalizeDArrayElementAliases(stackObjects.code);
         NormalizedCode darrayAddresses =
             normalizeDArrayElementAddresses(darrayAliases.code);
         NormalizedCode virtualCalls =
@@ -1153,6 +1166,7 @@ public class STDecompExport extends GhidraScript {
         int replacements = legacyScalarLifetimes.replacements +
             legacyBulkCopy.replacements +
             bulkZero.replacements + bulkCopy.replacements +
+            stackObjects.replacements +
             darrayAliases.replacements + darrayAddresses.replacements +
             virtualCalls.replacements + affineCancellation.replacements +
             gridIndexing.replacements + recordAddresses.replacements +
@@ -1206,6 +1220,83 @@ public class STDecompExport extends GhidraScript {
                 scalarLifetimes.replacements + deadCodePointers.replacements +
                 narrowPromotions.replacements + biasedDivisions.replacements +
                 deadSynthetics.replacements);
+    }
+
+    /**
+     * A fixed EBP-relative REP STOS span is a real local storage object even when
+     * Ghidra cannot create one Listing variable because another lexical lifetime
+     * overlaps the same bytes.  The preceding bulk-zero pass has already proved
+     * the exact machine span.  Give only one unanimous, entirely local raw stack
+     * root an explicit byte-array identity; the byte element type deliberately
+     * asserts extent and aliasable storage, not a semantic record layout.
+     */
+    private NormalizedCode normalizeRawStackZeroObjects(String code) {
+        if (code == null || code.isEmpty() || !code.contains("&stack0x") ||
+                !code.contains(BULK_ZERO_MARKER))
+            return new NormalizedCode(code, 0);
+        Map<String, Set<Long>> observed = new TreeMap<>();
+        Matcher matcher = RAW_STACK_ZERO_OBJECT.matcher(code);
+        while (matcher.find()) {
+            long bytes = parseIntegerLiteral(matcher.group("bytes"));
+            if (bytes > 1 && bytes <= 0x100000)
+                observed.computeIfAbsent(matcher.group("offset").toLowerCase(Locale.ROOT),
+                    ignored -> new TreeSet<>()).add(bytes);
+        }
+        if (observed.isEmpty()) return new NormalizedCode(code, 0);
+
+        Map<String, StackObjectPresentation> objects = new TreeMap<>();
+        for (Map.Entry<String, Set<Long>> entry : observed.entrySet()) {
+            if (entry.getValue().size() != 1) continue;
+            long unsigned;
+            try { unsigned = Long.parseUnsignedLong(entry.getKey(), 16); }
+            catch (NumberFormatException exception) { continue; }
+            long offset = unsigned >= 0x80000000L ? unsigned - 0x100000000L : unsigned;
+            long bytes = entry.getValue().iterator().next();
+            if (offset >= 0 || offset + bytes > 0) continue;
+            String name = "stack_bytes_neg_" +
+                Long.toHexString(-offset).toUpperCase(Locale.ROOT);
+            if (Pattern.compile("\\b" + Pattern.quote(name) + "\\b").matcher(code).find())
+                continue;
+            objects.put(entry.getKey(), new StackObjectPresentation(name, bytes));
+        }
+        if (objects.isEmpty()) return new NormalizedCode(code, 0);
+
+        String normalized = code;
+        int replacements = 0;
+        for (Map.Entry<String, StackObjectPresentation> entry : objects.entrySet()) {
+            Pattern raw = Pattern.compile("&stack0x" + Pattern.quote(entry.getKey()),
+                Pattern.CASE_INSENSITIVE);
+            Matcher references = raw.matcher(normalized);
+            StringBuffer rewritten = new StringBuffer();
+            int count = 0;
+            while (references.find()) {
+                references.appendReplacement(rewritten,
+                    Matcher.quoteReplacement(entry.getValue().name));
+                count++;
+            }
+            references.appendTail(rewritten);
+            if (count == 0) continue;
+            normalized = rewritten.toString();
+            replacements += count;
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+
+        // A recovered comment may itself contain braces (for example a set of
+        // direct offsets).  Only a brace occupying its own source line can be
+        // the opening brace emitted by the decompiler for this function body.
+        Matcher bodyBrace = Pattern.compile("(?m)^\\{[ \\t]*$").matcher(normalized);
+        if (!bodyBrace.find()) return new NormalizedCode(code, 0);
+        int newline = normalized.indexOf('\n', bodyBrace.end());
+        if (newline < 0) return new NormalizedCode(code, 0);
+        StringBuilder declarations = new StringBuilder();
+        for (StackObjectPresentation object : objects.values())
+            declarations.append("  byte ").append(object.name).append('[')
+                .append("0x").append(Long.toHexString(object.bytes)).append("];")
+                .append(" /* exact EBP-relative stack object */")
+                .append(System.lineSeparator());
+        normalized = normalized.substring(0, newline + 1) + declarations +
+            normalized.substring(newline + 1);
+        return new NormalizedCode(normalized, replacements + objects.size());
     }
 
     /**
@@ -1503,6 +1594,11 @@ public class STDecompExport extends GhidraScript {
         if (code.contains(marker) && code.lines().anyMatch(line ->
                 line.contains(marker) && line.contains("scalar_") &&
                     line.contains("code **"))) return true;
+        int stackDeclaration = code.indexOf("byte stack_bytes_neg_");
+        if (stackDeclaration >= 0) {
+            Matcher bodyBrace = Pattern.compile("(?m)^\\{[ \\t]*$").matcher(code);
+            if (!bodyBrace.find() || stackDeclaration < bodyBrace.start()) return true;
+        }
         return malformedDArrayAtCall(code);
     }
 
@@ -5108,6 +5204,7 @@ public class STDecompExport extends GhidraScript {
         if (cached != null) return cached;
         long frameBias = currentProgram.getDefaultPointerSize();
         Map<Long, StackSlotLifetime> slots = new HashMap<>();
+        Map<String, Set<Long>> registerOrigins = new HashMap<>();
         List<Parameter> parameters = Arrays.stream(function.getParameters())
             .filter(parameter -> !parameter.isAutoParameter())
             .sorted(Comparator.comparingInt(Parameter::getOrdinal)).toList();
@@ -5139,8 +5236,21 @@ public class STDecompExport extends GhidraScript {
                     if (slot.written) slot.readAfterWrite = true;
                     else slot.readBeforeWrite = true;
                 }
-                if (write && slot.readBeforeWrite) slot.written = true;
+                // Read/modify/write arithmetic is ordinary mutation of the
+                // parameter, not proof that MSVC recycled its physical slot.
+                // For a full overwrite, require a value whose tracked incoming
+                // parameter origins exclude this same slot.  This retains the
+                // useful cross-parameter reuse cases while rejecting clamps,
+                // coordinate transforms, and other source-level param updates.
+                if (write && !read && slot.readBeforeWrite &&
+                        operandIndex == 0 && instruction.getNumOperands() >= 2) {
+                    Set<Long> sourceOrigins = operandOrigins(instruction, 1,
+                        registerOrigins);
+                    if (!sourceOrigins.isEmpty() && !sourceOrigins.contains(offset))
+                        slot.written = true;
+                }
             }
+            updateParameterOrigins(instruction, mnemonic, registerOrigins);
         }
         Set<String> result = new TreeSet<>();
         for (StackSlotLifetime slot : slots.values())
@@ -5149,6 +5259,71 @@ public class STDecompExport extends GhidraScript {
         Set<String> immutable = Set.copyOf(result);
         stackSlotReuseCache.put(function.getEntryPoint(), immutable);
         return immutable;
+    }
+
+    private Set<Long> operandOrigins(Instruction instruction, int operandIndex,
+            Map<String, Set<Long>> registerOrigins) {
+        Set<Long> result = new TreeSet<>();
+        Long stack = ebpStackOffset(instruction, operandIndex);
+        if (stack != null) result.add(stack);
+        if (instruction == null || operandIndex < 0 ||
+                operandIndex >= instruction.getNumOperands()) return result;
+        // Address-register participation is not value provenance.  For
+        // example MOV EAX,[table + param_5*8] loads a table element, not a
+        // transformed param_5 value.  Only a direct register operand carries
+        // an incoming-slot value through this detector.
+        String direct = directRegister(instruction, operandIndex);
+        if (!direct.isBlank())
+            result.addAll(registerOrigins.getOrDefault(direct, Set.of()));
+        return result;
+    }
+
+    private void updateParameterOrigins(Instruction instruction, String mnemonic,
+            Map<String, Set<Long>> registerOrigins) {
+        if ("CALL".equals(mnemonic)) {
+            registerOrigins.remove("EAX");
+            registerOrigins.remove("ECX");
+            registerOrigins.remove("EDX");
+            return;
+        }
+        if (instruction.getNumOperands() == 0) return;
+        String destination = directRegister(instruction, 0);
+        if (destination.isBlank() || !instructionWritesFirstOperand(mnemonic)) return;
+        Set<Long> origins;
+        if (instruction.getNumOperands() >= 2 &&
+                Set.of("MOV", "MOVSX", "MOVZX").contains(mnemonic)) {
+            origins = operandOrigins(instruction, 1, registerOrigins);
+        }
+        // Arithmetic, LEA, and partial updates change the value domain.  They
+        // cannot prove that a later stack overwrite is the exact lifetime of
+        // another ABI parameter, even if an input parameter helped calculate
+        // the result.
+        else origins = Set.of();
+        if (origins.isEmpty()) registerOrigins.remove(destination);
+        else registerOrigins.put(destination, Set.copyOf(origins));
+    }
+
+    private String directRegister(Instruction instruction, int operandIndex) {
+        if (instruction == null || operandIndex < 0 ||
+                operandIndex >= instruction.getNumOperands()) return "";
+        Object[] objects = instruction.getOpObjects(operandIndex);
+        if (objects.length != 1 || !(objects[0] instanceof Register register)) return "";
+        return x86RootRegister(register.getName());
+    }
+
+    private String x86RootRegister(String name) {
+        String value = name == null ? "" : name.toUpperCase(Locale.ROOT);
+        return switch (value) {
+            case "EAX", "AX", "AL", "AH" -> "EAX";
+            case "EBX", "BX", "BL", "BH" -> "EBX";
+            case "ECX", "CX", "CL", "CH" -> "ECX";
+            case "EDX", "DX", "DL", "DH" -> "EDX";
+            case "ESI", "SI" -> "ESI";
+            case "EDI", "DI" -> "EDI";
+            case "EBP", "BP" -> "EBP";
+            case "ESP", "SP" -> "ESP";
+            default -> value;
+        };
     }
 
     private Long ebpStackOffset(String operand) {
@@ -5867,57 +6042,80 @@ public class STDecompExport extends GhidraScript {
             field("recommended_resolution", resolution)));
     }
 
-    private String functionFingerprint(Function function, List<String> tags, List<String> callers,
+    private FunctionFingerprints functionFingerprints(Function function, List<String> tags,
+            List<String> callers,
             List<String> callees, List<String> stringsUsed, List<String> globalsUsed,
             List<String> comments, Set<Function> calledFunctions, Path renderedCode)
             throws Exception {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        updateDigest(digest,
-            functionDataTypesFingerprint(function, calledFunctions, renderedCode));
-        updateDigest(digest, function.getName(true));
-        updateDigest(digest, function.getSignature().getPrototypeString(true));
-        updateDigest(digest, nullToEmpty(function.getCallingConventionName()));
-        updateDigest(digest, Boolean.toString(function.isThunk()));
+        MessageDigest padded = MessageDigest.getInstance("SHA-256");
+        String typeFingerprint =
+            functionDataTypesFingerprint(function, calledFunctions, renderedCode);
+        updateDigests(digest, padded, typeFingerprint);
+        updateDigests(digest, padded, function.getName(true));
+        updateDigests(digest, padded, function.getSignature().getPrototypeString(true));
+        updateDigests(digest, padded, nullToEmpty(function.getCallingConventionName()));
+        String callFixup = nullToEmpty(function.getCallFixup());
+        if (!callFixup.isEmpty()) updateDigests(digest, padded, callFixup);
+        else updateDigest(padded, "");
+        updateDigests(digest, padded, Boolean.toString(function.isThunk()));
         if (function.isThunk()) {
             Function target = function.getThunkedFunction(true);
-            updateDigest(digest, target == null ? "" : functionId(target));
+            updateDigests(digest, padded, target == null ? "" : functionId(target));
         }
-        updateDigest(digest, Boolean.toString(function.hasNoReturn()));
-        updateDigest(digest, Boolean.toString(function.hasVarArgs()));
-        updateDigest(digest, nullToEmpty(function.getComment()));
-        updateDigest(digest, nullToEmpty(function.getRepeatableComment()));
-        updateDigest(digest, variablesJson(function.getParameters()));
-        updateDigest(digest, variablesJson(function.getLocalVariables()));
-        updateDigest(digest, String.join("\n", tags));
-        updateDigest(digest, String.join("\n", callers));
-        updateDigest(digest, String.join("\n", callees));
+        updateDigests(digest, padded, Boolean.toString(function.hasNoReturn()));
+        updateDigests(digest, padded, Boolean.toString(function.hasVarArgs()));
+        updateDigests(digest, padded, nullToEmpty(function.getComment()));
+        updateDigests(digest, padded, nullToEmpty(function.getRepeatableComment()));
+        updateDigests(digest, padded, variablesJson(function.getParameters()));
+        updateDigests(digest, padded, variablesJson(function.getLocalVariables()));
+        updateDigests(digest, padded, String.join("\n", tags));
+        updateDigests(digest, padded, String.join("\n", callers));
+        updateDigests(digest, padded, String.join("\n", callees));
         List<String> calleeSignatures = new ArrayList<>();
+        List<String> paddedCalleeSignatures = new ArrayList<>();
         for (Function callee : calledFunctions) {
-            calleeSignatures.add(functionId(callee) + "\u0000" +
+            String base = functionId(callee) + "\u0000" +
                 callee.getSignature().getPrototypeString(true) + "\u0000" +
-                nullToEmpty(callee.getCallingConventionName()));
+                nullToEmpty(callee.getCallingConventionName());
+            String calleeFixup = nullToEmpty(callee.getCallFixup());
+            calleeSignatures.add(calleeFixup.isEmpty() ? base : base + "\u0000" + calleeFixup);
+            paddedCalleeSignatures.add(base + "\u0000" + calleeFixup);
         }
         calleeSignatures.sort(Comparator.naturalOrder());
+        paddedCalleeSignatures.sort(Comparator.naturalOrder());
         updateDigest(digest, String.join("\n", calleeSignatures));
-        updateDigest(digest, String.join("\n", stringsUsed));
-        updateDigest(digest, String.join("\n", globalsUsed));
-        updateDigest(digest, String.join("\n", comments));
-        updateDigest(digest, functionSymbolsFingerprint(function));
+        updateDigest(padded, String.join("\n", paddedCalleeSignatures));
+        updateDigests(digest, padded, String.join("\n", stringsUsed));
+        updateDigests(digest, padded, String.join("\n", globalsUsed));
+        updateDigests(digest, padded, String.join("\n", comments));
+        updateDigests(digest, padded, functionSymbolsFingerprint(function));
         String compositeStringGuard = compositeStringCandidateFingerprint(function);
         if (!compositeStringGuard.isEmpty())
-            updateDigest(digest, compositeStringGuard);
+            updateDigests(digest, padded, compositeStringGuard);
         InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
         while (instructions.hasNext()) {
             checkCancelled();
             Instruction instruction = instructions.next();
-            updateDigest(digest, addr(instruction.getAddress()));
+            updateDigests(digest, padded, addr(instruction.getAddress()));
             try {
-                digest.update(instruction.getBytes());
+                byte[] bytes = instruction.getBytes();
+                digest.update(bytes);
+                padded.update(bytes);
             }
             catch (ghidra.program.model.mem.MemoryAccessException exception) {
-                updateDigest(digest, instruction.toString());
+                updateDigests(digest, padded, instruction.toString());
             }
         }
+        return new FunctionFingerprints(hexDigest(digest), hexDigest(padded));
+    }
+
+    private void updateDigests(MessageDigest first, MessageDigest second, String value) {
+        updateDigest(first, value);
+        updateDigest(second, value);
+    }
+
+    private String hexDigest(MessageDigest digest) {
         StringBuilder hex = new StringBuilder();
         for (byte value : digest.digest()) hex.append(String.format("%02x", value & 0xff));
         return hex.toString();
@@ -6785,6 +6983,8 @@ public class STDecompExport extends GhidraScript {
         }
     }
     private record NormalizedCode(String code, int replacements) { }
+    private record FunctionFingerprints(String canonical, String paddedCallFixup) { }
+    private record StackObjectPresentation(String name, long bytes) { }
     private record FixedZeroStore(long offset, int width) { }
     private record ScalarPointerCopy(int line, int end, String indent,
         String target) { }
@@ -7113,7 +7313,12 @@ public class STDecompExport extends GhidraScript {
             range.importThunkEntries * 24L >= range.length * 3L;
         if (range.baseKind.equals("orphan_instruction")) range.classification = "orphan_code";
         else if (range.baseKind.equals("defined_data")) range.classification = "defined_data";
-        else if (range.baseKind.equals("padding")) range.classification = "padding";
+        // A newly recovered tiny function can split one compiler-alignment run into raw
+        // fragments shorter than COVERAGE_PADDING_RUN.  Their raw base kind records how the
+        // range was discovered, not meaningful content: if every byte is a known padding byte,
+        // retain the semantic padding classification regardless of fragment length.
+        else if (range.baseKind.equals("padding") || range.nonPaddingBytes == 0)
+            range.classification = "padding";
         else if (range.executablePointers >= 3 &&
                 range.executablePointers * 8L >= range.length)
             range.classification = "address_table";

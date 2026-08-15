@@ -20,7 +20,7 @@ void __thiscall StartSystemTy::sub_006E56B0(StartSystemTy *this,uint param_1)
   iVar3 = sub_006E5360(this,param_1,(int *)&param_1,&local_8);
   if (iVar3 == 0) {
     local_18 = 3;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*local_8)(local_28);
   }
   iVar3 = sub_006E5360(this,uVar2,(int *)&param_1,&local_8);

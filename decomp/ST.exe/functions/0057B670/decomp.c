@@ -37,7 +37,6 @@ FUN_0057b670(int *param_1,uint param_2,uint param_3,short *param_4,short *param_
   this = param_1;
   uVar5 = 0;
   local_8 = 0;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {
     return 1;
   }
@@ -50,7 +49,6 @@ FUN_0057b670(int *param_1,uint param_2,uint param_3,short *param_4,short *param_
   }
   if (STField<int>(param_1,0x259) == 0x99) {
     iVar4 = 0x15e;
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0057b6da:
     param_1 = (int *)0x3fc00000;
   }
@@ -60,7 +58,6 @@ LAB_0057b6da:
       goto LAB_0057b6da;
     }
     iVar4 = 0xfa;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (int *)0x3f000000;
   }
   thunk_FUN_0057a2c0((AnonShape_0057A2C0_A829D396 *)this,param_3,&local_8,param_4,iVar4,param_1,
@@ -69,15 +66,12 @@ LAB_0057b6ff:
   if (local_8 != 0) {
     thunk_FUN_00416270(this,&param_2,(int *)&param_5,(short *)&param_4);
     if (STField<int>(this,0x259) == 0x99) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)0xb4;
     }
     else if (STField<int>(this,0x259) == 0xb7) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)0xb9;
     }
     else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)0x96;
     }
     if (0 < (int)(param_3 + 1)) {

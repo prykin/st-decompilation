@@ -1056,7 +1056,7 @@ LAB_004fbaa0:
           *(undefined2 *)&this_00->field_0x2c = 0;
           *(undefined2 *)&this_00->field_0x2e = 2;
           this_00->field_0030 = this_00->field_0144;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
         }
         this_00->field_0144 = local_8;
@@ -1065,7 +1065,7 @@ LAB_004fbaa0:
           *(undefined2 *)&this_00->field_0x2c = 0;
           *(undefined2 *)&this_00->field_0x2e = 2;
           this_00->field_0030 = this_00->field_0144;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
         }
       }
@@ -1161,19 +1161,19 @@ LAB_004fbaa0:
           }
           else {
             if ((bVar13 == 5) && (g_researchPanel_008016E8 != nullptr)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (*(code *)g_researchPanel_008016E8->field_0000->field_001C)();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_00;
             }
             if ((bVar13 == 6) && (g_bldBoatPanel_0080167C != nullptr)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (*(code *)g_bldBoatPanel_0080167C->field_0000->field_001C)();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_01;
             }
             if ((bVar13 == 7) && (g_bldObjPanel_00801684 != nullptr)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (*(code *)g_bldObjPanel_00801684->field_0000->field_001C)();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_02;
@@ -1184,7 +1184,7 @@ LAB_004fbaa0:
               uVar26 = extraout_EDX_03;
             }
             if ((bVar13 == 9) && (g_tradePanel_00802A44 != nullptr)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)&g_tradePanel_00802A44->field_0000[1].field_0xc)();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_04;
@@ -1195,7 +1195,7 @@ LAB_004fbaa0:
               uVar26 = extraout_EDX_05;
             }
             if ((bVar13 == 0xb) && (g_bldLabPanel_00801680 != nullptr)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (*(code *)g_bldLabPanel_00801680->field_0000->field_001C)();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_06;

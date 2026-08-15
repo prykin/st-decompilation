@@ -9,7 +9,7 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
 
 {
   byte bVar1;
-  DArrayTy *pDVar2;
+  FSGSTy_field_1EA6DArray *pFVar2;
   FSGSTy *this_00;
   int iVar4;
   undefined4 uVar4;
@@ -17,15 +17,14 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
   int iVar6;
   uint index;
   uint uVar7;
-  byte *puVar8;
+  char *pcVar8;
   byte *pbVar9;
-  byte *pbVar11;
-  bool bVar12;
+  bool bVar10;
   InternalExceptionFrame local_84;
   byte local_40 [48];
   FSGSTy *local_10;
   uint local_c;
-  undefined4 *local_8;
+  char *local_8;
   byte *pbVar10;
 
   if ((this->array_00BC[0xc].field_01DF == '\x06') && (this->array_00BC[0xc].field_01E0 == '\0')) {
@@ -37,53 +36,55 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
     if (iVar4 == 0) {
       local_10->field_002D = 0x26;
       FUN_006e6080(local_10,2,local_10->field_1B20,(undefined4 *)&local_10->field_0x1d);
-      pDVar2 = this_00->field_1EA6;
-      uVar7 = pDVar2->count;
+      pFVar2 = this_00->field_1EA6;
+      uVar7 = pFVar2->count;
       if (*(ushort *)&this_00->field_0x31 < uVar7) {
-        local_8 = DArrayAt<undefined4>(pDVar2, (uint)*(ushort *)&this_00->field_0x31);
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+        local_8 = &pFVar2->data->field_0000 +
+                  pFVar2->elementSize * (uint)*(ushort *)&this_00->field_0x31;
       }
       else {
         local_8 = nullptr;
       }
       local_c = uVar7;
       if (local_8 != nullptr) {
-        puVar8 = (byte *)(local_8);
+        pcVar8 = local_8;
         pbVar9 = local_40;
-        memmove(pbVar9, puVar8, 0x2e); /* compiler REP MOVS byte copy */
+        memmove(pbVar9, pcVar8, 0x2e); /* compiler REP MOVS byte copy */
       }
       index = 0;
       if (uVar7 != 0) {
         if (uVar7 == 0) {
-          pbVar9 = nullptr;
+          pcVar8 = nullptr;
           goto LAB_005a278f;
         }
         do {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          pbVar9 = (byte *)(this_00->field_1EA6->elementSize * index +
-                           (int)this_00->field_1EA6->data);
+          pcVar8 = &this_00->field_1EA6->data->field_0000 + this_00->field_1EA6->elementSize * index
+          ;
 LAB_005a278f:
           pbVar10 = param_1;
-          if (pbVar9 != nullptr) {
+          if (pcVar8 != nullptr) {
             do {
-              bVar1 = *pbVar9;
-              bVar12 = bVar1 < *pbVar10;
+              bVar1 = *pcVar8;
+              bVar10 = bVar1 < *pbVar10;
               if (bVar1 != *pbVar10) {
 LAB_005a27ba:
-                iVar6 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
+                iVar6 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
                 goto LAB_005a27bf;
               }
               if (bVar1 == 0) break;
-              bVar1 = pbVar9[1];
-              bVar12 = bVar1 < pbVar10[1];
+              bVar1 = pcVar8[1];
+              bVar10 = bVar1 < pbVar10[1];
               if (bVar1 != pbVar10[1]) goto LAB_005a27ba;
-              pbVar9 = pbVar9 + 2;
+              pcVar8 = pcVar8 + 2;
               pbVar10 = pbVar10 + 2;
             } while (bVar1 != 0);
             iVar6 = 0;
 LAB_005a27bf:
             uVar7 = local_c;
             if (iVar6 == 0) {
-              DArrayRemoveAt(this_00->field_1EA6,index);
+              DArrayRemoveAt((DArrayTy *)this_00->field_1EA6,index);
               break;
             }
           }
@@ -110,30 +111,30 @@ LAB_005a27bf:
         local_c = this_00->field_1EA6->count;
         if (local_c != 0) {
           if (local_c == 0) {
-            pbVar9 = nullptr;
+            pcVar8 = nullptr;
             goto LAB_005a28be;
           }
           do {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            pbVar9 = (byte *)(this_00->field_1EA6->elementSize * uVar7 +
-                             (int)this_00->field_1EA6->data);
+            pcVar8 = &this_00->field_1EA6->data->field_0000 +
+                     this_00->field_1EA6->elementSize * uVar7;
 LAB_005a28be:
-            if (pbVar9 != nullptr) {
-              pbVar11 = local_40;
+            if (pcVar8 != nullptr) {
+              pbVar9 = local_40;
               do {
-                bVar1 = *pbVar9;
-                bVar12 = bVar1 < *pbVar11;
-                if (bVar1 != *pbVar11) {
+                bVar1 = *pcVar8;
+                bVar10 = bVar1 < *pbVar9;
+                if (bVar1 != *pbVar9) {
 LAB_005a28e9:
-                  iVar6 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
+                  iVar6 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
                   goto LAB_005a28ee;
                 }
                 if (bVar1 == 0) break;
-                bVar1 = pbVar9[1];
-                bVar12 = bVar1 < pbVar11[1];
-                if (bVar1 != pbVar11[1]) goto LAB_005a28e9;
+                bVar1 = pcVar8[1];
+                bVar10 = bVar1 < pbVar9[1];
+                if (bVar1 != pbVar9[1]) goto LAB_005a28e9;
+                pcVar8 = pcVar8 + 2;
                 pbVar9 = pbVar9 + 2;
-                pbVar11 = pbVar11 + 2;
               } while (bVar1 != 0);
               iVar6 = 0;
 LAB_005a28ee:

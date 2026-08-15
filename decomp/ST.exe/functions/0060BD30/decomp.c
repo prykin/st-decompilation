@@ -32,7 +32,7 @@ void __thiscall FUN_0060bd30(void *this,undefined4 *param_1,undefined4 param_2)
   local_20[1] = STField<undefined4>(this,0x1f5);
   local_20[0] = param_2;
   local_40[5] = local_20;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)*param_1)(local_40);
   return;
 }

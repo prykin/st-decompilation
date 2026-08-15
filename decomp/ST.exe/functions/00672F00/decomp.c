@@ -21,7 +21,7 @@ int FUN_00672f00(void)
 
   piVar3 = DAT_00811958;
   if (DAT_00857560 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)PTR_0081194c->field_0004)(DAT_00857560);
     DAT_00857560 = 0;
   }

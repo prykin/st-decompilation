@@ -179,14 +179,25 @@ public class STPointerShapeApplier extends GhidraScript {
                     throw new IllegalArgumentException("overlapping/out-of-range field at " + offset);
                 DataType type = resolveFieldType(unt(field.get("proposed_type")), size);
                 String name = unt(field.get("proposed_name"));
-                String comment = MARKER + " evidence_count=" + field.get("evidence_count") +
-                    "; " + unt(field.get("reason"));
+                String comment = field.containsKey("proposed_comment") ?
+                    unt(field.get("proposed_comment")) :
+                    MARKER + " evidence_count=" + field.get("evidence_count") +
+                        "; " + unt(field.get("reason"));
                 desired.replaceAtOffset(offset, type, size, name.isBlank() ? null : name, comment);
                 previousEnd = (long)offset + size;
             }
             String desiredHash = layoutHash(desired);
-            desired.setDescription(MARKER + " Generated anonymous fixed-offset pointer shape" +
-                HASH_MARKER + desiredHash);
+            if (row.containsKey("proposed_description")) {
+                String exactDescription = unt(row.get("proposed_description"));
+                String snapshotHash = storedHash(exactDescription);
+                if (snapshotHash != null && !snapshotHash.equals(desiredHash))
+                    throw new IllegalArgumentException(
+                        "accepted snapshot description/hash does not match its fields");
+                desired.setDescription(exactDescription);
+            }
+            else desired.setDescription(
+                MARKER + " Generated anonymous fixed-offset pointer shape" +
+                    HASH_MARKER + desiredHash);
             if (existing == null) {
                 DataType installed = dataTypes.resolve(desired, DataTypeConflictHandler.KEEP_HANDLER);
                 if (!(installed instanceof Structure structure) ||
@@ -282,9 +293,36 @@ public class STPointerShapeApplier extends GhidraScript {
             String currentType = typeSpecification(variable.getDataType());
             String proposedType = typeSpecification(proposed);
             SourceType source = variable.getSource();
+            SourceType proposedSource = optionalSource(row.get("proposed_source"));
             boolean owned = scriptOwnedPointer(variable.getComment());
+            if (row.containsKey("proposed_comment")) {
+                if (!row.containsKey("expected_comment")) {
+                    report.add(targetReport(row, "preserved",
+                        "exact comment restore has no expected_comment baseline"));
+                    return;
+                }
+                String expectedComment = unt(row.get("expected_comment"));
+                if (!text(variable.getComment()).equals(expectedComment)) {
+                    report.add(targetReport(row, "preserved",
+                        "stale variable comment baseline"));
+                    return;
+                }
+            }
+            if (proposedSource != null && source != optionalSource(
+                    row.get("expected_source"))) {
+                report.add(targetReport(row, "preserved",
+                    "stale variable source baseline"));
+                return;
+            }
             if (currentType.equals(proposedType) || proposed.isEquivalent(variable.getDataType())) {
-                addVariableComment(variable, row);
+                if (proposedSource != null && source != proposedSource)
+                    variable.setDataType(proposed, proposedSource);
+                // Re-running an analyzer may refine or merely rephrase its reason without
+                // changing the recovered type.  Provenance is part of the semantic Program
+                // fingerprint, so do not churn an existing owned marker for an equivalent
+                // type.  An exact accepted-snapshot repair opts in through proposed_comment.
+                if (row.containsKey("proposed_comment") || !owned)
+                    addVariableComment(variable, row);
                 report.add(targetReport(row, "unchanged", "type already applied"));
                 return;
             }
@@ -305,7 +343,8 @@ public class STPointerShapeApplier extends GhidraScript {
             if (variable instanceof Parameter parameter && parameter.isAutoParameter()) {
                 variable = applyAutoThis(function, proposed);
             }
-            else variable.setDataType(proposed, SourceType.ANALYSIS);
+            else variable.setDataType(proposed,
+                proposedSource == null ? SourceType.ANALYSIS : proposedSource);
             addVariableComment(variable, row);
             report.add(targetReport(row, "applied", currentType + " -> " +
                 typeSpecification(proposed)));
@@ -404,6 +443,11 @@ public class STPointerShapeApplier extends GhidraScript {
     }
 
     private void addVariableComment(Variable variable, Map<String, String> row) {
+        if (row.containsKey("proposed_comment")) {
+            String exact = unt(row.get("proposed_comment"));
+            if (!text(variable.getComment()).equals(exact)) variable.setComment(exact);
+            return;
+        }
         String block = MARKER + " " + unt(row.get("proposed_type")) + "; " +
             unt(row.get("reason"));
         String old = variable.getComment();
@@ -656,6 +700,10 @@ public class STPointerShapeApplier extends GhidraScript {
     private static boolean enabled(String value) {
         return "1".equals(value) || "true".equalsIgnoreCase(value) ||
             "yes".equalsIgnoreCase(value);
+    }
+    private static SourceType optionalSource(String value) {
+        String source = unt(value).strip();
+        return source.isEmpty() ? null : SourceType.valueOf(source);
     }
     private static String tsv(String value) {
         if (value == null) return "";

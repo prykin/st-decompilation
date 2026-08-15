@@ -37,12 +37,12 @@ void __fastcall FUN_00750287(AnonShape_00750287_BC8A1854 *param_1)
     if (((-1 < local_8) && ((0 < local_8 || (uVar3 != 0)))) &&
        ((uVar3 != param_1->field_0058 || (local_8 != param_1->field_005C)))) {
       if (param_1->field_0054 != 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)param_1->field_0060 + 0x18))
                   ((int *)param_1->field_0060,param_1->field_0054);
         ResetEvent((HANDLE)param_1->field_0050);
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)param_1->field_0060 + 0x10))
                 ((int *)param_1->field_0060,uVar3,local_8,0,0,param_1->field_0050,
                  &param_1->field_0054);

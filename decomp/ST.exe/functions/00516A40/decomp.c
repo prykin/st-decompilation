@@ -125,7 +125,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
       local_44->field_0030 = (undefined2)iVar16;
       local_44->field_0032 = STPiece<2,2>(iVar16);
       if (g_cursorClass_00802A30 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_44->field_0x18);
       }
     }

@@ -19,7 +19,6 @@ void FUN_00761550(int *param_1,int param_2,int param_3,int *param_4,int param_5)
   piVar4 = (int *)(param_3 + 0x60);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   piVar6 = (int *)(*(int *)(param_2 + 0x50) + 0x60);
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = 8;
   piVar7 = local_4c;
   do {
@@ -43,13 +42,11 @@ void FUN_00761550(int *param_1,int param_2,int param_3,int *param_4,int param_5)
     piVar4 = piVar4 + 1;
     piVar6 = piVar6 + 1;
     piVar7 = piVar7 + 1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 + -1;
   } while (0 < param_2);
   piVar4 = local_4c;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = param_4;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = 2;
   do {
     puVar3 = (undefined1 *)(param_5 + *param_1);
@@ -67,7 +64,6 @@ void FUN_00761550(int *param_1,int param_2,int param_3,int *param_4,int param_5)
     piVar4 = piVar4 + 8;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + 1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = param_3 + -1;
   } while (param_3 != 0);
   return;

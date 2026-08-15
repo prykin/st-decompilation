@@ -12,7 +12,7 @@ void __thiscall FUN_005503c0(void *this,int param_1)
       return;
     }
     STField<undefined4>(this,0xd0) = 0x44ff;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0x20))((int)this + 0xc0);
   }
   return;

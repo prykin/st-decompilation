@@ -58,6 +58,8 @@ void st::fn_00440750(int param_1)
 void st::fn_004407A0(char param_1,undefined4 param_2,undefined4 param_3)
 
 {
+  int _param_1 = static_cast<int>(param_1);
+
   DArrayTy *array;
   dword dVar1;
   uint index;
@@ -465,6 +467,8 @@ void st::fn_00446A70(void)
 uint st::fn_00449A90(char param_1,short param_2)
 
 {
+  alignas(4) byte st_stack_frame[48];
+
   dword dVar1;
   uint index;
   uint index_00;
@@ -484,7 +488,7 @@ uint st::fn_00449A90(char param_1,short param_2)
       if (((local_14 != nullptr) && (dVar1 = local_14->count, dVar1 != 0)) &&
          (index_00 = 0, array = local_8, 0 < (int)dVar1)) {
         do {
-          st::fn_006ACC70(local_14,index_00,&stack0x00000006);
+          st::fn_006ACC70(local_14,index_00,(st_stack_frame + 42));
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           if (in_stack_00000006 == param_2) {
             return index;
@@ -769,7 +773,7 @@ uint __fastcall st::fn_0044CE40(STAllPlayersC *param_1)
           }
                     /* WARNING: Could not recover jumptable at 0x0044d04b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar5 = (*(code *)(&switchD_0044d04b::switchdataD_0044d1d0)
                             [*(byte *)((int)&PTR_caseD_3_0044d1d4 + uVar5 + 3)])();
           return uVar5;
@@ -834,7 +838,6 @@ byte * st::fn_0044D320(Global_sub_0044D320_param_1Enum param_1)
   local_10 = local_14->count;
   pbVar3 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0xc));
   if (param_1 < 0x1001) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == 0x1000) {
       pbVar3[0] = 1;
       pbVar3[1] = 2;
@@ -850,7 +853,6 @@ byte * st::fn_0044D320(Global_sub_0044D320_param_1Enum param_1)
       pbVar3[0xb] = 0xb;
     }
     else if (param_1 < 0x41) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 0x40) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
@@ -930,7 +932,6 @@ byte * st::fn_0044D320(Global_sub_0044D320_param_1Enum param_1)
       }
     }
     else if (param_1 < 0x201) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 0x200) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
@@ -963,7 +964,6 @@ byte * st::fn_0044D320(Global_sub_0044D320_param_1Enum param_1)
         pbVar3[0xb] = 0;
       }
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0x400) {
       pbVar3[0] = 1;
       pbVar3[1] = 2;
@@ -998,7 +998,6 @@ byte * st::fn_0044D320(Global_sub_0044D320_param_1Enum param_1)
     goto LAB_0044d710;
   }
   if (param_1 < 0x100001) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == 0x100000) {
       pbVar3[0] = 1;
       pbVar3[1] = 2;
@@ -1007,7 +1006,6 @@ byte * st::fn_0044D320(Global_sub_0044D320_param_1Enum param_1)
       goto LAB_0044d6f8;
     }
     if (param_1 < 0x20001) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 0x20000) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
@@ -1022,7 +1020,6 @@ byte * st::fn_0044D320(Global_sub_0044D320_param_1Enum param_1)
         pbVar3[10] = 1;
         pbVar3[0xb] = 0x12;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       else if (param_1 == 0x2000) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
@@ -1056,7 +1053,6 @@ byte * st::fn_0044D320(Global_sub_0044D320_param_1Enum param_1)
       }
     }
     else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 0x40000) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
@@ -1083,7 +1079,6 @@ byte * st::fn_0044D320(Global_sub_0044D320_param_1Enum param_1)
   }
   else {
     if (param_1 < 0x800001) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 0x800000) {
 LAB_0044d6cc:
         pbVar3[0] = 1;
@@ -1146,7 +1141,6 @@ LAB_0044d6f8:
     pbVar3[10] = 0;
     pbVar3[0xb] = 0x18;
   }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0044d710:
   param_1 = 0;
   if (0 < (int)local_10) {
@@ -1401,7 +1395,6 @@ switchD_0044dcfe_caseD_19:
         }
         else if (GVar2 == 0x2000000) goto switchD_0044dcfe_caseD_19;
       }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 cf_continue_loop_0044DDCF:
       param_1 = param_1 + CASE_1;
     } while ((int)param_1 < (int)local_10);
@@ -1502,7 +1495,6 @@ void st::fn_0044E260(uint param_1,uint param_2,uint param_3,int *param_4)
   local_14 = (STGameObjC *)st::fn_00405CF9((char)param_1,(ushort)param_2);
   if (local_14 != nullptr) {
     pDVar5 = (DArrayTy *)st::fn_00402DB5((STGroupC *)local_14);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = pDVar5->count;
     if (param_2 != 0) {
       local_18 = st::fn_006AE290(nullptr,param_2,4,1);
@@ -1515,7 +1507,6 @@ void st::fn_0044E260(uint param_1,uint param_2,uint param_3,int *param_4)
           if ((local_14 == nullptr) ||
              (iVar6 = local_14->vfunc_F8(), iVar6 == 0)) {
             st::fn_006B0C70(pDVar5,uVar12);
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 - 1;
             uVar12 = uVar12 - 1;
           }
@@ -1530,7 +1521,6 @@ void st::fn_0044E260(uint param_1,uint param_2,uint param_3,int *param_4)
         local_8 = 10000;
         local_c = 0;
         local_14 = st::pointer_boundary_cast<STGameObjC *>(local_18->data);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = 10000;
         local_10 = 0;
         uVar12 = param_2;
@@ -1551,7 +1541,6 @@ void st::fn_0044E260(uint param_1,uint param_2,uint param_3,int *param_4)
             iVar6 = (int)*(short *)((int)&pSVar1->vfunc_5C + 1);
             uVar8 = iVar6 - iVar9;
             if ((int)uVar8 < (int)param_1) {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_1 = uVar8;
             }
             iVar6 = iVar6 + iVar9;
@@ -1570,7 +1559,6 @@ void st::fn_0044E260(uint param_1,uint param_2,uint param_3,int *param_4)
           local_c = iVar6;
         }
         if ((int)param_1 < 0) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 0;
         }
         if (g_worldGrid.sizeY + -1 < local_10) {
@@ -1592,7 +1580,7 @@ void st::fn_0044E260(uint param_1,uint param_2,uint param_3,int *param_4)
                 iVar6 = iVar11 * 8 + -8;
                 do {
                   piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar6);
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   if (((piVar2 != nullptr) &&
                       (((iVar9 = piVar2[8], iVar9 == 0x14 || (iVar9 == 1000)) || (iVar9 == 0x3e9))))
                      && ((((param_3 & 1 << ((byte)piVar2[9] & 0x1f)) != 0 &&

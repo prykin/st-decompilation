@@ -1,4 +1,5 @@
 function_address	semantic_id	status	detail
+0072DA40	msvc_alloca_probe	unchanged	desired name and prototype already present
 006AB060	free_and_null	unchanged	desired name and prototype already present
 006AE110	darray_destroy	unchanged	desired name and prototype already present
 006AE290	darray_create	unchanged	desired name and prototype already present

@@ -34,7 +34,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
     if ((cVar7 < '\0') || ('\a' < cVar7)) {
       cVar7 = (char)*(undefined4 *)&this->field_0x24;
     }
-    /* ST_PSEUDO[call_clobber_piece,stack_slot_reuse]: candidate volatile-register merge after CALL: split the partial-register lifetime; compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     if (((param_2 != '\b') && ((param_2 < '\0' || (cVar7 = param_2, '\b' < param_2)))) ||
        (param_2 = cVar7, uVar6 = STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(param_2)), param_2 < '\0'))
     {
@@ -63,7 +63,6 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
             puVar4 = nullptr;
           }
           this_01 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0x24,*puVar4,CASE_1);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (((this_01 != nullptr) &&
               (iVar5 = this_01->vfunc_F8(), iVar5 != 0)) &&
              (iVar5 = this_01->vfunc_6C(), param_2 == iVar5)) {

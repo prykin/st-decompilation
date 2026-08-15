@@ -1,6 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
    Diagnostic line evidence: 2357 (metadata/report site, not the function definition)
@@ -21,6 +22,7 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
   byte *pbVar10;
   int iVar11;
   int iVar12;
+  RuntimeRecord_007F4D3C_0014 *pRVar13;
   int local_bc;
   int local_b8;
   uint local_b4;
@@ -59,16 +61,12 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
     local_30 = (uint)(0 < DAT_007f4d24);
     local_24 = nullptr;
     if (0 < param_4) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 - (DAT_007f4d38 * param_4 >> 0x10);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + (DAT_007f4d28 * param_4 >> 0x10);
     }
     local_2c = 0;
     local_28 = DAT_007f4d20;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 * 4 + 2;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 * 4 + 2;
     local_54[0] = param_3;
     uVar7 = *(uint *)(&DAT_007a4b60 + param_5 * 4);
@@ -101,11 +99,9 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
       local_5c = 0;
       if ((local_28 < (int)uVar7) && (local_30 != 0)) {
         if (local_24 == nullptr) {
-          local_8 = 0;
-          Library::MSVCRT::FUN_0072da40();
-          local_8 = 0xffffffff;
-          local_24 = &stack0xffffff34;
           local_1c = &stack0xffffff34;
+          local_24 = &stack0xffffff34;
+          local_8 = 0xffffffff;
         }
         pbVar10 = local_24;
         memset(pbVar10, 0, uVar7); /* compiler bulk-zero initialization */
@@ -150,9 +146,9 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
                 iVar11 = iVar11 + local_60;
                 local_48[0] = (iVar9 >> 0x10) + param_1 >> 2;
                 local_4c = (iVar11 >> 0x10) + param_2 >> 2;
-                *(int *)(iVar12 + DAT_007f4d3c) = local_48[0];
-                *(int *)(iVar12 + 4 + DAT_007f4d3c) = local_4c;
-                *(int *)(iVar12 + 8 + DAT_007f4d3c) = local_54[0];
+                *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + iVar12) = local_48[0];
+                *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + iVar12) = local_4c;
+                *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + iVar12) = local_54[0];
                 iVar12 = iVar12 + 0x14;
                 if (((-1 < local_48[0]) && (local_48[0] < DAT_007f4d2c)) &&
                    ((-1 < local_4c && (local_4c < DAT_007f4d30)))) {
@@ -175,9 +171,9 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
                 iVar8 = FUN_0040f840(pbVar10,uVar7,local_40,0);
                 local_48[0] = (iVar8 * local_74 + 0x8000 + iVar5 >> 0x10) + param_1 >> 2;
                 local_4c = (iVar8 * local_60 + 0x8000 + iVar4 >> 0x10) + param_2 >> 2;
-                *(int *)(iVar11 + DAT_007f4d3c) = local_48[0];
-                *(int *)(iVar11 + 4 + DAT_007f4d3c) = local_4c;
-                *(int *)(iVar11 + 8 + DAT_007f4d3c) = local_54[0];
+                *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + iVar11) = local_48[0];
+                *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + iVar11) = local_4c;
+                *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + iVar11) = local_54[0];
                 iVar11 = iVar11 + 0x14;
                 if ((((-1 < local_48[0]) && (local_48[0] < DAT_007f4d2c)) && (-1 < local_4c)) &&
                    (local_4c < DAT_007f4d30)) {
@@ -209,9 +205,9 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
             if ((!bVar3) ||
                (uVar7 = local_54[0] * local_34 + local_48[0] + DAT_007f4d2c * local_4c ^ 7,
                (*(byte *)(DAT_007f4cfc + ((int)uVar7 >> 3)) >> (uVar7 & 7) & 1) == 0)) {
-              *(int *)(iVar12 + DAT_007f4d3c) = local_48[0];
-              *(int *)(iVar12 + 4 + DAT_007f4d3c) = local_4c;
-              *(int *)(iVar12 + 8 + DAT_007f4d3c) = local_54[0];
+              *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + iVar12) = local_48[0];
+              *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + iVar12) = local_4c;
+              *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + iVar12) = local_54[0];
               local_2c = local_2c + 1;
               iVar12 = iVar12 + 0x14;
               local_28 = local_28 + -1;
@@ -233,9 +229,7 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
         local_70 = local_70 + 1;
         if (8 < local_70) {
           local_70 = 0;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = param_1 - ((DAT_007f4d38 << 2) >> 0x10);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 + ((DAT_007f4d28 << 2) >> 0x10);
           local_30 = 1;
           local_54[0] = param_3;
@@ -269,35 +263,35 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
     }
     local_2c = 0;
     if (0 < DAT_007f4d20) {
-      iVar11 = 0;
+      iVar5 = 0;
       iVar4 = local_34;
-      iVar5 = DAT_007f4d3c;
+      pRVar13 = g_runtimeRecords_007F4D3C;
       do {
-        local_48[0] = *(int *)(iVar11 + iVar5);
-        local_4c = *(int *)(iVar11 + 4 + iVar5);
-        local_54[0] = *(int *)(iVar11 + 8 + iVar5);
+        local_48[0] = *(int *)((int)&pRVar13->field_0000 + iVar5);
+        local_4c = *(int *)((int)&pRVar13->field_0004 + iVar5);
+        local_54[0] = *(int *)((int)&pRVar13->field_0008 + iVar5);
         if ((((local_48[0] < 0) || (DAT_007f4d2c <= local_48[0])) || (local_4c < 0)) ||
            ((DAT_007f4d30 <= local_4c ||
             (iVar4 = local_34,
             *(short *)(DAT_007f4cf0 +
                       (local_54[0] * local_34 + local_48[0] + DAT_007f4d2c * local_4c) * 2) != 0))))
         {
-          iVar5 = FUN_0040f270(local_48,&local_4c,local_54,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
-                               DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
-          if (iVar5 != 0) {
+          iVar11 = FUN_0040f270(local_48,&local_4c,local_54,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
+                                DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
+          if (iVar11 != 0) {
             iVar4 = -4;
             goto LAB_0040e872;
           }
           uVar7 = local_54[0] * iVar4 + local_48[0] + DAT_007f4d2c * local_4c ^ 7;
           pbVar10 = (byte *)(DAT_007f4cfc + ((int)uVar7 >> 3));
           *pbVar10 = *pbVar10 | '\x01' << (uVar7 & 7);
-          *(int *)(iVar11 + DAT_007f4d3c) = local_48[0];
-          *(int *)(iVar11 + 4 + DAT_007f4d3c) = local_4c;
-          *(int *)(iVar11 + 8 + DAT_007f4d3c) = local_54[0];
-          iVar5 = DAT_007f4d3c;
+          *(int *)((int)&g_runtimeRecords_007F4D3C->field_0000 + iVar5) = local_48[0];
+          *(int *)((int)&g_runtimeRecords_007F4D3C->field_0004 + iVar5) = local_4c;
+          *(int *)((int)&g_runtimeRecords_007F4D3C->field_0008 + iVar5) = local_54[0];
+          pRVar13 = g_runtimeRecords_007F4D3C;
         }
         local_2c = local_2c + 1;
-        iVar11 = iVar11 + 0x14;
+        iVar5 = iVar5 + 0x14;
       } while (local_2c < DAT_007f4d20);
     }
     FUN_0040eb90();

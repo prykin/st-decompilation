@@ -20,7 +20,7 @@ undefined4 FUN_0074731f(AnonShape_0074731F_00DF946A *param_1,short *param_2)
     *(undefined4 *)(param_2 + 0x80) = param_1->field_0034;
     piVar1 = (int *)param_1->field_0034;
     if (piVar1 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar1 + 4))(piVar1);
     }
     uVar2 = 0;

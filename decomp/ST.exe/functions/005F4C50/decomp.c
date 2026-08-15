@@ -50,7 +50,6 @@ STBHEShellC::sub_005F4C50
       iVar1 = iVar7 / this->field_0121;
       iVar7 = iVar7 + -0x96;
       puVar4[4] = iVar1 + g_playSystem_00802A38->field_00E4 + param_6;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = param_4 + -1;
       puVar4 = puVar4 + 1;
     } while (param_4 != 0);
@@ -61,12 +60,9 @@ STBHEShellC::sub_005F4C50
   pSVar2 = (STBHEShellC_field_0169DArray *)
            Library::DKW::TBL::DArrayCreate(nullptr,iVar6 * param_5,0x23,10);
   this->field_0169 = pSVar2;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((pSVar2 != nullptr) && (param_4 = 0, 0 < this->field_010D)) {
     do {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 0.0;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = 0;
       iVar6 = this->field_0109 * param_4;
       if (0 < this->field_0109) {
@@ -74,7 +70,6 @@ STBHEShellC::sub_005F4C50
           puVar4 = (undefined4 *)local_2c;
           memset(puVar4, 0, 0x23); /* compiler bulk-zero initialization */
           puVar4 = (undefined4 *)((byte *)puVar4 + 0x20);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (param_4 == 0) {
             fcos((float10)param_1);
             lVar8 = Library::MSVCRT::__ftol();
@@ -83,7 +78,6 @@ STBHEShellC::sub_005F4C50
             local_1a = iVar7;
             lVar8 = Library::MSVCRT::__ftol();
             local_16 = (int)lVar8;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = param_1 + local_8;
           }
           else {
@@ -111,12 +105,10 @@ STBHEShellC::sub_005F4C50
           }
           local_2c[0] = uVar5 == 0;
           Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_0169,local_2c);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = param_3 + 1;
           iVar6 = iVar6 + 1;
         } while (param_3 < this->field_0109);
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = param_4 + 1;
     } while (param_4 < this->field_010D);
   }

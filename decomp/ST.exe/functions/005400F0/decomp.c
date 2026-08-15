@@ -60,7 +60,7 @@ int __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,STMessage *message)
         if (this_00->field_0044 <= iVar5) {
           this_00->field_0044 = iVar5;
           this_00->field_0172 = CASE_1;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)this_00->field_0000->field_0018)(1);
         }
         Library::DKW::DDX::FUN_006b3640

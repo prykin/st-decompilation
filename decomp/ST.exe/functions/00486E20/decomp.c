@@ -35,7 +35,7 @@ void __thiscall FUN_00486e20(void *this,undefined4 *param_1)
   else {
     STField<undefined1>(puVar1,7) = 0;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar7 = (**(code **)(*(int *)this + 8))();
   if (iVar7 == 1) {
     *(undefined1 *)(puVar1 + 2) = 1;

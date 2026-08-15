@@ -23,31 +23,31 @@ sites, not unique source objects.
 | --- | ---: | --- |
 | Program functions | 10,681 | Includes 281 external functions. |
 | Exported function records | 10,400 | Stable identity is the entry address. |
-| Decompiled bodies | 5,720 | Library functions and thunks do not duplicate bodies. |
-| Library functions | 854 | Kept as declarations/call targets, not decompiled bodies. |
+| Decompiled bodies | 5,624 | Library functions and thunks do not duplicate bodies. |
+| Library functions | 950 | Kept as declarations/call targets, not decompiled bodies. |
 | Thunk functions | 3,826 | Retain direct entry, chain, and resolved target. |
 | Failed decompilations | 0 | Every expected body has `decompile_status=ok`. |
 | Executable bytes | 3,731,456 | Entire `.text` audit scope. |
 | Function-covered bytes | 2,825,525 (75.72%) | Bytes currently owned by Ghidra functions. |
 | Meaningful unclaimed bytes | 98,460 (2.64%) | Excludes 807,471 bytes classified as padding. |
-| Typed physical-vtable slots | 2,737 | Protected by the ABI regression gate. |
+| Typed physical-vtable slots | 3,192 | Protected by the ABI regression gate. |
 
 ## Compilation-facing inventory
 
 | Class | Functions | Body share | Occurrences | State | What remains |
 | --- | ---: | ---: | ---: | --- | --- |
-| Translation-unit/declaration assembly | 5,720 | 100.00% | 5,720 | assembled and audited | `tools/st_source_tree.py` emits 318 deterministic TUs; the current 64-diagnostic compiler audit passes 178 and maps 2,196 of 2,213 capped errors to function addresses. |
-| Default `FUN_ADDRESS` names | 4,163 | 72.78% | 4,163 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
-| Undefined function signatures | 3,880 | 67.83% | 3,880 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
-| Undefined scalar spelling | 3,651 | 63.83% | 18,286 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
-| Typed byte-offset field view | 1,142 | 19.97% | 10,119 | compatibility implemented | `STField<T>(base, offset)` preserves the exact access until owner/layout proof supplies a named member. |
-| Ownerless `__thiscall` | 999 | 17.49% | 999 | source ABI emitted | `st::fn_ADDRESS` retains the explicit ECX receiver until a class is proven. |
-| Opaque `code *` callback type | 795 | 13.90% | 1,938 | compatibility implemented | Install the exact callback/vtable-slot `FunctionDefinition`. |
-| Raw indirect call | 775 | 13.55% | 1,888 | semantic debt | Recover receiver, calling convention, argument count, and return type. One previously malformed exporter-owned callback expression is now honestly included. |
-| Unresolved register/high value | 233 | 4.07% | 1,454 | semantic debt | Repair boundary ABI, return width, x87 result, SEH/setjmp live-in, or SSA lifetime. |
-| Partial lvalue piece helper | 230 | 4.02% | 1,095 | compatibility implemented | Replace `STPiece<O,W>` only when a field/union facet is proven. |
-| `CONCAT*` intrinsic | 233 | 4.07% | 824 | compatibility implemented | Recover a packed value or retain exact byte composition. |
-| Nonstandard integer/x87 width | 307 | 5.37% | 2,095 | compatibility implemented | Includes `int3`/`uint3`, `longlong` aliases, `float10`, and unresolved x87 `unkbyte10`. |
+| Translation-unit/declaration assembly | 5,624 | 100.00% | 5,624 | assembled and audited | `tools/st_source_tree.py` emits 321 deterministic TUs; the current 64-diagnostic compiler audit passes 185 and maps 1,581 of 1,598 capped errors to function addresses. |
+| Default `FUN_ADDRESS` names | 4,065 | 72.28% | 4,065 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
+| Undefined function signatures | 3,810 | 67.75% | 3,810 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
+| Undefined scalar spelling | 3,574 | 63.55% | 18,012 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
+| Typed byte-offset field view | 1,117 | 19.86% | 9,829 | compatibility implemented | `STField<T>(base, offset)` preserves the exact access until owner/layout proof supplies a named member. |
+| Ownerless `__thiscall` | 979 | 17.41% | 979 | source ABI emitted | `st::fn_ADDRESS` retains the explicit ECX receiver until a class is proven. |
+| Opaque `code *` callback type | 766 | 13.62% | 1,867 | compatibility implemented | Install the exact callback/vtable-slot `FunctionDefinition`. |
+| Raw indirect call | 741 | 13.18% | 1,806 | semantic debt | Recover receiver, calling convention, argument count, and return type. One previously malformed exporter-owned callback expression is now honestly included. |
+| Unresolved register/high value | 227 | 4.04% | 1,371 | semantic debt | Repair boundary ABI, return width, x87 result, SEH/setjmp live-in, or SSA lifetime. |
+| Partial lvalue piece helper | 245 | 4.36% | 1,173 | compatibility implemented | Replace `STPiece<O,W>` only when a field/union facet is proven. |
+| `CONCAT*` intrinsic | 228 | 4.05% | 804 | compatibility implemented | Recover a packed value or retain exact byte composition. |
+| Nonstandard integer/x87 width | 241 | 4.28% | 1,352 | compatibility implemented | Includes `int3`/`uint3`, `longlong` aliases, `float10`, and unresolved x87 `unkbyte10`. |
 | `SUB*` intrinsic | 35 | 0.61% | 163 | compatibility implemented | Recover a named subfield or retain exact extraction. |
 | Carry/borrow intrinsic | 27 | 0.47% | 134 | compatibility implemented | Prefer a source comparison only when its arithmetic proof is exact. |
 | x87 math intrinsic | 19 | 0.33% | 125 | compatibility implemented | `fsin`/`fcos`/`fpatan` retain long-double semantics pending complete x87-stack recovery. |
@@ -55,7 +55,7 @@ sites, not unique source objects.
 | Literal-storage piece | 1 | 0.02% | 3 | compatibility implemented | `STLiteralPiece<O,W>` keeps the little-endian bytes; later recover the intended initializer. |
 | Residual Ghidra `._offset_width_` syntax | 0 | 0.00% | 0 | closed | No remaining syntactic occurrence in exported bodies. |
 
-The compatibility surface covers 34,786 occurrences. It does not claim that
+The compatibility surface covers 33,464 occurrences. It does not claim that
 `undefined4`, `code *`, or a byte-offset access is the original source type; it
 only makes the exact recovered operation expressible in C++ while preserving
 the semantic debt for later analyzers.
@@ -160,29 +160,29 @@ physical-vtable disagreement as review-only.
     source compiles and behavior-facing ABI tests exist.
 
 `tools/st_source_tree.py` now crosses the missing-translation-unit boundary:
-all 5,720 bodies are placed in 318 generated C++ translation units, 1,044 under
+all 5,624 bodies are placed in 321 generated C++ translation units, 1,044 under
 proven original paths. Its complete generated declaration header passes a
 C++17 syntax probe. Full object compilation is the new measurable boundary;
 current errors expose residual overlapping `field_0x...` views, pointer/word
 role conflicts, untyped vtable slots, and weak prototypes. See
 `docs/source-tree-generation.md` and `src/ST.exe/audit/`.
 
-The source-compilation layer now materializes 2,678 exact unnamed-byte views
-actually referenced by statically typed bodies, emits 780 non-virtual member
-wrappers over receiver-aware physical-vtable slots, and exposes 1,292 uniquely
+The source-compilation layer now materializes 2,312 exact unnamed-byte views
+actually referenced by statically typed bodies, emits 1,130 non-virtual member
+wrappers over receiver-aware physical-vtable slots, and exposes 1,283 uniquely
 owned non-virtual `__thiscall` functions as forwarding class methods over their
 address-stable `st::fn_ADDRESS` implementations. It does not alter packed layout
 or synthesize inheritance. It also renames 247 exact address-taken global-object
 uses whose image symbol collides with a C++ type name to `st_global_ADDRESS`,
 without changing the Ghidra symbol. With a fixed 64-error-per-TU Apple Clang
-probe, 178 of 318 units pass; the 2,213 retained errors are dominated by
-undeclared identifiers (888), pointer indirection (354), non-callable values
-(261), and invalid operands (146). General call-boundary and local-lifetime
-recovery reduced assignment diagnostics from 1,426 to 72 and call-argument
-diagnostics from 1,226 to zero. Exact unnamed component spelling leaves 31
+probe, 185 of 321 units pass; the 1,598 retained errors are led by pointer
+indirection (351), non-callable values (230), undeclared identifiers (180), and
+invalid operands (148). The current audit has 85 assignment-type and two
+call-argument-type diagnostics. Exact unnamed component spelling leaves 78
 missing-record-member diagnostics. Address-
 generated aliases now repair 145 invalid address-coded global spellings and 78
 address-taken external labels; exact arity resolves 17 otherwise ambiguous
-direct calls, and 40 exporter-tagged stack-slot lifetimes receive safe lexical
-declarations. Only eight direct-call ambiguities remain. These capped counts are a comparison baseline,
+direct calls, 94 exporter-tagged stack-slot lifetimes receive safe lexical
+declarations, and 71 promoted narrow parameter slots receive an exact full-word
+view. Nine direct-call ambiguities remain. These capped counts are a comparison baseline,
 not an assertion that later diagnostics in a failed TU do not exist.

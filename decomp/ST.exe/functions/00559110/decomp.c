@@ -41,9 +41,7 @@ VisibleClassTy::sub_00559110
     }
     if (this->field_00FC[uVar5] != 0) {
       iVar9 = iVar8 * 2 + 1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = param_1 - iVar8;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = (int)param_2 - iVar8;
       pbVar7 = thunk_FUN_005532f0(iVar8);
       if (pbVar7 != nullptr) {
@@ -73,17 +71,13 @@ VisibleClassTy::sub_00559110
         if (((this->field_004C != nullptr) && (this->field_0050 != nullptr)) &&
            ((param_7 & 0x4000) != 0)) {
           sub_00558C00(this,this->field_010C,param_1,(int)param_2,(int *)&param_4,&param_6);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_5 = 0;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = param_4 - iVar10;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_6 = param_6 + (g_centeredOffsets5[param_3] - iVar10);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = pbVar7;
           if (0 < iVar9) {
             do {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_7 = 0;
               do {
                 if (param_2[param_7] != '\0') {
@@ -103,25 +97,19 @@ VisibleClassTy::sub_00559110
                     }
                   }
                 }
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_7 = param_7 + 1;
               } while ((int)param_7 < iVar9);
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_5 = param_5 + 1;
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_2 = param_2 + iVar9;
             } while (param_5 < iVar9);
             if (bVar6) {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_4 = param_4 - 1;
               iVar8 = iVar8 * 2 + 3;
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = param_6 + -1;
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_5 = 0;
               if (0 < iVar8) {
                 do {
-                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_7 = 0;
                   do {
                     iVar9 = param_7 + param_4;
@@ -133,10 +121,8 @@ VisibleClassTy::sub_00559110
                         (this->field_0050[iVar11] != 0)))) {
                       thunk_FUN_00553990(iVar9,iVar10,this->field_004C,uVar5,this->field_0034);
                     }
-                    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_7 = param_7 + 1;
                   } while ((int)param_7 < iVar8);
-                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_5 = param_5 + 1;
                 } while (param_5 < iVar8);
               }

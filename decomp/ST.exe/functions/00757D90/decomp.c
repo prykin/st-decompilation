@@ -16,7 +16,7 @@ undefined4 FUN_00757d90(AnonShape_00757D90_5427B306 *param_1)
   iVar4 = puVar3[1];
   while( true ) {
     if (iVar4 == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar4 = (*(code *)puVar3[3])(param_1);
       if (iVar4 == 0) {
         return 0;
@@ -34,7 +34,7 @@ undefined4 FUN_00757d90(AnonShape_00757D90_5427B306 *param_1)
       *puVar3 = pbVar5;
       puVar3[1] = iVar4;
       if (iVar4 == 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (*(code *)puVar3[3])(param_1);
         if (iVar4 == 0) {
           return 0;
@@ -46,7 +46,7 @@ undefined4 FUN_00757d90(AnonShape_00757D90_5427B306 *param_1)
     }
     do {
       if (iVar4 == 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (*(code *)puVar3[3])(param_1);
         if (iVar4 == 0) {
           return 0;

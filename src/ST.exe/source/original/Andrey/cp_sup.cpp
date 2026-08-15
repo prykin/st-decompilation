@@ -1012,7 +1012,7 @@ st::fn_004F3540(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar7 = 1;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar4 = (*(code *)param_5)(param_2);
   text_00 = st::fn_006F2C00(text,1,uVar4);
   local_c = st::fn_006F1CE0(g_cMf32_00806790,param_3,text_00,errorCode,iVar7);
@@ -1247,7 +1247,7 @@ cf_common_join_004F3AC3:
                        local_18[2],local_18[3]);
       iVar9 = -1;
       iVar8 = -1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_2);
       iVar7 = -1;
       iVar5 = -2;
@@ -1355,7 +1355,7 @@ cf_common_join_004F3D83:
     errorCode = (int *)st::fn_0072D7F0(local_5c.jumpBuffer,0);
     if (errorCode == nullptr) {
       iVar9 = 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_2);
       text = st::fn_006F2C00(param_4,1,uVar4);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_3,text,errorCode,iVar9);
@@ -1368,7 +1368,7 @@ cf_common_join_004F3D83:
                        local_10,local_c,local_18[2],local_18[3]);
       iVar10 = -1;
       iVar7 = -1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar5 = (*(code *)param_6)(param_2);
       iVar6 = -1;
       iVar9 = -2;
@@ -1461,7 +1461,7 @@ cf_common_join_004F4070:
     local_14 = this;
     iVar4 = st::fn_0072D7F0(local_58.jumpBuffer,0);
     if (iVar4 == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_2);
       text = st::fn_006F2C00(param_4,1,uVar4);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_3,text,nullptr,1);

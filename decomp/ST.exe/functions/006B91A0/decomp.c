@@ -42,13 +42,13 @@ int FUN_006b91a0(int *param_1,int *param_2)
     local_18 = local_28 + local_20;
     iVar1 = 0;
     while( true ) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*(int *)param_1[0xf] + 0x14))
                         ((int *)param_1[0xf],&local_34,*(undefined4 *)(*param_1 + 0x40),&local_24,
                          0x1000000,0);
       if (iVar2 == 0) break;
       if (iVar2 == -0x7789fe3e) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)param_1[0xf] + 0x6c))((int *)param_1[0xf]);
         FUN_006cec40((AnonShape_006CEC40_BB23E716 *)*param_1);
       }

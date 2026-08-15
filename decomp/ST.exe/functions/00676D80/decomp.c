@@ -80,7 +80,7 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
         puVar3 = DArrayAt<undefined4>(local_1c, uVar10);
 LAB_00676e12:
         this = (STFishC *)*puVar3;
-        if ((this != nullptr) && (iVar5 = (*this->vtable->vfunc_F8)(), iVar5 != 0)) {
+        if ((this != nullptr) && (iVar5 = this->vfunc_F8(), iVar5 != 0)) {
           local_10 = 1;
           dVar6 = this->slot_2C();
           if (param_2 != 0) {
@@ -109,7 +109,7 @@ LAB_00676e88:
           if (local_10 == 0) {
 LAB_00677024:
             if (param_14 == nullptr) goto LAB_00677041;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar5 = (*(code *)param_14)(param_1,local_14,this,param_13);
           }
           else {
@@ -174,7 +174,7 @@ LAB_00676f4c:
               local_10 = 0;
             }
             if ((local_10 == 0) || (param_12 == nullptr)) goto LAB_00677024;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar5 = (*(code *)param_12)(param_1,local_14,this,param_13);
           }
           if (iVar5 != 0) {

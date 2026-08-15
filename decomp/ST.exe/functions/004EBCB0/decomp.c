@@ -19,12 +19,12 @@ void __thiscall FUN_004ebcb0(void *this,int param_1,int param_2)
     if (STField<int>(this,0x5ac) == 0x52) {
       iVar2 = *(int *)this;
       bVar1 = LookupRecordByte(STField<char>(this,0x23d));
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(iVar2 + 0x90))(3,(-(uint)(bVar1 != 2) & 0xffffff3b) + 0x35e);
       return;
     }
     if (STField<int>(this,0x5ac) == 0x5f) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0x90))(3,0x3b1);
     }
   }

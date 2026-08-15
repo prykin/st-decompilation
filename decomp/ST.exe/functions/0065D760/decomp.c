@@ -51,7 +51,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
     return;
   }
   if (g_allPlayers_007FA174 != nullptr) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar7 = (**(code **)(*(int *)objPtr + 0x2c))();
     if ((iVar7 < 0x32) || (0x73 < iVar7)) {
       bVar2 = false;
@@ -59,7 +59,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
     else {
       bVar2 = true;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (((bVar2) && (pAVar3->field_007B != 1)) ||
        (iVar7 = (**(code **)(*(int *)objPtr + 0x2c))(), iVar7 == 0x78)) {
       RaiseInternalException
@@ -67,7 +67,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
     }
     array = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
     Library::DKW::TBL::DArrayAppend(array,(void *)(objPtr + 0x32));
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar7 = (**(code **)(*(int *)objPtr + 0x2c))();
     if ((iVar7 < 1) || (0x28 < iVar7)) {
       bVar2 = false;

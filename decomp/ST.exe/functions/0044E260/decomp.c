@@ -34,7 +34,6 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
   local_14 = (STGameObjC *)thunk_FUN_0042b760((char)param_1,(ushort)param_2);
   if (local_14 != nullptr) {
     pDVar5 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)local_14);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = pDVar5->count;
     if (param_2 != 0) {
       local_18 = Library::DKW::TBL::DArrayCreate(nullptr,param_2,4,1);
@@ -47,7 +46,6 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
           if ((local_14 == nullptr) ||
              (iVar6 = local_14->vfunc_F8(), iVar6 == 0)) {
             DArrayRemoveAt(pDVar5,uVar12);
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 - 1;
             uVar12 = uVar12 - 1;
           }
@@ -62,7 +60,6 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
         local_8 = 10000;
         local_c = 0;
         local_14 = local_18->data;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = 10000;
         local_10 = 0;
         uVar12 = param_2;
@@ -83,7 +80,6 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
             iVar6 = (int)*(short *)((int)&pSVar1->vfunc_5C + 1);
             uVar8 = iVar6 - iVar9;
             if ((int)uVar8 < (int)param_1) {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_1 = uVar8;
             }
             iVar6 = iVar6 + iVar9;
@@ -102,7 +98,6 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
           local_c = iVar6;
         }
         if ((int)param_1 < 0) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 0;
         }
         if (g_worldGrid.sizeY + -1 < local_10) {
@@ -124,7 +119,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
                 iVar6 = iVar11 * 8 + -8;
                 do {
                   piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar6);
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   if (((piVar2 != nullptr) &&
                       (((iVar9 = piVar2[8], iVar9 == 0x14 || (iVar9 == 1000)) || (iVar9 == 0x3e9))))
                      && ((((param_3 & 1 << ((byte)piVar2[9] & 0x1f)) != 0 &&

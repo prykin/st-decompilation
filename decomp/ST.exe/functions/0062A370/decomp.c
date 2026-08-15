@@ -29,7 +29,6 @@ int __thiscall STParticleC::sub_0062A370(STParticleC *this,int param_1)
   iVar3 = param_1 - this->field_00AE;
   iVar4 = this->field_008E * this->field_009A * iVar3;
   local_14 = 1;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = this->field_00A6 * 20000;
   iVar5 = this->field_008A * this->field_009A * iVar3;
   local_c = iVar4 / 10000 - (iVar4 * iVar3) / param_1;
@@ -66,7 +65,7 @@ int __thiscall STParticleC::sub_0062A370(STParticleC *this,int param_1)
     return 1;
   }
   if (uVar2 == 2) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((this->field_00EB != nullptr) &&
        (iVar3 = (**(code **)(this->field_00EB->field_0000 + 0xe0))
                           (this->field_00EF,(int)&param_1 + 2,&local_6,&local_8,&local_24),

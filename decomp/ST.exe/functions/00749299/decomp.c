@@ -8,7 +8,6 @@ undefined4 FUN_00749299(int *param_1,int param_2)
   undefined4 uVar2;
   LPCRITICAL_SECTION lpCriticalSection;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
     uVar2 = 0x80004003;
   }
@@ -24,14 +23,14 @@ undefined4 FUN_00749299(int *param_1,int param_2)
       FUN_0074931d((AnonShape_0074931D_CA8B6F7D *)(param_1 + -3));
     }
     if ((param_1[0x12] != 0) && (param_1[8] == param_1[0xc])) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(param_1[-3] + 0x10))();
       param_1[0x12] = 0;
       bVar1 = true;
     }
     LeaveCriticalSection(lpCriticalSection);
     if (bVar1) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*param_1 + 8))(param_1);
     }
     uVar2 = 0;

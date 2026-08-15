@@ -37,17 +37,17 @@ undefined4 FUN_004b7750(uint param_1)
       if ((pDVar7 != nullptr) && (local_10 = 0, pDVar7->count != 0)) {
 LAB_004b77c4:
         DArrayGetElement(pDVar7,local_10,local_c);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((local_c[0] != nullptr) &&
            ((iVar4 = (**(code **)(*local_c[0] + 0x2c))(), iVar4 != 0x78 ||
             (iVar4 = thunk_FUN_004b7520(param_1,*(Global_sub_004B7520_param_2Enum *)
                                                  ((int)local_c[0] + 0x259)), iVar4 != 0)))) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar4 = (**(code **)(*local_c[0] + 0x2c))();
           local_14 = thunk_FUN_004b72e0(cVar6,iVar4);
           if (0 < local_14) {
             local_1c = local_c[0][6];
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             GVar5 = (**(code **)(*local_c[0] + 0x2c))();
             local_18 = thunk_FUN_004b7350(param_1,GVar5);
             pDVar7 = g_packedRecords_A62x8[iVar2].field1948_0x992;

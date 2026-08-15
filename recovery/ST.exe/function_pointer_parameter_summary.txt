@@ -1,6 +1,6 @@
 program=ST.exe
-functions_scanned=5624
-direct_calls_seen=42464
+functions_scanned=5555
+direct_calls_seen=42465
 indirect_parameter_calls=30
 indirect_parameter_candidates=25
 backward_argument_callsites=67

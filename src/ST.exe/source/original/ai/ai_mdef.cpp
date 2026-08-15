@@ -35,7 +35,7 @@ void __cdecl st::fn_00675EA0(uint param_1,int *param_2)
     g_currentExceptionFrame = local_48.previous;
     return;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar4 = (**(code **)(*param_2 + 0x2c))();
   if ((iVar4 < 1) || (0x28 < iVar4)) {
     bVar2 = false;
@@ -448,7 +448,7 @@ st::fn_00676D80(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char 
         puVar3 = DArrayAt<undefined4>(local_1c, uVar10);
 LAB_00676e12:
         this = (STFishC *)*puVar3;
-        if ((this != nullptr) && (iVar5 = (*this->vtable->vfunc_F8)(), iVar5 != 0)) {
+        if ((this != nullptr) && (iVar5 = this->vfunc_F8(), iVar5 != 0)) {
           local_10 = 1;
           dVar6 = this->slot_2C();
           if (param_2 != 0) {
@@ -477,7 +477,7 @@ LAB_00676e88:
           if (local_10 == 0) {
 LAB_00677024:
             if (param_14 == nullptr) goto LAB_00677041;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar5 = (*(code *)param_14)(param_1,local_14,this,param_13);
           }
           else {
@@ -542,7 +542,7 @@ LAB_00676f4c:
               local_10 = 0;
             }
             if ((local_10 == 0) || (param_12 == nullptr)) goto LAB_00677024;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar5 = (*(code *)param_12)(param_1,local_14,this,param_13);
           }
           if (iVar5 != 0) {
@@ -806,7 +806,7 @@ st::fn_00677960(short param_1,short param_2,short param_3,short param_4,short pa
           iVar5 = 0;
         }
         uVar6 = local_10;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar5 != 0) && (param_8 != nullptr)) &&
            (iVar5 = (*(code *)param_8)(0,local_10,this,param_9), iVar5 != 0)) {
           g_currentExceptionFrame = local_5c.previous;
@@ -894,7 +894,8 @@ st::fn_00677BE0(short param_1,short param_2,byte *param_3,short param_4,short pa
         (local_10 = uVar9, local_1c = (*this->vtable[1].vfunc_08)(this), pDVar8 = g_array_007FA160,
         (short)local_1c == param_1)) &&
        ((param_2 == 0 ||
-        (iVar4 = (*this->vtable[1].vfunc_0C)(), pDVar8 = g_array_007FA160, iVar4 == param_2)))) {
+        (iVar4 = (*this->vtable[1].vfunc_0C)(this), pDVar8 = g_array_007FA160, iVar4 == param_2))))
+    {
       iVar4 = 1;
       local_14 = 1;
       if ((param_3 != nullptr) && (*param_3 != 0)) {
@@ -937,7 +938,7 @@ LAB_00677cee:
         }
         pDVar8 = g_array_007FA160;
         uVar9 = local_10;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar4 != 0) && (param_10 != nullptr)) &&
            (iVar4 = (*(code *)param_10)(local_1c,local_10,this,param_11), pDVar8 = g_array_007FA160,
            uVar9 = local_10, iVar4 != 0)) {
@@ -1056,7 +1057,7 @@ LAB_00678036:
             (iVar7 = local_14, (int)param_5 + (int)param_8 <= (int)local_a)))) {
           iVar7 = 0;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar7 != 0) && (param_9 != nullptr)) &&
            (iVar7 = (*(code *)param_9)(0,local_10,this,param_10), iVar7 != 0)) {
           g_currentExceptionFrame = local_6c.previous;
@@ -1194,7 +1195,7 @@ LAB_00678362:
         }
         pDVar7 = g_array_007FA158;
         uVar9 = local_10;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar8 != 0) && (param_11 != nullptr)) &&
            (iVar8 = (*(code *)param_11)(param_1,local_10,this,param_12), pDVar7 = g_array_007FA158,
            uVar9 = local_10, iVar8 != 0)) {
@@ -1317,7 +1318,7 @@ LAB_00678692:
                (iVar7 = local_14, (int)param_5 + (int)param_8 <= (int)local_c)))))))))) {
           iVar7 = 0;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar7 != 0) && (param_9 != nullptr)) &&
            (iVar7 = (*(code *)param_9)(0,local_10,this,param_10), iVar7 != 0)) {
           g_currentExceptionFrame = local_6c.previous;

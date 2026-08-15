@@ -11,7 +11,7 @@ void __thiscall FUN_00493110(void *this,AnonShape_00493110_B173055C *param_1)
   iVar2 = STPlaySystemC::sub_006E62D0
                     (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1,(int *)&param_1);
   if (iVar2 != -4) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (**(code **)(*(int *)param_1 + 0x2c))();
     iVar2 = STField<int>(this,0x6f7);
     if (((iVar2 == 7) || (iVar2 == 0x13)) || (iVar2 == 0x1b)) {
@@ -33,7 +33,7 @@ void __thiscall FUN_00493110(void *this,AnonShape_00493110_B173055C *param_1)
       STField<undefined4>(this,0x76) = 0;
       STField<undefined4>(this,0x5a2) = uVar1;
       STField<undefined4>(this,0x5c4) = 7;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0xb4))();
       return;
     }

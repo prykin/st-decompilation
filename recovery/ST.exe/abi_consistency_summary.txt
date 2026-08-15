@@ -1,6 +1,6 @@
 ST x86 ABI consistency
 
-Functions scanned: 5624
+Functions scanned: 5555
 Proposals: 0
 Automatic: 0
 known_setjmp3: 0

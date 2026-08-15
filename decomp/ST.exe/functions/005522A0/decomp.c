@@ -71,7 +71,7 @@ LAB_00552481:
       uVar17 = 1;
       uVar15 = 0;
       pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pAVar8->field_0010)(message,pCVar3,iVar7,uVar15,uVar17);
       g_currentExceptionFrame = local_68.previous;
       return 0;
@@ -92,7 +92,7 @@ LAB_00552481:
         thunk_FUN_0054edf0((undefined4 *)0x20,(uint *)&local_18,0,0xffffffff);
         if (this_00->field_01BB != '\0') {
           this_00->field_0028 = 0xbfff;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)this_00->field_0000->field_0000)(&this_00->field_0x18);
           g_currentExceptionFrame = local_68.previous;
           return 0;
@@ -204,7 +204,7 @@ LAB_00552481:
     uVar15 = 0;
     pcVar13 = thunk_FUN_00529fe0;
     pCVar3 = thunk_FUN_00571240(text,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)pAVar8->field_0008)(message,1,pCVar3,pcVar13,uVar15,uVar17);
   }
   g_currentExceptionFrame = local_68.previous;

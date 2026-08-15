@@ -286,7 +286,7 @@ LAB_00610969:
         local_44 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
         local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
         ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_58,&local_48,0.0,0.0,0.0,1);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                           (STPiece<2,2>(local_68),uStack_62,STPiece<2,2>(local_60),local_58 >> 0x10,
                            (undefined1)uStack_52,local_50 >> 0x10);
@@ -408,7 +408,7 @@ LAB_00610d9f:
         local_38 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
         local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
         ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68,&local_3c,0.0,0.0,0.0,1);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                           (STPiece<2,2>(local_58),uStack_52,STPiece<2,2>(local_50),local_68 >> 0x10,
                            (undefined1)uStack_62,local_60 >> 0x10);
@@ -561,7 +561,7 @@ LAB_00611304:
       local_38 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
       local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
       ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68,&local_3c,0.0,0.0,0.0,1);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                         (STPiece<2,2>(local_58),uStack_52,STPiece<2,2>(local_50),local_68 >> 0x10,
                          (undefined1)uStack_62,local_60 >> 0x10);
@@ -702,7 +702,7 @@ LAB_0061196b:
       local_38 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
       local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
       ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68,&local_3c,0.0,0.0,0.0,1);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                         (STPiece<2,2>(local_58),uStack_52,STPiece<2,2>(local_50),local_68 >> 0x10,
                          (undefined1)uStack_62,local_60 >> 0x10);
@@ -998,7 +998,7 @@ LAB_00612459:
       local_38 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
       local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
       ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68,&local_3c,0.0,0.0,0.0,1);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                         (STPiece<2,2>(local_58),uStack_52,STPiece<2,2>(local_50),local_68 >> 0x10,
                          (undefined1)uStack_62,local_60 >> 0x10);

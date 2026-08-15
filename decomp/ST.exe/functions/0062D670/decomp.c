@@ -39,7 +39,6 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
   pbVar7 = local_10;
   memmove(pbVar7, puVar5, 0x98); /* compiler REP MOVS byte copy */
   *param_1 = 0x98;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = nullptr;
   do {
     switch(param_1) {
@@ -68,7 +67,6 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
       memmove(puVar8, puVar6, local_c); /* compiler REP MOVS byte copy */
       FreeAndNull(&local_14);
     }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 switchD_0062d6cc_default:
     param_1 = (uint *)((int)param_1 + 1);
     if (3 < (int)param_1) {

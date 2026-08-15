@@ -36,18 +36,15 @@ undefined4 FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4
     fVar7 = (float10)_DAT_0079cd88 / (float10)(param_5 + -1);
     iVar3 = 0;
     pdVar5 = pdVar2;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = iVar6;
     if (-1 < iVar4) {
       do {
         iVar3 = iVar3 + 1;
         pdVar5[1] = ((double)param_3 * *pdVar5) / (double)iVar3;
         pdVar5 = pdVar5 + 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + -1;
       } while (iVar3 <= iVar4);
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
     if (0 < param_5) {
       do {
@@ -83,9 +80,7 @@ undefined4 FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4
         *(short *)param_4 = (short)lVar8;
         lVar8 = Library::MSVCRT::__ftol();
         *(short *)(param_4 + 2) = (short)lVar8;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = param_4 + 4;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         fVar7 = extraout_ST1;

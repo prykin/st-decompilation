@@ -30,7 +30,7 @@ FUN_006255b0(void *this,int param_1,undefined4 param_2,int param_3,int param_4,
     STField<int>(this,0x2ca) = param_6;
   }
   else if (((1 < param_1) && (param_1 < 4)) && (STField<int *>(this,0x245) != nullptr)) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (**(code **)(*STField<int *>(this,0x245) + 0xe0))
                       (STField<undefined4>(this,0x249),(int)&param_1 + 2,(int)&param_8 + 2,
                        (int)&param_7 + 2,&local_8);

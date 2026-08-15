@@ -298,6 +298,7 @@ int __thiscall
 st::fn_006952B0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byte *param_2)
 
 {
+  byte stack_bytes_neg_90[0x20]; /* exact EBP-relative stack object */
   int iVar1;
   CGenerate *this_00;
   int local_EAX_536;
@@ -363,7 +364,7 @@ st::fn_006952B0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byte *param
     local_20 = local_44 / 0x640;
     local_44 = local_44 / 3;
     local_8 = st::fn_006AAC70(local_28 * 4);
-    memset(&stack0xffffff70, 0, 0x20); /* compiler bulk-zero initialization */
+    memset(stack_bytes_neg_90, 0, 0x20); /* compiler bulk-zero initialization */
     iVar3 = 0;
     local_54 = st::fn_006AE290(nullptr,10,0x40,10);
     local_78 = st::fn_006AE290(nullptr,10,0x40,10);
@@ -436,14 +437,14 @@ st::fn_006952B0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byte *param
       st::fn_00404A43(this);
       local_EAX_1032 =
            st::fn_0040541B((AnonShape_0052EFB0_8161B92D *)&local_6c,
-                              (RecoveredRecord_CGenerate_00695180 *)&stack0xffffff70,(int)&local_38,
+                              (RecoveredRecord_CGenerate_00695180 *)stack_bytes_neg_90,(int)&local_38,
                               local_c);
       if (local_EAX_1032 == 0) {
         st::fn_00402004(this);
       }
       else {
         local_c = 1;
-        st::fn_0040430E(st::pointer_boundary_cast<undefined4 *>(&local_6c),(undefined4 *)&stack0xffffff70);
+        st::fn_0040430E(st::pointer_boundary_cast<undefined4 *>(&local_6c),(undefined4 *)stack_bytes_neg_90);
         st::fn_0040191F(this);
       }
       local_3c = st::external_000000DA();
@@ -454,7 +455,7 @@ st::fn_006952B0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byte *param
       DAT_00853dd4 = st::machine_word_boundary_cast<undefined4>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(this->field_0008[1] * *this->field_0008 * 0x28)));
       st::fn_00401C8A((short *)this->field_000C,st::pointer_boundary_cast<undefined4 *>(DAT_00853dd4),(short *)0x1);
       _DAT_00853dd0 = st::fn_0072E6C0();
-      st::fn_00402D88(this,(AnonShape_00694CD0_AC50FDB9 *)&stack0xffffff70);
+      st::fn_00402D88(this,(AnonShape_00694CD0_AC50FDB9 *)stack_bytes_neg_90);
       _DAT_00853dd0 = st::fn_0072E6C0();
       st::fn_004050F6(this);
       st::fn_00404A43(this);
@@ -1133,6 +1134,8 @@ LAB_00696e1a:
 
 // 006971B0 CGenerate::sub_006971B0
 #line 4 "decomp/ST.exe/functions/006971B0/decomp.c"
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -1141,91 +1144,83 @@ LAB_00696e1a:
 int __thiscall st::fn_006971B0(CGenerate *this)
 
 {
+  alignas(4) byte st_stack_frame[88];
+
   dword dVar1;
   CGenerate_field_5853DArray *pCVar2;
+  int iVar3;
   CGenerate_field_5853Element *element_5853;
-  uint uVar4;
-  int iVar5;
+  uint uVar5;
   int iVar6;
-  uint uVar7;
-  int iVar8;
-  undefined4 *puVar9;
+  int iVar7;
+  uint uVar8;
+  int iVar9;
+  undefined4 *puVar10;
   int local_38;
   int local_20;
-  void *local_14;
-  undefined1 *puStack_10;
-  undefined *puStack_c;
-  undefined4 local_8;
 
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079d788);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
-  local_14 = ExceptionList;
   local_20 = 0;
-  local_8 = 0;
-  uVar4 = this->field_583B;
-  ExceptionList = &local_14;
-  st::fn_0072DA40();
-  local_8 = 0xffffffff;
+  uVar5 = this->field_583B;
+  iVar3 = uVar5 * -4;
   if ((this->field_5853 != nullptr) &&
-     (&stack0x00000000 != (undefined1 *)0x50)) {
-    puVar9 = (undefined4 *)&stack0xffffffb0;
-    for (uVar4 = uVar4 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *puVar9 = 0;
-      puVar9 = puVar9 + 1;
+     ((st_stack_frame + 4) != (undefined1 *)(uVar5 * 4))) {
+    puVar10 = (undefined4 *)((st_stack_frame + 4) + iVar3);
+    for (uVar5 = uVar5 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *puVar10 = 0;
+      puVar10 = puVar10 + 1;
     }
-    for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *(undefined1 *)puVar9 = 0;
-      puVar9 = (undefined4 *)((int)puVar9 + 1);
+    for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *(undefined1 *)puVar10 = 0;
+      puVar10 = (undefined4 *)((int)puVar10 + 1);
     }
     dVar1 = this->field_5853->count;
-    uVar4 = 0;
+    uVar5 = 0;
     if (0 < (int)dVar1) {
       do {
         pCVar2 = st::pointer_boundary_cast<CGenerate_field_5853DArray *>(this->field_5853);
-        if (uVar4 < pCVar2->count) {
-          element_5853 = DArrayAt<CGenerate_field_5853Element>(pCVar2, uVar4);
+        if (uVar5 < pCVar2->count) {
+          element_5853 = DArrayAt<CGenerate_field_5853Element>(pCVar2, uVar5);
         }
         else {
           element_5853 = nullptr;
         }
         if (element_5853 != nullptr) {
-          *(int *)(&stack0xffffffb0 + element_5853->field_0000 * 4) =
-               *(int *)(&stack0xffffffb0 + element_5853->field_0000 * 4) + element_5853->field_0011;
+          *(int *)((st_stack_frame + 4) + element_5853->field_0000 * 4 + iVar3) =
+               *(int *)((st_stack_frame + 4) + element_5853->field_0000 * 4 + iVar3) + element_5853->field_0011;
         }
-        uVar4 = uVar4 + 1;
-      } while ((int)uVar4 < (int)dVar1);
+        uVar5 = uVar5 + 1;
+      } while ((int)uVar5 < (int)dVar1);
     }
     local_38 = -1;
-    iVar6 = 0;
-    iVar8 = 0;
-    iVar5 = -1;
+    iVar7 = 0;
+    iVar9 = 0;
+    iVar6 = -1;
     if (0 < this->field_583B) {
       do {
-        iVar5 = (*(int *)(&stack0xffffffb0 + iVar8 * 4) * 100) / (int)this->field_582F;
-        if (iVar8 == 0) {
-          uVar4 = iVar5 - this->field_5843;
-          uVar7 = (int)uVar4 >> 0x1f;
-          iVar6 = (uVar4 ^ uVar7) - uVar7;
-          local_38 = iVar8;
+        iVar6 = (*(int *)((st_stack_frame + 4) + iVar9 * 4 + iVar3) * 100) / (int)this->field_582F;
+        if (iVar9 == 0) {
+          uVar5 = iVar6 - this->field_5843;
+          uVar8 = (int)uVar5 >> 0x1f;
+          iVar7 = (uVar5 ^ uVar8) - uVar8;
+          local_38 = iVar9;
         }
         else {
-          uVar4 = iVar5 - this->field_5843;
-          uVar7 = (int)uVar4 >> 0x1f;
-          iVar5 = (uVar4 ^ uVar7) - uVar7;
-          if (iVar5 < iVar6) {
-            iVar6 = iVar5;
-            local_38 = iVar8;
+          uVar5 = iVar6 - this->field_5843;
+          uVar8 = (int)uVar5 >> 0x1f;
+          iVar6 = (uVar5 ^ uVar8) - uVar8;
+          if (iVar6 < iVar7) {
+            iVar7 = iVar6;
+            local_38 = iVar9;
           }
         }
-        iVar8 = iVar8 + 1;
-        iVar5 = local_38;
-      } while (iVar8 < this->field_583B);
+        iVar9 = iVar9 + 1;
+        iVar6 = local_38;
+      } while (iVar9 < this->field_583B);
     }
-    if (-1 < iVar5) {
-      local_20 = iVar5;
+    if (-1 < iVar6) {
+      local_20 = iVar6;
     }
   }
-  ExceptionList = local_14;
   return local_20;
 }
 
@@ -1828,7 +1823,6 @@ st::fn_00698CA0
       *param_5 = (int)(short)iVar1;
       iVar2 = (int)(short)iVar1 - uVar3;
       *param_4 = iVar2;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_3 == *param_5) {
         return 4;
       }
@@ -1840,6 +1834,8 @@ st::fn_00698CA0
 
 // 006991C0 CGenerate::sub_006991C0
 #line 4 "decomp/ST.exe/functions/006991C0/decomp.c"
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=8;
    incoming_edx_uses=0; incoming_stack_parameter_uses=360; direct_non_thunk_callers=0;
@@ -1851,15 +1847,16 @@ st::fn_006991C0
           int param_7,AnonShape_006991C0_D95B9E4A *param_8)
 
 {
+  alignas(4) byte st_stack_frame[400];
+
   short *psVar1;
-  int *piVar2;
-  short *psVar3;
-  ushort uVar4;
+  short *psVar2;
+  int *piVar3;
+  uint *puVar4;
   ushort uVar5;
-  int iVar6;
-  undefined1 *puVar7;
-  undefined1 *puVar8;
-  byte *pbVar9;
+  ushort uVar6;
+  int iVar7;
+  byte *pbVar8;
   int local_EAX_350;
   int uVar12;
   uint uVar14;
@@ -1883,20 +1880,33 @@ st::fn_006991C0
   int local_EAX_4717;
   uint local_EAX_4853;
   uint local_EAX_4951;
-  uint uVar10;
+  int iVar10;
   uint uVar11;
-  int iVar13;
-  int iVar14;
+  uint uVar15;
   int iVar19;
   int iVar20;
-  undefined4 *puVar21;
-  undefined4 *puVar22;
-  undefined4 *puVar23;
-  bool bVar24;
+  int iVar21;
+  int iVar22;
+  undefined1 *puVar23;
+  int iVar24;
+  int iVar25;
+  undefined4 *puVar26;
+  undefined4 *puVar27;
+  undefined4 *puVar28;
+  bool bVar29;
+  int aiStackY_1150 [17];
+  undefined1 auStackY_110c [496];
+  undefined4 uStackY_f1c;
+  undefined4 uStackY_f18;
+  uint uStackY_f14;
+  short asStackY_f10 [612];
+  int aiStackY_a48 [5];
+  undefined4 auStackY_a34 [561];
+  undefined4 uStackY_170;
   int local_144;
   int local_140;
   int local_13c;
-  undefined4 local_134;
+  uint local_134;
   uint local_130;
   undefined2 local_12c;
   undefined2 uStack_12a;
@@ -1959,64 +1969,70 @@ st::fn_006991C0
   puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079d7b8);
   puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
+  local_1c = (st_stack_frame + 36);
   local_f0 = 0;
   local_118 = 0;
   local_8c = 0;
+  uStackY_170 = 0x699224;
   ExceptionList = &local_14;
   local_d4 = param_1 * param_2;
   st::fn_006AB060(&this->field_584B);
-  pbVar9 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(param_1 * param_2));
-  this->field_584B = pbVar9;
-  uVar11 = this->field_582F;
-  memset(pbVar9, 0, uVar11); /* compiler bulk-zero initialization */
+  uStackY_170 = 0x69922a;
+  pbVar8 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(param_1 * param_2));
+  this->field_584B = pbVar8;
+  uVar15 = this->field_582F;
+  memset(pbVar8, 0, uVar15); /* compiler bulk-zero initialization */
+  uStackY_170 = 0x699252;
   st::fn_0040564B(this,this->field_5833);
-  local_8 = 0;
-  st::fn_0072DA40();
-  uVar11 = local_d4;
-  local_b4 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-  st::fn_0072DA40();
-  local_9c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-  st::fn_0072DA40();
-  local_94 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-  st::fn_0072DA40();
+  uVar15 = local_d4;
+  local_b4 = (undefined1 *)auStackY_a34;
+  iVar24 = local_d4 * 10;
+  aiStackY_a48[4] = 0x699285;
+  iVar7 = -(iVar24 + 3U & 0xfffffffc);
+  local_9c = (undefined1 *)((int)auStackY_a34 + iVar7);
+  *(undefined4 *)((int)auStackY_a34 + iVar7 + -4) = 0x6992a4;
+  iVar20 = param_5 * -4;
+  local_94 = (undefined1 *)((int)auStackY_a34 + iVar20 + iVar7);
+  *(undefined4 *)((int)auStackY_a34 + iVar20 + iVar7 + -4) = 0x6992bb;
+  iVar24 = -(iVar24 + 3U & 0xfffffffc);
+  local_1c = (undefined1 *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7);
+  local_3c = (undefined1 *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7);
   local_8 = 0xffffffff;
   local_dc = 0;
-  local_3c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-  puVar7 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-  puVar8 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-  if (0 < (int)uVar11) {
+  if (0 < (int)uVar15) {
     do {
+      iVar21 = local_dc;
       if ((((0 < local_dc % param_1) && (0 < local_dc / param_1)) &&
           (local_dc % param_1 < this->field_5833 + -1)) &&
          (local_dc / param_1 < this->field_5837 + -1)) {
-        local_EAX_350 = st::fn_0040208B(this,local_dc,(int)local_80);
+        *(int **)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) = local_80;
+        *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc) = iVar21;
+        *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8) = 0x699323;
+        local_EAX_350 =
+             st::fn_0040208B(this,*(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc),
+                          *(int *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4));
         local_140 = -1;
-        bVar24 = false;
-        iVar20 = 0;
-        iVar14 = local_140;
+        bVar29 = false;
+        iVar25 = 0;
+        iVar21 = local_140;
         if (0 < param_7) {
           do {
-            bVar24 = true;
-            iVar14 = 0;
+            bVar29 = true;
+            iVar21 = 0;
             if (0 < local_EAX_350) {
               do {
-                if ((short)this->field_584F[local_80[iVar14] + this->field_582F * iVar20] < 1) {
-                  bVar24 = false;
+                if ((short)this->field_584F[local_80[iVar21] + this->field_582F * iVar25] < 1) {
+                  bVar29 = false;
                   break;
                 }
-                iVar14 = iVar14 + 1;
-              } while (iVar14 < local_EAX_350);
+                iVar21 = iVar21 + 1;
+              } while (iVar21 < local_EAX_350);
             }
-            iVar14 = iVar20;
-          } while ((!bVar24) && (iVar20 = iVar20 + 1, iVar14 = local_140, iVar20 < param_7));
+            iVar21 = iVar25;
+          } while ((!bVar29) && (iVar25 = iVar25 + 1, iVar21 = local_140, iVar25 < param_7));
         }
-        local_140 = iVar14;
-        if ((bVar24) && (-1 < local_140)) {
+        local_140 = iVar21;
+        if ((bVar29) && (-1 < local_140)) {
           if (local_140 == 0) {
             this->field_584B[local_dc] = 1;
           }
@@ -2024,72 +2040,76 @@ st::fn_006991C0
           *psVar1 = (short)(local_dc % param_1);
           psVar1[1] = (short)(local_dc / param_2);
           psVar1[2] = (short)local_140;
-          iVar14 = 0;
-          uVar11 = local_d4;
+          iVar21 = 0;
+          uVar15 = local_d4;
           if (0 < (int)param_5) {
             do {
-              uVar12 = st::fn_006ACF90((int)*psVar1,(int)psVar1[1],
-                                    (int)*(short *)(param_6 + iVar14 * 4),
-                                    (int)*(short *)(param_6 + 2 + iVar14 * 4));
-              if (uVar12 < (int)uVar11) {
-                uVar11 = uVar12;
+              *(int *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) =
+                   (int)*(short *)(param_6 + 2 + iVar21 * 4);
+              *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc) =
+                   (int)*(short *)(param_6 + iVar21 * 4);
+              *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8) = (int)psVar1[1];
+              *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 4) = (int)*psVar1;
+              *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7) = 0x699421;
+              uVar12 = st::fn_006ACF90(*(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 4),
+                                    *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8),
+                                    *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc),
+                                    *(int *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4));
+              if (uVar12 < (int)uVar15) {
+                uVar15 = uVar12;
               }
-              *(int *)(local_94 + iVar14 * 4) = uVar12;
-              iVar14 = iVar14 + 1;
-            } while (iVar14 < (int)param_5);
+              *(int *)(local_94 + iVar21 * 4) = uVar12;
+              iVar21 = iVar21 + 1;
+            } while (iVar21 < (int)param_5);
           }
-          iVar20 = 0;
-          iVar14 = 0;
+          iVar25 = 0;
+          iVar21 = 0;
           if (0 < (int)param_5) {
             do {
-              iVar20 = iVar20 + (*(int *)(local_94 + iVar14 * 4) - uVar11);
-              iVar14 = iVar14 + 1;
-            } while (iVar14 < (int)param_5);
+              iVar25 = iVar25 + (*(int *)(local_94 + iVar21 * 4) - uVar15);
+              iVar21 = iVar21 + 1;
+            } while (iVar21 < (int)param_5);
           }
-          *(int *)(local_9c + local_f0 * 10 + 6) = iVar20;
+          *(int *)(local_9c + local_f0 * 10 + 6) = iVar25;
           local_f0 = local_f0 + 1;
         }
       }
       local_dc = local_dc + 1;
-      puVar7 = local_3c;
-      puVar8 = local_1c;
     } while (local_dc < (int)local_d4);
   }
-  local_1c = puVar8;
-  local_3c = puVar7;
   if (local_f0 != 0) {
     local_dc = 0;
     if (0 < (int)param_5) {
       do {
-        iVar20 = (int)*(short *)(param_6 + local_dc * 4);
-        local_30 = iVar20 + -7;
-        iVar14 = 0;
+        iVar25 = (int)*(short *)(param_6 + local_dc * 4);
+        local_30 = iVar25 + -7;
+        iVar21 = 0;
         if (local_30 < 0) {
           local_30 = 0;
         }
-        iVar13 = (int)*(short *)(param_6 + 2 + local_dc * 4);
-        iVar19 = iVar13 + -7;
-        if (iVar19 < 0) {
-          iVar19 = 0;
+        iVar19 = (int)*(short *)(param_6 + 2 + local_dc * 4);
+        iVar22 = iVar19 + -7;
+        if (iVar22 < 0) {
+          iVar22 = 0;
         }
-        iVar20 = iVar20 + 8;
-        if (this->field_5833 < iVar20) {
-          iVar20 = this->field_5833;
+        iVar25 = iVar25 + 8;
+        if (this->field_5833 < iVar25) {
+          iVar25 = this->field_5833;
         }
-        iVar13 = iVar13 + 8;
-        if (this->field_5837 < iVar13) {
-          iVar13 = this->field_5837;
+        iVar19 = iVar19 + 8;
+        if (this->field_5837 < iVar19) {
+          iVar19 = this->field_5837;
         }
-        for (; iVar6 = local_30, iVar19 < iVar13; iVar19 = iVar19 + 1) {
-          for (; iVar6 < iVar20; iVar6 = iVar6 + 1) {
-            if (this->field_584B[iVar6 + this->field_5833 * iVar19] != 0) {
-              *(short *)(local_b4 + iVar14 * 10) = (short)iVar6;
-              *(short *)((int)(local_b4 + iVar14 * 10) + 2) = (short)iVar19;
-              iVar14 = iVar14 + 1;
+        for (; iVar10 = local_30, iVar22 < iVar19; iVar22 = iVar22 + 1) {
+          for (; iVar10 < iVar25; iVar10 = iVar10 + 1) {
+            if (this->field_584B[iVar10 + this->field_5833 * iVar22] != 0) {
+              *(short *)(local_b4 + iVar21 * 10) = (short)iVar10;
+              *(short *)((int)(local_b4 + iVar21 * 10) + 2) = (short)iVar22;
+              iVar21 = iVar21 + 1;
             }
           }
         }
-        if (iVar14 < 2) {
+        if (iVar21 < 2) {
           ExceptionList = local_14;
           return local_118;
         }
@@ -2097,22 +2117,31 @@ st::fn_006991C0
         local_c0 = 0;
         local_48 = 0;
         local_58 = 0;
-        local_11c = iVar20;
-        local_50 = iVar13;
+        local_11c = iVar25;
+        local_50 = iVar19;
         do {
+          *(undefined4 *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) = 0x69957b;
           uVar14 = st::fn_0072E6C0();
-          iVar20 = (int)uVar14 % iVar14;
+          iVar25 = (int)uVar14 % iVar21;
+          *(undefined4 *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) = 0x699585;
           local_EAX_960 = st::fn_0072E6C0();
-          iVar19 = (int)local_EAX_960 % iVar14;
-          iVar9 = st::fn_006ACF90((int)*(short *)(local_b4 + iVar20 * 10),
-                               (int)*(short *)((int)(local_b4 + iVar20 * 10) + 2),
-                               (int)*(short *)(local_b4 + iVar19 * 10),
-                               (int)*(short *)((int)(local_b4 + iVar19 * 10) + 2));
-          puVar7 = local_b4;
-          if ((iVar20 != iVar19) && (2 < iVar9)) {
+          iVar22 = (int)local_EAX_960 % iVar21;
+          psVar1 = (short *)(local_b4 + iVar22 * 10);
+          psVar2 = (short *)(local_b4 + iVar25 * 10);
+          *(int *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) = (int)psVar1[1];
+          *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc) = (int)*psVar1;
+          *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8) = (int)psVar2[1];
+          *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 4) = (int)*psVar2;
+          *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7) = 0x6995b3;
+          iVar9 = st::fn_006ACF90(*(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 4),
+                               *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8),
+                               *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc),
+                               *(int *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4));
+          puVar23 = local_b4;
+          if ((iVar25 != iVar22) && (2 < iVar9)) {
             if (0 < iVar9) {
-              local_58 = iVar19;
-              local_48 = iVar20;
+              local_48 = iVar25;
+              local_58 = iVar22;
             }
             local_c0 = 1;
           }
@@ -2128,184 +2157,225 @@ st::fn_006991C0
         uStack_12a = 0xde;
         local_128 = 0;
         local_126 = 0;
-        st::fn_006AE1C0((DArrayTy *)param_8->field_001C,&local_134);
+        *(uint **)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) = &local_134;
+        *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc) = param_8->field_001C;
+        *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8) = 0x699662;
+        st::fn_006AE1C0
+                  (*(DArrayTy **)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc),
+                   *(void **)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4));
         local_8c = local_8c + 1;
-        local_134 = *(uint *)(puVar7 + local_58 * 10);
+        local_134 = *(uint *)(puVar23 + local_58 * 10);
         local_130 = local_130 & 0xffff0000;
         uStack_12a = 0xdd;
         local_128 = 0;
         local_126 = 0;
-        st::fn_006AE1C0((DArrayTy *)param_8->field_001C,&local_134);
+        *(uint **)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) = &local_134;
+        *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc) = param_8->field_001C;
+        *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8) = 0x6996ad;
+        st::fn_006AE1C0
+                  (*(DArrayTy **)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc),
+                   *(void **)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4));
         local_118 = local_118 + 2;
         local_f4 = 0;
-        iVar14 = 0;
+        iVar21 = 0;
         do {
-          iVar20 = local_48;
-          if ((local_f4 != 0) && (iVar20 = iVar14, local_f4 == 1)) {
-            iVar20 = local_58;
+          iVar25 = local_48;
+          if ((local_f4 != 0) && (iVar25 = iVar21, local_f4 == 1)) {
+            iVar25 = local_58;
           }
-          local_11c = (int)*(short *)(local_b4 + iVar20 * 10);
+          local_11c = (int)*(short *)(local_b4 + iVar25 * 10);
           local_30 = local_11c + -7;
           if (local_30 < 0) {
             local_30 = 0;
           }
-          local_50 = (int)*(short *)((int)(local_b4 + iVar20 * 10) + 2);
-          iVar14 = local_50 + -7;
-          if (iVar14 < 0) {
-            iVar14 = 0;
+          local_50 = (int)*(short *)((int)(local_b4 + iVar25 * 10) + 2);
+          iVar21 = local_50 + -7;
+          if (iVar21 < 0) {
+            iVar21 = 0;
           }
           local_11c = local_11c + 8;
-          if (this->field_5833 < local_11c) {
-            local_11c = this->field_5833;
+          iVar22 = this->field_5833;
+          if (iVar22 < local_11c) {
+            local_11c = iVar22;
           }
           local_50 = local_50 + 8;
-          if (this->field_5837 < local_50) {
-            local_50 = this->field_5837;
+          iVar22 = this->field_5837;
+          if (iVar22 < local_50) {
+            local_50 = iVar22;
           }
-          for (; iVar19 = local_30, iVar14 < local_50; iVar14 = iVar14 + 1) {
-            for (; iVar19 < local_11c; iVar19 = iVar19 + 1) {
-              this->field_584B[iVar19 + this->field_5833 * iVar14] = 0;
-              uVar11 = iVar19 - *(short *)(local_b4 + iVar20 * 10);
-              uVar10 = (int)uVar11 >> 0x1f;
-              if (((int)((uVar11 ^ uVar10) - uVar10) < 3) ||
-                 (uVar11 = iVar14 - *(short *)((int)(local_b4 + iVar20 * 10) + 2),
-                 uVar10 = (int)uVar11 >> 0x1f, (int)((uVar11 ^ uVar10) - uVar10) < 3)) {
-                this->field_584B[iVar19 + this->field_5833 * iVar14] = 0;
+          for (; iVar22 = local_30, iVar21 < local_50; iVar21 = iVar21 + 1) {
+            for (; iVar22 < local_11c; iVar22 = iVar22 + 1) {
+              this->field_584B[iVar22 + this->field_5833 * iVar21] = 0;
+              uVar15 = iVar22 - *(short *)(local_b4 + iVar25 * 10);
+              uVar11 = (int)uVar15 >> 0x1f;
+              if (((int)((uVar15 ^ uVar11) - uVar11) < 3) ||
+                 (uVar15 = iVar21 - *(short *)((int)(local_b4 + iVar25 * 10) + 2),
+                 uVar11 = (int)uVar15 >> 0x1f, (int)((uVar15 ^ uVar11) - uVar11) < 3)) {
+                this->field_584B[iVar22 + this->field_5833 * iVar21] = 0;
               }
             }
           }
           local_f4 = local_f4 + 1;
-          iVar14 = iVar20;
+          iVar21 = iVar25;
         } while (local_f4 < 2);
         local_dc = local_dc + 1;
       } while (local_dc < (int)param_5);
     }
     param_8->field_0008 = local_118;
+    puVar23 = (undefined1 *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7);
     if (0 < param_4) {
-      local_8 = 1;
-      st::fn_0072DA40();
-      local_a8 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      st::fn_0072DA40();
-      local_24 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      st::fn_0072DA40();
-      local_10c = (undefined4 *)&stack0xfffffe98;
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      st::fn_0072DA40();
-      local_e4 = (undefined4 *)&stack0xfffffe98;
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      st::fn_0072DA40();
-      local_110 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      st::fn_0072DA40();
+      iVar21 = param_5 * param_5;
+      *(undefined4 *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) = 0x699821;
+      local_a8 = (undefined1 *)((int)auStackY_a34 + iVar21 * -4 + iVar24 + iVar20 + iVar7);
+      *(undefined4 *)((int)auStackY_a34 + iVar21 * -4 + iVar24 + iVar20 + iVar7 + -4) = 0x699838;
+      local_24 = (undefined1 *)((int)auStackY_a34 + iVar21 * -8 + iVar24 + iVar20 + iVar7);
+      *(undefined4 *)((int)auStackY_a34 + iVar21 * -8 + iVar24 + iVar20 + iVar7 + -4) = 0x699853;
+      local_10c = (undefined4 *)((int)auStackY_a34 + iVar21 * -8 + iVar24 + param_5 * -0xc + iVar7);
+      *(undefined4 *)((int)auStackY_a34 + iVar21 * -8 + iVar24 + param_5 * -0xc + iVar7 + -4) =
+           0x69986a;
+      local_e4 = (undefined4 *)((int)auStackY_a34 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+      *(undefined4 *)((int)auStackY_a34 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + -4) =
+           0x69987f;
+      local_110 = (undefined1 *)((int)&uStackY_f18 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+      *(undefined4 *)((int)&uStackY_f1c + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7) = 0x699894
+      ;
+      local_1c = auStackY_110c + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7;
+      local_108 = auStackY_110c + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7;
       local_8 = 0xffffffff;
       local_dc = 0;
-      local_108 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      puVar7 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      puVar8 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
       if (0 < (int)param_5) {
         do {
           local_f4 = 0;
           if (0 < (int)param_5) {
             do {
-              iVar14 = local_f4;
+              iVar20 = local_f4;
+              *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) =
+                   (int)*(short *)(param_6 + 2 + local_f4 * 4);
+              *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c) =
+                   (int)*(short *)(param_6 + local_f4 * 4);
+              *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38) =
+                   (int)*(short *)(param_6 + 2 + local_dc * 4);
+              *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34) =
+                   (int)*(short *)(param_6 + local_dc * 4);
+              *(undefined4 *)
+               ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) =
+                   0x6998ec;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_EAX_1831 =
-                   st::fn_006ACED8((int)*(short *)(param_6 + local_dc * 4),
-                                (int)*(short *)(param_6 + 2 + local_dc * 4),
-                                (int)*(short *)(param_6 + local_f4 * 4),
-                                (int)*(short *)(param_6 + 2 + local_f4 * 4));
-              iVar20 = local_dc * param_5;
-              *(int *)(local_a8 + (iVar20 + iVar14) * 4) = local_EAX_1831;
+                   st::fn_006ACED8(*(int *)((int)aiStackY_1150 +
+                                        iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34),
+                                *(int *)((int)aiStackY_1150 +
+                                        iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38),
+                                *(int *)((int)aiStackY_1150 +
+                                        iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c),
+                                *(int *)((int)aiStackY_1150 +
+                                        iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40));
+              local_38 = local_EAX_1831;
+              iVar25 = local_dc * param_5;
+              *(int *)(local_a8 + (iVar25 + iVar20) * 4) = local_EAX_1831;
               local_a4 = 0;
               local_104 = 0;
-              if (0 < iVar14) {
+              if (0 < iVar20) {
                 do {
-                  iVar19 = iVar14;
+                  iVar22 = iVar20;
                   if (local_EAX_1831 <
                       *(int *)(local_a8 +
-                              (*(int *)(local_24 + (iVar20 + local_104) * 4) + iVar20) * 4)) {
-                    while (iVar19 = iVar19 + -1, local_104 <= iVar19) {
-                      *(undefined4 *)(local_24 + (iVar20 + iVar19) * 4 + 4) =
-                           *(undefined4 *)(local_24 + (iVar20 + iVar19) * 4);
-                      iVar14 = local_f4;
+                              (*(int *)(local_24 + (iVar25 + local_104) * 4) + iVar25) * 4)) {
+                    while (iVar22 = iVar22 + -1, local_104 <= iVar22) {
+                      *(undefined4 *)(local_24 + (iVar25 + iVar22) * 4 + 4) =
+                           *(undefined4 *)(local_24 + (iVar25 + iVar22) * 4);
+                      iVar20 = local_f4;
                     }
-                    *(int *)(local_24 + (iVar20 + local_104) * 4) = iVar14;
+                    *(int *)(local_24 + (iVar25 + local_104) * 4) = iVar20;
                     local_a4 = 1;
                   }
                   if (local_a4 != 0) goto LAB_0069999c;
                   local_104 = local_104 + 1;
-                } while (local_104 < iVar14);
+                } while (local_104 < iVar20);
               }
               if (local_a4 == 0) {
-                *(int *)(local_24 + (iVar20 + iVar14) * 4) = iVar14;
+                *(int *)(local_24 + (iVar25 + iVar20) * 4) = iVar20;
               }
 LAB_0069999c:
-              local_f4 = iVar14 + 1;
-              local_38 = local_EAX_1831;
-            } while (local_f4 < (int)param_5);
+              local_f4 = iVar20 + 1;
+            } while (iVar20 + 1 < (int)param_5);
           }
           local_dc = local_dc + 1;
-          puVar7 = local_108;
-          puVar8 = local_1c;
         } while (local_dc < (int)param_5);
       }
-      local_1c = puVar8;
-      local_108 = puVar7;
-      puVar21 = local_10c;
-      for (iVar14 = (param_5 & 0x1fffffff) << 1; iVar14 != 0; iVar14 = iVar14 + -1) {
-        *puVar21 = 0xffffffff;
-        puVar21 = puVar21 + 1;
+      puVar26 = local_10c;
+      for (iVar20 = (param_5 & 0x1fffffff) << 1; iVar20 != 0; iVar20 = iVar20 + -1) {
+        *puVar26 = 0xffffffff;
+        puVar26 = puVar26 + 1;
       }
-      for (iVar14 = 0; iVar14 != 0; iVar14 = iVar14 + -1) {
-        *(undefined1 *)puVar21 = 0xff;
-        puVar21 = (undefined4 *)((int)puVar21 + 1);
+      for (iVar20 = 0; iVar20 != 0; iVar20 = iVar20 + -1) {
+        *(undefined1 *)puVar26 = 0xff;
+        puVar26 = (undefined4 *)((int)puVar26 + 1);
       }
-      puVar21 = local_e4;
-      for (iVar14 = (param_5 & 0x1fffffff) << 1; iVar14 != 0; iVar14 = iVar14 + -1) {
-        *puVar21 = 0xffffffff;
-        puVar21 = puVar21 + 1;
+      puVar26 = local_e4;
+      for (iVar20 = (param_5 & 0x1fffffff) << 1; iVar20 != 0; iVar20 = iVar20 + -1) {
+        *puVar26 = 0xffffffff;
+        puVar26 = puVar26 + 1;
       }
-      for (iVar14 = 0; iVar14 != 0; iVar14 = iVar14 + -1) {
-        *(undefined1 *)puVar21 = 0xff;
-        puVar21 = (undefined4 *)((int)puVar21 + 1);
+      for (iVar20 = 0; iVar20 != 0; iVar20 = iVar20 + -1) {
+        *(undefined1 *)puVar26 = 0xff;
+        puVar26 = (undefined4 *)((int)puVar26 + 1);
       }
       local_114 = 0;
       local_dc = 0;
+      puVar23 = auStackY_110c + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7;
       if (0 < (int)param_5) {
         do {
           local_88 = 0;
           local_f4 = 0;
           if (0 < (int)param_5) {
             do {
-              iVar14 = *(int *)(local_24 + (local_dc * param_5 + local_f4) * 4);
-              local_88 = iVar14;
-              if (((iVar14 != local_dc) && ((int)local_10c[iVar14] < 0)) &&
-                 (local_10c[iVar14 + param_5] != local_dc)) {
-                local_10c[iVar14] = 1;
-                local_10c[local_dc + param_5] = iVar14;
+              iVar20 = *(int *)(local_24 + (local_dc * param_5 + local_f4) * 4);
+              local_88 = iVar20;
+              if (((iVar20 != local_dc) && ((int)local_10c[iVar20] < 0)) &&
+                 (local_10c[iVar20 + param_5] != local_dc)) {
+                local_10c[iVar20] = 1;
+                local_10c[local_dc + param_5] = iVar20;
                 break;
               }
               local_f4 = local_f4 + 1;
             } while (local_f4 < (int)param_5);
           }
-          piVar2 = (int *)(local_a8 + (local_dc * param_5 + local_88) * 4);
-          if (((*piVar2 != 0) && (-1 < local_88)) && (local_88 < (int)param_5)) {
-            iVar14 = (int)*(short *)(param_6 + local_dc * 4);
-            local_e0 = ((*(short *)(param_6 + local_88 * 4) - iVar14) * 4) / 9 + iVar14;
+          piVar3 = (int *)(local_a8 + (local_dc * param_5 + local_88) * 4);
+          if (((*piVar3 != 0) && (-1 < local_88)) && (local_88 < (int)param_5)) {
+            iVar25 = (int)*(short *)(param_6 + local_dc * 4);
+            local_e0 = ((*(short *)(param_6 + local_88 * 4) - iVar25) * 4) / 9 + iVar25;
             psVar1 = (short *)(param_6 + 2 + local_88 * 4);
-            psVar3 = (short *)(param_6 + 2 + local_dc * 4);
-            local_124 = (((int)*psVar1 - (int)*psVar3) * 4) / 9 + (int)*psVar3;
-            iVar16 = st::fn_006ACED8(local_e0,local_124,iVar14,(int)*psVar3);
+            psVar2 = (short *)(param_6 + 2 + local_dc * 4);
+            iVar20 = (((int)*psVar1 - (int)*psVar2) * 4) / 9 + (int)*psVar2;
+            local_124 = iVar20;
+            *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) =
+                 (int)*psVar2;
+            *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c) =
+                 iVar25;
+            *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38) =
+                 iVar20;
+            *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34) =
+                 local_e0;
+            *(undefined4 *)
+             ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) = 0x699b46
+            ;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            iVar16 = st::fn_006ACED8(*(int *)((int)aiStackY_1150 +
+                                          iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34),
+                                  *(int *)((int)aiStackY_1150 +
+                                          iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38),
+                                  *(int *)((int)aiStackY_1150 +
+                                          iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c),
+                                  *(int *)((int)aiStackY_1150 +
+                                          iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40));
             if (0x1e < iVar16) {
-              local_e0 = (int)*(short *)(param_6 + local_dc * 4);
-              iVar14 = *piVar2;
-              local_e0 = ((*(short *)(param_6 + local_88 * 4) - local_e0) * 0x1e) / iVar14 +
-                         local_e0;
-              local_124 = (((int)*psVar1 - (int)*psVar3) * 0x1e) / iVar14 + (int)*psVar3;
+              iVar25 = (int)*(short *)(param_6 + local_dc * 4);
+              iVar20 = *piVar3;
+              local_e0 = ((*(short *)(param_6 + local_88 * 4) - iVar25) * 0x1e) / iVar20 + iVar25;
+              local_124 = (((int)*psVar1 - (int)*psVar2) * 0x1e) / iVar20 + (int)*psVar2;
             }
-            iVar14 = 0;
+            iVar20 = 0;
             local_144 = 0;
             local_100 = 3;
             local_44 = 5;
@@ -2314,22 +2384,47 @@ LAB_0069999c:
               if (0 < local_f0) {
                 do {
                   psVar1 = (short *)(local_9c + local_f4 * 10);
-                  if ((*(int *)(psVar1 + 3) != 0) &&
-                     (local_EAX_2631 = st::fn_006ACED8((int)*psVar1,(int)psVar1[1],local_e0,local_124),
-                     local_EAX_2631 <= local_44)) {
-                    iVar20 = iVar14 * 10;
-                    *(undefined4 *)(&stack0xfffffe98 + iVar20) = *(undefined4 *)psVar1;
-                    *(undefined4 *)(&stack0xfffffe9c + iVar20) = *(undefined4 *)(psVar1 + 2);
-                    *(short *)(&stack0xfffffea0 + iVar20) = psVar1[4];
-                    *(int *)(local_108 + iVar14 * 4) = local_f4;
-                    iVar14 = iVar14 + 1;
-                    local_144 = iVar14;
-                    if (iVar14 == 0x7b) break;
+                  if (*(int *)(psVar1 + 3) != 0) {
+                    *(int *)((int)aiStackY_1150 +
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) = local_124;
+                    *(int *)((int)aiStackY_1150 +
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c) = local_e0;
+                    *(int *)((int)aiStackY_1150 +
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38) = (int)psVar1[1];
+                    *(int *)((int)aiStackY_1150 +
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34) = (int)*psVar1;
+                    *(undefined4 *)
+                     ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) =
+                         0x699c0c;
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                    local_EAX_2631 =
+                         st::fn_006ACED8(*(int *)((int)aiStackY_1150 +
+                                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34)
+                                      ,*(int *)((int)aiStackY_1150 +
+                                               iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38
+                                               ),
+                                      *(int *)((int)aiStackY_1150 +
+                                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c)
+                                      ,*(int *)((int)aiStackY_1150 +
+                                               iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40
+                                               ));
+                    if (local_EAX_2631 <= local_44) {
+                      puVar26 = (undefined4 *)
+                                ((int)&uStackY_f18 +
+                                iVar20 * 10 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                      *puVar26 = *(undefined4 *)psVar1;
+                      puVar26[1] = *(undefined4 *)(psVar1 + 2);
+                      *(short *)(puVar26 + 2) = psVar1[4];
+                      *(int *)(local_108 + iVar20 * 4) = local_f4;
+                      iVar20 = iVar20 + 1;
+                      local_144 = iVar20;
+                      if (iVar20 == 0x7b) break;
+                    }
                   }
                   local_f4 = local_f4 + 1;
                 } while (local_f4 < local_f0);
               }
-              if (iVar14 < 0xb) {
+              if (iVar20 < 0xb) {
                 local_100 = local_100 + -1;
                 local_44 = local_44 + 2;
               }
@@ -2337,38 +2432,120 @@ LAB_0069999c:
                 local_100 = 0;
               }
             } while (0 < local_100);
-            if (0 < iVar14) {
+            if (0 < iVar20) {
               local_100 = 0x46;
               local_b0 = 0;
               local_48 = 0;
               local_58 = 0;
               do {
+                *(undefined4 *)
+                 ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) =
+                     0x699cae;
                 local_EAX_2793 = st::fn_0072E6C0();
+                *(undefined4 *)
+                 ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) =
+                     0x699cc1;
                 local_4c = (int)local_EAX_2793 % local_144;
                 uVar13 = st::fn_0072E6C0();
                 local_5c = (int)uVar13 % local_144;
-                iVar20 = ((int)uVar13 % local_144) * 10;
-                iVar14 = ((int)local_EAX_2793 % local_144) * 10;
+                iVar25 = ((int)uVar13 % local_144) * 10;
+                iVar20 = ((int)local_EAX_2793 % local_144) * 10;
+                *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40)
+                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                     = (int)*(short *)((int)&uStackY_f18 +
+                                      iVar25 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 2);
+                *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c)
+                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                     = (int)*(short *)((int)&uStackY_f18 +
+                                      iVar25 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38)
+                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                     = (int)*(short *)((int)&uStackY_f18 +
+                                      iVar20 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 2);
+                *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34)
+                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                     = (int)*(short *)((int)&uStackY_f18 +
+                                      iVar20 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                *(undefined4 *)
+                 ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) =
+                     0x699cf2;
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 local_EAX_2861 =
-                     st::fn_006ACED8((int)*(short *)(&stack0xfffffe98 + iVar14),
-                                  (int)*(short *)(&stack0xfffffe9a + iVar14),
-                                  (int)*(short *)(&stack0xfffffe98 + iVar20),
-                                  (int)*(short *)(&stack0xfffffe9a + iVar20));
+                     st::fn_006ACED8(*(int *)((int)aiStackY_1150 +
+                                          iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34),
+                                  *(int *)((int)aiStackY_1150 +
+                                          iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38),
+                                  *(int *)((int)aiStackY_1150 +
+                                          iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c),
+                                  *(int *)((int)aiStackY_1150 +
+                                          iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40));
                 if ((local_4c != local_5c) && (iVar15 = 2, 1 < local_EAX_2861)) {
                   local_ec = 2;
                   local_f4 = 0;
                   if (0 < local_114) {
                     do {
-                      local_ec = st::fn_006ACF90((int)*(short *)(local_9c + local_e4[local_f4] * 10),
-                                              (int)*(short *)((int)(local_9c +
-                                                                   local_e4[local_f4] * 10) + 2),
-                                              (int)*(short *)(&stack0xfffffe98 + iVar14),
-                                              (int)*(short *)(local_9c + iVar14 + 2));
-                      iVar15 = st::fn_006ACF90((int)*(short *)(local_9c + local_e4[local_f4] * 10),
-                                            (int)*(short *)((int)(local_9c + local_e4[local_f4] * 10
-                                                                 ) + 2),
-                                            (int)*(short *)(&stack0xfffffe98 + iVar20),
-                                            (int)*(short *)(local_9c + iVar20 + 2));
+                      iVar22 = local_e4[local_f4];
+                      *(int *)((int)aiStackY_1150 +
+                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) =
+                           (int)*(short *)(local_9c + iVar20 + 2);
+                      *(int *)((int)aiStackY_1150 +
+                              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c) =
+                           (int)*(short *)((int)&uStackY_f18 +
+                                          iVar20 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                      *(int *)((int)aiStackY_1150 +
+                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38) =
+                           (int)*(short *)((int)(local_9c + iVar22 * 10) + 2);
+                      *(int *)((int)aiStackY_1150 +
+                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34) =
+                           (int)*(short *)(local_9c + iVar22 * 10);
+                      *(undefined4 *)
+                       ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30)
+                           = 0x699d60;
+                      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                      local_ec = st::fn_006ACF90(*(int *)((int)aiStackY_1150 +
+                                                      iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7
+                                                      + 0x34),
+                                              *(int *)((int)aiStackY_1150 +
+                                                      iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7
+                                                      + 0x38),
+                                              *(int *)((int)aiStackY_1150 +
+                                                      iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7
+                                                      + 0x3c),
+                                              *(int *)((int)aiStackY_1150 +
+                                                      iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7
+                                                      + 0x40));
+                      iVar22 = local_e4[local_f4];
+                      *(int *)((int)aiStackY_1150 +
+                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) =
+                           (int)*(short *)(local_9c + iVar25 + 2);
+                      *(int *)((int)aiStackY_1150 +
+                              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c) =
+                           (int)*(short *)((int)&uStackY_f18 +
+                                          iVar25 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                      *(int *)((int)aiStackY_1150 +
+                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38) =
+                           (int)*(short *)((int)(local_9c + iVar22 * 10) + 2);
+                      *(int *)((int)aiStackY_1150 +
+                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34) =
+                           (int)*(short *)(local_9c + iVar22 * 10);
+                      *(undefined4 *)
+                       ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30)
+                           = 0x699d9a;
+                      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                      iVar15 = st::fn_006ACF90(*(int *)((int)aiStackY_1150 +
+                                                    iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                    0x34),
+                                            *(int *)((int)aiStackY_1150 +
+                                                    iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                    0x38),
+                                            *(int *)((int)aiStackY_1150 +
+                                                    iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                    0x3c),
+                                            *(int *)((int)aiStackY_1150 +
+                                                    iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                    0x40));
                       if (local_ec < 2) goto LAB_00699f26;
                     } while ((1 < iVar15) && (local_f4 = local_f4 + 1, local_f4 < local_114));
                   }
@@ -2376,37 +2553,176 @@ LAB_0069999c:
                     local_ec = (*(int *)(local_a8 + (local_dc * param_5 + local_88) * 4) * iVar15) /
                                2;
                     psVar1 = (short *)(param_6 + 2 + local_88 * 4);
-                    psVar3 = (short *)(param_6 + 2 + local_dc * 4);
+                    psVar2 = (short *)(param_6 + 2 + local_dc * 4);
+                    *(int *)((int)aiStackY_1150 +
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) =
+                         (int)*(short *)((int)&uStackY_f18 +
+                                        iVar25 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 2);
+                    *(int *)((int)aiStackY_1150 +
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c) =
+                         (int)*(short *)((int)&uStackY_f18 +
+                                        iVar25 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                    *(int *)((int)aiStackY_1150 +
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38) =
+                         (int)*(short *)((int)&uStackY_f18 +
+                                        iVar20 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 2);
+                    *(int *)((int)aiStackY_1150 +
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34) =
+                         (int)*(short *)((int)&uStackY_f18 +
+                                        iVar20 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                    *(undefined4 *)
+                     ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) =
+                         0x699e42;
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     local_EAX_3197 =
-                         st::fn_006ACED8((int)*(short *)(&stack0xfffffe98 + iVar14),
-                                      (int)*(short *)(&stack0xfffffe9a + iVar14),
-                                      (int)*(short *)(&stack0xfffffe98 + iVar20),
-                                      (int)*(short *)(&stack0xfffffe9a + iVar20));
-                    iVar18 = st::fn_006ACED8((int)*(short *)(param_6 + local_88 * 4),(int)*psVar1,
-                                          (int)*(short *)(&stack0xfffffe98 + iVar20),
-                                          (int)*(short *)(&stack0xfffffe9a + iVar20));
-                    iVar12 = st::fn_006ACED8((int)*(short *)(param_6 + local_88 * 4),(int)*psVar1,
-                                          (int)*(short *)(&stack0xfffffe98 + iVar14),
-                                          (int)*(short *)(&stack0xfffffe9a + iVar14));
-                    iVar19 = local_dc;
-                    iVar17 = st::fn_006ACED8((int)*(short *)(param_6 + local_dc * 4),(int)*psVar3,
-                                          (int)*(short *)(&stack0xfffffe98 + iVar20),
-                                          (int)*(short *)(&stack0xfffffe9a + iVar20));
-                    iVar20 = iVar17 + local_ec;
+                         st::fn_006ACED8(*(int *)((int)aiStackY_1150 +
+                                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34)
+                                      ,*(int *)((int)aiStackY_1150 +
+                                               iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38
+                                               ),
+                                      *(int *)((int)aiStackY_1150 +
+                                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c)
+                                      ,*(int *)((int)aiStackY_1150 +
+                                               iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40
+                                               ));
+                    *(int *)((int)aiStackY_1150 +
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) =
+                         (int)*(short *)((int)&uStackY_f18 +
+                                        iVar25 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 2);
+                    *(int *)((int)aiStackY_1150 +
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x2c) =
+                         (int)*(short *)((int)&uStackY_f18 +
+                                        iVar25 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                    *(int *)((int)aiStackY_1150 +
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x28) = (int)*psVar1;
+                    *(int *)((int)aiStackY_1150 +
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x24) =
+                         (int)*(short *)(param_6 + local_88 * 4);
+                    *(undefined4 *)
+                     ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x20) =
+                         0x699e6c;
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                    iVar18 = st::fn_006ACED8(*(int *)((int)aiStackY_1150 +
+                                                  iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                  0x24),
+                                          *(int *)((int)aiStackY_1150 +
+                                                  iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                  0x28),
+                                          *(int *)((int)aiStackY_1150 +
+                                                  iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                  0x2c),
+                                          *(int *)((int)aiStackY_1150 +
+                                                  iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                  0x30));
+                    *(int *)((int)aiStackY_1150 +
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x20) =
+                         (int)*(short *)((int)&uStackY_f18 +
+                                        iVar20 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 2);
+                    *(int *)((int)aiStackY_1150 +
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x1c) =
+                         (int)*(short *)((int)&uStackY_f18 +
+                                        iVar20 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                    *(int *)((int)aiStackY_1150 +
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x18) = (int)*psVar1;
+                    *(int *)((int)aiStackY_1150 +
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x14) =
+                         (int)*(short *)(param_6 + local_88 * 4);
+                    *(undefined4 *)
+                     ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x10) =
+                         0x699e9c;
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                    iVar12 = st::fn_006ACED8(*(int *)((int)aiStackY_1150 +
+                                                  iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                  0x14),
+                                          *(int *)((int)aiStackY_1150 +
+                                                  iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                  0x18),
+                                          *(int *)((int)aiStackY_1150 +
+                                                  iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                  0x1c),
+                                          *(int *)((int)aiStackY_1150 +
+                                                  iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                  0x20));
+                    iVar22 = local_dc;
+                    *(int *)((int)aiStackY_1150 +
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x10) =
+                         (int)*(short *)((int)&uStackY_f18 +
+                                        iVar25 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 2);
+                    *(int *)((int)aiStackY_1150 +
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0xc) =
+                         (int)*(short *)((int)&uStackY_f18 +
+                                        iVar25 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                    *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 8
+                            ) = (int)*psVar2;
+                    *(int *)((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 4
+                            ) = (int)*(short *)(param_6 + local_dc * 4);
+                    *(undefined4 *)
+                     ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7) =
+                         0x699ec6;
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                    iVar17 = st::fn_006ACED8(*(int *)((int)aiStackY_1150 +
+                                                  iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 4
+                                                  ),
+                                          *(int *)((int)aiStackY_1150 +
+                                                  iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 8
+                                                  ),
+                                          *(int *)((int)aiStackY_1150 +
+                                                  iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                  0xc),
+                                          *(int *)((int)aiStackY_1150 +
+                                                  iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
+                                                  0x10));
+                    iVar25 = iVar17 + local_ec;
+                    *(int *)((int)aiStackY_1150 +
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) =
+                         (int)*(short *)((int)&uStackY_f18 +
+                                        iVar20 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 2);
+                    *(int *)((int)aiStackY_1150 +
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c) =
+                         (int)*(short *)((int)&uStackY_f18 +
+                                        iVar20 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                    *(int *)((int)aiStackY_1150 +
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38) = (int)*psVar2;
+                    *(int *)((int)aiStackY_1150 +
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34) =
+                         (int)*(short *)(param_6 + iVar22 * 4);
+                    *(undefined4 *)
+                     ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) =
+                         0x699eff;
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     local_EAX_3386 =
-                         st::fn_006ACED8((int)*(short *)(param_6 + iVar19 * 4),(int)*psVar3,
-                                      (int)*(short *)(&stack0xfffffe98 + iVar14),
-                                      (int)*(short *)(&stack0xfffffe9a + iVar14));
-                    iVar14 = local_EAX_3386 + iVar20 + local_EAX_3197 + iVar18 + iVar12;
-                    if (local_b0 < iVar14) {
+                         st::fn_006ACED8(*(int *)((int)aiStackY_1150 +
+                                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34)
+                                      ,*(int *)((int)aiStackY_1150 +
+                                               iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38
+                                               ),
+                                      *(int *)((int)aiStackY_1150 +
+                                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c)
+                                      ,*(int *)((int)aiStackY_1150 +
+                                               iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40
+                                               ));
+                    iVar20 = local_EAX_3386 + iVar25 + local_EAX_3197 + iVar18 + iVar12;
+                    if (local_b0 < iVar20) {
                       local_48 = local_4c;
                       local_58 = local_5c;
-                      local_b0 = iVar14;
+                      local_b0 = iVar20;
                     }
                   }
                 }
 LAB_00699f26:
-                iVar14 = local_48;
+                iVar20 = local_48;
                 local_100 = local_100 + -1;
               } while (0 < local_100);
               if (local_48 != local_58) {
@@ -2416,24 +2732,37 @@ LAB_00699f26:
                 uStack_12a = 0;
                 local_128 = 0;
                 local_126 = 0;
-                iVar20 = local_48 * 10;
-                uVar4 = *(ushort *)(&stack0xfffffe98 + iVar20);
-                local_134 = (uint)uVar4;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_134 = CONCAT22(*(short *)(&stack0xfffffe9a + iVar20),uVar4);
-                local_130 = (uint)*(ushort *)(&stack0xfffffe9c + iVar20);
+                puVar4 = (uint *)((int)&uStackY_f18 +
+                                 local_48 * 10 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                local_134 = (uint)(ushort)*puVar4;
+                local_134 = *puVar4;
+                local_130 = (uint)(ushort)puVar4[1];
                 this->field_584B
-                [(int)*(short *)(&stack0xfffffe9a + iVar20) * this->field_5833 + (int)(short)uVar4]
-                     = 0;
+                [(int)(short)STField<ushort>(puVar4,2) * this->field_5833 +
+                 (int)(short)(ushort)*puVar4] = 0;
                 uStack_12a = 0xdd;
                 local_128 = 0;
                 local_126 = 1;
-                st::fn_006AE1C0((DArrayTy *)param_8->field_001C,&local_134);
-                iVar20 = local_58;
+                *(uint **)((int)aiStackY_1150 +
+                          iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) = &local_134;
+                *(undefined4 *)
+                 ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c) =
+                     param_8->field_001C;
+                *(undefined4 *)
+                 ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38) =
+                     0x699fd4;
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                st::fn_006AE1C0
+                          (*(DArrayTy **)
+                            ((int)aiStackY_1150 +
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c),
+                           *(void **)((int)aiStackY_1150 +
+                                     iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40));
+                iVar25 = local_58;
                 local_118 = local_118 + 1;
-                iVar14 = *(int *)(local_108 + iVar14 * 4);
-                local_e4[local_114] = iVar14;
-                *(undefined4 *)(local_9c + iVar14 * 10 + 6) = 0;
+                iVar20 = *(int *)(local_108 + iVar20 * 4);
+                local_e4[local_114] = iVar20;
+                *(undefined4 *)(local_9c + iVar20 * 10 + 6) = 0;
                 local_114 = local_114 + 1;
                 if (1 < param_4) {
                   local_134 = 0;
@@ -2442,114 +2771,138 @@ LAB_00699f26:
                   uStack_12a = 0;
                   local_128 = 0;
                   local_126 = 0;
-                  iVar14 = local_58 * 10;
-                  uVar4 = *(ushort *)(&stack0xfffffe98 + iVar14);
-                  local_134 = (uint)uVar4;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_134 = CONCAT22(*(short *)(&stack0xfffffe9a + iVar14),uVar4);
+                  puVar4 = (uint *)((int)&uStackY_f18 +
+                                   local_58 * 10 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7);
+                  local_134 = (uint)(ushort)*puVar4;
+                  local_134 = *puVar4;
                   this->field_584B
-                  [(int)*(short *)(&stack0xfffffe9a + iVar14) * this->field_5833 + (int)(short)uVar4
-                  ] = 0;
-                  local_130 = (uint)*(ushort *)(&stack0xfffffe9c + iVar14);
+                  [(int)(short)STField<ushort>(puVar4,2) * this->field_5833 +
+                   (int)(short)(ushort)*puVar4] = 0;
+                  local_130 = (uint)(ushort)puVar4[1];
                   uStack_12a = 0xde;
                   local_128 = 0;
                   local_126 = 1;
-                  st::fn_006AE1C0((DArrayTy *)param_8->field_001C,&local_134);
-                  iVar14 = *(int *)(local_108 + iVar20 * 4);
-                  local_e4[local_114] = iVar14;
-                  *(undefined4 *)(local_9c + iVar14 * 10 + 6) = 0;
-                  local_114 = local_114 + 1;
+                  *(uint **)((int)aiStackY_1150 +
+                            iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) = &local_134;
+                  *(undefined4 *)
+                   ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c) =
+                       param_8->field_001C;
+                  *(undefined4 *)
+                   ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38) =
+                       0x69a0a7;
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                  st::fn_006AE1C0
+                            (*(DArrayTy **)
+                              ((int)aiStackY_1150 +
+                              iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x3c),
+                             *(void **)((int)aiStackY_1150 +
+                                       iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40));
                   local_118 = local_118 + 1;
                   local_8c = local_8c + 1;
+                  iVar20 = *(int *)(local_108 + iVar25 * 4);
+                  local_e4[local_114] = iVar20;
+                  *(undefined4 *)(local_9c + iVar20 * 10 + 6) = 0;
+                  local_114 = local_114 + 1;
                 }
               }
             }
           }
           local_dc = local_dc + 1;
+          puVar23 = auStackY_110c + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7;
         } while (local_dc < (int)param_5);
       }
     }
+    iVar7 = local_f0;
     local_bc = param_3 - local_118;
-    if (0 < local_bc) {
-      local_8 = 2;
-      st::fn_0072DA40();
-      local_120 = (undefined4 *)&stack0xfffffe98;
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      st::fn_0072DA40();
-      local_a0 = (undefined4 *)&stack0xfffffe98;
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      st::fn_0072DA40();
-      local_84 = (undefined4 *)&stack0xfffffe98;
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      st::fn_0072DA40();
+    if (0 < param_3 - local_118) {
+      *(undefined4 *)(puVar23 + -4) = 0x69a130;
+      iVar20 = iVar7 * -4;
+      local_120 = (undefined4 *)(puVar23 + iVar20);
+      *(undefined4 *)(puVar23 + iVar20 + -4) = 0x69a149;
+      iVar21 = local_bc;
+      local_a0 = (undefined4 *)(puVar23 + iVar7 * -8);
+      *(undefined4 *)(puVar23 + iVar7 * -8 + -4) = 0x69a16d;
+      iVar24 = iVar21 * -8;
+      local_84 = (undefined4 *)(puVar23 + iVar21 * -4 + iVar7 * -8);
+      *(undefined4 *)(puVar23 + iVar21 * -4 + iVar7 * -8 + -4) = 0x69a181;
+      local_1c = puVar23 + iVar21 * -8 + iVar7 * -8;
+      local_20 = (undefined4 *)(puVar23 + iVar21 * -8 + iVar7 * -8);
       local_8 = 0xffffffff;
-      iVar14 = 0;
+      iVar25 = 0;
       local_b8 = 0;
-      uVar11 = 0;
-      local_20 = (undefined4 *)&stack0xfffffe98;
-      puVar21 = (undefined4 *)&stack0xfffffe98;
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-      puVar7 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
+      uVar15 = 0;
       if (0 < local_f0) {
         do {
+          psVar1 = (short *)(local_9c + uVar15 * 10);
+          *(undefined4 *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -4) = param_8->field_001C;
+          *(undefined4 *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -8) = 0xf;
+          *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0xc) = (int)psVar1[1];
+          *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0x10) = (int)*psVar1;
+          *(undefined4 *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0x14) = 0x69a1cd;
           local_EAX_4104 =
-               st::fn_00404025((int)*(short *)(local_9c + uVar11 * 10),
-                                  (int)*(short *)((int)(local_9c + uVar11 * 10) + 2),0xf,
-                                  (DArrayTy *)param_8->field_001C);
+               st::fn_00404025(*(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0x10),
+                                  *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0xc),
+                                  *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -8),
+                                  *(DArrayTy **)(puVar23 + iVar21 * -8 + iVar7 * -8 + -4));
           if (0xf < local_EAX_4104) {
-            *(uint *)(&stack0xfffffe98 + iVar14 * 4) = local_EAX_4104 << 0x10 | uVar11 & 0xffff;
-            iVar14 = iVar14 + 1;
-            local_b8 = iVar14;
+            *(uint *)(puVar23 + iVar25 * 4 + iVar20) = local_EAX_4104 << 0x10 | uVar15 & 0xffff;
+            iVar25 = iVar25 + 1;
+            local_b8 = iVar25;
           }
-          uVar11 = uVar11 + 1;
-          puVar21 = local_20;
-          puVar7 = local_1c;
-        } while ((int)uVar11 < local_f0);
+          uVar15 = uVar15 + 1;
+        } while ((int)uVar15 < local_f0);
       }
-      local_1c = puVar7;
-      local_20 = puVar21;
-      if (0 < iVar14) {
+      if (0 < iVar25) {
         local_100 = 0x82;
-        uVar11 = 0;
+        uVar15 = 0;
         local_b0 = 0;
-        iVar14 = local_b8;
-        puVar21 = local_120;
-        puVar22 = local_a0;
+        iVar20 = local_b8;
+        puVar26 = local_120;
+        puVar27 = local_a0;
         do {
-          for (; iVar14 != 0; iVar14 = iVar14 + -1) {
-            *puVar22 = *puVar21;
-            puVar21 = puVar21 + 1;
-            puVar22 = puVar22 + 1;
+          for (; iVar20 != 0; iVar20 = iVar20 + -1) {
+            *puVar27 = *puVar26;
+            puVar26 = puVar26 + 1;
+            puVar27 = puVar27 + 1;
           }
           local_fc = 0;
           local_28 = 0;
-          puVar21 = local_84;
-          for (iVar14 = local_bc; iVar14 != 0; iVar14 = iVar14 + -1) {
-            *puVar21 = 0;
-            puVar21 = puVar21 + 1;
+          puVar26 = local_84;
+          for (iVar20 = local_bc; iVar20 != 0; iVar20 = iVar20 + -1) {
+            *puVar26 = 0;
+            puVar26 = puVar26 + 1;
           }
           local_dc = 0;
           do {
+            *(undefined4 *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -4) = 0x69a243;
             local_EAX_4222 = st::fn_0072E6C0();
-            iVar14 = (int)local_EAX_4222 % local_b8;
-            uVar10 = local_a0[iVar14];
-            if (uVar10 >> 0x10 != 0) {
-              local_84[local_fc] = iVar14;
-              local_28 = local_28 + (uVar10 >> 0x10);
+            iVar20 = (int)local_EAX_4222 % local_b8;
+            uVar11 = local_a0[iVar20];
+            if (uVar11 >> 0x10 != 0) {
+              local_84[local_fc] = iVar20;
+              local_28 = local_28 + (uVar11 >> 0x10);
               local_fc = local_fc + 1;
               if (local_bc <= (int)local_fc) break;
-              uVar4 = *(ushort *)(local_a0 + iVar14);
-              if (((int)(uint)uVar4 < local_f0) && (local_f4 = 0, 0 < local_b8)) {
+              uVar5 = *(ushort *)(local_a0 + iVar20);
+              if (((int)(uint)uVar5 < local_f0) && (local_f4 = 0, 0 < local_b8)) {
                 do {
-                  uVar5 = *(ushort *)(local_a0 + local_f4);
-                  if (((int)(uint)uVar5 < local_f0) &&
-                     (local_EAX_4400 =
-                           st::fn_006ACF90((int)*(short *)(local_9c + (uint)uVar5 * 10),
-                                        (int)*(short *)((int)(local_9c + (uint)uVar5 * 10) + 2),
-                                        (int)*(short *)(local_9c + (uint)uVar4 * 10),
-                                        (int)*(short *)((int)(local_9c + (uint)uVar4 * 10) + 2)),
-                     local_EAX_4400 < 0xf)) {
-                    local_a0[local_f4] = (uint)uVar5;
+                  uVar6 = *(ushort *)(local_a0 + local_f4);
+                  if ((int)(uint)uVar6 < local_f0) {
+                    psVar1 = (short *)(local_9c + (uint)uVar5 * 10);
+                    psVar2 = (short *)(local_9c + (uint)uVar6 * 10);
+                    *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -4) = (int)psVar1[1];
+                    *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -8) = (int)*psVar1;
+                    *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0xc) = (int)psVar2[1];
+                    *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0x10) = (int)*psVar2;
+                    *(undefined4 *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0x14) = 0x69a2f5;
+                    local_EAX_4400 =
+                         st::fn_006ACF90(*(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0x10),
+                                      *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0xc),
+                                      *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -8),
+                                      *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -4));
+                    if (local_EAX_4400 < 0xf) {
+                      local_a0[local_f4] = (uint)uVar6;
+                    }
                   }
                   local_f4 = local_f4 + 1;
                 } while (local_f4 < local_b8);
@@ -2557,183 +2910,196 @@ LAB_00699f26:
             }
             local_dc = local_dc + 1;
           } while (local_dc < 0x82);
-          uVar10 = local_fc;
-          puVar21 = local_84;
-          puVar22 = local_20;
+          uVar11 = local_fc;
+          puVar26 = local_84;
+          puVar27 = local_20;
           if (local_b0 < local_28) {
-            for (; uVar10 != 0; uVar10 = uVar10 - 1) {
-              *puVar22 = *puVar21;
-              puVar21 = puVar21 + 1;
-              puVar22 = puVar22 + 1;
+            for (; uVar11 != 0; uVar11 = uVar11 - 1) {
+              *puVar27 = *puVar26;
+              puVar26 = puVar26 + 1;
+              puVar27 = puVar27 + 1;
             }
             local_b0 = local_28;
-            uVar11 = local_fc;
+            uVar15 = local_fc;
           }
           local_100 = local_100 + -1;
-          iVar14 = local_b8;
-          puVar21 = local_120;
-          puVar22 = local_a0;
+          iVar20 = local_b8;
+          puVar26 = local_120;
+          puVar27 = local_a0;
         } while (0 < local_100);
-        if (uVar11 != 0) {
-          local_8 = 3;
-          st::fn_0072DA40();
-          local_ac = (undefined4 *)&stack0xfffffe98;
-          local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-          st::fn_0072DA40();
-          local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-          st::fn_0072DA40();
+        if (uVar15 != 0) {
+          *(undefined4 *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -4) = 0x69a396;
+          local_ac = (undefined4 *)(puVar23 + uVar15 * -4 + iVar21 * -8 + iVar7 * -8);
+          *(undefined4 *)(puVar23 + uVar15 * -4 + iVar21 * -8 + iVar7 * -8 + -4) = 0x69a3ad;
+          *(undefined4 *)(puVar23 + uVar15 * -8 + iVar21 * -8 + iVar7 * -8 + -4) = 0x69a3ca;
+          iVar20 = uVar15 * uVar15 * -4;
+          local_1c = puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8;
+          local_e8 = puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8;
           local_8 = 0xffffffff;
           local_dc = 0;
-          local_e8 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-          local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-          puVar7 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-          iVar14 = local_dc;
-          puVar8 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe98);
-          if (0 < (int)uVar11) {
+          iVar25 = local_dc;
+          if (0 < (int)uVar15) {
             do {
-              for (; local_1c = puVar8, local_e8 = puVar7, iVar14 < (int)uVar11; iVar14 = iVar14 + 1
-                  ) {
+              for (; iVar25 < (int)uVar15; iVar25 = iVar25 + 1) {
+                psVar1 = (short *)(local_9c + (uint)*(ushort *)(local_120 + local_20[iVar25]) * 10);
+                psVar2 = (short *)(local_9c + (uint)*(ushort *)(local_120 + local_20[local_dc]) * 10
+                                  );
+                *(int *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -4) = (int)psVar1[1]
+                ;
+                *(int *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -8) = (int)*psVar1;
+                *(int *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -0xc) =
+                     (int)psVar2[1];
+                *(int *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -0x10) =
+                     (int)*psVar2;
+                *(undefined4 *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -0x14) =
+                     0x69a432;
                 local_EAX_4717 =
-                     st::fn_006ACED8((int)*(short *)(local_9c +
-                                                 (uint)*(ushort *)(local_120 + local_20[local_dc]) *
-                                                 10),
-                                  (int)*(short *)((int)(local_9c +
-                                                       (uint)*(ushort *)
-                                                              (local_120 + local_20[local_dc]) * 10)
-                                                 + 2),
-                                  (int)*(short *)(local_9c +
-                                                 (uint)*(ushort *)(local_120 + local_20[iVar14]) *
-                                                 10),
-                                  (int)*(short *)((int)(local_9c +
-                                                       (uint)*(ushort *)
-                                                              (local_120 + local_20[iVar14]) * 10) +
-                                                 2));
-                *(int *)(local_e8 + (uVar11 * local_dc + iVar14) * 4) = local_EAX_4717;
-                puVar7 = local_e8;
-                puVar8 = local_1c;
+                     st::fn_006ACED8(*(int *)(puVar23 +
+                                          iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -0x10),
+                                  *(int *)(puVar23 +
+                                          iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -0xc),
+                                  *(int *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -8
+                                          ),
+                                  *(int *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -4
+                                          ));
+                *(int *)(local_e8 + (uVar15 * local_dc + iVar25) * 4) = local_EAX_4717;
               }
               local_dc = local_dc + 1;
-              puVar7 = local_e8;
-              iVar14 = local_dc;
-              puVar8 = local_1c;
-            } while (local_dc < (int)uVar11);
+              iVar25 = local_dc;
+            } while (local_dc < (int)uVar15);
           }
-          local_90 = (int)uVar11 / 2;
-          uVar10 = uVar11 & 0x80000001;
-          bVar24 = uVar10 == 0;
-          if ((int)uVar10 < 0) {
-            bVar24 = (uVar10 - 1 | 0xfffffffe) == 0xffffffff;
+          local_13c = (int)uVar15 / 2;
+          local_90 = local_13c;
+          uVar11 = uVar15 & 0x80000001;
+          bVar29 = uVar11 == 0;
+          if ((int)uVar11 < 0) {
+            bVar29 = (uVar11 - 1 | 0xfffffffe) == 0xffffffff;
           }
-          local_13c = local_90;
-          if (!bVar24) {
-            local_13c = local_90 + 1;
+          if (!bVar29) {
+            local_13c = local_13c + 1;
           }
           local_100 = 100;
           local_b0 = 0;
-          uVar10 = uVar11;
-          puVar22 = local_ac;
-          puVar21 = local_ac;
+          uVar11 = uVar15;
+          puVar27 = local_ac;
+          puVar26 = local_ac;
           do {
-            for (; uVar10 != 0; uVar10 = uVar10 - 1) {
-              *puVar22 = 0;
-              puVar22 = puVar22 + 1;
+            for (; uVar11 != 0; uVar11 = uVar11 - 1) {
+              *puVar27 = 0;
+              puVar27 = puVar27 + 1;
             }
-            iVar14 = 0;
+            iVar25 = 0;
             local_38 = 0;
             if (0 < local_13c) {
               do {
+                *(undefined4 *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -4) =
+                     0x69a4ba;
                 local_EAX_4853 = st::fn_0072E6C0();
-                iVar20 = (int)local_EAX_4853 % (int)uVar11;
-                if (puVar21[iVar20] == 0) {
-                  puVar21[iVar20] = 0xdd;
+                iVar22 = (int)local_EAX_4853 % (int)uVar15;
+                if (puVar26[iVar22] == 0) {
+                  puVar26[iVar22] = 0xdd;
                 }
                 else {
                   iVar19 = 0;
-                  if (0 < (int)uVar11) {
+                  if (0 < (int)uVar15) {
                     do {
-                      iVar13 = iVar20 + iVar19;
-                      if ((int)uVar11 <= iVar13) {
-                        iVar13 = iVar13 - uVar11;
+                      iVar10 = iVar22 + iVar19;
+                      if ((int)uVar15 <= iVar10) {
+                        iVar10 = iVar10 - uVar15;
                       }
-                      if (puVar21[iVar13] == 0) {
-                        puVar21[iVar13] = 0xdd;
+                      if (puVar26[iVar10] == 0) {
+                        puVar26[iVar10] = 0xdd;
                         break;
                       }
                       iVar19 = iVar19 + 1;
-                    } while (iVar19 < (int)uVar11);
+                    } while (iVar19 < (int)uVar15);
                   }
                 }
-                iVar14 = iVar14 + 1;
-              } while (iVar14 < local_13c);
+                iVar25 = iVar25 + 1;
+              } while (iVar25 < local_13c);
             }
-            iVar14 = 0;
+            iVar25 = 0;
             if (0 < local_90) {
               do {
+                *(undefined4 *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -4) =
+                     0x69a51c;
                 local_EAX_4951 = st::fn_0072E6C0();
-                iVar20 = (int)local_EAX_4951 % (int)uVar11;
-                if (puVar21[iVar20] == 0) {
-                  puVar21[iVar20] = 0xde;
+                iVar22 = (int)local_EAX_4951 % (int)uVar15;
+                if (puVar26[iVar22] == 0) {
+                  puVar26[iVar22] = 0xde;
                 }
                 else {
                   iVar19 = 0;
-                  if (0 < (int)uVar11) {
+                  if (0 < (int)uVar15) {
                     do {
-                      iVar13 = iVar20 + iVar19;
-                      if ((int)uVar11 <= iVar13) {
-                        iVar13 = iVar13 - uVar11;
+                      iVar10 = iVar22 + iVar19;
+                      if ((int)uVar15 <= iVar10) {
+                        iVar10 = iVar10 - uVar15;
                       }
-                      if (puVar21[iVar13] == 0) {
-                        puVar21[iVar13] = 0xde;
+                      if (puVar26[iVar10] == 0) {
+                        puVar26[iVar10] = 0xde;
                         break;
                       }
                       iVar19 = iVar19 + 1;
-                    } while (iVar19 < (int)uVar11);
+                    } while (iVar19 < (int)uVar15);
                   }
                 }
-                iVar14 = iVar14 + 1;
-              } while (iVar14 < local_90);
+                iVar25 = iVar25 + 1;
+              } while (iVar25 < local_90);
             }
-            iVar14 = 0;
-            iVar20 = iVar14;
-            if (0 < (int)uVar11) {
+            iVar25 = 0;
+            iVar22 = iVar25;
+            if (0 < (int)uVar15) {
               do {
-                for (; iVar14 < (int)uVar11; iVar14 = iVar14 + 1) {
-                  if (puVar21[iVar14] == puVar21[iVar20]) {
-                    local_38 = local_38 + *(int *)(local_e8 + (uVar11 * iVar20 + iVar14) * 4);
-                    puVar21 = local_ac;
+                for (; iVar25 < (int)uVar15; iVar25 = iVar25 + 1) {
+                  if (puVar26[iVar25] == puVar26[iVar22]) {
+                    local_38 = local_38 + *(int *)(local_e8 + (uVar15 * iVar22 + iVar25) * 4);
+                    puVar26 = local_ac;
                   }
                 }
-                iVar14 = iVar20 + 1;
-                iVar20 = iVar14;
-              } while (iVar14 < (int)uVar11);
+                iVar25 = iVar22 + 1;
+                iVar22 = iVar25;
+              } while (iVar25 < (int)uVar15);
             }
-            puVar22 = puVar21;
+            puVar27 = puVar26;
             if (local_b0 <= local_38) {
               local_b0 = local_38;
-              puVar21 = local_ac;
-              puVar23 = (undefined4 *)&stack0xfffffe98;
-              for (uVar10 = uVar11; puVar22 = local_ac, uVar10 != 0; uVar10 = uVar10 - 1) {
-                *puVar23 = *puVar21;
-                puVar21 = puVar21 + 1;
-                puVar23 = puVar23 + 1;
+              puVar26 = local_ac;
+              puVar28 = (undefined4 *)(puVar23 + uVar15 * -8 + iVar21 * -8 + iVar7 * -8);
+              for (uVar11 = uVar15; puVar27 = local_ac, uVar11 != 0; uVar11 = uVar11 - 1) {
+                *puVar28 = *puVar26;
+                puVar26 = puVar26 + 1;
+                puVar28 = puVar28 + 1;
               }
             }
             local_100 = local_100 + -1;
-            uVar10 = uVar11;
-            puVar21 = puVar22;
+            uVar11 = uVar15;
+            puVar26 = puVar27;
           } while (-1 < local_100);
-          iVar14 = 0;
-          if (0 < (int)uVar11) {
+          iVar25 = 0;
+          if (0 < (int)uVar15) {
             do {
-              uStack_12a = (undefined2)*(undefined4 *)(&stack0xfffffe98 + iVar14 * 4);
-              local_128 = (undefined2)((uint)*(undefined4 *)(&stack0xfffffe98 + iVar14 * 4) >> 0x10);
-              local_134 = *(uint *)(local_9c + (uint)*(ushort *)(local_120 + local_20[iVar14]) * 10);
-              local_130 = STReplaceLowWord((uint32_t)(local_130), (uint16_t)(*(undefined2 *) ((int)(local_9c + (uint)*(ushort *)(local_120 + local_20[iVar14]) * 10) + 4)));
+              uStack_12a = (undefined2)
+                           *(undefined4 *)
+                            (puVar23 + iVar25 * 4 + uVar15 * -8 + iVar21 * -8 + iVar7 * -8);
+              local_128 = (undefined2)
+                          ((uint)*(undefined4 *)
+                                  (puVar23 + iVar25 * 4 + uVar15 * -8 + iVar21 * -8 + iVar7 * -8) >>
+                          0x10);
+              local_134 = *(uint *)(local_9c + (uint)*(ushort *)(local_120 + local_20[iVar25]) * 10);
+              local_130 = STReplaceLowWord((uint32_t)(local_130), (uint16_t)((short)*(uint *)((int)(local_9c + (uint)*(ushort *) (local_120 + local_20[iVar25]) * 10) + 4)));
               local_126 = 2;
-              st::fn_006AE1C0((DArrayTy *)param_8->field_001C,&local_134);
+              *(uint **)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -4) = &local_134;
+              *(undefined4 *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -8) =
+                   param_8->field_001C;
+              *(undefined4 *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -0xc) =
+                   0x69a631;
+              st::fn_006AE1C0
+                        (*(DArrayTy **)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -8),
+                         *(void **)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -4));
               local_118 = local_118 + 1;
-              iVar14 = iVar14 + 1;
-            } while (iVar14 < (int)uVar11);
+              iVar25 = iVar25 + 1;
+            } while (iVar25 < (int)uVar15);
           }
         }
       }
@@ -2898,7 +3264,6 @@ void __thiscall st::fn_0069ADA0(CGenerate *this,int param_1,int param_2)
   if (0 < param_2) {
     do {
       pbVar5 = st::pointer_boundary_cast<byte *>(this->field_000C);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
       if (0 < *(short *)(pbVar5 + 2)) {
         do {
@@ -2917,7 +3282,6 @@ void __thiscall st::fn_0069ADA0(CGenerate *this,int param_1,int param_2)
             } while (iVar8 < *(short *)this->field_000C);
           }
           pbVar5 = st::pointer_boundary_cast<byte *>(this->field_000C);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 + 1;
         } while (param_2 < *(short *)(pbVar5 + 2));
       }
@@ -2982,7 +3346,6 @@ int __thiscall st::fn_0069B190(CGenerate *this,int param_1,int param_2,int param
           iVar5 = 0;
           if (-1 < iVar6) {
             iVar7 = iVar6 * local_14 + local_18 * iVar1;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = iVar7 * 2;
             do {
               iVar8 = iVar7 + 1;
@@ -3022,7 +3385,6 @@ int __thiscall st::fn_0069B190(CGenerate *this,int param_1,int param_2,int param
                   }
                 }
               }
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_2 = param_2 + 2;
               iVar6 = this->field_5833;
               iVar7 = iVar8;
@@ -3065,13 +3427,10 @@ st::fn_0069B400(CGenerate *this,int param_1,int param_2,int param_3,int param_4,
   if (this->field_5847 != 1 && -1 < this->field_5847 + -1) {
     local_10 = (int *)(param_5 + 0x18);
     do {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = 0;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = 0;
       if (0 < iVar6) {
         iVar4 = (this->field_5833 * param_2 + this->field_582F * local_c + param_1) * 2;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = iVar6;
         do {
           if (0 < iVar3) {
@@ -3082,11 +3441,9 @@ st::fn_0069B400(CGenerate *this,int param_1,int param_2,int param_3,int param_4,
               if (0 < sVar1) {
                 iVar2 = iVar2 + sVar1;
                 if (sVar1 == 4) {
-                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_4 = param_4 + 1;
                 }
                 else {
-                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_3 = param_3 + 1;
                 }
               }
@@ -3095,7 +3452,6 @@ st::fn_0069B400(CGenerate *this,int param_1,int param_2,int param_3,int param_4,
             } while (iVar5 != 0);
           }
           iVar4 = iVar4 + this->field_5833 * 2;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_5 = param_5 + -1;
         } while (param_5 != 0);
       }
@@ -3110,6 +3466,8 @@ st::fn_0069B400(CGenerate *this,int param_1,int param_2,int param_3,int param_4,
 
 // 0069BDC0 CGenerate::sub_0069BDC0
 #line 4 "decomp/ST.exe/functions/0069BDC0/decomp.c"
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=3; incoming_stack_parameter_uses=19; direct_non_thunk_callers=0;
@@ -3121,6 +3479,8 @@ st::fn_0069BDC0
           RecoveredRecord_CGenerate_0069BDC0 *param_7)
 
 {
+  alignas(4) byte st_stack_frame[184];
+
   undefined1 *puVar1;
   int iVar2;
   int iVar4;
@@ -3163,7 +3523,7 @@ st::fn_0069BDC0
   puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079d808);
   puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff6c);
+  local_1c = (st_stack_frame + 32);
   local_40 = 0;
   local_68 = 0;
   local_7c = 0;
@@ -3177,7 +3537,6 @@ st::fn_0069BDC0
             ((this->field_5837 - param_3) / param_4 + 2);
     ExceptionList = &local_14;
     local_78 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(uVar6 * 0x40));
-    piVar8 = (int *)&stack0xffffff6c;
     puVar10 = local_78;
     for (iVar5 = (uVar6 & 0x3ffffff) << 4; iVar5 != 0; iVar5 = iVar5 + -1) {
       *puVar10 = 0;
@@ -3230,14 +3589,13 @@ st::fn_0069BDC0
     }
     iVar5 = local_40;
     if (-1 < (int)local_3c) {
-      local_8 = 0;
-      st::fn_0072DA40();
-      local_5c = (int *)&stack0xffffff6c;
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff6c);
-      st::fn_0072DA40();
+      iVar5 = param_1 * -4;
+      local_5c = (int *)((st_stack_frame + 32) + iVar5);
+      piVar8 = (int *)((st_stack_frame + 32) + iVar5);
+      *(undefined4 *)((st_stack_frame + 28) + iVar5) = 0x69bfdd;
+      local_1c = (st_stack_frame + 32);
+      local_58 = (int *)(st_stack_frame + 32);
       local_8 = 0xffffffff;
-      local_58 = (int *)&stack0xffffff6c;
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff6c);
       st::fn_00730810((undefined1 *)local_78,local_3c,0x40,st::pointer_boundary_cast<undefined *>(st::fn_00402ADB));
       local_28 = (local_50 * param_5) / 100;
       local_60 = 0;
@@ -3340,6 +3698,8 @@ LAB_0069c1df:
 
 // 0069CB50 CGenerate::sub_0069CB50
 #line 4 "decomp/ST.exe/functions/0069CB50/decomp.c"
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=234; direct_non_thunk_callers=0;
@@ -3348,18 +3708,23 @@ LAB_0069c1df:
 uint __fastcall st::fn_0069CB50(int *param_1)
 
 {
+  alignas(4) byte st_stack_frame[416];
+
   int iVar1;
-  dword dVar2;
-  DArrayTy *pDVar3;
-  int *piVar4;
+  undefined4 uVar2;
+  dword dVar3;
+  undefined1 *puVar4;
+  uint *puVar5_mg0;
+  int *piVar5;
   uint local_EAX_492;
-  int iVar5;
+  int iVar6;
   uint local_EAX_596;
   int iVar10;
   int local_EAX_783;
   uint local_EAX_878;
   uint local_EAX_1239;
-  uint uVar6;
+  byte *puVar7;
+  uint uVar8;
   uint local_EAX_2979;
   uint local_EAX_3093;
   uint local_EAX_3129;
@@ -3391,19 +3756,22 @@ uint __fastcall st::fn_0069CB50(int *param_1)
   uint local_EAX_4755;
   uint local_EAX_4843;
   uint uVar14;
-  void *pvVar7;
-  int iVar8;
+  int iVar9;
   uint uVar10;
   int iVar11;
-  int iVar12;
+  DArrayTy *pDVar12;
   int iVar13;
   int iVar14;
-  uint uVar15;
-  AnonShape_0069CB50_B339E56A *pAVar16;
-  byte *puVar17;
-  uint uVar18;
-  bool bVar19;
-  undefined4 uVar20;
+  int iVar15;
+  uint uVar16;
+  int iVar17;
+  uint *puVar18;
+  int iVar19;
+  AnonShape_0069CB50_B339E56A *pAVar20;
+  uint uVar21;
+  bool bVar22;
+  int aiStackY_1b0 [4];
+  undefined4 uStackY_1a0;
   int local_17c;
   uint local_178;
   int local_174;
@@ -3418,7 +3786,7 @@ uint __fastcall st::fn_0069CB50(int *param_1)
   int local_144;
   int local_140;
   uint local_13c;
-  DArrayTy *local_138;
+  uint *local_138;
   int local_134;
   int aiStack_130 [9];
   int local_10c [9];
@@ -3461,268 +3829,337 @@ uint __fastcall st::fn_0069CB50(int *param_1)
   puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079d818);
   puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe68);
-  iVar14 = 0;
+  local_1c = (st_stack_frame + 4);
+  iVar17 = 0;
   local_13c = 0;
   local_40 = 0;
   ExceptionList = &local_14;
   st::fn_004026E4(param_1);
-  iVar8 = *(int *)param_1[2] << 1;
-  STField<int>(param_1,0x5833) = iVar8;
+  iVar9 = *(int *)param_1[2] << 1;
+  STField<int>(param_1,0x5833) = iVar9;
   STField<int>(param_1,0x5837) = ((int *)param_1[2])[1] << 1;
-  st::fn_0040564B((CGenerate *)param_1,iVar8);
-  iVar8 = ((int *)param_1[2])[1] * *(int *)param_1[2];
-  uVar15 = iVar8 * 4;
-  local_d8 = uVar15;
-  local_78 = st::fn_006AAC70(iVar8 * 0x38);
-  local_c0 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(uVar15));
-  local_8 = 0;
-  st::fn_0072DA40();
-  local_16c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe68);
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe68);
-  st::fn_0072DA40();
-  local_74 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe68);
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe68);
-  st::fn_0072DA40();
+  uStackY_1a0 = 0x69cbb3;
+  st::fn_0040564B((CGenerate *)param_1,iVar9);
+  iVar19 = ((int *)param_1[2])[1] * *(int *)param_1[2];
+  uStackY_1a0 = 0x69cbd6;
+  local_d8 = iVar19 * 4;
+  local_78 = st::fn_006AAC70(iVar19 * 0x38);
+  uStackY_1a0 = 0x69cbdf;
+  local_c0 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(iVar19 * 4));
+  iVar9 = iVar19 * -0x10;
+  local_16c = (st_stack_frame + 4) + iVar9;
+  *(undefined4 *)((st_stack_frame + 0) + iVar9) = 0x69cc0e;
+  local_74 = (st_stack_frame + 4) + iVar19 * -0x20;
+  *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x20) = 0x69cc22;
+  local_1c = (st_stack_frame + 4) + iVar19 * -0x30;
+  local_70 = (st_stack_frame + 4) + iVar19 * -0x30;
   local_8 = 0xffffffff;
-  local_70 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe68);
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffe68);
-  st::fn_0040356C(param_1,(int)local_78,(int *)(*(int *)param_1[2] << 1),
-                     ((int *)param_1[2])[1] << 1);
-  pDVar3 = (DArrayTy *)
-           st::fn_00404C82((int)local_78,*(int *)param_1[2] << 1,((int *)param_1[2])[1] << 1);
-  local_138 = pDVar3;
-  if (pDVar3 == nullptr) {
+  piVar5 = (int *)param_1[2];
+  *(int *)((st_stack_frame + 0) + iVar19 * -0x30) = st::machine_word_boundary_cast<int>(piVar5[1] << 1);
+  aiStackY_1b0[iVar19 * -0xc + 4] = *piVar5 << 1;
+  aiStackY_1b0[iVar19 * -0xc + 3] = (int)local_78;
+  aiStackY_1b0[iVar19 * -0xc + 2] = 0x69cc4a;
+  st::fn_0040356C(param_1,aiStackY_1b0[iVar19 * -0xc + 3],(int *)aiStackY_1b0[iVar19 * -0xc + 4],
+                     *(int *)((st_stack_frame + 0) + iVar19 * -0x30));
+  piVar5 = (int *)param_1[2];
+  *(int *)((st_stack_frame + 0) + iVar19 * -0x30) = st::machine_word_boundary_cast<int>(piVar5[1] << 1);
+  aiStackY_1b0[iVar19 * -0xc + 4] = *piVar5 << 1;
+  aiStackY_1b0[iVar19 * -0xc + 3] = (int)local_78;
+  aiStackY_1b0[iVar19 * -0xc + 2] = 0x69cc63;
+  puVar5_mg0 = st::fn_00404C82(aiStackY_1b0[iVar19 * -0xc + 3],aiStackY_1b0[iVar19 * -0xc + 4],
+                                  *(int *)((st_stack_frame + 0) + iVar19 * -0x30));
+  local_138 = puVar5_mg0;
+  if (puVar5_mg0 == nullptr) {
+    *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69ded7;
     uVar14 = st::fn_0072E6C0();
-    st::fn_00402856(param_1,100,100,0,0x3e9,uVar14 % DAT_007d88d4);
+    *(uint *)((st_stack_frame + 0) + iVar19 * -0x30) = uVar14 % DAT_007d88d4;
+    aiStackY_1b0[iVar19 * -0xc + 4] = 0x3e9;
+    aiStackY_1b0[iVar19 * -0xc + 3] = 0;
+    aiStackY_1b0[iVar19 * -0xc + 2] = 100;
+    aiStackY_1b0[iVar19 * -0xc + 1] = 100;
+    aiStackY_1b0[iVar19 * -0xc] = 0x69def1;
+    st::fn_00402856(param_1,aiStackY_1b0[iVar19 * -0xc + 1],aiStackY_1b0[iVar19 * -0xc + 2],
+                       aiStackY_1b0[iVar19 * -0xc + 3],aiStackY_1b0[iVar19 * -0xc + 4],
+                       *(uint *)((st_stack_frame + 0) + iVar19 * -0x30));
   }
   else {
-    uVar15 = pDVar3->count;
-    local_13c = uVar15;
-    if (0 < (int)uVar15) {
+    uVar16 = puVar5_mg0[3];
+    local_13c = uVar16;
+    if (0 < (int)uVar16) {
       local_144 = 0;
-      iVar8 = 0;
+      iVar14 = 0;
       local_ac = 0;
       uVar10 = 0;
-      if (0 < (int)uVar15) {
+      if (0 < (int)uVar16) {
         do {
-          if (uVar10 < pDVar3->count) {
-            piVar4 = DArrayAt<int>(pDVar3, uVar10);
+          if (uVar10 < puVar5_mg0[3]) {
+            piVar5 = (int *)(puVar5_mg0[2] * uVar10 + puVar5_mg0[7]);
           }
           else {
-            piVar4 = nullptr;
+            piVar5 = nullptr;
           }
-          if (((piVar4 != nullptr) && (*piVar4 == 0)) && (0 < piVar4[1])) {
-            *(uint *)(local_74 + iVar14 * 4) = uVar10;
-            *(int *)(local_70 + iVar14 * 4) = piVar4[1];
-            iVar14 = iVar14 + 1;
-            iVar8 = local_ac + piVar4[1];
-            local_144 = iVar14;
-            local_ac = iVar8;
+          if (((piVar5 != nullptr) && (*piVar5 == 0)) && (0 < piVar5[1])) {
+            *(uint *)(local_74 + iVar17 * 4) = uVar10;
+            *(int *)(local_70 + iVar17 * 4) = piVar5[1];
+            iVar17 = iVar17 + 1;
+            iVar14 = local_ac + piVar5[1];
+            local_144 = iVar17;
+            local_ac = iVar14;
           }
           uVar10 = uVar10 + 1;
-        } while ((int)uVar10 < (int)uVar15);
+        } while ((int)uVar10 < (int)uVar16);
       }
-      if ((0 < iVar14) && (0 < iVar8)) {
-        iVar8 = STField<int>(param_1,0x5833);
-        local_140 = iVar8 * 8;
+      if ((0 < iVar17) && (0 < iVar14)) {
+        iVar14 = STField<int>(param_1,0x5833);
+        local_140 = iVar14 * 8;
         local_6c = 0;
-        local_7c = (int)(iVar8 + (iVar8 >> 0x1f & 3U)) >> 2;
+        local_7c = (int)(iVar14 + (iVar14 >> 0x1f & 3U)) >> 2;
         while ((0 < local_140 && (local_6c < local_7c))) {
+          *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69cd41;
           local_EAX_492 = st::fn_0072E6C0();
-          iVar13 = (int)local_EAX_492 % local_ac;
-          iVar5 = 0;
+          iVar15 = (int)local_EAX_492 % local_ac;
+          iVar6 = 0;
           iVar11 = 0;
-          iVar8 = iVar13;
-          if (0 < iVar14) {
+          iVar14 = iVar15;
+          if (0 < iVar17) {
             do {
-              iVar5 = iVar5 + *(int *)(local_70 + iVar11 * 4);
-              iVar8 = iVar11;
-              if (iVar13 < iVar5) break;
+              iVar6 = iVar6 + *(int *)(local_70 + iVar11 * 4);
+              iVar14 = iVar11;
+              if (iVar15 < iVar6) break;
               iVar11 = iVar11 + 1;
-              iVar8 = iVar13;
-            } while (iVar11 < iVar14);
+              iVar14 = iVar15;
+            } while (iVar11 < iVar17);
           }
-          if (iVar14 <= iVar11) {
-            iVar8 = iVar14 + -1;
+          if (iVar17 <= iVar11) {
+            iVar14 = iVar17 + -1;
           }
-          if (*(uint *)(local_74 + iVar8 * 4) < pDVar3->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            pAVar16 = (AnonShape_0069CB50_B339E56A *)
-                      (pDVar3->elementSize * *(uint *)(local_74 + iVar8 * 4) + (int)pDVar3->data);
+          if (*(uint *)(local_74 + iVar14 * 4) < puVar5_mg0[3]) {
+            pAVar20 = (AnonShape_0069CB50_B339E56A *)
+                      (puVar5_mg0[2] * *(uint *)(local_74 + iVar14 * 4) + puVar5_mg0[7]);
           }
           else {
-            pAVar16 = nullptr;
+            pAVar20 = nullptr;
           }
-          local_30 = pAVar16;
-          if (pAVar16 == nullptr) {
+          local_30 = pAVar20;
+          if (pAVar20 == nullptr) {
             local_140 = local_140 + 1;
           }
           else {
             local_e4 = 0;
             do {
-              dVar2 = pAVar16->field_000C->count;
+              dVar3 = pAVar20->field_000C->count;
+              *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69cda9;
               local_EAX_596 = st::fn_0072E6C0();
-              uVar15 = (int)local_EAX_596 % (int)dVar2;
-              pDVar3 = pAVar16->field_000C;
-              if (uVar15 < pDVar3->count) {
-                piVar4 = DArrayAt<int>(pDVar3, uVar15);
+              uVar16 = (int)local_EAX_596 % (int)dVar3;
+              pDVar12 = pAVar20->field_000C;
+              if (uVar16 < pDVar12->count) {
+                piVar5 = DArrayAt<int>(pDVar12, uVar16);
               }
               else {
-                piVar4 = nullptr;
+                piVar5 = nullptr;
               }
-              local_dc = *piVar4;
+              local_dc = *piVar5;
               if (((-1 < local_dc) && (*(int *)((int)local_78 + local_dc * 0xe + 6) < 0)) &&
                  ((*(byte *)((int)local_78 + local_dc * 0xe + 1) & 4) != 0)) {
-                iVar8 = local_dc / (*(int *)param_1[2] << 1);
-                iVar5 = local_dc % (*(int *)param_1[2] << 1);
+                iVar14 = local_dc / (*(int *)param_1[2] << 1);
+                iVar6 = local_dc % (*(int *)param_1[2] << 1);
                 local_c4 = 1;
-                iVar14 = 0;
+                iVar17 = 0;
                 if (0 < local_40) {
                   do {
-                    iVar10 = st::fn_006ACF90((int)*(short *)(local_16c + iVar14 * 4),
-                                          (int)*(short *)(local_16c + iVar14 * 4 + 2),iVar5,iVar8);
-                    if ((iVar10 < 2) ||
-                       (local_EAX_783 =
-                             st::fn_006ACF90((int)*(short *)(local_16c + iVar14 * 4),
-                                          (int)*(short *)(local_16c + iVar14 * 4 + 2),iVar5 + 1,
-                                          iVar8 + 1), local_EAX_783 < 2)) {
+                    *(int *)((st_stack_frame + 0) + iVar19 * -0x30) = iVar14;
+                    aiStackY_1b0[iVar19 * -0xc + 4] = iVar6;
+                    puVar4 = local_16c;
+                    aiStackY_1b0[iVar19 * -0xc + 3] = (int)*(short *)(local_16c + iVar17 * 4 + 2);
+                    aiStackY_1b0[iVar19 * -0xc + 2] = (int)*(short *)(puVar4 + iVar17 * 4);
+                    aiStackY_1b0[iVar19 * -0xc + 1] = 0x69ce41;
+                    iVar10 = st::fn_006ACF90(aiStackY_1b0[iVar19 * -0xc + 2],
+                                          aiStackY_1b0[iVar19 * -0xc + 3],
+                                          aiStackY_1b0[iVar19 * -0xc + 4],
+                                          *(int *)((st_stack_frame + 0) + iVar19 * -0x30));
+                    if (iVar10 < 2) {
+LAB_0069ce71:
                       local_c4 = 0;
                       break;
                     }
-                    iVar14 = iVar14 + 1;
-                  } while (iVar14 < local_40);
+                    *(int *)((st_stack_frame + 0) + iVar19 * -0x30) = iVar14 + 1;
+                    aiStackY_1b0[iVar19 * -0xc + 4] = iVar6 + 1;
+                    puVar4 = local_16c;
+                    aiStackY_1b0[iVar19 * -0xc + 3] = (int)*(short *)(local_16c + iVar17 * 4 + 2);
+                    aiStackY_1b0[iVar19 * -0xc + 2] = (int)*(short *)(puVar4 + iVar17 * 4);
+                    aiStackY_1b0[iVar19 * -0xc + 1] = 0x69ce64;
+                    local_EAX_783 =
+                         st::fn_006ACF90(aiStackY_1b0[iVar19 * -0xc + 2],
+                                      aiStackY_1b0[iVar19 * -0xc + 3],
+                                      aiStackY_1b0[iVar19 * -0xc + 4],
+                                      *(int *)((st_stack_frame + 0) + iVar19 * -0x30));
+                    if (local_EAX_783 < 2) goto LAB_0069ce71;
+                    iVar17 = iVar17 + 1;
+                  } while (iVar17 < local_40);
                 }
                 iVar11 = local_40;
-                iVar14 = local_144;
-                pAVar16 = local_30;
+                iVar17 = local_144;
+                pAVar20 = local_30;
                 if (local_c4 != 0) {
-                  *(short *)(local_16c + local_40 * 4) = (short)iVar5;
-                  *(short *)(local_16c + local_40 * 4 + 2) = (short)iVar8;
+                  *(short *)(local_16c + local_40 * 4) = (short)iVar6;
+                  *(short *)(local_16c + local_40 * 4 + 2) = (short)iVar14;
                   local_6c = local_6c + 1;
+                  *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69cec3;
                   local_EAX_878 = st::fn_0072E6C0();
-                  st::fn_00402856(param_1,iVar5 * 100,iVar8 * 100,0,0x3ee,
-                                     local_EAX_878 % DAT_007d9134);
+                  *(uint *)((st_stack_frame + 0) + iVar19 * -0x30) = local_EAX_878 % DAT_007d9134;
+                  aiStackY_1b0[iVar19 * -0xc + 4] = 0x3ee;
+                  aiStackY_1b0[iVar19 * -0xc + 3] = 0;
+                  aiStackY_1b0[iVar19 * -0xc + 2] = iVar14 * 100;
+                  aiStackY_1b0[iVar19 * -0xc + 1] = iVar6 * 100;
+                  aiStackY_1b0[iVar19 * -0xc] = 0x69cefa;
+                  st::fn_00402856(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
+                                     aiStackY_1b0[iVar19 * -0xc + 2],aiStackY_1b0[iVar19 * -0xc + 3]
+                                     ,aiStackY_1b0[iVar19 * -0xc + 4],
+                                     *(uint *)((st_stack_frame + 0) + iVar19 * -0x30));
                   *(undefined4 *)((int)local_78 + local_dc * 0xe + 6) = 0x3ee;
-                  st::fn_00405D99(param_1,(int)local_78,iVar5 * 100,iVar8 * 100,
-                                     *(int *)param_1[2] << 1,((int *)param_1[2])[1] << 1);
+                  piVar5 = (int *)param_1[2];
+                  *(int *)((st_stack_frame + 0) + iVar19 * -0x30) = st::machine_word_boundary_cast<int>(piVar5[1] << 1);
+                  aiStackY_1b0[iVar19 * -0xc + 4] = *piVar5 << 1;
+                  aiStackY_1b0[iVar19 * -0xc + 3] = iVar14 * 100;
+                  aiStackY_1b0[iVar19 * -0xc + 2] = iVar6 * 100;
+                  aiStackY_1b0[iVar19 * -0xc + 1] = (int)local_78;
+                  aiStackY_1b0[iVar19 * -0xc] = 0x69cf35;
+                  st::fn_00405D99(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
+                                     aiStackY_1b0[iVar19 * -0xc + 2],aiStackY_1b0[iVar19 * -0xc + 3]
+                                     ,aiStackY_1b0[iVar19 * -0xc + 4],
+                                     *(int *)((st_stack_frame + 0) + iVar19 * -0x30));
                   local_40 = iVar11 + 1;
-                  iVar14 = local_144;
+                  iVar17 = local_144;
                   break;
                 }
               }
               local_e4 = local_e4 + 1;
             } while ((int)local_e4 < 10);
             local_140 = local_140 + -1;
-            pDVar3 = local_138;
+            puVar5_mg0 = local_138;
           }
         }
       }
-      iVar14 = 0;
+      iVar17 = 0;
       local_144 = 0;
-      iVar8 = 0;
+      iVar14 = 0;
       local_ac = 0;
-      uVar15 = 0;
+      uVar16 = 0;
       if (0 < (int)local_13c) {
         do {
-          if (uVar15 < pDVar3->count) {
-            piVar4 = DArrayAt<int>(pDVar3, uVar15);
+          if (uVar16 < puVar5_mg0[3]) {
+            piVar5 = (int *)(puVar5_mg0[2] * uVar16 + puVar5_mg0[7]);
           }
           else {
-            piVar4 = nullptr;
+            piVar5 = nullptr;
           }
-          if ((piVar4 != nullptr) && (*piVar4 == 0xff)) {
-            *(uint *)(local_74 + iVar14 * 4) = uVar15;
-            *(undefined4 *)(local_70 + iVar14 * 4) = *(undefined4 *)(piVar4[3] + 0xc);
-            iVar8 = iVar8 + *(int *)(piVar4[3] + 0xc);
-            iVar14 = iVar14 + 1;
-            pDVar3 = local_138;
-            local_144 = iVar14;
-            local_ac = iVar8;
+          if ((piVar5 != nullptr) && (*piVar5 == 0xff)) {
+            *(uint *)(local_74 + iVar17 * 4) = uVar16;
+            *(undefined4 *)(local_70 + iVar17 * 4) = *(undefined4 *)(piVar5[3] + 0xc);
+            iVar14 = iVar14 + *(int *)(piVar5[3] + 0xc);
+            iVar17 = iVar17 + 1;
+            puVar5_mg0 = local_138;
+            local_144 = iVar17;
+            local_ac = iVar14;
           }
-          uVar15 = uVar15 + 1;
-        } while ((int)uVar15 < (int)local_13c);
+          uVar16 = uVar16 + 1;
+        } while ((int)uVar16 < (int)local_13c);
       }
-      if ((0 < iVar14) && (0 < iVar8)) {
-        local_140 = iVar14 / 2 + 1;
-        local_134 = (iVar14 * 3) / 2 + 1;
+      if ((0 < iVar17) && (0 < iVar14)) {
+        local_140 = iVar17 / 2 + 1;
+        local_134 = (iVar17 * 3) / 2 + 1;
         local_17c = 0;
         while ((0 < local_140 && (local_17c < local_134))) {
-          iVar11 = 0;
+          iVar6 = 0;
           local_b4 = nullptr;
           local_28 = nullptr;
+          *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d02c;
           local_EAX_1239 = st::fn_0072E6C0();
-          iVar5 = (int)local_EAX_1239 % local_ac;
+          local_148 = (int)local_EAX_1239 % local_ac;
+          iVar17 = 0;
           iVar14 = 0;
-          iVar8 = 0;
-          local_148 = iVar5;
           if (0 < local_144) {
             do {
-              iVar14 = iVar14 + *(int *)(local_70 + iVar8 * 4);
-              local_148 = iVar8;
-              if (iVar5 < iVar14) break;
-              iVar8 = iVar8 + 1;
-              local_148 = iVar5;
-            } while (iVar8 < local_144);
+              iVar17 = iVar17 + *(int *)(local_70 + iVar14 * 4);
+              if ((int)local_EAX_1239 % local_ac < iVar17) {
+                local_148 = iVar14;
+                break;
+              }
+              iVar14 = iVar14 + 1;
+            } while (iVar14 < local_144);
           }
-          if (local_144 <= iVar8) {
+          if (local_144 <= iVar14) {
             local_148 = local_144 + -1;
           }
-          if (*(uint *)(local_74 + local_148 * 4) < local_138->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+          local_15c = local_148;
+          if (*(uint *)(local_74 + local_148 * 4) < local_138[3]) {
             local_30 = (AnonShape_0069CB50_B339E56A *)
-                       (local_138->elementSize * *(uint *)(local_74 + local_148 * 4) +
-                       (int)local_138->data);
+                       (local_138[2] * *(uint *)(local_74 + local_148 * 4) + local_138[7]);
           }
           else {
             local_30 = nullptr;
           }
-          local_15c = local_148;
           if (local_30 == nullptr) {
             local_140 = local_140 + 1;
           }
           else {
             local_164 = 0;
-            puVar17 = (byte *)(local_c0);
-            memset(puVar17, 0, local_d8); /* compiler bulk-zero initialization */
+            puVar7 = (byte *)(local_c0);
+            memset(puVar7, 0, local_d8); /* compiler bulk-zero initialization */
             local_e4 = 0;
-            pDVar3 = local_30->field_000C;
-            if (0 < (int)pDVar3->count) {
-              bVar19 = pDVar3->count != 0;
+            pDVar12 = local_30->field_000C;
+            if (0 < (int)pDVar12->count) {
+              bVar22 = pDVar12->count != 0;
               do {
-                uVar15 = local_e4;
-                if (bVar19) {
-                  piVar4 = DArrayAt<int>(pDVar3, local_e4);
+                uVar16 = local_e4;
+                if (bVar22) {
+                  puVar7 = DArrayAt<byte>(pDVar12, local_e4);
                 }
                 else {
-                  piVar4 = nullptr;
+                  puVar7 = nullptr;
                 }
-                iVar14 = st::fn_00405C81(param_1,*piVar4,*(int *)param_1[2] << 1,local_68,
-                                            nullptr);
-                iVar8 = 0;
-                if (0 < iVar14) {
+                uVar2 = *puVar7;
+                *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0;
+                aiStackY_1b0[iVar19 * -0xc + 4] = (int)local_68;
+                aiStackY_1b0[iVar19 * -0xc + 3] = *(int *)param_1[2] << 1;
+                aiStackY_1b0[iVar19 * -0xc + 2] = uVar2;
+                aiStackY_1b0[iVar19 * -0xc + 1] = 0x69d10d;
+                iVar17 = st::fn_00405C81(param_1,aiStackY_1b0[iVar19 * -0xc + 2],
+                                            aiStackY_1b0[iVar19 * -0xc + 3],
+                                            (int *)aiStackY_1b0[iVar19 * -0xc + 4],
+                                            *(int **)((st_stack_frame + 0) + iVar19 * -0x30));
+                iVar14 = 0;
+                if (0 < iVar17) {
                   do {
-                    if ((*(int *)((int)local_78 + local_68[iVar8] * 0xe + 2) == 0) &&
-                       (*(char *)(iVar11 + (int)local_c0) == '\0')) {
-                      *(short *)(local_16c + iVar11 * 4 + 2) =
-                           (short)(local_68[iVar8] / (*(int *)param_1[2] << 1));
-                      *(short *)(local_16c + iVar11 * 4) =
-                           (short)(local_68[iVar8] % (*(int *)param_1[2] << 1));
-                      *(undefined1 *)(local_68[iVar8] + (int)local_c0) = 1;
-                      iVar11 = iVar11 + 1;
-                      local_164 = iVar11;
+                    if ((*(int *)((int)local_78 + local_68[iVar14] * 0xe + 2) == 0) &&
+                       (*(char *)(iVar6 + (int)local_c0) == '\0')) {
+                      *(short *)(local_16c + iVar6 * 4 + 2) =
+                           (short)(local_68[iVar14] / (*(int *)param_1[2] << 1));
+                      *(short *)(local_16c + iVar6 * 4) =
+                           (short)(local_68[iVar14] % (*(int *)param_1[2] << 1));
+                      *(undefined1 *)(local_68[iVar14] + (int)local_c0) = 1;
+                      iVar6 = iVar6 + 1;
+                      local_164 = iVar6;
                     }
-                    iVar8 = iVar8 + 1;
-                    uVar15 = local_e4;
-                  } while (iVar8 < iVar14);
+                    iVar14 = iVar14 + 1;
+                    uVar16 = local_e4;
+                  } while (iVar14 < iVar17);
                 }
-                local_e4 = uVar15 + 1;
-                pDVar3 = local_30->field_000C;
-                bVar19 = local_e4 < pDVar3->count;
-              } while ((int)local_e4 < (int)pDVar3->count);
+                local_e4 = uVar16 + 1;
+                pDVar12 = local_30->field_000C;
+                bVar22 = local_e4 < pDVar12->count;
+              } while ((int)local_e4 < (int)pDVar12->count);
             }
-            local_b4 = st::fn_006AAC70(iVar11 * 8);
-            local_28 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(iVar11 * 4));
+            *(int *)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) = iVar6 * 8;
+            aiStackY_1b0[iVar19 * -0xc + 4] = 0x69d1b2;
+            local_b4 = st::fn_006AAC70
+                                 (*(uint *)((st_stack_frame + 0) +
+                                           iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
+            *(int *)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) = iVar6 * 4;
+            aiStackY_1b0[iVar19 * -0xc + 4] = 0x69d1c5;
+            local_28 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70
+                                 (*(uint *)((st_stack_frame + 0) +
+                                           iVar19 * -0x20 + iVar9 + -0x198 + 0x198)));
             local_44 = 0;
             local_b8 = -1;
             local_24 = -1;
@@ -3730,62 +4167,72 @@ uint __fastcall st::fn_0069CB50(int *param_1)
             local_178 = 0;
             local_158 = 0;
             local_e4 = 0;
-            if (0 < iVar11) {
+            if (0 < iVar6) {
 LAB_0069d203:
-              local_dc = local_24;
               if (local_24 < 0) {
                 local_dc = (int)*(short *)(local_16c + local_178 * 4) +
                            (int)*(short *)(local_16c + local_178 * 4 + 2) * *(int *)param_1[2] * 2;
               }
+              else {
+                local_dc = local_24;
+              }
               if ((1 < *(byte *)(local_dc + (int)local_c0)) &&
-                 (local_154 = 0, uVar15 = local_178, 0 < local_164)) {
+                 (local_154 = 0, uVar16 = local_178, 0 < local_164)) {
                 do {
-                  uVar15 = uVar15 + 1;
-                  if (local_164 <= (int)uVar15) {
-                    uVar15 = 0;
+                  uVar16 = uVar16 + 1;
+                  if (local_164 <= (int)uVar16) {
+                    uVar16 = 0;
                   }
-                  local_dc = (int)*(short *)(local_16c + uVar15 * 4) +
-                             (int)*(short *)(local_16c + uVar15 * 4 + 2) * *(int *)param_1[2] * 2;
+                  local_dc = (int)*(short *)(local_16c + uVar16 * 4) +
+                             (int)*(short *)(local_16c + uVar16 * 4 + 2) * *(int *)param_1[2] * 2;
                 } while ((1 < *(byte *)(local_dc + (int)local_c0)) &&
                         (local_154 = local_154 + 1, (int)local_154 < local_164));
               }
-              iVar14 = local_dc;
+              iVar17 = local_dc;
               if (*(byte *)(local_dc + (int)local_c0) < 2) {
-                iVar8 = st::fn_00405C81(param_1,local_dc,*(int *)param_1[2] << 1,local_68,
-                                           &local_174);
-                uVar15 = 0;
+                *(int **)((st_stack_frame + 0) + iVar19 * -0x30) = &local_174;
+                aiStackY_1b0[iVar19 * -0xc + 4] = (int)local_68;
+                aiStackY_1b0[iVar19 * -0xc + 3] = *(int *)param_1[2] << 1;
+                aiStackY_1b0[iVar19 * -0xc + 2] = iVar17;
+                aiStackY_1b0[iVar19 * -0xc + 1] = 0x69d2d2;
+                iVar14 = st::fn_00405C81(param_1,aiStackY_1b0[iVar19 * -0xc + 2],
+                                            aiStackY_1b0[iVar19 * -0xc + 3],
+                                            (int *)aiStackY_1b0[iVar19 * -0xc + 4],
+                                            *(int **)((st_stack_frame + 0) + iVar19 * -0x30));
+                uVar16 = 0;
                 local_bc = 0;
                 local_38 = 0;
                 if (local_174 == 8) {
-                  bVar19 = false;
+                  bVar22 = false;
                   local_e8 = 0xffffffff;
-                  if (0 < iVar8) {
+                  if (0 < iVar14) {
                     do {
-                      aiStack_130[uVar15] = 0;
-                      aiStack_a8[uVar15] = 0;
-                      iVar14 = local_68[uVar15];
-                      if (*(int *)((int)local_78 + iVar14 * 0xe + 10) ==
+                      aiStack_130[uVar16] = 0;
+                      aiStack_a8[uVar16] = 0;
+                      iVar17 = local_68[uVar16];
+                      if (*(int *)((int)local_78 + iVar17 * 0xe + 10) ==
                           *(int *)(local_74 + local_148 * 4)) {
-                        aiStack_a8[uVar15] = iVar14 + 1;
+                        aiStack_a8[uVar16] = iVar17 + 1;
                         local_38 = local_38 + 1;
-                        if (!bVar19) {
-                          bVar19 = true;
+                        if (!bVar22) {
+                          bVar22 = true;
                         }
                       }
-                      if (*(char *)(iVar14 + (int)local_c0) == '\x01') {
-                        aiStack_130[uVar15] = iVar14 + 1;
+                      if (*(char *)(iVar17 + (int)local_c0) == '\x01') {
+                        aiStack_130[uVar16] = iVar17 + 1;
                         local_bc = local_bc + 1;
-                        if ((bVar19) && ((int)local_e8 < 0)) {
-                          local_e8 = uVar15 - 1;
+                        if ((bVar22) && ((int)local_e8 < 0)) {
+                          local_e8 = uVar16 - 1;
                         }
                       }
-                      if (((uVar15 == iVar8 - 1U) && (bVar19)) && ((int)local_e8 < 0)) {
-                        local_e8 = uVar15;
+                      if (((uVar16 == iVar14 - 1U) && (bVar22)) && ((int)local_e8 < 0)) {
+                        local_e8 = uVar16;
                       }
-                      uVar15 = uVar15 + 1;
-                      iVar14 = local_dc;
-                    } while ((int)uVar15 < iVar8);
+                      uVar16 = uVar16 + 1;
+                      iVar17 = local_dc;
+                    } while ((int)uVar16 < iVar14);
                   }
+                  uVar16 = local_e8;
                   if (local_24 == -1) {
                     local_28[local_44] = local_178 & 0xffff;
                     local_158 = 1;
@@ -3794,31 +4241,31 @@ LAB_0069d203:
                   if (-1 < (int)local_e8) {
                     local_b8 = -1;
                     if (local_38 == 1) {
-                      iVar8 = aiStack_a8[local_e8];
+                      iVar14 = aiStack_a8[local_e8];
                       goto LAB_0069d44d;
                     }
                     if (local_38 == 2) {
-                      uVar15 = 0;
+                      uVar10 = 0;
                       do {
-                        uVar10 = uVar15 & 0x80000001;
-                        bVar19 = uVar10 == 0;
-                        if ((int)uVar10 < 0) {
-                          bVar19 = (uVar10 - 1 | 0xfffffffe) == 0xffffffff;
+                        uVar21 = uVar10 & 0x80000001;
+                        bVar22 = uVar21 == 0;
+                        if ((int)uVar21 < 0) {
+                          bVar22 = (uVar21 - 1 | 0xfffffffe) == 0xffffffff;
                         }
-                        if ((bVar19) && (aiStack_a8[uVar15] != 0)) goto LAB_0069d43d;
-                        uVar15 = uVar15 + 1;
-                      } while ((int)uVar15 < 8);
+                        if ((bVar22) && (aiStack_a8[uVar10] != 0)) goto LAB_0069d43d;
+                        uVar10 = uVar10 + 1;
+                      } while ((int)uVar10 < 8);
                     }
                     else if (local_38 == 3) {
-                      iVar8 = 0;
-                      uVar15 = 0;
+                      iVar14 = 0;
+                      uVar10 = 0;
                       do {
-                        if (aiStack_a8[uVar15] != 0) {
-                          if (iVar8 == 1) goto LAB_0069d43d;
-                          iVar8 = iVar8 + 1;
+                        if (aiStack_a8[uVar10] != 0) {
+                          if (iVar14 == 1) goto LAB_0069d43d;
+                          iVar14 = iVar14 + 1;
                         }
-                        uVar15 = uVar15 + 1;
-                      } while ((int)uVar15 < 8);
+                        uVar10 = uVar10 + 1;
+                      } while ((int)uVar10 < 8);
                     }
                     goto LAB_0069d454;
                   }
@@ -3827,27 +4274,27 @@ LAB_0069d203:
                 local_b8 = -1;
                 local_24 = -1;
                 if (local_44 == 0) {
-                  *(int *)((int)local_b4 + local_178 * 8) = iVar14;
+                  *(int *)((int)local_b4 + local_178 * 8) = iVar17;
                   *(undefined4 *)((int)local_b4 + local_178 * 8 + 4) = 0xffffffff;
                   *local_28 = 0x10000;
                   local_44 = 1;
                   local_158 = 0;
-                  uVar15 = 1;
+                  uVar16 = 1;
                 }
                 else {
-                  *(int *)((int)local_b4 + local_178 * 8) = iVar14;
+                  *(int *)((int)local_b4 + local_178 * 8) = iVar17;
                   *(undefined4 *)((int)local_b4 + local_178 * 8 + 4) = 0xffffffff;
                   if (local_158 == 1) {
                     local_28[local_44] =
                          (local_178 + 1) * 0x10000 | (uint)*(ushort *)(local_28 + local_44);
-                    uVar15 = local_44 + 1;
+                    uVar16 = local_44 + 1;
+                    local_44 = uVar16;
                     local_158 = 0;
-                    local_44 = uVar15;
                   }
                   else {
                     local_28[local_44] = (local_178 + 1) * 0x10000 | local_178 & 0xffff;
-                    uVar15 = local_44 + 1;
-                    local_44 = uVar15;
+                    uVar16 = local_44 + 1;
+                    local_44 = uVar16;
                   }
                 }
                 goto LAB_0069d5f2;
@@ -3858,128 +4305,174 @@ LAB_0069d626:
               local_e4 = 0;
               if (0 < (int)local_44) {
                 do {
-                  uVar15 = local_e4;
-                  iVar8 = 0;
+                  uVar16 = local_e4;
+                  iVar14 = 0;
                   uVar10 = (uint)*(ushort *)(local_28 + local_e4);
-                  uVar18 = (uint)local_28[local_e4] >> 0x10;
-                  iVar14 = uVar18 - uVar10;
+                  uVar21 = (uint)local_28[local_e4] >> 0x10;
+                  local_e8 = uVar21;
+                  iVar17 = uVar21 - uVar10;
                   local_bc = 0;
                   local_c8 = 0;
                   local_34 = 0;
                   local_84 = 0;
-                  local_e8 = uVar18;
-                  if (iVar14 < 8) {
-                    if (2 < iVar14) goto LAB_0069d684;
+                  if (iVar17 < 8) {
+                    if (2 < iVar17) goto LAB_0069d684;
                     local_c8 = 1;
                   }
                   else {
-                    uVar6 = st::fn_0072E6C0();
-                    iVar14 = ((int)uVar6 % 3) * 2 + 3;
+                    *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d678;
+                    uVar8 = st::fn_0072E6C0();
+                    iVar17 = ((int)uVar8 % 3) * 2 + 3;
 LAB_0069d684:
-                    local_34 = iVar14 / 2;
-                    iVar8 = 1;
+                    local_bc = iVar17;
+                    local_34 = iVar17 / 2;
+                    iVar14 = 1;
                     local_84 = 1;
                     local_d4 = 0;
-                    local_bc = iVar14;
                   }
                   local_154 = uVar10;
-                  if (uVar10 < uVar18) {
+                  if (uVar10 < uVar21) {
                     do {
-                      if (iVar8 == 0) {
+                      if (iVar14 == 0) {
 LAB_0069d7b2:
-                        iVar14 = *(int *)((int)local_b4 + local_154 * 8);
-                        iVar8 = *(int *)((int)local_b4 + local_154 * 8 + 4);
-                        if (-1 < iVar14) {
-                          iVar11 = iVar14 * 0xe;
-                          iVar5 = *(int *)(iVar11 + 6 + (int)local_78);
-                          if ((iVar5 < 0) || (iVar5 != 0x3ed)) {
-                            iVar12 = *(int *)param_1[2] << 1;
-                            iVar5 = (iVar14 / iVar12) * 100;
-                            iVar13 = iVar5 + 0x32;
-                            iVar14 = (iVar14 % iVar12) * 100;
-                            iVar1 = iVar14 + 0x32;
-                            if (iVar8 < 0) {
+                        iVar17 = *(int *)((int)local_b4 + local_154 * 8);
+                        iVar14 = *(int *)((int)local_b4 + local_154 * 8 + 4);
+                        if (-1 < iVar17) {
+                          iVar11 = iVar17 * 0xe;
+                          iVar6 = *(int *)(iVar11 + 6 + (int)local_78);
+                          if ((iVar6 < 0) || (iVar6 != 0x3ed)) {
+                            iVar13 = *(int *)param_1[2] << 1;
+                            iVar6 = (iVar17 / iVar13) * 100;
+                            iVar15 = iVar6 + 0x32;
+                            iVar17 = (iVar17 % iVar13) * 100;
+                            iVar1 = iVar17 + 0x32;
+                            if (iVar14 < 0) {
+                              *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d960;
                               local_EAX_3595 = st::fn_0072E6C0();
                               if ((int)local_EAX_3595 % 6 == 0) {
+                                *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d971;
                                 local_EAX_3612 = st::fn_0072E6C0();
-                                uVar15 = local_EAX_3612 % DAT_007d9564;
-                                iVar14 = 0x3f0;
-                                uVar20 = 0;
+                                *(uint *)((st_stack_frame + 0) + iVar19 * -0x30) =
+                                     local_EAX_3612 % DAT_007d9564;
+                                aiStackY_1b0[iVar19 * -0xc + 4] = 0x3f0;
+                                aiStackY_1b0[iVar19 * -0xc + 3] = 0;
+                                aiStackY_1b0[iVar19 * -0xc + 2] = 0x69d986;
                                 local_EAX_3633 = st::fn_0072E6C0();
-                                iVar13 = (int)local_EAX_3633 % 0x51 + -0x28 + iVar13;
+                                aiStackY_1b0[iVar19 * -0xc + 2] =
+                                     (int)local_EAX_3633 % 0x51 + -0x28 + iVar15;
+                                aiStackY_1b0[iVar19 * -0xc + 1] = 0x69d998;
                                 local_EAX_3651 = st::fn_0072E6C0();
-                                st::fn_00402856(param_1,(int)local_EAX_3651 % 0x51 + -0x28 +
-                                                           iVar1,iVar13,uVar20,iVar14,uVar15);
+                                aiStackY_1b0[iVar19 * -0xc + 1] =
+                                     (int)local_EAX_3651 % 0x51 + -0x28 + iVar1;
+                                aiStackY_1b0[iVar19 * -0xc] = 0x69d9b0;
+                                st::fn_00402856(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
+                                                   aiStackY_1b0[iVar19 * -0xc + 2],
+                                                   aiStackY_1b0[iVar19 * -0xc + 3],
+                                                   aiStackY_1b0[iVar19 * -0xc + 4],
+                                                   *(uint *)((st_stack_frame + 0) + iVar19 * -0x30));
                                 *(undefined4 *)(iVar11 + 6 + (int)local_78) = 0x3f0;
                               }
                               else {
+                                *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d9c8;
                                 local_EAX_3699 = st::fn_0072E6C0();
                                 if ((int)local_EAX_3699 % 9 == 0) {
+                                  *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d9d9;
                                   local_EAX_3716 = st::fn_0072E6C0();
-                                  uVar15 = local_EAX_3716 % DAT_007d977c;
-                                  iVar14 = 0x3f1;
-                                  uVar20 = 0;
+                                  *(uint *)((st_stack_frame + 0) + iVar19 * -0x30) =
+                                       local_EAX_3716 % DAT_007d977c;
+                                  aiStackY_1b0[iVar19 * -0xc + 4] = 0x3f1;
+                                  aiStackY_1b0[iVar19 * -0xc + 3] = 0;
+                                  aiStackY_1b0[iVar19 * -0xc + 2] = 0x69d9ee;
                                   uVar9 = st::fn_0072E6C0();
-                                  iVar13 = (int)uVar9 % 0x51 + -0x28 + iVar13;
+                                  aiStackY_1b0[iVar19 * -0xc + 2] =
+                                       (int)uVar9 % 0x51 + -0x28 + iVar15;
+                                  aiStackY_1b0[iVar19 * -0xc + 1] = 0x69da00;
                                   local_EAX_3755 = st::fn_0072E6C0();
-                                  st::fn_00402856(param_1,(int)local_EAX_3755 % 0x51 + -0x28 +
-                                                             iVar1,iVar13,uVar20,iVar14,uVar15);
+                                  aiStackY_1b0[iVar19 * -0xc + 1] =
+                                       (int)local_EAX_3755 % 0x51 + -0x28 + iVar1;
+                                  aiStackY_1b0[iVar19 * -0xc] = 0x69da18;
+                                  st::fn_00402856(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
+                                                     aiStackY_1b0[iVar19 * -0xc + 2],
+                                                     aiStackY_1b0[iVar19 * -0xc + 3],
+                                                     aiStackY_1b0[iVar19 * -0xc + 4],
+                                                     *(uint *)((st_stack_frame + 0) + iVar19 * -0x30));
                                   *(undefined4 *)(iVar11 + 6 + (int)local_78) = 0x3f1;
                                 }
                               }
                             }
                             else {
-                              local_150 = (iVar8 / iVar12) * 100 + 0x32;
-                              local_cc = (iVar8 % iVar12) * 100 + 0x32;
-                              iVar8 = local_150 - iVar13;
-                              if ((iVar8 == 0) && (local_cc == iVar1)) {
+                              local_150 = (iVar14 / iVar13) * 100 + 0x32;
+                              local_cc = (iVar14 % iVar13) * 100 + 0x32;
+                              iVar14 = local_150 - iVar15;
+                              if ((iVar14 == 0) && (local_cc == iVar1)) {
+                                *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d870;
                                 local_EAX_3355 = st::fn_0072E6C0();
-                                iVar14 = iVar14 + 0x24 + (int)local_EAX_3355 % 0x1d;
+                                iVar17 = iVar17 + 0x24 + (int)local_EAX_3355 % 0x1d;
+                                *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d881;
                                 local_EAX_3372 = st::fn_0072E6C0();
-                                iVar8 = iVar5 + 0x24 + (int)local_EAX_3372 % 0x1d;
+                                iVar14 = iVar6 + 0x24 + (int)local_EAX_3372 % 0x1d;
                               }
                               else {
+                                *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d894;
                                 local_EAX_3391 = st::fn_0072E6C0();
-                                iVar14 = (local_cc - iVar1) / 2 + iVar1 + -0xe +
+                                iVar17 = (local_cc - iVar1) / 2 + iVar1 + -0xe +
                                          (int)local_EAX_3391 % 0x1d;
+                                *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d8b6;
                                 local_EAX_3425 = st::fn_0072E6C0();
-                                iVar8 = iVar8 / 2 + iVar13 + -0xe + (int)local_EAX_3425 % 0x1d;
+                                iVar14 = iVar14 / 2 + iVar15 + -0xe + (int)local_EAX_3425 % 0x1d;
                               }
                               if (local_c8 == 1) {
+                                *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d918;
                                 local_EAX_3523 = st::fn_0072E6C0();
-                                uVar15 = (int)local_EAX_3523 % 7 + 9;
+                                uVar16 = (int)local_EAX_3523 % 7 + 9;
                               }
                               else if (local_c8 == 2) {
+                                *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d902;
                                 local_EAX_3501 = st::fn_0072E6C0();
-                                uVar15 = local_EAX_3501 & 0x80000003;
-                                if ((int)uVar15 < 0) {
-                                  uVar15 = (uVar15 - 1 | 0xfffffffc) + 1;
+                                uVar16 = local_EAX_3501 & 0x80000003;
+                                if ((int)uVar16 < 0) {
+                                  uVar16 = (uVar16 - 1 | 0xfffffffc) + 1;
                                 }
                               }
                               else if (local_c8 == 3) {
+                                *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d8f0;
                                 local_EAX_3483 = st::fn_0072E6C0();
-                                uVar15 = (int)local_EAX_3483 % 5 + 4;
+                                uVar16 = (int)local_EAX_3483 % 5 + 4;
                               }
                               else {
+                                *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d8e1;
                                 local_EAX_3468 = st::fn_0072E6C0();
-                                uVar15 = local_EAX_3468 % DAT_007d8f1c;
+                                uVar16 = local_EAX_3468 % DAT_007d8f1c;
                               }
                               if (local_84 != 0) {
                                 local_d4 = local_d4 + 1;
                               }
-                              st::fn_00402856(param_1,iVar14,iVar8,0,0x3ed,uVar15);
+                              *(uint *)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198)
+                                   = uVar16;
+                              aiStackY_1b0[iVar19 * -0xc + 4] = 0x3ed;
+                              aiStackY_1b0[iVar19 * -0xc + 3] = 0;
+                              aiStackY_1b0[iVar19 * -0xc + 2] = iVar14;
+                              aiStackY_1b0[iVar19 * -0xc + 1] = iVar17;
+                              aiStackY_1b0[iVar19 * -0xc] = 0x69d945;
+                              st::fn_00402856(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
+                                                 aiStackY_1b0[iVar19 * -0xc + 2],
+                                                 aiStackY_1b0[iVar19 * -0xc + 3],
+                                                 aiStackY_1b0[iVar19 * -0xc + 4],
+                                                 *(uint *)((st_stack_frame + 0) +
+                                                          iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
                               *(undefined4 *)(iVar11 + 6 + (int)local_78) = 0x3ed;
                             }
                           }
                         }
                       }
-                      else if (iVar8 == 2) {
+                      else if (iVar14 == 2) {
                         if ((int)local_178 <= (int)local_154) {
                           local_84 = 1;
                           goto LAB_0069d7b2;
                         }
                       }
                       else {
+                        *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d6f8;
                         local_EAX_2979 = st::fn_0072E6C0();
                         if ((int)local_EAX_2979 % 3 != 0) {
                           if (local_d4 < local_34) {
@@ -3992,9 +4485,11 @@ LAB_0069d7b2:
                             local_c8 = ((local_d4 < local_34 / 2 + local_34) - 1 & 0xfffffffe) + 3;
                           }
                           if (local_bc <= local_d4) {
+                            *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d76a;
                             local_EAX_3093 = st::fn_0072E6C0();
                             local_178 = (int)local_EAX_3093 % 10 + 5 + local_154;
                             local_84 = 2;
+                            *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69d78e;
                             local_EAX_3129 = st::fn_0072E6C0();
                             local_bc = ((int)local_EAX_3129 % 3) * 2 + 3;
                             local_34 = local_bc / 2;
@@ -4004,179 +4499,234 @@ LAB_0069d7b2:
                         }
                       }
                       local_154 = local_154 + 1;
-                      iVar8 = local_84;
-                      uVar15 = local_e4;
+                      iVar14 = local_84;
+                      uVar16 = local_e4;
                     } while ((int)local_154 < (int)local_e8);
                   }
-                  local_e4 = uVar15 + 1;
-                } while ((int)local_e4 < (int)local_44);
+                  local_e4 = uVar16 + 1;
+                } while ((int)(uVar16 + 1) < (int)local_44);
               }
               if (local_ac < 1) break;
             }
-            iVar14 = *(int *)(local_70 + local_15c * 4);
+            local_ac = local_ac - *(int *)(local_70 + local_15c * 4);
             *(undefined4 *)(local_70 + local_15c * 4) = 0;
             local_17c = local_17c + 1;
             local_140 = local_140 + -1;
-            local_ac = local_ac - iVar14;
-            st::fn_006AB060(&local_b4);
-            st::fn_006AB060(&local_28);
+            *(void ***)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) = &local_b4;
+            aiStackY_1b0[iVar19 * -0xc + 4] = 0x69da93;
+            st::fn_006AB060(*(void **)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
+            *(undefined4 ***)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) =
+                 &local_28;
+            aiStackY_1b0[iVar19 * -0xc + 4] = 0x69da9c;
+            st::fn_006AB060(*(void **)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
           }
         }
       }
-      iVar14 = 0;
+      iVar17 = 0;
       local_144 = 0;
-      iVar8 = 0;
+      iVar14 = 0;
       local_ac = 0;
-      uVar15 = 0;
+      uVar16 = 0;
       if (0 < (int)local_13c) {
         do {
-          if (uVar15 < local_138->count) {
-            piVar4 = DArrayAt<int>(local_138, uVar15);
+          if (uVar16 < local_138[3]) {
+            piVar5 = (int *)(local_138[2] * uVar16 + local_138[7]);
           }
           else {
-            piVar4 = nullptr;
+            piVar5 = nullptr;
           }
-          if (((piVar4 != nullptr) && (0 < piVar4[2])) && (*piVar4 != 0xff)) {
-            *(uint *)(local_74 + iVar14 * 4) = uVar15;
-            *(int *)(local_70 + iVar14 * 4) = piVar4[2];
-            iVar14 = iVar14 + 1;
-            iVar8 = iVar8 + piVar4[2];
-            local_144 = iVar14;
-            local_ac = iVar8;
+          if (((piVar5 != nullptr) && (0 < piVar5[2])) && (*piVar5 != 0xff)) {
+            *(uint *)(local_74 + iVar17 * 4) = uVar16;
+            *(int *)(local_70 + iVar17 * 4) = piVar5[2];
+            iVar17 = iVar17 + 1;
+            local_144 = iVar17;
+            iVar14 = iVar14 + piVar5[2];
+            local_ac = iVar14;
           }
-          uVar15 = uVar15 + 1;
-        } while ((int)uVar15 < (int)local_13c);
+          uVar16 = uVar16 + 1;
+        } while ((int)uVar16 < (int)local_13c);
       }
-      if ((0 < iVar14) && (0 < iVar8)) {
+      if ((0 < iVar17) && (0 < iVar14)) {
         local_140 = STField<int>(param_1,0x5833) * 8;
         local_b0 = 0;
         local_170 = (STField<int>(param_1,0x5833) * 3) / 2;
-        pDVar3 = local_138;
+        puVar18 = local_138;
         while ((0 < local_140 && (local_b0 < local_170))) {
+          *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69db81;
           local_EAX_4140 = st::fn_0072E6C0();
-          iVar13 = (int)local_EAX_4140 % iVar8;
-          iVar5 = 0;
+          iVar15 = (int)local_EAX_4140 % iVar14;
+          iVar6 = 0;
           iVar11 = 0;
-          local_15c = iVar13;
-          if (0 < iVar14) {
+          local_15c = iVar15;
+          if (0 < iVar17) {
             do {
-              iVar5 = iVar5 + *(int *)(local_70 + iVar11 * 4);
+              iVar6 = iVar6 + *(int *)(local_70 + iVar11 * 4);
               local_15c = iVar11;
-              pDVar3 = local_138;
-              if (iVar13 < iVar5) break;
+              puVar18 = local_138;
+              if (iVar15 < iVar6) break;
               iVar11 = iVar11 + 1;
-              local_15c = iVar13;
-            } while (iVar11 < iVar14);
+              local_15c = iVar15;
+            } while (iVar11 < iVar17);
           }
-          if (iVar14 <= iVar11) {
-            local_15c = iVar14 + -1;
+          if (iVar17 <= iVar11) {
+            local_15c = iVar17 + -1;
           }
-          if (*(uint *)(local_74 + local_15c * 4) < pDVar3->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            pAVar16 = (AnonShape_0069CB50_B339E56A *)
-                      (pDVar3->elementSize * *(uint *)(local_74 + local_15c * 4) + (int)pDVar3->data
-                      );
+          if (*(uint *)(local_74 + local_15c * 4) < puVar18[3]) {
+            pAVar20 = (AnonShape_0069CB50_B339E56A *)
+                      (puVar18[2] * *(uint *)(local_74 + local_15c * 4) + puVar18[7]);
           }
           else {
-            pAVar16 = nullptr;
+            pAVar20 = nullptr;
           }
-          local_30 = pAVar16;
-          if (pAVar16 == nullptr) {
+          local_30 = pAVar20;
+          if (pAVar20 == nullptr) {
             local_140 = local_140 + 1;
           }
           else {
             local_e4 = 0;
             do {
-              dVar2 = pAVar16->field_000C->count;
+              dVar3 = pAVar20->field_000C->count;
+              *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69dbf4;
               local_EAX_4255 = st::fn_0072E6C0();
-              uVar15 = (int)local_EAX_4255 % (int)dVar2;
-              pDVar3 = pAVar16->field_000C;
-              if (uVar15 < pDVar3->count) {
-                piVar4 = DArrayAt<int>(pDVar3, uVar15);
+              uVar16 = (int)local_EAX_4255 % (int)dVar3;
+              pDVar12 = pAVar20->field_000C;
+              if (uVar16 < pDVar12->count) {
+                piVar5 = DArrayAt<int>(pDVar12, uVar16);
               }
               else {
-                piVar4 = nullptr;
+                piVar5 = nullptr;
               }
-              local_dc = *piVar4;
+              local_dc = *piVar5;
               if (((-1 < local_dc) && (*(int *)((int)local_78 + local_dc * 0xe + 6) < 0)) &&
                  ((*(byte *)((int)local_78 + local_dc * 0xe + 1) & 0xc) != 0)) {
-                iVar14 = local_dc / (*(int *)param_1[2] << 1);
-                iVar8 = local_dc % (*(int *)param_1[2] << 1);
+                iVar17 = local_dc / (*(int *)param_1[2] << 1);
+                iVar14 = local_dc % (*(int *)param_1[2] << 1);
                 local_c4 = 1;
-                iVar5 = 0;
+                iVar6 = 0;
                 if (0 < local_40) {
                   do {
+                    *(int *)((st_stack_frame + 0) + iVar19 * -0x30) = iVar17;
+                    aiStackY_1b0[iVar19 * -0xc + 4] = iVar14;
+                    puVar4 = local_16c;
+                    aiStackY_1b0[iVar19 * -0xc + 3] = (int)*(short *)(local_16c + iVar6 * 4 + 2);
+                    aiStackY_1b0[iVar19 * -0xc + 2] = (int)*(short *)(puVar4 + iVar6 * 4);
+                    aiStackY_1b0[iVar19 * -0xc + 1] = 0x69dc8c;
                     local_EAX_4407 =
-                         st::fn_006ACF90((int)*(short *)(local_16c + iVar5 * 4),
-                                      (int)*(short *)(local_16c + iVar5 * 4 + 2),iVar8,iVar14);
-                    if ((local_EAX_4407 < 2) ||
-                       (local_EAX_4442 =
-                             st::fn_006ACF90((int)*(short *)(local_16c + iVar5 * 4),
-                                          (int)*(short *)(local_16c + iVar5 * 4 + 2),iVar8 + 1,
-                                          iVar14 + 1), local_EAX_4442 < 2)) {
+                         st::fn_006ACF90(aiStackY_1b0[iVar19 * -0xc + 2],
+                                      aiStackY_1b0[iVar19 * -0xc + 3],
+                                      aiStackY_1b0[iVar19 * -0xc + 4],
+                                      *(int *)((st_stack_frame + 0) + iVar19 * -0x30));
+                    if (local_EAX_4407 < 2) {
+LAB_0069dcbc:
                       local_c4 = 0;
                       break;
                     }
-                    iVar5 = iVar5 + 1;
-                  } while (iVar5 < local_40);
+                    *(int *)((st_stack_frame + 0) + iVar19 * -0x30) = iVar17 + 1;
+                    aiStackY_1b0[iVar19 * -0xc + 4] = iVar14 + 1;
+                    puVar4 = local_16c;
+                    aiStackY_1b0[iVar19 * -0xc + 3] = (int)*(short *)(local_16c + iVar6 * 4 + 2);
+                    aiStackY_1b0[iVar19 * -0xc + 2] = (int)*(short *)(puVar4 + iVar6 * 4);
+                    aiStackY_1b0[iVar19 * -0xc + 1] = 0x69dcaf;
+                    local_EAX_4442 =
+                         st::fn_006ACF90(aiStackY_1b0[iVar19 * -0xc + 2],
+                                      aiStackY_1b0[iVar19 * -0xc + 3],
+                                      aiStackY_1b0[iVar19 * -0xc + 4],
+                                      *(int *)((st_stack_frame + 0) + iVar19 * -0x30));
+                    if (local_EAX_4442 < 2) goto LAB_0069dcbc;
+                    iVar6 = iVar6 + 1;
+                  } while (iVar6 < local_40);
                 }
-                pAVar16 = local_30;
+                pAVar20 = local_30;
                 if (local_c4 != 0) {
-                  *(short *)(local_16c + local_40 * 4) = (short)iVar8;
-                  *(short *)(local_16c + local_40 * 4 + 2) = (short)iVar14;
+                  *(short *)(local_16c + local_40 * 4) = (short)iVar14;
+                  *(short *)(local_16c + local_40 * 4 + 2) = (short)iVar17;
                   local_b0 = local_b0 + 1;
+                  *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69dd0b;
                   local_EAX_4534 = st::fn_0072E6C0();
-                  uVar15 = local_EAX_4534 & 0x80000001;
-                  bVar19 = uVar15 == 0;
-                  if ((int)uVar15 < 0) {
-                    bVar19 = (uVar15 - 1 | 0xfffffffe) == 0xffffffff;
+                  uVar16 = local_EAX_4534 & 0x80000001;
+                  bVar22 = uVar16 == 0;
+                  if ((int)uVar16 < 0) {
+                    bVar22 = (uVar16 - 1 | 0xfffffffe) == 0xffffffff;
                   }
-                  if (bVar19) {
+                  if (bVar22) {
+                    *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69de40;
                     local_EAX_4843 = st::fn_0072E6C0();
-                    st::fn_00402856(param_1,iVar8 * 100 + 0x32,iVar14 * 100 + 0x32,0,0x3f2,
-                                       local_EAX_4843 % DAT_007d9994);
+                    *(uint *)((st_stack_frame + 0) + iVar19 * -0x30) = local_EAX_4843 % DAT_007d9994;
+                    aiStackY_1b0[iVar19 * -0xc + 4] = 0x3f2;
+                    aiStackY_1b0[iVar19 * -0xc + 3] = 0;
+                    aiStackY_1b0[iVar19 * -0xc + 2] = iVar17 * 100 + 0x32;
+                    aiStackY_1b0[iVar19 * -0xc + 1] = iVar14 * 100 + 0x32;
+                    aiStackY_1b0[iVar19 * -0xc] = 0x69de77;
+                    st::fn_00402856(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
+                                       aiStackY_1b0[iVar19 * -0xc + 2],
+                                       aiStackY_1b0[iVar19 * -0xc + 3],
+                                       aiStackY_1b0[iVar19 * -0xc + 4],
+                                       *(uint *)((st_stack_frame + 0) + iVar19 * -0x30));
                     *(undefined4 *)((int)local_78 + local_dc * 0xe + 6) = 0x3f2;
                   }
                   else {
+                    *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69dd22;
                     local_EAX_4557 = st::fn_0072E6C0();
-                    uVar15 = local_EAX_4557 & 0x8000000f;
-                    bVar19 = uVar15 == 0;
-                    if ((int)uVar15 < 0) {
-                      bVar19 = (uVar15 - 1 | 0xfffffff0) == 0xffffffff;
+                    uVar16 = local_EAX_4557 & 0x8000000f;
+                    bVar22 = uVar16 == 0;
+                    if ((int)uVar16 < 0) {
+                      bVar22 = (uVar16 - 1 | 0xfffffff0) == 0xffffffff;
                     }
-                    if (bVar19) {
+                    if (bVar22) {
+                      *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69dd39;
                       local_EAX_4580 = st::fn_0072E6C0();
-                      uVar15 = local_EAX_4580 % DAT_007d977c;
-                      if (((iVar8 < 1) || (*(int *)param_1[2] * 2 + -2 <= iVar8)) ||
-                         ((iVar14 < 1 || (iVar14 <= ((int *)param_1[2])[1] * 2 + -2)))) {
-                        iVar5 = 0x3f1;
-                        uVar20 = 0;
-                        iVar14 = iVar14 * 100;
-                        iVar8 = iVar8 * 100;
+                      if (((iVar14 < 1) || (*(int *)param_1[2] * 2 + -2 <= iVar14)) ||
+                         ((iVar17 < 1 || (iVar17 <= ((int *)param_1[2])[1] * 2 + -2)))) {
+                        *(uint *)((st_stack_frame + 0) + iVar19 * -0x30) = local_EAX_4580 % DAT_007d977c
+                        ;
+                        aiStackY_1b0[iVar19 * -0xc + 4] = 0x3f1;
+                        aiStackY_1b0[iVar19 * -0xc + 3] = 0;
+                        aiStackY_1b0[iVar19 * -0xc + 2] = iVar17 * 100;
+                        aiStackY_1b0[iVar19 * -0xc + 1] = iVar14 * 100;
                       }
                       else {
-                        iVar5 = 0x3f1;
-                        uVar20 = 0;
+                        *(uint *)((st_stack_frame + 0) + iVar19 * -0x30) = local_EAX_4580 % DAT_007d977c
+                        ;
+                        aiStackY_1b0[iVar19 * -0xc + 4] = 0x3f1;
+                        aiStackY_1b0[iVar19 * -0xc + 3] = 0;
+                        aiStackY_1b0[iVar19 * -0xc + 2] = 0x69dd74;
                         local_EAX_4639 = st::fn_0072E6C0();
-                        iVar14 = (int)local_EAX_4639 % 0x51 + -0x28 + iVar14 * 100;
+                        aiStackY_1b0[iVar19 * -0xc + 2] =
+                             (int)local_EAX_4639 % 0x51 + -0x28 + iVar17 * 100;
+                        aiStackY_1b0[iVar19 * -0xc + 1] = 0x69dd8c;
                         local_EAX_4663 = st::fn_0072E6C0();
-                        iVar8 = (int)local_EAX_4663 % 0x51 + -0x28 + iVar8 * 100;
+                        aiStackY_1b0[iVar19 * -0xc + 1] =
+                             (int)local_EAX_4663 % 0x51 + -0x28 + iVar14 * 100;
                       }
-                      st::fn_00402856(param_1,iVar8,iVar14,uVar20,iVar5,uVar15);
+                      aiStackY_1b0[iVar19 * -0xc] = 0x69ddc4;
+                      st::fn_00402856(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
+                                         aiStackY_1b0[iVar19 * -0xc + 2],
+                                         aiStackY_1b0[iVar19 * -0xc + 3],
+                                         aiStackY_1b0[iVar19 * -0xc + 4],
+                                         *(uint *)((st_stack_frame + 0) + iVar19 * -0x30));
                       *(undefined4 *)((int)local_78 + local_dc * 0xe + 6) = 0x3f1;
                     }
                     else {
+                      *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69dde8;
                       local_EAX_4755 = st::fn_0072E6C0();
-                      st::fn_00402856(param_1,iVar8 * 100 + 0x32,iVar14 * 100 + 0x32,0,0x3e9,
-                                         local_EAX_4755 % DAT_007d88d4);
+                      *(uint *)((st_stack_frame + 0) + iVar19 * -0x30) = local_EAX_4755 % DAT_007d88d4;
+                      aiStackY_1b0[iVar19 * -0xc + 4] = 0x3e9;
+                      aiStackY_1b0[iVar19 * -0xc + 3] = 0;
+                      aiStackY_1b0[iVar19 * -0xc + 2] = iVar17 * 100 + 0x32;
+                      aiStackY_1b0[iVar19 * -0xc + 1] = iVar14 * 100 + 0x32;
+                      aiStackY_1b0[iVar19 * -0xc] = 0x69de1f;
+                      st::fn_00402856(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
+                                         aiStackY_1b0[iVar19 * -0xc + 2],
+                                         aiStackY_1b0[iVar19 * -0xc + 3],
+                                         aiStackY_1b0[iVar19 * -0xc + 4],
+                                         *(uint *)((st_stack_frame + 0) + iVar19 * -0x30));
                       *(undefined4 *)((int)local_78 + local_dc * 0xe + 6) = 0x3e9;
                     }
                   }
-                  iVar14 = local_40 + 1;
-                  piVar4 = (int *)(local_70 + local_15c * 4);
-                  *piVar4 = *piVar4 + -4;
-                  local_40 = iVar14;
-                  if (*piVar4 < 0) {
+                  local_40 = local_40 + 1;
+                  piVar5 = (int *)(local_70 + local_15c * 4);
+                  *piVar5 = *piVar5 + -4;
+                  if (*piVar5 < 0) {
                     *(undefined4 *)(local_70 + local_15c * 4) = 0;
                   }
                   break;
@@ -4185,74 +4735,91 @@ LAB_0069d7b2:
               local_e4 = local_e4 + 1;
             } while ((int)local_e4 < 10);
             local_140 = local_140 + -1;
-            iVar14 = local_144;
-            iVar8 = local_ac;
-            pDVar3 = local_138;
+            iVar17 = local_144;
+            iVar14 = local_ac;
+            puVar18 = local_138;
           }
         }
       }
     }
   }
-  pDVar3 = local_138;
+  puVar18 = local_138;
   if (local_138 != nullptr) {
-    uVar15 = 0;
-    if (0 < (int)local_138->count) {
-      bVar19 = local_138->count != 0;
+    uVar16 = 0;
+    if (0 < (int)local_138[3]) {
+      bVar22 = local_138[3] != 0;
       do {
-        if (bVar19) {
-          pvVar7 = DArrayAt<void>(pDVar3, uVar15);
+        if (bVar22) {
+          iVar17 = st::machine_word_boundary_cast<int>(puVar18[2] * uVar16 + puVar18[7]);
         }
         else {
-          pvVar7 = nullptr;
+          iVar17 = 0;
         }
-        if ((pvVar7 != nullptr) && (STField<DArrayTy *>(pvVar7,0xc) != nullptr)) {
-          st::fn_006AE110(STField<DArrayTy *>(pvVar7,0xc));
+        if ((iVar17 != 0) && (*(int *)(iVar17 + 0xc) != 0)) {
+          *(int *)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) =
+               *(int *)(iVar17 + 0xc);
+          aiStackY_1b0[iVar19 * -0xc + 4] = 0x69df26;
+          st::fn_006AE110(*(DArrayTy **)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
         }
-        uVar15 = uVar15 + 1;
-        bVar19 = uVar15 < pDVar3->count;
-      } while ((int)uVar15 < (int)pDVar3->count);
+        uVar16 = uVar16 + 1;
+        bVar22 = uVar16 < puVar18[3];
+      } while ((int)uVar16 < (int)puVar18[3]);
     }
-    st::fn_006AE110(pDVar3);
+    *(uint **)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) = puVar18;
+    aiStackY_1b0[iVar19 * -0xc + 4] = 0x69df34;
+    st::fn_006AE110(*(DArrayTy **)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
   }
-  st::fn_006AB060(&local_78);
-  st::fn_006AB060(&local_c0);
+  *(void ***)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) = &local_78;
+  aiStackY_1b0[iVar19 * -0xc + 4] = 0x69df3d;
+  st::fn_006AB060(*(void **)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
+  *(undefined4 ***)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) = &local_c0;
+  aiStackY_1b0[iVar19 * -0xc + 4] = 0x69df49;
+  st::fn_006AB060(*(void **)((st_stack_frame + 0) + iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
+  *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69df54;
   st::fn_00403805(param_1);
   ExceptionList = local_14;
   return local_13c;
 LAB_0069d43d:
-  iVar8 = aiStack_a8[uVar15];
+  iVar14 = aiStack_a8[uVar10];
 LAB_0069d44d:
-  local_b8 = iVar8 + -1;
+  local_b8 = iVar14 + -1;
 LAB_0069d454:
   if (local_b8 < 0) {
     local_b8 = st::machine_word_boundary_cast<int>(aiStack_a8[local_e8] + -1);
   }
-  iVar8 = local_e8 + 3;
-  if (7 < iVar8) {
-    iVar8 = local_e8 - 5;
+  iVar14 = local_e8 + 3;
+  if (7 < iVar14) {
+    iVar14 = local_e8 - 5;
   }
-  iVar5 = st::fn_00405C81(param_1,local_68[local_e8],*(int *)param_1[2] << 1,local_10c,nullptr
-                            );
-  if (iVar5 == 8) {
-    iVar5 = 0;
+  *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0;
+  aiStackY_1b0[iVar19 * -0xc + 4] = (int)local_10c;
+  aiStackY_1b0[iVar19 * -0xc + 3] = *(int *)param_1[2] << 1;
+  aiStackY_1b0[iVar19 * -0xc + 2] = local_68[uVar16];
+  aiStackY_1b0[iVar19 * -0xc + 1] = 0x69d494;
+  iVar6 = st::fn_00405C81(param_1,aiStackY_1b0[iVar19 * -0xc + 2],aiStackY_1b0[iVar19 * -0xc + 3]
+                             ,(int *)aiStackY_1b0[iVar19 * -0xc + 4],
+                             *(int **)((st_stack_frame + 0) + iVar19 * -0x30));
+  if (iVar6 == 8) {
+    iVar6 = 0;
     do {
-      if ((*(char *)(local_10c[iVar8] + (int)local_c0) == '\x01') && (local_10c[iVar8] != iVar14)) {
-        local_24 = local_10c[iVar8];
+      if ((*(char *)(local_10c[iVar14] + (int)local_c0) == '\x01') && (local_10c[iVar14] != iVar17))
+      {
+        local_24 = local_10c[iVar14];
         break;
       }
-      iVar11 = iVar8 + -1;
+      iVar11 = iVar14 + -1;
       if (iVar11 < 0) {
-        iVar11 = iVar8 + 7;
+        iVar11 = iVar14 + 7;
       }
-      iVar5 = iVar5 + 1;
-      iVar8 = iVar11;
-    } while (iVar5 < 8);
+      iVar6 = iVar6 + 1;
+      iVar14 = iVar11;
+    } while (iVar6 < 8);
   }
 LAB_0069d4ca:
   if (local_24 == -1) {
-    *(int *)((int)local_b4 + local_178 * 8) = iVar14;
+    *(int *)((int)local_b4 + local_178 * 8) = iVar17;
     *(undefined4 *)((int)local_b4 + local_178 * 8 + 4) = 0xffffffff;
-    *(char *)(iVar14 + (int)local_c0) = (char)local_44 + '\x02';
+    *(char *)(iVar17 + (int)local_c0) = (char)local_44 + '\x02';
     local_178 = local_178 + 1;
     if (local_158 != 0) {
       local_28[local_44] = local_178 * 0x10000 | (uint)*(ushort *)(local_28 + local_44);
@@ -4261,11 +4828,11 @@ LAB_0069d4ca:
     }
   }
   else if (-1 < local_b8) {
-    *(int *)((int)local_b4 + local_178 * 8) = iVar14;
+    *(int *)((int)local_b4 + local_178 * 8) = iVar17;
     *(int *)((int)local_b4 + local_178 * 8 + 4) = local_b8;
-    uVar15 = local_44 & 0xff;
+    uVar16 = local_44 & 0xff;
 LAB_0069d5f2:
-    *(char *)(iVar14 + (int)local_c0) = (char)uVar15 + '\x02';
+    *(char *)(iVar17 + (int)local_c0) = (char)uVar16 + '\x02';
     local_178 = local_178 + 1;
   }
   if ((0xfc < (int)local_44) || (local_e4 = local_e4 + 1, local_164 <= (int)local_e4))

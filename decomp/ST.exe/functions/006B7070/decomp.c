@@ -1,15 +1,24 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 005D4850 -> 006B7070 @ 005D488F */
 
 void FUN_006b7070(int *param_1)
 
 {
-  int iVar1;
-  uint uVar2;
-  int **ppiVar3;
+  int *piVar1;
+  code *pcVar2;
+  int iVar3;
+  int iVar4;
+  uint uVar5;
+  undefined1 *puVar6;
+  undefined4 *puVar7;
+  undefined4 auStack_50 [2];
+  undefined1 auStack_48 [4];
+  int iStack_44;
   int *piStack_40;
   uint uStack_3c;
   uint *puStack_38;
@@ -30,29 +39,44 @@ void FUN_006b7070(int *param_1)
     piStack_40 = (int *)*param_1;
     puStack_38 = local_28;
     uStack_3c = 0;
+    iStack_44 = 0x6b70b1;
     ExceptionList = &local_14;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar1 = (**(code **)(*piStack_40 + 0x58))();
-    if (iVar1 == -0x7788ffe2) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
+    iVar3 = (**(code **)(*piStack_40 + 0x58))();
+    if (iVar3 == -0x7788ffe2) {
       local_8 = 0;
-      Library::MSVCRT::FUN_0072da40();
-      ppiVar3 = &piStack_40;
-      local_20 = (undefined1 *)&piStack_40;
-      local_1c = (undefined1 *)&piStack_40;
-      for (uVar2 = local_28[0] >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
-        *ppiVar3 = nullptr;
-        ppiVar3 = ppiVar3 + 1;
+      iStack_44 = 0x6b70ce;
+      iVar3 = -(local_28[0] + 3 & 0xfffffffc);
+      local_1c = (undefined1 *)((int)&piStack_40 + iVar3);
+      local_20 = (undefined1 *)((int)&piStack_40 + iVar3);
+      puVar7 = (undefined4 *)((int)&piStack_40 + iVar3);
+      for (uVar5 = local_28[0] >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+        *puVar7 = 0;
+        puVar7 = puVar7 + 1;
       }
-      for (uVar2 = local_28[0] & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-        *(undefined1 *)ppiVar3 = 0;
-        ppiVar3 = (int **)((int)ppiVar3 + 1);
+      for (uVar5 = local_28[0] & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+        *(undefined1 *)puVar7 = 0;
+        puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar1 = (**(code **)(*(int *)*param_1 + 0x58))((int *)*param_1,&piStack_40,local_28);
-      if (iVar1 == 0) {
-        uStack_3c = uStack_3c | 0x20;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*(int *)*param_1 + 0x7c))((int *)*param_1,&piStack_40,0);
+      piVar1 = (int *)*param_1;
+      iVar4 = *piVar1;
+      *(uint **)((int)&iStack_44 + iVar3) = local_28;
+      *(int *)(auStack_48 + iVar3) = (int)&piStack_40 + iVar3;
+      *(int **)((int)auStack_50 + iVar3 + 4) = piVar1;
+      pcVar2 = *(code **)(iVar4 + 0x58);
+      puVar6 = (undefined1 *)((int)auStack_50 + iVar3);
+      *(undefined4 *)((int)auStack_50 + iVar3) = 0x6b70f7;
+      iVar4 = (*pcVar2)();
+      if (iVar4 == 0) {
+        *(uint *)((int)&uStack_3c + iVar3) = *(uint *)((int)&uStack_3c + iVar3) | 0x20;
+        piVar1 = (int *)*param_1;
+        iVar4 = *piVar1;
+        *(undefined4 *)(puVar6 + -4) = 0;
+        *(int *)((int)puVar6 + -8) = (int)&piStack_40 + iVar3;
+        *(int **)(puVar6 + -0xc) = piVar1;
+        pcVar2 = *(code **)(iVar4 + 0x7c);
+        *(undefined4 *)(puVar6 + -0x10) = 0x6b710e;
+        (*pcVar2)();
       }
     }
   }

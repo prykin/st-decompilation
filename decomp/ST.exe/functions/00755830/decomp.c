@@ -49,7 +49,7 @@ uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       sVar2 = *(short *)(param_1->field_000C + 0x34);
       if (sVar2 == 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (**(code **)(param_1->field_000C + 8))(param_2 + 2);
       }
       else {

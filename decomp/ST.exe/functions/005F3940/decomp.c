@@ -1,5 +1,4 @@
 
-
 int FUN_005f3940(int param_1,int param_2,int param_3)
 
 {
@@ -12,7 +11,6 @@ int FUN_005f3940(int param_1,int param_2,int param_3)
 
   iVar4 = STBiasedDiv16(param_1, 0xc9); /* exact signed 16-bit grid-index division */
   iVar5 = STBiasedDiv16(param_2, 0xc9); /* exact signed 16-bit grid-index division */
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   if ((((g_sT3DSMAPContext_00807598->field_0048 <= iVar4) &&
        (iVar4 <= g_sT3DSMAPContext_00807598->field_0058)) &&

@@ -31,7 +31,6 @@ undefined4 __thiscall FUN_005f89f0(void *this,int param_1)
   if (g_worldGrid.sizeY <= iVar5) {
     iVar5 = g_worldGrid.sizeY + -1;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = STField<int>(this,0x285);
   while( true ) {
     sVar6 = (short)iVar4;
@@ -43,7 +42,6 @@ undefined4 __thiscall FUN_005f89f0(void *this,int param_1)
          ((g_worldGrid.sizeY <= sVar7 || (sVar8 < 0)))) ||
         ((g_worldGrid.sizeZ <= sVar8 ||
          (STGridAt3D(g_worldGrid, sVar6, sVar7, sVar8).objects[0] == nullptr)))))) break;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + 1;
     if ((4 < param_1) || (STField<int>(this,0x285) + 2 < param_1)) break;
   }

@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_00747406(void *this,undefined4 param_1,int *param_2,un
     uVar2 = 0x80004001;
   }
   else {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (**(code **)(*piVar1 + 0xc))(piVar1,param_1,param_2,param_3);
   }
   return uVar2;

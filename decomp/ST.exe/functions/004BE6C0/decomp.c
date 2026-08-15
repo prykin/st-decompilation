@@ -37,10 +37,10 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
   case 4:
     STField<undefined1>(param_1,2) = 1;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar3 = (**(code **)(*(int *)this + 0x7c))();
   STField<undefined1>(param_1,0x1b) = uVar3;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar3 = (**(code **)(*(int *)this + 0xc4))();
   *(undefined1 *)(param_1 + 7) = uVar3;
   STField<undefined4>(param_1,3) = STField<undefined4>(this,0x5ac);

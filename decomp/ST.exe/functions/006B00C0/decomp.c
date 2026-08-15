@@ -23,7 +23,7 @@ uint * FUN_006b00c0(uint *param_1,uint *param_2,undefined *param_3)
   memmove(puVar6, puVar5, uVar2); /* compiler REP MOVS byte copy */
   iVar4 = pDVar1->capacity - pDVar1->count;
   if (iVar4 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)param_3)(pDVar1->data,pDVar1->count,iVar4);
   }
   return &pDVar1->flags;

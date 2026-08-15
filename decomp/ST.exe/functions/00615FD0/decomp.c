@@ -19,7 +19,7 @@ undefined4 __thiscall FUN_00615fd0(void *this,int param_1,undefined4 param_2)
     if (3 < param_1) {
       return param_2;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((STField<int *>(this,0x2ff) != nullptr) &&
        (iVar1 = (**(code **)(*STField<int *>(this,0x2ff) + 0xe0))
                           (STField<undefined4>(this,0x303),(int)&param_2 + 2,(int)&param_1 + 2,

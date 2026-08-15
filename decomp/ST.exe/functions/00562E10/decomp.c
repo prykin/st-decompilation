@@ -12,8 +12,8 @@ void FUN_00562e10(undefined4 param_1,undefined4 param_2,undefined4 *param_3,int 
   int iVar6;
   int iVar7;
 
-  iVar1 = *(int *)(DAT_00803300 + param_4 * 0x14);
-  iVar2 = *(int *)(DAT_00803300 + param_4 * 0x14 + 4);
+  iVar1 = g_runtimeRecords_00803300[param_4].field_0000;
+  iVar2 = g_runtimeRecords_00803300[param_4].field_0004;
   iVar3 = DAT_008032ec;
   if (param_4 < DAT_0080337c) {
     iVar3 = DAT_00803378;
@@ -23,8 +23,9 @@ void FUN_00562e10(undefined4 param_1,undefined4 param_2,undefined4 *param_3,int 
     iVar7 = 0;
     puVar5 = param_3;
     do {
-      iVar4 = FUN_006acf90(*(int *)(iVar7 + DAT_00803300),*(int *)(iVar7 + 4 + DAT_00803300),iVar1,
-                           iVar2);
+      iVar4 = FUN_006acf90(*(int *)((int)&g_runtimeRecords_00803300->field_0000 + iVar7),
+                           *(int *)((int)&g_runtimeRecords_00803300->field_0004 + iVar7),iVar1,iVar2
+                          );
       if (iVar4 < DAT_00803378 / 2 + iVar3 / 2) {
         *puVar5 = 0xffffffff;
       }
@@ -37,8 +38,9 @@ void FUN_00562e10(undefined4 param_1,undefined4 param_2,undefined4 *param_3,int 
     iVar7 = iVar6 * 0x14;
     puVar5 = param_3 + iVar6;
     do {
-      iVar4 = FUN_006acf90(*(int *)(iVar7 + DAT_00803300),*(int *)(iVar7 + 4 + DAT_00803300),iVar1,
-                           iVar2);
+      iVar4 = FUN_006acf90(*(int *)((int)&g_runtimeRecords_00803300->field_0000 + iVar7),
+                           *(int *)((int)&g_runtimeRecords_00803300->field_0004 + iVar7),iVar1,iVar2
+                          );
       if (iVar4 < DAT_008032ec / 2 + iVar3 / 2) {
         *puVar5 = 0xffffffff;
       }

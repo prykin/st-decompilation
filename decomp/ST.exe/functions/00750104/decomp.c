@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_00750104(void *this,AnonShape_00750104_599B328B *param
 
   local_8 = this;
   EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 8));
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(param_1->field_000C + 4))(&param_1->field_000C);
   this_00 = (int *)((int)this + 0x38);
   if (param_1->field_0030 == 0) {

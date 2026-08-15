@@ -18,11 +18,11 @@ undefined4 __thiscall FUN_006d7380(void *this,int param_1)
     iVar3 = STField<int>(this,0x8c);
     if (*(int *)(iVar3 + 0x18) != 0) {
       if (iVar3 != 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar4 = (**(code **)(*piVar1 + 0x20))(piVar1,iVar3 + 0xc);
         return uVar4;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (**(code **)(*piVar1 + 0x20))(piVar1,0);
       return uVar4;
     }
@@ -32,12 +32,12 @@ undefined4 __thiscall FUN_006d7380(void *this,int param_1)
                          (char *)(STField<int>(this,0x90) + 0x1c));
     if (iVar2 != 0) {
       if (STField<int>(this,0x90) != 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar4 = (**(code **)(*STField<int *>(this,0x40) + 0x20))
                           (STField<int *>(this,0x40),STField<int>(this,0x90) + 0xc);
         return uVar4;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (**(code **)(*STField<int *>(this,0x40) + 0x20))(STField<int *>(this,0x40),0);
     }
   }

@@ -107,14 +107,14 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
                   piVar5 = nullptr;
                 }
                 piVar5 = (int *)*piVar5;
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 if ((piVar5 != nullptr) && (iVar6 = (**(code **)(*piVar5 + 0xf8))(), iVar6 != 0))
                 {
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   iVar6 = (**(code **)(*piVar5 + 0x2c))();
                   pIVar7 = thunk_FUN_00674fb0(iVar6);
                   if ((((uint)pIVar7 & 3) != 0) || (((uint)pIVar7 & 0x630000) != 0)) {
-                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                     iVar6 = (**(code **)(*piVar5 + 0xd4))();
                     local_14 = local_14 + iVar6;
                   }
@@ -141,7 +141,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
                   }
                   pSVar1 = (STFishC *)*puVar8;
                   if ((pSVar1 != nullptr) &&
-                     (iVar6 = (*pSVar1->vtable->vfunc_F8)(), iVar6 != 0)) {
+                     (iVar6 = pSVar1->vfunc_F8(), iVar6 != 0)) {
                     memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
                     STPiece<0,2>(local_3c) = (undefined2)local_8;
                     dVar9 = pSVar1->slot_2C();
@@ -210,7 +210,8 @@ LAB_0067c61b:
                       }
                       pSVar1 = (STFishC *)*puVar8;
                       if (((pSVar1 != nullptr) &&
-                          (iVar6 = (*pSVar1->vtable->vfunc_F8)(), iVar13 = local_18, iVar6 != 0)) &&
+                          (iVar6 = pSVar1->vfunc_F8(), iVar13 = local_18,
+                          iVar6 != 0)) &&
                          (puVar11 = thunk_FUN_0067bd00(this_00->field_06AD,uVar14),
                          iVar13 = local_18, puVar11 == nullptr)) {
                         uVar3 = (undefined2)local_8;

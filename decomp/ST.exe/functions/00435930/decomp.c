@@ -97,12 +97,12 @@ STAllPlayersC::GetCursorType
   }
   if ((param_2 != nullptr) && (param_2->field_0024 == (uint)DAT_0080874d)
      ) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((param_2->field_0020 == 0x14) &&
        (iVar8 = (**(code **)(*(int *)param_2 + 0xec))(), iVar8 == 1)) {
       return 3;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (((param_2->field_0020 == 1000) || (param_2->field_0020 == 0x3e9)) &&
        (iVar8 = (**(code **)(*(int *)param_2 + 0xec))(), iVar8 == 1)) {
       return 4;

@@ -53,12 +53,12 @@ int FUN_006b0a20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT iS
         UVar4 = UVar4 - 1;
       } while (UVar4 != 0);
       if (param_5 != 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*param_1->field_0030 + 0x58))(param_1->field_0030,1,0);
       }
       piVar1 = (int *)param_1->field_003C;
       if (piVar1 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar1 + 0x18))(piVar1,0,iStart,param_4,local_404);
       }
       SetPaletteEntries(*(HPALETTE *)param_1,iStart,param_4,local_404);

@@ -48,7 +48,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
           iVar7 = piVar8[-2] + -0x96;
           iVar5 = thunk_FUN_004e60d0(param_1[9],local_8);
           local_c = *(int *)(&DAT_007e601c + (iVar5 + iVar7 * 5) * 4);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar5 = (**(code **)(*param_1 + 0x2c))();
           iVar5 = thunk_FUN_004b72e0((char)param_1[9],iVar5);
           if (iVar5 != 0) {

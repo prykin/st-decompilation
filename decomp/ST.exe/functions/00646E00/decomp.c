@@ -32,16 +32,13 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
   if (param_2 < 0) {
     iVar6 = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
                         (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = iVar6 + -1;
   }
   else {
     iVar6 = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
                         (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = iVar6;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   if (iVar4 < 0) {
     iVar6 = iVar6 + -1;
@@ -64,20 +61,16 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
     if (iVar6 < 0) {
       iVar6 = 0;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = local_8 + -3;
     if (param_2 < 0) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
     }
     local_8 = iVar5 + 4;
     if (g_worldGrid.sizeY < local_8) {
       local_8 = (int)g_worldGrid.sizeY;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = iVar4 + 4;
     if (g_worldGrid.sizeX < param_3) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = (int)g_worldGrid.sizeX;
     }
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&

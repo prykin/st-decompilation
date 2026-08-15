@@ -62,12 +62,10 @@ st::fn_00601500
   bVar12 = param_1 < 0;
   if (bVar12) {
     iVar11 = 0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
   }
   local_c = (uint)bVar12;
   if (param_2 < 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     local_c = 1;
     iVar11 = 0;

@@ -337,7 +337,7 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
       this_00->field_01CC = 0;
       if (this_00->field_01BB == '\0') {
         pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (*(code *)pAVar1->field_0004)
                           (0,1,0xac,0x57,0,1,1,pCVar3,uVar6,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12);
         uVar5 = 1;
@@ -350,14 +350,14 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
         uVar7 = 0xb201;
         this_00->field_01C8 = uVar6;
         pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (*(code *)pAVar1->field_0004)
                           (0,1,0xe5,0x57,0,1,1,pCVar3,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12,uVar5);
         this_00->field_01CC = uVar6;
       }
       else {
         pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (*(code *)pAVar1->field_0004)(0,1,0xca,0x57,0,1,1,pCVar3);
         this_00->field_01C8 = uVar6;
       }
@@ -736,7 +736,7 @@ LAB_00552481:
       uVar17 = 1;
       uVar15 = 0;
       pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pAVar8->field_0010)(message,pCVar3,iVar7,uVar15,uVar17);
       g_currentExceptionFrame = local_68.previous;
       return 0;
@@ -757,7 +757,7 @@ LAB_00552481:
         st::fn_00403C33((undefined4 *)0x20,(uint *)&local_18,0,0xffffffff);
         if (this_00->field_01BB != '\0') {
           this_00->field_0028 = 0xbfff;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)this_00->field_0000->field_0000)(&this_00->field_0x18);
           g_currentExceptionFrame = local_68.previous;
           return 0;
@@ -869,7 +869,7 @@ LAB_00552481:
     uVar15 = 0;
     pcVar13 = st::pointer_boundary_cast<code *>(st::fn_00401E88);
     pCVar3 = st::fn_0040577C(text,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)pAVar8->field_0008)(message,1,pCVar3,pcVar13,uVar15,uVar17);
   }
   g_currentExceptionFrame = local_68.previous;

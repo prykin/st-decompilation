@@ -205,7 +205,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       if (HVar5 == 0x78) {
         HVar5 = *(HelpPanelTy_sub_00514BC0_param_1Enum *)&this_00->field_049A->field_0x259;
       }
-      iVar7 = (*pSVar2->vtable->vfunc_0C)();
+      iVar7 = pSVar2->vfunc_0C();
       HelpPanelTy::sub_00514BC0(g_helpPanel_00801690,HVar5,iVar7);
       this_00->field_04DE = 0;
     }

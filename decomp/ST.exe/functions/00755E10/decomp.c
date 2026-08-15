@@ -29,7 +29,7 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
   iVar5 = param_1->field_000C;
   if (iVar2 < *(short *)(iVar4 + 8)) {
     if (*(short *)(iVar5 + 0x34) == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(iVar5 + 8))(iVar2 + 0x18 + iVar4);
     }
     else {
@@ -89,14 +89,13 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
   }
   else {
     if (*(short *)(iVar5 + 0x34) == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(iVar5 + 8))
                         (*(int *)(iVar5 + 0x44 + *(int *)(iVar5 + 0x1c) * 8) + 0x18 + iVar4);
     }
     else {
       iVar5 = (int)*(short *)(iVar5 + 0x34);
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((iVar5 + 8 + param_2 < iVar9) || (param_2 == 0)) {
       uVar6 = FUN_00757530((AnonShape_00757530_EEED7D69 *)param_1,1,
                            (undefined4 *)(iVar4 + 0x10 + iVar7));

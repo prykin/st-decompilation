@@ -6,8 +6,8 @@ function_address	enum_name	status	detail
 00411E50	Global_sub_00411E50_local_20Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00411E50_local_20Enum; generated enum domain already current
 00411E50	Global_sub_00411E50_local_20Enum	disabled	apply=0
 00413170	Global_sub_00413170_DAT_007f4d08Enum	disabled	apply=0
-00413AF0	Global_sub_00413AF0_iVar8Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00413AF0_iVar8Enum; generated enum domain already current
-00413AF0	Global_sub_00413AF0_iVar8Enum	disabled	apply=0
+00413AF0	Global_sub_00413AF0_iVar9Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00413AF0_iVar9Enum; generated enum domain already current
+00413AF0	Global_sub_00413AF0_iVar9Enum	disabled	apply=0
 0041C3F0	TLOEmbryoTy_sub_0041C3F0_uVar2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/TLOEmbryoTy_sub_0041C3F0_uVar2Enum; generated enum domain already current
 0041C3F0	TLOEmbryoTy_sub_0041C3F0_uVar2Enum	disabled	apply=0
 0041C5A0	Global_sub_0041C5A0_uVar1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0041C5A0_uVar1Enum; generated enum domain already current
@@ -23,7 +23,7 @@ function_address	enum_name	status	detail
 00420340	STSprGameObjC_LoadActFrame_dVar5Enum	disabled	apply=0
 00420AE0	STSprGameObjC_LoadLifeFrame_SVar4Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STSprGameObjC_LoadLifeFrame_SVar4Enum; generated enum domain already current
 00420AE0	STSprGameObjC_LoadLifeFrame_SVar4Enum	disabled	apply=0
-004232A0	STGroupBoatC_field_0020State	applied	created /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_0020State; field field_0020 -> /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_0020State
+004232A0	STGroupBoatC_field_0020State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_0020State; field already uses enum
 004248D0	Global_sub_004248D0_param_5Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_5Enum; parameter already uses enum
 004248D0	Global_sub_004248D0_param_6Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_6Enum; parameter already uses enum
 00424E10	SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_00424E10_local_8cEnum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_00424E10_local_8cEnum; generated enum domain already current
@@ -112,7 +112,7 @@ function_address	enum_name	status	detail
 00462180	Global_sub_00462180_local_EAX_7817Enum	disabled	apply=0
 004658D0	Global_sub_004658D0_local_EAX_48Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004658D0_local_EAX_48Enum; generated enum domain already current
 004658D0	Global_sub_004658D0_local_EAX_48Enum	disabled	apply=0
-00465C60	STBoatC_field_04D9State	applied	updated generated /SubmarineTitans/Recovered/Enums/STBoatC_field_04D9State; enum domain updated; field already uses enum
+00465C60	STBoatC_field_04D9State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_04D9State; field already uses enum
 00465C60	STBoatC_LoadRC_local_EAX_1088Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_LoadRC_local_EAX_1088Enum; generated enum domain already current
 00465C60	STBoatC_LoadRC_local_EAX_11037Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_LoadRC_local_EAX_11037Enum; generated enum domain already current
 00465C60	STBoatC_LoadRC_local_EAX_15261Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_LoadRC_local_EAX_15261Enum; generated enum domain already current
@@ -131,7 +131,7 @@ function_address	enum_name	status	detail
 00465C60	STBoatC_LoadRC_local_EAX_8376Enum	disabled	apply=0
 0046AA50	STBoatC_BackLoadRC_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_BackLoadRC_switch_0Enum; generated enum domain already current
 0046AA50	STBoatC_BackLoadRC_switch_0Enum	disabled	apply=0
-0046B100	STBoatC_field_050CState	applied	updated generated /SubmarineTitans/Recovered/Enums/STBoatC_field_050CState; enum domain updated; field already uses enum
+0046B100	STBoatC_field_050CState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_050CState; field already uses enum
 0046B100	STBoatC_Build_uVar8Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_Build_uVar8Enum; generated enum domain already current
 0046B100	STBoatC_Build_uVar8Enum	disabled	apply=0
 0046C980	STBoatC_field_0508State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_0508State; field already uses enum
@@ -163,7 +163,7 @@ function_address	enum_name	status	detail
 004732F0	STBoatC_field_059AState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_059AState; field already uses enum
 004732F0	STBoatC_LoadObj_iVar10Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_LoadObj_iVar10Enum; generated enum domain already current
 004732F0	STBoatC_LoadObj_iVar10Enum	disabled	apply=0
-004749C0	STBoatC_field_05C4State	applied	updated generated /SubmarineTitans/Recovered/Enums/STBoatC_field_05C4State; enum domain updated; field already uses enum
+004749C0	STBoatC_field_05C4State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_05C4State; field already uses enum
 004749C0	STBoatC_WaitLoad_iVar10Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_WaitLoad_iVar10Enum; generated enum domain already current
 004749C0	STBoatC_WaitLoad_iVar10Enum	disabled	apply=0
 004758E0	STBoatC_field_05D6State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_05D6State; field already uses enum
@@ -188,7 +188,7 @@ function_address	enum_name	status	detail
 0047C050	STBoatC_Bring_local_EAX_1049Enum	disabled	apply=0
 0047C050	STBoatC_Bring_local_EAX_49Enum	disabled	apply=0
 0047CF20	STBoatC_field_0687State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_0687State; field already uses enum
-0047D080	STBoatC_field_06A5State	applied	updated generated /SubmarineTitans/Recovered/Enums/STBoatC_field_06A5State; enum domain updated; field already uses enum
+0047D080	STBoatC_field_06A5State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_06A5State; field already uses enum
 0047DF00	STBoatC_Dismant_local_EAX_1031Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_Dismant_local_EAX_1031Enum; generated enum domain already current
 0047DF00	STBoatC_Dismant_local_EAX_51Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_Dismant_local_EAX_51Enum; generated enum domain already current
 0047DF00	STBoatC_Dismant_local_EAX_1031Enum	disabled	apply=0
@@ -241,7 +241,7 @@ function_address	enum_name	status	detail
 004B6E30	Global_sub_004B6E30_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004B6E30_param_2Enum; parameter already uses enum
 004B7350	Global_sub_004B7350_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004B7350_param_2Enum; parameter already uses enum
 004B7520	Global_sub_004B7520_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004B7520_param_2Enum; parameter already uses enum
-004B7F90	TLOBaseTy_field_0245State	applied	updated generated /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State; enum domain updated; field already uses enum
+004B7F90	TLOBaseTy_field_0245State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State; field already uses enum
 004B80D0	TLOBaseTy_field_05ACState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState; field already uses enum
 004B80D0	TLOBaseTy_SetState_TVar5Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/TLOBaseTy_SetState_TVar5Enum; generated enum domain already current
 004B80D0	TLOBaseTy_SetState_TVar5Enum	disabled	apply=0
@@ -543,7 +543,7 @@ function_address	enum_name	status	detail
 00548BC0	Global_sub_00548BC0_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00548BC0_switch_0Enum; generated enum domain already current
 00548BC0	Global_sub_00548BC0_switch_0Enum	disabled	apply=0
 00548C40	CursorClassTy_field_04A2State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CursorClassTy_field_04A2State; field already uses enum
-00548C40	CursorClassTy_TakeCmdToRun_CVar1Enum	applied	created /SubmarineTitans/Recovered/Enums/CursorClassTy_TakeCmdToRun_CVar1Enum; generated enum domain updated from exact typed uses
+00548C40	CursorClassTy_TakeCmdToRun_CVar1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CursorClassTy_TakeCmdToRun_CVar1Enum; generated enum domain already current
 00548C40	CursorClassTy_TakeCmdToRun_CVar1Enum	disabled	apply=0
 0054BF40	CursorClassTy_field_0493State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CursorClassTy_field_0493State; field already uses enum
 0054BF40	CursorClassTy_SetGCType_iVar6Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CursorClassTy_SetGCType_iVar6Enum; generated enum domain already current
@@ -649,7 +649,7 @@ function_address	enum_name	status	detail
 0059C520	FSGSTy_CreateCtrls_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/FSGSTy_CreateCtrls_switch_0Enum; generated enum domain already current
 0059C520	FSGSTy_CreateCtrls_switch_0Enum	disabled	apply=0
 005A4350	FSGSTy_GetMessage_SVar5Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/FSGSTy_GetMessage_SVar5Enum; generated enum domain already current
-005A4350	FSGSTy_GetMessage_iVar43Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/FSGSTy_GetMessage_iVar43Enum; generated enum domain already current
+005A4350	FSGSTy_GetMessage_iVar47Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/FSGSTy_GetMessage_iVar47Enum; generated enum domain already current
 005A4350	FSGSTy_GetMessage_switch_14Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/FSGSTy_GetMessage_switch_14Enum; generated enum domain already current
 005A4350	FSGSTy_GetMessage_switch_15Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/FSGSTy_GetMessage_switch_15Enum; generated enum domain already current
 005A4350	FSGSTy_GetMessage_switch_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/FSGSTy_GetMessage_switch_1Enum; generated enum domain already current
@@ -657,7 +657,7 @@ function_address	enum_name	status	detail
 005A4350	FSGSTy_GetMessage_switch_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/FSGSTy_GetMessage_switch_3Enum; generated enum domain already current
 005A4350	FSGSTy_GetMessage_switch_8Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/FSGSTy_GetMessage_switch_8Enum; generated enum domain already current
 005A4350	FSGSTy_GetMessage_SVar5Enum	disabled	apply=0
-005A4350	FSGSTy_GetMessage_iVar43Enum	disabled	apply=0
+005A4350	FSGSTy_GetMessage_iVar47Enum	disabled	apply=0
 005A4350	FSGSTy_GetMessage_switch_1Enum	disabled	apply=0
 005A4350	FSGSTy_GetMessage_switch_14Enum	disabled	apply=0
 005A4350	FSGSTy_GetMessage_switch_15Enum	disabled	apply=0
@@ -765,9 +765,7 @@ function_address	enum_name	status	detail
 005DFA30	MTaskTy_field_006DState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/MTaskTy_field_006DState; field already uses enum
 005E0AC0	MTaskTy_NoneMTask_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/MTaskTy_NoneMTask_switch_0Enum; generated enum domain already current
 005E0AC0	MTaskTy_NoneMTask_switch_0Enum	disabled	apply=0
-005E1330	MTaskTy_PlayScript_iVar24Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/MTaskTy_PlayScript_iVar24Enum; generated enum domain already current
 005E1330	MTaskTy_PlayScript_switch_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/MTaskTy_PlayScript_switch_1Enum; generated enum domain already current
-005E1330	MTaskTy_PlayScript_iVar24Enum	disabled	apply=0
 005E1330	MTaskTy_PlayScript_switch_1Enum	disabled	apply=0
 005E5E30	MTestTy_field_00B3State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/MTestTy_field_00B3State; field already uses enum
 005E84D0	WaitTy_NoneWait_local_2cEnum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/WaitTy_NoneWait_local_2cEnum; generated enum domain already current
@@ -799,7 +797,7 @@ function_address	enum_name	status	detail
 00600750	Global_sub_00600750_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00600750_switch_0Enum; generated enum domain already current
 00600750	Global_sub_00600750_switch_0Enum	disabled	apply=0
 00601DB0	Global_sub_00601DB0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00601DB0_param_1Enum; parameter already uses enum
-00601F80	STDestC_field_036EState	applied	updated generated /SubmarineTitans/Recovered/Enums/STDestC_field_036EState; enum domain updated; field already uses enum
+00601F80	STDestC_field_036EState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STDestC_field_036EState; field already uses enum
 00603740	STExplosion_GetMessage_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STExplosion_GetMessage_switch_0Enum; generated enum domain already current
 00603740	STExplosion_GetMessage_switch_0Enum	disabled	apply=0
 00606050	STExplosion_sub_00606050_local_74Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STExplosion_sub_00606050_local_74Enum; generated enum domain already current
@@ -867,7 +865,7 @@ function_address	enum_name	status	detail
 0062B300	Global_sub_0062B300_switch_0Enum	disabled	apply=0
 0062D840	STManRub3C_sub_0062D840_iVar3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STManRub3C_sub_0062D840_iVar3Enum; generated enum domain already current
 0062D840	STManRub3C_sub_0062D840_iVar3Enum	disabled	apply=0
-0062E740	STRubbishC_field_01FAState	applied	created /SubmarineTitans/Recovered/Enums/STRubbishC_field_01FAState; field field_01FA -> /SubmarineTitans/Recovered/Enums/STRubbishC_field_01FAState
+0062E740	STRubbishC_field_01FAState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STRubbishC_field_01FAState; field already uses enum
 0062F3B0	STRubbishC_LoadImagSpr_param_4Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STRubbishC_LoadImagSpr_param_4Enum; parameter already uses enum
 00632030	Global_sub_00632030_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00632030_param_1Enum; parameter already uses enum
 006324C0	Global_sub_006324C0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006324C0_param_1Enum; parameter already uses enum
@@ -916,14 +914,14 @@ function_address	enum_name	status	detail
 0065E450	Global_sub_0065E450_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0065E450_param_3Enum; parameter already uses enum
 00660F70	AiFltClassTy_sub_00660F70_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/AiFltClassTy_sub_00660F70_switch_0Enum; generated enum domain already current
 00660F70	AiFltClassTy_sub_00660F70_switch_0Enum	disabled	apply=0
-00662240	AiFltClassTy_field_009BState	applied	updated generated /SubmarineTitans/Recovered/Enums/AiFltClassTy_field_009BState; enum domain updated; field already uses enum
+00662240	AiFltClassTy_field_009BState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/AiFltClassTy_field_009BState; field already uses enum
 00662240	AiFltClassTy_GetAiMess_iVar20Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/AiFltClassTy_GetAiMess_iVar20Enum; generated enum domain already current
 00662240	AiFltClassTy_GetAiMess_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/AiFltClassTy_GetAiMess_switch_0Enum; generated enum domain already current
 00662240	AiFltClassTy_GetAiMess_switch_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/AiFltClassTy_GetAiMess_switch_2Enum; generated enum domain already current
 00662240	AiFltClassTy_GetAiMess_iVar20Enum	disabled	apply=0
 00662240	AiFltClassTy_GetAiMess_switch_0Enum	disabled	apply=0
 00662240	AiFltClassTy_GetAiMess_switch_2Enum	disabled	apply=0
-00664960	AiFltClassTy_sub_00664960_AVar21Enum	applied	created /SubmarineTitans/Recovered/Enums/AiFltClassTy_sub_00664960_AVar21Enum; generated enum domain updated from exact typed uses
+00664960	AiFltClassTy_sub_00664960_AVar21Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/AiFltClassTy_sub_00664960_AVar21Enum; generated enum domain already current
 00664960	AiFltClassTy_sub_00664960_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/AiFltClassTy_sub_00664960_switch_0Enum; generated enum domain already current
 00664960	AiFltClassTy_sub_00664960_switch_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/AiFltClassTy_sub_00664960_switch_3Enum; generated enum domain already current
 00664960	AiFltClassTy_sub_00664960_switch_4Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/AiFltClassTy_sub_00664960_switch_4Enum; generated enum domain already current
@@ -981,14 +979,6 @@ function_address	enum_name	status	detail
 006AAEF0	Global_sub_006AAEF0_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006AAEF0_switch_0Enum; generated enum domain already current
 006AAEF0	Global_sub_006AAEF0_switch_0Enum	disabled	apply=0
 006AD020	Global_sub_006AD020_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006AD020_param_3Enum; parameter already uses enum
-006BEA40	Global_sub_006BEA40_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006BEA40_switch_0Enum; generated enum domain already current
-006BEA40	Global_sub_006BEA40_switch_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006BEA40_switch_1Enum; generated enum domain already current
-006BEA40	Global_sub_006BEA40_switch_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006BEA40_switch_2Enum; generated enum domain already current
-006BEA40	Global_sub_006BEA40_switch_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006BEA40_switch_3Enum; generated enum domain already current
-006BEA40	Global_sub_006BEA40_switch_0Enum	disabled	apply=0
-006BEA40	Global_sub_006BEA40_switch_1Enum	disabled	apply=0
-006BEA40	Global_sub_006BEA40_switch_2Enum	disabled	apply=0
-006BEA40	Global_sub_006BEA40_switch_3Enum	disabled	apply=0
 006C8EC0	Global_sub_006C8EC0_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006C8EC0_param_3Enum; parameter already uses enum
 006DC320	AnonShape_006DC320_0C876EFA_field_00A8State	disabled	apply=0
 006DCD60	Global_sub_006DCD60_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006DCD60_switch_0Enum; generated enum domain already current

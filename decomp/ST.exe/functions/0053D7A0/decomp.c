@@ -38,7 +38,7 @@ UPanelTy::PaintBut(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte para
     errorCode = (int *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (errorCode == nullptr) {
       iVar5 = 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_4)(param_1);
       text = FUN_006f2c00(param_3,1,uVar4);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,text,errorCode,iVar5);

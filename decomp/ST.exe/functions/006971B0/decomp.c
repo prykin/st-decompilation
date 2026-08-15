@@ -1,6 +1,8 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -11,89 +13,79 @@ int __thiscall CGenerate::sub_006971B0(CGenerate *this)
 {
   dword dVar1;
   CGenerate_field_5853DArray *pCVar2;
+  int iVar3;
   CGenerate_field_5853Element *element_5853;
-  uint uVar4;
-  int iVar5;
+  uint uVar5;
   int iVar6;
-  uint uVar7;
-  int iVar8;
-  undefined4 *puVar9;
+  int iVar7;
+  uint uVar8;
+  int iVar9;
+  undefined4 *puVar10;
   int local_38;
   int local_20;
-  void *local_14;
-  undefined1 *puStack_10;
-  undefined *puStack_c;
-  undefined4 local_8;
 
-  puStack_c = &DAT_0079d788;
-  puStack_10 = &LAB_0072d964;
-  local_14 = ExceptionList;
   local_20 = 0;
-  local_8 = 0;
-  uVar4 = this->field_583B;
-  ExceptionList = &local_14;
-  Library::MSVCRT::FUN_0072da40();
-  local_8 = 0xffffffff;
+  uVar5 = this->field_583B;
+  iVar3 = uVar5 * -4;
   if ((this->field_5853 != nullptr) &&
-     (&stack0x00000000 != (undefined1 *)0x50)) {
-    puVar9 = (undefined4 *)&stack0xffffffb0;
-    for (uVar4 = uVar4 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *puVar9 = 0;
-      puVar9 = puVar9 + 1;
+     (&stack0xffffffb0 != (undefined1 *)(uVar5 * 4))) {
+    puVar10 = (undefined4 *)(&stack0xffffffb0 + iVar3);
+    for (uVar5 = uVar5 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *puVar10 = 0;
+      puVar10 = puVar10 + 1;
     }
-    for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *(undefined1 *)puVar9 = 0;
-      puVar9 = (undefined4 *)((int)puVar9 + 1);
+    for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *(undefined1 *)puVar10 = 0;
+      puVar10 = (undefined4 *)((int)puVar10 + 1);
     }
     dVar1 = this->field_5853->count;
-    uVar4 = 0;
+    uVar5 = 0;
     if (0 < (int)dVar1) {
       do {
         pCVar2 = this->field_5853;
-        if (uVar4 < pCVar2->count) {
-          element_5853 = DArrayAt<CGenerate_field_5853Element>(pCVar2, uVar4);
+        if (uVar5 < pCVar2->count) {
+          element_5853 = DArrayAt<CGenerate_field_5853Element>(pCVar2, uVar5);
         }
         else {
           element_5853 = nullptr;
         }
         if (element_5853 != nullptr) {
-          *(int *)(&stack0xffffffb0 + element_5853->field_0000 * 4) =
-               *(int *)(&stack0xffffffb0 + element_5853->field_0000 * 4) + element_5853->field_0011;
+          *(int *)(&stack0xffffffb0 + element_5853->field_0000 * 4 + iVar3) =
+               *(int *)(&stack0xffffffb0 + element_5853->field_0000 * 4 + iVar3) + element_5853->field_0011;
         }
-        uVar4 = uVar4 + 1;
-      } while ((int)uVar4 < (int)dVar1);
+        uVar5 = uVar5 + 1;
+      } while ((int)uVar5 < (int)dVar1);
     }
     local_38 = -1;
-    iVar6 = 0;
-    iVar8 = 0;
-    iVar5 = -1;
+    iVar7 = 0;
+    iVar9 = 0;
+    iVar6 = -1;
     if (0 < this->field_583B) {
       do {
-        iVar5 = (*(int *)(&stack0xffffffb0 + iVar8 * 4) * 100) / (int)this->field_582F;
-        if (iVar8 == 0) {
-          uVar4 = iVar5 - this->field_5843;
-          uVar7 = (int)uVar4 >> 0x1f;
-          iVar6 = (uVar4 ^ uVar7) - uVar7;
-          local_38 = iVar8;
+        iVar6 = (*(int *)(&stack0xffffffb0 + iVar9 * 4 + iVar3) * 100) / (int)this->field_582F;
+        if (iVar9 == 0) {
+          uVar5 = iVar6 - this->field_5843;
+          uVar8 = (int)uVar5 >> 0x1f;
+          iVar7 = (uVar5 ^ uVar8) - uVar8;
+          local_38 = iVar9;
         }
         else {
-          uVar4 = iVar5 - this->field_5843;
-          uVar7 = (int)uVar4 >> 0x1f;
-          iVar5 = (uVar4 ^ uVar7) - uVar7;
-          if (iVar5 < iVar6) {
-            iVar6 = iVar5;
-            local_38 = iVar8;
+          uVar5 = iVar6 - this->field_5843;
+          uVar8 = (int)uVar5 >> 0x1f;
+          iVar6 = (uVar5 ^ uVar8) - uVar8;
+          if (iVar6 < iVar7) {
+            iVar7 = iVar6;
+            local_38 = iVar9;
           }
         }
-        iVar8 = iVar8 + 1;
-        iVar5 = local_38;
-      } while (iVar8 < this->field_583B);
+        iVar9 = iVar9 + 1;
+        iVar6 = local_38;
+      } while (iVar9 < this->field_583B);
     }
-    if (-1 < iVar5) {
-      local_20 = iVar5;
+    if (-1 < iVar6) {
+      local_20 = iVar6;
     }
   }
-  ExceptionList = local_14;
   return local_20;
 }
 

@@ -79,7 +79,6 @@ undefined4 FUN_004e51b0(int *param_1,uint *param_2,uint *param_3)
   } while ((int)local_8 < 0x9b);
   if (0 < (int)param_2) {
     local_14 = param_2;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (uint *)(&DAT_00799074 + local_c * 0x1c2);
     do {
       iVar7 = 0;
@@ -93,7 +92,6 @@ undefined4 FUN_004e51b0(int *param_1,uint *param_2,uint *param_3)
         iVar7 = iVar7 + 1;
         puVar11 = (uint *)((int)puVar11 + 5);
       } while (iVar7 < 0x1e);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (uint *)((int)param_2 + 0x96);
       local_14 = (uint *)((int)local_14 + -1);
     } while (local_14 != nullptr);
@@ -181,7 +179,6 @@ cf_continue_loop_004E5505:
   if (0x9a < (int)param_3) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = (uint *)&g_packedRecords_A62x8[(int)param_1].field_0x69b;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (uint *)0x1;
     puVar14 = &DAT_007c0dd4;
     local_10 = iVar10;
@@ -204,12 +201,10 @@ cf_continue_loop_004E5505:
       }
 LAB_004e5598:
       puVar14 = puVar14 + 3;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (uint *)((int)param_2 + 1);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_3 + 1;
     } while ((int)puVar14 < 0x7c0e4c);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = &g_packedRecords_A62x8[(int)piVar5].field1024_0x593;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = (uint *)0x32;
@@ -235,7 +230,6 @@ LAB_004e5598:
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_004e5655:
       param_3 = (uint *)((int)param_3 + 1);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + 1;
       if (0x73 < (int)param_3) {
         iVar10 = *(int *)((int)&g_packedRecords_A62x8[0].field1966_0x9ce + local_10);
@@ -259,21 +253,21 @@ LAB_004e5655:
                              (byte *)&param_1);
           while (-1 < local_EAX_1316) {
             if (param_1 != nullptr) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               iVar10 = (**(code **)(*param_1 + 0x2c))();
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               if ((iVar10 == 0x36) || (iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 0x5d)) {
                 thunk_FUN_004e4d60((AnonShape_004E4D60_C16F78E8 *)param_1);
               }
               if (param_1 != nullptr) {
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar10 = (**(code **)(*param_1 + 0x2c))();
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 if ((iVar10 == 0x5d) || (iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 0x3d))
                 {
                   thunk_FUN_004e4f30((STMineSetC *)param_1);
                 }
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 if ((param_1 != nullptr) &&
                    (((iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 5 ||
                      (iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 0x21)) ||

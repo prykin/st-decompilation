@@ -11,7 +11,7 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
   short local_8;
   short local_6;
 
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*param_1 + 0x1c))();
   thunk_FUN_005fa0b0((STColl3C *)param_1);
   switch(uVar2) {

@@ -53,9 +53,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
   int local_c;
   int local_8;
 
-  iVar15 = (int)*(short *)(DAT_00857110 + 2 + DAT_00857114 * 8);
+  iVar15 = (int)g_runtimeRecords_00857110[g_runtimeRecordCount_00857114].field_0002;
   iVar14 = *(int *)&this->field_0x28;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = param_1 + iVar15 * param_2;
   local_8 = *(int *)&this->field_0xc + iVar15 * iVar14;
   local_c = *(int *)&this->field_0x14 + iVar15 * iVar14 * 2;
@@ -63,10 +62,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
   local_1c = iVar14;
   local_14 = iVar15;
   local_10 = (AnonShape_00728A80_F2811CDB *)this;
-  iVar6 = FUN_007287e0(&local_38,DAT_00857114);
+  iVar6 = FUN_007287e0(&local_38,g_runtimeRecordCount_00857114);
   if (iVar6 != 0) {
     local_54 = -1;
-    iVar6 = FUN_007287e0(&local_54,DAT_00857114);
+    iVar6 = FUN_007287e0(&local_54,g_runtimeRecordCount_00857114);
     if ((iVar6 != 0) && (iVar15 < *(int *)&this->field_0x3c)) {
       do {
         if (*(int *)&this->field_0x34 <= iVar15) {
@@ -219,7 +218,6 @@ LAB_00728cf9:
           local_40 = local_40 + local_3c;
         }
         local_8 = local_8 + iVar14;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + param_2;
         iVar15 = iVar15 + 1;
         local_c = local_c + iVar14 * 2;

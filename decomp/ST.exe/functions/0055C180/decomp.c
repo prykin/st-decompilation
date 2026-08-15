@@ -25,7 +25,7 @@ void __fastcall FUN_0055c180(CFsgsConnection *param_1)
   } while (cVar1 != '\0');
   if (iVar3 == -2) {
     CFsgsConnection::GetFastestServer(param_1);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)param_1 + 0x3c))(1,100,0,0);
     return;
   }

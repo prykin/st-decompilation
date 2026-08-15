@@ -270,6 +270,9 @@ The current work focuses on recovering what the binary can prove:
 - read-only contradiction auditing for stale manual/protected types;
 - verified semantics for high-fanout utility functions and conservative `void`/boolean/noreturn
   returns, plus unanimous propagation of already recovered structure pointers through EAX;
+- machine-proven MSVC `alloca_probe` semantics plus conservative fixed-stack
+  storage extents, with overlapping lexical lifetimes retained for audit rather
+  than forced into incompatible Ghidra Listing variables;
 - conservative class layouts, field types, and fixed member arrays proven by
   bounded indexing or exact pointer-walk loops;
 - per-owner-field `DArrayTy` specializations whose runtime stride is proven by

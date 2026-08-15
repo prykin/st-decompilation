@@ -193,7 +193,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
               STT3DSprC::SetCurFase(this,'\v',0);
               thunk_FUN_004ac700(this,'\v');
               STT3DSprC::StartShow(this,0xb,g_playSystem_00802A38->field_00E4);
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(*param_1 + 0x90))(3,0x25d);
             }
             DArrayDestroy(local_8);

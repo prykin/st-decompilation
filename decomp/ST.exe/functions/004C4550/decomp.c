@@ -229,7 +229,6 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       iVar3 = (int)param_1 * 0x20;
       iVar9 = (int)param_1 * 0x80;
       iVar11 = (int)param_1 * 0x80;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)(&this->field_0x2a5 + iVar9);
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
@@ -257,7 +256,6 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       iVar3 = (int)param_1 * 0x20;
       iVar11 = (int)param_1 * 0x80;
       iVar9 = (int)param_1 * 0x80;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)(&this->field_0x2a5 + iVar11);
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
@@ -300,7 +298,6 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       iVar3 = (int)param_1 * 0x20;
       iVar9 = (int)param_1 * 0x80;
       iVar11 = (int)param_1 * 0x80;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)(&this->field_0x2a5 + iVar9);
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
@@ -349,7 +346,6 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         iVar3 = ((int)piVar2 + this->field_0235 * 2) * 0x16;
         local_10 = (int)*(short *)(&DAT_007932d8 + iVar3) + (int)sVar5;
         local_14 = STBiasedDiv16(local_10, 200); /* exact signed 16-bit grid-index division */
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)((int)(short)local_8 + (int)*(short *)(&DAT_007932d6 + iVar3));
         sVar5 = (short)((int)param_1 >> 0x1f);
         if ((int)param_1 < 0) {
@@ -375,7 +371,6 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       }
     }
     else if ((&DAT_00792ca0)[iVar3 * 3] == 0xb3) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = nullptr;
       if (((AnonShape_005EFAE0_B406B78B *)this->field_04E0[3] != nullptr)
          && (iVar3 = STPlaySystemC::sub_006E62D0

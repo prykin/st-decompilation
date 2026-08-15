@@ -1,6 +1,6 @@
 // Apply reviewed unclaimed_code_proposals.tsv from STUnclaimedCodeAnalyzer.
-// Exact terminal entries are created before their JMP thunks.  Every row is revalidated against
-// its saved bytes and live pointer/CALL/data anchor before the Ghidra database is changed.
+// Exact terminal/callback entries are created before their JMP thunks.  Every row is revalidated
+// against its saved bytes and live pointer/CALL/data anchor before the Ghidra database is changed.
 // Existing manual functions, symbols, signatures, and overlapping bodies are preserved.
 // @author OpenAI
 // @category SubmarineTitans.Recovery

@@ -22,12 +22,10 @@ void FUN_0075e890(AnonShape_0075E890_C23EB446 *param_1,int param_2,int param_3,i
   iVar1 = FUN_0075e980((int)param_1,iVar5,piVar6,iVar4,(int)local_188);
   FUN_0075eb40((AnonShape_0075EB40_977462DD *)param_1,iVar5,(int)piVar6,iVar4,iVar1,(int)local_188,
                local_88);
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (AnonShape_0075E890_C23EB446 *)0x4;
   pbVar3 = local_88;
   piVar6 = (int *)(local_8 + (param_2 >> 2) * 0x10);
   do {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 8;
     iVar1 = ((param_3 >> 3) * 0x100 + (param_4 >> 2) * 4) * 2;
     do {
@@ -40,11 +38,9 @@ void FUN_0075e890(AnonShape_0075E890_C23EB446 *param_1,int param_2,int param_3,i
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);
       iVar1 = iVar1 + 0x40;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + -1;
     } while (param_2 != 0);
     piVar6 = piVar6 + 1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_0075E890_C23EB446 *)((int)&param_1[-1].field_01BA + 3);
   } while (param_1 != nullptr);
   return;

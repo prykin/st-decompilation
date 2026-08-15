@@ -50,7 +50,7 @@ STAllPlayersC::GetTOBJList
     do {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       piVar1 = *(int **)(*(int *)(local_10 + 0x1c) + iVar4 * 4);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((piVar1 == nullptr) || (SVar5 = (**(code **)(*piVar1 + 0x2c))(), SVar5 != param_2)) ||
          (iVar7 = (**(code **)(*piVar1 + 0xf8))(), iVar7 == 0)) {
 switchD_0043e836_caseD_3a:
@@ -59,7 +59,7 @@ switchD_0043e836_caseD_3a:
       else {
         if (param_3 != 0) {
           switch(param_2) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           case CASE_38:
           case CASE_39:
           case CASE_4F:
@@ -73,7 +73,7 @@ switchD_0043e836_caseD_3a:
         }
         bVar3 = true;
       }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0043e85d:
       if ((bVar3) &&
          ((param_4 == -1 || (iVar7 = (**(code **)(*piVar1 + 0x6c))(), iVar7 == param_4)))) {

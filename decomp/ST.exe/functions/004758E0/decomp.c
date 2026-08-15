@@ -50,7 +50,6 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
   AnonShape_004758E0_51E65DA0 *local_c;
   undefined1 local_5;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -140,7 +139,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         sub_0041C5A0(this);
         thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,
                            (AnonShape_00495FF0_59081BDD *)this);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)local_c + 0xb8))();
         DumpClassC::WritePtr
                   (this->field_05D0,this->field_05D2,this->field_05D4,0,
@@ -170,7 +169,6 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     local_20 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
     local_10 = 0;
     if (this->field_02BF != '\0') {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int)&this->field_0x2b3;
       do {
         puVar8 = thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)param_1,*(ushort *)(param_1 + 4),
@@ -224,7 +222,6 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
                    (uVar7 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_28,
                    iVar10 + -3,iVar6,sVar5,sVar14,sVar15,sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
         local_10 = local_10 + 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 6;
       } while (local_10 < (int)(uint)(byte)this->field_02BF);
     }

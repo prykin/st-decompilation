@@ -19,7 +19,7 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
   undefined4 extraout_ECX_03;
   Global_sub_0043FC50_param_1Enum GVar3;
 
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   objPtr = (STGameObjC *)(**(code **)(*(int *)this + 4))();
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uVar2 = extraout_ECX;

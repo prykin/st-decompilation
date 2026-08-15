@@ -117,7 +117,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
       local_68 = FUN_0070aa70(g_cMf32_00806790,param_14,0,1);
       local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_14,1);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)pPVar2->field_000C + 8))(2,&local_8,0,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_8;

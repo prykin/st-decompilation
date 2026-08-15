@@ -125,7 +125,7 @@ LAB_0044ca10:
                     bVar15 = g_bulkInitializedRecords_008087C7[uVar9].field_0023 !=
                              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   if (((bVar15) && (iVar13 = (**(code **)(*piVar4 + 0xf8))(), iVar13 != 0)) &&
                      (iVar13 = (**(code **)(*piVar4 + 0xf4))(DAT_0080874d), iVar13 != 0)) {
                     local_10 = (undefined1)piVar4[9];

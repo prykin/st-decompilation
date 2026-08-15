@@ -45,7 +45,7 @@ int __thiscall FUN_0063c510(void *this,int param_1)
       thunk_FUN_004ac6b0(this_00,'\r');
       sub_00416240(this,STField<ushort>(this,0x266),STField<short>(this,0x26a),
                    STField<ushort>(this,0x26e));
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0xd8))();
       pVVar2 = g_visibleClass_00802A88;
       if (g_visibleClass_00802A88 != nullptr) {

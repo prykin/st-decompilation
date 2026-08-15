@@ -61,9 +61,11 @@ When `STDecompExport` asks for a directory, select `<repo>/decomp`.
 Normal refreshes no longer require launching every script or selecting every
 TSV manually. Run `STRecoveryLauncher` from Script Manager or
 **Tools → Submarine Titans → Run Recovery Pipeline**. The launcher
-writes `recovery/ST.exe/pipeline_bootstrap.log` before asking Ghidra to load and
-run `STRecoveryPipeline`; this preserves provider/runtime diagnostics after the
-source bundle has compiled. Because Script Manager is connected directly to
+writes an ignored `pipeline_bootstrap.log.tmp` while asking Ghidra to load and
+run `STRecoveryPipeline`, then atomically promotes it to
+`recovery/ST.exe/pipeline_bootstrap.log` only after successful completion. This
+preserves the last complete provider/runtime log across a JVM kill, reboot, or
+out-of-memory failure. Because Script Manager is connected directly to
 this repository's `scripts/` directory, the pipeline
 infers `<repo>` from its own source path and passes these arguments to every
 child script:
@@ -946,6 +948,19 @@ migration instead of happening as a side effect of one decompiler run.
    - Directory: `<repo>/recovery`
 2. Run `STUtilityFunctionApplier`.
    - File: `<repo>/recovery/ST.exe/utility_function_proposals.tsv`
+2a. Run `STStackObjectAnalyzer`.
+   - Directory: `<repo>/recovery`
+   - Output: `stack_object_proposals.tsv` and `stack_object_summary.txt`.
+   - The analyzer recognizes exact EBP-relative `REP STOSD/STOSW/STOSB` spans
+     and calls to a function carrying Ghidra's `alloca_probe` call-fixup. A
+     fixed zero span proves storage extent only; a dynamic allocation remains a
+     runtime-sized object.
+2b. Run `STStackObjectApplier`.
+   - File: `<repo>/recovery/ST.exe/stack_object_proposals.tsv`
+   - Only a complete fixed span with unclaimed, non-overlapping Listing storage
+     can become a Ghidra byte-array local. Overlapping lexical lifetimes remain
+     audit/presentation facts because the Listing cannot hold two intersecting
+     stack variables.
 3. Run `STAbiConsistencyAnalyzer`.
    - Directory: `<repo>/recovery`
 4. Run `STAbiConsistencyApplier`.
@@ -1014,6 +1029,10 @@ migration instead of happening as a side effect of one decompiler run.
     - In addition to indexed tables, this recognizes bounded Win32 resource-string
       scratch arenas from `LoadStringA`, a global base-plus-cursor destination, and
       the wrapper's exact chunk/capacity checks.
+    - It also distinguishes an image-backed aggregate from a pointer-sized global
+      which publishes runtime scratch records. The latter needs a unique affine
+      record stride, repeated cross-function reads/writes, non-overlapping members,
+      and no sub-record pointer advance; dynamic stack backing supplies no count.
 18. Run `STGlobalAggregateApplier`.
     - File: `<repo>/recovery/ST.exe/global_aggregate_proposals.tsv`
 19. Run `STGlobalDataAnalyzer`.
@@ -1120,10 +1139,20 @@ migration instead of happening as a side effect of one decompiler run.
    - Ordinary 30-second decompilation failures are retried once with a
      300-second budget. A retry changes no proposal threshold and prevents a
      transient timeout from silently removing previously visible evidence.
+   - A machine pass recovers weak generated members used as nested pointers from
+     `MOV child,[parent+member]` followed by a later dereference of `child`.
+     Ghidra includes memory-base registers in `getOpObjects()`, so only a fully
+     rendered standalone register operand is accepted as a register definition.
+     This prevents `MOV [EBX+offset],EAX` from falsely replacing the tracked
+     value of `EBX` and cascading one field into a giant child type.
 30. Run `STPointerShapeApplier`.
    - File: `<repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv`
    - The program directory containing that file is also accepted. The sibling
      type and field proposal TSVs are loaded automatically.
+   - An already equivalent applied type retains its existing
+     `STPointerShapeApplier` provenance text. Analyzer reason rewording is not a
+     semantic change; only an explicit exact-baseline row may replace that text
+     or restore its `SourceType`.
    - A direct compiler spill `local = (Base *)this` is restored to the named
      method owner's most-derived type only when the local is still
      `STPointerShapeApplier`-owned, has stable storage, uses no base adjustment,
@@ -1224,7 +1253,13 @@ migration instead of happening as a side effect of one decompiler run.
 The utility pass is intentionally small and strict. It verifies body shapes before
 assigning the semantics and prototypes of `FreeAndNull`, `DArrayDestroy`,
 `DArrayCreate`, `SArrayCreate`, `LoadResourceString`, `DArrayGetElement`, and
-the behavior-derived `LookupRecordByte`. It also discovers the unique generic `DArrayRemoveAt` helper
+the behavior-derived `LookupRecordByte`. It also recognizes the complete VC6
+x86 stack-probe machine contract and attaches Ghidra's built-in `alloca_probe`
+call-fixup; the helper's image address and prior symbol spelling are not inputs.
+The semantic Program ledger and per-function export dependency both include a
+non-empty call-fixup. An absent fixup contributes no fingerprint component, so
+adding this dependency does not invalidate unrelated functions. The pass also
+discovers the unique generic `DArrayRemoveAt` helper
 and the iterator-style `DArrayGetNext` helper from their descriptor accesses
 plus exact `REP MOVSD`/`REP MOVSB` bodies, rather than from ST-specific
 addresses. The optimized six-argument pitched-buffer primitive is similarly
@@ -1294,6 +1329,15 @@ A resource-string scratch arena is also automatic
 only when one wrapper proves the `LoadStringA` destination base, read/write cursor,
 chunk limit, and enclosing capacity. Other indexed bases remain `apply=0` until
 their bounds and record shape are proven.
+
+A pointer-sized global which is first loaded and then repeatedly dereferenced as
+`base + index*stride + member` is handled separately from the image-backed cases.
+The analyzer requires one winning affine stride, at least three non-overlapping
+exact-width fields, read/write evidence across multiple functions, and rejects any
+observed pointer update not divisible by the stride. A complete uniform partition
+may retain a singly accessed member when that member fills the sole exact partition
+slot. If the global address itself is repeatedly used as a SIB base, it is an image
+table rather than a scalar published pointer and is not retyped by this rule.
 
 Indirect-call analysis audits every raw call site in `indirect_call_sites.tsv`.
 It prefers an independently tagged/imported target signature. If semantic typing
@@ -1712,14 +1756,26 @@ The analyzer recognizes the linked VC6 CRT, DKW modules, and source modules
 under `E:\Ourlib\`. Exact source paths outrank the weak leading-underscore
 heuristic. The latter remains `apply=0` for manual review.
 
-Static helpers do not always reference their compilation unit's debug/assertion
-path directly. The analyzer may inherit a library/source classification only
-when the helper lies between the nearest exact source anchors on both sides,
-both anchors name the same normalized source file, the helper has at least one
-direct caller, and every caller remains inside that closed object-file interval
-or is independently classified as the same library. This is not an unrestricted
-call-graph closure: indirect application callbacks and functions crossing a
-source boundary remain unclassified.
+Static helpers and callbacks do not always reference their compilation unit's
+debug/assertion path directly. The analyzer may inherit a library/source
+classification only when the function lies between the nearest exact source
+anchors on both sides, both anchors name the same normalized source file, it has
+at least one direct caller or executable DATA-reference owner, and every such
+owner remains inside that closed object-file interval or is independently
+classified as the same library. A DATA-reference owner counts only when the
+exact reference originates in an instruction inside a containing function; an
+arbitrary table does not. This is not an unrestricted call-graph closure:
+indirect application callbacks and functions crossing a source boundary remain
+unclassified.
+
+Source-file provenance remains stricter than library-module ownership. An exact
+`MOV [memory], imm32` callback target may sit at the tail of one object file,
+between different source basenames belonging to the same linked library. In
+that case the analyzer assigns only the common library/namespace when both
+nearest exact source anchors around the callback agree on it, and every exact
+installer, direct caller, or executable non-flow reference owner is independently
+bounded by its own nearest anchors for the same module (or already independently
+classified). It never invents either neighboring source filename for the callback.
 
 Existing C++ ownership is preserved: a method such as `cMf32::RecGet` receives
 library tags and comments but is not flattened into a module namespace. Global
@@ -1765,7 +1821,9 @@ a library or thunk, stale `decomp.c` and `listing.asm` files are deleted.
 
 The same run performs executable-section coverage auditing. Known function
 bodies are subtracted from every initialized executable memory block. Long
-`00`/`90`/`CC` runs are classified as padding; remaining ranges are classified as
+`00`/`90`/`CC` runs are classified as padding; a short all-padding fragment stays
+padding even when a newly recovered tiny function splits it below the ordinary
+run-length threshold. Remaining ranges are classified as
 orphan instructions, defined data, address tables, import-thunk tables, probable
 x86 code, text, or unknown non-padding bytes. Probable-code evidence includes
 validated relative calls, return opcodes, and conservative entry-byte patterns;
@@ -1879,14 +1937,14 @@ a new conflict is what requires another iteration.
 
 | Pair or script | Primary purpose |
 | --- | --- |
-| `STRecoveryLauncher` | Capture provider/loading/runtime diagnostics for the pipeline itself in `pipeline_bootstrap.log`, then invoke the normal pipeline. |
+| `STRecoveryLauncher` | Capture provider/loading/runtime diagnostics in an ignored staging log, invoke the normal pipeline, and atomically promote `pipeline_bootstrap.log` only after success. |
 | `STRecoveryPipeline` | Infer repository paths, run dependency-ordered fixed-point workflows, retain the three newest hash-addressed run logs, and refuse stale/unconverged/regressed exports. |
 | `STTypeBootstrapAnalyzer/Applier` | Infer the minimum semantic type anchors from method/access/reference families; reconcile a unique anchor with an exact-layout same-leaf legacy view using hash-intact baselines, concrete-over-generic pointer types, and provenance-gated member names; migrate exact provenance-owned legacy view parameters and stack locals without embedded addresses, type-name deletion lists, or enum values; atomically normalize signature, return, and explicit-parameter provenance after a tagged heuristic identity retirement. |
 | `STDebugSymbolAnalyzer/Applier` | Recover C++ owners, method names, calling conventions, source evidence, and short diagnostic printf strings. |
 | `STCallsiteConventionAnalyzer/Applier` | Audit direct and thunk-mediated callers and apply only unanimous high-confidence static `__cdecl` corrections. |
 | `STMessageIdAnalyzer/Applier` | Recover the `MESS_*`/`STMessageId` domain. |
 | `STMessageHandlerAnalyzer/Applier` | Apply the common `STMessage *` envelope and status return across the named `GetMessage` family, including the shared zero-return handler, and idempotently tag exact recovered handlers as vtable provenance. |
-| `STUnclaimedCodeAnalyzer/Applier` | Create only callback/entry targets and complete direct-JMP thunk chains with live pointer/CALL/data anchors; retain EH funclets, direct raw targets, and probable code as review-only coverage. |
+| `STUnclaimedCodeAnalyzer/Applier` | Create complete direct-JMP thunk chains and missing callback entries from an exact x86 `MOV [memory], imm32` function-address store to a standalone instruction entry or complete `RET`/`RET n` stub, always with a live pointer/CALL/data anchor; reject fallthrough interiors and retain EH funclets, other direct raw targets, and probable code as review-only coverage. |
 | `STObjectFactoryAnalyzer/Applier` | Recover the terminated object-type/factory registry, exact no-argument cdecl factory ABI, concrete class results/names, missing table-selected entries, `STObjectTypeId`, and typed registry consumers. |
 | `STVTableAnalyzer/Applier` | Find long and strongly referenced short vtables, resolve direct-JMP thunks, preserve tagged owner-specific message signatures, apply physical layouts separately from semantic owners, type safe owner vptrs, and record owner conflicts. Generated types naming the same exact table address share a unanimous independently recovered slot ABI; conflicting alias families remain unchanged. |
 | `STVirtualMethodAnalyzer/Applier` | Propagate reviewed virtual slot names, conventions, and compatible signatures. |
@@ -1894,6 +1952,7 @@ a new conflict is what requires another iteration.
 | `STClassLayoutAnalyzer/Applier` | Build and revalidate conservative class layouts, including fields reached after stable prologue `this` spills, exact x87 float/double operand widths with split dword high halves folded into the qword member, exact low/high copies of ABI-proven `double` parameters, and exact machine-word field copies whose independently observed contained subfield widths are transferred to the corresponding endpoint from a staged snapshot. A full-width scalar wins over same-offset contained low-word/byte scalar views; a transport word is partitioned only when every equal narrow subspan has independent exact-width evidence (with exact partial-register `MOVSX`/`MOVZX` consumers supplying signedness). Geometry propagation never invents signedness or semantic type, and partial overlaps remain union/review debt. The pair also handles exact address-of-field consumer types, dynamic byte/word buffers, nested class-field pointee layouts, semantic field-type/name proposals, and packed initialization writes between an allocator/factory return and its store into an already typed singleton. Hash the installed `StructureDB`; legacy hash-diverged generated classes receive only exact-field surgical overlays with separately protected hashes. An unchanged hash-owned layout generated by `STGlobalDataApplier` may be handed over once, preserving non-overlapping producer fields; manual or edited layouts remain protected. |
 | `STClassArrayAnalyzer` | Prove fixed arrays embedded in generated class layouts from bounded indexed accesses and exact pointer-walk loops, and recover a selected pointer element's pointee width from its subsequent dereference; `STClassLayoutAnalyzer/Applier` consumes the proposals. |
 | `STInlineAggregateAnalyzer` | Recover exact by-value nested members from complete typed `REP MOVS` source spans and catalogue exact `REP STOS` zero spans. `STClassLayoutAnalyzer/Applier` consumes safe nested-member proposals; zero spans become array bounds only when independent indexed-stride evidence agrees. |
+| `STStackObjectAnalyzer/Applier` | Recover exact fixed EBP-relative zero-initialized local-storage extents and audit dynamic `alloca_probe` sites. Install only non-overlapping fixed byte arrays; retain intersecting lexical lifetimes for export-time byte-storage presentation instead of deleting an existing Listing local. |
 | `STDArrayElementAnalyzer/Applier` | Recover one packed element record and one ABI-compatible descriptor specialization per generated class `DArrayTy` field from exact factory element sizes, runtime-stride aliases, exact inline-record snapshots, typed consumer parameters, and conservative state/index/handle/coordinate roles; decompile candidates in parallel with a short normal budget and retry only timed-out large bodies with the longer budget; retain the monotonic union of fields independently proven on earlier passes so applied member rendering cannot erase its own raw-access evidence. |
 | `STLocalLifetimeAnalyzer/Applier` | Split compiler-reused decompiler locals at distinct merge groups, type single-group raw-undefined locals from exact call/copy evidence, propagate hash-intact recursive-node fields and persistent parameter/global types through exact same-size cast anchors, recover exact unadjusted `__thiscall` receiver spills whose downstream member access requires the owner layout, and recover scalar roles only from role-bearing p-code. Decompiler-only nominal locals cannot bootstrap ordinary `typed_copy` evidence; generated split names are deterministic and collision-free. Verify the exact machine anchor after a fresh decompile and converge only changed functions before the final broad confirmation. |
 | `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods, use typed global-singleton values passed in ECX as owner evidence, and repair weak script-owned assignments to high-fanout shared helpers; it participates in the deep fixed point after global typing. |
@@ -1901,7 +1960,7 @@ a new conflict is what requires another iteration.
 | `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |
 | `STJumpTableBoundaryAnalyzer/Applier` | Bound a dword destination table before adjacent packed byte-selector data only from the complete computed-jump reference set, exact in-function instruction targets, an independently indexed byte read at the first non-entry, and a fresh decompiler truncation warning; install a normal finite Ghidra switch override while preserving foreign/manual overrides. |
 | `STSwitchEnumAnalyzer/Applier` | Turn repeated switch/state domains into enums, decode exact OR-composed cases, retain an evidence-generated monotonic domain state, and materialize exact local domains without typing reused locals. It also recognizes generated class-state fields implemented as direct immediate comparisons or exact register def-use, including contiguous `MOV field -> DEC/SUB -> JZ/JNZ` chains and bounded exact constant-register writes. |
-| `STUtilityFunctionAnalyzer/Applier` | Verify and name high-fanout runtime helpers, model `FreeAndNull` as a neutral address of caller-owned pointer storage (`void *`, not C++-incompatible `void **`), discover generic DArray erase/iterator and pitched row-copy implementations, recover source- and machine-verified DKW allocate/zero-allocate/reallocate contracts with neutral `void *` results, retain heterogeneous object-loader payloads as `byte *`, install their exact prototypes, and attach ID-specific `RECOVERED_UTILITY_*` tags for name/address-independent downstream use. |
+| `STUtilityFunctionAnalyzer/Applier` | Verify and name high-fanout runtime helpers, model `FreeAndNull` as a neutral address of caller-owned pointer storage (`void *`, not C++-incompatible `void **`), discover the complete MSVC x86 stack-probe body and attach the built-in `alloca_probe` p-code injection, discover generic DArray erase/iterator and pitched row-copy implementations, recover source- and machine-verified DKW allocate/zero-allocate/reallocate contracts with neutral `void *` results, retain heterogeneous object-loader payloads as `byte *`, install their exact prototypes, and attach ID-specific `RECOVERED_UTILITY_*` tags for name/address-independent downstream use. |
 | `STAbiConsistencyAnalyzer/Applier` | Repair machine-proven x86 calling/return widths, expand truncated callee-cleaned stack signatures from unanimous `RET n` plus complete incoming-slot reads, merge exact x87 double-width stack slots (including a qword copied into an owner field independently read as `double`, or forwarded as two ordered dword pushes to a typed `double` callee slot), preserve their observed four-byte-aligned x86 stack storage and migrate older script-owned dynamically realigned signatures, preserve Ghidra's unsized one-byte `/undefined` baseline during unrelated full-prototype repairs, `_setjmp3` varargs, and other ABI details that otherwise create `unaff_*`/`extraout_*` artifacts. |
 | `STReturnSemanticsAnalyzer/Applier` | Recover conservative leaf and CFG-proven non-leaf `void`, boolean, terminal `noreturn`, unanimous evidence-backed structure-pointer returns, and exact all-return-path forwarding of one trusted concrete callee result; retain contradictory EAX reads for review and repair the short-lived unsafe automatic `void` rollback. |
 | `STPrototypeAnalyzer/Applier` | Propagate compatible parameter/return types and reviewed parameter names across direct calls, including externally anchored SCCs of unchanged wrapper boundaries; detect oscillating seed cycles, keep only their exact common facts, and never let the maximum-pass parity select an ABI. A pointer-to-incoming-stack-slot passed to a callee which writes the complete pointee on every return path starts a new post-call output lifetime without changing the entry ABI; an exact full-EAX pointer-producing return may similarly repair a generic one-byte Ghidra return. |
@@ -1911,7 +1970,7 @@ a new conflict is what requires another iteration.
 | `STAbiRegressionGate` | Compare the current in-memory Program with the receipt-selected accepted corpus before expensive consumers run; protect all accepted typed vtable ABIs while merging physical aliases by table address, and accept a missing legacy class path only when it resolves to one same-leaf semantic anchor with identical complete component geometry and compatible storage views; reject new class-vptr dispatch substitutions, decompile configurable ABI sentinels, and permit only exact fingerprinted reviewed transitions. |
 | `STGlobalRecordAnalyzer/Applier` | Recover packed arrays of repeated global records from a symbolically inferred base/stride plus independent extent evidence; create fields only from observed machine accesses and exact rendered scalar casts, recover pointer members only from matching typed stores and consumers, retain hash-owned concrete fields as a monotonic baseline, retire legacy seeded nested layouts, and migrate an obsolete generated Listing element identity only when its producer marker and stored/current layout hashes agree. |
 | `STDiscriminatedPayloadAnalyzer/Applier` | Infer per-case payload layouts from direct reads, fixed pointer-advance copy loops, shared goto tails, and single-element DArray appends. The final pass recovers caller stack aggregates only when thunk-resolved vtable-slot machine evidence and the typed decompiler call agree on the exact case/stack pair; obsolete hash-intact generated family identities migrate by function-address/case provenance, never by layout similarity. Imported/library families are excluded, and any intact generated false-positive left by an earlier pre-library pass is retired through the ordinary type lifecycle. |
-| `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent/indexing formula, including composed affine packed-record strides closed by exact bulk-zero extents, transpose-proven binary relation matrices, and behavior-proven Win32 resource-string scratch arenas. |
+| `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install bounded arrays/matrices with a proven extent/indexing formula, including composed affine packed-record strides closed by exact bulk-zero extents, transpose-proven binary relation matrices, and behavior-proven Win32 resource-string scratch arenas. It also types pointer-sized globals which publish runtime record storage from a unique cross-function affine layout while rejecting image-table bases and sub-record cursors. |
 | `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, recover bare initialized pointers to exact string `Data` as `char *`, preserve or reconstruct their target-derived `PTR_s_*` identity instead of call-parameter names, follow the constructor-result edge through MSVC new/null join blocks, accept ordinary `T **` address-taking when an unambiguous named-constructor store proves the singleton's `T *` value, promote script-owned anonymous singleton pointers to named classes or dominant statically linked library contexts, prove narrow character storage from a dominant exact `char` call-boundary quorum or a complete bounded forward-CFG proof from `MOV EDI,global` to `REPNE SCASB` with AL zero on every path, name literal-backed module handles, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. Printable bytes alone never prove a string. |
 | `STFunctionPointerParameterAnalyzer/Applier` | Recover callback stack parameters from complete direct-callsite coverage: every observed caller passes an exact function address or null into the same parameter, the callee invokes it indirectly with one argument count, and at least two exact target sites agree on ECX use, `RET n`, and neutral parameter widths. Cdecl counts additionally require matching caller cleanup. Manual/imported signatures, concrete parameter types, and unknown callsite values remain review-only. |
 | `STFunctionPointerFieldAnalyzer/Applier` | Recover non-vtable callback members only from the complete chain “exact stored function address → one generated structure field → indirect call through that same field.” A cheap machine pass recognizes direct and register-mediated function-address stores; High p-code proves the exact field before call-only functions are decompiled. With no exact stored target, call-only decompilation and call-only proposal noise are skipped. All stored targets must have one imported or independently recovered ABI; bare `USER_DEFINED` provenance is review-only, and manual structures and concrete fields are preserved. The report retains all exact observed stores and their rejection reasons. |
@@ -1925,7 +1984,7 @@ a new conflict is what requires another iteration.
 | `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names, including unique identifiers passed to repeated machine-verified diagnostic sinks and bounded source-string clusters. |
 | `STThunkPropagationAnalyzer/Applier` | Audit transparent direct-JMP thunks, preserve normal Ghidra target forwarding, and release only exact redundant manual `TargetName_thunk` symbols after full ABI and stale-baseline validation; delegated target signatures are never mutated. |
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
-| `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
+| `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations; close same-source object-file intervals over exact direct callers and exact instruction-owned callback-address references without crossing source boundaries. Exact address-installed callbacks at a boundary between different files may inherit only a unanimously bounded common library module, never a fabricated source basename. |
 | `STExportRegressionGate` | Compare a fresh corpus with the prior central-index snapshot, report per-function quality deltas, reject exact structural/critical regressions, and write a reproducible export receipt. |
 | `STDecompExport` | Transactionally stage and promote the address-stable, dependency-fingerprinted LLM corpus so a failed long export cannot partially overwrite the accepted tree; export resolved thunk/call relations and executable coverage gaps; inline proven immutable strings; normalize terminal traps, compiler bulk-zero and `REP MOVS` loops (including exact structural field-based pointer advances and trailing byte stores), split integer-only lifetimes from pointer-typed SSA names, remove dead opaque-code-pointer declarations, reproduce observable live-out state, exact recovered row-major three-dimensional grid indexing through `STGridAt3D`, exact same-base affine cancellation, ABI-proven narrow-return piece assignments, exact low-byte/word composition, exact generated global-record interior addresses, exact C++ virtual-call sugar, and exact recovered DArray element lifetimes/addresses without persistently typing reused SSA storage; migrate exporter-owned cached syntax after normalization changes and force a fresh decompile when an older pass destroyed the original SSA lifetime; emit the C++17 compatibility boundary plus address-stable compile-readiness summary/sites; fingerprint only composite members actually rendered by each cached body and catalogue stage-aware pseudocode/quality debt. |
 
@@ -1956,9 +2015,11 @@ let Ghidra compile the source again. Compilation failures against other Ghidra
 versions can be genuine API differences. Script Manager refresh compiles the
 entire source bundle before any repository script can execute, so refresh-time
 compiler diagnostics remain in Ghidra's Console/application log. After a
-successful refresh, `STRecoveryLauncher` retains provider/runtime output in
-`recovery/ST.exe/pipeline_bootstrap.log`; child load diagnostics are retained in
-the newest run's `build/` directory and indexed by `build_manifest.tsv`.
+successful refresh, `STRecoveryLauncher` atomically promotes provider/runtime
+output to `recovery/ST.exe/pipeline_bootstrap.log`; a failed attempt leaves only
+the ignored `.tmp` staging log and does not overwrite the prior successful log.
+Child load diagnostics are retained in the newest run's `build/` directory and
+indexed by `build_manifest.tsv`.
 
 ### An applier asks for a file instead of a directory
 

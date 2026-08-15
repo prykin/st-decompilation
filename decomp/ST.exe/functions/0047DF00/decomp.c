@@ -70,7 +70,6 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
   undefined4 *local_c;
   int local_8;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -92,14 +91,11 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
     if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
         ((sVar16 < 0 || ((g_worldGrid.sizeY <= sVar16 || (sVar14 < 0)))))) ||
        (g_worldGrid.sizeZ <= sVar14)) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = nullptr;
     }
     else {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar16, sVar14).objects[0];
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) {
       return 0;
     }
@@ -116,7 +112,7 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
     if (iVar9 == 0) {
       return 0;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar9 = (**(code **)(*param_1 + 0x2c))();
     iVar9 = *(int *)(&DAT_00791d68 + iVar9 * 4);
     this->field_06B9 = iVar9;
@@ -194,14 +190,11 @@ LAB_0047f4cd:
       if (((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
          ((sVar14 < 0 ||
           (((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = nullptr;
       }
       else {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
           (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
            *(int *)&this->field_0x6af)) ||
@@ -237,14 +230,11 @@ LAB_0047e0a4:
       if (((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
          ((sVar14 < 0 ||
           (((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = nullptr;
       }
       else {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
           (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
            *(int *)&this->field_0x6af)) ||
@@ -286,14 +276,11 @@ LAB_0047e0a4:
         if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
             ((sVar14 < 0 || ((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)))))) ||
            (g_worldGrid.sizeZ <= sVar16)) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = nullptr;
         }
         else {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) {
           return 0;
         }
@@ -440,11 +427,9 @@ LAB_0047edd5:
         sVar14 = this->field_06AB;
         if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar14 < 0)) ||
            (((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = nullptr;
         }
         else {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
         }
         if ((((AnonShape_004B9D90_4F3151F9 *)param_1 != nullptr) &&
@@ -629,11 +614,9 @@ LAB_0047edd5:
         sVar14 = this->field_06AB;
         if (((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar14 < 0)) ||
             ((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)))) || (g_worldGrid.sizeZ <= sVar16)) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = nullptr;
         }
         else {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
         }
         if ((((AnonShape_004B9D90_4F3151F9 *)param_1 != nullptr) &&
@@ -686,14 +669,11 @@ cf_common_exit_0047F19A:
       sVar14 = this->field_06AB;
       if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar14 < 0)) ||
          (((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = nullptr;
       }
       else {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
           (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
            *(int *)&this->field_0x6af)) ||
@@ -702,7 +682,6 @@ cf_common_exit_0047F19A:
         STPlaySystemC::sub_006E62D0
                   (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
                    (int *)&param_1);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (param_1 == nullptr) {
           return 0;
         }
@@ -731,14 +710,11 @@ cf_common_exit_0047F19A:
       sVar14 = this->field_06AB;
       if (((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar14 < 0)) ||
           ((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)))) || (g_worldGrid.sizeZ <= sVar16)) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = nullptr;
       }
       else {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
           (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
            *(int *)&this->field_0x6af)) ||
@@ -763,14 +739,11 @@ cf_common_exit_0047F19A:
       sVar14 = this->field_06AB;
       if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar14 < 0)) ||
          (((g_worldGrid.sizeY <= sVar14 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = nullptr;
       }
       else {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
           (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
            *(int *)&this->field_0x6af)) ||
@@ -779,7 +752,6 @@ cf_common_exit_0047F19A:
         STPlaySystemC::sub_006E62D0
                   (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
                    (int *)&param_1);
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (param_1 == nullptr) {
           return 0;
         }

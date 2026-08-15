@@ -13,7 +13,6 @@ ST3DSMAPContext::sub_007178C0(ST3DSMAPContext *this,int param_1,int param_2,int 
   byte *pbVar1;
   uint uVar2;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == this->field_04BA) {
     uVar2 = this->field_04B2 * param_3 + param_2 ^ 7;
     pbVar1 = (byte *)((int)this->field_046E + ((int)uVar2 >> 3));

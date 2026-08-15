@@ -577,11 +577,11 @@ void __thiscall st::fn_005A07F0(FSGSTy *this)
   }
   this->field_1AEC = nullptr;
   if (this->field_1EA6 != nullptr) {
-    st::fn_006AE110(this->field_1EA6);
+    st::fn_006AE110((DArrayTy *)this->field_1EA6);
   }
   this->field_1EA6 = nullptr;
   if (this->field_1EAA != nullptr) {
-    st::fn_006AE110(this->field_1EAA);
+    st::fn_006AE110((DArrayTy *)this->field_1EAA);
   }
   this->field_1EAA = nullptr;
   if (this->field_1E8E != 0) {

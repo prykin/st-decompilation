@@ -21,7 +21,7 @@ FUN_0074c613(AnonShape_0074C613_A217E84A *param_1,undefined4 param_2,undefined4 
   undefined1 uVar1;
 
   FUN_007482d8((AnonShape_007482D8_1685BA8E *)param_1,param_2,param_3,param_4,param_5,param_6);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar1 = (**(code **)(*param_1->field_00CC + 100))(param_2,param_3,param_4,param_5,param_6);
   return uVar1;
 }

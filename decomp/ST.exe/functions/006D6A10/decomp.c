@@ -73,7 +73,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
     if ((uVar8 & 1) == 0) {
       if (STField<int>(this,0x310) == 0) {
         if (STField<int>(this,0x300) != 0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar2 + 0x80))(piVar2,0);
           STField<undefined4>(this,0x300) = 0;
           STField<undefined4>(this,0x2fc) = 0;
@@ -107,12 +107,12 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
           local_c = 0;
           while( true ) {
             piVar4 = *(int **)(*(int *)(STField<int>(this,0x288) + 0x28) + 0x40);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar9 = (**(code **)(*piVar4 + 0x14))(piVar4,&local_54,piVar2,&local_30,0x1000000,0);
             local_8 = iVar9;
             if (iVar9 == 0) break;
             if (iVar9 == -0x7789fe3e) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(*piVar2 + 0x6c))(piVar2);
               FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(STField<int>(this,0x288) + 0x28));
             }
@@ -136,7 +136,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
       }
       else {
         if (STField<int>(this,0x300) != 0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar2 + 0x80))(piVar2,0);
           iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
           if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
@@ -164,7 +164,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
     }
     else if ((STField<int>(this,0x304) == 0) || ((uVar8 & 0x2000000) != 0)) {
       if (STField<int>(this,0x300) != 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar2 + 0x80))(piVar2,0);
         STField<undefined4>(this,0x300) = 0;
         STField<undefined4>(this,0x2fc) = 0;
@@ -191,11 +191,11 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
       do {
         if (STField<int>(this,0x304) == 0) {
           piVar4 = *(int **)(*(int *)(STField<int>(this,0x288) + 0x28) + 0x34);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar9 = (**(code **)(*piVar4 + 0x14))(piVar4,&local_20,piVar2,&local_30,0x1000000,0);
         }
         else {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar9 = (**(code **)(*piVar2 + 0x84))
                             (piVar2,&local_30,
                              *(undefined4 *)(*(int *)(STField<int>(this,0x288) + 0x28) + 0x34),
@@ -204,7 +204,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         local_8 = iVar9;
         if (iVar9 == 0) break;
         if (iVar9 == -0x7789fe3e) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar2 + 0x6c))(piVar2);
           FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(STField<int>(this,0x288) + 0x28));
         }

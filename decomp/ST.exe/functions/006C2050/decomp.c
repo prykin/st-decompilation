@@ -23,28 +23,28 @@ void FUN_006c2050(void)
         piVar2[-4] = piVar2[-4] & 0xfffffff7;
         piVar1 = (int *)piVar2[-1];
         if (piVar1 != nullptr) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar1 + 0x48))(piVar1);
           piVar1 = (int *)*piVar2;
           if (piVar1 != nullptr) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*piVar1 + 8))(piVar1);
             *piVar2 = 0;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*(int *)piVar2[-1] + 8))((int *)piVar2[-1]);
         }
       }
       piVar2 = piVar2 + 0x31;
     } while ((int)piVar2 < 0x856888);
     if (DAT_008568b8 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*DAT_008568b8 + 0x48))(DAT_008568b8);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*DAT_008568b8 + 8))(DAT_008568b8);
       DAT_008568b8 = nullptr;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*DAT_008568b4 + 8))(DAT_008568b4);
     DAT_008568b4 = nullptr;
     DAT_00856878 = 0;

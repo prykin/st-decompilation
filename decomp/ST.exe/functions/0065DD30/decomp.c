@@ -37,11 +37,9 @@ FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,
       cVar2 = (char)param_1->field_0024;
     }
     if ((param_5 != '\b') && ((param_5 < '\0' || (cVar2 = param_5, '\b' < param_5)))) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = -1;
       cVar2 = param_5;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = cVar2;
     uVar4 = local_1c->count;
     local_14 = 0;
@@ -105,7 +103,6 @@ LAB_0065deea:
 LAB_0065deef:
             if (iVar9 != 0) goto cf_common_join_0065DF91;
           }
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (((param_5 == -1) || (iVar9 = this->vfunc_6C(), param_5 == iVar9)) &&
              (((param_10 < 1 || ((param_11 < 1 || (param_12 < 1)))) ||
               ((STFishC::sub_004162B0((STFishC *)this,&local_6,&local_8,&local_a),

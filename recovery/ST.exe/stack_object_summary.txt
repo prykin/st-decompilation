@@ -1,0 +1,8 @@
+program=ST.exe
+functions_scanned=5616
+fixed_zero_spans=249
+fixed_zero_apply=0
+overlapping_stack_lifetimes=232
+dynamic_alloca_sites=105
+note=An exact zero span proves storage extent, not a semantic element type.
+note=Overlapping stack lifetimes remain presentation/audit facts because Ghidra Listing stack locals cannot overlap.

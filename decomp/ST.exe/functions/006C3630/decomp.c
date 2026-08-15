@@ -21,11 +21,11 @@ DWORD FUN_006c3630(LPDWORD lpThreadId)
                            (LPVOID *)(lpParameter + 0x15));
   if (-1 < (int)DVar3) {
     puVar1 = (undefined4 *)lpParameter[0x15];
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     DVar3 = (**(code **)*puVar1)(puVar1,&DAT_007a10d8,lpParameter + 0x16);
     if (DVar3 == 0) {
       piVar2 = (int *)lpParameter[0x16];
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       DVar3 = (**(code **)(*piVar2 + 0x1c))(piVar2,lpParameter + 0x1d);
       if (-1 < (int)DVar3) {
         DVar3 = FUN_006d4ef0(lpParameter + 0x10,lpParameter + 0x12,(int)lpParameter);

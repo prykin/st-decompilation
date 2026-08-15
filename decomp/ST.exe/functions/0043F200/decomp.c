@@ -46,7 +46,7 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       piVar2 = *(int **)(*(int *)(local_10 + 0x1c) + iVar4 * 4);
       if (piVar2 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar2 + 0x74))(local_20);
         pbVar9 = local_20;
         pbVar5 = param_2;

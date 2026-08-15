@@ -41,7 +41,7 @@ int FUN_006b08f0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT pa
         piVar1 = (int *)param_1->field_003C;
         iVar3 = local_8;
         if (piVar1 != nullptr) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar3 = (**(code **)(*piVar1 + 0x18))(piVar1,0,0,0x100,local_40c[0].palPalEntry);
           local_8 = iVar3;
         }

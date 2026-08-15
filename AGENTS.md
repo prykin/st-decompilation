@@ -98,6 +98,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   prior value after a full-pointee write proven on every callee return path and
   allow the post-write scalar lifetime to flow to later calls. Do not infer the
   output type from caller pseudocode alone.
+- Exporter `stack_slot_reuse` evidence requires a full overwrite whose machine
+  value traces through transparent `MOV`/`MOVSX`/`MOVZX` operations to a
+  different incoming parameter slot. Arithmetic, `LEA`, and registers used only
+  to address a memory operand do not carry argument identity; read/modify/write
+  and same-origin transforms are ordinary mutable parameters.
 - A generated scalar class field may become an anonymous state enum from exact
   immediate writes plus comparisons. Comparison evidence includes only direct
   `CMP field,imm`, a bounded load/compare def-use, or a contiguous
@@ -120,11 +125,26 @@ Original binaries are local under ignored `bin/` and must not be committed.
 - A library loader returning heterogeneous serialized records must retain a
   neutral `byte *` ABI. Recover a separate payload view at each consumer; do not
   propagate one consumer's structure back into the loader return.
-- A library-static helper may inherit source ownership only between its nearest
-  exact source anchors when both anchors name the same normalized file and all
-  direct callers stay inside that closed interval or independently belong to
-  the same library. Never grow library ownership through an unrestricted call
-  graph; application callbacks and source-boundary crossings remain outside.
+- A library-static helper or address-installed callback may inherit source
+  ownership only between its nearest exact source anchors when both anchors
+  name the same normalized file and every direct caller plus every executable
+  DATA-reference owner stays inside that closed interval or independently
+  belongs to the same library. The DATA-reference exception requires an exact
+  instruction reference from a containing function; arbitrary tables are not
+  owners. Never grow library ownership through an unrestricted call graph;
+  application callbacks and source-boundary crossings remain outside.
+- Source-file provenance and library-module ownership are distinct. An exact
+  `MOV [memory], imm32` callback target at the boundary of two different source
+  files may inherit only the common library module when the nearest exact source
+  anchors around the callback agree on library/namespace and every direct caller
+  plus executable non-flow reference owner is independently bounded by its own
+  nearest exact anchors for that same module or already has the same independent
+  library classification. Never attach either source basename to the callback
+  from this weaker module-only proof.
+- Missing callback entries may be created automatically only from an exact x86
+  `MOV [memory], imm32` function-address store to a standalone disassembled
+  instruction entry or a complete `RET`/`RET n` stub. Reject fallthrough targets
+  and do not infer an owner or semantic prototype merely from the store.
 - Decompiler `T * + n` arithmetic is measured in pointee elements unless an
   explicit integer cast proves byte arithmetic. Derive the current rendered
   pointee width before recording a field offset; newly exposed scaled geometry
@@ -164,6 +184,16 @@ Original binaries are local under ignored `bin/` and must not be committed.
   hash-intact generated recursive node. Split merge groups receive deterministic
   collision-free database names and must survive a fresh decompile at the same
   machine anchor.
+- Ghidra `Instruction.getOpObjects()` may report the base register embedded in
+  a memory operand such as `[EBX+0x10]`. Machine dataflow must treat an operand
+  as a register definition/copy only when the complete rendered operand is one
+  standalone register; a memory destination never defines its base register.
+  Nested-pointer recovery still requires the loaded word to be reused as a
+  later memory base before promoting the owner field.
+- Reapplying an equivalent pointer-shape type must not rewrite an existing
+  script-owned provenance comment merely because analyzer wording changed.
+  Exact accepted-snapshot repair may restore comment/source metadata explicitly;
+  ordinary confirming passes are semantically idempotent.
 - Non-leaf `void` is valid only when every direct-call CFG path kills EAX before
   an explicit read; an unresolved path is `unknown`, not ignored. A bare caller
   `RET` proves forwarding only when that caller already has a protected non-void
@@ -226,6 +256,12 @@ Original binaries are local under ignored `bin/` and must not be committed.
   inline array only when independent indexed-stride evidence agrees; install a
   nested by-value member only for an exact complete typed copy into an
   automation-owned range.
+- A writable global word may publish a runtime-sized record array without being
+  an image-backed array itself. Recover its pointee only from one unique affine
+  stride, non-overlapping exact-width members, repeated read/write use across
+  functions, and record-aligned pointer advances. A global which is itself a
+  repeated SIB table base, or a cursor advanced by a sub-record delta, remains
+  neutral. Dynamic `alloca` backing proves no static element count.
 - An exact machine-word field copy may transfer an independently observed
   contained subfield width to the corresponding byte offset at the other end.
   Stage transfers from one snapshot and carry geometry only—never signedness or
@@ -248,6 +284,20 @@ Original binaries are local under ignored `bin/` and must not be committed.
   the cached body. A generated layout change must invalidate functions which
   spell the changed field, but unrelated additions elsewhere in that structure
   must not invalidate every user.
+- An optional function/callee call-fixup contributes to the export fingerprint
+  only when non-empty. The exact historical empty-padded digest may be accepted
+  solely as an equivalent cache migration and must be rewritten to the sparse
+  canonical digest without recompiling an unrelated body.
+- Recognize MSVC x86 `__alloca_probe` only from its complete page-probe, ESP
+  adjustment, saved-register, and return-address machine contract. Attach
+  Ghidra's built-in `alloca_probe` call-fixup and include it in the semantic
+  Program ledger; a name or address match alone is insufficient.
+- A fixed EBP-relative `REP STOS` span is a real storage extent, but overlapping
+  lexical lifetimes cannot all become Ghidra Listing locals. Install a byte
+  array only into completely unclaimed stack storage; otherwise retain the
+  overlap in `stack_object_proposals.tsv` and give an exact raw zero root only a
+  deterministic exporter-owned byte-storage spelling. Dynamic `alloca` and SEH
+  frame slots remain distinct audit classes.
 - Export may fold the complete MSVC signed grid-index division idiom to
   `STBiasedDiv16(value, 201|200)` only when both sign branches are present and
   algebraically identical apart from the exact negative bias. The helper keeps

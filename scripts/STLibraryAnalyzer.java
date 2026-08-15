@@ -24,6 +24,8 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.Instruction;
+import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.ReferenceIterator;
 import ghidra.program.util.DefinedStringIterator;
@@ -125,6 +127,7 @@ public class STLibraryAnalyzer extends GhidraScript {
         }
 
         int intervalHelpers = inferSourceIntervalHelpers(found, sourceAnchors);
+        int moduleCallbacks = inferStoredCallbackLibraryOwners(found, sourceAnchors);
 
         List<Proposal> proposals = new ArrayList<>();
         int conflicts = 0;
@@ -151,6 +154,7 @@ public class STLibraryAnalyzer extends GhidraScript {
             "proposals=" + proposals.size(),
             "conflicts=" + conflicts,
             "source_interval_helpers=" + intervalHelpers,
+            "module_callback_helpers=" + moduleCallbacks,
             "ourlib_proposals=" + proposals.stream()
                 .filter(proposal -> proposal.library.startsWith("OURLIB_")).count(),
             "note=Only rows with apply=1 are consumed by STLibraryApplier."),
@@ -180,11 +184,14 @@ public class STLibraryAnalyzer extends GhidraScript {
     /**
      * MSVC emits the functions of one object file contiguously, but only functions which
      * directly use an assertion/debug path retain a reference to that source string.  Recover
-     * the static helpers between two exact anchors only when those are also the nearest source
-     * anchors on both sides and every direct caller stays inside that closed interval (or is
-     * already independently classified as the same library).  This deliberately does not grow
-     * an arbitrary call-graph closure: application callbacks invoked indirectly by a library
-     * receive no direct caller edge and code on either side of a source boundary is rejected.
+     * the static helpers and registered callbacks between two exact anchors only when those are
+     * also the nearest source anchors on both sides and every direct caller/executable DATA
+     * reference stays inside that closed interval (or is already independently classified as
+     * the same library).  The DATA-reference case is intentionally limited to exact references
+     * whose source belongs to a containing function; it recovers address-installed callbacks
+     * without turning arbitrary tables or adjacent code into library ownership.  This
+     * deliberately does not grow an arbitrary call-graph closure, and code on either side of a
+     * source boundary is rejected.
      */
     private int inferSourceIntervalHelpers(Map<Address, Evidence> found,
             Map<Address, Set<SourceAnchor>> sourceAnchors) throws Exception {
@@ -222,8 +229,8 @@ public class STLibraryAnalyzer extends GhidraScript {
             if (!left.equals(right)) continue;
             Function function = functions.get(index);
             Set<Function> callers = function.getCallingFunctions(monitor);
-            if (callers.isEmpty()) continue;
             boolean closed = true;
+            boolean hasOwnerReference = !callers.isEmpty();
             for (Function caller : callers) {
                 Address entry = caller.getEntryPoint();
                 if (entry.compareTo(functions.get(prior[index]).getEntryPoint()) >= 0 &&
@@ -236,6 +243,32 @@ public class STLibraryAnalyzer extends GhidraScript {
                 }
             }
             if (!closed) continue;
+
+            ReferenceIterator incoming = currentProgram.getReferenceManager()
+                .getReferencesTo(function.getEntryPoint());
+            while (incoming.hasNext()) {
+                Reference reference = incoming.next();
+                if (reference.getReferenceType().isFlow()) continue;
+                Address from = reference.getFromAddress();
+                if (!currentProgram.getMemory().contains(from) ||
+                        !currentProgram.getMemory().getBlock(from).isExecute()) continue;
+                Function owner = currentProgram.getListing().getFunctionContaining(from);
+                if (owner == null) {
+                    closed = false;
+                    break;
+                }
+                hasOwnerReference = true;
+                Address ownerEntry = owner.getEntryPoint();
+                if (ownerEntry.compareTo(functions.get(prior[index]).getEntryPoint()) >= 0 &&
+                        ownerEntry.compareTo(functions.get(following[index]).getEntryPoint()) <= 0)
+                    continue;
+                Evidence ownerEvidence = found.get(ownerEntry);
+                if (!exactLibrary(ownerEvidence, left)) {
+                    closed = false;
+                    break;
+                }
+            }
+            if (!closed || !hasOwnerReference) continue;
             Evidence evidence = found.computeIfAbsent(function.getEntryPoint(),
                 ignored -> new Evidence(function));
             boolean already = exactLibrary(evidence, left);
@@ -252,6 +285,177 @@ public class STLibraryAnalyzer extends GhidraScript {
             evidence.namespaces.size() == 1 &&
             evidence.libraries.contains(anchor.library) &&
             evidence.namespaces.contains(anchor.namespace);
+    }
+
+    /**
+     * Recover only the library module of an address-installed callback at a source-file
+     * boundary. Source ownership remains deliberately stricter in
+     * {@link #inferSourceIntervalHelpers}: two normalized source names must agree there.
+     *
+     * Here the nearest exact source anchors may name different files, but they must name the
+     * same library and namespace. At least one exact x86 {@code MOV [memory], imm32} must
+     * install the callback address, and every direct caller plus every executable non-flow
+     * reference owner must stay in that closed module interval or already have the same exact
+     * library classification. This covers compiler-emitted no-op/error callbacks at the tail
+     * of one object file without growing library ownership through an unrestricted call graph.
+     */
+    private int inferStoredCallbackLibraryOwners(Map<Address, Evidence> found,
+            Map<Address, Set<SourceAnchor>> sourceAnchors) throws Exception {
+        List<Function> functions = new ArrayList<>();
+        Map<Address, Integer> indexByEntry = new HashMap<>();
+        for (Function function : currentProgram.getFunctionManager().getFunctions(true))
+            if (!function.isExternal()) functions.add(function);
+        functions.sort(Comparator.comparing(Function::getEntryPoint));
+        for (int index = 0; index < functions.size(); index++)
+            indexByEntry.put(functions.get(index).getEntryPoint(), index);
+
+        SourceAnchor[] exact = new SourceAnchor[functions.size()];
+        for (int index = 0; index < functions.size(); index++) {
+            Set<SourceAnchor> anchors = sourceAnchors.get(
+                functions.get(index).getEntryPoint());
+            if (anchors != null && anchors.size() == 1)
+                exact[index] = anchors.iterator().next();
+        }
+        int[] prior = new int[functions.size()], following = new int[functions.size()];
+        int nearest = -1;
+        for (int index = 0; index < functions.size(); index++) {
+            prior[index] = nearest;
+            if (exact[index] != null) nearest = index;
+        }
+        nearest = -1;
+        for (int index = functions.size() - 1; index >= 0; index--) {
+            following[index] = nearest;
+            if (exact[index] != null) nearest = index;
+        }
+        Map<Address, SourceAnchor> boundedLibraries = new HashMap<>();
+        for (int index = 0; index < functions.size(); index++) {
+            if (prior[index] < 0 || following[index] < 0) continue;
+            SourceAnchor left = exact[prior[index]], right = exact[following[index]];
+            if (sameLibrary(left, right))
+                boundedLibraries.put(functions.get(index).getEntryPoint(), left);
+        }
+
+        Map<Address, List<StoredCallback>> stores = collectStoredCallbacks();
+        int inferred = 0;
+        for (Map.Entry<Address, List<StoredCallback>> entry : stores.entrySet()) {
+            monitor.checkCancelled();
+            Function callback = currentProgram.getFunctionManager()
+                .getFunctionAt(entry.getKey());
+            if (callback == null || callback.isExternal()) continue;
+            Integer callbackIndex = indexByEntry.get(callback.getEntryPoint());
+            if (callbackIndex == null || prior[callbackIndex] < 0 ||
+                    following[callbackIndex] < 0) continue;
+            int leftIndex = prior[callbackIndex], rightIndex = following[callbackIndex];
+            SourceAnchor left = exact[leftIndex], right = exact[rightIndex];
+            if (!sameLibrary(left, right)) continue;
+            if (exactLibrary(found.get(callback.getEntryPoint()), left)) continue;
+
+            boolean closed = true;
+            Set<String> references = new TreeSet<>();
+            for (StoredCallback store : entry.getValue()) {
+                if (!boundedOrExactLibrary(store.owner, boundedLibraries, found, left)) {
+                    closed = false;
+                    break;
+                }
+                references.add(addr(store.site));
+            }
+            if (!closed || references.isEmpty()) continue;
+
+            for (Function caller : callback.getCallingFunctions(monitor)) {
+                if (boundedOrExactLibrary(caller, boundedLibraries, found, left)) continue;
+                closed = false;
+                break;
+            }
+            if (!closed) continue;
+
+            ReferenceIterator incoming = currentProgram.getReferenceManager()
+                .getReferencesTo(callback.getEntryPoint());
+            while (incoming.hasNext()) {
+                Reference reference = incoming.next();
+                if (reference.getReferenceType().isFlow()) continue;
+                Address from = reference.getFromAddress();
+                if (!currentProgram.getMemory().contains(from)) continue;
+                ghidra.program.model.mem.MemoryBlock block =
+                    currentProgram.getMemory().getBlock(from);
+                if (block == null || !block.isExecute()) continue;
+                Function owner = currentProgram.getListing().getFunctionContaining(from);
+                Instruction instruction = currentProgram.getListing().getInstructionAt(from);
+                if (owner == null || instruction == null ||
+                        !callback.getEntryPoint().equals(storedImmediateCodeAddress(instruction)) ||
+                        !boundedOrExactLibrary(owner, boundedLibraries, found, left)) {
+                    closed = false;
+                    break;
+                }
+            }
+            if (!closed) continue;
+
+            Evidence evidence = found.computeIfAbsent(callback.getEntryPoint(),
+                ignored -> new Evidence(callback));
+            evidence.add(new Classification(left.library, left.namespace),
+                "address-installed callback inside closed " + left.library +
+                    " source-module envelope",
+                entry.getValue().get(0).site, true);
+            for (String reference : references) evidence.references.add(reference);
+            inferred++;
+        }
+        return inferred;
+    }
+
+    private Map<Address, List<StoredCallback>> collectStoredCallbacks() throws Exception {
+        Map<Address, List<StoredCallback>> result = new LinkedHashMap<>();
+        InstructionIterator instructions = currentProgram.getListing().getInstructions(true);
+        while (instructions.hasNext()) {
+            monitor.checkCancelled();
+            Instruction instruction = instructions.next();
+            Function owner = currentProgram.getListing()
+                .getFunctionContaining(instruction.getAddress());
+            if (owner == null || owner.isExternal()) continue;
+            Address target = storedImmediateCodeAddress(instruction);
+            if (target == null || currentProgram.getFunctionManager().getFunctionAt(target) == null)
+                continue;
+            result.computeIfAbsent(target, ignored -> new ArrayList<>())
+                .add(new StoredCallback(owner, instruction.getAddress()));
+        }
+        return result;
+    }
+
+    private Address storedImmediateCodeAddress(Instruction instruction) {
+        try {
+            byte[] bytes = instruction.getBytes();
+            if (bytes.length < 6 || (bytes[0] & 0xff) != 0xc7) return null;
+            int modrm = bytes[1] & 0xff;
+            if ((modrm & 0x38) != 0 || (modrm & 0xc0) == 0xc0) return null;
+            int value = (bytes[bytes.length - 4] & 0xff) |
+                ((bytes[bytes.length - 3] & 0xff) << 8) |
+                ((bytes[bytes.length - 2] & 0xff) << 16) |
+                ((bytes[bytes.length - 1] & 0xff) << 24);
+            Address target = currentProgram.getAddressFactory().getDefaultAddressSpace()
+                .getAddress(Integer.toUnsignedLong(value));
+            ghidra.program.model.mem.MemoryBlock targetBlock =
+                currentProgram.getMemory().getBlock(target);
+            if (targetBlock == null || !targetBlock.isExecute()) return null;
+            for (Reference reference : instruction.getReferencesFrom())
+                if (target.equals(reference.getToAddress()) &&
+                        (reference.getReferenceType().isData() ||
+                            !reference.getReferenceType().isFlow()))
+                    return target;
+        }
+        catch (Exception ignored) { }
+        return null;
+    }
+
+    private boolean boundedOrExactLibrary(Function function,
+            Map<Address, SourceAnchor> boundedLibraries,
+            Map<Address, Evidence> found, SourceAnchor library) {
+        Address entry = function.getEntryPoint();
+        SourceAnchor bounded = boundedLibraries.get(entry);
+        return bounded != null && sameLibrary(bounded, library) ||
+            exactLibrary(found.get(entry), library);
+    }
+
+    private boolean sameLibrary(SourceAnchor left, SourceAnchor right) {
+        return left != null && right != null && left.library.equals(right.library) &&
+            left.namespace.equals(right.namespace);
     }
 
     private String normalizeSource(String value) {
@@ -367,6 +571,7 @@ public class STLibraryAnalyzer extends GhidraScript {
             return value != 0 ? value : source.compareTo(other.source);
         }
     }
+    private record StoredCallback(Function owner, Address site) { }
     private static class Evidence {
         final Function function;
         final Set<String> libraries = new TreeSet<>(), namespaces = new TreeSet<>();

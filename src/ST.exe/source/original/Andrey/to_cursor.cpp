@@ -226,7 +226,7 @@ st::fn_00543AD0
   local_8->field_00B9 = -(int)param_4;
   local_8->field_00A9 = param_1;
   local_8->field_00BD = -param_5;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(local_8->field_0018 + 4))(PTR_00806784,7,0,text,0xffffffff);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_006B85D0
@@ -734,6 +734,8 @@ void __thiscall st::fn_00544800(CursorClassTy *this)
 int __thiscall st::fn_005449B0(CursorClassTy *this,STMessage *message)
 
 {
+  alignas(4) byte st_stack_frame[1368];
+
   int *piVar1;
   char cVar2;
   CursorClassTy_field_00DEState CVar3;
@@ -1858,7 +1860,7 @@ switchD_0054679d_default:
       switch(*(undefined1 *)pAVar5) {
       case 1:
         if (pAVar5->field_0009 < 0) {
-          if ((&stack0x00000000 != (undefined1 *)0x524) &&
+          if (((st_stack_frame + 1364) != (undefined1 *)0x524) &&
              (pcVar12_mg13 = st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618),
              pcVar12_mg13 != nullptr)) {
             UVar12 = local_8->field_0001;
@@ -1888,7 +1890,7 @@ LAB_005458df:
         break;
       case 2:
         if (pAVar5->field_0001 == 0) goto switchD_00545816_default;
-        if ((&stack0x00000000 != (undefined1 *)0x524) &&
+        if (((st_stack_frame + 1364) != (undefined1 *)0x524) &&
            (pcVar12_mg12 = st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618),
            pcVar12_mg12 != nullptr)) {
           UVar12 = local_8->field_0001;
@@ -2000,7 +2002,7 @@ switchD_00545816_default:
     else if ((uVar32 < 2) || (3 < uVar32)) {
       local_c = 0.0;
     }
-    else if ((&stack0x00000000 != (undefined1 *)0x524) &&
+    else if (((st_stack_frame + 1364) != (undefined1 *)0x524) &&
             (pcVar12_mg14 = st::fn_006B0140(UVar12,g_hINSTANCE_00807618),
             pcVar12_mg14 != nullptr)) {
       UVar12 = this_00->field_04DA;
@@ -3165,6 +3167,8 @@ switchD_00546590_caseD_a125:
 void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
 
 {
+  alignas(4) byte st_stack_frame[724];
+
   CursorClassTy_field_0494State CVar1;
   STFishC *pSVar2;
   undefined4 uVar3;
@@ -3353,7 +3357,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
       if (HVar5 == 0x78) {
         HVar5 = *(HelpPanelTy_sub_00514BC0_param_1Enum *)&this_00->field_049A->field_0x259;
       }
-      iVar7 = (*pSVar2->vtable->vfunc_0C)();
+      iVar7 = pSVar2->vfunc_0C();
       st::fn_00404D1D(g_helpPanel_00801690,HVar5,iVar7);
       this_00->field_04DE = 0;
     }
@@ -3442,13 +3446,13 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         local_b0 = 0;
         local_ac = 0;
         if (g_tLOBldMark_007FB2AC->field_0024 != 0) {
-          if (&stack0x00000000 != (undefined1 *)0xb4) {
+          if ((st_stack_frame + 720) != (undefined1 *)0xb4) {
             local_b4 = g_tLOBldMark_007FB2AC->field_0030;
           }
-          if (&stack0x00000000 != (undefined1 *)0xb0) {
+          if ((st_stack_frame + 720) != (undefined1 *)0xb0) {
             local_b0 = g_tLOBldMark_007FB2AC->field_0034;
           }
-          if (&stack0x00000000 != (undefined1 *)0xac) {
+          if ((st_stack_frame + 720) != (undefined1 *)0xac) {
             local_ac = g_tLOBldMark_007FB2AC->field_0038;
           }
           if (g_tLOBldMark_007FB2AC->field_0024 != 0) {
@@ -3791,13 +3795,13 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
       local_c0 = 0;
       local_bc = 0;
       if (g_tLOBldMark_007FB2AC->field_0024 != 0) {
-        if (&stack0x00000000 != (undefined1 *)0xc4) {
+        if ((st_stack_frame + 720) != (undefined1 *)0xc4) {
           local_c4 = g_tLOBldMark_007FB2AC->field_0030;
         }
-        if (&stack0x00000000 != (undefined1 *)0xc0) {
+        if ((st_stack_frame + 720) != (undefined1 *)0xc0) {
           local_c0 = g_tLOBldMark_007FB2AC->field_0034;
         }
-        if (&stack0x00000000 != (undefined1 *)0xbc) {
+        if ((st_stack_frame + 720) != (undefined1 *)0xbc) {
           local_bc = g_tLOBldMark_007FB2AC->field_0038;
         }
         if (g_tLOBldMark_007FB2AC->field_0024 != 0) {
@@ -4231,7 +4235,7 @@ LAB_0054b2a9:
           GVar9 = *(Global_sub_005121F0_param_1Enum *)&this_00->field_049A->field_0x259;
         }
         if (g_helpPanel_00801690 != nullptr) {
-          iVar6 = (*pSVar7->vtable->vfunc_0C)();
+          iVar6 = pSVar7->vfunc_0C();
           iVar6 = st::fn_00404F61(g_helpPanel_00801690,GVar9,iVar6);
           if (iVar6 != 0) {
             iVar6 = this_00->field_0038;

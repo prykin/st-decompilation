@@ -13,7 +13,7 @@ uint FUN_006c6c80(int param_1)
   uint local_8;
 
   iVar2 = param_1;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar3 = (**(code **)(param_1 + 0x42))(param_1,(int)&param_1 + 3,1);
   if (uVar3 != 1) {
     if ((int)uVar3 < 0) {
@@ -23,7 +23,7 @@ uint FUN_006c6c80(int param_1)
   }
   bVar1 = false;
   if (STPiece<3,1>(param_1) == -1) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_8,1);
     if (uVar3 != 1) {
       if ((int)uVar3 < 0) {
@@ -31,7 +31,7 @@ uint FUN_006c6c80(int param_1)
       }
       return 0xfffffffb;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_108,local_8 & 0xff);
     if (uVar3 != (local_8 & 0xff)) {
       if ((int)uVar3 < 0) {
@@ -48,7 +48,7 @@ uint FUN_006c6c80(int param_1)
       bVar1 = false;
     }
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_8,1);
   while( true ) {
     if (uVar3 != 1) {
@@ -60,7 +60,7 @@ uint FUN_006c6c80(int param_1)
     if ((char)local_8 == '\0') {
       return 0;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_108,local_8 & 0xff);
     if (uVar3 != (local_8 & 0xff)) break;
     if (((bVar1) && ((local_108 & 7) == 1)) && (2 < (byte)local_8)) {
@@ -75,7 +75,7 @@ uint FUN_006c6c80(int param_1)
         *(uint *)(iVar2 + 0x56) = *(uint *)(iVar2 + 0x56) | 2;
       }
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_8,1);
   }
   if ((int)uVar3 < 0) {

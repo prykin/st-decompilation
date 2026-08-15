@@ -32,7 +32,6 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
     uVar3 = uVar3 - 1;
     pbVar7_mg0 = param_1 + 1;
     bVar1 = *param_1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = pbVar7_mg0;
   } while (bVar1 != 0);
   uVar3 = ~uVar3;
@@ -72,7 +71,6 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
     pcVar10 = pcVar10 + 4;
     pcVar9 = pcVar9 + 4;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = nullptr;
   for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
     *pcVar9 = *pcVar10;
@@ -90,17 +88,14 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
         pcVar10 = pcVar10 + 1;
       } while (cVar2 != '\0');
       iVar5 = iVar5 + 1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + ~uVar3;
     } while (iVar5 < param_4->field_0008);
   }
   if (STField<int>(this,0x644) != 0) {
     FreeAndNull((undefined4 *)((int)this + 0x644));
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = Library::DKW::LIB::MemAllocClear((uint)(param_1 + param_4->field_0008));
   STField<undefined4>(this,0x644) = param_1;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {
     STField<undefined1>(this,10) = 1;
     return;
@@ -135,7 +130,6 @@ LAB_0055c414:
     pbVar10_mg1 = param_1;
     memmove(pbVar10_mg1, pbVar7, uVar3); /* compiler REP MOVS byte copy */
     param_1[uVar3] = -(iVar6 != param_4->field_0008 + -1) & 10;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + uVar3 + 1;
     iVar5 = param_4->field_0008;
     iVar6 = iVar6 + 1;

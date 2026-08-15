@@ -82,7 +82,7 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((*(int *)(param_1->field_005C + 0x310) == 0) &&
            (piVar1 = (int *)param_1->field_0064, piVar1 != nullptr)) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar1 + 8))(piVar1);
           param_1->field_0064 = 0;
         }

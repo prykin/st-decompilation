@@ -16,7 +16,6 @@ uint __thiscall FUN_00639670(void *this,int param_1)
   if (iVar4 == 0) {
     return 0;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = ((iVar4 * 500) / 0x1e + (iVar4 * iVar4 * 1000) / 900) / 10;
   STField<undefined4>(this,0x286) = STField<undefined4>(this,0x27a);
   STField<undefined4>(this,0x28e) = STField<undefined4>(this,0x282);
@@ -49,7 +48,7 @@ uint __thiscall FUN_00639670(void *this,int param_1)
     if (uVar2 != 2) {
       return uVar2;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((STField<int *>(this,0x2bf) != nullptr) &&
        (iVar4 = (**(code **)(*STField<int *>(this,0x2bf) + 0xe0))
                           (STField<undefined4>(this,0x2c3),(int)&param_1 + 2,&local_6,

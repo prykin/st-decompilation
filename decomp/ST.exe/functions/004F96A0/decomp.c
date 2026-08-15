@@ -76,10 +76,10 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
               local_c = (char *)g_dArray_0080C4C7->elementSize;
             }
             else {
-              int scalar_local_c = *(int *)(puVar12 + 6) + *(int *)(puVar12 + 10); /* split integer lifetime from pointer-typed SSA storage */
+              local_c = (char *)(*(int *)(puVar12 + 6) + *(int *)(puVar12 + 10));
             }
             iVar3 = *(int *)(puVar12 + 6);
-            if (iVar3 < scalar_local_c) {
+            if (iVar3 < (int)local_c) {
               do {
                 if (iVar3 < (int)g_dArray_0080C4C7->elementSize) {
                   pcVar7 = *(char **)(g_dArray_0080C4C7->growCapacity + iVar3 * 4);
@@ -89,7 +89,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
                 }
                 thunk_FUN_005411a0(local_8,pcVar7,"@ %s");
                 iVar3 = iVar3 + 1;
-              } while (iVar3 < scalar_local_c);
+              } while (iVar3 < (int)local_c);
             }
             pDVar4 = (DArrayTy *)
                      ccFntTy::FormIndentSarr
@@ -204,7 +204,7 @@ LAB_004f9a8a:
             this_00->field_0028 = 0x5dc6;
             *(undefined **)&this_00->field_0x2c = &DAT_0080c4d7;
             if (DAT_008117bc != nullptr) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)*DAT_008117bc)(&this_00->field_0x18);
             }
             this_00->field_0260 = CASE_4;

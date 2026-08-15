@@ -16,7 +16,7 @@ void __fastcall FUN_007496a1(AnonShape_007496A1_B3436AED *param_1)
     param_1->field_002C = param_1->field_002C + -1;
     param_1->field_0028 = iVar2;
     if (piVar1 == nullptr) break;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 0x54))(1);
   }
   param_1->field_003C = 0;

@@ -1,5 +1,5 @@
 program=ST.exe
-functions_scanned=1471
+functions_scanned=1466
 exact_copy_candidates=1
 nested_struct_apply=1
 zero_spans=93

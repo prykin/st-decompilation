@@ -66,13 +66,13 @@ void __thiscall ST3DSMAPContext::sub_006DBAB0(ST3DSMAPContext *this)
     FreeAndNull(&this->field_0008);
     FreeAndNull(&this->field_0010);
     FreeAndNull(&this->field_0018);
-    FreeAndNull(&this->field_0158);
+    FreeAndNull(&this->field_0x158);
     FreeAndNull(&this->field_0154);
     FreeAndNull(&this->field_001C);
     FreeAndNull(&this->field_0350);
     FreeAndNull(&this->field_0354);
     FreeAndNull(&this->field_02B0);
-    FUN_006b9890(&this->field_0294);
+    FUN_006b9890((int *)&this->field_0x294);
     FUN_006e6620((int)this);
     this->field_0014 = nullptr;
     this->field_0004 = nullptr;

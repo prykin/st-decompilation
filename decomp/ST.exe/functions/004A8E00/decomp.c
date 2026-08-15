@@ -10,16 +10,12 @@ void FUN_004a8e00(int param_1,int param_2,int param_3)
   int iVar1;
 
   switch(DAT_008073fc) {
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case 0:
     param_1 = param_1 - param_3;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 - param_3;
     break;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case 1:
     param_1 = param_1 + param_3;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 - param_3;
     break;
   case 2:
@@ -27,26 +23,20 @@ void FUN_004a8e00(int param_1,int param_2,int param_3)
     goto LAB_004a8e4a;
   case 3:
     iVar1 = -param_3;
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_004a8e4a:
     param_1 = param_1 + iVar1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 + param_3;
   }
   if (param_1 < 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
   }
   if (param_2 < 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
   }
   if (*PTR_00806750 + -1 < param_1) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = *PTR_00806750 + -1;
   }
   if (PTR_00806750[1] + -1 < param_2) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = PTR_00806750[1] + -1;
   }
   DAT_008073d8 = param_1;

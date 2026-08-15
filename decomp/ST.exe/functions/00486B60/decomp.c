@@ -18,7 +18,7 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
 
   puVar1 = param_1;
   *param_1 = 1;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar5 = (**(code **)(*(int *)this + 8))();
   if (iVar5 == 1) {
     puVar1[1] = 1;
@@ -34,10 +34,10 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
   else {
     puVar1[0x1d] = 0;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*(int *)this + 0x7c))();
   puVar1[0x1b] = uVar2;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*(int *)this + 0xc4))();
   puVar1[0x1c] = uVar2;
   *(undefined4 *)(puVar1 + 3) = STField<undefined4>(this,0x6f7);
@@ -60,28 +60,28 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
                 (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x7ca),
                  (int *)&local_c);
       if (local_c != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (**(code **)(*local_c + 0x2c))();
         *(undefined4 *)(puVar1 + 0x1e) = uVar6;
         iVar5 = local_c[8];
         if (iVar5 == 0x14) {
           local_EAX_316 = thunk_FUN_004e8030(STField<int>(this,0x6f7));
           puVar1[0x22] = (char)local_EAX_316;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar2 = (**(code **)(*local_c + 0x7c))();
           puVar1[0x23] = uVar2;
         }
         else if ((iVar5 == 0x172) || (iVar5 == 0x1a4)) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar2 = (**(code **)(*local_c + 0xc))();
           puVar1[0x22] = uVar2;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar2 = (**(code **)(*local_c + 0x7c))();
           puVar1[0x23] = uVar2;
         }
         else {
           puVar1[0x22] = 0;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar2 = (**(code **)(*local_c + 0x7c))();
           puVar1[0x23] = uVar2;
         }

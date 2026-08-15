@@ -1,6 +1,9 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __thiscall FUN_007279b0(void *this,int param_1,int param_2,int param_3)
@@ -12,6 +15,8 @@ void __thiscall FUN_007279b0(void *this,int param_1,int param_2,int param_3)
   int iVar4;
   int iVar5;
   int iVar6;
+  undefined4 auStack_48 [2];
+  uint uStack_40;
   uint local_20;
   void *local_14;
   undefined1 *puStack_10;
@@ -119,12 +124,18 @@ void __thiscall FUN_007279b0(void *this,int param_1,int param_2,int param_3)
     DAT_008570ec = STField<int>(this,0x3c);
   }
   if ((DAT_00857064 < DAT_008570ec) && (DAT_00857060 < DAT_008570e8)) {
-    local_8 = 0;
-    ExceptionList = &local_14;
-    Library::MSVCRT::FUN_0072da40();
+    iVar2 = (DAT_008570ec - DAT_00857064) + 1;
+    uStack_40 = 0x727c13;
     local_8 = 0xffffffff;
-    FUN_00726d80((int *)&stack0xffffffc4,local_20);
-    FUN_00727230((int *)&stack0xffffffc4);
+    *(uint *)((int)&uStack_40 + iVar2 * -0x20) = local_20;
+    auStack_48[iVar2 * 0xfffffff8U + 1] = &stack0xffffffc4 + iVar2 * -0x20;
+    auStack_48[iVar2 * -8] = 0x727c2e;
+    ExceptionList = &local_14;
+    FUN_00726d80((int *)auStack_48[iVar2 * 0xfffffff8U + 1],
+                 *(int *)((int)&uStack_40 + iVar2 * -0x20));
+    *(undefined1 **)((int)&uStack_40 + iVar2 * -0x20) = &stack0xffffffc4 + iVar2 * -0x20;
+    auStack_48[iVar2 * 0xfffffff8U + 1] = 0x727c37;
+    FUN_00727230(*(int **)((int)&uStack_40 + iVar2 * -0x20));
   }
   ExceptionList = local_14;
   return;

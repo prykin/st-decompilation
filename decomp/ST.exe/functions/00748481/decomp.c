@@ -19,7 +19,7 @@ FUN_00748481(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_
     uVar2 = 0x80004002;
   }
   else {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (**(code **)(*piVar1 + 0x1c))(piVar1,param_2,param_3,param_4,param_5);
   }
   return uVar2;

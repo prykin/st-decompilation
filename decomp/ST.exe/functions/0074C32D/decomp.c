@@ -18,7 +18,7 @@ FUN_0074c32d(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
     uVar1 = 0;
   }
   else {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar1 = (**(code **)(*STField<int *>(this,0x90) + 0x58))
                       (param_1,param_2,param_3,param_4,param_5);
   }

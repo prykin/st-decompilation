@@ -14,12 +14,12 @@ int __thiscall FUN_0074f04d(void *this,undefined4 param_1,int param_2)
     iVar1 = -0x7fffbffb;
   }
   else {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*(int *)this + 0x34))
                       (this,param_1,0,STField<undefined4>(this,0x38),
                        STField<undefined4>(this,0x3c),&DAT_007a1dd8);
     if ((param_2 != 0) && (-1 < iVar1)) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar1 = (**(code **)(*(int *)this + 0x34))
                         (this,param_2,0,STField<undefined4>(this,0x40),
                          STField<undefined4>(this,0x44),&DAT_007a1dd8);

@@ -5,6 +5,7 @@ undefined4 * __cdecl
 FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
 
 {
+  byte stack_bytes_neg_330[0x318]; /* exact EBP-relative stack object */
   char cVar1;
   uint *puVar2;
   int *piVar3;
@@ -32,7 +33,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   local_14 = 0;
   memset(&DAT_008117c0, 0, 0x104); /* compiler bulk-zero initialization */
   iVar5 = 0;
-  memset(&stack0xfffffcd0, 0, 0x318); /* compiler bulk-zero initialization */
+  memset(stack_bytes_neg_330, 0, 0x318); /* compiler bulk-zero initialization */
   local_8 = nullptr;
   local_c = DAT_00807dd5 >> 0x10 & 0xff;
   local_18 = DAT_00807dd5 & 0xffff;
@@ -104,11 +105,11 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   } while (cVar1 != '\0');
   uVar6 = ~uVar6;
   pcVar9 = pcVar12 + -uVar6;
-  pcVar12 = &stack0xfffffcd0;
+  pcVar12 = stack_bytes_neg_330;
   memmove(pcVar12, pcVar9, uVar6); /* compiler REP MOVS byte copy */
-  FUN_006b78c0(&stack0xfffffcd0,&stack0xfffffcd0);
+  FUN_006b78c0(stack_bytes_neg_330,stack_bytes_neg_330);
   array = (DArrayTy *)
-          thunk_FUN_00683c70((LPCSTR)param_1,(AnonShape_00683C70_22193481 *)&stack0xfffffcd0,
+          thunk_FUN_00683c70((LPCSTR)param_1,(AnonShape_00683C70_22193481 *)stack_bytes_neg_330,
                              &local_14,param_4,nullptr);
   if (array != nullptr) {
     if (local_14 != CASE_A) {
@@ -137,9 +138,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
       if (uVar6 != 0) {
         uVar8 = 0xffffffff;
         uVar7 = 0;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (uint *)0xffffffff;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)0xffffffff;
         if (0 < (int)uVar6) {
           bVar13 = uVar6 != 0;
@@ -152,12 +151,10 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
                  (piVar3 = STField<int *>(pvVar4,0x10c), (int)piVar3 <= (int)local_c)))))) {
               if ((int)param_4 < (int)piVar3) {
                 uVar8 = uVar7;
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_4 = piVar3;
               }
               if ((int)param_1 < (int)puVar2) {
                 uVar8 = uVar7;
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = puVar2;
               }
             }
@@ -194,9 +191,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
         }
         uVar8 = 0xffffffff;
         uVar7 = 0;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (uint *)0xffffffff;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)0xffffffff;
         if (0 < (int)uVar6) {
           bVar13 = uVar6 != 0;
@@ -209,12 +204,10 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
                  (piVar3 = STField<int *>(pvVar4,0x10c), (int)piVar3 <= (int)local_18)))))) {
               if ((int)param_4 < (int)piVar3) {
                 uVar8 = uVar7;
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_4 = piVar3;
               }
               if ((int)param_1 < (int)puVar2) {
                 uVar8 = uVar7;
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = puVar2;
               }
             }

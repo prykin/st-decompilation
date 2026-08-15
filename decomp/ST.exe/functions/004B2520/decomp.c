@@ -1,6 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* [STPrototypeApplier] Propagated parameter 4.
    Evidence: 00479600 -> 004B2520 @ 0047B46E; /STBoatC+0x647; MOVSX at 0047B452 establishes signed
    source width 2 | 004B2520 -> 004B2390 @ 004B25DA
@@ -30,6 +31,8 @@ FUN_004b2520(uint param_1,STBoatC_field_06F7State param_2,int param_3,int param_
   int *piVar14;
   STWorldObject *this;
   bool bVar15;
+  int aiStack_138 [44];
+  undefined4 uStack_88;
   int local_68;
   int local_64;
   int local_48;
@@ -52,12 +55,14 @@ FUN_004b2520(uint param_1,STBoatC_field_06F7State param_2,int param_3,int param_
   *param_6 = 0xffffffff;
   *param_10 = 0;
   local_48 = 1;
-  local_8 = 0;
-  Library::MSVCRT::FUN_0072da40();
+  uStack_88 = 0x4b2585;
   local_34 = 0;
   local_8 = 0xffffffff;
   iVar6 = thunk_FUN_004b2390(param_1,param_3,param_4,param_5,param_10,1);
   if (iVar6 != 0) {
+    aiStack_138[0] = param_3;
+    aiStack_138[1] = param_4;
+    aiStack_138[2] = param_5;
     local_34 = 1;
     goto cf_common_exit_004B2601;
   }
@@ -143,6 +148,9 @@ LAB_004b288e:
   if (local_30 == nullptr) {
     if (*param_10 != 0) {
       *param_10 = 0;
+      aiStack_138[0] = param_3;
+      aiStack_138[1] = param_4;
+      aiStack_138[2] = param_5;
       local_34 = 1;
       goto cf_common_exit_004B2601;
     }
@@ -172,7 +180,7 @@ LAB_004b288e:
     if (0 < g_worldGrid.sizeZ + -1) {
       do {
         if (local_68 <= local_64) {
-          piVar14 = (int *)(&stack0xffffff7c + local_34 * 0xc);
+          piVar14 = aiStack_138 + local_34 * 3;
           iVar13 = local_68;
           do {
             if ((-1 < iVar13) && (iVar13 < (short)uVar11)) {
@@ -206,7 +214,7 @@ LAB_004b288e:
         iVar13 = iVar6 + 1 + local_68;
         iVar7 = iVar6 + -1 + local_64;
         if (iVar13 <= iVar7) {
-          piVar14 = (int *)(&stack0xffffff7c + local_34 * 0xc);
+          piVar14 = aiStack_138 + local_34 * 3;
           do {
             if ((-1 < iVar13) && (iVar13 < g_worldGrid.sizeY)) {
               if ((-1 < local_68) &&
@@ -248,10 +256,9 @@ cf_common_exit_004B2601:
     else {
       local_34 = param_9 % local_34;
     }
-    local_34 = local_34 * 0xc;
-    *param_6 = *(undefined4 *)(&stack0xffffff7c + local_34);
-    *param_7 = *(undefined4 *)(&stack0xffffff80 + local_34);
-    *param_8 = *(undefined4 *)(&stack0xffffff84 + local_34);
+    *param_6 = aiStack_138[local_34 * 3];
+    *param_7 = aiStack_138[local_34 * 3 + 1];
+    *param_8 = aiStack_138[local_34 * 3 + 2];
   }
   ExceptionList = local_14;
   return 0;

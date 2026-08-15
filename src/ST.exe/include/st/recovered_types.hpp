@@ -812,6 +812,8 @@ struct AnonShape_005DF640_DD656F0B;
 struct AnonShape_005DF7C0_BF27E5E8;
 struct AnonShape_005E10A0_819783CC;
 struct AnonShape_005E11D0_D0F8BE03;
+struct AnonShape_005E1330_1AE0EB1C;
+struct AnonShape_005E1330_47BFB53C;
 struct AnonShape_005E3E80_D5AAB6C7;
 struct AnonShape_005E4570_1DAE8C90;
 struct AnonShape_005E4570_F1672769;
@@ -1501,6 +1503,10 @@ struct EditorClassTyVTable;
 struct FrmPanelTy;
 struct FrmPanelTyVTable;
 struct FSGSTy;
+struct FSGSTy_field_1EA6DArray;
+struct FSGSTy_field_1EA6Element;
+struct FSGSTy_field_1EAADArray;
+struct FSGSTy_field_1EAAElement;
 struct FSGSTy_field_1EBEDArray;
 struct FSGSTy_field_1EBEElement;
 struct FSGSTy_field_1FB3DArray;
@@ -1673,6 +1679,13 @@ struct RecoveredSourceFamily_dibcopy;
 struct RecursiveNode_ST3DSMAPContext_0140_DDDC9F89;
 struct ResearchPanelTy;
 struct ResearchPanelTyVTable;
+struct RuntimeRecord_007F4D3C_0014;
+struct RuntimeRecord_007F4D74_0010;
+struct RuntimeRecord_008032F4_0014;
+struct RuntimeRecord_008032F8_0014;
+struct RuntimeRecord_00803300_0014;
+struct RuntimeRecord_00803310_0014;
+struct RuntimeRecord_00857110_0008;
 struct SAMPanelTy;
 struct SAMPanelTyVTable;
 struct SettMapMTy;
@@ -2137,6 +2150,7 @@ using FSGSTy_GetMessage_iVar21Enum = uint32_t;
 using FSGSTy_GetMessage_iVar43Enum = uint32_t;
 using FSGSTy_GetMessage_iVar44Enum = uint32_t;
 using FSGSTy_GetMessage_iVar45Enum = uint32_t;
+using FSGSTy_GetMessage_iVar47Enum = uint32_t;
 using FSGSTy_GetMessage_SVar5Enum = uint32_t;
 using FSGSTy_GetMessage_SVar6Enum = uint32_t;
 using FSGSTy_GetMessage_switch_14Enum = uint32_t;
@@ -2165,6 +2179,7 @@ using Global_sub_00411E50_local_20Enum = uint32_t;
 using Global_sub_00413AF0_iVar6Enum = int32_t;
 using Global_sub_00413AF0_iVar7Enum = int32_t;
 using Global_sub_00413AF0_iVar8Enum = int32_t;
+using Global_sub_00413AF0_iVar9Enum = int32_t;
 using Global_sub_0041C5A0_uVar1Enum = uint32_t;
 using Global_sub_0041DD00_uVar2Enum = uint32_t;
 using Global_sub_0041F630_uVar3Enum = uint32_t;
@@ -3965,7 +3980,7 @@ using STFnType_dispatch_STGameObjCDispatchVTable_EC_5a2cf198 = undefined4 __this
 using STFnType_dispatch_STGameObjCDispatchVTable_F0_67c5a363 = undefined4 __thiscall(STGameObjC *st_this);
 using STFnType_dispatch_STGameObjCDispatchVTable_F8_e40fbdd3 = undefined4 __thiscall(STGameObjC *st_this);
 using STFnType_dispatch_STGameObjCDispatchVTable_FC_bf7b9e8c = undefined4 __thiscall(STGameObjC *st_this);
-using STFnType_icall_004137F0_FUN_004137f0_for_STGroupBoatC_dcbf25a0 = undefined4 __thiscall(STGroupBoatC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_004137F0_FUN_004137f0_for_STGroupBoatC_dcbf25a0 = undefined4 __thiscall(STGroupBoatC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
 using STFnType_icall_004137F0_FUN_004137f0_stdcall_d4d3828d = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
 using STFnType_icall_00415B10_FUN_00415b10_for_STArtiafactC_488696a8 = undefined4 __thiscall(STArtiafactC *st_this);
 using STFnType_icall_00415B10_FUN_00415b10_for_STColl3C_4b7ab03c = undefined4 __thiscall(STColl3C *st_this);
@@ -3991,7 +4006,57 @@ using STFnType_icall_00415B10_FUN_00415b10_for_TLOBaseTy_0fcd09a0 = undefined4 _
 using STFnType_icall_00415B10_FUN_00415b10_for_TLOEmbryoTy_5f8a5d38 = undefined4 __thiscall(TLOEmbryoTy *st_this);
 using STFnType_icall_00415B10_FUN_00415b10_for_TLOFakeTy_fb0e1e05 = undefined4 __thiscall(TLOFakeTy *st_this);
 using STFnType_icall_00415B10_FUN_00415b10_for_void_20d33985 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_004168D0_FUN_004168d0_for_STArtiafactC_51591e74 = undefined2 __thiscall(STArtiafactC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STBoatC_9aa348f8 = undefined2 __thiscall(STBoatC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STColl3C_e5ee8461 = undefined2 __thiscall(STColl3C *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STContainerC_bce543d1 = undefined2 __thiscall(STContainerC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STCrabC_afd82b84 = undefined2 __thiscall(STCrabC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STDcResourcC_53467613 = undefined2 __thiscall(STDcResourcC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STDestC_876f1db8 = undefined2 __thiscall(STDestC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STExplosion_61e75529 = undefined2 __thiscall(STExplosion *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STFishC_272b1aaf = undefined2 __thiscall(STFishC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STGameObjC_08fc90dc = undefined2 __thiscall(STGameObjC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STJellyGunC_72e9bb3f = undefined2 __thiscall(STJellyGunC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STJellyManC_5b49f10b = undefined2 __thiscall(STJellyManC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STLBombC_ae141949 = undefined2 __thiscall(STLBombC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STMBombC_38a9192f = undefined2 __thiscall(STMBombC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STMineSetC_4cc827e7 = undefined2 __thiscall(STMineSetC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STOctopusC_a23f6f24 = undefined2 __thiscall(STOctopusC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STRubbishC_5ebe70b3 = undefined2 __thiscall(STRubbishC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STSatC_ad8a8377 = undefined2 __thiscall(STSatC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STSharkC_0d8b1b79 = undefined2 __thiscall(STSharkC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STSprGameObjC_367d4d6d = undefined2 __thiscall(STSprGameObjC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_STTorpC_d0e5f6cc = undefined2 __thiscall(STTorpC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_TLOBaseTy_80a0c1cb = undefined2 __thiscall(TLOBaseTy *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_TLOEmbryoTy_e4fbbb8e = undefined2 __thiscall(TLOEmbryoTy *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_TLOFakeTy_9dab980d = undefined2 __thiscall(TLOFakeTy *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_004168D0_FUN_004168d0_for_void_5ab04ff5 = undefined2 __thiscall(void *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
 using STFnType_icall_004168D0_FUN_004168d0_stdcall_f5b5e8b3 = undefined2 __stdcall(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STArtiafactC_b865751b = undefined2 __thiscall(STArtiafactC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STBoatC_1060fe95 = undefined2 __thiscall(STBoatC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STColl3C_c416a76b = undefined2 __thiscall(STColl3C *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STContainerC_f39e1e32 = undefined2 __thiscall(STContainerC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STCrabC_e13f3433 = undefined2 __thiscall(STCrabC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STDcResourcC_b97d6d4e = undefined2 __thiscall(STDcResourcC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STDestC_31a53be2 = undefined2 __thiscall(STDestC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STExplosion_1fdfd9eb = undefined2 __thiscall(STExplosion *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STFishC_eb9dd894 = undefined2 __thiscall(STFishC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STGameObjC_6fe041be = undefined2 __thiscall(STGameObjC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STJellyGunC_08dfcae6 = undefined2 __thiscall(STJellyGunC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STJellyManC_37a26f44 = undefined2 __thiscall(STJellyManC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STLBombC_9d75e169 = undefined2 __thiscall(STLBombC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STMBombC_20bab230 = undefined2 __thiscall(STMBombC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STMineSetC_aed6cc72 = undefined2 __thiscall(STMineSetC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STOctopusC_42b1e33b = undefined2 __thiscall(STOctopusC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STRubbishC_43393252 = undefined2 __thiscall(STRubbishC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STSatC_8fba12e8 = undefined2 __thiscall(STSatC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STSharkC_0bb6b8fc = undefined2 __thiscall(STSharkC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STSprGameObjC_8377f409 = undefined2 __thiscall(STSprGameObjC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_STTorpC_1cf0899a = undefined2 __thiscall(STTorpC *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_TLOBaseTy_aad16b03 = undefined2 __thiscall(TLOBaseTy *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_TLOEmbryoTy_0721879f = undefined2 __thiscall(TLOEmbryoTy *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_TLOFakeTy_f8feb826 = undefined2 __thiscall(TLOFakeTy *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
+using STFnType_icall_00416DB0_FUN_00416db0_for_void_d3c266d0 = undefined2 __thiscall(void *st_this, short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
 using STFnType_icall_00416DB0_FUN_00416db0_stdcall_1f058c79 = undefined2 __stdcall(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6);
 using STFnType_icall_00417F30_FUN_00417f30_for_STArtiafactC_fb51db55 = undefined4 __thiscall(STArtiafactC *st_this, short arg_1, short arg_2, short arg_3);
 using STFnType_icall_00417F30_FUN_00417f30_for_STBoatC_14178f8b = undefined4 __thiscall(STBoatC *st_this, short arg_1, short arg_2, short arg_3);
@@ -4018,7 +4083,76 @@ using STFnType_icall_00417F30_FUN_00417f30_for_TLOBaseTy_44858a94 = undefined4 _
 using STFnType_icall_00417F30_FUN_00417f30_for_TLOEmbryoTy_2c552fdc = undefined4 __thiscall(TLOEmbryoTy *st_this, short arg_1, short arg_2, short arg_3);
 using STFnType_icall_00417F30_FUN_00417f30_for_TLOFakeTy_0d4b9307 = undefined4 __thiscall(TLOFakeTy *st_this, short arg_1, short arg_2, short arg_3);
 using STFnType_icall_00417F30_FUN_00417f30_for_void_7be46e8f = undefined4 __thiscall(void *st_this, short arg_1, short arg_2, short arg_3);
+using STFnType_icall_00418990_FUN_00418990_for_STExplosion_94c9f604 = undefined4 __thiscall(STExplosion *st_this);
+using STFnType_icall_00418990_FUN_00418990_for_STGameObjC_26961843 = undefined4 __thiscall(STGameObjC *st_this);
+using STFnType_icall_00418990_FUN_00418990_for_STJellyManC_3c8d2bef = undefined4 __thiscall(STJellyManC *st_this);
+using STFnType_icall_00418990_FUN_00418990_for_STRubbishC_039bb1e5 = undefined4 __thiscall(STRubbishC *st_this);
+using STFnType_icall_00418990_FUN_00418990_for_void_550c12c5 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STColl3C_f95c9257 = undefined4 __thiscall(STColl3C *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STCrabC_da856d22 = undefined4 __thiscall(STCrabC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STDcResourcC_9d829ab6 = undefined4 __thiscall(STDcResourcC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STDestC_e9724701 = undefined4 __thiscall(STDestC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STExplosion_21e6b15d = undefined4 __thiscall(STExplosion *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STFishC_66ffa34e = undefined4 __thiscall(STFishC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STGameObjC_f58463bf = undefined4 __thiscall(STGameObjC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STJellyGunC_6dba4457 = undefined4 __thiscall(STJellyGunC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STJellyManC_51e43c32 = undefined4 __thiscall(STJellyManC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STLBombC_3c4850b1 = undefined4 __thiscall(STLBombC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STMBombC_f5f4ae57 = undefined4 __thiscall(STMBombC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STMineSetC_c0f67dfa = undefined4 __thiscall(STMineSetC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STOctopusC_ea612fa8 = undefined4 __thiscall(STOctopusC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STRubbishC_c8ebc079 = undefined4 __thiscall(STRubbishC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STSatC_2a009904 = undefined4 __thiscall(STSatC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STSharkC_e36070b3 = undefined4 __thiscall(STSharkC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_STTorpC_1d498c3d = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_TLOFakeTy_180f4ed2 = undefined4 __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_004189B0_FUN_004189b0_for_void_5ef13bc7 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_004189D0_MoveStep_1a77551c = undefined4 __thiscall(STGameObjC *st_this, int *param_1);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STArtiafactC_8298ec45 = undefined4 __thiscall(STArtiafactC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STColl3C_e690e658 = undefined4 __thiscall(STColl3C *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STContainerC_a1fca720 = undefined4 __thiscall(STContainerC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STCrabC_e226f0fa = undefined4 __thiscall(STCrabC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STDcResourcC_f0f2a758 = undefined4 __thiscall(STDcResourcC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STDestC_14b5b02f = undefined4 __thiscall(STDestC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STExplosion_9eb718a0 = undefined4 __thiscall(STExplosion *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STFishC_4430d5ce = undefined4 __thiscall(STFishC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STGameObjC_29c0b8f9 = undefined4 __thiscall(STGameObjC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STJellyGunC_5bc70f5a = undefined4 __thiscall(STJellyGunC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STJellyManC_74d27cbb = undefined4 __thiscall(STJellyManC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STLBombC_4f1fcc53 = undefined4 __thiscall(STLBombC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STMBombC_eaea7dc2 = undefined4 __thiscall(STMBombC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STMineSetC_82dad34e = undefined4 __thiscall(STMineSetC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STOctopusC_e3c30cad = undefined4 __thiscall(STOctopusC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STRubbishC_0e4da735 = undefined4 __thiscall(STRubbishC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STSatC_4f619860 = undefined4 __thiscall(STSatC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STSharkC_12d7bbf2 = undefined4 __thiscall(STSharkC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STSprGameObjC_cf399d2d = undefined4 __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_STTorpC_92362061 = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_TLOFakeTy_048150eb = undefined4 __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_00418CE0_FUN_00418ce0_for_void_7590cb18 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_00418D00_FUN_00418d00_for_STArtiafactC_b559ad12 = void __thiscall(STArtiafactC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STColl3C_698c9681 = void __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STContainerC_45e0e492 = void __thiscall(STContainerC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STCrabC_3132fbc9 = void __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STDcResourcC_a494e7f5 = void __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STDestC_533d9815 = void __thiscall(STDestC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STExplosion_b8d494b0 = void __thiscall(STExplosion *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STFishC_c4e01f79 = void __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STGameObjC_e0419464 = void __thiscall(STGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STJellyGunC_3ddfef71 = void __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STJellyManC_87b99cc7 = void __thiscall(STJellyManC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STLBombC_c4a00eff = void __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STMBombC_6ff20fcc = void __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STMineSetC_598f6ed8 = void __thiscall(STMineSetC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STOctopusC_b6e871e2 = void __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STRubbishC_e588666c = void __thiscall(STRubbishC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STSatC_f8972697 = void __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STSharkC_15f53563 = void __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STSprGameObjC_91817209 = void __thiscall(STSprGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_STTorpC_f9188982 = void __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_TLOEmbryoTy_ece872d7 = void __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_TLOFakeTy_d34da627 = void __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_00418D00_FUN_00418d00_for_void_3eff1a22 = void __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00418D00_FUN_00418d00_stdcall_872f7274 = void __stdcall(undefined4 arg_1);
 using STFnType_icall_00419A90_FUN_00419a90_for_STArtiafactC_006d00e5 = undefined4 __thiscall(STArtiafactC *st_this);
 using STFnType_icall_00419A90_FUN_00419a90_for_STColl3C_e7d573f0 = undefined4 __thiscall(STColl3C *st_this);
@@ -4069,20 +4203,357 @@ using STFnType_icall_00419BF0_FUN_00419bf0_for_TLOBaseTy_01f011c9 = undefined4 _
 using STFnType_icall_00419BF0_FUN_00419bf0_for_TLOEmbryoTy_95ff73ce = undefined4 __thiscall(TLOEmbryoTy *st_this);
 using STFnType_icall_00419BF0_FUN_00419bf0_for_TLOFakeTy_3f4b1426 = undefined4 __thiscall(TLOFakeTy *st_this);
 using STFnType_icall_00419BF0_FUN_00419bf0_for_void_163e6af3 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STColl3C_e97245a6 = undefined4 __thiscall(STColl3C *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STCrabC_b077bcaa = undefined4 __thiscall(STCrabC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STDcResourcC_ea4e9748 = undefined4 __thiscall(STDcResourcC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STDestC_38547b80 = undefined4 __thiscall(STDestC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STExplosion_026c79d8 = undefined4 __thiscall(STExplosion *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STFishC_dd866f12 = undefined4 __thiscall(STFishC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STGameObjC_46d24fa0 = undefined4 __thiscall(STGameObjC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STJellyGunC_dde4fe92 = undefined4 __thiscall(STJellyGunC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STJellyManC_abd8ffc1 = undefined4 __thiscall(STJellyManC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STLBombC_901c808c = undefined4 __thiscall(STLBombC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STMBombC_296fd071 = undefined4 __thiscall(STMBombC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STMineSetC_f31c6141 = undefined4 __thiscall(STMineSetC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STOctopusC_0022bc1c = undefined4 __thiscall(STOctopusC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STRubbishC_db886864 = undefined4 __thiscall(STRubbishC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STSatC_ff28988f = undefined4 __thiscall(STSatC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STSharkC_f5b0043a = undefined4 __thiscall(STSharkC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_STTorpC_785b4de4 = undefined4 __thiscall(STTorpC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_TLOFakeTy_58e7085a = undefined4 __thiscall(TLOFakeTy *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DB0_FUN_00419db0_for_void_853e3e83 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
 using STFnType_icall_00419DB0_FUN_00419db0_stdcall_e77b5413 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00419DD0_FUN_00419dd0_for_STColl3C_7494490f = undefined4 __thiscall(STColl3C *st_this);
+using STFnType_icall_00419DD0_FUN_00419dd0_for_STExplosion_da179e69 = undefined4 __thiscall(STExplosion *st_this);
+using STFnType_icall_00419DD0_FUN_00419dd0_for_STGameObjC_a57034af = undefined4 __thiscall(STGameObjC *st_this);
+using STFnType_icall_00419DD0_FUN_00419dd0_for_STRubbishC_3fda9c46 = undefined4 __thiscall(STRubbishC *st_this);
+using STFnType_icall_00419DD0_FUN_00419dd0_for_STTorpC_b28a71de = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_icall_00419DD0_FUN_00419dd0_for_TLOFakeTy_b65b841b = undefined4 __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_00419DD0_FUN_00419dd0_for_void_e0a378ac = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STColl3C_4a72a338 = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STCrabC_81ba4f5a = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STExplosion_57e07d3c = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STFishC_b65a34ad = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STGameObjC_92925319 = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STJellyGunC_2962b99d = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STJellyManC_0b09a8bc = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STLBombC_a6e4455d = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STMBombC_b080a5f9 = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STOctopusC_42536486 = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STRubbishC_9d07c893 = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STSatC_4e5ec504 = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STSharkC_29b0ca72 = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_STTorpC_27e1af83 = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_TLOFakeTy_2c2490be = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB60_FUN_0041ab60_for_void_35bbf756 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041AB60_FUN_0041ab60_stdcall_f90a3518 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STColl3C_3557bd98 = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STCrabC_f670ca7b = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STExplosion_1c28e816 = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STFishC_713bc7bc = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STGameObjC_d303fca3 = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STJellyGunC_b808acb4 = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STJellyManC_7d620abf = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STLBombC_a44654fc = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STMBombC_72945364 = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STOctopusC_b218120d = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STRubbishC_c9011e86 = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STSatC_f85d4c8c = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STSharkC_12619615 = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_STTorpC_971941b6 = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_TLOFakeTy_b8eec9f9 = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AB90_FUN_0041ab90_for_void_f51525bb = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041AB90_FUN_0041ab90_stdcall_8beea772 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STArtiafactC_ef60572d = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STBoatC_047768f6 = undefined4 __thiscall(STBoatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STColl3C_010d0ddb = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STContainerC_56320eb1 = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STCrabC_2540047e = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STDcResourcC_b2e9c044 = undefined4 __thiscall(STDcResourcC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STDestC_9a09895e = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STExplosion_5aecb3d7 = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STFishC_6dbb992d = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STGameObjC_0a0efbec = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STJellyGunC_e8a3bdbb = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STJellyManC_36a39c95 = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STLBombC_34d7d1c9 = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STMBombC_7c6c3aa1 = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STMineSetC_377a8260 = undefined4 __thiscall(STMineSetC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STOctopusC_1d2d43fb = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STRubbishC_e130f455 = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STSatC_4e701332 = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STSharkC_e37e7eff = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STSprGameObjC_f7de8235 = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_STTorpC_74436bc1 = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_TLOEmbryoTy_f85ade26 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_TLOFakeTy_d56d8a63 = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABC0_FUN_0041abc0_for_void_a8364d0e = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041ABC0_FUN_0041abc0_stdcall_bb3a49cf = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STArtiafactC_7b465db0 = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STBoatC_f6e2f1b3 = undefined4 __thiscall(STBoatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STColl3C_4ed10455 = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STContainerC_a2777627 = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STCrabC_f70cf854 = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STDcResourcC_08df5746 = undefined4 __thiscall(STDcResourcC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STDestC_5fe7acb1 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STExplosion_c0ca9467 = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STFishC_88eb7a73 = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STGameObjC_66d20449 = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STJellyGunC_b68e4add = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STJellyManC_2385d988 = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STLBombC_cb950549 = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STMBombC_67cf8f4e = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STMineSetC_9d9577b2 = undefined4 __thiscall(STMineSetC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STOctopusC_bed1d389 = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STRubbishC_924f6185 = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STSatC_b37cb2b4 = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STSharkC_faeb520a = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STSprGameObjC_b9b3ac72 = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_STTorpC_e8a50e16 = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_TLOEmbryoTy_a9a423cf = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_TLOFakeTy_befdc2eb = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ABF0_FUN_0041abf0_for_void_f42ce0ef = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041ABF0_FUN_0041abf0_stdcall_cabf325e = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STArtiafactC_45cd5d25 = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STColl3C_c12baa0e = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STContainerC_c1f44d84 = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STCrabC_09a4e18c = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STDcResourcC_fcd17b0d = undefined4 __thiscall(STDcResourcC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STDestC_d0e96d40 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STExplosion_bf104951 = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STFishC_2c0ccded = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STGameObjC_18a5e4e2 = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STJellyGunC_dfd548c2 = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STJellyManC_59cc54f0 = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STLBombC_e57af7bf = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STMBombC_07d1f2d1 = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STMineSetC_d05744a1 = undefined4 __thiscall(STMineSetC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STOctopusC_4ce4e26f = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STRubbishC_5d923620 = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STSatC_9fa8ae4f = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STSharkC_cde7d7ce = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STSprGameObjC_f52685ab = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_STTorpC_82afa497 = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_TLOBaseTy_fba529ca = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_TLOEmbryoTy_9220a492 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_TLOFakeTy_1ee0ee9f = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC40_FUN_0041ac40_for_void_09d32dd3 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041AC40_FUN_0041ac40_stdcall_23983a84 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STArtiafactC_194adf37 = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STBoatC_0031c5b5 = undefined4 __thiscall(STBoatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STColl3C_2e0dce9a = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STContainerC_50ad2378 = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STCrabC_6a208503 = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STDcResourcC_e57bd1e0 = undefined4 __thiscall(STDcResourcC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STDestC_6282147e = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STExplosion_d79776c0 = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STFishC_429d1f9b = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STGameObjC_b28417c5 = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STJellyGunC_d80bb684 = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STJellyManC_7b76f457 = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STLBombC_2addc8ab = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STMBombC_64a65192 = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STMineSetC_d99b152c = undefined4 __thiscall(STMineSetC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STOctopusC_b6891165 = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STRubbishC_aa928b85 = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STSatC_357ff7e9 = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STSharkC_ce001b27 = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STSprGameObjC_eb0b17bf = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_STTorpC_aaf6d519 = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_TLOEmbryoTy_418664dc = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_TLOFakeTy_35bf2be4 = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AC90_FUN_0041ac90_for_void_b8bd2b8d = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041AC90_FUN_0041ac90_stdcall_a2451f7e = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STArtiafactC_30d0d323 = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STBoatC_8de6d035 = undefined4 __thiscall(STBoatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STColl3C_acdcd2c9 = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STContainerC_ec5daedf = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STCrabC_78c71266 = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STDcResourcC_89e47406 = undefined4 __thiscall(STDcResourcC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STDestC_e0ff2528 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STExplosion_27f0d328 = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STFishC_1c091ca5 = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STGameObjC_aad5434d = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STJellyGunC_242d9002 = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STJellyManC_dd56f15c = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STLBombC_4acf17d8 = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STMBombC_ce181a88 = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STMineSetC_0a80a080 = undefined4 __thiscall(STMineSetC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STOctopusC_e912e3fc = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STRubbishC_361aead2 = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STSatC_24d4eb67 = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STSharkC_85d6d9f2 = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STSprGameObjC_9baa5b2d = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_STTorpC_163e3a2c = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_TLOEmbryoTy_c0b124c3 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_TLOFakeTy_d77dc3d9 = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACC0_FUN_0041acc0_for_void_1b1308b8 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041ACC0_FUN_0041acc0_stdcall_cde87490 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STArtiafactC_1de517c5 = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STColl3C_6c5a4ad8 = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STContainerC_5c830f73 = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STCrabC_0a032e6d = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STDcResourcC_bb4d3fd5 = undefined4 __thiscall(STDcResourcC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STDestC_eda8752d = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STExplosion_48fccfa5 = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STFishC_81cbb5cd = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STGameObjC_496a130d = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STJellyGunC_97818c5a = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STJellyManC_7ee73dc0 = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STLBombC_caa06b9b = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STMBombC_e61e4c96 = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STMineSetC_8afd9b0f = undefined4 __thiscall(STMineSetC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STOctopusC_1a1ea993 = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STRubbishC_c9b4224d = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STSatC_6542cc06 = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STSharkC_59152c94 = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STSprGameObjC_1fa03896 = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_STTorpC_c9c528f5 = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_TLOBaseTy_e57d589d = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_TLOEmbryoTy_b872169d = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_TLOFakeTy_2eb08d12 = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ACF0_FUN_0041acf0_for_void_a8265038 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041ACF0_FUN_0041acf0_stdcall_e8a44c6b = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STArtiafactC_7465018d = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STBoatC_c0319223 = undefined4 __thiscall(STBoatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STColl3C_52c3101c = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STContainerC_4a553a01 = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STCrabC_23d2eb68 = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STDcResourcC_25fee2a5 = undefined4 __thiscall(STDcResourcC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STDestC_266c0a94 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STExplosion_30d0d7ea = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STFishC_cea962e1 = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STGameObjC_48527e4d = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STJellyGunC_b96d71c3 = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STJellyManC_23c2110b = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STLBombC_5282fdd6 = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STMBombC_2a45ae9b = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STMineSetC_9f51f539 = undefined4 __thiscall(STMineSetC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STOctopusC_0a6beaff = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STRubbishC_95d1b70d = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STSatC_98672ff1 = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STSharkC_48d07ab5 = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STSprGameObjC_07a1b400 = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_STTorpC_254ccb56 = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_TLOEmbryoTy_7d494acd = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_TLOFakeTy_7ba0d291 = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD20_FUN_0041ad20_for_void_8583e498 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041AD20_FUN_0041ad20_stdcall_4d612e43 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STArtiafactC_67cbdab2 = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STBoatC_22298cfc = undefined4 __thiscall(STBoatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STColl3C_aa2adfa1 = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STContainerC_27052e2e = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STCrabC_073fa6a1 = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STDcResourcC_a043ca5e = undefined4 __thiscall(STDcResourcC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STDestC_2c3506f1 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STExplosion_d3084a98 = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STFishC_edc39ed7 = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STGameObjC_0c019c46 = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STJellyGunC_b9b11606 = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STJellyManC_cb688448 = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STLBombC_f32e262c = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STMBombC_bb30859f = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STMineSetC_9066a223 = undefined4 __thiscall(STMineSetC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STOctopusC_531bf98d = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STRubbishC_1d5bca23 = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STSatC_6ae77257 = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STSharkC_c0aca7c7 = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STSprGameObjC_5cc2c309 = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_STTorpC_d96a545f = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_TLOBaseTy_8bbed775 = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_TLOEmbryoTy_ba9e2381 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_TLOFakeTy_142f47b8 = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD50_FUN_0041ad50_for_void_4d5043e7 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041AD50_FUN_0041ad50_stdcall_2927dbcc = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STColl3C_6f849a97 = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STCrabC_a8aeb896 = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STDestC_627caf06 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STExplosion_4446117c = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STFishC_9c36de15 = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STGameObjC_cd71f464 = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STJellyGunC_aa8102bd = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STJellyManC_431bc3ed = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STLBombC_ad555f63 = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STMBombC_8b505e4b = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STOctopusC_ec88533d = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STRubbishC_5e77b7f6 = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STSatC_a05123f0 = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STSharkC_05d491d9 = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_STTorpC_e5022792 = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_TLOBaseTy_37d6b2f6 = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_TLOEmbryoTy_02576509 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_TLOFakeTy_e9b74233 = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AD80_FUN_0041ad80_for_void_d5af319c = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041AD80_FUN_0041ad80_stdcall_e0794816 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STBoatC_719aa26b = undefined4 __thiscall(STBoatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STColl3C_38ca1e4c = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STCrabC_8008ee7f = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STDestC_b2b01b70 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STExplosion_f4b3c030 = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STFishC_5a98f226 = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STGameObjC_9a71bfc9 = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STJellyGunC_2d83db5e = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STJellyManC_a6029e27 = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STLBombC_f3057b2d = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STMBombC_1d38b126 = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STOctopusC_91446d9c = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STRubbishC_51967ce4 = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STSatC_939c97e1 = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STSharkC_44109bf4 = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_STTorpC_f6a4cc59 = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_TLOEmbryoTy_6ca5416a = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_TLOFakeTy_0a00f585 = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADB0_FUN_0041adb0_for_void_96d5ebb4 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041ADB0_FUN_0041adb0_stdcall_afc8e808 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STArtiafactC_7618d738 = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STColl3C_3112bf38 = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STContainerC_1ce8035c = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STCrabC_1ec11e38 = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STDcResourcC_113b9b6e = undefined4 __thiscall(STDcResourcC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STDestC_564b6910 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STExplosion_58635c9c = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STFishC_3e3f9606 = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STGameObjC_70b94cb9 = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STJellyGunC_0db69e44 = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STJellyManC_7390c83b = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STLBombC_84856e8d = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STMBombC_16b4e684 = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STMineSetC_fc1c10b7 = undefined4 __thiscall(STMineSetC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STOctopusC_b4d06c7e = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STRubbishC_121a68de = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STSatC_0ffc10a1 = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STSharkC_dcaeead7 = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STSprGameObjC_396ec3f5 = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_STTorpC_f3077dad = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_TLOBaseTy_3d7db543 = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_TLOEmbryoTy_27926ad0 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_TLOFakeTy_0a1af44b = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041ADE0_FUN_0041ade0_for_void_a8d281ad = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041ADE0_FUN_0041ade0_stdcall_d5d0f847 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STArtiafactC_a3579fcf = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STBoatC_1466cac8 = undefined4 __thiscall(STBoatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STColl3C_b7905913 = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STContainerC_f8a5a8aa = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STCrabC_97194a0b = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STDcResourcC_34fe5b91 = undefined4 __thiscall(STDcResourcC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STDestC_354bb9c5 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STExplosion_4d9d939e = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STFishC_6a010aed = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STGameObjC_ef70235a = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STJellyGunC_12345ab7 = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STJellyManC_fdfaf0b0 = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STLBombC_6fb9609d = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STMBombC_5879c194 = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STOctopusC_8becc7c6 = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STRubbishC_88daf326 = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STSatC_c1f1e54d = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STSharkC_274f0b4a = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STSprGameObjC_70dbcd69 = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_STTorpC_5772fbe9 = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_TLOBaseTy_f99b547e = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_TLOEmbryoTy_22861c94 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_TLOFakeTy_5f3d6101 = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AE10_FUN_0041ae10_for_void_3ef97959 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041AE10_FUN_0041ae10_stdcall_87aae9eb = undefined4 __stdcall(undefined2 arg_1);
 using STFnType_icall_0041AE40_FUN_0041ae40_for_STArtiafactC_fff6da7c = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
 using STFnType_icall_0041AE40_FUN_0041ae40_for_STColl3C_7f86d14f = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
@@ -4128,12 +4599,180 @@ using STFnType_icall_0041AE80_FUN_0041ae80_for_STTorpC_93479a3b = undefined4 __t
 using STFnType_icall_0041AE80_FUN_0041ae80_for_TLOEmbryoTy_cd67c3ef = undefined4 __thiscall(TLOEmbryoTy *st_this);
 using STFnType_icall_0041AE80_FUN_0041ae80_for_TLOFakeTy_d1474882 = undefined4 __thiscall(TLOFakeTy *st_this);
 using STFnType_icall_0041AE80_FUN_0041ae80_for_void_aed536e2 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STColl3C_2774b8c6 = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STCrabC_9bfe21a1 = undefined4 __thiscall(STCrabC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STDcResourcC_f2d3910f = undefined4 __thiscall(STDcResourcC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STExplosion_3561c2ca = undefined4 __thiscall(STExplosion *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STFishC_03ea23a6 = undefined4 __thiscall(STFishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STGameObjC_0742e9eb = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STJellyGunC_d887717a = undefined4 __thiscall(STJellyGunC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STJellyManC_0c339ae3 = undefined4 __thiscall(STJellyManC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STLBombC_8b58fd5c = undefined4 __thiscall(STLBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STMBombC_7de5cc37 = undefined4 __thiscall(STMBombC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STOctopusC_a4c2d0d9 = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STRubbishC_8bdea5dd = undefined4 __thiscall(STRubbishC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STSatC_a24aaa1f = undefined4 __thiscall(STSatC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STSharkC_e3d8d67d = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STSprGameObjC_7c4ebaa6 = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_STTorpC_b5a285bd = undefined4 __thiscall(STTorpC *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_TLOEmbryoTy_a66fae8d = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_TLOFakeTy_27c4c063 = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1);
+using STFnType_icall_0041AEA0_FUN_0041aea0_for_void_717a717d = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0041AEA0_FUN_0041aea0_stdcall_d19c5aba = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STColl3C_1de22685 = void __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STCrabC_3b87f6f1 = void __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STDcResourcC_7398194d = void __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STExplosion_1683e11e = void __thiscall(STExplosion *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STFishC_7e98ad5b = void __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STGameObjC_1907703f = void __thiscall(STGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STJellyGunC_24311808 = void __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STJellyManC_6fe3718e = void __thiscall(STJellyManC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STLBombC_3a3437fb = void __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STMBombC_25a7da5a = void __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STOctopusC_c8ee2d9e = void __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STRubbishC_22966819 = void __thiscall(STRubbishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STSatC_eff4eb0f = void __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STSharkC_3e0c52db = void __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STSprGameObjC_ff1bc05d = void __thiscall(STSprGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_STTorpC_25e349c4 = void __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_TLOEmbryoTy_0299b1a4 = void __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_TLOFakeTy_de62f45d = void __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041AEC0_FUN_0041aec0_for_void_5e6ba3d3 = void __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0041AEC0_FUN_0041aec0_stdcall_67c692f2 = void __stdcall(undefined4 arg_1);
 using STFnType_icall_0041AF40_GetMessage_a8d4792e = undefined4 __thiscall(STGameObjC *st_this, AnonShape_0041AF40_F59F8577 *param_1);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STCrabC_7e81044a = undefined4 __thiscall(STCrabC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STDcResourcC_f764c98e = undefined4 __thiscall(STDcResourcC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STDestC_209b381a = undefined4 __thiscall(STDestC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STExplosion_bc5b2398 = undefined4 __thiscall(STExplosion *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STFishC_78f64a87 = undefined4 __thiscall(STFishC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STGameObjC_a9d23475 = undefined4 __thiscall(STGameObjC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STJellyGunC_3f2623f8 = undefined4 __thiscall(STJellyGunC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STJellyManC_08bf169a = undefined4 __thiscall(STJellyManC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STLBombC_9517314c = undefined4 __thiscall(STLBombC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STMBombC_e216a7ac = undefined4 __thiscall(STMBombC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STMineSetC_a82a1062 = undefined4 __thiscall(STMineSetC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STOctopusC_d37e2538 = undefined4 __thiscall(STOctopusC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STRubbishC_54ff87ff = undefined4 __thiscall(STRubbishC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STSatC_425416e7 = undefined4 __thiscall(STSatC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STSharkC_deb5a699 = undefined4 __thiscall(STSharkC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_STTorpC_afcb3aee = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_TLOEmbryoTy_869090d5 = undefined4 __thiscall(TLOEmbryoTy *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_TLOFakeTy_c360f64d = undefined4 __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_0041C2C0_FUN_0041c2c0_for_void_f2577ba3 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STCrabC_42c23d45 = undefined4 __thiscall(STCrabC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STDcResourcC_2fc88837 = undefined4 __thiscall(STDcResourcC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STDestC_2f91bc4a = undefined4 __thiscall(STDestC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STExplosion_a35b7589 = undefined4 __thiscall(STExplosion *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STFishC_08b2cc59 = undefined4 __thiscall(STFishC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STGameObjC_88f1d42c = undefined4 __thiscall(STGameObjC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STJellyGunC_c70f8ecf = undefined4 __thiscall(STJellyGunC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STJellyManC_90ad5b2f = undefined4 __thiscall(STJellyManC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STLBombC_cc108b9c = undefined4 __thiscall(STLBombC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STMBombC_ff78ee96 = undefined4 __thiscall(STMBombC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STOctopusC_1f75b498 = undefined4 __thiscall(STOctopusC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STRubbishC_c94704d8 = undefined4 __thiscall(STRubbishC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STSatC_85bcab99 = undefined4 __thiscall(STSatC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STSharkC_30bfd18b = undefined4 __thiscall(STSharkC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_STTorpC_46b6019c = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_TLOFakeTy_76c6348e = undefined4 __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_0041C2E0_FUN_0041c2e0_for_void_5cd7f09e = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0041C300_FUN_0041c300_for_STArtiafactC_3822921d = void __thiscall(STArtiafactC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STColl3C_a2b80f9f = void __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STContainerC_f3aaf403 = void __thiscall(STContainerC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STCrabC_3f05caed = void __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STDcResourcC_8b17f227 = void __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STDestC_3de31c9a = void __thiscall(STDestC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STExplosion_13aaac3e = void __thiscall(STExplosion *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STFishC_770bfb3a = void __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STGameObjC_40477d56 = void __thiscall(STGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STJellyGunC_d9c2badc = void __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STJellyManC_93fbfe80 = void __thiscall(STJellyManC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STLBombC_57309f70 = void __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STMBombC_566bafeb = void __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STMineSetC_fbed5b40 = void __thiscall(STMineSetC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STOctopusC_e24ad031 = void __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STRubbishC_60725770 = void __thiscall(STRubbishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STSatC_5abebb57 = void __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STSharkC_6ecc96de = void __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STSprGameObjC_8ddc23e9 = void __thiscall(STSprGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_STTorpC_807e8b98 = void __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_TLOEmbryoTy_22a71824 = void __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_TLOFakeTy_adbac25d = void __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041C300_FUN_0041c300_for_void_9c4f3882 = void __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0041C300_FUN_0041c300_stdcall_f79f77d4 = void __stdcall(undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STArtiafactC_2c85ea2c = void __thiscall(STArtiafactC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STColl3C_a80703f5 = void __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STContainerC_1543687c = void __thiscall(STContainerC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STCrabC_0c3d97e2 = void __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STDcResourcC_3541dbef = void __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STDestC_f44536a7 = void __thiscall(STDestC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STExplosion_59cb3e29 = void __thiscall(STExplosion *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STFishC_598dcf94 = void __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STGameObjC_0527a980 = void __thiscall(STGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STJellyGunC_aaf2fd5d = void __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STJellyManC_8cc4fe72 = void __thiscall(STJellyManC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STLBombC_6a8ef071 = void __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STMBombC_ba3214f7 = void __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STMineSetC_8bc08e07 = void __thiscall(STMineSetC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STOctopusC_133012c4 = void __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STRubbishC_bc35c2cb = void __thiscall(STRubbishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STSatC_238fe5a7 = void __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STSharkC_b6fcfddf = void __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STSprGameObjC_3248124c = void __thiscall(STSprGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_STTorpC_6e96642d = void __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_TLOEmbryoTy_a3410688 = void __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_TLOFakeTy_2c8dd92b = void __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041C320_FUN_0041c320_for_void_60e60e93 = void __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0041C320_FUN_0041c320_stdcall_45a9c050 = void __stdcall(undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STArtiafactC_78c7bf87 = undefined4 __thiscall(STArtiafactC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STBoatC_1dcdf822 = undefined4 __thiscall(STBoatC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STColl3C_e8ab1249 = undefined4 __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STContainerC_d0a3feac = undefined4 __thiscall(STContainerC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STCrabC_2044eec7 = undefined4 __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STDcResourcC_44826b85 = undefined4 __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STDestC_8338242a = undefined4 __thiscall(STDestC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STExplosion_26d126d3 = undefined4 __thiscall(STExplosion *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STFishC_1ee4f424 = undefined4 __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STGameObjC_c24fabfd = undefined4 __thiscall(STGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STJellyGunC_43548a4e = undefined4 __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STJellyManC_1ff589c6 = undefined4 __thiscall(STJellyManC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STLBombC_a234e51c = undefined4 __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STMBombC_ef4f4a5d = undefined4 __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STMineSetC_be022ff0 = undefined4 __thiscall(STMineSetC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STOctopusC_17cbd50f = undefined4 __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STRubbishC_3fb91503 = undefined4 __thiscall(STRubbishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STSatC_341f9810 = undefined4 __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STSharkC_adeced2e = undefined4 __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STSprGameObjC_2252c3df = undefined4 __thiscall(STSprGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_STTorpC_0ec834d9 = undefined4 __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_TLOEmbryoTy_84535375 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_TLOFakeTy_7f5266d3 = undefined4 __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041C340_FUN_0041c340_for_void_aaae5b9d = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0041C340_FUN_0041c340_stdcall_00f3d08a = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0041C360_FUN_0041c360_for_STArtiafactC_506e1bfa = void __thiscall(STArtiafactC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STColl3C_82524146 = void __thiscall(STColl3C *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STContainerC_dcc4cb3c = void __thiscall(STContainerC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STCrabC_4e92cb80 = void __thiscall(STCrabC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STDcResourcC_4bd8b057 = void __thiscall(STDcResourcC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STDestC_178a48f7 = void __thiscall(STDestC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STExplosion_74a38d0f = void __thiscall(STExplosion *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STFishC_b85ebd75 = void __thiscall(STFishC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STGameObjC_4f621ae6 = void __thiscall(STGameObjC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STJellyGunC_a5b17a80 = void __thiscall(STJellyGunC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STJellyManC_8e1a051a = void __thiscall(STJellyManC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STLBombC_9982c66d = void __thiscall(STLBombC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STMBombC_629115ab = void __thiscall(STMBombC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STMineSetC_f6c9206a = void __thiscall(STMineSetC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STOctopusC_df7cba64 = void __thiscall(STOctopusC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STRubbishC_eadd974f = void __thiscall(STRubbishC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STSatC_9534feda = void __thiscall(STSatC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STSharkC_a1361a21 = void __thiscall(STSharkC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STSprGameObjC_7c1e3f10 = void __thiscall(STSprGameObjC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_STTorpC_8c115d30 = void __thiscall(STTorpC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_TLOBaseTy_d4bf4e4e = void __thiscall(TLOBaseTy *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_TLOEmbryoTy_56923149 = void __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_TLOFakeTy_7dfb9609 = void __thiscall(TLOFakeTy *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0041C360_FUN_0041c360_for_void_b0df5b91 = void __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0041C360_FUN_0041c360_stdcall_db8bf6ba = void __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0041C380_FUN_0041c380_for_STArtiafactC_76e3b3f5 = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0041C380_FUN_0041c380_for_STBoatC_14fbc944 = undefined4 __thiscall(STBoatC *st_this, undefined2 arg_1, undefined2 arg_2);
@@ -4160,9 +4799,183 @@ using STFnType_icall_0041C380_FUN_0041c380_for_TLOBaseTy_de88f7b8 = undefined4 _
 using STFnType_icall_0041C380_FUN_0041c380_for_TLOEmbryoTy_e70bbdc3 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0041C380_FUN_0041c380_for_TLOFakeTy_0d17caab = undefined4 __thiscall(TLOFakeTy *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0041C380_FUN_0041c380_for_void_04566710 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STArtiafactC_d77deb78 = void __thiscall(STArtiafactC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STColl3C_32a89abd = void __thiscall(STColl3C *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STContainerC_4a5ea07e = void __thiscall(STContainerC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STCrabC_0ec2f5b0 = void __thiscall(STCrabC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STDcResourcC_29dd1a13 = void __thiscall(STDcResourcC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STDestC_07272875 = void __thiscall(STDestC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STExplosion_3f1de81c = void __thiscall(STExplosion *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STFishC_34313a2d = void __thiscall(STFishC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STGameObjC_cb80084d = void __thiscall(STGameObjC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STJellyGunC_ce52037a = void __thiscall(STJellyGunC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STJellyManC_ddf5d5d7 = void __thiscall(STJellyManC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STLBombC_84bd256f = void __thiscall(STLBombC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STMBombC_671784b9 = void __thiscall(STMBombC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STMineSetC_e014038f = void __thiscall(STMineSetC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STOctopusC_1d502c1e = void __thiscall(STOctopusC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STRubbishC_93f1d096 = void __thiscall(STRubbishC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STSatC_da5f42d4 = void __thiscall(STSatC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STSharkC_13b3f487 = void __thiscall(STSharkC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STSprGameObjC_44c9fdf1 = void __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_STTorpC_958bf7d5 = void __thiscall(STTorpC *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_TLOBaseTy_b0cf9e00 = void __thiscall(TLOBaseTy *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_TLOEmbryoTy_dc4270e9 = void __thiscall(TLOEmbryoTy *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_TLOFakeTy_9b6cf8de = void __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_0041D5E0_FUN_0041d5e0_for_void_3aa6d2b6 = void __thiscall(void *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STArtiafactC_589376bc = void __thiscall(STArtiafactC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STColl3C_b151ab48 = void __thiscall(STColl3C *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STContainerC_abf11324 = void __thiscall(STContainerC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STCrabC_5a79864d = void __thiscall(STCrabC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STDcResourcC_0d9b41e6 = void __thiscall(STDcResourcC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STDestC_36ef4a93 = void __thiscall(STDestC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STExplosion_f056233f = void __thiscall(STExplosion *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STFishC_c7169878 = void __thiscall(STFishC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STGameObjC_d7c7fbca = void __thiscall(STGameObjC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STJellyGunC_f810b8b7 = void __thiscall(STJellyGunC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STJellyManC_2794ca19 = void __thiscall(STJellyManC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STLBombC_efb557f5 = void __thiscall(STLBombC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STMBombC_bd29cdd6 = void __thiscall(STMBombC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STMineSetC_6130accb = void __thiscall(STMineSetC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STOctopusC_16feb693 = void __thiscall(STOctopusC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STRubbishC_da5e3716 = void __thiscall(STRubbishC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STSatC_9b5dc4ed = void __thiscall(STSatC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STSharkC_4472f02c = void __thiscall(STSharkC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STSprGameObjC_6b427e17 = void __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_STTorpC_f0250140 = void __thiscall(STTorpC *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_TLOBaseTy_660426ad = void __thiscall(TLOBaseTy *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_TLOEmbryoTy_359fffa2 = void __thiscall(TLOEmbryoTy *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_TLOFakeTy_2f9d3b2b = void __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_0041D600_FUN_0041d600_for_void_01f57e8e = void __thiscall(void *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STColl3C_dc77f54f = void __thiscall(STColl3C *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STCrabC_732c881d = void __thiscall(STCrabC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STDcResourcC_9d6df6f2 = void __thiscall(STDcResourcC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STDestC_0493a7b2 = void __thiscall(STDestC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STExplosion_883a5860 = void __thiscall(STExplosion *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STFishC_f4a24d80 = void __thiscall(STFishC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STGameObjC_4df174ed = void __thiscall(STGameObjC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STJellyGunC_fb5f66fb = void __thiscall(STJellyGunC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STJellyManC_4939a4f2 = void __thiscall(STJellyManC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STLBombC_b3e90d41 = void __thiscall(STLBombC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STMBombC_49759f65 = void __thiscall(STMBombC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STMineSetC_947a5166 = void __thiscall(STMineSetC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STOctopusC_4e263a85 = void __thiscall(STOctopusC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STRubbishC_41f544e1 = void __thiscall(STRubbishC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STSatC_4910876d = void __thiscall(STSatC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STSharkC_cce612ff = void __thiscall(STSharkC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_STTorpC_7f8cc3ee = void __thiscall(STTorpC *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_TLOBaseTy_a0d75e90 = void __thiscall(TLOBaseTy *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_TLOEmbryoTy_10c4b3c3 = void __thiscall(TLOEmbryoTy *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_TLOFakeTy_0a5ddaf4 = void __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_0041D760_FUN_0041d760_for_void_3f0197ed = void __thiscall(void *st_this);
+using STFnType_icall_0041D780_FUN_0041d780_for_STColl3C_47474e3d = void __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STCrabC_4632ae91 = void __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STDcResourcC_3667f839 = void __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STDestC_78cfa376 = void __thiscall(STDestC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STExplosion_65a132b9 = void __thiscall(STExplosion *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STFishC_93a5c17d = void __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STGameObjC_e00b1c1a = void __thiscall(STGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STJellyGunC_520133fd = void __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STJellyManC_c5d0d61c = void __thiscall(STJellyManC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STLBombC_eebc7711 = void __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STMBombC_523741d0 = void __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STMineSetC_b31928d6 = void __thiscall(STMineSetC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STOctopusC_b51f683f = void __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STRubbishC_31b1aed4 = void __thiscall(STRubbishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STSatC_fce2be26 = void __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STSharkC_9596f8e1 = void __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_STTorpC_dc07f6a7 = void __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_TLOBaseTy_c7860202 = void __thiscall(TLOBaseTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_TLOEmbryoTy_de61edfc = void __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_TLOFakeTy_9da21f2d = void __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041D780_FUN_0041d780_for_void_24ff4773 = void __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0041D780_FUN_0041d780_stdcall_a4716901 = void __stdcall(undefined4 arg_1);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STColl3C_66d22efa = undefined4 __thiscall(STColl3C *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STCrabC_0f4484e8 = undefined4 __thiscall(STCrabC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STDcResourcC_b2cb3612 = undefined4 __thiscall(STDcResourcC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STDestC_aea3b1c3 = undefined4 __thiscall(STDestC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STExplosion_361c1250 = undefined4 __thiscall(STExplosion *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STFishC_0a1c76d6 = undefined4 __thiscall(STFishC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STGameObjC_f1d09a5f = undefined4 __thiscall(STGameObjC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STJellyGunC_92a1435e = undefined4 __thiscall(STJellyGunC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STJellyManC_c48d5780 = undefined4 __thiscall(STJellyManC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STLBombC_ec259c0a = undefined4 __thiscall(STLBombC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STMBombC_5a9e3c77 = undefined4 __thiscall(STMBombC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STMineSetC_23251a93 = undefined4 __thiscall(STMineSetC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STOctopusC_a037ac4c = undefined4 __thiscall(STOctopusC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STRubbishC_6a6985e5 = undefined4 __thiscall(STRubbishC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STSatC_2d6d74b0 = undefined4 __thiscall(STSatC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STSharkC_0273cdc3 = undefined4 __thiscall(STSharkC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_STTorpC_458ef3c6 = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_TLOBaseTy_0d78a161 = undefined4 __thiscall(TLOBaseTy *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_TLOEmbryoTy_24a04e32 = undefined4 __thiscall(TLOEmbryoTy *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_TLOFakeTy_ac44dbf8 = undefined4 __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_0041D7A0_FUN_0041d7a0_for_void_50cc8eac = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STColl3C_7c399f60 = undefined4 __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STCrabC_9f8731e3 = undefined4 __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STDcResourcC_d2e66d96 = undefined4 __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STDestC_9d6f280b = undefined4 __thiscall(STDestC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STExplosion_a2ad4f75 = undefined4 __thiscall(STExplosion *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STFishC_d0517c3d = undefined4 __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STGameObjC_e3707c96 = undefined4 __thiscall(STGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STJellyGunC_b3038f8e = undefined4 __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STJellyManC_dcb6f9f1 = undefined4 __thiscall(STJellyManC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STLBombC_c21f058f = undefined4 __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STMBombC_d5d6d2d3 = undefined4 __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STMineSetC_81f41267 = undefined4 __thiscall(STMineSetC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STOctopusC_ae2da5ac = undefined4 __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STRubbishC_af91b444 = undefined4 __thiscall(STRubbishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STSatC_c9813d78 = undefined4 __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STSharkC_5449a81e = undefined4 __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_STTorpC_fb2da938 = undefined4 __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_TLOBaseTy_c27dbe6b = undefined4 __thiscall(TLOBaseTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_TLOEmbryoTy_73539fff = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_TLOFakeTy_d090c2e5 = undefined4 __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7C0_FUN_0041d7c0_for_void_0da631c4 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0041D7C0_FUN_0041d7c0_stdcall_ca25c450 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STColl3C_acac44fc = undefined4 __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STCrabC_e9040eae = undefined4 __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STDcResourcC_a9e23399 = undefined4 __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STDestC_a33fe0ec = undefined4 __thiscall(STDestC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STExplosion_f5606100 = undefined4 __thiscall(STExplosion *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STFishC_764da441 = undefined4 __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STGameObjC_09ddc1cc = undefined4 __thiscall(STGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STJellyGunC_96df17d7 = undefined4 __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STJellyManC_f1a8c7f9 = undefined4 __thiscall(STJellyManC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STLBombC_6d558988 = undefined4 __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STMBombC_9a61af75 = undefined4 __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STMineSetC_579b21c9 = undefined4 __thiscall(STMineSetC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STOctopusC_4d27d96c = undefined4 __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STRubbishC_9ae98dc9 = undefined4 __thiscall(STRubbishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STSatC_56c5ed2c = undefined4 __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STSharkC_407d04b0 = undefined4 __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_STTorpC_a598a8ac = undefined4 __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_TLOBaseTy_e69de1ec = undefined4 __thiscall(TLOBaseTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_TLOEmbryoTy_0088c91a = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_TLOFakeTy_8e877599 = undefined4 __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041D7E0_FUN_0041d7e0_for_void_6d521435 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0041D7E0_FUN_0041d7e0_stdcall_db447f8b = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0041D800_FUN_0041d800_for_STColl3C_25695412 = void __thiscall(STColl3C *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STCrabC_cc3c6a2e = void __thiscall(STCrabC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STDcResourcC_b0509422 = void __thiscall(STDcResourcC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STDestC_937ae1e5 = void __thiscall(STDestC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STExplosion_f9dcdd45 = void __thiscall(STExplosion *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STFishC_e47c71d7 = void __thiscall(STFishC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STGameObjC_33ce92a4 = void __thiscall(STGameObjC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STJellyGunC_54de6c8f = void __thiscall(STJellyGunC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STJellyManC_800dc360 = void __thiscall(STJellyManC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STLBombC_b5b5ba13 = void __thiscall(STLBombC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STMBombC_c6e176fb = void __thiscall(STMBombC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STMineSetC_17a5c067 = void __thiscall(STMineSetC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STOctopusC_0dc81bf2 = void __thiscall(STOctopusC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STRubbishC_d7954888 = void __thiscall(STRubbishC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STSatC_e830d2df = void __thiscall(STSatC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STSharkC_148ed59a = void __thiscall(STSharkC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_STTorpC_0e08a079 = void __thiscall(STTorpC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_TLOBaseTy_94d87cbe = void __thiscall(TLOBaseTy *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_TLOEmbryoTy_6fe42cd7 = void __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_TLOFakeTy_b0f1e227 = void __thiscall(TLOFakeTy *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_0041D800_FUN_0041d800_for_void_1903b4fc = void __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
 using STFnType_icall_0041D800_FUN_0041d800_stdcall_382b0c1a = void __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
 using STFnType_icall_0041D820_FUN_0041d820_for_STColl3C_91171e3a = undefined4 __thiscall(STColl3C *st_this);
 using STFnType_icall_0041D820_FUN_0041d820_for_STCrabC_d6f32239 = undefined4 __thiscall(STCrabC *st_this);
@@ -4206,6 +5019,51 @@ using STFnType_icall_0041D860_FUN_0041d860_for_TLOBaseTy_066d5902 = undefined4 _
 using STFnType_icall_0041D860_FUN_0041d860_for_TLOEmbryoTy_d2c53190 = undefined4 __thiscall(TLOEmbryoTy *st_this);
 using STFnType_icall_0041D860_FUN_0041d860_for_TLOFakeTy_128f8592 = undefined4 __thiscall(TLOFakeTy *st_this);
 using STFnType_icall_0041D860_FUN_0041d860_for_void_52e7e192 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STColl3C_9be27957 = undefined4 __thiscall(STColl3C *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STCrabC_f9116334 = undefined4 __thiscall(STCrabC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STDcResourcC_10e050f3 = undefined4 __thiscall(STDcResourcC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STDestC_391ed432 = undefined4 __thiscall(STDestC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STExplosion_9148114c = undefined4 __thiscall(STExplosion *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STFishC_5f03fda7 = undefined4 __thiscall(STFishC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STGameObjC_1d12edc0 = undefined4 __thiscall(STGameObjC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STJellyGunC_c13d25b9 = undefined4 __thiscall(STJellyGunC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STJellyManC_0afd6cf6 = undefined4 __thiscall(STJellyManC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STLBombC_f8bbf46c = undefined4 __thiscall(STLBombC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STMBombC_29695b9e = undefined4 __thiscall(STMBombC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STMineSetC_7203ae25 = undefined4 __thiscall(STMineSetC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STOctopusC_0709ab6f = undefined4 __thiscall(STOctopusC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STRubbishC_7df58439 = undefined4 __thiscall(STRubbishC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STSatC_08030c83 = undefined4 __thiscall(STSatC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STSharkC_afc1f694 = undefined4 __thiscall(STSharkC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_STTorpC_b33555db = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_TLOBaseTy_c3997bc8 = undefined4 __thiscall(TLOBaseTy *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_TLOEmbryoTy_bd9e517a = undefined4 __thiscall(TLOEmbryoTy *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_TLOFakeTy_7a810cc8 = undefined4 __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_0041D8A0_FUN_0041d8a0_for_void_ae4b974c = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STArtiafactC_02544054 = undefined4 __thiscall(STArtiafactC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STColl3C_6d26e069 = undefined4 __thiscall(STColl3C *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STContainerC_863fba73 = undefined4 __thiscall(STContainerC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STCrabC_5f437357 = undefined4 __thiscall(STCrabC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STDcResourcC_0f5e898a = undefined4 __thiscall(STDcResourcC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STDestC_f4e74aa0 = undefined4 __thiscall(STDestC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STExplosion_341e9810 = undefined4 __thiscall(STExplosion *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STFishC_03b63b48 = undefined4 __thiscall(STFishC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STGameObjC_360e9f1d = undefined4 __thiscall(STGameObjC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STJellyGunC_8172a2db = undefined4 __thiscall(STJellyGunC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STJellyManC_d00bb279 = undefined4 __thiscall(STJellyManC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STLBombC_8b046905 = undefined4 __thiscall(STLBombC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STMBombC_e65a5087 = undefined4 __thiscall(STMBombC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STMineSetC_f1cf66f3 = undefined4 __thiscall(STMineSetC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STOctopusC_d3a16f68 = undefined4 __thiscall(STOctopusC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STRubbishC_795944fd = undefined4 __thiscall(STRubbishC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STSatC_a7a1cea1 = undefined4 __thiscall(STSatC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STSharkC_34991c12 = undefined4 __thiscall(STSharkC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STSprGameObjC_bcdc8fcc = undefined4 __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_STTorpC_381862fe = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_TLOBaseTy_e1711af2 = undefined4 __thiscall(TLOBaseTy *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_TLOEmbryoTy_496c99ae = undefined4 __thiscall(TLOEmbryoTy *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_TLOFakeTy_b4de1e62 = undefined4 __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_0041D8C0_FUN_0041d8c0_for_void_faabfe7c = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0041DA10_FUN_0041da10_for_STArtiafactC_fd95c94d = undefined4 __thiscall(STArtiafactC *st_this);
 using STFnType_icall_0041DA10_FUN_0041da10_for_STBoatC_0df98b68 = undefined4 __thiscall(STBoatC *st_this);
 using STFnType_icall_0041DA10_FUN_0041da10_for_STColl3C_49df85c1 = undefined4 __thiscall(STColl3C *st_this);
@@ -4246,8 +5104,46 @@ using STFnType_icall_0041DA30_FUN_0041da30_for_TLOBaseTy_28681edb = undefined4 _
 using STFnType_icall_0041DA30_FUN_0041da30_for_TLOEmbryoTy_e5f37bcc = undefined4 __thiscall(TLOEmbryoTy *st_this);
 using STFnType_icall_0041DA30_FUN_0041da30_for_TLOFakeTy_12591e47 = undefined4 __thiscall(TLOFakeTy *st_this);
 using STFnType_icall_0041DA30_FUN_0041da30_for_void_653cc4d2 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0041DBC0_FUN_0041dbc0_for_STDcResourcC_962f7ac5 = undefined4 __thiscall(STDcResourcC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_icall_0041DBC0_FUN_0041dbc0_for_STDestC_88fd91a1 = undefined4 __thiscall(STDestC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_icall_0041DBC0_FUN_0041dbc0_for_STJellyGunC_204ded2c = undefined4 __thiscall(STJellyGunC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_icall_0041DBC0_FUN_0041dbc0_for_STLBombC_a1d250e8 = undefined4 __thiscall(STLBombC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_icall_0041DBC0_FUN_0041dbc0_for_STMBombC_3ce1612d = undefined4 __thiscall(STMBombC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_icall_0041DBC0_FUN_0041dbc0_for_STSatC_e7e2fa73 = undefined4 __thiscall(STSatC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_icall_0041DBC0_FUN_0041dbc0_for_STTorpC_f18e4532 = undefined4 __thiscall(STTorpC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_icall_0041DBC0_FUN_0041dbc0_for_TLOFakeTy_49492fab = undefined4 __thiscall(TLOFakeTy *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_icall_0041DBC0_FUN_0041dbc0_for_void_0523fdda = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
 using STFnType_icall_0041DBC0_FUN_0041dbc0_stdcall_64aaff23 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_icall_0041DBE0_FUN_0041dbe0_for_STDcResourcC_8e8527f1 = undefined4 __thiscall(STDcResourcC *st_this, undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_0041DBE0_FUN_0041dbe0_for_STDestC_dcca11ae = undefined4 __thiscall(STDestC *st_this, undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_0041DBE0_FUN_0041dbe0_for_STJellyGunC_ce18cfd3 = undefined4 __thiscall(STJellyGunC *st_this, undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_0041DBE0_FUN_0041dbe0_for_STLBombC_019c8565 = undefined4 __thiscall(STLBombC *st_this, undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_0041DBE0_FUN_0041dbe0_for_STMBombC_481653e8 = undefined4 __thiscall(STMBombC *st_this, undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_0041DBE0_FUN_0041dbe0_for_STSatC_9edc3714 = undefined4 __thiscall(STSatC *st_this, undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_0041DBE0_FUN_0041dbe0_for_STTorpC_c75333f4 = undefined4 __thiscall(STTorpC *st_this, undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_0041DBE0_FUN_0041dbe0_for_TLOFakeTy_1c76a8eb = undefined4 __thiscall(TLOFakeTy *st_this, undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_0041DBE0_FUN_0041dbe0_for_void_9913626c = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
 using STFnType_icall_0041DBE0_FUN_0041dbe0_stdcall_c5625374 = undefined4 __stdcall(undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STArtiafactC_fd9e99d4 = void __thiscall(STArtiafactC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STColl3C_d8f9311b = void __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STContainerC_7e3ead9e = void __thiscall(STContainerC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STCrabC_cdb9cae0 = void __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STDcResourcC_ddf97cb5 = void __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STDestC_daf96989 = void __thiscall(STDestC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STFishC_13a6acee = void __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STJellyGunC_aecd83d6 = void __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STLBombC_58a0e08e = void __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STMBombC_528fae0b = void __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STMineSetC_a2fb0f8e = void __thiscall(STMineSetC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STOctopusC_ad8ddf27 = void __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STSatC_d8e34620 = void __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STSharkC_ffe0d13f = void __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STSprGameObjC_7fa9a673 = void __thiscall(STSprGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_STTorpC_122df375 = void __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_TLOBaseTy_1ac9cb73 = void __thiscall(TLOBaseTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_TLOEmbryoTy_92c2811d = void __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_TLOFakeTy_c33b13b7 = void __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041DC20_FUN_0041dc20_for_void_ee7315d1 = void __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0041DC20_FUN_0041dc20_stdcall_02449f3a = void __stdcall(undefined4 arg_1);
 using STFnType_icall_0041DD00_FUN_0041dd00_for_STArtiafactC_2ac69012 = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
 using STFnType_icall_0041DD00_FUN_0041dd00_for_STColl3C_eebfd7aa = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1);
@@ -4316,7 +5212,61 @@ using STFnType_icall_0041F330_FUN_0041f330_for_STTorpC_9c38c1e8 = undefined4 __t
 using STFnType_icall_0041F330_FUN_0041f330_for_TLOEmbryoTy_bb791e6e = undefined4 __thiscall(TLOEmbryoTy *st_this);
 using STFnType_icall_0041F330_FUN_0041f330_for_TLOFakeTy_770df6ef = undefined4 __thiscall(TLOFakeTy *st_this);
 using STFnType_icall_0041F330_FUN_0041f330_for_void_878140df = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0041F350_FUN_0041f350_for_STArtiafactC_ef48463b = undefined4 __thiscall(STArtiafactC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STColl3C_2c096dae = undefined4 __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STContainerC_04c6ddd4 = undefined4 __thiscall(STContainerC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STCrabC_a4be88b9 = undefined4 __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STDcResourcC_17c55edb = undefined4 __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STDestC_02768d34 = undefined4 __thiscall(STDestC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STFishC_fd6b4cf1 = undefined4 __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STJellyGunC_6b7b8b0e = undefined4 __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STLBombC_da822783 = undefined4 __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STMBombC_4dc7a4b5 = undefined4 __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STOctopusC_39bfc6a6 = undefined4 __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STSatC_c30a125c = undefined4 __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STSharkC_aff50d02 = undefined4 __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STSprGameObjC_8c0fa1e8 = undefined4 __thiscall(STSprGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_STTorpC_e93f0602 = undefined4 __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_TLOEmbryoTy_0eaa3a15 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_TLOFakeTy_7376616c = undefined4 __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_0041F350_FUN_0041f350_for_void_bc74167b = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0041F350_FUN_0041f350_stdcall_a8f92ed1 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0041F370_FUN_0041f370_for_STCrabC_edad6486 = undefined4 __thiscall(STCrabC *st_this);
+using STFnType_icall_0041F370_FUN_0041f370_for_STDcResourcC_66e0eeca = undefined4 __thiscall(STDcResourcC *st_this);
+using STFnType_icall_0041F370_FUN_0041f370_for_STDestC_2d58b9ed = undefined4 __thiscall(STDestC *st_this);
+using STFnType_icall_0041F370_FUN_0041f370_for_STFishC_61061140 = undefined4 __thiscall(STFishC *st_this);
+using STFnType_icall_0041F370_FUN_0041f370_for_STJellyGunC_741a8ca2 = undefined4 __thiscall(STJellyGunC *st_this);
+using STFnType_icall_0041F370_FUN_0041f370_for_STLBombC_551f8dfe = undefined4 __thiscall(STLBombC *st_this);
+using STFnType_icall_0041F370_FUN_0041f370_for_STMBombC_92f3046d = undefined4 __thiscall(STMBombC *st_this);
+using STFnType_icall_0041F370_FUN_0041f370_for_STOctopusC_44deb566 = undefined4 __thiscall(STOctopusC *st_this);
+using STFnType_icall_0041F370_FUN_0041f370_for_STSatC_e33e95f7 = undefined4 __thiscall(STSatC *st_this);
+using STFnType_icall_0041F370_FUN_0041f370_for_STSharkC_52e8d4ab = undefined4 __thiscall(STSharkC *st_this);
+using STFnType_icall_0041F370_FUN_0041f370_for_STTorpC_a8cc5f01 = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_icall_0041F370_FUN_0041f370_for_void_2c95ca0f = undefined4 __thiscall(void *st_this);
+using STFnType_icall_004210A0_FUN_004210a0_for_STArtiafactC_3bef10c1 = undefined4 __thiscall(STArtiafactC *st_this);
+using STFnType_icall_004210A0_FUN_004210a0_for_STColl3C_c23f25ce = undefined4 __thiscall(STColl3C *st_this);
+using STFnType_icall_004210A0_FUN_004210a0_for_STContainerC_25240747 = undefined4 __thiscall(STContainerC *st_this);
+using STFnType_icall_004210A0_FUN_004210a0_for_TLOEmbryoTy_df065db9 = undefined4 __thiscall(TLOEmbryoTy *st_this);
+using STFnType_icall_004210A0_FUN_004210a0_for_void_14bf7b46 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STArtiafactC_f0ef2822 = undefined4 __thiscall(STArtiafactC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STColl3C_2c193662 = undefined4 __thiscall(STColl3C *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STContainerC_c39cd0ba = undefined4 __thiscall(STContainerC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STCrabC_cd2143ff = undefined4 __thiscall(STCrabC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STDcResourcC_f934dccd = undefined4 __thiscall(STDcResourcC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STDestC_9846af53 = undefined4 __thiscall(STDestC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STFishC_2b3bf6e4 = undefined4 __thiscall(STFishC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STJellyGunC_fc0e7b4d = undefined4 __thiscall(STJellyGunC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STLBombC_74981221 = undefined4 __thiscall(STLBombC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STMBombC_bdb01782 = undefined4 __thiscall(STMBombC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STMineSetC_2364e38e = undefined4 __thiscall(STMineSetC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STOctopusC_3998bcd9 = undefined4 __thiscall(STOctopusC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STSatC_56964491 = undefined4 __thiscall(STSatC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STSharkC_6ec28324 = undefined4 __thiscall(STSharkC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STSprGameObjC_f874798b = undefined4 __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_STTorpC_4cd9cb24 = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_TLOEmbryoTy_a17f54fa = undefined4 __thiscall(TLOEmbryoTy *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_TLOFakeTy_f2143eec = undefined4 __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_004210C0_FUN_004210c0_for_void_c96e70aa = undefined4 __thiscall(void *st_this);
 using STFnType_icall_00422E20_FUN_00422e20_for_STArtiafactC_b7cc07e2 = undefined1 __thiscall(STArtiafactC *st_this, undefined1 arg_1);
 using STFnType_icall_00422E20_FUN_00422e20_for_STBoatC_52d088ce = undefined1 __thiscall(STBoatC *st_this, undefined1 arg_1);
 using STFnType_icall_00422E20_FUN_00422e20_for_STColl3C_9b4b7264 = undefined1 __thiscall(STColl3C *st_this, undefined1 arg_1);
@@ -4359,13 +5309,151 @@ using STFnType_icall_00422FF0_FUN_00422ff0_for_TLOBaseTy_64c266a0 = undefined1 _
 using STFnType_icall_00422FF0_FUN_00422ff0_for_TLOEmbryoTy_bb262980 = undefined1 __thiscall(TLOEmbryoTy *st_this, undefined1 arg_1);
 using STFnType_icall_00422FF0_FUN_00422ff0_for_TLOFakeTy_9f5b281a = undefined1 __thiscall(TLOFakeTy *st_this, undefined1 arg_1);
 using STFnType_icall_00422FF0_FUN_00422ff0_for_void_b0b0f1c2 = undefined1 __thiscall(void *st_this, undefined1 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STArtiafactC_78c2ad73 = undefined4 __thiscall(STArtiafactC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STBoatC_d404d543 = undefined4 __thiscall(STBoatC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STColl3C_7d1a0f82 = undefined4 __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STContainerC_fb79ce1e = undefined4 __thiscall(STContainerC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STCrabC_d15e3f65 = undefined4 __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STDcResourcC_bcfe7e36 = undefined4 __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STDestC_91e436ec = undefined4 __thiscall(STDestC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STFishC_425c78be = undefined4 __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STJellyGunC_54bc1426 = undefined4 __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STLBombC_befed588 = undefined4 __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STMBombC_d7e63578 = undefined4 __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STMineSetC_9ba011c0 = undefined4 __thiscall(STMineSetC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STOctopusC_477d7d26 = undefined4 __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STSatC_1f6a7310 = undefined4 __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STSharkC_421ef35c = undefined4 __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STSprGameObjC_8cc28530 = undefined4 __thiscall(STSprGameObjC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_STTorpC_f654c6a6 = undefined4 __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_TLOEmbryoTy_fade862b = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_TLOFakeTy_08233178 = undefined4 __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_00423140_FUN_00423140_for_void_cb8034cd = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00423140_FUN_00423140_stdcall_107237ee = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00423160_FUN_00423160_for_STArtiafactC_c6c7cd5c = void __thiscall(STArtiafactC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STBoatC_023a7888 = void __thiscall(STBoatC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STColl3C_e8affcce = void __thiscall(STColl3C *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STContainerC_13e7fdda = void __thiscall(STContainerC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STCrabC_10c21a8f = void __thiscall(STCrabC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STDcResourcC_8241d5c2 = void __thiscall(STDcResourcC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STDestC_5f346654 = void __thiscall(STDestC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STFishC_3579be8c = void __thiscall(STFishC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STJellyGunC_b10d6c5f = void __thiscall(STJellyGunC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STLBombC_f5a4c376 = void __thiscall(STLBombC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STMBombC_6c595935 = void __thiscall(STMBombC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STMineSetC_5da041ee = void __thiscall(STMineSetC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STOctopusC_b0a13181 = void __thiscall(STOctopusC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STSatC_f0fd8bac = void __thiscall(STSatC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STSharkC_d2f2691d = void __thiscall(STSharkC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STSprGameObjC_8d52c1ff = void __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_STTorpC_7b03ee2a = void __thiscall(STTorpC *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_TLOEmbryoTy_d99744fa = void __thiscall(TLOEmbryoTy *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_TLOFakeTy_eab12fd9 = void __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_00423160_FUN_00423160_for_void_98c0196b = void __thiscall(void *st_this);
+using STFnType_icall_00423180_FUN_00423180_for_STArtiafactC_c8aed240 = void __thiscall(STArtiafactC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STBoatC_17942385 = void __thiscall(STBoatC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STColl3C_418a3172 = void __thiscall(STColl3C *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STContainerC_9d7e73fb = void __thiscall(STContainerC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STCrabC_dd56928f = void __thiscall(STCrabC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STDcResourcC_af0effc3 = void __thiscall(STDcResourcC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STDestC_da6c8328 = void __thiscall(STDestC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STFishC_5a225231 = void __thiscall(STFishC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STJellyGunC_da48572c = void __thiscall(STJellyGunC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STLBombC_d7c03186 = void __thiscall(STLBombC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STMBombC_560c4ad7 = void __thiscall(STMBombC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STMineSetC_ced8565b = void __thiscall(STMineSetC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STOctopusC_478c4f29 = void __thiscall(STOctopusC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STSatC_21a51c4e = void __thiscall(STSatC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STSharkC_4654e8d8 = void __thiscall(STSharkC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STSprGameObjC_244038c2 = void __thiscall(STSprGameObjC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_STTorpC_0fc85d91 = void __thiscall(STTorpC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_TLOEmbryoTy_d0fcf8f3 = void __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_TLOFakeTy_f2c4d0f7 = void __thiscall(TLOFakeTy *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00423180_FUN_00423180_for_void_3d7ba17c = void __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00423180_FUN_00423180_stdcall_8c9be3a6 = void __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_004231A0_FUN_004231a0_for_STColl3C_2d93ee61 = undefined4 __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_STCrabC_8797755d = undefined4 __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_STDcResourcC_d1be4c93 = undefined4 __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_STDestC_a6963443 = undefined4 __thiscall(STDestC *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_STFishC_8889fffc = undefined4 __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_STJellyGunC_c5ba94b7 = undefined4 __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_STLBombC_414a3150 = undefined4 __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_STMBombC_19849aa5 = undefined4 __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_STMineSetC_4b3128c2 = undefined4 __thiscall(STMineSetC *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_STOctopusC_f5ea6678 = undefined4 __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_STSatC_57c750fb = undefined4 __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_STSharkC_b45fcbb6 = undefined4 __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_STTorpC_393e5c8b = undefined4 __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_TLOBaseTy_cdfaba24 = undefined4 __thiscall(TLOBaseTy *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_TLOEmbryoTy_fa224fad = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_TLOFakeTy_067e5415 = undefined4 __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_004231A0_FUN_004231a0_for_void_b472e082 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_004231A0_FUN_004231a0_stdcall_a299f524 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STColl3C_28f053ca = void __thiscall(STColl3C *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STCrabC_ae17c303 = void __thiscall(STCrabC *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STDcResourcC_fa1445f3 = void __thiscall(STDcResourcC *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STDestC_594c8211 = void __thiscall(STDestC *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STFishC_61ac693a = void __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STJellyGunC_516b1a5b = void __thiscall(STJellyGunC *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STLBombC_8107a349 = void __thiscall(STLBombC *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STMBombC_829d57e9 = void __thiscall(STMBombC *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STMineSetC_0fd04d92 = void __thiscall(STMineSetC *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STOctopusC_d8f0c709 = void __thiscall(STOctopusC *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STSatC_91263150 = void __thiscall(STSatC *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STSharkC_f4f151c3 = void __thiscall(STSharkC *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_STTorpC_8f8a1e5d = void __thiscall(STTorpC *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_TLOBaseTy_f2eea164 = void __thiscall(TLOBaseTy *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_TLOEmbryoTy_b5394f70 = void __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_TLOFakeTy_0903bb39 = void __thiscall(TLOFakeTy *st_this, undefined4 arg_1);
+using STFnType_icall_004231C0_FUN_004231c0_for_void_d313c826 = void __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_004231C0_FUN_004231c0_stdcall_5087afda = void __stdcall(undefined4 arg_1);
+using STFnType_icall_004231E0_FUN_004231e0_for_STArtiafactC_5d02e1b9 = undefined4 __thiscall(STArtiafactC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STColl3C_d7a7973c = undefined4 __thiscall(STColl3C *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STContainerC_5dc00efb = undefined4 __thiscall(STContainerC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STCrabC_0a43fbe4 = undefined4 __thiscall(STCrabC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STDestC_fea8d56a = undefined4 __thiscall(STDestC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STFishC_366dd58c = undefined4 __thiscall(STFishC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STJellyGunC_b42eba37 = undefined4 __thiscall(STJellyGunC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STLBombC_a6ce26bf = undefined4 __thiscall(STLBombC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STMBombC_aa90489b = undefined4 __thiscall(STMBombC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STMineSetC_1e5a3bee = undefined4 __thiscall(STMineSetC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STOctopusC_edd2d243 = undefined4 __thiscall(STOctopusC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STSatC_2ed991e5 = undefined4 __thiscall(STSatC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STSharkC_c4352e4e = undefined4 __thiscall(STSharkC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STSprGameObjC_cb11e0c0 = undefined4 __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_STTorpC_2aea5329 = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_TLOBaseTy_c0989397 = undefined4 __thiscall(TLOBaseTy *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_TLOEmbryoTy_38c443fb = undefined4 __thiscall(TLOEmbryoTy *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_TLOFakeTy_9aa79d53 = undefined4 __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_004231E0_FUN_004231e0_for_void_e2e2761d = undefined4 __thiscall(void *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STArtiafactC_1c16fc40 = undefined4 __thiscall(STArtiafactC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STColl3C_b9869dc5 = undefined4 __thiscall(STColl3C *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STContainerC_ea8ae1f3 = undefined4 __thiscall(STContainerC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STCrabC_30863a47 = undefined4 __thiscall(STCrabC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STDcResourcC_252cebad = undefined4 __thiscall(STDcResourcC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STDestC_de567ad2 = undefined4 __thiscall(STDestC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STFishC_4200e05f = undefined4 __thiscall(STFishC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STJellyGunC_a57140c4 = undefined4 __thiscall(STJellyGunC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STLBombC_ecb7ce9c = undefined4 __thiscall(STLBombC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STMBombC_0feb8add = undefined4 __thiscall(STMBombC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STMineSetC_18791f03 = undefined4 __thiscall(STMineSetC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STOctopusC_c4e8fe3c = undefined4 __thiscall(STOctopusC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STSatC_c1244c55 = undefined4 __thiscall(STSatC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STSharkC_bf859d0c = undefined4 __thiscall(STSharkC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STSprGameObjC_d4196eee = undefined4 __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_STTorpC_be2ebafc = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_TLOBaseTy_1229b6b3 = undefined4 __thiscall(TLOBaseTy *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_TLOEmbryoTy_44cba2f7 = undefined4 __thiscall(TLOEmbryoTy *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_TLOFakeTy_5ea75e52 = undefined4 __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_00423200_FUN_00423200_for_void_4164a4c4 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_00423C70_FUN_00423c70_for_void_b6dc2536 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_00423EC0_GetMessage_b8113944 = int __thiscall(STGroupC *st_this, STMessage *message);
+using STFnType_icall_004244D0_FUN_004244d0_for_void_c1bcce8d = undefined4 __thiscall(void *st_this);
+using STFnType_icall_00424710_FUN_00424710_for_void_6ff40964 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
 using STFnType_icall_00424710_FUN_00424710_stdcall_99177d14 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00424730_FUN_00424730_for_void_9a894c15 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_00424750_FUN_00424750_for_void_3bce0f28 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_00424770_FUN_00424770_for_void_e85239b1 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_00430A90_GetMessage_9464aa7a = int __thiscall(STAllPlayersC *st_this, STMessage *message);
 using STFnType_icall_0044EDE0_FUN_0044ede0_for_STBoatC_2b0564c6 = undefined4 __thiscall(STBoatC *st_this, undefined2 arg_1);
 using STFnType_icall_0044EE30_GetMessage_48f9253b = int __thiscall(STBoatC *st_this, STMessage *message);
@@ -4416,6 +5504,7 @@ using STFnType_icall_004BE110_FUN_004be110_for_TLOBaseTy_c277dbf7 = undefined4 _
 using STFnType_icall_004BE180_FUN_004be180_for_TLOBaseTy_b71d78f4 = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
 using STFnType_icall_004BE1A0_FUN_004be1a0_for_TLOBaseTy_adb3345b = undefined4 __thiscall(TLOBaseTy *st_this);
 using STFnType_icall_004BE1D0_FUN_004be1d0_for_TLOBaseTy_a7f4d342 = undefined4 __thiscall(TLOBaseTy *st_this);
+using STFnType_icall_004BE200_FUN_004be200_for_TLOBaseTy_cb1ee493 = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
 using STFnType_icall_004BE200_FUN_004be200_stdcall_4dee0364 = undefined4 __stdcall(undefined2 arg_1);
 using STFnType_icall_004BE240_FUN_004be240_for_TLOBaseTy_4df3811d = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
 using STFnType_icall_004BE290_FUN_004be290_for_TLOBaseTy_279a55a1 = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
@@ -4438,6 +5527,8 @@ using STFnType_icall_004CCC10_FUN_004ccc10_for_TLOBaseTy_733005e3 = undefined4 _
 using STFnType_icall_004CE0F0_FUN_004ce0f0_for_TLOBaseTy_214c20ae = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
 using STFnType_icall_004CF640_FUN_004cf640_for_TLOBaseTy_9f0faeda = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
 using STFnType_icall_004D0B90_GetMessage_f730671d = int __thiscall(TLOFakeTy *st_this, STMessage *message);
+using STFnType_icall_004D0F80_FUN_004d0f80_for_TLOFakeTy_feb0a195 = undefined4 __thiscall(TLOFakeTy *st_this);
+using STFnType_icall_004D0FA0_FUN_004d0fa0_for_TLOFakeTy_cc14a5d2 = undefined4 __thiscall(TLOFakeTy *st_this);
 using STFnType_icall_004D55B0_GetMessage_008a2d43 = int __thiscall(TLOEmbryoTy *st_this, STMessage *message);
 using STFnType_icall_004D6360_FUN_004d6360_for_TLOEmbryoTy_2ed26b5b = undefined4 __thiscall(TLOEmbryoTy *st_this, short arg_1, short arg_2, short arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
 using STFnType_icall_004D6360_FUN_004d6360_for_void_64f9c054 = undefined4 __thiscall(void *st_this, short arg_1, short arg_2, short arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
@@ -4447,10 +5538,12 @@ using STFnType_icall_004D6890_FUN_004d6890_for_TLOEmbryoTy_d74a97c7 = undefined4
 using STFnType_icall_004D6890_FUN_004d6890_for_void_9565021f = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_004D6930_FUN_004d6930_for_TLOEmbryoTy_0e6fcc94 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
 using STFnType_icall_004D6930_FUN_004d6930_for_void_92bb8843 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
+using STFnType_icall_004D6BE0_FUN_004d6be0_for_TLOEmbryoTy_17941c94 = undefined4 __thiscall(TLOEmbryoTy *st_this);
 using STFnType_icall_004D6C00_FUN_004d6c00_for_void_c7384dc7 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_004D6C20_FUN_004d6c20_for_TLOEmbryoTy_4cc0d1ae = undefined4 __thiscall(TLOEmbryoTy *st_this);
 using STFnType_icall_004D6C20_FUN_004d6c20_for_void_d6d9ab79 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_004D6C50_FUN_004d6c50_for_void_e0b95510 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_004D6C70_FUN_004d6c70_for_TLOEmbryoTy_4bb00359 = undefined4 __thiscall(TLOEmbryoTy *st_this);
 using STFnType_icall_004D6C90_FUN_004d6c90_for_TLOEmbryoTy_7b1f28a7 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1, undefined2 arg_2, undefined4 arg_3, undefined4 arg_4);
 using STFnType_icall_004D6C90_FUN_004d6c90_for_void_09913ff5 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined2 arg_2, undefined4 arg_3, undefined4 arg_4);
 using STFnType_icall_004D6D50_FUN_004d6d50_for_TLOEmbryoTy_51f72ba9 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined2 arg_1);
@@ -4504,6 +5597,7 @@ using STFnType_icall_004D7040_FUN_004d7040_for_STTorpC_22e3b323 = undefined4 __t
 using STFnType_icall_004D7040_FUN_004d7040_for_TLOEmbryoTy_ae099f0f = undefined4 __thiscall(TLOEmbryoTy *st_this);
 using STFnType_icall_004D7040_FUN_004d7040_for_TLOFakeTy_e3ac71f0 = undefined4 __thiscall(TLOFakeTy *st_this);
 using STFnType_icall_004D7040_FUN_004d7040_for_void_b7e9c1bc = undefined4 __thiscall(void *st_this);
+using STFnType_icall_004D7390_FUN_004d7390_for_TLOBaseTy_fe55ff03 = undefined4 __thiscall(TLOBaseTy *st_this);
 using STFnType_icall_004DA340_FUN_004da340_for_TLOBaseTy_e1e045fb = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
 using STFnType_icall_004E3200_FUN_004e3200_for_TLOBaseTy_95eecff7 = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
 using STFnType_icall_004EB600_FUN_004eb600_for_TLOBaseTy_d893643f = undefined4 __thiscall(TLOBaseTy *st_this, undefined2 arg_1);
@@ -4517,6 +5611,7 @@ using STFnType_icall_00538FC0_PaintLBut_aa1009be = undefined __thiscall(PanelTy 
 using STFnType_icall_00542EC0_InterSystemC__DoneSystem_for_InterSystemC_9b55d3ab = undefined4 __thiscall(InterSystemC *st_this);
 using STFnType_icall_00542F40_GetMessage_56099452 = int __thiscall(InterSystemC *st_this, STMessage *message);
 using STFnType_icall_0054CF00_FUN_0054cf00_for_STPlaySystemC_ad51854f = undefined4 __thiscall(STPlaySystemC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_0054CFA0_FUN_0054cfa0_for_STPlaySystemC_d58b66e7 = undefined4 __thiscall(STPlaySystemC *st_this);
 using STFnType_icall_0054E4F0_GetMessage_44a79779 = int __thiscall(STPlaySystemC *st_this, STMessage *message);
 using STFnType_icall_005564C0_GetMessage_40b65516 = int __thiscall(TraksClassTy *st_this, STMessage *message);
 using STFnType_icall_00558840_GetMessage_3dbe95e0 = int __thiscall(VisibleClassTy *st_this, STMessage *message);
@@ -4527,6 +5622,7 @@ using STFnType_icall_0055C290_FUN_0055c290_for_CFsgsConnection_a7c42c74 = undefi
 using STFnType_icall_0055C2E0_FUN_0055c2e0_for_CFsgsConnection_98211880 = undefined4 __thiscall(CFsgsConnection *st_this, undefined2 arg_1, undefined2 arg_2, undefined4 arg_3, undefined4 arg_4);
 using STFnType_icall_0055C500_FUN_0055c500_for_CFsgsConnection_a95c2a08 = undefined4 __thiscall(CFsgsConnection *st_this, undefined2 arg_1, undefined4 arg_2);
 using STFnType_icall_0055C550_FUN_0055c550_for_CFsgsConnection_71eff6ff = undefined4 __thiscall(CFsgsConnection *st_this, undefined4 arg_1);
+using STFnType_icall_0055C590_FUN_0055c590_for_CFsgsConnection_ff85990e = undefined4 __thiscall(CFsgsConnection *st_this, undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined4 arg_4);
 using STFnType_icall_0055C590_FUN_0055c590_stdcall_447df404 = undefined4 __stdcall(undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined4 arg_4);
 using STFnType_icall_0055C6C0_FUN_0055c6c0_for_CFsgsConnection_0fbcec50 = undefined4 __thiscall(CFsgsConnection *st_this, undefined2 arg_1);
 using STFnType_icall_0055C740_FUN_0055c740_for_CFsgsConnection_c135ae21 = undefined4 __thiscall(CFsgsConnection *st_this, undefined2 arg_1);
@@ -4557,16 +5653,22 @@ using STFnType_icall_00580860_FUN_00580860_for_STDcResourcC_c06431bf = undefined
 using STFnType_icall_005808A0_FUN_005808a0_for_STDcResourcC_15967f7f = undefined4 __thiscall(STDcResourcC *st_this, undefined2 arg_1);
 using STFnType_icall_005808E0_FUN_005808e0_for_STDcResourcC_89ec5ca5 = undefined4 __thiscall(STDcResourcC *st_this);
 using STFnType_icall_00581BF0_GetMessage_262bb3fe = int __thiscall(STJellyManC *st_this, STMessage *message);
+using STFnType_icall_005823B0_FUN_005823b0_for_STJellyManC_72039c68 = undefined4 __thiscall(STJellyManC *st_this);
 using STFnType_icall_00583270_GetMessage_e904e296 = int __thiscall(STJellyGunC *st_this, STMessage *message);
+using STFnType_icall_00584950_FUN_00584950_for_STJellyGunC_c5a54f83 = undefined4 __thiscall(STJellyGunC *st_this);
 using STFnType_icall_005859A0_GetMessage_4b40ca4c = int __thiscall(STLBombC *st_this, STMessage *message);
+using STFnType_icall_005861D0_FUN_005861d0_for_STLBombC_437ea87a = undefined4 __thiscall(STLBombC *st_this);
 using STFnType_icall_00588BC0_GetMessage_f22b884d = int __thiscall(STMBombC *st_this, STMessage *message);
+using STFnType_icall_00589970_FUN_00589970_for_STMBombC_3f2bb95f = undefined4 __thiscall(STMBombC *st_this);
 using STFnType_icall_00589A20_FUN_00589a20_for_STOctopusC_02e5dfae = undefined4 __thiscall(STOctopusC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5, undefined2 arg_6);
 using STFnType_icall_00589B10_FUN_00589b10_for_STOctopusC_6ccb8907 = undefined4 __thiscall(STOctopusC *st_this, undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
 using STFnType_icall_00589C10_GetMessage_602f5599 = int __thiscall(STOctopusC *st_this, STMessage *message);
 using STFnType_icall_0058C760_GetMessage_281b3f19 = int __thiscall(STSatC *st_this, STMessage *message);
+using STFnType_icall_0058CFC0_FUN_0058cfc0_for_STSatC_05490180 = undefined4 __thiscall(STSatC *st_this);
 using STFnType_icall_0058D7C0_GetMessage_69930b7b = int __thiscall(STSharkC *st_this, STMessage *message);
 using STFnType_icall_0058E440_FUN_0058e440_for_STSharkC_8cf4e584 = undefined4 __thiscall(STSharkC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5, undefined2 arg_6);
 using STFnType_icall_0058E530_FUN_0058e530_for_STSharkC_7ee002d0 = undefined4 __thiscall(STSharkC *st_this, undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_00590150_FUN_00590150_for_STSharkC_f73c10e1 = undefined4 __thiscall(STSharkC *st_this);
 using STFnType_icall_005908B0_GetMessage_cba72ae5 = int __thiscall(MAdvTy *st_this, STMessage *message);
 using STFnType_icall_00594440_GetMessage_128c34c8 = int __thiscall(ComboTy *st_this, STMessage *message);
 using STFnType_icall_005A4350_GetMessage_f96ae45a = int __thiscall(FSGSTy *st_this, STMessage *message);
@@ -4598,7 +5700,10 @@ using STFnType_icall_005EE080_FUN_005ee080_for_STSprGameObjC_703d608d = undefine
 using STFnType_icall_005EE3F0_FUN_005ee3f0_for_STArtiafactC_28c4e2df = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
 using STFnType_icall_005EE3F0_FUN_005ee3f0_for_STContainerC_f151c391 = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
 using STFnType_icall_005EE3F0_FUN_005ee3f0_for_STSprGameObjC_8aa96460 = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_005EF430_FUN_005ef430_for_STSprGameObjC_92e30f91 = undefined4 __thiscall(STSprGameObjC *st_this, undefined4 arg_1);
 using STFnType_icall_005EF430_FUN_005ef430_stdcall_95a99918 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_005EF450_FUN_005ef450_for_STSprGameObjC_c83b3f23 = undefined4 __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_005EF470_FUN_005ef470_for_STSprGameObjC_f7fa30b8 = undefined4 __thiscall(STSprGameObjC *st_this);
 using STFnType_icall_005EF5D0_FUN_005ef5d0_for_STArtiafactC_58c529cf = undefined4 __thiscall(STArtiafactC *st_this);
 using STFnType_icall_005EFA30_FUN_005efa30_for_STArtiafactC_6ed32cdb = undefined4 __thiscall(STArtiafactC *st_this);
 using STFnType_icall_005EFA30_FUN_005efa30_for_STContainerC_30938838 = undefined4 __thiscall(STContainerC *st_this);
@@ -4627,6 +5732,9 @@ using STFnType_icall_005EFCD0_FUN_005efcd0_for_STSprGameObjC_8032db77 = undefine
 using STFnType_icall_005F0050_FUN_005f0050_for_STArtiafactC_067d77b4 = undefined4 __thiscall(STArtiafactC *st_this);
 using STFnType_icall_005F0050_FUN_005f0050_for_STContainerC_e6068e07 = undefined4 __thiscall(STContainerC *st_this);
 using STFnType_icall_005F0050_FUN_005f0050_for_STSprGameObjC_a54a34f8 = undefined4 __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_005F0090_FUN_005f0090_for_STArtiafactC_78d2127e = undefined4 __thiscall(STArtiafactC *st_this);
+using STFnType_icall_005F0090_FUN_005f0090_for_STContainerC_b79525c1 = undefined4 __thiscall(STContainerC *st_this);
+using STFnType_icall_005F0090_FUN_005f0090_for_STSprGameObjC_961151a5 = undefined4 __thiscall(STSprGameObjC *st_this);
 using STFnType_icall_005F00B0_FUN_005f00b0_for_STArtiafactC_954e0dc1 = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
 using STFnType_icall_005F00B0_FUN_005f00b0_for_STContainerC_73bc5d4c = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
 using STFnType_icall_005F00B0_FUN_005f00b0_for_STSprGameObjC_de892eb1 = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
@@ -4639,9 +5747,17 @@ using STFnType_icall_005F0240_FUN_005f0240_for_STSprGameObjC_75ac93c8 = undefine
 using STFnType_icall_005F0280_FUN_005f0280_for_STArtiafactC_1121768a = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
 using STFnType_icall_005F0280_FUN_005f0280_for_STContainerC_cb4b1e88 = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
 using STFnType_icall_005F0280_FUN_005f0280_for_STSprGameObjC_c4141706 = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
+using STFnType_icall_005F0360_FUN_005f0360_for_STArtiafactC_e0c8d73d = undefined4 __thiscall(STArtiafactC *st_this);
+using STFnType_icall_005F0360_FUN_005f0360_for_STSprGameObjC_d3f29c44 = undefined4 __thiscall(STSprGameObjC *st_this);
 using STFnType_icall_005F0380_FUN_005f0380_for_STArtiafactC_02d8b5bf = undefined4 __thiscall(STArtiafactC *st_this);
 using STFnType_icall_005F0380_FUN_005f0380_for_STContainerC_e6c622f8 = undefined4 __thiscall(STContainerC *st_this);
 using STFnType_icall_005F0380_FUN_005f0380_for_STSprGameObjC_8edea515 = undefined4 __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_005F03D0_FUN_005f03d0_for_STArtiafactC_91cca5c9 = undefined4 __thiscall(STArtiafactC *st_this);
+using STFnType_icall_005F03D0_FUN_005f03d0_for_STSprGameObjC_d2cbfaf4 = undefined4 __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_005F03F0_FUN_005f03f0_for_STSprGameObjC_1417655a = undefined4 __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_005F0410_FUN_005f0410_for_STArtiafactC_4606646e = undefined4 __thiscall(STArtiafactC *st_this);
+using STFnType_icall_005F0410_FUN_005f0410_for_STSprGameObjC_0dbe8440 = undefined4 __thiscall(STSprGameObjC *st_this);
+using STFnType_icall_005F0430_FUN_005f0430_for_STSprGameObjC_49c1ba95 = undefined4 __thiscall(STSprGameObjC *st_this);
 using STFnType_icall_005F0470_FUN_005f0470_for_STArtiafactC_5080703d = undefined4 __thiscall(STArtiafactC *st_this, undefined2 arg_1);
 using STFnType_icall_005F0470_FUN_005f0470_for_STContainerC_d99c2a4f = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
 using STFnType_icall_005F0470_FUN_005f0470_for_STSprGameObjC_453b0863 = undefined4 __thiscall(STSprGameObjC *st_this, undefined2 arg_1);
@@ -4657,6 +5773,7 @@ using STFnType_icall_005F5F20_GetMessage_a0925832 = int __thiscall(STColl3C *st_
 using STFnType_icall_005F6EE0_FUN_005f6ee0_for_STColl3C_20ff2832 = undefined4 __thiscall(STColl3C *st_this);
 using STFnType_icall_005FB1F0_FUN_005fb1f0_fa277a18 = uint __thiscall(void *st_this, short param_1, short param_2, short param_3, short param_4, short param_5, short param_6);
 using STFnType_icall_005FB540_FUN_005fb540_for_STColl3C_f071c67b = undefined4 __thiscall(STColl3C *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_005FB5C0_FUN_005fb5c0_for_STColl3C_44cf9091 = undefined4 __thiscall(STColl3C *st_this);
 using STFnType_icall_005FC450_FUN_005fc450_for_STContainerC_a6ee5458 = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
 using STFnType_icall_005FCC70_FUN_005fcc70_for_STContainerC_68642be9 = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
 using STFnType_icall_005FCCB0_FUN_005fccb0_for_STContainerC_69e58300 = undefined4 __thiscall(STContainerC *st_this, undefined2 arg_1);
@@ -4667,6 +5784,7 @@ using STFnType_icall_005FD3A0_FUN_005fd3a0_for_void_5addcf02 = undefined4 __this
 using STFnType_icall_00601F80_GetMessage_bc6d939f = int __thiscall(STDestC *st_this, STMessage *message);
 using STFnType_icall_00602700_FUN_00602700_for_STDestC_d3354288 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
 using STFnType_icall_00602740_FUN_00602740_for_STDestC_c9a0eff2 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
+using STFnType_icall_00602880_FUN_00602880_for_STDestC_9161e34c = undefined4 __thiscall(STDestC *st_this);
 using STFnType_icall_006033D0_FUN_006033d0_for_STDestC_826fd4b4 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
 using STFnType_icall_00603470_FUN_00603470_for_STDestC_ec7ec802 = undefined4 __thiscall(STDestC *st_this, undefined2 arg_1);
 using STFnType_icall_00603740_GetMessage_54559dfc = int __thiscall(STExplosion *st_this, STMessage *message);
@@ -4698,7 +5816,15 @@ using STFnType_icall_00638CA0_FUN_00638ca0_for_void_c8a0edc2 = undefined4 __this
 using STFnType_icall_00639C90_FUN_00639c90_for_void_54a2e974 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_00643E20_FUN_00643e20_for_STTorpC_8a94773f = undefined4 __thiscall(STTorpC *st_this);
 using STFnType_icall_006461E0_GetMessage_483b8793 = int __thiscall(STVolcanoC *st_this, STMessage *message);
+using STFnType_icall_00647B40_FUN_00647b40_for_AiBossClassTy_476720ca = undefined4 __thiscall(AiBossClassTy *st_this);
+using STFnType_icall_00647B40_FUN_00647b40_for_void_7f6f9c3c = undefined4 __thiscall(void *st_this);
+using STFnType_icall_00647B60_FUN_00647b60_for_AiBossClassTy_ec54ea19 = undefined4 __thiscall(AiBossClassTy *st_this, undefined2 arg_1);
+using STFnType_icall_00647B60_FUN_00647b60_for_AiPlrClassTy_1d280f61 = undefined4 __thiscall(AiPlrClassTy *st_this, undefined2 arg_1);
+using STFnType_icall_00647B60_FUN_00647b60_for_void_993c7b26 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_00647B60_FUN_00647b60_stdcall_26d99e5a = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_00647B80_FUN_00647b80_for_AiBossClassTy_cae08b05 = undefined4 __thiscall(AiBossClassTy *st_this, undefined2 arg_1);
+using STFnType_icall_00647B80_FUN_00647b80_for_AiPlrClassTy_2de356eb = undefined4 __thiscall(AiPlrClassTy *st_this, undefined2 arg_1);
+using STFnType_icall_00647B80_FUN_00647b80_for_void_72a41fbb = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_00647B80_FUN_00647b80_stdcall_4140fc8f = undefined4 __stdcall(undefined2 arg_1);
 using STFnType_icall_00647BA0_FUN_00647ba0_for_AiBossClassTy_65cde373 = undefined4 __thiscall(AiBossClassTy *st_this, undefined2 arg_1);
 using STFnType_icall_00647BA0_FUN_00647ba0_for_AiPlrClassTy_acf13403 = undefined4 __thiscall(AiPlrClassTy *st_this, undefined2 arg_1);
@@ -4726,6 +5852,7 @@ using STFnType_icall_00647D50_FUN_00647d50_for_AiPlrClassTy_0f422965 = undefined
 using STFnType_icall_00647D50_FUN_00647d50_for_void_98c3c651 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_00647D90_FUN_00647d90_for_AiBossClassTy_1fe11a93 = undefined4 __thiscall(AiBossClassTy *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00648030_GetMessage_1beab329 = int __thiscall(AiBossClassTy *st_this, STMessage *message);
+using STFnType_icall_0064CD10_FUN_0064cd10_for_void_986d7fd8 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0064CD10_FUN_0064cd10_stdcall_7b46d832 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0064E580_FUN_0064e580_for_AiBossClassTy_7b91e8cb = undefined4 __thiscall(AiBossClassTy *st_this, undefined2 arg_1);
 using STFnType_icall_0064E580_FUN_0064e580_for_AiPlrClassTy_bcbccec9 = undefined4 __thiscall(AiPlrClassTy *st_this, undefined2 arg_1);
@@ -4733,57 +5860,93 @@ using STFnType_icall_0064E580_FUN_0064e580_for_void_a7471151 = undefined4 __this
 using STFnType_icall_00667D90_GetMessage_220b236d = int __thiscall(AiFltClassTy *st_this, STMessage *message);
 using STFnType_icall_00678950_FUN_00678950_for_AiPlrClassTy_91c3daef = undefined4 __thiscall(AiPlrClassTy *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0067C7E0_GetMessage_19ec3611 = int __thiscall(AiPlrClassTy *st_this, STMessage *message);
+using STFnType_icall_006822C0_FUN_006822c0_for_void_a3a3e0f7 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006822C0_FUN_006822c0_stdcall_a70a0d5a = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_00682300_FUN_00682300_for_void_7ccc1b8b = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_00682300_FUN_00682300_stdcall_35b62234 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_00682340_FUN_00682340_for_void_4e50a42d = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_00682340_FUN_00682340_stdcall_609b063e = undefined4 __stdcall(undefined2 arg_1);
 using STFnType_icall_00690B90_GetMessage_64a4dce6 = int __thiscall(AiTactClassTy *st_this, STMessage *message);
+using STFnType_icall_006D50E0_FUN_006d50e0_for_void_65ced866 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_006D50F0_FUN_006d50f0_for_void_94c66d06 = void __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_006D50F0_FUN_006d50f0_stdcall_054e106a = void __stdcall(undefined4 arg_1);
+using STFnType_icall_006D5100_FUN_006d5100_for_void_43c65cf5 = void __thiscall(void *st_this);
+using STFnType_icall_006D5110_FUN_006d5110_for_void_f194c073 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_006D5110_FUN_006d5110_stdcall_b1202b2f = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_006D5130_FUN_006d5130_for_void_3c590129 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D5130_FUN_006d5130_stdcall_a82afd28 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_006D5150_FUN_006d5150_for_void_7c2a3404 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D5150_FUN_006d5150_stdcall_1871dc5c = undefined4 __stdcall(undefined2 arg_1);
 using STFnType_icall_006D5170_FUN_006d5170_for_void_23e12f44 = undefined4 __thiscall(void *st_this, undefined1 arg_1);
 using STFnType_icall_006D5200_FUN_006d5200_for_void_606b8311 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D5230_FUN_006d5230_for_void_d127cc71 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D5260_FUN_006d5260_for_void_b2e456db = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D54C0_FUN_006d54c0_for_void_95d64d13 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
+using STFnType_icall_006D5780_FUN_006d5780_for_void_59d927fd = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_006D5780_FUN_006d5780_stdcall_53e5f32b = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_006D5790_FUN_006d5790_for_void_0ef4c263 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_006D5790_FUN_006d5790_stdcall_77b3c0c8 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_006D57B0_FUN_006d57b0_for_void_a0aa74aa = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D57B0_FUN_006d57b0_stdcall_54b311e6 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_006D57D0_FUN_006d57d0_for_void_890cf59c = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D57D0_FUN_006d57d0_stdcall_547789b1 = undefined4 __stdcall(undefined2 arg_1);
 using STFnType_icall_006D57F0_FUN_006d57f0_for_void_bd6d0c7d = undefined4 __thiscall(void *st_this, undefined1 arg_1);
+using STFnType_icall_006D5820_FUN_006d5820_for_void_8eb325d1 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_006D5820_FUN_006d5820_stdcall_e4e15b42 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_006D58C0_FUN_006d58c0_for_void_8eab9bd3 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_006D5D20_FUN_006d5d20_for_void_36c0f79a = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_006D5D20_FUN_006d5d20_stdcall_8e6de35e = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_006D5D40_FUN_006d5d40_for_void_c3cdfb5b = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D5D40_FUN_006d5d40_stdcall_beb0351d = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_006D5D60_FUN_006d5d60_for_void_b8502d6d = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D5D60_FUN_006d5d60_stdcall_e1d41d12 = undefined4 __stdcall(undefined2 arg_1);
 using STFnType_icall_006D5D80_FUN_006d5d80_for_void_d2140f29 = undefined4 __thiscall(void *st_this, undefined1 arg_1);
+using STFnType_icall_006D5E50_FUN_006d5e50_for_void_8ab7d1b3 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_006D5E50_FUN_006d5e50_stdcall_b0c1e46b = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_006D5ED0_FUN_006d5ed0_for_void_2dd698eb = undefined4 __thiscall(void *st_this);
 using STFnType_icall_006D6090_FUN_006d6090_for_void_4a5ca155 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_006D6120_FUN_006d6120_for_void_ff83af42 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D6120_FUN_006d6120_stdcall_2f141b7d = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_006D6140_FUN_006d6140_for_void_6fcdf952 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D6140_FUN_006d6140_stdcall_e99e8613 = undefined4 __stdcall(undefined2 arg_1);
 using STFnType_icall_006D6190_FUN_006d6190_for_void_ed05dd65 = undefined4 __thiscall(void *st_this, undefined1 arg_1);
+using STFnType_icall_006D61C0_FUN_006d61c0_for_void_1bbf8c91 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D61C0_FUN_006d61c0_stdcall_cdf474a0 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_006D61E0_FUN_006d61e0_for_void_175b916d = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D61E0_FUN_006d61e0_stdcall_28017a98 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_006D6250_FUN_006d6250_for_void_5851729f = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_006D6250_FUN_006d6250_stdcall_0dec5694 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_006D6270_FUN_006d6270_for_void_2a98ffd3 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_006D6270_FUN_006d6270_stdcall_33358190 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_006D6290_FUN_006d6290_for_void_e877d509 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_006D6290_FUN_006d6290_stdcall_14117a5b = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_006D6A10_FUN_006d6a10_for_void_5bb257af = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D7000_FUN_006d7000_for_void_a787cafd = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D7060_FUN_006d7060_for_void_105cb73b = undefined4 __thiscall(void *st_this, undefined2 arg_1);
+using STFnType_icall_006D7100_FUN_006d7100_for_void_93f7cf44 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_006D7100_FUN_006d7100_stdcall_533c1e7e = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_006D7120_FUN_006d7120_for_void_887baeeb = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D7120_FUN_006d7120_stdcall_89925cff = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_006D7140_FUN_006d7140_for_void_aa04ef52 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_006D7140_FUN_006d7140_stdcall_84c82bee = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_006D7160_FUN_006d7160_for_void_1a6e4c37 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_006D7160_FUN_006d7160_stdcall_e3ee5d98 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_006D7170_FUN_006d7170_for_void_d02ad020 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_006D7170_FUN_006d7170_stdcall_e2bf13c0 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_006D7180_FUN_006d7180_for_void_97b2e4f8 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_006D7180_FUN_006d7180_stdcall_67270543 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_006D7190_FUN_006d7190_for_void_fd689eb7 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_006D7190_FUN_006d7190_stdcall_3022fea3 = undefined4 __stdcall(undefined4 arg_1);
 using STFnType_icall_006D71A0_FUN_006d71a0_for_void_9db95945 = undefined4 __thiscall(void *st_this, undefined1 arg_1);
 using STFnType_icall_006D71D0_FUN_006d71d0_for_void_12c45437 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
+using STFnType_icall_006D7310_FUN_006d7310_for_void_82917d45 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined2 arg_2);
 using STFnType_icall_006D7310_FUN_006d7310_stdcall_53296135 = undefined4 __stdcall(undefined4 arg_1, undefined2 arg_2);
+using STFnType_icall_006D7330_FUN_006d7330_for_void_aab63a2d = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined4 arg_3);
 using STFnType_icall_006D7330_FUN_006d7330_stdcall_46957361 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined4 arg_3);
 using STFnType_icall_006D7350_FUN_006d7350_for_void_f18de2c8 = undefined4 __thiscall(void *st_this, undefined1 arg_1);
 using STFnType_icall_006D7380_FUN_006d7380_for_void_3e3d5ab6 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined4 arg_2);
+using STFnType_icall_006E4FA0_FUN_006e4fa0_for_AppClassTy_dcab7210 = undefined4 __thiscall(AppClassTy *st_this, undefined2 arg_1);
+using STFnType_icall_006E4FA0_FUN_006e4fa0_for_STAppC_291414c8 = undefined4 __thiscall(STAppC *st_this, undefined2 arg_1);
 using STFnType_icall_006E4FA0_FUN_006e4fa0_stdcall_ba2ece87 = undefined4 __stdcall(undefined2 arg_1);
 using STFnType_icall_006E5150_STAppC__sub_006E5150_for_AppClassTy_b7af20c6 = undefined4 __thiscall(AppClassTy *st_this, undefined2 arg_1);
 using STFnType_icall_006E52D0_FUN_006e52d0_for_BaseSystemC_8037d617 = undefined4 __thiscall(BaseSystemC *st_this);
@@ -4800,6 +5963,11 @@ using STFnType_icall_006E5690_FUN_006e5690_for_GameSystemC_2808fc1e = undefined4
 using STFnType_icall_006E5690_FUN_006e5690_for_InterSystemC_4c0b2f97 = undefined4 __thiscall(InterSystemC *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_006E5690_FUN_006e5690_for_StartSystemTy_507f0ade = undefined4 __thiscall(StartSystemTy *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_006E5950_FUN_006e5950_stdcall_289892b4 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_BaseSystemC_32b83c2e = undefined4 __thiscall(BaseSystemC *st_this, undefined2 arg_1);
+using STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_DebugSystemC_b8169ccb = undefined4 __thiscall(DebugSystemC *st_this, undefined2 arg_1);
+using STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_GameSystemC_86b48dde = undefined4 __thiscall(GameSystemC *st_this, undefined2 arg_1);
+using STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_InterSystemC_1e744864 = undefined4 __thiscall(InterSystemC *st_this, undefined2 arg_1);
+using STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_StartSystemTy_cc7db176 = undefined4 __thiscall(StartSystemTy *st_this, undefined2 arg_1);
 using STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_stdcall_b6bc005a = undefined4 __stdcall(undefined2 arg_1);
 using STFnType_icall_006E5FD0_FUN_006e5fd0_4d52e996 = int __thiscall(void *st_this, STMessage *message);
 using STFnType_icall_006E6130_FUN_006e6130_for_STPlaySystemC_20d12b29 = undefined4 __thiscall(STPlaySystemC *st_this, undefined2 arg_1, undefined2 arg_2);
@@ -4825,57 +5993,98 @@ using STFnType_icall_00724D20_FUN_00724d20_for_TrackbarClassTy_a62ec5ed = undefi
 using STFnType_icall_00724D20_FUN_00724d20_for_void_268c6246 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_00724D40_FUN_00724d40_for_TrackbarClassTy_75304920 = undefined4 __thiscall(TrackbarClassTy *st_this);
 using STFnType_icall_00724D40_FUN_00724d40_for_void_645abb88 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_00734210_Library__MSVCRT__FUN_00734210_for_AppClassTy_2dcd711e = undefined4 __thiscall(AppClassTy *st_this);
+using STFnType_icall_00734210_Library__MSVCRT__FUN_00734210_for_SystemWithNamedObjClassTy_b2009715 = undefined4 __thiscall(SystemWithNamedObjClassTy *st_this);
+using STFnType_icall_00734210_Library__MSVCRT__FUN_00734210_for_void_2e025c51 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_00746E65_FUN_00746e65_for_void_769a62d7 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00746E65_FUN_00746e65_stdcall_231c3306 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_00746FAB_FUN_00746fab_for_void_1b6bb739 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00746FAB_FUN_00746fab_stdcall_83622771 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00746FCE_FUN_00746fce_for_void_018dbd85 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_00746FCE_FUN_00746fce_stdcall_f0ca96dc = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_00746FEB_FUN_00746feb_for_void_4941397e = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00746FEB_FUN_00746feb_stdcall_eee5a020 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00747029_FUN_00747029_for_void_880d9918 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00747029_FUN_00747029_stdcall_d0580cdb = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00747161_FUN_00747161_for_void_445eb183 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00747212_FUN_00747212_for_void_8730be99 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_00747245_FUN_00747245_for_void_5429c75c = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00747245_FUN_00747245_stdcall_766a7996 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074731F_FUN_0074731f_for_void_2428519b = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074731F_FUN_0074731f_stdcall_45dc71c3 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074736A_FUN_0074736a_for_void_fc0bf207 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0074736A_FUN_0074736a_stdcall_c5893335 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_007473FE_FUN_007473fe_for_void_d869175f = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_007473FE_FUN_007473fe_stdcall_1f9efae1 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074747F_FUN_0074747f_for_void_9b627d1c = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0074748E_FUN_0074748e_for_void_214873a5 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0074748E_FUN_0074748e_stdcall_0b1ab21d = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_007474F4_FUN_007474f4_for_void_2b2f482e = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_007474F4_FUN_007474f4_stdcall_14165abf = undefined4 __stdcall(undefined2 arg_1);
 using STFnType_icall_007475E7_FUN_007475e7_for_void_031a6c2e = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_00747622_FUN_00747622_for_void_efe5ec86 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00747622_FUN_00747622_stdcall_1e139717 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0074766E_FUN_0074766e_9ea7a9f5 = undefined(void);
 using STFnType_icall_0074766E_FUN_0074766e_stdcall_442181ab = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074767F_FUN_0074767f_for_void_2f2f457a = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074767F_FUN_0074767f_stdcall_325fba15 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_007476A9_FUN_007476a9_for_void_37a460c9 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_007476A9_FUN_007476a9_stdcall_1cb558e8 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
-using STFnType_icall_00747704_FUN_00747704_for_void_90cdb8d2 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_00747704_FUN_00747704_for_void_90cdb8d2 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
 using STFnType_icall_00747704_FUN_00747704_stdcall_68d9541c = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
+using STFnType_icall_007477EA_FUN_007477ea_for_void_f8e25b72 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_007477EA_FUN_007477ea_stdcall_4f6eb793 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00747822_FUN_00747822_for_void_af68fd42 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00747822_FUN_00747822_stdcall_d603c250 = undefined4 __stdcall(undefined4 arg_1);
 using STFnType_icall_007478BC_FUN_007478bc_for_void_32e67f7f = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_007478EB_FUN_007478eb_for_void_946d5cb9 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_007478EB_FUN_007478eb_stdcall_b30436f1 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00747937_FUN_00747937_df7a942e = undefined(void);
 using STFnType_icall_00747937_FUN_00747937_stdcall_370ee420 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00747948_FUN_00747948_for_void_0edc2765 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00747948_FUN_00747948_stdcall_944d56c1 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00747972_FUN_00747972_for_void_874cff26 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00747972_FUN_00747972_stdcall_8544c63e = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_007479CD_FUN_007479cd_for_void_c5c3127e = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
 using STFnType_icall_007479CD_FUN_007479cd_stdcall_5e974e0e = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
+using STFnType_icall_00747AA5_FUN_00747aa5_for_void_7e0bad7a = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_00747AA5_FUN_00747aa5_stdcall_7ff3c145 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_00747AF8_FUN_00747af8_for_void_d9e60c00 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00747AF8_FUN_00747af8_stdcall_2314f70e = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00747C3D_FUN_00747c3d_for_void_f5a1ab09 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00747C3D_FUN_00747c3d_stdcall_29f28039 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00747C50_FUN_00747c50_for_void_422623cf = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00747C50_FUN_00747c50_stdcall_d66385e8 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00747C63_FUN_00747c63_for_void_8066e20e = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_00747C63_FUN_00747c63_stdcall_0c45073e = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_00747F68_FUN_00747f68_for_void_fc00508e = undefined4 __thiscall(void *st_this, undefined2 arg_1);
+using STFnType_icall_00747F94_FUN_00747f94_for_void_bd8619e6 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00747F94_FUN_00747f94_stdcall_f2c16e83 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_007480A5_FUN_007480a5_for_void_afe32541 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_007480A5_FUN_007480a5_stdcall_621901c7 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00748102_FUN_00748102_for_void_adff76b0 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748102_FUN_00748102_stdcall_8b558e92 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00748130_FUN_00748130_for_void_94f1b462 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748130_FUN_00748130_stdcall_ec87a322 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00748186_FUN_00748186_for_void_9af5ea35 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748186_FUN_00748186_stdcall_c614b75b = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_007481E1_FUN_007481e1_for_void_d08ba7d9 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_007481E1_FUN_007481e1_stdcall_da683ebf = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00748211_FUN_00748211_for_void_e98904cb = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748211_FUN_00748211_stdcall_8b0febc1 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074823A_FUN_0074823a_for_void_54c83050 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074823A_FUN_0074823a_stdcall_177f86a4 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074827F_FUN_0074827f_for_void_1a007dc2 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074827F_FUN_0074827f_stdcall_03df6c10 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748287_FUN_00748287_for_void_c2182a52 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_00748296_FUN_00748296_for_void_82d7f46c = undefined4 __thiscall(void *st_this);
+using STFnType_icall_00748299_FUN_00748299_for_void_621c5293 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748299_FUN_00748299_stdcall_6c0d01be = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_007482AB_FUN_007482ab_for_void_22752bc9 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_007482AB_FUN_007482ab_stdcall_6f9625f1 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_007482D8_FUN_007482d8_adb650e6 = undefined4 __stdcall(AnonShape_007482D8_1685BA8E *param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, double param_6);
 using STFnType_icall_007482D8_FUN_007482d8_stdcall_e37defc7 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6, undefined4 arg_7);
+using STFnType_icall_007483B7_FUN_007483b7_for_void_2b97aab6 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_007483B7_FUN_007483b7_stdcall_2b7a7b41 = undefined4 __stdcall(undefined4 arg_1);
 using STFnType_icall_007483C3_FUN_007483c3_for_void_982002e7 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_00748481_FUN_00748481_for_void_89c5dccb = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
@@ -4883,76 +6092,123 @@ using STFnType_icall_007484AB_FUN_007484ab_for_void_7303a2f6 = undefined4 __this
 using STFnType_icall_007484C9_FUN_007484c9_for_void_65946896 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_007484DD_FUN_007484dd_for_void_3e917798 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_007484F4_FUN_007484f4_for_void_6c1219a9 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0074850F_FUN_0074850f_for_void_afb65131 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074850F_FUN_0074850f_stdcall_eacb82bd = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00748517_FUN_00748517_for_void_4e755204 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00748517_FUN_00748517_stdcall_3ad57d3a = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074851F_FUN_0074851f_for_void_adffcc02 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074851F_FUN_0074851f_stdcall_769a72ff = undefined4 __stdcall(undefined4 arg_1);
 using STFnType_icall_00748527_FUN_00748527_for_void_f560465b = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0074853B_FUN_0074853b_for_void_0e7265c2 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0074854F_FUN_0074854f_768680ea = undefined4 __thiscall(void *st_this, undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, double param_5);
 using STFnType_icall_0074854F_FUN_0074854f_for_void_7bf5492a = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_icall_007485EC_FUN_007485ec_for_void_97100b31 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_007485EC_FUN_007485ec_stdcall_6abbfcab = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_0074862E_FUN_0074862e_for_void_03640ab3 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074862E_FUN_0074862e_stdcall_c7901ebc = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074868B_FUN_0074868b_for_void_1b2e2fd1 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined1 arg_3);
 using STFnType_icall_0074868B_FUN_0074868b_stdcall_ae0379bc = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined1 arg_3);
+using STFnType_icall_007486DD_FUN_007486dd_for_void_24144578 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_007486DD_FUN_007486dd_stdcall_f6eab672 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00748859_FUN_00748859_for_void_c684f111 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
 using STFnType_icall_00748859_FUN_00748859_stdcall_5c69ae10 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
+using STFnType_icall_007488A3_FUN_007488a3_for_void_1ad53b93 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_007488A3_FUN_007488a3_stdcall_ade66980 = undefined4 __stdcall(undefined2 arg_1);
+using STFnType_icall_00748990_FUN_00748990_for_void_2c2f56b1 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6, undefined4 arg_7, undefined4 arg_8);
 using STFnType_icall_00748990_FUN_00748990_stdcall_bd87eb80 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6, undefined4 arg_7, undefined4 arg_8);
 using STFnType_icall_007489A5_FUN_007489a5_for_void_a1849e3f = undefined4 __thiscall(void *st_this);
+using STFnType_icall_007489C7_FUN_007489c7_for_void_118d856b = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_007489C7_FUN_007489c7_stdcall_f596ba29 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_007489CF_FUN_007489cf_for_void_4fb48636 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_00748AB7_FUN_00748ab7_for_void_3ce22bed = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_00748AE7_FUN_00748ae7_for_void_5e6bd757 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00748AE7_FUN_00748ae7_stdcall_6fb84aae = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_00748B37_FUN_00748b37_for_void_b65821da = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00748B37_FUN_00748b37_stdcall_c64a3f36 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00748B48_FUN_00748b48_for_void_9ce31bea = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00748B48_FUN_00748b48_stdcall_93d7e452 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00748BAE_FUN_00748bae_for_void_c310cf2b = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748BAE_FUN_00748bae_stdcall_586e87ca = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00748BC0_FUN_00748bc0_for_void_69f8945f = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00748BC0_FUN_00748bc0_stdcall_dc0963a5 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00748BCA_FUN_00748bca_for_void_00be010f = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00748BCA_FUN_00748bca_stdcall_5222952f = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_00748C2F_FUN_00748c2f_for_void_7ac7a3b7 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00748C2F_FUN_00748c2f_stdcall_8bda7d15 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_00748C8E_FUN_00748c8e_for_void_168b68c1 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_00748C8E_FUN_00748c8e_stdcall_17e83ed9 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_00748CCA_FUN_00748cca_for_void_3c75b61c = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_00748CCA_FUN_00748cca_stdcall_44015456 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_00748CFF_FUN_00748cff_for_void_a3b78761 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00748CFF_FUN_00748cff_stdcall_fb1b5df5 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00748D11_FUN_00748d11_for_void_91effa7c = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748D11_FUN_00748d11_stdcall_4ecbd5f2 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00748D2B_FUN_00748d2b_for_void_b74ea853 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00748D2B_FUN_00748d2b_stdcall_a33e5037 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00748D40_FUN_00748d40_for_void_8acf119f = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748D40_FUN_00748d40_stdcall_04f2775f = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00748D5A_FUN_00748d5a_for_void_e1257084 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00748D5A_FUN_00748d5a_stdcall_2d6d6259 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00748D6E_FUN_00748d6e_for_void_4cf6846c = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748D6E_FUN_00748d6e_stdcall_7e3adbe1 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00748D88_FUN_00748d88_for_void_02249fc1 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00748D88_FUN_00748d88_stdcall_83ef8460 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_00748D92_FUN_00748d92_for_void_4a27ac0c = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748D92_FUN_00748d92_stdcall_66df4e2c = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00748DAE_FUN_00748dae_for_void_43dc042b = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748DAE_FUN_00748dae_stdcall_0f34e4c7 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00748DE3_FUN_00748de3_for_void_53bb858a = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_00748DE3_FUN_00748de3_stdcall_22c65f31 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00748E2B_FUN_00748e2b_for_void_724dc27c = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00748E2B_FUN_00748e2b_stdcall_c6f00692 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
-using STFnType_icall_00748ECA_FUN_00748eca_for_void_be05bfc9 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_00748ECA_FUN_00748eca_for_void_be05bfc9 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00748ECA_FUN_00748eca_stdcall_8a204bd0 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_007490C6_FUN_007490c6_for_void_d6e89906 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_007490C6_FUN_007490c6_stdcall_9276a712 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_007491C3_FUN_007491c3_for_void_c014f7d0 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_007491C3_FUN_007491c3_stdcall_f8b193e3 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_00749212_FUN_00749212_for_void_d59143af = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
 using STFnType_icall_00749212_FUN_00749212_stdcall_2981ede0 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_icall_00749299_FUN_00749299_for_void_5e13cb8a = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_00749299_FUN_00749299_stdcall_5741c4d2 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_00749339_FUN_00749339_for_void_40c0dad0 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00749339_FUN_00749339_stdcall_f879be9b = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074939F_FUN_0074939f_for_void_0035304e = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074939F_FUN_0074939f_stdcall_113b55d9 = undefined4 __stdcall(undefined4 arg_1);
 using STFnType_icall_007494B5_FUN_007494b5_for_void_436ed19b = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_007494D1_FUN_007494d1_for_void_fbd32e9c = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_007494D1_FUN_007494d1_stdcall_a4103bdc = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_007495BF_FUN_007495bf_for_void_43799ed5 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_007496A0_FUN_007496a0_for_void_724fc24f = void __thiscall(void *st_this);
 using STFnType_icall_00749B43_FUN_00749b43_for_void_3c525a74 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00749BE1_FUN_00749be1_for_void_81925bb1 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_00749CA4_FUN_00749ca4_for_void_216c8900 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00749CA4_FUN_00749ca4_stdcall_9cf347e8 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00749CEC_FUN_00749cec_for_void_e7c09b5b = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00749D09_FUN_00749d09_for_void_9691619e = undefined4 __thiscall(void *st_this);
+using STFnType_icall_00749DB2_FUN_00749db2_for_void_883135fc = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_00749DB2_FUN_00749db2_stdcall_68857e41 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_00749DF1_FUN_00749df1_for_void_b37145dc = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_00749E34_FUN_00749e34_for_void_6f5870a8 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_00749E34_FUN_00749e34_stdcall_c81a0163 = undefined4 __stdcall(undefined4 arg_1);
 using STFnType_icall_00749EC2_FUN_00749ec2_for_void_eb2a13ae = undefined4 __thiscall(void *st_this, undefined2 arg_1);
-using STFnType_icall_00749F88_FUN_00749f88_for_void_76854d07 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_00749F88_FUN_00749f88_for_void_76854d07 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_00749F88_FUN_00749f88_stdcall_37a62328 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_0074A057_FUN_0074a057_for_void_5d6d6f6c = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0074A05B_FUN_0074a05b_for_void_8f602524 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
+using STFnType_icall_0074A0C1_FUN_0074a0c1_for_void_4b25c1b6 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0074A0C1_FUN_0074a0c1_stdcall_10cd7148 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0074A113_EndOfStream_76ec159c = int32_t __thiscall(CBaseRenderer *st_this);
 using STFnType_icall_0074A143_BeginFlush_f91c163c = int32_t __thiscall(CBaseRenderer *st_this);
 using STFnType_icall_0074A177_FUN_0074a177_for_void_12a2c68e = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0074A193_FUN_0074a193_for_void_0e3eb57c = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074A1A7_FUN_0074a1a7_for_void_f0f6cf20 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0074A1AA_FUN_0074a1aa_for_void_0da3df87 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0074A1C4_FUN_0074a1c4_for_void_941c62f9 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074A1C4_FUN_0074a1c4_stdcall_471fc114 = undefined4 __stdcall(undefined4 arg_1);
 using STFnType_icall_0074A1C9_FUN_0074a1c9_for_void_de95aa9c = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0074A220_FUN_0074a220_for_void_95ff4aeb = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0074A271_FUN_0074a271_for_void_38876b0a = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0074A271_FUN_0074a271_stdcall_bf7dd418 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0074A27C_FUN_0074a27c_for_void_cdd2a12b = undefined1 __thiscall(void *st_this);
 using STFnType_icall_0074A2AB_FUN_0074a2ab_ef83f46a = int __thiscall(void *st_this, int param_1);
@@ -4966,15 +6222,22 @@ using STFnType_icall_0074A646_FUN_0074a646_for_void_607ef352 = undefined4 __this
 using STFnType_icall_0074A72A_FUN_0074a72a_for_void_42ad12d5 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0074A77D_FUN_0074a77d_for_void_24c5df7d = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0074A7E3_FUN_0074a7e3_for_void_e9121c0c = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0074A959_FUN_0074a959_for_void_b57e783a = void __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074A959_FUN_0074a959_stdcall_7a62d172 = void __stdcall(undefined4 arg_1);
+using STFnType_icall_0074A95C_FUN_0074a95c_for_void_9ae0b2fe = void __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074A95C_FUN_0074a95c_stdcall_2b11c6a8 = void __stdcall(undefined4 arg_1);
 using STFnType_icall_0074A9A6_FUN_0074a9a6_for_void_b05c13b2 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074A9C2_FUN_0074a9c2_for_void_10835fd1 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074A9C2_FUN_0074a9c2_stdcall_6f8b8219 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074AA28_FUN_0074aa28_for_void_2a7f613f = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074AA28_FUN_0074aa28_stdcall_aeb1c193 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074AA87_FUN_0074aa87_for_void_f1a29630 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074AA87_FUN_0074aa87_stdcall_c81f029c = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074AAE1_FUN_0074aae1_for_void_4ec23280 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074AAE1_FUN_0074aae1_stdcall_d38d4556 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074AAF7_FUN_0074aaf7_for_void_f2354adf = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0074AB15_FUN_0074ab15_for_void_c4627250 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074AB3D_FUN_0074ab3d_for_void_bc377fe8 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074AB3D_FUN_0074ab3d_stdcall_558ebf79 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074AB73_FUN_0074ab73_for_void_7e884f15 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074AB9E_FUN_0074ab9e_for_void_7b6643eb = undefined4 __thiscall(void *st_this, undefined4 arg_1);
@@ -4982,34 +6245,62 @@ using STFnType_icall_0074AC25_FUN_0074ac25_for_void_a6836e93 = undefined4 __this
 using STFnType_icall_0074AC6E_FUN_0074ac6e_for_void_5eec8cbb = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0074AD27_FUN_0074ad27_for_void_8fbd115c = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0074AD32_FUN_0074ad32_for_void_572403fb = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0074AD47_FUN_0074ad47_for_void_a87f09a5 = void __thiscall(void *st_this);
+using STFnType_icall_0074AD48_FUN_0074ad48_for_void_49939ce0 = void __thiscall(void *st_this);
 using STFnType_icall_0074AD60_FUN_0074ad60_for_void_0dd1d372 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074AE34_FUN_0074ae34_for_void_02c15e34 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074AE67_FUN_0074ae67_for_void_a828a504 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074AE8E_FUN_0074ae8e_for_void_ddef85a0 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074AEE2_FUN_0074aee2_for_void_6019422b = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074AEE2_FUN_0074aee2_stdcall_b27db88e = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074AEF2_FUN_0074aef2_for_void_c6e33b27 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6, undefined4 arg_7, undefined4 arg_8);
 using STFnType_icall_0074AEF2_FUN_0074aef2_stdcall_371c8b37 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6, undefined4 arg_7, undefined4 arg_8);
 using STFnType_icall_0074AF26_FUN_0074af26_for_void_cd2a0a11 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
 using STFnType_icall_0074B06D_FUN_0074b06d_for_void_5108e734 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_0074B442_FUN_0074b442_for_void_d48de098 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0074B445_FUN_0074b445_for_void_7246d40d = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0074B448_FUN_0074b448_for_void_e6f47f22 = void __thiscall(void *st_this);
+using STFnType_icall_0074B449_FUN_0074b449_for_void_ee3b4371 = void __thiscall(void *st_this);
 using STFnType_icall_0074B44A_FUN_0074b44a_for_void_e419893f = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074B469_FUN_0074b469_for_void_f85e2120 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074B469_FUN_0074b469_stdcall_0cfc1e87 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074B49D_FUN_0074b49d_for_void_675957f7 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074B49D_FUN_0074b49d_stdcall_a283de62 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074B4D1_FUN_0074b4d1_for_void_bf2fb346 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074B4D1_FUN_0074b4d1_stdcall_3d3f54a7 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074B52E_FUN_0074b52e_for_void_eb038ca3 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074B668_FUN_0074b668_for_void_21978637 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074B668_FUN_0074b668_stdcall_f82819e5 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074B68F_FUN_0074b68f_for_void_de623e5e = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074B68F_FUN_0074b68f_stdcall_fdbf27cd = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074B6B7_FUN_0074b6b7_for_void_f28fc9a6 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0074B6B7_FUN_0074b6b7_stdcall_0a61bade = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_0074B719_FUN_0074b719_for_void_9e9387f2 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0074B719_FUN_0074b719_stdcall_aa02a0aa = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_0074B84E_FUN_0074b84e_for_void_fc19dc15 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074B84E_FUN_0074b84e_stdcall_4bc70ac6 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074B86C_FUN_0074b86c_for_void_13c2ab22 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074B86C_FUN_0074b86c_stdcall_1b094c87 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074BE6A_FUN_0074be6a_for_void_6426ea1f = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074BE6A_FUN_0074be6a_stdcall_e35fe0bb = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074BE72_FUN_0074be72_for_void_21fc9817 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0074BF23_FUN_0074bf23_for_void_7d30b674 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0074BF23_FUN_0074bf23_stdcall_9e452e24 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_0074BFA5_FUN_0074bfa5_for_void_4e2b7d21 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0074BFA8_FUN_0074bfa8_for_void_44342330 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0074BFAB_FUN_0074bfab_for_void_6f0ca549 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074BFAB_FUN_0074bfab_stdcall_8a103cbc = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074BFB0_FUN_0074bfb0_for_void_32cefb45 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074BFB0_FUN_0074bfb0_stdcall_17721cc6 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074BFBA_FUN_0074bfba_for_void_38177a0a = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074BFBA_FUN_0074bfba_stdcall_e33b772a = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074C1C4_FUN_0074c1c4_for_void_9de245b1 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
 using STFnType_icall_0074C1C4_FUN_0074c1c4_stdcall_51e85cef = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
 using STFnType_icall_0074C1CA_FUN_0074c1ca_for_void_0485f710 = undefined4 __thiscall(void *st_this);
 using STFnType_icall_0074C1DC_FUN_0074c1dc_for_void_789cb801 = undefined4 __thiscall(void *st_this);
+using STFnType_icall_0074C1F9_FUN_0074c1f9_for_void_eed3ce48 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074C1F9_FUN_0074c1f9_stdcall_6f23048a = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074C28A_FUN_0074c28a_for_void_004e6be0 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074C28A_FUN_0074c28a_stdcall_08f5da4b = undefined4 __stdcall(undefined4 arg_1);
 using STFnType_icall_0074C32D_FUN_0074c32d_fef73188 = undefined4 __thiscall(void *st_this, undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, double param_5);
 using STFnType_icall_0074C32D_FUN_0074c32d_for_void_8f9db1aa = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
@@ -5020,13 +6311,18 @@ using STFnType_icall_0074C41B_FUN_0074c41b_for_void_a727b517 = undefined4 __this
 using STFnType_icall_0074C434_FUN_0074c434_for_void_de708b0d = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074C45B_FUN_0074c45b_for_void_9dcd9ba4 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074C49C_FUN_0074c49c_for_void_3657733f = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074C4BF_FUN_0074c4bf_for_void_91b1b61d = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074C4BF_FUN_0074c4bf_stdcall_75412347 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074C501_FUN_0074c501_for_void_05a6195b = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074C501_FUN_0074c501_stdcall_9c937b7f = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074C571_FUN_0074c571_for_void_14bc9de3 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074C571_FUN_0074c571_stdcall_6bd1feca = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074C5D2_FUN_0074c5d2_for_void_e061b5e2 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074C5D2_FUN_0074c5d2_stdcall_781ba03b = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074C613_FUN_0074c613_05a6f077 = undefined1 __stdcall(AnonShape_0074C613_A217E84A *param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, double param_6);
 using STFnType_icall_0074C613_FUN_0074c613_for_void_dcc9f639 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6, undefined4 arg_7);
 using STFnType_icall_0074C69E_FUN_0074c69e_for_void_0cafef41 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074C6EA_FUN_0074c6ea_for_void_c53c9a93 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0074C6EA_FUN_0074c6ea_stdcall_daa3c88a = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0074C77C_FUN_0074c77c_for_void_13c00265 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074C7B6_FUN_0074c7b6_for_void_649fd7b0 = undefined4 __thiscall(void *st_this);
@@ -5035,40 +6331,65 @@ using STFnType_icall_0074C7F6_FUN_0074c7f6_for_void_69937d74 = undefined4 __this
 using STFnType_icall_0074C81F_FUN_0074c81f_for_void_a7e1959a = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074C842_FUN_0074c842_for_void_6db6a387 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074C858_FUN_0074c858_for_void_46f785f1 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074C8A9_FUN_0074c8a9_for_void_7a0c356d = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6, undefined4 arg_7, undefined4 arg_8);
 using STFnType_icall_0074C8A9_FUN_0074c8a9_stdcall_64390bae = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6, undefined4 arg_7, undefined4 arg_8);
+using STFnType_icall_0074C90A_FUN_0074c90a_for_void_2342a82a = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0074C90A_FUN_0074c90a_stdcall_dc2486a6 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0074C921_FUN_0074c921_for_void_d9d0c3ba = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074C921_FUN_0074c921_stdcall_22b920e6 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074C931_FUN_0074c931_for_void_4f0b4063 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074C931_FUN_0074c931_stdcall_4c0583c1 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074C941_FUN_0074c941_for_void_5acb3186 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074C941_FUN_0074c941_stdcall_1dcdb1f1 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074CAA4_FUN_0074caa4_for_void_ac5cc9fd = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074CCE2_FUN_0074cce2_for_void_45553ab0 = undefined4 __thiscall(void *st_this, undefined2 arg_1);
 using STFnType_icall_0074CE11_FUN_0074ce11_for_void_ecec3d05 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074CE2D_FUN_0074ce2d_for_void_113e2c5b = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074CE2D_FUN_0074ce2d_stdcall_0b49141b = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074CEB2_FUN_0074ceb2_for_void_6ebab6c6 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0074CEB2_FUN_0074ceb2_stdcall_19a7ea3b = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_0074CF2D_FUN_0074cf2d_for_void_ae73abf9 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074CF2D_FUN_0074cf2d_stdcall_ca80d060 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074CF58_FUN_0074cf58_for_void_670d6e24 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074CF93_FUN_0074cf93_for_void_a32fcc64 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074CF93_FUN_0074cf93_stdcall_f28d5405 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074CFFB_FUN_0074cffb_for_void_77f90068 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074D017_FUN_0074d017_for_void_c1f82e53 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074D017_FUN_0074d017_stdcall_9647f9a3 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074D042_FUN_0074d042_for_void_57496e36 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074D07D_FUN_0074d07d_for_void_dd6bccce = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined4 arg_2);
+using STFnType_icall_0074E6F6_FUN_0074e6f6_for_void_e3492378 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074E6F6_FUN_0074e6f6_stdcall_5de68c28 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074E70A_FUN_0074e70a_fbf8358f = undefined(void);
 using STFnType_icall_0074E70A_FUN_0074e70a_stdcall_f24027a6 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_icall_0074E72B_FUN_0074e72b_for_void_3d617146 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined4 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5, undefined2 arg_6);
 using STFnType_icall_0074E72B_FUN_0074e72b_stdcall_8dec87ba = undefined4 __stdcall(undefined2 arg_1, undefined4 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5, undefined2 arg_6);
+using STFnType_icall_0074E74F_FUN_0074e74f_for_void_d426ac1d = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5, undefined2 arg_6, undefined2 arg_7, undefined2 arg_8, undefined2 arg_9);
 using STFnType_icall_0074E74F_FUN_0074e74f_stdcall_934c8168 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5, undefined2 arg_6, undefined2 arg_7, undefined2 arg_8, undefined2 arg_9);
 using STFnType_icall_0074E7F6_FUN_0074e7f6_for_void_3fe80577 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074E847_FUN_0074e847_for_void_b74ec229 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0074E847_FUN_0074e847_stdcall_53494f38 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_0074E930_FUN_0074e930_for_void_d70349b2 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074E930_FUN_0074e930_stdcall_3ddbd398 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074E962_FUN_0074e962_for_void_0890699a = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074E962_FUN_0074e962_stdcall_ad13fce4 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074E994_FUN_0074e994_for_void_e0ded61e = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074E994_FUN_0074e994_stdcall_33090185 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074E9C6_FUN_0074e9c6_for_void_d8367285 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074E9C6_FUN_0074e9c6_stdcall_9fbf78a3 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074E9F8_FUN_0074e9f8_for_void_5dc1e04a = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074E9F8_FUN_0074e9f8_stdcall_a08148c9 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074EA2A_FUN_0074ea2a_for_void_f9a1eaaf = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074EA2A_FUN_0074ea2a_stdcall_6a32e578 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074EA5C_FUN_0074ea5c_for_void_37c35340 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074EA5C_FUN_0074ea5c_stdcall_ac9e41cc = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074EA8E_FUN_0074ea8e_for_void_2e8c189b = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5, undefined2 arg_6);
 using STFnType_icall_0074EA8E_FUN_0074ea8e_stdcall_9356ab4f = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5, undefined2 arg_6);
+using STFnType_icall_0074EACC_FUN_0074eacc_for_void_1895d3ab = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
 using STFnType_icall_0074EACC_FUN_0074eacc_stdcall_124b48a8 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
+using STFnType_icall_0074EB07_FUN_0074eb07_for_void_dba646f5 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0074EB07_FUN_0074eb07_stdcall_d4f5d45c = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_0074EB6B_FUN_0074eb6b_for_void_e384d961 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074EB6B_FUN_0074eb6b_stdcall_fc8c051a = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074EB99_FUN_0074eb99_237e878e = undefined(void);
 using STFnType_icall_0074EB99_FUN_0074eb99_stdcall_6891e0ee = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
@@ -5076,36 +6397,58 @@ using STFnType_icall_0074EBAE_FUN_0074ebae_3d7cc8d2 = undefined(void);
 using STFnType_icall_0074EBAE_FUN_0074ebae_stdcall_151a2f53 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074EBC3_FUN_0074ebc3_2c528aad = undefined(void);
 using STFnType_icall_0074EBC3_FUN_0074ebc3_stdcall_1a03eaf2 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074EBD8_FUN_0074ebd8_for_void_e201bc62 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0074EBD8_FUN_0074ebd8_stdcall_cee4cffd = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_0074EC0D_FUN_0074ec0d_for_void_18190d82 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074EC0D_FUN_0074ec0d_stdcall_ef13342e = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074EC3F_FUN_0074ec3f_for_void_f6215cfb = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0074EC3F_FUN_0074ec3f_stdcall_7523f05a = undefined4 __stdcall(undefined2 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0074EC87_FUN_0074ec87_for_void_c47faa04 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074EC87_FUN_0074ec87_stdcall_0a60056a = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074ECBC_FUN_0074ecbc_for_void_88a63183 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074ECBC_FUN_0074ecbc_stdcall_54d86f9a = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074ECF1_FUN_0074ecf1_313c07ab = int __stdcall(int *param_1, double param_2);
 using STFnType_icall_0074ECF1_FUN_0074ecf1_stdcall_9fb2129b = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0074ED2B_FUN_0074ed2b_for_void_6027a688 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074ED2B_FUN_0074ed2b_stdcall_c6c2e995 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074ED60_FUN_0074ed60_25199731 = int __stdcall(int *param_1, double param_2);
 using STFnType_icall_0074ED60_FUN_0074ed60_stdcall_e9a87a3e = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0074ED9A_FUN_0074ed9a_for_void_1ebf4394 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074ED9A_FUN_0074ed9a_stdcall_a7e3eb56 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074EDCF_FUN_0074edcf_1eecbd64 = int __stdcall(int *param_1, double param_2);
 using STFnType_icall_0074EDCF_FUN_0074edcf_stdcall_d3fd7b22 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0074EE09_FUN_0074ee09_for_void_cf899f75 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074EE09_FUN_0074ee09_stdcall_c316389c = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074EE3E_FUN_0074ee3e_for_void_70a67151 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0074EE3E_FUN_0074ee3e_stdcall_6672fa51 = undefined4 __stdcall(undefined2 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0074EE89_FUN_0074ee89_for_void_657b2d0d = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074EE89_FUN_0074ee89_stdcall_88f892c0 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074EEBE_FUN_0074eebe_for_void_edaa9c80 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074EEBE_FUN_0074eebe_stdcall_09ed6dd2 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2);
 using STFnType_icall_0074EF44_FUN_0074ef44_for_void_acdc8769 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074F026_FUN_0074f026_for_void_d504d02b = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0074F026_FUN_0074f026_stdcall_01fc41b2 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0074F03D_FUN_0074f03d_for_void_0725a8a9 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074F03D_FUN_0074f03d_stdcall_c8b3a821 = undefined4 __stdcall(undefined4 arg_1);
 using STFnType_icall_0074F04D_FUN_0074f04d_for_void_4fbfe8a8 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2);
+using STFnType_icall_0074F0C0_FUN_0074f0c0_for_void_d469b277 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074F0C0_FUN_0074f0c0_stdcall_c8004f1a = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074F0D0_FUN_0074f0d0_for_void_842e9613 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074F0D0_FUN_0074f0d0_stdcall_3916baac = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074FD33_FUN_0074fd33_for_void_8a0d2d81 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
 using STFnType_icall_0074FD33_FUN_0074fd33_stdcall_b712493b = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_icall_0074FD4A_FUN_0074fd4a_for_void_f2bb5e64 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074FD4A_FUN_0074fd4a_stdcall_06f00035 = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074FD5A_FUN_0074fd5a_for_void_7cfdccd8 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074FD5A_FUN_0074fd5a_stdcall_35214778 = undefined4 __stdcall(undefined4 arg_1);
 using STFnType_icall_0074FD6A_FUN_0074fd6a_for_void_3d409878 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
+using STFnType_icall_0074FDAB_FUN_0074fdab_for_void_2a6416d0 = undefined4 __thiscall(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
 using STFnType_icall_0074FDAB_FUN_0074fdab_stdcall_34db3a86 = undefined4 __stdcall(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3);
+using STFnType_icall_0074FDEB_FUN_0074fdeb_for_void_9c826721 = undefined4 __thiscall(void *st_this, undefined4 arg_1);
 using STFnType_icall_0074FDEB_FUN_0074fdeb_stdcall_14211c0e = undefined4 __stdcall(undefined4 arg_1);
+using STFnType_icall_0074FE15_FUN_0074fe15_for_void_d8b01e47 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074FE15_FUN_0074fe15_stdcall_d8c2d0ce = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
+using STFnType_icall_0074FE1D_FUN_0074fe1d_for_void_7641ddd4 = undefined4 __thiscall(void *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074FE1D_FUN_0074fe1d_stdcall_18d5dfb5 = undefined4 __stdcall(undefined4 arg_1, undefined4 arg_2);
 using STFnType_icall_0074FE47_FUN_0074fe47_stdcall_94034252 = undefined4 __stdcall(undefined2 arg_1, undefined4 arg_2, undefined2 arg_3);
 using STFnType_icall_EXTERNAL_00000103_OnStartGameReply_a9b71abb = void __thiscall(CFsgsConnection *st_this, ulong param_1);
@@ -5549,7 +6892,57 @@ using icall_00415B10_FUN_00415b10_for_TLOBaseTy = STFnType_icall_00415B10_FUN_00
 using icall_00415B10_FUN_00415b10_for_TLOEmbryoTy = STFnType_icall_00415B10_FUN_00415b10_for_TLOEmbryoTy_5f8a5d38;
 using icall_00415B10_FUN_00415b10_for_TLOFakeTy = STFnType_icall_00415B10_FUN_00415b10_for_TLOFakeTy_fb0e1e05;
 using icall_00415B10_FUN_00415b10_for_void = STFnType_icall_00415B10_FUN_00415b10_for_void_20d33985;
+using icall_004168D0_FUN_004168d0_for_STArtiafactC = STFnType_icall_004168D0_FUN_004168d0_for_STArtiafactC_51591e74;
+using icall_004168D0_FUN_004168d0_for_STBoatC = STFnType_icall_004168D0_FUN_004168d0_for_STBoatC_9aa348f8;
+using icall_004168D0_FUN_004168d0_for_STColl3C = STFnType_icall_004168D0_FUN_004168d0_for_STColl3C_e5ee8461;
+using icall_004168D0_FUN_004168d0_for_STContainerC = STFnType_icall_004168D0_FUN_004168d0_for_STContainerC_bce543d1;
+using icall_004168D0_FUN_004168d0_for_STCrabC = STFnType_icall_004168D0_FUN_004168d0_for_STCrabC_afd82b84;
+using icall_004168D0_FUN_004168d0_for_STDcResourcC = STFnType_icall_004168D0_FUN_004168d0_for_STDcResourcC_53467613;
+using icall_004168D0_FUN_004168d0_for_STDestC = STFnType_icall_004168D0_FUN_004168d0_for_STDestC_876f1db8;
+using icall_004168D0_FUN_004168d0_for_STExplosion = STFnType_icall_004168D0_FUN_004168d0_for_STExplosion_61e75529;
+using icall_004168D0_FUN_004168d0_for_STFishC = STFnType_icall_004168D0_FUN_004168d0_for_STFishC_272b1aaf;
+using icall_004168D0_FUN_004168d0_for_STGameObjC = STFnType_icall_004168D0_FUN_004168d0_for_STGameObjC_08fc90dc;
+using icall_004168D0_FUN_004168d0_for_STJellyGunC = STFnType_icall_004168D0_FUN_004168d0_for_STJellyGunC_72e9bb3f;
+using icall_004168D0_FUN_004168d0_for_STJellyManC = STFnType_icall_004168D0_FUN_004168d0_for_STJellyManC_5b49f10b;
+using icall_004168D0_FUN_004168d0_for_STLBombC = STFnType_icall_004168D0_FUN_004168d0_for_STLBombC_ae141949;
+using icall_004168D0_FUN_004168d0_for_STMBombC = STFnType_icall_004168D0_FUN_004168d0_for_STMBombC_38a9192f;
+using icall_004168D0_FUN_004168d0_for_STMineSetC = STFnType_icall_004168D0_FUN_004168d0_for_STMineSetC_4cc827e7;
+using icall_004168D0_FUN_004168d0_for_STOctopusC = STFnType_icall_004168D0_FUN_004168d0_for_STOctopusC_a23f6f24;
+using icall_004168D0_FUN_004168d0_for_STRubbishC = STFnType_icall_004168D0_FUN_004168d0_for_STRubbishC_5ebe70b3;
+using icall_004168D0_FUN_004168d0_for_STSatC = STFnType_icall_004168D0_FUN_004168d0_for_STSatC_ad8a8377;
+using icall_004168D0_FUN_004168d0_for_STSharkC = STFnType_icall_004168D0_FUN_004168d0_for_STSharkC_0d8b1b79;
+using icall_004168D0_FUN_004168d0_for_STSprGameObjC = STFnType_icall_004168D0_FUN_004168d0_for_STSprGameObjC_367d4d6d;
+using icall_004168D0_FUN_004168d0_for_STTorpC = STFnType_icall_004168D0_FUN_004168d0_for_STTorpC_d0e5f6cc;
+using icall_004168D0_FUN_004168d0_for_TLOBaseTy = STFnType_icall_004168D0_FUN_004168d0_for_TLOBaseTy_80a0c1cb;
+using icall_004168D0_FUN_004168d0_for_TLOEmbryoTy = STFnType_icall_004168D0_FUN_004168d0_for_TLOEmbryoTy_e4fbbb8e;
+using icall_004168D0_FUN_004168d0_for_TLOFakeTy = STFnType_icall_004168D0_FUN_004168d0_for_TLOFakeTy_9dab980d;
+using icall_004168D0_FUN_004168d0_for_void = STFnType_icall_004168D0_FUN_004168d0_for_void_5ab04ff5;
 using icall_004168D0_FUN_004168d0_stdcall = STFnType_icall_004168D0_FUN_004168d0_stdcall_f5b5e8b3;
+using icall_00416DB0_FUN_00416db0_for_STArtiafactC = STFnType_icall_00416DB0_FUN_00416db0_for_STArtiafactC_b865751b;
+using icall_00416DB0_FUN_00416db0_for_STBoatC = STFnType_icall_00416DB0_FUN_00416db0_for_STBoatC_1060fe95;
+using icall_00416DB0_FUN_00416db0_for_STColl3C = STFnType_icall_00416DB0_FUN_00416db0_for_STColl3C_c416a76b;
+using icall_00416DB0_FUN_00416db0_for_STContainerC = STFnType_icall_00416DB0_FUN_00416db0_for_STContainerC_f39e1e32;
+using icall_00416DB0_FUN_00416db0_for_STCrabC = STFnType_icall_00416DB0_FUN_00416db0_for_STCrabC_e13f3433;
+using icall_00416DB0_FUN_00416db0_for_STDcResourcC = STFnType_icall_00416DB0_FUN_00416db0_for_STDcResourcC_b97d6d4e;
+using icall_00416DB0_FUN_00416db0_for_STDestC = STFnType_icall_00416DB0_FUN_00416db0_for_STDestC_31a53be2;
+using icall_00416DB0_FUN_00416db0_for_STExplosion = STFnType_icall_00416DB0_FUN_00416db0_for_STExplosion_1fdfd9eb;
+using icall_00416DB0_FUN_00416db0_for_STFishC = STFnType_icall_00416DB0_FUN_00416db0_for_STFishC_eb9dd894;
+using icall_00416DB0_FUN_00416db0_for_STGameObjC = STFnType_icall_00416DB0_FUN_00416db0_for_STGameObjC_6fe041be;
+using icall_00416DB0_FUN_00416db0_for_STJellyGunC = STFnType_icall_00416DB0_FUN_00416db0_for_STJellyGunC_08dfcae6;
+using icall_00416DB0_FUN_00416db0_for_STJellyManC = STFnType_icall_00416DB0_FUN_00416db0_for_STJellyManC_37a26f44;
+using icall_00416DB0_FUN_00416db0_for_STLBombC = STFnType_icall_00416DB0_FUN_00416db0_for_STLBombC_9d75e169;
+using icall_00416DB0_FUN_00416db0_for_STMBombC = STFnType_icall_00416DB0_FUN_00416db0_for_STMBombC_20bab230;
+using icall_00416DB0_FUN_00416db0_for_STMineSetC = STFnType_icall_00416DB0_FUN_00416db0_for_STMineSetC_aed6cc72;
+using icall_00416DB0_FUN_00416db0_for_STOctopusC = STFnType_icall_00416DB0_FUN_00416db0_for_STOctopusC_42b1e33b;
+using icall_00416DB0_FUN_00416db0_for_STRubbishC = STFnType_icall_00416DB0_FUN_00416db0_for_STRubbishC_43393252;
+using icall_00416DB0_FUN_00416db0_for_STSatC = STFnType_icall_00416DB0_FUN_00416db0_for_STSatC_8fba12e8;
+using icall_00416DB0_FUN_00416db0_for_STSharkC = STFnType_icall_00416DB0_FUN_00416db0_for_STSharkC_0bb6b8fc;
+using icall_00416DB0_FUN_00416db0_for_STSprGameObjC = STFnType_icall_00416DB0_FUN_00416db0_for_STSprGameObjC_8377f409;
+using icall_00416DB0_FUN_00416db0_for_STTorpC = STFnType_icall_00416DB0_FUN_00416db0_for_STTorpC_1cf0899a;
+using icall_00416DB0_FUN_00416db0_for_TLOBaseTy = STFnType_icall_00416DB0_FUN_00416db0_for_TLOBaseTy_aad16b03;
+using icall_00416DB0_FUN_00416db0_for_TLOEmbryoTy = STFnType_icall_00416DB0_FUN_00416db0_for_TLOEmbryoTy_0721879f;
+using icall_00416DB0_FUN_00416db0_for_TLOFakeTy = STFnType_icall_00416DB0_FUN_00416db0_for_TLOFakeTy_f8feb826;
+using icall_00416DB0_FUN_00416db0_for_void = STFnType_icall_00416DB0_FUN_00416db0_for_void_d3c266d0;
 using icall_00416DB0_FUN_00416db0_stdcall = STFnType_icall_00416DB0_FUN_00416db0_stdcall_1f058c79;
 using icall_00417F30_FUN_00417f30_for_STArtiafactC = STFnType_icall_00417F30_FUN_00417f30_for_STArtiafactC_fb51db55;
 using icall_00417F30_FUN_00417f30_for_STBoatC = STFnType_icall_00417F30_FUN_00417f30_for_STBoatC_14178f8b;
@@ -5576,7 +6969,76 @@ using icall_00417F30_FUN_00417f30_for_TLOBaseTy = STFnType_icall_00417F30_FUN_00
 using icall_00417F30_FUN_00417f30_for_TLOEmbryoTy = STFnType_icall_00417F30_FUN_00417f30_for_TLOEmbryoTy_2c552fdc;
 using icall_00417F30_FUN_00417f30_for_TLOFakeTy = STFnType_icall_00417F30_FUN_00417f30_for_TLOFakeTy_0d4b9307;
 using icall_00417F30_FUN_00417f30_for_void = STFnType_icall_00417F30_FUN_00417f30_for_void_7be46e8f;
+using icall_00418990_FUN_00418990_for_STExplosion = STFnType_icall_00418990_FUN_00418990_for_STExplosion_94c9f604;
+using icall_00418990_FUN_00418990_for_STGameObjC = STFnType_icall_00418990_FUN_00418990_for_STGameObjC_26961843;
+using icall_00418990_FUN_00418990_for_STJellyManC = STFnType_icall_00418990_FUN_00418990_for_STJellyManC_3c8d2bef;
+using icall_00418990_FUN_00418990_for_STRubbishC = STFnType_icall_00418990_FUN_00418990_for_STRubbishC_039bb1e5;
+using icall_00418990_FUN_00418990_for_void = STFnType_icall_00418990_FUN_00418990_for_void_550c12c5;
+using icall_004189B0_FUN_004189b0_for_STColl3C = STFnType_icall_004189B0_FUN_004189b0_for_STColl3C_f95c9257;
+using icall_004189B0_FUN_004189b0_for_STCrabC = STFnType_icall_004189B0_FUN_004189b0_for_STCrabC_da856d22;
+using icall_004189B0_FUN_004189b0_for_STDcResourcC = STFnType_icall_004189B0_FUN_004189b0_for_STDcResourcC_9d829ab6;
+using icall_004189B0_FUN_004189b0_for_STDestC = STFnType_icall_004189B0_FUN_004189b0_for_STDestC_e9724701;
+using icall_004189B0_FUN_004189b0_for_STExplosion = STFnType_icall_004189B0_FUN_004189b0_for_STExplosion_21e6b15d;
+using icall_004189B0_FUN_004189b0_for_STFishC = STFnType_icall_004189B0_FUN_004189b0_for_STFishC_66ffa34e;
+using icall_004189B0_FUN_004189b0_for_STGameObjC = STFnType_icall_004189B0_FUN_004189b0_for_STGameObjC_f58463bf;
+using icall_004189B0_FUN_004189b0_for_STJellyGunC = STFnType_icall_004189B0_FUN_004189b0_for_STJellyGunC_6dba4457;
+using icall_004189B0_FUN_004189b0_for_STJellyManC = STFnType_icall_004189B0_FUN_004189b0_for_STJellyManC_51e43c32;
+using icall_004189B0_FUN_004189b0_for_STLBombC = STFnType_icall_004189B0_FUN_004189b0_for_STLBombC_3c4850b1;
+using icall_004189B0_FUN_004189b0_for_STMBombC = STFnType_icall_004189B0_FUN_004189b0_for_STMBombC_f5f4ae57;
+using icall_004189B0_FUN_004189b0_for_STMineSetC = STFnType_icall_004189B0_FUN_004189b0_for_STMineSetC_c0f67dfa;
+using icall_004189B0_FUN_004189b0_for_STOctopusC = STFnType_icall_004189B0_FUN_004189b0_for_STOctopusC_ea612fa8;
+using icall_004189B0_FUN_004189b0_for_STRubbishC = STFnType_icall_004189B0_FUN_004189b0_for_STRubbishC_c8ebc079;
+using icall_004189B0_FUN_004189b0_for_STSatC = STFnType_icall_004189B0_FUN_004189b0_for_STSatC_2a009904;
+using icall_004189B0_FUN_004189b0_for_STSharkC = STFnType_icall_004189B0_FUN_004189b0_for_STSharkC_e36070b3;
+using icall_004189B0_FUN_004189b0_for_STTorpC = STFnType_icall_004189B0_FUN_004189b0_for_STTorpC_1d498c3d;
+using icall_004189B0_FUN_004189b0_for_TLOFakeTy = STFnType_icall_004189B0_FUN_004189b0_for_TLOFakeTy_180f4ed2;
+using icall_004189B0_FUN_004189b0_for_void = STFnType_icall_004189B0_FUN_004189b0_for_void_5ef13bc7;
 using icall_004189D0_MoveStep = STFnType_icall_004189D0_MoveStep_1a77551c;
+using icall_00418CE0_FUN_00418ce0_for_STArtiafactC = STFnType_icall_00418CE0_FUN_00418ce0_for_STArtiafactC_8298ec45;
+using icall_00418CE0_FUN_00418ce0_for_STColl3C = STFnType_icall_00418CE0_FUN_00418ce0_for_STColl3C_e690e658;
+using icall_00418CE0_FUN_00418ce0_for_STContainerC = STFnType_icall_00418CE0_FUN_00418ce0_for_STContainerC_a1fca720;
+using icall_00418CE0_FUN_00418ce0_for_STCrabC = STFnType_icall_00418CE0_FUN_00418ce0_for_STCrabC_e226f0fa;
+using icall_00418CE0_FUN_00418ce0_for_STDcResourcC = STFnType_icall_00418CE0_FUN_00418ce0_for_STDcResourcC_f0f2a758;
+using icall_00418CE0_FUN_00418ce0_for_STDestC = STFnType_icall_00418CE0_FUN_00418ce0_for_STDestC_14b5b02f;
+using icall_00418CE0_FUN_00418ce0_for_STExplosion = STFnType_icall_00418CE0_FUN_00418ce0_for_STExplosion_9eb718a0;
+using icall_00418CE0_FUN_00418ce0_for_STFishC = STFnType_icall_00418CE0_FUN_00418ce0_for_STFishC_4430d5ce;
+using icall_00418CE0_FUN_00418ce0_for_STGameObjC = STFnType_icall_00418CE0_FUN_00418ce0_for_STGameObjC_29c0b8f9;
+using icall_00418CE0_FUN_00418ce0_for_STJellyGunC = STFnType_icall_00418CE0_FUN_00418ce0_for_STJellyGunC_5bc70f5a;
+using icall_00418CE0_FUN_00418ce0_for_STJellyManC = STFnType_icall_00418CE0_FUN_00418ce0_for_STJellyManC_74d27cbb;
+using icall_00418CE0_FUN_00418ce0_for_STLBombC = STFnType_icall_00418CE0_FUN_00418ce0_for_STLBombC_4f1fcc53;
+using icall_00418CE0_FUN_00418ce0_for_STMBombC = STFnType_icall_00418CE0_FUN_00418ce0_for_STMBombC_eaea7dc2;
+using icall_00418CE0_FUN_00418ce0_for_STMineSetC = STFnType_icall_00418CE0_FUN_00418ce0_for_STMineSetC_82dad34e;
+using icall_00418CE0_FUN_00418ce0_for_STOctopusC = STFnType_icall_00418CE0_FUN_00418ce0_for_STOctopusC_e3c30cad;
+using icall_00418CE0_FUN_00418ce0_for_STRubbishC = STFnType_icall_00418CE0_FUN_00418ce0_for_STRubbishC_0e4da735;
+using icall_00418CE0_FUN_00418ce0_for_STSatC = STFnType_icall_00418CE0_FUN_00418ce0_for_STSatC_4f619860;
+using icall_00418CE0_FUN_00418ce0_for_STSharkC = STFnType_icall_00418CE0_FUN_00418ce0_for_STSharkC_12d7bbf2;
+using icall_00418CE0_FUN_00418ce0_for_STSprGameObjC = STFnType_icall_00418CE0_FUN_00418ce0_for_STSprGameObjC_cf399d2d;
+using icall_00418CE0_FUN_00418ce0_for_STTorpC = STFnType_icall_00418CE0_FUN_00418ce0_for_STTorpC_92362061;
+using icall_00418CE0_FUN_00418ce0_for_TLOFakeTy = STFnType_icall_00418CE0_FUN_00418ce0_for_TLOFakeTy_048150eb;
+using icall_00418CE0_FUN_00418ce0_for_void = STFnType_icall_00418CE0_FUN_00418ce0_for_void_7590cb18;
+using icall_00418D00_FUN_00418d00_for_STArtiafactC = STFnType_icall_00418D00_FUN_00418d00_for_STArtiafactC_b559ad12;
+using icall_00418D00_FUN_00418d00_for_STColl3C = STFnType_icall_00418D00_FUN_00418d00_for_STColl3C_698c9681;
+using icall_00418D00_FUN_00418d00_for_STContainerC = STFnType_icall_00418D00_FUN_00418d00_for_STContainerC_45e0e492;
+using icall_00418D00_FUN_00418d00_for_STCrabC = STFnType_icall_00418D00_FUN_00418d00_for_STCrabC_3132fbc9;
+using icall_00418D00_FUN_00418d00_for_STDcResourcC = STFnType_icall_00418D00_FUN_00418d00_for_STDcResourcC_a494e7f5;
+using icall_00418D00_FUN_00418d00_for_STDestC = STFnType_icall_00418D00_FUN_00418d00_for_STDestC_533d9815;
+using icall_00418D00_FUN_00418d00_for_STExplosion = STFnType_icall_00418D00_FUN_00418d00_for_STExplosion_b8d494b0;
+using icall_00418D00_FUN_00418d00_for_STFishC = STFnType_icall_00418D00_FUN_00418d00_for_STFishC_c4e01f79;
+using icall_00418D00_FUN_00418d00_for_STGameObjC = STFnType_icall_00418D00_FUN_00418d00_for_STGameObjC_e0419464;
+using icall_00418D00_FUN_00418d00_for_STJellyGunC = STFnType_icall_00418D00_FUN_00418d00_for_STJellyGunC_3ddfef71;
+using icall_00418D00_FUN_00418d00_for_STJellyManC = STFnType_icall_00418D00_FUN_00418d00_for_STJellyManC_87b99cc7;
+using icall_00418D00_FUN_00418d00_for_STLBombC = STFnType_icall_00418D00_FUN_00418d00_for_STLBombC_c4a00eff;
+using icall_00418D00_FUN_00418d00_for_STMBombC = STFnType_icall_00418D00_FUN_00418d00_for_STMBombC_6ff20fcc;
+using icall_00418D00_FUN_00418d00_for_STMineSetC = STFnType_icall_00418D00_FUN_00418d00_for_STMineSetC_598f6ed8;
+using icall_00418D00_FUN_00418d00_for_STOctopusC = STFnType_icall_00418D00_FUN_00418d00_for_STOctopusC_b6e871e2;
+using icall_00418D00_FUN_00418d00_for_STRubbishC = STFnType_icall_00418D00_FUN_00418d00_for_STRubbishC_e588666c;
+using icall_00418D00_FUN_00418d00_for_STSatC = STFnType_icall_00418D00_FUN_00418d00_for_STSatC_f8972697;
+using icall_00418D00_FUN_00418d00_for_STSharkC = STFnType_icall_00418D00_FUN_00418d00_for_STSharkC_15f53563;
+using icall_00418D00_FUN_00418d00_for_STSprGameObjC = STFnType_icall_00418D00_FUN_00418d00_for_STSprGameObjC_91817209;
+using icall_00418D00_FUN_00418d00_for_STTorpC = STFnType_icall_00418D00_FUN_00418d00_for_STTorpC_f9188982;
+using icall_00418D00_FUN_00418d00_for_TLOEmbryoTy = STFnType_icall_00418D00_FUN_00418d00_for_TLOEmbryoTy_ece872d7;
+using icall_00418D00_FUN_00418d00_for_TLOFakeTy = STFnType_icall_00418D00_FUN_00418d00_for_TLOFakeTy_d34da627;
+using icall_00418D00_FUN_00418d00_for_void = STFnType_icall_00418D00_FUN_00418d00_for_void_3eff1a22;
 using icall_00418D00_FUN_00418d00_stdcall = STFnType_icall_00418D00_FUN_00418d00_stdcall_872f7274;
 using icall_00419A90_FUN_00419a90_for_STArtiafactC = STFnType_icall_00419A90_FUN_00419a90_for_STArtiafactC_006d00e5;
 using icall_00419A90_FUN_00419a90_for_STColl3C = STFnType_icall_00419A90_FUN_00419a90_for_STColl3C_e7d573f0;
@@ -5627,20 +7089,357 @@ using icall_00419BF0_FUN_00419bf0_for_TLOBaseTy = STFnType_icall_00419BF0_FUN_00
 using icall_00419BF0_FUN_00419bf0_for_TLOEmbryoTy = STFnType_icall_00419BF0_FUN_00419bf0_for_TLOEmbryoTy_95ff73ce;
 using icall_00419BF0_FUN_00419bf0_for_TLOFakeTy = STFnType_icall_00419BF0_FUN_00419bf0_for_TLOFakeTy_3f4b1426;
 using icall_00419BF0_FUN_00419bf0_for_void = STFnType_icall_00419BF0_FUN_00419bf0_for_void_163e6af3;
+using icall_00419DB0_FUN_00419db0_for_STColl3C = STFnType_icall_00419DB0_FUN_00419db0_for_STColl3C_e97245a6;
+using icall_00419DB0_FUN_00419db0_for_STCrabC = STFnType_icall_00419DB0_FUN_00419db0_for_STCrabC_b077bcaa;
+using icall_00419DB0_FUN_00419db0_for_STDcResourcC = STFnType_icall_00419DB0_FUN_00419db0_for_STDcResourcC_ea4e9748;
+using icall_00419DB0_FUN_00419db0_for_STDestC = STFnType_icall_00419DB0_FUN_00419db0_for_STDestC_38547b80;
+using icall_00419DB0_FUN_00419db0_for_STExplosion = STFnType_icall_00419DB0_FUN_00419db0_for_STExplosion_026c79d8;
+using icall_00419DB0_FUN_00419db0_for_STFishC = STFnType_icall_00419DB0_FUN_00419db0_for_STFishC_dd866f12;
+using icall_00419DB0_FUN_00419db0_for_STGameObjC = STFnType_icall_00419DB0_FUN_00419db0_for_STGameObjC_46d24fa0;
+using icall_00419DB0_FUN_00419db0_for_STJellyGunC = STFnType_icall_00419DB0_FUN_00419db0_for_STJellyGunC_dde4fe92;
+using icall_00419DB0_FUN_00419db0_for_STJellyManC = STFnType_icall_00419DB0_FUN_00419db0_for_STJellyManC_abd8ffc1;
+using icall_00419DB0_FUN_00419db0_for_STLBombC = STFnType_icall_00419DB0_FUN_00419db0_for_STLBombC_901c808c;
+using icall_00419DB0_FUN_00419db0_for_STMBombC = STFnType_icall_00419DB0_FUN_00419db0_for_STMBombC_296fd071;
+using icall_00419DB0_FUN_00419db0_for_STMineSetC = STFnType_icall_00419DB0_FUN_00419db0_for_STMineSetC_f31c6141;
+using icall_00419DB0_FUN_00419db0_for_STOctopusC = STFnType_icall_00419DB0_FUN_00419db0_for_STOctopusC_0022bc1c;
+using icall_00419DB0_FUN_00419db0_for_STRubbishC = STFnType_icall_00419DB0_FUN_00419db0_for_STRubbishC_db886864;
+using icall_00419DB0_FUN_00419db0_for_STSatC = STFnType_icall_00419DB0_FUN_00419db0_for_STSatC_ff28988f;
+using icall_00419DB0_FUN_00419db0_for_STSharkC = STFnType_icall_00419DB0_FUN_00419db0_for_STSharkC_f5b0043a;
+using icall_00419DB0_FUN_00419db0_for_STTorpC = STFnType_icall_00419DB0_FUN_00419db0_for_STTorpC_785b4de4;
+using icall_00419DB0_FUN_00419db0_for_TLOFakeTy = STFnType_icall_00419DB0_FUN_00419db0_for_TLOFakeTy_58e7085a;
+using icall_00419DB0_FUN_00419db0_for_void = STFnType_icall_00419DB0_FUN_00419db0_for_void_853e3e83;
 using icall_00419DB0_FUN_00419db0_stdcall = STFnType_icall_00419DB0_FUN_00419db0_stdcall_e77b5413;
+using icall_00419DD0_FUN_00419dd0_for_STColl3C = STFnType_icall_00419DD0_FUN_00419dd0_for_STColl3C_7494490f;
+using icall_00419DD0_FUN_00419dd0_for_STExplosion = STFnType_icall_00419DD0_FUN_00419dd0_for_STExplosion_da179e69;
+using icall_00419DD0_FUN_00419dd0_for_STGameObjC = STFnType_icall_00419DD0_FUN_00419dd0_for_STGameObjC_a57034af;
+using icall_00419DD0_FUN_00419dd0_for_STRubbishC = STFnType_icall_00419DD0_FUN_00419dd0_for_STRubbishC_3fda9c46;
+using icall_00419DD0_FUN_00419dd0_for_STTorpC = STFnType_icall_00419DD0_FUN_00419dd0_for_STTorpC_b28a71de;
+using icall_00419DD0_FUN_00419dd0_for_TLOFakeTy = STFnType_icall_00419DD0_FUN_00419dd0_for_TLOFakeTy_b65b841b;
+using icall_00419DD0_FUN_00419dd0_for_void = STFnType_icall_00419DD0_FUN_00419dd0_for_void_e0a378ac;
+using icall_0041AB60_FUN_0041ab60_for_STColl3C = STFnType_icall_0041AB60_FUN_0041ab60_for_STColl3C_4a72a338;
+using icall_0041AB60_FUN_0041ab60_for_STCrabC = STFnType_icall_0041AB60_FUN_0041ab60_for_STCrabC_81ba4f5a;
+using icall_0041AB60_FUN_0041ab60_for_STExplosion = STFnType_icall_0041AB60_FUN_0041ab60_for_STExplosion_57e07d3c;
+using icall_0041AB60_FUN_0041ab60_for_STFishC = STFnType_icall_0041AB60_FUN_0041ab60_for_STFishC_b65a34ad;
+using icall_0041AB60_FUN_0041ab60_for_STGameObjC = STFnType_icall_0041AB60_FUN_0041ab60_for_STGameObjC_92925319;
+using icall_0041AB60_FUN_0041ab60_for_STJellyGunC = STFnType_icall_0041AB60_FUN_0041ab60_for_STJellyGunC_2962b99d;
+using icall_0041AB60_FUN_0041ab60_for_STJellyManC = STFnType_icall_0041AB60_FUN_0041ab60_for_STJellyManC_0b09a8bc;
+using icall_0041AB60_FUN_0041ab60_for_STLBombC = STFnType_icall_0041AB60_FUN_0041ab60_for_STLBombC_a6e4455d;
+using icall_0041AB60_FUN_0041ab60_for_STMBombC = STFnType_icall_0041AB60_FUN_0041ab60_for_STMBombC_b080a5f9;
+using icall_0041AB60_FUN_0041ab60_for_STOctopusC = STFnType_icall_0041AB60_FUN_0041ab60_for_STOctopusC_42536486;
+using icall_0041AB60_FUN_0041ab60_for_STRubbishC = STFnType_icall_0041AB60_FUN_0041ab60_for_STRubbishC_9d07c893;
+using icall_0041AB60_FUN_0041ab60_for_STSatC = STFnType_icall_0041AB60_FUN_0041ab60_for_STSatC_4e5ec504;
+using icall_0041AB60_FUN_0041ab60_for_STSharkC = STFnType_icall_0041AB60_FUN_0041ab60_for_STSharkC_29b0ca72;
+using icall_0041AB60_FUN_0041ab60_for_STTorpC = STFnType_icall_0041AB60_FUN_0041ab60_for_STTorpC_27e1af83;
+using icall_0041AB60_FUN_0041ab60_for_TLOFakeTy = STFnType_icall_0041AB60_FUN_0041ab60_for_TLOFakeTy_2c2490be;
+using icall_0041AB60_FUN_0041ab60_for_void = STFnType_icall_0041AB60_FUN_0041ab60_for_void_35bbf756;
 using icall_0041AB60_FUN_0041ab60_stdcall = STFnType_icall_0041AB60_FUN_0041ab60_stdcall_f90a3518;
+using icall_0041AB90_FUN_0041ab90_for_STColl3C = STFnType_icall_0041AB90_FUN_0041ab90_for_STColl3C_3557bd98;
+using icall_0041AB90_FUN_0041ab90_for_STCrabC = STFnType_icall_0041AB90_FUN_0041ab90_for_STCrabC_f670ca7b;
+using icall_0041AB90_FUN_0041ab90_for_STExplosion = STFnType_icall_0041AB90_FUN_0041ab90_for_STExplosion_1c28e816;
+using icall_0041AB90_FUN_0041ab90_for_STFishC = STFnType_icall_0041AB90_FUN_0041ab90_for_STFishC_713bc7bc;
+using icall_0041AB90_FUN_0041ab90_for_STGameObjC = STFnType_icall_0041AB90_FUN_0041ab90_for_STGameObjC_d303fca3;
+using icall_0041AB90_FUN_0041ab90_for_STJellyGunC = STFnType_icall_0041AB90_FUN_0041ab90_for_STJellyGunC_b808acb4;
+using icall_0041AB90_FUN_0041ab90_for_STJellyManC = STFnType_icall_0041AB90_FUN_0041ab90_for_STJellyManC_7d620abf;
+using icall_0041AB90_FUN_0041ab90_for_STLBombC = STFnType_icall_0041AB90_FUN_0041ab90_for_STLBombC_a44654fc;
+using icall_0041AB90_FUN_0041ab90_for_STMBombC = STFnType_icall_0041AB90_FUN_0041ab90_for_STMBombC_72945364;
+using icall_0041AB90_FUN_0041ab90_for_STOctopusC = STFnType_icall_0041AB90_FUN_0041ab90_for_STOctopusC_b218120d;
+using icall_0041AB90_FUN_0041ab90_for_STRubbishC = STFnType_icall_0041AB90_FUN_0041ab90_for_STRubbishC_c9011e86;
+using icall_0041AB90_FUN_0041ab90_for_STSatC = STFnType_icall_0041AB90_FUN_0041ab90_for_STSatC_f85d4c8c;
+using icall_0041AB90_FUN_0041ab90_for_STSharkC = STFnType_icall_0041AB90_FUN_0041ab90_for_STSharkC_12619615;
+using icall_0041AB90_FUN_0041ab90_for_STTorpC = STFnType_icall_0041AB90_FUN_0041ab90_for_STTorpC_971941b6;
+using icall_0041AB90_FUN_0041ab90_for_TLOFakeTy = STFnType_icall_0041AB90_FUN_0041ab90_for_TLOFakeTy_b8eec9f9;
+using icall_0041AB90_FUN_0041ab90_for_void = STFnType_icall_0041AB90_FUN_0041ab90_for_void_f51525bb;
 using icall_0041AB90_FUN_0041ab90_stdcall = STFnType_icall_0041AB90_FUN_0041ab90_stdcall_8beea772;
+using icall_0041ABC0_FUN_0041abc0_for_STArtiafactC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STArtiafactC_ef60572d;
+using icall_0041ABC0_FUN_0041abc0_for_STBoatC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STBoatC_047768f6;
+using icall_0041ABC0_FUN_0041abc0_for_STColl3C = STFnType_icall_0041ABC0_FUN_0041abc0_for_STColl3C_010d0ddb;
+using icall_0041ABC0_FUN_0041abc0_for_STContainerC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STContainerC_56320eb1;
+using icall_0041ABC0_FUN_0041abc0_for_STCrabC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STCrabC_2540047e;
+using icall_0041ABC0_FUN_0041abc0_for_STDcResourcC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STDcResourcC_b2e9c044;
+using icall_0041ABC0_FUN_0041abc0_for_STDestC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STDestC_9a09895e;
+using icall_0041ABC0_FUN_0041abc0_for_STExplosion = STFnType_icall_0041ABC0_FUN_0041abc0_for_STExplosion_5aecb3d7;
+using icall_0041ABC0_FUN_0041abc0_for_STFishC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STFishC_6dbb992d;
+using icall_0041ABC0_FUN_0041abc0_for_STGameObjC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STGameObjC_0a0efbec;
+using icall_0041ABC0_FUN_0041abc0_for_STJellyGunC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STJellyGunC_e8a3bdbb;
+using icall_0041ABC0_FUN_0041abc0_for_STJellyManC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STJellyManC_36a39c95;
+using icall_0041ABC0_FUN_0041abc0_for_STLBombC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STLBombC_34d7d1c9;
+using icall_0041ABC0_FUN_0041abc0_for_STMBombC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STMBombC_7c6c3aa1;
+using icall_0041ABC0_FUN_0041abc0_for_STMineSetC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STMineSetC_377a8260;
+using icall_0041ABC0_FUN_0041abc0_for_STOctopusC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STOctopusC_1d2d43fb;
+using icall_0041ABC0_FUN_0041abc0_for_STRubbishC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STRubbishC_e130f455;
+using icall_0041ABC0_FUN_0041abc0_for_STSatC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STSatC_4e701332;
+using icall_0041ABC0_FUN_0041abc0_for_STSharkC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STSharkC_e37e7eff;
+using icall_0041ABC0_FUN_0041abc0_for_STSprGameObjC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STSprGameObjC_f7de8235;
+using icall_0041ABC0_FUN_0041abc0_for_STTorpC = STFnType_icall_0041ABC0_FUN_0041abc0_for_STTorpC_74436bc1;
+using icall_0041ABC0_FUN_0041abc0_for_TLOEmbryoTy = STFnType_icall_0041ABC0_FUN_0041abc0_for_TLOEmbryoTy_f85ade26;
+using icall_0041ABC0_FUN_0041abc0_for_TLOFakeTy = STFnType_icall_0041ABC0_FUN_0041abc0_for_TLOFakeTy_d56d8a63;
+using icall_0041ABC0_FUN_0041abc0_for_void = STFnType_icall_0041ABC0_FUN_0041abc0_for_void_a8364d0e;
 using icall_0041ABC0_FUN_0041abc0_stdcall = STFnType_icall_0041ABC0_FUN_0041abc0_stdcall_bb3a49cf;
+using icall_0041ABF0_FUN_0041abf0_for_STArtiafactC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STArtiafactC_7b465db0;
+using icall_0041ABF0_FUN_0041abf0_for_STBoatC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STBoatC_f6e2f1b3;
+using icall_0041ABF0_FUN_0041abf0_for_STColl3C = STFnType_icall_0041ABF0_FUN_0041abf0_for_STColl3C_4ed10455;
+using icall_0041ABF0_FUN_0041abf0_for_STContainerC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STContainerC_a2777627;
+using icall_0041ABF0_FUN_0041abf0_for_STCrabC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STCrabC_f70cf854;
+using icall_0041ABF0_FUN_0041abf0_for_STDcResourcC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STDcResourcC_08df5746;
+using icall_0041ABF0_FUN_0041abf0_for_STDestC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STDestC_5fe7acb1;
+using icall_0041ABF0_FUN_0041abf0_for_STExplosion = STFnType_icall_0041ABF0_FUN_0041abf0_for_STExplosion_c0ca9467;
+using icall_0041ABF0_FUN_0041abf0_for_STFishC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STFishC_88eb7a73;
+using icall_0041ABF0_FUN_0041abf0_for_STGameObjC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STGameObjC_66d20449;
+using icall_0041ABF0_FUN_0041abf0_for_STJellyGunC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STJellyGunC_b68e4add;
+using icall_0041ABF0_FUN_0041abf0_for_STJellyManC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STJellyManC_2385d988;
+using icall_0041ABF0_FUN_0041abf0_for_STLBombC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STLBombC_cb950549;
+using icall_0041ABF0_FUN_0041abf0_for_STMBombC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STMBombC_67cf8f4e;
+using icall_0041ABF0_FUN_0041abf0_for_STMineSetC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STMineSetC_9d9577b2;
+using icall_0041ABF0_FUN_0041abf0_for_STOctopusC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STOctopusC_bed1d389;
+using icall_0041ABF0_FUN_0041abf0_for_STRubbishC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STRubbishC_924f6185;
+using icall_0041ABF0_FUN_0041abf0_for_STSatC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STSatC_b37cb2b4;
+using icall_0041ABF0_FUN_0041abf0_for_STSharkC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STSharkC_faeb520a;
+using icall_0041ABF0_FUN_0041abf0_for_STSprGameObjC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STSprGameObjC_b9b3ac72;
+using icall_0041ABF0_FUN_0041abf0_for_STTorpC = STFnType_icall_0041ABF0_FUN_0041abf0_for_STTorpC_e8a50e16;
+using icall_0041ABF0_FUN_0041abf0_for_TLOEmbryoTy = STFnType_icall_0041ABF0_FUN_0041abf0_for_TLOEmbryoTy_a9a423cf;
+using icall_0041ABF0_FUN_0041abf0_for_TLOFakeTy = STFnType_icall_0041ABF0_FUN_0041abf0_for_TLOFakeTy_befdc2eb;
+using icall_0041ABF0_FUN_0041abf0_for_void = STFnType_icall_0041ABF0_FUN_0041abf0_for_void_f42ce0ef;
 using icall_0041ABF0_FUN_0041abf0_stdcall = STFnType_icall_0041ABF0_FUN_0041abf0_stdcall_cabf325e;
+using icall_0041AC40_FUN_0041ac40_for_STArtiafactC = STFnType_icall_0041AC40_FUN_0041ac40_for_STArtiafactC_45cd5d25;
+using icall_0041AC40_FUN_0041ac40_for_STColl3C = STFnType_icall_0041AC40_FUN_0041ac40_for_STColl3C_c12baa0e;
+using icall_0041AC40_FUN_0041ac40_for_STContainerC = STFnType_icall_0041AC40_FUN_0041ac40_for_STContainerC_c1f44d84;
+using icall_0041AC40_FUN_0041ac40_for_STCrabC = STFnType_icall_0041AC40_FUN_0041ac40_for_STCrabC_09a4e18c;
+using icall_0041AC40_FUN_0041ac40_for_STDcResourcC = STFnType_icall_0041AC40_FUN_0041ac40_for_STDcResourcC_fcd17b0d;
+using icall_0041AC40_FUN_0041ac40_for_STDestC = STFnType_icall_0041AC40_FUN_0041ac40_for_STDestC_d0e96d40;
+using icall_0041AC40_FUN_0041ac40_for_STExplosion = STFnType_icall_0041AC40_FUN_0041ac40_for_STExplosion_bf104951;
+using icall_0041AC40_FUN_0041ac40_for_STFishC = STFnType_icall_0041AC40_FUN_0041ac40_for_STFishC_2c0ccded;
+using icall_0041AC40_FUN_0041ac40_for_STGameObjC = STFnType_icall_0041AC40_FUN_0041ac40_for_STGameObjC_18a5e4e2;
+using icall_0041AC40_FUN_0041ac40_for_STJellyGunC = STFnType_icall_0041AC40_FUN_0041ac40_for_STJellyGunC_dfd548c2;
+using icall_0041AC40_FUN_0041ac40_for_STJellyManC = STFnType_icall_0041AC40_FUN_0041ac40_for_STJellyManC_59cc54f0;
+using icall_0041AC40_FUN_0041ac40_for_STLBombC = STFnType_icall_0041AC40_FUN_0041ac40_for_STLBombC_e57af7bf;
+using icall_0041AC40_FUN_0041ac40_for_STMBombC = STFnType_icall_0041AC40_FUN_0041ac40_for_STMBombC_07d1f2d1;
+using icall_0041AC40_FUN_0041ac40_for_STMineSetC = STFnType_icall_0041AC40_FUN_0041ac40_for_STMineSetC_d05744a1;
+using icall_0041AC40_FUN_0041ac40_for_STOctopusC = STFnType_icall_0041AC40_FUN_0041ac40_for_STOctopusC_4ce4e26f;
+using icall_0041AC40_FUN_0041ac40_for_STRubbishC = STFnType_icall_0041AC40_FUN_0041ac40_for_STRubbishC_5d923620;
+using icall_0041AC40_FUN_0041ac40_for_STSatC = STFnType_icall_0041AC40_FUN_0041ac40_for_STSatC_9fa8ae4f;
+using icall_0041AC40_FUN_0041ac40_for_STSharkC = STFnType_icall_0041AC40_FUN_0041ac40_for_STSharkC_cde7d7ce;
+using icall_0041AC40_FUN_0041ac40_for_STSprGameObjC = STFnType_icall_0041AC40_FUN_0041ac40_for_STSprGameObjC_f52685ab;
+using icall_0041AC40_FUN_0041ac40_for_STTorpC = STFnType_icall_0041AC40_FUN_0041ac40_for_STTorpC_82afa497;
+using icall_0041AC40_FUN_0041ac40_for_TLOBaseTy = STFnType_icall_0041AC40_FUN_0041ac40_for_TLOBaseTy_fba529ca;
+using icall_0041AC40_FUN_0041ac40_for_TLOEmbryoTy = STFnType_icall_0041AC40_FUN_0041ac40_for_TLOEmbryoTy_9220a492;
+using icall_0041AC40_FUN_0041ac40_for_TLOFakeTy = STFnType_icall_0041AC40_FUN_0041ac40_for_TLOFakeTy_1ee0ee9f;
+using icall_0041AC40_FUN_0041ac40_for_void = STFnType_icall_0041AC40_FUN_0041ac40_for_void_09d32dd3;
 using icall_0041AC40_FUN_0041ac40_stdcall = STFnType_icall_0041AC40_FUN_0041ac40_stdcall_23983a84;
+using icall_0041AC90_FUN_0041ac90_for_STArtiafactC = STFnType_icall_0041AC90_FUN_0041ac90_for_STArtiafactC_194adf37;
+using icall_0041AC90_FUN_0041ac90_for_STBoatC = STFnType_icall_0041AC90_FUN_0041ac90_for_STBoatC_0031c5b5;
+using icall_0041AC90_FUN_0041ac90_for_STColl3C = STFnType_icall_0041AC90_FUN_0041ac90_for_STColl3C_2e0dce9a;
+using icall_0041AC90_FUN_0041ac90_for_STContainerC = STFnType_icall_0041AC90_FUN_0041ac90_for_STContainerC_50ad2378;
+using icall_0041AC90_FUN_0041ac90_for_STCrabC = STFnType_icall_0041AC90_FUN_0041ac90_for_STCrabC_6a208503;
+using icall_0041AC90_FUN_0041ac90_for_STDcResourcC = STFnType_icall_0041AC90_FUN_0041ac90_for_STDcResourcC_e57bd1e0;
+using icall_0041AC90_FUN_0041ac90_for_STDestC = STFnType_icall_0041AC90_FUN_0041ac90_for_STDestC_6282147e;
+using icall_0041AC90_FUN_0041ac90_for_STExplosion = STFnType_icall_0041AC90_FUN_0041ac90_for_STExplosion_d79776c0;
+using icall_0041AC90_FUN_0041ac90_for_STFishC = STFnType_icall_0041AC90_FUN_0041ac90_for_STFishC_429d1f9b;
+using icall_0041AC90_FUN_0041ac90_for_STGameObjC = STFnType_icall_0041AC90_FUN_0041ac90_for_STGameObjC_b28417c5;
+using icall_0041AC90_FUN_0041ac90_for_STJellyGunC = STFnType_icall_0041AC90_FUN_0041ac90_for_STJellyGunC_d80bb684;
+using icall_0041AC90_FUN_0041ac90_for_STJellyManC = STFnType_icall_0041AC90_FUN_0041ac90_for_STJellyManC_7b76f457;
+using icall_0041AC90_FUN_0041ac90_for_STLBombC = STFnType_icall_0041AC90_FUN_0041ac90_for_STLBombC_2addc8ab;
+using icall_0041AC90_FUN_0041ac90_for_STMBombC = STFnType_icall_0041AC90_FUN_0041ac90_for_STMBombC_64a65192;
+using icall_0041AC90_FUN_0041ac90_for_STMineSetC = STFnType_icall_0041AC90_FUN_0041ac90_for_STMineSetC_d99b152c;
+using icall_0041AC90_FUN_0041ac90_for_STOctopusC = STFnType_icall_0041AC90_FUN_0041ac90_for_STOctopusC_b6891165;
+using icall_0041AC90_FUN_0041ac90_for_STRubbishC = STFnType_icall_0041AC90_FUN_0041ac90_for_STRubbishC_aa928b85;
+using icall_0041AC90_FUN_0041ac90_for_STSatC = STFnType_icall_0041AC90_FUN_0041ac90_for_STSatC_357ff7e9;
+using icall_0041AC90_FUN_0041ac90_for_STSharkC = STFnType_icall_0041AC90_FUN_0041ac90_for_STSharkC_ce001b27;
+using icall_0041AC90_FUN_0041ac90_for_STSprGameObjC = STFnType_icall_0041AC90_FUN_0041ac90_for_STSprGameObjC_eb0b17bf;
+using icall_0041AC90_FUN_0041ac90_for_STTorpC = STFnType_icall_0041AC90_FUN_0041ac90_for_STTorpC_aaf6d519;
+using icall_0041AC90_FUN_0041ac90_for_TLOEmbryoTy = STFnType_icall_0041AC90_FUN_0041ac90_for_TLOEmbryoTy_418664dc;
+using icall_0041AC90_FUN_0041ac90_for_TLOFakeTy = STFnType_icall_0041AC90_FUN_0041ac90_for_TLOFakeTy_35bf2be4;
+using icall_0041AC90_FUN_0041ac90_for_void = STFnType_icall_0041AC90_FUN_0041ac90_for_void_b8bd2b8d;
 using icall_0041AC90_FUN_0041ac90_stdcall = STFnType_icall_0041AC90_FUN_0041ac90_stdcall_a2451f7e;
+using icall_0041ACC0_FUN_0041acc0_for_STArtiafactC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STArtiafactC_30d0d323;
+using icall_0041ACC0_FUN_0041acc0_for_STBoatC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STBoatC_8de6d035;
+using icall_0041ACC0_FUN_0041acc0_for_STColl3C = STFnType_icall_0041ACC0_FUN_0041acc0_for_STColl3C_acdcd2c9;
+using icall_0041ACC0_FUN_0041acc0_for_STContainerC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STContainerC_ec5daedf;
+using icall_0041ACC0_FUN_0041acc0_for_STCrabC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STCrabC_78c71266;
+using icall_0041ACC0_FUN_0041acc0_for_STDcResourcC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STDcResourcC_89e47406;
+using icall_0041ACC0_FUN_0041acc0_for_STDestC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STDestC_e0ff2528;
+using icall_0041ACC0_FUN_0041acc0_for_STExplosion = STFnType_icall_0041ACC0_FUN_0041acc0_for_STExplosion_27f0d328;
+using icall_0041ACC0_FUN_0041acc0_for_STFishC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STFishC_1c091ca5;
+using icall_0041ACC0_FUN_0041acc0_for_STGameObjC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STGameObjC_aad5434d;
+using icall_0041ACC0_FUN_0041acc0_for_STJellyGunC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STJellyGunC_242d9002;
+using icall_0041ACC0_FUN_0041acc0_for_STJellyManC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STJellyManC_dd56f15c;
+using icall_0041ACC0_FUN_0041acc0_for_STLBombC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STLBombC_4acf17d8;
+using icall_0041ACC0_FUN_0041acc0_for_STMBombC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STMBombC_ce181a88;
+using icall_0041ACC0_FUN_0041acc0_for_STMineSetC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STMineSetC_0a80a080;
+using icall_0041ACC0_FUN_0041acc0_for_STOctopusC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STOctopusC_e912e3fc;
+using icall_0041ACC0_FUN_0041acc0_for_STRubbishC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STRubbishC_361aead2;
+using icall_0041ACC0_FUN_0041acc0_for_STSatC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STSatC_24d4eb67;
+using icall_0041ACC0_FUN_0041acc0_for_STSharkC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STSharkC_85d6d9f2;
+using icall_0041ACC0_FUN_0041acc0_for_STSprGameObjC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STSprGameObjC_9baa5b2d;
+using icall_0041ACC0_FUN_0041acc0_for_STTorpC = STFnType_icall_0041ACC0_FUN_0041acc0_for_STTorpC_163e3a2c;
+using icall_0041ACC0_FUN_0041acc0_for_TLOEmbryoTy = STFnType_icall_0041ACC0_FUN_0041acc0_for_TLOEmbryoTy_c0b124c3;
+using icall_0041ACC0_FUN_0041acc0_for_TLOFakeTy = STFnType_icall_0041ACC0_FUN_0041acc0_for_TLOFakeTy_d77dc3d9;
+using icall_0041ACC0_FUN_0041acc0_for_void = STFnType_icall_0041ACC0_FUN_0041acc0_for_void_1b1308b8;
 using icall_0041ACC0_FUN_0041acc0_stdcall = STFnType_icall_0041ACC0_FUN_0041acc0_stdcall_cde87490;
+using icall_0041ACF0_FUN_0041acf0_for_STArtiafactC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STArtiafactC_1de517c5;
+using icall_0041ACF0_FUN_0041acf0_for_STColl3C = STFnType_icall_0041ACF0_FUN_0041acf0_for_STColl3C_6c5a4ad8;
+using icall_0041ACF0_FUN_0041acf0_for_STContainerC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STContainerC_5c830f73;
+using icall_0041ACF0_FUN_0041acf0_for_STCrabC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STCrabC_0a032e6d;
+using icall_0041ACF0_FUN_0041acf0_for_STDcResourcC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STDcResourcC_bb4d3fd5;
+using icall_0041ACF0_FUN_0041acf0_for_STDestC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STDestC_eda8752d;
+using icall_0041ACF0_FUN_0041acf0_for_STExplosion = STFnType_icall_0041ACF0_FUN_0041acf0_for_STExplosion_48fccfa5;
+using icall_0041ACF0_FUN_0041acf0_for_STFishC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STFishC_81cbb5cd;
+using icall_0041ACF0_FUN_0041acf0_for_STGameObjC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STGameObjC_496a130d;
+using icall_0041ACF0_FUN_0041acf0_for_STJellyGunC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STJellyGunC_97818c5a;
+using icall_0041ACF0_FUN_0041acf0_for_STJellyManC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STJellyManC_7ee73dc0;
+using icall_0041ACF0_FUN_0041acf0_for_STLBombC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STLBombC_caa06b9b;
+using icall_0041ACF0_FUN_0041acf0_for_STMBombC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STMBombC_e61e4c96;
+using icall_0041ACF0_FUN_0041acf0_for_STMineSetC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STMineSetC_8afd9b0f;
+using icall_0041ACF0_FUN_0041acf0_for_STOctopusC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STOctopusC_1a1ea993;
+using icall_0041ACF0_FUN_0041acf0_for_STRubbishC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STRubbishC_c9b4224d;
+using icall_0041ACF0_FUN_0041acf0_for_STSatC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STSatC_6542cc06;
+using icall_0041ACF0_FUN_0041acf0_for_STSharkC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STSharkC_59152c94;
+using icall_0041ACF0_FUN_0041acf0_for_STSprGameObjC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STSprGameObjC_1fa03896;
+using icall_0041ACF0_FUN_0041acf0_for_STTorpC = STFnType_icall_0041ACF0_FUN_0041acf0_for_STTorpC_c9c528f5;
+using icall_0041ACF0_FUN_0041acf0_for_TLOBaseTy = STFnType_icall_0041ACF0_FUN_0041acf0_for_TLOBaseTy_e57d589d;
+using icall_0041ACF0_FUN_0041acf0_for_TLOEmbryoTy = STFnType_icall_0041ACF0_FUN_0041acf0_for_TLOEmbryoTy_b872169d;
+using icall_0041ACF0_FUN_0041acf0_for_TLOFakeTy = STFnType_icall_0041ACF0_FUN_0041acf0_for_TLOFakeTy_2eb08d12;
+using icall_0041ACF0_FUN_0041acf0_for_void = STFnType_icall_0041ACF0_FUN_0041acf0_for_void_a8265038;
 using icall_0041ACF0_FUN_0041acf0_stdcall = STFnType_icall_0041ACF0_FUN_0041acf0_stdcall_e8a44c6b;
+using icall_0041AD20_FUN_0041ad20_for_STArtiafactC = STFnType_icall_0041AD20_FUN_0041ad20_for_STArtiafactC_7465018d;
+using icall_0041AD20_FUN_0041ad20_for_STBoatC = STFnType_icall_0041AD20_FUN_0041ad20_for_STBoatC_c0319223;
+using icall_0041AD20_FUN_0041ad20_for_STColl3C = STFnType_icall_0041AD20_FUN_0041ad20_for_STColl3C_52c3101c;
+using icall_0041AD20_FUN_0041ad20_for_STContainerC = STFnType_icall_0041AD20_FUN_0041ad20_for_STContainerC_4a553a01;
+using icall_0041AD20_FUN_0041ad20_for_STCrabC = STFnType_icall_0041AD20_FUN_0041ad20_for_STCrabC_23d2eb68;
+using icall_0041AD20_FUN_0041ad20_for_STDcResourcC = STFnType_icall_0041AD20_FUN_0041ad20_for_STDcResourcC_25fee2a5;
+using icall_0041AD20_FUN_0041ad20_for_STDestC = STFnType_icall_0041AD20_FUN_0041ad20_for_STDestC_266c0a94;
+using icall_0041AD20_FUN_0041ad20_for_STExplosion = STFnType_icall_0041AD20_FUN_0041ad20_for_STExplosion_30d0d7ea;
+using icall_0041AD20_FUN_0041ad20_for_STFishC = STFnType_icall_0041AD20_FUN_0041ad20_for_STFishC_cea962e1;
+using icall_0041AD20_FUN_0041ad20_for_STGameObjC = STFnType_icall_0041AD20_FUN_0041ad20_for_STGameObjC_48527e4d;
+using icall_0041AD20_FUN_0041ad20_for_STJellyGunC = STFnType_icall_0041AD20_FUN_0041ad20_for_STJellyGunC_b96d71c3;
+using icall_0041AD20_FUN_0041ad20_for_STJellyManC = STFnType_icall_0041AD20_FUN_0041ad20_for_STJellyManC_23c2110b;
+using icall_0041AD20_FUN_0041ad20_for_STLBombC = STFnType_icall_0041AD20_FUN_0041ad20_for_STLBombC_5282fdd6;
+using icall_0041AD20_FUN_0041ad20_for_STMBombC = STFnType_icall_0041AD20_FUN_0041ad20_for_STMBombC_2a45ae9b;
+using icall_0041AD20_FUN_0041ad20_for_STMineSetC = STFnType_icall_0041AD20_FUN_0041ad20_for_STMineSetC_9f51f539;
+using icall_0041AD20_FUN_0041ad20_for_STOctopusC = STFnType_icall_0041AD20_FUN_0041ad20_for_STOctopusC_0a6beaff;
+using icall_0041AD20_FUN_0041ad20_for_STRubbishC = STFnType_icall_0041AD20_FUN_0041ad20_for_STRubbishC_95d1b70d;
+using icall_0041AD20_FUN_0041ad20_for_STSatC = STFnType_icall_0041AD20_FUN_0041ad20_for_STSatC_98672ff1;
+using icall_0041AD20_FUN_0041ad20_for_STSharkC = STFnType_icall_0041AD20_FUN_0041ad20_for_STSharkC_48d07ab5;
+using icall_0041AD20_FUN_0041ad20_for_STSprGameObjC = STFnType_icall_0041AD20_FUN_0041ad20_for_STSprGameObjC_07a1b400;
+using icall_0041AD20_FUN_0041ad20_for_STTorpC = STFnType_icall_0041AD20_FUN_0041ad20_for_STTorpC_254ccb56;
+using icall_0041AD20_FUN_0041ad20_for_TLOEmbryoTy = STFnType_icall_0041AD20_FUN_0041ad20_for_TLOEmbryoTy_7d494acd;
+using icall_0041AD20_FUN_0041ad20_for_TLOFakeTy = STFnType_icall_0041AD20_FUN_0041ad20_for_TLOFakeTy_7ba0d291;
+using icall_0041AD20_FUN_0041ad20_for_void = STFnType_icall_0041AD20_FUN_0041ad20_for_void_8583e498;
 using icall_0041AD20_FUN_0041ad20_stdcall = STFnType_icall_0041AD20_FUN_0041ad20_stdcall_4d612e43;
+using icall_0041AD50_FUN_0041ad50_for_STArtiafactC = STFnType_icall_0041AD50_FUN_0041ad50_for_STArtiafactC_67cbdab2;
+using icall_0041AD50_FUN_0041ad50_for_STBoatC = STFnType_icall_0041AD50_FUN_0041ad50_for_STBoatC_22298cfc;
+using icall_0041AD50_FUN_0041ad50_for_STColl3C = STFnType_icall_0041AD50_FUN_0041ad50_for_STColl3C_aa2adfa1;
+using icall_0041AD50_FUN_0041ad50_for_STContainerC = STFnType_icall_0041AD50_FUN_0041ad50_for_STContainerC_27052e2e;
+using icall_0041AD50_FUN_0041ad50_for_STCrabC = STFnType_icall_0041AD50_FUN_0041ad50_for_STCrabC_073fa6a1;
+using icall_0041AD50_FUN_0041ad50_for_STDcResourcC = STFnType_icall_0041AD50_FUN_0041ad50_for_STDcResourcC_a043ca5e;
+using icall_0041AD50_FUN_0041ad50_for_STDestC = STFnType_icall_0041AD50_FUN_0041ad50_for_STDestC_2c3506f1;
+using icall_0041AD50_FUN_0041ad50_for_STExplosion = STFnType_icall_0041AD50_FUN_0041ad50_for_STExplosion_d3084a98;
+using icall_0041AD50_FUN_0041ad50_for_STFishC = STFnType_icall_0041AD50_FUN_0041ad50_for_STFishC_edc39ed7;
+using icall_0041AD50_FUN_0041ad50_for_STGameObjC = STFnType_icall_0041AD50_FUN_0041ad50_for_STGameObjC_0c019c46;
+using icall_0041AD50_FUN_0041ad50_for_STJellyGunC = STFnType_icall_0041AD50_FUN_0041ad50_for_STJellyGunC_b9b11606;
+using icall_0041AD50_FUN_0041ad50_for_STJellyManC = STFnType_icall_0041AD50_FUN_0041ad50_for_STJellyManC_cb688448;
+using icall_0041AD50_FUN_0041ad50_for_STLBombC = STFnType_icall_0041AD50_FUN_0041ad50_for_STLBombC_f32e262c;
+using icall_0041AD50_FUN_0041ad50_for_STMBombC = STFnType_icall_0041AD50_FUN_0041ad50_for_STMBombC_bb30859f;
+using icall_0041AD50_FUN_0041ad50_for_STMineSetC = STFnType_icall_0041AD50_FUN_0041ad50_for_STMineSetC_9066a223;
+using icall_0041AD50_FUN_0041ad50_for_STOctopusC = STFnType_icall_0041AD50_FUN_0041ad50_for_STOctopusC_531bf98d;
+using icall_0041AD50_FUN_0041ad50_for_STRubbishC = STFnType_icall_0041AD50_FUN_0041ad50_for_STRubbishC_1d5bca23;
+using icall_0041AD50_FUN_0041ad50_for_STSatC = STFnType_icall_0041AD50_FUN_0041ad50_for_STSatC_6ae77257;
+using icall_0041AD50_FUN_0041ad50_for_STSharkC = STFnType_icall_0041AD50_FUN_0041ad50_for_STSharkC_c0aca7c7;
+using icall_0041AD50_FUN_0041ad50_for_STSprGameObjC = STFnType_icall_0041AD50_FUN_0041ad50_for_STSprGameObjC_5cc2c309;
+using icall_0041AD50_FUN_0041ad50_for_STTorpC = STFnType_icall_0041AD50_FUN_0041ad50_for_STTorpC_d96a545f;
+using icall_0041AD50_FUN_0041ad50_for_TLOBaseTy = STFnType_icall_0041AD50_FUN_0041ad50_for_TLOBaseTy_8bbed775;
+using icall_0041AD50_FUN_0041ad50_for_TLOEmbryoTy = STFnType_icall_0041AD50_FUN_0041ad50_for_TLOEmbryoTy_ba9e2381;
+using icall_0041AD50_FUN_0041ad50_for_TLOFakeTy = STFnType_icall_0041AD50_FUN_0041ad50_for_TLOFakeTy_142f47b8;
+using icall_0041AD50_FUN_0041ad50_for_void = STFnType_icall_0041AD50_FUN_0041ad50_for_void_4d5043e7;
 using icall_0041AD50_FUN_0041ad50_stdcall = STFnType_icall_0041AD50_FUN_0041ad50_stdcall_2927dbcc;
+using icall_0041AD80_FUN_0041ad80_for_STColl3C = STFnType_icall_0041AD80_FUN_0041ad80_for_STColl3C_6f849a97;
+using icall_0041AD80_FUN_0041ad80_for_STCrabC = STFnType_icall_0041AD80_FUN_0041ad80_for_STCrabC_a8aeb896;
+using icall_0041AD80_FUN_0041ad80_for_STDestC = STFnType_icall_0041AD80_FUN_0041ad80_for_STDestC_627caf06;
+using icall_0041AD80_FUN_0041ad80_for_STExplosion = STFnType_icall_0041AD80_FUN_0041ad80_for_STExplosion_4446117c;
+using icall_0041AD80_FUN_0041ad80_for_STFishC = STFnType_icall_0041AD80_FUN_0041ad80_for_STFishC_9c36de15;
+using icall_0041AD80_FUN_0041ad80_for_STGameObjC = STFnType_icall_0041AD80_FUN_0041ad80_for_STGameObjC_cd71f464;
+using icall_0041AD80_FUN_0041ad80_for_STJellyGunC = STFnType_icall_0041AD80_FUN_0041ad80_for_STJellyGunC_aa8102bd;
+using icall_0041AD80_FUN_0041ad80_for_STJellyManC = STFnType_icall_0041AD80_FUN_0041ad80_for_STJellyManC_431bc3ed;
+using icall_0041AD80_FUN_0041ad80_for_STLBombC = STFnType_icall_0041AD80_FUN_0041ad80_for_STLBombC_ad555f63;
+using icall_0041AD80_FUN_0041ad80_for_STMBombC = STFnType_icall_0041AD80_FUN_0041ad80_for_STMBombC_8b505e4b;
+using icall_0041AD80_FUN_0041ad80_for_STOctopusC = STFnType_icall_0041AD80_FUN_0041ad80_for_STOctopusC_ec88533d;
+using icall_0041AD80_FUN_0041ad80_for_STRubbishC = STFnType_icall_0041AD80_FUN_0041ad80_for_STRubbishC_5e77b7f6;
+using icall_0041AD80_FUN_0041ad80_for_STSatC = STFnType_icall_0041AD80_FUN_0041ad80_for_STSatC_a05123f0;
+using icall_0041AD80_FUN_0041ad80_for_STSharkC = STFnType_icall_0041AD80_FUN_0041ad80_for_STSharkC_05d491d9;
+using icall_0041AD80_FUN_0041ad80_for_STTorpC = STFnType_icall_0041AD80_FUN_0041ad80_for_STTorpC_e5022792;
+using icall_0041AD80_FUN_0041ad80_for_TLOBaseTy = STFnType_icall_0041AD80_FUN_0041ad80_for_TLOBaseTy_37d6b2f6;
+using icall_0041AD80_FUN_0041ad80_for_TLOEmbryoTy = STFnType_icall_0041AD80_FUN_0041ad80_for_TLOEmbryoTy_02576509;
+using icall_0041AD80_FUN_0041ad80_for_TLOFakeTy = STFnType_icall_0041AD80_FUN_0041ad80_for_TLOFakeTy_e9b74233;
+using icall_0041AD80_FUN_0041ad80_for_void = STFnType_icall_0041AD80_FUN_0041ad80_for_void_d5af319c;
 using icall_0041AD80_FUN_0041ad80_stdcall = STFnType_icall_0041AD80_FUN_0041ad80_stdcall_e0794816;
+using icall_0041ADB0_FUN_0041adb0_for_STBoatC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STBoatC_719aa26b;
+using icall_0041ADB0_FUN_0041adb0_for_STColl3C = STFnType_icall_0041ADB0_FUN_0041adb0_for_STColl3C_38ca1e4c;
+using icall_0041ADB0_FUN_0041adb0_for_STCrabC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STCrabC_8008ee7f;
+using icall_0041ADB0_FUN_0041adb0_for_STDestC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STDestC_b2b01b70;
+using icall_0041ADB0_FUN_0041adb0_for_STExplosion = STFnType_icall_0041ADB0_FUN_0041adb0_for_STExplosion_f4b3c030;
+using icall_0041ADB0_FUN_0041adb0_for_STFishC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STFishC_5a98f226;
+using icall_0041ADB0_FUN_0041adb0_for_STGameObjC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STGameObjC_9a71bfc9;
+using icall_0041ADB0_FUN_0041adb0_for_STJellyGunC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STJellyGunC_2d83db5e;
+using icall_0041ADB0_FUN_0041adb0_for_STJellyManC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STJellyManC_a6029e27;
+using icall_0041ADB0_FUN_0041adb0_for_STLBombC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STLBombC_f3057b2d;
+using icall_0041ADB0_FUN_0041adb0_for_STMBombC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STMBombC_1d38b126;
+using icall_0041ADB0_FUN_0041adb0_for_STOctopusC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STOctopusC_91446d9c;
+using icall_0041ADB0_FUN_0041adb0_for_STRubbishC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STRubbishC_51967ce4;
+using icall_0041ADB0_FUN_0041adb0_for_STSatC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STSatC_939c97e1;
+using icall_0041ADB0_FUN_0041adb0_for_STSharkC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STSharkC_44109bf4;
+using icall_0041ADB0_FUN_0041adb0_for_STTorpC = STFnType_icall_0041ADB0_FUN_0041adb0_for_STTorpC_f6a4cc59;
+using icall_0041ADB0_FUN_0041adb0_for_TLOEmbryoTy = STFnType_icall_0041ADB0_FUN_0041adb0_for_TLOEmbryoTy_6ca5416a;
+using icall_0041ADB0_FUN_0041adb0_for_TLOFakeTy = STFnType_icall_0041ADB0_FUN_0041adb0_for_TLOFakeTy_0a00f585;
+using icall_0041ADB0_FUN_0041adb0_for_void = STFnType_icall_0041ADB0_FUN_0041adb0_for_void_96d5ebb4;
 using icall_0041ADB0_FUN_0041adb0_stdcall = STFnType_icall_0041ADB0_FUN_0041adb0_stdcall_afc8e808;
+using icall_0041ADE0_FUN_0041ade0_for_STArtiafactC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STArtiafactC_7618d738;
+using icall_0041ADE0_FUN_0041ade0_for_STColl3C = STFnType_icall_0041ADE0_FUN_0041ade0_for_STColl3C_3112bf38;
+using icall_0041ADE0_FUN_0041ade0_for_STContainerC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STContainerC_1ce8035c;
+using icall_0041ADE0_FUN_0041ade0_for_STCrabC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STCrabC_1ec11e38;
+using icall_0041ADE0_FUN_0041ade0_for_STDcResourcC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STDcResourcC_113b9b6e;
+using icall_0041ADE0_FUN_0041ade0_for_STDestC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STDestC_564b6910;
+using icall_0041ADE0_FUN_0041ade0_for_STExplosion = STFnType_icall_0041ADE0_FUN_0041ade0_for_STExplosion_58635c9c;
+using icall_0041ADE0_FUN_0041ade0_for_STFishC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STFishC_3e3f9606;
+using icall_0041ADE0_FUN_0041ade0_for_STGameObjC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STGameObjC_70b94cb9;
+using icall_0041ADE0_FUN_0041ade0_for_STJellyGunC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STJellyGunC_0db69e44;
+using icall_0041ADE0_FUN_0041ade0_for_STJellyManC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STJellyManC_7390c83b;
+using icall_0041ADE0_FUN_0041ade0_for_STLBombC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STLBombC_84856e8d;
+using icall_0041ADE0_FUN_0041ade0_for_STMBombC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STMBombC_16b4e684;
+using icall_0041ADE0_FUN_0041ade0_for_STMineSetC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STMineSetC_fc1c10b7;
+using icall_0041ADE0_FUN_0041ade0_for_STOctopusC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STOctopusC_b4d06c7e;
+using icall_0041ADE0_FUN_0041ade0_for_STRubbishC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STRubbishC_121a68de;
+using icall_0041ADE0_FUN_0041ade0_for_STSatC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STSatC_0ffc10a1;
+using icall_0041ADE0_FUN_0041ade0_for_STSharkC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STSharkC_dcaeead7;
+using icall_0041ADE0_FUN_0041ade0_for_STSprGameObjC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STSprGameObjC_396ec3f5;
+using icall_0041ADE0_FUN_0041ade0_for_STTorpC = STFnType_icall_0041ADE0_FUN_0041ade0_for_STTorpC_f3077dad;
+using icall_0041ADE0_FUN_0041ade0_for_TLOBaseTy = STFnType_icall_0041ADE0_FUN_0041ade0_for_TLOBaseTy_3d7db543;
+using icall_0041ADE0_FUN_0041ade0_for_TLOEmbryoTy = STFnType_icall_0041ADE0_FUN_0041ade0_for_TLOEmbryoTy_27926ad0;
+using icall_0041ADE0_FUN_0041ade0_for_TLOFakeTy = STFnType_icall_0041ADE0_FUN_0041ade0_for_TLOFakeTy_0a1af44b;
+using icall_0041ADE0_FUN_0041ade0_for_void = STFnType_icall_0041ADE0_FUN_0041ade0_for_void_a8d281ad;
 using icall_0041ADE0_FUN_0041ade0_stdcall = STFnType_icall_0041ADE0_FUN_0041ade0_stdcall_d5d0f847;
+using icall_0041AE10_FUN_0041ae10_for_STArtiafactC = STFnType_icall_0041AE10_FUN_0041ae10_for_STArtiafactC_a3579fcf;
+using icall_0041AE10_FUN_0041ae10_for_STBoatC = STFnType_icall_0041AE10_FUN_0041ae10_for_STBoatC_1466cac8;
+using icall_0041AE10_FUN_0041ae10_for_STColl3C = STFnType_icall_0041AE10_FUN_0041ae10_for_STColl3C_b7905913;
+using icall_0041AE10_FUN_0041ae10_for_STContainerC = STFnType_icall_0041AE10_FUN_0041ae10_for_STContainerC_f8a5a8aa;
+using icall_0041AE10_FUN_0041ae10_for_STCrabC = STFnType_icall_0041AE10_FUN_0041ae10_for_STCrabC_97194a0b;
+using icall_0041AE10_FUN_0041ae10_for_STDcResourcC = STFnType_icall_0041AE10_FUN_0041ae10_for_STDcResourcC_34fe5b91;
+using icall_0041AE10_FUN_0041ae10_for_STDestC = STFnType_icall_0041AE10_FUN_0041ae10_for_STDestC_354bb9c5;
+using icall_0041AE10_FUN_0041ae10_for_STExplosion = STFnType_icall_0041AE10_FUN_0041ae10_for_STExplosion_4d9d939e;
+using icall_0041AE10_FUN_0041ae10_for_STFishC = STFnType_icall_0041AE10_FUN_0041ae10_for_STFishC_6a010aed;
+using icall_0041AE10_FUN_0041ae10_for_STGameObjC = STFnType_icall_0041AE10_FUN_0041ae10_for_STGameObjC_ef70235a;
+using icall_0041AE10_FUN_0041ae10_for_STJellyGunC = STFnType_icall_0041AE10_FUN_0041ae10_for_STJellyGunC_12345ab7;
+using icall_0041AE10_FUN_0041ae10_for_STJellyManC = STFnType_icall_0041AE10_FUN_0041ae10_for_STJellyManC_fdfaf0b0;
+using icall_0041AE10_FUN_0041ae10_for_STLBombC = STFnType_icall_0041AE10_FUN_0041ae10_for_STLBombC_6fb9609d;
+using icall_0041AE10_FUN_0041ae10_for_STMBombC = STFnType_icall_0041AE10_FUN_0041ae10_for_STMBombC_5879c194;
+using icall_0041AE10_FUN_0041ae10_for_STOctopusC = STFnType_icall_0041AE10_FUN_0041ae10_for_STOctopusC_8becc7c6;
+using icall_0041AE10_FUN_0041ae10_for_STRubbishC = STFnType_icall_0041AE10_FUN_0041ae10_for_STRubbishC_88daf326;
+using icall_0041AE10_FUN_0041ae10_for_STSatC = STFnType_icall_0041AE10_FUN_0041ae10_for_STSatC_c1f1e54d;
+using icall_0041AE10_FUN_0041ae10_for_STSharkC = STFnType_icall_0041AE10_FUN_0041ae10_for_STSharkC_274f0b4a;
+using icall_0041AE10_FUN_0041ae10_for_STSprGameObjC = STFnType_icall_0041AE10_FUN_0041ae10_for_STSprGameObjC_70dbcd69;
+using icall_0041AE10_FUN_0041ae10_for_STTorpC = STFnType_icall_0041AE10_FUN_0041ae10_for_STTorpC_5772fbe9;
+using icall_0041AE10_FUN_0041ae10_for_TLOBaseTy = STFnType_icall_0041AE10_FUN_0041ae10_for_TLOBaseTy_f99b547e;
+using icall_0041AE10_FUN_0041ae10_for_TLOEmbryoTy = STFnType_icall_0041AE10_FUN_0041ae10_for_TLOEmbryoTy_22861c94;
+using icall_0041AE10_FUN_0041ae10_for_TLOFakeTy = STFnType_icall_0041AE10_FUN_0041ae10_for_TLOFakeTy_5f3d6101;
+using icall_0041AE10_FUN_0041ae10_for_void = STFnType_icall_0041AE10_FUN_0041ae10_for_void_3ef97959;
 using icall_0041AE10_FUN_0041ae10_stdcall = STFnType_icall_0041AE10_FUN_0041ae10_stdcall_87aae9eb;
 using icall_0041AE40_FUN_0041ae40_for_STArtiafactC = STFnType_icall_0041AE40_FUN_0041ae40_for_STArtiafactC_fff6da7c;
 using icall_0041AE40_FUN_0041ae40_for_STColl3C = STFnType_icall_0041AE40_FUN_0041ae40_for_STColl3C_7f86d14f;
@@ -5686,12 +7485,180 @@ using icall_0041AE80_FUN_0041ae80_for_STTorpC = STFnType_icall_0041AE80_FUN_0041
 using icall_0041AE80_FUN_0041ae80_for_TLOEmbryoTy = STFnType_icall_0041AE80_FUN_0041ae80_for_TLOEmbryoTy_cd67c3ef;
 using icall_0041AE80_FUN_0041ae80_for_TLOFakeTy = STFnType_icall_0041AE80_FUN_0041ae80_for_TLOFakeTy_d1474882;
 using icall_0041AE80_FUN_0041ae80_for_void = STFnType_icall_0041AE80_FUN_0041ae80_for_void_aed536e2;
+using icall_0041AEA0_FUN_0041aea0_for_STColl3C = STFnType_icall_0041AEA0_FUN_0041aea0_for_STColl3C_2774b8c6;
+using icall_0041AEA0_FUN_0041aea0_for_STCrabC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STCrabC_9bfe21a1;
+using icall_0041AEA0_FUN_0041aea0_for_STDcResourcC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STDcResourcC_f2d3910f;
+using icall_0041AEA0_FUN_0041aea0_for_STExplosion = STFnType_icall_0041AEA0_FUN_0041aea0_for_STExplosion_3561c2ca;
+using icall_0041AEA0_FUN_0041aea0_for_STFishC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STFishC_03ea23a6;
+using icall_0041AEA0_FUN_0041aea0_for_STGameObjC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STGameObjC_0742e9eb;
+using icall_0041AEA0_FUN_0041aea0_for_STJellyGunC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STJellyGunC_d887717a;
+using icall_0041AEA0_FUN_0041aea0_for_STJellyManC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STJellyManC_0c339ae3;
+using icall_0041AEA0_FUN_0041aea0_for_STLBombC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STLBombC_8b58fd5c;
+using icall_0041AEA0_FUN_0041aea0_for_STMBombC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STMBombC_7de5cc37;
+using icall_0041AEA0_FUN_0041aea0_for_STOctopusC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STOctopusC_a4c2d0d9;
+using icall_0041AEA0_FUN_0041aea0_for_STRubbishC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STRubbishC_8bdea5dd;
+using icall_0041AEA0_FUN_0041aea0_for_STSatC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STSatC_a24aaa1f;
+using icall_0041AEA0_FUN_0041aea0_for_STSharkC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STSharkC_e3d8d67d;
+using icall_0041AEA0_FUN_0041aea0_for_STSprGameObjC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STSprGameObjC_7c4ebaa6;
+using icall_0041AEA0_FUN_0041aea0_for_STTorpC = STFnType_icall_0041AEA0_FUN_0041aea0_for_STTorpC_b5a285bd;
+using icall_0041AEA0_FUN_0041aea0_for_TLOEmbryoTy = STFnType_icall_0041AEA0_FUN_0041aea0_for_TLOEmbryoTy_a66fae8d;
+using icall_0041AEA0_FUN_0041aea0_for_TLOFakeTy = STFnType_icall_0041AEA0_FUN_0041aea0_for_TLOFakeTy_27c4c063;
+using icall_0041AEA0_FUN_0041aea0_for_void = STFnType_icall_0041AEA0_FUN_0041aea0_for_void_717a717d;
 using icall_0041AEA0_FUN_0041aea0_stdcall = STFnType_icall_0041AEA0_FUN_0041aea0_stdcall_d19c5aba;
+using icall_0041AEC0_FUN_0041aec0_for_STColl3C = STFnType_icall_0041AEC0_FUN_0041aec0_for_STColl3C_1de22685;
+using icall_0041AEC0_FUN_0041aec0_for_STCrabC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STCrabC_3b87f6f1;
+using icall_0041AEC0_FUN_0041aec0_for_STDcResourcC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STDcResourcC_7398194d;
+using icall_0041AEC0_FUN_0041aec0_for_STExplosion = STFnType_icall_0041AEC0_FUN_0041aec0_for_STExplosion_1683e11e;
+using icall_0041AEC0_FUN_0041aec0_for_STFishC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STFishC_7e98ad5b;
+using icall_0041AEC0_FUN_0041aec0_for_STGameObjC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STGameObjC_1907703f;
+using icall_0041AEC0_FUN_0041aec0_for_STJellyGunC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STJellyGunC_24311808;
+using icall_0041AEC0_FUN_0041aec0_for_STJellyManC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STJellyManC_6fe3718e;
+using icall_0041AEC0_FUN_0041aec0_for_STLBombC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STLBombC_3a3437fb;
+using icall_0041AEC0_FUN_0041aec0_for_STMBombC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STMBombC_25a7da5a;
+using icall_0041AEC0_FUN_0041aec0_for_STOctopusC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STOctopusC_c8ee2d9e;
+using icall_0041AEC0_FUN_0041aec0_for_STRubbishC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STRubbishC_22966819;
+using icall_0041AEC0_FUN_0041aec0_for_STSatC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STSatC_eff4eb0f;
+using icall_0041AEC0_FUN_0041aec0_for_STSharkC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STSharkC_3e0c52db;
+using icall_0041AEC0_FUN_0041aec0_for_STSprGameObjC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STSprGameObjC_ff1bc05d;
+using icall_0041AEC0_FUN_0041aec0_for_STTorpC = STFnType_icall_0041AEC0_FUN_0041aec0_for_STTorpC_25e349c4;
+using icall_0041AEC0_FUN_0041aec0_for_TLOEmbryoTy = STFnType_icall_0041AEC0_FUN_0041aec0_for_TLOEmbryoTy_0299b1a4;
+using icall_0041AEC0_FUN_0041aec0_for_TLOFakeTy = STFnType_icall_0041AEC0_FUN_0041aec0_for_TLOFakeTy_de62f45d;
+using icall_0041AEC0_FUN_0041aec0_for_void = STFnType_icall_0041AEC0_FUN_0041aec0_for_void_5e6ba3d3;
 using icall_0041AEC0_FUN_0041aec0_stdcall = STFnType_icall_0041AEC0_FUN_0041aec0_stdcall_67c692f2;
 using icall_0041AF40_GetMessage = STFnType_icall_0041AF40_GetMessage_a8d4792e;
+using icall_0041C2C0_FUN_0041c2c0_for_STCrabC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STCrabC_7e81044a;
+using icall_0041C2C0_FUN_0041c2c0_for_STDcResourcC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STDcResourcC_f764c98e;
+using icall_0041C2C0_FUN_0041c2c0_for_STDestC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STDestC_209b381a;
+using icall_0041C2C0_FUN_0041c2c0_for_STExplosion = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STExplosion_bc5b2398;
+using icall_0041C2C0_FUN_0041c2c0_for_STFishC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STFishC_78f64a87;
+using icall_0041C2C0_FUN_0041c2c0_for_STGameObjC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STGameObjC_a9d23475;
+using icall_0041C2C0_FUN_0041c2c0_for_STJellyGunC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STJellyGunC_3f2623f8;
+using icall_0041C2C0_FUN_0041c2c0_for_STJellyManC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STJellyManC_08bf169a;
+using icall_0041C2C0_FUN_0041c2c0_for_STLBombC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STLBombC_9517314c;
+using icall_0041C2C0_FUN_0041c2c0_for_STMBombC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STMBombC_e216a7ac;
+using icall_0041C2C0_FUN_0041c2c0_for_STMineSetC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STMineSetC_a82a1062;
+using icall_0041C2C0_FUN_0041c2c0_for_STOctopusC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STOctopusC_d37e2538;
+using icall_0041C2C0_FUN_0041c2c0_for_STRubbishC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STRubbishC_54ff87ff;
+using icall_0041C2C0_FUN_0041c2c0_for_STSatC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STSatC_425416e7;
+using icall_0041C2C0_FUN_0041c2c0_for_STSharkC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STSharkC_deb5a699;
+using icall_0041C2C0_FUN_0041c2c0_for_STTorpC = STFnType_icall_0041C2C0_FUN_0041c2c0_for_STTorpC_afcb3aee;
+using icall_0041C2C0_FUN_0041c2c0_for_TLOEmbryoTy = STFnType_icall_0041C2C0_FUN_0041c2c0_for_TLOEmbryoTy_869090d5;
+using icall_0041C2C0_FUN_0041c2c0_for_TLOFakeTy = STFnType_icall_0041C2C0_FUN_0041c2c0_for_TLOFakeTy_c360f64d;
+using icall_0041C2C0_FUN_0041c2c0_for_void = STFnType_icall_0041C2C0_FUN_0041c2c0_for_void_f2577ba3;
+using icall_0041C2E0_FUN_0041c2e0_for_STCrabC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STCrabC_42c23d45;
+using icall_0041C2E0_FUN_0041c2e0_for_STDcResourcC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STDcResourcC_2fc88837;
+using icall_0041C2E0_FUN_0041c2e0_for_STDestC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STDestC_2f91bc4a;
+using icall_0041C2E0_FUN_0041c2e0_for_STExplosion = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STExplosion_a35b7589;
+using icall_0041C2E0_FUN_0041c2e0_for_STFishC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STFishC_08b2cc59;
+using icall_0041C2E0_FUN_0041c2e0_for_STGameObjC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STGameObjC_88f1d42c;
+using icall_0041C2E0_FUN_0041c2e0_for_STJellyGunC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STJellyGunC_c70f8ecf;
+using icall_0041C2E0_FUN_0041c2e0_for_STJellyManC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STJellyManC_90ad5b2f;
+using icall_0041C2E0_FUN_0041c2e0_for_STLBombC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STLBombC_cc108b9c;
+using icall_0041C2E0_FUN_0041c2e0_for_STMBombC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STMBombC_ff78ee96;
+using icall_0041C2E0_FUN_0041c2e0_for_STOctopusC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STOctopusC_1f75b498;
+using icall_0041C2E0_FUN_0041c2e0_for_STRubbishC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STRubbishC_c94704d8;
+using icall_0041C2E0_FUN_0041c2e0_for_STSatC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STSatC_85bcab99;
+using icall_0041C2E0_FUN_0041c2e0_for_STSharkC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STSharkC_30bfd18b;
+using icall_0041C2E0_FUN_0041c2e0_for_STTorpC = STFnType_icall_0041C2E0_FUN_0041c2e0_for_STTorpC_46b6019c;
+using icall_0041C2E0_FUN_0041c2e0_for_TLOFakeTy = STFnType_icall_0041C2E0_FUN_0041c2e0_for_TLOFakeTy_76c6348e;
+using icall_0041C2E0_FUN_0041c2e0_for_void = STFnType_icall_0041C2E0_FUN_0041c2e0_for_void_5cd7f09e;
+using icall_0041C300_FUN_0041c300_for_STArtiafactC = STFnType_icall_0041C300_FUN_0041c300_for_STArtiafactC_3822921d;
+using icall_0041C300_FUN_0041c300_for_STColl3C = STFnType_icall_0041C300_FUN_0041c300_for_STColl3C_a2b80f9f;
+using icall_0041C300_FUN_0041c300_for_STContainerC = STFnType_icall_0041C300_FUN_0041c300_for_STContainerC_f3aaf403;
+using icall_0041C300_FUN_0041c300_for_STCrabC = STFnType_icall_0041C300_FUN_0041c300_for_STCrabC_3f05caed;
+using icall_0041C300_FUN_0041c300_for_STDcResourcC = STFnType_icall_0041C300_FUN_0041c300_for_STDcResourcC_8b17f227;
+using icall_0041C300_FUN_0041c300_for_STDestC = STFnType_icall_0041C300_FUN_0041c300_for_STDestC_3de31c9a;
+using icall_0041C300_FUN_0041c300_for_STExplosion = STFnType_icall_0041C300_FUN_0041c300_for_STExplosion_13aaac3e;
+using icall_0041C300_FUN_0041c300_for_STFishC = STFnType_icall_0041C300_FUN_0041c300_for_STFishC_770bfb3a;
+using icall_0041C300_FUN_0041c300_for_STGameObjC = STFnType_icall_0041C300_FUN_0041c300_for_STGameObjC_40477d56;
+using icall_0041C300_FUN_0041c300_for_STJellyGunC = STFnType_icall_0041C300_FUN_0041c300_for_STJellyGunC_d9c2badc;
+using icall_0041C300_FUN_0041c300_for_STJellyManC = STFnType_icall_0041C300_FUN_0041c300_for_STJellyManC_93fbfe80;
+using icall_0041C300_FUN_0041c300_for_STLBombC = STFnType_icall_0041C300_FUN_0041c300_for_STLBombC_57309f70;
+using icall_0041C300_FUN_0041c300_for_STMBombC = STFnType_icall_0041C300_FUN_0041c300_for_STMBombC_566bafeb;
+using icall_0041C300_FUN_0041c300_for_STMineSetC = STFnType_icall_0041C300_FUN_0041c300_for_STMineSetC_fbed5b40;
+using icall_0041C300_FUN_0041c300_for_STOctopusC = STFnType_icall_0041C300_FUN_0041c300_for_STOctopusC_e24ad031;
+using icall_0041C300_FUN_0041c300_for_STRubbishC = STFnType_icall_0041C300_FUN_0041c300_for_STRubbishC_60725770;
+using icall_0041C300_FUN_0041c300_for_STSatC = STFnType_icall_0041C300_FUN_0041c300_for_STSatC_5abebb57;
+using icall_0041C300_FUN_0041c300_for_STSharkC = STFnType_icall_0041C300_FUN_0041c300_for_STSharkC_6ecc96de;
+using icall_0041C300_FUN_0041c300_for_STSprGameObjC = STFnType_icall_0041C300_FUN_0041c300_for_STSprGameObjC_8ddc23e9;
+using icall_0041C300_FUN_0041c300_for_STTorpC = STFnType_icall_0041C300_FUN_0041c300_for_STTorpC_807e8b98;
+using icall_0041C300_FUN_0041c300_for_TLOEmbryoTy = STFnType_icall_0041C300_FUN_0041c300_for_TLOEmbryoTy_22a71824;
+using icall_0041C300_FUN_0041c300_for_TLOFakeTy = STFnType_icall_0041C300_FUN_0041c300_for_TLOFakeTy_adbac25d;
+using icall_0041C300_FUN_0041c300_for_void = STFnType_icall_0041C300_FUN_0041c300_for_void_9c4f3882;
 using icall_0041C300_FUN_0041c300_stdcall = STFnType_icall_0041C300_FUN_0041c300_stdcall_f79f77d4;
+using icall_0041C320_FUN_0041c320_for_STArtiafactC = STFnType_icall_0041C320_FUN_0041c320_for_STArtiafactC_2c85ea2c;
+using icall_0041C320_FUN_0041c320_for_STColl3C = STFnType_icall_0041C320_FUN_0041c320_for_STColl3C_a80703f5;
+using icall_0041C320_FUN_0041c320_for_STContainerC = STFnType_icall_0041C320_FUN_0041c320_for_STContainerC_1543687c;
+using icall_0041C320_FUN_0041c320_for_STCrabC = STFnType_icall_0041C320_FUN_0041c320_for_STCrabC_0c3d97e2;
+using icall_0041C320_FUN_0041c320_for_STDcResourcC = STFnType_icall_0041C320_FUN_0041c320_for_STDcResourcC_3541dbef;
+using icall_0041C320_FUN_0041c320_for_STDestC = STFnType_icall_0041C320_FUN_0041c320_for_STDestC_f44536a7;
+using icall_0041C320_FUN_0041c320_for_STExplosion = STFnType_icall_0041C320_FUN_0041c320_for_STExplosion_59cb3e29;
+using icall_0041C320_FUN_0041c320_for_STFishC = STFnType_icall_0041C320_FUN_0041c320_for_STFishC_598dcf94;
+using icall_0041C320_FUN_0041c320_for_STGameObjC = STFnType_icall_0041C320_FUN_0041c320_for_STGameObjC_0527a980;
+using icall_0041C320_FUN_0041c320_for_STJellyGunC = STFnType_icall_0041C320_FUN_0041c320_for_STJellyGunC_aaf2fd5d;
+using icall_0041C320_FUN_0041c320_for_STJellyManC = STFnType_icall_0041C320_FUN_0041c320_for_STJellyManC_8cc4fe72;
+using icall_0041C320_FUN_0041c320_for_STLBombC = STFnType_icall_0041C320_FUN_0041c320_for_STLBombC_6a8ef071;
+using icall_0041C320_FUN_0041c320_for_STMBombC = STFnType_icall_0041C320_FUN_0041c320_for_STMBombC_ba3214f7;
+using icall_0041C320_FUN_0041c320_for_STMineSetC = STFnType_icall_0041C320_FUN_0041c320_for_STMineSetC_8bc08e07;
+using icall_0041C320_FUN_0041c320_for_STOctopusC = STFnType_icall_0041C320_FUN_0041c320_for_STOctopusC_133012c4;
+using icall_0041C320_FUN_0041c320_for_STRubbishC = STFnType_icall_0041C320_FUN_0041c320_for_STRubbishC_bc35c2cb;
+using icall_0041C320_FUN_0041c320_for_STSatC = STFnType_icall_0041C320_FUN_0041c320_for_STSatC_238fe5a7;
+using icall_0041C320_FUN_0041c320_for_STSharkC = STFnType_icall_0041C320_FUN_0041c320_for_STSharkC_b6fcfddf;
+using icall_0041C320_FUN_0041c320_for_STSprGameObjC = STFnType_icall_0041C320_FUN_0041c320_for_STSprGameObjC_3248124c;
+using icall_0041C320_FUN_0041c320_for_STTorpC = STFnType_icall_0041C320_FUN_0041c320_for_STTorpC_6e96642d;
+using icall_0041C320_FUN_0041c320_for_TLOEmbryoTy = STFnType_icall_0041C320_FUN_0041c320_for_TLOEmbryoTy_a3410688;
+using icall_0041C320_FUN_0041c320_for_TLOFakeTy = STFnType_icall_0041C320_FUN_0041c320_for_TLOFakeTy_2c8dd92b;
+using icall_0041C320_FUN_0041c320_for_void = STFnType_icall_0041C320_FUN_0041c320_for_void_60e60e93;
 using icall_0041C320_FUN_0041c320_stdcall = STFnType_icall_0041C320_FUN_0041c320_stdcall_45a9c050;
+using icall_0041C340_FUN_0041c340_for_STArtiafactC = STFnType_icall_0041C340_FUN_0041c340_for_STArtiafactC_78c7bf87;
+using icall_0041C340_FUN_0041c340_for_STBoatC = STFnType_icall_0041C340_FUN_0041c340_for_STBoatC_1dcdf822;
+using icall_0041C340_FUN_0041c340_for_STColl3C = STFnType_icall_0041C340_FUN_0041c340_for_STColl3C_e8ab1249;
+using icall_0041C340_FUN_0041c340_for_STContainerC = STFnType_icall_0041C340_FUN_0041c340_for_STContainerC_d0a3feac;
+using icall_0041C340_FUN_0041c340_for_STCrabC = STFnType_icall_0041C340_FUN_0041c340_for_STCrabC_2044eec7;
+using icall_0041C340_FUN_0041c340_for_STDcResourcC = STFnType_icall_0041C340_FUN_0041c340_for_STDcResourcC_44826b85;
+using icall_0041C340_FUN_0041c340_for_STDestC = STFnType_icall_0041C340_FUN_0041c340_for_STDestC_8338242a;
+using icall_0041C340_FUN_0041c340_for_STExplosion = STFnType_icall_0041C340_FUN_0041c340_for_STExplosion_26d126d3;
+using icall_0041C340_FUN_0041c340_for_STFishC = STFnType_icall_0041C340_FUN_0041c340_for_STFishC_1ee4f424;
+using icall_0041C340_FUN_0041c340_for_STGameObjC = STFnType_icall_0041C340_FUN_0041c340_for_STGameObjC_c24fabfd;
+using icall_0041C340_FUN_0041c340_for_STJellyGunC = STFnType_icall_0041C340_FUN_0041c340_for_STJellyGunC_43548a4e;
+using icall_0041C340_FUN_0041c340_for_STJellyManC = STFnType_icall_0041C340_FUN_0041c340_for_STJellyManC_1ff589c6;
+using icall_0041C340_FUN_0041c340_for_STLBombC = STFnType_icall_0041C340_FUN_0041c340_for_STLBombC_a234e51c;
+using icall_0041C340_FUN_0041c340_for_STMBombC = STFnType_icall_0041C340_FUN_0041c340_for_STMBombC_ef4f4a5d;
+using icall_0041C340_FUN_0041c340_for_STMineSetC = STFnType_icall_0041C340_FUN_0041c340_for_STMineSetC_be022ff0;
+using icall_0041C340_FUN_0041c340_for_STOctopusC = STFnType_icall_0041C340_FUN_0041c340_for_STOctopusC_17cbd50f;
+using icall_0041C340_FUN_0041c340_for_STRubbishC = STFnType_icall_0041C340_FUN_0041c340_for_STRubbishC_3fb91503;
+using icall_0041C340_FUN_0041c340_for_STSatC = STFnType_icall_0041C340_FUN_0041c340_for_STSatC_341f9810;
+using icall_0041C340_FUN_0041c340_for_STSharkC = STFnType_icall_0041C340_FUN_0041c340_for_STSharkC_adeced2e;
+using icall_0041C340_FUN_0041c340_for_STSprGameObjC = STFnType_icall_0041C340_FUN_0041c340_for_STSprGameObjC_2252c3df;
+using icall_0041C340_FUN_0041c340_for_STTorpC = STFnType_icall_0041C340_FUN_0041c340_for_STTorpC_0ec834d9;
+using icall_0041C340_FUN_0041c340_for_TLOEmbryoTy = STFnType_icall_0041C340_FUN_0041c340_for_TLOEmbryoTy_84535375;
+using icall_0041C340_FUN_0041c340_for_TLOFakeTy = STFnType_icall_0041C340_FUN_0041c340_for_TLOFakeTy_7f5266d3;
+using icall_0041C340_FUN_0041c340_for_void = STFnType_icall_0041C340_FUN_0041c340_for_void_aaae5b9d;
 using icall_0041C340_FUN_0041c340_stdcall = STFnType_icall_0041C340_FUN_0041c340_stdcall_00f3d08a;
+using icall_0041C360_FUN_0041c360_for_STArtiafactC = STFnType_icall_0041C360_FUN_0041c360_for_STArtiafactC_506e1bfa;
+using icall_0041C360_FUN_0041c360_for_STColl3C = STFnType_icall_0041C360_FUN_0041c360_for_STColl3C_82524146;
+using icall_0041C360_FUN_0041c360_for_STContainerC = STFnType_icall_0041C360_FUN_0041c360_for_STContainerC_dcc4cb3c;
+using icall_0041C360_FUN_0041c360_for_STCrabC = STFnType_icall_0041C360_FUN_0041c360_for_STCrabC_4e92cb80;
+using icall_0041C360_FUN_0041c360_for_STDcResourcC = STFnType_icall_0041C360_FUN_0041c360_for_STDcResourcC_4bd8b057;
+using icall_0041C360_FUN_0041c360_for_STDestC = STFnType_icall_0041C360_FUN_0041c360_for_STDestC_178a48f7;
+using icall_0041C360_FUN_0041c360_for_STExplosion = STFnType_icall_0041C360_FUN_0041c360_for_STExplosion_74a38d0f;
+using icall_0041C360_FUN_0041c360_for_STFishC = STFnType_icall_0041C360_FUN_0041c360_for_STFishC_b85ebd75;
+using icall_0041C360_FUN_0041c360_for_STGameObjC = STFnType_icall_0041C360_FUN_0041c360_for_STGameObjC_4f621ae6;
+using icall_0041C360_FUN_0041c360_for_STJellyGunC = STFnType_icall_0041C360_FUN_0041c360_for_STJellyGunC_a5b17a80;
+using icall_0041C360_FUN_0041c360_for_STJellyManC = STFnType_icall_0041C360_FUN_0041c360_for_STJellyManC_8e1a051a;
+using icall_0041C360_FUN_0041c360_for_STLBombC = STFnType_icall_0041C360_FUN_0041c360_for_STLBombC_9982c66d;
+using icall_0041C360_FUN_0041c360_for_STMBombC = STFnType_icall_0041C360_FUN_0041c360_for_STMBombC_629115ab;
+using icall_0041C360_FUN_0041c360_for_STMineSetC = STFnType_icall_0041C360_FUN_0041c360_for_STMineSetC_f6c9206a;
+using icall_0041C360_FUN_0041c360_for_STOctopusC = STFnType_icall_0041C360_FUN_0041c360_for_STOctopusC_df7cba64;
+using icall_0041C360_FUN_0041c360_for_STRubbishC = STFnType_icall_0041C360_FUN_0041c360_for_STRubbishC_eadd974f;
+using icall_0041C360_FUN_0041c360_for_STSatC = STFnType_icall_0041C360_FUN_0041c360_for_STSatC_9534feda;
+using icall_0041C360_FUN_0041c360_for_STSharkC = STFnType_icall_0041C360_FUN_0041c360_for_STSharkC_a1361a21;
+using icall_0041C360_FUN_0041c360_for_STSprGameObjC = STFnType_icall_0041C360_FUN_0041c360_for_STSprGameObjC_7c1e3f10;
+using icall_0041C360_FUN_0041c360_for_STTorpC = STFnType_icall_0041C360_FUN_0041c360_for_STTorpC_8c115d30;
+using icall_0041C360_FUN_0041c360_for_TLOBaseTy = STFnType_icall_0041C360_FUN_0041c360_for_TLOBaseTy_d4bf4e4e;
+using icall_0041C360_FUN_0041c360_for_TLOEmbryoTy = STFnType_icall_0041C360_FUN_0041c360_for_TLOEmbryoTy_56923149;
+using icall_0041C360_FUN_0041c360_for_TLOFakeTy = STFnType_icall_0041C360_FUN_0041c360_for_TLOFakeTy_7dfb9609;
+using icall_0041C360_FUN_0041c360_for_void = STFnType_icall_0041C360_FUN_0041c360_for_void_b0df5b91;
 using icall_0041C360_FUN_0041c360_stdcall = STFnType_icall_0041C360_FUN_0041c360_stdcall_db8bf6ba;
 using icall_0041C380_FUN_0041c380_for_STArtiafactC = STFnType_icall_0041C380_FUN_0041c380_for_STArtiafactC_76e3b3f5;
 using icall_0041C380_FUN_0041c380_for_STBoatC = STFnType_icall_0041C380_FUN_0041c380_for_STBoatC_14fbc944;
@@ -5718,9 +7685,183 @@ using icall_0041C380_FUN_0041c380_for_TLOBaseTy = STFnType_icall_0041C380_FUN_00
 using icall_0041C380_FUN_0041c380_for_TLOEmbryoTy = STFnType_icall_0041C380_FUN_0041c380_for_TLOEmbryoTy_e70bbdc3;
 using icall_0041C380_FUN_0041c380_for_TLOFakeTy = STFnType_icall_0041C380_FUN_0041c380_for_TLOFakeTy_0d17caab;
 using icall_0041C380_FUN_0041c380_for_void = STFnType_icall_0041C380_FUN_0041c380_for_void_04566710;
+using icall_0041D5E0_FUN_0041d5e0_for_STArtiafactC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STArtiafactC_d77deb78;
+using icall_0041D5E0_FUN_0041d5e0_for_STColl3C = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STColl3C_32a89abd;
+using icall_0041D5E0_FUN_0041d5e0_for_STContainerC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STContainerC_4a5ea07e;
+using icall_0041D5E0_FUN_0041d5e0_for_STCrabC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STCrabC_0ec2f5b0;
+using icall_0041D5E0_FUN_0041d5e0_for_STDcResourcC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STDcResourcC_29dd1a13;
+using icall_0041D5E0_FUN_0041d5e0_for_STDestC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STDestC_07272875;
+using icall_0041D5E0_FUN_0041d5e0_for_STExplosion = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STExplosion_3f1de81c;
+using icall_0041D5E0_FUN_0041d5e0_for_STFishC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STFishC_34313a2d;
+using icall_0041D5E0_FUN_0041d5e0_for_STGameObjC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STGameObjC_cb80084d;
+using icall_0041D5E0_FUN_0041d5e0_for_STJellyGunC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STJellyGunC_ce52037a;
+using icall_0041D5E0_FUN_0041d5e0_for_STJellyManC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STJellyManC_ddf5d5d7;
+using icall_0041D5E0_FUN_0041d5e0_for_STLBombC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STLBombC_84bd256f;
+using icall_0041D5E0_FUN_0041d5e0_for_STMBombC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STMBombC_671784b9;
+using icall_0041D5E0_FUN_0041d5e0_for_STMineSetC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STMineSetC_e014038f;
+using icall_0041D5E0_FUN_0041d5e0_for_STOctopusC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STOctopusC_1d502c1e;
+using icall_0041D5E0_FUN_0041d5e0_for_STRubbishC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STRubbishC_93f1d096;
+using icall_0041D5E0_FUN_0041d5e0_for_STSatC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STSatC_da5f42d4;
+using icall_0041D5E0_FUN_0041d5e0_for_STSharkC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STSharkC_13b3f487;
+using icall_0041D5E0_FUN_0041d5e0_for_STSprGameObjC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STSprGameObjC_44c9fdf1;
+using icall_0041D5E0_FUN_0041d5e0_for_STTorpC = STFnType_icall_0041D5E0_FUN_0041d5e0_for_STTorpC_958bf7d5;
+using icall_0041D5E0_FUN_0041d5e0_for_TLOBaseTy = STFnType_icall_0041D5E0_FUN_0041d5e0_for_TLOBaseTy_b0cf9e00;
+using icall_0041D5E0_FUN_0041d5e0_for_TLOEmbryoTy = STFnType_icall_0041D5E0_FUN_0041d5e0_for_TLOEmbryoTy_dc4270e9;
+using icall_0041D5E0_FUN_0041d5e0_for_TLOFakeTy = STFnType_icall_0041D5E0_FUN_0041d5e0_for_TLOFakeTy_9b6cf8de;
+using icall_0041D5E0_FUN_0041d5e0_for_void = STFnType_icall_0041D5E0_FUN_0041d5e0_for_void_3aa6d2b6;
+using icall_0041D600_FUN_0041d600_for_STArtiafactC = STFnType_icall_0041D600_FUN_0041d600_for_STArtiafactC_589376bc;
+using icall_0041D600_FUN_0041d600_for_STColl3C = STFnType_icall_0041D600_FUN_0041d600_for_STColl3C_b151ab48;
+using icall_0041D600_FUN_0041d600_for_STContainerC = STFnType_icall_0041D600_FUN_0041d600_for_STContainerC_abf11324;
+using icall_0041D600_FUN_0041d600_for_STCrabC = STFnType_icall_0041D600_FUN_0041d600_for_STCrabC_5a79864d;
+using icall_0041D600_FUN_0041d600_for_STDcResourcC = STFnType_icall_0041D600_FUN_0041d600_for_STDcResourcC_0d9b41e6;
+using icall_0041D600_FUN_0041d600_for_STDestC = STFnType_icall_0041D600_FUN_0041d600_for_STDestC_36ef4a93;
+using icall_0041D600_FUN_0041d600_for_STExplosion = STFnType_icall_0041D600_FUN_0041d600_for_STExplosion_f056233f;
+using icall_0041D600_FUN_0041d600_for_STFishC = STFnType_icall_0041D600_FUN_0041d600_for_STFishC_c7169878;
+using icall_0041D600_FUN_0041d600_for_STGameObjC = STFnType_icall_0041D600_FUN_0041d600_for_STGameObjC_d7c7fbca;
+using icall_0041D600_FUN_0041d600_for_STJellyGunC = STFnType_icall_0041D600_FUN_0041d600_for_STJellyGunC_f810b8b7;
+using icall_0041D600_FUN_0041d600_for_STJellyManC = STFnType_icall_0041D600_FUN_0041d600_for_STJellyManC_2794ca19;
+using icall_0041D600_FUN_0041d600_for_STLBombC = STFnType_icall_0041D600_FUN_0041d600_for_STLBombC_efb557f5;
+using icall_0041D600_FUN_0041d600_for_STMBombC = STFnType_icall_0041D600_FUN_0041d600_for_STMBombC_bd29cdd6;
+using icall_0041D600_FUN_0041d600_for_STMineSetC = STFnType_icall_0041D600_FUN_0041d600_for_STMineSetC_6130accb;
+using icall_0041D600_FUN_0041d600_for_STOctopusC = STFnType_icall_0041D600_FUN_0041d600_for_STOctopusC_16feb693;
+using icall_0041D600_FUN_0041d600_for_STRubbishC = STFnType_icall_0041D600_FUN_0041d600_for_STRubbishC_da5e3716;
+using icall_0041D600_FUN_0041d600_for_STSatC = STFnType_icall_0041D600_FUN_0041d600_for_STSatC_9b5dc4ed;
+using icall_0041D600_FUN_0041d600_for_STSharkC = STFnType_icall_0041D600_FUN_0041d600_for_STSharkC_4472f02c;
+using icall_0041D600_FUN_0041d600_for_STSprGameObjC = STFnType_icall_0041D600_FUN_0041d600_for_STSprGameObjC_6b427e17;
+using icall_0041D600_FUN_0041d600_for_STTorpC = STFnType_icall_0041D600_FUN_0041d600_for_STTorpC_f0250140;
+using icall_0041D600_FUN_0041d600_for_TLOBaseTy = STFnType_icall_0041D600_FUN_0041d600_for_TLOBaseTy_660426ad;
+using icall_0041D600_FUN_0041d600_for_TLOEmbryoTy = STFnType_icall_0041D600_FUN_0041d600_for_TLOEmbryoTy_359fffa2;
+using icall_0041D600_FUN_0041d600_for_TLOFakeTy = STFnType_icall_0041D600_FUN_0041d600_for_TLOFakeTy_2f9d3b2b;
+using icall_0041D600_FUN_0041d600_for_void = STFnType_icall_0041D600_FUN_0041d600_for_void_01f57e8e;
+using icall_0041D760_FUN_0041d760_for_STColl3C = STFnType_icall_0041D760_FUN_0041d760_for_STColl3C_dc77f54f;
+using icall_0041D760_FUN_0041d760_for_STCrabC = STFnType_icall_0041D760_FUN_0041d760_for_STCrabC_732c881d;
+using icall_0041D760_FUN_0041d760_for_STDcResourcC = STFnType_icall_0041D760_FUN_0041d760_for_STDcResourcC_9d6df6f2;
+using icall_0041D760_FUN_0041d760_for_STDestC = STFnType_icall_0041D760_FUN_0041d760_for_STDestC_0493a7b2;
+using icall_0041D760_FUN_0041d760_for_STExplosion = STFnType_icall_0041D760_FUN_0041d760_for_STExplosion_883a5860;
+using icall_0041D760_FUN_0041d760_for_STFishC = STFnType_icall_0041D760_FUN_0041d760_for_STFishC_f4a24d80;
+using icall_0041D760_FUN_0041d760_for_STGameObjC = STFnType_icall_0041D760_FUN_0041d760_for_STGameObjC_4df174ed;
+using icall_0041D760_FUN_0041d760_for_STJellyGunC = STFnType_icall_0041D760_FUN_0041d760_for_STJellyGunC_fb5f66fb;
+using icall_0041D760_FUN_0041d760_for_STJellyManC = STFnType_icall_0041D760_FUN_0041d760_for_STJellyManC_4939a4f2;
+using icall_0041D760_FUN_0041d760_for_STLBombC = STFnType_icall_0041D760_FUN_0041d760_for_STLBombC_b3e90d41;
+using icall_0041D760_FUN_0041d760_for_STMBombC = STFnType_icall_0041D760_FUN_0041d760_for_STMBombC_49759f65;
+using icall_0041D760_FUN_0041d760_for_STMineSetC = STFnType_icall_0041D760_FUN_0041d760_for_STMineSetC_947a5166;
+using icall_0041D760_FUN_0041d760_for_STOctopusC = STFnType_icall_0041D760_FUN_0041d760_for_STOctopusC_4e263a85;
+using icall_0041D760_FUN_0041d760_for_STRubbishC = STFnType_icall_0041D760_FUN_0041d760_for_STRubbishC_41f544e1;
+using icall_0041D760_FUN_0041d760_for_STSatC = STFnType_icall_0041D760_FUN_0041d760_for_STSatC_4910876d;
+using icall_0041D760_FUN_0041d760_for_STSharkC = STFnType_icall_0041D760_FUN_0041d760_for_STSharkC_cce612ff;
+using icall_0041D760_FUN_0041d760_for_STTorpC = STFnType_icall_0041D760_FUN_0041d760_for_STTorpC_7f8cc3ee;
+using icall_0041D760_FUN_0041d760_for_TLOBaseTy = STFnType_icall_0041D760_FUN_0041d760_for_TLOBaseTy_a0d75e90;
+using icall_0041D760_FUN_0041d760_for_TLOEmbryoTy = STFnType_icall_0041D760_FUN_0041d760_for_TLOEmbryoTy_10c4b3c3;
+using icall_0041D760_FUN_0041d760_for_TLOFakeTy = STFnType_icall_0041D760_FUN_0041d760_for_TLOFakeTy_0a5ddaf4;
+using icall_0041D760_FUN_0041d760_for_void = STFnType_icall_0041D760_FUN_0041d760_for_void_3f0197ed;
+using icall_0041D780_FUN_0041d780_for_STColl3C = STFnType_icall_0041D780_FUN_0041d780_for_STColl3C_47474e3d;
+using icall_0041D780_FUN_0041d780_for_STCrabC = STFnType_icall_0041D780_FUN_0041d780_for_STCrabC_4632ae91;
+using icall_0041D780_FUN_0041d780_for_STDcResourcC = STFnType_icall_0041D780_FUN_0041d780_for_STDcResourcC_3667f839;
+using icall_0041D780_FUN_0041d780_for_STDestC = STFnType_icall_0041D780_FUN_0041d780_for_STDestC_78cfa376;
+using icall_0041D780_FUN_0041d780_for_STExplosion = STFnType_icall_0041D780_FUN_0041d780_for_STExplosion_65a132b9;
+using icall_0041D780_FUN_0041d780_for_STFishC = STFnType_icall_0041D780_FUN_0041d780_for_STFishC_93a5c17d;
+using icall_0041D780_FUN_0041d780_for_STGameObjC = STFnType_icall_0041D780_FUN_0041d780_for_STGameObjC_e00b1c1a;
+using icall_0041D780_FUN_0041d780_for_STJellyGunC = STFnType_icall_0041D780_FUN_0041d780_for_STJellyGunC_520133fd;
+using icall_0041D780_FUN_0041d780_for_STJellyManC = STFnType_icall_0041D780_FUN_0041d780_for_STJellyManC_c5d0d61c;
+using icall_0041D780_FUN_0041d780_for_STLBombC = STFnType_icall_0041D780_FUN_0041d780_for_STLBombC_eebc7711;
+using icall_0041D780_FUN_0041d780_for_STMBombC = STFnType_icall_0041D780_FUN_0041d780_for_STMBombC_523741d0;
+using icall_0041D780_FUN_0041d780_for_STMineSetC = STFnType_icall_0041D780_FUN_0041d780_for_STMineSetC_b31928d6;
+using icall_0041D780_FUN_0041d780_for_STOctopusC = STFnType_icall_0041D780_FUN_0041d780_for_STOctopusC_b51f683f;
+using icall_0041D780_FUN_0041d780_for_STRubbishC = STFnType_icall_0041D780_FUN_0041d780_for_STRubbishC_31b1aed4;
+using icall_0041D780_FUN_0041d780_for_STSatC = STFnType_icall_0041D780_FUN_0041d780_for_STSatC_fce2be26;
+using icall_0041D780_FUN_0041d780_for_STSharkC = STFnType_icall_0041D780_FUN_0041d780_for_STSharkC_9596f8e1;
+using icall_0041D780_FUN_0041d780_for_STTorpC = STFnType_icall_0041D780_FUN_0041d780_for_STTorpC_dc07f6a7;
+using icall_0041D780_FUN_0041d780_for_TLOBaseTy = STFnType_icall_0041D780_FUN_0041d780_for_TLOBaseTy_c7860202;
+using icall_0041D780_FUN_0041d780_for_TLOEmbryoTy = STFnType_icall_0041D780_FUN_0041d780_for_TLOEmbryoTy_de61edfc;
+using icall_0041D780_FUN_0041d780_for_TLOFakeTy = STFnType_icall_0041D780_FUN_0041d780_for_TLOFakeTy_9da21f2d;
+using icall_0041D780_FUN_0041d780_for_void = STFnType_icall_0041D780_FUN_0041d780_for_void_24ff4773;
 using icall_0041D780_FUN_0041d780_stdcall = STFnType_icall_0041D780_FUN_0041d780_stdcall_a4716901;
+using icall_0041D7A0_FUN_0041d7a0_for_STColl3C = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STColl3C_66d22efa;
+using icall_0041D7A0_FUN_0041d7a0_for_STCrabC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STCrabC_0f4484e8;
+using icall_0041D7A0_FUN_0041d7a0_for_STDcResourcC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STDcResourcC_b2cb3612;
+using icall_0041D7A0_FUN_0041d7a0_for_STDestC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STDestC_aea3b1c3;
+using icall_0041D7A0_FUN_0041d7a0_for_STExplosion = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STExplosion_361c1250;
+using icall_0041D7A0_FUN_0041d7a0_for_STFishC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STFishC_0a1c76d6;
+using icall_0041D7A0_FUN_0041d7a0_for_STGameObjC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STGameObjC_f1d09a5f;
+using icall_0041D7A0_FUN_0041d7a0_for_STJellyGunC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STJellyGunC_92a1435e;
+using icall_0041D7A0_FUN_0041d7a0_for_STJellyManC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STJellyManC_c48d5780;
+using icall_0041D7A0_FUN_0041d7a0_for_STLBombC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STLBombC_ec259c0a;
+using icall_0041D7A0_FUN_0041d7a0_for_STMBombC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STMBombC_5a9e3c77;
+using icall_0041D7A0_FUN_0041d7a0_for_STMineSetC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STMineSetC_23251a93;
+using icall_0041D7A0_FUN_0041d7a0_for_STOctopusC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STOctopusC_a037ac4c;
+using icall_0041D7A0_FUN_0041d7a0_for_STRubbishC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STRubbishC_6a6985e5;
+using icall_0041D7A0_FUN_0041d7a0_for_STSatC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STSatC_2d6d74b0;
+using icall_0041D7A0_FUN_0041d7a0_for_STSharkC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STSharkC_0273cdc3;
+using icall_0041D7A0_FUN_0041d7a0_for_STTorpC = STFnType_icall_0041D7A0_FUN_0041d7a0_for_STTorpC_458ef3c6;
+using icall_0041D7A0_FUN_0041d7a0_for_TLOBaseTy = STFnType_icall_0041D7A0_FUN_0041d7a0_for_TLOBaseTy_0d78a161;
+using icall_0041D7A0_FUN_0041d7a0_for_TLOEmbryoTy = STFnType_icall_0041D7A0_FUN_0041d7a0_for_TLOEmbryoTy_24a04e32;
+using icall_0041D7A0_FUN_0041d7a0_for_TLOFakeTy = STFnType_icall_0041D7A0_FUN_0041d7a0_for_TLOFakeTy_ac44dbf8;
+using icall_0041D7A0_FUN_0041d7a0_for_void = STFnType_icall_0041D7A0_FUN_0041d7a0_for_void_50cc8eac;
+using icall_0041D7C0_FUN_0041d7c0_for_STColl3C = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STColl3C_7c399f60;
+using icall_0041D7C0_FUN_0041d7c0_for_STCrabC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STCrabC_9f8731e3;
+using icall_0041D7C0_FUN_0041d7c0_for_STDcResourcC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STDcResourcC_d2e66d96;
+using icall_0041D7C0_FUN_0041d7c0_for_STDestC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STDestC_9d6f280b;
+using icall_0041D7C0_FUN_0041d7c0_for_STExplosion = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STExplosion_a2ad4f75;
+using icall_0041D7C0_FUN_0041d7c0_for_STFishC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STFishC_d0517c3d;
+using icall_0041D7C0_FUN_0041d7c0_for_STGameObjC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STGameObjC_e3707c96;
+using icall_0041D7C0_FUN_0041d7c0_for_STJellyGunC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STJellyGunC_b3038f8e;
+using icall_0041D7C0_FUN_0041d7c0_for_STJellyManC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STJellyManC_dcb6f9f1;
+using icall_0041D7C0_FUN_0041d7c0_for_STLBombC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STLBombC_c21f058f;
+using icall_0041D7C0_FUN_0041d7c0_for_STMBombC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STMBombC_d5d6d2d3;
+using icall_0041D7C0_FUN_0041d7c0_for_STMineSetC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STMineSetC_81f41267;
+using icall_0041D7C0_FUN_0041d7c0_for_STOctopusC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STOctopusC_ae2da5ac;
+using icall_0041D7C0_FUN_0041d7c0_for_STRubbishC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STRubbishC_af91b444;
+using icall_0041D7C0_FUN_0041d7c0_for_STSatC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STSatC_c9813d78;
+using icall_0041D7C0_FUN_0041d7c0_for_STSharkC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STSharkC_5449a81e;
+using icall_0041D7C0_FUN_0041d7c0_for_STTorpC = STFnType_icall_0041D7C0_FUN_0041d7c0_for_STTorpC_fb2da938;
+using icall_0041D7C0_FUN_0041d7c0_for_TLOBaseTy = STFnType_icall_0041D7C0_FUN_0041d7c0_for_TLOBaseTy_c27dbe6b;
+using icall_0041D7C0_FUN_0041d7c0_for_TLOEmbryoTy = STFnType_icall_0041D7C0_FUN_0041d7c0_for_TLOEmbryoTy_73539fff;
+using icall_0041D7C0_FUN_0041d7c0_for_TLOFakeTy = STFnType_icall_0041D7C0_FUN_0041d7c0_for_TLOFakeTy_d090c2e5;
+using icall_0041D7C0_FUN_0041d7c0_for_void = STFnType_icall_0041D7C0_FUN_0041d7c0_for_void_0da631c4;
 using icall_0041D7C0_FUN_0041d7c0_stdcall = STFnType_icall_0041D7C0_FUN_0041d7c0_stdcall_ca25c450;
+using icall_0041D7E0_FUN_0041d7e0_for_STColl3C = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STColl3C_acac44fc;
+using icall_0041D7E0_FUN_0041d7e0_for_STCrabC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STCrabC_e9040eae;
+using icall_0041D7E0_FUN_0041d7e0_for_STDcResourcC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STDcResourcC_a9e23399;
+using icall_0041D7E0_FUN_0041d7e0_for_STDestC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STDestC_a33fe0ec;
+using icall_0041D7E0_FUN_0041d7e0_for_STExplosion = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STExplosion_f5606100;
+using icall_0041D7E0_FUN_0041d7e0_for_STFishC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STFishC_764da441;
+using icall_0041D7E0_FUN_0041d7e0_for_STGameObjC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STGameObjC_09ddc1cc;
+using icall_0041D7E0_FUN_0041d7e0_for_STJellyGunC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STJellyGunC_96df17d7;
+using icall_0041D7E0_FUN_0041d7e0_for_STJellyManC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STJellyManC_f1a8c7f9;
+using icall_0041D7E0_FUN_0041d7e0_for_STLBombC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STLBombC_6d558988;
+using icall_0041D7E0_FUN_0041d7e0_for_STMBombC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STMBombC_9a61af75;
+using icall_0041D7E0_FUN_0041d7e0_for_STMineSetC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STMineSetC_579b21c9;
+using icall_0041D7E0_FUN_0041d7e0_for_STOctopusC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STOctopusC_4d27d96c;
+using icall_0041D7E0_FUN_0041d7e0_for_STRubbishC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STRubbishC_9ae98dc9;
+using icall_0041D7E0_FUN_0041d7e0_for_STSatC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STSatC_56c5ed2c;
+using icall_0041D7E0_FUN_0041d7e0_for_STSharkC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STSharkC_407d04b0;
+using icall_0041D7E0_FUN_0041d7e0_for_STTorpC = STFnType_icall_0041D7E0_FUN_0041d7e0_for_STTorpC_a598a8ac;
+using icall_0041D7E0_FUN_0041d7e0_for_TLOBaseTy = STFnType_icall_0041D7E0_FUN_0041d7e0_for_TLOBaseTy_e69de1ec;
+using icall_0041D7E0_FUN_0041d7e0_for_TLOEmbryoTy = STFnType_icall_0041D7E0_FUN_0041d7e0_for_TLOEmbryoTy_0088c91a;
+using icall_0041D7E0_FUN_0041d7e0_for_TLOFakeTy = STFnType_icall_0041D7E0_FUN_0041d7e0_for_TLOFakeTy_8e877599;
+using icall_0041D7E0_FUN_0041d7e0_for_void = STFnType_icall_0041D7E0_FUN_0041d7e0_for_void_6d521435;
 using icall_0041D7E0_FUN_0041d7e0_stdcall = STFnType_icall_0041D7E0_FUN_0041d7e0_stdcall_db447f8b;
+using icall_0041D800_FUN_0041d800_for_STColl3C = STFnType_icall_0041D800_FUN_0041d800_for_STColl3C_25695412;
+using icall_0041D800_FUN_0041d800_for_STCrabC = STFnType_icall_0041D800_FUN_0041d800_for_STCrabC_cc3c6a2e;
+using icall_0041D800_FUN_0041d800_for_STDcResourcC = STFnType_icall_0041D800_FUN_0041d800_for_STDcResourcC_b0509422;
+using icall_0041D800_FUN_0041d800_for_STDestC = STFnType_icall_0041D800_FUN_0041d800_for_STDestC_937ae1e5;
+using icall_0041D800_FUN_0041d800_for_STExplosion = STFnType_icall_0041D800_FUN_0041d800_for_STExplosion_f9dcdd45;
+using icall_0041D800_FUN_0041d800_for_STFishC = STFnType_icall_0041D800_FUN_0041d800_for_STFishC_e47c71d7;
+using icall_0041D800_FUN_0041d800_for_STGameObjC = STFnType_icall_0041D800_FUN_0041d800_for_STGameObjC_33ce92a4;
+using icall_0041D800_FUN_0041d800_for_STJellyGunC = STFnType_icall_0041D800_FUN_0041d800_for_STJellyGunC_54de6c8f;
+using icall_0041D800_FUN_0041d800_for_STJellyManC = STFnType_icall_0041D800_FUN_0041d800_for_STJellyManC_800dc360;
+using icall_0041D800_FUN_0041d800_for_STLBombC = STFnType_icall_0041D800_FUN_0041d800_for_STLBombC_b5b5ba13;
+using icall_0041D800_FUN_0041d800_for_STMBombC = STFnType_icall_0041D800_FUN_0041d800_for_STMBombC_c6e176fb;
+using icall_0041D800_FUN_0041d800_for_STMineSetC = STFnType_icall_0041D800_FUN_0041d800_for_STMineSetC_17a5c067;
+using icall_0041D800_FUN_0041d800_for_STOctopusC = STFnType_icall_0041D800_FUN_0041d800_for_STOctopusC_0dc81bf2;
+using icall_0041D800_FUN_0041d800_for_STRubbishC = STFnType_icall_0041D800_FUN_0041d800_for_STRubbishC_d7954888;
+using icall_0041D800_FUN_0041d800_for_STSatC = STFnType_icall_0041D800_FUN_0041d800_for_STSatC_e830d2df;
+using icall_0041D800_FUN_0041d800_for_STSharkC = STFnType_icall_0041D800_FUN_0041d800_for_STSharkC_148ed59a;
+using icall_0041D800_FUN_0041d800_for_STTorpC = STFnType_icall_0041D800_FUN_0041d800_for_STTorpC_0e08a079;
+using icall_0041D800_FUN_0041d800_for_TLOBaseTy = STFnType_icall_0041D800_FUN_0041d800_for_TLOBaseTy_94d87cbe;
+using icall_0041D800_FUN_0041d800_for_TLOEmbryoTy = STFnType_icall_0041D800_FUN_0041d800_for_TLOEmbryoTy_6fe42cd7;
+using icall_0041D800_FUN_0041d800_for_TLOFakeTy = STFnType_icall_0041D800_FUN_0041d800_for_TLOFakeTy_b0f1e227;
+using icall_0041D800_FUN_0041d800_for_void = STFnType_icall_0041D800_FUN_0041d800_for_void_1903b4fc;
 using icall_0041D800_FUN_0041d800_stdcall = STFnType_icall_0041D800_FUN_0041d800_stdcall_382b0c1a;
 using icall_0041D820_FUN_0041d820_for_STColl3C = STFnType_icall_0041D820_FUN_0041d820_for_STColl3C_91171e3a;
 using icall_0041D820_FUN_0041d820_for_STCrabC = STFnType_icall_0041D820_FUN_0041d820_for_STCrabC_d6f32239;
@@ -5764,6 +7905,51 @@ using icall_0041D860_FUN_0041d860_for_TLOBaseTy = STFnType_icall_0041D860_FUN_00
 using icall_0041D860_FUN_0041d860_for_TLOEmbryoTy = STFnType_icall_0041D860_FUN_0041d860_for_TLOEmbryoTy_d2c53190;
 using icall_0041D860_FUN_0041d860_for_TLOFakeTy = STFnType_icall_0041D860_FUN_0041d860_for_TLOFakeTy_128f8592;
 using icall_0041D860_FUN_0041d860_for_void = STFnType_icall_0041D860_FUN_0041d860_for_void_52e7e192;
+using icall_0041D8A0_FUN_0041d8a0_for_STColl3C = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STColl3C_9be27957;
+using icall_0041D8A0_FUN_0041d8a0_for_STCrabC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STCrabC_f9116334;
+using icall_0041D8A0_FUN_0041d8a0_for_STDcResourcC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STDcResourcC_10e050f3;
+using icall_0041D8A0_FUN_0041d8a0_for_STDestC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STDestC_391ed432;
+using icall_0041D8A0_FUN_0041d8a0_for_STExplosion = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STExplosion_9148114c;
+using icall_0041D8A0_FUN_0041d8a0_for_STFishC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STFishC_5f03fda7;
+using icall_0041D8A0_FUN_0041d8a0_for_STGameObjC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STGameObjC_1d12edc0;
+using icall_0041D8A0_FUN_0041d8a0_for_STJellyGunC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STJellyGunC_c13d25b9;
+using icall_0041D8A0_FUN_0041d8a0_for_STJellyManC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STJellyManC_0afd6cf6;
+using icall_0041D8A0_FUN_0041d8a0_for_STLBombC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STLBombC_f8bbf46c;
+using icall_0041D8A0_FUN_0041d8a0_for_STMBombC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STMBombC_29695b9e;
+using icall_0041D8A0_FUN_0041d8a0_for_STMineSetC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STMineSetC_7203ae25;
+using icall_0041D8A0_FUN_0041d8a0_for_STOctopusC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STOctopusC_0709ab6f;
+using icall_0041D8A0_FUN_0041d8a0_for_STRubbishC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STRubbishC_7df58439;
+using icall_0041D8A0_FUN_0041d8a0_for_STSatC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STSatC_08030c83;
+using icall_0041D8A0_FUN_0041d8a0_for_STSharkC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STSharkC_afc1f694;
+using icall_0041D8A0_FUN_0041d8a0_for_STTorpC = STFnType_icall_0041D8A0_FUN_0041d8a0_for_STTorpC_b33555db;
+using icall_0041D8A0_FUN_0041d8a0_for_TLOBaseTy = STFnType_icall_0041D8A0_FUN_0041d8a0_for_TLOBaseTy_c3997bc8;
+using icall_0041D8A0_FUN_0041d8a0_for_TLOEmbryoTy = STFnType_icall_0041D8A0_FUN_0041d8a0_for_TLOEmbryoTy_bd9e517a;
+using icall_0041D8A0_FUN_0041d8a0_for_TLOFakeTy = STFnType_icall_0041D8A0_FUN_0041d8a0_for_TLOFakeTy_7a810cc8;
+using icall_0041D8A0_FUN_0041d8a0_for_void = STFnType_icall_0041D8A0_FUN_0041d8a0_for_void_ae4b974c;
+using icall_0041D8C0_FUN_0041d8c0_for_STArtiafactC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STArtiafactC_02544054;
+using icall_0041D8C0_FUN_0041d8c0_for_STColl3C = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STColl3C_6d26e069;
+using icall_0041D8C0_FUN_0041d8c0_for_STContainerC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STContainerC_863fba73;
+using icall_0041D8C0_FUN_0041d8c0_for_STCrabC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STCrabC_5f437357;
+using icall_0041D8C0_FUN_0041d8c0_for_STDcResourcC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STDcResourcC_0f5e898a;
+using icall_0041D8C0_FUN_0041d8c0_for_STDestC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STDestC_f4e74aa0;
+using icall_0041D8C0_FUN_0041d8c0_for_STExplosion = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STExplosion_341e9810;
+using icall_0041D8C0_FUN_0041d8c0_for_STFishC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STFishC_03b63b48;
+using icall_0041D8C0_FUN_0041d8c0_for_STGameObjC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STGameObjC_360e9f1d;
+using icall_0041D8C0_FUN_0041d8c0_for_STJellyGunC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STJellyGunC_8172a2db;
+using icall_0041D8C0_FUN_0041d8c0_for_STJellyManC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STJellyManC_d00bb279;
+using icall_0041D8C0_FUN_0041d8c0_for_STLBombC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STLBombC_8b046905;
+using icall_0041D8C0_FUN_0041d8c0_for_STMBombC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STMBombC_e65a5087;
+using icall_0041D8C0_FUN_0041d8c0_for_STMineSetC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STMineSetC_f1cf66f3;
+using icall_0041D8C0_FUN_0041d8c0_for_STOctopusC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STOctopusC_d3a16f68;
+using icall_0041D8C0_FUN_0041d8c0_for_STRubbishC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STRubbishC_795944fd;
+using icall_0041D8C0_FUN_0041d8c0_for_STSatC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STSatC_a7a1cea1;
+using icall_0041D8C0_FUN_0041d8c0_for_STSharkC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STSharkC_34991c12;
+using icall_0041D8C0_FUN_0041d8c0_for_STSprGameObjC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STSprGameObjC_bcdc8fcc;
+using icall_0041D8C0_FUN_0041d8c0_for_STTorpC = STFnType_icall_0041D8C0_FUN_0041d8c0_for_STTorpC_381862fe;
+using icall_0041D8C0_FUN_0041d8c0_for_TLOBaseTy = STFnType_icall_0041D8C0_FUN_0041d8c0_for_TLOBaseTy_e1711af2;
+using icall_0041D8C0_FUN_0041d8c0_for_TLOEmbryoTy = STFnType_icall_0041D8C0_FUN_0041d8c0_for_TLOEmbryoTy_496c99ae;
+using icall_0041D8C0_FUN_0041d8c0_for_TLOFakeTy = STFnType_icall_0041D8C0_FUN_0041d8c0_for_TLOFakeTy_b4de1e62;
+using icall_0041D8C0_FUN_0041d8c0_for_void = STFnType_icall_0041D8C0_FUN_0041d8c0_for_void_faabfe7c;
 using icall_0041DA10_FUN_0041da10_for_STArtiafactC = STFnType_icall_0041DA10_FUN_0041da10_for_STArtiafactC_fd95c94d;
 using icall_0041DA10_FUN_0041da10_for_STBoatC = STFnType_icall_0041DA10_FUN_0041da10_for_STBoatC_0df98b68;
 using icall_0041DA10_FUN_0041da10_for_STColl3C = STFnType_icall_0041DA10_FUN_0041da10_for_STColl3C_49df85c1;
@@ -5804,8 +7990,46 @@ using icall_0041DA30_FUN_0041da30_for_TLOBaseTy = STFnType_icall_0041DA30_FUN_00
 using icall_0041DA30_FUN_0041da30_for_TLOEmbryoTy = STFnType_icall_0041DA30_FUN_0041da30_for_TLOEmbryoTy_e5f37bcc;
 using icall_0041DA30_FUN_0041da30_for_TLOFakeTy = STFnType_icall_0041DA30_FUN_0041da30_for_TLOFakeTy_12591e47;
 using icall_0041DA30_FUN_0041da30_for_void = STFnType_icall_0041DA30_FUN_0041da30_for_void_653cc4d2;
+using icall_0041DBC0_FUN_0041dbc0_for_STDcResourcC = STFnType_icall_0041DBC0_FUN_0041dbc0_for_STDcResourcC_962f7ac5;
+using icall_0041DBC0_FUN_0041dbc0_for_STDestC = STFnType_icall_0041DBC0_FUN_0041dbc0_for_STDestC_88fd91a1;
+using icall_0041DBC0_FUN_0041dbc0_for_STJellyGunC = STFnType_icall_0041DBC0_FUN_0041dbc0_for_STJellyGunC_204ded2c;
+using icall_0041DBC0_FUN_0041dbc0_for_STLBombC = STFnType_icall_0041DBC0_FUN_0041dbc0_for_STLBombC_a1d250e8;
+using icall_0041DBC0_FUN_0041dbc0_for_STMBombC = STFnType_icall_0041DBC0_FUN_0041dbc0_for_STMBombC_3ce1612d;
+using icall_0041DBC0_FUN_0041dbc0_for_STSatC = STFnType_icall_0041DBC0_FUN_0041dbc0_for_STSatC_e7e2fa73;
+using icall_0041DBC0_FUN_0041dbc0_for_STTorpC = STFnType_icall_0041DBC0_FUN_0041dbc0_for_STTorpC_f18e4532;
+using icall_0041DBC0_FUN_0041dbc0_for_TLOFakeTy = STFnType_icall_0041DBC0_FUN_0041dbc0_for_TLOFakeTy_49492fab;
+using icall_0041DBC0_FUN_0041dbc0_for_void = STFnType_icall_0041DBC0_FUN_0041dbc0_for_void_0523fdda;
 using icall_0041DBC0_FUN_0041dbc0_stdcall = STFnType_icall_0041DBC0_FUN_0041dbc0_stdcall_64aaff23;
+using icall_0041DBE0_FUN_0041dbe0_for_STDcResourcC = STFnType_icall_0041DBE0_FUN_0041dbe0_for_STDcResourcC_8e8527f1;
+using icall_0041DBE0_FUN_0041dbe0_for_STDestC = STFnType_icall_0041DBE0_FUN_0041dbe0_for_STDestC_dcca11ae;
+using icall_0041DBE0_FUN_0041dbe0_for_STJellyGunC = STFnType_icall_0041DBE0_FUN_0041dbe0_for_STJellyGunC_ce18cfd3;
+using icall_0041DBE0_FUN_0041dbe0_for_STLBombC = STFnType_icall_0041DBE0_FUN_0041dbe0_for_STLBombC_019c8565;
+using icall_0041DBE0_FUN_0041dbe0_for_STMBombC = STFnType_icall_0041DBE0_FUN_0041dbe0_for_STMBombC_481653e8;
+using icall_0041DBE0_FUN_0041dbe0_for_STSatC = STFnType_icall_0041DBE0_FUN_0041dbe0_for_STSatC_9edc3714;
+using icall_0041DBE0_FUN_0041dbe0_for_STTorpC = STFnType_icall_0041DBE0_FUN_0041dbe0_for_STTorpC_c75333f4;
+using icall_0041DBE0_FUN_0041dbe0_for_TLOFakeTy = STFnType_icall_0041DBE0_FUN_0041dbe0_for_TLOFakeTy_1c76a8eb;
+using icall_0041DBE0_FUN_0041dbe0_for_void = STFnType_icall_0041DBE0_FUN_0041dbe0_for_void_9913626c;
 using icall_0041DBE0_FUN_0041dbe0_stdcall = STFnType_icall_0041DBE0_FUN_0041dbe0_stdcall_c5625374;
+using icall_0041DC20_FUN_0041dc20_for_STArtiafactC = STFnType_icall_0041DC20_FUN_0041dc20_for_STArtiafactC_fd9e99d4;
+using icall_0041DC20_FUN_0041dc20_for_STColl3C = STFnType_icall_0041DC20_FUN_0041dc20_for_STColl3C_d8f9311b;
+using icall_0041DC20_FUN_0041dc20_for_STContainerC = STFnType_icall_0041DC20_FUN_0041dc20_for_STContainerC_7e3ead9e;
+using icall_0041DC20_FUN_0041dc20_for_STCrabC = STFnType_icall_0041DC20_FUN_0041dc20_for_STCrabC_cdb9cae0;
+using icall_0041DC20_FUN_0041dc20_for_STDcResourcC = STFnType_icall_0041DC20_FUN_0041dc20_for_STDcResourcC_ddf97cb5;
+using icall_0041DC20_FUN_0041dc20_for_STDestC = STFnType_icall_0041DC20_FUN_0041dc20_for_STDestC_daf96989;
+using icall_0041DC20_FUN_0041dc20_for_STFishC = STFnType_icall_0041DC20_FUN_0041dc20_for_STFishC_13a6acee;
+using icall_0041DC20_FUN_0041dc20_for_STJellyGunC = STFnType_icall_0041DC20_FUN_0041dc20_for_STJellyGunC_aecd83d6;
+using icall_0041DC20_FUN_0041dc20_for_STLBombC = STFnType_icall_0041DC20_FUN_0041dc20_for_STLBombC_58a0e08e;
+using icall_0041DC20_FUN_0041dc20_for_STMBombC = STFnType_icall_0041DC20_FUN_0041dc20_for_STMBombC_528fae0b;
+using icall_0041DC20_FUN_0041dc20_for_STMineSetC = STFnType_icall_0041DC20_FUN_0041dc20_for_STMineSetC_a2fb0f8e;
+using icall_0041DC20_FUN_0041dc20_for_STOctopusC = STFnType_icall_0041DC20_FUN_0041dc20_for_STOctopusC_ad8ddf27;
+using icall_0041DC20_FUN_0041dc20_for_STSatC = STFnType_icall_0041DC20_FUN_0041dc20_for_STSatC_d8e34620;
+using icall_0041DC20_FUN_0041dc20_for_STSharkC = STFnType_icall_0041DC20_FUN_0041dc20_for_STSharkC_ffe0d13f;
+using icall_0041DC20_FUN_0041dc20_for_STSprGameObjC = STFnType_icall_0041DC20_FUN_0041dc20_for_STSprGameObjC_7fa9a673;
+using icall_0041DC20_FUN_0041dc20_for_STTorpC = STFnType_icall_0041DC20_FUN_0041dc20_for_STTorpC_122df375;
+using icall_0041DC20_FUN_0041dc20_for_TLOBaseTy = STFnType_icall_0041DC20_FUN_0041dc20_for_TLOBaseTy_1ac9cb73;
+using icall_0041DC20_FUN_0041dc20_for_TLOEmbryoTy = STFnType_icall_0041DC20_FUN_0041dc20_for_TLOEmbryoTy_92c2811d;
+using icall_0041DC20_FUN_0041dc20_for_TLOFakeTy = STFnType_icall_0041DC20_FUN_0041dc20_for_TLOFakeTy_c33b13b7;
+using icall_0041DC20_FUN_0041dc20_for_void = STFnType_icall_0041DC20_FUN_0041dc20_for_void_ee7315d1;
 using icall_0041DC20_FUN_0041dc20_stdcall = STFnType_icall_0041DC20_FUN_0041dc20_stdcall_02449f3a;
 using icall_0041DD00_FUN_0041dd00_for_STArtiafactC = STFnType_icall_0041DD00_FUN_0041dd00_for_STArtiafactC_2ac69012;
 using icall_0041DD00_FUN_0041dd00_for_STColl3C = STFnType_icall_0041DD00_FUN_0041dd00_for_STColl3C_eebfd7aa;
@@ -5874,7 +8098,61 @@ using icall_0041F330_FUN_0041f330_for_STTorpC = STFnType_icall_0041F330_FUN_0041
 using icall_0041F330_FUN_0041f330_for_TLOEmbryoTy = STFnType_icall_0041F330_FUN_0041f330_for_TLOEmbryoTy_bb791e6e;
 using icall_0041F330_FUN_0041f330_for_TLOFakeTy = STFnType_icall_0041F330_FUN_0041f330_for_TLOFakeTy_770df6ef;
 using icall_0041F330_FUN_0041f330_for_void = STFnType_icall_0041F330_FUN_0041f330_for_void_878140df;
+using icall_0041F350_FUN_0041f350_for_STArtiafactC = STFnType_icall_0041F350_FUN_0041f350_for_STArtiafactC_ef48463b;
+using icall_0041F350_FUN_0041f350_for_STColl3C = STFnType_icall_0041F350_FUN_0041f350_for_STColl3C_2c096dae;
+using icall_0041F350_FUN_0041f350_for_STContainerC = STFnType_icall_0041F350_FUN_0041f350_for_STContainerC_04c6ddd4;
+using icall_0041F350_FUN_0041f350_for_STCrabC = STFnType_icall_0041F350_FUN_0041f350_for_STCrabC_a4be88b9;
+using icall_0041F350_FUN_0041f350_for_STDcResourcC = STFnType_icall_0041F350_FUN_0041f350_for_STDcResourcC_17c55edb;
+using icall_0041F350_FUN_0041f350_for_STDestC = STFnType_icall_0041F350_FUN_0041f350_for_STDestC_02768d34;
+using icall_0041F350_FUN_0041f350_for_STFishC = STFnType_icall_0041F350_FUN_0041f350_for_STFishC_fd6b4cf1;
+using icall_0041F350_FUN_0041f350_for_STJellyGunC = STFnType_icall_0041F350_FUN_0041f350_for_STJellyGunC_6b7b8b0e;
+using icall_0041F350_FUN_0041f350_for_STLBombC = STFnType_icall_0041F350_FUN_0041f350_for_STLBombC_da822783;
+using icall_0041F350_FUN_0041f350_for_STMBombC = STFnType_icall_0041F350_FUN_0041f350_for_STMBombC_4dc7a4b5;
+using icall_0041F350_FUN_0041f350_for_STOctopusC = STFnType_icall_0041F350_FUN_0041f350_for_STOctopusC_39bfc6a6;
+using icall_0041F350_FUN_0041f350_for_STSatC = STFnType_icall_0041F350_FUN_0041f350_for_STSatC_c30a125c;
+using icall_0041F350_FUN_0041f350_for_STSharkC = STFnType_icall_0041F350_FUN_0041f350_for_STSharkC_aff50d02;
+using icall_0041F350_FUN_0041f350_for_STSprGameObjC = STFnType_icall_0041F350_FUN_0041f350_for_STSprGameObjC_8c0fa1e8;
+using icall_0041F350_FUN_0041f350_for_STTorpC = STFnType_icall_0041F350_FUN_0041f350_for_STTorpC_e93f0602;
+using icall_0041F350_FUN_0041f350_for_TLOEmbryoTy = STFnType_icall_0041F350_FUN_0041f350_for_TLOEmbryoTy_0eaa3a15;
+using icall_0041F350_FUN_0041f350_for_TLOFakeTy = STFnType_icall_0041F350_FUN_0041f350_for_TLOFakeTy_7376616c;
+using icall_0041F350_FUN_0041f350_for_void = STFnType_icall_0041F350_FUN_0041f350_for_void_bc74167b;
 using icall_0041F350_FUN_0041f350_stdcall = STFnType_icall_0041F350_FUN_0041f350_stdcall_a8f92ed1;
+using icall_0041F370_FUN_0041f370_for_STCrabC = STFnType_icall_0041F370_FUN_0041f370_for_STCrabC_edad6486;
+using icall_0041F370_FUN_0041f370_for_STDcResourcC = STFnType_icall_0041F370_FUN_0041f370_for_STDcResourcC_66e0eeca;
+using icall_0041F370_FUN_0041f370_for_STDestC = STFnType_icall_0041F370_FUN_0041f370_for_STDestC_2d58b9ed;
+using icall_0041F370_FUN_0041f370_for_STFishC = STFnType_icall_0041F370_FUN_0041f370_for_STFishC_61061140;
+using icall_0041F370_FUN_0041f370_for_STJellyGunC = STFnType_icall_0041F370_FUN_0041f370_for_STJellyGunC_741a8ca2;
+using icall_0041F370_FUN_0041f370_for_STLBombC = STFnType_icall_0041F370_FUN_0041f370_for_STLBombC_551f8dfe;
+using icall_0041F370_FUN_0041f370_for_STMBombC = STFnType_icall_0041F370_FUN_0041f370_for_STMBombC_92f3046d;
+using icall_0041F370_FUN_0041f370_for_STOctopusC = STFnType_icall_0041F370_FUN_0041f370_for_STOctopusC_44deb566;
+using icall_0041F370_FUN_0041f370_for_STSatC = STFnType_icall_0041F370_FUN_0041f370_for_STSatC_e33e95f7;
+using icall_0041F370_FUN_0041f370_for_STSharkC = STFnType_icall_0041F370_FUN_0041f370_for_STSharkC_52e8d4ab;
+using icall_0041F370_FUN_0041f370_for_STTorpC = STFnType_icall_0041F370_FUN_0041f370_for_STTorpC_a8cc5f01;
+using icall_0041F370_FUN_0041f370_for_void = STFnType_icall_0041F370_FUN_0041f370_for_void_2c95ca0f;
+using icall_004210A0_FUN_004210a0_for_STArtiafactC = STFnType_icall_004210A0_FUN_004210a0_for_STArtiafactC_3bef10c1;
+using icall_004210A0_FUN_004210a0_for_STColl3C = STFnType_icall_004210A0_FUN_004210a0_for_STColl3C_c23f25ce;
+using icall_004210A0_FUN_004210a0_for_STContainerC = STFnType_icall_004210A0_FUN_004210a0_for_STContainerC_25240747;
+using icall_004210A0_FUN_004210a0_for_TLOEmbryoTy = STFnType_icall_004210A0_FUN_004210a0_for_TLOEmbryoTy_df065db9;
+using icall_004210A0_FUN_004210a0_for_void = STFnType_icall_004210A0_FUN_004210a0_for_void_14bf7b46;
+using icall_004210C0_FUN_004210c0_for_STArtiafactC = STFnType_icall_004210C0_FUN_004210c0_for_STArtiafactC_f0ef2822;
+using icall_004210C0_FUN_004210c0_for_STColl3C = STFnType_icall_004210C0_FUN_004210c0_for_STColl3C_2c193662;
+using icall_004210C0_FUN_004210c0_for_STContainerC = STFnType_icall_004210C0_FUN_004210c0_for_STContainerC_c39cd0ba;
+using icall_004210C0_FUN_004210c0_for_STCrabC = STFnType_icall_004210C0_FUN_004210c0_for_STCrabC_cd2143ff;
+using icall_004210C0_FUN_004210c0_for_STDcResourcC = STFnType_icall_004210C0_FUN_004210c0_for_STDcResourcC_f934dccd;
+using icall_004210C0_FUN_004210c0_for_STDestC = STFnType_icall_004210C0_FUN_004210c0_for_STDestC_9846af53;
+using icall_004210C0_FUN_004210c0_for_STFishC = STFnType_icall_004210C0_FUN_004210c0_for_STFishC_2b3bf6e4;
+using icall_004210C0_FUN_004210c0_for_STJellyGunC = STFnType_icall_004210C0_FUN_004210c0_for_STJellyGunC_fc0e7b4d;
+using icall_004210C0_FUN_004210c0_for_STLBombC = STFnType_icall_004210C0_FUN_004210c0_for_STLBombC_74981221;
+using icall_004210C0_FUN_004210c0_for_STMBombC = STFnType_icall_004210C0_FUN_004210c0_for_STMBombC_bdb01782;
+using icall_004210C0_FUN_004210c0_for_STMineSetC = STFnType_icall_004210C0_FUN_004210c0_for_STMineSetC_2364e38e;
+using icall_004210C0_FUN_004210c0_for_STOctopusC = STFnType_icall_004210C0_FUN_004210c0_for_STOctopusC_3998bcd9;
+using icall_004210C0_FUN_004210c0_for_STSatC = STFnType_icall_004210C0_FUN_004210c0_for_STSatC_56964491;
+using icall_004210C0_FUN_004210c0_for_STSharkC = STFnType_icall_004210C0_FUN_004210c0_for_STSharkC_6ec28324;
+using icall_004210C0_FUN_004210c0_for_STSprGameObjC = STFnType_icall_004210C0_FUN_004210c0_for_STSprGameObjC_f874798b;
+using icall_004210C0_FUN_004210c0_for_STTorpC = STFnType_icall_004210C0_FUN_004210c0_for_STTorpC_4cd9cb24;
+using icall_004210C0_FUN_004210c0_for_TLOEmbryoTy = STFnType_icall_004210C0_FUN_004210c0_for_TLOEmbryoTy_a17f54fa;
+using icall_004210C0_FUN_004210c0_for_TLOFakeTy = STFnType_icall_004210C0_FUN_004210c0_for_TLOFakeTy_f2143eec;
+using icall_004210C0_FUN_004210c0_for_void = STFnType_icall_004210C0_FUN_004210c0_for_void_c96e70aa;
 using icall_00422E20_FUN_00422e20_for_STArtiafactC = STFnType_icall_00422E20_FUN_00422e20_for_STArtiafactC_b7cc07e2;
 using icall_00422E20_FUN_00422e20_for_STBoatC = STFnType_icall_00422E20_FUN_00422e20_for_STBoatC_52d088ce;
 using icall_00422E20_FUN_00422e20_for_STColl3C = STFnType_icall_00422E20_FUN_00422e20_for_STColl3C_9b4b7264;
@@ -5917,13 +8195,151 @@ using icall_00422FF0_FUN_00422ff0_for_TLOBaseTy = STFnType_icall_00422FF0_FUN_00
 using icall_00422FF0_FUN_00422ff0_for_TLOEmbryoTy = STFnType_icall_00422FF0_FUN_00422ff0_for_TLOEmbryoTy_bb262980;
 using icall_00422FF0_FUN_00422ff0_for_TLOFakeTy = STFnType_icall_00422FF0_FUN_00422ff0_for_TLOFakeTy_9f5b281a;
 using icall_00422FF0_FUN_00422ff0_for_void = STFnType_icall_00422FF0_FUN_00422ff0_for_void_b0b0f1c2;
+using icall_00423140_FUN_00423140_for_STArtiafactC = STFnType_icall_00423140_FUN_00423140_for_STArtiafactC_78c2ad73;
+using icall_00423140_FUN_00423140_for_STBoatC = STFnType_icall_00423140_FUN_00423140_for_STBoatC_d404d543;
+using icall_00423140_FUN_00423140_for_STColl3C = STFnType_icall_00423140_FUN_00423140_for_STColl3C_7d1a0f82;
+using icall_00423140_FUN_00423140_for_STContainerC = STFnType_icall_00423140_FUN_00423140_for_STContainerC_fb79ce1e;
+using icall_00423140_FUN_00423140_for_STCrabC = STFnType_icall_00423140_FUN_00423140_for_STCrabC_d15e3f65;
+using icall_00423140_FUN_00423140_for_STDcResourcC = STFnType_icall_00423140_FUN_00423140_for_STDcResourcC_bcfe7e36;
+using icall_00423140_FUN_00423140_for_STDestC = STFnType_icall_00423140_FUN_00423140_for_STDestC_91e436ec;
+using icall_00423140_FUN_00423140_for_STFishC = STFnType_icall_00423140_FUN_00423140_for_STFishC_425c78be;
+using icall_00423140_FUN_00423140_for_STJellyGunC = STFnType_icall_00423140_FUN_00423140_for_STJellyGunC_54bc1426;
+using icall_00423140_FUN_00423140_for_STLBombC = STFnType_icall_00423140_FUN_00423140_for_STLBombC_befed588;
+using icall_00423140_FUN_00423140_for_STMBombC = STFnType_icall_00423140_FUN_00423140_for_STMBombC_d7e63578;
+using icall_00423140_FUN_00423140_for_STMineSetC = STFnType_icall_00423140_FUN_00423140_for_STMineSetC_9ba011c0;
+using icall_00423140_FUN_00423140_for_STOctopusC = STFnType_icall_00423140_FUN_00423140_for_STOctopusC_477d7d26;
+using icall_00423140_FUN_00423140_for_STSatC = STFnType_icall_00423140_FUN_00423140_for_STSatC_1f6a7310;
+using icall_00423140_FUN_00423140_for_STSharkC = STFnType_icall_00423140_FUN_00423140_for_STSharkC_421ef35c;
+using icall_00423140_FUN_00423140_for_STSprGameObjC = STFnType_icall_00423140_FUN_00423140_for_STSprGameObjC_8cc28530;
+using icall_00423140_FUN_00423140_for_STTorpC = STFnType_icall_00423140_FUN_00423140_for_STTorpC_f654c6a6;
+using icall_00423140_FUN_00423140_for_TLOEmbryoTy = STFnType_icall_00423140_FUN_00423140_for_TLOEmbryoTy_fade862b;
+using icall_00423140_FUN_00423140_for_TLOFakeTy = STFnType_icall_00423140_FUN_00423140_for_TLOFakeTy_08233178;
+using icall_00423140_FUN_00423140_for_void = STFnType_icall_00423140_FUN_00423140_for_void_cb8034cd;
 using icall_00423140_FUN_00423140_stdcall = STFnType_icall_00423140_FUN_00423140_stdcall_107237ee;
+using icall_00423160_FUN_00423160_for_STArtiafactC = STFnType_icall_00423160_FUN_00423160_for_STArtiafactC_c6c7cd5c;
+using icall_00423160_FUN_00423160_for_STBoatC = STFnType_icall_00423160_FUN_00423160_for_STBoatC_023a7888;
+using icall_00423160_FUN_00423160_for_STColl3C = STFnType_icall_00423160_FUN_00423160_for_STColl3C_e8affcce;
+using icall_00423160_FUN_00423160_for_STContainerC = STFnType_icall_00423160_FUN_00423160_for_STContainerC_13e7fdda;
+using icall_00423160_FUN_00423160_for_STCrabC = STFnType_icall_00423160_FUN_00423160_for_STCrabC_10c21a8f;
+using icall_00423160_FUN_00423160_for_STDcResourcC = STFnType_icall_00423160_FUN_00423160_for_STDcResourcC_8241d5c2;
+using icall_00423160_FUN_00423160_for_STDestC = STFnType_icall_00423160_FUN_00423160_for_STDestC_5f346654;
+using icall_00423160_FUN_00423160_for_STFishC = STFnType_icall_00423160_FUN_00423160_for_STFishC_3579be8c;
+using icall_00423160_FUN_00423160_for_STJellyGunC = STFnType_icall_00423160_FUN_00423160_for_STJellyGunC_b10d6c5f;
+using icall_00423160_FUN_00423160_for_STLBombC = STFnType_icall_00423160_FUN_00423160_for_STLBombC_f5a4c376;
+using icall_00423160_FUN_00423160_for_STMBombC = STFnType_icall_00423160_FUN_00423160_for_STMBombC_6c595935;
+using icall_00423160_FUN_00423160_for_STMineSetC = STFnType_icall_00423160_FUN_00423160_for_STMineSetC_5da041ee;
+using icall_00423160_FUN_00423160_for_STOctopusC = STFnType_icall_00423160_FUN_00423160_for_STOctopusC_b0a13181;
+using icall_00423160_FUN_00423160_for_STSatC = STFnType_icall_00423160_FUN_00423160_for_STSatC_f0fd8bac;
+using icall_00423160_FUN_00423160_for_STSharkC = STFnType_icall_00423160_FUN_00423160_for_STSharkC_d2f2691d;
+using icall_00423160_FUN_00423160_for_STSprGameObjC = STFnType_icall_00423160_FUN_00423160_for_STSprGameObjC_8d52c1ff;
+using icall_00423160_FUN_00423160_for_STTorpC = STFnType_icall_00423160_FUN_00423160_for_STTorpC_7b03ee2a;
+using icall_00423160_FUN_00423160_for_TLOEmbryoTy = STFnType_icall_00423160_FUN_00423160_for_TLOEmbryoTy_d99744fa;
+using icall_00423160_FUN_00423160_for_TLOFakeTy = STFnType_icall_00423160_FUN_00423160_for_TLOFakeTy_eab12fd9;
+using icall_00423160_FUN_00423160_for_void = STFnType_icall_00423160_FUN_00423160_for_void_98c0196b;
+using icall_00423180_FUN_00423180_for_STArtiafactC = STFnType_icall_00423180_FUN_00423180_for_STArtiafactC_c8aed240;
+using icall_00423180_FUN_00423180_for_STBoatC = STFnType_icall_00423180_FUN_00423180_for_STBoatC_17942385;
+using icall_00423180_FUN_00423180_for_STColl3C = STFnType_icall_00423180_FUN_00423180_for_STColl3C_418a3172;
+using icall_00423180_FUN_00423180_for_STContainerC = STFnType_icall_00423180_FUN_00423180_for_STContainerC_9d7e73fb;
+using icall_00423180_FUN_00423180_for_STCrabC = STFnType_icall_00423180_FUN_00423180_for_STCrabC_dd56928f;
+using icall_00423180_FUN_00423180_for_STDcResourcC = STFnType_icall_00423180_FUN_00423180_for_STDcResourcC_af0effc3;
+using icall_00423180_FUN_00423180_for_STDestC = STFnType_icall_00423180_FUN_00423180_for_STDestC_da6c8328;
+using icall_00423180_FUN_00423180_for_STFishC = STFnType_icall_00423180_FUN_00423180_for_STFishC_5a225231;
+using icall_00423180_FUN_00423180_for_STJellyGunC = STFnType_icall_00423180_FUN_00423180_for_STJellyGunC_da48572c;
+using icall_00423180_FUN_00423180_for_STLBombC = STFnType_icall_00423180_FUN_00423180_for_STLBombC_d7c03186;
+using icall_00423180_FUN_00423180_for_STMBombC = STFnType_icall_00423180_FUN_00423180_for_STMBombC_560c4ad7;
+using icall_00423180_FUN_00423180_for_STMineSetC = STFnType_icall_00423180_FUN_00423180_for_STMineSetC_ced8565b;
+using icall_00423180_FUN_00423180_for_STOctopusC = STFnType_icall_00423180_FUN_00423180_for_STOctopusC_478c4f29;
+using icall_00423180_FUN_00423180_for_STSatC = STFnType_icall_00423180_FUN_00423180_for_STSatC_21a51c4e;
+using icall_00423180_FUN_00423180_for_STSharkC = STFnType_icall_00423180_FUN_00423180_for_STSharkC_4654e8d8;
+using icall_00423180_FUN_00423180_for_STSprGameObjC = STFnType_icall_00423180_FUN_00423180_for_STSprGameObjC_244038c2;
+using icall_00423180_FUN_00423180_for_STTorpC = STFnType_icall_00423180_FUN_00423180_for_STTorpC_0fc85d91;
+using icall_00423180_FUN_00423180_for_TLOEmbryoTy = STFnType_icall_00423180_FUN_00423180_for_TLOEmbryoTy_d0fcf8f3;
+using icall_00423180_FUN_00423180_for_TLOFakeTy = STFnType_icall_00423180_FUN_00423180_for_TLOFakeTy_f2c4d0f7;
+using icall_00423180_FUN_00423180_for_void = STFnType_icall_00423180_FUN_00423180_for_void_3d7ba17c;
 using icall_00423180_FUN_00423180_stdcall = STFnType_icall_00423180_FUN_00423180_stdcall_8c9be3a6;
+using icall_004231A0_FUN_004231a0_for_STColl3C = STFnType_icall_004231A0_FUN_004231a0_for_STColl3C_2d93ee61;
+using icall_004231A0_FUN_004231a0_for_STCrabC = STFnType_icall_004231A0_FUN_004231a0_for_STCrabC_8797755d;
+using icall_004231A0_FUN_004231a0_for_STDcResourcC = STFnType_icall_004231A0_FUN_004231a0_for_STDcResourcC_d1be4c93;
+using icall_004231A0_FUN_004231a0_for_STDestC = STFnType_icall_004231A0_FUN_004231a0_for_STDestC_a6963443;
+using icall_004231A0_FUN_004231a0_for_STFishC = STFnType_icall_004231A0_FUN_004231a0_for_STFishC_8889fffc;
+using icall_004231A0_FUN_004231a0_for_STJellyGunC = STFnType_icall_004231A0_FUN_004231a0_for_STJellyGunC_c5ba94b7;
+using icall_004231A0_FUN_004231a0_for_STLBombC = STFnType_icall_004231A0_FUN_004231a0_for_STLBombC_414a3150;
+using icall_004231A0_FUN_004231a0_for_STMBombC = STFnType_icall_004231A0_FUN_004231a0_for_STMBombC_19849aa5;
+using icall_004231A0_FUN_004231a0_for_STMineSetC = STFnType_icall_004231A0_FUN_004231a0_for_STMineSetC_4b3128c2;
+using icall_004231A0_FUN_004231a0_for_STOctopusC = STFnType_icall_004231A0_FUN_004231a0_for_STOctopusC_f5ea6678;
+using icall_004231A0_FUN_004231a0_for_STSatC = STFnType_icall_004231A0_FUN_004231a0_for_STSatC_57c750fb;
+using icall_004231A0_FUN_004231a0_for_STSharkC = STFnType_icall_004231A0_FUN_004231a0_for_STSharkC_b45fcbb6;
+using icall_004231A0_FUN_004231a0_for_STTorpC = STFnType_icall_004231A0_FUN_004231a0_for_STTorpC_393e5c8b;
+using icall_004231A0_FUN_004231a0_for_TLOBaseTy = STFnType_icall_004231A0_FUN_004231a0_for_TLOBaseTy_cdfaba24;
+using icall_004231A0_FUN_004231a0_for_TLOEmbryoTy = STFnType_icall_004231A0_FUN_004231a0_for_TLOEmbryoTy_fa224fad;
+using icall_004231A0_FUN_004231a0_for_TLOFakeTy = STFnType_icall_004231A0_FUN_004231a0_for_TLOFakeTy_067e5415;
+using icall_004231A0_FUN_004231a0_for_void = STFnType_icall_004231A0_FUN_004231a0_for_void_b472e082;
 using icall_004231A0_FUN_004231a0_stdcall = STFnType_icall_004231A0_FUN_004231a0_stdcall_a299f524;
+using icall_004231C0_FUN_004231c0_for_STColl3C = STFnType_icall_004231C0_FUN_004231c0_for_STColl3C_28f053ca;
+using icall_004231C0_FUN_004231c0_for_STCrabC = STFnType_icall_004231C0_FUN_004231c0_for_STCrabC_ae17c303;
+using icall_004231C0_FUN_004231c0_for_STDcResourcC = STFnType_icall_004231C0_FUN_004231c0_for_STDcResourcC_fa1445f3;
+using icall_004231C0_FUN_004231c0_for_STDestC = STFnType_icall_004231C0_FUN_004231c0_for_STDestC_594c8211;
+using icall_004231C0_FUN_004231c0_for_STFishC = STFnType_icall_004231C0_FUN_004231c0_for_STFishC_61ac693a;
+using icall_004231C0_FUN_004231c0_for_STJellyGunC = STFnType_icall_004231C0_FUN_004231c0_for_STJellyGunC_516b1a5b;
+using icall_004231C0_FUN_004231c0_for_STLBombC = STFnType_icall_004231C0_FUN_004231c0_for_STLBombC_8107a349;
+using icall_004231C0_FUN_004231c0_for_STMBombC = STFnType_icall_004231C0_FUN_004231c0_for_STMBombC_829d57e9;
+using icall_004231C0_FUN_004231c0_for_STMineSetC = STFnType_icall_004231C0_FUN_004231c0_for_STMineSetC_0fd04d92;
+using icall_004231C0_FUN_004231c0_for_STOctopusC = STFnType_icall_004231C0_FUN_004231c0_for_STOctopusC_d8f0c709;
+using icall_004231C0_FUN_004231c0_for_STSatC = STFnType_icall_004231C0_FUN_004231c0_for_STSatC_91263150;
+using icall_004231C0_FUN_004231c0_for_STSharkC = STFnType_icall_004231C0_FUN_004231c0_for_STSharkC_f4f151c3;
+using icall_004231C0_FUN_004231c0_for_STTorpC = STFnType_icall_004231C0_FUN_004231c0_for_STTorpC_8f8a1e5d;
+using icall_004231C0_FUN_004231c0_for_TLOBaseTy = STFnType_icall_004231C0_FUN_004231c0_for_TLOBaseTy_f2eea164;
+using icall_004231C0_FUN_004231c0_for_TLOEmbryoTy = STFnType_icall_004231C0_FUN_004231c0_for_TLOEmbryoTy_b5394f70;
+using icall_004231C0_FUN_004231c0_for_TLOFakeTy = STFnType_icall_004231C0_FUN_004231c0_for_TLOFakeTy_0903bb39;
+using icall_004231C0_FUN_004231c0_for_void = STFnType_icall_004231C0_FUN_004231c0_for_void_d313c826;
 using icall_004231C0_FUN_004231c0_stdcall = STFnType_icall_004231C0_FUN_004231c0_stdcall_5087afda;
+using icall_004231E0_FUN_004231e0_for_STArtiafactC = STFnType_icall_004231E0_FUN_004231e0_for_STArtiafactC_5d02e1b9;
+using icall_004231E0_FUN_004231e0_for_STColl3C = STFnType_icall_004231E0_FUN_004231e0_for_STColl3C_d7a7973c;
+using icall_004231E0_FUN_004231e0_for_STContainerC = STFnType_icall_004231E0_FUN_004231e0_for_STContainerC_5dc00efb;
+using icall_004231E0_FUN_004231e0_for_STCrabC = STFnType_icall_004231E0_FUN_004231e0_for_STCrabC_0a43fbe4;
+using icall_004231E0_FUN_004231e0_for_STDestC = STFnType_icall_004231E0_FUN_004231e0_for_STDestC_fea8d56a;
+using icall_004231E0_FUN_004231e0_for_STFishC = STFnType_icall_004231E0_FUN_004231e0_for_STFishC_366dd58c;
+using icall_004231E0_FUN_004231e0_for_STJellyGunC = STFnType_icall_004231E0_FUN_004231e0_for_STJellyGunC_b42eba37;
+using icall_004231E0_FUN_004231e0_for_STLBombC = STFnType_icall_004231E0_FUN_004231e0_for_STLBombC_a6ce26bf;
+using icall_004231E0_FUN_004231e0_for_STMBombC = STFnType_icall_004231E0_FUN_004231e0_for_STMBombC_aa90489b;
+using icall_004231E0_FUN_004231e0_for_STMineSetC = STFnType_icall_004231E0_FUN_004231e0_for_STMineSetC_1e5a3bee;
+using icall_004231E0_FUN_004231e0_for_STOctopusC = STFnType_icall_004231E0_FUN_004231e0_for_STOctopusC_edd2d243;
+using icall_004231E0_FUN_004231e0_for_STSatC = STFnType_icall_004231E0_FUN_004231e0_for_STSatC_2ed991e5;
+using icall_004231E0_FUN_004231e0_for_STSharkC = STFnType_icall_004231E0_FUN_004231e0_for_STSharkC_c4352e4e;
+using icall_004231E0_FUN_004231e0_for_STSprGameObjC = STFnType_icall_004231E0_FUN_004231e0_for_STSprGameObjC_cb11e0c0;
+using icall_004231E0_FUN_004231e0_for_STTorpC = STFnType_icall_004231E0_FUN_004231e0_for_STTorpC_2aea5329;
+using icall_004231E0_FUN_004231e0_for_TLOBaseTy = STFnType_icall_004231E0_FUN_004231e0_for_TLOBaseTy_c0989397;
+using icall_004231E0_FUN_004231e0_for_TLOEmbryoTy = STFnType_icall_004231E0_FUN_004231e0_for_TLOEmbryoTy_38c443fb;
+using icall_004231E0_FUN_004231e0_for_TLOFakeTy = STFnType_icall_004231E0_FUN_004231e0_for_TLOFakeTy_9aa79d53;
+using icall_004231E0_FUN_004231e0_for_void = STFnType_icall_004231E0_FUN_004231e0_for_void_e2e2761d;
+using icall_00423200_FUN_00423200_for_STArtiafactC = STFnType_icall_00423200_FUN_00423200_for_STArtiafactC_1c16fc40;
+using icall_00423200_FUN_00423200_for_STColl3C = STFnType_icall_00423200_FUN_00423200_for_STColl3C_b9869dc5;
+using icall_00423200_FUN_00423200_for_STContainerC = STFnType_icall_00423200_FUN_00423200_for_STContainerC_ea8ae1f3;
+using icall_00423200_FUN_00423200_for_STCrabC = STFnType_icall_00423200_FUN_00423200_for_STCrabC_30863a47;
+using icall_00423200_FUN_00423200_for_STDcResourcC = STFnType_icall_00423200_FUN_00423200_for_STDcResourcC_252cebad;
+using icall_00423200_FUN_00423200_for_STDestC = STFnType_icall_00423200_FUN_00423200_for_STDestC_de567ad2;
+using icall_00423200_FUN_00423200_for_STFishC = STFnType_icall_00423200_FUN_00423200_for_STFishC_4200e05f;
+using icall_00423200_FUN_00423200_for_STJellyGunC = STFnType_icall_00423200_FUN_00423200_for_STJellyGunC_a57140c4;
+using icall_00423200_FUN_00423200_for_STLBombC = STFnType_icall_00423200_FUN_00423200_for_STLBombC_ecb7ce9c;
+using icall_00423200_FUN_00423200_for_STMBombC = STFnType_icall_00423200_FUN_00423200_for_STMBombC_0feb8add;
+using icall_00423200_FUN_00423200_for_STMineSetC = STFnType_icall_00423200_FUN_00423200_for_STMineSetC_18791f03;
+using icall_00423200_FUN_00423200_for_STOctopusC = STFnType_icall_00423200_FUN_00423200_for_STOctopusC_c4e8fe3c;
+using icall_00423200_FUN_00423200_for_STSatC = STFnType_icall_00423200_FUN_00423200_for_STSatC_c1244c55;
+using icall_00423200_FUN_00423200_for_STSharkC = STFnType_icall_00423200_FUN_00423200_for_STSharkC_bf859d0c;
+using icall_00423200_FUN_00423200_for_STSprGameObjC = STFnType_icall_00423200_FUN_00423200_for_STSprGameObjC_d4196eee;
+using icall_00423200_FUN_00423200_for_STTorpC = STFnType_icall_00423200_FUN_00423200_for_STTorpC_be2ebafc;
+using icall_00423200_FUN_00423200_for_TLOBaseTy = STFnType_icall_00423200_FUN_00423200_for_TLOBaseTy_1229b6b3;
+using icall_00423200_FUN_00423200_for_TLOEmbryoTy = STFnType_icall_00423200_FUN_00423200_for_TLOEmbryoTy_44cba2f7;
+using icall_00423200_FUN_00423200_for_TLOFakeTy = STFnType_icall_00423200_FUN_00423200_for_TLOFakeTy_5ea75e52;
+using icall_00423200_FUN_00423200_for_void = STFnType_icall_00423200_FUN_00423200_for_void_4164a4c4;
 using icall_00423C70_FUN_00423c70_for_void = STFnType_icall_00423C70_FUN_00423c70_for_void_b6dc2536;
 using icall_00423EC0_GetMessage = STFnType_icall_00423EC0_GetMessage_b8113944;
+using icall_004244D0_FUN_004244d0_for_void = STFnType_icall_004244D0_FUN_004244d0_for_void_c1bcce8d;
+using icall_00424710_FUN_00424710_for_void = STFnType_icall_00424710_FUN_00424710_for_void_6ff40964;
 using icall_00424710_FUN_00424710_stdcall = STFnType_icall_00424710_FUN_00424710_stdcall_99177d14;
+using icall_00424730_FUN_00424730_for_void = STFnType_icall_00424730_FUN_00424730_for_void_9a894c15;
+using icall_00424750_FUN_00424750_for_void = STFnType_icall_00424750_FUN_00424750_for_void_3bce0f28;
+using icall_00424770_FUN_00424770_for_void = STFnType_icall_00424770_FUN_00424770_for_void_e85239b1;
 using icall_00430A90_GetMessage = STFnType_icall_00430A90_GetMessage_9464aa7a;
 using icall_0044EDE0_FUN_0044ede0_for_STBoatC = STFnType_icall_0044EDE0_FUN_0044ede0_for_STBoatC_2b0564c6;
 using icall_0044EE30_GetMessage = STFnType_icall_0044EE30_GetMessage_48f9253b;
@@ -5974,6 +8390,7 @@ using icall_004BE110_FUN_004be110_for_TLOBaseTy = STFnType_icall_004BE110_FUN_00
 using icall_004BE180_FUN_004be180_for_TLOBaseTy = STFnType_icall_004BE180_FUN_004be180_for_TLOBaseTy_b71d78f4;
 using icall_004BE1A0_FUN_004be1a0_for_TLOBaseTy = STFnType_icall_004BE1A0_FUN_004be1a0_for_TLOBaseTy_adb3345b;
 using icall_004BE1D0_FUN_004be1d0_for_TLOBaseTy = STFnType_icall_004BE1D0_FUN_004be1d0_for_TLOBaseTy_a7f4d342;
+using icall_004BE200_FUN_004be200_for_TLOBaseTy = STFnType_icall_004BE200_FUN_004be200_for_TLOBaseTy_cb1ee493;
 using icall_004BE200_FUN_004be200_stdcall = STFnType_icall_004BE200_FUN_004be200_stdcall_4dee0364;
 using icall_004BE240_FUN_004be240_for_TLOBaseTy = STFnType_icall_004BE240_FUN_004be240_for_TLOBaseTy_4df3811d;
 using icall_004BE290_FUN_004be290_for_TLOBaseTy = STFnType_icall_004BE290_FUN_004be290_for_TLOBaseTy_279a55a1;
@@ -5996,6 +8413,8 @@ using icall_004CCC10_FUN_004ccc10_for_TLOBaseTy = STFnType_icall_004CCC10_FUN_00
 using icall_004CE0F0_FUN_004ce0f0_for_TLOBaseTy = STFnType_icall_004CE0F0_FUN_004ce0f0_for_TLOBaseTy_214c20ae;
 using icall_004CF640_FUN_004cf640_for_TLOBaseTy = STFnType_icall_004CF640_FUN_004cf640_for_TLOBaseTy_9f0faeda;
 using icall_004D0B90_GetMessage = STFnType_icall_004D0B90_GetMessage_f730671d;
+using icall_004D0F80_FUN_004d0f80_for_TLOFakeTy = STFnType_icall_004D0F80_FUN_004d0f80_for_TLOFakeTy_feb0a195;
+using icall_004D0FA0_FUN_004d0fa0_for_TLOFakeTy = STFnType_icall_004D0FA0_FUN_004d0fa0_for_TLOFakeTy_cc14a5d2;
 using icall_004D55B0_GetMessage = STFnType_icall_004D55B0_GetMessage_008a2d43;
 using icall_004D6360_FUN_004d6360_for_TLOEmbryoTy = STFnType_icall_004D6360_FUN_004d6360_for_TLOEmbryoTy_2ed26b5b;
 using icall_004D6360_FUN_004d6360_for_void = STFnType_icall_004D6360_FUN_004d6360_for_void_64f9c054;
@@ -6005,10 +8424,12 @@ using icall_004D6890_FUN_004d6890_for_TLOEmbryoTy = STFnType_icall_004D6890_FUN_
 using icall_004D6890_FUN_004d6890_for_void = STFnType_icall_004D6890_FUN_004d6890_for_void_9565021f;
 using icall_004D6930_FUN_004d6930_for_TLOEmbryoTy = STFnType_icall_004D6930_FUN_004d6930_for_TLOEmbryoTy_0e6fcc94;
 using icall_004D6930_FUN_004d6930_for_void = STFnType_icall_004D6930_FUN_004d6930_for_void_92bb8843;
+using icall_004D6BE0_FUN_004d6be0_for_TLOEmbryoTy = STFnType_icall_004D6BE0_FUN_004d6be0_for_TLOEmbryoTy_17941c94;
 using icall_004D6C00_FUN_004d6c00_for_void = STFnType_icall_004D6C00_FUN_004d6c00_for_void_c7384dc7;
 using icall_004D6C20_FUN_004d6c20_for_TLOEmbryoTy = STFnType_icall_004D6C20_FUN_004d6c20_for_TLOEmbryoTy_4cc0d1ae;
 using icall_004D6C20_FUN_004d6c20_for_void = STFnType_icall_004D6C20_FUN_004d6c20_for_void_d6d9ab79;
 using icall_004D6C50_FUN_004d6c50_for_void = STFnType_icall_004D6C50_FUN_004d6c50_for_void_e0b95510;
+using icall_004D6C70_FUN_004d6c70_for_TLOEmbryoTy = STFnType_icall_004D6C70_FUN_004d6c70_for_TLOEmbryoTy_4bb00359;
 using icall_004D6C90_FUN_004d6c90_for_TLOEmbryoTy = STFnType_icall_004D6C90_FUN_004d6c90_for_TLOEmbryoTy_7b1f28a7;
 using icall_004D6C90_FUN_004d6c90_for_void = STFnType_icall_004D6C90_FUN_004d6c90_for_void_09913ff5;
 using icall_004D6D50_FUN_004d6d50_for_TLOEmbryoTy = STFnType_icall_004D6D50_FUN_004d6d50_for_TLOEmbryoTy_51f72ba9;
@@ -6062,6 +8483,7 @@ using icall_004D7040_FUN_004d7040_for_STTorpC = STFnType_icall_004D7040_FUN_004d
 using icall_004D7040_FUN_004d7040_for_TLOEmbryoTy = STFnType_icall_004D7040_FUN_004d7040_for_TLOEmbryoTy_ae099f0f;
 using icall_004D7040_FUN_004d7040_for_TLOFakeTy = STFnType_icall_004D7040_FUN_004d7040_for_TLOFakeTy_e3ac71f0;
 using icall_004D7040_FUN_004d7040_for_void = STFnType_icall_004D7040_FUN_004d7040_for_void_b7e9c1bc;
+using icall_004D7390_FUN_004d7390_for_TLOBaseTy = STFnType_icall_004D7390_FUN_004d7390_for_TLOBaseTy_fe55ff03;
 using icall_004DA340_FUN_004da340_for_TLOBaseTy = STFnType_icall_004DA340_FUN_004da340_for_TLOBaseTy_e1e045fb;
 using icall_004E3200_FUN_004e3200_for_TLOBaseTy = STFnType_icall_004E3200_FUN_004e3200_for_TLOBaseTy_95eecff7;
 using icall_004EB600_FUN_004eb600_for_TLOBaseTy = STFnType_icall_004EB600_FUN_004eb600_for_TLOBaseTy_d893643f;
@@ -6076,6 +8498,7 @@ using icall_00538FC0_PaintLBut = STFnType_icall_00538FC0_PaintLBut_aa1009be;
 using icall_00542EC0_InterSystemC__DoneSystem_for_InterSystemC = STFnType_icall_00542EC0_InterSystemC__DoneSystem_for_InterSystemC_9b55d3ab;
 using icall_00542F40_GetMessage = STFnType_icall_00542F40_GetMessage_56099452;
 using icall_0054CF00_FUN_0054cf00_for_STPlaySystemC = STFnType_icall_0054CF00_FUN_0054cf00_for_STPlaySystemC_ad51854f;
+using icall_0054CFA0_FUN_0054cfa0_for_STPlaySystemC = STFnType_icall_0054CFA0_FUN_0054cfa0_for_STPlaySystemC_d58b66e7;
 using icall_0054E4F0_GetMessage = STFnType_icall_0054E4F0_GetMessage_44a79779;
 using icall_005564C0_GetMessage = STFnType_icall_005564C0_GetMessage_40b65516;
 using icall_00558840_GetMessage = STFnType_icall_00558840_GetMessage_3dbe95e0;
@@ -6086,6 +8509,7 @@ using icall_0055C290_FUN_0055c290_for_CFsgsConnection = STFnType_icall_0055C290_
 using icall_0055C2E0_FUN_0055c2e0_for_CFsgsConnection = STFnType_icall_0055C2E0_FUN_0055c2e0_for_CFsgsConnection_98211880;
 using icall_0055C500_FUN_0055c500_for_CFsgsConnection = STFnType_icall_0055C500_FUN_0055c500_for_CFsgsConnection_a95c2a08;
 using icall_0055C550_FUN_0055c550_for_CFsgsConnection = STFnType_icall_0055C550_FUN_0055c550_for_CFsgsConnection_71eff6ff;
+using icall_0055C590_FUN_0055c590_for_CFsgsConnection = STFnType_icall_0055C590_FUN_0055c590_for_CFsgsConnection_ff85990e;
 using icall_0055C590_FUN_0055c590_stdcall = STFnType_icall_0055C590_FUN_0055c590_stdcall_447df404;
 using icall_0055C6C0_FUN_0055c6c0_for_CFsgsConnection = STFnType_icall_0055C6C0_FUN_0055c6c0_for_CFsgsConnection_0fbcec50;
 using icall_0055C740_FUN_0055c740_for_CFsgsConnection = STFnType_icall_0055C740_FUN_0055c740_for_CFsgsConnection_c135ae21;
@@ -6116,16 +8540,22 @@ using icall_00580860_FUN_00580860_for_STDcResourcC = STFnType_icall_00580860_FUN
 using icall_005808A0_FUN_005808a0_for_STDcResourcC = STFnType_icall_005808A0_FUN_005808a0_for_STDcResourcC_15967f7f;
 using icall_005808E0_FUN_005808e0_for_STDcResourcC = STFnType_icall_005808E0_FUN_005808e0_for_STDcResourcC_89ec5ca5;
 using icall_00581BF0_GetMessage = STFnType_icall_00581BF0_GetMessage_262bb3fe;
+using icall_005823B0_FUN_005823b0_for_STJellyManC = STFnType_icall_005823B0_FUN_005823b0_for_STJellyManC_72039c68;
 using icall_00583270_GetMessage = STFnType_icall_00583270_GetMessage_e904e296;
+using icall_00584950_FUN_00584950_for_STJellyGunC = STFnType_icall_00584950_FUN_00584950_for_STJellyGunC_c5a54f83;
 using icall_005859A0_GetMessage = STFnType_icall_005859A0_GetMessage_4b40ca4c;
+using icall_005861D0_FUN_005861d0_for_STLBombC = STFnType_icall_005861D0_FUN_005861d0_for_STLBombC_437ea87a;
 using icall_00588BC0_GetMessage = STFnType_icall_00588BC0_GetMessage_f22b884d;
+using icall_00589970_FUN_00589970_for_STMBombC = STFnType_icall_00589970_FUN_00589970_for_STMBombC_3f2bb95f;
 using icall_00589A20_FUN_00589a20_for_STOctopusC = STFnType_icall_00589A20_FUN_00589a20_for_STOctopusC_02e5dfae;
 using icall_00589B10_FUN_00589b10_for_STOctopusC = STFnType_icall_00589B10_FUN_00589b10_for_STOctopusC_6ccb8907;
 using icall_00589C10_GetMessage = STFnType_icall_00589C10_GetMessage_602f5599;
 using icall_0058C760_GetMessage = STFnType_icall_0058C760_GetMessage_281b3f19;
+using icall_0058CFC0_FUN_0058cfc0_for_STSatC = STFnType_icall_0058CFC0_FUN_0058cfc0_for_STSatC_05490180;
 using icall_0058D7C0_GetMessage = STFnType_icall_0058D7C0_GetMessage_69930b7b;
 using icall_0058E440_FUN_0058e440_for_STSharkC = STFnType_icall_0058E440_FUN_0058e440_for_STSharkC_8cf4e584;
 using icall_0058E530_FUN_0058e530_for_STSharkC = STFnType_icall_0058E530_FUN_0058e530_for_STSharkC_7ee002d0;
+using icall_00590150_FUN_00590150_for_STSharkC = STFnType_icall_00590150_FUN_00590150_for_STSharkC_f73c10e1;
 using icall_005908B0_GetMessage = STFnType_icall_005908B0_GetMessage_cba72ae5;
 using icall_00594440_GetMessage = STFnType_icall_00594440_GetMessage_128c34c8;
 using icall_005A4350_GetMessage = STFnType_icall_005A4350_GetMessage_f96ae45a;
@@ -6157,7 +8587,10 @@ using icall_005EE080_FUN_005ee080_for_STSprGameObjC = STFnType_icall_005EE080_FU
 using icall_005EE3F0_FUN_005ee3f0_for_STArtiafactC = STFnType_icall_005EE3F0_FUN_005ee3f0_for_STArtiafactC_28c4e2df;
 using icall_005EE3F0_FUN_005ee3f0_for_STContainerC = STFnType_icall_005EE3F0_FUN_005ee3f0_for_STContainerC_f151c391;
 using icall_005EE3F0_FUN_005ee3f0_for_STSprGameObjC = STFnType_icall_005EE3F0_FUN_005ee3f0_for_STSprGameObjC_8aa96460;
+using icall_005EF430_FUN_005ef430_for_STSprGameObjC = STFnType_icall_005EF430_FUN_005ef430_for_STSprGameObjC_92e30f91;
 using icall_005EF430_FUN_005ef430_stdcall = STFnType_icall_005EF430_FUN_005ef430_stdcall_95a99918;
+using icall_005EF450_FUN_005ef450_for_STSprGameObjC = STFnType_icall_005EF450_FUN_005ef450_for_STSprGameObjC_c83b3f23;
+using icall_005EF470_FUN_005ef470_for_STSprGameObjC = STFnType_icall_005EF470_FUN_005ef470_for_STSprGameObjC_f7fa30b8;
 using icall_005EF5D0_FUN_005ef5d0_for_STArtiafactC = STFnType_icall_005EF5D0_FUN_005ef5d0_for_STArtiafactC_58c529cf;
 using icall_005EFA30_FUN_005efa30_for_STArtiafactC = STFnType_icall_005EFA30_FUN_005efa30_for_STArtiafactC_6ed32cdb;
 using icall_005EFA30_FUN_005efa30_for_STContainerC = STFnType_icall_005EFA30_FUN_005efa30_for_STContainerC_30938838;
@@ -6186,6 +8619,9 @@ using icall_005EFCD0_FUN_005efcd0_for_STSprGameObjC = STFnType_icall_005EFCD0_FU
 using icall_005F0050_FUN_005f0050_for_STArtiafactC = STFnType_icall_005F0050_FUN_005f0050_for_STArtiafactC_067d77b4;
 using icall_005F0050_FUN_005f0050_for_STContainerC = STFnType_icall_005F0050_FUN_005f0050_for_STContainerC_e6068e07;
 using icall_005F0050_FUN_005f0050_for_STSprGameObjC = STFnType_icall_005F0050_FUN_005f0050_for_STSprGameObjC_a54a34f8;
+using icall_005F0090_FUN_005f0090_for_STArtiafactC = STFnType_icall_005F0090_FUN_005f0090_for_STArtiafactC_78d2127e;
+using icall_005F0090_FUN_005f0090_for_STContainerC = STFnType_icall_005F0090_FUN_005f0090_for_STContainerC_b79525c1;
+using icall_005F0090_FUN_005f0090_for_STSprGameObjC = STFnType_icall_005F0090_FUN_005f0090_for_STSprGameObjC_961151a5;
 using icall_005F00B0_FUN_005f00b0_for_STArtiafactC = STFnType_icall_005F00B0_FUN_005f00b0_for_STArtiafactC_954e0dc1;
 using icall_005F00B0_FUN_005f00b0_for_STContainerC = STFnType_icall_005F00B0_FUN_005f00b0_for_STContainerC_73bc5d4c;
 using icall_005F00B0_FUN_005f00b0_for_STSprGameObjC = STFnType_icall_005F00B0_FUN_005f00b0_for_STSprGameObjC_de892eb1;
@@ -6198,9 +8634,17 @@ using icall_005F0240_FUN_005f0240_for_STSprGameObjC = STFnType_icall_005F0240_FU
 using icall_005F0280_FUN_005f0280_for_STArtiafactC = STFnType_icall_005F0280_FUN_005f0280_for_STArtiafactC_1121768a;
 using icall_005F0280_FUN_005f0280_for_STContainerC = STFnType_icall_005F0280_FUN_005f0280_for_STContainerC_cb4b1e88;
 using icall_005F0280_FUN_005f0280_for_STSprGameObjC = STFnType_icall_005F0280_FUN_005f0280_for_STSprGameObjC_c4141706;
+using icall_005F0360_FUN_005f0360_for_STArtiafactC = STFnType_icall_005F0360_FUN_005f0360_for_STArtiafactC_e0c8d73d;
+using icall_005F0360_FUN_005f0360_for_STSprGameObjC = STFnType_icall_005F0360_FUN_005f0360_for_STSprGameObjC_d3f29c44;
 using icall_005F0380_FUN_005f0380_for_STArtiafactC = STFnType_icall_005F0380_FUN_005f0380_for_STArtiafactC_02d8b5bf;
 using icall_005F0380_FUN_005f0380_for_STContainerC = STFnType_icall_005F0380_FUN_005f0380_for_STContainerC_e6c622f8;
 using icall_005F0380_FUN_005f0380_for_STSprGameObjC = STFnType_icall_005F0380_FUN_005f0380_for_STSprGameObjC_8edea515;
+using icall_005F03D0_FUN_005f03d0_for_STArtiafactC = STFnType_icall_005F03D0_FUN_005f03d0_for_STArtiafactC_91cca5c9;
+using icall_005F03D0_FUN_005f03d0_for_STSprGameObjC = STFnType_icall_005F03D0_FUN_005f03d0_for_STSprGameObjC_d2cbfaf4;
+using icall_005F03F0_FUN_005f03f0_for_STSprGameObjC = STFnType_icall_005F03F0_FUN_005f03f0_for_STSprGameObjC_1417655a;
+using icall_005F0410_FUN_005f0410_for_STArtiafactC = STFnType_icall_005F0410_FUN_005f0410_for_STArtiafactC_4606646e;
+using icall_005F0410_FUN_005f0410_for_STSprGameObjC = STFnType_icall_005F0410_FUN_005f0410_for_STSprGameObjC_0dbe8440;
+using icall_005F0430_FUN_005f0430_for_STSprGameObjC = STFnType_icall_005F0430_FUN_005f0430_for_STSprGameObjC_49c1ba95;
 using icall_005F0470_FUN_005f0470_for_STArtiafactC = STFnType_icall_005F0470_FUN_005f0470_for_STArtiafactC_5080703d;
 using icall_005F0470_FUN_005f0470_for_STContainerC = STFnType_icall_005F0470_FUN_005f0470_for_STContainerC_d99c2a4f;
 using icall_005F0470_FUN_005f0470_for_STSprGameObjC = STFnType_icall_005F0470_FUN_005f0470_for_STSprGameObjC_453b0863;
@@ -6216,6 +8660,7 @@ using icall_005F5F20_GetMessage = STFnType_icall_005F5F20_GetMessage_a0925832;
 using icall_005F6EE0_FUN_005f6ee0_for_STColl3C = STFnType_icall_005F6EE0_FUN_005f6ee0_for_STColl3C_20ff2832;
 using icall_005FB1F0_FUN_005fb1f0 = STFnType_icall_005FB1F0_FUN_005fb1f0_fa277a18;
 using icall_005FB540_FUN_005fb540_for_STColl3C = STFnType_icall_005FB540_FUN_005fb540_for_STColl3C_f071c67b;
+using icall_005FB5C0_FUN_005fb5c0_for_STColl3C = STFnType_icall_005FB5C0_FUN_005fb5c0_for_STColl3C_44cf9091;
 using icall_005FC450_FUN_005fc450_for_STContainerC = STFnType_icall_005FC450_FUN_005fc450_for_STContainerC_a6ee5458;
 using icall_005FCC70_FUN_005fcc70_for_STContainerC = STFnType_icall_005FCC70_FUN_005fcc70_for_STContainerC_68642be9;
 using icall_005FCCB0_FUN_005fccb0_for_STContainerC = STFnType_icall_005FCCB0_FUN_005fccb0_for_STContainerC_69e58300;
@@ -6226,6 +8671,7 @@ using icall_005FD3A0_FUN_005fd3a0_for_void = STFnType_icall_005FD3A0_FUN_005fd3a
 using icall_00601F80_GetMessage = STFnType_icall_00601F80_GetMessage_bc6d939f;
 using icall_00602700_FUN_00602700_for_STDestC = STFnType_icall_00602700_FUN_00602700_for_STDestC_d3354288;
 using icall_00602740_FUN_00602740_for_STDestC = STFnType_icall_00602740_FUN_00602740_for_STDestC_c9a0eff2;
+using icall_00602880_FUN_00602880_for_STDestC = STFnType_icall_00602880_FUN_00602880_for_STDestC_9161e34c;
 using icall_006033D0_FUN_006033d0_for_STDestC = STFnType_icall_006033D0_FUN_006033d0_for_STDestC_826fd4b4;
 using icall_00603470_FUN_00603470_for_STDestC = STFnType_icall_00603470_FUN_00603470_for_STDestC_ec7ec802;
 using icall_00603740_GetMessage = STFnType_icall_00603740_GetMessage_54559dfc;
@@ -6257,7 +8703,15 @@ using icall_00638CA0_FUN_00638ca0_for_void = STFnType_icall_00638CA0_FUN_00638ca
 using icall_00639C90_FUN_00639c90_for_void = STFnType_icall_00639C90_FUN_00639c90_for_void_54a2e974;
 using icall_00643E20_FUN_00643e20_for_STTorpC = STFnType_icall_00643E20_FUN_00643e20_for_STTorpC_8a94773f;
 using icall_006461E0_GetMessage = STFnType_icall_006461E0_GetMessage_483b8793;
+using icall_00647B40_FUN_00647b40_for_AiBossClassTy = STFnType_icall_00647B40_FUN_00647b40_for_AiBossClassTy_476720ca;
+using icall_00647B40_FUN_00647b40_for_void = STFnType_icall_00647B40_FUN_00647b40_for_void_7f6f9c3c;
+using icall_00647B60_FUN_00647b60_for_AiBossClassTy = STFnType_icall_00647B60_FUN_00647b60_for_AiBossClassTy_ec54ea19;
+using icall_00647B60_FUN_00647b60_for_AiPlrClassTy = STFnType_icall_00647B60_FUN_00647b60_for_AiPlrClassTy_1d280f61;
+using icall_00647B60_FUN_00647b60_for_void = STFnType_icall_00647B60_FUN_00647b60_for_void_993c7b26;
 using icall_00647B60_FUN_00647b60_stdcall = STFnType_icall_00647B60_FUN_00647b60_stdcall_26d99e5a;
+using icall_00647B80_FUN_00647b80_for_AiBossClassTy = STFnType_icall_00647B80_FUN_00647b80_for_AiBossClassTy_cae08b05;
+using icall_00647B80_FUN_00647b80_for_AiPlrClassTy = STFnType_icall_00647B80_FUN_00647b80_for_AiPlrClassTy_2de356eb;
+using icall_00647B80_FUN_00647b80_for_void = STFnType_icall_00647B80_FUN_00647b80_for_void_72a41fbb;
 using icall_00647B80_FUN_00647b80_stdcall = STFnType_icall_00647B80_FUN_00647b80_stdcall_4140fc8f;
 using icall_00647BA0_FUN_00647ba0_for_AiBossClassTy = STFnType_icall_00647BA0_FUN_00647ba0_for_AiBossClassTy_65cde373;
 using icall_00647BA0_FUN_00647ba0_for_AiPlrClassTy = STFnType_icall_00647BA0_FUN_00647ba0_for_AiPlrClassTy_acf13403;
@@ -6285,6 +8739,7 @@ using icall_00647D50_FUN_00647d50_for_AiPlrClassTy = STFnType_icall_00647D50_FUN
 using icall_00647D50_FUN_00647d50_for_void = STFnType_icall_00647D50_FUN_00647d50_for_void_98c3c651;
 using icall_00647D90_FUN_00647d90_for_AiBossClassTy = STFnType_icall_00647D90_FUN_00647d90_for_AiBossClassTy_1fe11a93;
 using icall_00648030_GetMessage = STFnType_icall_00648030_GetMessage_1beab329;
+using icall_0064CD10_FUN_0064cd10_for_void = STFnType_icall_0064CD10_FUN_0064cd10_for_void_986d7fd8;
 using icall_0064CD10_FUN_0064cd10_stdcall = STFnType_icall_0064CD10_FUN_0064cd10_stdcall_7b46d832;
 using icall_0064E580_FUN_0064e580_for_AiBossClassTy = STFnType_icall_0064E580_FUN_0064e580_for_AiBossClassTy_7b91e8cb;
 using icall_0064E580_FUN_0064e580_for_AiPlrClassTy = STFnType_icall_0064E580_FUN_0064e580_for_AiPlrClassTy_bcbccec9;
@@ -6292,57 +8747,93 @@ using icall_0064E580_FUN_0064e580_for_void = STFnType_icall_0064E580_FUN_0064e58
 using icall_00667D90_GetMessage = STFnType_icall_00667D90_GetMessage_220b236d;
 using icall_00678950_FUN_00678950_for_AiPlrClassTy = STFnType_icall_00678950_FUN_00678950_for_AiPlrClassTy_91c3daef;
 using icall_0067C7E0_GetMessage = STFnType_icall_0067C7E0_GetMessage_19ec3611;
+using icall_006822C0_FUN_006822c0_for_void = STFnType_icall_006822C0_FUN_006822c0_for_void_a3a3e0f7;
 using icall_006822C0_FUN_006822c0_stdcall = STFnType_icall_006822C0_FUN_006822c0_stdcall_a70a0d5a;
+using icall_00682300_FUN_00682300_for_void = STFnType_icall_00682300_FUN_00682300_for_void_7ccc1b8b;
 using icall_00682300_FUN_00682300_stdcall = STFnType_icall_00682300_FUN_00682300_stdcall_35b62234;
+using icall_00682340_FUN_00682340_for_void = STFnType_icall_00682340_FUN_00682340_for_void_4e50a42d;
 using icall_00682340_FUN_00682340_stdcall = STFnType_icall_00682340_FUN_00682340_stdcall_609b063e;
 using icall_00690B90_GetMessage = STFnType_icall_00690B90_GetMessage_64a4dce6;
+using icall_006D50E0_FUN_006d50e0_for_void = STFnType_icall_006D50E0_FUN_006d50e0_for_void_65ced866;
+using icall_006D50F0_FUN_006d50f0_for_void = STFnType_icall_006D50F0_FUN_006d50f0_for_void_94c66d06;
 using icall_006D50F0_FUN_006d50f0_stdcall = STFnType_icall_006D50F0_FUN_006d50f0_stdcall_054e106a;
+using icall_006D5100_FUN_006d5100_for_void = STFnType_icall_006D5100_FUN_006d5100_for_void_43c65cf5;
+using icall_006D5110_FUN_006d5110_for_void = STFnType_icall_006D5110_FUN_006d5110_for_void_f194c073;
 using icall_006D5110_FUN_006d5110_stdcall = STFnType_icall_006D5110_FUN_006d5110_stdcall_b1202b2f;
+using icall_006D5130_FUN_006d5130_for_void = STFnType_icall_006D5130_FUN_006d5130_for_void_3c590129;
 using icall_006D5130_FUN_006d5130_stdcall = STFnType_icall_006D5130_FUN_006d5130_stdcall_a82afd28;
+using icall_006D5150_FUN_006d5150_for_void = STFnType_icall_006D5150_FUN_006d5150_for_void_7c2a3404;
 using icall_006D5150_FUN_006d5150_stdcall = STFnType_icall_006D5150_FUN_006d5150_stdcall_1871dc5c;
 using icall_006D5170_FUN_006d5170_for_void = STFnType_icall_006D5170_FUN_006d5170_for_void_23e12f44;
 using icall_006D5200_FUN_006d5200_for_void = STFnType_icall_006D5200_FUN_006d5200_for_void_606b8311;
 using icall_006D5230_FUN_006d5230_for_void = STFnType_icall_006D5230_FUN_006d5230_for_void_d127cc71;
 using icall_006D5260_FUN_006d5260_for_void = STFnType_icall_006D5260_FUN_006d5260_for_void_b2e456db;
 using icall_006D54C0_FUN_006d54c0_for_void = STFnType_icall_006D54C0_FUN_006d54c0_for_void_95d64d13;
+using icall_006D5780_FUN_006d5780_for_void = STFnType_icall_006D5780_FUN_006d5780_for_void_59d927fd;
 using icall_006D5780_FUN_006d5780_stdcall = STFnType_icall_006D5780_FUN_006d5780_stdcall_53e5f32b;
+using icall_006D5790_FUN_006d5790_for_void = STFnType_icall_006D5790_FUN_006d5790_for_void_0ef4c263;
 using icall_006D5790_FUN_006d5790_stdcall = STFnType_icall_006D5790_FUN_006d5790_stdcall_77b3c0c8;
+using icall_006D57B0_FUN_006d57b0_for_void = STFnType_icall_006D57B0_FUN_006d57b0_for_void_a0aa74aa;
 using icall_006D57B0_FUN_006d57b0_stdcall = STFnType_icall_006D57B0_FUN_006d57b0_stdcall_54b311e6;
+using icall_006D57D0_FUN_006d57d0_for_void = STFnType_icall_006D57D0_FUN_006d57d0_for_void_890cf59c;
 using icall_006D57D0_FUN_006d57d0_stdcall = STFnType_icall_006D57D0_FUN_006d57d0_stdcall_547789b1;
 using icall_006D57F0_FUN_006d57f0_for_void = STFnType_icall_006D57F0_FUN_006d57f0_for_void_bd6d0c7d;
+using icall_006D5820_FUN_006d5820_for_void = STFnType_icall_006D5820_FUN_006d5820_for_void_8eb325d1;
 using icall_006D5820_FUN_006d5820_stdcall = STFnType_icall_006D5820_FUN_006d5820_stdcall_e4e15b42;
 using icall_006D58C0_FUN_006d58c0_for_void = STFnType_icall_006D58C0_FUN_006d58c0_for_void_8eab9bd3;
+using icall_006D5D20_FUN_006d5d20_for_void = STFnType_icall_006D5D20_FUN_006d5d20_for_void_36c0f79a;
 using icall_006D5D20_FUN_006d5d20_stdcall = STFnType_icall_006D5D20_FUN_006d5d20_stdcall_8e6de35e;
+using icall_006D5D40_FUN_006d5d40_for_void = STFnType_icall_006D5D40_FUN_006d5d40_for_void_c3cdfb5b;
 using icall_006D5D40_FUN_006d5d40_stdcall = STFnType_icall_006D5D40_FUN_006d5d40_stdcall_beb0351d;
+using icall_006D5D60_FUN_006d5d60_for_void = STFnType_icall_006D5D60_FUN_006d5d60_for_void_b8502d6d;
 using icall_006D5D60_FUN_006d5d60_stdcall = STFnType_icall_006D5D60_FUN_006d5d60_stdcall_e1d41d12;
 using icall_006D5D80_FUN_006d5d80_for_void = STFnType_icall_006D5D80_FUN_006d5d80_for_void_d2140f29;
+using icall_006D5E50_FUN_006d5e50_for_void = STFnType_icall_006D5E50_FUN_006d5e50_for_void_8ab7d1b3;
 using icall_006D5E50_FUN_006d5e50_stdcall = STFnType_icall_006D5E50_FUN_006d5e50_stdcall_b0c1e46b;
 using icall_006D5ED0_FUN_006d5ed0_for_void = STFnType_icall_006D5ED0_FUN_006d5ed0_for_void_2dd698eb;
 using icall_006D6090_FUN_006d6090_for_void = STFnType_icall_006D6090_FUN_006d6090_for_void_4a5ca155;
+using icall_006D6120_FUN_006d6120_for_void = STFnType_icall_006D6120_FUN_006d6120_for_void_ff83af42;
 using icall_006D6120_FUN_006d6120_stdcall = STFnType_icall_006D6120_FUN_006d6120_stdcall_2f141b7d;
+using icall_006D6140_FUN_006d6140_for_void = STFnType_icall_006D6140_FUN_006d6140_for_void_6fcdf952;
 using icall_006D6140_FUN_006d6140_stdcall = STFnType_icall_006D6140_FUN_006d6140_stdcall_e99e8613;
 using icall_006D6190_FUN_006d6190_for_void = STFnType_icall_006D6190_FUN_006d6190_for_void_ed05dd65;
+using icall_006D61C0_FUN_006d61c0_for_void = STFnType_icall_006D61C0_FUN_006d61c0_for_void_1bbf8c91;
 using icall_006D61C0_FUN_006d61c0_stdcall = STFnType_icall_006D61C0_FUN_006d61c0_stdcall_cdf474a0;
+using icall_006D61E0_FUN_006d61e0_for_void = STFnType_icall_006D61E0_FUN_006d61e0_for_void_175b916d;
 using icall_006D61E0_FUN_006d61e0_stdcall = STFnType_icall_006D61E0_FUN_006d61e0_stdcall_28017a98;
+using icall_006D6250_FUN_006d6250_for_void = STFnType_icall_006D6250_FUN_006d6250_for_void_5851729f;
 using icall_006D6250_FUN_006d6250_stdcall = STFnType_icall_006D6250_FUN_006d6250_stdcall_0dec5694;
+using icall_006D6270_FUN_006d6270_for_void = STFnType_icall_006D6270_FUN_006d6270_for_void_2a98ffd3;
 using icall_006D6270_FUN_006d6270_stdcall = STFnType_icall_006D6270_FUN_006d6270_stdcall_33358190;
+using icall_006D6290_FUN_006d6290_for_void = STFnType_icall_006D6290_FUN_006d6290_for_void_e877d509;
 using icall_006D6290_FUN_006d6290_stdcall = STFnType_icall_006D6290_FUN_006d6290_stdcall_14117a5b;
 using icall_006D6A10_FUN_006d6a10_for_void = STFnType_icall_006D6A10_FUN_006d6a10_for_void_5bb257af;
 using icall_006D7000_FUN_006d7000_for_void = STFnType_icall_006D7000_FUN_006d7000_for_void_a787cafd;
 using icall_006D7060_FUN_006d7060_for_void = STFnType_icall_006D7060_FUN_006d7060_for_void_105cb73b;
+using icall_006D7100_FUN_006d7100_for_void = STFnType_icall_006D7100_FUN_006d7100_for_void_93f7cf44;
 using icall_006D7100_FUN_006d7100_stdcall = STFnType_icall_006D7100_FUN_006d7100_stdcall_533c1e7e;
+using icall_006D7120_FUN_006d7120_for_void = STFnType_icall_006D7120_FUN_006d7120_for_void_887baeeb;
 using icall_006D7120_FUN_006d7120_stdcall = STFnType_icall_006D7120_FUN_006d7120_stdcall_89925cff;
+using icall_006D7140_FUN_006d7140_for_void = STFnType_icall_006D7140_FUN_006d7140_for_void_aa04ef52;
 using icall_006D7140_FUN_006d7140_stdcall = STFnType_icall_006D7140_FUN_006d7140_stdcall_84c82bee;
+using icall_006D7160_FUN_006d7160_for_void = STFnType_icall_006D7160_FUN_006d7160_for_void_1a6e4c37;
 using icall_006D7160_FUN_006d7160_stdcall = STFnType_icall_006D7160_FUN_006d7160_stdcall_e3ee5d98;
+using icall_006D7170_FUN_006d7170_for_void = STFnType_icall_006D7170_FUN_006d7170_for_void_d02ad020;
 using icall_006D7170_FUN_006d7170_stdcall = STFnType_icall_006D7170_FUN_006d7170_stdcall_e2bf13c0;
+using icall_006D7180_FUN_006d7180_for_void = STFnType_icall_006D7180_FUN_006d7180_for_void_97b2e4f8;
 using icall_006D7180_FUN_006d7180_stdcall = STFnType_icall_006D7180_FUN_006d7180_stdcall_67270543;
+using icall_006D7190_FUN_006d7190_for_void = STFnType_icall_006D7190_FUN_006d7190_for_void_fd689eb7;
 using icall_006D7190_FUN_006d7190_stdcall = STFnType_icall_006D7190_FUN_006d7190_stdcall_3022fea3;
 using icall_006D71A0_FUN_006d71a0_for_void = STFnType_icall_006D71A0_FUN_006d71a0_for_void_9db95945;
 using icall_006D71D0_FUN_006d71d0_for_void = STFnType_icall_006D71D0_FUN_006d71d0_for_void_12c45437;
+using icall_006D7310_FUN_006d7310_for_void = STFnType_icall_006D7310_FUN_006d7310_for_void_82917d45;
 using icall_006D7310_FUN_006d7310_stdcall = STFnType_icall_006D7310_FUN_006d7310_stdcall_53296135;
+using icall_006D7330_FUN_006d7330_for_void = STFnType_icall_006D7330_FUN_006d7330_for_void_aab63a2d;
 using icall_006D7330_FUN_006d7330_stdcall = STFnType_icall_006D7330_FUN_006d7330_stdcall_46957361;
 using icall_006D7350_FUN_006d7350_for_void = STFnType_icall_006D7350_FUN_006d7350_for_void_f18de2c8;
 using icall_006D7380_FUN_006d7380_for_void = STFnType_icall_006D7380_FUN_006d7380_for_void_3e3d5ab6;
+using icall_006E4FA0_FUN_006e4fa0_for_AppClassTy = STFnType_icall_006E4FA0_FUN_006e4fa0_for_AppClassTy_dcab7210;
+using icall_006E4FA0_FUN_006e4fa0_for_STAppC = STFnType_icall_006E4FA0_FUN_006e4fa0_for_STAppC_291414c8;
 using icall_006E4FA0_FUN_006e4fa0_stdcall = STFnType_icall_006E4FA0_FUN_006e4fa0_stdcall_ba2ece87;
 using icall_006E5150_STAppC__sub_006E5150_for_AppClassTy = STFnType_icall_006E5150_STAppC__sub_006E5150_for_AppClassTy_b7af20c6;
 using icall_006E52D0_FUN_006e52d0_for_BaseSystemC = STFnType_icall_006E52D0_FUN_006e52d0_for_BaseSystemC_8037d617;
@@ -6359,6 +8850,11 @@ using icall_006E5690_FUN_006e5690_for_GameSystemC = STFnType_icall_006E5690_FUN_
 using icall_006E5690_FUN_006e5690_for_InterSystemC = STFnType_icall_006E5690_FUN_006e5690_for_InterSystemC_4c0b2f97;
 using icall_006E5690_FUN_006e5690_for_StartSystemTy = STFnType_icall_006E5690_FUN_006e5690_for_StartSystemTy_507f0ade;
 using icall_006E5950_FUN_006e5950_stdcall = STFnType_icall_006E5950_FUN_006e5950_stdcall_289892b4;
+using icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_BaseSystemC = STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_BaseSystemC_32b83c2e;
+using icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_DebugSystemC = STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_DebugSystemC_b8169ccb;
+using icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_GameSystemC = STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_GameSystemC_86b48dde;
+using icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_InterSystemC = STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_InterSystemC_1e744864;
+using icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_StartSystemTy = STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_for_StartSystemTy_cc7db176;
 using icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_stdcall = STFnType_icall_006E5950_Library__Ourlib__SAPP__FUN_006e5950_stdcall_b6bc005a;
 using icall_006E5FD0_FUN_006e5fd0 = STFnType_icall_006E5FD0_FUN_006e5fd0_4d52e996;
 using icall_006E6130_FUN_006e6130_for_STPlaySystemC = STFnType_icall_006E6130_FUN_006e6130_for_STPlaySystemC_20d12b29;
@@ -6384,57 +8880,98 @@ using icall_00724D20_FUN_00724d20_for_TrackbarClassTy = STFnType_icall_00724D20_
 using icall_00724D20_FUN_00724d20_for_void = STFnType_icall_00724D20_FUN_00724d20_for_void_268c6246;
 using icall_00724D40_FUN_00724d40_for_TrackbarClassTy = STFnType_icall_00724D40_FUN_00724d40_for_TrackbarClassTy_75304920;
 using icall_00724D40_FUN_00724d40_for_void = STFnType_icall_00724D40_FUN_00724d40_for_void_645abb88;
+using icall_00734210_Library__MSVCRT__FUN_00734210_for_AppClassTy = STFnType_icall_00734210_Library__MSVCRT__FUN_00734210_for_AppClassTy_2dcd711e;
+using icall_00734210_Library__MSVCRT__FUN_00734210_for_SystemWithNamedObjClassTy = STFnType_icall_00734210_Library__MSVCRT__FUN_00734210_for_SystemWithNamedObjClassTy_b2009715;
+using icall_00734210_Library__MSVCRT__FUN_00734210_for_void = STFnType_icall_00734210_Library__MSVCRT__FUN_00734210_for_void_2e025c51;
+using icall_00746E65_FUN_00746e65_for_void = STFnType_icall_00746E65_FUN_00746e65_for_void_769a62d7;
 using icall_00746E65_FUN_00746e65_stdcall = STFnType_icall_00746E65_FUN_00746e65_stdcall_231c3306;
+using icall_00746FAB_FUN_00746fab_for_void = STFnType_icall_00746FAB_FUN_00746fab_for_void_1b6bb739;
 using icall_00746FAB_FUN_00746fab_stdcall = STFnType_icall_00746FAB_FUN_00746fab_stdcall_83622771;
+using icall_00746FCE_FUN_00746fce_for_void = STFnType_icall_00746FCE_FUN_00746fce_for_void_018dbd85;
 using icall_00746FCE_FUN_00746fce_stdcall = STFnType_icall_00746FCE_FUN_00746fce_stdcall_f0ca96dc;
+using icall_00746FEB_FUN_00746feb_for_void = STFnType_icall_00746FEB_FUN_00746feb_for_void_4941397e;
 using icall_00746FEB_FUN_00746feb_stdcall = STFnType_icall_00746FEB_FUN_00746feb_stdcall_eee5a020;
+using icall_00747029_FUN_00747029_for_void = STFnType_icall_00747029_FUN_00747029_for_void_880d9918;
 using icall_00747029_FUN_00747029_stdcall = STFnType_icall_00747029_FUN_00747029_stdcall_d0580cdb;
 using icall_00747161_FUN_00747161_for_void = STFnType_icall_00747161_FUN_00747161_for_void_445eb183;
 using icall_00747212_FUN_00747212_for_void = STFnType_icall_00747212_FUN_00747212_for_void_8730be99;
+using icall_00747245_FUN_00747245_for_void = STFnType_icall_00747245_FUN_00747245_for_void_5429c75c;
 using icall_00747245_FUN_00747245_stdcall = STFnType_icall_00747245_FUN_00747245_stdcall_766a7996;
+using icall_0074731F_FUN_0074731f_for_void = STFnType_icall_0074731F_FUN_0074731f_for_void_2428519b;
 using icall_0074731F_FUN_0074731f_stdcall = STFnType_icall_0074731F_FUN_0074731f_stdcall_45dc71c3;
+using icall_0074736A_FUN_0074736a_for_void = STFnType_icall_0074736A_FUN_0074736a_for_void_fc0bf207;
 using icall_0074736A_FUN_0074736a_stdcall = STFnType_icall_0074736A_FUN_0074736a_stdcall_c5893335;
+using icall_007473FE_FUN_007473fe_for_void = STFnType_icall_007473FE_FUN_007473fe_for_void_d869175f;
 using icall_007473FE_FUN_007473fe_stdcall = STFnType_icall_007473FE_FUN_007473fe_stdcall_1f9efae1;
 using icall_0074747F_FUN_0074747f_for_void = STFnType_icall_0074747F_FUN_0074747f_for_void_9b627d1c;
+using icall_0074748E_FUN_0074748e_for_void = STFnType_icall_0074748E_FUN_0074748e_for_void_214873a5;
 using icall_0074748E_FUN_0074748e_stdcall = STFnType_icall_0074748E_FUN_0074748e_stdcall_0b1ab21d;
+using icall_007474F4_FUN_007474f4_for_void = STFnType_icall_007474F4_FUN_007474f4_for_void_2b2f482e;
 using icall_007474F4_FUN_007474f4_stdcall = STFnType_icall_007474F4_FUN_007474f4_stdcall_14165abf;
 using icall_007475E7_FUN_007475e7_for_void = STFnType_icall_007475E7_FUN_007475e7_for_void_031a6c2e;
+using icall_00747622_FUN_00747622_for_void = STFnType_icall_00747622_FUN_00747622_for_void_efe5ec86;
 using icall_00747622_FUN_00747622_stdcall = STFnType_icall_00747622_FUN_00747622_stdcall_1e139717;
 using icall_0074766E_FUN_0074766e = STFnType_icall_0074766E_FUN_0074766e_9ea7a9f5;
 using icall_0074766E_FUN_0074766e_stdcall = STFnType_icall_0074766E_FUN_0074766e_stdcall_442181ab;
+using icall_0074767F_FUN_0074767f_for_void = STFnType_icall_0074767F_FUN_0074767f_for_void_2f2f457a;
 using icall_0074767F_FUN_0074767f_stdcall = STFnType_icall_0074767F_FUN_0074767f_stdcall_325fba15;
+using icall_007476A9_FUN_007476a9_for_void = STFnType_icall_007476A9_FUN_007476a9_for_void_37a460c9;
 using icall_007476A9_FUN_007476a9_stdcall = STFnType_icall_007476A9_FUN_007476a9_stdcall_1cb558e8;
 using icall_00747704_FUN_00747704_for_void = STFnType_icall_00747704_FUN_00747704_for_void_90cdb8d2;
 using icall_00747704_FUN_00747704_stdcall = STFnType_icall_00747704_FUN_00747704_stdcall_68d9541c;
+using icall_007477EA_FUN_007477ea_for_void = STFnType_icall_007477EA_FUN_007477ea_for_void_f8e25b72;
 using icall_007477EA_FUN_007477ea_stdcall = STFnType_icall_007477EA_FUN_007477ea_stdcall_4f6eb793;
+using icall_00747822_FUN_00747822_for_void = STFnType_icall_00747822_FUN_00747822_for_void_af68fd42;
 using icall_00747822_FUN_00747822_stdcall = STFnType_icall_00747822_FUN_00747822_stdcall_d603c250;
 using icall_007478BC_FUN_007478bc_for_void = STFnType_icall_007478BC_FUN_007478bc_for_void_32e67f7f;
+using icall_007478EB_FUN_007478eb_for_void = STFnType_icall_007478EB_FUN_007478eb_for_void_946d5cb9;
 using icall_007478EB_FUN_007478eb_stdcall = STFnType_icall_007478EB_FUN_007478eb_stdcall_b30436f1;
 using icall_00747937_FUN_00747937 = STFnType_icall_00747937_FUN_00747937_df7a942e;
 using icall_00747937_FUN_00747937_stdcall = STFnType_icall_00747937_FUN_00747937_stdcall_370ee420;
+using icall_00747948_FUN_00747948_for_void = STFnType_icall_00747948_FUN_00747948_for_void_0edc2765;
 using icall_00747948_FUN_00747948_stdcall = STFnType_icall_00747948_FUN_00747948_stdcall_944d56c1;
+using icall_00747972_FUN_00747972_for_void = STFnType_icall_00747972_FUN_00747972_for_void_874cff26;
 using icall_00747972_FUN_00747972_stdcall = STFnType_icall_00747972_FUN_00747972_stdcall_8544c63e;
+using icall_007479CD_FUN_007479cd_for_void = STFnType_icall_007479CD_FUN_007479cd_for_void_c5c3127e;
 using icall_007479CD_FUN_007479cd_stdcall = STFnType_icall_007479CD_FUN_007479cd_stdcall_5e974e0e;
+using icall_00747AA5_FUN_00747aa5_for_void = STFnType_icall_00747AA5_FUN_00747aa5_for_void_7e0bad7a;
 using icall_00747AA5_FUN_00747aa5_stdcall = STFnType_icall_00747AA5_FUN_00747aa5_stdcall_7ff3c145;
+using icall_00747AF8_FUN_00747af8_for_void = STFnType_icall_00747AF8_FUN_00747af8_for_void_d9e60c00;
 using icall_00747AF8_FUN_00747af8_stdcall = STFnType_icall_00747AF8_FUN_00747af8_stdcall_2314f70e;
+using icall_00747C3D_FUN_00747c3d_for_void = STFnType_icall_00747C3D_FUN_00747c3d_for_void_f5a1ab09;
 using icall_00747C3D_FUN_00747c3d_stdcall = STFnType_icall_00747C3D_FUN_00747c3d_stdcall_29f28039;
+using icall_00747C50_FUN_00747c50_for_void = STFnType_icall_00747C50_FUN_00747c50_for_void_422623cf;
 using icall_00747C50_FUN_00747c50_stdcall = STFnType_icall_00747C50_FUN_00747c50_stdcall_d66385e8;
+using icall_00747C63_FUN_00747c63_for_void = STFnType_icall_00747C63_FUN_00747c63_for_void_8066e20e;
 using icall_00747C63_FUN_00747c63_stdcall = STFnType_icall_00747C63_FUN_00747c63_stdcall_0c45073e;
 using icall_00747F68_FUN_00747f68_for_void = STFnType_icall_00747F68_FUN_00747f68_for_void_fc00508e;
+using icall_00747F94_FUN_00747f94_for_void = STFnType_icall_00747F94_FUN_00747f94_for_void_bd8619e6;
 using icall_00747F94_FUN_00747f94_stdcall = STFnType_icall_00747F94_FUN_00747f94_stdcall_f2c16e83;
+using icall_007480A5_FUN_007480a5_for_void = STFnType_icall_007480A5_FUN_007480a5_for_void_afe32541;
 using icall_007480A5_FUN_007480a5_stdcall = STFnType_icall_007480A5_FUN_007480a5_stdcall_621901c7;
+using icall_00748102_FUN_00748102_for_void = STFnType_icall_00748102_FUN_00748102_for_void_adff76b0;
 using icall_00748102_FUN_00748102_stdcall = STFnType_icall_00748102_FUN_00748102_stdcall_8b558e92;
+using icall_00748130_FUN_00748130_for_void = STFnType_icall_00748130_FUN_00748130_for_void_94f1b462;
 using icall_00748130_FUN_00748130_stdcall = STFnType_icall_00748130_FUN_00748130_stdcall_ec87a322;
+using icall_00748186_FUN_00748186_for_void = STFnType_icall_00748186_FUN_00748186_for_void_9af5ea35;
 using icall_00748186_FUN_00748186_stdcall = STFnType_icall_00748186_FUN_00748186_stdcall_c614b75b;
+using icall_007481E1_FUN_007481e1_for_void = STFnType_icall_007481E1_FUN_007481e1_for_void_d08ba7d9;
 using icall_007481E1_FUN_007481e1_stdcall = STFnType_icall_007481E1_FUN_007481e1_stdcall_da683ebf;
+using icall_00748211_FUN_00748211_for_void = STFnType_icall_00748211_FUN_00748211_for_void_e98904cb;
 using icall_00748211_FUN_00748211_stdcall = STFnType_icall_00748211_FUN_00748211_stdcall_8b0febc1;
+using icall_0074823A_FUN_0074823a_for_void = STFnType_icall_0074823A_FUN_0074823a_for_void_54c83050;
 using icall_0074823A_FUN_0074823a_stdcall = STFnType_icall_0074823A_FUN_0074823a_stdcall_177f86a4;
+using icall_0074827F_FUN_0074827f_for_void = STFnType_icall_0074827F_FUN_0074827f_for_void_1a007dc2;
 using icall_0074827F_FUN_0074827f_stdcall = STFnType_icall_0074827F_FUN_0074827f_stdcall_03df6c10;
 using icall_00748287_FUN_00748287_for_void = STFnType_icall_00748287_FUN_00748287_for_void_c2182a52;
+using icall_00748296_FUN_00748296_for_void = STFnType_icall_00748296_FUN_00748296_for_void_82d7f46c;
+using icall_00748299_FUN_00748299_for_void = STFnType_icall_00748299_FUN_00748299_for_void_621c5293;
 using icall_00748299_FUN_00748299_stdcall = STFnType_icall_00748299_FUN_00748299_stdcall_6c0d01be;
+using icall_007482AB_FUN_007482ab_for_void = STFnType_icall_007482AB_FUN_007482ab_for_void_22752bc9;
 using icall_007482AB_FUN_007482ab_stdcall = STFnType_icall_007482AB_FUN_007482ab_stdcall_6f9625f1;
 using icall_007482D8_FUN_007482d8 = STFnType_icall_007482D8_FUN_007482d8_adb650e6;
 using icall_007482D8_FUN_007482d8_stdcall = STFnType_icall_007482D8_FUN_007482d8_stdcall_e37defc7;
+using icall_007483B7_FUN_007483b7_for_void = STFnType_icall_007483B7_FUN_007483b7_for_void_2b97aab6;
 using icall_007483B7_FUN_007483b7_stdcall = STFnType_icall_007483B7_FUN_007483b7_stdcall_2b7a7b41;
 using icall_007483C3_FUN_007483c3_for_void = STFnType_icall_007483C3_FUN_007483c3_for_void_982002e7;
 using icall_00748481_FUN_00748481_for_void = STFnType_icall_00748481_FUN_00748481_for_void_89c5dccb;
@@ -6442,76 +8979,123 @@ using icall_007484AB_FUN_007484ab_for_void = STFnType_icall_007484AB_FUN_007484a
 using icall_007484C9_FUN_007484c9_for_void = STFnType_icall_007484C9_FUN_007484c9_for_void_65946896;
 using icall_007484DD_FUN_007484dd_for_void = STFnType_icall_007484DD_FUN_007484dd_for_void_3e917798;
 using icall_007484F4_FUN_007484f4_for_void = STFnType_icall_007484F4_FUN_007484f4_for_void_6c1219a9;
+using icall_0074850F_FUN_0074850f_for_void = STFnType_icall_0074850F_FUN_0074850f_for_void_afb65131;
 using icall_0074850F_FUN_0074850f_stdcall = STFnType_icall_0074850F_FUN_0074850f_stdcall_eacb82bd;
+using icall_00748517_FUN_00748517_for_void = STFnType_icall_00748517_FUN_00748517_for_void_4e755204;
 using icall_00748517_FUN_00748517_stdcall = STFnType_icall_00748517_FUN_00748517_stdcall_3ad57d3a;
+using icall_0074851F_FUN_0074851f_for_void = STFnType_icall_0074851F_FUN_0074851f_for_void_adffcc02;
 using icall_0074851F_FUN_0074851f_stdcall = STFnType_icall_0074851F_FUN_0074851f_stdcall_769a72ff;
 using icall_00748527_FUN_00748527_for_void = STFnType_icall_00748527_FUN_00748527_for_void_f560465b;
 using icall_0074853B_FUN_0074853b_for_void = STFnType_icall_0074853B_FUN_0074853b_for_void_0e7265c2;
 using icall_0074854F_FUN_0074854f = STFnType_icall_0074854F_FUN_0074854f_768680ea;
 using icall_0074854F_FUN_0074854f_for_void = STFnType_icall_0074854F_FUN_0074854f_for_void_7bf5492a;
+using icall_007485EC_FUN_007485ec_for_void = STFnType_icall_007485EC_FUN_007485ec_for_void_97100b31;
 using icall_007485EC_FUN_007485ec_stdcall = STFnType_icall_007485EC_FUN_007485ec_stdcall_6abbfcab;
+using icall_0074862E_FUN_0074862e_for_void = STFnType_icall_0074862E_FUN_0074862e_for_void_03640ab3;
 using icall_0074862E_FUN_0074862e_stdcall = STFnType_icall_0074862E_FUN_0074862e_stdcall_c7901ebc;
+using icall_0074868B_FUN_0074868b_for_void = STFnType_icall_0074868B_FUN_0074868b_for_void_1b2e2fd1;
 using icall_0074868B_FUN_0074868b_stdcall = STFnType_icall_0074868B_FUN_0074868b_stdcall_ae0379bc;
+using icall_007486DD_FUN_007486dd_for_void = STFnType_icall_007486DD_FUN_007486dd_for_void_24144578;
 using icall_007486DD_FUN_007486dd_stdcall = STFnType_icall_007486DD_FUN_007486dd_stdcall_f6eab672;
+using icall_00748859_FUN_00748859_for_void = STFnType_icall_00748859_FUN_00748859_for_void_c684f111;
 using icall_00748859_FUN_00748859_stdcall = STFnType_icall_00748859_FUN_00748859_stdcall_5c69ae10;
+using icall_007488A3_FUN_007488a3_for_void = STFnType_icall_007488A3_FUN_007488a3_for_void_1ad53b93;
 using icall_007488A3_FUN_007488a3_stdcall = STFnType_icall_007488A3_FUN_007488a3_stdcall_ade66980;
+using icall_00748990_FUN_00748990_for_void = STFnType_icall_00748990_FUN_00748990_for_void_2c2f56b1;
 using icall_00748990_FUN_00748990_stdcall = STFnType_icall_00748990_FUN_00748990_stdcall_bd87eb80;
 using icall_007489A5_FUN_007489a5_for_void = STFnType_icall_007489A5_FUN_007489a5_for_void_a1849e3f;
+using icall_007489C7_FUN_007489c7_for_void = STFnType_icall_007489C7_FUN_007489c7_for_void_118d856b;
 using icall_007489C7_FUN_007489c7_stdcall = STFnType_icall_007489C7_FUN_007489c7_stdcall_f596ba29;
 using icall_007489CF_FUN_007489cf_for_void = STFnType_icall_007489CF_FUN_007489cf_for_void_4fb48636;
 using icall_00748AB7_FUN_00748ab7_for_void = STFnType_icall_00748AB7_FUN_00748ab7_for_void_3ce22bed;
+using icall_00748AE7_FUN_00748ae7_for_void = STFnType_icall_00748AE7_FUN_00748ae7_for_void_5e6bd757;
 using icall_00748AE7_FUN_00748ae7_stdcall = STFnType_icall_00748AE7_FUN_00748ae7_stdcall_6fb84aae;
+using icall_00748B37_FUN_00748b37_for_void = STFnType_icall_00748B37_FUN_00748b37_for_void_b65821da;
 using icall_00748B37_FUN_00748b37_stdcall = STFnType_icall_00748B37_FUN_00748b37_stdcall_c64a3f36;
+using icall_00748B48_FUN_00748b48_for_void = STFnType_icall_00748B48_FUN_00748b48_for_void_9ce31bea;
 using icall_00748B48_FUN_00748b48_stdcall = STFnType_icall_00748B48_FUN_00748b48_stdcall_93d7e452;
+using icall_00748BAE_FUN_00748bae_for_void = STFnType_icall_00748BAE_FUN_00748bae_for_void_c310cf2b;
 using icall_00748BAE_FUN_00748bae_stdcall = STFnType_icall_00748BAE_FUN_00748bae_stdcall_586e87ca;
+using icall_00748BC0_FUN_00748bc0_for_void = STFnType_icall_00748BC0_FUN_00748bc0_for_void_69f8945f;
 using icall_00748BC0_FUN_00748bc0_stdcall = STFnType_icall_00748BC0_FUN_00748bc0_stdcall_dc0963a5;
+using icall_00748BCA_FUN_00748bca_for_void = STFnType_icall_00748BCA_FUN_00748bca_for_void_00be010f;
 using icall_00748BCA_FUN_00748bca_stdcall = STFnType_icall_00748BCA_FUN_00748bca_stdcall_5222952f;
+using icall_00748C2F_FUN_00748c2f_for_void = STFnType_icall_00748C2F_FUN_00748c2f_for_void_7ac7a3b7;
 using icall_00748C2F_FUN_00748c2f_stdcall = STFnType_icall_00748C2F_FUN_00748c2f_stdcall_8bda7d15;
+using icall_00748C8E_FUN_00748c8e_for_void = STFnType_icall_00748C8E_FUN_00748c8e_for_void_168b68c1;
 using icall_00748C8E_FUN_00748c8e_stdcall = STFnType_icall_00748C8E_FUN_00748c8e_stdcall_17e83ed9;
+using icall_00748CCA_FUN_00748cca_for_void = STFnType_icall_00748CCA_FUN_00748cca_for_void_3c75b61c;
 using icall_00748CCA_FUN_00748cca_stdcall = STFnType_icall_00748CCA_FUN_00748cca_stdcall_44015456;
+using icall_00748CFF_FUN_00748cff_for_void = STFnType_icall_00748CFF_FUN_00748cff_for_void_a3b78761;
 using icall_00748CFF_FUN_00748cff_stdcall = STFnType_icall_00748CFF_FUN_00748cff_stdcall_fb1b5df5;
+using icall_00748D11_FUN_00748d11_for_void = STFnType_icall_00748D11_FUN_00748d11_for_void_91effa7c;
 using icall_00748D11_FUN_00748d11_stdcall = STFnType_icall_00748D11_FUN_00748d11_stdcall_4ecbd5f2;
+using icall_00748D2B_FUN_00748d2b_for_void = STFnType_icall_00748D2B_FUN_00748d2b_for_void_b74ea853;
 using icall_00748D2B_FUN_00748d2b_stdcall = STFnType_icall_00748D2B_FUN_00748d2b_stdcall_a33e5037;
+using icall_00748D40_FUN_00748d40_for_void = STFnType_icall_00748D40_FUN_00748d40_for_void_8acf119f;
 using icall_00748D40_FUN_00748d40_stdcall = STFnType_icall_00748D40_FUN_00748d40_stdcall_04f2775f;
+using icall_00748D5A_FUN_00748d5a_for_void = STFnType_icall_00748D5A_FUN_00748d5a_for_void_e1257084;
 using icall_00748D5A_FUN_00748d5a_stdcall = STFnType_icall_00748D5A_FUN_00748d5a_stdcall_2d6d6259;
+using icall_00748D6E_FUN_00748d6e_for_void = STFnType_icall_00748D6E_FUN_00748d6e_for_void_4cf6846c;
 using icall_00748D6E_FUN_00748d6e_stdcall = STFnType_icall_00748D6E_FUN_00748d6e_stdcall_7e3adbe1;
+using icall_00748D88_FUN_00748d88_for_void = STFnType_icall_00748D88_FUN_00748d88_for_void_02249fc1;
 using icall_00748D88_FUN_00748d88_stdcall = STFnType_icall_00748D88_FUN_00748d88_stdcall_83ef8460;
+using icall_00748D92_FUN_00748d92_for_void = STFnType_icall_00748D92_FUN_00748d92_for_void_4a27ac0c;
 using icall_00748D92_FUN_00748d92_stdcall = STFnType_icall_00748D92_FUN_00748d92_stdcall_66df4e2c;
+using icall_00748DAE_FUN_00748dae_for_void = STFnType_icall_00748DAE_FUN_00748dae_for_void_43dc042b;
 using icall_00748DAE_FUN_00748dae_stdcall = STFnType_icall_00748DAE_FUN_00748dae_stdcall_0f34e4c7;
+using icall_00748DE3_FUN_00748de3_for_void = STFnType_icall_00748DE3_FUN_00748de3_for_void_53bb858a;
 using icall_00748DE3_FUN_00748de3_stdcall = STFnType_icall_00748DE3_FUN_00748de3_stdcall_22c65f31;
+using icall_00748E2B_FUN_00748e2b_for_void = STFnType_icall_00748E2B_FUN_00748e2b_for_void_724dc27c;
 using icall_00748E2B_FUN_00748e2b_stdcall = STFnType_icall_00748E2B_FUN_00748e2b_stdcall_c6f00692;
 using icall_00748ECA_FUN_00748eca_for_void = STFnType_icall_00748ECA_FUN_00748eca_for_void_be05bfc9;
 using icall_00748ECA_FUN_00748eca_stdcall = STFnType_icall_00748ECA_FUN_00748eca_stdcall_8a204bd0;
+using icall_007490C6_FUN_007490c6_for_void = STFnType_icall_007490C6_FUN_007490c6_for_void_d6e89906;
 using icall_007490C6_FUN_007490c6_stdcall = STFnType_icall_007490C6_FUN_007490c6_stdcall_9276a712;
+using icall_007491C3_FUN_007491c3_for_void = STFnType_icall_007491C3_FUN_007491c3_for_void_c014f7d0;
 using icall_007491C3_FUN_007491c3_stdcall = STFnType_icall_007491C3_FUN_007491c3_stdcall_f8b193e3;
+using icall_00749212_FUN_00749212_for_void = STFnType_icall_00749212_FUN_00749212_for_void_d59143af;
 using icall_00749212_FUN_00749212_stdcall = STFnType_icall_00749212_FUN_00749212_stdcall_2981ede0;
+using icall_00749299_FUN_00749299_for_void = STFnType_icall_00749299_FUN_00749299_for_void_5e13cb8a;
 using icall_00749299_FUN_00749299_stdcall = STFnType_icall_00749299_FUN_00749299_stdcall_5741c4d2;
+using icall_00749339_FUN_00749339_for_void = STFnType_icall_00749339_FUN_00749339_for_void_40c0dad0;
 using icall_00749339_FUN_00749339_stdcall = STFnType_icall_00749339_FUN_00749339_stdcall_f879be9b;
+using icall_0074939F_FUN_0074939f_for_void = STFnType_icall_0074939F_FUN_0074939f_for_void_0035304e;
 using icall_0074939F_FUN_0074939f_stdcall = STFnType_icall_0074939F_FUN_0074939f_stdcall_113b55d9;
 using icall_007494B5_FUN_007494b5_for_void = STFnType_icall_007494B5_FUN_007494b5_for_void_436ed19b;
+using icall_007494D1_FUN_007494d1_for_void = STFnType_icall_007494D1_FUN_007494d1_for_void_fbd32e9c;
 using icall_007494D1_FUN_007494d1_stdcall = STFnType_icall_007494D1_FUN_007494d1_stdcall_a4103bdc;
 using icall_007495BF_FUN_007495bf_for_void = STFnType_icall_007495BF_FUN_007495bf_for_void_43799ed5;
+using icall_007496A0_FUN_007496a0_for_void = STFnType_icall_007496A0_FUN_007496a0_for_void_724fc24f;
 using icall_00749B43_FUN_00749b43_for_void = STFnType_icall_00749B43_FUN_00749b43_for_void_3c525a74;
 using icall_00749BE1_FUN_00749be1_for_void = STFnType_icall_00749BE1_FUN_00749be1_for_void_81925bb1;
+using icall_00749CA4_FUN_00749ca4_for_void = STFnType_icall_00749CA4_FUN_00749ca4_for_void_216c8900;
 using icall_00749CA4_FUN_00749ca4_stdcall = STFnType_icall_00749CA4_FUN_00749ca4_stdcall_9cf347e8;
 using icall_00749CEC_FUN_00749cec_for_void = STFnType_icall_00749CEC_FUN_00749cec_for_void_e7c09b5b;
 using icall_00749D09_FUN_00749d09_for_void = STFnType_icall_00749D09_FUN_00749d09_for_void_9691619e;
+using icall_00749DB2_FUN_00749db2_for_void = STFnType_icall_00749DB2_FUN_00749db2_for_void_883135fc;
 using icall_00749DB2_FUN_00749db2_stdcall = STFnType_icall_00749DB2_FUN_00749db2_stdcall_68857e41;
 using icall_00749DF1_FUN_00749df1_for_void = STFnType_icall_00749DF1_FUN_00749df1_for_void_b37145dc;
+using icall_00749E34_FUN_00749e34_for_void = STFnType_icall_00749E34_FUN_00749e34_for_void_6f5870a8;
 using icall_00749E34_FUN_00749e34_stdcall = STFnType_icall_00749E34_FUN_00749e34_stdcall_c81a0163;
 using icall_00749EC2_FUN_00749ec2_for_void = STFnType_icall_00749EC2_FUN_00749ec2_for_void_eb2a13ae;
 using icall_00749F88_FUN_00749f88_for_void = STFnType_icall_00749F88_FUN_00749f88_for_void_76854d07;
 using icall_00749F88_FUN_00749f88_stdcall = STFnType_icall_00749F88_FUN_00749f88_stdcall_37a62328;
+using icall_0074A057_FUN_0074a057_for_void = STFnType_icall_0074A057_FUN_0074a057_for_void_5d6d6f6c;
 using icall_0074A05B_FUN_0074a05b_for_void = STFnType_icall_0074A05B_FUN_0074a05b_for_void_8f602524;
+using icall_0074A0C1_FUN_0074a0c1_for_void = STFnType_icall_0074A0C1_FUN_0074a0c1_for_void_4b25c1b6;
 using icall_0074A0C1_FUN_0074a0c1_stdcall = STFnType_icall_0074A0C1_FUN_0074a0c1_stdcall_10cd7148;
 using icall_0074A113_EndOfStream = STFnType_icall_0074A113_EndOfStream_76ec159c;
 using icall_0074A143_BeginFlush = STFnType_icall_0074A143_BeginFlush_f91c163c;
 using icall_0074A177_FUN_0074a177_for_void = STFnType_icall_0074A177_FUN_0074a177_for_void_12a2c68e;
 using icall_0074A193_FUN_0074a193_for_void = STFnType_icall_0074A193_FUN_0074a193_for_void_0e3eb57c;
+using icall_0074A1A7_FUN_0074a1a7_for_void = STFnType_icall_0074A1A7_FUN_0074a1a7_for_void_f0f6cf20;
 using icall_0074A1AA_FUN_0074a1aa_for_void = STFnType_icall_0074A1AA_FUN_0074a1aa_for_void_0da3df87;
+using icall_0074A1C4_FUN_0074a1c4_for_void = STFnType_icall_0074A1C4_FUN_0074a1c4_for_void_941c62f9;
 using icall_0074A1C4_FUN_0074a1c4_stdcall = STFnType_icall_0074A1C4_FUN_0074a1c4_stdcall_471fc114;
 using icall_0074A1C9_FUN_0074a1c9_for_void = STFnType_icall_0074A1C9_FUN_0074a1c9_for_void_de95aa9c;
 using icall_0074A220_FUN_0074a220_for_void = STFnType_icall_0074A220_FUN_0074a220_for_void_95ff4aeb;
+using icall_0074A271_FUN_0074a271_for_void = STFnType_icall_0074A271_FUN_0074a271_for_void_38876b0a;
 using icall_0074A271_FUN_0074a271_stdcall = STFnType_icall_0074A271_FUN_0074a271_stdcall_bf7dd418;
 using icall_0074A27C_FUN_0074a27c_for_void = STFnType_icall_0074A27C_FUN_0074a27c_for_void_cdd2a12b;
 using icall_0074A2AB_FUN_0074a2ab = STFnType_icall_0074A2AB_FUN_0074a2ab_ef83f46a;
@@ -6525,15 +9109,22 @@ using icall_0074A646_FUN_0074a646_for_void = STFnType_icall_0074A646_FUN_0074a64
 using icall_0074A72A_FUN_0074a72a_for_void = STFnType_icall_0074A72A_FUN_0074a72a_for_void_42ad12d5;
 using icall_0074A77D_FUN_0074a77d_for_void = STFnType_icall_0074A77D_FUN_0074a77d_for_void_24c5df7d;
 using icall_0074A7E3_FUN_0074a7e3_for_void = STFnType_icall_0074A7E3_FUN_0074a7e3_for_void_e9121c0c;
+using icall_0074A959_FUN_0074a959_for_void = STFnType_icall_0074A959_FUN_0074a959_for_void_b57e783a;
 using icall_0074A959_FUN_0074a959_stdcall = STFnType_icall_0074A959_FUN_0074a959_stdcall_7a62d172;
+using icall_0074A95C_FUN_0074a95c_for_void = STFnType_icall_0074A95C_FUN_0074a95c_for_void_9ae0b2fe;
 using icall_0074A95C_FUN_0074a95c_stdcall = STFnType_icall_0074A95C_FUN_0074a95c_stdcall_2b11c6a8;
 using icall_0074A9A6_FUN_0074a9a6_for_void = STFnType_icall_0074A9A6_FUN_0074a9a6_for_void_b05c13b2;
+using icall_0074A9C2_FUN_0074a9c2_for_void = STFnType_icall_0074A9C2_FUN_0074a9c2_for_void_10835fd1;
 using icall_0074A9C2_FUN_0074a9c2_stdcall = STFnType_icall_0074A9C2_FUN_0074a9c2_stdcall_6f8b8219;
+using icall_0074AA28_FUN_0074aa28_for_void = STFnType_icall_0074AA28_FUN_0074aa28_for_void_2a7f613f;
 using icall_0074AA28_FUN_0074aa28_stdcall = STFnType_icall_0074AA28_FUN_0074aa28_stdcall_aeb1c193;
+using icall_0074AA87_FUN_0074aa87_for_void = STFnType_icall_0074AA87_FUN_0074aa87_for_void_f1a29630;
 using icall_0074AA87_FUN_0074aa87_stdcall = STFnType_icall_0074AA87_FUN_0074aa87_stdcall_c81f029c;
+using icall_0074AAE1_FUN_0074aae1_for_void = STFnType_icall_0074AAE1_FUN_0074aae1_for_void_4ec23280;
 using icall_0074AAE1_FUN_0074aae1_stdcall = STFnType_icall_0074AAE1_FUN_0074aae1_stdcall_d38d4556;
 using icall_0074AAF7_FUN_0074aaf7_for_void = STFnType_icall_0074AAF7_FUN_0074aaf7_for_void_f2354adf;
 using icall_0074AB15_FUN_0074ab15_for_void = STFnType_icall_0074AB15_FUN_0074ab15_for_void_c4627250;
+using icall_0074AB3D_FUN_0074ab3d_for_void = STFnType_icall_0074AB3D_FUN_0074ab3d_for_void_bc377fe8;
 using icall_0074AB3D_FUN_0074ab3d_stdcall = STFnType_icall_0074AB3D_FUN_0074ab3d_stdcall_558ebf79;
 using icall_0074AB73_FUN_0074ab73_for_void = STFnType_icall_0074AB73_FUN_0074ab73_for_void_7e884f15;
 using icall_0074AB9E_FUN_0074ab9e_for_void = STFnType_icall_0074AB9E_FUN_0074ab9e_for_void_7b6643eb;
@@ -6541,34 +9132,62 @@ using icall_0074AC25_FUN_0074ac25_for_void = STFnType_icall_0074AC25_FUN_0074ac2
 using icall_0074AC6E_FUN_0074ac6e_for_void = STFnType_icall_0074AC6E_FUN_0074ac6e_for_void_5eec8cbb;
 using icall_0074AD27_FUN_0074ad27_for_void = STFnType_icall_0074AD27_FUN_0074ad27_for_void_8fbd115c;
 using icall_0074AD32_FUN_0074ad32_for_void = STFnType_icall_0074AD32_FUN_0074ad32_for_void_572403fb;
+using icall_0074AD47_FUN_0074ad47_for_void = STFnType_icall_0074AD47_FUN_0074ad47_for_void_a87f09a5;
+using icall_0074AD48_FUN_0074ad48_for_void = STFnType_icall_0074AD48_FUN_0074ad48_for_void_49939ce0;
 using icall_0074AD60_FUN_0074ad60_for_void = STFnType_icall_0074AD60_FUN_0074ad60_for_void_0dd1d372;
 using icall_0074AE34_FUN_0074ae34_for_void = STFnType_icall_0074AE34_FUN_0074ae34_for_void_02c15e34;
 using icall_0074AE67_FUN_0074ae67_for_void = STFnType_icall_0074AE67_FUN_0074ae67_for_void_a828a504;
 using icall_0074AE8E_FUN_0074ae8e_for_void = STFnType_icall_0074AE8E_FUN_0074ae8e_for_void_ddef85a0;
+using icall_0074AEE2_FUN_0074aee2_for_void = STFnType_icall_0074AEE2_FUN_0074aee2_for_void_6019422b;
 using icall_0074AEE2_FUN_0074aee2_stdcall = STFnType_icall_0074AEE2_FUN_0074aee2_stdcall_b27db88e;
+using icall_0074AEF2_FUN_0074aef2_for_void = STFnType_icall_0074AEF2_FUN_0074aef2_for_void_c6e33b27;
 using icall_0074AEF2_FUN_0074aef2_stdcall = STFnType_icall_0074AEF2_FUN_0074aef2_stdcall_371c8b37;
 using icall_0074AF26_FUN_0074af26_for_void = STFnType_icall_0074AF26_FUN_0074af26_for_void_cd2a0a11;
 using icall_0074B06D_FUN_0074b06d_for_void = STFnType_icall_0074B06D_FUN_0074b06d_for_void_5108e734;
+using icall_0074B442_FUN_0074b442_for_void = STFnType_icall_0074B442_FUN_0074b442_for_void_d48de098;
+using icall_0074B445_FUN_0074b445_for_void = STFnType_icall_0074B445_FUN_0074b445_for_void_7246d40d;
+using icall_0074B448_FUN_0074b448_for_void = STFnType_icall_0074B448_FUN_0074b448_for_void_e6f47f22;
+using icall_0074B449_FUN_0074b449_for_void = STFnType_icall_0074B449_FUN_0074b449_for_void_ee3b4371;
 using icall_0074B44A_FUN_0074b44a_for_void = STFnType_icall_0074B44A_FUN_0074b44a_for_void_e419893f;
+using icall_0074B469_FUN_0074b469_for_void = STFnType_icall_0074B469_FUN_0074b469_for_void_f85e2120;
 using icall_0074B469_FUN_0074b469_stdcall = STFnType_icall_0074B469_FUN_0074b469_stdcall_0cfc1e87;
+using icall_0074B49D_FUN_0074b49d_for_void = STFnType_icall_0074B49D_FUN_0074b49d_for_void_675957f7;
 using icall_0074B49D_FUN_0074b49d_stdcall = STFnType_icall_0074B49D_FUN_0074b49d_stdcall_a283de62;
+using icall_0074B4D1_FUN_0074b4d1_for_void = STFnType_icall_0074B4D1_FUN_0074b4d1_for_void_bf2fb346;
 using icall_0074B4D1_FUN_0074b4d1_stdcall = STFnType_icall_0074B4D1_FUN_0074b4d1_stdcall_3d3f54a7;
 using icall_0074B52E_FUN_0074b52e_for_void = STFnType_icall_0074B52E_FUN_0074b52e_for_void_eb038ca3;
+using icall_0074B668_FUN_0074b668_for_void = STFnType_icall_0074B668_FUN_0074b668_for_void_21978637;
 using icall_0074B668_FUN_0074b668_stdcall = STFnType_icall_0074B668_FUN_0074b668_stdcall_f82819e5;
+using icall_0074B68F_FUN_0074b68f_for_void = STFnType_icall_0074B68F_FUN_0074b68f_for_void_de623e5e;
 using icall_0074B68F_FUN_0074b68f_stdcall = STFnType_icall_0074B68F_FUN_0074b68f_stdcall_fdbf27cd;
+using icall_0074B6B7_FUN_0074b6b7_for_void = STFnType_icall_0074B6B7_FUN_0074b6b7_for_void_f28fc9a6;
 using icall_0074B6B7_FUN_0074b6b7_stdcall = STFnType_icall_0074B6B7_FUN_0074b6b7_stdcall_0a61bade;
+using icall_0074B719_FUN_0074b719_for_void = STFnType_icall_0074B719_FUN_0074b719_for_void_9e9387f2;
 using icall_0074B719_FUN_0074b719_stdcall = STFnType_icall_0074B719_FUN_0074b719_stdcall_aa02a0aa;
+using icall_0074B84E_FUN_0074b84e_for_void = STFnType_icall_0074B84E_FUN_0074b84e_for_void_fc19dc15;
 using icall_0074B84E_FUN_0074b84e_stdcall = STFnType_icall_0074B84E_FUN_0074b84e_stdcall_4bc70ac6;
+using icall_0074B86C_FUN_0074b86c_for_void = STFnType_icall_0074B86C_FUN_0074b86c_for_void_13c2ab22;
 using icall_0074B86C_FUN_0074b86c_stdcall = STFnType_icall_0074B86C_FUN_0074b86c_stdcall_1b094c87;
+using icall_0074BE6A_FUN_0074be6a_for_void = STFnType_icall_0074BE6A_FUN_0074be6a_for_void_6426ea1f;
 using icall_0074BE6A_FUN_0074be6a_stdcall = STFnType_icall_0074BE6A_FUN_0074be6a_stdcall_e35fe0bb;
+using icall_0074BE72_FUN_0074be72_for_void = STFnType_icall_0074BE72_FUN_0074be72_for_void_21fc9817;
+using icall_0074BF23_FUN_0074bf23_for_void = STFnType_icall_0074BF23_FUN_0074bf23_for_void_7d30b674;
 using icall_0074BF23_FUN_0074bf23_stdcall = STFnType_icall_0074BF23_FUN_0074bf23_stdcall_9e452e24;
+using icall_0074BFA5_FUN_0074bfa5_for_void = STFnType_icall_0074BFA5_FUN_0074bfa5_for_void_4e2b7d21;
+using icall_0074BFA8_FUN_0074bfa8_for_void = STFnType_icall_0074BFA8_FUN_0074bfa8_for_void_44342330;
+using icall_0074BFAB_FUN_0074bfab_for_void = STFnType_icall_0074BFAB_FUN_0074bfab_for_void_6f0ca549;
 using icall_0074BFAB_FUN_0074bfab_stdcall = STFnType_icall_0074BFAB_FUN_0074bfab_stdcall_8a103cbc;
+using icall_0074BFB0_FUN_0074bfb0_for_void = STFnType_icall_0074BFB0_FUN_0074bfb0_for_void_32cefb45;
 using icall_0074BFB0_FUN_0074bfb0_stdcall = STFnType_icall_0074BFB0_FUN_0074bfb0_stdcall_17721cc6;
+using icall_0074BFBA_FUN_0074bfba_for_void = STFnType_icall_0074BFBA_FUN_0074bfba_for_void_38177a0a;
 using icall_0074BFBA_FUN_0074bfba_stdcall = STFnType_icall_0074BFBA_FUN_0074bfba_stdcall_e33b772a;
+using icall_0074C1C4_FUN_0074c1c4_for_void = STFnType_icall_0074C1C4_FUN_0074c1c4_for_void_9de245b1;
 using icall_0074C1C4_FUN_0074c1c4_stdcall = STFnType_icall_0074C1C4_FUN_0074c1c4_stdcall_51e85cef;
 using icall_0074C1CA_FUN_0074c1ca_for_void = STFnType_icall_0074C1CA_FUN_0074c1ca_for_void_0485f710;
 using icall_0074C1DC_FUN_0074c1dc_for_void = STFnType_icall_0074C1DC_FUN_0074c1dc_for_void_789cb801;
+using icall_0074C1F9_FUN_0074c1f9_for_void = STFnType_icall_0074C1F9_FUN_0074c1f9_for_void_eed3ce48;
 using icall_0074C1F9_FUN_0074c1f9_stdcall = STFnType_icall_0074C1F9_FUN_0074c1f9_stdcall_6f23048a;
+using icall_0074C28A_FUN_0074c28a_for_void = STFnType_icall_0074C28A_FUN_0074c28a_for_void_004e6be0;
 using icall_0074C28A_FUN_0074c28a_stdcall = STFnType_icall_0074C28A_FUN_0074c28a_stdcall_08f5da4b;
 using icall_0074C32D_FUN_0074c32d = STFnType_icall_0074C32D_FUN_0074c32d_fef73188;
 using icall_0074C32D_FUN_0074c32d_for_void = STFnType_icall_0074C32D_FUN_0074c32d_for_void_8f9db1aa;
@@ -6579,13 +9198,18 @@ using icall_0074C41B_FUN_0074c41b_for_void = STFnType_icall_0074C41B_FUN_0074c41
 using icall_0074C434_FUN_0074c434_for_void = STFnType_icall_0074C434_FUN_0074c434_for_void_de708b0d;
 using icall_0074C45B_FUN_0074c45b_for_void = STFnType_icall_0074C45B_FUN_0074c45b_for_void_9dcd9ba4;
 using icall_0074C49C_FUN_0074c49c_for_void = STFnType_icall_0074C49C_FUN_0074c49c_for_void_3657733f;
+using icall_0074C4BF_FUN_0074c4bf_for_void = STFnType_icall_0074C4BF_FUN_0074c4bf_for_void_91b1b61d;
 using icall_0074C4BF_FUN_0074c4bf_stdcall = STFnType_icall_0074C4BF_FUN_0074c4bf_stdcall_75412347;
+using icall_0074C501_FUN_0074c501_for_void = STFnType_icall_0074C501_FUN_0074c501_for_void_05a6195b;
 using icall_0074C501_FUN_0074c501_stdcall = STFnType_icall_0074C501_FUN_0074c501_stdcall_9c937b7f;
+using icall_0074C571_FUN_0074c571_for_void = STFnType_icall_0074C571_FUN_0074c571_for_void_14bc9de3;
 using icall_0074C571_FUN_0074c571_stdcall = STFnType_icall_0074C571_FUN_0074c571_stdcall_6bd1feca;
+using icall_0074C5D2_FUN_0074c5d2_for_void = STFnType_icall_0074C5D2_FUN_0074c5d2_for_void_e061b5e2;
 using icall_0074C5D2_FUN_0074c5d2_stdcall = STFnType_icall_0074C5D2_FUN_0074c5d2_stdcall_781ba03b;
 using icall_0074C613_FUN_0074c613 = STFnType_icall_0074C613_FUN_0074c613_05a6f077;
 using icall_0074C613_FUN_0074c613_for_void = STFnType_icall_0074C613_FUN_0074c613_for_void_dcc9f639;
 using icall_0074C69E_FUN_0074c69e_for_void = STFnType_icall_0074C69E_FUN_0074c69e_for_void_0cafef41;
+using icall_0074C6EA_FUN_0074c6ea_for_void = STFnType_icall_0074C6EA_FUN_0074c6ea_for_void_c53c9a93;
 using icall_0074C6EA_FUN_0074c6ea_stdcall = STFnType_icall_0074C6EA_FUN_0074c6ea_stdcall_daa3c88a;
 using icall_0074C77C_FUN_0074c77c_for_void = STFnType_icall_0074C77C_FUN_0074c77c_for_void_13c00265;
 using icall_0074C7B6_FUN_0074c7b6_for_void = STFnType_icall_0074C7B6_FUN_0074c7b6_for_void_649fd7b0;
@@ -6594,40 +9218,65 @@ using icall_0074C7F6_FUN_0074c7f6_for_void = STFnType_icall_0074C7F6_FUN_0074c7f
 using icall_0074C81F_FUN_0074c81f_for_void = STFnType_icall_0074C81F_FUN_0074c81f_for_void_a7e1959a;
 using icall_0074C842_FUN_0074c842_for_void = STFnType_icall_0074C842_FUN_0074c842_for_void_6db6a387;
 using icall_0074C858_FUN_0074c858_for_void = STFnType_icall_0074C858_FUN_0074c858_for_void_46f785f1;
+using icall_0074C8A9_FUN_0074c8a9_for_void = STFnType_icall_0074C8A9_FUN_0074c8a9_for_void_7a0c356d;
 using icall_0074C8A9_FUN_0074c8a9_stdcall = STFnType_icall_0074C8A9_FUN_0074c8a9_stdcall_64390bae;
+using icall_0074C90A_FUN_0074c90a_for_void = STFnType_icall_0074C90A_FUN_0074c90a_for_void_2342a82a;
 using icall_0074C90A_FUN_0074c90a_stdcall = STFnType_icall_0074C90A_FUN_0074c90a_stdcall_dc2486a6;
+using icall_0074C921_FUN_0074c921_for_void = STFnType_icall_0074C921_FUN_0074c921_for_void_d9d0c3ba;
 using icall_0074C921_FUN_0074c921_stdcall = STFnType_icall_0074C921_FUN_0074c921_stdcall_22b920e6;
+using icall_0074C931_FUN_0074c931_for_void = STFnType_icall_0074C931_FUN_0074c931_for_void_4f0b4063;
 using icall_0074C931_FUN_0074c931_stdcall = STFnType_icall_0074C931_FUN_0074c931_stdcall_4c0583c1;
+using icall_0074C941_FUN_0074c941_for_void = STFnType_icall_0074C941_FUN_0074c941_for_void_5acb3186;
 using icall_0074C941_FUN_0074c941_stdcall = STFnType_icall_0074C941_FUN_0074c941_stdcall_1dcdb1f1;
 using icall_0074CAA4_FUN_0074caa4_for_void = STFnType_icall_0074CAA4_FUN_0074caa4_for_void_ac5cc9fd;
 using icall_0074CCE2_FUN_0074cce2_for_void = STFnType_icall_0074CCE2_FUN_0074cce2_for_void_45553ab0;
 using icall_0074CE11_FUN_0074ce11_for_void = STFnType_icall_0074CE11_FUN_0074ce11_for_void_ecec3d05;
+using icall_0074CE2D_FUN_0074ce2d_for_void = STFnType_icall_0074CE2D_FUN_0074ce2d_for_void_113e2c5b;
 using icall_0074CE2D_FUN_0074ce2d_stdcall = STFnType_icall_0074CE2D_FUN_0074ce2d_stdcall_0b49141b;
+using icall_0074CEB2_FUN_0074ceb2_for_void = STFnType_icall_0074CEB2_FUN_0074ceb2_for_void_6ebab6c6;
 using icall_0074CEB2_FUN_0074ceb2_stdcall = STFnType_icall_0074CEB2_FUN_0074ceb2_stdcall_19a7ea3b;
+using icall_0074CF2D_FUN_0074cf2d_for_void = STFnType_icall_0074CF2D_FUN_0074cf2d_for_void_ae73abf9;
 using icall_0074CF2D_FUN_0074cf2d_stdcall = STFnType_icall_0074CF2D_FUN_0074cf2d_stdcall_ca80d060;
 using icall_0074CF58_FUN_0074cf58_for_void = STFnType_icall_0074CF58_FUN_0074cf58_for_void_670d6e24;
+using icall_0074CF93_FUN_0074cf93_for_void = STFnType_icall_0074CF93_FUN_0074cf93_for_void_a32fcc64;
 using icall_0074CF93_FUN_0074cf93_stdcall = STFnType_icall_0074CF93_FUN_0074cf93_stdcall_f28d5405;
 using icall_0074CFFB_FUN_0074cffb_for_void = STFnType_icall_0074CFFB_FUN_0074cffb_for_void_77f90068;
+using icall_0074D017_FUN_0074d017_for_void = STFnType_icall_0074D017_FUN_0074d017_for_void_c1f82e53;
 using icall_0074D017_FUN_0074d017_stdcall = STFnType_icall_0074D017_FUN_0074d017_stdcall_9647f9a3;
 using icall_0074D042_FUN_0074d042_for_void = STFnType_icall_0074D042_FUN_0074d042_for_void_57496e36;
 using icall_0074D07D_FUN_0074d07d_for_void = STFnType_icall_0074D07D_FUN_0074d07d_for_void_dd6bccce;
+using icall_0074E6F6_FUN_0074e6f6_for_void = STFnType_icall_0074E6F6_FUN_0074e6f6_for_void_e3492378;
 using icall_0074E6F6_FUN_0074e6f6_stdcall = STFnType_icall_0074E6F6_FUN_0074e6f6_stdcall_5de68c28;
 using icall_0074E70A_FUN_0074e70a = STFnType_icall_0074E70A_FUN_0074e70a_fbf8358f;
 using icall_0074E70A_FUN_0074e70a_stdcall = STFnType_icall_0074E70A_FUN_0074e70a_stdcall_f24027a6;
+using icall_0074E72B_FUN_0074e72b_for_void = STFnType_icall_0074E72B_FUN_0074e72b_for_void_3d617146;
 using icall_0074E72B_FUN_0074e72b_stdcall = STFnType_icall_0074E72B_FUN_0074e72b_stdcall_8dec87ba;
+using icall_0074E74F_FUN_0074e74f_for_void = STFnType_icall_0074E74F_FUN_0074e74f_for_void_d426ac1d;
 using icall_0074E74F_FUN_0074e74f_stdcall = STFnType_icall_0074E74F_FUN_0074e74f_stdcall_934c8168;
 using icall_0074E7F6_FUN_0074e7f6_for_void = STFnType_icall_0074E7F6_FUN_0074e7f6_for_void_3fe80577;
+using icall_0074E847_FUN_0074e847_for_void = STFnType_icall_0074E847_FUN_0074e847_for_void_b74ec229;
 using icall_0074E847_FUN_0074e847_stdcall = STFnType_icall_0074E847_FUN_0074e847_stdcall_53494f38;
+using icall_0074E930_FUN_0074e930_for_void = STFnType_icall_0074E930_FUN_0074e930_for_void_d70349b2;
 using icall_0074E930_FUN_0074e930_stdcall = STFnType_icall_0074E930_FUN_0074e930_stdcall_3ddbd398;
+using icall_0074E962_FUN_0074e962_for_void = STFnType_icall_0074E962_FUN_0074e962_for_void_0890699a;
 using icall_0074E962_FUN_0074e962_stdcall = STFnType_icall_0074E962_FUN_0074e962_stdcall_ad13fce4;
+using icall_0074E994_FUN_0074e994_for_void = STFnType_icall_0074E994_FUN_0074e994_for_void_e0ded61e;
 using icall_0074E994_FUN_0074e994_stdcall = STFnType_icall_0074E994_FUN_0074e994_stdcall_33090185;
+using icall_0074E9C6_FUN_0074e9c6_for_void = STFnType_icall_0074E9C6_FUN_0074e9c6_for_void_d8367285;
 using icall_0074E9C6_FUN_0074e9c6_stdcall = STFnType_icall_0074E9C6_FUN_0074e9c6_stdcall_9fbf78a3;
+using icall_0074E9F8_FUN_0074e9f8_for_void = STFnType_icall_0074E9F8_FUN_0074e9f8_for_void_5dc1e04a;
 using icall_0074E9F8_FUN_0074e9f8_stdcall = STFnType_icall_0074E9F8_FUN_0074e9f8_stdcall_a08148c9;
+using icall_0074EA2A_FUN_0074ea2a_for_void = STFnType_icall_0074EA2A_FUN_0074ea2a_for_void_f9a1eaaf;
 using icall_0074EA2A_FUN_0074ea2a_stdcall = STFnType_icall_0074EA2A_FUN_0074ea2a_stdcall_6a32e578;
+using icall_0074EA5C_FUN_0074ea5c_for_void = STFnType_icall_0074EA5C_FUN_0074ea5c_for_void_37c35340;
 using icall_0074EA5C_FUN_0074ea5c_stdcall = STFnType_icall_0074EA5C_FUN_0074ea5c_stdcall_ac9e41cc;
+using icall_0074EA8E_FUN_0074ea8e_for_void = STFnType_icall_0074EA8E_FUN_0074ea8e_for_void_2e8c189b;
 using icall_0074EA8E_FUN_0074ea8e_stdcall = STFnType_icall_0074EA8E_FUN_0074ea8e_stdcall_9356ab4f;
+using icall_0074EACC_FUN_0074eacc_for_void = STFnType_icall_0074EACC_FUN_0074eacc_for_void_1895d3ab;
 using icall_0074EACC_FUN_0074eacc_stdcall = STFnType_icall_0074EACC_FUN_0074eacc_stdcall_124b48a8;
+using icall_0074EB07_FUN_0074eb07_for_void = STFnType_icall_0074EB07_FUN_0074eb07_for_void_dba646f5;
 using icall_0074EB07_FUN_0074eb07_stdcall = STFnType_icall_0074EB07_FUN_0074eb07_stdcall_d4f5d45c;
+using icall_0074EB6B_FUN_0074eb6b_for_void = STFnType_icall_0074EB6B_FUN_0074eb6b_for_void_e384d961;
 using icall_0074EB6B_FUN_0074eb6b_stdcall = STFnType_icall_0074EB6B_FUN_0074eb6b_stdcall_fc8c051a;
 using icall_0074EB99_FUN_0074eb99 = STFnType_icall_0074EB99_FUN_0074eb99_237e878e;
 using icall_0074EB99_FUN_0074eb99_stdcall = STFnType_icall_0074EB99_FUN_0074eb99_stdcall_6891e0ee;
@@ -6635,36 +9284,58 @@ using icall_0074EBAE_FUN_0074ebae = STFnType_icall_0074EBAE_FUN_0074ebae_3d7cc8d
 using icall_0074EBAE_FUN_0074ebae_stdcall = STFnType_icall_0074EBAE_FUN_0074ebae_stdcall_151a2f53;
 using icall_0074EBC3_FUN_0074ebc3 = STFnType_icall_0074EBC3_FUN_0074ebc3_2c528aad;
 using icall_0074EBC3_FUN_0074ebc3_stdcall = STFnType_icall_0074EBC3_FUN_0074ebc3_stdcall_1a03eaf2;
+using icall_0074EBD8_FUN_0074ebd8_for_void = STFnType_icall_0074EBD8_FUN_0074ebd8_for_void_e201bc62;
 using icall_0074EBD8_FUN_0074ebd8_stdcall = STFnType_icall_0074EBD8_FUN_0074ebd8_stdcall_cee4cffd;
+using icall_0074EC0D_FUN_0074ec0d_for_void = STFnType_icall_0074EC0D_FUN_0074ec0d_for_void_18190d82;
 using icall_0074EC0D_FUN_0074ec0d_stdcall = STFnType_icall_0074EC0D_FUN_0074ec0d_stdcall_ef13342e;
+using icall_0074EC3F_FUN_0074ec3f_for_void = STFnType_icall_0074EC3F_FUN_0074ec3f_for_void_f6215cfb;
 using icall_0074EC3F_FUN_0074ec3f_stdcall = STFnType_icall_0074EC3F_FUN_0074ec3f_stdcall_7523f05a;
+using icall_0074EC87_FUN_0074ec87_for_void = STFnType_icall_0074EC87_FUN_0074ec87_for_void_c47faa04;
 using icall_0074EC87_FUN_0074ec87_stdcall = STFnType_icall_0074EC87_FUN_0074ec87_stdcall_0a60056a;
+using icall_0074ECBC_FUN_0074ecbc_for_void = STFnType_icall_0074ECBC_FUN_0074ecbc_for_void_88a63183;
 using icall_0074ECBC_FUN_0074ecbc_stdcall = STFnType_icall_0074ECBC_FUN_0074ecbc_stdcall_54d86f9a;
 using icall_0074ECF1_FUN_0074ecf1 = STFnType_icall_0074ECF1_FUN_0074ecf1_313c07ab;
 using icall_0074ECF1_FUN_0074ecf1_stdcall = STFnType_icall_0074ECF1_FUN_0074ecf1_stdcall_9fb2129b;
+using icall_0074ED2B_FUN_0074ed2b_for_void = STFnType_icall_0074ED2B_FUN_0074ed2b_for_void_6027a688;
 using icall_0074ED2B_FUN_0074ed2b_stdcall = STFnType_icall_0074ED2B_FUN_0074ed2b_stdcall_c6c2e995;
 using icall_0074ED60_FUN_0074ed60 = STFnType_icall_0074ED60_FUN_0074ed60_25199731;
 using icall_0074ED60_FUN_0074ed60_stdcall = STFnType_icall_0074ED60_FUN_0074ed60_stdcall_e9a87a3e;
+using icall_0074ED9A_FUN_0074ed9a_for_void = STFnType_icall_0074ED9A_FUN_0074ed9a_for_void_1ebf4394;
 using icall_0074ED9A_FUN_0074ed9a_stdcall = STFnType_icall_0074ED9A_FUN_0074ed9a_stdcall_a7e3eb56;
 using icall_0074EDCF_FUN_0074edcf = STFnType_icall_0074EDCF_FUN_0074edcf_1eecbd64;
 using icall_0074EDCF_FUN_0074edcf_stdcall = STFnType_icall_0074EDCF_FUN_0074edcf_stdcall_d3fd7b22;
+using icall_0074EE09_FUN_0074ee09_for_void = STFnType_icall_0074EE09_FUN_0074ee09_for_void_cf899f75;
 using icall_0074EE09_FUN_0074ee09_stdcall = STFnType_icall_0074EE09_FUN_0074ee09_stdcall_c316389c;
+using icall_0074EE3E_FUN_0074ee3e_for_void = STFnType_icall_0074EE3E_FUN_0074ee3e_for_void_70a67151;
 using icall_0074EE3E_FUN_0074ee3e_stdcall = STFnType_icall_0074EE3E_FUN_0074ee3e_stdcall_6672fa51;
+using icall_0074EE89_FUN_0074ee89_for_void = STFnType_icall_0074EE89_FUN_0074ee89_for_void_657b2d0d;
 using icall_0074EE89_FUN_0074ee89_stdcall = STFnType_icall_0074EE89_FUN_0074ee89_stdcall_88f892c0;
+using icall_0074EEBE_FUN_0074eebe_for_void = STFnType_icall_0074EEBE_FUN_0074eebe_for_void_edaa9c80;
 using icall_0074EEBE_FUN_0074eebe_stdcall = STFnType_icall_0074EEBE_FUN_0074eebe_stdcall_09ed6dd2;
 using icall_0074EF44_FUN_0074ef44_for_void = STFnType_icall_0074EF44_FUN_0074ef44_for_void_acdc8769;
+using icall_0074F026_FUN_0074f026_for_void = STFnType_icall_0074F026_FUN_0074f026_for_void_d504d02b;
 using icall_0074F026_FUN_0074f026_stdcall = STFnType_icall_0074F026_FUN_0074f026_stdcall_01fc41b2;
+using icall_0074F03D_FUN_0074f03d_for_void = STFnType_icall_0074F03D_FUN_0074f03d_for_void_0725a8a9;
 using icall_0074F03D_FUN_0074f03d_stdcall = STFnType_icall_0074F03D_FUN_0074f03d_stdcall_c8b3a821;
 using icall_0074F04D_FUN_0074f04d_for_void = STFnType_icall_0074F04D_FUN_0074f04d_for_void_4fbfe8a8;
+using icall_0074F0C0_FUN_0074f0c0_for_void = STFnType_icall_0074F0C0_FUN_0074f0c0_for_void_d469b277;
 using icall_0074F0C0_FUN_0074f0c0_stdcall = STFnType_icall_0074F0C0_FUN_0074f0c0_stdcall_c8004f1a;
+using icall_0074F0D0_FUN_0074f0d0_for_void = STFnType_icall_0074F0D0_FUN_0074f0d0_for_void_842e9613;
 using icall_0074F0D0_FUN_0074f0d0_stdcall = STFnType_icall_0074F0D0_FUN_0074f0d0_stdcall_3916baac;
+using icall_0074FD33_FUN_0074fd33_for_void = STFnType_icall_0074FD33_FUN_0074fd33_for_void_8a0d2d81;
 using icall_0074FD33_FUN_0074fd33_stdcall = STFnType_icall_0074FD33_FUN_0074fd33_stdcall_b712493b;
+using icall_0074FD4A_FUN_0074fd4a_for_void = STFnType_icall_0074FD4A_FUN_0074fd4a_for_void_f2bb5e64;
 using icall_0074FD4A_FUN_0074fd4a_stdcall = STFnType_icall_0074FD4A_FUN_0074fd4a_stdcall_06f00035;
+using icall_0074FD5A_FUN_0074fd5a_for_void = STFnType_icall_0074FD5A_FUN_0074fd5a_for_void_7cfdccd8;
 using icall_0074FD5A_FUN_0074fd5a_stdcall = STFnType_icall_0074FD5A_FUN_0074fd5a_stdcall_35214778;
 using icall_0074FD6A_FUN_0074fd6a_for_void = STFnType_icall_0074FD6A_FUN_0074fd6a_for_void_3d409878;
+using icall_0074FDAB_FUN_0074fdab_for_void = STFnType_icall_0074FDAB_FUN_0074fdab_for_void_2a6416d0;
 using icall_0074FDAB_FUN_0074fdab_stdcall = STFnType_icall_0074FDAB_FUN_0074fdab_stdcall_34db3a86;
+using icall_0074FDEB_FUN_0074fdeb_for_void = STFnType_icall_0074FDEB_FUN_0074fdeb_for_void_9c826721;
 using icall_0074FDEB_FUN_0074fdeb_stdcall = STFnType_icall_0074FDEB_FUN_0074fdeb_stdcall_14211c0e;
+using icall_0074FE15_FUN_0074fe15_for_void = STFnType_icall_0074FE15_FUN_0074fe15_for_void_d8b01e47;
 using icall_0074FE15_FUN_0074fe15_stdcall = STFnType_icall_0074FE15_FUN_0074fe15_stdcall_d8c2d0ce;
+using icall_0074FE1D_FUN_0074fe1d_for_void = STFnType_icall_0074FE1D_FUN_0074fe1d_for_void_7641ddd4;
 using icall_0074FE1D_FUN_0074fe1d_stdcall = STFnType_icall_0074FE1D_FUN_0074fe1d_stdcall_18d5dfb5;
 using icall_0074FE47_FUN_0074fe47_stdcall = STFnType_icall_0074FE47_FUN_0074fe47_stdcall_94034252;
 using STObjectFactoryFn = STFnType_STObjectFactoryFn_ea7089ae;
@@ -7341,6 +10012,7 @@ struct AppClassTy {
     undefined4 InitApp(undefined4 param_1);
     undefined DoneApp();
     WPARAM RunApp();
+    undefined4 vfunc_14();
     undefined4 sub_006E5150(undefined2 arg_1);
     int AddChildSystem(SystemClassTy * parentSystem, SystemClassTy * childSystem, int checkDuplicateId);
     int AddDecodeMessage(undefined4 * param_1);
@@ -9099,81 +11771,12 @@ struct MMMObjTy {
 
 struct MMObjTy {
     MMObjTyVTable *vtable; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; owner_vtable_pointer
-    byte _unknown_0004[2];
-    undefined1 field_0x6; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0007[1];
+    byte _unknown_0004[4];
     undefined4 field_0008; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     StartSystemTy *field_000C; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=pointer:/StartSystemTy <= 005B6220 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005B6480 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0
-    byte _unknown_0010[13];
-    undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001E[1];
-    undefined1 field_0x1f; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0020[10];
-    undefined1 field_0x2a; // exact unnamed-byte view referenced by exported code
-    byte _unknown_002B[2];
-    undefined1 field_0x2d; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x2e; // exact unnamed-byte view referenced by exported code
-    byte _unknown_002F[2];
-    undefined1 field_0x31; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x32; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x33; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0034[1];
-    undefined1 field_0x35; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0036[10];
-    undefined1 field_0x40; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0041[4];
-    undefined1 field_0x45; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0046[3];
-    undefined1 field_0x49; // exact unnamed-byte view referenced by exported code
-    byte _unknown_004A[3];
-    undefined1 field_0x4d; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x4e; // exact unnamed-byte view referenced by exported code
-    byte _unknown_004F[2];
-    undefined1 field_0x51; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x52; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0053[5];
-    undefined1 field_0x58; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0059[3];
-    undefined1 field_0x5c; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0x5d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_005E[2];
-    undefined1 field_0x60; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0061[3];
-    undefined1 field_0x64; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0065[1];
+    byte _unknown_0010[86];
     uint field_0066[13]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=13; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[13], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:13:/uint <= 005B6259 exact pointer walk count=13, stride=4, cursor_displacement=0 | 005B64B9 exact pointer walk count=13, stride=4, cursor_displacement=0
-    byte _unknown_009A[1];
-    undefined1 field_0x9b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_009C[3];
-    undefined1 field_0x9f; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00A0[3];
-    undefined1 field_0xa3; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00A4[5];
-    undefined1 field_0xa9; // exact unnamed-byte view referenced by exported code
-    undefined1 field_0xaa; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00AB[3];
-    undefined1 field_0xae; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00AF[3];
-    undefined1 field_0xb2; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00B3[3];
-    undefined1 field_0xb6; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00B7[5];
-    undefined1 field_0xbc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00BD[1];
-    undefined1 field_0xbe; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00BF[1];
-    undefined1 field_0xc0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00C1[2];
-    undefined1 field_0xc3; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00C4[13];
-    undefined1 field_0xd1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00D2[4];
-    undefined1 field_0xd6; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00D7[3];
-    undefined1 field_0xda; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00DB[3];
-    undefined1 field_0xde; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00DF[3];
+    byte _unknown_009A[72];
     undefined1 field_00E2; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
     int GetMessage(STMessage *message);
     undefined DoneMMObj();
@@ -9468,10 +12071,7 @@ struct MTaskTy {
     DArrayTy *field_064B; // [STClassLayoutApplier] reads=14, writes=5; type_confidence=conflict; name_confidence=conflict; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/DArrayTy|pointer:/uint; typed_cross_class_recovery=10; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005E0470 [this+0x64B] passed to DArrayDestroy parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C | pointer:/uint <= 005E00E9 generic pointer-return assignment in MTaskTy::InitMTask; name_evidence=array <= 005E0470 [this+0x64B] passed to DArrayDestroy parameter array
     DArrayTy *field_064F; // [STClassLayoutApplier] reads=14, writes=5; type_confidence=conflict; name_confidence=conflict; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/DArrayTy|pointer:/uint; typed_cross_class_recovery=10; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005E0470 [this+0x64F] passed to DArrayDestroy parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C | pointer:/uint <= 005E010B generic pointer-return assignment in MTaskTy::InitMTask; name_evidence=array <= 005E0470 [this+0x64F] passed to DArrayDestroy parameter array
     undefined4 field_0653; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; type_evidence=/ushort <= 005DFA30 exact address of [this+0x653] passed to FUN_006b2330 parameter param_7
-    undefined1 field_0x657; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0658[3];
-    undefined1 field_0x65b; // exact unnamed-byte view referenced by exported code
-    byte _unknown_065C[3];
+    byte _unknown_0657[8];
     undefined1 field_0x65f; // exact unnamed-byte view referenced by exported code
     byte _unknown_0660[11];
     undefined1 field_0x66b; // exact unnamed-byte view referenced by exported code
@@ -9488,7 +12088,7 @@ struct MTaskTy {
     undefined1 field_0x6c3; // exact unnamed-byte view referenced by exported code
     byte _unknown_06C4[3];
     undefined1 field_06C7; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined1 field_0x6c8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_06C8[1];
     undefined1 field_06C9; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined1 field_06CA; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     ushort *field_06CB; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/ushort|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_MTaskTy_06CB|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/int|pointer:/ushort; typed_cross_class_recovery=1; type_evidence=/int <= 005E4570 [this+0x6CB] passed to ccFntTy::SetSurf parameter param_1 | /ushort <= 005DFA30 exact address of [this+0x6CB] passed to FUN_006b2330 parameter param_7 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_MTaskTy_06CB <= consistent nested dereferences through [this+0x6CB] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 005E4570 [this+0x6CB] passed to FUN_006c7610 parameter param_1 | pointer:/int <= 005E4570 [this+0x6CB] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 005E50B7 dynamic 2-byte dereference of field-derived address in MTaskTy::GetMessage
@@ -10150,8 +12750,8 @@ struct STAlgaC {
     undefined4 field_0030; // [STClassLayoutApplier] reads=9, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
     undefined4 field_0034; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
     void *field_0038; // [STClassLayoutApplier] reads=17, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; duplicate_suggested_field_name; type_evidence=pointer:/void <= 00575CB0 [this+0x38] passed to Library::DKW::LIB::MemRealloc parameter allocation; 005762CA generic pointer-return assignment in STAlgaC::GetMessage; name_evidence=allocation <= 00575CB0 [this+0x38] passed to Library::DKW::LIB::MemRealloc parameter allocation
-    int field_003C; // [STClassLayoutApplier] reads=16, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=11; type_evidence=/int <= 00575E92 CMP/JLE establishes /int through a field-derived value in STAlgaC::GetMessage; 00575E92 CMP/JLE through typed class pointer in STAlgaC::GetMessage; 005765AA CMP/JL establishes /int through a field-derived value in STAlgaC::GetMessage; 005765AA CMP/JL through typed class pointer in STAlgaC::GetMessage; 00576705 CMP/JLE establishes /int through a field-derived value in STAlgaC::GetMessage; 00576705 CMP/JLE through typed class pointer in STAlgaC::GetMessage
-    void *field_0040; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=pointer:/void <= 00575CB0 [this+0x40] passed to Library::DKW::LIB::MemRealloc parameter allocation; 005765C8 generic pointer-return assignment in STAlgaC::GetMessage; name_evidence=allocation <= 00575CB0 [this+0x40] passed to Library::DKW::LIB::MemRealloc parameter allocation
+    int field_003C; // [STClassLayoutApplier] reads=16, writes=4; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/void; typed_cross_class_recovery=11; type_evidence=/int <= 00575E92 CMP/JLE establishes /int through a field-derived value in STAlgaC::GetMessage; 00575E92 CMP/JLE through typed class pointer in STAlgaC::GetMessage; 005765AA CMP/JL establishes /int through a field-derived value in STAlgaC::GetMessage; 005765AA CMP/JL through typed class pointer in STAlgaC::GetMessage; 00576705 CMP/JLE establishes /int through a field-derived value in STAlgaC::GetMessage; 00576705 CMP/JLE through typed class pointer in STAlgaC::GetMessage | pointer:/void <= 00575CB0 [this+0x3C] passed to FUN_006accd0 parameter param_2
+    RuntimeRecord_007F4D3C_0014 *field_0040; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/GlobalAggregates/RuntimeRecord_007F4D3C_0014 <= 00575CB0 [this+0x40] passed to FUN_006accd0 parameter param_1; name_evidence=allocation <= 00575CB0 [this+0x40] passed to Library::DKW::LIB::MemRealloc parameter allocation
     int field_0044; // [STClassLayoutApplier] reads=14, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=11; type_evidence=/int <= 00575D99 CMP/JLE establishes /int through a field-derived value in STAlgaC::GetMessage; 00575D99 CMP/JLE through typed class pointer in STAlgaC::GetMessage; 00575FCC CMP/JLE through typed class pointer in STAlgaC::GetMessage; 00575FED CMP/JL through typed class pointer in STAlgaC::GetMessage; 0057631F CMP/JL establishes /int through a field-derived value in STAlgaC::GetMessage; 0057631F CMP/JL through typed class pointer in STAlgaC::GetMessage
     ushort *field_0048; // [STClassLayoutApplier] reads=7, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; duplicate_suggested_field_name; type_evidence=pointer:/ushort <= 00575FDB dynamic 2-byte dereference of field-derived address in STAlgaC::GetMessage; name_evidence=allocation <= 00575CB0 [this+0x48] passed to Library::DKW::LIB::MemRealloc parameter allocation
     int GetMessage(STMessage *message);
@@ -10618,6 +13218,8 @@ struct STArtiafactC {
     undefined4 vfunc_74(undefined2 arg_1);
     undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
     void vfunc_9C();
     undefined4 vfunc_A0(undefined2 arg_1);
     undefined4 vfunc_A8(undefined2 arg_1);
@@ -10625,6 +13227,8 @@ struct STArtiafactC {
     undefined4 vfunc_B0(undefined2 arg_1, short arg_2, short arg_3, short arg_4, short arg_5);
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -10632,14 +13236,22 @@ struct STArtiafactC {
     undefined4 vfunc_DC(short arg_1, short arg_2, short arg_3, short arg_4, short arg_5, short arg_6);
     undefined4 vfunc_E0(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
     undefined4 vfunc_E8(undefined2 arg_1);
+    undefined4 vfunc_F0();
     undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
     undefined4 vfunc_114(undefined2 arg_1);
     undefined4 vfunc_118(undefined2 arg_1);
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     undefined4 vfunc_124(undefined2 arg_1);
     dword slot_128();
+    undefined4 vfunc_12C();
+    undefined4 vfunc_130();
     dword slot_134();
+    undefined4 vfunc_138();
     dword slot_13C();
     undefined4 vfunc_140(undefined2 arg_1);
     undefined4 vfunc_144();
@@ -11395,6 +14007,7 @@ struct STBoatC {
     dword slot_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
     undefined4 vfunc_114(undefined2 arg_1);
     undefined4 vfunc_118(undefined2 arg_1);
     undefined4 vfunc_11C();
@@ -11551,26 +14164,40 @@ struct STColl3C {
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
     dword slot_78();
     undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
     undefined4 vfunc_D8();
     undefined4 vfunc_E0(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
     undefined4 vfunc_E8(undefined2 arg_1);
+    undefined4 vfunc_EC();
     undefined4 vfunc_F0();
     dword slot_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     int CreateAddSpr();
     undefined4 LoadImagSpr(int param_1);
     int sub_005F66B0();
@@ -11684,6 +14311,8 @@ struct STContainerC {
     undefined4 vfunc_74(undefined2 arg_1);
     undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
     void vfunc_9C();
     undefined4 vfunc_A0(undefined2 arg_1);
     undefined4 vfunc_A8(undefined2 arg_1);
@@ -11691,6 +14320,8 @@ struct STContainerC {
     undefined4 vfunc_B0(undefined2 arg_1, short arg_2, short arg_3, short arg_4, short arg_5);
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -11698,11 +14329,16 @@ struct STContainerC {
     undefined4 vfunc_DC(short arg_1, short arg_2, short arg_3, short arg_4, short arg_5, short arg_6);
     undefined4 vfunc_E0(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
     undefined4 vfunc_E8(undefined2 arg_1);
+    undefined4 vfunc_F0();
     undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
     undefined4 vfunc_114(undefined2 arg_1);
     undefined4 vfunc_118(undefined2 arg_1);
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     undefined4 vfunc_124(undefined2 arg_1);
     dword slot_128();
     dword slot_12C();
@@ -11754,15 +14390,25 @@ struct STCrabC {
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
     dword slot_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -11772,8 +14418,13 @@ struct STCrabC {
     undefined4 vfunc_E8(undefined2 arg_1);
     undefined4 vfunc_EC();
     undefined4 vfunc_F0();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     bool Bad();
     void SetSprRange(uint param_1);
 };
@@ -11823,6 +14474,7 @@ struct STDcResourcC {
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
@@ -11833,9 +14485,18 @@ struct STDcResourcC {
     undefined4 vfunc_5C(undefined2 arg_1);
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -11843,9 +14504,13 @@ struct STDcResourcC {
     undefined4 vfunc_E8(undefined2 arg_1);
     undefined4 vfunc_EC();
     undefined4 vfunc_F0();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
     dword slot_11C();
+    undefined4 vfunc_120();
     int CreateRes();
     undefined4 * Init();
     undefined4 * sub_0057F2E0(int param_1, int param_2);
@@ -11906,18 +14571,29 @@ struct STDestC {
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_30(undefined2 arg_1);
     undefined4 vfunc_34(undefined2 arg_1);
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
     undefined4 vfunc_70(undefined2 arg_1);
     undefined4 vfunc_74(undefined2 arg_1);
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -11925,8 +14601,13 @@ struct STDestC {
     undefined4 vfunc_E8(undefined2 arg_1);
     undefined4 vfunc_EC();
     undefined4 vfunc_F0();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     void sub_00602440();
     void sub_006024B0();
     byte * sub_006025D0(undefined4 *param_1);
@@ -11974,14 +14655,26 @@ struct STExplosion {
     HoloTy *field_02BB; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=10; type_evidence=pointer:/HoloTy <= 00603740 [this+0x2BB] passed to Library::MSVCRT::FUN_0072e2b0 parameter param_1
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
+    undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     void sub_00604120();
@@ -12124,15 +14817,25 @@ struct STFishC {
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
     dword slot_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -12142,13 +14845,18 @@ struct STFishC {
     undefined4 vfunc_E8(undefined2 arg_1);
     undefined4 vfunc_EC();
     undefined4 vfunc_F0();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     void LifeFish();
     void sub_004162B0(short *param_1, short *param_2, short *param_3);
     void sub_004162F0(short *param_1, short *param_2, short *param_3);
     int sub_0057BF20();
-    undefined4 sub_0057D5F0(uint param_1);
+    STFishC_field_023BState sub_0057D5F0(uint param_1);
     undefined4 sub_0057D700(uint *param_1, uint *param_2, int *param_3, int *param_4);
 };
 
@@ -12878,14 +15586,25 @@ struct STJellyGunC {
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -12893,8 +15612,13 @@ struct STJellyGunC {
     undefined4 vfunc_E8(undefined2 arg_1);
     undefined4 vfunc_EC();
     undefined4 vfunc_F0();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     void LifeGun();
     undefined4 sub_00415ED0(undefined4 *param_1, int *param_2);
     void sub_00582530();
@@ -12927,14 +15651,26 @@ struct STJellyManC {
     int field_020F; // [STClassLayoutApplier] reads=8, writes=10; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=7; typed_cross_class_recovery=9; type_evidence=/int <= 00581ACF CMP/JL establishes /int through a field-derived value in STJellyManC::Error; 00581ACF CMP/JL through typed class pointer in STJellyManC::Error
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
+    undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 Error(undefined4 param_1, int *param_2, undefined4 param_3);
@@ -13060,14 +15796,25 @@ struct STLBombC {
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -13075,8 +15822,13 @@ struct STLBombC {
     undefined4 vfunc_E8(undefined2 arg_1);
     undefined4 vfunc_EC();
     undefined4 vfunc_F0();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
 };
 
 struct STLightC {
@@ -13191,14 +15943,25 @@ struct STMBombC {
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -13206,8 +15969,13 @@ struct STMBombC {
     undefined4 vfunc_E8(undefined2 arg_1);
     undefined4 vfunc_EC();
     undefined4 vfunc_F0();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
 };
 
 struct STManBasisC {
@@ -13426,6 +16194,7 @@ struct STMineSetC {
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
@@ -13439,10 +16208,18 @@ struct STMineSetC {
     dword slot_6C();
     undefined4 vfunc_70(undefined2 arg_1);
     undefined4 vfunc_74(undefined2 arg_1);
+    undefined4 vfunc_78();
     undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -13454,8 +16231,12 @@ struct STMineSetC {
     undefined4 vfunc_F0();
     undefined4 vfunc_F4(undefined2 arg_1);
     undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     undefined4 LoadImagMineSet(int param_1);
     void sub_0041D1A0(int param_1);
     void sub_0041D2B0();
@@ -13525,15 +16306,25 @@ struct STOctopusC {
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
     dword slot_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -13543,8 +16334,13 @@ struct STOctopusC {
     undefined4 vfunc_E8(undefined2 arg_1);
     undefined4 vfunc_EC();
     undefined4 vfunc_F0();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     void Bad();
     void SetSprRange(uint param_1);
     undefined4 sub_0058AF70(short param_1, short param_2, short param_3);
@@ -13689,6 +16485,7 @@ struct STPlaySystemC {
     undefined4 vfunc_08(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
     undefined4 vfunc_0C(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
     undefined4 vfunc_10(undefined2 arg_1, undefined2 arg_2);
+    undefined4 vfunc_14();
     undefined4 Life();
     undefined4 GetMessage(int param_1);
     void AddToRep(undefined4 *param_1, uint param_2);
@@ -13752,14 +16549,26 @@ struct STRubbishC {
     STRubbishC_field_01FAState field_01FA; // [STClassLayoutApplier] reads=1, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3 [STSwitchEnumApplier] enum recovered from switch cases
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
+    undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 LoadImagSpr(void *param_1, int *param_2, undefined4 param_3, STRubbishC_LoadImagSpr_param_4Enum param_4);
@@ -13810,14 +16619,25 @@ struct STSatC {
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -13825,8 +16645,13 @@ struct STSatC {
     undefined4 vfunc_E8(undefined2 arg_1);
     undefined4 vfunc_EC();
     undefined4 vfunc_F0();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
 };
 
 struct STSharkC {
@@ -13879,14 +16704,25 @@ struct STSharkC {
     undefined4 GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -13896,8 +16732,13 @@ struct STSharkC {
     undefined4 vfunc_E8(undefined2 arg_1);
     undefined4 vfunc_EC();
     undefined4 vfunc_F0();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     undefined4 CreateShark(int param_1, int param_2, int param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8, undefined4 param_9);
     void LifeShark();
     void sub_0058EFE0();
@@ -14029,6 +16870,8 @@ struct STSprGameObjC {
     dword slot_78();
     undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
     void vfunc_9C();
     undefined4 vfunc_A0(undefined2 arg_1);
     dword slot_A4();
@@ -14038,6 +16881,8 @@ struct STSprGameObjC {
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
     dword slot_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -14046,12 +16891,24 @@ struct STSprGameObjC {
     undefined4 vfunc_E0(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
     undefined4 vfunc_E8(undefined2 arg_1);
     dword slot_EC();
+    undefined4 vfunc_F0();
     undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
     undefined4 vfunc_114(undefined2 arg_1);
     undefined4 vfunc_118(undefined2 arg_1);
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
+    undefined4 vfunc_128();
+    undefined4 vfunc_12C();
+    undefined4 vfunc_130();
+    undefined4 vfunc_134();
+    undefined4 vfunc_138();
+    undefined4 vfunc_13C();
     void slot_140(undefined4 param_1);
+    undefined4 vfunc_144();
     undefined4 CheckRay(short param_1, short param_2, short param_3, short param_4, short param_5, short param_6, STSprGameObjC_CheckRay_param_7Enum param_7, int *param_8, int param_9);
     void LoadActFrame();
     void LoadLifeFrame();
@@ -14225,14 +17082,25 @@ struct STTorpC {
     int GetMessage(STMessage *message);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -14240,8 +17108,13 @@ struct STTorpC {
     undefined4 vfunc_E8(undefined2 arg_1);
     undefined4 vfunc_EC();
     undefined4 vfunc_F0();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     undefined4 ClearDangerous(int param_1, uint param_2);
     int IsDangerous(int param_1, uint *param_2);
     void RestoreTorpData(int param_1);
@@ -16328,6 +19201,32 @@ struct CGenerate_field_5853Element {
     byte _unknown_0019[4];
 };
 
+struct FSGSTy_field_1EA6Element {
+    char field_0000; // [STDArrayElementApplier] evidence_count=8; observed_types={/byte=5, /char=33, /uint=1, /undefined1=2, /undefined4=2}; semantic_roles={}; role_sites=; source_names={}; sites=005A2380 *local_8 | 005A2380 *pbVar8 | 005A26C0 *local_8 | 005A26C0 *pbVar9 | 005A2C10 *pvVar4 | 005A4350 *local_8 | 005A4350 *pcVar37 | 005A4350 *pvVar36
+    char field_0001; // [STDArrayElementApplier] evidence_count=3; observed_types={/char=6}; semantic_roles={}; role_sites=; source_names={}; sites=005A2380 pcVar7[1] | 005A26C0 pcVar8[1] | 005A4350 pcVar39[1]
+    byte _unknown_0002[34];
+    int field_0024; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=24, /uint=3}; semantic_roles={}; role_sites=; source_names={}; sites=005A4350 local_8[9]
+    int field_0028; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=24, /uint=3}; semantic_roles={}; role_sites=; source_names={}; sites=005A4350 local_8[10]
+    byte _unknown_002C[1];
+    undefined1 field_002D; // [STDArrayElementApplier] evidence_count=1; observed_types={/undefined1=1}; semantic_roles={}; role_sites=; source_names={}; sites=005A4350 local_8+0x2D
+};
+
+struct FSGSTy_field_1EAAElement {
+    char field_0000; // [STDArrayElementApplier] evidence_count=5; observed_types={/char=35, /uint=1, /undefined1=1}; semantic_roles={}; role_sites=; source_names={}; sites=005A2FF0 *_Str1 | 005A2FF0 *_Str2 | 005A4350 *local_8 | 005A4350 *pcVar37 | 005A4350 *pvVar36
+    char field_0001; // [STDArrayElementApplier] evidence_count=1; observed_types={/char=3}; semantic_roles={}; role_sites=; source_names={}; sites=005A4350 pcVar37[1]
+    byte _unknown_0002[6];
+    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0009[27];
+    int field_0024; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=24, /uint=3}; semantic_roles={}; role_sites=; source_names={}; sites=005A4350 local_8[9]
+    int field_0028; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=24, /uint=3}; semantic_roles={}; role_sites=; source_names={}; sites=005A4350 local_8[10]
+    int field_002C; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=4, /undefined4=3}; semantic_roles={}; role_sites=; source_names={}; sites=005A4350 local_c->field_002C
+    int field_0030; // [STDArrayElementApplier] evidence_count=2; observed_types={/int=25, /uint=4, /ulong=8, pointer:/byte=8}; semantic_roles={}; role_sites=; source_names={}; sites=005A4350 local_8[12] | 005A4350 local_c+0x30
+    byte _unknown_0034[44];
+    uint field_0060; // [STDArrayElementApplier] evidence_count=1; observed_types={/uint=1}; semantic_roles={}; role_sites=; source_names={}; sites=005A4350 local_c+0x60
+    undefined1 field_0x64; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0065[3];
+};
+
 struct FSGSTy_field_1FB3Element {
     uint field_0000; // [STDArrayElementApplier] evidence_count=1; observed_types={/uint=1}; semantic_roles={}; role_sites=; source_names={}; sites=005A4350 *puVar24
     ulong field_0004; // [STDArrayElementApplier] evidence_count=1; observed_types={/uint=1, /ulong=2}; semantic_roles={}; role_sites=; source_names={}; sites=005A4350 puVar24[1]
@@ -16389,7 +19288,15 @@ struct MTaskTy_field_0074Element {
     undefined4 field_0026; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=9, /uint=6}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar22+0x26
     int field_002A; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=13}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar22+0x2A
     int field_002E; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=7}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar22+0x2E
-    byte _unknown_0032[30];
+    undefined4 field_0032; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3, /uint=3}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar18+0x32
+    undefined4 field_0036; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3, /uint=3}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar18+0x36
+    int field_003A; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar18+0x3A
+    int field_003E; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar18+0x3E
+    int field_0042; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar18+0x42
+    undefined4 field_0046; // [STDArrayElementApplier] evidence_count=1; observed_types={/undefined4=2}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar18+0x46
+    undefined4 slotStorage; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3, /uint=2, pointer:/void=4}; semantic_roles={}; role_sites=; source_names={slotStorage=4}; sites=005E1330 piVar18+0x4A
+    undefined1 field_004E; // [STDArrayElementApplier] evidence_count=1; observed_types={/undefined1=3}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar18+0x4E
+    undefined1 field_004F; // [STDArrayElementApplier] evidence_count=1; observed_types={/undefined1=1}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar18+0x4F
 };
 
 struct OptPanelTy_field_02FDElement {
@@ -16601,6 +19508,28 @@ struct CGenerate_field_5853DArray {
     dword growCapacity; // Elements added when storage grows.
     void *growCallback; // Callback pointer when flags&0x100; observed call arguments: data, oldCapacity, addedCapacity.
     CGenerate_field_5853Element *data; // Contiguous element storage.
+};
+
+struct FSGSTy_field_1EA6DArray {
+    dword flags; // Bit 0x8 owns descriptor; bit 0x100 enables grow callback.
+    dword iteratorIndex; // Cursor used by DArrayGetNext.
+    dword elementSize; // Element size in bytes.
+    dword count; // Number of populated elements.
+    dword capacity; // Allocated element capacity.
+    dword growCapacity; // Elements added when storage grows.
+    void *growCallback; // Callback pointer when flags&0x100; observed call arguments: data, oldCapacity, addedCapacity.
+    FSGSTy_field_1EA6Element *data; // Contiguous element storage.
+};
+
+struct FSGSTy_field_1EAADArray {
+    dword flags; // Bit 0x8 owns descriptor; bit 0x100 enables grow callback.
+    dword iteratorIndex; // Cursor used by DArrayGetNext.
+    dword elementSize; // Element size in bytes.
+    dword count; // Number of populated elements.
+    dword capacity; // Allocated element capacity.
+    dword growCapacity; // Elements added when storage grows.
+    void *growCallback; // Callback pointer when flags&0x100; observed call arguments: data, oldCapacity, addedCapacity.
+    FSGSTy_field_1EAAElement *data; // Contiguous element storage.
 };
 
 struct FSGSTy_field_1EBEDArray {
@@ -17167,6 +20096,60 @@ struct BulkInitializedRecord_008087C7 {
     byte field_0039;
     byte field_003A;
     byte _unknown_003B[22];
+};
+
+struct RuntimeRecord_007F4D3C_0014 {
+    int field_0000;
+    int field_0004;
+    int field_0008;
+    int field_000C;
+    int field_0010;
+};
+
+struct RuntimeRecord_007F4D74_0010 {
+    int field_0000;
+    int field_0004;
+    int field_0008;
+    int field_000C;
+};
+
+struct RuntimeRecord_008032F4_0014 {
+    int field_0000;
+    int field_0004;
+    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0009[3];
+    int field_000C;
+    byte _unknown_0010[4];
+};
+
+struct RuntimeRecord_008032F8_0014 {
+    int field_0000;
+    int field_0004;
+    byte _unknown_0008[4];
+    int field_000C;
+    byte _unknown_0010[4];
+};
+
+struct RuntimeRecord_00803300_0014 {
+    int field_0000;
+    int field_0004;
+    int field_0008;
+    int field_000C;
+    byte _unknown_0010[4];
+};
+
+struct RuntimeRecord_00803310_0014 {
+    int field_0000;
+    int field_0004;
+    int field_0008;
+    int field_000C;
+    int field_0010;
+};
+
+struct RuntimeRecord_00857110_0008 {
+    short field_0000;
+    short field_0002;
+    int field_0004;
 };
 
 struct PackedRecord_A62x8 {
@@ -18479,8 +21462,8 @@ struct FSGSTy {
     tagBITMAPINFO *field_1E9A; // [STClassLayoutApplier] reads=28, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=16; type_evidence=pointer:/wingdi.h/tagBITMAPINFO <= 0059EBF5 generic pointer-return assignment in FSGSTy::JoinGameCtrls
     uint *field_1E9E; // [STClassLayoutApplier] reads=18, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/DArrayTy|pointer:/ushort; typed_cross_class_recovery=13; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005964BD generic pointer-return assignment in FSGSTy::InitFSGS; 005967F0 [this+0x1E9E] passed to FUN_006b5570 parameter param_1; 005A1F00 [this+0x1E9E] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005A4350 [this+0x1E9E] passed to FUN_006b5570 parameter param_1; 005A49FE generic pointer-return assignment in FSGSTy::GetMessage | pointer:/ushort <= 005A21D1 dynamic 2-byte dereference of field-derived address in FSGSTy::AddMessage
     DArrayTy *field_1EA2; // [STClassLayoutApplier] reads=20, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1EA2|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=12; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1EA2 <= consistent nested dereferences through [this+0x1EA2] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005A07F0 [this+0x1EA2] passed to FUN_006b5570 parameter param_1; 005A4350 [this+0x1EA2] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
-    DArrayTy *field_1EA6; // [STClassLayoutApplier] reads=52, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=29; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005A07F0 [this+0x1EA6] passed to DArrayDestroy parameter array; 005A2380 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array; 005A26C0 [this+0x1EA6] passed to DArrayRemoveAt parameter array; 005A2D70 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005A07F0 [this+0x1EA6] passed to DArrayDestroy parameter array; 005A2380 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array; 005A26C0 [this+0x1EA6] passed to DArrayRemoveAt parameter array; 005A2D70 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array
-    DArrayTy *field_1EAA; // [STClassLayoutApplier] reads=20, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005A07F0 [this+0x1EAA] passed to DArrayDestroy parameter array; 005A2FF0 [this+0x1EAA] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005A07F0 [this+0x1EAA] passed to DArrayDestroy parameter array; 005A2FF0 [this+0x1EAA] passed to Library::DKW::TBL::DArrayAppend parameter array
+    FSGSTy_field_1EA6DArray *field_1EA6; // [STClassLayoutApplier] reads=52, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=29; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005A07F0 [this+0x1EA6] passed to DArrayDestroy parameter array; 005A2380 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array; 005A26C0 [this+0x1EA6] passed to DArrayRemoveAt parameter array; 005A2D70 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005A07F0 [this+0x1EA6] passed to DArrayDestroy parameter array; 005A2380 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array; 005A26C0 [this+0x1EA6] passed to DArrayRemoveAt parameter array; 005A2D70 [this+0x1EA6] passed to Library::DKW::TBL::DArrayAppend parameter array
+    FSGSTy_field_1EAADArray *field_1EAA; // [STClassLayoutApplier] reads=20, writes=3; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=12; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005A07F0 [this+0x1EAA] passed to DArrayDestroy parameter array; 005A2FF0 [this+0x1EAA] passed to Library::DKW::TBL::DArrayAppend parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 005A07F0 [this+0x1EAA] passed to DArrayDestroy parameter array; 005A2FF0 [this+0x1EAA] passed to Library::DKW::TBL::DArrayAppend parameter array
     undefined4 field_1EAE; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=4
     DWORD field_1EB2; // [STClassLayoutApplier] reads=1, writes=2; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/WinDef.h/DWORD <= 0059776B exact field-to-field MOV propagation; 00597A4B exact field-to-field MOV propagation
     undefined4 field_1EB6; // [STClassLayoutApplier] reads=21, writes=13; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=18
@@ -19465,21 +22448,21 @@ struct SNDContext {
 
 struct ST3DSMAPContext {
     int *field_0000; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0000|pointer:/int; typed_cross_class_recovery=5; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0000 <= consistent nested dereferences through [this+0x0] | pointer:/int <= 006E858A generic pointer-return assignment in ST3DSMAPContext::sub_006E8580
-    DDXContext *field_0004; // [STClassLayoutApplier] reads=12, writes=3; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0004|pointer:/SubmarineTitans/Recovered/LibraryContexts/DDXContext; typed_cross_class_recovery=8; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0004 <= consistent nested dereferences through [this+0x4] | pointer:/SubmarineTitans/Recovered/LibraryContexts/DDXContext <= 006DBD37 generic pointer-return assignment in ST3DSMAPContext::sub_006DBD20; 00709470 [this+0x4] passed to FUN_006b0ba0 parameter param_1
+    DDXContext *field_0004; // [STClassLayoutApplier] reads=11, writes=3; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0004|pointer:/SubmarineTitans/Recovered/LibraryContexts/DDXContext; typed_cross_class_recovery=7; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0004 <= consistent nested dereferences through [this+0x4] | pointer:/SubmarineTitans/Recovered/LibraryContexts/DDXContext <= 006DBD37 generic pointer-return assignment in ST3DSMAPContext::sub_006DBD20; 00709470 [this+0x4] passed to FUN_006b0ba0 parameter param_1
     void *field_0008; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=pointer:/void <= 006DBD5C generic pointer-return assignment in ST3DSMAPContext::sub_006DBD20
-    int field_000C; // [STClassLayoutApplier] reads=10, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=13; type_evidence=/int <= 006DDBE0 [this+0xC] passed to FUN_006b01d0 parameter param_1
+    int field_000C; // [STClassLayoutApplier] reads=5, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/int <= 006DDBE0 [this+0xC] passed to FUN_006b01d0 parameter param_1
     void *field_0010; // [STClassLayoutApplier] reads=6, writes=4; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; duplicate_suggested_field_name; type_evidence=pointer:/void <= 006DBD20 [this+0x10] passed to Library::DKW::LIB::MemRealloc parameter allocation; 006DBD86 generic pointer-return assignment in ST3DSMAPContext::sub_006DBD20; 006DBD99 generic pointer-return assignment in ST3DSMAPContext::sub_006DBD20; name_evidence=allocation <= 006DBD20 [this+0x10] passed to Library::DKW::LIB::MemRealloc parameter allocation
     ushort *field_0014; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=pointer:/ushort <= 006DE2A1 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DDD50; 006DE4A2 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DDD50; 006E2D2D dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E2D00
     void *field_0018; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=1
-    void *field_001C; // [STClassLayoutApplier] reads=6, writes=6; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; duplicate_suggested_field_name; type_evidence=pointer:/void <= 006DBD20 [this+0x1C] passed to Library::DKW::LIB::MemRealloc parameter allocation; 006DBDC5 generic pointer-return assignment in ST3DSMAPContext::sub_006DBD20; 006DD870 [this+0x1C] passed to Library::DKW::LIB::MemRealloc parameter allocation; 006DDA6C generic pointer-return assignment in ST3DSMAPContext::sub_006DD870; 006DDB70 [this+0x1C] passed to Library::DKW::LIB::MemRealloc parameter allocation; 006DDB9E generic pointer-return assignment in ST3DSMAPContext::sub_006DDB70; name_evidence=allocation <= 006DBD20 [this+0x1C] passed to Library::DKW::LIB::MemRealloc parameter allocation; 006DD870 [this+0x1C] passed to Library::DKW::LIB::MemRealloc parameter allocation; 006DDB70 [this+0x1C] passed to Library::DKW::LIB::MemRealloc parameter allocation
+    void *field_001C; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; duplicate_suggested_field_name; type_evidence=pointer:/void <= 006DBD20 [this+0x1C] passed to Library::DKW::LIB::MemRealloc parameter allocation; 006DBDC5 generic pointer-return assignment in ST3DSMAPContext::sub_006DBD20; 006DDB70 [this+0x1C] passed to Library::DKW::LIB::MemRealloc parameter allocation; 006DDB9E generic pointer-return assignment in ST3DSMAPContext::sub_006DDB70; name_evidence=allocation <= 006DBD20 [this+0x1C] passed to Library::DKW::LIB::MemRealloc parameter allocation; 006DDB70 [this+0x1C] passed to Library::DKW::LIB::MemRealloc parameter allocation
     undefined4 field_0020; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
     undefined4 field_0024; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    int field_0028; // [STClassLayoutApplier] reads=31, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=24; type_evidence=/int <= 006DDBE0 [this+0x28] passed to FUN_006b01d0 parameter param_2; 006DE293 CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DE2DE CMP/JL through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DE49C CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DE50A CMP/JL through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006E2D0E CMP/JGE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E2D00; 006E2D0E CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E2D00
-    int field_002C; // [STClassLayoutApplier] reads=11, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/int <= 006DBDB0 CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006DBD20; 006DDA57 CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006DD870; 006DE286 CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DE2F0 CMP/JL through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DE48F CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DE51C CMP/JL through typed class pointer in ST3DSMAPContext::sub_006DDD50
-    int field_0030; // [STClassLayoutApplier] reads=24, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=20; type_evidence=/int <= 006DDBE0 [this+0x30] passed to FUN_006b01d0 parameter param_3
-    int field_0034; // [STClassLayoutApplier] reads=32, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=24; type_evidence=/int <= 006DDA39 FIADD establishes /int; 006DDBE0 [this+0x34] passed to FUN_006b01d0 parameter param_4; 00717E1A CMP/JGE through typed class pointer in FUN_00717970
-    int field_0038; // [STClassLayoutApplier] reads=18, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=17; type_evidence=/int <= 00717E0B CMP/JLE through typed class pointer in FUN_00717970; 00717EFA CMP/JLE through typed class pointer in FUN_00717970
-    int field_003C; // [STClassLayoutApplier] reads=18, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=17; type_evidence=/int <= 00717E2A CMP/JLE through typed class pointer in FUN_00717970; 00717F35 CMP/JLE through typed class pointer in FUN_00717970
+    int field_0028; // [STClassLayoutApplier] reads=23, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=17; type_evidence=/int <= 006DDBE0 [this+0x28] passed to FUN_006b01d0 parameter param_2; 006DE293 CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DE2DE CMP/JL through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DE49C CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DE50A CMP/JL through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006E2D0E CMP/JGE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E2D00; 006E2D0E CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E2D00
+    int field_002C; // [STClassLayoutApplier] reads=9, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/int <= 006DBDB0 CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006DBD20; 006DE286 CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DE2F0 CMP/JL through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DE48F CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DE51C CMP/JL through typed class pointer in ST3DSMAPContext::sub_006DDD50
+    int field_0030; // [STClassLayoutApplier] reads=15, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; type_evidence=/int <= 006DDBE0 [this+0x30] passed to FUN_006b01d0 parameter param_3
+    int field_0034; // [STClassLayoutApplier] reads=21, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=15; type_evidence=/int <= 006DDBE0 [this+0x34] passed to FUN_006b01d0 parameter param_4; 00717E1A CMP/JGE through typed class pointer in FUN_00717970
+    int field_0038; // [STClassLayoutApplier] reads=9, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/int <= 00717E0B CMP/JLE through typed class pointer in FUN_00717970; 00717EFA CMP/JLE through typed class pointer in FUN_00717970
+    int field_003C; // [STClassLayoutApplier] reads=9, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/int <= 00717E2A CMP/JLE through typed class pointer in FUN_00717970; 00717F35 CMP/JLE through typed class pointer in FUN_00717970
     byte _unknown_0040[4];
     int field_0044; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=14; type_evidence=/int <= 00556851 CMP/JL through typed class pointer in TraksClassTy::TraksCreate; 005F39E8 CMP/JL through typed class pointer in FUN_005f3940; 00604435 CMP/JL through typed class pointer in STExplosion::sub_00604350; 0060DE35 CMP/JL through typed class pointer in FUN_0060dd70; 006191CA CMP/JL through typed class pointer in STJumpMineC::sub_006191A0; 0061E275 CMP/JL through typed class pointer in FUN_0061e110; 0061E2B7 CMP/JL through typed class pointer in FUN_0061e110; 0061F909 CMP/JL through typed class pointer in FUN_0061f8b0; 0062B56E CMP/JL through typed class pointer in STParticleC::sub_0062B4A0; 0062FECA CMP/JL through typed class pointer in STRubbishC::sub_0062FEA0; 00635C8F CMP/JL through typed class pointer in FUN_00635bf0; 00635E3F CMP/JL through typed class pointer in FUN_00635da0; 0063706A CMP/JL through typed class pointer in SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0; 00646ED5 CMP/JL through typed class pointer in FUN_00646e00
     int field_0048; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=14; type_evidence=/int <= 005F39D6 CMP/JL through typed class pointer in FUN_005f3940; 00604418 CMP/JL through typed class pointer in STExplosion::sub_00604350; 0060DE1C CMP/JL through typed class pointer in FUN_0060dd70; 006191B2 CMP/JL through typed class pointer in STJumpMineC::sub_006191A0; 0061E265 CMP/JL through typed class pointer in FUN_0061e110; 0061E29B CMP/JL through typed class pointer in FUN_0061e110; 0062B55C CMP/JL through typed class pointer in STParticleC::sub_0062B4A0; 0062FEB2 CMP/JL through typed class pointer in STRubbishC::sub_0062FEA0; 00635C85 CMP/JL through typed class pointer in FUN_00635bf0; 00635E35 CMP/JL through typed class pointer in FUN_00635da0; 00637058 CMP/JL through typed class pointer in SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0; 00646EB8 CMP/JL through typed class pointer in FUN_00646e00
@@ -19490,57 +22473,57 @@ struct ST3DSMAPContext {
     double field_0060; // [STClassLayoutApplier] reads=10, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x10|8x6; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/double <= 006E1629 FSUB establishes /double; 006E170A FADD establishes /double; 006E2877 FSUB establishes /double
     double field_0068; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x10|8x4; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/double <= 006E1626 FLD establishes /double; 006E16BF FLD establishes /double
     double field_0070; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x10|8x4; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/double <= 006E1649 FSUB establishes /double; 006E177A FADD establishes /double
-    double field_0078; // [STClassLayoutApplier] reads=12, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x10|8x8; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/double <= 006DDA2A FSUBR establishes /double; 006E1646 FLD establishes /double; 006E17CE FLD establishes /double; 006E28BF FLD establishes /double
+    double field_0078; // [STClassLayoutApplier] reads=10, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x10|8x6; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/double <= 006E1646 FLD establishes /double; 006E17CE FLD establishes /double; 006E28BF FLD establishes /double
     double field_0080; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/double <= 006DD533 FLD establishes /double; 006DD53E FLD establishes /double; 006E2742 FLD establishes /double
     double field_0088; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x2|8x1; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/double <= 006DD610 exact adjacent copy of one ABI-proven /double parameter; sites=006DD619 copies incoming /double half 0 to [this+0x88] | 006DD622 copies incoming /double half 1 to [this+0x8C]
     double field_0090; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x2|8x1; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/double <= 006DD610 exact adjacent copy of one ABI-proven /double parameter; sites=006DD62B copies incoming /double half 0 to [this+0x90] | 006DD633 copies incoming /double half 1 to [this+0x94]
-    double field_0098; // [STClassLayoutApplier] reads=26, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x6|8x20; concrete_type_already_present; typed_cross_class_recovery=15; type_evidence=/double <= 004A8A4A FLD establishes /double; 004A8F57 FLD establishes /double; 006DD568 FADD establishes /double; 006DD588 FSUBR establishes /double; 006DD5A8 FSUBR establishes /double; 006DD5C8 FADD establishes /double; 006DD5E5 FLD establishes /double; 006E110B FLD establishes /double; 006E1211 FADD establishes /double; 006E132F FLD establishes /double; 006E1C2D FLD establishes /double; 006E1D9B FADD establishes /double
-    double field_00A0; // [STClassLayoutApplier] reads=26, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x6|8x20; concrete_type_already_present; typed_cross_class_recovery=15; type_evidence=/double <= 004A8A56 FLD establishes /double; 004A8F63 FLD establishes /double; 006DD579 FADD establishes /double; 006DD599 FADD establishes /double; 006DD5B9 FSUBR establishes /double; 006DD5D9 FSUBR establishes /double; 006DD5F3 FLD establishes /double; 006E1127 FLD establishes /double; 006E1222 FLD establishes /double; 006E1335 FLD establishes /double; 006E1C3A FLD establishes /double; 006E1DAB FADD establishes /double
+    double field_0098; // [STClassLayoutApplier] reads=22, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x4|8x18; concrete_type_already_present; typed_cross_class_recovery=13; type_evidence=/double <= 004A8A4A FLD establishes /double; 004A8F57 FLD establishes /double; 006DD568 FADD establishes /double; 006DD588 FSUBR establishes /double; 006DD5A8 FSUBR establishes /double; 006DD5C8 FADD establishes /double; 006DD5E5 FLD establishes /double; 006E110B FLD establishes /double; 006E1211 FADD establishes /double; 006E1C2D FLD establishes /double; 006E1D9B FADD establishes /double
+    double field_00A0; // [STClassLayoutApplier] reads=22, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x4|8x18; concrete_type_already_present; typed_cross_class_recovery=13; type_evidence=/double <= 004A8A56 FLD establishes /double; 004A8F63 FLD establishes /double; 006DD579 FADD establishes /double; 006DD599 FADD establishes /double; 006DD5B9 FSUBR establishes /double; 006DD5D9 FSUBR establishes /double; 006DD5F3 FLD establishes /double; 006E1127 FLD establishes /double; 006E1222 FLD establishes /double; 006E1C3A FLD establishes /double; 006E1DAB FADD establishes /double
     ST3DSMAPContext_field_00A8State field_00A8; // [STClassLayoutApplier] reads=35, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=18; type_evidence=/int <= 006DDDF4 CMP/JL through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DDDFC CMP/JG through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006E6FB9 CMP/JG through typed class pointer in ST3DSMAPContext::sub_006E6FB0 | /uint <= 006E1460 [this+0xA8] passed to ST3DSMAPContext::sub_006DD610 parameter param_1; 006E6B14 CMP/JA establishes /uint through a field-derived value in ST3DSMAPContext::sub_006E6AF0; 006E6B14 CMP/JA through typed class pointer in ST3DSMAPContext::sub_006E6AF0; 006E74A4 CMP/JA establishes /uint through a field-derived value in ST3DSMAPContext::sub_006E6FB0; 006E74A4 CMP/JA through typed class pointer in ST3DSMAPContext::sub_006E6FB0; 006E782A CMP/JA establishes /uint through a field-derived value in ST3DSMAPContext::sub_006E6FB0; 006E782A CMP/JA through typed class pointer in ST3DSMAPContext::sub_006E6FB0; 006E7E1C CMP/JA establishes /uint through a field-derived value in ST3DSMAPContext::sub_006E6FB0; 006E7E1C CMP/JA through typed class pointer in ST3DSMAPContext::sub_006E6FB0 [STSwitchEnumApplier] enum recovered from switch cases
     byte _unknown_00AC[4];
     double field_00B0; // [STClassLayoutApplier] reads=16, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/double <= 006E2624 FADD establishes /double; 006E2657 FADD establishes /double; 006E269B FADD establishes /double; 006E26DF FADD establishes /double; 006E272B FADD establishes /double; 006E27C6 FADD establishes /double; 006E280E FADD establishes /double; 006E284B FSUBR establishes /double
-    double field_00B8; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/double <= 006DDA2D FSUB establishes /double; 006E2639 FADD establishes /double; 006E266C FADD establishes /double; 006E26B0 FADD establishes /double; 006E26F4 FADD establishes /double; 006E2737 FADD establishes /double; 006E2854 FADD establishes /double
-    double field_00C0; // [STClassLayoutApplier] reads=10, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/double <= 006DDA24 FSUB establishes /double; 006E268C FADD establishes /double; 006E26D0 FADD establishes /double; 006E2719 FADD establishes /double; 006E286C FADD establishes /double
-    double field_00C8; // [STClassLayoutApplier] reads=48, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x2|8x49; concrete_type_already_present; typed_cross_class_recovery=39; type_evidence=/double <= 006DBF71 FDIVR establishes /double; 006DC050 exact adjacent copy of one ABI-proven /double parameter; sites=006DC0A7 copies incoming /double half 0 to [this+0xC8] | 006DC0B0 copies incoming /double half 1 to [this+0xCC]; 006DC140 FDIVR establishes /double; 006DDE85 FMUL establishes /double; 006DDEA1 FMUL establishes /double; 006DEB17 FDIV establishes /double; 006DEB54 FDIV establishes /double; 006DEBB4 FDIV establishes /double; 006DEBEF FDIV establishes /double; 006DEC52 FDIV establishes /double; 006DEC8D FDIV establishes /double; 006DECEF FDIV establishes /double; 006DED28 FDIV establishes /double; 006DED96 FDIV establishes /double; 006DEDD3 FDIV establishes /double; 006DEE2A FDIV establishes /double; 006DEE67 FDIV establishes /double; 006DEEBF FDIV establishes /double; 006DEEFC FDIV establishes /double; 006DEF56 FDIV establishes /double; 006DEF9C FDIV establishes /double; 006E1064 FMUL establishes /double; 006E1089 FMUL establishes /double; 006E1111 FDIV establishes /double; 006E112D FDIV establishes /double; 006E115B FMUL establishes /double; 006E117F FMUL establishes /double; 006E6926 FMUL establishes /double; 006E6A0D FDIV establishes /double; 006E6A5F FDIV establishes /double; 006E747E FMUL establishes /double; 006E77D7 FCOM establishes /double; 006E780A FDIV establishes /double; 006E7D72 FDIV establishes /double; 006E7DAE FDIV establishes /double; 007179FB FLD establishes /double; 00717A20 FLD establishes /double; 00717AA3 FLD establishes /double; 00717AD2 FLD establishes /double
-    double field_00D0; // [STClassLayoutApplier] reads=29, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x3|8x29; concrete_type_already_present; typed_cross_class_recovery=23; type_evidence=/double <= 006DBF54 FLD establishes /double; 006DC050 exact adjacent copy of one ABI-proven /double parameter; sites=006DC0B9 copies incoming /double half 0 to [this+0xD0] | 006DC0C2 copies incoming /double half 1 to [this+0xD4]; 006DC158 FLD establishes /double; 006DC243 FLD establishes /double; 006DC264 FLD establishes /double; 006DC2BA FLD establishes /double; 006DC2D2 FLD establishes /double; 006DDE69 FMUL establishes /double; 006DE31D FLD establishes /double; 006DE34E FLD establishes /double; 006DE385 FLD establishes /double; 006DE3BC FLD establishes /double; 006DEAF6 FLD establishes /double; 006DEB92 FLD establishes /double; 006DEC2F FLD establishes /double; 006DECCD FLD establishes /double; 006DED60 FLD establishes /double; 006DF059 FMUL establishes /double; 006DF0BC FMUL establishes /double; 006DF22B FLD establishes /double; 006E7DEC FDIV establishes /double; 00717995 FLD establishes /double
+    double field_00B8; // [STClassLayoutApplier] reads=12, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=/double <= 006E2639 FADD establishes /double; 006E266C FADD establishes /double; 006E26B0 FADD establishes /double; 006E26F4 FADD establishes /double; 006E2737 FADD establishes /double; 006E2854 FADD establishes /double
+    double field_00C0; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/double <= 006E268C FADD establishes /double; 006E26D0 FADD establishes /double; 006E2719 FADD establishes /double; 006E286C FADD establishes /double
+    double field_00C8; // [STClassLayoutApplier] reads=32, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x2|8x33; concrete_type_already_present; typed_cross_class_recovery=23; type_evidence=/double <= 006DBF71 FDIVR establishes /double; 006DC050 exact adjacent copy of one ABI-proven /double parameter; sites=006DC0A7 copies incoming /double half 0 to [this+0xC8] | 006DC0B0 copies incoming /double half 1 to [this+0xCC]; 006DC140 FDIVR establishes /double; 006DDE85 FMUL establishes /double; 006DDEA1 FMUL establishes /double; 006E1064 FMUL establishes /double; 006E1089 FMUL establishes /double; 006E1111 FDIV establishes /double; 006E112D FDIV establishes /double; 006E115B FMUL establishes /double; 006E117F FMUL establishes /double; 006E6926 FMUL establishes /double; 006E6A0D FDIV establishes /double; 006E6A5F FDIV establishes /double; 006E747E FMUL establishes /double; 006E77D7 FCOM establishes /double; 006E780A FDIV establishes /double; 006E7D72 FDIV establishes /double; 006E7DAE FDIV establishes /double; 007179FB FLD establishes /double; 00717A20 FLD establishes /double; 00717AA3 FLD establishes /double; 00717AD2 FLD establishes /double
+    double field_00D0; // [STClassLayoutApplier] reads=21, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x3|8x21; concrete_type_already_present; typed_cross_class_recovery=15; type_evidence=/double <= 006DBF54 FLD establishes /double; 006DC050 exact adjacent copy of one ABI-proven /double parameter; sites=006DC0B9 copies incoming /double half 0 to [this+0xD0] | 006DC0C2 copies incoming /double half 1 to [this+0xD4]; 006DC158 FLD establishes /double; 006DC243 FLD establishes /double; 006DC264 FLD establishes /double; 006DC2BA FLD establishes /double; 006DC2D2 FLD establishes /double; 006DDE69 FMUL establishes /double; 006DE31D FLD establishes /double; 006DE34E FLD establishes /double; 006DE385 FLD establishes /double; 006DE3BC FLD establishes /double; 006E7DEC FDIV establishes /double; 00717995 FLD establishes /double
     double field_00D8; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/double <= 006E105E FLD establishes /double; 006E287F FMUL establishes /double; 00717B7A FMUL establishes /double
-    double field_00E0; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/double <= 006DDA33 FMUL establishes /double; 006E1083 FLD establishes /double; 006E28C5 FMUL establishes /double; 00717BF1 FMUL establishes /double
+    double field_00E0; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/double <= 006E1083 FLD establishes /double; 006E28C5 FMUL establishes /double; 00717BF1 FMUL establishes /double
     double field_00E8; // [STClassLayoutApplier] reads=40, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=37; type_evidence=/double <= 004A9E37 FLD establishes /double; 004A9E4A FLD establishes /double; 004A9E7C FLD establishes /double; 004A9E8F FLD establishes /double; 004AA087 FLD establishes /double; 004AA09A FLD establishes /double; 004AA0CC FLD establishes /double; 004AA0DF FLD establishes /double; 004AA2D7 FLD establishes /double; 004AA2EA FLD establishes /double; 004AA31C FLD establishes /double; 004AA32F FLD establishes /double; 004AA527 FLD establishes /double; 004AA53A FLD establishes /double; 004AA56C FLD establishes /double; 004AA57F FLD establishes /double; 004AA765 FLD establishes /double; 004AA778 FLD establishes /double; 004AA7AA FLD establishes /double; 004AA7BD FLD establishes /double; 004AA992 FLD establishes /double; 004AA9A5 FLD establishes /double; 004AA9D7 FLD establishes /double; 004AA9EA FLD establishes /double; 004AABC2 FLD establishes /double; 004AABD5 FLD establishes /double; 004AAC07 FLD establishes /double; 004AAC1A FLD establishes /double; 004AADF5 FLD establishes /double; 004AAE08 FLD establishes /double; 004AAE3A FLD establishes /double; 004AAE4D FLD establishes /double; 006DBE08 FSTP establishes /double; 006E1CC1 FMUL establishes /double; 006E1CF6 FMUL establishes /double; 006E1D36 FMUL establishes /double; 006E1D67 FMUL establishes /double
     double field_00F0; // [STClassLayoutApplier] reads=40, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=37; type_evidence=/double <= 004A9E3D FCOMP establishes /double; 004A9E52 FLD establishes /double; 004A9E82 FCOMP establishes /double; 004A9E97 FLD establishes /double; 004AA08D FCOMP establishes /double; 004AA0A2 FLD establishes /double; 004AA0D2 FCOMP establishes /double; 004AA0E7 FLD establishes /double; 004AA2DD FCOMP establishes /double; 004AA2F2 FLD establishes /double; 004AA322 FCOMP establishes /double; 004AA337 FLD establishes /double; 004AA52D FCOMP establishes /double; 004AA542 FLD establishes /double; 004AA572 FCOMP establishes /double; 004AA587 FLD establishes /double; 004AA76B FCOMP establishes /double; 004AA780 FLD establishes /double; 004AA7B0 FCOMP establishes /double; 004AA7C5 FLD establishes /double; 004AA998 FCOMP establishes /double; 004AA9AD FLD establishes /double; 004AA9DD FCOMP establishes /double; 004AA9F2 FLD establishes /double; 004AABC8 FCOMP establishes /double; 004AABDD FLD establishes /double; 004AAC0D FCOMP establishes /double; 004AAC22 FLD establishes /double; 004AADFB FCOMP establishes /double; 004AAE10 FLD establishes /double; 004AAE40 FCOMP establishes /double; 004AAE55 FLD establishes /double; 006DBE0E FSTP establishes /double; 006E1CB8 FMUL establishes /double; 006E1CFF FMUL establishes /double; 006E1D2D FMUL establishes /double; 006E1D5E FMUL establishes /double
     double field_00F8; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/double <= 006DBDEE FST establishes /double; 006DD7BE FMUL establishes /double; 006DD82E FMUL establishes /double
     double field_0100; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/double <= 006DBE00 FST establishes /double
     int field_0108; // [STClassLayoutApplier] reads=3, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/int <= 005763BB FILD establishes /int
-    double field_010C; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/double <= 006DBE26 FST establishes /double; 006DD7B8 FST establishes /double; 006DD828 FST establishes /double; 006DDA18 FDIV establishes /double; 006E2911 FMUL establishes /double
-    double field_0114; // [STClassLayoutApplier] reads=10, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=/double <= 006DBE1A FSUB establishes /double; 006DD79F FST establishes /double; 006DD809 FCOM establishes /double; 006DD81C FSUB establishes /double; 006DDA1E FADD establishes /double; 006E2906 FSUB establishes /double
+    double field_010C; // [STClassLayoutApplier] reads=2, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/double <= 006DBE26 FST establishes /double; 006DD7B8 FST establishes /double; 006DD828 FST establishes /double; 006E2911 FMUL establishes /double
+    double field_0114; // [STClassLayoutApplier] reads=8, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=/double <= 006DBE1A FSUB establishes /double; 006DD79F FST establishes /double; 006DD809 FCOM establishes /double; 006DD81C FSUB establishes /double; 006E2906 FSUB establishes /double
     double field_011C; // [STClassLayoutApplier] reads=6, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/double <= 006DBE14 FLD establishes /double; 006DD799 FCOM establishes /double; 006DD7AC FSUBR establishes /double; 006DD80F FST establishes /double
-    undefined4 field_0124; // [STClassLayoutApplier] reads=20, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=16
+    undefined4 field_0124; // [STClassLayoutApplier] reads=17, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=13
     undefined4 field_0128; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3; type_evidence=/byte <= 006DDBE0 [this+0x128] passed to FUN_006b01d0 parameter param_7
     byte _unknown_012C[8];
-    undefined4 field_0134; // [STClassLayoutApplier] reads=0, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_0134; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     byte _unknown_0138[4];
-    int field_013C; // [STClassLayoutApplier] reads=3, writes=43; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=41; type_evidence=/int <= 006DDF41 CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DDF4D CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DDF93 CMP/JG through typed class pointer in ST3DSMAPContext::sub_006DDD50
+    int field_013C; // [STClassLayoutApplier] reads=2, writes=14; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=11; type_evidence=/int <= 006DDF41 CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DDF4D CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDD50; 006DDF93 CMP/JG through typed class pointer in ST3DSMAPContext::sub_006DDD50
     RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *field_0140; // [STClassLayoutApplier] reads=34, writes=43; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=72; type_evidence=pointer:/void <= 00574685 generic pointer-return assignment in FUN_005745e0; [STRecursivePointeeApplier] Recursive linked-node root; evidence=006DDD50 ST3DSMAPContext::sub_006DDD50 | 006DE9C0 ST3DSMAPContext::sub_006DE9C0
-    undefined4 field_0144; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    int field_0148; // [STClassLayoutApplier] reads=6, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/int <= 006DD87F CMP/JLE establishes /int through a field-derived value in ST3DSMAPContext::sub_006DD870; 006DD87F CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DD870
+    undefined4 field_0144; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    int field_0148; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1
     undefined4 field_014C; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined4 field_0150; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte *field_0154; // [STClassLayoutApplier] reads=14, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=pointer:/byte <= 006DDB28 dynamic 1-byte dereference of field-derived address in ST3DSMAPContext::sub_006DDAE0
-    void *field_0158; // [STClassLayoutApplier] reads=8, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=pointer:/void <= 006DD8C0 generic pointer-return assignment in ST3DSMAPContext::sub_006DD870
-    double field_015C; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/double <= 006DD895 FLD establishes /double; 006DD8C6 FLD establishes /double; 006DDAC5 FSTP establishes /double
-    double field_0164; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/double <= 006DD89B FCOMP establishes /double; 006DD8DF FLD establishes /double; 006DDACB FSTP establishes /double
-    int field_016C; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/int <= 006DDA12 FILD establishes /int
-    undefined4 field_0170; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    int field_0174; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/int <= 006DBDAC CMP/JLE establishes /int through a field-derived value in ST3DSMAPContext::sub_006DBD20; 006DBDAC CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DBD20; 006DBDB0 CMP/JGE establishes /int through a field-derived value in ST3DSMAPContext::sub_006DBD20; 006DBDB0 CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006DBD20; 006DDB79 CMP/JLE establishes /int through a field-derived value in ST3DSMAPContext::sub_006DDB70; 006DDB79 CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDB70
+    byte *field_0154; // [STClassLayoutApplier] reads=6, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=pointer:/byte <= 006DDB28 dynamic 1-byte dereference of field-derived address in ST3DSMAPContext::sub_006DDAE0
+    undefined1 field_0x158; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0159[3];
+    double field_015C; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/double <= 006DDAC5 FSTP establishes /double
+    double field_0164; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/double <= 006DDACB FSTP establishes /double
+    byte _unknown_016C[8];
+    int field_0174; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/int <= 006DBDAC CMP/JLE establishes /int through a field-derived value in ST3DSMAPContext::sub_006DBD20; 006DBDAC CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DBD20; 006DBDB0 CMP/JGE establishes /int through a field-derived value in ST3DSMAPContext::sub_006DBD20; 006DBDB0 CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006DBD20; 006DDB79 CMP/JLE establishes /int through a field-derived value in ST3DSMAPContext::sub_006DDB70; 006DDB79 CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DDB70
     byte _unknown_0178[256];
     undefined4 field_0278; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     ushort *field_027C; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/ushort <= 0056E46D generic pointer-return assignment in STAppC::StartGame
-    AnonPointee_ST3DSMAPContext_0280 *field_0280; // [STClassLayoutApplier] reads=68, writes=1; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/byte|pointer:/ushort; typed_cross_class_recovery=58; type_evidence=pointer:/byte <= 006E7DA1 dynamic 1-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0; 006E7DDE dynamic 1-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0 | pointer:/ushort <= 006DEA46 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEAA9 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEB2E dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEB65 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEBCB dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEC00 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEC69 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEC9E dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DED06 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DED39 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEDAD dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEDE4 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEE41 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEE78 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEED6 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEF0D dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEF6D dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DEFAD dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DF036 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DF03A dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DF080 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DF14D dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DF1F4 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DF783 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DFAB6 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006DFFAB dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006E04C4 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006DE9C0; 006E6907 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E68C0; 006E6A8F dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E68C0; 006E70B0 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0; 006E70B4 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0; 006E7475 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0; 006E77F7 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0; 006E7D9C dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0; 006E7DD8 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0
+    AnonPointee_ST3DSMAPContext_0280 *field_0280; // [STClassLayoutApplier] reads=22, writes=1; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/byte|pointer:/ushort; typed_cross_class_recovery=12; type_evidence=pointer:/byte <= 006E7DA1 dynamic 1-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0; 006E7DDE dynamic 1-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0 | pointer:/ushort <= 006E6907 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E68C0; 006E6A8F dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E68C0; 006E70B0 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0; 006E70B4 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0; 006E7475 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0; 006E77F7 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0; 006E7D9C dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0; 006E7DD8 dynamic 2-byte dereference of field-derived address in ST3DSMAPContext::sub_006E6FB0
     int field_0284; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/int <= 006E3251 CMP/JGE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E3210; 006E3251 CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E3210; 006E326E CMP/JGE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E3210; 006E326E CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E3210; 006E3368 CMP/JGE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E3310; 006E3368 CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E3310; 006E3389 CMP/JGE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E3310; 006E3389 CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E3310
     undefined4 field_0288; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    int field_028C; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=/int <= 0057672B exact field-to-field MOV propagation; 006E06EA CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DE9C0; 006E08F4 CMP/JL through typed class pointer in ST3DSMAPContext::sub_006DE9C0; 006E0B22 CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006DE9C0; 006E0D24 CMP/JL through typed class pointer in ST3DSMAPContext::sub_006DE9C0
-    undefined4 field_0290; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
-    undefined4 field_0294; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=2
-    undefined4 field_0298; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=2
+    undefined4 field_028C; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined4 field_0290; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    undefined1 field_0x294; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0295[7];
     undefined4 field_029C; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
     char *field_02A0; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/char <= 006E8649 generic pointer-return assignment in ST3DSMAPContext::sub_006E8640
     char *field_02A4; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/char <= 006E864F generic pointer-return assignment in ST3DSMAPContext::sub_006E8640
@@ -19556,14 +22539,14 @@ struct ST3DSMAPContext {
     int field_02CC; // [STClassLayoutApplier] reads=6, writes=8; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/int <= 006E1792 CMP/JG through typed class pointer in ST3DSMAPContext::sub_006E1460; 006E17E4 CMP/JLE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E1460; 006E17E4 CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006E1460
     undefined4 field_02D0; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     byte _unknown_02D4[4];
-    undefined4 field_02D8; // [STClassLayoutApplier] reads=5, writes=15; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=15
-    undefined4 field_02DC; // [STClassLayoutApplier] reads=6, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_02D8; // [STClassLayoutApplier] reads=4, writes=15; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=14
+    undefined4 field_02DC; // [STClassLayoutApplier] reads=5, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
     undefined4 field_02E0; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
     undefined4 field_02E4; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
     undefined4 field_02E8; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
     undefined4 field_02EC; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_02F0; // [STClassLayoutApplier] reads=14, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=14
-    undefined4 field_02F4; // [STClassLayoutApplier] reads=12, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=11
+    undefined4 field_02F0; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
+    undefined4 field_02F4; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     byte _unknown_02F8[16];
     double field_0308; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/double <= 005766C7 FMUL establishes /double; 006E9025 FMUL establishes /double
     undefined4 field_0310; // [STClassLayoutApplier] reads=26, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; cfg_field_recovery=2; typed_cross_class_recovery=13; type_evidence=/int <= 006DBB59 CMP/JLE establishes /int through a field-derived value in ST3DSMAPContext::sub_006DBAB0; 006DBB93 CMP/JL establishes /int through a field-derived value in ST3DSMAPContext::sub_006DBAB0; 006E7058 CMP/JLE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E6FB0; 006E7058 CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006E6FB0; 006E7D34 CMP/JLE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E6FB0; 006E877D CMP/JG establishes /int through CFG-recovered field flow in ST3DSMAPContext::sub_006E8660; 006E877D CMP/JG through typed class pointer in ST3DSMAPContext::sub_006E8660 | /uint <= 006EA27C CMP/JNC establishes /uint through a field-derived value in ST3DSMAPContext::sub_006EA270; 006EA27C CMP/JNC through typed class pointer in ST3DSMAPContext::sub_006EA270; 006EA5EF CMP/JNC establishes /uint through a field-derived value in ST3DSMAPContext::sub_006EA5E0; 006EA5EF CMP/JNC through typed class pointer in ST3DSMAPContext::sub_006EA5E0; 006EA6DC CMP/JNC establishes /uint through a field-derived value in ST3DSMAPContext::sub_006EA6D0; 006EA6DC CMP/JNC through typed class pointer in ST3DSMAPContext::sub_006EA6D0; 006EA80C CMP/JNC establishes /uint through a field-derived value in ST3DSMAPContext::sub_006EA800; 006EA80C CMP/JNC through typed class pointer in ST3DSMAPContext::sub_006EA800; 006EA8AC CMP/JNC establishes /uint through a field-derived value in ST3DSMAPContext::sub_006EA8A0; 006EA8AC CMP/JNC through typed class pointer in ST3DSMAPContext::sub_006EA8A0; 006EB31C CMP/JNC establishes /uint through a field-derived value in ST3DSMAPContext::sub_006EB310; 006EB31C CMP/JNC through typed class pointer in ST3DSMAPContext::sub_006EB310
@@ -19582,10 +22565,10 @@ struct ST3DSMAPContext {
     double field_0360; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/double <= 006DBFB3 FST establishes /double; 006DC19F FSTP establishes /double; 006DC1FB FLD establishes /double; 006DC20A FLD establishes /double
     double field_0368; // [STClassLayoutApplier] reads=5, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/double <= 006DBF77 FST establishes /double; 006DC146 FST establishes /double; 006E1217 FDIV establishes /double; 006E122D FDIV establishes /double; 006E128E FMUL establishes /double; 006E12A1 FMUL establishes /double; 006E12AA FLD establishes /double
     undefined4 field_0370; // [STClassLayoutApplier] reads=7, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    int field_0374; // [STClassLayoutApplier] reads=4, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/int <= 006E129B FILD establishes /int
-    int field_0378; // [STClassLayoutApplier] reads=4, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/int <= 006E127F FILD establishes /int
+    int field_0374; // [STClassLayoutApplier] reads=3, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/int <= 006E129B FILD establishes /int
+    int field_0378; // [STClassLayoutApplier] reads=3, writes=7; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/int <= 006E127F FILD establishes /int
     undefined4 field_037C; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    int field_0380; // [STClassLayoutApplier] reads=16, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=13; type_evidence=/int <= 006DBF6B FILD establishes /int; 006DEA2C IDIV divisor in ST3DSMAPContext::sub_006DE9C0
+    int field_0380; // [STClassLayoutApplier] reads=15, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=12; type_evidence=/int <= 006DBF6B FILD establishes /int
     int field_0384; // [STClassLayoutApplier] reads=6, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5
     undefined1 field_0x388; // exact unnamed-byte view referenced by exported code
     byte _unknown_0389[3];
@@ -19595,7 +22578,7 @@ struct ST3DSMAPContext {
     double field_039C; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/double <= 006DC2DE FST establishes /double
     double field_03A4; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/double <= 006DC2E6 FSTP establishes /double; 006E32F8 FMUL establishes /double; 006E3430 FMUL establishes /double
     byte _unknown_03AC[48];
-    int field_03DC; // [STClassLayoutApplier] reads=59, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=32; type_evidence=/int <= 006E6BAB FILD establishes /int; 006E6BCF FILD establishes /int; 006E70D1 IDIV divisor in ST3DSMAPContext::sub_006E6FB0; 006E7294 CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E6FB0; 006E73CF CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E6FB0; 006E75AD FILD establishes /int; 006E7613 FILD establishes /int; 006E77F1 FILD establishes /int; 006E78DA FILD establishes /int; 006E790B FILD establishes /int; 006E7EBD FILD establishes /int; 006E7EDF FILD establishes /int; 006E80B9 CMP/JGE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E6FB0; 006E80B9 CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E6FB0; 006E813C CMP/JGE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E6FB0; 006E813C CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E6FB0
+    int field_03DC; // [STClassLayoutApplier] reads=54, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=29; type_evidence=/int <= 006E70D1 IDIV divisor in ST3DSMAPContext::sub_006E6FB0; 006E7294 CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E6FB0; 006E73CF CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E6FB0; 006E75AD FILD establishes /int; 006E7613 FILD establishes /int; 006E77F1 FILD establishes /int; 006E78DA FILD establishes /int; 006E790B FILD establishes /int; 006E7EBD FILD establishes /int; 006E7EDF FILD establishes /int; 006E80B9 CMP/JGE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E6FB0; 006E80B9 CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E6FB0; 006E813C CMP/JGE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E6FB0; 006E813C CMP/JGE through typed class pointer in ST3DSMAPContext::sub_006E6FB0
     undefined4 field_03E0; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
     undefined4 field_03E4; // [STClassLayoutApplier] reads=8, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5; type_evidence=/byte <= 006E6FB0 [this+0x3E4] passed to FUN_006b5b10 parameter param_7
     int field_03E8; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/int <= 006E8066 CMP/JLE establishes /int through a field-derived value in ST3DSMAPContext::sub_006E6FB0; 006E8066 CMP/JLE through typed class pointer in ST3DSMAPContext::sub_006E6FB0
@@ -26841,17 +29824,11 @@ struct AnonShape_005A2A60_B397ABCA {
 };
 
 struct AnonShape_005A4350_59BACD18 {
-    byte _unknown_0000[4];
-    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0005[3];
+    byte _unknown_0000[8];
     int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_000C[8];
     int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0018[12];
-    undefined1 field_0x24; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0025[3];
-    undefined1 field_0x28; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0029[3];
+    byte _unknown_0018[20];
     int field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
@@ -27410,6 +30387,41 @@ struct AnonShape_005E11D0_D0F8BE03 {
     ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
     byte _unknown_0010[4];
     uint field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
+};
+
+struct AnonShape_005E1330_1AE0EB1C {
+    byte _unknown_0000[4];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[7];
+    undefined1 field_0xc; // exact unnamed-byte view referenced by exported code
+    byte _unknown_000D[1606];
+    int field_0653; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 *field_0657; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_065B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+};
+
+struct AnonShape_005E1330_47BFB53C {
+    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0001[1];
+    undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0003[1];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    uint field_0005; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=3}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 field_0x9; // exact unnamed-byte view referenced by exported code
+    undefined1 field_000A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 field_0xb; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0xc; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0xd; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0xe; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0xf; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x10; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0011[1];
+    int field_0012; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 field_0x16; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x17; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x18; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x19; // exact unnamed-byte view referenced by exported code
+    uint field_001A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=3}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_005E3E80_D5AAB6C7 {
@@ -28549,9 +31561,7 @@ struct AnonShape_0060EA30_DCEB68AD {
 };
 
 struct AnonShape_0060F940_1CCED7C8 {
-    byte _unknown_0000[6];
-    undefined1 field_0x6; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0007[1];
+    byte _unknown_0000[8];
     int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
     int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=16}
     int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=16}
@@ -31473,10 +34483,7 @@ struct AnonShape_006C3F80_1EACF9F3 {
 struct AnonShape_006C3FC0_72DDFA27 {
     byte _unknown_0000[4];
     uint field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=3}
-    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0009[7];
-    undefined1 field_0x10; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0011[7];
+    byte _unknown_0008[16];
     undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
@@ -31798,14 +34805,14 @@ struct AnonShape_006C7D20_41F6C243 {
 };
 
 struct AnonShape_006CE700_6E2936C3 {
-    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0000[1];
     undefined1 field_0001; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=2}
     undefined1 field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=2}
     byte _unknown_0003[1];
 };
 
 struct AnonShape_006CE700_F21E5976 {
-    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0000[1];
     undefined1 field_0001; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=2}
     undefined1 field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=2}
     byte _unknown_0003[1];
@@ -34735,8 +37742,7 @@ struct AnonShape_0075FD80_7EE67BE7 {
     int field_0070; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_0074[326];
     int field_01BA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_01BE[1];
-    undefined1 field_0x1bf; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01BE[2];
 };
 
 struct AnonShape_0075FE30_46CD87E7 {
@@ -34754,16 +37760,11 @@ struct AnonShape_0075FEE0_E0ABA202 {
     int field_0070; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_0074[326];
     int field_01BA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_01BE[1];
-    undefined1 field_0x1bf; // exact unnamed-byte view referenced by exported code
+    byte _unknown_01BE[2];
 };
 
 struct AnonShape_0075FFF0_30A040AA {
-    byte _unknown_0000[4];
-    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0005[99];
-    undefined1 field_0x68; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0069[337];
+    byte _unknown_0000[442];
     AnonNested_0075FFF0_01BA_DF5323FE *field_01BA; // [STPointerShapeApplier] evidence_count=7; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_01BE[2];
 };
@@ -36228,7 +39229,7 @@ struct AiBossClassTyVTable_at_1C {
     undefined4 __thiscall (*vfunc_0C)(AiBossClassTy *st_this, undefined2 arg_1); // slot 0xC -> 00403CBF thunk_FUN_00647be0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_10)(AiBossClassTy *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x10 -> 00404AC0 thunk_FUN_00647c10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_14)(AiBossClassTy *st_this); // slot 0x14 -> 0040136B thunk_FUN_00647c80 [STIndirectCallApplier]
-    void *vfunc_18; // slot 0x18 -> 004041FB thunk_FUN_00647b40
+    undefined4 __thiscall (*vfunc_18)(AiBossClassTy *st_this); // slot 0x18 -> 004041FB thunk_FUN_00647b40 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_1C)(AiBossClassTy *st_this, undefined2 arg_1); // slot 0x1C -> 004022A2 thunk_FUN_00647ca0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_20)(AiBossClassTy *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x20 -> 00405A3D thunk_FUN_00647ce0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(AiBossClassTy *st_this, undefined2 arg_1); // slot 0x24 -> 004019F6 thunk_FUN_00647d10 [STIndirectCallApplier]
@@ -36271,7 +39272,7 @@ struct AppClassTyVTable {
     void *vfunc_08; // slot 0x8 -> 00402B44 thunk_FUN_0056a820
     WPARAM __thiscall (*RunApp)(AppClassTy *st_this); // slot 0xC -> 006E4FC0 AppClassTy::RunApp
     undefined4 __stdcall (*vfunc_10)(undefined2 arg_1); // slot 0x10 -> 006E4FA0 FUN_006e4fa0 [STIndirectCallApplier]
-    void *vfunc_14; // slot 0x14 -> 00734210 Library::MSVCRT::FUN_00734210
+    undefined4 __thiscall (*vfunc_14)(AppClassTy *st_this); // slot 0x14 -> 00734210 Library::MSVCRT::FUN_00734210 [STIndirectCallApplier]
     undefined4 __thiscall (*sub_006E5150)(AppClassTy *st_this, undefined2 arg_1); // slot 0x18 -> 006E5150 STAppC::sub_006E5150 [STIndirectCallApplier]
 };
 
@@ -36282,7 +39283,7 @@ struct BaseSystemCVTable {
     undefined4 __thiscall (*vfunc_0C)(BaseSystemC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4); // slot 0xC -> 006E5670 FUN_006e5670 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_10)(BaseSystemC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x10 -> 006E5690 FUN_006e5690 [STIndirectCallApplier]
     undefined4 __thiscall (*CreateSystemObjects)(BaseSystemC *st_this); // slot 0x14 -> 00403EF4 BaseSystemC::CreateSystemObjects
-    undefined4 __stdcall (*vfunc_18)(undefined2 arg_1); // slot 0x18 -> 006E5950 FUN_006e5950 [STIndirectCallApplier]
+    undefined4 __stdcall (*vfunc_18)(undefined2 arg_1); // slot 0x18 -> 006E5950 Library::Ourlib::SAPP::FUN_006e5950 [STIndirectCallApplier]
     int __thiscall (*Life)(SystemClassTy *st_this); // slot 0x1C -> 006E5D90 SystemClassTy::Life
     int __thiscall (*GetMessage)(SystemClassTy *st_this, int param_1); // slot 0x20 -> 006E5F00 SystemClassTy::GetMessage
 };
@@ -36383,7 +39384,7 @@ struct DebugSystemCVTable {
     undefined4 __thiscall (*vfunc_0C)(DebugSystemC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4); // slot 0xC -> 006E5670 FUN_006e5670 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_10)(DebugSystemC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x10 -> 006E5690 FUN_006e5690 [STIndirectCallApplier]
     undefined4 __thiscall (*CreateSystemObjects)(DebugSystemC *st_this); // slot 0x14 -> 00403DAA DebugSystemC::CreateSystemObjects
-    undefined4 __stdcall (*vfunc_18)(undefined2 arg_1); // slot 0x18 -> 006E5950 FUN_006e5950 [STIndirectCallApplier]
+    undefined4 __stdcall (*vfunc_18)(undefined2 arg_1); // slot 0x18 -> 006E5950 Library::Ourlib::SAPP::FUN_006e5950 [STIndirectCallApplier]
     int __thiscall (*Life)(SystemClassTy *st_this); // slot 0x1C -> 006E5D90 SystemClassTy::Life
     int __thiscall (*GetMessage)(SystemClassTy *st_this, int param_1); // slot 0x20 -> 006E5F00 SystemClassTy::GetMessage
 };
@@ -36423,7 +39424,7 @@ struct GameSystemCVTable {
     undefined4 __thiscall (*vfunc_0C)(GameSystemC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4); // slot 0xC -> 006E5670 FUN_006e5670 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_10)(GameSystemC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x10 -> 006E5690 FUN_006e5690 [STIndirectCallApplier]
     undefined4 __thiscall (*CreateSystemObjects)(GameSystemC *st_this); // slot 0x14 -> 004019CE GameSystemC::CreateSystemObjects
-    undefined4 __stdcall (*vfunc_18)(undefined2 arg_1); // slot 0x18 -> 006E5950 FUN_006e5950 [STIndirectCallApplier]
+    undefined4 __stdcall (*vfunc_18)(undefined2 arg_1); // slot 0x18 -> 006E5950 Library::Ourlib::SAPP::FUN_006e5950 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_1C)(GameSystemC *st_this); // slot 0x1C -> 00402F95 thunk_FUN_00577440 [STIndirectCallApplier]
     undefined4 __thiscall (*GetMessage)(GameSystemC *st_this, int param_1); // slot 0x20 -> 0040482C GameSystemC::GetMessage
 };
@@ -36461,7 +39462,7 @@ struct InterSystemCVTable {
     undefined4 __thiscall (*vfunc_0C)(InterSystemC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4); // slot 0xC -> 006E5670 FUN_006e5670 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_10)(InterSystemC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x10 -> 006E5690 FUN_006e5690 [STIndirectCallApplier]
     undefined __thiscall (*CreateSystemObjects)(InterSystemC *st_this); // slot 0x14 -> 00401DCA InterSystemC::CreateSystemObjects
-    undefined4 __stdcall (*vfunc_18)(undefined2 arg_1); // slot 0x18 -> 006E5950 FUN_006e5950 [STIndirectCallApplier]
+    undefined4 __stdcall (*vfunc_18)(undefined2 arg_1); // slot 0x18 -> 006E5950 Library::Ourlib::SAPP::FUN_006e5950 [STIndirectCallApplier]
     int __thiscall (*Life)(SystemClassTy *st_this); // slot 0x1C -> 006E5D90 SystemClassTy::Life
     undefined4 __thiscall (*GetMessage)(InterSystemC *st_this, int param_1); // slot 0x20 -> 00402A63 InterSystemC::GetMessage
 };
@@ -36656,8 +39657,8 @@ struct STArtiafactCVTable {
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STArtiafactC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
+    void __thiscall (*vfunc_94)(STArtiafactC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STArtiafactC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
     void __thiscall (*vfunc_9C)(STArtiafactC *st_this); // slot 0x9C -> 004030DF thunk_FUN_005efa70 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_A0)(STArtiafactC *st_this, undefined2 arg_1); // slot 0xA0 -> 00404E99 thunk_FUN_005efa90 [STIndirectCallApplier]
     dword __thiscall (*slot_A4)(STSprGameObjC *st_this); // slot 0xA4 -> 00405D58 STSprGameObjC::thunk_FUN_005efac0
@@ -36667,8 +39668,8 @@ struct STArtiafactCVTable {
     undefined4 __thiscall (*vfunc_B4)(STArtiafactC *st_this); // slot 0xB4 -> 004018BB thunk_FUN_005efc40 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STArtiafactC *st_this); // slot 0xB8 -> 00402969 thunk_FUN_005efcd0 [STIndirectCallApplier]
     dword __thiscall (*slot_BC)(STSprGameObjC *st_this); // slot 0xBC -> 00403A53 STSprGameObjC::thunk_FUN_005f0030
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_C0)(STArtiafactC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STArtiafactC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STArtiafactC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STArtiafactC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -36679,32 +39680,32 @@ struct STArtiafactCVTable {
     void __stdcall (*vfunc_E4)(undefined4 arg_1); // slot 0xE4 -> 004018ED thunk_FUN_0041dc20 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_E8)(STArtiafactC *st_this, undefined2 arg_1); // slot 0xE8 -> 00404E8A thunk_FUN_0041dd00 [STIndirectCallApplier]
     dword __thiscall (*slot_EC)(STSprGameObjC *st_this); // slot 0xEC -> 00402365 STSprGameObjC::thunk_FUN_005ef9f0
-    void *vfunc_F0; // slot 0xF0 -> 00405CE0 thunk_FUN_005f0090
+    undefined4 __thiscall (*vfunc_F0)(STArtiafactC *st_this); // slot 0xF0 -> 00405CE0 thunk_FUN_005f0090 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F8)(STArtiafactC *st_this); // slot 0xF8 -> 004018DE thunk_FUN_005f0050 [STIndirectCallApplier]
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_FC)(STArtiafactC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STArtiafactC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STArtiafactC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STArtiafactC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_114)(STArtiafactC *st_this, undefined2 arg_1); // slot 0x114 -> 00402757 thunk_FUN_005f0470 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_118)(STArtiafactC *st_this, undefined2 arg_1); // slot 0x118 -> 00404679 thunk_FUN_005f04b0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STArtiafactC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STArtiafactC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_124)(STArtiafactC *st_this, undefined2 arg_1); // slot 0x124 -> 0040306C thunk_FUN_005ebd00 [STIndirectCallApplier]
     dword __thiscall (*slot_128)(STArtiafactC *st_this); // slot 0x128 -> 004040C0 STArtiafactC::thunk_FUN_005ef490
-    void *vfunc_12C; // slot 0x12C -> 00403D55 thunk_FUN_005f0360
-    void *vfunc_130; // slot 0x130 -> 00405006 thunk_FUN_005f03d0
+    undefined4 __thiscall (*vfunc_12C)(STArtiafactC *st_this); // slot 0x12C -> 00403D55 thunk_FUN_005f0360 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_130)(STArtiafactC *st_this); // slot 0x130 -> 00405006 thunk_FUN_005f03d0 [STIndirectCallApplier]
     dword __thiscall (*slot_134)(STArtiafactC *st_this); // slot 0x134 -> 0040508D STArtiafactC::thunk_FUN_005ec680
-    void *vfunc_138; // slot 0x138 -> 00404115 thunk_FUN_005f0410
+    undefined4 __thiscall (*vfunc_138)(STArtiafactC *st_this); // slot 0x138 -> 00404115 thunk_FUN_005f0410 [STIndirectCallApplier]
     dword __thiscall (*slot_13C)(STArtiafactC *st_this); // slot 0x13C -> 00401FEB STArtiafactC::thunk_FUN_005ec620
     undefined4 __thiscall (*vfunc_140)(STArtiafactC *st_this, undefined2 arg_1); // slot 0x140 -> 00403F5D thunk_FUN_005ec640 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_144)(STArtiafactC *st_this); // slot 0x144 -> 00404C87 thunk_FUN_005ef5d0 [STIndirectCallApplier]
 };
 
 struct STArtiafactCVTable_at_1D5 {
-    void *vfunc_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*vfunc_00)(STArtiafactC *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct STBHEShellCVTable {
@@ -36779,7 +39780,7 @@ struct STBoatCVTable {
     undefined1 __thiscall (*vfunc_100)(STBoatC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STBoatC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STBoatC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_114)(STBoatC *st_this, undefined2 arg_1); // slot 0x114 -> 00401681 thunk_FUN_00493050 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_118)(STBoatC *st_this, undefined2 arg_1); // slot 0x118 -> 00402892 thunk_FUN_00493110 [STIndirectCallApplier]
@@ -36791,7 +39792,7 @@ struct STColl3CVTable {
     undefined4 __thiscall (*GetMessage)(STColl3C *st_this, int param_1); // slot 0x0 -> 00404917 STColl3C::GetMessage
     undefined4 __thiscall (*vfunc_04)(STColl3C *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STColl3C *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STColl3C *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STColl3C *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -36799,7 +39800,7 @@ struct STColl3CVTable {
     undefined4 __thiscall (*vfunc_20)(STColl3C *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(STColl3C *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004024E6 thunk_FUN_00419dd0
+    undefined4 __thiscall (*vfunc_2C)(STColl3C *st_this); // slot 0x2C -> 004024E6 thunk_FUN_00419dd0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -36825,19 +39826,19 @@ struct STColl3CVTable {
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STColl3C *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STColl3C *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STColl3C *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STColl3C *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STColl3C *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STColl3C *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STColl3C *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STColl3C *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STColl3C *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STColl3C *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STColl3C *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STColl3C *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -36847,24 +39848,24 @@ struct STColl3CVTable {
     undefined4 __thiscall (*vfunc_E0)(STColl3C *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5); // slot 0xE0 -> 0040212B thunk_FUN_005fb540 [STIndirectCallApplier]
     void __stdcall (*vfunc_E4)(undefined4 arg_1); // slot 0xE4 -> 004018ED thunk_FUN_0041dc20 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_E8)(STColl3C *st_this, undefined2 arg_1); // slot 0xE8 -> 00404E8A thunk_FUN_0041dd00 [STIndirectCallApplier]
-    void *vfunc_EC; // slot 0xEC -> 00401A96 thunk_FUN_005fb5c0
+    undefined4 __thiscall (*vfunc_EC)(STColl3C *st_this); // slot 0xEC -> 00401A96 thunk_FUN_005fb5c0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(STColl3C *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
     dword __thiscall (*slot_F8)(STColl3C *st_this); // slot 0xF8 -> 00402649 STColl3C::thunk_FUN_005fb5e0
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_FC)(STColl3C *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STColl3C *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STColl3C *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STColl3C *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STColl3C *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STColl3C *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STColl3CVTable_at_1D5 {
-    void *vfunc_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*vfunc_00)(STColl3C *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct STContainerCVTable {
@@ -36905,8 +39906,8 @@ struct STContainerCVTable {
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STContainerC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
+    void __thiscall (*vfunc_94)(STContainerC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STContainerC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
     void __thiscall (*vfunc_9C)(STContainerC *st_this); // slot 0x9C -> 004030DF thunk_FUN_005efa70 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_A0)(STContainerC *st_this, undefined2 arg_1); // slot 0xA0 -> 00404E99 thunk_FUN_005efa90 [STIndirectCallApplier]
     dword __thiscall (*slot_A4)(STSprGameObjC *st_this); // slot 0xA4 -> 00405D58 STSprGameObjC::thunk_FUN_005efac0
@@ -36916,8 +39917,8 @@ struct STContainerCVTable {
     undefined4 __thiscall (*vfunc_B4)(STContainerC *st_this); // slot 0xB4 -> 004018BB thunk_FUN_005efc40 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STContainerC *st_this); // slot 0xB8 -> 00402969 thunk_FUN_005efcd0 [STIndirectCallApplier]
     dword __thiscall (*slot_BC)(STSprGameObjC *st_this); // slot 0xBC -> 00403A53 STSprGameObjC::thunk_FUN_005f0030
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_C0)(STContainerC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STContainerC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STContainerC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STContainerC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -36928,19 +39929,19 @@ struct STContainerCVTable {
     void __stdcall (*vfunc_E4)(undefined4 arg_1); // slot 0xE4 -> 004018ED thunk_FUN_0041dc20 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_E8)(STContainerC *st_this, undefined2 arg_1); // slot 0xE8 -> 00404E8A thunk_FUN_0041dd00 [STIndirectCallApplier]
     dword __thiscall (*slot_EC)(STSprGameObjC *st_this); // slot 0xEC -> 00402365 STSprGameObjC::thunk_FUN_005ef9f0
-    void *vfunc_F0; // slot 0xF0 -> 00405CE0 thunk_FUN_005f0090
+    undefined4 __thiscall (*vfunc_F0)(STContainerC *st_this); // slot 0xF0 -> 00405CE0 thunk_FUN_005f0090 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F8)(STContainerC *st_this); // slot 0xF8 -> 004018DE thunk_FUN_005f0050 [STIndirectCallApplier]
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_FC)(STContainerC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STContainerC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STContainerC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STContainerC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_114)(STContainerC *st_this, undefined2 arg_1); // slot 0x114 -> 00402757 thunk_FUN_005f0470 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_118)(STContainerC *st_this, undefined2 arg_1); // slot 0x118 -> 00404679 thunk_FUN_005f04b0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STContainerC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STContainerC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_124)(STContainerC *st_this, undefined2 arg_1); // slot 0x124 -> 00405AF6 thunk_FUN_005fc450 [STIndirectCallApplier]
     dword __thiscall (*slot_128)(STContainerC *st_this); // slot 0x128 -> 00404476 STContainerC::thunk_FUN_005fd360
     dword __thiscall (*slot_12C)(STContainerC *st_this); // slot 0x12C -> 0040389B STContainerC::thunk_FUN_005fcd80
@@ -36953,14 +39954,14 @@ struct STContainerCVTable {
 };
 
 struct STContainerCVTable_at_1D5 {
-    void *vfunc_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*vfunc_00)(STContainerC *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct STCrabCVTable {
     undefined4 __thiscall (*GetMessage)(STCrabC *st_this, int param_1); // slot 0x0 -> 00405871 STCrabC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STCrabC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STCrabC *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STCrabC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STCrabC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -36987,26 +39988,26 @@ struct STCrabCVTable {
     undefined4 __thiscall (*vfunc_6C)(STCrabC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STCrabC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STCrabC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STCrabC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STCrabC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STCrabC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STCrabC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STCrabC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STCrabC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STCrabC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STCrabC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STCrabC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STCrabC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STCrabC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STCrabC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -37019,24 +40020,24 @@ struct STCrabCVTable {
     undefined4 __thiscall (*vfunc_EC)(STCrabC *st_this); // slot 0xEC -> 004059F7 thunk_FUN_0041f310 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(STCrabC *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(STCrabC *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(STCrabC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STCrabC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STCrabC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STCrabC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STCrabC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STCrabC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STDcResourcCVTable {
     undefined4 __thiscall (*GetMessage)(STDcResourcC *st_this, int param_1); // slot 0x0 -> 0040502E STDcResourcC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STDcResourcC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STDcResourcC *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STDcResourcC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STDcResourcC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -37063,26 +40064,26 @@ struct STDcResourcCVTable {
     undefined4 __thiscall (*vfunc_6C)(STDcResourcC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STDcResourcC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STDcResourcC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STDcResourcC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STDcResourcC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STDcResourcC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STDcResourcC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STDcResourcC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STDcResourcC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STDcResourcC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STDcResourcC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STDcResourcC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STDcResourcC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STDcResourcC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STDcResourcC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -37095,24 +40096,24 @@ struct STDcResourcCVTable {
     undefined4 __thiscall (*vfunc_EC)(STDcResourcC *st_this); // slot 0xEC -> 004044B2 thunk_FUN_005808e0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(STDcResourcC *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(STDcResourcC *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(STDcResourcC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STDcResourcC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STDcResourcC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STDcResourcC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
     dword __thiscall (*slot_11C)(STDcResourcC *st_this); // slot 0x11C -> 00405894 STDcResourcC::thunk_FUN_00580f20
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_120)(STDcResourcC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STDestCVTable {
     undefined4 __thiscall (*GetMessage)(STDestC *st_this, int param_1); // slot 0x0 -> 004050CE STDestC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STDestC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STDestC *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STDestC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STDestC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -37120,7 +40121,7 @@ struct STDestCVTable {
     undefined4 __thiscall (*vfunc_20)(STDestC *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(STDestC *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004046C4 thunk_FUN_00602880
+    undefined4 __thiscall (*vfunc_2C)(STDestC *st_this); // slot 0x2C -> 004046C4 thunk_FUN_00602880 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_30)(STDestC *st_this, undefined2 arg_1); // slot 0x30 -> 004055DD thunk_FUN_006033d0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_34)(STDestC *st_this, undefined2 arg_1); // slot 0x34 -> 00403DC3 thunk_FUN_00603470 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -37139,26 +40140,26 @@ struct STDestCVTable {
     undefined4 __thiscall (*vfunc_6C)(STDestC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_70)(STDestC *st_this, undefined2 arg_1); // slot 0x70 -> 00403B93 thunk_FUN_00602740 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_74)(STDestC *st_this, undefined2 arg_1); // slot 0x74 -> 00404EF3 thunk_FUN_00602700 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STDestC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STDestC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STDestC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STDestC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STDestC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STDestC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STDestC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STDestC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STDestC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STDestC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STDestC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STDestC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STDestC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STDestC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -37171,24 +40172,24 @@ struct STDestCVTable {
     undefined4 __thiscall (*vfunc_EC)(STDestC *st_this); // slot 0xEC -> 004059F7 thunk_FUN_0041f310 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(STDestC *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(STDestC *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(STDestC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STDestC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STDestC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STDestC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STDestC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STDestC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STExplosionVTable {
     undefined4 __thiscall (*GetMessage)(STExplosion *st_this, int param_1); // slot 0x0 -> 00402E5F STExplosion::GetMessage
     undefined4 __thiscall (*vfunc_04)(STExplosion *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
-    void *vfunc_08; // slot 0x8 -> 00402EFA thunk_FUN_00418990
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_08)(STExplosion *st_this); // slot 0x8 -> 00402EFA thunk_FUN_00418990 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_0C)(STExplosion *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STExplosion *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -37196,7 +40197,7 @@ struct STExplosionVTable {
     undefined4 __thiscall (*vfunc_20)(STExplosion *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(STExplosion *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004024E6 thunk_FUN_00419dd0
+    undefined4 __thiscall (*vfunc_2C)(STExplosion *st_this); // slot 0x2C -> 004024E6 thunk_FUN_00419dd0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -37215,26 +40216,26 @@ struct STExplosionVTable {
     undefined4 __thiscall (*vfunc_6C)(STExplosion *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STExplosion *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STExplosion *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STExplosion *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STExplosion *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STExplosion *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STExplosion *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STExplosion *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STExplosion *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STExplosion *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STExplosion *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STExplosion *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STExplosion *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STExplosion *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STExplosion *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -37244,7 +40245,7 @@ struct STFishCVTable {
     undefined4 __thiscall (*GetMessage)(STFishC *st_this, int param_1); // slot 0x0 -> 00402838 STFishC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STFishC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STFishC *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STFishC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STFishC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -37271,26 +40272,26 @@ struct STFishCVTable {
     undefined4 __thiscall (*vfunc_6C)(STFishC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STFishC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STFishC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STFishC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STFishC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STFishC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STFishC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STFishC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STFishC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STFishC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STFishC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STFishC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STFishC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STFishC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STFishC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -37303,17 +40304,17 @@ struct STFishCVTable {
     undefined4 __thiscall (*vfunc_EC)(STFishC *st_this); // slot 0xEC -> 004059F7 thunk_FUN_0041f310 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(STFishC *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(STFishC *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(STFishC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STFishC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STFishC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STFishC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STFishC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STFishC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STGameObjCDispatchVTable {
@@ -37404,8 +40405,8 @@ struct STGameObjCDispatchVTable {
 struct STGameObjCVTable {
     undefined4 __thiscall (*GetMessage)(STGameObjC *st_this, AnonShape_0041AF40_F59F8577 *param_1); // slot 0x0 -> 00403ebd STGameObjC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STGameObjC *st_this); // slot 0x4 -> 00402964 FUN_00415b10 [STIndirectCallApplier]
-    void *vfunc_08; // slot 0x8 -> 00402efa FUN_00418990
-    void *vfunc_0C; // slot 0xC -> 00402ec3 FUN_004189b0
+    undefined4 __thiscall (*vfunc_08)(STGameObjC *st_this); // slot 0x8 -> 00402efa FUN_00418990 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_0C)(STGameObjC *st_this); // slot 0xC -> 00402ec3 FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402afe FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036ac FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STGameObjC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404bce FUN_00417f30 [STIndirectCallApplier]
@@ -37413,7 +40414,7 @@ struct STGameObjCVTable {
     undefined4 __thiscall (*vfunc_20)(STGameObjC *st_this); // slot 0x20 -> 00404dd1 FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(STGameObjC *st_this); // slot 0x24 -> 00401438 FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004024e6 FUN_00419dd0
+    undefined4 __thiscall (*vfunc_2C)(STGameObjC *st_this); // slot 0x2C -> 004024e6 FUN_00419dd0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404f70 FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402d2e FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404de5 FUN_0041abc0 [STIndirectCallApplier]
@@ -37432,26 +40433,26 @@ struct STGameObjCVTable {
     undefined4 __thiscall (*vfunc_6C)(STGameObjC *st_this); // slot 0x6C -> 004039c2 FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572c FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402bf8 FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349f FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STGameObjC *st_this); // slot 0x78 -> 0040349f FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STGameObjC *st_this); // slot 0x7C -> 00405501 FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411f FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054d9 FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045de FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405d26 FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STGameObjC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574f FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401f23 FUN_0041d760
+    void __thiscall (*vfunc_94)(STGameObjC *st_this); // slot 0x94 -> 00403931 FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STGameObjC *st_this); // slot 0x98 -> 00403846 FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STGameObjC *st_this); // slot 0x9C -> 00401f23 FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574a FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229d FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STGameObjC *st_this); // slot 0xA4 -> 0040229d FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404ea8 FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405be6 FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404e03 FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STGameObjC *st_this); // slot 0xB4 -> 00403d3c FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STGameObjC *st_this); // slot 0xB8 -> 00401f28 FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018d9 FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405e02 FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ecb FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STGameObjC *st_this); // slot 0xBC -> 004018d9 FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STGameObjC *st_this); // slot 0xC0 -> 00405e02 FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STGameObjC *st_this); // slot 0xC4 -> 00404ecb FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403aee FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STGameObjC *st_this); // slot 0xCC -> 004034d6 FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STGameObjC *st_this); // slot 0xD0 -> 0040167c FUN_004d7040 [STIndirectCallApplier]
@@ -37474,7 +40475,7 @@ struct STJellyGunCVTable {
     undefined4 __thiscall (*GetMessage)(STJellyGunC *st_this, int param_1); // slot 0x0 -> 0040201D STJellyGunC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STJellyGunC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STJellyGunC *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STJellyGunC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STJellyGunC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -37482,7 +40483,7 @@ struct STJellyGunCVTable {
     undefined4 __thiscall (*vfunc_20)(STJellyGunC *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(STJellyGunC *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 00402BC6 thunk_FUN_00584950
+    undefined4 __thiscall (*vfunc_2C)(STJellyGunC *st_this); // slot 0x2C -> 00402BC6 thunk_FUN_00584950 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -37501,26 +40502,26 @@ struct STJellyGunCVTable {
     undefined4 __thiscall (*vfunc_6C)(STJellyGunC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STJellyGunC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STJellyGunC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STJellyGunC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STJellyGunC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STJellyGunC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STJellyGunC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STJellyGunC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STJellyGunC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STJellyGunC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STJellyGunC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STJellyGunC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STJellyGunC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STJellyGunC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STJellyGunC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -37533,24 +40534,24 @@ struct STJellyGunCVTable {
     undefined4 __thiscall (*vfunc_EC)(STJellyGunC *st_this); // slot 0xEC -> 004059F7 thunk_FUN_0041f310 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(STJellyGunC *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(STJellyGunC *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(STJellyGunC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STJellyGunC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STJellyGunC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STJellyGunC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STJellyGunC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STJellyGunC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STJellyManCVTable {
     undefined4 __thiscall (*GetMessage)(STJellyManC *st_this, int param_1); // slot 0x0 -> 00402F4F STJellyManC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STJellyManC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
-    void *vfunc_08; // slot 0x8 -> 00402EFA thunk_FUN_00418990
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_08)(STJellyManC *st_this); // slot 0x8 -> 00402EFA thunk_FUN_00418990 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_0C)(STJellyManC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STJellyManC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -37558,7 +40559,7 @@ struct STJellyManCVTable {
     undefined4 __thiscall (*vfunc_20)(STJellyManC *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(STJellyManC *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 0040312F thunk_FUN_005823b0
+    undefined4 __thiscall (*vfunc_2C)(STJellyManC *st_this); // slot 0x2C -> 0040312F thunk_FUN_005823b0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -37577,26 +40578,26 @@ struct STJellyManCVTable {
     undefined4 __thiscall (*vfunc_6C)(STJellyManC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STJellyManC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STJellyManC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STJellyManC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STJellyManC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STJellyManC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STJellyManC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STJellyManC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STJellyManC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STJellyManC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STJellyManC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STJellyManC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STJellyManC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STJellyManC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STJellyManC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -37610,7 +40611,7 @@ struct STLBombCVTable {
     undefined4 __thiscall (*GetMessage)(STLBombC *st_this, int param_1); // slot 0x0 -> 004048EA STLBombC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STLBombC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STLBombC *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STLBombC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STLBombC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -37618,7 +40619,7 @@ struct STLBombCVTable {
     undefined4 __thiscall (*vfunc_20)(STLBombC *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(STLBombC *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 00401546 thunk_FUN_005861d0
+    undefined4 __thiscall (*vfunc_2C)(STLBombC *st_this); // slot 0x2C -> 00401546 thunk_FUN_005861d0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -37637,26 +40638,26 @@ struct STLBombCVTable {
     undefined4 __thiscall (*vfunc_6C)(STLBombC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STLBombC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STLBombC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STLBombC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STLBombC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STLBombC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STLBombC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STLBombC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STLBombC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STLBombC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STLBombC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STLBombC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STLBombC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STLBombC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STLBombC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -37669,17 +40670,17 @@ struct STLBombCVTable {
     undefined4 __thiscall (*vfunc_EC)(STLBombC *st_this); // slot 0xEC -> 004059F7 thunk_FUN_0041f310 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(STLBombC *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(STLBombC *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(STLBombC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STLBombC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STLBombC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STLBombC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STLBombC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STLBombC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STLightCVTable {
@@ -37690,7 +40691,7 @@ struct STMBombCVTable {
     undefined4 __thiscall (*GetMessage)(STMBombC *st_this, int param_1); // slot 0x0 -> 00401037 STMBombC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STMBombC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STMBombC *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STMBombC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STMBombC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -37698,7 +40699,7 @@ struct STMBombCVTable {
     undefined4 __thiscall (*vfunc_20)(STMBombC *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(STMBombC *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 00404043 thunk_FUN_00589970
+    undefined4 __thiscall (*vfunc_2C)(STMBombC *st_this); // slot 0x2C -> 00404043 thunk_FUN_00589970 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -37717,26 +40718,26 @@ struct STMBombCVTable {
     undefined4 __thiscall (*vfunc_6C)(STMBombC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STMBombC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STMBombC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STMBombC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STMBombC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STMBombC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STMBombC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STMBombC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STMBombC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STMBombC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STMBombC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STMBombC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STMBombC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STMBombC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STMBombC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -37749,17 +40750,17 @@ struct STMBombCVTable {
     undefined4 __thiscall (*vfunc_EC)(STMBombC *st_this); // slot 0xEC -> 004059F7 thunk_FUN_0041f310 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(STMBombC *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(STMBombC *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(STMBombC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STMBombC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STMBombC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STMBombC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STMBombC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STMBombC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STManBasisCVTable {
@@ -37778,7 +40779,7 @@ struct STMineSetCVTable {
     undefined4 __thiscall (*GetMessage)(STMineSetC *st_this, int param_1); // slot 0x0 -> 00401672 STMineSetC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STMineSetC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STMineSetC *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STMineSetC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STMineSetC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -37805,26 +40806,26 @@ struct STMineSetCVTable {
     dword __thiscall (*slot_6C)(STMineSetC *st_this); // slot 0x6C -> 004043EA STMineSetC::thunk_FUN_00626ea0
     undefined4 __thiscall (*vfunc_70)(STMineSetC *st_this, undefined2 arg_1); // slot 0x70 -> 004053E9 thunk_FUN_00626c00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_74)(STMineSetC *st_this, undefined2 arg_1); // slot 0x74 -> 00404872 thunk_FUN_00626bc0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
+    undefined4 __thiscall (*vfunc_78)(STMineSetC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_7C)(STMineSetC *st_this); // slot 0x7C -> 004042E1 thunk_FUN_00627e80 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STMineSetC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STMineSetC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STMineSetC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STMineSetC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STMineSetC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STMineSetC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STMineSetC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STMineSetC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STMineSetC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STMineSetC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STMineSetC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STMineSetC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -37838,23 +40839,23 @@ struct STMineSetCVTable {
     undefined4 __thiscall (*vfunc_F0)(STMineSetC *st_this); // slot 0xF0 -> 00404B88 thunk_FUN_00627a60 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F4)(STMineSetC *st_this, undefined2 arg_1); // slot 0xF4 -> 00405A83 thunk_FUN_00627aa0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F8)(STMineSetC *st_this); // slot 0xF8 -> 00403323 thunk_FUN_00627250 [STIndirectCallApplier]
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_FC)(STMineSetC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STMineSetC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STMineSetC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STMineSetC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STMineSetC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STMineSetC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STOctopusCVTable {
     undefined4 __thiscall (*GetMessage)(STOctopusC *st_this, int param_1); // slot 0x0 -> 00403B1B STOctopusC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STOctopusC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STOctopusC *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STOctopusC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STOctopusC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -37881,26 +40882,26 @@ struct STOctopusCVTable {
     undefined4 __thiscall (*vfunc_6C)(STOctopusC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STOctopusC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STOctopusC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STOctopusC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STOctopusC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STOctopusC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STOctopusC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STOctopusC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STOctopusC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STOctopusC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STOctopusC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STOctopusC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STOctopusC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STOctopusC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STOctopusC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -37913,17 +40914,17 @@ struct STOctopusCVTable {
     undefined4 __thiscall (*vfunc_EC)(STOctopusC *st_this); // slot 0xEC -> 004059F7 thunk_FUN_0041f310 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(STOctopusC *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(STOctopusC *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(STOctopusC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STOctopusC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STOctopusC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STOctopusC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STOctopusC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STOctopusC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STPlaySystemCVTable {
@@ -37932,7 +40933,7 @@ struct STPlaySystemCVTable {
     undefined4 __thiscall (*vfunc_08)(STPlaySystemC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5); // slot 0x8 -> 004021DA thunk_FUN_0054cf00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_0C)(STPlaySystemC *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4); // slot 0xC -> 006E6150 FUN_006e6150 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_10)(STPlaySystemC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x10 -> 006E6130 FUN_006e6130 [STIndirectCallApplier]
-    void *vfunc_14; // slot 0x14 -> 00403E45 thunk_FUN_0054cfa0
+    undefined4 __thiscall (*vfunc_14)(STPlaySystemC *st_this); // slot 0x14 -> 00403E45 thunk_FUN_0054cfa0 [STIndirectCallApplier]
     int __thiscall (*SendMessage)(SystemWithNamedObjClassTy *st_this, int param_1); // slot 0x18 -> 006E6330 SystemWithNamedObjClassTy::SendMessage
     undefined4 __thiscall (*Life)(STPlaySystemC *st_this); // slot 0x1C -> 004032C9 STPlaySystemC::Life
     undefined4 __thiscall (*GetMessage)(STPlaySystemC *st_this, int param_1); // slot 0x20 -> 00401244 STPlaySystemC::GetMessage
@@ -37941,8 +40942,8 @@ struct STPlaySystemCVTable {
 struct STRubbishCVTable {
     undefined4 __thiscall (*GetMessage)(STRubbishC *st_this, int param_1); // slot 0x0 -> 0040231F STRubbishC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STRubbishC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
-    void *vfunc_08; // slot 0x8 -> 00402EFA thunk_FUN_00418990
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_08)(STRubbishC *st_this); // slot 0x8 -> 00402EFA thunk_FUN_00418990 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_0C)(STRubbishC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STRubbishC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -37950,7 +40951,7 @@ struct STRubbishCVTable {
     undefined4 __thiscall (*vfunc_20)(STRubbishC *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(STRubbishC *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004024E6 thunk_FUN_00419dd0
+    undefined4 __thiscall (*vfunc_2C)(STRubbishC *st_this); // slot 0x2C -> 004024E6 thunk_FUN_00419dd0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -37969,26 +40970,26 @@ struct STRubbishCVTable {
     undefined4 __thiscall (*vfunc_6C)(STRubbishC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STRubbishC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STRubbishC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STRubbishC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STRubbishC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STRubbishC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STRubbishC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STRubbishC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STRubbishC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STRubbishC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STRubbishC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STRubbishC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STRubbishC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STRubbishC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STRubbishC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -37998,7 +40999,7 @@ struct STSatCVTable {
     undefined4 __thiscall (*GetMessage)(STSatC *st_this, int param_1); // slot 0x0 -> 004022B1 STSatC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STSatC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STSatC *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STSatC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STSatC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -38006,7 +41007,7 @@ struct STSatCVTable {
     undefined4 __thiscall (*vfunc_20)(STSatC *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(STSatC *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004027BB thunk_FUN_0058cfc0
+    undefined4 __thiscall (*vfunc_2C)(STSatC *st_this); // slot 0x2C -> 004027BB thunk_FUN_0058cfc0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -38025,26 +41026,26 @@ struct STSatCVTable {
     undefined4 __thiscall (*vfunc_6C)(STSatC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STSatC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STSatC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STSatC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STSatC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STSatC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STSatC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STSatC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STSatC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STSatC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STSatC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STSatC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STSatC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STSatC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STSatC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -38057,24 +41058,24 @@ struct STSatCVTable {
     undefined4 __thiscall (*vfunc_EC)(STSatC *st_this); // slot 0xEC -> 004059F7 thunk_FUN_0041f310 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(STSatC *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(STSatC *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(STSatC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STSatC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STSatC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STSatC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STSatC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STSatC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STSharkCVTable {
     undefined4 __thiscall (*GetMessage)(STSharkC *st_this, int param_1); // slot 0x0 -> 00404665 STSharkC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STSharkC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STSharkC *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STSharkC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STSharkC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -38082,7 +41083,7 @@ struct STSharkCVTable {
     undefined4 __thiscall (*vfunc_20)(STSharkC *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(STSharkC *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 00402D0B thunk_FUN_00590150
+    undefined4 __thiscall (*vfunc_2C)(STSharkC *st_this); // slot 0x2C -> 00402D0B thunk_FUN_00590150 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -38101,26 +41102,26 @@ struct STSharkCVTable {
     undefined4 __thiscall (*vfunc_6C)(STSharkC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STSharkC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STSharkC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STSharkC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STSharkC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STSharkC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STSharkC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STSharkC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STSharkC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STSharkC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STSharkC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STSharkC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STSharkC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STSharkC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STSharkC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -38133,17 +41134,17 @@ struct STSharkCVTable {
     undefined4 __thiscall (*vfunc_EC)(STSharkC *st_this); // slot 0xEC -> 004059F7 thunk_FUN_0041f310 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(STSharkC *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(STSharkC *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(STSharkC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STSharkC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STSharkC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STSharkC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STSharkC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STSharkC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STSprGameObjCVTable {
@@ -38184,8 +41185,8 @@ struct STSprGameObjCVTable {
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STSprGameObjC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
+    void __thiscall (*vfunc_94)(STSprGameObjC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STSprGameObjC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
     void __thiscall (*vfunc_9C)(STSprGameObjC *st_this); // slot 0x9C -> 004030DF thunk_FUN_005efa70 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_A0)(STSprGameObjC *st_this, undefined2 arg_1); // slot 0xA0 -> 00404E99 thunk_FUN_005efa90 [STIndirectCallApplier]
     dword __thiscall (*slot_A4)(STSprGameObjC *st_this); // slot 0xA4 -> 00405D58 STSprGameObjC::thunk_FUN_005efac0
@@ -38195,8 +41196,8 @@ struct STSprGameObjCVTable {
     undefined4 __thiscall (*vfunc_B4)(STSprGameObjC *st_this); // slot 0xB4 -> 004018BB thunk_FUN_005efc40 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STSprGameObjC *st_this); // slot 0xB8 -> 00402969 thunk_FUN_005efcd0 [STIndirectCallApplier]
     dword __thiscall (*slot_BC)(STSprGameObjC *st_this); // slot 0xBC -> 00403A53 STSprGameObjC::thunk_FUN_005f0030
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_C0)(STSprGameObjC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STSprGameObjC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STSprGameObjC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STSprGameObjC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -38207,35 +41208,35 @@ struct STSprGameObjCVTable {
     void __stdcall (*vfunc_E4)(undefined4 arg_1); // slot 0xE4 -> 004018ED thunk_FUN_0041dc20 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_E8)(STSprGameObjC *st_this, undefined2 arg_1); // slot 0xE8 -> 00404E8A thunk_FUN_0041dd00 [STIndirectCallApplier]
     dword __thiscall (*slot_EC)(STSprGameObjC *st_this); // slot 0xEC -> 00402365 STSprGameObjC::thunk_FUN_005ef9f0
-    void *vfunc_F0; // slot 0xF0 -> 00405CE0 thunk_FUN_005f0090
+    undefined4 __thiscall (*vfunc_F0)(STSprGameObjC *st_this); // slot 0xF0 -> 00405CE0 thunk_FUN_005f0090 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F8)(STSprGameObjC *st_this); // slot 0xF8 -> 004018DE thunk_FUN_005f0050 [STIndirectCallApplier]
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_FC)(STSprGameObjC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STSprGameObjC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STSprGameObjC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STSprGameObjC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_114)(STSprGameObjC *st_this, undefined2 arg_1); // slot 0x114 -> 00402757 thunk_FUN_005f0470 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_118)(STSprGameObjC *st_this, undefined2 arg_1); // slot 0x118 -> 00404679 thunk_FUN_005f04b0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STSprGameObjC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STSprGameObjC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_124)(undefined4 arg_1); // slot 0x124 -> 00403B6B thunk_FUN_005ef430 [STIndirectCallApplier]
-    void *vfunc_128; // slot 0x128 -> 00405DB2 thunk_FUN_005ef450
-    void *vfunc_12C; // slot 0x12C -> 00403D55 thunk_FUN_005f0360
-    void *vfunc_130; // slot 0x130 -> 00405006 thunk_FUN_005f03d0
-    void *vfunc_134; // slot 0x134 -> 00404723 thunk_FUN_005f03f0
-    void *vfunc_138; // slot 0x138 -> 00404115 thunk_FUN_005f0410
-    void *vfunc_13C; // slot 0x13C -> 004056E1 thunk_FUN_005f0430
+    undefined4 __thiscall (*vfunc_128)(STSprGameObjC *st_this); // slot 0x128 -> 00405DB2 thunk_FUN_005ef450 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_12C)(STSprGameObjC *st_this); // slot 0x12C -> 00403D55 thunk_FUN_005f0360 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_130)(STSprGameObjC *st_this); // slot 0x130 -> 00405006 thunk_FUN_005f03d0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_134)(STSprGameObjC *st_this); // slot 0x134 -> 00404723 thunk_FUN_005f03f0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_138)(STSprGameObjC *st_this); // slot 0x138 -> 00404115 thunk_FUN_005f0410 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_13C)(STSprGameObjC *st_this); // slot 0x13C -> 004056E1 thunk_FUN_005f0430 [STIndirectCallApplier]
     void __thiscall (*slot_140)(STSprGameObjC *st_this, undefined4 param_1); // slot 0x140 -> 004039B8 STSprGameObjC::thunk_FUN_005f0450
-    void *vfunc_144; // slot 0x144 -> 0040309E thunk_FUN_005ef470
+    undefined4 __thiscall (*vfunc_144)(STSprGameObjC *st_this); // slot 0x144 -> 0040309E thunk_FUN_005ef470 [STIndirectCallApplier]
 };
 
 struct STTorpCVTable {
     int __thiscall (*GetMessage)(STTorpC *st_this, STMessage *message); // slot 0x0 -> 00404CAF STTorpC::GetMessage
     undefined4 __thiscall (*vfunc_04)(STTorpC *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(STTorpC *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(STTorpC *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(STTorpC *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -38243,7 +41244,7 @@ struct STTorpCVTable {
     undefined4 __thiscall (*vfunc_20)(STTorpC *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(STTorpC *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004024E6 thunk_FUN_00419dd0
+    undefined4 __thiscall (*vfunc_2C)(STTorpC *st_this); // slot 0x2C -> 004024E6 thunk_FUN_00419dd0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -38262,26 +41263,26 @@ struct STTorpCVTable {
     undefined4 __thiscall (*vfunc_6C)(STTorpC *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(STTorpC *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(STTorpC *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(STTorpC *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(STTorpC *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(STTorpC *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(STTorpC *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(STTorpC *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(STTorpC *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(STTorpC *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(STTorpC *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(STTorpC *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(STTorpC *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(STTorpC *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(STTorpC *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -38294,17 +41295,17 @@ struct STTorpCVTable {
     undefined4 __thiscall (*vfunc_EC)(STTorpC *st_this); // slot 0xEC -> 004059F7 thunk_FUN_0041f310 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(STTorpC *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(STTorpC *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(STTorpC *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(STTorpC *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(STTorpC *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(STTorpC *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(STTorpC *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(STTorpC *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct STVolcanoCVTable {
@@ -38362,7 +41363,7 @@ struct StartSystemTyVTable {
     undefined4 __thiscall (*vfunc_0C)(StartSystemTy *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4); // slot 0xC -> 006E5670 FUN_006e5670 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_10)(StartSystemTy *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x10 -> 006E5690 FUN_006e5690 [STIndirectCallApplier]
     undefined __thiscall (*CreateSystemObjects)(StartSystemTy *st_this); // slot 0x14 -> 00402171 StartSystemTy::CreateSystemObjects
-    undefined4 __stdcall (*vfunc_18)(undefined2 arg_1); // slot 0x18 -> 006E5950 FUN_006e5950 [STIndirectCallApplier]
+    undefined4 __stdcall (*vfunc_18)(undefined2 arg_1); // slot 0x18 -> 006E5950 Library::Ourlib::SAPP::FUN_006e5950 [STIndirectCallApplier]
     int __thiscall (*Life)(SystemClassTy *st_this); // slot 0x1C -> 006E5D90 SystemClassTy::Life
     int __thiscall (*GetMessage)(StartSystemTy *st_this, int *param_1); // slot 0x20 -> 004046CE StartSystemTy::GetMessage
 };
@@ -38373,7 +41374,7 @@ struct SystemWithNamedObjClassTyVTable {
     int __thiscall (*CreateObject)(SystemWithNamedObjClassTy *st_this, STObjectTypeId param_1, undefined4 *param_2, int *param_3, undefined4 param_4, undefined4 param_5); // slot 0x8 -> 006E6170 SystemWithNamedObjClassTy::CreateObject
     undefined4 __thiscall (*vfunc_0C)(SystemWithNamedObjClassTy *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4); // slot 0xC -> 006E6150 FUN_006e6150 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_10)(SystemWithNamedObjClassTy *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x10 -> 006E6130 FUN_006e6130 [STIndirectCallApplier]
-    void *vfunc_14; // slot 0x14 -> 00734210 Library::MSVCRT::FUN_00734210
+    undefined4 __thiscall (*vfunc_14)(SystemWithNamedObjClassTy *st_this); // slot 0x14 -> 00734210 Library::MSVCRT::FUN_00734210 [STIndirectCallApplier]
     int __thiscall (*SendMessage)(SystemWithNamedObjClassTy *st_this, int param_1); // slot 0x18 -> 006E6330 SystemWithNamedObjClassTy::SendMessage
     int __thiscall (*Life)(SystemClassTy *st_this); // slot 0x1C -> 006E5D90 SystemClassTy::Life
     int __thiscall (*GetMessage)(SystemClassTy *st_this, int param_1); // slot 0x20 -> 006E5F00 SystemClassTy::GetMessage
@@ -38417,22 +41418,22 @@ struct TLOBaseTyVTable {
     undefined4 __thiscall (*vfunc_88)(TLOBaseTy *st_this, undefined2 arg_1); // slot 0x88 -> 00403008 thunk_FUN_004be320 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(TLOBaseTy *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(TLOBaseTy *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(TLOBaseTy *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(TLOBaseTy *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(TLOBaseTy *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(TLOBaseTy *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(TLOBaseTy *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
+    undefined4 __thiscall (*vfunc_BC)(TLOBaseTy *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(TLOBaseTy *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
     dword __thiscall (*slot_C4)(TLOBaseTy *st_this); // slot 0xC4 -> 00404F02 TLOBaseTy::thunk_FUN_004be160
     undefined4 __thiscall (*vfunc_C8)(TLOBaseTy *st_this, undefined2 arg_1); // slot 0xC8 -> 00405DF8 thunk_FUN_004be180 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(TLOBaseTy *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
-    void *vfunc_D0; // slot 0xD0 -> 0040144C thunk_FUN_004d7390
+    undefined4 __thiscall (*vfunc_D0)(TLOBaseTy *st_this); // slot 0xD0 -> 0040144C thunk_FUN_004d7390 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D4)(TLOBaseTy *st_this); // slot 0xD4 -> 004053DA thunk_FUN_0041da10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D8)(TLOBaseTy *st_this); // slot 0xD8 -> 0040503D thunk_FUN_0041da30 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_DC)(TLOBaseTy *st_this, short arg_1, short arg_2, short arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6); // slot 0xDC -> 004035F8 thunk_FUN_004c5980 [STIndirectCallApplier]
@@ -38451,8 +41452,8 @@ struct TLOBaseTyVTable {
     undefined4 __thiscall (*vfunc_110)(TLOBaseTy *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x110 -> 00403661 thunk_FUN_004ccc10 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(TLOBaseTy *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(TLOBaseTy *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct TLOBldMarkVTable {
@@ -38471,7 +41472,7 @@ struct TLOEmbryoTyVTable {
     undefined4 __thiscall (*vfunc_20)(TLOEmbryoTy *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(TLOEmbryoTy *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_28)(TLOEmbryoTy *st_this, undefined4 arg_1, undefined2 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00401839 thunk_FUN_004d6c90 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004044B7 thunk_FUN_004d6be0
+    undefined4 __thiscall (*vfunc_2C)(TLOEmbryoTy *st_this); // slot 0x2C -> 004044B7 thunk_FUN_004d6be0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_30)(TLOEmbryoTy *st_this, undefined2 arg_1); // slot 0x30 -> 0040594D thunk_FUN_004d6890 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_34)(TLOEmbryoTy *st_this, undefined2 arg_1); // slot 0x34 -> 00405092 thunk_FUN_004d6930 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -38490,26 +41491,26 @@ struct TLOEmbryoTyVTable {
     undefined4 __thiscall (*vfunc_6C)(TLOEmbryoTy *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
+    undefined4 __thiscall (*vfunc_78)(TLOEmbryoTy *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
     dword __thiscall (*slot_7C)(TLOEmbryoTy *st_this); // slot 0x7C -> 00402CE3 TLOEmbryoTy::thunk_FUN_004d6c50
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(TLOEmbryoTy *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(TLOEmbryoTy *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(TLOEmbryoTy *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(TLOEmbryoTy *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(TLOEmbryoTy *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(TLOEmbryoTy *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(TLOEmbryoTy *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 004013C5 thunk_FUN_004d6c70
+    undefined4 __thiscall (*vfunc_BC)(TLOEmbryoTy *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(TLOEmbryoTy *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(TLOEmbryoTy *st_this); // slot 0xC4 -> 004013C5 thunk_FUN_004d6c70 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(TLOEmbryoTy *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(TLOEmbryoTy *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -38523,27 +41524,27 @@ struct TLOEmbryoTyVTable {
     undefined4 __thiscall (*vfunc_F0)(TLOEmbryoTy *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F8)(TLOEmbryoTy *st_this); // slot 0xF8 -> 00401FAF thunk_FUN_004d6c20 [STIndirectCallApplier]
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_FC)(TLOEmbryoTy *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(TLOEmbryoTy *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(TLOEmbryoTy *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(TLOEmbryoTy *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(TLOEmbryoTy *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(TLOEmbryoTy *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct TLOEmbryoTyVTable_at_1D5 {
-    void *vfunc_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*vfunc_00)(TLOEmbryoTy *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct TLOFakeTyVTable {
     int __thiscall (*GetMessage)(TLOFakeTy *st_this, int param_1); // slot 0x0 -> 00401C62 TLOFakeTy::GetMessage
     undefined4 __thiscall (*vfunc_04)(TLOFakeTy *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(TLOFakeTy *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(TLOFakeTy *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(TLOFakeTy *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -38551,7 +41552,7 @@ struct TLOFakeTyVTable {
     undefined4 __thiscall (*vfunc_20)(TLOFakeTy *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(TLOFakeTy *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004024E6 thunk_FUN_00419dd0
+    undefined4 __thiscall (*vfunc_2C)(TLOFakeTy *st_this); // slot 0x2C -> 004024E6 thunk_FUN_00419dd0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -38570,26 +41571,26 @@ struct TLOFakeTyVTable {
     undefined4 __thiscall (*vfunc_6C)(TLOFakeTy *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(TLOFakeTy *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(TLOFakeTy *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(TLOFakeTy *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(TLOFakeTy *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(TLOFakeTy *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(TLOFakeTy *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(TLOFakeTy *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(TLOFakeTy *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(TLOFakeTy *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(TLOFakeTy *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(TLOFakeTy *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(TLOFakeTy *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(TLOFakeTy *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(TLOFakeTy *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -38599,20 +41600,20 @@ struct TLOFakeTyVTable {
     undefined4 __stdcall (*vfunc_E0)(undefined4 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5); // slot 0xE0 -> 00402905 thunk_FUN_0041dbe0 [STIndirectCallApplier]
     void __stdcall (*vfunc_E4)(undefined4 arg_1); // slot 0xE4 -> 004018ED thunk_FUN_0041dc20 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_E8)(TLOFakeTy *st_this, undefined2 arg_1); // slot 0xE8 -> 00404E8A thunk_FUN_0041dd00 [STIndirectCallApplier]
-    void *vfunc_EC; // slot 0xEC -> 00403102 thunk_FUN_004d0fa0
+    undefined4 __thiscall (*vfunc_EC)(TLOFakeTy *st_this); // slot 0xEC -> 00403102 thunk_FUN_004d0fa0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(TLOFakeTy *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401C76 thunk_FUN_004d0f80
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(TLOFakeTy *st_this); // slot 0xF8 -> 00401C76 thunk_FUN_004d0f80 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(TLOFakeTy *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(TLOFakeTy *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(TLOFakeTy *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(TLOFakeTy *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(TLOFakeTy *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(TLOFakeTy *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct TrackbarClassTyVTable {
@@ -38641,17 +41642,17 @@ struct VTable_00790508 {
     int __thiscall (*GetMessage)(STGroupC *st_this, STMessage *message); // slot 0x0 -> 004034EA STGroupC::GetMessage
     undefined4 __thiscall (*slot_04)(void *st_this, undefined2 arg_1); // slot 0x4 -> 00405051 thunk_FUN_00423c70 [STIndirectCallApplier]
     void __thiscall (*slot_08)(STGroupC *st_this, undefined4 param_1, undefined4 param_2); // slot 0x8 -> 004039D6 STGroupC::thunk_FUN_00423ea0
-    void *slot_0C; // slot 0xC -> 004014F1 thunk_FUN_004244d0
+    undefined4 __thiscall (*slot_0C)(void *st_this); // slot 0xC -> 004014F1 thunk_FUN_004244d0 [STIndirectCallApplier]
     void __thiscall (*slot_10)(STGroupC *st_this, undefined4 param_1, undefined4 param_2); // slot 0x10 -> 00402F3B STGroupC::thunk_FUN_004244f0
     void __thiscall (*slot_14)(STGroupC *st_this, undefined4 param_1, undefined4 param_2); // slot 0x14 -> 004030C1 STGroupC::thunk_FUN_00424510
     undefined4 __stdcall (*slot_18)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x18 -> 00404A25 thunk_FUN_00424710 [STIndirectCallApplier]
-    void *slot_1C; // slot 0x1C -> 00401A69 thunk_FUN_00424730
-    void *slot_20; // slot 0x20 -> 00402522 thunk_FUN_00424750
-    void *slot_24; // slot 0x24 -> 00401898 thunk_FUN_00424770
+    undefined4 __thiscall (*slot_1C)(void *st_this); // slot 0x1C -> 00401A69 thunk_FUN_00424730 [STIndirectCallApplier]
+    undefined4 __thiscall (*slot_20)(void *st_this); // slot 0x20 -> 00402522 thunk_FUN_00424750 [STIndirectCallApplier]
+    undefined4 __thiscall (*slot_24)(void *st_this); // slot 0x24 -> 00401898 thunk_FUN_00424770 [STIndirectCallApplier]
 };
 
 struct VTable_00790700 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_00790708 {
@@ -38663,11 +41664,11 @@ struct VTable_00790790 {
 };
 
 struct VTable_00790C00 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_007976C0 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079AC18 {
@@ -38701,39 +41702,39 @@ struct VTable_0079AE64 {
 };
 
 struct VTable_0079B398 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079B524 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079B688 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079B8EC {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079BA50 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079BBB4 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079BD18 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079BE7C {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079BFE0 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079C018 {
@@ -38751,14 +41752,14 @@ struct VTable_0079C238 {
 };
 
 struct VTable_0079C578 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079C8A0 {
     undefined4 __thiscall (*vfunc_00)(void *st_this, undefined2 arg_1); // slot 0x0 -> 004056B9 thunk_FUN_005fd3a0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_04)(void *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
-    void *vfunc_08; // slot 0x8 -> 00402EFA thunk_FUN_00418990
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_08)(void *st_this); // slot 0x8 -> 00402EFA thunk_FUN_00418990 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_0C)(void *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(void *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -38766,7 +41767,7 @@ struct VTable_0079C8A0 {
     undefined4 __thiscall (*vfunc_20)(void *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(void *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004024E6 thunk_FUN_00419dd0
+    undefined4 __thiscall (*vfunc_2C)(void *st_this); // slot 0x2C -> 004024E6 thunk_FUN_00419dd0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -38785,40 +41786,40 @@ struct VTable_0079C8A0 {
     undefined4 __thiscall (*vfunc_6C)(void *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(void *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(void *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(void *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(void *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(void *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(void *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(void *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(void *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(void *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(void *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(void *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(void *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(void *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(void *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
 };
 
 struct VTable_0079CB10 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079CC28 {
     undefined4 __thiscall (*vfunc_00)(void *st_this, undefined2 arg_1); // slot 0x0 -> 00402B2B thunk_FUN_00608e90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_04)(void *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
-    void *vfunc_08; // slot 0x8 -> 00402EFA thunk_FUN_00418990
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_08)(void *st_this); // slot 0x8 -> 00402EFA thunk_FUN_00418990 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_0C)(void *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(void *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -38826,7 +41827,7 @@ struct VTable_0079CC28 {
     undefined4 __thiscall (*vfunc_20)(void *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(void *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004024E6 thunk_FUN_00419dd0
+    undefined4 __thiscall (*vfunc_2C)(void *st_this); // slot 0x2C -> 004024E6 thunk_FUN_00419dd0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -38845,26 +41846,26 @@ struct VTable_0079CC28 {
     undefined4 __thiscall (*vfunc_6C)(void *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(void *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(void *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(void *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(void *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(void *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(void *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(void *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(void *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(void *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(void *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(void *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(void *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(void *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(void *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -38873,8 +41874,8 @@ struct VTable_0079CC28 {
 struct VTable_0079CD94 {
     undefined4 __thiscall (*vfunc_00)(void *st_this, undefined2 arg_1); // slot 0x0 -> 0040127B thunk_FUN_0060ea30 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_04)(void *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
-    void *vfunc_08; // slot 0x8 -> 00402EFA thunk_FUN_00418990
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_08)(void *st_this); // slot 0x8 -> 00402EFA thunk_FUN_00418990 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_0C)(void *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(void *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -38882,7 +41883,7 @@ struct VTable_0079CD94 {
     undefined4 __thiscall (*vfunc_20)(void *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(void *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004024E6 thunk_FUN_00419dd0
+    undefined4 __thiscall (*vfunc_2C)(void *st_this); // slot 0x2C -> 004024E6 thunk_FUN_00419dd0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -38901,26 +41902,26 @@ struct VTable_0079CD94 {
     undefined4 __thiscall (*vfunc_6C)(void *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(void *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(void *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(void *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(void *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(void *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(void *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(void *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(void *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(void *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(void *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(void *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(void *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(void *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(void *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -38931,14 +41932,14 @@ struct VTable_0079CED8 {
 };
 
 struct VTable_0079D05C {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079D1D8 {
     undefined4 __thiscall (*vfunc_00)(void *st_this, undefined2 arg_1); // slot 0x0 -> 004040E3 thunk_FUN_00638ca0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_04)(void *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(void *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(void *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(void *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -38946,7 +41947,7 @@ struct VTable_0079D1D8 {
     undefined4 __thiscall (*vfunc_20)(void *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(void *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004024E6 thunk_FUN_00419dd0
+    undefined4 __thiscall (*vfunc_2C)(void *st_this); // slot 0x2C -> 004024E6 thunk_FUN_00419dd0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -38965,26 +41966,26 @@ struct VTable_0079D1D8 {
     undefined4 __thiscall (*vfunc_6C)(void *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(void *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(void *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(void *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(void *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(void *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(void *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(void *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(void *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(void *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(void *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(void *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(void *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(void *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(void *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -38997,28 +41998,28 @@ struct VTable_0079D1D8 {
     undefined4 __thiscall (*vfunc_EC)(void *st_this); // slot 0xEC -> 004059F7 thunk_FUN_0041f310 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(void *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(void *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(void *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(void *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(void *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(void *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(void *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(void *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct VTable_0079D338 {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079D33C {
     undefined4 __thiscall (*vfunc_00)(void *st_this, undefined2 arg_1); // slot 0x0 -> 00404B6F thunk_FUN_00639c90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_04)(void *st_this); // slot 0x4 -> 00402964 thunk_FUN_00415b10 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_08)(void *st_this); // slot 0x8 -> 00404F25 thunk_FUN_0041e510 [STIndirectCallApplier]
-    void *vfunc_0C; // slot 0xC -> 00402EC3 thunk_FUN_004189b0
+    undefined4 __thiscall (*vfunc_0C)(void *st_this); // slot 0xC -> 00402EC3 thunk_FUN_004189b0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_10)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x10 -> 00402AFE thunk_FUN_004168d0 [STIndirectCallApplier]
     undefined2 __stdcall (*vfunc_14)(short arg_1, short arg_2, undefined4 arg_3, short arg_4, short arg_5, undefined4 arg_6); // slot 0x14 -> 004036AC thunk_FUN_00416db0 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_18)(void *st_this, short arg_1, short arg_2, short arg_3); // slot 0x18 -> 00404BCE thunk_FUN_00417f30 [STIndirectCallApplier]
@@ -39026,7 +42027,7 @@ struct VTable_0079D33C {
     undefined4 __thiscall (*vfunc_20)(void *st_this); // slot 0x20 -> 00404DD1 thunk_FUN_00419a90 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_24)(void *st_this); // slot 0x24 -> 00401438 thunk_FUN_00419bf0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_28)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4); // slot 0x28 -> 00404232 thunk_FUN_00419db0 [STIndirectCallApplier]
-    void *vfunc_2C; // slot 0x2C -> 004024E6 thunk_FUN_00419dd0
+    undefined4 __thiscall (*vfunc_2C)(void *st_this); // slot 0x2C -> 004024E6 thunk_FUN_00419dd0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_30)(undefined2 arg_1); // slot 0x30 -> 00404F70 thunk_FUN_0041ab60 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_34)(undefined2 arg_1); // slot 0x34 -> 00402D2E thunk_FUN_0041ab90 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_38)(undefined2 arg_1); // slot 0x38 -> 00404DE5 thunk_FUN_0041abc0 [STIndirectCallApplier]
@@ -39045,26 +42046,26 @@ struct VTable_0079D33C {
     undefined4 __thiscall (*vfunc_6C)(void *st_this); // slot 0x6C -> 004039C2 thunk_FUN_0041ae80 [STIndirectCallApplier]
     void __stdcall (*vfunc_70)(undefined4 arg_1); // slot 0x70 -> 0040572C thunk_FUN_0041aec0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_74)(undefined2 arg_1); // slot 0x74 -> 00402BF8 thunk_FUN_0041aea0 [STIndirectCallApplier]
-    void *vfunc_78; // slot 0x78 -> 0040349F thunk_FUN_0041c2c0
-    void *vfunc_7C; // slot 0x7C -> 00405501 thunk_FUN_0041c2e0
+    undefined4 __thiscall (*vfunc_78)(void *st_this); // slot 0x78 -> 0040349F thunk_FUN_0041c2c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_7C)(void *st_this); // slot 0x7C -> 00405501 thunk_FUN_0041c2e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_80)(undefined4 arg_1); // slot 0x80 -> 0040411F thunk_FUN_0041c300 [STIndirectCallApplier]
     void __stdcall (*vfunc_84)(undefined4 arg_1); // slot 0x84 -> 004054D9 thunk_FUN_0041c320 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_88)(undefined4 arg_1); // slot 0x88 -> 004045DE thunk_FUN_0041c340 [STIndirectCallApplier]
     void __stdcall (*vfunc_8C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x8C -> 00405D26 thunk_FUN_0041c360 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_90)(void *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x90 -> 0040574F thunk_FUN_0041c380 [STIndirectCallApplier]
-    void *vfunc_94; // slot 0x94 -> 00403931 thunk_FUN_0041d5e0
-    void *vfunc_98; // slot 0x98 -> 00403846 thunk_FUN_0041d600
-    void *vfunc_9C; // slot 0x9C -> 00401F23 thunk_FUN_0041d760
+    void __thiscall (*vfunc_94)(void *st_this); // slot 0x94 -> 00403931 thunk_FUN_0041d5e0 [STIndirectCallApplier]
+    void __thiscall (*vfunc_98)(void *st_this); // slot 0x98 -> 00403846 thunk_FUN_0041d600 [STIndirectCallApplier]
+    void __thiscall (*vfunc_9C)(void *st_this); // slot 0x9C -> 00401F23 thunk_FUN_0041d760 [STIndirectCallApplier]
     void __stdcall (*vfunc_A0)(undefined4 arg_1); // slot 0xA0 -> 0040574A thunk_FUN_0041d780 [STIndirectCallApplier]
-    void *vfunc_A4; // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0
+    undefined4 __thiscall (*vfunc_A4)(void *st_this); // slot 0xA4 -> 0040229D thunk_FUN_0041d7a0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_A8)(undefined4 arg_1); // slot 0xA8 -> 00404EA8 thunk_FUN_0041d7c0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_AC)(undefined4 arg_1); // slot 0xAC -> 00405BE6 thunk_FUN_0041d7e0 [STIndirectCallApplier]
     void __stdcall (*vfunc_B0)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5); // slot 0xB0 -> 00404E03 thunk_FUN_0041d800 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B4)(void *st_this); // slot 0xB4 -> 00403D3C thunk_FUN_0041d820 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_B8)(void *st_this); // slot 0xB8 -> 00401F28 thunk_FUN_0041d860 [STIndirectCallApplier]
-    void *vfunc_BC; // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0
-    void *vfunc_C0; // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0
-    void *vfunc_C4; // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0
+    undefined4 __thiscall (*vfunc_BC)(void *st_this); // slot 0xBC -> 004018D9 thunk_FUN_0041d8a0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C0)(void *st_this); // slot 0xC0 -> 00405E02 thunk_FUN_0041d8c0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_C4)(void *st_this); // slot 0xC4 -> 00404ECB thunk_FUN_00418ce0 [STIndirectCallApplier]
     void __stdcall (*vfunc_C8)(undefined4 arg_1); // slot 0xC8 -> 00403AEE thunk_FUN_00418d00 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_CC)(void *st_this); // slot 0xCC -> 004034D6 thunk_FUN_004d7010 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_D0)(void *st_this); // slot 0xD0 -> 0040167C thunk_FUN_004d7040 [STIndirectCallApplier]
@@ -39077,25 +42078,25 @@ struct VTable_0079D33C {
     undefined4 __thiscall (*vfunc_EC)(void *st_this); // slot 0xEC -> 004059F7 thunk_FUN_0041f310 [STIndirectCallApplier]
     undefined4 __thiscall (*vfunc_F0)(void *st_this); // slot 0xF0 -> 00403936 thunk_FUN_0041f330 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_F4)(undefined4 arg_1); // slot 0xF4 -> 00403C9C thunk_FUN_0041f350 [STIndirectCallApplier]
-    void *vfunc_F8; // slot 0xF8 -> 00401A6E thunk_FUN_0041f370
-    void *vfunc_FC; // slot 0xFC -> 00403E13 thunk_FUN_004210c0
+    undefined4 __thiscall (*vfunc_F8)(void *st_this); // slot 0xF8 -> 00401A6E thunk_FUN_0041f370 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_FC)(void *st_this); // slot 0xFC -> 00403E13 thunk_FUN_004210c0 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_100)(void *st_this, undefined1 arg_1); // slot 0x100 -> 00401B3B thunk_FUN_00422e20 [STIndirectCallApplier]
     undefined1 __thiscall (*vfunc_104)(void *st_this, undefined1 arg_1); // slot 0x104 -> 00401DAC thunk_FUN_00422ff0 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_108)(undefined4 arg_1); // slot 0x108 -> 00402482 thunk_FUN_00423140 [STIndirectCallApplier]
-    void *vfunc_10C; // slot 0x10C -> 00401474 thunk_FUN_00423160
+    void __thiscall (*vfunc_10C)(void *st_this); // slot 0x10C -> 00401474 thunk_FUN_00423160 [STIndirectCallApplier]
     void __stdcall (*vfunc_110)(undefined4 arg_1, undefined4 arg_2); // slot 0x110 -> 00402BB2 thunk_FUN_00423180 [STIndirectCallApplier]
     undefined4 __stdcall (*vfunc_114)(undefined4 arg_1); // slot 0x114 -> 00402A45 thunk_FUN_004231a0 [STIndirectCallApplier]
     void __stdcall (*vfunc_118)(undefined4 arg_1); // slot 0x118 -> 004041E2 thunk_FUN_004231c0 [STIndirectCallApplier]
-    void *vfunc_11C; // slot 0x11C -> 00404F66 thunk_FUN_004231e0
-    void *vfunc_120; // slot 0x120 -> 004045CF thunk_FUN_00423200
+    undefined4 __thiscall (*vfunc_11C)(void *st_this); // slot 0x11C -> 00404F66 thunk_FUN_004231e0 [STIndirectCallApplier]
+    undefined4 __thiscall (*vfunc_120)(void *st_this); // slot 0x120 -> 004045CF thunk_FUN_00423200 [STIndirectCallApplier]
 };
 
 struct VTable_0079D49C {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079D60C {
-    void *slot_00; // slot 0x0 -> 00405605 thunk_FUN_004210a0
+    undefined4 __thiscall (*slot_00)(void *st_this); // slot 0x0 -> 00405605 thunk_FUN_004210a0 [STIndirectCallApplier]
 };
 
 struct VTable_0079D67C {
@@ -39105,7 +42106,7 @@ struct VTable_0079D67C {
     undefined4 __thiscall (*slot_0C)(void *st_this, undefined2 arg_1); // slot 0xC -> 00403CBF thunk_FUN_00647be0 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_10)(void *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x10 -> 00404AC0 thunk_FUN_00647c10 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_14)(void *st_this); // slot 0x14 -> 0040136B thunk_FUN_00647c80 [STIndirectCallApplier]
-    void *slot_18; // slot 0x18 -> 004041FB thunk_FUN_00647b40
+    undefined4 __thiscall (*slot_18)(void *st_this); // slot 0x18 -> 004041FB thunk_FUN_00647b40 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_1C)(void *st_this, undefined2 arg_1); // slot 0x1C -> 004022A2 thunk_FUN_00647ca0 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_20)(void *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x20 -> 00405A3D thunk_FUN_00647ce0 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_24)(void *st_this, undefined2 arg_1); // slot 0x24 -> 004019F6 thunk_FUN_00647d10 [STIndirectCallApplier]
@@ -39173,9 +42174,9 @@ struct VTable_0079DB78 {
     undefined4 __thiscall (*slot_0C)(void *st_this, undefined1 arg_1); // slot 0xC -> 006D5170 FUN_006d5170 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_10)(void *st_this, undefined4 arg_1); // slot 0x10 -> 00747212 FUN_00747212 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_14)(void *st_this); // slot 0x14 -> 0074747F FUN_0074747f [STIndirectCallApplier]
-    void *slot_18; // slot 0x18 -> 0074A057 FUN_0074a057
+    undefined4 __thiscall (*slot_18)(void *st_this); // slot 0x18 -> 0074A057 FUN_0074a057 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_1C)(void *st_this, undefined2 arg_1); // slot 0x1C -> 006D5230 FUN_006d5230 [STIndirectCallApplier]
-    void *slot_20; // slot 0x20 -> 006D50E0 FUN_006d50e0
+    undefined4 __thiscall (*slot_20)(void *st_this); // slot 0x20 -> 006D50E0 FUN_006d50e0 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_24)(void *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x24 -> 00749BE1 FUN_00749be1 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_28)(void *st_this, undefined4 arg_1); // slot 0x28 -> 00749CEC FUN_00749cec [STIndirectCallApplier]
     undefined4 __thiscall (*slot_2C)(void *st_this); // slot 0x2C -> 00749D09 FUN_00749d09 [STIndirectCallApplier]
@@ -39185,9 +42186,9 @@ struct VTable_0079DB78 {
     undefined4 __thiscall (*slot_3C)(void *st_this, undefined4 arg_1); // slot 0x3C -> 0074AE8E FUN_0074ae8e [STIndirectCallApplier]
     undefined4 __thiscall (*slot_40)(void *st_this); // slot 0x40 -> 0074AD27 FUN_0074ad27 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_44)(void *st_this); // slot 0x44 -> 0074AD32 FUN_0074ad32 [STIndirectCallApplier]
-    void *slot_48; // slot 0x48 -> 0074AD47 FUN_0074ad47
-    void *slot_4C; // slot 0x4C -> 0074AD48 FUN_0074ad48
-    void *slot_50; // slot 0x50 -> 006D5100 FUN_006d5100
+    void __thiscall (*slot_48)(void *st_this); // slot 0x48 -> 0074AD47 FUN_0074ad47 [STIndirectCallApplier]
+    void __thiscall (*slot_4C)(void *st_this); // slot 0x4C -> 0074AD48 FUN_0074ad48 [STIndirectCallApplier]
+    void __thiscall (*slot_50)(void *st_this); // slot 0x50 -> 006D5100 FUN_006d5100 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_54)(void *st_this, undefined4 arg_1); // slot 0x54 -> 0074B44A FUN_0074b44a [STIndirectCallApplier]
     undefined4 __thiscall (*slot_58)(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x58 -> 0074A220 FUN_0074a220 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_5C)(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3); // slot 0x5C -> 0074B06D FUN_0074b06d [STIndirectCallApplier]
@@ -39196,7 +42197,7 @@ struct VTable_0079DB78 {
     int32_t __thiscall (*EndOfStream)(CBaseRenderer *st_this); // slot 0x68 -> 0074A113 CBaseRenderer::EndOfStream [STIndirectCallApplier]
     undefined1 __thiscall (*slot_6C)(void *st_this); // slot 0x6C -> 0074A27C FUN_0074a27c [STIndirectCallApplier]
     undefined4 __thiscall (*slot_70)(void *st_this); // slot 0x70 -> 0074A5D8 FUN_0074a5d8 [STIndirectCallApplier]
-    void *slot_74; // slot 0x74 -> 0074A1A7 FUN_0074a1a7
+    undefined4 __thiscall (*slot_74)(void *st_this); // slot 0x74 -> 0074A1A7 FUN_0074a1a7 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_78)(void *st_this); // slot 0x78 -> 0074A1AA FUN_0074a1aa [STIndirectCallApplier]
     undefined4 __thiscall (*slot_7C)(void *st_this); // slot 0x7C -> 0074A77D FUN_0074a77d [STIndirectCallApplier]
     undefined4 __thiscall (*slot_80)(void *st_this); // slot 0x80 -> 0074A7E3 FUN_0074a7e3 [STIndirectCallApplier]
@@ -39356,16 +42357,16 @@ struct VTable_0079DDEC {
     undefined4 __thiscall (*slot_0C)(void *st_this, undefined1 arg_1); // slot 0xC -> 006D71A0 FUN_006d71a0 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_10)(void *st_this, undefined4 arg_1); // slot 0x10 -> 00747212 FUN_00747212 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_14)(void *st_this); // slot 0x14 -> 0074747F FUN_0074747f [STIndirectCallApplier]
-    void *slot_18; // slot 0x18 -> 0074BE72 FUN_0074be72
+    undefined4 __thiscall (*slot_18)(void *st_this); // slot 0x18 -> 0074BE72 FUN_0074be72 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_1C)(void *st_this, undefined2 arg_1); // slot 0x1C -> 006D71D0 FUN_006d71d0 [STIndirectCallApplier]
-    void *slot_20; // slot 0x20 -> 006D50E0 FUN_006d50e0
+    undefined4 __thiscall (*slot_20)(void *st_this); // slot 0x20 -> 006D50E0 FUN_006d50e0 [STIndirectCallApplier]
     undefined4 __stdcall (*slot_24)(undefined4 arg_1, undefined4 arg_2); // slot 0x24 -> 0074BE6A FUN_0074be6a [STIndirectCallApplier]
     undefined4 __stdcall (*slot_28)(undefined4 arg_1); // slot 0x28 -> 006D7180 FUN_006d7180 [STIndirectCallApplier]
     undefined4 __stdcall (*slot_2C)(undefined4 arg_1, undefined4 arg_2); // slot 0x2C -> 006D7170 FUN_006d7170 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_30)(void *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x30 -> 0074CAA4 FUN_0074caa4 [STIndirectCallApplier]
     undefined4 __stdcall (*slot_34)(undefined4 arg_1, undefined4 arg_2); // slot 0x34 -> 006D7160 FUN_006d7160 [STIndirectCallApplier]
-    void *slot_38; // slot 0x38 -> 0074BFA5 FUN_0074bfa5
-    void *slot_3C; // slot 0x3C -> 0074BFA8 FUN_0074bfa8
+    undefined4 __thiscall (*slot_38)(void *st_this); // slot 0x38 -> 0074BFA5 FUN_0074bfa5 [STIndirectCallApplier]
+    undefined4 __thiscall (*slot_3C)(void *st_this); // slot 0x3C -> 0074BFA8 FUN_0074bfa8 [STIndirectCallApplier]
     undefined4 __stdcall (*slot_40)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6); // slot 0x40 -> 0074C1C4 FUN_0074c1c4 [STIndirectCallApplier]
     undefined4 __stdcall (*slot_44)(undefined4 arg_1, undefined4 arg_2); // slot 0x44 -> 0074BFBA FUN_0074bfba [STIndirectCallApplier]
     undefined4 __stdcall (*slot_48)(undefined4 arg_1, undefined4 arg_2); // slot 0x48 -> 0074BFAB FUN_0074bfab [STIndirectCallApplier]
@@ -39426,7 +42427,7 @@ struct VTable_0079DED8 {
     undefined4 __stdcall (*slot_08)(undefined4 arg_1); // slot 0x8 -> 00747C50 FUN_00747c50 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_0C)(void *st_this, undefined1 arg_1); // slot 0xC -> 006D7350 FUN_006d7350 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_10)(void *st_this); // slot 0x10 -> 00748287 FUN_00748287 [STIndirectCallApplier]
-    void *slot_14; // slot 0x14 -> 00748296 FUN_00748296
+    undefined4 __thiscall (*slot_14)(void *st_this); // slot 0x14 -> 00748296 FUN_00748296 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_18)(void *st_this); // slot 0x18 -> 007489A5 FUN_007489a5 [STIndirectCallApplier]
     undefined4 __stdcall (*slot_1C)(undefined4 arg_1, undefined4 arg_2); // slot 0x1C -> 00748299 FUN_00748299 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_20)(void *st_this, undefined2 arg_1); // slot 0x20 -> 006D7000 FUN_006d7000 [STIndirectCallApplier]
@@ -39457,7 +42458,7 @@ struct VTable_0079E2C0 {
 
 struct VTable_0079E360 {
     int __thiscall (*GetMessage)(ControlClassTy *st_this, STMessage *message); // slot 0x0 -> 0072B780 ControlClassTy::GetMessage
-    void *slot_04; // slot 0x4 -> 00734210 Library::MSVCRT::FUN_00734210
+    undefined4 __thiscall (*slot_04)(void *st_this); // slot 0x4 -> 00734210 Library::MSVCRT::FUN_00734210 [STIndirectCallApplier]
 };
 
 struct VTable_007A1108 {
@@ -39524,7 +42525,7 @@ struct VTable_007A11C8 {
     undefined4 __stdcall (*slot_04)(undefined4 arg_1); // slot 0x4 -> 0074B84E FUN_0074b84e [STIndirectCallApplier]
     undefined4 __stdcall (*slot_08)(undefined4 arg_1); // slot 0x8 -> 0074B86C FUN_0074b86c [STIndirectCallApplier]
     undefined4 __thiscall (*slot_0C)(void *st_this, undefined4 arg_1); // slot 0xC -> 007494B5 FUN_007494b5 [STIndirectCallApplier]
-    void *slot_10; // slot 0x10 -> 007496A0 FUN_007496a0
+    void __thiscall (*slot_10)(void *st_this); // slot 0x10 -> 007496A0 FUN_007496a0 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_14)(void *st_this); // slot 0x14 -> 007495BF FUN_007495bf [STIndirectCallApplier]
 };
 
@@ -39561,9 +42562,9 @@ struct VTable_007A13D0 {
     undefined4 __thiscall (*slot_0C)(void *st_this, undefined4 arg_1); // slot 0xC -> 00749B43 FUN_00749b43 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_10)(void *st_this, undefined4 arg_1); // slot 0x10 -> 00747212 FUN_00747212 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_14)(void *st_this); // slot 0x14 -> 0074747F FUN_0074747f [STIndirectCallApplier]
-    void *slot_18; // slot 0x18 -> 0074A057 FUN_0074a057
+    undefined4 __thiscall (*slot_18)(void *st_this); // slot 0x18 -> 0074A057 FUN_0074a057 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_1C)(void *st_this, undefined2 arg_1); // slot 0x1C -> 0074A05B FUN_0074a05b [STIndirectCallApplier]
-    void *slot_20; // slot 0x20 -> 006D50E0 FUN_006d50e0
+    undefined4 __thiscall (*slot_20)(void *st_this); // slot 0x20 -> 006D50E0 FUN_006d50e0 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_24)(void *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x24 -> 00749BE1 FUN_00749be1 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_28)(void *st_this, undefined4 arg_1); // slot 0x28 -> 00749CEC FUN_00749cec [STIndirectCallApplier]
     undefined4 __thiscall (*slot_2C)(void *st_this); // slot 0x2C -> 00749D09 FUN_00749d09 [STIndirectCallApplier]
@@ -39571,11 +42572,11 @@ struct VTable_007A13D0 {
     void __stdcall (*slot_34)(undefined4 arg_1); // slot 0x34 -> 006D50F0 FUN_006d50f0 [STIndirectCallApplier]
     void __stdcall (*slot_38)(undefined4 arg_1); // slot 0x38 -> 0074A959 FUN_0074a959 [STIndirectCallApplier]
     void __stdcall (*slot_3C)(undefined4 arg_1); // slot 0x3C -> 0074A95C FUN_0074a95c [STIndirectCallApplier]
-    void *slot_40; // slot 0x40 -> 0074B442 FUN_0074b442
-    void *slot_44; // slot 0x44 -> 0074B445 FUN_0074b445
-    void *slot_48; // slot 0x48 -> 0074B448 FUN_0074b448
-    void *slot_4C; // slot 0x4C -> 0074B449 FUN_0074b449
-    void *slot_50; // slot 0x50 -> 006D5100 FUN_006d5100
+    undefined4 __thiscall (*slot_40)(void *st_this); // slot 0x40 -> 0074B442 FUN_0074b442 [STIndirectCallApplier]
+    undefined4 __thiscall (*slot_44)(void *st_this); // slot 0x44 -> 0074B445 FUN_0074b445 [STIndirectCallApplier]
+    void __thiscall (*slot_48)(void *st_this); // slot 0x48 -> 0074B448 FUN_0074b448 [STIndirectCallApplier]
+    void __thiscall (*slot_4C)(void *st_this); // slot 0x4C -> 0074B449 FUN_0074b449 [STIndirectCallApplier]
+    void __thiscall (*slot_50)(void *st_this); // slot 0x50 -> 006D5100 FUN_006d5100 [STIndirectCallApplier]
     int __thiscall (*slot_54)(void *st_this, int param_1); // slot 0x54 -> 0074A2AB FUN_0074a2ab [STIndirectCallApplier]
     undefined4 __thiscall (*slot_58)(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x58 -> 0074A220 FUN_0074a220 [STIndirectCallApplier]
     undefined4 __stdcall (*slot_5C)(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x5C -> 0074A271 FUN_0074a271 [STIndirectCallApplier]
@@ -39584,7 +42585,7 @@ struct VTable_007A13D0 {
     int32_t __thiscall (*EndOfStream)(CBaseRenderer *st_this); // slot 0x68 -> 0074A113 CBaseRenderer::EndOfStream [STIndirectCallApplier]
     undefined1 __thiscall (*slot_6C)(void *st_this); // slot 0x6C -> 0074A27C FUN_0074a27c [STIndirectCallApplier]
     undefined4 __thiscall (*slot_70)(void *st_this); // slot 0x70 -> 0074A5D8 FUN_0074a5d8 [STIndirectCallApplier]
-    void *slot_74; // slot 0x74 -> 0074A1A7 FUN_0074a1a7
+    undefined4 __thiscall (*slot_74)(void *st_this); // slot 0x74 -> 0074A1A7 FUN_0074a1a7 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_78)(void *st_this); // slot 0x78 -> 0074A1AA FUN_0074a1aa [STIndirectCallApplier]
     undefined4 __thiscall (*slot_7C)(void *st_this); // slot 0x7C -> 0074A77D FUN_0074a77d [STIndirectCallApplier]
     undefined4 __thiscall (*slot_80)(void *st_this); // slot 0x80 -> 0074A7E3 FUN_0074a7e3 [STIndirectCallApplier]
@@ -39598,8 +42599,8 @@ struct VTable_007A13D0 {
     undefined4 __thiscall (*slot_A0)(void *st_this); // slot 0xA0 -> 0074A347 FUN_0074a347 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_A4)(void *st_this); // slot 0xA4 -> 0074A36E FUN_0074a36e [STIndirectCallApplier]
     undefined4 __thiscall (*slot_A8)(void *st_this, undefined4 arg_1); // slot 0xA8 -> 0074A30E FUN_0074a30e [STIndirectCallApplier]
-    void *slot_AC; // slot 0xAC -> 00734210 Library::MSVCRT::FUN_00734210
-    void *slot_B0; // slot 0xB0 -> 00734210 Library::MSVCRT::FUN_00734210
+    undefined4 __thiscall (*slot_AC)(void *st_this); // slot 0xAC -> 00734210 Library::MSVCRT::FUN_00734210 [STIndirectCallApplier]
+    undefined4 __thiscall (*slot_B0)(void *st_this); // slot 0xB0 -> 00734210 Library::MSVCRT::FUN_00734210 [STIndirectCallApplier]
 };
 
 struct VTable_007A1488 {
@@ -39714,9 +42715,9 @@ struct VTable_007A15E8 {
     undefined4 __thiscall (*slot_0C)(void *st_this, undefined4 arg_1); // slot 0xC -> 0074AC25 FUN_0074ac25 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_10)(void *st_this, undefined4 arg_1); // slot 0x10 -> 00747212 FUN_00747212 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_14)(void *st_this); // slot 0x14 -> 0074747F FUN_0074747f [STIndirectCallApplier]
-    void *slot_18; // slot 0x18 -> 0074A057 FUN_0074a057
+    undefined4 __thiscall (*slot_18)(void *st_this); // slot 0x18 -> 0074A057 FUN_0074a057 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_1C)(void *st_this, undefined2 arg_1); // slot 0x1C -> 0074A05B FUN_0074a05b [STIndirectCallApplier]
-    void *slot_20; // slot 0x20 -> 006D50E0 FUN_006d50e0
+    undefined4 __thiscall (*slot_20)(void *st_this); // slot 0x20 -> 006D50E0 FUN_006d50e0 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_24)(void *st_this, undefined2 arg_1, undefined2 arg_2); // slot 0x24 -> 00749BE1 FUN_00749be1 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_28)(void *st_this, undefined4 arg_1); // slot 0x28 -> 00749CEC FUN_00749cec [STIndirectCallApplier]
     undefined4 __thiscall (*slot_2C)(void *st_this); // slot 0x2C -> 00749D09 FUN_00749d09 [STIndirectCallApplier]
@@ -39726,9 +42727,9 @@ struct VTable_007A15E8 {
     undefined4 __thiscall (*slot_3C)(void *st_this, undefined4 arg_1); // slot 0x3C -> 0074AE8E FUN_0074ae8e [STIndirectCallApplier]
     undefined4 __thiscall (*slot_40)(void *st_this); // slot 0x40 -> 0074AD27 FUN_0074ad27 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_44)(void *st_this); // slot 0x44 -> 0074AD32 FUN_0074ad32 [STIndirectCallApplier]
-    void *slot_48; // slot 0x48 -> 0074AD47 FUN_0074ad47
-    void *slot_4C; // slot 0x4C -> 0074AD48 FUN_0074ad48
-    void *slot_50; // slot 0x50 -> 006D5100 FUN_006d5100
+    void __thiscall (*slot_48)(void *st_this); // slot 0x48 -> 0074AD47 FUN_0074ad47 [STIndirectCallApplier]
+    void __thiscall (*slot_4C)(void *st_this); // slot 0x4C -> 0074AD48 FUN_0074ad48 [STIndirectCallApplier]
+    void __thiscall (*slot_50)(void *st_this); // slot 0x50 -> 006D5100 FUN_006d5100 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_54)(void *st_this, undefined4 arg_1); // slot 0x54 -> 0074B44A FUN_0074b44a [STIndirectCallApplier]
     undefined4 __thiscall (*slot_58)(void *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3); // slot 0x58 -> 0074A220 FUN_0074a220 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_5C)(void *st_this, undefined2 arg_1, undefined2 arg_2, undefined2 arg_3); // slot 0x5C -> 0074B06D FUN_0074b06d [STIndirectCallApplier]
@@ -39737,7 +42738,7 @@ struct VTable_007A15E8 {
     int32_t __thiscall (*EndOfStream)(CBaseRenderer *st_this); // slot 0x68 -> 0074A113 CBaseRenderer::EndOfStream [STIndirectCallApplier]
     undefined1 __thiscall (*slot_6C)(void *st_this); // slot 0x6C -> 0074A27C FUN_0074a27c [STIndirectCallApplier]
     undefined4 __thiscall (*slot_70)(void *st_this); // slot 0x70 -> 0074A5D8 FUN_0074a5d8 [STIndirectCallApplier]
-    void *slot_74; // slot 0x74 -> 0074A1A7 FUN_0074a1a7
+    undefined4 __thiscall (*slot_74)(void *st_this); // slot 0x74 -> 0074A1A7 FUN_0074a1a7 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_78)(void *st_this); // slot 0x78 -> 0074A1AA FUN_0074a1aa [STIndirectCallApplier]
     undefined4 __thiscall (*slot_7C)(void *st_this); // slot 0x7C -> 0074A77D FUN_0074a77d [STIndirectCallApplier]
     undefined4 __thiscall (*slot_80)(void *st_this); // slot 0x80 -> 0074A7E3 FUN_0074a7e3 [STIndirectCallApplier]
@@ -39751,8 +42752,8 @@ struct VTable_007A15E8 {
     undefined4 __thiscall (*slot_A0)(void *st_this); // slot 0xA0 -> 0074A347 FUN_0074a347 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_A4)(void *st_this); // slot 0xA4 -> 0074A36E FUN_0074a36e [STIndirectCallApplier]
     undefined4 __thiscall (*slot_A8)(void *st_this, undefined4 arg_1); // slot 0xA8 -> 0074A30E FUN_0074a30e [STIndirectCallApplier]
-    void *slot_AC; // slot 0xAC -> 00734210 Library::MSVCRT::FUN_00734210
-    void *slot_B0; // slot 0xB0 -> 00734210 Library::MSVCRT::FUN_00734210
+    undefined4 __thiscall (*slot_AC)(void *st_this); // slot 0xAC -> 00734210 Library::MSVCRT::FUN_00734210 [STIndirectCallApplier]
+    undefined4 __thiscall (*slot_B0)(void *st_this); // slot 0xB0 -> 00734210 Library::MSVCRT::FUN_00734210 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_B4)(void *st_this, undefined4 arg_1, undefined4 arg_2); // slot 0xB4 -> 0074AD60 FUN_0074ad60 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_B8)(void *st_this, undefined4 arg_1); // slot 0xB8 -> 0074AE34 FUN_0074ae34 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_BC)(void *st_this); // slot 0xBC -> 0074AC6E FUN_0074ac6e [STIndirectCallApplier]
@@ -39806,7 +42807,7 @@ struct VTable_007A17C8 {
     undefined4 __stdcall (*slot_08)(undefined4 arg_1); // slot 0x8 -> 00747C50 FUN_00747c50 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_0C)(void *st_this, undefined4 arg_1); // slot 0xC -> 0074C3D8 FUN_0074c3d8 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_10)(void *st_this); // slot 0x10 -> 00748287 FUN_00748287 [STIndirectCallApplier]
-    void *slot_14; // slot 0x14 -> 00748296 FUN_00748296
+    undefined4 __thiscall (*slot_14)(void *st_this); // slot 0x14 -> 00748296 FUN_00748296 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_18)(void *st_this); // slot 0x18 -> 007489A5 FUN_007489a5 [STIndirectCallApplier]
     undefined4 __stdcall (*slot_1C)(undefined4 arg_1, undefined4 arg_2); // slot 0x1C -> 00748299 FUN_00748299 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_20)(void *st_this, undefined4 arg_1); // slot 0x20 -> 0074C45B FUN_0074c45b [STIndirectCallApplier]
@@ -39920,7 +42921,7 @@ struct VTable_007A1950 {
     undefined4 __stdcall (*slot_08)(undefined4 arg_1); // slot 0x8 -> 00747C50 FUN_00747c50 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_0C)(void *st_this, undefined4 arg_1); // slot 0xC -> 0074CE11 FUN_0074ce11 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_10)(void *st_this); // slot 0x10 -> 00748287 FUN_00748287 [STIndirectCallApplier]
-    void *slot_14; // slot 0x14 -> 00748296 FUN_00748296
+    undefined4 __thiscall (*slot_14)(void *st_this); // slot 0x14 -> 00748296 FUN_00748296 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_18)(void *st_this); // slot 0x18 -> 007489A5 FUN_007489a5 [STIndirectCallApplier]
     undefined4 __stdcall (*slot_1C)(undefined4 arg_1, undefined4 arg_2); // slot 0x1C -> 00748299 FUN_00748299 [STIndirectCallApplier]
     undefined4 __thiscall (*slot_20)(void *st_this, undefined4 arg_1); // slot 0x20 -> 0074CF58 FUN_0074cf58 [STIndirectCallApplier]
@@ -40161,6 +43162,7 @@ struct SystemWithNamedObjClassTy {
     int CreateObject(STObjectTypeId param_1, undefined4 *param_2, int *param_3, undefined4 param_4, undefined4 param_5);
     undefined4 vfunc_0C(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
     undefined4 vfunc_10(undefined2 arg_1, undefined2 arg_2);
+    undefined4 vfunc_14();
     int SendMessage(int param_1);
 };
 
@@ -40453,11 +43455,18 @@ struct TLOBaseTy {
     undefined4 vfunc_84(undefined2 arg_1);
     undefined4 vfunc_88(undefined2 arg_1);
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
     dword slot_C4();
     undefined4 vfunc_C8(undefined2 arg_1);
     undefined4 vfunc_CC();
+    undefined4 vfunc_D0();
     undefined4 vfunc_D4();
     undefined4 vfunc_D8();
     undefined4 vfunc_DC(short arg_1, short arg_2, short arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
@@ -40472,6 +43481,8 @@ struct TLOBaseTy {
     undefined4 vfunc_108(undefined2 arg_1);
     undefined4 vfunc_10C();
     undefined4 vfunc_110(undefined2 arg_1, undefined2 arg_2);
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     int AddSprInit();
     bool FUN_004bea70(int *param_1);
     undefined4 FUN_004c7cc0(int param_1, uint param_2, uint param_3, int param_4, uint param_5, undefined4 param_6, int param_7, char *param_8);
@@ -40646,14 +43657,23 @@ struct TLOEmbryoTy {
     undefined4 vfunc_20();
     undefined4 vfunc_24();
     undefined4 vfunc_28(undefined4 arg_1, undefined2 arg_2, undefined4 arg_3, undefined4 arg_4);
+    undefined4 vfunc_2C();
     undefined4 vfunc_30(undefined2 arg_1);
     undefined4 vfunc_34(undefined2 arg_1);
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
     dword slot_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
@@ -40662,8 +43682,12 @@ struct TLOEmbryoTy {
     undefined4 vfunc_E0(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4, undefined2 arg_5);
     undefined4 vfunc_F0();
     undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
     int Create(RecoveredRecord_TLOEmbryoTy_004D11D0 *param_1);
     void sub_0041C3F0(undefined *param_1);
     undefined4 sub_004D10A0(int param_1);
@@ -40690,22 +43714,39 @@ struct TLOFakeTy {
     int GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
     undefined4 vfunc_D4();
     undefined4 vfunc_D8();
     undefined4 vfunc_E8(undefined2 arg_1);
+    undefined4 vfunc_EC();
     undefined4 vfunc_F0();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    void vfunc_10C();
+    undefined4 vfunc_11C();
+    undefined4 vfunc_120();
 };
 
 struct TabClassTy {
@@ -41255,15 +44296,7 @@ struct cTypingTy {
 struct ccFntTy {
     byte _unknown_0000[4];
     undefined4 field_0004; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_0008[6];
-    undefined1 field_0xe; // exact unnamed-byte view referenced by exported code
-    byte _unknown_000F[3];
-    undefined1 field_0x12; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0013[3];
-    undefined1 field_0x16; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0017[3];
-    undefined1 field_0x1a; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001B[41];
+    byte _unknown_0008[60];
     undefined4 field_0044; // [STClassLayoutApplier] reads=10, writes=7; type_confidence=none; name_confidence=none; consistent_this_relative_access
     undefined4 field_0048; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access
     undefined4 field_004C; // [STClassLayoutApplier] reads=2, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access
@@ -41943,6 +44976,10 @@ inline WPARAM AppClassTy::RunApp() {
     return (vtable->RunApp)(this);
 }
 
+inline undefined4 AppClassTy::vfunc_14() {
+    return (vtable->vfunc_14)(this);
+}
+
 inline undefined4 AppClassTy::sub_006E5150(undefined2 arg_1) {
     return (vtable->sub_006E5150)(this, arg_1);
 }
@@ -42327,6 +45364,14 @@ inline undefined4 STArtiafactC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
 }
 
+inline void STArtiafactC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STArtiafactC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
 inline void STArtiafactC::vfunc_9C() {
     (vtable->vfunc_9C)(this);
 }
@@ -42353,6 +45398,14 @@ inline undefined4 STArtiafactC::vfunc_B4() {
 
 inline undefined4 STArtiafactC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STArtiafactC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STArtiafactC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STArtiafactC::vfunc_CC() {
@@ -42383,8 +45436,16 @@ inline undefined4 STArtiafactC::vfunc_E8(undefined2 arg_1) {
     return (vtable->vfunc_E8)(this, arg_1);
 }
 
+inline undefined4 STArtiafactC::vfunc_F0() {
+    return (vtable->vfunc_F0)(this);
+}
+
 inline undefined4 STArtiafactC::vfunc_F8() {
     return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STArtiafactC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
 }
 
 inline undefined1 STArtiafactC::vfunc_100(undefined1 arg_1) {
@@ -42395,12 +45456,24 @@ inline undefined1 STArtiafactC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
 }
 
+inline void STArtiafactC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
 inline undefined4 STArtiafactC::vfunc_114(undefined2 arg_1) {
     return (vtable->vfunc_114)(this, arg_1);
 }
 
 inline undefined4 STArtiafactC::vfunc_118(undefined2 arg_1) {
     return (vtable->vfunc_118)(this, arg_1);
+}
+
+inline undefined4 STArtiafactC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STArtiafactC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline undefined4 STArtiafactC::vfunc_124(undefined2 arg_1) {
@@ -42411,8 +45484,20 @@ inline dword STArtiafactC::slot_128() {
     return (vtable->slot_128)(this);
 }
 
+inline undefined4 STArtiafactC::vfunc_12C() {
+    return (vtable->vfunc_12C)(this);
+}
+
+inline undefined4 STArtiafactC::vfunc_130() {
+    return (vtable->vfunc_130)(this);
+}
+
 inline dword STArtiafactC::slot_134() {
     return (vtable->slot_134)(this);
+}
+
+inline undefined4 STArtiafactC::vfunc_138() {
+    return (vtable->vfunc_138)(this);
 }
 
 inline dword STArtiafactC::slot_13C() {
@@ -42651,6 +45736,10 @@ inline undefined1 STBoatC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
 }
 
+inline void STBoatC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
 inline undefined4 STBoatC::vfunc_114(undefined2 arg_1) {
     return (vtable->vfunc_114)(this, arg_1);
 }
@@ -42679,6 +45768,10 @@ inline undefined4 STColl3C::vfunc_08() {
     return (vtable->vfunc_08)(this);
 }
 
+inline undefined4 STColl3C::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
+}
+
 inline undefined4 STColl3C::vfunc_18(short arg_1, short arg_2, short arg_3) {
     return (vtable->vfunc_18)(this, arg_1, arg_2, arg_3);
 }
@@ -42689,6 +45782,10 @@ inline undefined4 STColl3C::vfunc_20() {
 
 inline undefined4 STColl3C::vfunc_24() {
     return (vtable->vfunc_24)(this);
+}
+
+inline undefined4 STColl3C::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
 }
 
 inline undefined4 STColl3C::vfunc_68(undefined2 arg_1) {
@@ -42711,12 +45808,40 @@ inline undefined4 STColl3C::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
 }
 
+inline void STColl3C::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STColl3C::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STColl3C::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STColl3C::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
+}
+
 inline undefined4 STColl3C::vfunc_B4() {
     return (vtable->vfunc_B4)(this);
 }
 
 inline undefined4 STColl3C::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STColl3C::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STColl3C::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STColl3C::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STColl3C::vfunc_CC() {
@@ -42743,6 +45868,10 @@ inline undefined4 STColl3C::vfunc_E8(undefined2 arg_1) {
     return (vtable->vfunc_E8)(this, arg_1);
 }
 
+inline undefined4 STColl3C::vfunc_EC() {
+    return (vtable->vfunc_EC)(this);
+}
+
 inline undefined4 STColl3C::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
 }
@@ -42751,12 +45880,28 @@ inline dword STColl3C::slot_F8() {
     return (vtable->slot_F8)(this);
 }
 
+inline undefined4 STColl3C::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STColl3C::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
 
 inline undefined1 STColl3C::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
+}
+
+inline void STColl3C::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 STColl3C::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STColl3C::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline int STContainerC::GetMessage(STMessage *message) {
@@ -42831,6 +45976,14 @@ inline undefined4 STContainerC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
 }
 
+inline void STContainerC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STContainerC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
 inline void STContainerC::vfunc_9C() {
     (vtable->vfunc_9C)(this);
 }
@@ -42857,6 +46010,14 @@ inline undefined4 STContainerC::vfunc_B4() {
 
 inline undefined4 STContainerC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STContainerC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STContainerC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STContainerC::vfunc_CC() {
@@ -42887,8 +46048,16 @@ inline undefined4 STContainerC::vfunc_E8(undefined2 arg_1) {
     return (vtable->vfunc_E8)(this, arg_1);
 }
 
+inline undefined4 STContainerC::vfunc_F0() {
+    return (vtable->vfunc_F0)(this);
+}
+
 inline undefined4 STContainerC::vfunc_F8() {
     return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STContainerC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
 }
 
 inline undefined1 STContainerC::vfunc_100(undefined1 arg_1) {
@@ -42899,12 +46068,24 @@ inline undefined1 STContainerC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
 }
 
+inline void STContainerC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
 inline undefined4 STContainerC::vfunc_114(undefined2 arg_1) {
     return (vtable->vfunc_114)(this, arg_1);
 }
 
 inline undefined4 STContainerC::vfunc_118(undefined2 arg_1) {
     return (vtable->vfunc_118)(this, arg_1);
+}
+
+inline undefined4 STContainerC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STContainerC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline undefined4 STContainerC::vfunc_124(undefined2 arg_1) {
@@ -42955,6 +46136,10 @@ inline undefined4 STCrabC::vfunc_08() {
     return (vtable->vfunc_08)(this);
 }
 
+inline undefined4 STCrabC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
+}
+
 inline undefined4 STCrabC::vfunc_18(short arg_1, short arg_2, short arg_3) {
     return (vtable->vfunc_18)(this, arg_1, arg_2, arg_3);
 }
@@ -42979,8 +46164,32 @@ inline undefined4 STCrabC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STCrabC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STCrabC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STCrabC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STCrabC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STCrabC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STCrabC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STCrabC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STCrabC::vfunc_B4() {
@@ -42989,6 +46198,18 @@ inline undefined4 STCrabC::vfunc_B4() {
 
 inline undefined4 STCrabC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STCrabC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STCrabC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STCrabC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STCrabC::vfunc_CC() {
@@ -43027,12 +46248,32 @@ inline undefined4 STCrabC::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
 }
 
+inline undefined4 STCrabC::vfunc_F8() {
+    return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STCrabC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STCrabC::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
 
 inline undefined1 STCrabC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
+}
+
+inline void STCrabC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 STCrabC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STCrabC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline undefined4 STDcResourcC::GetMessage(int param_1) {
@@ -43045,6 +46286,10 @@ inline undefined4 STDcResourcC::vfunc_04() {
 
 inline undefined4 STDcResourcC::vfunc_08() {
     return (vtable->vfunc_08)(this);
+}
+
+inline undefined4 STDcResourcC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
 }
 
 inline undefined4 STDcResourcC::vfunc_18(short arg_1, short arg_2, short arg_3) {
@@ -43087,8 +46332,32 @@ inline undefined4 STDcResourcC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STDcResourcC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STDcResourcC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STDcResourcC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STDcResourcC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STDcResourcC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STDcResourcC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STDcResourcC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STDcResourcC::vfunc_B4() {
@@ -43097,6 +46366,18 @@ inline undefined4 STDcResourcC::vfunc_B4() {
 
 inline undefined4 STDcResourcC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STDcResourcC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STDcResourcC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STDcResourcC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STDcResourcC::vfunc_CC() {
@@ -43127,6 +46408,14 @@ inline undefined4 STDcResourcC::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
 }
 
+inline undefined4 STDcResourcC::vfunc_F8() {
+    return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STDcResourcC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STDcResourcC::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
@@ -43135,8 +46424,16 @@ inline undefined1 STDcResourcC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
 }
 
+inline void STDcResourcC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
 inline dword STDcResourcC::slot_11C() {
     return (vtable->slot_11C)(this);
+}
+
+inline undefined4 STDcResourcC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline undefined4 STDestC::GetMessage(int param_1) {
@@ -43151,6 +46448,10 @@ inline undefined4 STDestC::vfunc_08() {
     return (vtable->vfunc_08)(this);
 }
 
+inline undefined4 STDestC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
+}
+
 inline undefined4 STDestC::vfunc_18(short arg_1, short arg_2, short arg_3) {
     return (vtable->vfunc_18)(this, arg_1, arg_2, arg_3);
 }
@@ -43161,6 +46462,10 @@ inline undefined4 STDestC::vfunc_20() {
 
 inline undefined4 STDestC::vfunc_24() {
     return (vtable->vfunc_24)(this);
+}
+
+inline undefined4 STDestC::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
 }
 
 inline undefined4 STDestC::vfunc_30(undefined2 arg_1) {
@@ -43187,8 +46492,32 @@ inline undefined4 STDestC::vfunc_74(undefined2 arg_1) {
     return (vtable->vfunc_74)(this, arg_1);
 }
 
+inline undefined4 STDestC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STDestC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STDestC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STDestC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STDestC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STDestC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STDestC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STDestC::vfunc_B4() {
@@ -43197,6 +46526,18 @@ inline undefined4 STDestC::vfunc_B4() {
 
 inline undefined4 STDestC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STDestC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STDestC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STDestC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STDestC::vfunc_CC() {
@@ -43227,6 +46568,14 @@ inline undefined4 STDestC::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
 }
 
+inline undefined4 STDestC::vfunc_F8() {
+    return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STDestC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STDestC::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
@@ -43235,12 +46584,32 @@ inline undefined1 STDestC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
 }
 
+inline void STDestC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 STDestC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STDestC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
+}
+
 inline undefined4 STExplosion::GetMessage(int param_1) {
     return (vtable->GetMessage)(this, param_1);
 }
 
 inline undefined4 STExplosion::vfunc_04() {
     return (vtable->vfunc_04)(this);
+}
+
+inline undefined4 STExplosion::vfunc_08() {
+    return (vtable->vfunc_08)(this);
+}
+
+inline undefined4 STExplosion::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
 }
 
 inline undefined4 STExplosion::vfunc_18(short arg_1, short arg_2, short arg_3) {
@@ -43255,6 +46624,10 @@ inline undefined4 STExplosion::vfunc_24() {
     return (vtable->vfunc_24)(this);
 }
 
+inline undefined4 STExplosion::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
+}
+
 inline undefined4 STExplosion::vfunc_68(undefined2 arg_1) {
     return (vtable->vfunc_68)(this, arg_1);
 }
@@ -43263,8 +46636,32 @@ inline undefined4 STExplosion::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STExplosion::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STExplosion::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STExplosion::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STExplosion::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STExplosion::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STExplosion::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STExplosion::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STExplosion::vfunc_B4() {
@@ -43273,6 +46670,18 @@ inline undefined4 STExplosion::vfunc_B4() {
 
 inline undefined4 STExplosion::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STExplosion::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STExplosion::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STExplosion::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STExplosion::vfunc_CC() {
@@ -43293,6 +46702,10 @@ inline undefined4 STFishC::vfunc_04() {
 
 inline undefined4 STFishC::vfunc_08() {
     return (vtable->vfunc_08)(this);
+}
+
+inline undefined4 STFishC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
 }
 
 inline undefined4 STFishC::vfunc_18(short arg_1, short arg_2, short arg_3) {
@@ -43319,8 +46732,32 @@ inline undefined4 STFishC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STFishC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STFishC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STFishC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STFishC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STFishC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STFishC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STFishC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STFishC::vfunc_B4() {
@@ -43329,6 +46766,18 @@ inline undefined4 STFishC::vfunc_B4() {
 
 inline undefined4 STFishC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STFishC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STFishC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STFishC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STFishC::vfunc_CC() {
@@ -43367,12 +46816,32 @@ inline undefined4 STFishC::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
 }
 
+inline undefined4 STFishC::vfunc_F8() {
+    return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STFishC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STFishC::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
 
 inline undefined1 STFishC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
+}
+
+inline void STFishC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 STFishC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STFishC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline undefined4 STGameObjC::GetMessage(AnonShape_0041AF40_F59F8577 *param_1) {
@@ -43523,6 +46992,10 @@ inline undefined4 STJellyGunC::vfunc_08() {
     return (vtable->vfunc_08)(this);
 }
 
+inline undefined4 STJellyGunC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
+}
+
 inline undefined4 STJellyGunC::vfunc_18(short arg_1, short arg_2, short arg_3) {
     return (vtable->vfunc_18)(this, arg_1, arg_2, arg_3);
 }
@@ -43535,6 +47008,10 @@ inline undefined4 STJellyGunC::vfunc_24() {
     return (vtable->vfunc_24)(this);
 }
 
+inline undefined4 STJellyGunC::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
+}
+
 inline undefined4 STJellyGunC::vfunc_68(undefined2 arg_1) {
     return (vtable->vfunc_68)(this, arg_1);
 }
@@ -43543,8 +47020,32 @@ inline undefined4 STJellyGunC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STJellyGunC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STJellyGunC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STJellyGunC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STJellyGunC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STJellyGunC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STJellyGunC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STJellyGunC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STJellyGunC::vfunc_B4() {
@@ -43553,6 +47054,18 @@ inline undefined4 STJellyGunC::vfunc_B4() {
 
 inline undefined4 STJellyGunC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STJellyGunC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STJellyGunC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STJellyGunC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STJellyGunC::vfunc_CC() {
@@ -43583,6 +47096,14 @@ inline undefined4 STJellyGunC::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
 }
 
+inline undefined4 STJellyGunC::vfunc_F8() {
+    return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STJellyGunC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STJellyGunC::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
@@ -43591,12 +47112,32 @@ inline undefined1 STJellyGunC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
 }
 
+inline void STJellyGunC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 STJellyGunC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STJellyGunC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
+}
+
 inline undefined4 STJellyManC::GetMessage(int param_1) {
     return (vtable->GetMessage)(this, param_1);
 }
 
 inline undefined4 STJellyManC::vfunc_04() {
     return (vtable->vfunc_04)(this);
+}
+
+inline undefined4 STJellyManC::vfunc_08() {
+    return (vtable->vfunc_08)(this);
+}
+
+inline undefined4 STJellyManC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
 }
 
 inline undefined4 STJellyManC::vfunc_18(short arg_1, short arg_2, short arg_3) {
@@ -43611,6 +47152,10 @@ inline undefined4 STJellyManC::vfunc_24() {
     return (vtable->vfunc_24)(this);
 }
 
+inline undefined4 STJellyManC::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
+}
+
 inline undefined4 STJellyManC::vfunc_68(undefined2 arg_1) {
     return (vtable->vfunc_68)(this, arg_1);
 }
@@ -43619,8 +47164,32 @@ inline undefined4 STJellyManC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STJellyManC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STJellyManC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STJellyManC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STJellyManC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STJellyManC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STJellyManC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STJellyManC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STJellyManC::vfunc_B4() {
@@ -43629,6 +47198,18 @@ inline undefined4 STJellyManC::vfunc_B4() {
 
 inline undefined4 STJellyManC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STJellyManC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STJellyManC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STJellyManC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STJellyManC::vfunc_CC() {
@@ -43655,6 +47236,10 @@ inline undefined4 STLBombC::vfunc_08() {
     return (vtable->vfunc_08)(this);
 }
 
+inline undefined4 STLBombC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
+}
+
 inline undefined4 STLBombC::vfunc_18(short arg_1, short arg_2, short arg_3) {
     return (vtable->vfunc_18)(this, arg_1, arg_2, arg_3);
 }
@@ -43667,6 +47252,10 @@ inline undefined4 STLBombC::vfunc_24() {
     return (vtable->vfunc_24)(this);
 }
 
+inline undefined4 STLBombC::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
+}
+
 inline undefined4 STLBombC::vfunc_68(undefined2 arg_1) {
     return (vtable->vfunc_68)(this, arg_1);
 }
@@ -43675,8 +47264,32 @@ inline undefined4 STLBombC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STLBombC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STLBombC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STLBombC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STLBombC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STLBombC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STLBombC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STLBombC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STLBombC::vfunc_B4() {
@@ -43685,6 +47298,18 @@ inline undefined4 STLBombC::vfunc_B4() {
 
 inline undefined4 STLBombC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STLBombC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STLBombC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STLBombC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STLBombC::vfunc_CC() {
@@ -43715,12 +47340,32 @@ inline undefined4 STLBombC::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
 }
 
+inline undefined4 STLBombC::vfunc_F8() {
+    return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STLBombC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STLBombC::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
 
 inline undefined1 STLBombC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
+}
+
+inline void STLBombC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 STLBombC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STLBombC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline int STLightC::GetMessage(STMessage *message) {
@@ -43739,6 +47384,10 @@ inline undefined4 STMBombC::vfunc_08() {
     return (vtable->vfunc_08)(this);
 }
 
+inline undefined4 STMBombC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
+}
+
 inline undefined4 STMBombC::vfunc_18(short arg_1, short arg_2, short arg_3) {
     return (vtable->vfunc_18)(this, arg_1, arg_2, arg_3);
 }
@@ -43751,6 +47400,10 @@ inline undefined4 STMBombC::vfunc_24() {
     return (vtable->vfunc_24)(this);
 }
 
+inline undefined4 STMBombC::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
+}
+
 inline undefined4 STMBombC::vfunc_68(undefined2 arg_1) {
     return (vtable->vfunc_68)(this, arg_1);
 }
@@ -43759,8 +47412,32 @@ inline undefined4 STMBombC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STMBombC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STMBombC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STMBombC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STMBombC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STMBombC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STMBombC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STMBombC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STMBombC::vfunc_B4() {
@@ -43769,6 +47446,18 @@ inline undefined4 STMBombC::vfunc_B4() {
 
 inline undefined4 STMBombC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STMBombC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STMBombC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STMBombC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STMBombC::vfunc_CC() {
@@ -43799,12 +47488,32 @@ inline undefined4 STMBombC::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
 }
 
+inline undefined4 STMBombC::vfunc_F8() {
+    return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STMBombC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STMBombC::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
 
 inline undefined1 STMBombC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
+}
+
+inline void STMBombC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 STMBombC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STMBombC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline int STManBasisC::GetMessage(STMessage *message) {
@@ -43829,6 +47538,10 @@ inline undefined4 STMineSetC::vfunc_04() {
 
 inline undefined4 STMineSetC::vfunc_08() {
     return (vtable->vfunc_08)(this);
+}
+
+inline undefined4 STMineSetC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
 }
 
 inline undefined4 STMineSetC::vfunc_18(short arg_1, short arg_2, short arg_3) {
@@ -43883,6 +47596,10 @@ inline undefined4 STMineSetC::vfunc_74(undefined2 arg_1) {
     return (vtable->vfunc_74)(this, arg_1);
 }
 
+inline undefined4 STMineSetC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
 inline undefined4 STMineSetC::vfunc_7C() {
     return (vtable->vfunc_7C)(this);
 }
@@ -43891,12 +47608,40 @@ inline undefined4 STMineSetC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
 }
 
+inline void STMineSetC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STMineSetC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STMineSetC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STMineSetC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
+}
+
 inline undefined4 STMineSetC::vfunc_B4() {
     return (vtable->vfunc_B4)(this);
 }
 
 inline undefined4 STMineSetC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STMineSetC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STMineSetC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STMineSetC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STMineSetC::vfunc_CC() {
@@ -43943,12 +47688,28 @@ inline undefined4 STMineSetC::vfunc_F8() {
     return (vtable->vfunc_F8)(this);
 }
 
+inline undefined4 STMineSetC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STMineSetC::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
 
 inline undefined1 STMineSetC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
+}
+
+inline void STMineSetC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 STMineSetC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STMineSetC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline undefined4 STOctopusC::GetMessage(int param_1) {
@@ -43961,6 +47722,10 @@ inline undefined4 STOctopusC::vfunc_04() {
 
 inline undefined4 STOctopusC::vfunc_08() {
     return (vtable->vfunc_08)(this);
+}
+
+inline undefined4 STOctopusC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
 }
 
 inline undefined4 STOctopusC::vfunc_18(short arg_1, short arg_2, short arg_3) {
@@ -43987,8 +47752,32 @@ inline undefined4 STOctopusC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STOctopusC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STOctopusC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STOctopusC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STOctopusC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STOctopusC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STOctopusC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STOctopusC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STOctopusC::vfunc_B4() {
@@ -43997,6 +47786,18 @@ inline undefined4 STOctopusC::vfunc_B4() {
 
 inline undefined4 STOctopusC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STOctopusC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STOctopusC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STOctopusC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STOctopusC::vfunc_CC() {
@@ -44035,12 +47836,32 @@ inline undefined4 STOctopusC::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
 }
 
+inline undefined4 STOctopusC::vfunc_F8() {
+    return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STOctopusC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STOctopusC::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
 
 inline undefined1 STOctopusC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
+}
+
+inline void STOctopusC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 STOctopusC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STOctopusC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline undefined4 STPlaySystemC::InitSystem(int param_1) {
@@ -44063,6 +47884,10 @@ inline undefined4 STPlaySystemC::vfunc_10(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_10)(this, arg_1, arg_2);
 }
 
+inline undefined4 STPlaySystemC::vfunc_14() {
+    return (vtable->vfunc_14)(this);
+}
+
 inline undefined4 STPlaySystemC::Life() {
     return (vtable->Life)(this);
 }
@@ -44079,6 +47904,14 @@ inline undefined4 STRubbishC::vfunc_04() {
     return (vtable->vfunc_04)(this);
 }
 
+inline undefined4 STRubbishC::vfunc_08() {
+    return (vtable->vfunc_08)(this);
+}
+
+inline undefined4 STRubbishC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
+}
+
 inline undefined4 STRubbishC::vfunc_18(short arg_1, short arg_2, short arg_3) {
     return (vtable->vfunc_18)(this, arg_1, arg_2, arg_3);
 }
@@ -44091,6 +47924,10 @@ inline undefined4 STRubbishC::vfunc_24() {
     return (vtable->vfunc_24)(this);
 }
 
+inline undefined4 STRubbishC::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
+}
+
 inline undefined4 STRubbishC::vfunc_68(undefined2 arg_1) {
     return (vtable->vfunc_68)(this, arg_1);
 }
@@ -44099,8 +47936,32 @@ inline undefined4 STRubbishC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STRubbishC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STRubbishC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STRubbishC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STRubbishC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STRubbishC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STRubbishC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STRubbishC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STRubbishC::vfunc_B4() {
@@ -44109,6 +47970,18 @@ inline undefined4 STRubbishC::vfunc_B4() {
 
 inline undefined4 STRubbishC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STRubbishC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STRubbishC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STRubbishC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STRubbishC::vfunc_CC() {
@@ -44131,6 +48004,10 @@ inline undefined4 STSatC::vfunc_08() {
     return (vtable->vfunc_08)(this);
 }
 
+inline undefined4 STSatC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
+}
+
 inline undefined4 STSatC::vfunc_18(short arg_1, short arg_2, short arg_3) {
     return (vtable->vfunc_18)(this, arg_1, arg_2, arg_3);
 }
@@ -44143,6 +48020,10 @@ inline undefined4 STSatC::vfunc_24() {
     return (vtable->vfunc_24)(this);
 }
 
+inline undefined4 STSatC::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
+}
+
 inline undefined4 STSatC::vfunc_68(undefined2 arg_1) {
     return (vtable->vfunc_68)(this, arg_1);
 }
@@ -44151,8 +48032,32 @@ inline undefined4 STSatC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STSatC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STSatC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STSatC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STSatC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STSatC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STSatC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STSatC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STSatC::vfunc_B4() {
@@ -44161,6 +48066,18 @@ inline undefined4 STSatC::vfunc_B4() {
 
 inline undefined4 STSatC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STSatC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STSatC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STSatC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STSatC::vfunc_CC() {
@@ -44191,12 +48108,32 @@ inline undefined4 STSatC::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
 }
 
+inline undefined4 STSatC::vfunc_F8() {
+    return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STSatC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STSatC::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
 
 inline undefined1 STSatC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
+}
+
+inline void STSatC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 STSatC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STSatC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline undefined4 STSharkC::GetMessage(int param_1) {
@@ -44211,6 +48148,10 @@ inline undefined4 STSharkC::vfunc_08() {
     return (vtable->vfunc_08)(this);
 }
 
+inline undefined4 STSharkC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
+}
+
 inline undefined4 STSharkC::vfunc_18(short arg_1, short arg_2, short arg_3) {
     return (vtable->vfunc_18)(this, arg_1, arg_2, arg_3);
 }
@@ -44223,6 +48164,10 @@ inline undefined4 STSharkC::vfunc_24() {
     return (vtable->vfunc_24)(this);
 }
 
+inline undefined4 STSharkC::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
+}
+
 inline undefined4 STSharkC::vfunc_68(undefined2 arg_1) {
     return (vtable->vfunc_68)(this, arg_1);
 }
@@ -44231,8 +48176,32 @@ inline undefined4 STSharkC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STSharkC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STSharkC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STSharkC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STSharkC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STSharkC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STSharkC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STSharkC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STSharkC::vfunc_B4() {
@@ -44241,6 +48210,18 @@ inline undefined4 STSharkC::vfunc_B4() {
 
 inline undefined4 STSharkC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STSharkC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STSharkC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STSharkC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STSharkC::vfunc_CC() {
@@ -44279,12 +48260,32 @@ inline undefined4 STSharkC::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
 }
 
+inline undefined4 STSharkC::vfunc_F8() {
+    return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STSharkC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STSharkC::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
 
 inline undefined1 STSharkC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
+}
+
+inline void STSharkC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 STSharkC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STSharkC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline undefined4 STSprGameObjC::GetMessage(int param_1) {
@@ -44359,6 +48360,14 @@ inline undefined4 STSprGameObjC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
 }
 
+inline void STSprGameObjC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STSprGameObjC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
 inline void STSprGameObjC::vfunc_9C() {
     (vtable->vfunc_9C)(this);
 }
@@ -44395,6 +48404,14 @@ inline dword STSprGameObjC::slot_BC() {
     return (vtable->slot_BC)(this);
 }
 
+inline undefined4 STSprGameObjC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STSprGameObjC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
+}
+
 inline undefined4 STSprGameObjC::vfunc_CC() {
     return (vtable->vfunc_CC)(this);
 }
@@ -44427,8 +48444,16 @@ inline dword STSprGameObjC::slot_EC() {
     return (vtable->slot_EC)(this);
 }
 
+inline undefined4 STSprGameObjC::vfunc_F0() {
+    return (vtable->vfunc_F0)(this);
+}
+
 inline undefined4 STSprGameObjC::vfunc_F8() {
     return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STSprGameObjC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
 }
 
 inline undefined1 STSprGameObjC::vfunc_100(undefined1 arg_1) {
@@ -44439,6 +48464,10 @@ inline undefined1 STSprGameObjC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
 }
 
+inline void STSprGameObjC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
 inline undefined4 STSprGameObjC::vfunc_114(undefined2 arg_1) {
     return (vtable->vfunc_114)(this, arg_1);
 }
@@ -44447,8 +48476,44 @@ inline undefined4 STSprGameObjC::vfunc_118(undefined2 arg_1) {
     return (vtable->vfunc_118)(this, arg_1);
 }
 
+inline undefined4 STSprGameObjC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STSprGameObjC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
+}
+
+inline undefined4 STSprGameObjC::vfunc_128() {
+    return (vtable->vfunc_128)(this);
+}
+
+inline undefined4 STSprGameObjC::vfunc_12C() {
+    return (vtable->vfunc_12C)(this);
+}
+
+inline undefined4 STSprGameObjC::vfunc_130() {
+    return (vtable->vfunc_130)(this);
+}
+
+inline undefined4 STSprGameObjC::vfunc_134() {
+    return (vtable->vfunc_134)(this);
+}
+
+inline undefined4 STSprGameObjC::vfunc_138() {
+    return (vtable->vfunc_138)(this);
+}
+
+inline undefined4 STSprGameObjC::vfunc_13C() {
+    return (vtable->vfunc_13C)(this);
+}
+
 inline void STSprGameObjC::slot_140(undefined4 param_1) {
     (vtable->slot_140)(this, param_1);
+}
+
+inline undefined4 STSprGameObjC::vfunc_144() {
+    return (vtable->vfunc_144)(this);
 }
 
 inline int STTorpC::GetMessage(STMessage *message) {
@@ -44463,6 +48528,10 @@ inline undefined4 STTorpC::vfunc_08() {
     return (vtable->vfunc_08)(this);
 }
 
+inline undefined4 STTorpC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
+}
+
 inline undefined4 STTorpC::vfunc_18(short arg_1, short arg_2, short arg_3) {
     return (vtable->vfunc_18)(this, arg_1, arg_2, arg_3);
 }
@@ -44475,6 +48544,10 @@ inline undefined4 STTorpC::vfunc_24() {
     return (vtable->vfunc_24)(this);
 }
 
+inline undefined4 STTorpC::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
+}
+
 inline undefined4 STTorpC::vfunc_68(undefined2 arg_1) {
     return (vtable->vfunc_68)(this, arg_1);
 }
@@ -44483,8 +48556,32 @@ inline undefined4 STTorpC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STTorpC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STTorpC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STTorpC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STTorpC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STTorpC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STTorpC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STTorpC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STTorpC::vfunc_B4() {
@@ -44493,6 +48590,18 @@ inline undefined4 STTorpC::vfunc_B4() {
 
 inline undefined4 STTorpC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 STTorpC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STTorpC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STTorpC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 STTorpC::vfunc_CC() {
@@ -44523,12 +48632,32 @@ inline undefined4 STTorpC::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
 }
 
+inline undefined4 STTorpC::vfunc_F8() {
+    return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 STTorpC::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 STTorpC::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
 
 inline undefined1 STTorpC::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
+}
+
+inline void STTorpC::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 STTorpC::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 STTorpC::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline int STVolcanoC::GetMessage(STMessage *message) {
@@ -44755,6 +48884,10 @@ inline undefined4 SystemWithNamedObjClassTy::vfunc_10(undefined2 arg_1, undefine
     return (vtable->vfunc_10)(this, arg_1, arg_2);
 }
 
+inline undefined4 SystemWithNamedObjClassTy::vfunc_14() {
+    return (vtable->vfunc_14)(this);
+}
+
 inline int SystemWithNamedObjClassTy::SendMessage(int param_1) {
     return (vtable->SendMessage)(this, param_1);
 }
@@ -44867,12 +49000,36 @@ inline undefined4 TLOBaseTy::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
 }
 
+inline void TLOBaseTy::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void TLOBaseTy::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void TLOBaseTy::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 TLOBaseTy::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
+}
+
 inline undefined4 TLOBaseTy::vfunc_B4() {
     return (vtable->vfunc_B4)(this);
 }
 
 inline undefined4 TLOBaseTy::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 TLOBaseTy::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 TLOBaseTy::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
 }
 
 inline dword TLOBaseTy::slot_C4() {
@@ -44885,6 +49042,10 @@ inline undefined4 TLOBaseTy::vfunc_C8(undefined2 arg_1) {
 
 inline undefined4 TLOBaseTy::vfunc_CC() {
     return (vtable->vfunc_CC)(this);
+}
+
+inline undefined4 TLOBaseTy::vfunc_D0() {
+    return (vtable->vfunc_D0)(this);
 }
 
 inline undefined4 TLOBaseTy::vfunc_D4() {
@@ -44943,6 +49104,14 @@ inline undefined4 TLOBaseTy::vfunc_110(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_110)(this, arg_1, arg_2);
 }
 
+inline undefined4 TLOBaseTy::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 TLOBaseTy::vfunc_120() {
+    return (vtable->vfunc_120)(this);
+}
+
 inline int TLOBldMark::GetMessage(STMessage *message) {
     return (vtable->GetMessage)(this, message);
 }
@@ -44979,6 +49148,10 @@ inline undefined4 TLOEmbryoTy::vfunc_28(undefined4 arg_1, undefined2 arg_2, unde
     return (vtable->vfunc_28)(this, arg_1, arg_2, arg_3, arg_4);
 }
 
+inline undefined4 TLOEmbryoTy::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
+}
+
 inline undefined4 TLOEmbryoTy::vfunc_30(undefined2 arg_1) {
     return (vtable->vfunc_30)(this, arg_1);
 }
@@ -44995,6 +49168,10 @@ inline undefined4 TLOEmbryoTy::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 TLOEmbryoTy::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
 inline dword TLOEmbryoTy::slot_7C() {
     return (vtable->slot_7C)(this);
 }
@@ -45003,12 +49180,40 @@ inline undefined4 TLOEmbryoTy::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
 }
 
+inline void TLOEmbryoTy::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void TLOEmbryoTy::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void TLOEmbryoTy::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 TLOEmbryoTy::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
+}
+
 inline undefined4 TLOEmbryoTy::vfunc_B4() {
     return (vtable->vfunc_B4)(this);
 }
 
 inline undefined4 TLOEmbryoTy::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 TLOEmbryoTy::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 TLOEmbryoTy::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 TLOEmbryoTy::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 TLOEmbryoTy::vfunc_CC() {
@@ -45043,12 +49248,28 @@ inline undefined4 TLOEmbryoTy::vfunc_F8() {
     return (vtable->vfunc_F8)(this);
 }
 
+inline undefined4 TLOEmbryoTy::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
+}
+
 inline undefined1 TLOEmbryoTy::vfunc_100(undefined1 arg_1) {
     return (vtable->vfunc_100)(this, arg_1);
 }
 
 inline undefined1 TLOEmbryoTy::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
+}
+
+inline void TLOEmbryoTy::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 TLOEmbryoTy::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 TLOEmbryoTy::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline int TLOFakeTy::GetMessage(int param_1) {
@@ -45063,6 +49284,10 @@ inline undefined4 TLOFakeTy::vfunc_08() {
     return (vtable->vfunc_08)(this);
 }
 
+inline undefined4 TLOFakeTy::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
+}
+
 inline undefined4 TLOFakeTy::vfunc_18(short arg_1, short arg_2, short arg_3) {
     return (vtable->vfunc_18)(this, arg_1, arg_2, arg_3);
 }
@@ -45075,6 +49300,10 @@ inline undefined4 TLOFakeTy::vfunc_24() {
     return (vtable->vfunc_24)(this);
 }
 
+inline undefined4 TLOFakeTy::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
+}
+
 inline undefined4 TLOFakeTy::vfunc_68(undefined2 arg_1) {
     return (vtable->vfunc_68)(this, arg_1);
 }
@@ -45083,8 +49312,32 @@ inline undefined4 TLOFakeTy::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 TLOFakeTy::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 TLOFakeTy::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 TLOFakeTy::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void TLOFakeTy::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void TLOFakeTy::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void TLOFakeTy::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 TLOFakeTy::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 TLOFakeTy::vfunc_B4() {
@@ -45093,6 +49346,18 @@ inline undefined4 TLOFakeTy::vfunc_B4() {
 
 inline undefined4 TLOFakeTy::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
+}
+
+inline undefined4 TLOFakeTy::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 TLOFakeTy::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 TLOFakeTy::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
 }
 
 inline undefined4 TLOFakeTy::vfunc_CC() {
@@ -45115,8 +49380,20 @@ inline undefined4 TLOFakeTy::vfunc_E8(undefined2 arg_1) {
     return (vtable->vfunc_E8)(this, arg_1);
 }
 
+inline undefined4 TLOFakeTy::vfunc_EC() {
+    return (vtable->vfunc_EC)(this);
+}
+
 inline undefined4 TLOFakeTy::vfunc_F0() {
     return (vtable->vfunc_F0)(this);
+}
+
+inline undefined4 TLOFakeTy::vfunc_F8() {
+    return (vtable->vfunc_F8)(this);
+}
+
+inline undefined4 TLOFakeTy::vfunc_FC() {
+    return (vtable->vfunc_FC)(this);
 }
 
 inline undefined1 TLOFakeTy::vfunc_100(undefined1 arg_1) {
@@ -45125,6 +49402,18 @@ inline undefined1 TLOFakeTy::vfunc_100(undefined1 arg_1) {
 
 inline undefined1 TLOFakeTy::vfunc_104(undefined1 arg_1) {
     return (vtable->vfunc_104)(this, arg_1);
+}
+
+inline void TLOFakeTy::vfunc_10C() {
+    (vtable->vfunc_10C)(this);
+}
+
+inline undefined4 TLOFakeTy::vfunc_11C() {
+    return (vtable->vfunc_11C)(this);
+}
+
+inline undefined4 TLOFakeTy::vfunc_120() {
+    return (vtable->vfunc_120)(this);
 }
 
 inline int TrackbarClassTy::GetMessage(STMessage *message) {

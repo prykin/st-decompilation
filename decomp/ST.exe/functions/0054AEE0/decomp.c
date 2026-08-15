@@ -197,7 +197,7 @@ LAB_0054b2a9:
           GVar9 = *(Global_sub_005121F0_param_1Enum *)&this_00->field_049A->field_0x259;
         }
         if (g_helpPanel_00801690 != nullptr) {
-          iVar6 = (*pSVar7->vtable->vfunc_0C)();
+          iVar6 = pSVar7->vfunc_0C();
           iVar6 = thunk_FUN_005121f0(g_helpPanel_00801690,GVar9,iVar6);
           if (iVar6 != 0) {
             iVar6 = this_00->field_0038;

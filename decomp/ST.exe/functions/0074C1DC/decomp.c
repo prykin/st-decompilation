@@ -11,7 +11,7 @@ undefined4 __fastcall FUN_0074c1dc(int param_1)
   uVar1 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int **)(param_1 + 0x90) != nullptr) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar1 = (**(code **)(**(int **)(param_1 + 0x90) + 0x50))();
   }
   return uVar1;

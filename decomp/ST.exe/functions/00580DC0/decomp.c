@@ -32,9 +32,9 @@ undefined4 __fastcall FUN_00580dc0(STJellyGunC *param_1)
        ((sVar1 < g_worldGrid.sizeZ &&
         (pAVar4 = (AnonShape_004E0250_5A3B9236 *)
                   STGridAt3D(g_worldGrid, sVar3, sVar2, sVar1).objects[0], pAVar4 != nullptr)))) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(*(int *)pAVar4 + 0x2c))();
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((iVar5 != 0x39) && (iVar5 = (**(code **)(*(int *)pAVar4 + 0x2c))(), iVar5 != 0x4f)) &&
          (iVar5 = (**(code **)(*(int *)pAVar4 + 0x2c))(), iVar5 != 0x5e)) {
         return 1;

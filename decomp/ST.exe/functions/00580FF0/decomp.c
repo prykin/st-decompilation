@@ -17,7 +17,7 @@ void FUN_00580ff0(ushort param_1,undefined2 param_2)
     local_a = param_2;
     local_c = param_1;
     local_14 = 0x5de1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*DAT_008117bc)(local_24);
   }
   return;

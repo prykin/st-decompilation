@@ -1,17 +1,22 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+
 undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
 
 {
   byte bVar1;
   bool bVar2;
+  int iVar4;
   int iVar3;
   cMf32 *this;
-  ushort *puVar3;
-  uint uVar4;
-  byte *pbVar6;
-  byte *pbVar7;
+  ushort *puVar5;
+  uint uVar6;
+  byte *pbVar8;
+  byte *pbVar9;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  char *in_stack_00000010;
   int local_1e18;
   int local_1e14;
   int local_1e10;
@@ -19,84 +24,85 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   byte local_378 [260];
   byte local_274 [260];
   byte local_170 [260];
-  InternalExceptionFrame *local_6c;
-  int local_68 [9];
-  int iStackY_44;
-  undefined1 uVar8;
-  undefined4 uVar9;
-  int *piVar10;
-  int iVar11;
-  undefined4 uVar12;
+  InternalExceptionFrame local_6c;
+  undefined1 local_28 [3];
+  int local_25;
+  undefined1 *local_20;
+  int *local_1c;
+  char *local_18;
+  int local_14;
+  int local_10;
+  int local_c;
+  undefined4 local_8;
 
-  Library::MSVCRT::FUN_0072da40();
-  uVar12 = 0;
+  local_8 = 0;
   if (param_3 != '\0') {
     return 0;
   }
-  Library::MSVCRT::FUN_0072e730(param_1,local_378,local_274,local_47c,(byte *)0x8f000405);
+  local_1c = &local_1e18;
+  local_20 = local_28;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  local_18 = in_stack_00000010;
+  local_14 = -0x70fffbfb;
+  local_c = -0x70fffdfb;
+  local_10 = -0x70fff7fb;
+  Library::MSVCRT::FUN_0072e730(param_1,local_378,local_274,local_47c,nullptr);
   Library::MSVCRT::__makepath
             ((char *)local_170,(char *)local_378,(char *)local_274,(char *)local_47c,nullptr);
-  local_6c = g_currentExceptionFrame;
-  iStackY_44 = 0x5db0d9;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&local_6c;
-  iVar3 = Library::MSVCRT::__setjmp3(local_68,0);
+  local_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_6c;
+  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
-    g_currentExceptionFrame = local_6c;
-    return 0;
+    g_currentExceptionFrame = local_6c.previous;
+    return local_8;
   }
-  uVar8 = 0;
   this = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_170,0,0,0);
-  piVar10 = (int *)&stack0xffffffe4;
-  iVar11 = 0;
-  uVar9 = 0x5db113;
-  puVar3 = cMf32::RecGet(this,0,PTR_s_DESCRIPTOR_0079c1d8,piVar10,0);
-  if (puVar3 == nullptr) goto cf_common_exit_005DB1E1;
-  if ((char)*piVar10 == '\x05') {
-    iVar11 = 0;
-    uVar9 = 0x5db13b;
-    puVar3 = cMf32::RecGet(this,0x80,PTR_s_SAVE_PLAYER_0079c1c8,(int *)&stack0xffffffe0,0);
-    if (puVar3 == nullptr) goto cf_common_exit_005DB1E1;
-  }
+  puVar5 = cMf32::RecGet(this,0,PTR_s_DESCRIPTOR_0079c1d8,(int *)&local_1c,0);
+  if ((puVar5 == nullptr) ||
+     ((*local_18 == '\x05' &&
+      (puVar5 = cMf32::RecGet(this,0x80,PTR_s_SAVE_PLAYER_0079c1c8,(int *)&local_20,0),
+      puVar5 == nullptr)))) goto cf_common_exit_005DB1E1;
   bVar2 = false;
-  if ((local_1e18 != 0) && (local_1e10 == STField<int>(piVar10,1))) {
-    switch((char)*piVar10) {
-    case '\x02':
-      if (local_1e14 != iVar11) goto joined_r0x005db18e;
+  if ((local_1e18 == 0) || (local_1e10 != *(int *)(local_18 + 1))) goto switchD_005db168_default;
+  switch(*local_18) {
+  case '\x02':
+    if ((local_1e14 != local_14) && (local_1e14 != local_c)) break;
+    goto cf_common_exit_005DB1AB;
+  case '\x03':
+    iVar4 = local_c;
+    goto joined_r0x005db1a9;
+  case '\x04':
+    iVar4 = local_10;
+joined_r0x005db1a9:
+    if (local_1e14 == iVar4) {
 cf_common_exit_005DB1AB:
       bVar2 = true;
-      break;
-    case '\x03':
-joined_r0x005db18e:
-      if (local_1e14 == -0x70fffdfb) goto cf_common_exit_005DB1AB;
-      break;
-    case '\x04':
-      if (local_1e14 == -0x70fff7fb) goto cf_common_exit_005DB1AB;
-      break;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    case '\x05':
-      if (STField<int>(piVar10,5) == CONCAT31((int3)uVar9,uVar8)) goto cf_common_exit_005DB1AB;
     }
+    break;
+  case '\x05':
+    if (*(int *)(local_18 + 5) == local_25) goto cf_common_exit_005DB1AB;
   }
+switchD_005db168_default:
   if (bVar2) {
-    uVar4 = 0xffffffff;
-    uVar12 = 0xffffff90;
-    pbVar6 = local_170;
+    uVar6 = 0xffffffff;
+    local_8 = 0xffffff90;
+    pbVar8 = local_170;
     do {
-      pbVar7 = pbVar6;
-      if (uVar4 == 0) break;
-      uVar4 = uVar4 - 1;
-      pbVar7 = pbVar6 + 1;
-      bVar1 = *pbVar6;
-      pbVar6 = pbVar7;
+      pbVar9 = pbVar8;
+      if (uVar6 == 0) break;
+      uVar6 = uVar6 - 1;
+      pbVar9 = pbVar8 + 1;
+      bVar1 = *pbVar8;
+      pbVar8 = pbVar9;
     } while (bVar1 != 0);
-    uVar4 = ~uVar4;
-    pbVar6 = pbVar7 + -uVar4;
-    pbVar7 = (byte *)&CHAR_00h_0080ed16;
-    memmove(pbVar7, pbVar6, uVar4); /* compiler REP MOVS byte copy */
+    uVar6 = ~uVar6;
+    pbVar8 = pbVar9 + -uVar6;
+    pbVar9 = (byte *)&CHAR_00h_0080ed16;
+    memmove(pbVar9, pbVar8, uVar6); /* compiler REP MOVS byte copy */
   }
 cf_common_exit_005DB1E1:
   cMf32::delete(this);
-  g_currentExceptionFrame = local_6c;
-  return uVar12;
+  g_currentExceptionFrame = local_6c.previous;
+  return local_8;
 }
 

@@ -64,7 +64,7 @@ LAB_00538bd9:
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       ccFntTy::SetSurf(param_4,pPVar2->field_0068,0,iVar3,uVar4,local_18->field_0008,
                        local_18->field_000C);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_1);
       iVar5 = -1;
       iVar3 = -2;

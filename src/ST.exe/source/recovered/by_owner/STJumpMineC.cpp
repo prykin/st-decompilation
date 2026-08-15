@@ -44,10 +44,8 @@ byte __thiscall st::fn_006191A0(STJumpMineC *this,uint param_1,int param_2)
       (g_sT3DSMAPContext_00807598->field_0044 <= param_2)) &&
      (param_2 <= g_sT3DSMAPContext_00807598->field_0054)) {
     local_8 = this;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = st::fn_006DDBD0();
     pVVar1 = g_visibleClass_00802A88;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (((param_1 == 0) || (g_visibleClass_00802A88 == nullptr)) ||
        ((iVar2 = (int)this->field_00CD, DAT_0080874d == -1 ||
         (g_visibleClass_00802A88->field_00F8 == 0)))) goto cf_common_exit_00619287;
@@ -63,7 +61,6 @@ byte __thiscall st::fn_006191A0(STJumpMineC *this,uint param_1,int param_2)
           (pVVar1->field_004C[param_2 + iVar2 * pVVar1->field_0030] != 0))))))))
     goto cf_common_exit_00619287;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = 0;
 cf_common_exit_00619287:
   return (byte)param_1;
@@ -814,6 +811,9 @@ st::fn_0061B340
           int param_6,int *param_7)
 
 {
+  int _param_1 = static_cast<int>(param_1);
+  int _param_2 = static_cast<int>(param_2);
+
   byte bVar1;
   byte bVar2;
   byte bVar3;

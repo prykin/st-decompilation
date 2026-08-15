@@ -9,10 +9,10 @@ void __thiscall
 FSGSTy::ChangePlayerPing(FSGSTy *this,undefined4 param_1,int param_2,undefined4 param_3)
 
 {
-  DArrayTy *pDVar1;
+  FSGSTy_field_1EA6DArray *pFVar1;
   uint uVar2;
   int errorCode;
-  void *pvVar4;
+  char *pcVar4;
   int iVar5;
   uint uVar6;
   InternalExceptionFrame local_4c;
@@ -26,18 +26,19 @@ FSGSTy::ChangePlayerPing(FSGSTy *this,undefined4 param_1,int param_2,undefined4 
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (errorCode == 0) {
       uVar6 = 0;
-      pDVar1 = local_8->field_1EA6;
-      uVar2 = pDVar1->count;
+      pFVar1 = local_8->field_1EA6;
+      uVar2 = pFVar1->count;
       if (uVar2 != 0) {
         if (uVar2 == 0) {
-          pvVar4 = nullptr;
+          pcVar4 = nullptr;
           goto LAB_005a2c91;
         }
         do {
-          pvVar4 = DArrayAt<void>(pDVar1, uVar6);
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+          pcVar4 = &pFVar1->data->field_0000 + pFVar1->elementSize * uVar6;
 LAB_005a2c91:
-          if ((pvVar4 != nullptr) && (STField<int>(pvVar4,0x21) == param_2)) {
-            STField<undefined4>(pvVar4,0x29) = param_3;
+          if ((pcVar4 != nullptr) && (*(int *)(pcVar4 + 0x21) == param_2)) {
+            *(undefined4 *)(pcVar4 + 0x29) = param_3;
             break;
           }
           uVar6 = uVar6 + 1;

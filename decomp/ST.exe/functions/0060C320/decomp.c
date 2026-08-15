@@ -1,6 +1,9 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
+
 int __fastcall FUN_0060c320(void *param_1)
 
 {
@@ -9,21 +12,26 @@ int __fastcall FUN_0060c320(void *param_1)
   byte bVar3;
   byte bVar4;
   byte bVar5;
-  undefined4 uVar6;
+  code *pcVar6;
   undefined4 uVar7;
-  undefined1 *puVar8;
-  undefined1 *puVar9;
+  undefined4 uVar8;
+  void *this;
+  void **ppvVar9;
   int iVar10;
   int iVar11;
-  int iVar13;
-  short sVar12;
+  int iVar12;
   int iVar14;
+  int iVar13;
   short sVar15;
-  int iVar16;
-  int iVar17;
-  STWorldObject *pSVar18;
-  short sVar19;
-  bool bVar20;
+  short sVar16;
+  short *psVar17;
+  undefined4 *puVar19;
+  undefined4 *puVar20;
+  short *psVar21;
+  int iVar22;
+  STWorldObject *pSVar23;
+  short sVar24;
+  bool bVar25;
   short local_80 [2];
   int local_7c;
   int local_74;
@@ -45,25 +53,25 @@ int __fastcall FUN_0060c320(void *param_1)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
+  undefined4 *puVar18;
 
   puStack_c = &DAT_0079cd68;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
-  local_1c = &stack0xffffff60;
-  iVar16 = 0;
+  local_64 = 0;
   local_74 = 0;
   local_2c = 0;
-  iVar14 = STField<int>(param_1,0x1e9);
-  local_5c = STBiasedDiv16(iVar14, 0xc9); /* exact signed 16-bit grid-index division */
-  iVar14 = STField<int>(param_1,0x1ed);
-  local_6c = STBiasedDiv16(iVar14, 0xc9); /* exact signed 16-bit grid-index division */
-  iVar14 = STField<int>(param_1,0x24c);
-  iVar17 = local_6c - iVar14;
-  if (iVar17 < 0) {
-    iVar16 = -iVar17;
-    iVar17 = 0;
+  iVar11 = STField<int>(param_1,0x1e9);
+  local_5c = STBiasedDiv16(iVar11, 0xc9); /* exact signed 16-bit grid-index division */
+  iVar11 = STField<int>(param_1,0x1ed);
+  local_6c = STBiasedDiv16(iVar11, 0xc9); /* exact signed 16-bit grid-index division */
+  iVar11 = STField<int>(param_1,0x24c);
+  iVar22 = local_6c - iVar11;
+  if (iVar22 < 0) {
+    local_64 = -iVar22;
+    iVar22 = 0;
   }
-  local_20 = local_5c - iVar14;
+  local_20 = local_5c - iVar11;
   if (local_20 < 0) {
     local_44 = -local_20;
     local_20 = 0;
@@ -71,181 +79,227 @@ int __fastcall FUN_0060c320(void *param_1)
   else {
     local_44 = 0;
   }
-  local_6c = iVar14 + 1 + local_6c;
-  if (g_worldGrid.sizeY < local_6c) {
-    local_6c = (int)g_worldGrid.sizeY;
+  local_6c = iVar11 + 1 + local_6c;
+  iVar10 = (int)g_worldGrid.sizeY;
+  if (iVar10 < local_6c) {
+    local_6c = iVar10;
   }
-  local_5c = iVar14 + 1 + local_5c;
-  if (g_worldGrid.sizeX < local_5c) {
-    local_5c = (int)g_worldGrid.sizeX;
+  local_5c = iVar11 + 1 + local_5c;
+  iVar11 = (int)g_worldGrid.sizeX;
+  if (iVar11 < local_5c) {
+    local_5c = iVar11;
   }
-  local_8 = 0;
-  ExceptionList = &local_14;
-  Library::MSVCRT::FUN_0072da40();
+  iVar11 = (local_5c - local_20) * (local_6c - iVar22);
+  psVar17 = local_80 + iVar11 * -0x1e + -0x10;
+  local_1c = (undefined1 *)(local_80 + iVar11 * -0x1e + -0x10);
+  local_68 = (undefined1 *)(local_80 + iVar11 * -0x1e + -0x10);
   local_8 = 0xffffffff;
-  local_68 = &stack0xffffff60;
-  puVar8 = &stack0xffffff60;
-  local_64 = iVar16;
-  local_40 = iVar17;
-  local_1c = &stack0xffffff60;
-  puVar9 = &stack0xffffff60;
-  if (iVar17 < local_6c) {
+  local_40 = iVar22;
+  psVar21 = local_80 + iVar11 * -0x1e + -0x10;
+  ExceptionList = &local_14;
+  ppvVar9 = &local_14;
+  if (iVar22 < local_6c) {
     do {
       local_7c = local_20;
       local_58 = local_44;
-      iVar14 = local_20;
-      local_40 = iVar17;
+      iVar11 = local_20;
+      local_40 = iVar22;
       if (local_20 < local_5c) {
         do {
           local_3c = 0;
-          local_7c = iVar14;
+          local_7c = iVar11;
           do {
-            iVar16 = local_3c;
+            iVar10 = local_3c;
             if ((&DAT_007abc64)[local_64 + local_58 * 0xf] != '\0') {
-              sVar19 = (short)iVar14;
-              if (((((sVar19 < 0) || (g_worldGrid.sizeX <= sVar19)) ||
-                   (sVar12 = (short)iVar17, sVar12 < 0)) ||
-                  ((g_worldGrid.sizeY <= sVar12 || (sVar15 = (short)local_3c, sVar15 < 0)))) ||
-                 (g_worldGrid.sizeZ <= sVar15)) {
-                pSVar18 = nullptr;
+              sVar24 = (short)iVar11;
+              if (((((sVar24 < 0) || (g_worldGrid.sizeX <= sVar24)) ||
+                   (sVar15 = (short)iVar22, sVar15 < 0)) ||
+                  ((g_worldGrid.sizeY <= sVar15 || (sVar16 = (short)local_3c, sVar16 < 0)))) ||
+                 (g_worldGrid.sizeZ <= sVar16)) {
+                pSVar23 = nullptr;
               }
               else {
-                pSVar18 = STGridAt3D(g_worldGrid, sVar19, sVar12, sVar15).objects[0];
+                pSVar23 = STGridAt3D(g_worldGrid, sVar24, sVar15, sVar16).objects[0];
               }
-              if (((pSVar18 != nullptr) &&
-                  (iVar10 = (*pSVar18->vtable[5].slots_00_28[0])(), iVar17 = local_40, iVar10 != 0))
-                 && ((pSVar18[1].vtable < (STWorldObjectVTable *)0x8 &&
-                     ((g_playSystem_00802A38 == nullptr ||
-                      (g_bulkInitializedRecords_008087C7[(int)pSVar18[1].vtable].field_0022 < 8)))))
-                 ) {
-                bVar3 = *(byte *)&pSVar18[1].vtable;
-                bVar4 = STField<byte>(param_1,0x1d9);
-                if (DAT_00808a8f == '\0') {
-                  if (bVar3 == bVar4) {
+              if (pSVar23 != nullptr) {
+                pcVar6 = pSVar23->vtable[5].slots_00_28[0];
+                puVar18 = (undefined4 *)((int)psVar17 + -4);
+                psVar17 = (short *)((int)psVar17 + -4);
+                *puVar18 = 0x60c4f6;
+                iVar12 = (*pcVar6)();
+                iVar22 = local_40;
+                if (((iVar12 != 0) && (pSVar23[1].vtable < (STWorldObjectVTable *)0x8)) &&
+                   ((g_playSystem_00802A38 == nullptr ||
+                    (g_bulkInitializedRecords_008087C7[(int)pSVar23[1].vtable].field_0022 < 8)))) {
+                  bVar3 = *(byte *)&pSVar23[1].vtable;
+                  bVar4 = STField<byte>(param_1,0x1d9);
+                  if (DAT_00808a8f == '\0') {
+                    if (bVar3 == bVar4) {
 LAB_0060c5f5:
-                    iVar10 = 0;
-                  }
-                  else {
-                    bVar5 = g_playerRelationMatrix[bVar3][bVar4];
-                    if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
-                      iVar10 = -2;
-                    }
-                    else if ((bVar5 == 1) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
-                      iVar10 = -1;
-                    }
-                    else if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 1)) {
-                      iVar10 = 1;
+                      iVar12 = 0;
                     }
                     else {
-                      if ((bVar5 != 1) || (g_playerRelationMatrix[bVar4][bVar3] != 1))
-                      goto LAB_0060c5f5;
-                      iVar10 = 2;
+                      bVar5 = g_playerRelationMatrix[bVar3][bVar4];
+                      if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
+                        iVar12 = -2;
+                      }
+                      else if ((bVar5 == 1) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
+                        iVar12 = -1;
+                      }
+                      else if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 1)) {
+                        iVar12 = 1;
+                      }
+                      else {
+                        if ((bVar5 != 1) || (g_playerRelationMatrix[bVar4][bVar3] != 1))
+                        goto LAB_0060c5f5;
+                        iVar12 = 2;
+                      }
                     }
+                    bVar25 = iVar12 < 0;
                   }
-                  bVar20 = iVar10 < 0;
-                }
-                else {
-                  bVar20 = g_bulkInitializedRecords_008087C7[bVar4].field_0023 !=
-                           g_bulkInitializedRecords_008087C7[bVar3].field_0023;
-                }
-                if ((bVar20) &&
-                   (iVar11 = (*pSVar18->vtable[5].slots_00_28[2])(), iVar10 = local_74,
-                   iVar17 = local_40, iVar11 != 0)) {
-                  puVar1 = (undefined4 *)(local_68 + local_74 * 0xc);
-                  *puVar1 = pSVar18;
-                  iVar11 = (*pSVar18->vtable[2].slots_00_28[6])();
-                  iVar11 = iVar11 + 1;
-                  iVar17 = local_40;
-                  iVar16 = local_3c;
-                  iVar14 = local_7c;
-                  if (0 < iVar11) {
-                    puVar1[1] = iVar11;
-                    iVar14 = STField<int>(param_1,0x1ed);
-                    iVar14 = STBiasedDiv16(iVar14, 0xc9); /* exact signed 16-bit grid-index division */
-                    iVar16 = STField<int>(param_1,0x1e9);
-                    iVar16 = STBiasedDiv16(iVar16, 0xc9); /* exact signed 16-bit grid-index division */
-                    iVar13 = FUN_006acf90(local_7c,local_40,iVar16,iVar14);
-                    puVar1[2] = iVar13;
-                    local_2c = local_2c + iVar11;
-                    local_74 = iVar10 + 1;
-                    iVar17 = local_40;
-                    iVar16 = local_3c;
-                    iVar14 = local_7c;
+                  else {
+                    bVar25 = g_bulkInitializedRecords_008087C7[bVar4].field_0023 !=
+                             g_bulkInitializedRecords_008087C7[bVar3].field_0023;
+                  }
+                  if (bVar25) {
+                    pcVar6 = pSVar23->vtable[5].slots_00_28[2];
+                    puVar19 = (undefined4 *)((int)psVar17 + -4);
+                    psVar17 = (short *)((int)psVar17 + -4);
+                    *puVar19 = 0x60c612;
+                    iVar14 = (*pcVar6)();
+                    iVar12 = local_74;
+                    iVar22 = local_40;
+                    if (iVar14 != 0) {
+                      puVar1 = (undefined4 *)(local_68 + local_74 * 0xc);
+                      *puVar1 = pSVar23;
+                      pcVar6 = pSVar23->vtable[2].slots_00_28[6];
+                      puVar20 = (undefined4 *)((int)psVar17 + -4);
+                      psVar17 = (short *)((int)psVar17 + -4);
+                      *puVar20 = 0x60c62f;
+                      iVar14 = (*pcVar6)();
+                      iVar14 = iVar14 + 1;
+                      iVar22 = local_40;
+                      iVar10 = local_3c;
+                      iVar11 = local_7c;
+                      if (0 < iVar14) {
+                        puVar1[1] = iVar14;
+                        iVar11 = STField<int>(param_1,0x1ed);
+                        iVar11 = STBiasedDiv16(iVar11, 0xc9); /* exact signed 16-bit grid-index division */
+                        iVar22 = STField<int>(param_1,0x1e9);
+                        iVar22 = STBiasedDiv16(iVar22, 0xc9); /* exact signed 16-bit grid-index division */
+                        *(int *)((int)psVar17 + -4) = iVar11;
+                        *(int *)((int)psVar17 + -8) = iVar22;
+                        *(int *)((int)psVar17 + -0xc) = local_40;
+                        *(int *)((int)psVar17 + -0x10) = local_7c;
+                        *(undefined4 *)((int)psVar17 + -0x14) = 0x60c6b4;
+                        iVar13 = FUN_006acf90(*(int *)((int)psVar17 + -0x10),
+                                              *(int *)((int)psVar17 + -0xc),
+                                              *(int *)((int)psVar17 + -8),
+                                              *(int *)((int)psVar17 + -4));
+                        puVar1[2] = iVar13;
+                        local_2c = local_2c + iVar14;
+                        local_74 = iVar12 + 1;
+                        iVar22 = local_40;
+                        iVar10 = local_3c;
+                        iVar11 = local_7c;
+                      }
+                    }
                   }
                 }
               }
             }
-            local_3c = iVar16 + 1;
-          } while (local_3c < 5);
-          iVar14 = iVar14 + 1;
+            local_3c = iVar10 + 1;
+          } while (iVar10 + 1 < 5);
+          iVar11 = iVar11 + 1;
+          local_7c = iVar11;
           local_58 = local_58 + 1;
-          local_7c = iVar14;
-        } while (iVar14 < local_5c);
+        } while (iVar11 < local_5c);
       }
-      iVar17 = iVar17 + 1;
+      iVar22 = iVar22 + 1;
+      local_40 = iVar22;
       local_64 = local_64 + 1;
-      puVar8 = local_68;
-      local_40 = iVar17;
-      puVar9 = local_1c;
-    } while (iVar17 < local_6c);
+      psVar21 = psVar17;
+      ppvVar9 = ExceptionList;
+    } while (iVar22 < local_6c);
   }
-  local_1c = puVar9;
-  local_68 = puVar8;
+  ExceptionList = ppvVar9;
   if (local_2c != 0) {
-    iVar14 = 0;
+    iVar11 = 0;
     if (0 < local_74) {
       do {
         local_64 = 0;
-        if (0 < iVar14) {
+        if (0 < iVar11) {
           do {
-            puVar1 = (undefined4 *)(local_68 + iVar14 * 0xc);
+            puVar1 = (undefined4 *)(local_68 + iVar11 * 0xc);
             puVar2 = (undefined4 *)(local_68 + local_64 * 0xc);
-            iVar16 = puVar2[2];
-            if (iVar16 < (int)puVar1[2]) {
-              uVar6 = puVar2[1];
-              uVar7 = *puVar2;
+            iVar22 = puVar2[2];
+            if (iVar22 < (int)puVar1[2]) {
+              uVar7 = puVar2[1];
+              local_4c = uVar7;
+              uVar8 = *puVar2;
               puVar2[2] = puVar1[2];
               puVar2[1] = puVar1[1];
               *puVar2 = *puVar1;
-              puVar1[2] = iVar16;
-              puVar1[1] = uVar6;
-              *puVar1 = uVar7;
-              local_4c = uVar6;
+              puVar1[2] = iVar22;
+              puVar1[1] = uVar7;
+              *puVar1 = uVar8;
             }
             local_64 = local_64 + 1;
-          } while (local_64 < iVar14);
+          } while (local_64 < iVar11);
         }
-        iVar14 = iVar14 + 1;
-      } while (iVar14 < local_74);
+        iVar11 = iVar11 + 1;
+      } while (iVar11 < local_74);
     }
     local_58 = 0;
     if (0 < local_74) {
       do {
-        iVar14 = *(int *)((int)(local_68 + local_58 * 0xc) + 4);
-        iVar16 = STField<int>(param_1,0x209);
-        bVar20 = iVar16 <= iVar14;
-        if (bVar20) {
-          iVar14 = iVar14 - iVar16;
+        iVar11 = *(int *)((int)(local_68 + local_58 * 0xc) + 4);
+        iVar22 = STField<int>(param_1,0x209);
+        bVar25 = iVar22 <= iVar11;
+        if (bVar25) {
+          iVar11 = iVar11 - iVar22;
         }
-        puVar1 = *(undefined4 **)(local_68 + local_58 * 0xc);
-        thunk_FUN_00416270(puVar1,(uint *)local_54,(int *)local_80,local_28);
-        thunk_FUN_0061f5c0(STField<undefined4>(param_1,0x1d9),
-                           (short)STField<undefined4>(param_1,0x1e9) + 100,
-                           (short)STField<undefined4>(param_1,0x1ed) + 100,
-                           (short)STField<undefined4>(param_1,0x1f1) + 0xb4,local_54[0],
-                           local_80[0],local_28[0]);
-        if (bVar20) {
-          thunk_FUN_0060bd30(param_1,puVar1,iVar14);
+        this = *(void **)(local_68 + local_58 * 0xc);
+        *(short **)((int)psVar21 + -4) = local_28;
+        *(short **)((int)psVar21 + -8) = local_80;
+        *(short **)((int)psVar21 + -0xc) = local_54;
+        *(undefined4 *)((int)psVar21 + -0x10) = 0x60c7b4;
+        thunk_FUN_00416270(this,*(uint **)((int)psVar21 + -0xc),*(int **)((int)psVar21 + -8),
+                           *(short **)((int)psVar21 + -4));
+        *(int *)((int)psVar21 + -4) = (int)local_28[0];
+        *(int *)((int)psVar21 + -8) = (int)local_80[0];
+        *(int *)((int)psVar21 + -0xc) = (int)local_54[0];
+        *(int *)((int)psVar21 + -0x10) = STField<int>(param_1,0x1f1) + 0xb4;
+        *(int *)((int)psVar21 + -0x14) = STField<int>(param_1,0x1ed) + 100;
+        *(int *)((int)psVar21 + -0x18) = STField<int>(param_1,0x1e9) + 100;
+        *(undefined4 *)((int)psVar21 + -0x1c) = STField<undefined4>(param_1,0x1d9);
+        *(undefined4 *)((int)psVar21 + -0x20) = 0x60c7f6;
+        thunk_FUN_0061f5c0(*(undefined4 *)((int)psVar21 + -0x1c),*(ushort *)((int)psVar21 + -0x18),
+                           *(ushort *)((int)psVar21 + -0x14),*(ushort *)((int)psVar21 + -0x10),
+                           *(short *)((int)psVar21 + -0xc),*(short *)((int)psVar21 + -8),
+                           *(short *)((int)psVar21 + -4));
+        if (bVar25) {
+          *(int *)((int)psVar21 + -4) = iVar11;
+          *(void **)((int)psVar21 + -8) = this;
+          *(undefined4 *)((int)psVar21 + -0xc) = 0x60c826;
+          thunk_FUN_0060bd30(param_1,*(undefined4 **)((int)psVar21 + -8),
+                             *(undefined4 *)((int)psVar21 + -4));
           STField<undefined4>(param_1,0x209) = 0;
         }
         else {
-          thunk_FUN_0060bd30(param_1,puVar1,iVar14 * 5);
-          STField<int>(param_1,0x209) = STField<int>(param_1,0x209) - iVar14;
+          *(int *)((int)psVar21 + -4) = iVar11 * 5;
+          *(void **)((int)psVar21 + -8) = this;
+          *(undefined4 *)((int)psVar21 + -0xc) = 0x60c80f;
+          thunk_FUN_0060bd30(param_1,*(undefined4 **)((int)psVar21 + -8),
+                             *(undefined4 *)((int)psVar21 + -4));
+          STField<int>(param_1,0x209) = STField<int>(param_1,0x209) - iVar11;
         }
       } while ((STField<int>(param_1,0x209) != 0) &&
               (local_58 = local_58 + 1, local_58 < local_74));
     }
-    thunk_FUN_0060bcb0(param_1,STField<int>(param_1,0x209));
+    *(undefined4 *)((int)psVar21 + -4) = STField<undefined4>(param_1,0x209);
+    *(undefined4 *)((int)psVar21 + -8) = 0x60c85c;
+    thunk_FUN_0060bcb0(param_1,*(int *)((int)psVar21 + -4));
   }
   ExceptionList = local_14;
   return local_74;

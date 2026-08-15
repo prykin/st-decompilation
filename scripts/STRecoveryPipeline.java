@@ -103,6 +103,8 @@ public class STRecoveryPipeline extends GhidraScript {
             "class_record_array_field_proposals.tsv", "class_array_summary.txt")),
         Map.entry("STInlineAggregateAnalyzer.java", List.of(
             "inline_aggregate_proposals.tsv", "inline_aggregate_summary.txt")),
+        Map.entry("STStackObjectAnalyzer.java", List.of(
+            "stack_object_proposals.tsv", "stack_object_summary.txt")),
         Map.entry("STObjectFactoryAnalyzer.java", List.of(
             "object_factory_registry.tsv", "object_factory_proposals.tsv",
             "object_type_consumer_proposals.tsv", "object_factory_summary.txt")),
@@ -145,6 +147,7 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STAbiConsistencyAnalyzer.java", List.of()),
         Map.entry("STClassArrayAnalyzer.java", List.of()),
         Map.entry("STInlineAggregateAnalyzer.java", List.of()),
+        Map.entry("STStackObjectAnalyzer.java", List.of()),
         Map.entry("STObjectFactoryAnalyzer.java", List.of()),
         Map.entry("STVTableAnalyzer.java", List.of()),
         Map.entry("STMethodOwnerAnalyzer.java", List.of()),
@@ -325,6 +328,8 @@ public class STRecoveryPipeline extends GhidraScript {
 
         pair("STUtilityFunctionAnalyzer.java", "STUtilityFunctionApplier.java",
             "utility_function_proposals.tsv", "utility_function_apply_report.tsv");
+        pair("STStackObjectAnalyzer.java", "STStackObjectApplier.java",
+            "stack_object_proposals.tsv", "stack_object_apply_report.tsv");
 
         boolean converged = false;
         Map<String, Integer> seenDeepStates = new LinkedHashMap<>();
@@ -1433,10 +1438,10 @@ public class STRecoveryPipeline extends GhidraScript {
         // Do not guard this call with isAnalyzing(): Ghidra clears that flag slightly before
         // AnalysisWorkerCommand closes its outer Program transaction.  In headless mode,
         // waitForAnalysis() asks Ghidra 12.1.2 to persist analyzer timing statistics after the
-        // actual queue has drained.  The headless script is not inside a Program transaction at
-        // that point, so OptionsDB throws NoTransactionException even though analysis succeeded.
-        // startAnalysis(..., false) runs the same queue synchronously without that diagnostic
-        // timing write.  GUI mode retains waitForAnalysis() and its background-thread barrier.
+        // actual queue has drained.  The pipeline deliberately ended its implicit script
+        // transaction, so both that OptionsDB write and mutating analyzers such as X86 Function
+        // Callee Purge need an explicit transaction around the synchronous queue.  GUI mode
+        // retains waitForAnalysis() and its background-thread barrier.
         drainAnalysis(analysis);
         for (int attempt = 0; attempt < 500; attempt++) {
             monitor.checkCancelled();
@@ -1453,8 +1458,19 @@ public class STRecoveryPipeline extends GhidraScript {
     }
 
     private void drainAnalysis(AutoAnalysisManager analysis) {
-        if (SystemUtilities.isInHeadlessMode()) analysis.startAnalysis(monitor, false);
-        else analysis.waitForAnalysis(null, monitor);
+        if (!SystemUtilities.isInHeadlessMode()) {
+            analysis.waitForAnalysis(null, monitor);
+            return;
+        }
+        int transaction = currentProgram.startTransaction("Auto Analysis");
+        boolean commit = false;
+        try {
+            analysis.startAnalysis(monitor, false);
+            commit = !monitor.isCancelled();
+        }
+        finally {
+            currentProgram.endTransaction(transaction, commit);
+        }
     }
 
     /**

@@ -345,7 +345,7 @@ LAB_00510fa9:
     if (iVar24 < 0x127) {
                     /* WARNING: Could not recover jumptable at 0x0051146f. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)(&PTR_LAB_00511560)[iVar27])();
       return;
     }

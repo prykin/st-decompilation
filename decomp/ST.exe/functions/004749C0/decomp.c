@@ -64,7 +64,6 @@ int __thiscall STBoatC::WaitLoad(STBoatC *this,STBoatC *param_1)
   int local_c;
   undefined4 *local_8;
 
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (pSVar13 = this, param_1 == (STBoatC *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     iVar12 = 0;
@@ -147,7 +146,6 @@ switchD_00474a47_caseD_2:
         iVar12 = this->field_05BC;
         this->field_05BC = iVar12 + 1;
         if ((&this->field_05B4)[iVar12] != -1) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (STBoatC *)thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
           sub_00481520(this,(int)this->field_005B,(int)this->field_005D,
                        (int)(&this->field_05B2)[this->field_05BC]);

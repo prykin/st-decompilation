@@ -129,12 +129,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
             *puVar8 = iVar6 + -2;
             this_01->field_027A = 5;
             iVar6 = *(int *)&pAVar3->field_0x20;
-            if (iVar6 < 0) {
-              iVar6 = (short)(iVar6 / 0xc9) + -1;
-            }
-            else {
-              iVar6 = (int)(short)(iVar6 / 0xc9);
-            }
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar6 + -2;
             this_01->field_027E = 5;
             local_EAX_481 =
@@ -156,12 +151,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
             *puVar8 = iVar6 + -2;
             this_01->field_027A = 5;
             iVar6 = *(int *)&pAVar3->field_0x20;
-            if (iVar6 < 0) {
-              iVar6 = (short)(iVar6 / 0xc9) + -1;
-            }
-            else {
-              iVar6 = (int)(short)(iVar6 / 0xc9);
-            }
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar6 + -2;
             this_01->field_027E = 5;
             local_EAX_859 =
@@ -176,12 +166,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
             *puVar8 = iVar6 + -2;
             this_01->field_027A = 5;
             iVar6 = *(int *)&pAVar3->field_0x20;
-            if (iVar6 < 0) {
-              iVar6 = (short)(iVar6 / 0xc9) + -1;
-            }
-            else {
-              iVar6 = (int)(short)(iVar6 / 0xc9);
-            }
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar6 + -2;
             this_01->field_027E = 5;
             local_EAX_1048 =
@@ -197,12 +182,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
             *puVar8 = iVar6 + -2;
             this_01->field_027A = 5;
             iVar6 = *(int *)&pAVar3->field_0x20;
-            if (iVar6 < 0) {
-              iVar6 = (short)(iVar6 / 0xc9) + -1;
-            }
-            else {
-              iVar6 = (int)(short)(iVar6 / 0xc9);
-            }
+            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar6 + -2;
             this_01->field_027E = 5;
             local_EAX_1235 =
@@ -221,12 +201,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
           *puVar8 = iVar6 + -2;
           this_01->field_027A = 5;
           iVar6 = *(int *)&pAVar3->field_0x20;
-          if (iVar6 < 0) {
-            iVar6 = (short)(iVar6 / 0xc9) + -1;
-          }
-          else {
-            iVar6 = (int)(short)(iVar6 / 0xc9);
-          }
+          iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
           this_01->field_0276 = iVar6 + -2;
           this_01->field_027E = 5;
           local_EAX_670 =
@@ -356,6 +331,8 @@ int __thiscall st::fn_006041A0(STExplosionC *this,int param_1)
 
 // 00604A90 STExplosionC::SaveObj
 #line 4 "decomp/ST.exe/functions/00604A90/decomp.c"
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Expl.cpp
    STExplosionC::SaveObj */
@@ -363,19 +340,23 @@ int __thiscall st::fn_006041A0(STExplosionC *this,int param_1)
 undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
 
 {
+  alignas(4) byte st_stack_frame[208];
+
   int iVar1;
-  undefined1 *puVar3;
+  HoloTy *this_00;
+  int iVar4;
+  undefined1 *puVar5;
   int iVar3;
-  HoloTy **ppHVar4;
-  uint *puVar5;
+  HoloTy **ppHVar6;
+  uint *puVar7;
   int iVar7;
-  byte *puVar6;
-  int iVar8;
-  uint uVar10;
-  uint *puVar11;
+  byte *puVar8;
+  int iVar9;
+  uint uVar11;
   uint *puVar12;
-  AnonShape_00604A90_035626E6 *pAVar13;
-  uint *puVar14;
+  uint *puVar13;
+  AnonShape_00604A90_035626E6 *pAVar14;
+  uint *puVar15;
   HoloTy **local_b4;
   InternalExceptionFrame local_8c;
   AnonShape_00604A90_035626E6 *local_48;
@@ -395,28 +376,27 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
   puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079cc18);
   puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
+  local_1c = (st_stack_frame + 12);
   local_48 = nullptr;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   ExceptionList = &local_14;
-  iVar3 = st::fn_0072D7F0
-                    (local_8c.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0xffffffff);
-  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
+  iVar3 = st::fn_0072D7F0(local_8c.jumpBuffer,2);
+  local_1c = (st_stack_frame + 12);
   if (iVar3 == 0) {
     *param_1 = 0;
-    local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
+    local_1c = (st_stack_frame + 12);
     local_48 = st::pointer_boundary_cast<AnonShape_00604A90_035626E6 *>(st::fn_006AAC70(0xe2));
     *param_1 = 0xe2;
     this->field_01E1 = 1;
-    puVar6 = (byte *)&this->field_0x1d5;
-    pAVar13 = local_48;
-    memmove(pAVar13, puVar6, 0x40); /* compiler REP MOVS byte copy */
-    iVar8 = 0;
+    puVar8 = (byte *)&this->field_0x1d5;
+    pAVar14 = local_48;
+    memmove(pAVar14, puVar8, 0x40); /* compiler REP MOVS byte copy */
+    iVar9 = 0;
     *(undefined4 *)&local_48->field_0x40 = this->field_0215;
-    ppHVar4 = &this->field_0219;
-    puVar6 = (byte *)&local_48->field_0x44;
-    memmove(puVar6, ppHVar4, 0x50); /* compiler REP MOVS byte copy */
+    ppHVar6 = &this->field_0219;
+    puVar8 = (byte *)&local_48->field_0x44;
+    memmove(puVar8, ppHVar6, 0x50); /* compiler REP MOVS byte copy */
     *(int *)&local_48->field_0x94 = this->field_0269;
     local_48->field_0x98 = this->field_026D;
     local_48->field_0099 = this->field_026E;
@@ -428,64 +408,72 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
     if ((uint *)this->field_0215 != nullptr) {
       local_3c[0] = nullptr;
       local_3c[0] = (uint *)st::fn_006B0020((uint *)this->field_0215,(int *)&local_20);
-      uVar10 = *param_1 + local_20 + 4;
-      *param_1 = uVar10;
-      local_48 = st::pointer_boundary_cast<AnonShape_00604A90_035626E6 *>(st::fn_006ACF50(local_48,uVar10));
+      uVar11 = *param_1 + local_20 + 4;
+      *param_1 = uVar11;
+      local_48 = st::pointer_boundary_cast<AnonShape_00604A90_035626E6 *>(st::fn_006ACF50(local_48,uVar11));
       *(uint *)((*param_1 - local_20) + -4 + (int)local_48) = local_20;
-      puVar5 = local_3c[0];
-      puVar12 = (uint *)((*param_1 - local_20) + (int)local_48);
-      memmove(puVar12, puVar5, local_20); /* compiler REP MOVS byte copy */
+      puVar12 = local_3c[0];
+      puVar7 = (uint *)((*param_1 - local_20) + (int)local_48);
+      memmove(puVar7, puVar12, local_20); /* compiler REP MOVS byte copy */
       st::fn_006AB060(local_3c);
     }
-    puVar6 = (byte *)&stack0xffffff40;
-    iVar8 = 0;
+    iVar9 = 0;
     iVar1 = this->field_0269;
     if (iVar1 != 0) {
-      local_8 = 0;
-      st::fn_0072DA40();
+      iVar4 = iVar1 * -8;
+      puVar8 = (byte *)((st_stack_frame + 12) + iVar4);
+      local_1c = (st_stack_frame + 12) + iVar4;
+      local_24 = (st_stack_frame + 12) + iVar4;
       local_8 = 0xffffffff;
       local_30 = 0;
-      local_24 = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
-      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
       if (0 < iVar1) {
-        ppHVar4 = &this->field_0219;
-        local_24 = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
-        local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
+        ppHVar6 = &this->field_0219;
         do {
-          if (*ppHVar4 != nullptr) {
-            local_3c[0] = (uint *)st::fn_00403C7E(*ppHVar4,st::pointer_boundary_cast<undefined4 *>(local_2c));
-            iVar8 = iVar8 + 4 + local_2c[0];
-            puVar6[1] = local_2c[0];
-            *puVar6 = local_3c[0];
+          this_00 = *ppHVar6;
+          if (this_00 != nullptr) {
+            *(int **)((st_stack_frame + 8) + iVar4) = local_2c;
+            *(undefined4 *)((st_stack_frame + 4) + iVar4) = 0x604c70;
+            local_3c[0] = (uint *)st::fn_00403C7E(this_00,*(undefined4 **)
+                                                              ((st_stack_frame + 8) + iVar4));
+            iVar9 = iVar9 + 4 + local_2c[0];
+            puVar8[1] = local_2c[0];
+            *puVar8 = local_3c[0];
           }
           local_30 = local_30 + 1;
-          ppHVar4 = ppHVar4 + 1;
-          puVar6 = (byte *)(puVar6 + 2);
+          ppHVar6 = ppHVar6 + 1;
+          puVar8 = (byte *)(puVar8 + 2);
         } while (local_30 < this->field_0269);
       }
-      uVar10 = *param_1;
-      *param_1 = uVar10 + iVar8;
-      local_48 = st::pointer_boundary_cast<AnonShape_00604A90_035626E6 *>(st::fn_006ACF50(local_48,uVar10 + iVar8));
-      local_44 = (uint *)((*param_1 - iVar8) + (int)local_48);
+      uVar11 = *param_1;
+      *param_1 = uVar11 + iVar9;
+      *(uint *)((st_stack_frame + 8) + iVar4) = uVar11 + iVar9;
+      *(AnonShape_00604A90_035626E6 **)((st_stack_frame + 4) + iVar4) = local_48;
+      *(undefined4 *)((st_stack_frame + 0) + iVar4) = 0x604cbb;
+      local_48 = st::pointer_boundary_cast<AnonShape_00604A90_035626E6 *>(st::fn_006ACF50
+                           (*(void **)((st_stack_frame + 4) + iVar4),*(uint *)((st_stack_frame + 8) + iVar4)
+                           ));
+      puVar12 = (uint *)((*param_1 - iVar9) + (int)local_48);
       local_30 = 0;
       if (0 < this->field_0269) {
-        puVar5 = (uint *)(local_24 + 4);
+        puVar7 = (uint *)(local_24 + 4);
         local_b4 = &this->field_0219;
         do {
           if (*local_b4 != nullptr) {
-            *local_44 = *puVar5;
-            puVar11 = local_44 + 1;
-            local_3c[0] = (uint *)puVar5[-1];
-            uVar10 = *puVar5;
-            puVar12 = local_3c[0];
-            puVar14 = puVar11;
-            memmove(puVar14, puVar12, uVar10); /* compiler REP MOVS byte copy */
-            st::fn_006AB060(local_3c);
-            local_44 = (uint *)((int)puVar11 + *local_44);
+            local_44 = puVar12;
+            *puVar12 = *puVar7;
+            local_3c[0] = (uint *)puVar7[-1];
+            uVar11 = *puVar7;
+            puVar13 = (uint *)puVar7[-1];
+            puVar15 = puVar12 + 1;
+            memmove(puVar15, puVar13, uVar11); /* compiler REP MOVS byte copy */
+            *(uint ***)((st_stack_frame + 8) + iVar4) = local_3c;
+            *(undefined4 *)((st_stack_frame + 4) + iVar4) = 0x604d29;
+            st::fn_006AB060(*(void **)((st_stack_frame + 8) + iVar4));
+            puVar12 = (uint *)((int)(puVar12 + 1) + *local_44);
           }
           local_30 = local_30 + 1;
           local_b4 = local_b4 + 1;
-          puVar5 = puVar5 + 2;
+          puVar7 = puVar7 + 2;
         } while (local_30 < this->field_0269);
       }
     }
@@ -493,14 +481,13 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
   }
   else {
     g_currentExceptionFrame = local_8c.previous;
-    puVar3 = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
+    puVar5 = (st_stack_frame + 12);
     if (local_48 != nullptr) {
       st::fn_006AB060(&local_48);
-      puVar3 = local_1c;
+      puVar5 = local_1c;
     }
-    local_1c = puVar3;
-    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x2df,0,iVar3,st::mutable_c_string("%s"),
-                               "STExplosionC::SaveObj(");
+    local_1c = puVar5;
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x2df,0,iVar3,st::mutable_c_string("%s"));
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

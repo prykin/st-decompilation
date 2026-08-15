@@ -29,7 +29,7 @@ uint __thiscall TraksClassTy::sub_00555D90(TraksClassTy *this,undefined4 *param_
       if (uVar3 < pTVar1->count) {
         element_0024 = DArrayAt<TraksClassTy_field_0024Element>(pTVar1, uVar3);
         for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *(undefined4 *)psVar4 = *param_1;
+          *(undefined4 *)element_0024 = *param_1;
           param_1 = param_1 + 1;
           psVar4 = psVar4 + 2;
         }
@@ -58,7 +58,7 @@ LAB_00555e34:
           if (uVar6 < uVar3) {
             element_0024_2 = DArrayAt<TraksClassTy_field_0024Element>(pTVar1, uVar6);
             for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
-              *(undefined4 *)psVar4 = *param_1;
+              *(undefined4 *)element_0024_2 = *param_1;
               param_1 = param_1 + 1;
               psVar4 = psVar4 + 2;
             }

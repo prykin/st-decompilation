@@ -25,7 +25,6 @@ STAllPlayersC::ResetActivityFromObjs
   objPtr = (char)param_1;
   uVar5 = (ushort)param_4;
   if (param_2 < 0x19b) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x19a) {
 LAB_0042d1f8:
       index = 0;
@@ -45,7 +44,6 @@ LAB_0042d1f8:
       return;
     }
     if (param_2 < 0x5b) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_2 == 0x5a) {
         SVar6 = CASE_4;
 LAB_0042d1c3:
@@ -56,14 +54,11 @@ LAB_0042d1c3:
         pSVar3->vfunc_E8(0);
         goto LAB_0042d2c3;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_2 == 0) {
         return;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_2 == 0x3c) goto LAB_0042d1f8;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_2 == 0x172) {
       SVar6 = CASE_2;
       goto LAB_0042d1c3;
@@ -76,7 +71,6 @@ LAB_0042d270:
     }
   }
   else {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1a4) {
       pSVar3 = GetObjPtr(this,objPtr,uVar5,CASE_5);
       if (pSVar3 == nullptr) {
@@ -89,7 +83,6 @@ LAB_0042d270:
       STGameObjC::ResetSelfCheckFlag(pSVar3);
       return;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1ae) {
       SVar6 = CASE_3;
     }

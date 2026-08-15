@@ -73,7 +73,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
-          (*local_8->vtable_at_1d5->vfunc_00)();
+          (*local_8->vtable_at_1d5->vfunc_00)((STContainerC *)&local_8->vtable_at_1d5);
           g_currentExceptionFrame = local_60.previous;
           return 0;
         default:

@@ -108,7 +108,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
         if ((int)uVar3 < 0x76) {
                     /* WARNING: Could not recover jumptable at 0x00505bca. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)(&PTR_DAT_00505cec)[local_14])();
           return;
         }
@@ -116,7 +116,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
       else if ((int)uVar3 < 0x76) {
                     /* WARNING: Could not recover jumptable at 0x00505b82. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (*(code *)(&PTR_DAT_00505cdc)[local_14])();
         return;
       }

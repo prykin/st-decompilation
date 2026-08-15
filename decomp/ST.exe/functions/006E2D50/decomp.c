@@ -17,9 +17,7 @@ void FUN_006e2d50(int *param_1,int *param_2,int param_3,int param_4,int param_5,
   int *temp_103f510114be;
 
   if (param_2 < param_1) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (int *)((int)param_2 + param_4 * 2 + (param_5 + -1) * param_3 + -2);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (int *)((int)param_1 + param_4 * 2 + (param_5 + -1) * param_3 + -2);
     while (0 < param_5) {
       if (param_6 < 1) {
@@ -68,12 +66,9 @@ void FUN_006e2d50(int *param_1,int *param_2,int param_3,int param_4,int param_5,
           STField<short>(piVar7,2) = STField<short>(piVar6,2) + (short)param_6;
         }
       }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 cf_continue_loop_006E2F66:
       param_2 = (int *)((int)param_2 - param_3);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)((int)param_1 - param_3);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = param_5 + -1;
     }
   }
@@ -121,12 +116,9 @@ cf_continue_loop_006E2F66:
           *(short *)piVar7_mg3 = (short)*piVar6_mg3 + (short)param_6;
         }
       }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 cf_continue_loop_006E2E31:
       param_2 = (int *)((int)param_2 + param_3);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)((int)param_1 + param_3);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = param_5 + -1;
     }
   }

@@ -24,7 +24,6 @@ int __thiscall STManRub3C::sub_0062D840(STManRub3C *this,undefined4 *param_1)
   else {
     puVar6 = (byte *)(&this->field_001C);
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (undefined4 *)0x98;
   puVar4 = (byte *)(puVar1);
   memmove(puVar6, puVar4, 0x98); /* compiler REP MOVS byte copy */
@@ -52,7 +51,6 @@ int __thiscall STManRub3C::sub_0062D840(STManRub3C *this,undefined4 *param_1)
     iVar2 = thunk_FUN_0062d7d0((int *)ppDVar7,piVar5);
 switchD_0062d881_default:
     piVar5 = (int *)((int)piVar5 + iVar2);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (undefined4 *)((int)param_1 + iVar2);
     iVar3 = iVar3 + 1;
     if (3 < iVar3) {

@@ -20,7 +20,7 @@ undefined4 __fastcall FUN_007489a5(int param_1)
     return 0x8004020a;
   }
   *(undefined1 *)(param_1 + 0xa1) = 0;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*piVar1 + 0x18))(piVar1);
   return uVar2;
 }

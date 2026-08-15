@@ -18,7 +18,7 @@ int FUN_00747c63(AnonShape_00747C63_5B932397 *param_1,int *param_2,char *param_3
       if (*(int *)(param_1->field_0064 + 0x14) == 0) {
         iVar1 = FUN_00747e65(&param_1[-1].field_005C,param_2,param_3);
         if (iVar1 < 0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)param_1[-1].field_005C[1].SpinCount)();
           LeaveCriticalSection(lpCriticalSection);
         }

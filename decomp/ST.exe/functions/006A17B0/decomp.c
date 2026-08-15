@@ -28,7 +28,6 @@ FUN_006a17b0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
     thunk_FUN_006a1410(param_1,param_2,param_3,param_4,param_5,param_7,param_8);
     local_c = 0;
     do {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = 0;
       local_8 = &DAT_007df82c;
       do {
@@ -68,7 +67,6 @@ FUN_006a17b0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
           }
         }
         local_8 = local_8 + 2;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = param_4 + 1;
       } while ((int)local_8 < 0x7df86c);
       local_c = local_c + 1;

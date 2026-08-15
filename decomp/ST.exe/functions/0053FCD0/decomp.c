@@ -39,7 +39,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
     piVar4 = (int *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (piVar4 == nullptr) {
       iVar9 = 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar5 = (*(code *)param_2)(param_1);
       iVar8 = 2;
       pCVar6 = thunk_FUN_00571240("BUT_BLDTAB",0);

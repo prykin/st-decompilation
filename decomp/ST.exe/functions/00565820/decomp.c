@@ -423,7 +423,6 @@ LAB_00565c6c:
             iVar15 = iVar15 + 1;
           } while (iVar15 < (int)dVar17);
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_7 = param_7 - dVar17;
         if ((int)param_7 < 1) goto cf_common_exit_0056623F;
         local_94[(int)((int)&local_58->iteratorIndex + 1)] = 0;
@@ -437,7 +436,6 @@ LAB_00565c6c:
           if (-1 < iVar14) {
             Library::DKW::TBL::DArrayAppend(local_1c,&local_40);
           }
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_7 = param_7 - 1;
         } while (param_7 != 0);
       }

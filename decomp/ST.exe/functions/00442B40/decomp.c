@@ -90,7 +90,6 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   STFishC::sub_004162B0((STFishC *)this,(short *)((int)&param_2 + 2),&local_6,&local_8);
   local_1c = this->field_0032;
   local_14 = (STGameObjC *)0x4;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = &g_packedRecords_A62x8[objPtr].field5_0xf;
   do {
     pDVar2 = (DArrayTy *)*param_1;
@@ -111,7 +110,6 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
         } while ((int)uVar4 < (int)local_18);
       }
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + 1;
     local_14 = (STGameObjC *)((int)local_14 + -1);
   } while (local_14 != nullptr);

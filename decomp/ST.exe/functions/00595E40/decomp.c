@@ -167,7 +167,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1B28,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(this_01->field_1B28 + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
   this_01->field_1B30 = 0;
   if (this_01->field_1B2C != 0xffffffff) {
@@ -176,7 +176,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1BB9,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(this_01->field_1BB9 + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
   this_01->field_1BC1 = 0;
   if (this_01->field_1BBD != 0xffffffff) {
@@ -185,7 +185,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1C4A,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(this_01->field_1C4A + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
   this_01->field_1C52 = 0;
   if (this_01->field_1C4E != 0xffffffff) {
@@ -194,7 +194,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1CDB,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(this_01->field_1CDB + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
   this_01->field_1CE3 = 0;
   if (this_01->field_1CDF != 0xffffffff) {
@@ -203,7 +203,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1D6C,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(this_01->field_1D6C + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
   this_01->field_1D74 = 0;
   if (this_01->field_1D70 != 0xffffffff) {
@@ -212,7 +212,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1DFD,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(this_01->field_1DFD + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
   this_01->field_1E05 = 0;
   if (this_01->field_1E01 != 0xffffffff) {

@@ -53,7 +53,7 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
       this_00->field_01CC = 0;
       if (this_00->field_01BB == '\0') {
         pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (*(code *)pAVar1->field_0004)
                           (0,1,0xac,0x57,0,1,1,pCVar3,uVar6,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12);
         uVar5 = 1;
@@ -66,14 +66,14 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
         uVar7 = 0xb201;
         this_00->field_01C8 = uVar6;
         pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (*(code *)pAVar1->field_0004)
                           (0,1,0xe5,0x57,0,1,1,pCVar3,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12,uVar5);
         this_00->field_01CC = uVar6;
       }
       else {
         pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (*(code *)pAVar1->field_0004)(0,1,0xca,0x57,0,1,1,pCVar3);
         this_00->field_01C8 = uVar6;
       }

@@ -25,7 +25,7 @@ undefined4 __thiscall FUN_0075019f(void *this,AnonShape_0075019F_4BD22E12 *param
   }
   else {
     FUN_0074df2b(this_00,local_8);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(param_1->field_000C + 8))(&param_1->field_000C);
     FUN_00750287(this);
   }

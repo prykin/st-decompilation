@@ -1,6 +1,8 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* WARNING: Unable to track spacebase fully for stack */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
    Diagnostic line evidence: 563 (metadata/report site, not the function definition)
@@ -12,19 +14,24 @@
 undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
 
 {
-  ushort uVar1;
-  int iVar2;
-  undefined1 *puVar3;
-  short *psVar4;
+  int *piVar1;
+  ushort uVar2;
+  int iVar3;
+  STFishC *this_00;
+  undefined4 *puVar4;
   STGameObjC *pSVar5;
   int iVar6;
   int iVar8;
   int iVar7;
   dword dVar8;
   int iVar9;
-  uint index;
   short *psVar10;
-  short *psVar11;
+  int iVar11;
+  uint index;
+  void *pvVar12;
+  undefined4 *puVar13;
+  Global_sub_006C8EC0_param_3Enum aGStackY_f8 [9];
+  undefined4 uStackY_d4;
   int local_b8;
   int local_ac;
   int local_a8;
@@ -39,13 +46,13 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
   int local_7c;
   short local_78 [2];
   int local_74;
-  Global_sub_006C8EC0_param_3Enum local_70;
+  int local_70;
   int local_6c;
   int local_68;
   int local_64;
   int local_60;
   int local_5c;
-  short *local_54;
+  void *local_54;
   int local_50;
   short local_4c [6];
   int local_40;
@@ -69,50 +76,58 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
   dVar8 = param_2->count;
   local_80 = dVar8;
   if (dVar8 == 0) {
+    uStackY_d4 = 0x40c0c5;
     ExceptionList = &local_14;
     local_1c = &stack0xffffff34;
-    psVar4 = Library::DKW::LIB::MemAlloc(4);
-    psVar4[0] = -4;
-    psVar4[1] = -1;
+    puVar4 = Library::DKW::LIB::MemAlloc(4);
+    *puVar4 = 0xfffffffc;
   }
   else {
+    uStackY_d4 = 0x40c0dd;
     ExceptionList = &local_14;
-    psVar4 = Library::DKW::LIB::MemAlloc(dVar8 * 4);
-    if (psVar4 != nullptr) {
+    puVar4 = Library::DKW::LIB::MemAlloc(dVar8 * 4);
+    if (puVar4 != nullptr) {
+      uStackY_d4 = 0x40c0f8;
       pSVar5 = thunk_FUN_00423e70(this,(ushort)param_1);
       if (pSVar5 == nullptr) {
-        psVar11 = psVar4;
+        puVar13 = puVar4;
         if (0 < (int)dVar8) {
           for (; dVar8 != 0; dVar8 = dVar8 - 1) {
-            psVar11[0] = -4;
-            psVar11[1] = -1;
-            psVar11 = psVar11 + 2;
+            *puVar13 = 0xfffffffc;
+            puVar13 = puVar13 + 1;
           }
         }
       }
       else {
-        local_8 = 0;
-        Library::MSVCRT::FUN_0072da40();
+        iVar3 = dVar8 * -0xc;
+        local_1c = &stack0xffffff34 + iVar3;
         local_8 = 0xffffffff;
-        iVar9 = (int)pSVar5->field_0047;
+        iVar11 = (int)pSVar5->field_0047;
+        local_74 = iVar11;
         local_a8 = (int)pSVar5->field_0049;
-        local_20 = (int)pSVar5->field_004B;
+        iVar9 = (int)pSVar5->field_004B;
+        local_30 = iVar9;
         index = 0;
         local_9c = local_a8;
-        local_74 = iVar9;
-        local_30 = local_20;
-        local_1c = &stack0xffffff34;
-        puVar3 = &stack0xffffff34;
         if (0 < (int)local_80) {
           do {
-            DArrayGetElement(param_2,index,&local_90);
-            STFishC::sub_004162F0(local_90,local_24,local_4c,local_78);
+            *(STFishC ***)(&stack0xffffff30 + iVar3) = &local_90;
+            aGStackY_f8[dVar8 * -3 + 9] = 0x40c171;
+            DArrayGetElement(param_2,index,*(void **)(&stack0xffffff30 + iVar3));
+            *(short **)(&stack0xffffff30 + iVar3) = local_78;
+            aGStackY_f8[dVar8 * -3 + 9] = (Global_sub_006C8EC0_param_3Enum)local_4c;
+            aGStackY_f8[dVar8 * -3 + 8] = (Global_sub_006C8EC0_param_3Enum)local_24;
+            this_00 = local_90;
+            aGStackY_f8[dVar8 * -3 + 7] = 0x40c188;
+            STFishC::sub_004162F0
+                      (this_00,(short *)aGStackY_f8[dVar8 * -3 + 8],
+                       (short *)aGStackY_f8[dVar8 * -3 + 9],*(short **)(&stack0xffffff30 + iVar3));
             iVar7 = (int)local_24[0];
             if (iVar7 < local_74) {
               local_74 = iVar7;
             }
-            if (iVar9 < iVar7) {
-              iVar9 = iVar7;
+            if (iVar11 < iVar7) {
+              iVar11 = iVar7;
             }
             iVar6 = (int)local_4c[0];
             if (iVar6 < local_9c) {
@@ -122,21 +137,19 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
               local_a8 = iVar6;
             }
             iVar6 = (int)local_78[0];
-            if (iVar6 < local_20) {
-              local_20 = iVar6;
+            if (iVar6 < iVar9) {
+              iVar9 = iVar6;
             }
             if (local_30 < iVar6) {
               local_30 = iVar6;
             }
-            iVar6 = index * 0xc;
-            *(int *)(&stack0xffffff34 + iVar6) = iVar7;
-            *(int *)(&stack0xffffff38 + iVar6) = (int)local_4c[0];
-            *(int *)(&stack0xffffff3c + iVar6) = (int)local_78[0];
+            piVar1 = (int *)(&stack0xffffff34 + index * 0xc + iVar3);
+            *piVar1 = iVar7;
+            piVar1[1] = (int)local_4c[0];
+            piVar1[2] = (int)local_78[0];
             index = index + 1;
-            puVar3 = local_1c;
           } while ((int)index < (int)local_80);
         }
-        local_1c = puVar3;
         local_74 = local_74 + -2;
         if (local_74 < 0) {
           local_74 = 0;
@@ -145,14 +158,16 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
         if (local_9c < 0) {
           local_9c = 0;
         }
-        local_20 = local_20 + -2;
-        if (local_20 < 0) {
+        local_20 = iVar9 + -2;
+        if (iVar9 + -2 < 0) {
           local_20 = 0;
         }
-        iVar7 = local_20;
-        iVar9 = iVar9 + 2;
-        if (g_pathingGrid.sizeX <= iVar9) {
-          iVar9 = g_pathingGrid.sizeX + -1;
+        iVar9 = local_20;
+        iVar11 = iVar11 + 2;
+        local_84 = iVar11;
+        if (g_pathingGrid.sizeX <= iVar11) {
+          iVar11 = g_pathingGrid.sizeX + -1;
+          local_84 = iVar11;
         }
         local_a8 = local_a8 + 2;
         if (g_pathingGrid.sizeY <= local_a8) {
@@ -186,148 +201,184 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
         if (g_pathingGrid.sizeZ <= local_6c) {
           local_6c = g_pathingGrid.sizeZ + -1;
         }
-        local_2c = (iVar9 - local_74) + 1;
-        local_70 = (local_a8 - local_9c) + CASE_1;
+        local_2c = (iVar11 - local_74) + 1;
+        local_70 = (local_a8 - local_9c) + 1;
         local_68 = (local_30 - local_20) + 1;
         local_64 = local_70 * local_2c;
-        local_84 = iVar9;
-        local_54 = Library::DKW::LIB::MemAlloc(local_64 * local_68 * 2);
-        for (local_8c = iVar7; local_8c < local_5c; local_8c = local_8c + 1) {
-          psVar11 = g_pathingGrid.cells +
+        local_84 = iVar11;
+        *(int *)(&stack0xffffff30 + iVar3) = local_64 * local_68 * 2;
+        aGStackY_f8[dVar8 * -3 + 9] = 0x40c329;
+        local_54 = Library::DKW::LIB::MemAlloc(*(uint *)(&stack0xffffff30 + iVar3));
+        local_8c = iVar9;
+        while (local_8c < local_5c) {
+          psVar10 = g_pathingGrid.cells +
                     g_pathingGrid.planeStride * local_8c + g_pathingGrid.sizeX * local_9c;
-          psVar10 = local_54 + (local_8c - local_20) * local_64;
-          for (local_88 = local_9c; iVar7 = local_74, local_88 <= local_a8; local_88 = local_88 + 1)
-          {
-            for (; iVar7 <= iVar9; iVar7 = iVar7 + 1) {
-              psVar10[iVar7 - local_74] = psVar11[iVar7];
+          pvVar12 = (void *)((int)local_54 + (local_8c - local_20) * local_64 * 2);
+          local_88 = local_9c;
+          while (iVar9 = local_74, local_88 <= local_a8) {
+            for (; iVar9 <= iVar11; iVar9 = iVar9 + 1) {
+              *(short *)((int)pvVar12 + (iVar9 - local_74) * 2) = psVar10[iVar9];
             }
-            psVar11 = psVar11 + g_pathingGrid.sizeX;
-            psVar10 = psVar10 + local_2c;
+            psVar10 = psVar10 + g_pathingGrid.sizeX;
+            pvVar12 = (void *)((int)pvVar12 + local_2c * 2);
+            local_88 = local_88 + 1;
           }
+          local_8c = local_8c + 1;
         }
         if (local_8c <= local_6c) {
           do {
-            psVar11 = g_pathingGrid.cells +
+            psVar10 = g_pathingGrid.cells +
                       g_pathingGrid.planeStride * local_8c + g_pathingGrid.sizeX * local_9c;
-            psVar10 = local_54 + (local_8c - local_20) * local_64;
-            for (local_88 = local_9c; iVar7 = local_74, local_88 < local_38; local_88 = local_88 + 1
-                ) {
-              for (; iVar7 <= iVar9; iVar7 = iVar7 + 1) {
-                psVar10[iVar7 - local_74] = psVar11[iVar7];
+            pvVar12 = (void *)((int)local_54 + (local_8c - local_20) * local_64 * 2);
+            local_88 = local_9c;
+            while (iVar9 = local_74, local_88 < local_38) {
+              for (; iVar9 <= iVar11; iVar9 = iVar9 + 1) {
+                *(short *)((int)pvVar12 + (iVar9 - local_74) * 2) = psVar10[iVar9];
               }
-              psVar11 = psVar11 + g_pathingGrid.sizeX;
-              psVar10 = psVar10 + local_2c;
+              psVar10 = psVar10 + g_pathingGrid.sizeX;
+              pvVar12 = (void *)((int)pvVar12 + local_2c * 2);
+              local_88 = local_88 + 1;
             }
             if (local_88 <= local_40) {
               do {
-                for (; iVar7 < local_ac; iVar7 = iVar7 + 1) {
-                  psVar10[iVar7 - local_74] = psVar11[iVar7];
+                for (; iVar9 < local_ac; iVar9 = iVar9 + 1) {
+                  *(short *)((int)pvVar12 + (iVar9 - local_74) * 2) = psVar10[iVar9];
                 }
-                for (; iVar7 <= local_b8; iVar7 = iVar7 + 1) {
-                  if ((psVar11[iVar7] == 0) &&
-                     (iVar8 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar5,iVar7,
-                                                 local_88,local_8c), iVar8 == 0)) {
-                    psVar10[iVar7 - local_74] = -3;
+                for (; iVar9 <= local_b8; iVar9 = iVar9 + 1) {
+                  if (psVar10[iVar9] == 0) {
+                    *(int *)(&stack0xffffff30 + iVar3) = local_8c;
+                    aGStackY_f8[dVar8 * -3 + 9] = local_88;
+                    aGStackY_f8[dVar8 * -3 + 8] = iVar9;
+                    aGStackY_f8[dVar8 * -3 + 7] = (Global_sub_006C8EC0_param_3Enum)pSVar5;
+                    aGStackY_f8[dVar8 * -3 + 6] = 0x40c4bf;
+                    iVar8 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)
+                                               aGStackY_f8[dVar8 * -3 + 7],
+                                               aGStackY_f8[dVar8 * -3 + 8],
+                                               aGStackY_f8[dVar8 * -3 + 9],
+                                               *(int *)(&stack0xffffff30 + iVar3));
+                    if (iVar8 != 0) goto LAB_0040c4d0;
+                    *(undefined2 *)((int)pvVar12 + (iVar9 - local_74) * 2) = 0xfffd;
                   }
                   else {
-                    psVar10[iVar7 - local_74] = psVar11[iVar7];
+LAB_0040c4d0:
+                    *(short *)((int)pvVar12 + (iVar9 - local_74) * 2) = psVar10[iVar9];
                   }
                 }
-                for (; iVar7 <= local_84; iVar7 = iVar7 + 1) {
-                  psVar10[iVar7 - local_74] = psVar11[iVar7];
+                for (; iVar9 <= local_84; iVar9 = iVar9 + 1) {
+                  *(short *)((int)pvVar12 + (iVar9 - local_74) * 2) = psVar10[iVar9];
                 }
-                psVar11 = psVar11 + g_pathingGrid.sizeX;
-                psVar10 = psVar10 + local_2c;
+                psVar10 = psVar10 + g_pathingGrid.sizeX;
+                pvVar12 = (void *)((int)pvVar12 + local_2c * 2);
                 local_88 = local_88 + 1;
-                iVar7 = local_74;
-                iVar9 = local_84;
+                iVar9 = local_74;
+                iVar11 = local_84;
               } while (local_88 <= local_40);
             }
-            for (; iVar7 = local_74, local_88 <= local_a8; local_88 = local_88 + 1) {
-              for (; iVar7 <= iVar9; iVar7 = iVar7 + 1) {
-                psVar10[iVar7 - local_74] = psVar11[iVar7];
+            while (iVar9 = local_74, local_88 <= local_a8) {
+              for (; iVar9 <= iVar11; iVar9 = iVar9 + 1) {
+                *(short *)((int)pvVar12 + (iVar9 - local_74) * 2) = psVar10[iVar9];
               }
-              psVar11 = psVar11 + g_pathingGrid.sizeX;
-              psVar10 = psVar10 + local_2c;
+              psVar10 = psVar10 + g_pathingGrid.sizeX;
+              pvVar12 = (void *)((int)pvVar12 + local_2c * 2);
+              local_88 = local_88 + 1;
             }
             local_8c = local_8c + 1;
           } while (local_8c <= local_6c);
         }
-        for (; psVar11 = local_54, local_8c <= local_30; local_8c = local_8c + 1) {
-          psVar11 = g_pathingGrid.cells +
+        while (local_8c <= local_30) {
+          psVar10 = g_pathingGrid.cells +
                     g_pathingGrid.planeStride * local_8c + g_pathingGrid.sizeX * local_9c;
-          psVar10 = local_54 + (local_8c - local_20) * local_64;
-          for (local_88 = local_9c; iVar7 = local_74, local_88 <= local_a8; local_88 = local_88 + 1)
-          {
-            for (; iVar7 <= iVar9; iVar7 = iVar7 + 1) {
-              psVar10[iVar7 - local_74] = psVar11[iVar7];
+          pvVar12 = (void *)((int)local_54 + (local_8c - local_20) * local_64 * 2);
+          local_88 = local_9c;
+          while (iVar9 = local_74, local_88 <= local_a8) {
+            for (; iVar9 <= iVar11; iVar9 = iVar9 + 1) {
+              *(short *)((int)pvVar12 + (iVar9 - local_74) * 2) = psVar10[iVar9];
             }
-            psVar11 = psVar11 + g_pathingGrid.sizeX;
-            psVar10 = psVar10 + local_2c;
+            psVar10 = psVar10 + g_pathingGrid.sizeX;
+            pvVar12 = (void *)((int)pvVar12 + local_2c * 2);
+            local_88 = local_88 + 1;
           }
+          local_8c = local_8c + 1;
         }
-        iVar9 = FUN_006ab090((int)local_54,local_2c,local_70,local_68,pSVar5->field_0047 - local_74,
-                             pSVar5->field_0049 - local_9c,pSVar5->field_004B - local_20,-1,-1,-1);
-        if (iVar9 == 0) {
+        *(undefined4 *)(&stack0xffffff30 + iVar3) = 0xffffffff;
+        aGStackY_f8[dVar8 * -3 + 9] = 0xffffffff;
+        aGStackY_f8[dVar8 * -3 + 8] = 0xffffffff;
+        aGStackY_f8[dVar8 * -3 + 7] = pSVar5->field_004B - local_20;
+        aGStackY_f8[dVar8 * -3 + 6] = pSVar5->field_0049 - local_9c;
+        aGStackY_f8[dVar8 * -3 + 5] = pSVar5->field_0047 - local_74;
+        aGStackY_f8[dVar8 * -3 + 4] = local_68;
+        aGStackY_f8[dVar8 * -3 + 3] = local_70;
+        aGStackY_f8[dVar8 * -3 + 2] = local_2c;
+        pvVar12 = local_54;
+        aGStackY_f8[dVar8 * -3 + 1] = (Global_sub_006C8EC0_param_3Enum)local_54;
+        aGStackY_f8[dVar8 * -3] = 0x40c669;
+        iVar11 = FUN_006ab090(aGStackY_f8[dVar8 * -3 + 1],aGStackY_f8[dVar8 * -3 + 2],
+                              aGStackY_f8[dVar8 * -3 + 3],aGStackY_f8[dVar8 * -3 + 4],
+                              aGStackY_f8[dVar8 * -3 + 5],aGStackY_f8[dVar8 * -3 + 6],
+                              aGStackY_f8[dVar8 * -3 + 7],aGStackY_f8[dVar8 * -3 + 8],
+                              aGStackY_f8[dVar8 * -3 + 9],*(int *)(&stack0xffffff30 + iVar3));
+        if (iVar11 == 0) {
           local_34 = 0;
           if (0 < (int)local_80) {
             do {
-              iVar9 = local_34 * 0xc;
-              local_8c = *(int *)(&stack0xffffff3c + iVar9) - local_20;
-              local_88 = *(int *)(&stack0xffffff38 + iVar9) - local_9c;
-              local_7c = *(int *)(&stack0xffffff34 + iVar9) - local_74;
-              psVar11 = local_54 + local_8c * local_64 + local_7c + local_88 * local_2c;
-              local_94 = (int)*psVar11;
+              piVar1 = (int *)(&stack0xffffff34 + local_34 * 0xc + iVar3);
+              local_8c = piVar1[2] - local_20;
+              local_88 = piVar1[1] - local_9c;
+              local_7c = *piVar1 - local_74;
+              psVar10 = (short *)((int)local_54 +
+                                 (local_8c * local_64 + local_7c + local_88 * local_2c) * 2);
+              local_94 = (int)*psVar10;
               if (local_94 < 0) {
                 local_94 = 30000;
                 local_a4 = 0;
                 do {
                   local_50 = (&SHORT_007ed570)[local_a4 * 4] + local_7c;
                   if ((-1 < local_50) && (local_50 < local_2c)) {
-                    iVar7 = (int)(&SHORT_007ed572)[local_a4 * 4];
-                    iVar9 = iVar7 + local_88;
-                    if ((-1 < iVar9) && (iVar9 < (int)local_70)) {
+                    iVar9 = (int)(&SHORT_007ed572)[local_a4 * 4];
+                    iVar11 = iVar9 + local_88;
+                    if ((-1 < iVar11) && (iVar11 < local_70)) {
                       local_60 = (&SHORT_007ed574)[local_a4 * 4] + local_8c;
                       if ((-1 < local_60) && (local_60 < local_68)) {
-                        uVar1 = (&SHORT_007ed576)[local_a4 * 4];
-                        if ((uVar1 & 1) == 0) {
-                          if (((uVar1 & 0x6000) == 0) || ((uVar1 & 0x9fff) == 0xffe)) {
+                        uVar2 = (&SHORT_007ed576)[local_a4 * 4];
+                        if ((uVar2 & 1) == 0) {
+                          if (((uVar2 & 0x6000) == 0) || ((uVar2 & 0x9fff) == 0xffe)) {
 LAB_0040c90d:
-                            if ((0 < local_54[iVar9 * local_2c + local_50 + local_60 * local_64]) &&
-                               (iVar9 = (int)local_54[iVar9 * local_2c +
-                                                      local_50 + local_60 * local_64] +
-                                        (&DAT_007ed640)[local_a4], iVar9 < local_94)) {
-                              local_94 = iVar9;
+                            iVar11 = (int)*(short *)((int)local_54 +
+                                                    (iVar11 * local_2c +
+                                                    local_50 + local_60 * local_64) * 2);
+                            if ((0 < iVar11) &&
+                               (iVar11 = iVar11 + (&DAT_007ed640)[local_a4], iVar11 < local_94)) {
+                              local_94 = iVar11;
                             }
                           }
-                          else if ((psVar11[(&SHORT_007ed574)[local_a4 * 4] * local_64] & 0xc000U)
+                          else if ((psVar10[(&SHORT_007ed574)[local_a4 * 4] * local_64] & 0xc000U)
                                    != 0xc000) {
-                            if (iVar7 == 0) {
-                              uVar1 = psVar11[(&SHORT_007ed570)[local_a4 * 4]];
+                            if (iVar9 == 0) {
+                              uVar2 = psVar10[(&SHORT_007ed570)[local_a4 * 4]];
                             }
                             else {
-                              uVar1 = psVar11[iVar7 * local_2c];
+                              uVar2 = psVar10[iVar9 * local_2c];
                             }
 joined_r0x0040c8f3:
-                            if ((uVar1 & 0xc000) != 0xc000) goto LAB_0040c90d;
+                            if ((uVar2 & 0xc000) != 0xc000) goto LAB_0040c90d;
                           }
                         }
                         else {
-                          iVar6 = (int)(&SHORT_007ed570)[local_a4 * 4];
-                          if (((psVar11[iVar6] & 0xc000U) != 0xc000) &&
-                             (iVar7 = iVar7 * local_2c, (psVar11[iVar7] & 0xc000U) != 0xc000)) {
-                            if ((uVar1 & 0x4000) == 0) {
-                              if ((uVar1 & 0x2000) == 0) goto LAB_0040c90d;
-                              if (((psVar11[local_64] & 0xc000U) != 0xc000) &&
-                                 (iVar2 = local_64, (psVar11[local_64 + iVar6] & 0xc000U) != 0xc000)
+                          iVar7 = (int)(&SHORT_007ed570)[local_a4 * 4];
+                          if (((psVar10[iVar7] & 0xc000U) != 0xc000) &&
+                             (iVar9 = iVar9 * local_2c, (psVar10[iVar9] & 0xc000U) != 0xc000)) {
+                            if ((uVar2 & 0x4000) == 0) {
+                              if ((uVar2 & 0x2000) == 0) goto LAB_0040c90d;
+                              if (((psVar10[local_64] & 0xc000U) != 0xc000) &&
+                                 (iVar6 = local_64, (psVar10[local_64 + iVar7] & 0xc000U) != 0xc000)
                                  ) goto LAB_0040c875;
                             }
-                            else if (((psVar11[-local_64] & 0xc000U) != 0xc000) &&
-                                    ((psVar11[iVar6 - local_64] & 0xc000U) != 0xc000)) {
-                              iVar2 = -local_64;
+                            else if (((psVar10[-local_64] & 0xc000U) != 0xc000) &&
+                                    ((psVar10[iVar7 - local_64] & 0xc000U) != 0xc000)) {
+                              iVar6 = -local_64;
 LAB_0040c875:
-                              if ((psVar11[iVar7 + iVar2] & 0xc000U) != 0xc000) {
-                                uVar1 = psVar11[iVar6 + iVar7];
+                              if ((psVar10[iVar9 + iVar6] & 0xc000U) != 0xc000) {
+                                uVar2 = psVar10[iVar7 + iVar9];
                                 goto joined_r0x0040c8f3;
                               }
                             }
@@ -340,29 +391,42 @@ LAB_0040c875:
                 } while (local_a4 < 0x1a);
               }
               if ((local_94 < 1) || (29999 < local_94)) {
-                iVar9 = -4;
+                iVar11 = -4;
               }
               else {
-                iVar9 = (local_94 + -1) / 3;
+                iVar11 = (local_94 + -1) / 3;
               }
-              *(int *)(psVar4 + local_34 * 2) = iVar9;
+              puVar4[local_34] = iVar11;
               local_34 = local_34 + 1;
-              psVar11 = local_54;
+              pvVar12 = local_54;
             } while (local_34 < (int)local_80);
           }
-          FUN_006a5e90(psVar11);
+          *(void **)(&stack0xffffff30 + iVar3) = pvVar12;
+          aGStackY_f8[dVar8 * -3 + 9] = 0x40c9a5;
+          FUN_006a5e90(*(short **)(&stack0xffffff30 + iVar3));
         }
         else {
-          FUN_006a5e90(psVar11);
-          FUN_006a5e90(psVar4);
+          *(void **)(&stack0xffffff30 + iVar3) = pvVar12;
+          aGStackY_f8[dVar8 * -3 + 9] = 0x40c673;
+          FUN_006a5e90(*(short **)(&stack0xffffff30 + iVar3));
+          *(undefined4 **)(&stack0xffffff30 + iVar3) = puVar4;
+          aGStackY_f8[dVar8 * -3 + 9] = 0x40c67f;
+          FUN_006a5e90(*(short **)(&stack0xffffff30 + iVar3));
+          *(undefined4 *)(&stack0xffffff30 + iVar3) = 0x233;
+          aGStackY_f8[dVar8 * -3 + 9] =
+               (Global_sub_006C8EC0_param_3Enum)"E:\\__titans\\wlad\\Grpway3d.cpp";
+          aGStackY_f8[dVar8 * -3 + 8] = g_overwriteContext_007ED77C;
+          aGStackY_f8[dVar8 * -3 + 7] = 0xfffffffe;
+          aGStackY_f8[dVar8 * -3 + 6] = 0x40c697;
           RaiseInternalException
-                    (-2,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0x233);
-          psVar4 = nullptr;
+                    (aGStackY_f8[dVar8 * -3 + 7],aGStackY_f8[dVar8 * -3 + 8],
+                     (char *)aGStackY_f8[dVar8 * -3 + 9],*(int *)(&stack0xffffff30 + iVar3));
+          puVar4 = nullptr;
         }
       }
     }
   }
   ExceptionList = local_14;
-  return (undefined4 *)psVar4;
+  return puVar4;
 }
 

@@ -40,9 +40,9 @@ public class STUtilityFunctionApplier extends GhidraScript {
         Tsv input = readTsv(file.toPath());
         require(input, "apply", "function_address", "semantic_id", "expected_qualified_name",
             "expected_name", "expected_name_source", "expected_signature", "expected_convention",
-            "expected_parameters", "proposed_name", "proposed_convention",
+            "expected_parameters", "expected_call_fixup", "proposed_name", "proposed_convention",
             "proposed_return_type", "proposed_parameter_types", "proposed_parameter_names",
-            "semantics", "evidence");
+            "proposed_call_fixup", "semantics", "evidence");
         dataTypes = currentProgram.getDataTypeManager();
         int transaction = currentProgram.startTransaction("Apply utility-function semantics");
         boolean commit = false;
@@ -78,11 +78,13 @@ public class STUtilityFunctionApplier extends GhidraScript {
                 function.getSymbol().getSource().toString().equals(row.get("expected_name_source")) &&
                 function.getPrototypeString(true, true).equals(unt(row.get("expected_signature"))) &&
                 function.getCallingConventionName().equals(row.get("expected_convention")) &&
-                parameterBaseline(function).equals(unt(row.get("expected_parameters")));
+                parameterBaseline(function).equals(unt(row.get("expected_parameters"))) &&
+                callFixup(function).equals(unt(row.get("expected_call_fixup")));
             boolean already = function.getName().equals(row.get("proposed_name")) &&
                 function.getCallingConventionName().equals(row.get("proposed_convention")) &&
                 typeSpec(function.getReturnType()).equals(row.get("proposed_return_type")) &&
-                proposedParametersPresent(function, row);
+                proposedParametersPresent(function, row) &&
+                desiredCallFixupPresent(function, row);
             if (already) {
                 // Semantic descriptions evolve independently of the stable
                 // prototype.  Refresh our owned block even when no type/name
@@ -123,6 +125,8 @@ public class STUtilityFunctionApplier extends GhidraScript {
                 parameter.setName(names[index], SourceType.ANALYSIS);
             }
             function.getSymbol().setName(row.get("proposed_name"), SourceType.ANALYSIS);
+            String proposedCallFixup = unt(row.get("proposed_call_fixup"));
+            if (!proposedCallFixup.isBlank()) function.setCallFixup(proposedCallFixup);
             refreshSemanticTags(function, row);
             replaceComment(function, row);
             report.add(new Report(addressText, row.get("semantic_id"), "applied",
@@ -140,6 +144,16 @@ public class STUtilityFunctionApplier extends GhidraScript {
             if (!typeSpec(parameters.get(index).getDataType()).equals(types[index]) ||
                     !parameters.get(index).getName().equals(names[index])) return false;
         return true;
+    }
+
+    private boolean desiredCallFixupPresent(Function function, Map<String, String> row) {
+        String proposed = unt(row.get("proposed_call_fixup"));
+        return proposed.isBlank() || callFixup(function).equals(proposed);
+    }
+
+    private String callFixup(Function function) {
+        String value = function.getCallFixup();
+        return value == null ? "" : value;
     }
 
     private void replaceComment(Function function, Map<String, String> row) {

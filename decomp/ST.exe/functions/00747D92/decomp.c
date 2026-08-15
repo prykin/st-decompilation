@@ -12,13 +12,12 @@ int __thiscall FUN_00747d92(void *this,int *param_1,char *param_2,int *param_3)
 
   piVar1 = param_3;
   local_8 = this;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar2 = (**(code **)(*param_3 + 0x14))(param_3);
   if (-1 < iVar2) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = nullptr;
     local_8 = nullptr;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar4 = (**(code **)(*piVar1 + 0xc))(piVar1,1,&param_3,&local_8);
     iVar2 = 0;
     while (iVar4 == 0) {
@@ -37,7 +36,7 @@ int __thiscall FUN_00747d92(void *this,int *param_1,char *param_2,int *param_3)
       if (iVar3 == 0) {
         return 0;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar4 = (**(code **)(*piVar1 + 0xc))(piVar1,1,&param_3,&local_8);
     }
     if (iVar2 == 0) {

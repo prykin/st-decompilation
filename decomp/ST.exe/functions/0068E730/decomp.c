@@ -24,7 +24,7 @@ undefined4 __thiscall AiTactClassTy::FUN_0068e730(AiTactClassTy *this,int param_
     element_00a5 = nullptr;
   }
   element_00a5->field_0004 = 0;
-  element_00a5->field_0000 = nullptr;
+  element_00a5->field_0000 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   BackFromRepair(this,*(short *)(param_1 + 0x7d));
   thunk_FUN_0065d590(param_1);

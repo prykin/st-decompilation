@@ -32,7 +32,7 @@ undefined4 FUN_0074bf23(int param_1,ushort *param_2,undefined4 *param_3)
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar2 = *(int *)(param_1 + -0xc);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (**(code **)(iVar2 + 0x1c))(uVar5);
     piVar3 = (int *)(-(uint)(iVar2 != 0) & iVar2 + 0xcU);
     *param_3 = piVar3;
@@ -40,7 +40,7 @@ undefined4 FUN_0074bf23(int param_1,ushort *param_2,undefined4 *param_3)
       uVar4 = 0x8007000e;
     }
     else {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar3 + 4))(piVar3);
     }
   }

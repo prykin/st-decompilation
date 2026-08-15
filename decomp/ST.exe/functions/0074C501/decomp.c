@@ -28,7 +28,7 @@ int FUN_0074c501(int param_1)
       LeaveCriticalSection(lpCriticalSection);
     }
     else {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar1 = (**(code **)(**(int **)(param_1 + 0xcc) + 0x5c))();
       LeaveCriticalSection(lpCriticalSection);
     }

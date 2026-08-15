@@ -57,11 +57,10 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
       if ((uVar1 & 0xa0000000) == 0) {
         return -0x51;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = *(AnonShape_006B8F10_41B61BA9 **)(param_1->field_0038 + param_1->field_0028 * 4);
       local_b4 = 0x7c;
       local_b0 = 6;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar6 = (**(code **)(*(int *)param_1 + 0x58))(param_1,&local_b4);
       if (iVar6 != 0) {
         return iVar6;
@@ -72,12 +71,10 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
     else {
       local_c = param_1->field_0030;
       local_8 = param_1->field_0034;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_006B8F10_41B61BA9 *)param_1->field_0038;
     }
   }
   else {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = *(AnonShape_006B8F10_41B61BA9 **)(param_1->field_0038 + param_1->field_0028 * 4);
     local_c = param_1->field_0004;
     local_8 = (byte *)param_1->field_0008;
@@ -109,14 +106,13 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
       local_1c = local_8 + local_24;
       local_2c = local_8 + local_10;
       local_34 = local_10;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = nullptr;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       while (iVar5 = (**(code **)(**(int **)(*(int *)pAVar2 + 0x40) + 0x14))
                                (*(int **)(*(int *)pAVar2 + 0x40),&local_38,param_1,&local_28,
                                 0x1008000,0), iVar5 != 0) {
         if (iVar5 == -0x7789fe3e) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*(int *)param_1 + 0x6c))(param_1);
           FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)pAVar2);
         }
@@ -124,7 +120,6 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
           if (((iVar5 != -0x7789ff60) && (iVar5 != -0x7789fe52)) || (param_2 != nullptr)) break;
           Sleep(2);
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)((int)param_2 + 1);
         if (1 < (int)param_2) break;
       }

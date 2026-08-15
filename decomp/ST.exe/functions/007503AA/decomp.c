@@ -40,7 +40,7 @@ undefined4 __thiscall FUN_007503aa(void *this,int *param_1,DWORD dwMilliseconds)
       return 0x80004004;
     }
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)(iVar4 + 0xc) + 4))(iVar4 + 0xc);
   *param_1 = iVar4;
   LeaveCriticalSection(lpCriticalSection);

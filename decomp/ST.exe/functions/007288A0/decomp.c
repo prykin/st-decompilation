@@ -34,8 +34,7 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
   AnonShape_007288A0_88D3FF06 *local_c;
   int local_8;
 
-  iVar10 = (int)*(short *)(DAT_00857110 + 2 + DAT_00857114 * 8);
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  iVar10 = (int)g_runtimeRecords_00857110[g_runtimeRecordCount_00857114].field_0002;
   param_1 = param_1 + iVar10 * param_2;
   local_14 = STField<int>(this,0x28);
   iVar12 = iVar10 * local_14 + STField<int>(this,0xc);
@@ -43,10 +42,10 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
   local_10 = iVar10;
   local_c = this;
   local_8 = iVar12;
-  iVar5 = FUN_007287e0(&local_30,DAT_00857114);
+  iVar5 = FUN_007287e0(&local_30,g_runtimeRecordCount_00857114);
   if (iVar5 != 0) {
     local_4c = -1;
-    iVar5 = FUN_007287e0(&local_4c,DAT_00857114);
+    iVar5 = FUN_007287e0(&local_4c,g_runtimeRecordCount_00857114);
     if ((iVar5 != 0) && (iVar10 < STField<int>(this,0x3c))) {
       do {
         if (*(int *)&((AnonShape_007288A0_88D3FF06 *)this)->field_0x34 <= iVar10) {
@@ -136,7 +135,6 @@ LAB_00728a04:
         else {
           local_40 = local_40 + local_3c;
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + param_2;
         iVar10 = iVar10 + 1;
         iVar12 = iVar12 + local_14;

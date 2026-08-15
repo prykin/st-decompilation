@@ -21,15 +21,12 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
     iVar8 = 1;
   }
   if (param_6 < 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = param_4 + 1 + param_6;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_6 = -param_6;
   }
   if (param_7 < 0) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = param_5 + 1 + param_7;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_7 = -param_7;
   }
   iVar2 = param_4 + -1 + param_6;
@@ -40,7 +37,6 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
   FUN_006bbb00(param_1,0xd);
   FUN_006c6450(param_1,puVar1[1]);
   FUN_006c6410(param_1,puVar1[2]);
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = 0;
   if (0 < iVar8) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -49,14 +45,12 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
       iVar7 = Library::DKW::DDX::FUN_006c53b0
                         ((int)param_1,param_4,param_8,iVar2 - iVar8,param_8,*puVar1);
       if (iVar7 != 0) goto cf_common_exit_006B96BA;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_3 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_8 = param_8 + 1;
     } while (param_3 < iVar8);
   }
   FUN_006c6410(param_1,puVar1[3]);
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = 0;
   if (0 < iVar8) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -65,14 +59,12 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
       iVar7 = Library::DKW::DDX::FUN_006c53b0
                         ((int)param_1,param_8,param_5,param_8,iVar3 - iVar8,*puVar1);
       if (iVar7 != 0) goto cf_common_exit_006B96BA;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_3 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_8 = param_8 + -1;
     } while (param_3 < iVar8);
   }
   FUN_006c6410(param_1,puVar1[4]);
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_8 = iVar3;
@@ -81,14 +73,12 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
       iVar7 = Library::DKW::DDX::FUN_006c53b0
                         ((int)param_1,iVar2,param_8,iVar8 + param_4,param_8,*puVar1);
       if (iVar7 != 0) goto cf_common_exit_006B96BA;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_3 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_8 = param_8 + -1;
     } while (param_3 < iVar8);
   }
   FUN_006c6410(param_1,puVar1[5]);
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = 0;
   if (0 < iVar8) {
     iVar2 = iVar8 + param_5;
@@ -97,7 +87,6 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
     do {
       iVar7 = Library::DKW::DDX::FUN_006c53b0((int)param_1,param_5,iVar3,param_5,iVar2,*puVar1);
       if (iVar7 != 0) break;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_3 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = param_5 + 1;

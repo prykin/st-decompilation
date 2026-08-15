@@ -212,7 +212,6 @@ LAB_004ae41c:
     }
     else if (param_4 == 0x4d) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1971_0x9e2;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_10 = (int *)&g_packedRecords_A62x8[param_5].field1971_0x9e2;
       if (pDVar12 != nullptr) {
         iVar11 = DAT_00795118 / 0xc9;
@@ -235,7 +234,6 @@ LAB_004ae41c:
     }
     else if (param_4 == 0x43) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1974_0x9ee;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_10 = (int *)&g_packedRecords_A62x8[param_5].field1974_0x9ee;
       if (pDVar12 != nullptr) {
         iVar11 = DAT_007950f0 / 0xc9;
@@ -258,7 +256,6 @@ LAB_004ae41c:
     }
     else if (param_4 == 0x73) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1975_0x9f2;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_10 = (int *)&g_packedRecords_A62x8[param_5].field1975_0x9f2;
       if (pDVar12 != nullptr) {
         iVar11 = DAT_007951b0 / 0xc9;
@@ -281,7 +278,6 @@ LAB_004ae41c:
     }
     else if (param_4 == 0x65) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1972_0x9e6;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_10 = (int *)&g_packedRecords_A62x8[param_5].field1972_0x9e6;
       if (pDVar12 != nullptr) {
         iVar11 = DAT_00795178 / 0xc9;
@@ -334,7 +330,6 @@ LAB_004ae41c:
             (iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
             0x5a < iVar11)) ||
            ((piVar2 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != piVar2)))))))) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (((_param_1 + 1 < (int)sVar15) &&
             ((((((sVar5 = (short)(_param_1 + 1), -1 < sVar5 && (sVar5 < sVar15)) && (-1 < sVar4)) &&
                ((sVar4 < g_worldGrid.sizeY && (-1 < sVar14)))) && (sVar14 < g_worldGrid.sizeZ)) &&
@@ -350,7 +345,6 @@ LAB_004ae41c:
               ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
           local_c = 1;
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         else if (((param_2 + 1 < (int)g_worldGrid.sizeY) &&
                  (((-1 < param_1 && (param_1 < sVar15)) &&
                   (sVar4 = (short)(param_2 + 1), -1 < sVar4)))) &&

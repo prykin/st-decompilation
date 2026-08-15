@@ -34,8 +34,8 @@ bool __fastcall FUN_005f0a30(STSprGameObjC *param_1)
         if (this != nullptr) {
           uVar5 = this->GetObjectTypeId();
           if (uVar5 == 99) {
-            iVar6 = (*param_1->vtable->vfunc_138)();
-            iVar7 = (*param_1->vtable->vfunc_130)();
+            iVar6 = param_1->vfunc_138();
+            iVar7 = param_1->vfunc_130();
             SVar8 = param_1->slot_2C();
             thunk_FUN_004b7e30(this,SVar8,iVar7,iVar6);
             iVar6 = param_1->vfunc_AC((short)*(undefined4 *)&this->field_0x18);

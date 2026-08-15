@@ -23,7 +23,7 @@ undefined4 FUN_0074939f(int *param_1)
     iVar2 = param_1[0xc];
     if (iVar2 <= iVar3) {
       param_1[0x12] = 0;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)pAVar1 + 0x10))();
     }
     else {
@@ -32,7 +32,7 @@ undefined4 FUN_0074939f(int *param_1)
     FUN_0074931d(pAVar1);
     LeaveCriticalSection(lpCriticalSection);
     if (iVar2 <= iVar3) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*param_1 + 8))(param_1);
     }
   }
