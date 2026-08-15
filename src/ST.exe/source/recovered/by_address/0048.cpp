@@ -189,9 +189,10 @@ switchD_004806bc_caseD_a:
       if (iVar4 == 1) {
         if (iVar3 == -1) {
           STField<undefined4>(param_1,0x74a) = 0;
-          if (DAT_00811798 != nullptr) {
-            st::fn_00405056(st::pointer_boundary_cast<void *>(DAT_00811798),(int)STField<short>(param_1,0x47),
-                               (int)STField<short>(param_1,0x49),(uint)DAT_0080874d);
+          if (g_sndUnderAttMeneg_00811798 != nullptr) {
+            st::fn_00405056
+                      (g_sndUnderAttMeneg_00811798,(int)STField<short>(param_1,0x47),
+                       (int)STField<short>(param_1,0x49),(uint)DAT_0080874d);
           }
         }
         else if ((iVar3 < 0) || ((int)PTR_00806724->entryCount / 2 <= iVar3)) {

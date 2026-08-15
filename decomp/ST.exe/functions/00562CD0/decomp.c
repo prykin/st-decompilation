@@ -27,8 +27,8 @@ int FUN_00562cd0(int param_1,int param_2,int param_3)
       iVar6 = iVar5 >> 0x10;
       if ((((iVar4 < 0) || (DAT_008033a4 <= iVar4)) || (iVar6 < 0)) ||
          ((DAT_008033a8 <= iVar6 ||
-          (iVar8 = (int)*(short *)(DAT_008033b4 + (DAT_008033a4 * iVar6 + iVar4) * 2), iVar8 < 1))))
-      {
+          (iVar8 = (int)*(short *)((int)PTR_008033b4 + (DAT_008033a4 * iVar6 + iVar4) * 2),
+          iVar8 < 1)))) {
         iVar7 = iVar7 + DAT_00803344;
       }
       else {

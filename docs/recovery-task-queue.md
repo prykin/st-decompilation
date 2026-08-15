@@ -565,6 +565,57 @@ baseline. A subsequent unchanged export reused 10,400/10,400 bodies and
 5,624/5,624 quality analyses, left `Program changed=false`, and completed in
 `00:01:56`.
 
+### Q-051 Recover pointer-valued globals and singleton publication
+
+Status: implemented, runtime-confirmed, and accepted. `STGlobalDataAnalyzer`
+now proves a neutral pointer role without guessing a pointee when one exact
+global value is dereferenced at least three times across two functions, or is
+used as the receiver at least three times across two callers and two distinct
+`__thiscall` callees. A concrete class pointer still needs independent evidence:
+either all-predecessor CFG propagation of an unadjusted named method receiver
+through exact register/EBP-stack copies into the global store, or a trusted
+concrete-pointer function whose every RET returns that exact global or null.
+Calls kill volatile receiver facts and CFG joins intersect them.
+
+The accepted pass typed 19 global words, including 14 deliberately neutral
+`void *` values and five concrete singletons: `TLOFakeTy`, `HelpStringTy`,
+`SoundManagerTy`, `SndUnderAttMenegC`, and `AiBossClassTy`. The newly typed
+singletons recovered 29 structural methods, one propagated prototype, eight
+`SndUnderAttMenegC` DArray specializations, and one exact local-lifetime split.
+The generated-type lifecycle then removed 1,014 unreferenced generated types.
+
+Accepted state:
+
+- run `6820bd712a048ce4e5b0294d740fe3c82bafdf4079d4384a80029686c1fe637f`;
+- semantic hash `1f669587552e8e1c36194655261ec8115e211916c56b2db8bdcfc4d78e15cd67`;
+- corpus manifest `0c74fa4297a743f7e423b089334381efd2f5051b4502b55046916c896d19036f`;
+- 10,407 function records, 5,555 bodies, zero failed bodies, and 3,192 typed
+  physical-vtable slots;
+- export gate: zero hard regressions and six non-blocking warnings; ABI gate:
+  zero errors and warnings;
+- raw indirect calls decreased by 38, raw pointer offsets by 50, undefined
+  occurrences by 176, and generic data symbols by 170;
+- regenerated source contains 5,555 bodies in 322 translation units and 13,398
+  audit rows; the fixed 64-error Apple Clang audit passes 193 units and retains
+  1,435 errors, 1,418 mapped to stable function addresses.
+
+### Q-052 Recover use-site pointer roles and callable table slots
+
+Status: next major cluster. The accepted compiler audit is now led by 304
+pointer-indirection and 235 non-callable-value diagnostics. Of those, 236 are
+exact indirections on neutral `void *`, 64 dereference a scalar `undefined4`,
+and 235 call a value still rendered as opaque `void`/`code`. The semantic corpus
+still contains 1,722 raw indirect calls.
+
+Do not solve this by globally specializing every neutral pointer. The next
+analyzer should recover a use-site lifetime/view from an exact typed load,
+stored-target family, physical vtable slot, or complete indirect-call ABI, and
+apply a persistent pointee or function definition only when all uses of the
+same storage identity agree. Heterogeneous loader/context values retain neutral
+storage with consumer-local views. The following source-assembly cluster is 180
+undeclared identifiers plus 90 missing record members and should be handled
+after the database-level pointer/callable pass.
+
 ## Definition of done for one queue item
 
 - No embedded ST image address or hand-authored type/name allow-list in the

@@ -3,10 +3,17 @@
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
+
+   [STMethodOwnerApplier] Structural method owner recovered as SndUnderAttMenegC.
+   Evidence: this_call_owners=[SndUnderAttMenegC]; agreed_this_calls=3; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=10; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 void __thiscall
-FUN_0061fe80(void *this,int param_1,int param_2,uint param_3,undefined4 param_4,int param_5)
+SndUnderAttMenegC::sub_0061FE80
+          (SndUnderAttMenegC *this,int param_1,int param_2,uint param_3,undefined4 param_4,
+          int param_5)
 
 {
   uint uVar1;
@@ -18,11 +25,11 @@ FUN_0061fe80(void *this,int param_1,int param_2,uint param_3,undefined4 param_4,
   if (DAT_0080874d == param_3) {
     return;
   }
-  if (STField<uint>(this,0xc1) <= uVar1) {
-    uVar2 = thunk_FUN_00620030(this,uVar1,param_1,param_2);
+  if (this->field_00C1 <= uVar1) {
+    uVar2 = sub_00620030(this,uVar1,param_1,param_2);
     if (((-1 < (int)uVar2) ||
-        (uVar2 = thunk_FUN_00620160(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) &&
-       (uVar2 != 2)) {
+        (uVar2 = sub_00620160(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) && (uVar2 != 2))
+    {
       return;
     }
     if (DAT_0080874e == '\x01') {
@@ -74,8 +81,8 @@ FUN_0061fe80(void *this,int param_1,int param_2,uint param_3,undefined4 param_4,
     local_10.x = -1;
     local_10.y = -1;
     SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
-    thunk_FUN_00620da0(this,param_1,param_2,0x8e);
-    STField<uint>(this,0xc1) = uVar1 + 0xfa;
+    sub_00620DA0(this,param_1,param_2,0x8e);
+    this->field_00C1 = uVar1 + 0xfa;
     return;
   }
   return;

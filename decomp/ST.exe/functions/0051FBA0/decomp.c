@@ -68,10 +68,10 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
       }
       puVar4 = (byte *)FUN_006b4fa0((int *)puVar3);
       memset(puVar4, 0, uVar9); /* compiler bulk-zero initialization */
-      DAT_00801694 = this_00;
+      g_helpString_00801694 = this_00;
       break;
     case MESS_SHARED_0003:
-      DAT_00801694 = nullptr;
+      g_helpString_00801694 = nullptr;
       if (local_8->field_011E != nullptr) {
         ccFntTy::operator_delete((uint *)local_8->field_011E);
         this_00->field_011E = nullptr;

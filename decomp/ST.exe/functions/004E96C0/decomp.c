@@ -15,8 +15,9 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
   if (STField<int>(this,0x4e0) == 0) {
     return 0;
   }
-  thunk_FUN_004d0a80(DAT_00800bcc,STField<int>(this,0x4e4),STField<int>(this,0x4e8),
-                     STField<int>(this,0x4ec));
+  TLOFakeTy::sub_004D0A80
+            (g_tLOFake_00800BCC,STField<int>(this,0x4e4),STField<int>(this,0x4e8),
+             STField<int>(this,0x4ec));
   STField<undefined4>(this,0x4e0) = 0;
   iVar1 = STPlaySystemC::sub_006E62D0
                     (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x4d8),
@@ -51,7 +52,7 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
     }
   }
   if (STField<int>(this,0x4f0) != 0) {
-    if (DAT_00811798 == nullptr) {
+    if (g_sndUnderAttMeneg_00811798 == nullptr) {
       if (STField<uint>(this,0x24) == (uint)*(byte *)(STField<int>(this,0x10) + 0x112d)) {
         local_EAX_378 = LookupRecordByte(STField<char>(this,0x23d));
         local_EAX_378 = (int)(byte)local_EAX_378;
@@ -74,8 +75,9 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
       }
     }
     else {
-      thunk_FUN_00620670(DAT_00811798,STField<int>(this,0x5b0),STField<int>(this,0x5b4),
-                         STField<uint>(this,0x24));
+      SndUnderAttMenegC::sub_00620670
+                (g_sndUnderAttMeneg_00811798,STField<int>(this,0x5b0),STField<int>(this,0x5b4)
+                 ,STField<uint>(this,0x24));
     }
   }
 cf_common_exit_004E987A:

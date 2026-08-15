@@ -14,7 +14,7 @@ void __thiscall FUN_00571320(void *this,HWND param_1)
   if (uVar2 == 2) {
     thunk_FUN_00566e70((void *)((int)this + 0x38),param_1);
   }
-  else if (((uVar2 == 4) || (uVar2 == 8)) && (DAT_008033f0 != 0)) {
+  else if (((uVar2 == 4) || (uVar2 == 8)) && (g_soundManager_008033F0 != nullptr)) {
     cVar1 = STField<char>(this,0x112e);
     if (cVar1 == '\x01') {
       thunk_FUN_00566600(2);

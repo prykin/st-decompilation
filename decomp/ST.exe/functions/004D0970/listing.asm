@@ -1,4 +1,4 @@
-FUN_004d0970:
+TLOFakeTy::sub_004D0970:
 004D0970  55                        PUSH EBP
 004D0971  8B EC                     MOV EBP,ESP
 004D0973  56                        PUSH ESI

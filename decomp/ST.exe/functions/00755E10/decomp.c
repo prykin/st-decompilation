@@ -16,15 +16,14 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
   undefined4 uVar10;
   undefined2 local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar9 = *(short *)(param_1->field_0008 + 0x16) + -0x10;
+  iVar9 = (short)param_1->field_0008->field_0016 + -0x10;
   *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + -1;
   iVar5 = param_1->field_000C;
   iVar4 = *(int *)(iVar5 + 0x1c);
   iVar7 = *(int *)(iVar5 + 0x44 + iVar4 * 8);
   iVar4 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,
                        *(undefined4 *)(iVar5 + 0x40 + iVar4 * 8),iVar4);
-  *(uint *)(param_1->field_0008 + 8) = *(uint *)(param_1->field_0008 + 8) | 0x10;
+  param_1->field_0008->field_0008 = param_1->field_0008->field_0008 | 0x10;
   iVar2 = FUN_00757450(param_1,iVar7);
   iVar5 = param_1->field_000C;
   if (iVar2 < *(short *)(iVar4 + 8)) {

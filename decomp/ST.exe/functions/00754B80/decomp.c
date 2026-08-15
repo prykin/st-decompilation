@@ -8,7 +8,7 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
   byte *pbVar1;
   byte *pbVar2;
   byte *pbVar3;
-  uint *puVar4;
+  AnonNested_AnonShape_00754B80_75BFDB7A_0080_4681841F *pAVar4;
   int iVar5;
   AnonShape_00754B80_75BFDB7A *pAVar6;
   uint uVar7;
@@ -82,7 +82,7 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
       iVar13 = 0;
       if (0 < param_1->field_007C) {
         local_10 = local_220;
-        iVar5 = *(int *)(param_1->field_0080 + 8);
+        iVar5 = param_1->field_0080->field_0008;
         do {
           iVar8 = (uint)*(byte *)(iVar5 + iVar13) << 8;
           local_18 = iVar8 >> (bVar9 & 0x1f) & local_14;
@@ -98,12 +98,12 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
       iVar13 = 0;
       if (0 < param_1->field_007C) {
         local_8 = local_220;
-        puVar4 = (uint *)param_1->field_0080;
-        local_18 = *puVar4;
-        local_10 = (ushort *)puVar4[1];
-        uVar7 = puVar4[2];
+        pAVar4 = param_1->field_0080;
+        local_18 = pAVar4->field_0000;
+        local_10 = (ushort *)pAVar4->field_0004;
+        iVar5 = pAVar4->field_0008;
         do {
-          pbVar1 = (byte *)(uVar7 + iVar13);
+          pbVar1 = (byte *)(iVar5 + iVar13);
           pbVar2 = (byte *)((int)local_10 + iVar13);
           pbVar3 = (byte *)(local_18 + iVar13);
           iVar13 = iVar13 + 1;

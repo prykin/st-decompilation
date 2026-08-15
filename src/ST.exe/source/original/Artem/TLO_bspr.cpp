@@ -778,6 +778,7 @@ undefined4 __fastcall st::fn_004CC370(AnonShape_004CC370_02CE3D17 *param_1)
 
 {
   AnonPointee_STT3DSprC_0020 *pAVar1;
+  AnonNested_AnonShape_004CC370_02CE3D17_0000_762E0E2D *pAVar2;
   uint uVar3;
   int iVar5;
   int iVar4;
@@ -805,7 +806,7 @@ undefined4 __fastcall st::fn_004CC370(AnonShape_004CC370_02CE3D17 *param_1)
     goto cf_common_exit_004CC6D2;
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar5 = (**(code **)(*(int *)param_1 + 0x7c))();
+  iVar5 = (*(code *)param_1->field_0000->field_007C)();
   if ((3 < iVar5 / 0x14) && (*(int *)&param_1->field_0x43c == 1)) {
     st::fn_00405768((TLOBaseTy *)param_1);
     goto cf_common_exit_004CC6D2;
@@ -878,15 +879,15 @@ cf_error_exit_004CC50A:
   st::fn_00402982((void *)param_1->field_0603,1);
   if ((*(int *)&param_1->field_0x43c == 3) || (*(int *)&param_1->field_0x43c == 4)) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)param_1 + 0x90))(3,0x363);
+    (*(code *)param_1->field_0000->field_0090)(3,0x363);
   }
   if (*(int *)&param_1->field_0x43c == 2) {
     local_EAX_774 = st::fn_004049B7(param_1->field_023D);
     if (*(int *)(&DAT_00795f18 + ((uint)(byte)local_EAX_774 + param_1->field_0235 * 3) * 4) != 0) {
-      iVar5 = *(int *)param_1;
+      pAVar2 = param_1->field_0000;
       local_EAX_824 = st::fn_004049B7(param_1->field_023D);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(iVar5 + 0x90))
+      (*(code *)pAVar2->field_0090)
                 (3,*(undefined4 *)
                     (&DAT_00795f18 + ((uint)(byte)local_EAX_824 + param_1->field_0235 * 3) * 4));
     }

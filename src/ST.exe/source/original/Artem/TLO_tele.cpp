@@ -93,10 +93,11 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
                    (*(short *)&this_00->field_047C + 1) * 200,this_00->field_0062);
       st::fn_00403DBE(local_8,&this_00->field_0480,&this_00->field_0484,&this_00->field_0488);
       st::fn_00405380(local_8,this_00->field_0018);
-      if (DAT_00800bcc == nullptr) {
+      if (g_tLOFake_00800BCC == nullptr) {
         st::fn_00404395();
       }
-      st::fn_00401582(st::pointer_boundary_cast<void *>(DAT_00800bcc),this_00->field_0480,this_00->field_0484,this_00->field_0488);
+      st::fn_00401582
+                (g_tLOFake_00800BCC,this_00->field_0480,this_00->field_0484,this_00->field_0488);
       this_00->field_0494 = 1;
       g_currentExceptionFrame = local_64.previous;
       return 0;
@@ -167,8 +168,9 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
     }
     if (uVar3 + 0x79 <= uVar10) {
       if (local_20->field_0494 != 0) {
-        st::fn_00401DD4(st::pointer_boundary_cast<void *>(DAT_00800bcc),local_20->field_0480,local_20->field_0484,
-                           local_20->field_0488);
+        st::fn_00401DD4
+                  (g_tLOFake_00800BCC,local_20->field_0480,local_20->field_0484,local_20->field_0488
+                  );
         this_00->field_0494 = 0;
       }
       st::fn_0040464C(this_00);

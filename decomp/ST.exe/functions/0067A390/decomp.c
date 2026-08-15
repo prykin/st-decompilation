@@ -86,7 +86,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
         }
         local_70 = param_1->field_06FE;
         local_68 = local_40;
-        iVar4 = *(int *)&param_1->field_0x695;
+        iVar4 = param_1->field_0695;
         local_40[0] = 0x50;
         local_34 = 0x31;
         local_2c = 0xff;
@@ -109,7 +109,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
               }
             }
             if (0 < local_6c) break;
-            iVar4 = *(int *)&param_1->field_0x695;
+            iVar4 = param_1->field_0695;
             uVar9 = uVar9 + 1;
             uVar11 = *(uint *)(iVar4 + 0xc);
           } while ((int)uVar9 < (int)uVar11);
@@ -148,7 +148,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
         }
         local_68 = local_40;
         local_40[0] = 0x34;
-        iVar4 = *(int *)&param_1->field_0x695;
+        iVar4 = param_1->field_0695;
         local_34 = 0x19;
         local_2c = 0xff;
         local_74 = (AnonShape_0068FD00_A5257008 *)0x70;
@@ -170,7 +170,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
               }
             }
             if (0 < local_6c) break;
-            iVar4 = *(int *)&param_1->field_0x695;
+            iVar4 = param_1->field_0695;
             uVar9 = uVar9 + 1;
             uVar11 = *(uint *)(iVar4 + 0xc);
           } while ((int)uVar9 < (int)uVar11);
@@ -209,7 +209,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
         }
         local_68 = local_40;
         local_40[0] = 0x48;
-        iVar4 = *(int *)&param_1->field_0x695;
+        iVar4 = param_1->field_0695;
         local_34 = 0x19;
         local_2c = 0xff;
         local_74 = (AnonShape_0068FD00_A5257008 *)0x70;
@@ -231,7 +231,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
               }
             }
             if (0 < local_6c) break;
-            iVar4 = *(int *)&param_1->field_0x695;
+            iVar4 = param_1->field_0695;
             uVar9 = uVar9 + 1;
             uVar11 = *(uint *)(iVar4 + 0xc);
           } while ((int)uVar9 < (int)uVar11);

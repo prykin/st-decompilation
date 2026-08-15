@@ -421,38 +421,36 @@ int __thiscall st::fn_0044EE30(STBoatC *this,STMessage *message)
   int local_EAX_44638;
   int local_EAX_44850;
   int uVar15;
-  void *pvVar23;
+  SndUnderAttMenegC *pSVar23;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  void *extraout_EAX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_00;
+  SndUnderAttMenegC *extraout_EAX;
   int local_EAX_46313;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_01;
+  undefined2 extraout_var_00;
   int iVar13;
   uint uVar16;
   STGroupBoatC *this_01;
   int local_EAX_48884;
   int iVar29;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_02;
+  undefined2 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_03;
+  undefined2 extraout_var_02;
   undefined2 uVar25;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_04;
+  undefined2 extraout_var_03;
   STWorldObject *pSVar24;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_05;
+  undefined2 extraout_var_04;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_06;
+  undefined2 extraout_var_05;
   undefined2 uVar28;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_07;
+  undefined2 extraout_var_06;
   STGroupBoatCVTable *pSVar26;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX;
@@ -624,25 +622,23 @@ int __thiscall st::fn_0044EE30(STBoatC *this,STMessage *message)
       }
       pSVar31 = st::pointer_boundary_cast<STGroupBoatC *>((message->arg0).ptr);
       local_1c = pSVar31;
-      if (DAT_008117bc != nullptr) {
+      if (g_aiBossClass_008117BC != nullptr) {
         if (pSVar31 != nullptr) {
           local_9c.id = MESS_SHARED_5DD5;
           local_9c.arg0.words.high = this_00->field_0032;
           local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
           local_9c.arg1.words.high = *(undefined2 *)&pSVar31->field_0xc;
           local_9c.arg1.words.low = *(undefined2 *)&pSVar31->field_0008;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (**(code **)*DAT_008117bc)(&local_9c);
+          g_aiBossClass_008117BC->st::fn_00404F07(&local_9c);
         }
-        if (((DAT_008117bc != nullptr) && (pSVar31 != nullptr)) &&
-           (pSVar31->vtable != (STGroupBoatCVTable *)0x2710)) {
+        if (((g_aiBossClass_008117BC != nullptr) && (pSVar31 != nullptr))
+           && (pSVar31->vtable != (STGroupBoatCVTable *)0x2710)) {
           local_9c.id = 0x5dd1;
           local_9c.arg0.words.high = this_00->field_0032;
           local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
           local_9c.arg1.words.high = *(undefined2 *)&pSVar31->field_0xc;
           local_9c.arg1.words.low = *(undefined2 *)&pSVar31->field_0008;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (**(code **)*DAT_008117bc)(&local_9c);
+          g_aiBossClass_008117BC->st::fn_00404F07(&local_9c);
         }
       }
       if (this_00->field_07CA != nullptr) {
@@ -1061,37 +1057,36 @@ LAB_00459f59:
       return 0;
     }
     this_00->field_0716 = st::machine_word_boundary_cast<int>(this_00->field_0716 - *(int *)pSVar31);
-    pvVar23 = st::pointer_boundary_cast<void *>(DAT_00811798);
-    if ((((DAT_00811798 != nullptr) && (STField<int>(pSVar31,8) != 0xff)) &&
-        (pvVar23 = (void *)st::fn_00401A3C((AnonShape_0041C710_C4D46939 *)this_00),
-        pvVar23 != nullptr)) && (STField<int>(pSVar31,0x14) == 0)) {
-      st::fn_004028C4(st::pointer_boundary_cast<void *>(DAT_00811798),(int)this_00->field_005B,(int)this_00->field_005D,
-                         this_00->field_0024);
+    pSVar23 = g_sndUnderAttMeneg_00811798;
+    if ((((g_sndUnderAttMeneg_00811798 != nullptr) &&
+         (STField<int>(pSVar31,8) != 0xff)) &&
+        (pSVar23 = (SndUnderAttMenegC *)st::fn_00401A3C((AnonShape_0041C710_C4D46939 *)this_00),
+        pSVar23 != nullptr)) && (STField<int>(pSVar31,0x14) == 0)) {
+      st::fn_004028C4
+                (g_sndUnderAttMeneg_00811798,(int)this_00->field_005B,(int)this_00->field_005D,
+                 this_00->field_0024);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      pvVar23 = extraout_EAX;
+      pSVar23 = extraout_EAX;
     }
-    uVar25 = (undefined2)((uint)pvVar23 >> 0x10);
-    if ((DAT_008117bc != nullptr) && (pSVar31 != nullptr)) {
+    uVar25 = (undefined2)((uint)pSVar23 >> 0x10);
+    if ((g_aiBossClass_008117BC != nullptr) && (pSVar31 != nullptr)) {
       local_9c.id = MESS_SHARED_5DD5;
       local_9c.arg0.words.high = this_00->field_0032;
       local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
       local_9c.arg1.words.high = (short)STField<int>(pSVar31,0xc);
       local_9c.arg1.words.low = (short)STField<int>(pSVar31,8);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)*DAT_008117bc)(&local_9c);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar25 = extraout_var_00;
+      iVar30 = g_aiBossClass_008117BC->st::fn_00404F07(&local_9c);
+      uVar25 = (undefined2)((uint)iVar30 >> 0x10);
     }
     if (this_00->field_0716 < 1) {
-      if (((DAT_008117bc != nullptr) && (pSVar31 != nullptr)) &&
+      if (((g_aiBossClass_008117BC != nullptr) && (pSVar31 != nullptr)) &&
          (*(int *)pSVar31 != 10000)) {
         local_9c.id = 0x5dd1;
         local_9c.arg0.words.high = this_00->field_0032;
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
         local_9c.arg1.words.high = (short)STField<int>(pSVar31,0xc);
         local_9c.arg1.words.low = (short)STField<int>(pSVar31,8);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)*DAT_008117bc)(&local_9c);
+        g_aiBossClass_008117BC->st::fn_00404F07(&local_9c);
       }
       this_00->field_02C0 = 1;
       switch(this_00->field_06F7) {
@@ -1277,7 +1272,7 @@ LAB_00459f59:
       st::fn_004041F1(this_00);
       sVar42 = this_00->field_06A9;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      local_7c = (AnonShape_0060EA30_DCEB68AD *)CONCAT22(extraout_var_01,sVar42);
+      local_7c = (AnonShape_0060EA30_DCEB68AD *)CONCAT22(extraout_var_00,sVar42);
       sVar4 = this_00->field_06AD;
       sVar5 = this_00->field_06AB;
       if ((((sVar42 < 0) || (g_worldGrid.sizeX <= sVar42)) || (sVar5 < 0)) ||
@@ -1394,7 +1389,7 @@ LAB_00459f59:
     st::fn_004020AE
               (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
                STReplaceLowWord((uint32_t)(uVar18), (uint16_t)(this_00->field_0030)),
-               CONCAT22(extraout_var_07,this_00->field_0032),(int *)this_00,this_00->field_0826);
+               CONCAT22(extraout_var_06,this_00->field_0032),(int *)this_00,this_00->field_0826);
     st::fn_00403283((int)this_00);
     if (this_00->field_047B != nullptr) {
       st::fn_006AE110(this_00->field_047B);
@@ -7417,16 +7412,16 @@ cf_error_exit_0045AEE3:
       this_00->field_001C = iVar14;
       st::fn_00405DC1(this_00,((ushort)((uint)iVar14 >> 0x10) & 7) * 0x2d);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar25 = extraout_var_03;
+      uVar25 = extraout_var_02;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar28 = extraout_var_06;
+      uVar28 = extraout_var_05;
     }
     else {
       this_00->field_006C = local_10->field_006C;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar25 = extraout_var_02;
+      uVar25 = extraout_var_01;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar28 = extraout_var_05;
+      uVar28 = extraout_var_04;
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     st::fn_004052C2
@@ -7595,14 +7590,13 @@ cf_error_exit_0045AEE3:
     uVar17 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
     this_00->field_001C = uVar17;
     this_00->field_077A = (uVar17 >> 0x10) % (iVar14 - 0xeU);
-    if (DAT_008117bc != nullptr) {
+    if (g_aiBossClass_008117BC != nullptr) {
       local_9c.id = MESS_AIBOSSCLASSTY_5DD0;
       local_9c.arg0.words.high = this_00->field_0032;
       local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
       local_9c.arg1.words.high = *(undefined2 *)(dVar15 + 0x28);
       local_9c.arg1.words.low = *(undefined2 *)&this_00->field_0024;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)*DAT_008117bc)(&local_9c);
+      g_aiBossClass_008117BC->st::fn_00404F07(&local_9c);
     }
     switch(this_00->field_06F7) {
     case CASE_1:
@@ -7762,7 +7756,7 @@ cf_error_exit_0045AEE3:
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     st::fn_004052C2
               (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
-               CONCAT22(extraout_var_04,this_00->field_0030),
+               CONCAT22(extraout_var_03,this_00->field_0030),
                CONCAT22(extraout_var,this_00->field_0032),(int *)this_00,1,0);
     if ((this_00->field_045D != CASE_14) || (this_00->field_05C0 != 3)) {
       st::fn_00401325
@@ -8639,7 +8633,7 @@ int __thiscall st::fn_004608B0(STBoatC *this,int param_1)
   uint uVar11;
   undefined2 *puVar12;
   bool bVar13;
-  RecoveredRecord_STBoatC_00645880 local_64;
+  AnonShape_00645880_8F6B4550 local_64;
   undefined4 local_3c [2];
   short local_34;
   short sStack_32;
@@ -15088,7 +15082,7 @@ int __thiscall st::fn_00471AC0(STBoatC *this,int param_1)
   undefined4 uVar11;
   undefined2 *puVar12;
   bool bVar13;
-  RecoveredRecord_STBoatC_00645880 local_64;
+  AnonShape_00645880_8F6B4550 local_64;
   undefined4 local_3c [2];
   short local_34;
   short sStack_32;
@@ -17531,14 +17525,7 @@ int __thiscall st::fn_00476CE0(STBoatC *this,int param_1)
   short sVar23;
   byte bVar24;
   STMessage local_64;
-  undefined1 local_44 [4];
-  undefined4 local_40;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
-  undefined2 local_30;
-  undefined2 local_2e;
-  undefined4 local_2c;
+  STMessage local_44;
   undefined4 local_24 [2];
   undefined4 local_1c;
   short local_18;
@@ -17993,14 +17980,13 @@ cf_common_exit_00477B2E:
     }
     iVar7 = st::fn_0040353F((AnonShape_004CC900_31EE9CAA *)pSVar8);
     if (iVar7 == 1) {
-      if (DAT_008117bc != nullptr) {
-        local_2e = pSVar8->field_0032;
-        local_30 = *(undefined2 *)&pSVar8->field_0024;
-        local_34 = 0x5dd4;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_2c = CONCAT22(this->field_0032,*(undefined2 *)&this->field_0024);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)*DAT_008117bc)(local_44);
+      if (g_aiBossClass_008117BC != nullptr) {
+        local_44.arg0.words.high = pSVar8->field_0032;
+        local_44.arg0.words.low = *(undefined2 *)&pSVar8->field_0024;
+        local_44.id = 0x5dd4;
+        local_44.arg1.words.high = this->field_0032;
+        local_44.arg1.words.low = *(undefined2 *)&this->field_0024;
+        g_aiBossClass_008117BC->GetMessage(&local_44);
       }
       pSVar8->vfunc_10C();
       (*pSVar8->vtable->vfunc_110)(this->field_0024,this->field_06F3);
@@ -18008,11 +17994,11 @@ cf_common_exit_00477B2E:
     else if (iVar7 != 2) goto cf_common_exit_0047746B;
     uVar8 = st::fn_004049B7(*(char *)&pSVar8->field_0024);
     iVar7 = (*pSVar8->vtable->vfunc_2C)();
-    local_64.arg0.ptr = &local_40;
-    local_40 = *(undefined4 *)(&DAT_007e1374 + ((uint)(byte)uVar8 + iVar7 * 3) * 4);
-    local_38 = 0xff;
-    local_3c = 0;
-    local_2c = 1;
+    local_64.arg0.ptr = &local_44.unknown_04;
+    local_44.unknown_04 = *(dword *)(&DAT_007e1374 + ((uint)(byte)uVar8 + iVar7 * 3) * 4);
+    local_44.unknown_0c = 0xff;
+    local_44.unknown_08 = 0;
+    local_44.arg1.u32 = 1;
     local_64.id = MESS_TORPHIT;
     this->GetMessage(&local_64);
     iVar7 = (this->field_0609 + 1) * 0xc9;
@@ -18800,10 +18786,11 @@ int __thiscall st::fn_00479600(STBoatC *this,int param_1)
         this->field_0742 = 1;
         this->field_063F = 0;
         this->field_0649 = 0;
-        if (DAT_00800bcc == nullptr) {
+        if (g_tLOFake_00800BCC == nullptr) {
           st::fn_00404395();
         }
-        st::fn_00401582(st::pointer_boundary_cast<void *>(DAT_00800bcc),(int)*psVar3,(int)*(short *)&this->field_0x659,(int)*psVar2);
+        st::fn_00401582
+                  (g_tLOFake_00800BCC,(int)*psVar3,(int)*(short *)&this->field_0x659,(int)*psVar2);
         *(undefined4 *)&this->field_0x663 = 5;
         *(undefined4 *)&this->field_0x667 = 0;
         return 2;
@@ -19091,8 +19078,9 @@ LAB_00479ba6:
                              CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
                                       (short)this->field_0018));
                 }
-                st::fn_00401DD4(st::pointer_boundary_cast<void *>(DAT_00800bcc),(int)this->field_0657,
-                                   (int)*(short *)&this->field_0x659,(int)this->field_065B);
+                st::fn_00401DD4
+                          (g_tLOFake_00800BCC,(int)this->field_0657,
+                           (int)*(short *)&this->field_0x659,(int)this->field_065B);
                 st::fn_0040295F(this,this->field_0657,*(short *)&this->field_0x659,
                                    this->field_065B,1);
                 sVar8 = (this->field_0643 + 1) * 0xc9;
@@ -19202,16 +19190,19 @@ LAB_00479ba6:
                   if (iVar11 < 0) {
                     this->field_071E = 0;
                   }
-                  if ((this->field_064D != 0) && (DAT_00811798 != nullptr)) {
-                    st::fn_0040321A(st::pointer_boundary_cast<void *>(DAT_00811798),(int)this->field_0047,(int)this->field_0049,
-                                       this->field_0024);
+                  if ((this->field_064D != 0) &&
+                     (g_sndUnderAttMeneg_00811798 != nullptr)) {
+                    st::fn_0040321A
+                              (g_sndUnderAttMeneg_00811798,(int)this->field_0047,
+                               (int)this->field_0049,this->field_0024);
                   }
                   st::fn_004029D7(this->field_0024,(int)this->field_0657,
                                      (int)*(short *)&this->field_0x659,(int)this->field_065B);
                 }
                 st::fn_0040464C(this);
-                st::fn_00401DD4(st::pointer_boundary_cast<void *>(DAT_00800bcc),(int)this->field_0657,
-                                   (int)*(short *)&this->field_0x659,(int)this->field_065B);
+                st::fn_00401DD4
+                          (g_tLOFake_00800BCC,(int)this->field_0657,
+                           (int)*(short *)&this->field_0x659,(int)this->field_065B);
                 st::fn_0040295F(this,this->field_0657,*(short *)&this->field_0x659,
                                    this->field_065B,1);
                 local_20 = (int)this->field_0041;
@@ -19639,8 +19630,9 @@ LAB_0047a385:
               st::fn_00403DBE(local_8,(undefined4 *)&this->field_0657,
                                  (undefined4 *)&this->field_0x659,(undefined4 *)&this->field_065B);
               st::fn_00405380(local_8,(int *)this->field_0018);
-              st::fn_00401582(st::pointer_boundary_cast<void *>(DAT_00800bcc),(int)this->field_0657,
-                                 (int)*(short *)&this->field_0x659,(int)this->field_065B);
+              st::fn_00401582
+                        (g_tLOFake_00800BCC,(int)this->field_0657,(int)*(short *)&this->field_0x659,
+                         (int)this->field_065B);
               *(undefined4 *)&this->field_0x667 = 0;
               *(uint *)&this->field_0x663 = (this->field_0635 != 1) + 4;
               goto cf_common_exit_0047A369;
@@ -23972,22 +23964,17 @@ void __fastcall st::fn_00491600(AnonShape_00491600_23458133 *param_1)
 {
   AnonNested_00491600_05A6_E75AEFE8 *pAVar1;
   int iVar2;
-  undefined1 local_24 [16];
-  undefined4 local_14;
-  undefined2 local_10;
-  undefined2 local_e;
-  undefined2 local_c;
-  undefined2 local_a;
+  STMessage local_24;
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*(int *)param_1 + 0x100))(param_1->field_01D1 | 0xd);
+  (**(code **)(param_1->field_0000 + 0x100))(param_1->field_01D1 | 0xd);
   st::fn_00404EC1(param_1->field_005B,param_1->field_005D,param_1->field_005F,param_1->field_008E
                      ,(AnonShape_00495FF0_59081BDD *)param_1);
   *(undefined4 *)&param_1[1].field_0x16 = 3;
-  if (DAT_008117bc != nullptr) {
-    local_10 = *(undefined2 *)&param_1->field_0x24;
-    local_e = param_1->field_0032;
-    local_14 = 0x5dd2;
+  if (g_aiBossClass_008117BC != nullptr) {
+    local_24.arg0.words.low = *(undefined2 *)&param_1->field_0x24;
+    local_24.arg0.words.high = param_1->field_0032;
+    local_24.id = MESS_AIBOSSCLASSTY_5DD0|MESS_ID_CREATE;
     if (param_1->field_05A6 == nullptr) {
       iVar2 = st::fn_006E62D0
                         (g_playSystem_00802A38,param_1->field_05A2,(int *)&param_1->field_05A6);
@@ -23997,10 +23984,9 @@ void __fastcall st::fn_00491600(AnonShape_00491600_23458133 *param_1)
       }
     }
     pAVar1 = param_1->field_05A6;
-    local_c = pAVar1->field_0024;
-    local_a = pAVar1->field_0032;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+    local_24.arg1.words.low = pAVar1->field_0024;
+    local_24.arg1.words.high = pAVar1->field_0032;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;
 }
@@ -24022,22 +24008,17 @@ void __fastcall st::fn_00491720(STBoatC *param_1,undefined4 param_2)
   uint uVar5;
   byte arg_1;
   uint uVar6;
-  undefined1 local_2c [16];
-  undefined4 local_1c;
-  undefined2 local_18;
-  undefined2 local_16;
-  ushort local_14;
-  ushort local_12;
+  STMessage local_2c;
   uint local_c;
   uint local_8;
 
   arg_1 = 0;
   local_8 = 0;
-  if (DAT_008117bc != nullptr) {
-    local_18 = *(undefined2 *)&param_1->field_0024;
-    local_16 = param_1->field_0032;
+  if (g_aiBossClass_008117BC != nullptr) {
+    local_2c.arg0.words.low = *(undefined2 *)&param_1->field_0024;
+    local_2c.arg0.words.high = param_1->field_0032;
     ppuVar1 = &param_1->field_05A6;
-    local_1c = 0x5dd3;
+    local_2c.id = MESS_AIBOSSCLASSTY_5DD0|MESS_SHARED_0003;
     if ((*ppuVar1 == nullptr) &&
        (iVar3 = st::fn_006E62D0
                           (g_playSystem_00802A38,param_1->field_05A2,(int *)ppuVar1), iVar3 == -4))
@@ -24045,10 +24026,9 @@ void __fastcall st::fn_00491720(STBoatC *param_1,undefined4 param_2)
       st::fn_006A5E40
                 (-4,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x501f);
     }
-    local_14 = (*ppuVar1)[0x12];
-    local_12 = (*ppuVar1)[0x19];
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_2c);
+    local_2c.arg1.words.low = (*ppuVar1)[0x12];
+    local_2c.arg1.words.high = (*ppuVar1)[0x19];
+    g_aiBossClass_008117BC->GetMessage(&local_2c);
   }
   param_1->field_05C0 = 0;
   param_1->field_07C2 = 0;

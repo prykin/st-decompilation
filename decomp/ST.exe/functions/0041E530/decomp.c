@@ -133,11 +133,11 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
   }
   if (MESS_STSPRGAMEOBJC_0109 < SVar2) {
     if (SVar2 == MESS_TORPHIT) {
-      if (DAT_008033f0 == nullptr) {
+      if (g_soundManager_008033F0 == nullptr) {
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      thunk_FUN_00566bd0(DAT_008033f0,(int)this_00);
+      SoundManagerTy::sub_00566BD0(g_soundManager_008033F0,(int)this_00);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }

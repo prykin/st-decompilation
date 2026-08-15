@@ -188,7 +188,7 @@ LAB_0057ac02:
             uVar9 = (undefined2)((uint)puVar1 >> 0x10);
             local_d0 = iVar12;
             /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
-            uVar9 = (**(code **)(*(int *)param_1 + 0x10))
+            uVar9 = (**(code **)(param_1->field_0000 + 0x10))
                               (CONCAT22(uVar18,param_1->field_0041),
                                CONCAT22(uVar9,param_1->field_0043),
                                CONCAT22(uVar18,param_1->field_0045),CONCAT22(uVar9,*puVar1),
@@ -461,7 +461,7 @@ LAB_0057a96b:
                 uVar18 = (undefined2)((uint)iVar16 >> 0x10);
                 uVar9 = (undefined2)((uint)puVar1 >> 0x10);
                 /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
-                uVar9 = (**(code **)(*(int *)param_1 + 0x10))
+                uVar9 = (**(code **)(param_1->field_0000 + 0x10))
                                   (CONCAT22(uVar18,param_1->field_0041),
                                    CONCAT22(uVar9,param_1->field_0043),
                                    CONCAT22(uVar18,param_1->field_0045),CONCAT22(uVar9,*puVar1),

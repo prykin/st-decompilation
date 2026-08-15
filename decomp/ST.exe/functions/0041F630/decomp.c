@@ -64,7 +64,7 @@ LAB_0041f738:
   }
   if (iVar7 != 0x14) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
+    uVar4 = (**(code **)(param_1->field_0000 + 0x2c))();
     switch(uVar4) {
     case 0x3e:
     case 0x3f:
@@ -96,7 +96,7 @@ switchD_0041f763_caseD_7:
     }
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
+  uVar4 = (**(code **)(param_1->field_0000 + 0x2c))();
   switch(uVar4) {
   case 7:
   case 8:
@@ -117,7 +117,7 @@ switchD_0041f763_caseD_9:
 LAB_0041f793:
   if (param_1->field_0211 != 0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar4 = (**(code **)(*(int *)param_1 + 0x6c))();
+    uVar4 = (**(code **)(param_1->field_0000 + 0x6c))();
     switch(uVar4) {
     case 0:
       local_8 = 10;

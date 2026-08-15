@@ -69,13 +69,13 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
                   (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss.cpp",0x61);
       }
       InitData(this_00,puVar9);
-      DAT_008117bc = this_00;
+      g_aiBossClass_008117BC = this_00;
       thunk_FUN_0064a450();
     }
     else if (SVar1 == MESS_SHARED_0003) {
       thunk_FUN_0064a580();
       thunk_FUN_00647ed0(this_00);
-      DAT_008117bc = nullptr;
+      g_aiBossClass_008117BC = nullptr;
     }
   }
   else if (SVar1 < 0x5ded) {

@@ -155,7 +155,7 @@ void st::fn_0055F410
     _DAT_0080336c = 0x14;
     _DAT_00803370 = 10;
     DAT_00803354 = 5;
-    DAT_008033b4 = 0;
+    PTR_008033b4 = nullptr;
     local_60[0] = nullptr;
     g_runtimeRecords_00803300 = nullptr;
     DAT_00803314 = 0;
@@ -206,9 +206,9 @@ void st::fn_0055F410
       uStackY_470 = 0x55f648;
       local_84 = aiStackY_e6c;
       uStackY_e70 = 0x55f65a;
-      DAT_008032fc = st::machine_word_boundary_cast<undefined4>(auStackY_eec);
+      PTR_008032fc = auStackY_eec;
       uStackY_ef0 = 0x55f671;
-      DAT_008033b0 = st::machine_word_boundary_cast<undefined4>(auStackY_f2c);
+      PTR_008033b0 = auStackY_f2c;
       uStackY_f30 = 0x55f685;
       local_164 = (int *)aAStackY_10bc;
       iStackY_10c0 = 0x55f6a4;
@@ -223,7 +223,7 @@ void st::fn_0055F410
       local_8 = 0xffffffff;
       memset(auStackY_eec, 0, 0x80); /* compiler bulk-zero initialization */
       iVar14 = 0;
-      DAT_008033b8 = st::machine_word_boundary_cast<undefined4>(auStackY_eac);
+      PTR_008033b8 = auStackY_eac;
       memset(auStackY_f2c, 0, 0x40); /* compiler bulk-zero initialization */
       g_runtimeRecords_008032F4 = (RuntimeRecord_008032F4_0014 *)((int)aRStackY_188c + iVar21);
       uVar25 = 0;
@@ -256,16 +256,16 @@ void st::fn_0055F410
           }
           local_78 = local_78 + 1;
           pRVar6 = g_runtimeRecords_008032F8;
-          puVar10 = st::pointer_boundary_cast<undefined4 *>(DAT_008032fc);
+          puVar10 = st::pointer_boundary_cast<undefined4 *>(PTR_008032fc);
           pRVar27 = g_runtimeRecords_00803300;
           pRVar7 = g_runtimeRecords_00803310;
-          puVar8 = st::pointer_boundary_cast<undefined4 *>(DAT_008033b0);
+          puVar8 = st::pointer_boundary_cast<undefined4 *>(PTR_008033b0);
         } while (local_78 < param_5);
       }
-      DAT_008033b0 = st::machine_word_boundary_cast<undefined4>(puVar8);
+      PTR_008033b0 = puVar8;
       g_runtimeRecords_00803310 = pRVar7;
       g_runtimeRecords_00803300 = pRVar27;
-      DAT_008032fc = st::machine_word_boundary_cast<undefined4>(puVar10);
+      PTR_008032fc = puVar10;
       g_runtimeRecords_008032F8 = pRVar6;
       iVar21 = -1;
       iVar14 = -1;
@@ -725,18 +725,18 @@ LAB_0056016e:
       }
       *piVar4 = DAT_00803304;
       piVar4[1] = DAT_00803308;
-      DAT_008033b4 = st::machine_word_boundary_cast<undefined4>(st::fn_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1));
+      PTR_008033b4 = st::fn_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1);
       st::fn_006AB060(local_60);
       st::fn_00402441(pbVar5);
       iVar21 = 0;
       do {
         iVar14 = (int)(iVar21 * 0x168 + (iVar21 * 0x168 >> 0x1f & 0xfU)) >> 4;
         local_EAX_4178 = st::fn_00561240(DAT_008032f0,DAT_008032ec,iVar14);
-        *(int **)((int)DAT_008032fc + iVar21 * 4) = local_EAX_4178;
+        *(int **)((int)PTR_008032fc + iVar21 * 4) = local_EAX_4178;
         piVar10 = st::fn_00561240(DAT_00803374,DAT_00803378,iVar14);
-        *(int **)(DAT_008033b8 + iVar21 * 4) = piVar10;
+        *(int **)((int)PTR_008033b8 + iVar21 * 4) = piVar10;
         local_EAX_4230 = st::fn_00561240(5,DAT_008032ec,iVar14);
-        *(int **)((int)DAT_008033b0 + iVar21 * 4) = local_EAX_4230;
+        *(int **)((int)PTR_008033b0 + iVar21 * 4) = local_EAX_4230;
         iVar21 = iVar21 + 1;
         iVar14 = DAT_0080339c;
         piVar20 = local_164;
@@ -765,7 +765,7 @@ LAB_0056016e:
             if (((-1 < local_94) && (local_94 < DAT_008033a4)) &&
                ((iVar21 = (char)local_a4[local_50 * 2 + 1] + DAT_00803308, -1 < iVar21 &&
                 ((iVar21 < DAT_008033a8 &&
-                 (0 < *(short *)((int)DAT_008033b4 + (iVar21 * DAT_008033a4 + local_94) * 2))))))) {
+                 (0 < *(short *)((int)PTR_008033b4 + (iVar21 * DAT_008033a4 + local_94) * 2))))))) {
               iVar14 = 0;
               local_148 = 0;
               if (0 < g_runtimeRecordCount_0080338C) {
@@ -1022,17 +1022,17 @@ LAB_0056016e:
     local_70 = iVar15;
     iVar21 = local_70;
     st::fn_006AB060(local_6c);
-    st::fn_006AB060(&DAT_008033b4);
+    st::fn_006AB060(&PTR_008033b4);
     st::fn_006AB060(local_60);
     st::fn_006AB060(&DAT_00803380);
     iVar14 = 0;
     do {
-      st::fn_006AB060((undefined1 *)((int)DAT_008032fc + iVar14));
+      st::fn_006AB060((void *)(iVar14 + (int)PTR_008032fc));
       iVar14 = iVar14 + 4;
     } while (iVar14 < 0x80);
     iVar14 = 0;
     do {
-      st::fn_006AB060((undefined1 *)((int)DAT_008033b0 + iVar14));
+      st::fn_006AB060((void *)(iVar14 + (int)PTR_008033b0));
       iVar14 = iVar14 + 4;
     } while (iVar14 < 0x40);
     if (iVar21 != 0) {
@@ -1448,7 +1448,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
     _DAT_0080336c = 0x1e;
     _DAT_00803370 = 0xf;
     DAT_00803354 = 5;
-    DAT_008033b4 = 0;
+    PTR_008033b4 = nullptr;
     local_60[0] = nullptr;
     g_runtimeRecords_00803300 = nullptr;
     DAT_00803314 = 0;
@@ -1502,9 +1502,9 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
       uStackY_4ac = 0x5631b8;
       local_80 = aiStackY_fa8;
       uStackY_fac = 0x5631ca;
-      DAT_008032fc = st::machine_word_boundary_cast<undefined4>(auStackY_1028);
+      PTR_008032fc = auStackY_1028;
       uStackY_102c = 0x5631e1;
-      DAT_008033b0 = st::machine_word_boundary_cast<undefined4>(auStackY_1068);
+      PTR_008033b0 = auStackY_1068;
       uStackY_106c = 0x5631f5;
       local_160 = (int *)aAStackY_11f8;
       iStackY_11fc = 0x563214;
@@ -1519,7 +1519,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
       local_8 = 0xffffffff;
       memset(auStackY_1028, 0, 0x80); /* compiler bulk-zero initialization */
       iVar16 = 0;
-      DAT_008033b8 = st::machine_word_boundary_cast<undefined4>(auStackY_fe8);
+      PTR_008033b8 = auStackY_fe8;
       memset(auStackY_1068, 0, 0x40); /* compiler bulk-zero initialization */
       g_runtimeRecords_008032F4 = (RuntimeRecord_008032F4_0014 *)((int)aRStackY_19c8 + iVar20);
       uVar24 = 0;
@@ -1552,16 +1552,16 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
           }
           local_78 = local_78 + 1;
           pRVar6 = g_runtimeRecords_008032F8;
-          puVar23 = st::pointer_boundary_cast<undefined4 *>(DAT_008032fc);
+          puVar23 = st::pointer_boundary_cast<undefined4 *>(PTR_008032fc);
           pRVar26 = g_runtimeRecords_00803300;
           pRVar7 = g_runtimeRecords_00803310;
-          puVar8 = st::pointer_boundary_cast<undefined4 *>(DAT_008033b0);
+          puVar8 = st::pointer_boundary_cast<undefined4 *>(PTR_008033b0);
         } while (local_78 < param_5);
       }
-      DAT_008033b0 = st::machine_word_boundary_cast<undefined4>(puVar8);
+      PTR_008033b0 = puVar8;
       g_runtimeRecords_00803310 = pRVar7;
       g_runtimeRecords_00803300 = pRVar26;
-      DAT_008032fc = st::machine_word_boundary_cast<undefined4>(puVar23);
+      PTR_008032fc = puVar23;
       g_runtimeRecords_008032F8 = pRVar6;
       iVar20 = -1;
       iVar16 = -1;
@@ -2016,18 +2016,18 @@ LAB_005637bc:
       }
       *piVar4 = DAT_00803304;
       piVar4[1] = DAT_00803308;
-      DAT_008033b4 = st::machine_word_boundary_cast<undefined4>(st::fn_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1));
+      PTR_008033b4 = st::fn_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1);
       st::fn_006AB060(local_60);
       st::fn_00402441(local_a0);
       iVar20 = 0;
       do {
         iVar16 = (int)(iVar20 * 0x168 + (iVar20 * 0x168 >> 0x1f & 0xfU)) >> 4;
         local_EAX_4198 = st::fn_00561240(DAT_008032f0,DAT_008032ec,iVar16);
-        *(int **)((int)DAT_008032fc + iVar20 * 4) = local_EAX_4198;
+        *(int **)((int)PTR_008032fc + iVar20 * 4) = local_EAX_4198;
         piVar9 = st::fn_00561240(DAT_00803374,DAT_00803378,iVar16);
-        *(int **)(DAT_008033b8 + iVar20 * 4) = piVar9;
+        *(int **)((int)PTR_008033b8 + iVar20 * 4) = piVar9;
         local_EAX_4250 = st::fn_00561240(5,DAT_008032ec,iVar16);
-        *(int **)((int)DAT_008033b0 + iVar20 * 4) = local_EAX_4250;
+        *(int **)((int)PTR_008033b0 + iVar20 * 4) = local_EAX_4250;
         iVar20 = iVar20 + 1;
         iVar16 = DAT_0080339c;
       } while (iVar20 < 0x10);
@@ -2053,7 +2053,7 @@ LAB_005637bc:
             if (((-1 < iVar20) && (iVar20 < DAT_008033a4)) &&
                ((iVar16 = (char)local_a0[local_50 * 2 + 1] + DAT_00803308, -1 < iVar16 &&
                 ((iVar16 < DAT_008033a8 &&
-                 (0 < *(short *)((int)DAT_008033b4 + (iVar16 * DAT_008033a4 + iVar20) * 2))))))) {
+                 (0 < *(short *)((int)PTR_008033b4 + (iVar16 * DAT_008033a4 + iVar20) * 2))))))) {
               local_140 = 0;
               local_150 = 0;
               if (0 < g_runtimeRecordCount_0080338C) {
@@ -2311,17 +2311,17 @@ LAB_005637bc:
     local_70 = iVar14;
     iVar20 = local_70;
     st::fn_006AB060(local_6c);
-    st::fn_006AB060(&DAT_008033b4);
+    st::fn_006AB060(&PTR_008033b4);
     st::fn_006AB060(local_60);
     st::fn_006AB060(&DAT_00803380);
     iVar16 = 0;
     do {
-      st::fn_006AB060((undefined1 *)((int)DAT_008032fc + iVar16));
+      st::fn_006AB060((void *)(iVar16 + (int)PTR_008032fc));
       iVar16 = iVar16 + 4;
     } while (iVar16 < 0x80);
     iVar16 = 0;
     do {
-      st::fn_006AB060((undefined1 *)((int)DAT_008033b0 + iVar16));
+      st::fn_006AB060((void *)(iVar16 + (int)PTR_008033b0));
       iVar16 = iVar16 + 4;
     } while (iVar16 < 0x40);
     if (iVar20 != 0) {

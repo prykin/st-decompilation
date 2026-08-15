@@ -5069,7 +5069,7 @@ int st::fn_00749EC2(AnonShape_00749EC2_C411FB81 *param_1)
 {
   AnonShape_00749EC2_C411FB81 *lpCriticalSection;
   undefined1 *this;
-  int *piVar1;
+  AnonNested_AnonShape_00749EC2_C411FB81_006C_7E3C32DA *pAVar1;
   int iVar2;
   int iVar3;
 
@@ -5077,8 +5077,7 @@ int st::fn_00749EC2(AnonShape_00749EC2_C411FB81 *param_1)
   st::external_00000018((LPCRITICAL_SECTION)lpCriticalSection);
   iVar2 = param_1->field_0008;
   if (iVar2 != 1) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)(param_1->field_006C + 0x18) != 0) {
+    if (param_1->entries_006C[6] != nullptr) {
       iVar3 = st::fn_007470E5((AnonShape_007470E5_0A8F5E67 *)param_1);
       if (iVar3 < 0) {
         st::external_00000019((LPCRITICAL_SECTION)lpCriticalSection);
@@ -5093,11 +5092,10 @@ int st::fn_00749EC2(AnonShape_00749EC2_C411FB81 *param_1)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0x6c))();
       st::fn_0074A760((int)this);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      piVar1 = *(int **)(param_1->field_006C + 0x9c);
-      if (piVar1 != nullptr) {
+      pAVar1 = param_1->entries_006C[0x27];
+      if (pAVar1 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*piVar1 + 0x14))(piVar1);
+        (**(code **)(pAVar1->field_0000 + 0x14))(pAVar1);
       }
       if (iVar2 == 0) {
         param_1->field_0054 = 0;

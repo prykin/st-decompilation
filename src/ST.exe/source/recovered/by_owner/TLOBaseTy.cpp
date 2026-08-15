@@ -4008,7 +4008,8 @@ int __thiscall st::fn_004CE7D0(TLOBaseTy *this)
       return 0;
     }
     if ((iVar2 != 0) && (this->field_04DC != 0)) {
-      st::fn_00401DD4(st::pointer_boundary_cast<void *>(DAT_00800bcc),this->field_04E0[0],this->field_04E0[1],this->field_04E0[2]);
+      st::fn_00401DD4
+                (g_tLOFake_00800BCC,this->field_04E0[0],this->field_04E0[1],this->field_04E0[2]);
       this->field_04DC = 0;
     }
   }
@@ -4139,10 +4140,10 @@ switchD_004ceb68_caseD_32:
   case CASE_2:
     iVar6 = st::fn_00402E87((int *)this->field_0024,0);
     if (iVar6 == 0) {
-      if (DAT_00811798 == nullptr) {
+      if (g_sndUnderAttMeneg_00811798 == nullptr) {
         return local_10;
       }
-      st::fn_00402AF4(st::pointer_boundary_cast<void *>(DAT_00811798),this->field_0024,8);
+      st::fn_00402AF4(g_sndUnderAttMeneg_00811798,this->field_0024,8);
       return local_10;
     }
     if ((this->field_05AC == CASE_32) || (local_14 = 1, this->field_05AC == CASE_5C)) {
@@ -4170,11 +4171,12 @@ switchD_004ceb68_caseD_32:
             this->field_04DC = 1;
             this->field_04E0[1] = local_c;
             this->field_04E0[2] = iVar6 + 1;
-            if (DAT_00800bcc == nullptr) {
+            if (g_tLOFake_00800BCC == nullptr) {
               st::fn_004032B5();
             }
-            st::fn_00401582(st::pointer_boundary_cast<void *>(DAT_00800bcc),this->field_04E0[0],this->field_04E0[1],
-                               this->field_04E0[2]);
+            st::fn_00401582
+                      (g_tLOFake_00800BCC,this->field_04E0[0],this->field_04E0[1],
+                       this->field_04E0[2]);
             this->field_04D0 = CASE_3;
             this->field_03D0 = 1;
             st::fn_00402CF7(this,0);
@@ -4223,7 +4225,8 @@ switchD_004ceb68_caseD_32:
     if (iVar6 != this->field_01F5->field_020C) {
       return local_10;
     }
-    st::fn_00401DD4(st::pointer_boundary_cast<void *>(DAT_00800bcc),this->field_04E0[0],this->field_04E0[1],this->field_04E0[2]);
+    st::fn_00401DD4
+              (g_tLOFake_00800BCC,this->field_04E0[0],this->field_04E0[1],this->field_04E0[2]);
     iVar6 = 0x11;
     ppbVar13 = local_6c;
     while( true ) {
@@ -4622,14 +4625,11 @@ undefined4 __thiscall st::fn_004E2AD0(TLOBaseTy *this,int param_1,uint param_2)
   byte *pbVar1;
   int uVar2;
   undefined4 uVar3;
+  int iVar4;
   TLOBaseTyVTable *pTVar5;
+  STMessage *pSVar6;
   undefined2 arg_2;
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined2 local_10;
-  undefined2 local_e;
-  undefined2 local_c;
-  short local_a;
+  STMessage local_24;
 
   if (param_1 != 2) {
     return 0;
@@ -4656,19 +4656,22 @@ undefined4 __thiscall st::fn_004E2AD0(TLOBaseTy *this,int param_1,uint param_2)
   }
   (*pTVar5->vfunc_90)(this,4,arg_2);
 cf_common_exit_004E2B69:
-  if (DAT_008117bc == nullptr) {
+  if (g_aiBossClass_008117BC == nullptr) {
     return 0;
   }
   pbVar1 = this->field_0024;
-  memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-  local_e = this->field_0032;
-  local_10 = *(undefined2 *)&this->field_0024;
-  local_14 = 0x5de6;
-  local_c = (undefined2)param_2;
+  pSVar6 = &local_24;
+  for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+    pSVar6->unknown_00 = 0;
+    pSVar6 = (STMessage *)&pSVar6->unknown_04;
+  }
+  local_24.arg0.words.high = this->field_0032;
+  local_24.arg0.words.low = *(undefined2 *)&this->field_0024;
+  local_24.id = 0x5de6;
+  local_24.arg1.words.low = (word)param_2;
   uVar3 = st::fn_0040186B((int)pbVar1,param_2);
-  local_a = (short)uVar3 + 1;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)*DAT_008117bc)(local_24);
+  local_24.arg1.words.high = (short)uVar3 + 1;
+  g_aiBossClass_008117BC->GetMessage(&local_24);
   return 0;
 }
 
@@ -4700,15 +4703,11 @@ undefined4 __thiscall st::fn_004E2C30(TLOBaseTy *this,uint param_1)
   byte *puVar8;
   byte *puVar9;
   byte *pbVar10;
-  int *piVar11;
-  undefined2 uVar12;
-  int *piVar13;
-  undefined4 local_60 [4];
-  undefined4 local_50;
-  undefined2 local_4c;
-  undefined2 local_4a;
-  undefined2 local_48;
-  short local_46;
+  STMessage *pSVar11;
+  int *piVar12;
+  undefined2 uVar13;
+  int *piVar14;
+  STMessage local_60;
   byte local_40 [20];
   undefined4 local_2c [5];
   byte *local_18;
@@ -4734,24 +4733,31 @@ undefined4 __thiscall st::fn_004E2C30(TLOBaseTy *this,uint param_1)
   puVar8 = (byte *)(&g_packedRecords_A62x8[(int)pbVar1].field376_0x2ff);
   pbVar10 = local_40;
   memmove(pbVar10, puVar8, 0x14); /* compiler REP MOVS byte copy */
+  iVar4 = 0;
   st::fn_00402130(pbVar1,param_1,local_10 + 1);
   st::fn_00401D66(this->field_0024,param_1);
-  if (DAT_008117bc != nullptr) {
+  if (g_aiBossClass_008117BC != nullptr) {
     pbVar1 = this->field_0024;
-    memset(local_60, 0, 0x20); /* compiler bulk-zero initialization */
-    iVar4 = 0;
-    local_4a = this->field_0032;
-    local_4c = *(undefined2 *)&this->field_0024;
-    local_50 = 0x5de7;
-    local_48 = (undefined2)param_1;
+    pSVar11 = &local_60;
+    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+      pSVar11->unknown_00 = 0;
+      pSVar11 = (STMessage *)&pSVar11->unknown_04;
+    }
+    local_60.arg0.words.high = this->field_0032;
+    local_60.arg0.words.low = *(undefined2 *)&this->field_0024;
+    local_60.id = 0x5de7;
+    local_60.arg1.words.low = (word)param_1;
     uVar6 = st::fn_0040186B((int)pbVar1,param_1);
-    local_46 = (short)uVar6;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_60);
-    memset(local_60, 0, 0x20); /* compiler bulk-zero initialization */
-    local_4c = *(undefined2 *)&this->field_0024;
+    local_60.arg1.words.high = (word)uVar6;
+    g_aiBossClass_008117BC->GetMessage(&local_60);
+    pSVar11 = &local_60;
+    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+      pSVar11->unknown_00 = 0;
+      pSVar11 = (STMessage *)&pSVar11->unknown_04;
+    }
+    local_60.arg0.words.low = *(undefined2 *)&this->field_0024;
     local_14 = local_2c;
-    local_50 = 0x5dea;
+    local_60.id = 0x5dea;
     local_10 = 0;
     do {
       uVar2 = local_10;
@@ -4767,11 +4773,10 @@ undefined4 __thiscall st::fn_004E2C30(TLOBaseTy *this,uint param_1)
         iVar4 = st::fn_0040186B((int)this->field_0024,uVar2);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if (iVar4 < CONCAT31(extraout_var_00,uVar3)) {
-          local_48 = (undefined2)uVar2;
+          local_60.arg1.words.low = (word)uVar2;
           uVar6 = st::fn_0040186B((int)this->field_0024,uVar2);
-          local_46 = (short)uVar6 + 1;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (**(code **)*DAT_008117bc)(local_60);
+          local_60.arg1.words.high = (short)uVar6 + 1;
+          g_aiBossClass_008117BC->GetMessage(&local_60);
         }
       }
       local_10 = uVar2 + 1;
@@ -4780,28 +4785,28 @@ undefined4 __thiscall st::fn_004E2C30(TLOBaseTy *this,uint param_1)
   if (this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D)
   goto cf_common_exit_004E2FE4;
   st::fn_00402D5B(0,(float)this->field_01F9,(float)this->field_01FD);
-  piVar13 = &local_c;
-  piVar11 = &local_8;
+  piVar14 = &local_c;
+  piVar12 = &local_8;
   local_8 = 0;
   local_c = 0;
   local_EAX_634 = st::fn_004049B7(*(char *)&this->field_0024);
   local_EAX_634 = (int)(byte)local_EAX_634;
-  st::fn_00405448(local_EAX_634,param_1,st::pointer_boundary_cast<undefined4 *>(piVar11),st::pointer_boundary_cast<undefined4 *>(piVar13));
+  st::fn_00405448(local_EAX_634,param_1,st::pointer_boundary_cast<undefined4 *>(piVar12),st::pointer_boundary_cast<undefined4 *>(piVar14));
   if (local_8 != 0) {
     uVar5 = st::fn_004049B7(*(char *)&this->field_0024);
     uVar5 = (int)(byte)uVar5;
     if (uVar5 == 1) {
       pTVar7 = this->vtable;
-      uVar12 = 0x5f;
+      uVar13 = 0x5f;
 LAB_004e2efc:
-      (*pTVar7->vfunc_90)(this,6,uVar12);
+      (*pTVar7->vfunc_90)(this,6,uVar13);
     }
     else if (uVar5 == 2) {
       this->vfunc_90(6,0x60);
     }
     else if (uVar5 == 3) {
       pTVar7 = this->vtable;
-      uVar12 = 0x61;
+      uVar13 = 0x61;
       goto LAB_004e2efc;
     }
   }
@@ -4810,16 +4815,16 @@ LAB_004e2efc:
     local_EAX_741 = (int)(byte)local_EAX_741;
     if (local_EAX_741 == 1) {
       pTVar7 = this->vtable;
-      uVar12 = 0x5c;
+      uVar13 = 0x5c;
 LAB_004e2f42:
-      (*pTVar7->vfunc_90)(this,6,uVar12);
+      (*pTVar7->vfunc_90)(this,6,uVar13);
     }
     else if (local_EAX_741 == 2) {
       this->vfunc_90(6,0x5d);
     }
     else if (local_EAX_741 == 3) {
       pTVar7 = this->vtable;
-      uVar12 = 0x5e;
+      uVar13 = 0x5e;
       goto LAB_004e2f42;
     }
   }
@@ -4828,16 +4833,16 @@ LAB_004e2f42:
     local_EAX_816 = (int)(byte)local_EAX_816;
     if (local_EAX_816 == 1) {
       pTVar7 = this->vtable;
-      uVar12 = 0x59;
+      uVar13 = 0x59;
 LAB_004e2f8d:
-      (*pTVar7->vfunc_90)(this,6,uVar12);
+      (*pTVar7->vfunc_90)(this,6,uVar13);
     }
     else if (local_EAX_816 == 2) {
       this->vfunc_90(6,0x5a);
     }
     else if (local_EAX_816 == 3) {
       pTVar7 = this->vtable;
-      uVar12 = 0x5b;
+      uVar13 = 0x5b;
       goto LAB_004e2f8d;
     }
   }
@@ -4845,7 +4850,7 @@ LAB_004e2f8d:
   local_EAX_884 = (int)(byte)local_EAX_884;
   if (local_EAX_884 == 1) {
     pTVar7 = this->vtable;
-    uVar12 = 0x20d;
+    uVar13 = 0x20d;
   }
   else {
     if (local_EAX_884 == 2) {
@@ -4854,9 +4859,9 @@ LAB_004e2f8d:
     }
     if (local_EAX_884 != 3) goto cf_common_exit_004E2FE4;
     pTVar7 = this->vtable;
-    uVar12 = 0x390;
+    uVar13 = 0x390;
   }
-  (*pTVar7->vfunc_90)(this,4,uVar12);
+  (*pTVar7->vfunc_90)(this,4,uVar13);
 cf_common_exit_004E2FE4:
   this->field_04D0 = CASE_0;
   st::fn_00402CF7(this,1);
@@ -4878,28 +4883,28 @@ cf_common_exit_004E2FE4:
 undefined4 __thiscall st::fn_004E3120(TLOBaseTy *this)
 
 {
-  undefined2 uVar1;
+  word wVar1;
   undefined4 uVar2;
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined2 local_10;
-  undefined2 local_e;
-  undefined2 local_c;
-  short local_a;
+  int iVar3;
+  STMessage *pSVar4;
+  STMessage local_24;
 
   if (*(int *)&this->field_0x361 == 2) {
     st::fn_00401D66(this->field_0024,*(uint *)&this->field_0x369);
-    if (DAT_008117bc != nullptr) {
-      uVar1 = *(undefined2 *)&this->field_0024;
-      memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-      local_e = this->field_0032;
-      local_c = *(undefined2 *)&this->field_0x369;
-      local_14 = 0x5de8;
-      local_10 = uVar1;
+    if (g_aiBossClass_008117BC != nullptr) {
+      wVar1 = *(word *)&this->field_0024;
+      pSVar4 = &local_24;
+      for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
+        pSVar4->unknown_00 = 0;
+        pSVar4 = (STMessage *)&pSVar4->unknown_04;
+      }
+      local_24.arg0.words.high = this->field_0032;
+      local_24.arg1.words.low = *(undefined2 *)&this->field_0x369;
+      local_24.id = 0x5de8;
+      local_24.arg0.words.low = wVar1;
       uVar2 = st::fn_0040186B((int)this->field_0024,*(int *)&this->field_0x369);
-      local_a = (short)uVar2 + 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)*DAT_008117bc)(local_24);
+      local_24.arg1.words.high = (short)uVar2 + 1;
+      g_aiBossClass_008117BC->GetMessage(&local_24);
     }
     this->field_04D0 = CASE_0;
     st::fn_00402CF7(this,1);
@@ -4932,7 +4937,7 @@ undefined4 __thiscall st::fn_004EA620(TLOBaseTy *this)
     this->field_046C = 0;
     this->field_0470 = 0;
     if (this->field_0494 != 0) {
-      st::fn_00401DD4(st::pointer_boundary_cast<void *>(DAT_00800bcc),this->field_0480,this->field_0484,this->field_0488);
+      st::fn_00401DD4(g_tLOFake_00800BCC,this->field_0480,this->field_0484,this->field_0488);
       this->field_0494 = 0;
     }
   }

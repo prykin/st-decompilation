@@ -38,12 +38,12 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
 
   if (param_5 == DAT_0080330c) {
     local_24_mg1 = g_runtimeRecords_008032F4;
-    iVar11 = *(int *)(param_3 * 4 + DAT_008032fc);
+    iVar11 = *(int *)(param_3 * 4 + (int)PTR_008032fc);
     DAT_00803398 = DAT_00803314;
   }
   else {
     local_24_mg1 = (RuntimeRecord_008032F4_0014 *)g_runtimeRecords_008032F8;
-    iVar11 = *(int *)(param_3 * 4 + DAT_008033b8);
+    iVar11 = *(int *)(param_3 * 4 + (int)PTR_008033b8);
     DAT_00803398 = DAT_0080337c;
   }
   local_34 = param_3 * 4;
@@ -100,7 +100,7 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
     local_EAX_437 = iVar11;
   }
   iVar19 = (int)(local_EAX_437 * uVar12) / DAT_00803390;
-  piVar18 = *(int **)(local_34 + DAT_008033b0);
+  piVar18 = *(int **)(local_34 + (int)PTR_008033b0);
   iVar10 = FUN_006db6d0(iVar7);
   iVar4 = Library::DKW::STR::FUN_006db640(iVar7);
   iVar11 = param_2 * 0x10000 - DAT_00803354 * -iVar4 >> 0x10;
@@ -188,7 +188,7 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
   iVar11 = ((int)piVar15 * local_EAX_1115) / DAT_00803390;
   iVar10 = thunk_FUN_0055de60(DAT_00803304,DAT_00803308,param_1,param_2);
   iVar8 = 0;
-  sVar3 = *(short *)(DAT_008033b4 + (DAT_008033a4 * param_2 + param_1) * 2);
+  sVar3 = *(short *)((int)PTR_008033b4 + (DAT_008033a4 * param_2 + param_1) * 2);
   if ((sVar3 != 0) && (sVar3 != -1)) {
     iVar8 = ((DAT_0080339c * DAT_00803320 + (int)sVar3) - iVar10) + -1;
   }

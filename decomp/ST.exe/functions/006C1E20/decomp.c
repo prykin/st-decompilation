@@ -5,34 +5,40 @@ void FUN_006c1e20(void)
 
 {
   int *piVar1;
-  int *piVar3;
+  int iVar2;
+  void **ppvVar3;
+  void **ppvVar4;
 
   if ((DAT_008568b4 != 0) && (g_hThread_008568C0 != (HANDLE)0x0)) {
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856880);
     if (DAT_008568c4 == 0) {
       EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
       FUN_006b9890(&DAT_00854ff4);
-      piVar3 = &DAT_00855004;
+      ppvVar3 = &PTR_00855004;
       do {
-        if ((piVar3[-3] & 1U) != 0) {
-          piVar3[-3] = piVar3[-3] & 8;
-          piVar1 = (int *)*piVar3;
+        if (((uint)ppvVar3[-3] & 1) != 0) {
+          ppvVar3[-3] = (void *)((uint)ppvVar3[-3] & 8);
+          piVar1 = *ppvVar3;
           if (piVar1 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*piVar1 + 0x48))(piVar1);
-            piVar1 = (int *)piVar3[1];
+            piVar1 = ppvVar3[1];
             if (piVar1 != nullptr) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(*piVar1 + 8))(piVar1);
-              piVar3[1] = 0;
+              ppvVar3[1] = nullptr;
             }
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)(*(int *)*piVar3 + 8))((int *)*piVar3);
+            (**(code **)(*(int *)*ppvVar3 + 8))(*ppvVar3);
           }
-          memset((uint *)(piVar3 + -3), 0, 0xc4); /* compiler bulk-zero initialization */
+          ppvVar4 = ppvVar3 + -3;
+          for (iVar2 = 0x31; iVar2 != 0; iVar2 = iVar2 + -1) {
+            *ppvVar4 = nullptr;
+            ppvVar4 = ppvVar4 + 1;
+          }
         }
-        piVar3 = piVar3 + 0x31;
-      } while ((int)piVar3 < 0x856884);
+        ppvVar3 = ppvVar3 + 0x31;
+      } while ((int)ppvVar3 < 0x856884);
       LeaveCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
       SuspendThread(g_hThread_008568C0);
       DAT_008568c4 = (uint)(DAT_008568c4 == 0);

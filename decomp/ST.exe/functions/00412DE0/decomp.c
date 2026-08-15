@@ -41,7 +41,7 @@ undefined4 FUN_00412de0(int param_1,int param_2,int param_3)
       if (((((local_c < 0) || (DAT_007f4d2c <= local_c)) || (local_10 < 0)) ||
           (((DAT_007f4d30 <= local_10 ||
             (uVar6 = local_c + DAT_007f4d2c * local_10 + local_8 * iVar4,
-            *(short *)(DAT_007f4cf0 + uVar6 * 2) != 0)) ||
+            *(short *)((int)PTR_007f4cf0 + uVar6 * 2) != 0)) ||
            (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) != 0)))) &&
          (iVar5 = FUN_0040f270(&local_c,&local_10,&local_8,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                DAT_007f4d1c >> 2,iVar1 >> 2,iVar2 >> 2,iVar3 >> 2), iVar5 != 0)) {

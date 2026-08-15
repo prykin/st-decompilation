@@ -1853,11 +1853,11 @@ int __thiscall st::fn_0041E530(STSprGameObjC *this,STMessage *message)
   }
   if (MESS_STSPRGAMEOBJC_0109 < SVar2) {
     if (SVar2 == MESS_TORPHIT) {
-      if (DAT_008033f0 == nullptr) {
+      if (g_soundManager_008033F0 == nullptr) {
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      st::fn_004059CF(st::pointer_boundary_cast<void *>(DAT_008033f0),(int)this_00);
+      st::fn_004059CF(g_soundManager_008033F0,(int)this_00);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }

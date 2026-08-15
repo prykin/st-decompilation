@@ -1,10 +1,16 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_00620780(void *this,int param_1,int param_2,int param_3)
+/* [STMethodOwnerApplier] Structural method owner recovered as SndUnderAttMenegC.
+   Evidence: this_call_owners=[SndUnderAttMenegC]; agreed_this_calls=1; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall
+SndUnderAttMenegC::sub_00620780(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
 
 {
-  DArrayTy *array;
+  SndUnderAttMenegC_field_00DDDArray *array;
   uint index;
   int *piVar1;
   undefined4 uVar2;
@@ -12,17 +18,19 @@ undefined4 __thiscall FUN_00620780(void *this,int param_1,int param_2,int param_
 
   uVar2 = 0xffffffff;
   local_8 = 0xffffffff;
-  if ((STField<int>(this,0xdd) != 0) &&
-     (index = *(int *)(STField<int>(this,0xdd) + 0xc) - 1, -1 < (int)index)) {
+  if ((this->field_00DD != nullptr) &&
+     (index = this->field_00DD->count - 1, -1 < (int)index)) {
     do {
-      array = STField<DArrayTy *>(this,0xdd);
+      array = this->field_00DD;
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
       if ((index < array->count) &&
-         (piVar1 = DArrayAt<int>(array, index), piVar1 != nullptr)) {
+         (piVar1 = (int *)((int)&array->data->field_0000 + array->elementSize * index),
+         piVar1 != nullptr)) {
         if ((param_2 < piVar1[2] + -3) ||
            (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
             (piVar1[3] + 3 < param_3)))) {
           if (0x1194 < (uint)(param_1 - *piVar1)) {
-            DArrayRemoveAt(array,index);
+            DArrayRemoveAt((DArrayTy *)array,index);
           }
         }
         else {

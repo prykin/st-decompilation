@@ -45,7 +45,7 @@ int __thiscall FUN_00462180(void *this,int param_1)
   ushort *puVar22;
   STWorldObject *pSVar23;
   bool bVar24;
-  RecoveredRecord_STBoatC_00645880 local_9c;
+  AnonShape_00645880_8F6B4550 local_9c;
   int local_74 [2];
   undefined1 local_6c [16];
   undefined4 local_5c;
@@ -375,13 +375,14 @@ LAB_00462a36:
               STT3DSprC::LoadSequence
                         ((STT3DSprC *)((int)this + 0x1d5),8,PTR_00806774,"expdstrwd",
                          CASE_1D);
-              if (DAT_00811798 != nullptr) {
+              if (g_sndUnderAttMeneg_00811798 != nullptr) {
                 STFishC::sub_004162F0
                           (pSVar15,(short *)((int)&local_14 + 2),(short *)((int)&local_28 + 2),
                            local_8);
                 pSVar15->slot_2C();
-                thunk_FUN_00620a00(DAT_00811798,(int)STPiece<2,2>(local_14),(int)STPiece<2,2>(local_28),
-                                   pSVar15->field_0024);
+                SndUnderAttMenegC::sub_00620A00
+                          (g_sndUnderAttMeneg_00811798,(int)STPiece<2,2>(local_14),(int)STPiece<2,2>(local_28),
+                           pSVar15->field_0024);
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar16 = (**(code **)(*(int *)this + 0xd8))();
                 return (-(uint)(iVar16 != 0) & 0xfffffffd) + 2;

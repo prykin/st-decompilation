@@ -44,11 +44,11 @@ int __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,STMessage *messag
   SVar2 = message->id;
   if (SVar2 != MESS_ID_NONE) {
     if (SVar2 == MESS_ID_CREATE) {
-      DAT_008033f0 = local_8;
+      g_soundManager_008033F0 = local_8;
       local_8->field_0028 = message->arg0;
     }
     else if (SVar2 == MESS_SHARED_0003) {
-      DAT_008033f0 = nullptr;
+      g_soundManager_008033F0 = nullptr;
       sub_00566900(local_8);
     }
     goto LAB_00566d75;

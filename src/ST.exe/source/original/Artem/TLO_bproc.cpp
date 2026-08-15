@@ -206,8 +206,9 @@ LAB_004c8806:
     iVar7 = 1;
   }
   param_1->field_03B8 = iVar7;
-  if ((iVar7 != 0) && (uVar12 = uVar12 << 2, DAT_00811798 != nullptr)) {
-    st::fn_00402AF4(st::pointer_boundary_cast<void *>(DAT_00811798),param_1->field_0024,5);
+  if ((iVar7 != 0) &&
+     (uVar12 = uVar12 << 2, g_sndUnderAttMeneg_00811798 != nullptr)) {
+    st::fn_00402AF4(g_sndUnderAttMeneg_00811798,param_1->field_0024,5);
   }
   if (g_playSystem_00802A38->field_00E4 < param_1->field_038C + uVar12) {
     return 0;
@@ -346,19 +347,21 @@ LAB_004c8bf2:
     else {
       param_1->field_03C0 = 1;
     }
-    if (DAT_00811798 != nullptr) {
+    if (g_sndUnderAttMeneg_00811798 != nullptr) {
       if (param_1->field_03BC != 0) {
-        st::fn_00402AF4(st::pointer_boundary_cast<void *>(DAT_00811798),param_1->field_0024,4);
+        st::fn_00402AF4(g_sndUnderAttMeneg_00811798,param_1->field_0024,4);
       }
       if (param_1->field_03C4 != 0) {
-        st::fn_00402AF4(st::pointer_boundary_cast<void *>(DAT_00811798),param_1->field_0024,2);
+        st::fn_00402AF4(g_sndUnderAttMeneg_00811798,param_1->field_0024,2);
       }
       if (param_1->field_03C8 != 0) {
         bVar5 = st::fn_004049B7(*(char *)&param_1->field_0024);
-        st::fn_00402AF4(st::pointer_boundary_cast<void *>(DAT_00811798),param_1->field_0024,(-(uint)(bVar5 != 3) & 0xfffffffd) + 6);
+        st::fn_00402AF4
+                  (g_sndUnderAttMeneg_00811798,param_1->field_0024,
+                   (-(uint)(bVar5 != 3) & 0xfffffffd) + 6);
       }
       if (param_1->field_03C0 != 0) {
-        st::fn_00402AF4(st::pointer_boundary_cast<void *>(DAT_00811798),param_1->field_0024,7);
+        st::fn_00402AF4(g_sndUnderAttMeneg_00811798,param_1->field_0024,7);
         return 0;
       }
     }

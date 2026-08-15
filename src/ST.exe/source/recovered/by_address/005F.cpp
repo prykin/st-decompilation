@@ -282,24 +282,25 @@ void __thiscall st::fn_005F04B0(void *this,int *param_1)
    Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=005F05C8 MOV CX,word ptr
    [EBP + 0x8] */
 
-void __thiscall st::fn_005F05A0(void *this,ushort param_1,undefined2 param_2)
+void __thiscall st::fn_005F05A0(void *this,ushort param_1,word param_2)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined2 local_e;
-  ushort local_c;
-  undefined2 local_a;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_24;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    local_e = (**(code **)(*(int *)this + 0x144))();
-    local_c = param_1;
-    local_a = param_2;
-    local_14 = 0x5dda;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+    local_24.arg0.words.high = (**(code **)(*(int *)this + 0x144))();
+    local_24.arg1.words.low = param_1;
+    local_24.arg1.words.high = param_2;
+    local_24.id = MESS_AIBOSSCLASSTY_5DD0|MESS_SYSTEMCLASSTY_000A;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;
 }
@@ -309,34 +310,35 @@ void __thiscall st::fn_005F05A0(void *this,ushort param_1,undefined2 param_2)
 void __fastcall st::fn_005F0620(AnonShape_005F0620_60AA17CE *param_1)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined2 local_e;
-  undefined2 local_c;
-  undefined2 local_a;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_24;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
     switch(param_1->field_02B1) {
     case 0:
     case 1:
     case 2:
-      local_e = param_1->field_0032;
-      local_14 = 0x5dd8;
+      local_24.arg0.words.high = param_1->field_0032;
+      local_24.id = MESS_AIBOSSCLASSTY_5DD0|MESS_SHARED_0008;
       break;
     case 3:
     case 4:
     case 5:
-      local_e = param_1->field_0032;
-      local_14 = 0x5ddd;
+      local_24.arg0.words.high = param_1->field_0032;
+      local_24.id = MESS_AIBOSSCLASSTY_5DD0|MESS_SHARED_0008|MESS_SHARED_0005;
       break;
     default:
       goto switchD_005f064c_default;
     }
-    local_c = param_1->field_02A3;
-    local_a = param_1->field_02AB;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+    local_24.arg1.words.low = param_1->field_02A3;
+    local_24.arg1.words.high = param_1->field_02AB;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
   }
 switchD_005f064c_default:
   return;
@@ -347,34 +349,35 @@ switchD_005f064c_default:
 void __fastcall st::fn_005F06E0(AnonShape_005F0620_60AA17CE *param_1)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined2 local_e;
-  undefined2 local_c;
-  undefined2 local_a;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_24;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
     switch(param_1->field_02B1) {
     case 0:
     case 1:
     case 2:
-      local_e = param_1->field_0032;
-      local_14 = 0x5dd9;
+      local_24.arg0.words.high = param_1->field_0032;
+      local_24.id = MESS_AIBOSSCLASSTY_5DD0|MESS_CURSORCLASSTY_0009;
       break;
     case 3:
     case 4:
     case 5:
-      local_e = param_1->field_0032;
-      local_14 = 0x5dde;
+      local_24.arg0.words.high = param_1->field_0032;
+      local_24.id = 0x5dde;
       break;
     default:
       goto switchD_005f070c_default;
     }
-    local_a = param_1->field_02AB;
-    local_c = param_1->field_02A3;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+    local_24.arg1.words.high = param_1->field_02AB;
+    local_24.arg1.words.low = param_1->field_02A3;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
   }
 switchD_005f070c_default:
   return;
@@ -2106,31 +2109,31 @@ LAB_005f9d2f:
 void __fastcall st::fn_005F9E40(AnonShape_005F9E40_7E333F34 *param_1)
 
 {
-  undefined4 *puVar1;
+  AnonNested_AnonShape_005F9E40_7E333F34_02E6_E59503F8 *pAVar1;
   STT3DSprC *this;
-  int iVar2;
 
-  puVar1 = (undefined4 *)param_1->field_02E6;
-  if (puVar1 != nullptr) {
-    this = (STT3DSprC *)*puVar1;
+  pAVar1 = param_1->field_02E6;
+  if (pAVar1 != nullptr) {
+    this = *(STT3DSprC **)pAVar1;
     if (this != nullptr) {
-      st::fn_00401064(this,'\x0e',puVar1[8]);
+      st::fn_00401064(this,'\x0e',*(uint *)(pAVar1 + 1));
       st::fn_004030BC(this,'\x0e');
-      iVar2 = param_1->field_02E6;
+      pAVar1 = param_1->field_02E6;
       st::fn_004045D9
-                (this,(float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)(iVar2 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+                (this,(float)(int)pAVar1->field_0014 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)(int)pAVar1->field_0018 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)(int)pAVar1->field_001C * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       return;
     }
-    if (-1 < (int)puVar1[1]) {
-      st::fn_006EA270(st::pointer_boundary_cast<ST3DSMAPContext *>(param_1->field_0211),puVar1[1],0,puVar1[8]);
-      iVar2 = param_1->field_02E6;
+    if (-1 < (int)*(uint *)&pAVar1->field_0x4) {
+      st::fn_006EA270
+                (st::pointer_boundary_cast<ST3DSMAPContext *>(param_1->field_0211),*(uint *)&pAVar1->field_0x4,0,*(uint *)(pAVar1 + 1));
+      pAVar1 = param_1->field_02E6;
       st::fn_006EA960
-                (param_1->field_0211,*(uint *)(iVar2 + 4),
-                 (float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)(iVar2 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+                (param_1->field_0211,*(uint *)&pAVar1->field_0x4,
+                 (float)(int)pAVar1->field_0014 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)(int)pAVar1->field_0018 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)(int)pAVar1->field_001C * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     }
   }
   return;
@@ -2144,17 +2147,17 @@ void __fastcall st::fn_005F9F70(AnonShape_005F9F70_43CA4DAC *param_1)
   STT3DSprC *pSVar1;
   uint uVar2;
 
-  if ((undefined4 *)param_1->field_02E6 != nullptr) {
-    pSVar1 = *(STT3DSprC **)param_1->field_02E6;
+  if (param_1->field_02E6 != nullptr) {
+    pSVar1 = (STT3DSprC *)param_1->field_02E6->field_0000;
     if (pSVar1 != nullptr) {
       st::fn_004021D5(pSVar1);
-      st::fn_0072E2B0(*(HoloTy **)param_1->field_02E6);
-      *(undefined4 *)param_1->field_02E6 = 0;
+      st::fn_0072E2B0((HoloTy *)param_1->field_02E6->field_0000);
+      param_1->field_02E6->field_0000 = 0;
     }
-    uVar2 = *(uint *)(param_1->field_02E6 + 4);
+    uVar2 = param_1->field_02E6->field_0004;
     if (-1 < (int)uVar2) {
       st::fn_006E8BA0(param_1->field_0211,uVar2);
-      *(undefined4 *)(param_1->field_02E6 + 4) = 0xffffffff;
+      param_1->field_02E6->field_0004 = 0xffffffff;
     }
   }
   return;
@@ -3201,27 +3204,27 @@ void __fastcall st::fn_005FCEB0(AnonShape_005FCEB0_FA1F7938 *param_1)
 
 {
   int iVar1;
-  undefined4 local_28 [4];
-  undefined4 local_18;
-  undefined2 local_12;
-  undefined2 local_10;
-  undefined2 local_e;
+  STMessage *pSVar2;
+  STMessage local_28;
   int local_8;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
-    local_12 = param_1->field_0032;
-    local_10 = param_1->field_032A;
-    local_18 = 0x5dd6;
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_28;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
+    local_28.arg0.words.high = param_1->field_0032;
+    local_28.arg1.words.low = param_1->field_032A;
+    local_28.id = 0x5dd6;
     iVar1 = st::fn_006E62D0
                       (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_0358,
                        &local_8);
     if (iVar1 != -4) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_e = *(undefined2 *)(local_8 + 0x32);
+      local_28.arg1.words.high = *(word *)(local_8 + 0x32);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_28);
+    g_aiBossClass_008117BC->GetMessage(&local_28);
   }
   return;
 }

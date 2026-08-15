@@ -94,7 +94,7 @@ LAB_00623863:
         thunk_FUN_004ad460(&param_1->field_0x1d5,0);
         param_1->field_02E9 = 1;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*(int *)param_1 + 0xd8))();
+        (**(code **)(param_1->field_0000 + 0xd8))();
         return;
       }
       goto LAB_006238c2;
@@ -107,7 +107,7 @@ LAB_00623863:
   }
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_006238c2:
-  (**(code **)(*(int *)param_1 + 0xd8))();
+  (**(code **)(param_1->field_0000 + 0xd8))();
   return;
 }
 

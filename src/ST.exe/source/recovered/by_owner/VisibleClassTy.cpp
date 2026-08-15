@@ -1493,7 +1493,7 @@ st::fn_0055BBC0
 
 {
   uint index;
-  RecoveredRecord_VisibleClassTy_0055B9F0 local_10;
+  AnonShape_0055B9F0_F484F6C2 local_10;
 
   if ((((this->field_0114 != 0) && (this->field_0110 != nullptr)) &&
       (param_5 < 8)) &&

@@ -10,35 +10,35 @@ void __thiscall SndUnderAttMenegC::sub_0061FCC0(SndUnderAttMenegC *this)
 
 {
   if (this->field_00B9 != nullptr) {
-    DArrayDestroy(this->field_00B9);
+    DArrayDestroy((DArrayTy *)this->field_00B9);
     this->field_00B9 = nullptr;
   }
   if (this->field_00C5 != nullptr) {
-    DArrayDestroy(this->field_00C5);
+    DArrayDestroy((DArrayTy *)this->field_00C5);
     this->field_00C5 = nullptr;
   }
   if (this->field_00D1 != nullptr) {
-    DArrayDestroy(this->field_00D1);
+    DArrayDestroy((DArrayTy *)this->field_00D1);
     this->field_00D1 = nullptr;
   }
   if (this->field_00DD != nullptr) {
-    DArrayDestroy(this->field_00DD);
+    DArrayDestroy((DArrayTy *)this->field_00DD);
     this->field_00DD = nullptr;
   }
   if (this->field_00E9 != nullptr) {
-    DArrayDestroy(this->field_00E9);
+    DArrayDestroy((DArrayTy *)this->field_00E9);
     this->field_00E9 = nullptr;
   }
   if (this->field_00F5 != nullptr) {
-    DArrayDestroy(this->field_00F5);
+    DArrayDestroy((DArrayTy *)this->field_00F5);
     this->field_00F5 = nullptr;
   }
   if (this->field_0101 != nullptr) {
-    DArrayDestroy(this->field_0101);
+    DArrayDestroy((DArrayTy *)this->field_0101);
     this->field_0101 = nullptr;
   }
   if (this->field_010A != nullptr) {
-    DArrayDestroy(this->field_010A);
+    DArrayDestroy((DArrayTy *)this->field_010A);
     this->field_010A = nullptr;
   }
   return;

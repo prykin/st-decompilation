@@ -1351,3 +1351,41 @@ Current accepted state:
   64-error Apple Clang audit passes 187 units and retains 1,531 errors, 1,514
   mapped to stable function addresses. The generated declaration surface and
   all 37 source-generator unit tests pass.
+
+## Pointer-valued globals and singleton publication
+
+The latest accepted export supersedes the state above. `STGlobalDataAnalyzer`
+now separates pointer-role evidence from pointee evidence. Three exact loaded-
+value dereferences across two functions, or three exact receiver sites spanning
+two callers and two distinct `__thiscall` callees, prove only neutral `void *`.
+A concrete `T *` requires either all-predecessor CFG propagation of an
+unadjusted named method receiver into the exact global store, or a trusted
+concrete-pointer function whose every RET returns the same global or null.
+Calls kill volatile receiver facts, joins intersect facts, and script-owned
+neutral pointers remain replaceable by stronger later evidence.
+
+The pass typed 19 globals: 14 neutral pointer values plus concrete
+`TLOFakeTy *`, `HelpStringTy *`, `SoundManagerTy *`, `SndUnderAttMenegC *`, and
+`AiBossClassTy *` singletons. Downstream fixed points recovered 29 structural
+methods (12 in the first method-owner wave and 17 in the second), one prototype,
+eight DArray descriptor specializations, and one local SSA lifetime. Type
+lifecycle removed 1,014 generated types which became unreferenced.
+
+Current accepted state:
+
+- run `6820bd712a048ce4e5b0294d740fe3c82bafdf4079d4384a80029686c1fe637f`;
+- semantic hash `1f669587552e8e1c36194655261ec8115e211916c56b2db8bdcfc4d78e15cd67`;
+- corpus manifest `0c74fa4297a743f7e423b089334381efd2f5051b4502b55046916c896d19036f`;
+- 10,407 function records, 5,555 bodies, zero failed bodies, and 3,192 typed
+  physical-vtable slots;
+- export receipt `passed`, with zero hard regressions and six non-blocking
+  warnings; ABI gate errors/warnings remain zero;
+- quality deltas: `generic_data_symbol -170`, `undefined_type -176`,
+  `raw_indirect_call -38`, `raw_pointer_offset -50`, and
+  `casted_generic_field -38`; warning-only stage transitions include
+  `anonymous_shape_type +34`, `generic_field_name +554`,
+  `dynamic_array_indexing +8`, and `generic_global_aggregate +12`;
+- generated source contains 5,555 bodies in 322 translation units and 13,398
+  audit rows. The fixed 64-error Apple Clang audit passes 193 units and retains
+  1,435 errors, 1,418 mapped to stable function addresses. All 37 generator
+  tests pass.

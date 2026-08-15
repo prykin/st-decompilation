@@ -9,22 +9,22 @@
 void __thiscall AiFltClassTy::sub_0065F980(AiFltClassTy *this)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined2 local_10;
-  undefined2 local_e;
-  AiFltClassTy *local_c;
-  undefined2 local_8;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-    local_10 = *(undefined2 *)&this->field_0024;
-    local_e = this->field_007D;
-    local_8 = *(undefined2 *)&this->field_00B3;
-    local_14 = 0x5de5;
-    local_c = this;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_24;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
+    local_24.arg0.words.low = *(undefined2 *)&this->field_0024;
+    local_24.arg0.words.high = this->field_007D;
+    local_24.arg2.words.low = *(undefined2 *)&this->field_00B3;
+    local_24.id = 0x5de5;
+    local_24.arg1 = (STMessageArg)this;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
     this->field_00B3 = 0;
     return;
   }

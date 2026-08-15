@@ -82,21 +82,8 @@ struct AllocationRecord_00690FC0;
 struct AnonNested_0040D540_0029_4E1A5CA3;
 struct AnonNested_00443F30_0839_FB957E77;
 struct AnonNested_00491600_05A6_E75AEFE8;
-struct AnonNested_004B7F90_01F5_230F20CA;
-struct AnonNested_004BEA70_04D0_ED4F30E8;
-struct AnonNested_004C5980_05FB_38F047AC;
-struct AnonNested_004C9430_0607_7C13AC95;
-struct AnonNested_004D0A80_024D_FEDAAB1B;
-struct AnonNested_004D6360_0360_98F97B35;
-struct AnonNested_004E91E0_0434_B58024EB;
-struct AnonNested_004E9960_061B_217F6F13;
 struct AnonNested_004EE350_0018_78690378;
 struct AnonNested_004EF5F0_0014_2E827CED;
-struct AnonNested_004F3540_0018_2CFA22F7;
-struct AnonNested_004F37C0_0018_F555AF4C;
-struct AnonNested_004F3A30_0018_BD4DC0BB;
-struct AnonNested_004F3CF0_0018_4CF39192;
-struct AnonNested_004F42A0_0014_236EA43C;
 struct AnonNested_00521CF0_0198_99A2701C;
 struct AnonNested_00521CF0_0198_ED218B19;
 struct AnonNested_0052A430_0014_F40A3334;
@@ -114,111 +101,31 @@ struct AnonNested_0053DAF0_0018_BAFC63C8;
 struct AnonNested_0053DCC0_0018_16DF3813;
 struct AnonNested_0053FCD0_0014_03E531EF;
 struct AnonNested_0053FEE0_0014_154E5252;
-struct AnonNested_0054EAB0_0065_6333AF5F;
-struct AnonNested_0054EB20_0065_4A00EB9C;
 struct AnonNested_00575CB0_0004_76DA00C1;
 struct AnonNested_005C1610_0014_572A8044;
 struct AnonNested_005D1400_0050_DA378AC5;
 struct AnonNested_005D5560_0050_EBFA0A51;
 struct AnonNested_005F1700_003C_057131A3;
-struct AnonNested_005F27C0_0014_1CFA0467;
-struct AnonNested_005F4C50_0169_A2908DF5;
-struct AnonNested_005F53A0_0169_99CDD61C;
-struct AnonNested_005F5B80_0169_794156D7;
-struct AnonNested_005F9CB0_02E6_32192ADE;
-struct AnonNested_005FAC40_02E6_39D7D583;
-struct AnonNested_005FADA0_02E6_8D03AC6C;
 struct AnonNested_005FAEE0_02E6_E37EB1FC;
-struct AnonNested_006001E0_0233_B26101C5;
-struct AnonNested_006028A0_0211_79D9690B;
 struct AnonNested_0060A4B0_0234_BD227FFA;
 struct AnonNested_0060A940_0234_EAD23A7B;
-struct AnonNested_0060D810_0244_C78BBECE;
-struct AnonNested_006139A0_0298_4BCC28B8;
-struct AnonNested_00617640_0014_CD0B523E;
-struct AnonNested_00617A20_005E_D2939D1E;
-struct AnonNested_00617FB0_005E_483CD789;
-struct AnonNested_00617FB0_0062_35E1D28C;
-struct AnonNested_00617FB0_0066_193D2AD0;
-struct AnonNested_00618AD0_005E_B3F50575;
-struct AnonNested_00618C00_0014_AEDCAA43;
-struct AnonNested_0061D190_0014_96ED958D;
-struct AnonNested_0061D710_00A3_C72C5EA4;
-struct AnonNested_0061F530_00A3_F5EAE8C3;
-struct AnonNested_006226C0_0211_7A284649;
-struct AnonNested_00627EB0_0014_B8FBF6AA;
-struct AnonNested_00630430_0014_3EDE47A6;
-struct AnonNested_006308F0_0038_6CBBD4FA;
-struct AnonNested_00631220_0034_EF4AC123;
-struct AnonNested_00631220_0038_55904769;
-struct AnonNested_00633770_001D_40333508;
 struct AnonNested_00637180_002C_C78B37DA;
-struct AnonNested_0063CFF0_0336_DC162146;
 struct AnonNested_0063D410_0336_B4CDA572;
 struct AnonNested_0063E660_0336_9C5AD80D;
-struct AnonNested_0063E9C0_0336_09F0C1DF;
-struct AnonNested_0063FE70_0336_EDA006AC;
-struct AnonNested_00640170_037F_4BC1E19C;
-struct AnonNested_006461E0_0014_EFB6F372;
-struct AnonNested_00647BA0_04E2_62109149;
-struct AnonNested_00647D50_05B3_23417B98;
 struct AnonNested_00652810_000F_9CE8027E;
-struct AnonNested_0068E4F0_00A5_6001B6B3;
-struct AnonNested_00694CD0_0008_CC35D736;
-struct AnonNested_0069ADA0_000C_771063C4;
-struct AnonNested_0069BC10_0008_975EAAD1;
-struct AnonNested_0069F160_0008_DA6B40D5;
-struct AnonNested_006A0470_0008_8D4C819A;
-struct AnonNested_006A0E30_0008_6257299B;
 struct AnonNested_006B2020_01A0_B4F1EFF3;
-struct AnonNested_006D58C0_00E0_63977295;
 struct AnonNested_006D6290_0018_C51D55FE;
-struct AnonNested_006D6A10_0288_213244E3;
-struct AnonNested_006D6A10_0288_DAFF5DDD;
-struct AnonNested_006D7000_00E0_8CA18F81;
-struct AnonNested_006E1460_0358_17426F2F;
-struct AnonNested_006E1DD0_0280_387F2D84;
-struct AnonNested_006E42C0_0014_A7057FF5;
-struct AnonNested_006E57B0_0010_2E36ABBC;
-struct AnonNested_006E6710_044E_DC1AB194;
-struct AnonNested_006E6780_044E_FEECA1D4;
-struct AnonNested_006E67C0_0452_59995E3E;
-struct AnonNested_006E6830_0452_DAA077C9;
-struct AnonNested_006E68C0_0280_223685B4;
 struct AnonNested_006E6FB0_0008_71212DD0;
-struct AnonNested_006E6FB0_031C_A9A253F8;
-struct AnonNested_006E6FB0_0420_246567AC;
-struct AnonNested_006E8580_0004_0F761FCB;
-struct AnonNested_006E8EA0_02F0_0B4BBCFB;
-struct AnonNested_006E9490_0310_0881F4E4;
-struct AnonNested_006E9CB0_0310_31D172B2;
-struct AnonNested_006E9D40_0310_477CEA1A;
-struct AnonNested_006E9DD0_0310_F81C983F;
-struct AnonNested_006E9E60_0310_51AA0C90;
 struct AnonNested_006ECFC0_0064_4836A151;
 struct AnonNested_006ECFC0_0064_60428B19;
-struct AnonNested_00721520_0138_26FFE90C;
 struct AnonNested_00721790_0138_C6072F4E;
 struct AnonNested_007217E0_0138_CBD04E88;
-struct AnonNested_00721830_0138_12664224;
 struct AnonNested_007219A0_0138_7CAF6BF8;
 struct AnonNested_007233F0_0064_6FCF4A7B;
-struct AnonNested_00727DA0_0124_460E0B05;
-struct AnonNested_0074A39B_0078_6EAEE8D5;
-struct AnonNested_0074BFBF_008C_134640C4;
-struct AnonNested_0074C45B_00D8_1CE910A3;
 struct AnonNested_0074C571_00CC_C64502DE;
-struct AnonNested_0074C77C_00A0_9AFF712D;
 struct AnonNested_0074C8A9_0090_6FCAB5DF;
-struct AnonNested_0074CAA4_008C_5B93FF00;
-struct AnonNested_0074CCE2_008C_4977F015;
-struct AnonNested_0074CCE2_0090_2EA95B8A;
-struct AnonNested_0074CF58_00E0_5F67D8EB;
-struct AnonNested_0074D042_00A8_3DC33D1A;
-struct AnonNested_00753B40_0008_62BB8A2C;
 struct AnonNested_00755D40_000C_A3EEF781;
 struct AnonNested_00757360_0008_E15F2681;
-struct AnonNested_007574C0_000C_273D01BA;
 struct AnonNested_00757530_000C_743CE253;
 struct AnonNested_007575B0_000C_8FAD8207;
 struct AnonNested_00757670_0008_104EC36D;
@@ -243,94 +150,66 @@ struct AnonNested_007611C0_0050_9F22CF38;
 struct AnonNested_AnonShape_004137F0_350C8AE0_0029_743E91AB;
 struct AnonNested_AnonShape_004137F0_350C8AE0_0059_F07A8D99;
 struct AnonNested_AnonShape_00497920_894F87D6_009F_65AF98AA;
+struct AnonNested_AnonShape_004CC370_02CE3D17_0000_762E0E2D;
+struct AnonNested_AnonShape_004D7270_8F0A3C37_0000_431532FF;
+struct AnonNested_AnonShape_004F3FE0_1578D6B9_0018_7B0E2AAD;
+struct AnonNested_AnonShape_005745E0_AF52CC75_044D_E2486BFB;
+struct AnonNested_AnonShape_00575460_06C413C6_044D_A1003587;
+struct AnonNested_AnonShape_00575460_06C413C6_0451_3D38181E;
+struct AnonNested_AnonShape_005F9E40_7E333F34_02E6_E59503F8;
+struct AnonNested_AnonShape_005F9F70_43CA4DAC_02E6_A919D50D;
+struct AnonNested_AnonShape_0060D940_4FDF4902_0244_00248A15;
+struct AnonNested_AnonShape_0060DAB0_7A3B9916_0244_2655E818;
+struct AnonNested_AnonShape_00640240_D1DBDD81_037F_89D39015;
+struct AnonNested_AnonShape_00661CA0_93A030EF_020B_27162EA8;
 struct AnonNested_AnonShape_006B1B10_121F236C_01B0_7CFC8645;
 struct AnonNested_AnonShape_006B1BD0_7C890E99_01B0_6D384113;
+struct AnonNested_AnonShape_006B8F10_41B61BA9_0000_93966B03;
+struct AnonNested_AnonShape_006D54C0_FBA73A61_0284_041C9282;
+struct AnonNested_AnonShape_006D54C0_FBA73A61_0288_92098C55;
+struct AnonNested_AnonShape_007295F0_722683CC_0004_5BDE234A;
+struct AnonNested_AnonShape_00749EC2_C411FB81_006C_7E3C32DA;
+struct AnonNested_AnonShape_00750F20_F8C16F98_0008_FDB2B39A;
+struct AnonNested_AnonShape_00750F20_F8C16F98_000C_F63CABFC;
+struct AnonNested_AnonShape_00750FB0_15A3AC3E_0008_EB22C12B;
+struct AnonNested_AnonShape_00750FB0_15A3AC3E_000C_71DE54C3;
+struct AnonNested_AnonShape_00753C80_4C8E695D_0008_9237F694;
+struct AnonNested_AnonShape_00753C80_4C8E695D_000C_9E74E987;
+struct AnonNested_AnonShape_007543F0_E9DD5DAA_000C_D54F7079;
+struct AnonNested_AnonShape_00754B80_75BFDB7A_0080_4681841F;
+struct AnonNested_AnonShape_00754FD0_6B521B56_0008_2A163446;
+struct AnonNested_AnonShape_00754FD0_6B521B56_000C_1591C729;
+struct AnonNested_AnonShape_00755970_4FB144E0_000C_11C2AAE5;
+struct AnonNested_AnonShape_00755E10_BD685653_0008_8628F4E0;
+struct AnonNested_AnonShape_00757D90_5427B306_0010_D8C59A06;
+struct AnonNested_AnonShape_00759190_45B6ED67_01A6_2E084C16;
+struct AnonNested_AnonShape_0075BE40_B9FD5FDF_01A6_A872C6DA;
+struct AnonNested_AnonShape_0075DF10_BA4C6604_0000_7BE2CA10;
 struct AnonNested_AnonShape_0075F590_570A7014_0080_51346D47;
 struct AnonNested_AnonShape_0075FE30_46CD87E7_01BA_82756618;
-struct AnonNested_AnonShape_GLOBAL_00848A18_1B9B27FE_0014_B23B2AAD;
-struct AnonNested_AnonShape_GLOBAL_00848A1C_B6E50991_0014_BB282182;
-struct AnonNested_AnonShape_GLOBAL_00848A2C_50EB5CD1_0014_282260F2;
-struct AnonNested_AnonShape_GLOBAL_00848A34_1A834A18_0014_B03F56A9;
 struct AnonPointee_AiEventClassTy_0000;
 struct AnonPointee_AiFltClassTy_0223;
 struct AnonPointee_AiFltClassTy_022F;
-struct AnonPointee_AiFltClassTy_0284;
-struct AnonPointee_AiPlrClassTy_001C;
-struct AnonPointee_BehPanelTy_0000;
-struct AnonPointee_ChooseMapTy_0000;
 struct AnonPointee_ChooseMapTy_1C7B;
 struct AnonPointee_ChooseMapTy_1C8B;
-struct AnonPointee_ChooseMapTy_1C97;
-struct AnonPointee_ChooseMapTy_1C9F;
-struct AnonPointee_cLoadingTy_0000;
-struct AnonPointee_cLoadingTy_0004;
-struct AnonPointee_ComboTy_00FC;
-struct AnonPointee_ComboTy_0104;
-struct AnonPointee_CPanelTy_01AC;
-struct AnonPointee_CPanelTy_01B0;
 struct AnonPointee_CPanelTy_01B4;
-struct AnonPointee_CursorClassTy_04D2;
-struct AnonPointee_FrmPanelTy_0000;
-struct AnonPointee_FSGSTy_0000;
 struct AnonPointee_FSGSTy_1A97;
-struct AnonPointee_FSGSTy_1AC0;
-struct AnonPointee_FSGSTy_1AE8;
-struct AnonPointee_FSGSTy_1AEC;
-struct AnonPointee_FSGSTy_1AF0;
-struct AnonPointee_FSGSTy_1AF4;
-struct AnonPointee_FSGSTy_1AF8;
-struct AnonPointee_FSGSTy_1AFC;
-struct AnonPointee_FSGSTy_1B00;
-struct AnonPointee_FSGSTy_1B0C;
-struct AnonPointee_FSGSTy_1EA2;
 struct AnonPointee_HelpPanelTy_0068;
 struct AnonPointee_HelpPanelTy_01B3;
-struct AnonPointee_HelpPanelTy_01EC;
 struct AnonPointee_HelpPanelTy_0218;
-struct AnonPointee_HelpStringTy_012A;
-struct AnonPointee_InfocPanelTy_0000;
-struct AnonPointee_IntercomPanelTy_019C;
-struct AnonPointee_InterSystemC_0000;
-struct AnonPointee_JumpManagC_0062;
-struct AnonPointee_JumpManagC_0066;
-struct AnonPointee_MainMenuTy_1AA7;
-struct AnonPointee_MoneyTy_0072;
-struct AnonPointee_MoneyTy_0076;
-struct AnonPointee_MoneyTy_007A;
 struct AnonPointee_MReportTy_0073;
 struct AnonPointee_MReportTy_0077;
-struct AnonPointee_MTaskTy_0643;
 struct AnonPointee_MTaskTy_06BF;
-struct AnonPointee_MTaskTy_06CB;
-struct AnonPointee_OptPanelTy_01E9;
-struct AnonPointee_PlayPanelTy_0068;
 struct AnonPointee_PlaySystemTy_0039;
-struct AnonPointee_PopUpTy_0090;
-struct AnonPointee_PrividerTy_1C82;
 struct AnonPointee_PrividerTy_1C8E;
-struct AnonPointee_PrividerTy_1C92;
 struct AnonPointee_ProdPanelTy_0000;
-struct AnonPointee_ProdPanelTy_0068;
-struct AnonPointee_SAMPanelTy_0000;
-struct AnonPointee_SettMapMTy_0000;
 struct AnonPointee_SettMapMTy_1C67;
 struct AnonPointee_SettMapMTy_1E1E;
 struct AnonPointee_SettMapMTy_2204;
 struct AnonPointee_SettMapSTy_0000;
-struct AnonPointee_SettMapTy_0000;
 struct AnonPointee_SettMapTy_1E2B;
-struct AnonPointee_SIDTy_1CB8;
-struct AnonPointee_SIDTy_1CBC;
-struct AnonPointee_SIDTy_1CC0;
-struct AnonPointee_SIDTy_1CC8;
-struct AnonPointee_SIDTy_1CCC;
-struct AnonPointee_SIDTy_1CD0;
 struct AnonPointee_SpecPanelTy_0000;
-struct AnonPointee_SpecPanelTy_0068;
-struct AnonPointee_ST3DSMAPContext_0004;
 struct AnonPointee_ST3DSMAPContext_0280;
-struct AnonPointee_ST3DSMAPContext_031C;
-struct AnonPointee_ST3DSMAPContext_0420;
 struct AnonPointee_ST3DSMAPContext_0446;
 struct AnonPointee_ST3DSMAPContext_044A;
 struct AnonPointee_ST3DSMAPContext_044E;
@@ -345,60 +224,26 @@ struct AnonPointee_STAllPlayersC_01AD;
 struct AnonPointee_STAllPlayersC_01B1;
 struct AnonPointee_STAllPlayersC_01B5;
 struct AnonPointee_STAllPlayersC_01B9;
-struct AnonPointee_STAllPlayersC_02E6;
-struct AnonPointee_STAppC_0000;
 struct AnonPointee_STAppC_115A;
-struct AnonPointee_STArtiafactC_0000;
-struct AnonPointee_StartSystemTy_0000;
 struct AnonPointee_StartSystemTy_000C;
-struct AnonPointee_StartSystemTy_02F0;
 struct AnonPointee_StartSystemTy_0544;
-struct AnonPointee_StartSystemTy_067E;
-struct AnonPointee_StartSystemTy_0682;
-struct AnonPointee_StartSystemTy_0696;
 struct AnonPointee_STBHEShellC_00F3;
-struct AnonPointee_STBoatC_0000;
-struct AnonPointee_STBoatC_0097;
-struct AnonPointee_STBoatC_046B;
-struct AnonPointee_STBoatC_05A6;
-struct AnonPointee_STColl3C_02E6;
-struct AnonPointee_STContainerC_0000;
-struct AnonPointee_STGameObjC_0000;
-struct AnonPointee_STGameObjC_0097;
-struct AnonPointee_STGameObjC_018D;
-struct AnonPointee_STGameObjC_0191;
 struct AnonPointee_STGameObjC_0195;
 struct AnonPointee_STGameObjC_0199;
-struct AnonPointee_STGameObjC_01A5;
-struct AnonPointee_STGameObjC_01A9;
 struct AnonPointee_STGameObjC_01AD;
 struct AnonPointee_STGameObjC_01B1;
 struct AnonPointee_STGameObjC_01B5;
 struct AnonPointee_STGameObjC_01B9;
-struct AnonPointee_STGameObjC_01C5;
-struct AnonPointee_STGameObjC_01C9;
-struct AnonPointee_STGroupBoatC_021E;
-struct AnonPointee_STGroupBoatC_022E;
 struct AnonPointee_STMineSetC_0211;
 struct AnonPointee_STParticleC_00EB;
-struct AnonPointee_STPlaySystemC_0000;
 struct AnonPointee_STPlaySystemC_0039;
 struct AnonPointee_STPlaySystemC_003D;
-struct AnonPointee_STSharkC_0000;
-struct AnonPointee_STSprGameObjC_0000;
 struct AnonPointee_STT3DSprC_0020;
-struct AnonPointee_STTorpC_0000;
-struct AnonPointee_TLOBaseTy_0000;
 struct AnonPointee_TLOBaseTy_01F5;
 struct AnonPointee_TLOBaseTy_0291;
 struct AnonPointee_TLOBaseTy_0607;
 struct AnonPointee_TLOBaseTy_061B;
-struct AnonPointee_TLOEmbryoTy_0000;
 struct AnonPointee_TradePanelTy_0000;
-struct AnonPointee_UpgPanelTy_0000;
-struct AnonPointee_WaitTy_0000;
-struct AnonPointee_WaitTy_1AEC;
-struct AnonPointee_WaitTy_1AF0;
 struct AnonReceiver_00416270;
 struct AnonReceiver_004167A0;
 struct AnonReceiver_004248D0;
@@ -411,8 +256,6 @@ struct AnonReceiver_0053F510;
 struct AnonReceiver_0053F510VTable;
 struct AnonReceiver_0054A9B0;
 struct AnonReceiver_00573260;
-struct AnonReceiver_005B6730VTable;
-struct AnonReceiver_005F35F0;
 struct AnonReceiver_005FDB50;
 struct AnonReceiver_00601500;
 struct AnonReceiver_0060EF40;
@@ -425,7 +268,6 @@ struct AnonReceiver_0065ED90;
 struct AnonReceiver_00660180;
 struct AnonReceiver_00664540;
 struct AnonReceiver_00678E00;
-struct AnonReceiver_006799B0;
 struct AnonReceiver_00693D00;
 struct AnonReceiver_006CEC40;
 struct AnonReceiver_006E1EE0;
@@ -443,28 +285,21 @@ struct AnonShape_00412960_B35D15BC;
 struct AnonShape_004137F0_350C8AE0;
 struct AnonShape_00413AF0_B6B4EE9A;
 struct AnonShape_00416390_86C8F938;
-struct AnonShape_004167A0_C6E28A87;
 struct AnonShape_00417830_9254190A;
 struct AnonShape_0041AF40_EF4C5356;
 struct AnonShape_0041AF40_F59F8577;
-struct AnonShape_0041C5A0_167218F4;
 struct AnonShape_0041C710_C4D46939;
 struct AnonShape_0041CAF0_1630B9E0;
 struct AnonShape_0041CF50_01071190;
 struct AnonShape_0041D100_A90F7B7E;
-struct AnonShape_0041D2B0_CE8C6BD3;
 struct AnonShape_0041D4F0_1597DF6B;
-struct AnonShape_0041D590_1DB01C7A;
 struct AnonShape_0041DA30_EF7DF530;
 struct AnonShape_0041F630_B1BEE81C;
-struct AnonShape_0041F970_0C561B1E;
 struct AnonShape_004210E0_306A4C8B;
 struct AnonShape_00422210_9D5BEAD8;
-struct AnonShape_00423EC0_64CE1121;
 struct AnonShape_00424360_8159BFF1;
 struct AnonShape_00428E50_DFCBD4F2;
 struct AnonShape_00435930_AC276C8C;
-struct AnonShape_00436F20_BB207B3A;
 struct AnonShape_00439100_AC816B12;
 struct AnonShape_0043BEB0_1C00EC12;
 struct AnonShape_0043EED0_93C25F9A;
@@ -475,71 +310,48 @@ struct AnonShape_00444E70_523E22DE;
 struct AnonShape_00444E70_8EFB8E54;
 struct AnonShape_00444E70_E59ECBC3;
 struct AnonShape_00449E60_F2069C78;
-struct AnonShape_0044A150_E4FE1661;
 struct AnonShape_0044A730_DBE673B2;
 struct AnonShape_0044AA20_1EE9340C;
 struct AnonShape_0044EE30_F343D8F0;
 struct AnonShape_004758E0_51E65DA0;
 struct AnonShape_004803D0_350EB461;
-struct AnonShape_00482DB0_070D50BF;
 struct AnonShape_004836C0_617DC527;
-struct AnonShape_004838E0_0C45D4D6;
-struct AnonShape_00483E30_F0F8D504;
 struct AnonShape_00488F30_727896DE;
 struct AnonShape_004898C0_081F3DAB;
 struct AnonShape_0048A840_34A87A21;
 struct AnonShape_0048A910_6D6DD7B1;
-struct AnonShape_0048D440_9DC42AE7;
-struct AnonShape_0048DCF0_C8633E73;
-struct AnonShape_0048DF40_8D46D7E8;
 struct AnonShape_004900E0_F89C68CE;
 struct AnonShape_00490B30_6CCF6294;
 struct AnonShape_00491600_23458133;
 struct AnonShape_00492AB0_63A128FD;
-struct AnonShape_00492B20_AFE20A9A;
-struct AnonShape_00492F30_E8F69762;
 struct AnonShape_00492FC0_E6F586EF;
 struct AnonShape_00493110_B173055C;
-struct AnonShape_00493CD0_11D91B87;
 struct AnonShape_004945C0_2B3B394D;
 struct AnonShape_00494AE0_7F188308;
-struct AnonShape_00494AE0_E545732F;
 struct AnonShape_00494DF0_56294F0B;
 struct AnonShape_00494F00_45028F21;
-struct AnonShape_00495EC0_95A268C6;
 struct AnonShape_00495FF0_59081BDD;
 struct AnonShape_00497110_11FEE69C;
 struct AnonShape_00497110_465BC742;
-struct AnonShape_00497920_894F87D6;
-struct AnonShape_00497E00_1D819A47;
-struct AnonShape_0049B7D0_41C6F9A6;
 struct AnonShape_004AB810_8E5693D5;
 struct AnonShape_004AD740_AC521149;
 struct AnonShape_004AD790_77673787;
 struct AnonShape_004ADBA0_0D812343;
-struct AnonShape_004ADBA0_E7CEFF88;
 struct AnonShape_004B31C0_DBC5A6CD;
 struct AnonShape_004B8C00_93076312;
 struct AnonShape_004B9920_1D6BF5BA;
 struct AnonShape_004B9D90_4F3151F9;
 struct AnonShape_004B9FA0_0EE05DAC;
-struct AnonShape_004B9FA0_DF027633;
 struct AnonShape_004BE380_4A62E49E;
 struct AnonShape_004C21A0_FDE833A6;
 struct AnonShape_004C2C10_59B6D93C;
 struct AnonShape_004C2D40_7C578146;
 struct AnonShape_004C2DD0_4C038B03;
-struct AnonShape_004C2F70_6CAAACC0;
 struct AnonShape_004C3020_45D93566;
 struct AnonShape_004C5DE0_7F596C47;
 struct AnonShape_004C5EB0_4D7D61A8;
 struct AnonShape_004C5F30_84FC19DC;
-struct AnonShape_004C61A0_0E747D1B;
-struct AnonShape_004C61E0_B3B9F8FF;
-struct AnonShape_004C63F0_0B060A14;
 struct AnonShape_004C71F0_9DDD72E5;
-struct AnonShape_004C7460_AC9F4C4C;
-struct AnonShape_004C96E0_AE72D977;
 struct AnonShape_004CBAD0_DCDD6BA9;
 struct AnonShape_004CC130_08293212;
 struct AnonShape_004CC220_7DEF08C7;
@@ -550,12 +362,6 @@ struct AnonShape_004CD6B0_318BEA19;
 struct AnonShape_004CD790_161F55D2;
 struct AnonShape_004CE670_5D83C685;
 struct AnonShape_004CE720_8639BE44;
-struct AnonShape_004CE7D0_208BB40F;
-struct AnonShape_004CE860_DECB0AA9;
-struct AnonShape_004D0310_B8EE97FF;
-struct AnonShape_004D11D0_880D99AA;
-struct AnonShape_004D2760_CB2BA53E;
-struct AnonShape_004D55B0_31219D03;
 struct AnonShape_004D6890_0C7826D6;
 struct AnonShape_004D6930_FDF7B020;
 struct AnonShape_004D7270_8F0A3C37;
@@ -568,7 +374,6 @@ struct AnonShape_004D9BD0_B3B50583;
 struct AnonShape_004D9C80_80F657D3;
 struct AnonShape_004DBA20_8FF87D0F;
 struct AnonShape_004DBA70_007C3C4C;
-struct AnonShape_004DC150_D7EBDFDF;
 struct AnonShape_004DC1E0_5260A589;
 struct AnonShape_004DC470_71C75079;
 struct AnonShape_004DC660_217FA9F0;
@@ -581,7 +386,6 @@ struct AnonShape_004DD500_8D93FB74;
 struct AnonShape_004DDCC0_33DEB43E;
 struct AnonShape_004DE820_615D04DD;
 struct AnonShape_004DEA40_61E7A6D4;
-struct AnonShape_004DF2B0_8C37D68B;
 struct AnonShape_004DFB00_599AF150;
 struct AnonShape_004E0040_648F9827;
 struct AnonShape_004E0250_5A3B9236;
@@ -591,118 +395,63 @@ struct AnonShape_004E1310_4FD56DAE;
 struct AnonShape_004E3880_642C8E1A;
 struct AnonShape_004E4630_7FABCC3F;
 struct AnonShape_004E4B10_C52B4B94;
-struct AnonShape_004E4B60_EABE8E44;
-struct AnonShape_004E4D60_97789D69;
 struct AnonShape_004E4D60_C16F78E8;
-struct AnonShape_004E4F30_490004C0;
 struct AnonShape_004E8D40_DAF7916C;
 struct AnonShape_004E8DC0_1D60A929;
 struct AnonShape_004E8F90_6386CD4A;
 struct AnonShape_004E9C20_50FC91C6;
 struct AnonShape_004EA460_7CF77153;
-struct AnonShape_004EA620_716C262B;
 struct AnonShape_004EA7A0_0F37AD2F;
-struct AnonShape_004EA7E0_AD59BCE4;
-struct AnonShape_004EAA20_6BF53BE2;
 struct AnonShape_004EAD90_30D2E515;
 struct AnonShape_004EAF90_D23494A9;
 struct AnonShape_004EC0F0_C371FA68;
 struct AnonShape_004EC400_367D4575;
 struct AnonShape_004ECC70_4D35D723;
-struct AnonShape_004ECCF0_985987C1;
-struct AnonShape_004ECDF0_4DB4D99D;
-struct AnonShape_004ECEA0_52E8E272;
 struct AnonShape_004EE350_18D491EA;
 struct AnonShape_004EEF20_59DE1DA2;
-struct AnonShape_004EF140_16642BA0;
 struct AnonShape_004EF320_444F9AB1;
 struct AnonShape_004EF5F0_1FA558EC;
-struct AnonShape_004EF6D0_502EEF25;
-struct AnonShape_004EFE20_20805E12;
-struct AnonShape_004EFFE0_E46DC6EE;
-struct AnonShape_004F0210_51A01EB3;
 struct AnonShape_004F0A60_A5DE070F;
-struct AnonShape_004F0C80_4C5E559C;
-struct AnonShape_004F0E60_091DB1BE;
-struct AnonShape_004F1080_64A4850E;
-struct AnonShape_004F1950_0C1561B7;
 struct AnonShape_004F2560_DB98CB49;
 struct AnonShape_004F2560_E9671A44;
 struct AnonShape_004F2E40_DC76A8C6;
-struct AnonShape_004F3540_E0E47AE6;
-struct AnonShape_004F37C0_C7280A38;
-struct AnonShape_004F3A30_4968CAC9;
-struct AnonShape_004F3CF0_F7329418;
 struct AnonShape_004F3FE0_1578D6B9;
-struct AnonShape_004F42A0_1F969F31;
 struct AnonShape_004F4F90_2D6E0DDA;
-struct AnonShape_004F5690_7820B819;
-struct AnonShape_004FA3B0_224BAE98;
-struct AnonShape_004FAFF0_0F922E35;
-struct AnonShape_004FF380_D63D7463;
-struct AnonShape_00501A10_7BD31715;
-struct AnonShape_00501D00_04A7E309;
 struct AnonShape_00501D00_3942B646;
 struct AnonShape_00505960_269BEFC9;
-struct AnonShape_00506040_A874E362;
 struct AnonShape_005105E0_BBFE3E3B;
-struct AnonShape_00510C80_2C2DC38C;
-struct AnonShape_00512BE0_C9F23DAB;
 struct AnonShape_00515650_BBDC7053;
 struct AnonShape_00517A50_98726C61;
 struct AnonShape_00518C20_0B2995D2;
-struct AnonShape_00521490_CB9EAEC2;
 struct AnonShape_00521CF0_154649D2;
 struct AnonShape_00521CF0_4A42AA62;
-struct AnonShape_00522E80_C2E4EACA;
 struct AnonShape_0052A430_8E4D893F;
 struct AnonShape_0052A7B0_DD603BF4;
 struct AnonShape_0052A890_F679384E;
-struct AnonShape_0052B330_71C9FFBF;
 struct AnonShape_0052B760_30F4E0D5;
-struct AnonShape_0052B990_04D99BFA;
-struct AnonShape_0052BF00_2F187CCA;
 struct AnonShape_0052D0A0_90C708AF;
 struct AnonShape_0052EFB0_8161B92D;
 struct AnonShape_0052EFB0_CC661192;
-struct AnonShape_00532CE0_361E49BD;
-struct AnonShape_00533B80_148E68ED;
 struct AnonShape_005389E0_C98BD548;
 struct AnonShape_00538BA0_C95DDA1D;
 struct AnonShape_00538DB0_574DDCD0;
 struct AnonShape_00538FC0_B5E96243;
-struct AnonShape_0053C620_58AD6CA0;
-struct AnonShape_0053C820_7DA0C7AE;
-struct AnonShape_0053CA80_7575DBCB;
 struct AnonShape_0053D7A0_044B6141;
 struct AnonShape_0053D920_829E6B3B;
 struct AnonShape_0053DAF0_3BDC2979;
 struct AnonShape_0053DCC0_5B8C160B;
 struct AnonShape_0053FCD0_D10A885A;
 struct AnonShape_0053FEE0_A49592EB;
-struct AnonShape_00542F40_93D3A62D;
 struct AnonShape_00544100_1A02F945;
-struct AnonShape_00544940_E504B2A8;
+struct AnonShape_00544100_ABD6BC59;
 struct AnonShape_005449B0_F65ED625;
 struct AnonShape_0054A9B0_643B0813;
-struct AnonShape_0054B700_B3EE6DE9;
-struct AnonShape_00551800_EBA95FA4;
-struct AnonShape_00551B10_03263458;
 struct AnonShape_005557B0_28260162;
-struct AnonShape_00555880_021D11E5;
-struct AnonShape_00555910_7455F960;
-struct AnonShape_00558140_7CF35A3F;
 struct AnonShape_005582A0_F54946B9;
-struct AnonShape_0055B9F0_A6E61FFF;
+struct AnonShape_0055B9F0_F484F6C2;
 struct AnonShape_0055C320_953077EC;
-struct AnonShape_00566600_1A7DDCB2;
-struct AnonShape_00566900_A2478973;
-struct AnonShape_00566AA0_2703DA85;
 struct AnonShape_00567220_C9DD1C7D;
 struct AnonShape_005672E0_9A0A2ED1;
-struct AnonShape_0056EE90_04DD57E6;
-struct AnonShape_0056EF50_CAB83E9D;
-struct AnonShape_0056F040_86F75ABE;
 struct AnonShape_0056F930_C6277D80;
 struct AnonShape_00571A30_67EE4B56;
 struct AnonShape_00571A30_8BA8841B;
@@ -716,82 +465,41 @@ struct AnonShape_005751F0_0FFC949A;
 struct AnonShape_00575460_06C413C6;
 struct AnonShape_00575CB0_0408A0C4;
 struct AnonShape_00575CB0_065D0A66;
-struct AnonShape_00575CB0_4AFBDFBD;
 struct AnonShape_00575CB0_C367735D;
-struct AnonShape_00577690_10255A81;
-struct AnonShape_005776D0_202C27C7;
 struct AnonShape_00578630_C5BC66E1;
-struct AnonShape_00578630_E75DF825;
 struct AnonShape_00579350_2E014C47;
 struct AnonShape_0057A2C0_A829D396;
-struct AnonShape_0057BF60_09E2DBC1;
 struct AnonShape_0057BF60_C1393638;
 struct AnonShape_0057CB30_71092CE7;
-struct AnonShape_0057D420_ACBACC73;
-struct AnonShape_0057E0A0_323CBAA3;
 struct AnonShape_00580570_1EF0F1E6;
-struct AnonShape_005805C0_8BDDDE2B;
 struct AnonShape_00580780_266862D6;
 struct AnonShape_00581200_BFD82E5E;
-struct AnonShape_00581BF0_F07EE3A2;
 struct AnonShape_00583270_0B8831C2;
-struct AnonShape_00583270_A36DCD7A;
 struct AnonShape_00583270_F758043B;
 struct AnonShape_00584B10_33997544;
 struct AnonShape_00584D10_AA6E9D03;
 struct AnonShape_00585020_1C9B1418;
 struct AnonShape_005859A0_2434EC3C;
-struct AnonShape_005859A0_2C017738;
 struct AnonShape_005859A0_2F00015D;
 struct AnonShape_00586320_9792A2C7;
-struct AnonShape_00586AF0_0A71E794;
 struct AnonShape_00588BC0_84BDD66C;
-struct AnonShape_00588BC0_F7B2CBED;
 struct AnonShape_00589740_397F9B27;
-struct AnonShape_00589C10_66C697EB;
 struct AnonShape_00589C10_CECA1FB4;
 struct AnonShape_0058A9E0_DB5690D0;
 struct AnonShape_0058BB90_CF74AF20;
 struct AnonShape_0058BD90_DCBCF849;
-struct AnonShape_0058C760_1E722DF9;
 struct AnonShape_0058C760_4470B7C6;
 struct AnonShape_0058C760_5C56630E;
-struct AnonShape_0058D7C0_0930224F;
 struct AnonShape_0058D7C0_99A937C6;
 struct AnonShape_0058EEB0_904026FD;
 struct AnonShape_0058F030_ED0F322F;
-struct AnonShape_0058FF70_CCAF0F72;
-struct AnonShape_00590860_47A09D44;
-struct AnonShape_005908B0_8A8C8A83;
-struct AnonShape_005925A0_ACA54D35;
-struct AnonShape_00592620_9AEC2C08;
-struct AnonShape_00593040_4F5768CD;
 struct AnonShape_005939E0_9F78A8B0;
-struct AnonShape_005943F0_068A3707;
-struct AnonShape_0059B820_F1E7AB4B;
-struct AnonShape_0059BE50_7219C6AE;
-struct AnonShape_005A07F0_323FD806;
-struct AnonShape_005A2A60_B397ABCA;
 struct AnonShape_005A4350_59BACD18;
 struct AnonShape_005AA6A0_963F03BF;
 struct AnonShape_005AB1D0_5E4FF544;
 struct AnonShape_005AD390_9AB360A8;
-struct AnonShape_005AE840_42F3E2A7;
-struct AnonShape_005AE950_3AC49809;
-struct AnonShape_005B47E0_F4E5CF5A;
-struct AnonShape_005B4860_900BE0CB;
-struct AnonShape_005B5240_B2C8755B;
-struct AnonShape_005B6560_61F462DF;
-struct AnonShape_005B66E0_174166E5;
 struct AnonShape_005B9730_A5560D7D;
 struct AnonShape_005BB9F0_E38C41BB;
-struct AnonShape_005BBA40_15493F88;
-struct AnonShape_005BD4B0_63635D6D;
-struct AnonShape_005BE5B0_D9085402;
-struct AnonShape_005C00D0_8BBBA4CC;
-struct AnonShape_005C0190_99FBAF43;
-struct AnonShape_005C05F0_AB1ACC3B;
-struct AnonShape_005C0B00_CBE14AB4;
 struct AnonShape_005C1610_B64592CA;
 struct AnonShape_005C5CA0_A6776207;
 struct AnonShape_005C5EB0_D4E7C108;
@@ -800,8 +508,6 @@ struct AnonShape_005CCC30_E8B603E2;
 struct AnonShape_005CCD00_F1FA07E9;
 struct AnonShape_005CE0E0_C50CCD71;
 struct AnonShape_005D00B0_9E7CC102;
-struct AnonShape_005D0150_383DDE8F;
-struct AnonShape_005D1380_CEECF2C3;
 struct AnonShape_005D1400_5A9F7B11;
 struct AnonShape_005D1400_891386BF;
 struct AnonShape_005D4990_5F0525CF;
@@ -811,8 +517,6 @@ struct AnonShape_005DE670_0D4D7A8C;
 struct AnonShape_005DE670_7D81EFA7;
 struct AnonShape_005DEB90_CA287120;
 struct AnonShape_005DEB90_FE6FE747;
-struct AnonShape_005DF640_DD656F0B;
-struct AnonShape_005DF7C0_BF27E5E8;
 struct AnonShape_005E10A0_819783CC;
 struct AnonShape_005E11D0_D0F8BE03;
 struct AnonShape_005E1330_1AE0EB1C;
@@ -820,12 +524,8 @@ struct AnonShape_005E1330_47BFB53C;
 struct AnonShape_005E3E80_D5AAB6C7;
 struct AnonShape_005E4570_1DAE8C90;
 struct AnonShape_005E4570_F1672769;
-struct AnonShape_005E5F60_843B3FDC;
 struct AnonShape_005E6640_0F1EE66B;
 struct AnonShape_005E84D0_1273B60D;
-struct AnonShape_005E9970_7C1AA6F1;
-struct AnonShape_005E9A40_265F7E5B;
-struct AnonShape_005EAF10_89B39713;
 struct AnonShape_005EBD80_1A4ED01F;
 struct AnonShape_005EC370_C8356E04;
 struct AnonShape_005EC6A0_C8559927;
@@ -840,25 +540,13 @@ struct AnonShape_005EFCD0_3603EDD8;
 struct AnonShape_005F0150_6EC63067;
 struct AnonShape_005F0310_D6E15516;
 struct AnonShape_005F0620_60AA17CE;
-struct AnonShape_005F06E0_7D4D7384;
-struct AnonShape_005F09B0_8503F451;
 struct AnonShape_005F0BA0_C8D654C5;
-struct AnonShape_005F0D00_68DA5B8B;
-struct AnonShape_005F0D90_C3146DC2;
 struct AnonShape_005F10D0_60EBA416;
 struct AnonShape_005F1700_3FAAC417;
-struct AnonShape_005F19A0_983A7F63;
-struct AnonShape_005F21D0_FA76322E;
-struct AnonShape_005F2330_0E1D2560;
-struct AnonShape_005F27C0_470044FE;
 struct AnonShape_005F3530_93A949A7;
 struct AnonShape_005F35F0_EF2A6FDB;
 struct AnonShape_005F4A30_D28DC55A;
-struct AnonShape_005F4FA0_36330E3A;
-struct AnonShape_005F53A0_843EB0E7;
 struct AnonShape_005F5440_D27C3BDE;
-struct AnonShape_005F5F20_58E29B9E;
-struct AnonShape_005F9450_64149E40;
 struct AnonShape_005F95B0_F363C582;
 struct AnonShape_005F9E40_7E333F34;
 struct AnonShape_005F9F70_43CA4DAC;
@@ -867,7 +555,6 @@ struct AnonShape_005FAA10_427149EB;
 struct AnonShape_005FAEE0_B5D482C5;
 struct AnonShape_005FB030_9C7404C6;
 struct AnonShape_005FB100_42251CC8;
-struct AnonShape_005FB640_4C6A297D;
 struct AnonShape_005FC4A0_70B17F95;
 struct AnonShape_005FCAD0_CB9D1D1A;
 struct AnonShape_005FCEB0_FA1F7938;
@@ -876,15 +563,9 @@ struct AnonShape_005FDA60_3863B978;
 struct AnonShape_005FEA50_174FA294;
 struct AnonShape_00600750_A7773F7A;
 struct AnonShape_006029C0_E1371936;
-struct AnonShape_00602BE0_B1CC517D;
-struct AnonShape_00602E90_7075769A;
-struct AnonShape_00603120_1977E258;
 struct AnonShape_00603470_D413D02D;
-struct AnonShape_00604350_448AE2F1;
 struct AnonShape_006048E0_C1705B76;
 struct AnonShape_00604A90_035626E6;
-struct AnonShape_00604FC0_D9906037;
-struct AnonShape_00605130_C97429EC;
 struct AnonShape_00608E90_523B07BC;
 struct AnonShape_0060A000_715F6478;
 struct AnonShape_0060A470_93FA2EC1;
@@ -905,35 +586,15 @@ struct AnonShape_00614BF0_51042166;
 struct AnonShape_00615390_8FE15FE8;
 struct AnonShape_00615AD0_7BE8CE57;
 struct AnonShape_00616400_B4BF5EEF;
-struct AnonShape_00617640_1122A6C6;
-struct AnonShape_006179D0_BD0E52D0;
-struct AnonShape_00618AD0_F1827B9B;
-struct AnonShape_00618C00_CCBA84F5;
-struct AnonShape_006193E0_B2745ECE;
 struct AnonShape_00619540_3F564CD2;
-struct AnonShape_0061D190_F4B28A60;
-struct AnonShape_0061D650_84237B09;
-struct AnonShape_0061DD40_21C2820F;
-struct AnonShape_0061E110_A0361859;
-struct AnonShape_0061E4F0_131B61D9;
 struct AnonShape_0061E770_099C0C21;
-struct AnonShape_0061E7F0_1BC555A1;
-struct AnonShape_0061F530_4582158C;
-struct AnonShape_0061FCC0_94F6689F;
 struct AnonShape_00621A70_2531BB4B;
-struct AnonShape_00621B50_242D543A;
-struct AnonShape_00622880_C4191DB5;
 struct AnonShape_00622990_E4CFDE96;
 struct AnonShape_00623040_D312340A;
 struct AnonShape_00623600_61226D23;
-struct AnonShape_00624000_A9481D8E;
 struct AnonShape_00626D70_1F4C15C4;
 struct AnonShape_00627170_DB470A34;
 struct AnonShape_00627700_6F319351;
-struct AnonShape_00627790_BD208A1C;
-struct AnonShape_00627EB0_4C14C976;
-struct AnonShape_00629830_F056CE49;
-struct AnonShape_00629F90_C3CBACCB;
 struct AnonShape_0062AF90_A19AAC76;
 struct AnonShape_0062B420_FA3E468B;
 struct AnonShape_0062BBC0_87279CD5;
@@ -941,21 +602,14 @@ struct AnonShape_0062C2D0_06591E1F;
 struct AnonShape_0062CAC0_4BF74422;
 struct AnonShape_0062CCA0_BAB34A07;
 struct AnonShape_0062E740_213F21A8;
-struct AnonShape_0062F150_AF81DB77;
 struct AnonShape_0062F7A0_700302F7;
 struct AnonShape_0062FA80_0B91B2B9;
 struct AnonShape_0062FCA0_22A9EE35;
-struct AnonShape_00630430_1F5C6718;
 struct AnonShape_00630430_7FBC9B9C;
-struct AnonShape_00630C50_5716D423;
-struct AnonShape_00631010_DBA5BE90;
-struct AnonShape_00631450_C4E92303;
-struct AnonShape_006315D0_2C2F0A18;
 struct AnonShape_00631F90_0DA5B9BC;
 struct AnonShape_00632E30_A9A0278F;
 struct AnonShape_006366D0_80B1100F;
 struct AnonShape_00636750_9523C2A1;
-struct AnonShape_00636FC0_24F8974B;
 struct AnonShape_00637180_4094267C;
 struct AnonShape_00639480_B53D0B0F;
 struct AnonShape_00639990_2135AB0A;
@@ -972,127 +626,68 @@ struct AnonShape_00640320_15B2529E;
 struct AnonShape_00643E20_B7FEAA75;
 struct AnonShape_00644410_A4B3CF3D;
 struct AnonShape_006456C0_B6840D7C;
-struct AnonShape_00645880_0D5933D4;
-struct AnonShape_006461E0_67B0C9B5;
-struct AnonShape_006472B0_8CB9F6B2;
+struct AnonShape_00645880_8F6B4550;
 struct AnonShape_00647370_C4EFCC30;
 struct AnonShape_00648400_5C076F88;
 struct AnonShape_00648530_D39EB612;
 struct AnonShape_00648C10_30A1BBFD;
 struct AnonShape_0064EC80_53C284F2;
 struct AnonShape_0064EF90_4909407D;
-struct AnonShape_0064F1B0_7494B956;
-struct AnonShape_0064F500_A59E916F;
-struct AnonShape_0064F780_BB085AB5;
-struct AnonShape_0064F950_8D921461;
-struct AnonShape_0064FB80_C24FD84C;
-struct AnonShape_0064FD80_D0EF9E6E;
-struct AnonShape_0064FF70_ABF5F4C4;
-struct AnonShape_00650090_96AA9A18;
-struct AnonShape_006501A0_62625B3D;
-struct AnonShape_00650240_0B686EC9;
-struct AnonShape_00650480_02BC599C;
-struct AnonShape_00650600_34B54EB0;
 struct AnonShape_00650A20_4A198923;
-struct AnonShape_00650B10_EE623C41;
-struct AnonShape_00650BD0_75D71395;
-struct AnonShape_00650CF0_62453E33;
-struct AnonShape_00650E10_EFFBA4CA;
-struct AnonShape_006515B0_C597180E;
 struct AnonShape_00651770_8F77396F;
-struct AnonShape_00651ED0_D900F83D;
-struct AnonShape_00652300_CCF8F417;
-struct AnonShape_00652460_1222B12A;
 struct AnonShape_006525E0_52237033;
 struct AnonShape_00652670_DFEA616F;
-struct AnonShape_00652700_9F96C451;
 struct AnonShape_00652810_4F58F813;
 struct AnonShape_0065C9E0_147DDF60;
 struct AnonShape_0065CB00_C527AFF0;
 struct AnonShape_0065CD10_BA40DE58;
 struct AnonShape_0065CD10_CB9334E9;
 struct AnonShape_0065D030_CB0F82F0;
-struct AnonShape_0065D6A0_A68E55B5;
 struct AnonShape_0065D6E0_0F9074F6;
 struct AnonShape_0065D720_52DE2AAB;
 struct AnonShape_0065DA10_8B0AA883;
 struct AnonShape_0065E360_B94C37CB;
 struct AnonShape_0065EF70_E78A8204;
 struct AnonShape_0065EF70_EB9B857D;
-struct AnonShape_0065F840_66A14163;
 struct AnonShape_0065FA10_37C5A4D3;
 struct AnonShape_0065FD00_EB74ED0C;
 struct AnonShape_00660180_1CB7CB7C;
 struct AnonShape_00660620_6BCED4D7;
-struct AnonShape_00660B50_B7639A62;
 struct AnonShape_00660D40_E58DF1E6;
 struct AnonShape_00660D40_F4300C26;
-struct AnonShape_00661580_92A3F5B0;
 struct AnonShape_00661CA0_93A030EF;
 struct AnonShape_00668180_E8377840;
 struct AnonShape_00668330_F270680B;
-struct AnonShape_00676C40_253791B9;
-struct AnonShape_00676CE0_44EEE27F;
-struct AnonShape_00676D80_A0E8D1CB;
 struct AnonShape_00679120_6A32469C;
 struct AnonShape_00679600_B8E418A8;
 struct AnonShape_0067A2D0_742706D4;
-struct AnonShape_0067BB50_2A71CB71;
-struct AnonShape_0067BBA0_56C30601;
-struct AnonShape_0067BC10_0DEA2337;
-struct AnonShape_0067BC80_D4009586;
-struct AnonShape_0067BD00_6519094F;
-struct AnonShape_0067BD50_1A5F3A84;
-struct AnonShape_0067BFD0_C4B8A7A1;
 struct AnonShape_0067CF30_CDCAC01F;
 struct AnonShape_0067D0A0_8092D907;
 struct AnonShape_0067D1D0_21940C5B;
-struct AnonShape_0067D3B0_A3AACF30;
-struct AnonShape_0067D3B0_B421D52F;
 struct AnonShape_0067D9C0_2E8A2257;
 struct AnonShape_0067DC20_B265FC02;
 struct AnonShape_00683780_11EA4E23;
 struct AnonShape_00683C70_22193481;
-struct AnonShape_0068CEC0_66639411;
 struct AnonShape_0068DC80_4419198B;
 struct AnonShape_0068EB30_4F4B480A;
 struct AnonShape_0068FD00_A5257008;
 struct AnonShape_00690650_F810CDF4;
-struct AnonShape_00690A40_CA73153C;
-struct AnonShape_00690AB0_91AAAD49;
-struct AnonShape_00690B90_30BB992F;
 struct AnonShape_00690E90_9F986EB9;
 struct AnonShape_00690FC0_955C4112;
 struct AnonShape_00691190_783A1B6D;
 struct AnonShape_00691480_E757992C;
 struct AnonShape_00693910_1CC6632C;
-struct AnonShape_00694B90_ACA70D4F;
-struct AnonShape_00694BE0_C065E5E3;
-struct AnonShape_00694C30_EF3EE984;
-struct AnonShape_00694C80_7D3552BD;
 struct AnonShape_00694CD0_AC50FDB9;
-struct AnonShape_00695180_3C0E4B54;
-struct AnonShape_00695180_D714D58B;
 struct AnonShape_006952B0_7A982E30;
 struct AnonShape_00696D00_CB3CB395;
-struct AnonShape_006975F0_6D562F4E;
-struct AnonShape_006978C0_CB24540D;
 struct AnonShape_00697AF0_A94F4D28;
 struct AnonShape_00697CF0_36737CA3;
 struct AnonShape_006991C0_D95B9E4A;
-struct AnonShape_0069AC20_BA305C93;
-struct AnonShape_0069BDC0_B656F442;
 struct AnonShape_0069CB50_B339E56A;
 struct AnonShape_0069FD70_008BB09C;
 struct AnonShape_006A00B0_8C09D559;
-struct AnonShape_006A0150_D0561BCC;
-struct AnonShape_006A0470_E995C390;
 struct AnonShape_006A58B0_8049417A;
 struct AnonShape_006A58B0_CDE73679;
-struct AnonShape_006ACC70_C8641025;
-struct AnonShape_006B0C70_7C4FE646;
-struct AnonShape_006B0CD0_C8D121FA;
-struct AnonShape_006B1190_EDB2B5FD;
 struct AnonShape_006B1B10_121F236C;
 struct AnonShape_006B1BD0_7C890E99;
 struct AnonShape_006B2020_F949DD3E;
@@ -1103,14 +698,11 @@ struct AnonShape_006B40E0_1B946617;
 struct AnonShape_006B4B20_3D4F4412;
 struct AnonShape_006B5050_99986F91;
 struct AnonShape_006B5480_2C1D4FBF;
-struct AnonShape_006B5570_4D68B99C;
 struct AnonShape_006B5A50_BD82F60D;
-struct AnonShape_006B5A50_C145E640;
 struct AnonShape_006B6530_C4BC1053;
 struct AnonShape_006B7190_816EEFBC;
 struct AnonShape_006B7830_769CA2DF;
 struct AnonShape_006B8200_800652FF;
-struct AnonShape_006B84D0_7C7D97C6;
 struct AnonShape_006B8850_E5DFE1E1;
 struct AnonShape_006B8F10_41B61BA9;
 struct AnonShape_006B94E0_A7E74DF0;
@@ -1120,7 +712,6 @@ struct AnonShape_006BB690_EB7315D1;
 struct AnonShape_006BB8B0_D6DE56CA;
 struct AnonShape_006BB980_E41494A1;
 struct AnonShape_006BB9D0_BD42D958;
-struct AnonShape_006BBB20_56723FCF;
 struct AnonShape_006BC440_9548EA86;
 struct AnonShape_006BC580_F6F161A5;
 struct AnonShape_006BF710_259ECA93;
@@ -1144,7 +735,6 @@ struct AnonShape_006C5E00_04F0C4FF;
 struct AnonShape_006C5F90_8AFC020B;
 struct AnonShape_006C6100_D1CCA835;
 struct AnonShape_006C6290_2B502C58;
-struct AnonShape_006C6410_3502CDE7;
 struct AnonShape_006C6AE0_9C4F43C2;
 struct AnonShape_006C6BE0_5C8BBC13;
 struct AnonShape_006C6E30_3C2F0429;
@@ -1155,8 +745,6 @@ struct AnonShape_006C7030_23487746;
 struct AnonShape_006C7240_F2C56622;
 struct AnonShape_006C72F0_54F06289;
 struct AnonShape_006C7430_D1D36538;
-struct AnonShape_006C7570_82D7EB54;
-struct AnonShape_006C7610_838EDECF;
 struct AnonShape_006C7700_7DDC3CA1;
 struct AnonShape_006C7B20_5A99C851;
 struct AnonShape_006C7D20_41F6C243;
@@ -1165,8 +753,6 @@ struct AnonShape_006CE700_F21E5976;
 struct AnonShape_006CEC40_BB23E716;
 struct AnonShape_006CECB0_97249119;
 struct AnonShape_006CEEE0_CDA60BFB;
-struct AnonShape_006D0680_01056108;
-struct AnonShape_006D0680_EDC74182;
 struct AnonShape_006D0820_E08F8169;
 struct AnonShape_006D0CF0_F5F86399;
 struct AnonShape_006D0F50_D22E7C78;
@@ -1188,33 +774,17 @@ struct AnonShape_006D8120_534053F7;
 struct AnonShape_006D86E0_768BB816;
 struct AnonShape_006D86E0_D6D32C07;
 struct AnonShape_006D8A60_6A1C9651;
-struct AnonShape_006D8A60_CD460E10;
 struct AnonShape_006D8A60_D503343B;
-struct AnonShape_006DBAB0_2B877B8C;
 struct AnonShape_006DBCA0_EF06575F;
-struct AnonShape_006DBD20_CC24D445;
-struct AnonShape_006DC050_D52EE3EA;
 struct AnonShape_006DC320_0C876EFA;
-struct AnonShape_006DD870_3C379B38;
-struct AnonShape_006DDB70_C8239555;
-struct AnonShape_006DDBE0_9835BAB9;
-struct AnonShape_006DDD50_309FA381;
-struct AnonShape_006DE9C0_E5D1D3B8;
-struct AnonShape_006E1050_52F5A113;
 struct AnonShape_006E1EE0_698AE49A;
 struct AnonShape_006E2B60_E36B924C;
-struct AnonShape_006E3210_FE49985F;
-struct AnonShape_006E3450_BC2FF034;
-struct AnonShape_006E3680_4519C52B;
 struct AnonShape_006E4480_50BB219F;
-struct AnonShape_006E4540_86065AE3;
 struct AnonShape_006E45C0_FB272364;
-struct AnonShape_006E5150_51076593;
 struct AnonShape_006E52D0_AF06BCD2;
 struct AnonShape_006E5740_EEA77B11;
 struct AnonShape_006E6AF0_D2F012A7;
 struct AnonShape_006E6FB0_BC494FEA;
-struct AnonShape_006E83F0_6F955BEB;
 struct AnonShape_006E8840_CF3FA5BA;
 struct AnonShape_006E8EA0_96B71903;
 struct AnonShape_006EB350_D4715C71;
@@ -1230,7 +800,6 @@ struct AnonShape_0070B3E0_DA0C9F15;
 struct AnonShape_0070B410_2733CA30;
 struct AnonShape_0070B6B0_34698A53;
 struct AnonShape_0070B770_3BA0472D;
-struct AnonShape_0070C9A0_D70EB495;
 struct AnonShape_0070C9E0_7137F001;
 struct AnonShape_00710790_4CBB90D4;
 struct AnonShape_007109F0_BD33A2FF;
@@ -1238,7 +807,6 @@ struct AnonShape_007115E0_FC3147FF;
 struct AnonShape_00711670_5F8DCCF2;
 struct AnonShape_00715360_91615618;
 struct AnonShape_00717380_FEFD061B;
-struct AnonShape_00717870_6CEBD31A;
 struct AnonShape_0071A990_7656000F;
 struct AnonShape_0071B760_B33E06ED;
 struct AnonShape_0071B760_D695FB3E;
@@ -1269,7 +837,6 @@ struct AnonShape_0074736A_AA1936BB;
 struct AnonShape_0074756B_58F08DE7;
 struct AnonShape_007477EA_440BD1E9;
 struct AnonShape_00747822_A1E67AF6;
-struct AnonShape_0074784F_2D85CB12;
 struct AnonShape_00747874_535F3AAD;
 struct AnonShape_00747AA5_87CB4B56;
 struct AnonShape_00747AF8_C78FFF68;
@@ -1291,7 +858,6 @@ struct AnonShape_0074931D_CA8B6F7D;
 struct AnonShape_00749415_513CA2B2;
 struct AnonShape_007494D1_ECEF44C3;
 struct AnonShape_007496A1_B3436AED;
-struct AnonShape_00749841_39B3C899;
 struct AnonShape_0074987C_9BF4FFD0;
 struct AnonShape_00749A79_05F12707;
 struct AnonShape_00749E34_D5356433;
@@ -1330,16 +896,10 @@ struct AnonShape_0075019F_4BD22E12;
 struct AnonShape_00750287_BC8A1854;
 struct AnonShape_00750F20_F8C16F98;
 struct AnonShape_00750FB0_15A3AC3E;
-struct AnonShape_007521B0_4642B53E;
-struct AnonShape_007527A0_89B74FC0;
-struct AnonShape_00752CF0_B22A2A38;
-struct AnonShape_00753B40_7E7955C3;
-struct AnonShape_00753B80_E259A731;
 struct AnonShape_00753C80_4C8E695D;
 struct AnonShape_00753CE0_1943F9C2;
 struct AnonShape_00753FD0_4E1BB8DD;
 struct AnonShape_00754185_34BF31BE;
-struct AnonShape_00754390_3E94CBF5;
 struct AnonShape_007543F0_E9DD5DAA;
 struct AnonShape_00754AF0_86EFDBFA;
 struct AnonShape_00754B80_75BFDB7A;
@@ -1348,7 +908,6 @@ struct AnonShape_007550C0_25940DF4;
 struct AnonShape_00755180_CB9F7747;
 struct AnonShape_007553F0_ACB112C2;
 struct AnonShape_00755560_6DE97093;
-struct AnonShape_00755830_DE41EB2A;
 struct AnonShape_00755970_4FB144E0;
 struct AnonShape_00755BC0_D59C64DD;
 struct AnonShape_00755D40_9BC6D2DA;
@@ -1359,8 +918,6 @@ struct AnonShape_00756D40_7190B7CA;
 struct AnonShape_00757250_D85D8BF6;
 struct AnonShape_00757360_9B4621C9;
 struct AnonShape_00757360_9C23D284;
-struct AnonShape_00757450_3CCFEA7C;
-struct AnonShape_007574C0_ED6B02E3;
 struct AnonShape_00757530_EEED7D69;
 struct AnonShape_007575B0_A94973CA;
 struct AnonShape_00757670_86D3B9A7;
@@ -1376,8 +933,6 @@ struct AnonShape_0075A040_811C231E;
 struct AnonShape_0075A180_7E367FD8;
 struct AnonShape_0075A2D0_C70BF9F5;
 struct AnonShape_0075A350_15A0BA61;
-struct AnonShape_0075A490_EF74CB12;
-struct AnonShape_0075A590_EA8FABF2;
 struct AnonShape_0075A7A0_BCCC082B;
 struct AnonShape_0075A800_65F17FFC;
 struct AnonShape_0075A860_7232E9BC;
@@ -1389,7 +944,6 @@ struct AnonShape_0075BA30_FEA40A39;
 struct AnonShape_0075BE40_B9FD5FDF;
 struct AnonShape_0075C180_73A43719;
 struct AnonShape_0075C180_8EED234B;
-struct AnonShape_0075C3B0_6803BA0D;
 struct AnonShape_0075C440_EFE38C9F;
 struct AnonShape_0075C680_AC52F0A7;
 struct AnonShape_0075C790_3F1CCBA9;
@@ -1402,7 +956,6 @@ struct AnonShape_0075D490_1FEB0A4F;
 struct AnonShape_0075D590_939A8180;
 struct AnonShape_0075DA80_57A0CDEF;
 struct AnonShape_0075DB50_5854A0B6;
-struct AnonShape_0075DD30_F9FDCD0D;
 struct AnonShape_0075DF10_BA4C6604;
 struct AnonShape_0075DFE0_9F2D3E56;
 struct AnonShape_0075E000_A9FEDC0C;
@@ -1425,30 +978,13 @@ struct AnonShape_00760970_DF0E462C;
 struct AnonShape_00760DF0_41372EAE;
 struct AnonShape_007611C0_0B5C7A2E;
 struct AnonShape_007611C0_979BF099;
-struct AnonShape_GLOBAL_007FB2AC_70073F41;
-struct AnonShape_GLOBAL_00801690_2AA401C1;
-struct AnonShape_GLOBAL_00802A4C_E3045C67;
 struct AnonShape_GLOBAL_00806724_3210464F;
-struct AnonShape_GLOBAL_00806740_0AFD1484;
-struct AnonShape_GLOBAL_00807598_0C6808FB;
 struct AnonShape_GLOBAL_0080759C_9638EF10;
-struct AnonShape_GLOBAL_0080760C_46D7AF7A;
-struct AnonShape_GLOBAL_0080765C_F1992A46;
-struct AnonShape_GLOBAL_0080C4C7_5A4CB754;
-struct AnonShape_GLOBAL_0080C4CB_D58160AA;
-struct AnonShape_GLOBAL_0080C502_B8708D85;
 struct AnonShape_GLOBAL_0081175C_57F682DD;
 struct AnonShape_GLOBAL_0081194C_4D1525E6;
-struct AnonShape_GLOBAL_008489C4_F7BABFAC;
 struct AnonShape_GLOBAL_008489CC_CDF8C3F4;
-struct AnonShape_GLOBAL_00848A18_1B9B27FE;
-struct AnonShape_GLOBAL_00848A1C_B6E50991;
-struct AnonShape_GLOBAL_00848A28_2C89E502;
-struct AnonShape_GLOBAL_00848A2C_50EB5CD1;
-struct AnonShape_GLOBAL_00848A30_5E88A82B;
-struct AnonShape_GLOBAL_00848A34_1A834A18;
-struct AnonShape_GLOBAL_00848A38_AD917B6C;
 struct AnonShape_GLOBAL_00854EE8_A19F58CE;
+struct AnonShape_GLOBAL_00854F44_D3146D26;
 struct AnonShape_GLOBAL_00857168_D75747E9;
 struct AppClassTy;
 struct AppClassTyVTable;
@@ -1663,6 +1199,7 @@ struct RecoveredRecord_AiEventClassTy_00652700;
 struct RecoveredRecord_CGenerate_00695180;
 struct RecoveredRecord_CGenerate_0069BDC0;
 struct RecoveredRecord_CPanelTy_00501D00;
+struct RecoveredRecord_CursorClassTy_00544100;
 struct RecoveredRecord_DumpClassC_00495EC0;
 struct RecoveredRecord_MMMObjTy_005B6560;
 struct RecoveredRecord_MMObjTy_005B5240;
@@ -1670,14 +1207,12 @@ struct RecoveredRecord_MReportTy_005BD4B0;
 struct RecoveredRecord_STBoatC_0040AE40;
 struct RecoveredRecord_STBoatC_00482DB0;
 struct RecoveredRecord_STBoatC_004838E0;
-struct RecoveredRecord_STBoatC_00645880;
 struct RecoveredRecord_STLightC_0061DD40;
 struct RecoveredRecord_STPlaySystemC_00533B80;
 struct RecoveredRecord_STRubbishC_0062F150;
 struct RecoveredRecord_TLOEmbryoTy_004D11D0;
 struct RecoveredRecord_TraksClassTy_00555880;
 struct RecoveredRecord_TraksClassTy_00555910;
-struct RecoveredRecord_VisibleClassTy_0055B9F0;
 struct RecoveredSourceFamily_dibcopy;
 struct RecursiveNode_ST3DSMAPContext_0140_DDDC9F89;
 struct ResearchPanelTy;
@@ -1713,6 +1248,22 @@ struct SliderClassTy;
 struct SliderClassTyVTable;
 struct SNDContext;
 struct SndUnderAttMenegC;
+struct SndUnderAttMenegC_field_00B9DArray;
+struct SndUnderAttMenegC_field_00B9Element;
+struct SndUnderAttMenegC_field_00C5DArray;
+struct SndUnderAttMenegC_field_00C5Element;
+struct SndUnderAttMenegC_field_00D1DArray;
+struct SndUnderAttMenegC_field_00D1Element;
+struct SndUnderAttMenegC_field_00DDDArray;
+struct SndUnderAttMenegC_field_00DDElement;
+struct SndUnderAttMenegC_field_00E9DArray;
+struct SndUnderAttMenegC_field_00E9Element;
+struct SndUnderAttMenegC_field_00F5DArray;
+struct SndUnderAttMenegC_field_00F5Element;
+struct SndUnderAttMenegC_field_0101DArray;
+struct SndUnderAttMenegC_field_0101Element;
+struct SndUnderAttMenegC_field_010ADArray;
+struct SndUnderAttMenegC_field_010AElement;
 struct SoundClassTy;
 struct SoundManagerTy;
 struct SoundManagerTyVTable;
@@ -2546,6 +2097,7 @@ using SettMapTy_GetMessage_SVar4Enum = uint32_t;
 using SettMapTy_GetMessage_SVar5Enum = uint32_t;
 using SettMapTy_GetMessage_switch_2Enum = uint32_t;
 using SettMapTy_GetMessage_switch_4Enum = uint32_t;
+using SndUnderAttMenegC_sub_00621780_switch_0Enum = uint32_t;
 using SoundManagerTy_field_0038State = uint8_t;
 using SoundManagerTy_GetMessage_SVar1Enum = uint32_t;
 using SoundPlayMode = uint8_t;
@@ -9592,7 +9144,7 @@ using vfunc_0072B780_GetMessage = STFnType_vfunc_0072B780_GetMessage_0d37d793;
 #pragma pack(push, 1)
 
 struct AiBossClassTy {
-    AiBossClassTyVTable *vtable; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=1
+    AiBossClassTyVTable *vtable; // [STClassLayoutApplier] reads=38, writes=2; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=39
     byte _unknown_0004[20];
     undefined4 field_0018; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     AiBossClassTyVTable_at_1C *vtable_at_1c; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1
@@ -11343,19 +10895,20 @@ struct HelpPanelTy {
 struct HelpStringTy {
     HelpStringTyVTable *vtable; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=1
     byte _unknown_0004[12];
-    STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 0051FBA0 [this+0x10] used as receiver of STAppC::sub_006E51B0
+    STAppC *field_0010; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=pointer:/STAppC <= 0051FAC0 [this+0x10] used as receiver of STAppC::sub_006E51B0; 0051FBA0 [this+0x10] used as receiver of STAppC::sub_006E51B0
     byte _unknown_0014[4];
     char field_0018; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; typed_cross_class_recovery=1; type_evidence=/char <= 0051F8F0 exact address of [this+0x18] passed to ccFntTy::WrStr parameter resourceString
     byte _unknown_0019[259];
-    undefined1 field_011C; // [STClassLayoutApplier] reads=0, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined1 field_011D; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
+    byte field_011C; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/byte <= 0051FAC9 CMP/JC through typed class pointer in HelpStringTy::sub_0051FAC0
+    undefined1 field_011D; // [STClassLayoutApplier] reads=2, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
     ccFntTy *field_011E; // [STClassLayoutApplier] reads=6, writes=5; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/ccFntTy <= 0051F8F0 [this+0x11E] used as receiver of ccFntTy::SetSurf; 0051F8F0 [this+0x11E] used as receiver of ccFntTy::WrStr
-    undefined4 field_0122; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    uint field_0126; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/uint <= 0051FD07 CMP/JC establishes /uint through a field-derived value in HelpStringTy::GetMessage; 0051FD07 CMP/JC through typed class pointer in HelpStringTy::GetMessage
+    undefined4 field_0122; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    uint field_0126; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/uint <= 0051FD07 CMP/JC establishes /uint through a field-derived value in HelpStringTy::GetMessage; 0051FD07 CMP/JC through typed class pointer in HelpStringTy::GetMessage
     ushort *field_012A; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpStringTy_012A|pointer:/int|pointer:/ushort; typed_cross_class_recovery=6; type_evidence=/int <= 0051F8F0 [this+0x12A] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpStringTy_012A <= consistent nested dereferences through [this+0x12A] | pointer:/int <= 0051F8F0 [this+0x12A] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 0051F96C dynamic 2-byte dereference of field-derived address in HelpStringTy::OutStr
-    undefined4 field_012E; // [STClassLayoutApplier] reads=2, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
+    undefined4 field_012E; // [STClassLayoutApplier] reads=2, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
     int GetMessage(STMessage *message);
     void OutStr();
+    void sub_0051FAC0(char *param_1, byte param_2, char param_3, uint param_4);
 };
 
 struct HoloTy {
@@ -16478,7 +16031,7 @@ struct STPlaySystemC {
     undefined4 field_00D0; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     byte _unknown_00D4[12];
     undefined4 field_00E0; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    uint field_00E4; // [STClassLayoutApplier] reads=809, writes=11; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x34|2x1|4x786; concrete_type_already_present; typed_cross_class_recovery=814; exact_copy_subfield_views=1; type_evidence=/uint <= 0041EAC8 DIV implicit dividend in STSprGameObjC::GetMessage; 00430DA7 DIV implicit dividend in STAllPlayersC::GetMessage; 004504A9 DIV implicit dividend in STBoatC::GetMessage; 00450868 DIV implicit dividend in STBoatC::GetMessage; 0045089C DIV implicit dividend in STBoatC::GetMessage; 004508CD DIV implicit dividend in STBoatC::GetMessage; 00450918 DIV implicit dividend in STBoatC::GetMessage; 0045095A DIV implicit dividend in STBoatC::GetMessage; 00450977 DIV implicit dividend in STBoatC::GetMessage; 004509E7 DIV implicit dividend in STBoatC::GetMessage; 00450A0C DIV implicit dividend in STBoatC::GetMessage; 00450C8A DIV implicit dividend in STBoatC::GetMessage; 0046B3BF DIV implicit dividend in STBoatC::Build; 00475116 DIV implicit dividend in STBoatC::WaitLoad; 00475127 DIV implicit dividend in STBoatC::WaitLoad; 004804CC DIV implicit dividend in STBoatC::FUN_004803d0; 0049A78A DIV implicit dividend in STGroupBoatC::GrpMove; 0049B619 DIV implicit dividend in STGroupBoatC::GrpGoToDeep; 0049C81C DIV implicit dividend in STGroupBoatC::GrpLoadRC; 0049CF6B DIV implicit dividend in STGroupBoatC::GrpBuild; 0049D423 DIV implicit dividend in STGroupBoatC::GrpUnLoadRC; 0049D932 DIV implicit dividend in STGroupBoatC::GrpRepare; 0049DBB4 DIV implicit dividend in STGroupBoatC::GrpGuard; 0049E280 DIV implicit dividend in STGroupBoatC::GrpLoadObj; 0049E7D3 DIV implicit dividend in STGroupBoatC::GrpUnLoadObj; 0049EB8B DIV implicit dividend in STGroupBoatC::SetMine; 0049EF44 DIV implicit dividend in STGroupBoatC::DCBomb; 0049F434 DIV implicit dividend in STGroupBoatC::Capture; 0049F778 DIV implicit dividend in STGroupBoatC::Recharge; 0049FA5D DIV implicit dividend in STGroupBoatC::Teleport; 0049FE63 DIV implicit dividend in STGroupBoatC::Bring; 004A0336 DIV implicit dividend in STGroupBoatC::GrpDismant; 004A07C4 DIV implicit dividend in STGroupBoatC::Scout; 004A0C6E DIV implicit dividend in STGroupBoatC::GrpRepSub; 004B900F CMP/JC through typed class pointer in FUN_004b8c80; 004B90BF CMP/JC through typed class pointer in FUN_004b8c80; 004B91CE CMP/JC through typed class pointer in FUN_004b8c80; 004B93C5 CMP/JC through typed class pointer in FUN_004b8c80; 004B943E CMP/JC through typed class pointer in FUN_004b8c80; 004BAFAB CMP/JC through typed class pointer in TLOBaseTy::GetMessage; 004BAFD1 CMP/JC through typed class pointer in TLOBaseTy::GetMessage; 004BB00A CMP/JC through typed class pointer in TLOBaseTy::GetMessage; 004C35FF CMP/JC through typed class pointer in TLOBaseTy::fireProc; 004C362C CMP/JC through typed class pointer in TLOBaseTy::fireProc; 004C37B4 CMP/JC through typed class pointer in TLOBaseTy::fireProc; 004C3839 CMP/JC through typed class pointer in TLOBaseTy::fireProc; 004C39C2 CMP/JC through typed class pointer in TLOBaseTy::fireProc; 004C5EC9 CMP/JC through typed class pointer in FUN_004c5eb0; 004C8640 CMP/JC through typed class pointer in FUN_004c84c0; 004C88CA CMP/JC through typed class pointer in FUN_004c84c0; 004CC47B CMP/JC through typed class pointer in FUN_004cc370; 004CD053 CMP/JC through typed class pointer in FUN_004ccc10; 004CD506 CMP/JC through typed class pointer in FUN_004cd480; 004D44E1 CMP/JC through typed class pointer in FUN_004d32c0; 004D4A5F CMP/JC through typed class pointer in FUN_004d32c0; 004D4D7A CMP/JC through typed class pointer in FUN_004d32c0; 004D71BF CMP/JBE through typed class pointer in FUN_004d7040; 004D838D CMP/JC through typed class pointer in FUN_004d8360; 004D93B1 CMP/JC through typed class pointer in FUN_004d9350; 004D983D CMP/JC through typed class pointer in FUN_004d9820; 004D9A3A CMP/JC through typed class pointer in FUN_004d9820; 004DA041 CMP/JC through typed class pointer in FUN_004d9fe0; 004DA52A CMP/JNC through typed class pointer in FUN_004da390; 004DAA45 CMP/JC through typed class pointer in FUN_004da9c0; 004DAC36 CMP/JNC through typed class pointer in FUN_004da9c0; 004DADA1 CMP/JA through typed class pointer in FUN_004da9c0; 004DC2E7 CMP/JC through typed class pointer in FUN_004dc260; 004DC342 CMP/JC through typed class pointer in FUN_004dc260; 004DC3CE CMP/JC through typed class pointer in FUN_004dc260; 004DC7B1 CMP/JC through typed class pointer in FUN_004dc760; 004DC8F9 CMP/JC through typed class pointer in FUN_004dc760; 004DCC10 CMP/JC through typed class pointer in FUN_004dcbf0; 004DD0BA CMP/JC through typed class pointer in FUN_004dd070; 004DD61B CMP/JC through typed class pointer in FUN_004dd570; 004DDE99 CMP/JC through typed class pointer in FUN_004ddd50; 004DED03 CMP/JC through typed class pointer in FUN_004dec10; 004DF401 CMP/JC through typed class pointer in FUN_004df3b0; 004DF549 CMP/JC through typed class pointer in FUN_004df3b0; 004DFB2D CMP/JC through typed class pointer in FUN_004dfb00; 004E0F7B CMP/JC through typed class pointer in FUN_004e0830; 004E2400 CMP/JC through typed class pointer in FUN_004e2340; 004E268B CMP/JBE through typed class pointer in FUN_004e2340; 004E27F9 DIV implicit dividend in FUN_004e27e0; 004E3928 CMP/JC through typed class pointer in FUN_004e3910; 004E470E CMP/JC through typed class pointer in FUN_004e46f0; 004E7F60 CMP/JA through typed class pointer in FUN_004e7f20; 004E90D1 CMP/JC through typed class pointer in FUN_004e9050; 004E9FC7 CMP/JC through typed class pointer in TLOBaseTy::teleNone; 004EA042 CMP/JC through typed class pointer in TLOBaseTy::teleNone; 004EA0BC CMP/JC through typed class pointer in TLOBaseTy::teleNone; 004EA89A CMP/JC through typed class pointer in FUN_004ea870; 004EADD9 CMP/JC through typed class pointer in FUN_004ead90; 004EB19E CMP/JC through typed class pointer in FUN_004eb150; 004EB1C9 CMP/JC through typed class pointer in FUN_004eb150; 004EB1F6 CMP/JC through typed class pointer in FUN_004eb150; 004EC428 CMP/JC through typed class pointer in FUN_004ec400; 004EC4C2 CMP/JC through typed class pointer in FUN_004ec400; 004ECD07 CMP/JC through typed class pointer in FUN_004eccf0; 004ED271 CMP/JC through typed class pointer in FUN_004ed210; 0057D076 DIV implicit dividend in STFishC::LifeFish; 0057D0D1 DIV implicit dividend in STFishC::LifeFish; 0057D14E DIV implicit dividend in STFishC::LifeFish; 0057D1DA DIV implicit dividend in STFishC::LifeFish; 0057D277 DIV implicit dividend in STFishC::LifeFish; 0057EA3B DIV implicit dividend in STDcResourcC::GetMessage; 0058052A CMP/JBE through typed class pointer in FUN_005804f0; 00581BD3 DIV implicit dividend in FUN_00581bc0; 0058C338 DIV implicit dividend in FUN_0058bd90; 0058E625 DIV implicit dividend in STSharkC::LifeShark; 0058E666 CMP/JBE through typed class pointer in STSharkC::LifeShark; 0058E978 DIV implicit dividend in STSharkC::LifeShark; 005EE717 CMP/JC through typed class pointer in FUN_005ee6e0; 005EE8E4 CMP/JC through typed class pointer in FUN_005ee6e0; 005EEA2E CMP/JC through typed class pointer in FUN_005ee6e0; 005EEB51 CMP/JC through typed class pointer in FUN_005ee6e0; 005F0BB8 DIV implicit dividend in FUN_005f0ba0; 005F3C47 CMP/JBE through typed class pointer in STBHEShellC::sub_005F3BF0; 005F6F95 CMP/JA through typed class pointer in STColl3C::sub_005F6F60; 005F783C CMP/JBE through typed class pointer in STColl3C::sub_005F6F60; 005F7FDF CMP/JC through typed class pointer in STColl3C::sub_005F6F60; 005FA197 DIV implicit dividend in FUN_005fa180; 006007AC CMP/JC through typed class pointer in FUN_00600750; 006094DD CMP/JC through typed class pointer in FUN_00608e90; 00610CB1 CMP/JNC through typed class pointer in FUN_006101b0; 00611C5B CMP/JBE through typed class pointer in FUN_006101b0; 0061F8DC CMP/JC through typed class pointer in FUN_0061f8b0; 0061FEA9 CMP/JC through typed class pointer in FUN_0061fe80; 006202D8 CMP/JC through typed class pointer in FUN_006202b0; 00620699 CMP/JC through typed class pointer in FUN_00620670; 00620A29 CMP/JC through typed class pointer in FUN_00620a00; 00620E68 CMP/JC through typed class pointer in FUN_00620e40; 00621209 CMP/JC through typed class pointer in FUN_006211e0; 00622060 DIV implicit dividend in STMineSetC::GetMessage; 00623A49 CMP/JC through typed class pointer in STMineSetC::sub_006239A0; 00623B1A CMP/JC through typed class pointer in STMineSetC::sub_006239A0; 00624975 CMP/JC through typed class pointer in STMineSetC::sub_00624920; 00627554 CMP/JBE through typed class pointer in STMineSetC::sub_00627400; 006283B7 DIV implicit dividend in STParticleC::GetMessage; 0062F241 DIV implicit dividend in FUN_0062f150; 00630668 DIV implicit dividend in STManRuinC::GetMessage; 00631056 CMP/JNC through typed class pointer in STManRuinC::sub_00631010; 0063EA60 DIV implicit dividend in FUN_0063e9c0; 0063EABC DIV implicit dividend in FUN_0063e9c0; 00646353 CMP/JNC through typed class pointer in STVolcanoC::GetMessage; 006463F8 DIV implicit dividend in STVolcanoC::GetMessage; 0064651A DIV implicit dividend in STVolcanoC::GetMessage; 006466CE DIV implicit dividend in STVolcanoC::GetMessage; 0064681E DIV implicit dividend in STVolcanoC::GetMessage; 0064684A CMP/JNC through typed class pointer in STVolcanoC::GetMessage; 00648174 CMP/JC through typed class pointer in AiBossClassTy::GetMessage; 00652882 DIV implicit dividend in AiEventClassTy::GetMessage
+    uint field_00E4; // [STClassLayoutApplier] reads=809, writes=11; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x34|2x1|4x786; concrete_type_already_present; typed_cross_class_recovery=814; exact_copy_subfield_views=1; type_evidence=/uint <= 0041EAC8 DIV implicit dividend in STSprGameObjC::GetMessage; 00430DA7 DIV implicit dividend in STAllPlayersC::GetMessage; 004504A9 DIV implicit dividend in STBoatC::GetMessage; 00450868 DIV implicit dividend in STBoatC::GetMessage; 0045089C DIV implicit dividend in STBoatC::GetMessage; 004508CD DIV implicit dividend in STBoatC::GetMessage; 00450918 DIV implicit dividend in STBoatC::GetMessage; 0045095A DIV implicit dividend in STBoatC::GetMessage; 00450977 DIV implicit dividend in STBoatC::GetMessage; 004509E7 DIV implicit dividend in STBoatC::GetMessage; 00450A0C DIV implicit dividend in STBoatC::GetMessage; 00450C8A DIV implicit dividend in STBoatC::GetMessage; 0046B3BF DIV implicit dividend in STBoatC::Build; 00475116 DIV implicit dividend in STBoatC::WaitLoad; 00475127 DIV implicit dividend in STBoatC::WaitLoad; 004804CC DIV implicit dividend in STBoatC::FUN_004803d0; 0049A78A DIV implicit dividend in STGroupBoatC::GrpMove; 0049B619 DIV implicit dividend in STGroupBoatC::GrpGoToDeep; 0049C81C DIV implicit dividend in STGroupBoatC::GrpLoadRC; 0049CF6B DIV implicit dividend in STGroupBoatC::GrpBuild; 0049D423 DIV implicit dividend in STGroupBoatC::GrpUnLoadRC; 0049D932 DIV implicit dividend in STGroupBoatC::GrpRepare; 0049DBB4 DIV implicit dividend in STGroupBoatC::GrpGuard; 0049E280 DIV implicit dividend in STGroupBoatC::GrpLoadObj; 0049E7D3 DIV implicit dividend in STGroupBoatC::GrpUnLoadObj; 0049EB8B DIV implicit dividend in STGroupBoatC::SetMine; 0049EF44 DIV implicit dividend in STGroupBoatC::DCBomb; 0049F434 DIV implicit dividend in STGroupBoatC::Capture; 0049F778 DIV implicit dividend in STGroupBoatC::Recharge; 0049FA5D DIV implicit dividend in STGroupBoatC::Teleport; 0049FE63 DIV implicit dividend in STGroupBoatC::Bring; 004A0336 DIV implicit dividend in STGroupBoatC::GrpDismant; 004A07C4 DIV implicit dividend in STGroupBoatC::Scout; 004A0C6E DIV implicit dividend in STGroupBoatC::GrpRepSub; 004B900F CMP/JC through typed class pointer in FUN_004b8c80; 004B90BF CMP/JC through typed class pointer in FUN_004b8c80; 004B91CE CMP/JC through typed class pointer in FUN_004b8c80; 004B93C5 CMP/JC through typed class pointer in FUN_004b8c80; 004B943E CMP/JC through typed class pointer in FUN_004b8c80; 004BAFAB CMP/JC through typed class pointer in TLOBaseTy::GetMessage; 004BAFD1 CMP/JC through typed class pointer in TLOBaseTy::GetMessage; 004BB00A CMP/JC through typed class pointer in TLOBaseTy::GetMessage; 004C35FF CMP/JC through typed class pointer in TLOBaseTy::fireProc; 004C362C CMP/JC through typed class pointer in TLOBaseTy::fireProc; 004C37B4 CMP/JC through typed class pointer in TLOBaseTy::fireProc; 004C3839 CMP/JC through typed class pointer in TLOBaseTy::fireProc; 004C39C2 CMP/JC through typed class pointer in TLOBaseTy::fireProc; 004C5EC9 CMP/JC through typed class pointer in FUN_004c5eb0; 004C8640 CMP/JC through typed class pointer in FUN_004c84c0; 004C88CA CMP/JC through typed class pointer in FUN_004c84c0; 004CC47B CMP/JC through typed class pointer in FUN_004cc370; 004CD053 CMP/JC through typed class pointer in FUN_004ccc10; 004CD506 CMP/JC through typed class pointer in FUN_004cd480; 004D44E1 CMP/JC through typed class pointer in FUN_004d32c0; 004D4A5F CMP/JC through typed class pointer in FUN_004d32c0; 004D4D7A CMP/JC through typed class pointer in FUN_004d32c0; 004D71BF CMP/JBE through typed class pointer in FUN_004d7040; 004D838D CMP/JC through typed class pointer in FUN_004d8360; 004D93B1 CMP/JC through typed class pointer in FUN_004d9350; 004D983D CMP/JC through typed class pointer in FUN_004d9820; 004D9A3A CMP/JC through typed class pointer in FUN_004d9820; 004DA041 CMP/JC through typed class pointer in FUN_004d9fe0; 004DA52A CMP/JNC through typed class pointer in FUN_004da390; 004DAA45 CMP/JC through typed class pointer in FUN_004da9c0; 004DAC36 CMP/JNC through typed class pointer in FUN_004da9c0; 004DADA1 CMP/JA through typed class pointer in FUN_004da9c0; 004DC2E7 CMP/JC through typed class pointer in FUN_004dc260; 004DC342 CMP/JC through typed class pointer in FUN_004dc260; 004DC3CE CMP/JC through typed class pointer in FUN_004dc260; 004DC7B1 CMP/JC through typed class pointer in FUN_004dc760; 004DC8F9 CMP/JC through typed class pointer in FUN_004dc760; 004DCC10 CMP/JC through typed class pointer in FUN_004dcbf0; 004DD0BA CMP/JC through typed class pointer in FUN_004dd070; 004DD61B CMP/JC through typed class pointer in FUN_004dd570; 004DDE99 CMP/JC through typed class pointer in FUN_004ddd50; 004DED03 CMP/JC through typed class pointer in FUN_004dec10; 004DF401 CMP/JC through typed class pointer in FUN_004df3b0; 004DF549 CMP/JC through typed class pointer in FUN_004df3b0; 004DFB2D CMP/JC through typed class pointer in FUN_004dfb00; 004E0F7B CMP/JC through typed class pointer in FUN_004e0830; 004E2400 CMP/JC through typed class pointer in FUN_004e2340; 004E268B CMP/JBE through typed class pointer in FUN_004e2340; 004E27F9 DIV implicit dividend in FUN_004e27e0; 004E3928 CMP/JC through typed class pointer in FUN_004e3910; 004E470E CMP/JC through typed class pointer in FUN_004e46f0; 004E7F60 CMP/JA through typed class pointer in FUN_004e7f20; 004E90D1 CMP/JC through typed class pointer in FUN_004e9050; 004E9FC7 CMP/JC through typed class pointer in TLOBaseTy::teleNone; 004EA042 CMP/JC through typed class pointer in TLOBaseTy::teleNone; 004EA0BC CMP/JC through typed class pointer in TLOBaseTy::teleNone; 004EA89A CMP/JC through typed class pointer in FUN_004ea870; 004EADD9 CMP/JC through typed class pointer in FUN_004ead90; 004EB19E CMP/JC through typed class pointer in FUN_004eb150; 004EB1C9 CMP/JC through typed class pointer in FUN_004eb150; 004EB1F6 CMP/JC through typed class pointer in FUN_004eb150; 004EC428 CMP/JC through typed class pointer in FUN_004ec400; 004EC4C2 CMP/JC through typed class pointer in FUN_004ec400; 004ECD07 CMP/JC through typed class pointer in FUN_004eccf0; 004ED271 CMP/JC through typed class pointer in FUN_004ed210; 0057D076 DIV implicit dividend in STFishC::LifeFish; 0057D0D1 DIV implicit dividend in STFishC::LifeFish; 0057D14E DIV implicit dividend in STFishC::LifeFish; 0057D1DA DIV implicit dividend in STFishC::LifeFish; 0057D277 DIV implicit dividend in STFishC::LifeFish; 0057EA3B DIV implicit dividend in STDcResourcC::GetMessage; 0058052A CMP/JBE through typed class pointer in FUN_005804f0; 00581BD3 DIV implicit dividend in FUN_00581bc0; 0058C338 DIV implicit dividend in FUN_0058bd90; 0058E625 DIV implicit dividend in STSharkC::LifeShark; 0058E666 CMP/JBE through typed class pointer in STSharkC::LifeShark; 0058E978 DIV implicit dividend in STSharkC::LifeShark; 005EE717 CMP/JC through typed class pointer in FUN_005ee6e0; 005EE8E4 CMP/JC through typed class pointer in FUN_005ee6e0; 005EEA2E CMP/JC through typed class pointer in FUN_005ee6e0; 005EEB51 CMP/JC through typed class pointer in FUN_005ee6e0; 005F0BB8 DIV implicit dividend in FUN_005f0ba0; 005F3C47 CMP/JBE through typed class pointer in STBHEShellC::sub_005F3BF0; 005F6F95 CMP/JA through typed class pointer in STColl3C::sub_005F6F60; 005F783C CMP/JBE through typed class pointer in STColl3C::sub_005F6F60; 005F7FDF CMP/JC through typed class pointer in STColl3C::sub_005F6F60; 005FA197 DIV implicit dividend in FUN_005fa180; 006007AC CMP/JC through typed class pointer in FUN_00600750; 006094DD CMP/JC through typed class pointer in FUN_00608e90; 00610CB1 CMP/JNC through typed class pointer in FUN_006101b0; 00611C5B CMP/JBE through typed class pointer in FUN_006101b0; 0061F8DC CMP/JC through typed class pointer in SndUnderAttMenegC::sub_0061F8B0; 0061FEA9 CMP/JC through typed class pointer in SndUnderAttMenegC::sub_0061FE80; 006202D8 CMP/JC through typed class pointer in SndUnderAttMenegC::sub_006202B0; 00620699 CMP/JC through typed class pointer in SndUnderAttMenegC::sub_00620670; 00620A29 CMP/JC through typed class pointer in SndUnderAttMenegC::sub_00620A00; 00620E68 CMP/JC through typed class pointer in SndUnderAttMenegC::sub_00620E40; 00621209 CMP/JC through typed class pointer in SndUnderAttMenegC::sub_006211E0; 00622060 DIV implicit dividend in STMineSetC::GetMessage; 00623A49 CMP/JC through typed class pointer in STMineSetC::sub_006239A0; 00623B1A CMP/JC through typed class pointer in STMineSetC::sub_006239A0; 00624975 CMP/JC through typed class pointer in STMineSetC::sub_00624920; 00627554 CMP/JBE through typed class pointer in STMineSetC::sub_00627400; 006283B7 DIV implicit dividend in STParticleC::GetMessage; 0062F241 DIV implicit dividend in FUN_0062f150; 00630668 DIV implicit dividend in STManRuinC::GetMessage; 00631056 CMP/JNC through typed class pointer in STManRuinC::sub_00631010; 0063EA60 DIV implicit dividend in FUN_0063e9c0; 0063EABC DIV implicit dividend in FUN_0063e9c0; 00646353 CMP/JNC through typed class pointer in STVolcanoC::GetMessage; 006463F8 DIV implicit dividend in STVolcanoC::GetMessage; 0064651A DIV implicit dividend in STVolcanoC::GetMessage; 006466CE DIV implicit dividend in STVolcanoC::GetMessage; 0064681E DIV implicit dividend in STVolcanoC::GetMessage; 0064684A CMP/JNC through typed class pointer in STVolcanoC::GetMessage; 00648174 CMP/JC through typed class pointer in AiBossClassTy::GetMessage; 00652882 DIV implicit dividend in AiEventClassTy::GetMessage
     undefined4 field_00E8; // [STClassLayoutApplier] reads=10, writes=10; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=10
     undefined4 field_00EC; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
     undefined4 field_00F0; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
@@ -17250,8 +16803,8 @@ struct SliderClassTy {
 struct SndUnderAttMenegC {
     undefined4 field_0000; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     byte _unknown_0004[24];
-    undefined4 field_001C; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    undefined1 field_0020; // [STClassLayoutApplier] reads=1, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
+    int field_001C; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=/int <= 00620E07 FILD establishes /int
+    undefined1 field_0020; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access
     int field_0021; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/int <= 0061F78C FILD establishes /int
     int field_0025; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/int <= 0061F771 FILD establishes /int
     undefined4 field_0029; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
@@ -17259,24 +16812,57 @@ struct SndUnderAttMenegC {
     undefined4 field_0031; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
     float field_0035; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/float <= 0061F752 FMUL establishes /float
     undefined4 field_0039; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
-    byte _unknown_003D[124];
-    DArrayTy *field_00B9; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0xB9] passed to DArrayDestroy parameter array; name_evidence=array <= 0061FCC0 [this+0xB9] passed to DArrayDestroy parameter array
-    byte _unknown_00BD[8];
-    DArrayTy *field_00C5; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0xC5] passed to DArrayDestroy parameter array; name_evidence=array <= 0061FCC0 [this+0xC5] passed to DArrayDestroy parameter array
-    byte _unknown_00C9[8];
-    DArrayTy *field_00D1; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0xD1] passed to DArrayDestroy parameter array; name_evidence=array <= 0061FCC0 [this+0xD1] passed to DArrayDestroy parameter array
-    byte _unknown_00D5[8];
-    DArrayTy *field_00DD; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0xDD] passed to DArrayDestroy parameter array; name_evidence=array <= 0061FCC0 [this+0xDD] passed to DArrayDestroy parameter array
-    byte _unknown_00E1[8];
-    DArrayTy *field_00E9; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0xE9] passed to DArrayDestroy parameter array; name_evidence=array <= 0061FCC0 [this+0xE9] passed to DArrayDestroy parameter array
-    byte _unknown_00ED[8];
-    DArrayTy *field_00F5; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0xF5] passed to DArrayDestroy parameter array; name_evidence=array <= 0061FCC0 [this+0xF5] passed to DArrayDestroy parameter array
-    byte _unknown_00F9[8];
-    DArrayTy *field_0101; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0x101] passed to DArrayDestroy parameter array; name_evidence=array <= 0061FCC0 [this+0x101] passed to DArrayDestroy parameter array
-    byte _unknown_0105[5];
-    DArrayTy *field_010A; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0x10A] passed to DArrayDestroy parameter array; name_evidence=array <= 0061FCC0 [this+0x10A] passed to DArrayDestroy parameter array
+    byte _unknown_003D[120];
+    uint field_00B5; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x1|4x4; concrete_type_already_present; typed_cross_class_recovery=3; exact_copy_subfield_views=1; type_evidence=/uint <= 0061F8DC CMP/JC through typed class pointer in SndUnderAttMenegC::sub_0061F8B0; 0061F9DE exact field-to-field MOV propagation
+    SndUnderAttMenegC_field_00B9DArray *field_00B9; // [STClassLayoutApplier] reads=10, writes=4; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FB70 [this+0xB9] passed to Library::DKW::TBL::DArrayAppend parameter array; 0061FBAF generic pointer-return assignment in SndUnderAttMenegC::sub_0061FB70; 0061FCC0 [this+0xB9] passed to DArrayDestroy parameter array; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 0061FB70 [this+0xB9] passed to Library::DKW::TBL::DArrayAppend parameter array; 0061FCC0 [this+0xB9] passed to DArrayDestroy parameter array
+    byte _unknown_00BD[4];
+    uint field_00C1; // [STClassLayoutApplier] reads=2, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x1|4x8; concrete_type_already_present; typed_cross_class_recovery=5; exact_copy_subfield_views=1; type_evidence=/uint <= 0061FEA9 CMP/JC through typed class pointer in SndUnderAttMenegC::sub_0061FE80; 0061FFBA exact field-to-field MOV propagation; 0062039D exact field-to-field MOV propagation; 00620726 exact field-to-field MOV propagation
+    SndUnderAttMenegC_field_00C5DArray *field_00C5; // [STClassLayoutApplier] reads=10, writes=4; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0xC5] passed to DArrayDestroy parameter array; 00620160 [this+0xC5] passed to Library::DKW::TBL::DArrayAppend parameter array; 0062019F generic pointer-return assignment in SndUnderAttMenegC::sub_00620160; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 0061FCC0 [this+0xC5] passed to DArrayDestroy parameter array; 00620160 [this+0xC5] passed to Library::DKW::TBL::DArrayAppend parameter array
+    byte _unknown_00C9[4];
+    uint field_00CD; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/uint <= 006202D8 CMP/JC through typed class pointer in SndUnderAttMenegC::sub_006202B0
+    SndUnderAttMenegC_field_00D1DArray *field_00D1; // [STClassLayoutApplier] reads=10, writes=4; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0xD1] passed to DArrayDestroy parameter array; 00620520 [this+0xD1] passed to Library::DKW::TBL::DArrayAppend parameter array; 0062055F generic pointer-return assignment in SndUnderAttMenegC::sub_00620520; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 0061FCC0 [this+0xD1] passed to DArrayDestroy parameter array; 00620520 [this+0xD1] passed to Library::DKW::TBL::DArrayAppend parameter array
+    byte _unknown_00D5[4];
+    uint field_00D9; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/uint <= 00620699 CMP/JC through typed class pointer in SndUnderAttMenegC::sub_00620670
+    SndUnderAttMenegC_field_00DDDArray *field_00DD; // [STClassLayoutApplier] reads=10, writes=4; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0xDD] passed to DArrayDestroy parameter array; 006208B0 [this+0xDD] passed to Library::DKW::TBL::DArrayAppend parameter array; 006208EF generic pointer-return assignment in SndUnderAttMenegC::sub_006208B0; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 0061FCC0 [this+0xDD] passed to DArrayDestroy parameter array; 006208B0 [this+0xDD] passed to Library::DKW::TBL::DArrayAppend parameter array
+    byte _unknown_00E1[4];
+    uint field_00E5; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x1|4x4; concrete_type_already_present; typed_cross_class_recovery=3; exact_copy_subfield_views=1; type_evidence=/uint <= 00620A29 CMP/JC through typed class pointer in SndUnderAttMenegC::sub_00620A00; 00620AC5 exact field-to-field MOV propagation
+    SndUnderAttMenegC_field_00E9DArray *field_00E9; // [STClassLayoutApplier] reads=10, writes=4; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0xE9] passed to DArrayDestroy parameter array; 00620C50 [this+0xE9] passed to Library::DKW::TBL::DArrayAppend parameter array; 00620C8F generic pointer-return assignment in SndUnderAttMenegC::sub_00620C50; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 0061FCC0 [this+0xE9] passed to DArrayDestroy parameter array; 00620C50 [this+0xE9] passed to Library::DKW::TBL::DArrayAppend parameter array
+    byte _unknown_00ED[4];
+    uint field_00F1; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x1|4x4; concrete_type_already_present; typed_cross_class_recovery=3; exact_copy_subfield_views=1; type_evidence=/uint <= 00620E68 CMP/JC through typed class pointer in SndUnderAttMenegC::sub_00620E40; 00620F03 exact field-to-field MOV propagation
+    SndUnderAttMenegC_field_00F5DArray *field_00F5; // [STClassLayoutApplier] reads=10, writes=4; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0xF5] passed to DArrayDestroy parameter array; 00621090 [this+0xF5] passed to Library::DKW::TBL::DArrayAppend parameter array; 006210CF generic pointer-return assignment in SndUnderAttMenegC::sub_00621090; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 0061FCC0 [this+0xF5] passed to DArrayDestroy parameter array; 00621090 [this+0xF5] passed to Library::DKW::TBL::DArrayAppend parameter array
+    byte _unknown_00F9[4];
+    uint field_00FD; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x1|4x4; concrete_type_already_present; typed_cross_class_recovery=3; exact_copy_subfield_views=1; type_evidence=/uint <= 00621209 CMP/JC through typed class pointer in SndUnderAttMenegC::sub_006211E0; 006212A5 exact field-to-field MOV propagation
+    SndUnderAttMenegC_field_0101DArray *field_0101; // [STClassLayoutApplier] reads=10, writes=4; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0x101] passed to DArrayDestroy parameter array; 00621430 [this+0x101] passed to Library::DKW::TBL::DArrayAppend parameter array; 0062146F generic pointer-return assignment in SndUnderAttMenegC::sub_00621430; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 0061FCC0 [this+0x101] passed to DArrayDestroy parameter array; 00621430 [this+0x101] passed to Library::DKW::TBL::DArrayAppend parameter array
+    undefined1 field_0105; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
+    uint field_0106; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x1|4x4; concrete_type_already_present; typed_cross_class_recovery=3; exact_copy_subfield_views=1; type_evidence=/uint <= 00621994 exact field-to-field MOV propagation
+    SndUnderAttMenegC_field_010ADArray *field_010A; // [STClassLayoutApplier] reads=10, writes=4; type_confidence=existing; name_confidence=conflict; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=7; duplicate_suggested_field_name; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0061FCC0 [this+0x10A] passed to DArrayDestroy parameter array; 006216E0 [this+0x10A] passed to Library::DKW::TBL::DArrayAppend parameter array; 00621727 generic pointer-return assignment in SndUnderAttMenegC::sub_006216E0; nested layout has DArray fields +0x8/+0xC/+0x1C; name_evidence=array <= 0061FCC0 [this+0x10A] passed to DArrayDestroy parameter array; 006216E0 [this+0x10A] passed to Library::DKW::TBL::DArrayAppend parameter array
     int GetMessage(STMessage *message);
+    void sub_0061F8B0(int param_1, int param_2, uint param_3);
+    undefined4 sub_0061FA40(int param_1, int param_2, int param_3);
+    uint sub_0061FB70(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4);
     void sub_0061FCC0();
+    void sub_0061FE80(int param_1, int param_2, uint param_3, undefined4 param_4, int param_5);
+    undefined4 sub_00620030(int param_1, int param_2, int param_3);
+    uint sub_00620160(undefined4 param_1, int param_2, undefined4 param_3, undefined4 param_4);
+    void sub_006202B0(int param_1, int param_2, undefined4 param_3, uint param_4);
+    undefined4 sub_006203F0(int param_1, int param_2, int param_3);
+    uint sub_00620520(undefined4 param_1, int param_2, undefined4 param_3, undefined4 param_4);
+    void sub_00620670(int param_1, int param_2, uint param_3);
+    undefined4 sub_00620780(int param_1, int param_2, int param_3);
+    uint sub_006208B0(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4);
+    void sub_00620A00(int param_1, int param_2, uint param_3);
+    undefined4 sub_00620B20(int param_1, int param_2, int param_3);
+    uint sub_00620C50(undefined4 param_1, int param_2, undefined4 param_3, undefined4 param_4);
+    undefined4 sub_00620DA0(int param_1, undefined4 param_2, undefined4 param_3);
+    void sub_00620E40(int param_1, int param_2, uint param_3);
+    undefined4 sub_00620F60(int param_1, int param_2, int param_3);
+    uint sub_00621090(undefined4 param_1, int param_2, undefined4 param_3, undefined4 param_4);
+    void sub_006211E0(int param_1, int param_2, uint param_3);
+    undefined4 sub_00621300(int param_1, int param_2, int param_3);
+    uint sub_00621430(undefined4 param_1, int param_2, undefined4 param_3, undefined4 param_4);
+    void sub_00621580(byte *param_1, int param_2);
+    uint sub_006216E0(undefined4 param_1);
+    void sub_00621780(uint param_1);
 };
 
 struct SoundClassTy {
@@ -17319,9 +16905,9 @@ struct SoundManagerTy {
     STAppC *field_0010; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=pointer:/STAppC <= 00566C20 [this+0x10] used as receiver of STAppC::sub_006E51B0
     byte _unknown_0014[4];
     cMf32 *field_0018; // [STClassLayoutApplier] reads=8, writes=3; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/cMf32 <= 00566900 [this+0x18] passed to cMf32::delete parameter param_1
-    undefined4 field_001C; // [STClassLayoutApplier] reads=8, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
+    undefined4 field_001C; // [STClassLayoutApplier] reads=10, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
     undefined4 field_0020; // [STClassLayoutApplier] reads=4, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
-    undefined4 field_0024; // [STClassLayoutApplier] reads=6, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=8
+    undefined4 field_0024; // [STClassLayoutApplier] reads=6, writes=11; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
     undefined4 field_0028; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
     int field_002C; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/int <= 005669AD CMP/JGE through typed class pointer in SoundManagerTy::sub_00566970
     int field_0030; // [STClassLayoutApplier] reads=4, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=/int <= 005669D0 CMP/JGE through typed class pointer in SoundManagerTy::sub_00566970
@@ -17333,6 +16919,7 @@ struct SoundManagerTy {
     void sub_00566900();
     void sub_00566970(int param_1, int param_2);
     void sub_00566AA0();
+    void sub_00566BD0(int param_1);
 };
 
 struct SoundPosition {
@@ -17873,59 +17460,10 @@ struct AnonPointee_AiFltClassTy_022F {
     undefined4 field_001C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
 };
 
-struct AnonPointee_AiFltClassTy_0284 {
-    byte _unknown_0000[130];
-    short field_0082; // [STClassLayoutApplier] nested evidence_count=3; nested reads=3, writes=0; type_evidence=/short <= 00661249 MOVSX establishes /short
-    short field_0084; // [STClassLayoutApplier] nested evidence_count=3; nested reads=3, writes=0; type_evidence=/short <= 0066123E MOVSX establishes /short
-    short field_0086; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0; type_evidence=/short <= 00661231 MOVSX establishes /short
-    byte _unknown_0088[172];
-    undefined4 field_0134; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_0138; // [STClassLayoutApplier] nested evidence_count=2; nested reads=3, writes=0
-    undefined4 field_013C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0140; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_AiPlrClassTy_001C {
-    byte _unknown_0000[20];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0018[4];
-    undefined4 field_001C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0020[12];
-    undefined4 field_002C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_BehPanelTy_0000 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=6, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-};
-
-struct AnonPointee_CPanelTy_01AC {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_CPanelTy_01B0 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
 struct AnonPointee_CPanelTy_01B4 {
     byte _unknown_0000[4];
     undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
     undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_ChooseMapTy_0000 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=1; nested reads=4, writes=0
-    byte _unknown_0004[4];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=7, writes=0
 };
 
 struct AnonPointee_ChooseMapTy_1C7B {
@@ -17944,52 +17482,6 @@ struct AnonPointee_ChooseMapTy_1C8B {
     undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
 };
 
-struct AnonPointee_ChooseMapTy_1C97 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=3; nested reads=15, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=3; nested reads=7, writes=0
-};
-
-struct AnonPointee_ChooseMapTy_1C9F {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=3; nested reads=17, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=3; nested reads=8, writes=0
-};
-
-struct AnonPointee_ComboTy_00FC {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_ComboTy_0104 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_CursorClassTy_04D2 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-};
-
-struct AnonPointee_FSGSTy_0000 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=1; nested reads=3, writes=0
-    byte _unknown_0004[4];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=3; nested reads=13, writes=0
-};
-
 struct AnonPointee_FSGSTy_1A97 {
     byte _unknown_0000[4];
     undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
@@ -17998,86 +17490,6 @@ struct AnonPointee_FSGSTy_1A97 {
     undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
     byte _unknown_0010[4];
     undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_FSGSTy_1AC0 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=12; nested reads=13, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=12; nested reads=13, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=11; nested reads=12, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=11; nested reads=12, writes=0
-};
-
-struct AnonPointee_FSGSTy_1AE8 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=7, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=8, writes=0
-};
-
-struct AnonPointee_FSGSTy_1AEC {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=6, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=6, writes=0
-};
-
-struct AnonPointee_FSGSTy_1AF0 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_FSGSTy_1AF4 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-};
-
-struct AnonPointee_FSGSTy_1AF8 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-};
-
-struct AnonPointee_FSGSTy_1AFC {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-};
-
-struct AnonPointee_FSGSTy_1B00 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-};
-
-struct AnonPointee_FSGSTy_1B0C {
-    undefined1 field_0000; // [STClassLayoutApplier] nested evidence_count=3; nested reads=3, writes=0
-    undefined1 field_0001; // [STClassLayoutApplier] nested evidence_count=3; nested reads=3, writes=0
-    byte _unknown_0002[2];
-};
-
-struct AnonPointee_FSGSTy_1EA2 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=3, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=3, writes=0
-};
-
-struct AnonPointee_FrmPanelTy_0000 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=24, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[16];
-    undefined4 field_001C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
 };
 
 struct AnonPointee_HelpPanelTy_0068 {
@@ -18098,16 +17510,6 @@ struct AnonPointee_HelpPanelTy_01B3 {
     undefined4 field_001C; // [STClassLayoutApplier] nested evidence_count=4; nested reads=5, writes=0
 };
 
-struct AnonPointee_HelpPanelTy_01EC {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=5, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
 struct AnonPointee_HelpPanelTy_0218 {
     byte _unknown_0000[4];
     undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=3; nested reads=4, writes=0
@@ -18116,51 +17518,6 @@ struct AnonPointee_HelpPanelTy_0218 {
     undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
     byte _unknown_0010[4];
     undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_HelpStringTy_012A {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_InfocPanelTy_0000 {
-    byte _unknown_0000[28];
-    undefined4 field_001C; // [STClassLayoutApplier] nested evidence_count=8; nested reads=11, writes=0
-    undefined4 field_0020; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_InterSystemC_0000 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=25, writes=0
-    byte _unknown_000C[4];
-    undefined4 field_0010; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_IntercomPanelTy_019C {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=3, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_JumpManagC_0062 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_000C; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_JumpManagC_0066 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_000C; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
 };
 
 struct AnonPointee_MReportTy_0073 {
@@ -18179,78 +17536,7 @@ struct AnonPointee_MReportTy_0077 {
     undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
 };
 
-struct AnonPointee_MTaskTy_0643 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
 struct AnonPointee_MTaskTy_06BF {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_MTaskTy_06CB {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_MainMenuTy_1AA7 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_000C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_MoneyTy_0072 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_MoneyTy_0076 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_MoneyTy_007A {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_OptPanelTy_01E9 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_PlayPanelTy_0068 {
     byte _unknown_0000[4];
     undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
     undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
@@ -18269,26 +17555,6 @@ struct AnonPointee_PlaySystemTy_0039 {
     byte _unknown_0017[1];
 };
 
-struct AnonPointee_PopUpTy_0090 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=6; nested reads=9, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_PrividerTy_1C82 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=3; nested reads=4, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
 struct AnonPointee_PrividerTy_1C8E {
     byte _unknown_0000[2];
     undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
@@ -18297,94 +17563,10 @@ struct AnonPointee_PrividerTy_1C8E {
     undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
 };
 
-struct AnonPointee_PrividerTy_1C92 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
 struct AnonPointee_ProdPanelTy_0000 {
     byte _unknown_0000[24];
     undefined4 field_0018; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
     undefined4 field_001C; // [STClassLayoutApplier] nested evidence_count=4; nested reads=10, writes=0
-};
-
-struct AnonPointee_ProdPanelTy_0068 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_SAMPanelTy_0000 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=4, writes=0
-    byte _unknown_0008[8];
-    undefined4 field_0010; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_SIDTy_1CB8 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_SIDTy_1CBC {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_SIDTy_1CC0 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_SIDTy_1CC8 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_SIDTy_1CCC {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=9, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=2; nested reads=7, writes=0
-};
-
-struct AnonPointee_SIDTy_1CD0 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=3, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=3, writes=0
-};
-
-struct AnonPointee_ST3DSMAPContext_0004 {
-    byte _unknown_0000[12];
-    undefined4 field_000C; // [STClassLayoutApplier] nested evidence_count=6; nested reads=6, writes=0
-    byte _unknown_0010[8];
-    undefined4 field_0018; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_001C; // [STClassLayoutApplier] nested evidence_count=2; nested reads=4, writes=0
 };
 
 struct AnonPointee_ST3DSMAPContext_0280 {
@@ -18407,27 +17589,6 @@ struct AnonPointee_ST3DSMAPContext_0280 {
     undefined4 field_0441; // [STClassLayoutApplier] nested evidence_count=1; nested reads=3, writes=0
     undefined4 field_0445; // [STClassLayoutApplier] nested evidence_count=1; nested reads=3, writes=0
     undefined4 field_0449; // [STClassLayoutApplier] nested evidence_count=1; nested reads=3, writes=0
-};
-
-struct AnonPointee_ST3DSMAPContext_031C {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=2
-    byte _unknown_0004[112];
-    float field_0074; // [STClassLayoutApplier] nested evidence_count=2; nested reads=18, writes=0; type_evidence=/float <= 006E7D6F FLD establishes /float; 006E7E2C FLD establishes /float; 006E7E49 FLD establishes /float; 006E7E66 FLD establishes /float; 006E7E80 FSUB establishes /float; 006E7E9A FLD establishes /float; 006E7EC3 FLD establishes /float; 006E7EE5 FLD establishes /float; 006E7F07 FSUB establishes /float
-    float field_0078; // [STClassLayoutApplier] nested evidence_count=2; nested reads=18, writes=0; type_evidence=/float <= 006E7DAB FLD establishes /float; 006E7E2F FSUB establishes /float; 006E7E4C FADD establishes /float; 006E7E69 FADD establishes /float; 006E7E7D FLD establishes /float; 006E7E9D FSUB establishes /float; 006E7EC6 FADD establishes /float; 006E7EE8 FADD establishes /float; 006E7F04 FLD establishes /float
-    float field_007C; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0; type_evidence=/float <= 006E7DE9 FLD establishes /float
-    byte _unknown_0080[136];
-    undefined4 field_0108; // [STClassLayoutApplier] nested evidence_count=2; nested reads=10, writes=14
-    undefined4 field_010C; // [STClassLayoutApplier] nested evidence_count=2; nested reads=20, writes=6
-    undefined1 field_0110; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=4
-    undefined1 field_0111; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=4
-    undefined1 field_0112; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=4
-};
-
-struct AnonPointee_ST3DSMAPContext_0420 {
-    undefined1 field_0000; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined1 field_0001; // [STClassLayoutApplier] nested evidence_count=2; nested reads=8, writes=0
-    byte _unknown_0002[1];
-    undefined1 field_0003; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
 };
 
 struct AnonPointee_ST3DSMAPContext_0446 {
@@ -18539,33 +17700,9 @@ struct AnonPointee_STAllPlayersC_01B9 {
     byte _unknown_000B[1];
 };
 
-struct AnonPointee_STAllPlayersC_02E6 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=2
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=2
-    byte _unknown_0008[80];
-    undefined4 field_0058; // [STClassLayoutApplier] nested evidence_count=2; nested reads=4, writes=2
-    undefined4 field_005C; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_STAppC_0000 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0008[16];
-    undefined4 field_0018; // [STClassLayoutApplier] nested evidence_count=2; nested reads=3, writes=0
-};
-
 struct AnonPointee_STAppC_115A {
     undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
     undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=4, writes=0
-};
-
-struct AnonPointee_STArtiafactC_0000 {
-    byte _unknown_0000[172];
-    undefined4 field_00AC; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_00B0[40];
-    undefined4 field_00D8; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_00DC[72];
-    undefined4 field_0124; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
 };
 
 struct AnonPointee_STBHEShellC_00F3 {
@@ -18582,110 +17719,6 @@ struct AnonPointee_STBHEShellC_00F3 {
     byte _unknown_00F3[8];
     undefined4 field_00FB; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
     byte _unknown_00FF[1];
-};
-
-struct AnonPointee_STBoatC_0000 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STClassLayoutApplier] nested evidence_count=3; nested reads=3, writes=0
-    byte _unknown_0014[12];
-    undefined4 field_0020; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    byte _unknown_0024[8];
-    undefined4 field_002C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_0030[96];
-    undefined4 field_0090; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    byte _unknown_0094[68];
-    undefined4 field_00D8; // [STClassLayoutApplier] nested evidence_count=10; nested reads=10, writes=0
-    byte _unknown_00DC[36];
-    undefined4 field_0100; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_STBoatC_0097 {
-    byte _unknown_0000[8];
-    undefined2 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined2 field_000A; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined2 field_000C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000E[2];
-};
-
-struct AnonPointee_STBoatC_046B {
-    byte _unknown_0000[65];
-    undefined2 field_0041; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined2 field_0043; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined2 field_0045; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_STBoatC_05A6 {
-    byte _unknown_0000[50];
-    undefined2 field_0032; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0034[1946];
-    undefined4 field_07CE; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_07D2[2];
-};
-
-struct AnonPointee_STColl3C_02E6 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=3; nested reads=1, writes=3
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=5; nested reads=1, writes=5
-    byte _unknown_0008[12];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=1
-    undefined4 field_0018; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=1
-    undefined4 field_001C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=1
-    undefined4 field_0020; // [STClassLayoutApplier] nested evidence_count=1; nested reads=4, writes=3
-    undefined4 field_0024; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0028[10];
-    undefined2 field_0032; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=1
-    byte _unknown_0034[36];
-    undefined4 field_0058; // [STClassLayoutApplier] nested evidence_count=4; nested reads=8, writes=2
-    undefined4 field_005C; // [STClassLayoutApplier] nested evidence_count=5; nested reads=5, writes=0
-    undefined4 field_0060; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=1
-    undefined4 field_0064; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=1
-    undefined4 field_0068; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=1
-};
-
-struct AnonPointee_STContainerC_0000 {
-    byte _unknown_0000[172];
-    undefined4 field_00AC; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_00B0[40];
-    undefined4 field_00D8; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_00DC[72];
-    undefined4 field_0124; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-};
-
-struct AnonPointee_STGameObjC_0000 {
-    byte _unknown_0000[48];
-    undefined4 field_0030; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0034; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0038[8];
-    undefined4 field_0040; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0044[8];
-    undefined4 field_004C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0050[8];
-    undefined4 field_0058; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_005C[4];
-    undefined4 field_0060; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0064[104];
-    undefined4 field_00CC; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_STGameObjC_0097 {
-    byte _unknown_0000[8];
-    undefined2 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined2 field_000A; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=1
-    undefined2 field_000C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=1
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=1
-};
-
-struct AnonPointee_STGameObjC_018D {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=2
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=2
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=2
-    undefined4 field_000C; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=2
-};
-
-struct AnonPointee_STGameObjC_0191 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_000C; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
 };
 
 struct AnonPointee_STGameObjC_0195 {
@@ -18706,18 +17739,6 @@ struct AnonPointee_STGameObjC_0199 {
     undefined2 field_0010; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
     undefined1 field_0012; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
     byte _unknown_0013[1];
-};
-
-struct AnonPointee_STGameObjC_01A5 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=2
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=2
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=2
-};
-
-struct AnonPointee_STGameObjC_01A9 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
 };
 
 struct AnonPointee_STGameObjC_01AD {
@@ -18752,31 +17773,6 @@ struct AnonPointee_STGameObjC_01B9 {
     byte _unknown_000B[1];
 };
 
-struct AnonPointee_STGameObjC_01C5 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=2
-    undefined2 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=2
-    byte _unknown_0006[2];
-};
-
-struct AnonPointee_STGameObjC_01C9 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined2 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    byte _unknown_0006[2];
-};
-
-struct AnonPointee_STGroupBoatC_021E {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined2 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    byte _unknown_0006[2];
-};
-
-struct AnonPointee_STGroupBoatC_022E {
-    byte _unknown_0000[12];
-    undefined4 field_000C; // [STClassLayoutApplier] nested evidence_count=3; nested reads=4, writes=0
-    byte _unknown_0010[12];
-    undefined4 field_001C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
 struct AnonPointee_STMineSetC_0211 {
     byte _unknown_0000[68];
     undefined4 field_0044; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
@@ -18793,13 +17789,6 @@ struct AnonPointee_STParticleC_00EB {
     byte _unknown_01F1[3];
 };
 
-struct AnonPointee_STPlaySystemC_0000 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[12];
-    undefined4 field_0018; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
 struct AnonPointee_STPlaySystemC_0039 {
     undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
     undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
@@ -18814,21 +17803,6 @@ struct AnonPointee_STPlaySystemC_003D {
     undefined1 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=0, writes=2
     undefined2 field_0005; // [STClassLayoutApplier] nested evidence_count=3; nested reads=4, writes=5
     undefined1 field_0x7; // exact unnamed-byte view referenced by exported code
-};
-
-struct AnonPointee_STSharkC_0000 {
-    byte _unknown_0000[28];
-    undefined4 field_001C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0020; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0024[180];
-    undefined4 field_00D8; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_STSprGameObjC_0000 {
-    byte _unknown_0000[12];
-    undefined4 field_000C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[28];
-    undefined4 field_002C; // [STClassLayoutApplier] nested evidence_count=2; nested reads=3, writes=0
 };
 
 struct AnonPointee_STT3DSprC_0020 {
@@ -18857,29 +17831,6 @@ struct AnonPointee_STT3DSprC_0020 {
     byte _unknown_01FC[16];
     undefined4 field_020C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
     undefined4 field_0210; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_STTorpC_0000 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_0018[120];
-    undefined4 field_0090; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0094[68];
-    undefined4 field_00D8; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-};
-
-struct AnonPointee_SettMapMTy_0000 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=2; nested reads=7, writes=0
-    byte _unknown_0004[4];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[12];
-    undefined4 field_0018; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_001C[4];
-    undefined4 field_0020; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0024; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0028[4];
-    undefined4 field_002C; // [STClassLayoutApplier] nested evidence_count=7; nested reads=9, writes=0
 };
 
 struct AnonPointee_SettMapMTy_1C67 {
@@ -18916,20 +17867,6 @@ struct AnonPointee_SettMapSTy_0000 {
     undefined4 field_002C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=5, writes=0
 };
 
-struct AnonPointee_SettMapTy_0000 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=4, writes=0
-    undefined4 field_000C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0010; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0018[4];
-    undefined4 field_001C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0020; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0024; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0028; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_002C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=3, writes=0
-};
-
 struct AnonPointee_SettMapTy_1E2B {
     byte _unknown_0000[4];
     undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
@@ -18947,36 +17884,9 @@ struct AnonPointee_SpecPanelTy_0000 {
     undefined4 field_0020; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
 };
 
-struct AnonPointee_SpecPanelTy_0068 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_StartSystemTy_0000 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=3; nested reads=16, writes=0
-    byte _unknown_000C[4];
-    undefined4 field_0010; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0014[4];
-    undefined4 field_0018; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
 struct AnonPointee_StartSystemTy_000C {
     undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
     undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=1
-};
-
-struct AnonPointee_StartSystemTy_02F0 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=3, writes=0
 };
 
 struct AnonPointee_StartSystemTy_0544 {
@@ -18985,42 +17895,6 @@ struct AnonPointee_StartSystemTy_0544 {
     byte _unknown_0003[1];
     undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=4; nested reads=5, writes=0
     undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_StartSystemTy_067E {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=5; nested reads=6, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=3; nested reads=3, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_StartSystemTy_0682 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=3, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_StartSystemTy_0696 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_TLOBaseTy_0000 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    byte _unknown_0014[124];
-    undefined4 field_0090; // [STClassLayoutApplier] nested evidence_count=4; nested reads=12, writes=0
-    byte _unknown_0094[100];
-    undefined4 field_00F8; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
 };
 
 struct AnonPointee_TLOBaseTy_01F5 {
@@ -19094,64 +17968,12 @@ struct AnonPointee_TLOBaseTy_061B {
     undefined4 field_05B8; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
 };
 
-struct AnonPointee_TLOEmbryoTy_0000 {
-    byte _unknown_0000[44];
-    undefined4 field_002C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0030[96];
-    undefined4 field_0090; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-};
-
 struct AnonPointee_TradePanelTy_0000 {
     undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
     undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=6, writes=0
     undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
     byte _unknown_000C[4];
     undefined4 field_0010; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_UpgPanelTy_0000 {
-    byte _unknown_0000[28];
-    undefined4 field_001C; // [STClassLayoutApplier] nested evidence_count=8; nested reads=11, writes=0
-    undefined4 field_0020; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_WaitTy_0000 {
-    undefined4 field_0000; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=0
-    byte _unknown_0004[4];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=3; nested reads=3, writes=0
-};
-
-struct AnonPointee_WaitTy_1AEC {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=6, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_WaitTy_1AF0 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=8, writes=0
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-};
-
-struct AnonPointee_cLoadingTy_0000 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_cLoadingTy_0004 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_000C[2];
-    undefined2 field_000E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
 };
 
 struct AiPlrClassTy_field_06A1Element {
@@ -19419,6 +18241,69 @@ struct SettMapMTy_field_2237Element {
     int field_0000; // [STDArrayElementApplier] evidence_count=3; observed_types={/SubmarineTitans/Recovered/PointerShapes/AnonShape_005D4990_5F0525CF=1, /int=7}; semantic_roles={}; role_sites=; source_names={}; sites=005CC2D0 *piVar2 | 005CE0E0 *local_10 | 005CE0E0 *pAVar9
     byte _unknown_0004[4];
     int field_0008; // [STDArrayElementApplier] evidence_count=2; observed_types={/int=2}; semantic_roles={}; role_sites=; source_names={}; sites=005CC2D0 piVar2[2] | 005CE0E0 local_10[2]
+};
+
+struct SndUnderAttMenegC_field_00B9Element {
+    int field_0000; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=4}; semantic_roles={}; role_sites=; source_names={}; sites=0061FA40 *piVar1
+    int field_0004; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=1}; semantic_roles={}; role_sites=; source_names={}; sites=0061FA40 piVar1[1]
+    int field_0008; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=0061FA40 piVar1[2]
+    int field_000C; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=0061FA40 piVar1[3]
+    byte _unknown_0010[4];
+};
+
+struct SndUnderAttMenegC_field_00C5Element {
+    int field_0000; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=4}; semantic_roles={}; role_sites=; source_names={}; sites=00620030 *piVar1
+    int field_0004; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=1}; semantic_roles={}; role_sites=; source_names={}; sites=00620030 piVar1[1]
+    int field_0008; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=00620030 piVar1[2]
+    int field_000C; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=00620030 piVar1[3]
+    byte _unknown_0010[4];
+};
+
+struct SndUnderAttMenegC_field_00D1Element {
+    int field_0000; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=4}; semantic_roles={}; role_sites=; source_names={}; sites=006203F0 *piVar1
+    int field_0004; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=1}; semantic_roles={}; role_sites=; source_names={}; sites=006203F0 piVar1[1]
+    int field_0008; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=006203F0 piVar1[2]
+    int field_000C; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=006203F0 piVar1[3]
+    byte _unknown_0010[4];
+};
+
+struct SndUnderAttMenegC_field_00DDElement {
+    int field_0000; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=4}; semantic_roles={}; role_sites=; source_names={}; sites=00620780 *piVar1
+    int field_0004; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=1}; semantic_roles={}; role_sites=; source_names={}; sites=00620780 piVar1[1]
+    int field_0008; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=00620780 piVar1[2]
+    int field_000C; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=00620780 piVar1[3]
+    byte _unknown_0010[4];
+};
+
+struct SndUnderAttMenegC_field_00E9Element {
+    int field_0000; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=4}; semantic_roles={}; role_sites=; source_names={}; sites=00620B20 *piVar1
+    int field_0004; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=1}; semantic_roles={}; role_sites=; source_names={}; sites=00620B20 piVar1[1]
+    int field_0008; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=00620B20 piVar1[2]
+    int field_000C; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=00620B20 piVar1[3]
+    byte _unknown_0010[4];
+};
+
+struct SndUnderAttMenegC_field_00F5Element {
+    int field_0000; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=4}; semantic_roles={}; role_sites=; source_names={}; sites=00620F60 *piVar1
+    int field_0004; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=1}; semantic_roles={}; role_sites=; source_names={}; sites=00620F60 piVar1[1]
+    int field_0008; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=00620F60 piVar1[2]
+    int field_000C; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=00620F60 piVar1[3]
+    byte _unknown_0010[4];
+};
+
+struct SndUnderAttMenegC_field_0101Element {
+    int field_0000; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=4}; semantic_roles={}; role_sites=; source_names={}; sites=00621300 *piVar1
+    int field_0004; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=1}; semantic_roles={}; role_sites=; source_names={}; sites=00621300 piVar1[1]
+    int field_0008; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=00621300 piVar1[2]
+    int field_000C; // [STDArrayElementApplier] evidence_count=1; observed_types={/int=3}; semantic_roles={}; role_sites=; source_names={}; sites=00621300 piVar1[3]
+    byte _unknown_0010[4];
+};
+
+struct SndUnderAttMenegC_field_010AElement {
+    undefined1 field_0000; // [STDArrayElementApplier] evidence_count=1; observed_types={/undefined1=2}; semantic_roles={}; role_sites=; source_names={}; sites=00621780 *puVar2
+    uint field_0001; // [STDArrayElementApplier] evidence_count=1; observed_types={/uint=1}; semantic_roles={}; role_sites=; source_names={}; sites=00621780 puVar2+0x1
+    byte _unknown_0005[4];
+    undefined4 field_0009; // [STDArrayElementApplier] evidence_count=1; observed_types={/undefined4=1}; semantic_roles={}; role_sites=; source_names={}; sites=00621780 puVar2+0x9
 };
 
 struct TraksClassTy_field_0024Element {
@@ -19731,6 +18616,94 @@ struct SettMapMTy_field_2237DArray {
     dword growCapacity; // Elements added when storage grows.
     void *growCallback; // Callback pointer when flags&0x100; observed call arguments: data, oldCapacity, addedCapacity.
     SettMapMTy_field_2237Element *data; // Contiguous element storage.
+};
+
+struct SndUnderAttMenegC_field_00B9DArray {
+    dword flags; // Bit 0x8 owns descriptor; bit 0x100 enables grow callback.
+    dword iteratorIndex; // Cursor used by DArrayGetNext.
+    dword elementSize; // Element size in bytes.
+    dword count; // Number of populated elements.
+    dword capacity; // Allocated element capacity.
+    dword growCapacity; // Elements added when storage grows.
+    void *growCallback; // Callback pointer when flags&0x100; observed call arguments: data, oldCapacity, addedCapacity.
+    SndUnderAttMenegC_field_00B9Element *data; // Contiguous element storage.
+};
+
+struct SndUnderAttMenegC_field_00C5DArray {
+    dword flags; // Bit 0x8 owns descriptor; bit 0x100 enables grow callback.
+    dword iteratorIndex; // Cursor used by DArrayGetNext.
+    dword elementSize; // Element size in bytes.
+    dword count; // Number of populated elements.
+    dword capacity; // Allocated element capacity.
+    dword growCapacity; // Elements added when storage grows.
+    void *growCallback; // Callback pointer when flags&0x100; observed call arguments: data, oldCapacity, addedCapacity.
+    SndUnderAttMenegC_field_00C5Element *data; // Contiguous element storage.
+};
+
+struct SndUnderAttMenegC_field_00D1DArray {
+    dword flags; // Bit 0x8 owns descriptor; bit 0x100 enables grow callback.
+    dword iteratorIndex; // Cursor used by DArrayGetNext.
+    dword elementSize; // Element size in bytes.
+    dword count; // Number of populated elements.
+    dword capacity; // Allocated element capacity.
+    dword growCapacity; // Elements added when storage grows.
+    void *growCallback; // Callback pointer when flags&0x100; observed call arguments: data, oldCapacity, addedCapacity.
+    SndUnderAttMenegC_field_00D1Element *data; // Contiguous element storage.
+};
+
+struct SndUnderAttMenegC_field_00DDDArray {
+    dword flags; // Bit 0x8 owns descriptor; bit 0x100 enables grow callback.
+    dword iteratorIndex; // Cursor used by DArrayGetNext.
+    dword elementSize; // Element size in bytes.
+    dword count; // Number of populated elements.
+    dword capacity; // Allocated element capacity.
+    dword growCapacity; // Elements added when storage grows.
+    void *growCallback; // Callback pointer when flags&0x100; observed call arguments: data, oldCapacity, addedCapacity.
+    SndUnderAttMenegC_field_00DDElement *data; // Contiguous element storage.
+};
+
+struct SndUnderAttMenegC_field_00E9DArray {
+    dword flags; // Bit 0x8 owns descriptor; bit 0x100 enables grow callback.
+    dword iteratorIndex; // Cursor used by DArrayGetNext.
+    dword elementSize; // Element size in bytes.
+    dword count; // Number of populated elements.
+    dword capacity; // Allocated element capacity.
+    dword growCapacity; // Elements added when storage grows.
+    void *growCallback; // Callback pointer when flags&0x100; observed call arguments: data, oldCapacity, addedCapacity.
+    SndUnderAttMenegC_field_00E9Element *data; // Contiguous element storage.
+};
+
+struct SndUnderAttMenegC_field_00F5DArray {
+    dword flags; // Bit 0x8 owns descriptor; bit 0x100 enables grow callback.
+    dword iteratorIndex; // Cursor used by DArrayGetNext.
+    dword elementSize; // Element size in bytes.
+    dword count; // Number of populated elements.
+    dword capacity; // Allocated element capacity.
+    dword growCapacity; // Elements added when storage grows.
+    void *growCallback; // Callback pointer when flags&0x100; observed call arguments: data, oldCapacity, addedCapacity.
+    SndUnderAttMenegC_field_00F5Element *data; // Contiguous element storage.
+};
+
+struct SndUnderAttMenegC_field_0101DArray {
+    dword flags; // Bit 0x8 owns descriptor; bit 0x100 enables grow callback.
+    dword iteratorIndex; // Cursor used by DArrayGetNext.
+    dword elementSize; // Element size in bytes.
+    dword count; // Number of populated elements.
+    dword capacity; // Allocated element capacity.
+    dword growCapacity; // Elements added when storage grows.
+    void *growCallback; // Callback pointer when flags&0x100; observed call arguments: data, oldCapacity, addedCapacity.
+    SndUnderAttMenegC_field_0101Element *data; // Contiguous element storage.
+};
+
+struct SndUnderAttMenegC_field_010ADArray {
+    dword flags; // Bit 0x8 owns descriptor; bit 0x100 enables grow callback.
+    dword iteratorIndex; // Cursor used by DArrayGetNext.
+    dword elementSize; // Element size in bytes.
+    dword count; // Number of populated elements.
+    dword capacity; // Allocated element capacity.
+    dword growCapacity; // Elements added when storage grows.
+    void *growCallback; // Callback pointer when flags&0x100; observed call arguments: data, oldCapacity, addedCapacity.
+    SndUnderAttMenegC_field_010AElement *data; // Contiguous element storage.
 };
 
 struct TraksClassTy_field_0024DArray {
@@ -20624,20 +19597,6 @@ struct AnonReceiver_00573260 {
     void FUN_00573260();
 };
 
-struct AnonReceiver_005B6730VTable {
-    void *slot_00; // Unresolved virtual/function-pointer slot at +0x0.
-    void *slot_04; // Unresolved virtual/function-pointer slot at +0x4.
-    void *slot_08; // Unresolved virtual/function-pointer slot at +0x8.
-    void *slot_0C; // Unresolved virtual/function-pointer slot at +0xC.
-    void *slot_10; // Unresolved virtual/function-pointer slot at +0x10.
-    void *slot_14; // Unresolved virtual/function-pointer slot at +0x14.
-    void *slot_18; // Unresolved virtual/function-pointer slot at +0x18.
-};
-
-struct AnonReceiver_005F35F0 {
-    byte _unknown_0000[373];
-};
-
 struct AnonReceiver_005FDB50 {
     byte _unknown_0000[28];
     undefined1 field_0x1c; // exact unnamed-byte view referenced by exported code
@@ -20913,10 +19872,6 @@ struct AnonReceiver_00664540 {
 struct AnonReceiver_00678E00 {
     byte _unknown_0000[1689];
     uint FUN_00679120(byte *param_1, int param_2, int param_3, int param_4);
-};
-
-struct AnonReceiver_006799B0 {
-    byte _unknown_0000[1794];
 };
 
 struct AnonReceiver_00693D00 {
@@ -22467,11 +21422,11 @@ struct ST3DSMAPContext {
     int field_0038; // [STClassLayoutApplier] reads=9, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/int <= 00717E0B CMP/JLE through typed class pointer in FUN_00717970; 00717EFA CMP/JLE through typed class pointer in FUN_00717970
     int field_003C; // [STClassLayoutApplier] reads=9, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/int <= 00717E2A CMP/JLE through typed class pointer in FUN_00717970; 00717F35 CMP/JLE through typed class pointer in FUN_00717970
     byte _unknown_0040[4];
-    int field_0044; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=14; type_evidence=/int <= 00556851 CMP/JL through typed class pointer in TraksClassTy::TraksCreate; 005F39E8 CMP/JL through typed class pointer in FUN_005f3940; 00604435 CMP/JL through typed class pointer in STExplosion::sub_00604350; 0060DE35 CMP/JL through typed class pointer in FUN_0060dd70; 006191CA CMP/JL through typed class pointer in STJumpMineC::sub_006191A0; 0061E275 CMP/JL through typed class pointer in FUN_0061e110; 0061E2B7 CMP/JL through typed class pointer in FUN_0061e110; 0061F909 CMP/JL through typed class pointer in FUN_0061f8b0; 0062B56E CMP/JL through typed class pointer in STParticleC::sub_0062B4A0; 0062FECA CMP/JL through typed class pointer in STRubbishC::sub_0062FEA0; 00635C8F CMP/JL through typed class pointer in FUN_00635bf0; 00635E3F CMP/JL through typed class pointer in FUN_00635da0; 0063706A CMP/JL through typed class pointer in SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0; 00646ED5 CMP/JL through typed class pointer in FUN_00646e00
+    int field_0044; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=14; type_evidence=/int <= 00556851 CMP/JL through typed class pointer in TraksClassTy::TraksCreate; 005F39E8 CMP/JL through typed class pointer in FUN_005f3940; 00604435 CMP/JL through typed class pointer in STExplosion::sub_00604350; 0060DE35 CMP/JL through typed class pointer in FUN_0060dd70; 006191CA CMP/JL through typed class pointer in STJumpMineC::sub_006191A0; 0061E275 CMP/JL through typed class pointer in FUN_0061e110; 0061E2B7 CMP/JL through typed class pointer in FUN_0061e110; 0061F909 CMP/JL through typed class pointer in SndUnderAttMenegC::sub_0061F8B0; 0062B56E CMP/JL through typed class pointer in STParticleC::sub_0062B4A0; 0062FECA CMP/JL through typed class pointer in STRubbishC::sub_0062FEA0; 00635C8F CMP/JL through typed class pointer in FUN_00635bf0; 00635E3F CMP/JL through typed class pointer in FUN_00635da0; 0063706A CMP/JL through typed class pointer in SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0; 00646ED5 CMP/JL through typed class pointer in FUN_00646e00
     int field_0048; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=14; type_evidence=/int <= 005F39D6 CMP/JL through typed class pointer in FUN_005f3940; 00604418 CMP/JL through typed class pointer in STExplosion::sub_00604350; 0060DE1C CMP/JL through typed class pointer in FUN_0060dd70; 006191B2 CMP/JL through typed class pointer in STJumpMineC::sub_006191A0; 0061E265 CMP/JL through typed class pointer in FUN_0061e110; 0061E29B CMP/JL through typed class pointer in FUN_0061e110; 0062B55C CMP/JL through typed class pointer in STParticleC::sub_0062B4A0; 0062FEB2 CMP/JL through typed class pointer in STRubbishC::sub_0062FEA0; 00635C85 CMP/JL through typed class pointer in FUN_00635bf0; 00635E35 CMP/JL through typed class pointer in FUN_00635da0; 00637058 CMP/JL through typed class pointer in SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0; 00646EB8 CMP/JL through typed class pointer in FUN_00646e00
     byte _unknown_004C[8];
-    int field_0054; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=14; type_evidence=/int <= 00556856 CMP/JG through typed class pointer in TraksClassTy::TraksCreate; 005F39F1 CMP/JG through typed class pointer in FUN_005f3940; 00604443 CMP/JG through typed class pointer in STExplosion::sub_00604350; 0060DE42 CMP/JG through typed class pointer in FUN_0060dd70; 006191D2 CMP/JG through typed class pointer in STJumpMineC::sub_006191A0; 0061E27D CMP/JG through typed class pointer in FUN_0061e110; 0061E2C5 CMP/JG through typed class pointer in FUN_0061e110; 0061F911 CMP/JG through typed class pointer in FUN_0061f8b0; 0062B577 CMP/JG through typed class pointer in STParticleC::sub_0062B4A0; 0062FED2 CMP/JG through typed class pointer in STRubbishC::sub_0062FEA0; 00635C94 CMP/JG through typed class pointer in FUN_00635bf0; 00635E44 CMP/JG through typed class pointer in FUN_00635da0; 00637073 CMP/JG through typed class pointer in SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0; 00646EE3 CMP/JG through typed class pointer in FUN_00646e00
-    int field_0058; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=14; type_evidence=/int <= 0055684C CMP/JG through typed class pointer in TraksClassTy::TraksCreate; 005F39DF CMP/JG through typed class pointer in FUN_005f3940; 00604427 CMP/JG through typed class pointer in STExplosion::sub_00604350; 0060DE29 CMP/JG through typed class pointer in FUN_0060dd70; 006191BB CMP/JG through typed class pointer in STJumpMineC::sub_006191A0; 0061E26D CMP/JG through typed class pointer in FUN_0061e110; 0061E2A9 CMP/JG through typed class pointer in FUN_0061e110; 0061F901 CMP/JG through typed class pointer in FUN_0061f8b0; 0062B565 CMP/JG through typed class pointer in STParticleC::sub_0062B4A0; 0062FEBB CMP/JG through typed class pointer in STRubbishC::sub_0062FEA0; 00635C8A CMP/JG through typed class pointer in FUN_00635bf0; 00635E3A CMP/JG through typed class pointer in FUN_00635da0; 00637061 CMP/JG through typed class pointer in SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0; 00646EC7 CMP/JG through typed class pointer in FUN_00646e00
+    int field_0054; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=14; type_evidence=/int <= 00556856 CMP/JG through typed class pointer in TraksClassTy::TraksCreate; 005F39F1 CMP/JG through typed class pointer in FUN_005f3940; 00604443 CMP/JG through typed class pointer in STExplosion::sub_00604350; 0060DE42 CMP/JG through typed class pointer in FUN_0060dd70; 006191D2 CMP/JG through typed class pointer in STJumpMineC::sub_006191A0; 0061E27D CMP/JG through typed class pointer in FUN_0061e110; 0061E2C5 CMP/JG through typed class pointer in FUN_0061e110; 0061F911 CMP/JG through typed class pointer in SndUnderAttMenegC::sub_0061F8B0; 0062B577 CMP/JG through typed class pointer in STParticleC::sub_0062B4A0; 0062FED2 CMP/JG through typed class pointer in STRubbishC::sub_0062FEA0; 00635C94 CMP/JG through typed class pointer in FUN_00635bf0; 00635E44 CMP/JG through typed class pointer in FUN_00635da0; 00637073 CMP/JG through typed class pointer in SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0; 00646EE3 CMP/JG through typed class pointer in FUN_00646e00
+    int field_0058; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=14; type_evidence=/int <= 0055684C CMP/JG through typed class pointer in TraksClassTy::TraksCreate; 005F39DF CMP/JG through typed class pointer in FUN_005f3940; 00604427 CMP/JG through typed class pointer in STExplosion::sub_00604350; 0060DE29 CMP/JG through typed class pointer in FUN_0060dd70; 006191BB CMP/JG through typed class pointer in STJumpMineC::sub_006191A0; 0061E26D CMP/JG through typed class pointer in FUN_0061e110; 0061E2A9 CMP/JG through typed class pointer in FUN_0061e110; 0061F901 CMP/JG through typed class pointer in SndUnderAttMenegC::sub_0061F8B0; 0062B565 CMP/JG through typed class pointer in STParticleC::sub_0062B4A0; 0062FEBB CMP/JG through typed class pointer in STRubbishC::sub_0062FEA0; 00635C8A CMP/JG through typed class pointer in FUN_00635bf0; 00635E3A CMP/JG through typed class pointer in FUN_00635da0; 00637061 CMP/JG through typed class pointer in SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0; 00646EC7 CMP/JG through typed class pointer in FUN_00646e00
     byte _unknown_005C[4];
     double field_0060; // [STClassLayoutApplier] reads=10, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x10|8x6; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=/double <= 006E1629 FSUB establishes /double; 006E170A FADD establishes /double; 006E2877 FSUB establishes /double
     double field_0068; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=4x10|8x4; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/double <= 006E1626 FLD establishes /double; 006E16BF FLD establishes /double
@@ -22743,68 +21698,6 @@ struct AnonNested_00491600_05A6_E75AEFE8 {
     undefined2 field_0032; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined2=1}; semantic_roles={}
 };
 
-struct AnonNested_004B7F90_01F5_230F20CA {
-    byte _unknown_0000[520];
-    int field_0208; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_020C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_004BEA70_04D0_ED4F30E8 {
-    undefined1 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined1=1}
-    byte _unknown_0001[31];
-    int field_0020; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    byte _unknown_0024[1204];
-    int field_04D8; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    byte _unknown_04DC[220];
-    int field_05B8; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_004C5980_05FB_38F047AC {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-};
-
-struct AnonNested_004C9430_0607_7C13AC95 {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    byte _unknown_0004[12];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_004D0A80_024D_FEDAAB1B {
-    int field_0000; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=3}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_004D6360_0360_98F97B35 {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-};
-
-struct AnonNested_004E91E0_0434_B58024EB {
-    byte _unknown_0000[32];
-    int field_0020; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_0024[1204];
-    int field_04D8; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_04DC[220];
-    int field_05B8; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_004E9960_061B_217F6F13 {
-    byte _unknown_0000[1456];
-    undefined4 field_05B0; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_05B4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_05B8; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
 struct AnonNested_004EE350_0018_78690378 {
     int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
     int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
@@ -22814,38 +21707,6 @@ struct AnonNested_004EF5F0_0014_2E827CED {
     undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=2}
     undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
     undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_004F3540_0018_2CFA22F7 {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_004F37C0_0018_F555AF4C {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_004F3A30_0018_BD4DC0BB {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_004F3CF0_0018_4CF39192 {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_004F42A0_0014_236EA43C {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_0008[4];
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
 };
 
 struct AnonNested_00521CF0_0198_99A2701C {
@@ -22961,17 +21822,6 @@ struct AnonNested_0053FEE0_0014_154E5252 {
     int field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
 };
 
-struct AnonNested_0054EAB0_0065_6333AF5F {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=2}
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_0054EB20_0065_4A00EB9C {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
 struct AnonNested_00575CB0_0004_76DA00C1 {
     byte field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=3}
     byte field_0001; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=2}
@@ -23024,88 +21874,6 @@ struct AnonNested_005F1700_003C_057131A3 {
     int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
 };
 
-struct AnonNested_005F27C0_0014_1CFA0467 {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=3}
-    byte _unknown_0004[8];
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_005F4C50_0169_A2908DF5 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-    byte _unknown_0010[2];
-    int field_0012; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0016; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_001A[2];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_005F53A0_0169_99CDD61C {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=1, /uint=1}
-    byte _unknown_0010[15];
-    undefined4 field_001F; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2, /undefined4=1}
-    byte _unknown_0023[1];
-};
-
-struct AnonNested_005F5B80_0169_794156D7 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=1, /uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_005F9CB0_02E6_32192ADE {
-    byte _unknown_0000[20];
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_001C[22];
-    short field_0032; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=2}
-    int field_0034; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=3}
-    int field_0038; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=3}
-    int field_003C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0040; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0044; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_0048[8];
-    int field_0050; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0054; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0058; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_005C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=4}
-    int field_0060; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0064; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0068; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-};
-
-struct AnonNested_005FAC40_02E6_39D7D583 {
-    byte _unknown_0000[20];
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1, /undefined4=1}
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1, /undefined4=1}
-    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=2, /undefined4=1}
-    byte _unknown_0020[20];
-    undefined4 field_0034; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0038; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    int field_003C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    byte _unknown_0040[16];
-    undefined4 field_0050; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=1, /undefined4=1}
-    undefined4 field_0054; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_0058[8];
-    undefined4 field_0060; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0064; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=1, /undefined4=1}
-    undefined4 field_0068; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_005FADA0_02E6_8D03AC6C {
-    byte _unknown_0000[4];
-    uint field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-    byte _unknown_0008[12];
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
 struct AnonNested_005FAEE0_02E6_E37EB1FC {
     byte _unknown_0000[20];
     int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
@@ -23120,31 +21888,6 @@ struct AnonNested_005FAEE0_02E6_E37EB1FC {
     int field_0060; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
     int field_0064; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
     int field_0068; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_006001E0_0233_B26101C5 {
-    byte _unknown_0000[4];
-    short field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=2}
-    short field_0006; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=1}
-    undefined2 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=1, /undefined2=1}
-    short field_000A; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=3}
-    byte _unknown_000C[6];
-    short field_0012; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=2}
-    short field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=2}
-    short field_0016; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=2}
-    byte _unknown_0018[50];
-    int field_004A; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_004E; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_0052[2];
-};
-
-struct AnonNested_006028A0_0211_79D9690B {
-    byte _unknown_0000[68];
-    int field_0044; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0048; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_004C[8];
-    int field_0054; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0058; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
 };
 
 struct AnonNested_0060A4B0_0234_BD227FFA {
@@ -23173,170 +21916,6 @@ struct AnonNested_0060A940_0234_EAD23A7B {
     undefined4 field_003C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2, /undefined4=1}
 };
 
-struct AnonNested_0060D810_0244_C78BBECE {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=5}
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1, pointer:/undefined4=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0020; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_006139A0_0298_4BCC28B8 {
-    undefined1 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined1=3}
-    byte _unknown_0001[5];
-    short field_0006; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=8}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=3}
-    byte _unknown_000C[12];
-    Global_sub_006141B0_param_2Enum field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/SubmarineTitans/Recovered/Enums/Global_sub_006141B0_param_2Enum=1}
-};
-
-struct AnonNested_00617640_0014_CD0B523E {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=2}
-    byte _unknown_0004[8];
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_00617A20_005E_D2939D1E {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2, /uint=2}
-    byte _unknown_0010[8];
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1, /undefined4=1}
-    int field_0020; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_00617FB0_005E_483CD789 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_00617FB0_0062_35E1D28C {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_00617FB0_0066_193D2AD0 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_00618AD0_005E_B3F50575 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2, /uint=2}
-    byte _unknown_0010[8];
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_0020[89];
-    undefined4 field_0079; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_007D; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_0081[10];
-    undefined4 field_008B; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_008F[1];
-};
-
-struct AnonNested_00618C00_0014_AEDCAA43 {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=3}
-    byte _unknown_0004[8];
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_0061D190_0014_96ED958D {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=3}
-    byte _unknown_0004[8];
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_0061D710_00A3_C72C5EA4 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_0061F530_00A3_F5EAE8C3 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2, /uint=2}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_0020[6];
-    undefined4 field_0026; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2, /undefined4=1}
-    byte _unknown_002A[2];
-};
-
-struct AnonNested_006226C0_0211_7A284649 {
-    byte _unknown_0000[68];
-    int field_0044; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0048; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_004C[8];
-    int field_0054; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0058; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_00627EB0_0014_B8FBF6AA {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=3}
-    byte _unknown_0004[8];
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_00630430_0014_3EDE47A6 {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=4}
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=3}
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=4}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_0010[16];
-    undefined1 field_0020; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=2, /char=2}
-    uint field_0021; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    byte _unknown_0025[3];
-};
-
-struct AnonNested_006308F0_0038_6CBBD4FA {
-    uint field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-    byte _unknown_0004[8];
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-};
-
-struct AnonNested_00631220_0034_EF4AC123 {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=5}
-    byte _unknown_0004[81];
-    uint field_0055; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-    byte _unknown_0059[3];
-};
-
-struct AnonNested_00631220_0038_55904769 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_00633770_001D_40333508 {
-    undefined1 field_0000; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined1=3}
-    byte _unknown_0001[7];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=3; dereference through parent pointer field; observed_types={/int=42, /undefined4=25}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=3; dereference through parent pointer field; observed_types={/uint=36}
-    byte _unknown_0010[1];
-    int field_0011; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=11}
-    int field_0015; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=11}
-    byte _unknown_0019[3];
-    int field_001C; // [STPointerShapeApplier] evidence_count=3; dereference through parent pointer field; observed_types={/int=36}
-    byte _unknown_0020[1];
-    undefined4 field_0021; // [STPointerShapeApplier] evidence_count=3; dereference through parent pointer field; observed_types={/float=41, /undefined4=6}
-    undefined4 field_0025; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/float=26, /undefined4=1}
-    byte _unknown_0029[12];
-    undefined4 field_0035; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1, /undefined4=1}
-    byte _unknown_0039[3];
-};
-
 struct AnonNested_00637180_002C_C78B37DA {
     byte _unknown_0000[4];
     uint field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=3}
@@ -23348,12 +21927,6 @@ struct AnonNested_00637180_002C_C78B37DA {
     int field_0016; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
     byte _unknown_001A[2];
     int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_0063CFF0_0336_DC162146 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
 };
 
 struct AnonNested_0063D410_0336_B4CDA572 {
@@ -23376,73 +21949,6 @@ struct AnonNested_0063E660_0336_9C5AD80D {
     undefined4 field_0038; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2, /undefined4=1}
 };
 
-struct AnonNested_0063E9C0_0336_09F0C1DF {
-    undefined1 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined1=1}
-    byte _unknown_0001[7];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=4, /uint=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=3, /uint=1}
-    float field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/float=7}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    undefined4 field_0020; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1, /uint=1, /undefined4=1}
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1, /undefined4=1}
-    byte _unknown_0028[4];
-    float field_002C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/float=1}
-    undefined4 field_0030; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_0034[4];
-    undefined4 field_0038; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1, /undefined4=1}
-};
-
-struct AnonNested_0063FE70_0336_EDA006AC {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1, /undefined4=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=4}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=4, /uint=1}
-    float field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/float=3}
-    byte _unknown_0014[8];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    undefined4 field_0020; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=8, /uint=3}
-    int field_0024; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    byte _unknown_0028[8];
-    undefined4 field_0030; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=3, /undefined4=1}
-    byte _unknown_0034[4];
-    uint field_0038; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=5}
-};
-
-struct AnonNested_00640170_037F_4BC1E19C {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=2}
-    float field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/float=1}
-    float field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/float=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined1 field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined1=1}
-    undefined1 field_0015; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined1=1}
-    byte _unknown_0016[1];
-    undefined4 field_0017; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_001B[1];
-};
-
-struct AnonNested_006461E0_0014_EFB6F372 {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=2}
-    byte _unknown_0004[8];
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_00647BA0_04E2_62109149 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_000C[8];
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_00647D50_05B3_23417B98 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_000C[8];
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
 struct AnonNested_00652810_000F_9CE8027E {
     byte _unknown_0000[8];
     int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
@@ -23451,59 +21957,10 @@ struct AnonNested_00652810_000F_9CE8027E {
     int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
 };
 
-struct AnonNested_0068E4F0_00A5_6001B6B3 {
-    byte _unknown_0000[4];
-    AnonShape_0065E360_B94C37CB *field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0065E360_B94C37CB=2}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2, /uint=2}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_00694CD0_0008_CC35D736 {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_0069ADA0_000C_771063C4 {
-    short field_0000; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/short=17}
-    short field_0002; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=6}
-    byte _unknown_0004[1105];
-    int field_0455; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    byte _unknown_0459[3];
-};
-
-struct AnonNested_0069BC10_0008_975EAAD1 {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_0069F160_0008_DA6B40D5 {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_006A0470_0008_8D4C819A {
-    int field_0000; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=5}
-    int field_0004; // [STPointerShapeApplier] evidence_count=3; dereference through parent pointer field; observed_types={/int=4}
-};
-
-struct AnonNested_006A0E30_0008_6257299B {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
 struct AnonNested_006B2020_01A0_B4F1EFF3 {
     byte _unknown_0000[68];
     int field_0044; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
     int field_0048; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_006D58C0_00E0_63977295 {
-    byte _unknown_0000[648];
-    int field_0288; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_028C[128];
-    int field_030C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
 };
 
 struct AnonNested_006D6290_0018_C51D55FE {
@@ -23515,126 +21972,6 @@ struct AnonNested_006D6290_0018_C51D55FE {
     undefined4 field_006C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1, /undefined4=1}
 };
 
-struct AnonNested_006D6A10_0288_213244E3 {
-    byte _unknown_0000[4];
-    uint field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2, /uint=5, /undefined4=2}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2, /undefined4=2}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0020; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=2}
-    int field_0024; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=2}
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=19, pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006CEC40_BB23E716=2}
-    byte _unknown_002C[188];
-    undefined4 field_00E8; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=2, /uint=2}
-    undefined4 field_00EC; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/WinDef.h/DWORD=1, /int=2}
-    int field_00F0; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    uint field_00F4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    uint field_00F8; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    undefined4 field_00FC; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1, /uint=1}
-    byte _unknown_0100[996];
-    undefined4 field_04E4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_04E8[4];
-    undefined4 field_04EC; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_006D6A10_0288_DAFF5DDD {
-    byte _unknown_0000[4];
-    uint field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2, /uint=5, /undefined4=2}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2, /undefined4=2}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0020; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=2}
-    int field_0024; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=2}
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=20, pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006CEC40_BB23E716=2}
-    byte _unknown_002C[188];
-    undefined4 field_00E8; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=2, /uint=2}
-    undefined4 field_00EC; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/WinDef.h/DWORD=1, /int=2}
-    int field_00F0; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    uint field_00F4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    uint field_00F8; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    undefined4 field_00FC; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1, /uint=1}
-    uint field_0100; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    uint field_0104; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    byte _unknown_0108[988];
-    undefined4 field_04E4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_04E8[4];
-    undefined4 field_04EC; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_006D7000_00E0_8CA18F81 {
-    byte _unknown_0000[144];
-    int field_0090; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_0094[12];
-    AnonShape_006D4CF0_8A8947BE *field_00A0; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006D4CF0_8A8947BE=1}
-};
-
-struct AnonNested_006E1460_0358_17426F2F {
-    byte _unknown_0000[884];
-    undefined4 field_0374; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0378; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_006E1DD0_0280_387F2D84 {
-    short field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=1}
-    short field_0002; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=1}
-};
-
-struct AnonNested_006E42C0_0014_A7057FF5 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_0008[4];
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_006E57B0_0010_2E36ABBC {
-    byte _unknown_0000[4];
-    undefined4 *field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={pointer:/undefined4=2}
-    byte _unknown_0008[4];
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_006E6710_044E_DC1AB194 {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=2}
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=2}
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_006E6780_044E_FEECA1D4 {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_006E67C0_0452_59995E3E {
-    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=2}
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=2}
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_006E6830_0452_DAA077C9 {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_006E68C0_0280_223685B4 {
-    short field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=1}
-    short field_0002; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=1}
-};
-
 struct AnonNested_006E6FB0_0008_71212DD0 {
     undefined1 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined1=2}
     byte _unknown_0001[12];
@@ -23644,85 +21981,6 @@ struct AnonNested_006E6FB0_0008_71212DD0 {
     short field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=6}
     byte _unknown_0016[1];
     undefined1 field_0x17; // exact unnamed-byte view referenced by exported code
-};
-
-struct AnonNested_006E6FB0_031C_A9A253F8 {
-    uint field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=4}
-    byte _unknown_0004[112];
-    uint field_0074; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-    uint field_0078; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-    uint field_007C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-    byte _unknown_0080[136];
-    uint field_0108; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=12}
-    uint field_010C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=13}
-    undefined1 field_0110; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=1, /char=1}
-    undefined1 field_0111; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=1, /char=1}
-    undefined1 field_0112; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=1, /undefined1=1}
-    byte _unknown_0113[1];
-};
-
-struct AnonNested_006E6FB0_0420_246567AC {
-    byte field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=2}
-    byte field_0001; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=4}
-    byte _unknown_0002[1];
-    byte field_0003; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=1}
-};
-
-struct AnonNested_006E8580_0004_0F761FCB {
-    byte _unknown_0000[24];
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-};
-
-struct AnonNested_006E8EA0_02F0_0B4BBCFB {
-    undefined1 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined1=1}
-    byte _unknown_0001[3];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=3}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=3}
-};
-
-struct AnonNested_006E9490_0310_0881F4E4 {
-    uint field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    byte _unknown_0004[144];
-    uint field_0094; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-    byte _unknown_0098[12];
-    uint field_00A4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-};
-
-struct AnonNested_006E9CB0_0310_31D172B2 {
-    uint field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    byte _unknown_0004[144];
-    uint field_0094; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-    byte _unknown_0098[8];
-    uint field_00A0; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    uint field_00A4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-};
-
-struct AnonNested_006E9D40_0310_477CEA1A {
-    uint field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    byte _unknown_0004[144];
-    uint field_0094; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-    byte _unknown_0098[8];
-    uint field_00A0; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    uint field_00A4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-};
-
-struct AnonNested_006E9DD0_0310_F81C983F {
-    uint field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    byte _unknown_0004[144];
-    uint field_0094; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-    byte _unknown_0098[8];
-    uint field_00A0; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    uint field_00A4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-};
-
-struct AnonNested_006E9E60_0310_51AA0C90 {
-    uint field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    byte _unknown_0004[144];
-    uint field_0094; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
-    byte _unknown_0098[8];
-    uint field_00A0; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
-    uint field_00A4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=1}
 };
 
 struct AnonNested_006ECFC0_0064_4836A151 {
@@ -23761,13 +22019,6 @@ struct AnonNested_006ECFC0_0064_60428B19 {
     int field_0088; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
 };
 
-struct AnonNested_00721520_0138_26FFE90C {
-    byte _unknown_0000[8];
-    char *field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={pointer:/char=1}
-    byte _unknown_000C[8];
-    int field_0014; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=3}
-};
-
 struct AnonNested_00721790_0138_C6072F4E {
     byte _unknown_0000[4];
     undefined4 field_0004; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=3, /undefined4=1}
@@ -23780,13 +22031,6 @@ struct AnonNested_007217E0_0138_CBD04E88 {
     byte _unknown_0000[4];
     undefined4 field_0004; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=3, /undefined4=1}
     int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_000C[8];
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_00721830_0138_12664224 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=1, /uint=1}
     byte _unknown_000C[8];
     int field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
 };
@@ -23804,36 +22048,6 @@ struct AnonNested_007233F0_0064_6FCF4A7B {
     int field_0070; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
 };
 
-struct AnonNested_00727DA0_0124_460E0B05 {
-    byte _unknown_0000[2];
-    byte field_0002; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=1}
-    byte field_0003; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=1}
-};
-
-struct AnonNested_0074A39B_0078_6EAEE8D5 {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_0004[188];
-    undefined4 field_00C0; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    undefined4 field_00C4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_00C8[4];
-    int field_00CC; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_0074BFBF_008C_134640C4 {
-    byte _unknown_0000[172];
-    undefined4 field_00AC; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_00B0[12];
-    undefined4 field_00BC; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_00C0[4];
-    undefined4 field_00C4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-};
-
-struct AnonNested_0074C45B_00D8_1CE910A3 {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    byte _unknown_0004[140];
-    int field_0090; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
 struct AnonNested_0074C571_00CC_C64502DE {
     int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}; semantic_roles={}
     byte _unknown_0004[88];
@@ -23842,54 +22056,10 @@ struct AnonNested_0074C571_00CC_C64502DE {
     int field_0090; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}; semantic_roles={}
 };
 
-struct AnonNested_0074C77C_00A0_9AFF712D {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_0004[136];
-    int field_008C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
 struct AnonNested_0074C8A9_0090_6FCAB5DF {
     int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
     byte _unknown_0004[136];
     void *field_008C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={pointer:/void=1}
-};
-
-struct AnonNested_0074CAA4_008C_5B93FF00 {
-    byte _unknown_0000[24];
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_001C[128];
-    int *field_009C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={pointer:/int=1}
-};
-
-struct AnonNested_0074CCE2_008C_4977F015 {
-    byte _unknown_0000[156];
-    int field_009C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=3}
-    byte _unknown_00A0[40];
-    int field_00C8; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_0074CCE2_0090_2EA95B8A {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}
-    byte _unknown_0004[148];
-    int field_0098; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/int=3}
-};
-
-struct AnonNested_0074CF58_00E0_5F67D8EB {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_0004[140];
-    int field_0090; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_0074D042_00A8_3DC33D1A {
-    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    byte _unknown_0004[136];
-    int field_008C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-};
-
-struct AnonNested_00753B40_0008_62BB8A2C {
-    byte _unknown_0000[24];
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
 };
 
 struct AnonNested_00755D40_000C_A3EEF781 {
@@ -23905,14 +22075,6 @@ struct AnonNested_00757360_0008_E15F2681 {
     uint field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}
     byte _unknown_000C[10];
     short field_0016; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=1}
-};
-
-struct AnonNested_007574C0_000C_273D01BA {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_000C[40];
-    short field_0034; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=1}
-    byte _unknown_0036[2];
 };
 
 struct AnonNested_00757530_000C_743CE253 {
@@ -24153,6 +22315,97 @@ struct AnonNested_AnonShape_00497920_894F87D6_009F_65AF98AA {
     undefined2 field_004E; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined2=2}; exact_widths={}; semantic_roles={}
 };
 
+struct AnonNested_AnonShape_004CC370_02CE3D17_0000_762E0E2D {
+    byte _unknown_0000[124];
+    undefined4 field_007C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0080[16];
+    undefined4 field_0090; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_004D7270_8F0A3C37_0000_431532FF {
+    byte _unknown_0000[144];
+    undefined4 field_0090; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0094[48];
+    undefined4 field_00C4; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_004F3FE0_1578D6B9_0018_7B0E2AAD {
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_005745E0_AF52CC75_044D_E2486BFB {
+    byte _unknown_0000[4];
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0009[3];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00575460_06C413C6_044D_A1003587 {
+    byte _unknown_0000[4];
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0009[3];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00575460_06C413C6_0451_3D38181E {
+    byte _unknown_0000[4];
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0009[3];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_005F9E40_7E333F34_02E6_E59503F8 {
+    byte _unknown_0000[4];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[15];
+    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_005F9F70_43CA4DAC_02E6_A919D50D {
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_0060D940_4FDF4902_0244_00248A15 {
+    byte _unknown_0000[12];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_0060DAB0_7A3B9916_0244_2655E818 {
+    byte _unknown_0000[8];
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+    undefined4 field_0020; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00640240_D1DBDD81_037F_89D39015 {
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=4; dereference through parent pointer field; observed_types={/undefined4=4}; exact_widths={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_000C[9];
+    undefined1 field_0015; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined1=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00661CA0_93A030EF_020B_27162EA8 {
+    byte _unknown_0000[8];
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=3; dereference through parent pointer field; observed_types={/undefined4=3}; exact_widths={}; semantic_roles={}
+    byte _unknown_0010[12];
+    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
 struct AnonNested_AnonShape_006B1B10_121F236C_01B0_7CFC8645 {
     uint flags; // [STPointerShapeApplier] evidence_count=5; dereference through parent pointer field; observed_types={/uint=11}; semantic_roles={flags=2}
     byte _unknown_0004[8];
@@ -24187,6 +22440,219 @@ struct AnonNested_AnonShape_006B1BD0_7C890E99_01B0_6D384113 {
     uint field_00D0; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/uint=2}; semantic_roles={}
 };
 
+struct AnonNested_AnonShape_006B8F10_41B61BA9_0000_93966B03 {
+    byte _unknown_0000[64];
+    undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0044[20];
+    undefined1 field_0x58; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0059[19];
+    undefined4 field_006C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_006D54C0_FBA73A61_0284_041C9282 {
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_006D54C0_FBA73A61_0288_92098C55 {
+    byte _unknown_0000[8];
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0020; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_002C[100];
+    undefined4 field_0090; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+    undefined4 field_0094; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0098; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_009C[20];
+    undefined4 field_00B0; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_00B4; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_00B8; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_00BC; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_007295F0_722683CC_0004_5BDE234A {
+    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}; exact_widths={}; semantic_roles={}
+    byte _unknown_0004[60];
+    uint *field_0040; // [STPointerShapeApplier] evidence_count=3; dereference through parent pointer field; observed_types={/undefined4=2, pointer:/uint=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00749EC2_C411FB81_006C_7E3C32DA {
+    int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}; exact_widths={}; semantic_roles={}
+    byte _unknown_0004[20];
+    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00750F20_F8C16F98_0008_FDB2B39A {
+    byte _unknown_0000[52];
+    undefined4 field_0034; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+    byte _unknown_0038[24];
+    uint *field_0050; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=1, pointer:/uint=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00750F20_F8C16F98_000C_F63CABFC {
+    byte _unknown_0000[12];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0014[8];
+    uint *field_001C; // [STPointerShapeApplier] evidence_count=6; dereference through parent pointer field; observed_types={/undefined4=5, pointer:/uint=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0020[4];
+    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=3; dereference through parent pointer field; observed_types={/undefined4=3}; exact_widths={}; semantic_roles={}
+    byte _unknown_0028[24];
+    undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0044; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00750FB0_15A3AC3E_0008_EB22C12B {
+    byte _unknown_0000[52];
+    undefined4 field_0034; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0038[24];
+    uint *field_0050; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=1, pointer:/uint=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00750FB0_15A3AC3E_000C_71DE54C3 {
+    byte _unknown_0000[12];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0014[8];
+    uint *field_001C; // [STPointerShapeApplier] evidence_count=6; dereference through parent pointer field; observed_types={/undefined4=5, pointer:/uint=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0020[4];
+    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0028[24];
+    undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00753C80_4C8E695D_0008_9237F694 {
+    byte _unknown_0000[8];
+    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0009[13];
+    undefined1 field_0x16; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0017[1];
+    undefined1 field_0x18; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0019[3];
+    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+    byte _unknown_0020[20];
+    undefined4 field_0034; // [STPointerShapeApplier] evidence_count=3; dereference through parent pointer field; observed_types={/undefined4=3}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00753C80_4C8E695D_000C_9E74E987 {
+    byte _unknown_0000[8];
+    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0009[11];
+    undefined1 field_0x14; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0015[7];
+    uint *field_001C; // [STPointerShapeApplier] evidence_count=6; dereference through parent pointer field; observed_types={/undefined4=3, pointer:/uint=3}; exact_widths={}; semantic_roles={}
+    byte _unknown_0020[4];
+    undefined1 field_0x24; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0025[5];
+    undefined1 field_0x2a; // exact unnamed-byte view referenced by exported code
+    byte _unknown_002B[9];
+    undefined2 field_0034; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined2=2}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_007543F0_E9DD5DAA_000C_D54F7079 {
+    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0001[3];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[3];
+    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0009[3];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined1 field_0x10; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0011[11];
+    uint *field_001C; // [STPointerShapeApplier] evidence_count=15; dereference through parent pointer field; observed_types={/undefined4=9, pointer:/uint=6}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00754B80_75BFDB7A_0080_4681841F {
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00754FD0_6B521B56_0008_2A163446 {
+    byte _unknown_0000[8];
+    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0009[13];
+    undefined2 field_0016; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined2=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0018[28];
+    undefined1 field_0x34; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0035[27];
+    uint *field_0050; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=1, pointer:/uint=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00754FD0_6B521B56_000C_1591C729 {
+    byte _unknown_0000[20];
+    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0020[4];
+    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+    undefined2 field_0028; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined2=1}; exact_widths={}; semantic_roles={}
+    undefined2 field_002A; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined2=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_002C[2];
+    undefined2 field_002E; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined2=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0030[6];
+    undefined1 field_0x36; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0037[9];
+    undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0044; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00755970_4FB144E0_000C_11C2AAE5 {
+    byte _unknown_0000[4];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[3];
+    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0009[19];
+    uint *field_001C; // [STPointerShapeApplier] evidence_count=5; dereference through parent pointer field; observed_types={/undefined4=3, pointer:/uint=2}; exact_widths={}; semantic_roles={}
+    byte _unknown_0020[16];
+    undefined4 field_0030; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined2 field_0034; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined2=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00755E10_BD685653_0008_8628F4E0 {
+    byte _unknown_0000[8];
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+    byte _unknown_000C[10];
+    undefined2 field_0016; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined2=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0018[28];
+    undefined4 field_0034; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00757D90_5427B306_0010_D8C59A06 {
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_00759190_45B6ED67_01A6_2E084C16 {
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+    byte _unknown_0014[52];
+    undefined4 field_0048; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_0075BE40_B9FD5FDF_01A6_A872C6DA {
+    byte _unknown_0000[8];
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=2}; exact_widths={}; semantic_roles={}
+    byte _unknown_000C[80];
+    undefined4 field_005C; // [STPointerShapeApplier] evidence_count=4; dereference through parent pointer field; observed_types={/undefined4=4}; exact_widths={}; semantic_roles={}
+};
+
+struct AnonNested_AnonShape_0075DF10_BA4C6604_0000_7BE2CA10 {
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=5; dereference through parent pointer field; observed_types={/undefined4=5}; exact_widths={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
+};
+
 struct AnonNested_AnonShape_0075F590_570A7014_0080_51346D47 {
     byte *field_0000; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=1, pointer:/byte=1}; exact_widths={}; semantic_roles={}
     byte *field_0004; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined4=1, pointer:/byte=1}; exact_widths={}; semantic_roles={}
@@ -24197,26 +22663,6 @@ struct AnonNested_AnonShape_0075FE30_46CD87E7_01BA_82756618 {
     int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=2}; semantic_roles={}
     int field_0004; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}; semantic_roles={}
     int field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}; semantic_roles={}
-};
-
-struct AnonNested_AnonShape_GLOBAL_00848A18_1B9B27FE_0014_B23B2AAD {
-    byte field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=3}; semantic_roles={}
-    byte field_0001; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=2}; semantic_roles={}
-};
-
-struct AnonNested_AnonShape_GLOBAL_00848A1C_B6E50991_0014_BB282182 {
-    byte field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=3}; semantic_roles={}
-    byte field_0001; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/byte=2}; semantic_roles={}
-};
-
-struct AnonNested_AnonShape_GLOBAL_00848A2C_50EB5CD1_0014_282260F2 {
-    byte field_0000; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/byte=6}; semantic_roles={}
-    byte field_0001; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/byte=4}; semantic_roles={}
-};
-
-struct AnonNested_AnonShape_GLOBAL_00848A34_1A834A18_0014_B03F56A9 {
-    byte field_0000; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/byte=6}; semantic_roles={}
-    byte field_0001; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/byte=4}; semantic_roles={}
 };
 
 struct AnonShape_0040CE20_D3328A6B {
@@ -24287,16 +22733,6 @@ struct AnonShape_00416390_86C8F938 {
     float field_0070; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}
 };
 
-struct AnonShape_004167A0_C6E28A87 {
-    byte _unknown_0000[151];
-    LPVOID field_0097; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/WinDef.h/LPVOID=1}
-    undefined4 field_009B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_009F[52];
-    undefined4 field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_00D7[12];
-    undefined1 field_00E3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-};
-
 struct AnonShape_00417830_9254190A {
     byte _unknown_0000[108];
     undefined2 field_006C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=5, /undefined2=1}
@@ -24325,21 +22761,6 @@ struct AnonShape_0041AF40_F59F8577 {
     undefined4 *field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined4=1}
 };
 
-struct AnonShape_0041C5A0_167218F4 {
-    byte _unknown_0000[91];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=3}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=3}
-    undefined2 field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1, /undefined2=2}
-    byte _unknown_0061[160];
-    int field_0101; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0105; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0109[4];
-    undefined1 *field_010D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined=1}
-    byte _unknown_0111[192];
-    byte field_01D1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
-    byte _unknown_01D2[2];
-};
-
 struct AnonShape_0041C710_C4D46939 {
     byte _unknown_0000[44];
     int field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
@@ -24363,71 +22784,50 @@ struct AnonShape_0041CAF0_1630B9E0 {
 };
 
 struct AnonShape_0041CF50_01071190 {
-    byte _unknown_0000[6];
-    ushort field_0006; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[2];
+    ushort field_0006; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0008[16];
     undefined1 field_0x18; // exact unnamed-byte view referenced by exported code
     byte _unknown_0019[11];
     undefined1 field_0x24; // exact unnamed-byte view referenced by exported code
     byte _unknown_0025[54];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    undefined2 field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
+    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0061[164];
-    undefined4 field_0105; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
+    undefined4 field_0105; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0109[3];
 };
 
 struct AnonShape_0041D100_A90F7B7E {
-    byte _unknown_0000[24];
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[20];
     undefined1 field_0x18; // exact unnamed-byte view referenced by exported code
     byte _unknown_0019[11];
     undefined1 field_0x24; // exact unnamed-byte view referenced by exported code
     byte _unknown_0025[54];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    undefined2 field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
+    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0061[168];
-    undefined4 field_0109; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/undefined=1}
+    undefined4 field_0109; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_010D[3];
 };
 
-struct AnonShape_0041D2B0_CE8C6BD3 {
-    byte _unknown_0000[91];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    undefined2 field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_0061[172];
-    undefined4 field_010D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/undefined=1}
-    byte _unknown_0111[3];
-};
-
 struct AnonShape_0041D4F0_1597DF6B {
-    byte _unknown_0000[24];
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[20];
     undefined1 field_0x18; // exact unnamed-byte view referenced by exported code
     byte _unknown_0019[11];
     undefined1 field_0x24; // exact unnamed-byte view referenced by exported code
     byte _unknown_0025[54];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    undefined2 field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
+    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0061[176];
-    undefined4 field_0111; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/undefined=1}
+    undefined4 field_0111; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0115[3];
-};
-
-struct AnonShape_0041D590_1DB01C7A {
-    byte _unknown_0000[36];
-    uint field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0028[51];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_0061[160];
-    undefined1 *field_0101; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined=1}
-    byte _unknown_0105[204];
-    byte field_01D1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
-    byte _unknown_01D2[2];
 };
 
 struct AnonShape_0041DA30_EF7DF530 {
@@ -24446,8 +22846,9 @@ struct AnonShape_0041DA30_EF7DF530 {
 };
 
 struct AnonShape_0041F630_B1BEE81C {
-    byte _unknown_0000[9];
-    byte field_0009; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[5];
+    byte field_0009; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_000A[22];
     undefined1 field_0x20; // exact unnamed-byte view referenced by exported code
     byte _unknown_0021[3];
@@ -24455,21 +22856,11 @@ struct AnonShape_0041F630_B1BEE81C {
     byte _unknown_0025[432];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_01D6[23];
-    int field_01ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_01ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_01F1[32];
-    undefined4 field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/void=2}
+    undefined4 field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[20];
-    undefined4 field_0229; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    byte _unknown_022D[3];
-};
-
-struct AnonShape_0041F970_0C561B1E {
-    byte _unknown_0000[493];
-    int field_01ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_01F1[32];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=2}
-    byte _unknown_0215[20];
-    undefined4 field_0229; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
+    undefined4 field_0229; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_022D[3];
 };
 
@@ -24706,12 +23097,6 @@ struct AnonShape_00422210_9D5BEAD8 {
     byte _unknown_027A[2];
 };
 
-struct AnonShape_00423EC0_64CE1121 {
-    byte _unknown_0000[16];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
 struct AnonShape_00424360_8159BFF1 {
     undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
     byte _unknown_0001[3];
@@ -24751,13 +23136,6 @@ struct AnonShape_00435930_AC276C8C {
     byte _unknown_0000[32];
     int field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
     uint field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-};
-
-struct AnonShape_00436F20_BB207B3A {
-    byte _unknown_0000[9];
-    undefined1 field_0009; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=2}
-    byte _unknown_000A[40];
-    undefined2 field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=2}
 };
 
 struct AnonShape_00439100_AC816B12 {
@@ -24980,13 +23358,6 @@ struct AnonShape_00449E60_F2069C78 {
     byte _unknown_0025[3];
 };
 
-struct AnonShape_0044A150_E4FE1661 {
-    byte _unknown_0000[32];
-    int field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined1 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_0025[3];
-};
-
 struct AnonShape_0044A730_DBE673B2 {
     byte _unknown_0000[32];
     int field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
@@ -25036,14 +23407,6 @@ struct AnonShape_004803D0_350EB461 {
     int field_0716; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={}
 };
 
-struct AnonShape_00482DB0_070D50BF {
-    byte _unknown_0000[65];
-    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_0047[1];
-};
-
 struct AnonShape_004836C0_617DC527 {
     byte _unknown_0000[1];
     short field_0001; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
@@ -25057,29 +23420,6 @@ struct AnonShape_004836C0_617DC527 {
     undefined1 field_0x800; // exact unnamed-byte view referenced by exported code
     byte _unknown_0801[1];
     short field_0802; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-};
-
-struct AnonShape_004838E0_0C45D4D6 {
-    byte _unknown_0000[52];
-    short field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0036; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_003A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_003E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_0040[1];
-    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_0047[1];
-};
-
-struct AnonShape_00483E30_F0F8D504 {
-    byte _unknown_0000[65];
-    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_0047[1];
 };
 
 struct AnonShape_00488F30_727896DE {
@@ -25209,57 +23549,6 @@ struct AnonShape_0048A910_6D6DD7B1 {
     byte _unknown_06FB[1];
 };
 
-struct AnonShape_0048D440_9DC42AE7 {
-    byte _unknown_0000[36];
-    undefined1 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_0025[11];
-    undefined2 field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    ushort field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=2}
-    byte _unknown_0034[1127];
-    short field_049B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_049D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_049F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    int field_04A1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    short field_04A5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_04A7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_04A9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    int field_04AB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_04AF[803];
-    int field_07D2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    int field_07D6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    int field_07DA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    byte _unknown_07DE[2];
-};
-
-struct AnonShape_0048DCF0_C8633E73 {
-    byte _unknown_0000[71];
-    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_004D[1168];
-    short field_04DD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=4}
-    short field_04DF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=4}
-    short field_04E1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=4}
-    byte _unknown_04E3[25];
-    short field_04FC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_04FE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0500; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    int field_0502; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0506[2];
-};
-
-struct AnonShape_0048DF40_8D46D7E8 {
-    byte _unknown_0000[1245];
-    undefined2 field_04DD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1, /undefined2=1}
-    undefined2 field_04DF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=2}
-    short field_04E1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_04E3[25];
-    short field_04FC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    undefined2 field_04FE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    short field_0500; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_0502[2];
-};
-
 struct AnonShape_004900E0_F89C68CE {
     undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
     byte _unknown_0001[19];
@@ -25344,23 +23633,24 @@ struct AnonShape_00490B30_6CCF6294 {
 };
 
 struct AnonShape_00491600_23458133 {
-    byte _unknown_0000[22];
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[18];
     undefined1 field_0x16; // exact unnamed-byte view referenced by exported code
     byte _unknown_0017[13];
     undefined1 field_0x24; // exact unnamed-byte view referenced by exported code
     byte _unknown_0025[13];
-    undefined2 field_0032; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0034[39];
-    short field_005B; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=1}; indexed_strides={}; semantic_roles={}
-    short field_005D; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=1}; indexed_strides={}; semantic_roles={}
-    short field_005F; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=1}; indexed_strides={}; semantic_roles={}
+    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0061[45];
-    byte field_008E; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/byte=1}; indexed_strides={}; semantic_roles={}
+    byte field_008E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_008F[322];
-    uint field_01D1; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=1}; indexed_strides={}; semantic_roles={}
+    uint field_01D1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_01D5[973];
-    AnonShape_005EFAE0_B406B78B *field_05A2; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_005EFAE0_B406B78B=1}; indexed_strides={}; semantic_roles={}
-    AnonNested_00491600_05A6_E75AEFE8 *field_05A6; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={}
+    AnonShape_005EFAE0_B406B78B *field_05A2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_005EFAE0_B406B78B=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonNested_00491600_05A6_E75AEFE8 *field_05A6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_00491600_05A6_E75AEFE8=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00492AB0_63A128FD {
@@ -25369,37 +23659,6 @@ struct AnonShape_00492AB0_63A128FD {
     byte _unknown_0020[1751];
     int field_06F7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
     byte _unknown_06FB[1];
-};
-
-struct AnonShape_00492B20_AFE20A9A {
-    byte _unknown_0000[36];
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0028[51];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_0061[1435];
-    undefined1 field_05FC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined2 field_05FD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    int field_05FF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    short field_0603; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0605; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0607; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0609; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_060B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_060D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_060F[1];
-};
-
-struct AnonShape_00492F30_E8F69762 {
-    byte _unknown_0000[1539];
-    undefined2 field_0603; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1, /undefined2=1}
-    undefined2 field_0605; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=2}
-    short field_0607; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0609; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    undefined2 field_060B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    short field_060D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_060F[1];
 };
 
 struct AnonShape_00492FC0_E6F586EF {
@@ -25417,25 +23676,15 @@ struct AnonShape_00492FC0_E6F586EF {
 };
 
 struct AnonShape_00493110_B173055C {
-    byte _unknown_0000[24];
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[20];
+    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_001C[8];
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0028[10];
-    undefined2 field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; indexed_strides={}; semantic_roles={}
+    undefined2 field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0034[441];
-    int field_01ED; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00493CD0_11D91B87 {
-    byte _unknown_0000[465];
-    byte field_01D1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
-    byte _unknown_01D2[1006];
-    int field_05C0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_05C4[370];
-    int field_0736; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_073A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_073E[2];
+    int field_01ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_004945C0_2B3B394D {
@@ -25463,33 +23712,6 @@ struct AnonShape_00494AE0_7F188308 {
     byte _unknown_0461[351];
     undefined1 field_0x5c0; // exact unnamed-byte view referenced by exported code
     byte _unknown_05C1[310];
-    int field_06F7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_06FB[143];
-    undefined4 field_078A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_078E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0792; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=2}
-    undefined4 field_0796; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=2}
-    byte _unknown_079A[2];
-};
-
-struct AnonShape_00494AE0_E545732F {
-    byte _unknown_0000[24];
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=4}
-    byte _unknown_001C[8];
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6, /uint=4}
-    byte _unknown_0028[51];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=4}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=4}
-    undefined2 field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=4}
-    byte _unknown_0061[160];
-    undefined4 field_0101; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/undefined=2}
-    byte _unknown_0105[204];
-    byte field_01D1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=4}
-    byte _unknown_01D2[651];
-    int field_045D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_0461[351];
-    int field_05C0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_05C4[307];
     int field_06F7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_06FB[143];
     undefined4 field_078A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
@@ -25545,14 +23767,6 @@ struct AnonShape_00494F00_45028F21 {
     byte _unknown_079A[2];
 };
 
-struct AnonShape_00495EC0_95A268C6 {
-    byte _unknown_0000[91];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_0061[3];
-};
-
 struct AnonShape_00495FF0_59081BDD {
     byte _unknown_0000[42];
     undefined1 field_0x2a; // exact unnamed-byte view referenced by exported code
@@ -25580,47 +23794,6 @@ struct AnonShape_00497110_465BC742 {
     int field_01E9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     int field_01ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_01F1[3];
-};
-
-struct AnonShape_00497920_894F87D6 {
-    byte _unknown_0000[36];
-    int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte _unknown_0028[8];
-    short field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte _unknown_0032[21];
-    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte _unknown_004D[14];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte _unknown_0061[62];
-    AnonNested_AnonShape_00497920_894F87D6_009F_65AF98AA *field_009F; // [STPointerShapeApplier] evidence_count=10; fixed-offset dereference; observed_types={/int=48, pointer:/short=12, pointer:/undefined4=6}; exact_widths={4=22}; indexed_strides={}; semantic_roles={}
-    undefined4 field_00A3; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/undefined4=6}; exact_widths={4=2}; indexed_strides={}; semantic_roles={}
-    undefined4 field_00A7; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/undefined4=3}; exact_widths={4=1}; indexed_strides={}; semantic_roles={}
-    short field_00AB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_00AD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    int field_00AF; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=3, /short=1}; exact_widths={4=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00B3[4];
-    int field_00B7; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=9}; exact_widths={4=3}; indexed_strides={}; semantic_roles={}
-    int field_00BB; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=36, /undefined2=3, pointer:/short=6}; exact_widths={2=1, 4=14}; indexed_strides={}; semantic_roles={}
-    int field_00BF; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=15, /short=13, pointer:/short=6}; exact_widths={4=7}; indexed_strides={}; semantic_roles={}
-    int field_00C3; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=24, /short=13, /undefined4=6, pointer:/short=6}; exact_widths={4=12}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00497E00_1D819A47 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_0049B7D0_41C6F9A6 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
 struct AnonShape_004AB810_8E5693D5 {
@@ -25682,20 +23855,6 @@ struct AnonShape_004ADBA0_0D812343 {
     undefined4 field_0017; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_001B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     char field_001F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-};
-
-struct AnonShape_004ADBA0_E7CEFF88 {
-    byte _unknown_0000[2];
-    undefined1 field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_0003[6];
-    undefined1 field_0009; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_000A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined4 field_000B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_000F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0013; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0017; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_001B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined1 field_001F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
 };
 
 struct AnonShape_004B31C0_DBC5A6CD {
@@ -25773,13 +23932,6 @@ struct AnonShape_004B9FA0_0EE05DAC {
     byte _unknown_03F6[2];
 };
 
-struct AnonShape_004B9FA0_DF027633 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1, /undefined4=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5, pointer:/int=3, pointer:/uint=1}
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-};
-
 struct AnonShape_004BE380_4A62E49E {
     byte _unknown_0000[565];
     int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
@@ -25844,16 +23996,6 @@ struct AnonShape_004C2DD0_4C038B03 {
     byte _unknown_0239[463];
     undefined4 field_0408; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_040C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_004C2F70_6CAAACC0 {
-    byte _unknown_0000[541];
-    int field_021D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0221[20];
-    int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0239[463];
-    int field_0408; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_040C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
 struct AnonShape_004C3020_45D93566 {
@@ -25956,31 +24098,6 @@ struct AnonShape_004C5F30_84FC19DC {
     int field_05B4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
 };
 
-struct AnonShape_004C61A0_0E747D1B {
-    byte _unknown_0000[24];
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_001C[16];
-    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/HoloTy=1}
-};
-
-struct AnonShape_004C61E0_B3B9F8FF {
-    byte _unknown_0000[16];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0014[4];
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_001C[16];
-    void *field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}
-};
-
-struct AnonShape_004C63F0_0B060A14 {
-    byte _unknown_0000[24];
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_001C[8];
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/HoloTy=1, pointer:/STT3DSprC=1}
-};
-
 struct AnonShape_004C71F0_9DDD72E5 {
     byte _unknown_0000[865];
     undefined4 field_0361; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
@@ -25991,43 +24108,6 @@ struct AnonShape_004C71F0_9DDD72E5 {
     byte _unknown_03DC[555];
     undefined4 field_0607; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     byte _unknown_060B[1];
-};
-
-struct AnonShape_004C7460_AC9F4C4C {
-    byte _unknown_0000[24];
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_001C[8];
-    char field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=3}
-    byte _unknown_0025[828];
-    int field_0361; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0365; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0369[4];
-    int field_036D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0371[35];
-    int field_0394; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0398; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    int field_039C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    int field_03A0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    int field_03A4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    byte _unknown_03A8[44];
-    int field_03D4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_03D8[559];
-    undefined4 field_0607; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/int=1}
-    byte _unknown_060B[1];
-};
-
-struct AnonShape_004C96E0_AE72D977 {
-    byte _unknown_0000[565];
-    int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0239[4];
-    char field_023D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_023E[7];
-    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0249[934];
-    undefined4 field_05EF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_05F3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_05F7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_05FB[1];
 };
 
 struct AnonShape_004CBAD0_DCDD6BA9 {
@@ -26074,20 +24154,21 @@ struct AnonShape_004CC220_7DEF08C7 {
 };
 
 struct AnonShape_004CC370_02CE3D17 {
-    byte _unknown_0000[28];
+    AnonNested_AnonShape_004CC370_02CE3D17_0000_762E0E2D *field_0000; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[24];
     undefined1 field_0x1c; // exact unnamed-byte view referenced by exported code
     byte _unknown_001D[440];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_01D6[35];
-    float field_01F9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}
-    float field_01FD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}
-    float field_0201; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}
+    float field_01F9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    float field_01FD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    float field_0201; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0205[12];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=2}
+    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[32];
-    int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
+    int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0239[4];
-    char field_023D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2}
+    char field_023D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_023E[510];
     undefined1 field_0x43c; // exact unnamed-byte view referenced by exported code
     byte _unknown_043D[3];
@@ -26101,15 +24182,16 @@ struct AnonShape_004CC370_02CE3D17 {
     byte _unknown_044D[3];
     undefined1 field_0x450; // exact unnamed-byte view referenced by exported code
     byte _unknown_0451[434];
-    undefined4 field_0603; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, pointer:/STT3DSprC=8, pointer:/void=4}
+    undefined4 field_0603; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0607[12];
-    int field_0613; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0617; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
+    int field_0613; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0617; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_061B[1];
 };
 
 struct AnonShape_004CC900_31EE9CAA {
-    byte _unknown_0000[28];
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[24];
     undefined1 field_0x1c; // exact unnamed-byte view referenced by exported code
     byte _unknown_001D[7];
     undefined1 field_0x24; // exact unnamed-byte view referenced by exported code
@@ -26118,14 +24200,14 @@ struct AnonShape_004CC900_31EE9CAA {
     byte _unknown_01FA[3];
     undefined1 field_0x1fd; // exact unnamed-byte view referenced by exported code
     byte _unknown_01FE[19];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}
+    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[551];
-    undefined4 field_043C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_043C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0440[4];
-    int field_0444; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0448; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    undefined4 field_044C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0450; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    int field_0444; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0448; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_044C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0450; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0454[8];
     undefined1 field_0x45c; // exact unnamed-byte view referenced by exported code
     byte _unknown_045D[7];
@@ -26133,7 +24215,7 @@ struct AnonShape_004CC900_31EE9CAA {
     byte _unknown_0465[3];
     undefined1 field_0x468; // exact unnamed-byte view referenced by exported code
     byte _unknown_0469[410];
-    undefined4 field_0603; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/STT3DSprC=3}
+    undefined4 field_0603; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0607[1];
 };
 
@@ -26190,69 +24272,6 @@ struct AnonShape_004CE720_8639BE44 {
     int field_04E8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
-struct AnonShape_004CE7D0_208BB40F {
-    byte _unknown_0000[1232];
-    int field_04D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_04D4[8];
-    undefined4 field_04DC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    int field_04E0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_04E4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_04E8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_04EC[192];
-    int field_05AC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-};
-
-struct AnonShape_004CE860_DECB0AA9 {
-    byte _unknown_0000[36];
-    int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0028[833];
-    int field_0369; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    byte _unknown_036D[43];
-    int field_0398; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_039C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_03A0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_03A4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-};
-
-struct AnonShape_004D0310_B8EE97FF {
-    byte _unknown_0000[36];
-    int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0028[489];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}
-    byte _unknown_0215[340];
-    int field_0369; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=8}
-    byte _unknown_036D[12];
-    int field_0379; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_037D[642];
-    undefined4 field_05FF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/STT3DSprC=10, pointer:/void=4}
-    byte _unknown_0603[1];
-};
-
-struct AnonShape_004D11D0_880D99AA {
-    byte _unknown_0000[291];
-    int field_0123; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0127[4];
-    int field_012B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_012F[4];
-    int field_0133; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0137[1];
-};
-
-struct AnonShape_004D2760_CB2BA53E {
-    byte _unknown_0000[601];
-    undefined4 field_0259; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/SubmarineTitans/Recovered/Enums/Global_sub_004B7520_param_2Enum=1, /int=1}
-    int field_025D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0261; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    short field_0265; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_0267[1];
-};
-
-struct AnonShape_004D55B0_31219D03 {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, pointer:/int=2, pointer:/undefined4=1}
-};
-
 struct AnonShape_004D6890_0C7826D6 {
     byte _unknown_0000[1];
     undefined1 field_0001; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
@@ -26298,18 +24317,19 @@ struct AnonShape_004D6930_FDF7B020 {
 };
 
 struct AnonShape_004D7270_8F0A3C37 {
-    byte _unknown_0000[36];
+    AnonNested_AnonShape_004D7270_8F0A3C37_0000_431532FF *field_0000; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[32];
     undefined1 field_0x24; // exact unnamed-byte view referenced by exported code
     byte _unknown_0025[7];
     undefined1 field_0x2c; // exact unnamed-byte view referenced by exported code
     byte _unknown_002D[424];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_01D6[95];
-    int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
+    int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0239[4];
-    char field_023D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2}
+    char field_023D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_023E[7];
-    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0249[3];
 };
 
@@ -26347,20 +24367,21 @@ struct AnonShape_004D8F80_1255A4D6 {
 };
 
 struct AnonShape_004D9000_7AA66E43 {
-    byte _unknown_0000[65];
-    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[61];
+    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0047[398];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_01D6[59];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}
+    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[48];
-    undefined4 field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0249[28];
-    uint field_0265; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=4}
+    uint field_0265; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0269[4];
-    undefined4 field_026D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
+    undefined4 field_026D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0271[607];
     undefined1 field_0x4d0; // exact unnamed-byte view referenced by exported code
     byte _unknown_04D1[3];
@@ -26370,7 +24391,7 @@ struct AnonShape_004D9000_7AA66E43 {
     byte _unknown_04D9[3];
     undefined1 field_0x4dc; // exact unnamed-byte view referenced by exported code
     byte _unknown_04DD[290];
-    undefined4 field_05FF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4, pointer:/STT3DSprC=4, pointer:/void=3}
+    undefined4 field_05FF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0603[1];
 };
 
@@ -26396,21 +24417,22 @@ struct AnonShape_004D9BD0_B3B50583 {
 };
 
 struct AnonShape_004D9C80_80F657D3 {
-    byte _unknown_0000[65];
-    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[61];
+    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0047[398];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_01D6[59];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}
+    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[48];
-    undefined4 field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0249[24];
-    undefined4 field_0261; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    uint field_0265; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
+    undefined4 field_0261; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0265; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0269[4];
-    undefined4 field_026D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_026D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0271[607];
     undefined1 field_0x4d0; // exact unnamed-byte view referenced by exported code
     byte _unknown_04D1[3];
@@ -26420,7 +24442,7 @@ struct AnonShape_004D9C80_80F657D3 {
     byte _unknown_04D9[3];
     undefined1 field_0x4dc; // exact unnamed-byte view referenced by exported code
     byte _unknown_04DD[290];
-    undefined4 field_05FF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4, pointer:/STT3DSprC=3, pointer:/void=2}
+    undefined4 field_05FF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0603[1];
 };
 
@@ -26441,17 +24463,6 @@ struct AnonShape_004DBA70_007C3C4C {
     undefined4 field_04C0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     byte _unknown_04C4[347];
     int *field_061F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=2}
-    byte _unknown_0623[1];
-};
-
-struct AnonShape_004DC150_D7EBDFDF {
-    byte _unknown_0000[24];
-    int *field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-    byte _unknown_001C[1188];
-    undefined4 field_04C0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    int field_04C4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_04C8[343];
-    undefined4 field_061F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/HoloTy=1, pointer:/int=2}
     byte _unknown_0623[1];
 };
 
@@ -26604,8 +24615,9 @@ struct AnonShape_004DDCC0_33DEB43E {
 };
 
 struct AnonShape_004DE820_615D04DD {
-    byte _unknown_0000[12];
-    ushort field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[8];
+    ushort field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_000E[22];
     undefined1 field_0x24; // exact unnamed-byte view referenced by exported code
     byte _unknown_0025[11];
@@ -26615,7 +24627,7 @@ struct AnonShape_004DE820_615D04DD {
     byte _unknown_00DF[246];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_01D6[31];
-    int field_01F5; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}
+    int field_01F5; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_004DEA40_61E7A6D4 {
@@ -26623,17 +24635,6 @@ struct AnonShape_004DEA40_61E7A6D4 {
     int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
     byte _unknown_0028[1192];
     int field_04D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-};
-
-struct AnonShape_004DF2B0_8C37D68B {
-    byte _unknown_0000[36];
-    int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0028[1192];
-    undefined4 field_04D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_04D4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_04D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_04DC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_04E0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
 };
 
 struct AnonShape_004DFB00_599AF150 {
@@ -26765,26 +24766,6 @@ struct AnonShape_004E4B10_C52B4B94 {
     undefined4 field_04D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
 };
 
-struct AnonShape_004E4B60_EABE8E44 {
-    byte _unknown_0000[565];
-    int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0239; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_023D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0241[4];
-    undefined4 field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0249[3];
-};
-
-struct AnonShape_004E4D60_97789D69 {
-    byte _unknown_0000[565];
-    int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0239; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_023D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0241[4];
-    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0249[3];
-};
-
 struct AnonShape_004E4D60_C16F78E8 {
     byte _unknown_0000[6];
     ushort field_0006; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -26808,14 +24789,6 @@ struct AnonShape_004E4D60_C16F78E8 {
     int field_04DC; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=6, /undefined4=12}; exact_widths={4=6}; indexed_strides={}; semantic_roles={}
     byte _unknown_04E0[204];
     int field_05AC; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=12}; exact_widths={4=4}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_004E4F30_490004C0 {
-    byte _unknown_0000[565];
-    int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0239; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_023D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_0241[3];
 };
 
 struct AnonShape_004E8D40_DAF7916C {
@@ -26894,20 +24867,6 @@ struct AnonShape_004EA460_7CF77153 {
     int field_05B8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
-struct AnonShape_004EA620_716C262B {
-    byte _unknown_0000[581];
-    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0249[547];
-    undefined4 field_046C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    undefined4 field_0470; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0474[12];
-    int field_0480; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0484; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0488; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_048C[8];
-    undefined4 field_0494; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-};
-
 struct AnonShape_004EA7A0_0F37AD2F {
     byte _unknown_0000[609];
     undefined4 field_0261; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
@@ -26915,34 +24874,6 @@ struct AnonShape_004EA7A0_0F37AD2F {
     undefined4 field_04D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     byte _unknown_04D4[24];
     undefined4 field_04EC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_004EA7E0_AD59BCE4 {
-    byte _unknown_0000[581];
-    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0249[24];
-    undefined4 field_0261; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    byte _unknown_0265[619];
-    undefined4 field_04D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1}
-};
-
-struct AnonShape_004EAA20_6BF53BE2 {
-    byte _unknown_0000[65];
-    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_0047[458];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}
-    byte _unknown_0215[48];
-    undefined4 field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0249[24];
-    undefined4 field_0261; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    uint field_0265; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    byte _unknown_0269[4];
-    undefined4 field_026D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0271[910];
-    undefined4 field_05FF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, pointer:/STT3DSprC=4, pointer:/void=3}
-    byte _unknown_0603[1];
 };
 
 struct AnonShape_004EAD90_30D2E515 {
@@ -27012,42 +24943,6 @@ struct AnonShape_004ECC70_4D35D723 {
     int field_05AC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
-struct AnonShape_004ECCF0_985987C1 {
-    byte _unknown_0000[1232];
-    undefined4 field_04D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, /undefined4=1}
-    undefined4 field_04D4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    byte _unknown_04D8[212];
-    int field_05AC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_004ECDF0_4DB4D99D {
-    byte _unknown_0000[581];
-    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0249[24];
-    undefined4 field_0261; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    byte _unknown_0265[619];
-    undefined4 field_04D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1}
-};
-
-struct AnonShape_004ECEA0_52E8E272 {
-    byte _unknown_0000[65];
-    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_0047[458];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}
-    byte _unknown_0215[48];
-    undefined4 field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0249[24];
-    undefined4 field_0261; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    uint field_0265; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    byte _unknown_0269[4];
-    undefined4 field_026D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0271[910];
-    undefined4 field_05FF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4, pointer:/STT3DSprC=4, pointer:/void=3}
-    byte _unknown_0603[1];
-};
-
 struct AnonShape_004EE350_18D491EA {
     byte _unknown_0000[24];
     AnonNested_004EE350_0018_78690378 *field_0018; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:/int=1}
@@ -27065,17 +24960,6 @@ struct AnonShape_004EEF20_59DE1DA2 {
     byte _unknown_0296[2];
 };
 
-struct AnonShape_004EF140_16642BA0 {
-    byte _unknown_0000[40];
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=1}
-    byte _unknown_0030[361];
-    int field_0199; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_019D[219];
-    byte field_0278; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=3}
-    byte _unknown_0279[3];
-};
-
 struct AnonShape_004EF320_444F9AB1 {
     byte _unknown_0000[16];
     int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
@@ -27089,38 +24973,6 @@ struct AnonShape_004EF5F0_1FA558EC {
     AnonNested_004EF5F0_0014_2E827CED *field_0014; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={pointer:/undefined4=1}
 };
 
-struct AnonShape_004EF6D0_502EEF25 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/char=1}
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_004EFE20_20805E12 {
-    byte _unknown_0000[40];
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=1}
-    byte _unknown_0030[361];
-    int field_0199; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_019D[221];
-    int field_027A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    byte _unknown_027E[2];
-};
-
-struct AnonShape_004EFFE0_E46DC6EE {
-    byte _unknown_0000[16];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    short field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_0016[2];
-    int *field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-};
-
-struct AnonShape_004F0210_51A01EB3 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
 struct AnonShape_004F0A60_A5DE070F {
     byte _unknown_0000[12];
     StartSystemTy *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/StartSystemTy=1}
@@ -27130,44 +24982,6 @@ struct AnonShape_004F0A60_A5DE070F {
     byte _unknown_027F[19];
     undefined4 field_0292; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
     byte _unknown_0296[2];
-};
-
-struct AnonShape_004F0C80_4C5E559C {
-    byte _unknown_0000[40];
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=1}
-    byte _unknown_0030[361];
-    int field_0199; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_019D[219];
-    byte field_0278; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=3}
-    byte _unknown_0279[3];
-};
-
-struct AnonShape_004F0E60_091DB1BE {
-    byte _unknown_0000[16];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    short field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_0016[2];
-    int *field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-};
-
-struct AnonShape_004F1080_64A4850E {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/char=1}
-};
-
-struct AnonShape_004F1950_0C1561B7 {
-    byte _unknown_0000[268];
-    uint field_010C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    uint field_0110; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0114[104];
-    uint field_017C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0180[52];
-    RecoveredSourceFamily_dibcopy *field_01B4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5B10_E0D06CF1=1}
-    byte _unknown_01B8[163];
-    short *field_025B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/short=1}
-    byte field_025F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
 };
 
 struct AnonShape_004F2560_DB98CB49 {
@@ -27241,35 +25055,10 @@ struct AnonShape_004F2E40_DC76A8C6 {
     int field_0128; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=6}; exact_widths={4=2}; indexed_strides={}; semantic_roles={}
 };
 
-struct AnonShape_004F3540_E0E47AE6 {
-    byte _unknown_0000[24];
-    AnonNested_004F3540_0018_2CFA22F7 *field_0018; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:/int=1}
-};
-
-struct AnonShape_004F37C0_C7280A38 {
-    byte _unknown_0000[24];
-    AnonNested_004F37C0_0018_F555AF4C *field_0018; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:/int=1}
-};
-
-struct AnonShape_004F3A30_4968CAC9 {
-    byte _unknown_0000[24];
-    AnonNested_004F3A30_0018_BD4DC0BB *field_0018; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={pointer:/int=1}
-};
-
-struct AnonShape_004F3CF0_F7329418 {
-    byte _unknown_0000[24];
-    AnonNested_004F3CF0_0018_4CF39192 *field_0018; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={pointer:/int=1}
-};
-
 struct AnonShape_004F3FE0_1578D6B9 {
     byte _unknown_0000[20];
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int *field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=2}
-};
-
-struct AnonShape_004F42A0_1F969F31 {
-    byte _unknown_0000[20];
-    AnonNested_004F42A0_0014_236EA43C *field_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/int=3}
+    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonNested_AnonShape_004F3FE0_1578D6B9_0018_7B0E2AAD *field_0018; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={pointer:/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_004F4F90_2D6E0DDA {
@@ -27531,95 +25320,6 @@ struct AnonShape_004F4F90_2D6E0DDA {
     byte _unknown_0DC7[1];
 };
 
-struct AnonShape_004F5690_7820B819 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-    byte _unknown_0010[4];
-    uint field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-};
-
-struct AnonShape_004FA3B0_224BAE98 {
-    byte _unknown_0000[2915];
-    char field_0B63; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    char field_0B64; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_0B65[236];
-    char field_0C51; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    char field_0C52; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_0C53[1];
-};
-
-struct AnonShape_004FAFF0_0F922E35 {
-    byte _unknown_0000[567];
-    int field_0237; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_023B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_023F[1];
-};
-
-struct AnonShape_004FF380_D63D7463 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_00501A10_7BD31715 {
-    byte _unknown_0000[68];
-    undefined4 field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_0048; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_004C[36];
-    undefined4 field_0070; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0074[40];
-    undefined4 field_009C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_00A0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_00A4[36];
-    undefined4 field_00C8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_00CC[192];
-    int field_018C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0190[290];
-    int field_02B2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_02B6[386];
-    int field_0438; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_043C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=2}
-    undefined4 field_0440; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    byte _unknown_0444[8];
-    undefined4 field_044C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    undefined4 field_0450; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    undefined4 field_0454; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    undefined4 field_0458; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    undefined4 field_045C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0460; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0464; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0468; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    int field_046C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0470; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0474; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0478; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_047C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0480; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0484; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0488[756];
-    int field_077C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0780[1049];
-    undefined4 field_0B99; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1}
-    byte _unknown_0B9D[1];
-    char field_0B9E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_0B9F[1];
-};
-
-struct AnonShape_00501D00_04A7E309 {
-    byte _unknown_0000[7];
-    char field_0007; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=3}
-    byte _unknown_0008[13];
-    char field_0015; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_0016[32];
-    int field_0036; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_003A[2];
-};
-
 struct AnonShape_00501D00_3942B646 {
     byte _unknown_0000[7];
     char field_0007; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=5}
@@ -27642,121 +25342,11 @@ struct AnonShape_00505960_269BEFC9 {
     byte _unknown_0007[1];
 };
 
-struct AnonShape_00506040_A874E362 {
-    byte _unknown_0000[80];
-    int field_0050; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_0054; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0058[40];
-    undefined4 field_0080; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0084[36];
-    int field_00A8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_00AC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_00B0[40];
-    undefined4 field_00D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_00DC[1164];
-    undefined4 field_0568; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    undefined4 field_056C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    undefined4 field_0570; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    undefined4 field_0574; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0578; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_057C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0580; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    int field_0584; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0588; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_058C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0590; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0594; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0598; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_059C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_05A0[476];
-    int field_077C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0780[1146];
-    char field_0BFA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_0BFB[1];
-};
-
 struct AnonShape_005105E0_BBFE3E3B {
     byte _unknown_0000[16];
     int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     int *field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-};
-
-struct AnonShape_00510C80_2C2DC38C {
-    byte _unknown_0000[60];
-    undefined4 field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0048; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_004C[16];
-    undefined4 field_005C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0060; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0064; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0068; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_006C[262];
-    undefined2 field_0172; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_0174[4];
-    undefined4 field_0178; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_017C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0180[28];
-    undefined4 field_019C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined1 field_01A0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_01A1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_01A2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined4 field_01A3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01A7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_01AB[8];
-    undefined4 field_01B3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01B7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01BB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01BF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_01C3[4];
-    undefined4 field_01C7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01CB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01CF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined1 field_01DB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined4 field_01DC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01E0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01E4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01E8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01EC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_01F0[40];
-    undefined4 field_0218; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_021C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0220; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0224; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0228; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_022C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0230; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0234; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0238; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_023C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0240; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0244; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0248; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_024C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_00512BE0_C9F23DAB {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-    byte _unknown_0010[24];
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0030[12];
-    int field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    byte _unknown_0040[4];
-    int field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_0048; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_004C[16];
-    int field_005C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_0060[316];
-    int field_019C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_01A0[68];
-    uint *field_01E4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/uint=1}
 };
 
 struct AnonShape_00515650_BBDC7053 {
@@ -27789,14 +25379,6 @@ struct AnonShape_00518C20_0B2995D2 {
     undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
 };
 
-struct AnonShape_00521490_CB9EAEC2 {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/char=1, pointer:/int=1}
-    ushort field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=2}
-    ushort field_001A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-};
-
 struct AnonShape_00521CF0_154649D2 {
     byte _unknown_0000[408];
     AnonNested_00521CF0_0198_99A2701C *field_0198; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=2}
@@ -27809,14 +25391,6 @@ struct AnonShape_00521CF0_4A42AA62 {
     undefined1 field_0x6c; // exact unnamed-byte view referenced by exported code
     byte _unknown_006D[299];
     AnonNested_00521CF0_0198_ED218B19 *field_0198; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=6}
-};
-
-struct AnonShape_00522E80_C2E4EACA {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 *field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined4=1}
-    ushort field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-    undefined2 field_001A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1, /ushort=2}
 };
 
 struct AnonShape_0052A430_8E4D893F {
@@ -27834,54 +25408,12 @@ struct AnonShape_0052A890_F679384E {
     AnonNested_0052A890_0014_9BCDCE5B *field_0014; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={pointer:/undefined4=1}
 };
 
-struct AnonShape_0052B330_71C9FFBF {
-    byte _unknown_0000[3507];
-    undefined4 field_0DB3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1, pointer:/int=2}
-    byte _unknown_0DB7[16];
-    undefined1 field_0DC7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2, /undefined1=1}
-    undefined4 field_0DC8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=3, /undefined4=1}
-    undefined1 field_0DCC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=2, /char=1}
-    undefined1 field_0DCD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=4, /undefined1=2}
-    undefined4 field_0DCE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4, /undefined4=2}
-    undefined4 field_0DD2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=3, /undefined4=2}
-    undefined4 field_0DD6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=6, /undefined4=4}
-    undefined4 field_0DDA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=5, /undefined4=4}
-    float field_0DDE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_0DE2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_0DE6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=2}
-    float field_0DEA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=2}
-    byte _unknown_0DEE[2];
-};
-
 struct AnonShape_0052B760_30F4E0D5 {
-    byte _unknown_0000[20];
-    undefined2 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=2, /ushort=1}
-    undefined2 field_0016; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=3, /undefined4=2}
-};
-
-struct AnonShape_0052B990_04D99BFA {
-    byte _unknown_0000[48];
-    int field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    int field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    byte _unknown_0038[32];
-    int field_0058; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_005C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0060[34];
-    int field_0082; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_0086[28];
-    undefined1 field_00A2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=3, /char=3}
-    byte _unknown_00A3[1];
-    char field_00A4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_00A5[3];
-};
-
-struct AnonShape_0052BF00_2F187CCA {
     byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0014[4];
-    ushort field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-    ushort field_001A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
+    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_0016; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_0052D0A0_90C708AF {
@@ -27907,40 +25439,6 @@ struct AnonShape_0052EFB0_CC661192 {
     AnonNested_0052EFB0_0018_CB007E0D *field_0018; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={pointer:/int=1}
 };
 
-struct AnonShape_00532CE0_361E49BD {
-    byte _unknown_0000[40];
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    uint field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0030[372];
-    char field_01A4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_01A5[28];
-    undefined4 field_01C1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_01C5[3];
-};
-
-struct AnonShape_00533B80_148E68ED {
-    byte _unknown_0000[60];
-    uint field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0040[4];
-    uint field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0048[24];
-    uint field_0060; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0064[4];
-    undefined4 field_0068; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5B10_E0D06CF1=1}
-    byte _unknown_006C[262];
-    short field_0172; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_0174[12];
-    ccFntTy *field_0180; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/ccFntTy=2}
-    byte *field_0184; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/byte=1}
-    byte _unknown_0188[28];
-    char field_01A4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2}
-    UINT field_01A5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/WinDef.h/UINT=1}
-    byte _unknown_01A9[2];
-    char field_01AB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_01AC[21];
-    int field_01C1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-};
-
 struct AnonShape_005389E0_C98BD548 {
     byte _unknown_0000[24];
     AnonNested_005389E0_0018_A8EBF066 *field_0018; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:/int=1}
@@ -27960,31 +25458,6 @@ struct AnonShape_00538FC0_B5E96243 {
     byte _unknown_0000[20];
     int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     AnonNested_00538FC0_0018_DB9172F2 *field_0018; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:/int=1}
-};
-
-struct AnonShape_0053C620_58AD6CA0 {
-    byte _unknown_0000[40];
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=1}
-    byte _unknown_0030[361];
-    int field_0199; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_019D[219];
-    byte field_0278; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=3}
-    byte _unknown_0279[3];
-};
-
-struct AnonShape_0053C820_7DA0C7AE {
-    byte _unknown_0000[16];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    short field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_0016[2];
-    int *field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-};
-
-struct AnonShape_0053CA80_7575DBCB {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/char=1}
 };
 
 struct AnonShape_0053D7A0_044B6141 {
@@ -28018,27 +25491,30 @@ struct AnonShape_0053FEE0_A49592EB {
     AnonNested_0053FEE0_0014_154E5252 *field_0014; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/int=2}
 };
 
-struct AnonShape_00542F40_93D3A62D {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    byte _unknown_0014[4];
-    int *field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=2}
-};
-
 struct AnonShape_00544100_1A02F945 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0008[20];
-    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0020[28];
-    undefined4 field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    uint field_0000; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0004; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=6, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0008[12];
+    uint field_0014; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0018; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_001C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=6, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0020[20];
+    uint field_0034; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0038; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_003C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=10, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
-struct AnonShape_00544940_E504B2A8 {
-    byte _unknown_0000[1238];
-    uint field_04D6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    undefined4 field_04DA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_04DE[2];
+struct AnonShape_00544100_ABD6BC59 {
+    uint field_0000; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=3}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0004; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=7}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0008[12];
+    uint field_0014; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=3}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0018; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=3}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_001C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=7}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0020[20];
+    uint field_0034; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=3}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0038; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=3}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_003C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=11}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_005449B0_F65ED625 {
@@ -28061,91 +25537,9 @@ struct AnonShape_0054A9B0_643B0813 {
     byte _unknown_04FB[1];
 };
 
-struct AnonShape_0054B700_B3EE6DE9 {
-    byte _unknown_0000[1247];
-    int field_04DF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_04E3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_04E7[1];
-};
-
-struct AnonShape_00551800_EBA95FA4 {
-    byte _unknown_0000[40];
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=9}
-    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5, /uint=1, /undefined4=3}
-    byte _unknown_0030[381];
-    ushort field_01AD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=2}
-    byte _unknown_01AF[12];
-    char field_01BB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    ushort field_01BC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-    byte _unknown_01BE[10];
-    undefined4 field_01C8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=3}
-    undefined4 field_01CC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4, /undefined4=1}
-    undefined1 field_01D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=4, /char=2}
-    byte _unknown_01D1[3];
-};
-
-struct AnonShape_00551B10_03263458 {
-    byte _unknown_0000[40];
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    uint field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    byte _unknown_0030[400];
-    undefined4 field_01C0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1}
-    byte _unknown_01C4[12];
-    byte field_01D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=2}
-    byte _unknown_01D1[3];
-};
-
 struct AnonShape_005557B0_28260162 {
     byte _unknown_0000[36];
     DArrayTy *field_0024; // [STPointerShapeApplier] evidence_count=7; fixed-offset dereference; observed_types={/int=3, /undefined4=1, pointer:/byte=1}
-};
-
-struct AnonShape_00555880_021D11E5 {
-    byte _unknown_0000[28];
-    short field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_001E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_0022[2];
-};
-
-struct AnonShape_00555910_7455F960 {
-    byte _unknown_0000[2];
-    undefined2 field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=6, /undefined2=1}
-    undefined2 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=6, /undefined2=1}
-    undefined2 field_0006; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=6, /undefined2=1}
-    short field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_000A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0012; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_0016[6];
-    undefined2 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1, /undefined2=2}
-    undefined2 field_001E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2, /undefined2=1}
-    undefined2 field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2, /undefined2=1}
-    short field_0022; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=5}
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    short field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_002E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    uint field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    short field_0036; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    undefined2 field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1, /undefined2=1}
-    undefined2 field_003A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2, /undefined2=1}
-};
-
-struct AnonShape_00558140_7CF35A3F {
-    byte _unknown_0000[56];
-    int field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_003C[16];
-    int field_004C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0050; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0054[160];
-    undefined4 field_00F4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    byte _unknown_00F8[24];
-    undefined4 field_0110; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
 };
 
 struct AnonShape_005582A0_F54946B9 {
@@ -28172,12 +25566,14 @@ struct AnonShape_005582A0_F54946B9 {
     undefined4 field_004C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; indexed_strides={}; semantic_roles={}
 };
 
-struct AnonShape_0055B9F0_A6E61FFF {
-    byte _unknown_0000[2];
-    short field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_0006[2];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+struct AnonShape_0055B9F0_F484F6C2 {
+    byte field_0000; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/byte=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    char field_0001; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/char=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0002; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0004; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    char field_0006; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/char=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte field_0007; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/byte=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_0055C320_953077EC {
@@ -28185,43 +25581,6 @@ struct AnonShape_0055C320_953077EC {
     int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6}
     byte _unknown_000C[8];
     int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-};
-
-struct AnonShape_00566600_1A7DDCB2 {
-    byte _unknown_0000[24];
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/cMf32=4}
-    byte _unknown_001C[12];
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, /uint=1, /undefined4=1}
-    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_00566900_A2478973 {
-    byte _unknown_0000[24];
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/cMf32=2}
-    byte _unknown_001C[12];
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0038[1];
-    undefined4 field_0039; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_003D[3];
-};
-
-struct AnonShape_00566AA0_2703DA85 {
-    byte _unknown_0000[24];
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_001C[12];
-    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    uint field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    uint field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined1 field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2, /undefined1=1}
-    undefined4 field_0039; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=4}
-    int field_003D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0041[3];
 };
 
 struct AnonShape_00567220_C9DD1C7D {
@@ -28240,33 +25599,6 @@ struct AnonShape_005672E0_9A0A2ED1 {
     byte _unknown_0DFB[400];
     undefined4 field_0F8B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
     byte _unknown_0F8F[1];
-};
-
-struct AnonShape_0056EE90_04DD57E6 {
-    byte _unknown_0000[4397];
-    undefined1 field_112D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1, /undefined1=2}
-    undefined1 field_112E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=2}
-    undefined1 field_112F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-};
-
-struct AnonShape_0056EF50_CAB83E9D {
-    byte _unknown_0000[4397];
-    undefined1 field_112D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2, /undefined1=1}
-    undefined1 field_112E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1, /undefined1=2}
-    undefined1 field_112F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_1130[101];
-    char field_1195; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_1196[2];
-};
-
-struct AnonShape_0056F040_86F75ABE {
-    byte _unknown_0000[4397];
-    char field_112D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2}
-    char field_112E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_112F[81];
-    undefined1 field_1180; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_1181[782];
-    undefined1 field_148F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=6, /char=2, /undefined1=1}
 };
 
 struct AnonShape_0056F930_C6277D80 {
@@ -28703,10 +26035,10 @@ struct AnonShape_005745E0_AF52CC75 {
     byte _unknown_0000[2];
     undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
     byte _unknown_0003[1];
-    byte field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=5}
+    byte field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     undefined1 field_0x5; // exact unnamed-byte view referenced by exported code
     byte _unknown_0006[1095];
-    undefined4 field_044D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/uint=1}
+    AnonNested_AnonShape_005745E0_AF52CC75_044D_E2486BFB *field_044D; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/undefined4=1, pointer:/SubmarineTitans/Recovered/DArrayTy=4}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0451[3];
 };
 
@@ -28738,10 +26070,9 @@ struct AnonShape_00575460_06C413C6 {
     byte _unknown_0000[4];
     undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
     byte _unknown_0005[1096];
-    undefined1 field_0x44d; // exact unnamed-byte view referenced by exported code
-    byte _unknown_044E[3];
-    undefined4 field_0451; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1, pointer:/byte=1}
-    int field_0455; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    AnonNested_AnonShape_00575460_06C413C6_044D_A1003587 *field_044D; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonNested_AnonShape_00575460_06C413C6_0451_3D38181E *field_0451; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0455; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     undefined1 field_0x459; // exact unnamed-byte view referenced by exported code
     byte _unknown_045A[2];
 };
@@ -28765,33 +26096,10 @@ struct AnonShape_00575CB0_065D0A66 {
     byte _unknown_008F[1];
 };
 
-struct AnonShape_00575CB0_4AFBDFBD {
-    byte _unknown_0000[16];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/undefined4=1}
-};
-
 struct AnonShape_00575CB0_C367735D {
     byte _unknown_0000[4];
     uint field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
     undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-};
-
-struct AnonShape_00577690_10255A81 {
-    byte _unknown_0000[24];
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_001C[4];
-    DWORD field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/WinDef.h/DWORD=1}
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0028[1032];
-    undefined1 field_0430; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_0431[3];
-};
-
-struct AnonShape_005776D0_202C27C7 {
-    byte _unknown_0000[16];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
 };
 
 struct AnonShape_00578630_C5BC66E1 {
@@ -28824,53 +26132,49 @@ struct AnonShape_00578630_C5BC66E1 {
     uint field_0060; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
-struct AnonShape_00578630_E75DF825 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    STSprGameObjC_field_0259State *field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/Enums/STSprGameObjC_field_0259State=2}
-};
-
 struct AnonShape_00579350_2E014C47 {
-    byte _unknown_0000[65];
-    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=5}
-    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=5}
-    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=13}
-    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[61];
+    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_004D[1];
-    short field_004E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    short field_004E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     undefined1 field_0x50; // exact unnamed-byte view referenced by exported code
     byte _unknown_0051[10];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0061[11];
     undefined1 field_0x6c; // exact unnamed-byte view referenced by exported code
     byte _unknown_006D[360];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_01D6[59];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=3}
+    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[28];
-    undefined4 field_0231; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5, /undefined4=1}
-    int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_0239; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    undefined4 field_023D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=1, /undefined4=1}
-    int field_0241; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0249; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_024D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    short field_0251; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    undefined4 field_0231; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0239; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_023D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0241; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0249; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_024D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0251; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0253[2];
-    short field_0255; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    short field_0255; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0257[34];
-    int field_0279; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
+    int field_0279; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_027D[3];
 };
 
 struct AnonShape_0057A2C0_A829D396 {
-    byte _unknown_0000[9];
-    byte field_0009; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[5];
+    byte field_0009; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_000A[18];
     undefined1 field_0x1c; // exact unnamed-byte view referenced by exported code
     byte _unknown_001D[7];
@@ -28878,25 +26182,18 @@ struct AnonShape_0057A2C0_A829D396 {
     byte _unknown_0025[15];
     undefined1 field_0x34; // exact unnamed-byte view referenced by exported code
     byte _unknown_0035[1];
-    short field_0036; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=5}
+    short field_0036; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     undefined1 field_0x38; // exact unnamed-byte view referenced by exported code
     byte _unknown_0039[1];
-    short field_003A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=5}
+    short field_003A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     undefined1 field_0x3c; // exact unnamed-byte view referenced by exported code
     byte _unknown_003D[1];
-    short field_003E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=4}
+    short field_003E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0040[1];
-    undefined2 field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2, /undefined2=2}
-    undefined2 field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2, /undefined2=2}
-    undefined2 field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2, /undefined2=2}
+    undefined2 field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0047[1];
-};
-
-struct AnonShape_0057BF60_09E2DBC1 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2, pointer:/undefined4=2}
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
 };
 
 struct AnonShape_0057BF60_C1393638 {
@@ -28928,30 +26225,6 @@ struct AnonShape_0057CB30_71092CE7 {
     byte _unknown_025F[1];
 };
 
-struct AnonShape_0057D420_ACBACC73 {
-    byte _unknown_0000[28];
-    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    byte _unknown_0020[39];
-    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_004D[488];
-    short field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=4}
-    short field_0237; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=4}
-    short field_0239; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=3}
-    byte _unknown_023B[4];
-    undefined4 field_023F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0243[36];
-    int field_0267; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_026B[1];
-};
-
-struct AnonShape_0057E0A0_323CBAA3 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 *field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined4=2}
-};
-
 struct AnonShape_00580570_1EF0F1E6 {
     byte _unknown_0000[597];
     uint field_0255; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
@@ -28960,20 +26233,6 @@ struct AnonShape_00580570_1EF0F1E6 {
     byte _unknown_0261[8];
     undefined4 field_0269; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     byte _unknown_026D[3];
-};
-
-struct AnonShape_005805C0_8BDDDE2B {
-    byte _unknown_0000[493];
-    uint field_01ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_01F1[32];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}
-    byte _unknown_0215[48];
-    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0249; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_024D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0251[12];
-    int field_025D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0261[3];
 };
 
 struct AnonShape_00580780_266862D6 {
@@ -29003,12 +26262,6 @@ struct AnonShape_00581200_BFD82E5E {
     int field_0207; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
     int field_020B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
     byte _unknown_020F[1];
-};
-
-struct AnonShape_00581BF0_F07EE3A2 {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, pointer:/undefined4=2}
 };
 
 struct AnonShape_00583270_0B8831C2 {
@@ -29041,12 +26294,6 @@ struct AnonShape_00583270_0B8831C2 {
     undefined1 field_0x6b; // exact unnamed-byte view referenced by exported code
 };
 
-struct AnonShape_00583270_A36DCD7A {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 *field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined4=2}
-};
-
 struct AnonShape_00583270_F758043B {
     byte _unknown_0000[3];
     undefined1 field_0x3; // exact unnamed-byte view referenced by exported code
@@ -29073,14 +26320,15 @@ struct AnonShape_00583270_F758043B {
 };
 
 struct AnonShape_00584B10_33997544 {
-    byte _unknown_0000[469];
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[465];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_01D6[59];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}
+    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[64];
-    char field_0255; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    undefined1 field_0256; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_0257; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
+    char field_0255; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 field_0256; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 field_0257; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00584D10_AA6E9D03 {
@@ -29165,12 +26413,6 @@ struct AnonShape_005859A0_2434EC3C {
     undefined1 field_0x63; // exact unnamed-byte view referenced by exported code
 };
 
-struct AnonShape_005859A0_2C017738 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/undefined4=2}
-};
-
 struct AnonShape_005859A0_2F00015D {
     byte _unknown_0000[3];
     undefined1 field_0x3; // exact unnamed-byte view referenced by exported code
@@ -29221,14 +26463,6 @@ struct AnonShape_00586320_9792A2C7 {
     undefined4 field_026F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1}
     undefined2 field_0273; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=3}
     byte _unknown_0275[3];
-};
-
-struct AnonShape_00586AF0_0A71E794 {
-    byte _unknown_0000[71];
-    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_004D[3];
 };
 
 struct AnonShape_00588BC0_84BDD66C {
@@ -29296,26 +26530,14 @@ struct AnonShape_00588BC0_84BDD66C {
     undefined1 field_0x83; // exact unnamed-byte view referenced by exported code
 };
 
-struct AnonShape_00588BC0_F7B2CBED {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/undefined4=2}
-};
-
 struct AnonShape_00589740_397F9B27 {
-    byte _unknown_0000[469];
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[465];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_01D6[159];
-    char field_0275; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    undefined1 field_0276; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_0277; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-};
-
-struct AnonShape_00589C10_66C697EB {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2, pointer:/undefined4=2}
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
+    char field_0275; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 field_0276; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 field_0277; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00589C10_CECA1FB4 {
@@ -29384,56 +26606,57 @@ struct AnonShape_00589C10_CECA1FB4 {
 };
 
 struct AnonShape_0058A9E0_DB5690D0 {
-    byte _unknown_0000[27];
-    short field_001B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[23];
+    short field_001B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_001D[36];
-    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=3}
-    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=3}
-    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_004D[1];
-    short field_004E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    short field_004E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     undefined1 field_0x50; // exact unnamed-byte view referenced by exported code
     byte _unknown_0051[1];
-    short field_0052; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    short field_0052; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0054[7];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0061[11];
     undefined1 field_0x6c; // exact unnamed-byte view referenced by exported code
     byte _unknown_006D[360];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_01D6[59];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=3}
+    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[28];
-    int field_0231; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    undefined4 field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4, /undefined4=1}
-    int field_0239; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
+    int field_0231; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0239; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_023D[8];
-    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_0249; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=2}
-    undefined4 field_024D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=1, /undefined4=2}
-    int field_0251; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0255; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0259; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    int field_025D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6}
-    int field_0261; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6}
-    int field_0265; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    int field_0269; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_026D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0271; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    short field_0275; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0249; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_024D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0251; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0255; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0259; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_025D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0261; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0265; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0269; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_026D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0271; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0275; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0277[2];
-    short field_0279; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    short field_0279; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_027B[2];
-    short field_027D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    short field_027D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_027F[2];
-    undefined4 field_0281; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, /undefined4=1}
+    undefined4 field_0281; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0285[32];
-    int field_02A5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
+    int field_02A5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_02A9[3];
 };
 
@@ -29455,48 +26678,43 @@ struct AnonShape_0058BB90_CF74AF20 {
 };
 
 struct AnonShape_0058BD90_DCBCF849 {
-    byte _unknown_0000[65];
-    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=3}
-    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=3}
-    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=7}
-    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[61];
+    short field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_004D[14];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0061[372];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_01D6[59];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=3}
+    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[28];
-    undefined4 field_0231; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, /undefined4=7}
-    undefined4 field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    undefined4 field_0239; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=7, /undefined4=2}
-    int field_023D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    int field_0241; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
+    undefined4 field_0231; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0239; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_023D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0241; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0245[4];
-    int field_0249; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_024D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0251; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0255; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0259; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_025D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0261; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0265; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    short field_0269; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    int field_0249; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_024D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0251; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0255; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0259; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_025D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0261; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0265; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0269; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_026B[2];
-    short field_026D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    short field_026D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_026F[2];
-    short field_0271; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    short field_0271; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0273[1];
-};
-
-struct AnonShape_0058C760_1E722DF9 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/undefined4=2}
 };
 
 struct AnonShape_0058C760_4470B7C6 {
@@ -29582,13 +26800,6 @@ struct AnonShape_0058C760_5C56630E {
     uint field_0074; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
 };
 
-struct AnonShape_0058D7C0_0930224F {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2, pointer:/undefined4=2}
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-};
-
 struct AnonShape_0058D7C0_99A937C6 {
     byte _unknown_0000[2];
     undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
@@ -29650,61 +26861,6 @@ struct AnonShape_0058F030_ED0F322F {
     byte _unknown_0257[1];
 };
 
-struct AnonShape_0058FF70_CCAF0F72 {
-    byte _unknown_0000[28];
-    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=2}
-    byte _unknown_0020[567];
-    undefined4 field_0257; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_025B[1];
-};
-
-struct AnonShape_00590860_47A09D44 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0010[16];
-    undefined4 field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_005908B0_8A8C8A83 {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_0014; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_005925A0_ACA54D35 {
-    byte _unknown_0000[12];
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-    byte _unknown_0010[21];
-    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0035[8131];
-    undefined4 field_1FF8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_00592620_9AEC2C08 {
-    byte _unknown_0000[12];
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-    byte _unknown_0010[21];
-    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0035[8131];
-    undefined4 field_1FF8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_00593040_4F5768CD {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=2, pointer:/byte=1, pointer:/int=1}
-};
-
 struct AnonShape_005939E0_9F78A8B0 {
     byte _unknown_0000[80];
     undefined1 field_0x50; // exact unnamed-byte view referenced by exported code
@@ -29717,131 +26873,6 @@ struct AnonShape_005939E0_9F78A8B0 {
     undefined1 field_0x74; // exact unnamed-byte view referenced by exported code
     byte _unknown_0075[3];
     int field_0078; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_005943F0_068A3707 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0010[16];
-    undefined4 field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_0059B820_F1E7AB4B {
-    byte _unknown_0000[41];
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=10}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=3, /undefined4=20}
-    undefined4 field_0035; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0039[6694];
-    undefined1 field_1A5F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    char field_1A60; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2}
-    byte _unknown_1A61[10];
-    undefined4 field_1A6B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_1A6F[85];
-    int field_1AC4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=7}
-    int field_1AC8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6}
-    int field_1ACC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_1AD0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_1AD4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_1AD8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_1ADC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_1AE0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_1AE4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    byte _unknown_1AE8[36];
-    byte *field_1B0C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/byte=1}
-    int field_1B10; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_1B14; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_1B18; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_1B1C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_1B20; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_1B24; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6}
-    byte _unknown_1B28[910];
-    int field_1EB6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    int field_1EBA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_1EBE[4];
-    int field_1EC2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_1EC6[13];
-    int field_1ED3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_1ED7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_1EDB[4];
-    undefined4 field_1EDF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    byte _unknown_1EE3[1];
-};
-
-struct AnonShape_0059BE50_7219C6AE {
-    byte _unknown_0000[41];
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=12}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=19}
-    byte _unknown_0035[6698];
-    undefined1 field_1A5F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_1A60[11];
-    undefined4 field_1A6B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_1A6F[85];
-    int field_1AC4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=12}
-    int field_1AC8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=8}
-    int field_1ACC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_1AD0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_1AD4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_1AD8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=8}
-    int field_1ADC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=8}
-    int field_1AE0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=8}
-    int field_1AE4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=8}
-    byte _unknown_1AE8[40];
-    int field_1B10; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_1B14; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_1B18; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_1B1C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_1B20; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_1B24; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    byte _unknown_1B28[910];
-    int field_1EB6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    int field_1EBA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_1EBE[21];
-    int field_1ED3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_1ED7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_1EDB[1];
-};
-
-struct AnonShape_005A07F0_323FD806 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    StartSystemTy *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/StartSystemTy=8}
-    byte _unknown_0010[6836];
-    undefined4 field_1AC4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    undefined4 field_1AC8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    byte _unknown_1ACC[28];
-    undefined4 field_1AE8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    undefined4 field_1AEC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    byte _unknown_1AF0[32];
-    undefined4 field_1B10; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    undefined4 field_1B14; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    undefined4 field_1B18; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    undefined4 field_1B1C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    undefined4 field_1B20; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    undefined4 field_1B24; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    byte _unknown_1B28[870];
-    int field_1E8E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_1E92; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_1E96[4];
-    int field_1E9A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_1E9E[4];
-    undefined4 field_1EA2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    undefined4 field_1EA6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    undefined4 field_1EAA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    byte _unknown_1EAE[2];
-};
-
-struct AnonShape_005A2A60_B397ABCA {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
 struct AnonShape_005A4350_59BACD18 {
@@ -29887,107 +26918,6 @@ struct AnonShape_005AD390_9AB360A8 {
     byte _unknown_0026[2];
 };
 
-struct AnonShape_005AE840_42F3E2A7 {
-    byte _unknown_0000[12];
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=5}
-    byte _unknown_0010[21];
-    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=5}
-    byte _unknown_0035[6699];
-    undefined4 field_1A60; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_1A64[8];
-    int field_1A6C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_1A70[531];
-    int field_1C83; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_1C87[1];
-};
-
-struct AnonShape_005AE950_3AC49809 {
-    byte _unknown_0000[12];
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=3}
-    byte _unknown_0010[21];
-    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=5}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=6}
-    byte _unknown_0035[6699];
-    undefined4 field_1A60; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_1A64[8];
-    int field_1A6C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_1A70[531];
-    int field_1C83; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_1C87[1];
-};
-
-struct AnonShape_005B47E0_F4E5CF5A {
-    byte _unknown_0000[12];
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-    byte _unknown_0010[21];
-    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0035[7850];
-    undefined4 field_1EDF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_1EE3[1];
-};
-
-struct AnonShape_005B4860_900BE0CB {
-    byte _unknown_0000[12];
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-    byte _unknown_0010[21];
-    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0035[7850];
-    undefined4 field_1EDF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_1EE3[1];
-};
-
-struct AnonShape_005B5240_B2C8755B {
-    byte _unknown_0000[71];
-    undefined1 field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=2}
-    byte _unknown_0048[153];
-    undefined4 field_00E1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_00E5[16];
-    int field_00F5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_00F9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_00FD[117];
-    undefined4 field_0172; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0176[16];
-    int field_0186; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_018A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_018E[28];
-    undefined4 field_01AA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_01AE[2];
-};
-
-struct AnonShape_005B6560_61F462DF {
-    byte _unknown_0000[4];
-    uint field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=2}
-    byte _unknown_000C[16];
-    uint field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    uint field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0024[36];
-    uint *field_0048; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/uint=1}
-};
-
-struct AnonShape_005B66E0_174166E5 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0010[21];
-    undefined4 field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0035[3];
-};
-
 struct AnonShape_005B9730_A5560D7D {
     byte _unknown_0000[7210];
     int entries[1]; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; indexed_strides={4=1}; semantic_roles={entries=1}
@@ -30012,123 +26942,38 @@ struct AnonShape_005BB9F0_E38C41BB {
     byte _unknown_1A77[1];
 };
 
-struct AnonShape_005BBA40_15493F88 {
-    byte _unknown_0000[12];
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-    byte _unknown_0010[21];
-    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0035[6704];
-    undefined4 field_1A65; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_1A69[10];
-    int field_1A73; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_1A77[1];
-};
-
-struct AnonShape_005BD4B0_63635D6D {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4, /uint=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-    byte _unknown_0010[4];
-    uint field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-};
-
-struct AnonShape_005BE5B0_D9085402 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6, /uint=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=7}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-    byte _unknown_0010[4];
-    uint field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-};
-
-struct AnonShape_005C00D0_8BBBA4CC {
-    byte _unknown_0000[12];
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=2}
-    byte _unknown_0010[21];
-    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1, /undefined4=2}
-    byte _unknown_0035[50];
-    char field_0067; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2}
-    byte _unknown_0068[55];
-    int field_009F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_00A3[1];
-};
-
-struct AnonShape_005C0190_99FBAF43 {
-    byte _unknown_0000[12];
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=2}
-    byte _unknown_0010[21];
-    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    byte _unknown_0035[106];
-    int field_009F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_00A3[1];
-};
-
-struct AnonShape_005C05F0_AB1ACC3B {
-    byte _unknown_0000[12];
-    StartSystemTy *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/StartSystemTy=2}
-    byte _unknown_0010[77];
-    BITMAPINFO *field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/wingdi.h/BITMAPINFO=1}
-    byte _unknown_0061[4];
-    undefined1 field_0065; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=2}
-    byte _unknown_0066[57];
-    undefined4 field_009F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    byte _unknown_00A3[944];
-    undefined4 field_0453; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1, pointer:/HoloTy=6, pointer:/undefined1=1}
-    undefined4 field_0457; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1, pointer:/HoloTy=6, pointer:/undefined1=1}
-    byte _unknown_045B[1];
-};
-
-struct AnonShape_005C0B00_CBE14AB4 {
-    byte _unknown_0000[20];
-    short field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_0016[2];
-    int *field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-};
-
 struct AnonShape_005C1610_B64592CA {
     byte _unknown_0000[20];
     AnonNested_005C1610_0014_572A8044 *field_0014; // [STPointerShapeApplier] evidence_count=13; fixed-offset dereference; observed_types={pointer:/uint=1}
 };
 
 struct AnonShape_005C5CA0_A6776207 {
-    byte _unknown_0000[12];
-    undefined1 field_0xc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_000D[16];
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[8];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=14; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0010[13];
     undefined1 field_0x1d; // exact unnamed-byte view referenced by exported code
     byte _unknown_001E[7];
-    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=6}
+    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0035[7214];
-    undefined4 field_1C63; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_1C63; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_1C67[447];
-    char field_1E26; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    int field_1E27; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    char field_1E26; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_1E27; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_1E2B[309];
     undefined1 field_0x1f60; // exact unnamed-byte view referenced by exported code
     byte _unknown_1F61[35];
-    undefined1 field_0x1f84; // exact unnamed-byte view referenced by exported code
-    byte _unknown_1F85[3];
+    undefined4 field_1F84; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
     undefined1 field_0x1f88; // exact unnamed-byte view referenced by exported code
     byte _unknown_1F89[404];
-    int field_211D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
+    int field_211D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_2121[4];
     undefined1 field_0x2125; // exact unnamed-byte view referenced by exported code
     byte _unknown_2126[55];
-    int field_215D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
+    int field_215D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_2161[3];
 };
 
@@ -30243,19 +27088,6 @@ struct AnonShape_005D00B0_9E7CC102 {
     undefined4 field_005C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
 };
 
-struct AnonShape_005D0150_383DDE8F {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-};
-
-struct AnonShape_005D1380_CEECF2C3 {
-    byte _unknown_0000[8068];
-    DArrayTy *field_1F84; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/int=1}
-};
-
 struct AnonShape_005D1400_5A9F7B11 {
     undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
     undefined1 field_0x1; // exact unnamed-byte view referenced by exported code
@@ -30286,10 +27118,9 @@ struct AnonShape_005D1400_891386BF {
 };
 
 struct AnonShape_005D4990_5F0525CF {
-    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0001[3];
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/undefined4=2}
+    uint field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_005D5560_9031BF1B {
@@ -30354,22 +27185,6 @@ struct AnonShape_005DEB90_FE6FE747 {
     int field_06AE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
     int field_06B2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
     byte _unknown_06B6[2];
-};
-
-struct AnonShape_005DF640_DD656F0B {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_005DF7C0_BF27E5E8 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
 struct AnonShape_005E10A0_819783CC {
@@ -30478,18 +27293,6 @@ struct AnonShape_005E4570_F1672769 {
     int field_01E0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
 };
 
-struct AnonShape_005E5F60_843B3FDC {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0010[89];
-    undefined4 field_0069; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_006D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0071; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0075; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0079[3];
-};
-
 struct AnonShape_005E6640_0F1EE66B {
     byte _unknown_0000[6804];
     int entries[1]; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; indexed_strides={4=1}; semantic_roles={entries=1}
@@ -30506,36 +27309,6 @@ struct AnonShape_005E84D0_1273B60D {
     undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
     byte _unknown_0009[2];
     undefined1 field_000B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-};
-
-struct AnonShape_005E9970_7C1AA6F1 {
-    byte _unknown_0000[12];
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=3}
-    byte _unknown_0010[21];
-    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    byte _unknown_0035[6699];
-    undefined4 field_1A60; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_005E9A40_265F7E5B {
-    byte _unknown_0000[12];
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-    byte _unknown_0010[21];
-    int field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=5}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=4}
-    byte _unknown_0035[6699];
-    undefined4 field_1A60; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_005EAF10_89B39713 {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/undefined4=2}
 };
 
 struct AnonShape_005EBD80_1A4ED01F {
@@ -30645,18 +27418,19 @@ struct AnonShape_005EC9F0_B12E6711 {
 };
 
 struct AnonShape_005EDA50_4BDBD797 {
-    byte _unknown_0000[24];
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[20];
     undefined1 field_0x18; // exact unnamed-byte view referenced by exported code
     byte _unknown_0019[66];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
+    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0061[396];
-    uint field_01ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
+    uint field_01ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_01F1[32];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=2}
+    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[212];
-    char field_02E9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
+    char field_02E9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_02EA[2];
 };
 
@@ -30677,12 +27451,13 @@ struct AnonShape_005EDC20_3D37DB9E {
 };
 
 struct AnonShape_005EE670_EFEE702F {
-    byte _unknown_0000[570];
-    undefined4 field_023A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[566];
+    undefined4 field_023A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_023E[207];
-    undefined1 field_030D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_030E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined2 field_030F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
+    undefined1 field_030D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 field_030E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_030F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0311[3];
 };
 
@@ -30850,27 +27625,6 @@ struct AnonShape_005F0620_60AA17CE {
     byte _unknown_02B5[3];
 };
 
-struct AnonShape_005F06E0_7D4D7384 {
-    byte _unknown_0000[50];
-    undefined2 field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=2}
-    byte _unknown_0034[623];
-    undefined2 field_02A3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_02A5[6];
-    undefined2 field_02AB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_02AD[4];
-    undefined4 field_02B1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_02B5[3];
-};
-
-struct AnonShape_005F09B0_8503F451 {
-    byte _unknown_0000[24];
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_001C[8];
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0028[10];
-    undefined2 field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-};
-
 struct AnonShape_005F0BA0_C8D654C5 {
     byte _unknown_0000[469];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
@@ -30881,26 +27635,6 @@ struct AnonShape_005F0BA0_C8D654C5 {
     byte _unknown_02D6[2];
 };
 
-struct AnonShape_005F0D00_68DA5B8B {
-    byte _unknown_0000[50];
-    undefined2 field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_0034[729];
-    char field_030D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte field_030E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=2}
-    undefined2 field_030F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_0311[3];
-};
-
-struct AnonShape_005F0D90_C3146DC2 {
-    byte _unknown_0000[50];
-    undefined2 field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_0034[729];
-    char field_030D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte field_030E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=2}
-    undefined2 field_030F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_0311[3];
-};
-
 struct AnonShape_005F10D0_60EBA416 {
     byte _unknown_0000[12];
     int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -30909,29 +27643,6 @@ struct AnonShape_005F10D0_60EBA416 {
 struct AnonShape_005F1700_3FAAC417 {
     byte _unknown_0000[60];
     AnonNested_005F1700_003C_057131A3 *field_003C; // [STPointerShapeApplier] evidence_count=8; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_005F19A0_983A7F63 {
-    byte _unknown_0000[60];
-    DArrayTy *field_003C; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/int=1, pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B0C70_7C4FE646=1}
-};
-
-struct AnonShape_005F21D0_FA76322E {
-    byte _unknown_0000[56];
-    int field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    int field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-};
-
-struct AnonShape_005F2330_0E1D2560 {
-    byte _unknown_0000[56];
-    undefined4 field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    undefined4 field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, /undefined4=1, pointer:/byte=1}
-};
-
-struct AnonShape_005F27C0_470044FE {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    AnonNested_005F27C0_0014_1CFA0467 *field_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:/undefined4=1}
 };
 
 struct AnonShape_005F3530_93A949A7 {
@@ -30973,54 +27684,10 @@ struct AnonShape_005F4A30_D28DC55A {
     byte _unknown_0025[3];
 };
 
-struct AnonShape_005F4FA0_36330E3A {
-    byte _unknown_0000[259];
-    char field_0103; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_0104[5];
-    int field_0109; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    int field_010D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0111; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0115; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0119[8];
-    int field_0121; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0125; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0129; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_012D[12];
-    int field_0139; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_013D[44];
-    int field_0169; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_016D[3];
-};
-
-struct AnonShape_005F53A0_843EB0E7 {
-    byte _unknown_0000[361];
-    AnonNested_005F53A0_0169_99CDD61C *field_0169; // [STPointerShapeApplier] evidence_count=7; fixed-offset dereference; observed_types={/int=3, /undefined4=1, pointer:/byte=1}
-    byte _unknown_016D[3];
-};
-
 struct AnonShape_005F5440_D27C3BDE {
     byte _unknown_0000[361];
     DArrayTy *field_0169; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={/int=3}
     byte _unknown_016D[3];
-};
-
-struct AnonShape_005F5F20_58E29B9E {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1, pointer:/undefined4=1}
-};
-
-struct AnonShape_005F9450_64149E40 {
-    byte _unknown_0000[565];
-    int field_0235; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0239[68];
-    int field_027D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0281; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0285; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0289; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_028D[17];
-    undefined1 field_029E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1, /undefined1=1}
-    byte _unknown_029F[1];
 };
 
 struct AnonShape_005F95B0_F363C582 {
@@ -31037,17 +27704,17 @@ struct AnonShape_005F95B0_F363C582 {
 
 struct AnonShape_005F9E40_7E333F34 {
     byte _unknown_0000[529];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=2}
+    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[209];
-    undefined4 field_02E6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/undefined4=1}
+    AnonNested_AnonShape_005F9E40_7E333F34_02E6_E59503F8 *field_02E6; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_02EA[2];
 };
 
 struct AnonShape_005F9F70_43CA4DAC {
     byte _unknown_0000[529];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}
+    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[209];
-    undefined4 field_02E6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/int=2, pointer:/undefined4=2}
+    AnonNested_AnonShape_005F9F70_43CA4DAC_02E6_A919D50D *field_02E6; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_02EA[2];
 };
 
@@ -31104,12 +27771,6 @@ struct AnonShape_005FB100_42251CC8 {
     undefined4 field_02DD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     int field_02E1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_02E5[3];
-};
-
-struct AnonShape_005FB640_4C6A297D {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/undefined4=2}
 };
 
 struct AnonShape_005FC4A0_70B17F95 {
@@ -31273,54 +27934,6 @@ struct AnonShape_006029C0_E1371936 {
     undefined1 field_039F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
 };
 
-struct AnonShape_00602BE0_B1CC517D {
-    byte _unknown_0000[493];
-    uint field_01ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    byte _unknown_01F1[32];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=2}
-    byte _unknown_0215[64];
-    short field_0255; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0257; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0259; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_025B[275];
-    undefined4 field_036E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=3}
-    byte _unknown_0372[8];
-    undefined1 field_037A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=4, /undefined1=3}
-    byte _unknown_037B[28];
-    int field_0397; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    undefined4 field_039B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1}
-    char field_039F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2}
-    byte _unknown_03A0[11];
-    undefined4 *field_03AB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined4=1}
-    byte _unknown_03AF[1];
-};
-
-struct AnonShape_00602E90_7075769A {
-    byte _unknown_0000[529];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=2}
-    byte _unknown_0215[44];
-    int field_0241; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    byte _unknown_0245[301];
-    int field_0372; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0376[5];
-    int field_037B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_037F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0383; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0387[1];
-};
-
-struct AnonShape_00603120_1977E258 {
-    byte _unknown_0000[581];
-    int field_0245; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0249[12];
-    short field_0255; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0257; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0259; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_025B[331];
-    undefined1 field_03A6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2, /undefined1=2}
-    byte _unknown_03A7[1];
-};
-
 struct AnonShape_00603470_D413D02D {
     byte _unknown_0000[1];
     char field_0001; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
@@ -31330,14 +27943,6 @@ struct AnonShape_00603470_D413D02D {
     undefined1 field_0005; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
     undefined1 field_0006; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
     undefined1 field_0007; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-};
-
-struct AnonShape_00604350_448AE2F1 {
-    byte _unknown_0000[497];
-    int field_01F1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_01F5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_01F9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_01FD[3];
 };
 
 struct AnonShape_006048E0_C1705B76 {
@@ -31388,39 +27993,6 @@ struct AnonShape_00604A90_035626E6 {
     undefined4 field_00DE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined1 field_0xe2; // exact unnamed-byte view referenced by exported code
     byte _unknown_00E3[1];
-};
-
-struct AnonShape_00604FC0_D9906037 {
-    byte _unknown_0000[38];
-    undefined1 field_0026; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_0027[114];
-    undefined4 field_0099; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_009D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_00A1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_00A5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_00A9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_00AD[49];
-    undefined4 field_00DE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_00E2[2];
-};
-
-struct AnonShape_00605130_C97429EC {
-    byte _unknown_0000[497];
-    undefined4 field_01F1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01F5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_01F9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_01FD[133];
-    undefined4 field_0282; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0286; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_028A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_028E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0292; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0296; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_029A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_029E[9];
-    undefined4 field_02A7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_02AB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_02AF[1];
 };
 
 struct AnonShape_00608E90_523B07BC {
@@ -31541,26 +28113,26 @@ struct AnonShape_0060D340_D77FEBE7 {
 
 struct AnonShape_0060D940_4FDF4902 {
     byte _unknown_0000[489];
-    int field_01E9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_01ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_01F1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    int field_01E9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_01ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_01F1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_01F5[28];
-    undefined4 field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[31];
-    int field_0234; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_0234; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0238[12];
-    int field_0244; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
+    AnonNested_AnonShape_0060D940_4FDF4902_0244_00248A15 *field_0244; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_0060DAB0_7A3B9916 {
     byte _unknown_0000[505];
-    int field_01F9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_01FD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_01F9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_01FD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0201[51];
-    int field_0234; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_0234; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0238[8];
-    int field_0240; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0244; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=9}
+    int field_0240; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonNested_AnonShape_0060DAB0_7A3B9916_0244_2655E818 *field_0244; // [STPointerShapeApplier] evidence_count=11; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_0060DD70_701DD710 {
@@ -31663,56 +28235,6 @@ struct AnonShape_00616400_B4BF5EEF {
     int field_0284; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
-struct AnonShape_00617640_1122A6C6 {
-    byte _unknown_0000[16];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    AnonNested_00617640_0014_CD0B523E *field_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:/undefined4=1}
-};
-
-struct AnonShape_006179D0_BD0E52D0 {
-    byte _unknown_0000[94];
-    DArrayTy *field_005E; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0062[2];
-};
-
-struct AnonShape_00618AD0_F1827B9B {
-    byte _unknown_0000[94];
-    AnonNested_00618AD0_005E_B3F50575 *field_005E; // [STPointerShapeApplier] evidence_count=9; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0062[2];
-};
-
-struct AnonShape_00618C00_CCBA84F5 {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    AnonNested_00618C00_0014_AEDCAA43 *field_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:/undefined4=1}
-};
-
-struct AnonShape_006193E0_B2745ECE {
-    byte _unknown_0000[97];
-    int field_0061; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0065; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0069; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_006D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0071; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0075; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0079[38];
-    int field_009F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_00A3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_00A7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_00AB[30];
-    short field_00C9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_00CB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_00CD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_00CF[12];
-    int field_00DB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_00DF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_00E3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_00E7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_00EB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_00EF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_00F3[1];
-};
-
 struct AnonShape_00619540_3F564CD2 {
     byte _unknown_0000[78];
     int field_004E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
@@ -31723,74 +28245,6 @@ struct AnonShape_00619540_3F564CD2 {
     byte _unknown_0062[2];
 };
 
-struct AnonShape_0061D190_F4B28A60 {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    AnonNested_0061D190_0014_96ED958D *field_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:/undefined4=1}
-};
-
-struct AnonShape_0061D650_84237B09 {
-    byte _unknown_0000[87];
-    int field_0057; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_005B[56];
-    undefined4 field_0093; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0097; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_009B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_009F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_00A3[1];
-};
-
-struct AnonShape_0061DD40_21C2820F {
-    byte _unknown_0000[48];
-    short field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0036; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_003A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_003C[10];
-    undefined1 field_0046; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    float field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}
-    float field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}
-    undefined4 field_004F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0053; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0057[4];
-    undefined4 field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    float field_0063; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}
-    float field_0067; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}
-    float field_006B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}
-    byte _unknown_006F[36];
-    int field_0093; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0097; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_009B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/int=1}
-    int field_009F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_00A3[9];
-    undefined4 field_00AC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-};
-
-struct AnonShape_0061E110_A0361859 {
-    byte _unknown_0000[48];
-    short field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0036; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_003A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-};
-
-struct AnonShape_0061E4F0_131B61D9 {
-    byte _unknown_0000[71];
-    float field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=6}
-    byte _unknown_004B[72];
-    int field_0093; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0097[4];
-    undefined4 field_009B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/int=1}
-    int field_009F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=9}
-    byte _unknown_00A3[9];
-    undefined4 field_00AC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4, /uint=4}
-};
-
 struct AnonShape_0061E770_099C0C21 {
     byte _unknown_0000[70];
     undefined1 field_0046; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
@@ -31799,99 +28253,12 @@ struct AnonShape_0061E770_099C0C21 {
     byte _unknown_00A7[1];
 };
 
-struct AnonShape_0061E7F0_1BC555A1 {
-    byte _unknown_0000[32];
-    int field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0024[28];
-    int field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined2 field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    char field_0046; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=3}
-    float field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=12}
-    byte _unknown_004B[8];
-    int field_0053; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=10}
-    undefined4 field_0057; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=10, pointer:/int=2}
-    int field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_005F[4];
-    float field_0063; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_0067; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_006B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_006F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_0073; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_0077; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_007B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_007F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_0083; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_0087; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_008B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    float field_008F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4}
-    int field_0093; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_0097[4];
-    undefined4 field_009B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, pointer:/int=1}
-    int field_009F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6}
-    undefined4 field_00A3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, pointer:/uint=1}
-    char field_00A7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_00A8[4];
-    undefined4 field_00AC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-};
-
-struct AnonShape_0061F530_4582158C {
-    byte _unknown_0000[163];
-    AnonNested_0061F530_00A3_F5EAE8C3 *field_00A3; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={/int=2, /undefined4=1, pointer:/byte=1}
-    byte _unknown_00A7[1];
-};
-
-struct AnonShape_0061FCC0_94F6689F {
-    byte _unknown_0000[28];
-    undefined1 field_0x1c; // exact unnamed-byte view referenced by exported code
-    byte _unknown_001D[20];
-    undefined1 field_0x31; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0032[135];
-    undefined4 field_00B9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    byte _unknown_00BD[8];
-    undefined4 field_00C5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    byte _unknown_00C9[8];
-    undefined4 field_00D1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    byte _unknown_00D5[8];
-    undefined4 field_00DD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    byte _unknown_00E1[8];
-    undefined4 field_00E9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    byte _unknown_00ED[8];
-    undefined4 field_00F5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    byte _unknown_00F9[8];
-    undefined4 field_0101; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    byte _unknown_0105[5];
-    undefined4 field_010A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    byte _unknown_010E[2];
-};
-
 struct AnonShape_00621A70_2531BB4B {
     byte _unknown_0000[261];
     undefined1 field_0105; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1, /undefined1=1}
     int field_0106; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     int field_010A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
     byte _unknown_010E[2];
-};
-
-struct AnonShape_00621B50_242D543A {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/undefined4=2}
-};
-
-struct AnonShape_00622880_C4191DB5 {
-    byte _unknown_0000[71];
-    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_004D[14];
-    short field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_0061[588];
-    byte field_02AD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
-    byte _unknown_02AE[156];
-    undefined4 field_034A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-    byte _unknown_034E[2];
 };
 
 struct AnonShape_00622990_E4CFDE96 {
@@ -31920,43 +28287,27 @@ struct AnonShape_00623040_D312340A {
 };
 
 struct AnonShape_00623600_61226D23 {
-    byte _unknown_0000[71];
-    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[67];
+    short field_0047; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_004B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_004D[392];
     undefined1 field_0x1d5; // exact unnamed-byte view referenced by exported code
     byte _unknown_01D6[215];
-    char field_02AD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=3}
-    int field_02AE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    char field_02AD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_02AE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_02B2[28];
-    undefined4 field_02CE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=7, /uint=4, /undefined4=2}
-    int field_02D2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte field_02D6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=2}
+    undefined4 field_02CE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_02D2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte field_02D6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_02D7[18];
-    undefined1 field_02E9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=3, /undefined1=2}
+    undefined1 field_02E9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_02EA[32];
-    undefined4 field_030A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5, /undefined4=2}
-    char field_030E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
+    undefined4 field_030A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    char field_030E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_030F[67];
-    char field_0352; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=2}
-    byte _unknown_0353[1];
-};
-
-struct AnonShape_00624000_A9481D8E {
-    byte _unknown_0000[685];
-    undefined1 field_02AD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=3, /char=1}
-    byte _unknown_02AE[32];
-    undefined4 field_02CE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_02D2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_02D6[1];
-    undefined4 field_02D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_02DB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_02DF[2];
-    undefined4 field_02E1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_02E5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_02E9[105];
-    char field_0352; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
+    char field_0352; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0353[1];
 };
 
@@ -32007,54 +28358,6 @@ struct AnonShape_00627700_6F319351 {
     int field_02A1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     undefined2 field_02A5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
     byte _unknown_02A7[1];
-};
-
-struct AnonShape_00627790_BD208A1C {
-    byte _unknown_0000[36];
-    undefined2 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_0026[12];
-    undefined2 field_0032; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_0034[525];
-    int field_0241; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0245[3];
-};
-
-struct AnonShape_00627EB0_4C14C976 {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    AnonNested_00627EB0_0014_B8FBF6AA *field_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:/undefined4=1}
-};
-
-struct AnonShape_00629830_F056CE49 {
-    byte _unknown_0000[20];
-    byte field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
-    byte _unknown_0015[157];
-    undefined4 field_00B2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_00B6[4];
-    undefined4 field_00BA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    byte _unknown_00BE[1];
-    undefined1 field_00BF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_00C0[6];
-    uint field_00C6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    byte _unknown_00CA[2];
-};
-
-struct AnonShape_00629F90_C3CBACCB {
-    byte _unknown_0000[20];
-    byte field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=4}
-    byte _unknown_0015[7];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    int field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_003C[5];
-    char field_0041; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    undefined4 field_0042; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0046[2];
 };
 
 struct AnonShape_0062AF90_A19AAC76 {
@@ -32166,16 +28469,6 @@ struct AnonShape_0062E740_213F21A8 {
     int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
-struct AnonShape_0062F150_AF81DB77 {
-    byte _unknown_0000[469];
-    int field_01D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_01D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_01DD; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_01E1[24];
-    char field_01F9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_01FA[2];
-};
-
 struct AnonShape_0062F7A0_700302F7 {
     byte _unknown_0000[469];
     undefined4 field_01D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1}
@@ -32218,55 +28511,9 @@ struct AnonShape_0062FCA0_22A9EE35 {
     undefined4 field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
 };
 
-struct AnonShape_00630430_1F5C6718 {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=1}
-    AnonNested_00630430_0014_3EDE47A6 *field_0014; // [STPointerShapeApplier] evidence_count=8; fixed-offset dereference; observed_types={pointer:/undefined4=1}
-};
-
 struct AnonShape_00630430_7FBC9B9C {
     byte _unknown_0000[12];
     int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00630C50_5716D423 {
-    byte _unknown_0000[64];
-    int field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0044[16];
-    int field_0054; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_0058; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_005C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-};
-
-struct AnonShape_00631010_DBA5BE90 {
-    byte _unknown_0000[56];
-    int field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_003C[4];
-    undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    int field_0048; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_004C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0050; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0054[13];
-    undefined4 field_0061; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=2}
-    byte _unknown_0065[3];
-};
-
-struct AnonShape_00631450_C4E92303 {
-    byte _unknown_0000[56];
-    int field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_003C[4];
-    undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0044[8];
-    int field_004C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_006315D0_2C2F0A18 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
 };
 
 struct AnonShape_00631F90_0DA5B9BC {
@@ -32277,40 +28524,41 @@ struct AnonShape_00631F90_0DA5B9BC {
 };
 
 struct AnonShape_00632E30_A9A0278F {
-    byte _unknown_0000[5];
-    undefined4 field_0005; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=9; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[1];
+    undefined4 field_0005; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0009[8];
-    undefined4 field_0011; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
+    undefined4 field_0011; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0015[4];
-    int field_0019; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=13}
-    int field_001D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=11}
+    int field_0019; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_001D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     undefined1 field_0x21; // exact unnamed-byte view referenced by exported code
     byte _unknown_0022[3];
-    undefined4 field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1}
-    undefined4 field_0035; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=1}
-    int field_0039; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
+    undefined4 field_0025; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0029; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_002D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0031; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0035; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0039; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_003D[8];
-    float field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}
+    float field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0049[20];
-    undefined4 field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1, /undefined4=3}
-    undefined4 field_0061; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=4}
-    undefined4 field_0065; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=3, /undefined4=1}
-    float field_0069; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=3}
-    undefined4 field_006D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=6, /undefined4=4}
-    undefined4 field_0071; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0075; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4, /undefined4=1}
-    undefined4 field_0079; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4, /undefined4=2}
-    float field_007D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=6}
-    float field_0081; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=6}
-    undefined4 field_0085; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=4}
-    undefined4 field_0089; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1, /undefined4=4}
-    undefined4 field_008D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0091; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1, /undefined4=1}
+    undefined4 field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0061; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0065; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    float field_0069; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_006D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0071; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0075; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0079; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    float field_007D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    float field_0081; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0085; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0089; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_008D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0091; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0095[4];
-    int field_0099; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_0099; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_009D[3];
 };
 
@@ -32324,13 +28572,6 @@ struct AnonShape_00636750_9523C2A1 {
     int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_0008[36];
     int field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-};
-
-struct AnonShape_00636FC0_24F8974B {
-    byte _unknown_0000[12];
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
 struct AnonShape_00637180_4094267C {
@@ -32474,9 +28715,9 @@ struct AnonShape_00640130_D1AC047E {
 
 struct AnonShape_00640240_D1DBDD81 {
     byte _unknown_0000[529];
-    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=5}
+    void *field_0211; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0215[362];
-    undefined4 field_037F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=2, pointer:/uint=6}
+    AnonNested_AnonShape_00640240_D1DBDD81_037F_89D39015 *field_037F; // [STPointerShapeApplier] evidence_count=8; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0383[1];
 };
 
@@ -32560,41 +28801,22 @@ struct AnonShape_006456C0_B6840D7C {
     int field_0068; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
-struct AnonShape_00645880_0D5933D4 {
-    uint field_0000; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_0004; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=18}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0008; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_000A; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/undefined2=1, /ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_000C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
+struct AnonShape_00645880_8F6B4550 {
+    uint field_0000; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0004; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=19}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_0008; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_000A; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_000C; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
     undefined2 field_000E; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=4, /undefined2=1, /ushort=5}; exact_widths={}; indexed_strides={}; semantic_roles={}
     ushort field_0010; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0012; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/undefined2=1, /ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0014; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/short=1, /ushort=8}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_0016; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=8, /undefined2=1, /ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_0018; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/short=8, /ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_001A; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/undefined2=1, /ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_001C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0020; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_0022; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=9, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte _unknown_0026[2];
-};
-
-struct AnonShape_006461E0_67B0C9B5 {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    AnonNested_006461E0_0014_EFB6F372 *field_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:/undefined4=1}
-};
-
-struct AnonShape_006472B0_8CB9F6B2 {
-    byte _unknown_0000[48];
-    int field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0048[8];
-    int field_0050; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
+    ushort field_0012; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=1, /ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0016; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=9, /ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0018; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=9, /ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_001A; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_001C; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_0020; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0022; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00647370_C4EFCC30 {
@@ -32663,142 +28885,6 @@ struct AnonShape_0064EF90_4909407D {
     int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
-struct AnonShape_0064F1B0_7494B956 {
-    byte _unknown_0000[10];
-    int field_000A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}; indexed_strides={}; semantic_roles={}
-    byte _unknown_000E[199];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00DA[1];
-    char field_00DB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_0064F500_A59E916F {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_000C[199];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_0064F780_BB085AB5 {
-    byte _unknown_0000[211];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00DA[1];
-    char field_00DB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_0064F950_8D921461 {
-    byte _unknown_0000[211];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00DA[1];
-    char field_00DB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_0064FB80_C24FD84C {
-    byte _unknown_0000[211];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_0064FD80_D0EF9E6E {
-    byte _unknown_0000[209];
-    char field_00D1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D2[1];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_0064FF70_ABF5F4C4 {
-    byte _unknown_0000[209];
-    char field_00D1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D2[1];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00650090_96AA9A18 {
-    byte _unknown_0000[211];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_006501A0_62625B3D {
-    byte _unknown_0000[6];
-    int field_0006; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}; indexed_strides={}; semantic_roles={}
-    byte _unknown_000A[203];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00650240_0B686EC9 {
-    byte _unknown_0000[209];
-    char field_00D1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D2[1];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00650480_02BC599C {
-    byte _unknown_0000[211];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00DA[1];
-    char field_00DB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00650600_34B54EB0 {
-    byte _unknown_0000[211];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00DA[1];
-    char field_00DB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
 struct AnonShape_00650A20_4A198923 {
     byte _unknown_0000[8];
     int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}; indexed_strides={}; semantic_roles={}
@@ -32812,106 +28898,10 @@ struct AnonShape_00650A20_4A198923 {
     char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
 };
 
-struct AnonShape_00650B10_EE623C41 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_000C[199];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00650BD0_75D71395 {
-    byte _unknown_0000[211];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00650CF0_62453E33 {
-    byte _unknown_0000[211];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00650E10_EFFBA4CA {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_000C[199];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_006515B0_C597180E {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_000C[4];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}; indexed_strides={}; semantic_roles={}
-    byte _unknown_0014[4];
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}; indexed_strides={}; semantic_roles={}
-    byte _unknown_001C[185];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00DA[1];
-    char field_00DB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
 struct AnonShape_00651770_8F77396F {
     byte _unknown_0000[16];
     int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-};
-
-struct AnonShape_00651ED0_D900F83D {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}; indexed_strides={}; semantic_roles={}
-    byte _unknown_000C[199];
-    char field_00D3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D4[1];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00652300_CCF8F417 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}; indexed_strides={}; semantic_roles={}
-    byte _unknown_000C[201];
-    char field_00D5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D6[1];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00DA[1];
-    char field_00DB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00652460_1222B12A {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_000C[203];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_006525E0_52237033 {
@@ -32944,17 +28934,6 @@ struct AnonShape_00652670_DFEA616F {
     byte _unknown_00D1[5];
     undefined1 field_0xd6; // exact unnamed-byte view referenced by exported code
     char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_00652700_9F96C451 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_000C[6];
-    int field_0012; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}; indexed_strides={}; semantic_roles={}
-    byte _unknown_0016[193];
-    char field_00D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
-    byte _unknown_00D8[1];
-    char field_00D9; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00652810_4F58F813 {
@@ -33045,14 +29024,6 @@ struct AnonShape_0065D030_CB0F82F0 {
     byte _unknown_0466[2];
 };
 
-struct AnonShape_0065D6A0_A68E55B5 {
-    byte _unknown_0000[36];
-    undefined1 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_0025[88];
-    short field_007D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    byte _unknown_007F[1];
-};
-
 struct AnonShape_0065D6E0_0F9074F6 {
     byte _unknown_0000[36];
     undefined1 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
@@ -33073,13 +29044,13 @@ struct AnonShape_0065DA10_8B0AA883 {
     byte _unknown_0000[8];
     undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
     byte _unknown_0009[3];
-    undefined1 field_0xc; // exact unnamed-byte view referenced by exported code
-    byte _unknown_000D[23];
-    undefined1 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0010[20];
+    undefined1 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0025[20];
     undefined1 field_0x39; // exact unnamed-byte view referenced by exported code
     byte _unknown_003A[67];
-    short field_007D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
+    short field_007D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_007F[1];
 };
 
@@ -33107,14 +29078,6 @@ struct AnonShape_0065EF70_EB9B857D {
     byte _unknown_01A1[142];
     int field_022F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_0233[1];
-};
-
-struct AnonShape_0065F840_66A14163 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=2}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
 struct AnonShape_0065FA10_37C5A4D3 {
@@ -33151,16 +29114,6 @@ struct AnonShape_00660620_6BCED4D7 {
     byte _unknown_00AB[1];
 };
 
-struct AnonShape_00660B50_B7639A62 {
-    byte _unknown_0000[36];
-    undefined1 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=2}
-    byte _unknown_0025[88];
-    short field_007D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=4}
-    byte _unknown_007F[40];
-    undefined4 field_00A7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_00AB[1];
-};
-
 struct AnonShape_00660D40_E58DF1E6 {
     byte _unknown_0000[36];
     char field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
@@ -33185,39 +29138,21 @@ struct AnonShape_00660D40_F4300C26 {
     byte _unknown_0082[2];
 };
 
-struct AnonShape_00661580_92A3F5B0 {
-    byte _unknown_0000[57];
-    short field_0039; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_003B[64];
-    short field_007B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-    short field_007D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
-    byte _unknown_007F[128];
-    char field_00FF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
-    byte _unknown_0100[251];
-    int field_01FB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_01FF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    byte _unknown_0203[8];
-    int field_020B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    byte _unknown_020F[113];
-    undefined4 field_0280; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1, /undefined4=1}
-    void *field_0284; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/void=1}
-};
-
 struct AnonShape_00661CA0_93A030EF {
     byte _unknown_0000[36];
-    undefined1 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1, /undefined1=1}
+    char field_0024; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/char=8, /undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0025[86];
-    short field_007B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=3}
+    short field_007B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_007D[30];
-    undefined4 field_009B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=2}
-    undefined4 field_009F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_00A3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_00A7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
+    undefined4 field_009B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_009F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_00A3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_00A7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_00AB[352];
-    int field_020B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6}
+    AnonNested_AnonShape_00661CA0_93A030EF_020B_27162EA8 *field_020B; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_020F[113];
-    undefined4 field_0280; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    undefined4 field_0284; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/AiTactClassTy=3, pointer:/void=4}
+    undefined4 field_0280; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AiTactClassTy *field_0284; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/undefined4=1, pointer:/AiTactClassTy=12}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00668180_E8377840 {
@@ -33255,30 +29190,6 @@ struct AnonShape_00668330_F270680B {
     byte _unknown_0213[1];
 };
 
-struct AnonShape_00676C40_253791B9 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-};
-
-struct AnonShape_00676CE0_44EEE27F {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-};
-
-struct AnonShape_00676D80_A0E8D1CB {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
 struct AnonShape_00679120_6A32469C {
     byte _unknown_0000[1495];
     undefined4 field_05D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
@@ -33298,20 +29209,20 @@ struct AnonShape_00679600_B8E418A8 {
     byte _unknown_0000[164];
     undefined1 field_0xa4; // exact unnamed-byte view referenced by exported code
     byte _unknown_00A5[1330];
-    uint field_05D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
+    uint field_05D7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_05DB[17];
     undefined1 field_0x5ec; // exact unnamed-byte view referenced by exported code
     byte _unknown_05ED[83];
-    undefined4 field_0640; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=4, /undefined4=3}
-    char field_0644; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
+    undefined4 field_0640; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    char field_0644; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0645[11];
     undefined1 field_0x650; // exact unnamed-byte view referenced by exported code
     byte _unknown_0651[3];
     undefined1 field_0x654; // exact unnamed-byte view referenced by exported code
     byte _unknown_0655[64];
-    undefined1 field_0x695; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0696[104];
-    undefined4 field_06FE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_0695; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0699[101];
+    undefined4 field_06FE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0702[2];
 };
 
@@ -33325,62 +29236,6 @@ struct AnonShape_0067A2D0_742706D4 {
     byte _unknown_0672[15];
     uint field_0681; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
     byte _unknown_0685[3];
-};
-
-struct AnonShape_0067BB50_2A71CB71 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_0067BBA0_56C30601 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_0067BC10_0DEA2337 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_0067BC80_D4009586 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_0067BD00_6519094F {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_0067BD50_1A5F3A84 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_0067BFD0_C4B8A7A1 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=2}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
 struct AnonShape_0067CF30_CDCAC01F {
@@ -33434,20 +29289,6 @@ struct AnonShape_0067D1D0_21940C5B {
     AllocationRecord_0065CB00 *field_0106; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0065CB00=3}; exact_widths={4=1}; indexed_strides={}; semantic_roles={}
 };
 
-struct AnonShape_0067D3B0_A3AACF30 {
-    byte _unknown_0000[6];
-    char field_0006; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=3}
-    byte _unknown_0007[187];
-    int field_00C2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=7}
-    byte _unknown_00C6[2];
-};
-
-struct AnonShape_0067D3B0_B421D52F {
-    byte _unknown_0000[194];
-    DArrayTy *field_00C2; // [STPointerShapeApplier] evidence_count=7; fixed-offset dereference; observed_types={/int=7}
-    byte _unknown_00C6[2];
-};
-
 struct AnonShape_0067D9C0_2E8A2257 {
     byte _unknown_0000[6];
     char field_0006; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/char=1}; indexed_strides={}; semantic_roles={}
@@ -33484,13 +29325,6 @@ struct AnonShape_00683C70_22193481 {
     byte _unknown_0105[259];
     undefined1 field_0x208; // exact unnamed-byte view referenced by exported code
     byte _unknown_0209[259];
-    undefined4 field_030C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0310; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0314; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_0068CEC0_66639411 {
-    byte _unknown_0000[780];
     undefined4 field_030C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_0310; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_0314; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
@@ -33539,35 +29373,6 @@ struct AnonShape_00690650_F810CDF4 {
     byte field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
     byte _unknown_0019[1];
     short field_001A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
-};
-
-struct AnonShape_00690A40_CA73153C {
-    byte _unknown_0000[28];
-    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=2}
-    byte _unknown_0020[105];
-    uint field_0089; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_008D[4];
-    uint field_0091; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0095[3];
-};
-
-struct AnonShape_00690AB0_91AAAD49 {
-    byte _unknown_0000[137];
-    int field_0089; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_008D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    byte _unknown_0091[155];
-    undefined4 field_012C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1, /undefined4=1}
-    byte _unknown_0130[4];
-    int field_0134; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0138; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_013C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0140; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_00690B90_30BB992F {
-    byte _unknown_0000[16];
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1, /undefined4=1}
-    undefined4 *field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined4=1}
 };
 
 struct AnonShape_00690E90_9F986EB9 {
@@ -33639,53 +29444,10 @@ struct AnonShape_00693910_1CC6632C {
     byte _unknown_199D[3];
 };
 
-struct AnonShape_00694B90_ACA70D4F {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-};
-
-struct AnonShape_00694BE0_C065E5E3 {
-    byte _unknown_0000[16];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-};
-
-struct AnonShape_00694C30_EF3EE984 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-};
-
-struct AnonShape_00694C80_7D3552BD {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=2}
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=2}
-};
-
 struct AnonShape_00694CD0_AC50FDB9 {
     byte _unknown_0000[24];
     int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
     int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-};
-
-struct AnonShape_00695180_3C0E4B54 {
-    byte _unknown_0000[16];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_00695180_D714D58B {
-    byte _unknown_0000[12];
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
 struct AnonShape_006952B0_7A982E30 {
@@ -33857,25 +29619,6 @@ struct AnonShape_00696D00_CB3CB395 {
     byte _unknown_001D[3];
 };
 
-struct AnonShape_006975F0_6D562F4E {
-    byte _unknown_0000[5];
-    int field_0005; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0009[4];
-    int field_000D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    int field_0011; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0015; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0019[3];
-};
-
-struct AnonShape_006978C0_CB24540D {
-    byte _unknown_0000[9];
-    int field_0009; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000D[4];
-    int field_0011; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0015; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=2}
-    byte _unknown_0019[3];
-};
-
 struct AnonShape_00697AF0_A94F4D28 {
     undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
     byte _unknown_0001[3];
@@ -33905,21 +29648,6 @@ struct AnonShape_006991C0_D95B9E4A {
     undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/uint=5}
 };
 
-struct AnonShape_0069AC20_BA305C93 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_0069BDC0_B656F442 {
-    byte _unknown_0000[16];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint *field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/uint=1}
-};
-
 struct AnonShape_0069CB50_B339E56A {
     byte _unknown_0000[12];
     DArrayTy *field_000C; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/int=2}
@@ -33944,25 +29672,6 @@ struct AnonShape_006A00B0_8C09D559 {
     undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/cMf32=2}
 };
 
-struct AnonShape_006A0150_D0561BCC {
-    byte _unknown_0000[8];
-    int *field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=2}
-    short *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/short=2}
-    byte _unknown_0010[536];
-    int field_0228; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_022C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0230[4];
-    int field_0234; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0238[1];
-    int field_0239; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_023D[3];
-};
-
-struct AnonShape_006A0470_E995C390 {
-    byte _unknown_0000[8];
-    AnonNested_006A0470_0008_8D4C819A *field_0008; // [STPointerShapeApplier] evidence_count=7; fixed-offset dereference; observed_types={/int=1, pointer:/int=5}
-};
-
 struct AnonShape_006A58B0_8049417A {
     byte _unknown_0000[4];
     int entries[1]; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; indexed_strides={4=1}; semantic_roles={entries=1}
@@ -33981,40 +29690,6 @@ struct AnonShape_006A58B0_CDE73679 {
     byte _unknown_001C[16];
     int field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={}
     int field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_006ACC70_C8641025 {
-    byte _unknown_0000[8];
-    uint field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-};
-
-struct AnonShape_006B0C70_7C4FE646 {
-    byte _unknown_0000[4];
-    uint field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=3}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=2}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_006B0CD0_C8D121FA {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-};
-
-struct AnonShape_006B1190_EDB2B5FD {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=2}
-    uint field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
 struct AnonShape_006B1B10_121F236C {
@@ -34117,25 +29792,10 @@ struct AnonShape_006B5480_2C1D4FBF {
     int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
 };
 
-struct AnonShape_006B5570_4D68B99C {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    byte _unknown_000C[8];
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/short=1}
-};
-
 struct AnonShape_006B5A50_BD82F60D {
     byte _unknown_0000[8];
     int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
     int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0010[12];
-    char *field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/char=1}
-};
-
-struct AnonShape_006B5A50_C145E640 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_0010[12];
     char *field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/char=1}
 };
@@ -34174,14 +29834,6 @@ struct AnonShape_006B8200_800652FF {
     int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
 };
 
-struct AnonShape_006B84D0_7C7D97C6 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-};
-
 struct AnonShape_006B8850_E5DFE1E1 {
     byte _unknown_0000[4];
     uint field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
@@ -34193,22 +29845,22 @@ struct AnonShape_006B8850_E5DFE1E1 {
 };
 
 struct AnonShape_006B8F10_41B61BA9 {
-    byte _unknown_0000[4];
-    uint field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=5}
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/byte=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
+    AnonNested_AnonShape_006B8F10_41B61BA9_0000_93966B03 *field_0000; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     undefined1 field_0x2c; // exact unnamed-byte view referenced by exported code
     byte _unknown_002D[3];
-    uint field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte *field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/byte=1}
-    undefined4 field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/byte=1}
+    uint field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte *field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/byte=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 entries_0038; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_006B94E0_A7E74DF0 {
@@ -34290,22 +29942,6 @@ struct AnonShape_006BB9D0_BD42D958 {
     LONG field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/winnt.h/LONG=1}
     byte _unknown_0020[32];
     int field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_006BBB20_56723FCF {
-    byte _unknown_0000[11];
-    byte field_000B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=7}
-    byte _unknown_0010[8];
-    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    int field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_0024[12];
-    int *field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=6}
-    byte _unknown_0034[8];
-    undefined4 field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/int=5}
-    undefined4 field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, /undefined4=1, pointer:/int=5}
 };
 
 struct AnonShape_006BC440_9548EA86 {
@@ -34604,12 +30240,6 @@ struct AnonShape_006C6290_2B502C58 {
     byte _unknown_049D[3];
 };
 
-struct AnonShape_006C6410_3502CDE7 {
-    byte _unknown_0000[1180];
-    uint field_049C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=3}
-    undefined4 field_04A0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-};
-
 struct AnonShape_006C6AE0_9C4F43C2 {
     byte _unknown_0000[8];
     int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
@@ -34761,22 +30391,6 @@ struct AnonShape_006C7430_D1D36538 {
     byte _unknown_0076[2];
 };
 
-struct AnonShape_006C7570_82D7EB54 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-};
-
-struct AnonShape_006C7610_838EDECF {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-};
-
 struct AnonShape_006C7700_7DDC3CA1 {
     int field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}; exact_widths={4=2}; indexed_strides={}; semantic_roles={}
     int field_0004; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/byte=1, /int=4}; exact_widths={4=2}; indexed_strides={}; semantic_roles={}
@@ -34870,22 +30484,6 @@ struct AnonShape_006CEEE0_CDA60BFB {
     int *field_01C0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
 };
 
-struct AnonShape_006D0680_01056108 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-};
-
-struct AnonShape_006D0680_EDC74182 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-};
-
 struct AnonShape_006D0820_E08F8169 {
     byte _unknown_0000[4];
     int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
@@ -34971,12 +30569,12 @@ struct AnonShape_006D54C0_FBA73A61 {
     byte _unknown_0000[124];
     undefined1 field_0x7c; // exact unnamed-byte view referenced by exported code
     byte _unknown_007D[519];
-    int *field_0284; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-    int field_0288; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=17}
-    int field_028C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0290; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    AnonNested_AnonShape_006D54C0_FBA73A61_0284_041C9282 *field_0284; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={pointer:/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonNested_AnonShape_006D54C0_FBA73A61_0288_92098C55 *field_0288; // [STPointerShapeApplier] evidence_count=18; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_028C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0290; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0294[120];
-    undefined4 field_030C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_030C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_006D5820_330472AB {
@@ -35122,37 +30720,11 @@ struct AnonShape_006D8A60_6A1C9651 {
     byte field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=4}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
-struct AnonShape_006D8A60_CD460E10 {
-    byte _unknown_0000[1];
-    byte field_0001; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=6}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=5}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte _unknown_0003[1];
-};
-
 struct AnonShape_006D8A60_D503343B {
     undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
     byte field_0001; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=4, /undefined=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=4, /undefined=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
     undefined1 field_0x3; // exact unnamed-byte view referenced by exported code
-};
-
-struct AnonShape_006DBAB0_2B877B8C {
-    byte _unknown_0000[1086];
-    undefined4 field_043E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0442[96];
-    undefined4 field_04A2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_04A6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_04AA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_04AE; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_04B2[8];
-    undefined4 field_04BA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_04BE[8];
-    undefined4 field_04C6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_04CA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_04CE[8];
-    undefined4 field_04D6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_04DA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_04DE[2];
 };
 
 struct AnonShape_006DBCA0_EF06575F {
@@ -35169,93 +30741,6 @@ struct AnonShape_006DBCA0_EF06575F {
     byte _unknown_0134[364];
     undefined4 field_02A0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_02A4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_006DBD20_CC24D445 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0018[4];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    uint field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0030[104];
-    undefined4 field_0098; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_009C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_00A0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_00A4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_00A8[32];
-    double field_00C8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    byte _unknown_00D0[24];
-    double field_00E8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_00F0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_00F8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_0100; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    int field_0108; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    double field_010C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_0114; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_011C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    int field_0124; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_0128[20];
-    undefined4 field_013C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0140; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_0144; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0148[44];
-    int field_0174; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0178[264];
-    undefined4 field_0280; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0284[84];
-    undefined4 field_02D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_02DC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_02E0[4];
-    int field_02E4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_02E8[8];
-    undefined4 field_02F0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_02F4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_02F8[96];
-    undefined4 field_0358; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4, pointer:/void=1}
-    byte _unknown_035C[4];
-    double field_0360; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_0368; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    undefined4 field_0370; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    undefined4 field_0374; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0378; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_037C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_0380; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0384[8];
-    undefined4 field_038C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0390; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_006DC050_D52EE3EA {
-    byte _unknown_0000[200];
-    undefined8 field_00C8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1, /undefined8=1}
-    undefined8 field_00D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=5, /undefined8=1}
-    byte _unknown_00D8[76];
-    undefined4 field_0124; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0128; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_012C[548];
-    undefined4 field_0350; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/undefined4=1}
-    undefined4 field_0354; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/undefined4=1}
-    undefined4 field_0358; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=9, pointer:/void=3}
-    byte _unknown_035C[4];
-    double field_0360; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=3}
-    double field_0368; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    undefined4 field_0370; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, /undefined4=1}
-    byte _unknown_0374[12];
-    int field_0380; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0384; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0388[12];
-    double field_0394; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_039C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_03A4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    byte _unknown_03AC[112];
-    undefined4 field_041C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
 };
 
 struct AnonShape_006DC320_0C876EFA {
@@ -35328,173 +30813,6 @@ struct AnonShape_006DC320_0C876EFA {
     int field_0414; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
 };
 
-struct AnonShape_006DD870_3C379B38 {
-    byte _unknown_0000[28];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0020[8];
-    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0030[276];
-    int field_0144; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0148; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    byte _unknown_014C[8];
-    undefined4 field_0154; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, pointer:/undefined4=1}
-    int field_0158; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    double field_015C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_0164; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    undefined4 field_016C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    undefined4 field_0170; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-    int field_0174; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_006DDB70_C8239555 {
-    byte _unknown_0000[28];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0020[8];
-    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_002C[280];
-    undefined4 field_0144; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0148[44];
-    int field_0174; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0178[352];
-    undefined4 field_02D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_006DDBE0_9835BAB9 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0008[4];
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0010[4];
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0018[16];
-    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    byte _unknown_002C[4];
-    int field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0040[228];
-    int field_0124; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0128; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_012C[428];
-    int field_02D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_02DC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_006DDD50_309FA381 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0008[4];
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/char=1, pointer:/undefined1=1}
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/ushort=2}
-    byte _unknown_0018[16];
-    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=7}
-    int field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    byte _unknown_0030[120];
-    int field_00A8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_00AC[120];
-    int field_0124; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    byte _unknown_0128[20];
-    int field_013C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0140; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1, pointer:/undefined4=3}
-    byte _unknown_0144[404];
-    undefined4 field_02D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
-    int field_02DC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_02E0[144];
-    undefined4 field_0370; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_0374; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0378; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_037C[4];
-    int field_0380; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0384; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0388[176];
-    undefined1 field_0438; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_0439; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_043A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_043B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_043C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_043D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_043E[2];
-};
-
-struct AnonShape_006DE9C0_E5D1D3B8 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0008[4];
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    byte _unknown_0010[24];
-    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6}
-    byte _unknown_002C[4];
-    undefined4 field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/float=4, /int=3}
-    int field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=8}
-    int field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=7}
-    int field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=7}
-    byte _unknown_0040[144];
-    double field_00D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=5}
-    byte _unknown_00D8[76];
-    int field_0124; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    byte _unknown_0128[12];
-    undefined4 field_0134; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0138[4];
-    undefined4 field_013C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=54, /undefined4=3}
-    undefined4 field_0140; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=6, pointer:/undefined1=24, pointer:/undefined4=3}
-    byte _unknown_0144[316];
-    undefined4 field_0280; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6, pointer:/short=16}
-    byte _unknown_0284[8];
-    int field_028C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_0290; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined4 *field_0294; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined4=2}
-    int field_0298; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_029C[60];
-    int field_02D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_02DC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_02E0[16];
-    int field_02F0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=12}
-    int field_02F4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=8}
-    byte _unknown_02F8[124];
-    int field_0374; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0378; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_037C[4];
-    int field_0380; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_006E1050_52F5A113 {
-    byte _unknown_0000[40];
-    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0030[104];
-    double field_0098; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_00A0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    byte _unknown_00A8[32];
-    double field_00C8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=6}
-    byte _unknown_00D0[8];
-    double field_00D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_00E0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    byte _unknown_00E8[84];
-    undefined4 field_013C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    undefined4 field_0140; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=3}
-    byte _unknown_0144[316];
-    undefined4 field_0280; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0284[44];
-    undefined4 field_02B0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, pointer:/ushort=1}
-    undefined4 field_02B4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, /uint=1}
-    int field_02B8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_02BC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_02C0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    int field_02C4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    int field_02C8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_02CC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_02D0[136];
-    undefined4 field_0358; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6, pointer:/void=2}
-    byte _unknown_035C[12];
-    double field_0368; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=3}
-    byte _unknown_0370[4];
-    int field_0374; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    int field_0378; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-};
-
 struct AnonShape_006E1EE0_698AE49A {
     byte _unknown_0000[28];
     uint field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
@@ -35511,61 +30829,14 @@ struct AnonShape_006E2B60_E36B924C {
     byte *field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/byte=1}
 };
 
-struct AnonShape_006E3210_FE49985F {
-    byte _unknown_0000[640];
-    int field_0280; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0284; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0288; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_028C[244];
-    int field_0380; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0384; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0388[12];
-    double field_0394; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    byte _unknown_039C[8];
-    double field_03A4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-};
-
-struct AnonShape_006E3450_BC2FF034 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_006E3680_4519C52B {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
 struct AnonShape_006E4480_50BB219F {
     byte _unknown_0000[8];
     DArrayTy *field_0008; // [STPointerShapeApplier] evidence_count=7; fixed-offset dereference; observed_types={/int=3}
 };
 
-struct AnonShape_006E4540_86065AE3 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
 struct AnonShape_006E45C0_FB272364 {
     byte _unknown_0000[8];
     DArrayTy *field_0008; // [STPointerShapeApplier] evidence_count=7; fixed-offset dereference; observed_types={/int=2}
-};
-
-struct AnonShape_006E5150_51076593 {
-    byte _unknown_0000[16];
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
 };
 
 struct AnonShape_006E52D0_AF06BCD2 {
@@ -35605,14 +30876,6 @@ struct AnonShape_006E6FB0_BC494FEA {
     byte _unknown_0000[4];
     int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     AnonNested_006E6FB0_0008_71212DD0 *field_0008; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-};
-
-struct AnonShape_006E83F0_6F955BEB {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_000C[2];
     ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
 };
@@ -35780,14 +31043,6 @@ struct AnonShape_0070B770_3BA0472D {
     short field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
 };
 
-struct AnonShape_0070C9A0_D70EB495 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-};
-
 struct AnonShape_0070C9E0_7137F001 {
     byte _unknown_0000[2];
     undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
@@ -35885,18 +31140,6 @@ struct AnonShape_00717380_FEFD061B {
     int field_04E2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6}
     undefined4 field_04E6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5, /undefined4=1}
     byte _unknown_04EA[2];
-};
-
-struct AnonShape_00717870_6CEBD31A {
-    byte _unknown_0000[1126];
-    undefined4 field_0466; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_046A[8];
-    LPVOID field_0472; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/WinDef.h/LPVOID=1}
-    byte _unknown_0476[44];
-    undefined4 field_04A2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_04A6[20];
-    undefined4 field_04BA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_04BE[2];
 };
 
 struct AnonShape_0071A990_7656000F {
@@ -36017,17 +31260,21 @@ struct AnonShape_00727DA0_C4265AA0 {
 };
 
 struct AnonShape_00728170_7560EBA7 {
-    byte _unknown_0000[28];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    uint field_0000; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0004; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0008[20];
+    uint field_001C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=1, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0020[4];
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=2}
+    uint field_0024; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00728170_E57D1DF1 {
-    byte _unknown_0000[28];
-    uint field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
+    uint field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0008[20];
+    uint field_001C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0020[4];
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /uint=2}
+    uint field_0024; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=1, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_007282B0_AFD740A9 {
@@ -36060,26 +31307,26 @@ struct AnonShape_00728A80_F2811CDB {
 
 struct AnonShape_007295F0_722683CC {
     byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
+    AnonNested_AnonShape_007295F0_722683CC_0004_5BDE234A **entries_0004; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0008[24];
-    int field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0028[284];
-    int field_0144; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_0144; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0148[16];
-    int field_0158; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_0158; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_015C[16];
-    int field_016C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0170; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_016C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0170; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0174[260];
-    int field_0278; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_027C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=2}
+    int field_0278; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_027C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0280[160];
-    int field_0320; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_0320; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0324[4];
-    int field_0328; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_0328; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_032C[4];
-    int field_0330; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_0330; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00746CDA_FC10F509 {
@@ -36158,14 +31405,6 @@ struct AnonShape_007477EA_440BD1E9 {
 };
 
 struct AnonShape_00747822_A1E67AF6 {
-    byte _unknown_0000[4];
-    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int *field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=2}
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_0074784F_2D85CB12 {
     byte _unknown_0000[4];
     undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
@@ -36381,14 +31620,6 @@ struct AnonShape_007496A1_B3436AED {
     undefined4 field_0058; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/WinDef.h/LPVOID=2, /undefined4=1}
 };
 
-struct AnonShape_00749841_39B3C899 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0008; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=2}
-};
-
 struct AnonShape_0074987C_9BF4FFD0 {
     byte _unknown_0000[14];
     undefined1 field_0xe; // exact unnamed-byte view referenced by exported code
@@ -36428,13 +31659,13 @@ struct AnonShape_00749E34_D5356433 {
 
 struct AnonShape_00749EC2_C411FB81 {
     byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_000C[72];
-    undefined4 field_0054; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_0054; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0058[12];
     undefined1 field_0x64; // exact unnamed-byte view referenced by exported code
     byte _unknown_0065[7];
-    int field_006C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
+    AnonNested_AnonShape_00749EC2_C411FB81_006C_7E3C32DA **entries_006C; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_0074A646_320FC166 {
@@ -36809,58 +32040,22 @@ struct AnonShape_00750287_BC8A1854 {
 
 struct AnonShape_00750F20_F8C16F98 {
     byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=12}
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    AnonNested_AnonShape_00750F20_F8C16F98_0008_FDB2B39A *field_0008; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonNested_AnonShape_00750F20_F8C16F98_000C_F63CABFC *field_000C; // [STPointerShapeApplier] evidence_count=14; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00750FB0_15A3AC3E {
     byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=10}
-};
-
-struct AnonShape_007521B0_4642B53E {
-    byte _unknown_0000[4];
-    uint field_0004; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=1}
-    uint field_0008; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-};
-
-struct AnonShape_007527A0_89B74FC0 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=1}
-    int field_0008; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-};
-
-struct AnonShape_00752CF0_B22A2A38 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_000C[2];
-    ushort field_000E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
-};
-
-struct AnonShape_00753B40_7E7955C3 {
-    byte _unknown_0000[8];
-    AnonNested_00753B40_0008_62BB8A2C *field_0008; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_00753B80_E259A731 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=1}
+    AnonNested_AnonShape_00750FB0_15A3AC3E_0008_EB22C12B *field_0008; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonNested_AnonShape_00750FB0_15A3AC3E_000C_71DE54C3 *field_000C; // [STPointerShapeApplier] evidence_count=11; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00753C80_4C8E695D {
     byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    AnonNested_AnonShape_00753C80_4C8E695D_0008_9237F694 *field_0008; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonNested_AnonShape_00753C80_4C8E695D_000C_9E74E987 *field_000C; // [STPointerShapeApplier] evidence_count=9; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00753CE0_1943F9C2 {
@@ -36917,17 +32112,10 @@ struct AnonShape_00754185_34BF31BE {
     undefined2 field_004E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
-struct AnonShape_00754390_3E94CBF5 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
 struct AnonShape_007543F0_E9DD5DAA {
     byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=14, /undefined4=1}
+    int field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonNested_AnonShape_007543F0_E9DD5DAA_000C_D54F7079 *field_000C; // [STPointerShapeApplier] evidence_count=17; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00754AF0_86EFDBFA {
@@ -36947,22 +32135,22 @@ struct AnonShape_00754B80_75BFDB7A {
     byte _unknown_0000[1];
     undefined1 field_0x1; // exact unnamed-byte view referenced by exported code
     byte _unknown_0002[34];
-    int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0028[64];
-    int field_0068; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    uint field_006C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=3}
+    int field_0068; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_006C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0070[4];
-    int field_0074; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    int field_0074; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0078[4];
-    int field_007C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
-    undefined4 field_0080; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/uint=1}
-    uint field_0084; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=3}
+    int field_007C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonNested_AnonShape_00754B80_75BFDB7A_0080_4681841F *field_0080; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0084; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00754FD0_6B521B56 {
     byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=12}
+    AnonNested_AnonShape_00754FD0_6B521B56_0008_2A163446 *field_0008; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonNested_AnonShape_00754FD0_6B521B56_000C_1591C729 *field_000C; // [STPointerShapeApplier] evidence_count=11; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_007550C0_25940DF4 {
@@ -37002,18 +32190,11 @@ struct AnonShape_00755560_6DE97093 {
     undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
 };
 
-struct AnonShape_00755830_DE41EB2A {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=7}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=10}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
 struct AnonShape_00755970_4FB144E0 {
     undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
     byte _unknown_0001[7];
-    int field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    int field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonNested_AnonShape_00755970_4FB144E0_000C_11C2AAE5 *field_000C; // [STPointerShapeApplier] evidence_count=8; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00755BC0_D59C64DD {
@@ -37032,11 +32213,11 @@ struct AnonShape_00755D40_9BC6D2DA {
 
 struct AnonShape_00755E10_BD685653 {
     byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=24}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
+    AnonNested_AnonShape_00755E10_BD685653_0008_8628F4E0 *field_0008; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_000C; // [STPointerShapeApplier] evidence_count=8; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0014[8];
-    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/uint=2, pointer:/undefined4=5}
+    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00756480_42788A49 {
@@ -37135,18 +32316,6 @@ struct AnonShape_00757360_9C23D284 {
     AnonNested_00757360_0008_E15F2681 *field_0008; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=5}
 };
 
-struct AnonShape_00757450_3CCFEA7C {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6}
-    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_007574C0_ED6B02E3 {
-    byte _unknown_0000[12];
-    AnonNested_007574C0_000C_273D01BA *field_000C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=2}
-};
-
 struct AnonShape_00757530_EEED7D69 {
     byte _unknown_0000[4];
     undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
@@ -37187,11 +32356,11 @@ struct AnonShape_00757C90_A505B8DD {
 
 struct AnonShape_00757D90_5427B306 {
     byte _unknown_0000[16];
-    undefined4 *field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined4=1}
+    AnonNested_AnonShape_00757D90_5427B306_0010_D8C59A06 *field_0010; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={pointer:/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0014[378];
-    uint field_018E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
+    uint field_018E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0192[20];
-    int field_01A6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=4}
+    int field_01A6; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_01AA[2];
 };
 
@@ -37231,14 +32400,15 @@ struct AnonShape_00759120_E4E2134C {
 };
 
 struct AnonShape_00759190_45B6ED67 {
-    byte _unknown_0000[136];
-    undefined4 field_0088; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[132];
+    undefined4 field_0088; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_008C[68];
-    undefined4 field_00D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_00D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_00D4[186];
-    undefined4 field_018E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_018E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0192[20];
-    int field_01A6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
+    AnonNested_AnonShape_00759190_45B6ED67_01A6_2E084C16 *field_01A6; // [STPointerShapeApplier] evidence_count=7; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_01AA[2];
 };
 
@@ -37281,30 +32451,6 @@ struct AnonShape_0075A350_15A0BA61 {
     int field_019A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     int field_019E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
     byte _unknown_01A2[2];
-};
-
-struct AnonShape_0075A490_EF74CB12 {
-    byte _unknown_0000[28];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0020[176];
-    int field_00D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_00D4[86];
-    int field_012A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_012E[104];
-    int field_0196; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_019A[2];
-};
-
-struct AnonShape_0075A590_EA8FABF2 {
-    byte _unknown_0000[28];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_0020[176];
-    int field_00D0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_00D4[86];
-    int field_012A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_012E[104];
-    int field_0196; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_019A[2];
 };
 
 struct AnonShape_0075A7A0_BCCC082B {
@@ -37414,12 +32560,12 @@ struct AnonShape_0075BA30_FEA40A39 {
 
 struct AnonShape_0075BE40_B9FD5FDF {
     byte _unknown_0000[268];
-    undefined4 field_010C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
+    undefined4 field_010C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0110[38];
-    int field_0136; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
+    int field_0136; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_013A[108];
-    int field_01A6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    int field_01AA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    AnonNested_AnonShape_0075BE40_B9FD5FDF_01A6_A872C6DA *field_01A6; // [STPointerShapeApplier] evidence_count=7; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_01AA; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_01AE[2];
 };
 
@@ -37441,17 +32587,6 @@ struct AnonShape_0075C180_8EED234B {
     undefined4 field_018E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     byte _unknown_0192[24];
     int field_01AA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_01AE[2];
-};
-
-struct AnonShape_0075C3B0_6803BA0D {
-    byte _unknown_0000[268];
-    undefined4 field_010C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0110[38];
-    int field_0136; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    byte _unknown_013A[108];
-    int field_01A6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
-    int field_01AA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_01AE[2];
 };
 
@@ -37559,10 +32694,11 @@ struct AnonShape_0075D590_939A8180 {
 };
 
 struct AnonShape_0075DA80_57A0CDEF {
-    byte _unknown_0000[246];
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[242];
     undefined1 field_0xf6; // exact unnamed-byte view referenced by exported code
     byte _unknown_00F7[191];
-    AnonNested_0075DA80_01B6_323D7698 *field_01B6; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={/int=1}
+    AnonNested_0075DA80_01B6_323D7698 *field_01B6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0075DA80_01B6_323D7698=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_01BA[2];
 };
 
@@ -37576,18 +32712,9 @@ struct AnonShape_0075DB50_5854A0B6 {
     byte _unknown_01BA[2];
 };
 
-struct AnonShape_0075DD30_F9FDCD0D {
-    byte _unknown_0000[104];
-    int field_0068; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_006C[198];
-    int field_0132; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0136[128];
-    int field_01B6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_01BA[2];
-};
-
 struct AnonShape_0075DF10_BA4C6604 {
-    byte _unknown_0000[104];
+    AnonNested_AnonShape_0075DF10_BA4C6604_0000_7BE2CA10 *field_0000; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[100];
     undefined1 field_0x68; // exact unnamed-byte view referenced by exported code
     byte _unknown_0069[7];
     undefined1 field_0x70; // exact unnamed-byte view referenced by exported code
@@ -37596,7 +32723,7 @@ struct AnonShape_0075DF10_BA4C6604 {
     byte _unknown_0127[115];
     undefined1 field_0x19a; // exact unnamed-byte view referenced by exported code
     byte _unknown_019B[23];
-    AnonNested_0075DF10_01B2_1F0F9C79 *field_01B2; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={/int=1}
+    AnonNested_0075DF10_01B2_1F0F9C79 *field_01B2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0075DF10_01B2_1F0F9C79=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_01B6[2];
 };
 
@@ -37753,32 +32880,6 @@ struct AnonShape_007611C0_979BF099 {
     undefined1 field_0003; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=2}
 };
 
-struct AnonShape_GLOBAL_007FB2AC_70073F41 {
-    byte _unknown_0000[24];
-    int field_0018; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=3}
-    byte _unknown_001C[8];
-    int field_0024; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=6}
-    byte _unknown_0028[8];
-    undefined4 field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0034; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-    undefined4 field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
-};
-
-struct AnonShape_GLOBAL_00801690_2AA401C1 {
-    byte _unknown_0000[370];
-    short field_0172; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=16}
-    byte _unknown_0174[103];
-    byte field_01DB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=2}
-};
-
-struct AnonShape_GLOBAL_00802A4C_E3045C67 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=2, /uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
 struct AnonShape_GLOBAL_00806724_3210464F {
     byte _unknown_0000[35];
     short entryCount; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=1}; indexed_strides={}; semantic_roles={entryCount=3}
@@ -37786,54 +32887,6 @@ struct AnonShape_GLOBAL_00806724_3210464F {
     short field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; indexed_strides={}; semantic_roles={}
     byte _unknown_002E[2];
     uint entries[1]; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=4, /undefined4=1}; indexed_strides={4=1}; semantic_roles={entries=4}
-};
-
-struct AnonShape_GLOBAL_00806740_0AFD1484 {
-    byte _unknown_0000[4];
-    uint field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_GLOBAL_00807598_0C6808FB {
-    byte _unknown_0000[28];
-    int field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0020[8];
-    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_002C[24];
-    int field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0048; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_004C[8];
-    int field_0054; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0058; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_005C[60];
-    double field_0098; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_00A0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    byte _unknown_00A8[96];
-    int field_0108; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_010C[56];
-    undefined4 field_0144; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0148[44];
-    int field_0174; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0178[256];
-    undefined4 field_0278; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_027C[20];
-    undefined4 field_0290; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0294[68];
-    undefined4 field_02D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_02DC[164];
-    int field_0380; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0384; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0388[144];
-    uint field_0418; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_041C[38];
-    int field_0442; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0446; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_044A[28];
-    undefined4 field_0466; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_046A[2];
 };
 
 struct AnonShape_GLOBAL_0080759C_9638EF10 {
@@ -37868,105 +32921,6 @@ struct AnonShape_GLOBAL_0080759C_9638EF10 {
     HPALETTE field_04B4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/WinDef.h/HPALETTE=1}
 };
 
-struct AnonShape_GLOBAL_0080760C_46D7AF7A {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0008[4];
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0010[4];
-    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0018[16];
-    int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_002C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0030[20];
-    int field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0048; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_004C[8];
-    int field_0054; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0058; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_005C[60];
-    double field_0098; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    double field_00A0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/double=1}
-    int field_00A8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_00AC[92];
-    int field_0108; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_010C[24];
-    int field_0124; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0128[20];
-    int field_013C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0140; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0144[308];
-    undefined4 field_0278; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_027C[20];
-    undefined4 field_0290; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0294[68];
-    undefined4 field_02D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_02DC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_02E0[144];
-    undefined4 field_0370; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_0374; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0378; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_037C[4];
-    int field_0380; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0384; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0388[144];
-    uint field_0418; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    byte _unknown_041C[28];
-    undefined1 field_0438; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_0439; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_043A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_043B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_043C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined1 field_043D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_043E[4];
-    int field_0442; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    int field_0446; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_044A[28];
-    undefined4 field_0466; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-};
-
-struct AnonShape_GLOBAL_0080765C_F1992A46 {
-    byte _unknown_0000[56];
-    uint field_0038; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=8}
-    byte _unknown_003C[12];
-    int field_0048; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=3}
-    int field_004C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=3}
-    uint field_0050; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=8}
-    byte _unknown_0054[12];
-    int field_0060; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=3}
-    int field_0064; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=3}
-    uint field_0068; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=7}
-    byte _unknown_006C[12];
-    int field_0078; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=3}
-    int field_007C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=3}
-    uint field_0080; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=7}
-    byte _unknown_0084[12];
-    int field_0090; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=3}
-    int field_0094; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=3}
-};
-
-struct AnonShape_GLOBAL_0080C4C7_5A4CB754 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/int=5, pointer:/char=1}
-    byte _unknown_000C[8];
-    int field_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/int=4}
-};
-
-struct AnonShape_GLOBAL_0080C4CB_D58160AA {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=8}
-    byte _unknown_000C[8];
-    int field_0014; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=3}
-};
-
-struct AnonShape_GLOBAL_0080C502_B8708D85 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=2, /uint=1, pointer:/uint=1}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=2}
-};
-
 struct AnonShape_GLOBAL_0081175C_57F682DD {
     byte _unknown_0000[2];
     undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
@@ -37989,74 +32943,6 @@ struct AnonShape_GLOBAL_0081194C_4D1525E6 {
     undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
 };
 
-struct AnonShape_GLOBAL_008489C4_F7BABFAC {
-    byte _unknown_0000[56];
-    undefined1 field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_0039[15];
-    undefined2 field_0048; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_004A[8];
-    undefined2 field_0052; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_0054[7];
-    undefined2 field_005B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    undefined1 field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_005E[129];
-    undefined1 field_00DF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_00E0[1];
-    undefined2 field_00E1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    undefined2 field_00E3; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    undefined2 field_00E5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    int field_00E7; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined2 field_00EB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    undefined2 field_00ED; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    undefined2 field_00EF; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    undefined4 field_00F1; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined1 field_00F5; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined4 field_00F6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_00FA; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_00FE[4];
-    undefined1 field_0102; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    int field_0103; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_0107[2];
-    undefined4 field_0109; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_010D[12];
-    undefined1 field_0119; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined4 field_011A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined2 field_011E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_0120[2];
-    int field_0122; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_0126; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    int field_012A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_012E[4];
-    undefined1 field_0132; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined4 field_0133; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined2 field_0137; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    undefined2 field_0139; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    int field_013B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined4 field_013F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined1 field_0143; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_0144[6];
-    undefined2 field_014A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_014C[10];
-    undefined1 field_0156; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    undefined2 field_0157; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    undefined2 field_0159; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    undefined4 field_015B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    undefined4 field_015F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0163[4];
-    undefined1 field_0167; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
-    byte _unknown_0168[6];
-    undefined2 field_016E; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}
-    byte _unknown_0170[123];
-    uint *field_01EB; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/uint=1}
-    byte _unknown_01EF[20];
-    uint *field_0203; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/uint=1}
-    byte _unknown_0207[8];
-    uint *field_020F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/uint=1}
-    byte _unknown_0213[44];
-    undefined4 field_023F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0243[1];
-};
-
 struct AnonShape_GLOBAL_008489CC_CDF8C3F4 {
     byte _unknown_0000[1];
     undefined4 field_0001; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -38067,62 +32953,28 @@ struct AnonShape_GLOBAL_008489CC_CDF8C3F4 {
     byte _unknown_0013[1];
 };
 
-struct AnonShape_GLOBAL_00848A18_1B9B27FE {
-    byte _unknown_0000[8];
-    int entryCount; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={entryCount=3}
-    byte _unknown_000C[8];
-    AnonNested_AnonShape_GLOBAL_00848A18_1B9B27FE_0014_B23B2AAD **entries_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_AnonShape_GLOBAL_00848A18_1B9B27FE_0014_B23B2AAD=1}; indexed_strides={}; semantic_roles={entries=3}
-};
-
-struct AnonShape_GLOBAL_00848A1C_B6E50991 {
-    byte _unknown_0000[8];
-    int entryCount; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={entryCount=3}
-    byte _unknown_000C[8];
-    AnonNested_AnonShape_GLOBAL_00848A1C_B6E50991_0014_BB282182 **entries_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={pointer:pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_AnonShape_GLOBAL_00848A1C_B6E50991_0014_BB282182=1}; indexed_strides={}; semantic_roles={entries=3}
-};
-
-struct AnonShape_GLOBAL_00848A28_2C89E502 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=3}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=3}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=3}
-};
-
-struct AnonShape_GLOBAL_00848A2C_50EB5CD1 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000C[8];
-    AnonNested_AnonShape_GLOBAL_00848A2C_50EB5CD1_0014_282260F2 **entries_0014; // [STPointerShapeApplier] evidence_count=8; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_GLOBAL_00848A30_5E88A82B {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=3}
-    uint field_000C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=3}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=3}
-};
-
-struct AnonShape_GLOBAL_00848A34_1A834A18 {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_000C[8];
-    AnonNested_AnonShape_GLOBAL_00848A34_1A834A18_0014_B03F56A9 **entries_0014; // [STPointerShapeApplier] evidence_count=8; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_GLOBAL_00848A38_AD917B6C {
-    byte _unknown_0000[8];
-    int field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=2}
-    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=2, /uint=2}
-    byte _unknown_0010[12];
-    int field_001C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=2}
-};
-
 struct AnonShape_GLOBAL_00854EE8_A19F58CE {
     byte _unknown_0000[64];
     undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     int *field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=2}
+};
+
+struct AnonShape_GLOBAL_00854F44_D3146D26 {
+    byte _unknown_0000[4];
+    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0014[20];
+    undefined1 field_0x28; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0029[27];
+    uint field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0048[32];
+    int field_0068; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_006C[4];
+    undefined1 field_0x70; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0071[79];
+    byte *field_00C0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/byte=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_GLOBAL_00857168_D75747E9 {
@@ -38786,6 +33638,19 @@ struct RecoveredRecord_CPanelTy_00501D00 {
     undefined1 field_0x3b; // exact unnamed-byte view referenced by exported code
 };
 
+struct RecoveredRecord_CursorClassTy_00544100 {
+    uint field_0000; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0004; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=6, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0008[12];
+    uint field_0014; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0018; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_001C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=6, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0020[20];
+    uint field_0034; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0038; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_003C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=10, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+};
+
 struct RecoveredRecord_DumpClassC_00495EC0 {
     byte _unknown_0000[42];
     undefined1 field_0x2a; // exact unnamed-byte view referenced by exported code
@@ -38798,13 +33663,13 @@ struct RecoveredRecord_DumpClassC_00495EC0 {
 
 struct RecoveredRecord_MMMObjTy_005B6560 {
     byte _unknown_0000[4];
-    uint field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=2}
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=2}
+    uint field_0004; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=5}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=4, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_000C[16];
-    uint field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    uint field_0020; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
+    uint field_001C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=5}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0020; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=5}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0024[36];
-    uint *field_0048; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/uint=1}
+    uint *field_0048; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={pointer:/uint=5}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct RecoveredRecord_MMObjTy_005B5240 {
@@ -38918,25 +33783,6 @@ struct RecoveredRecord_STBoatC_004838E0 {
     short field_0043; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
     short field_0045; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
     byte _unknown_0047[1];
-};
-
-struct RecoveredRecord_STBoatC_00645880 {
-    uint field_0000; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_0004; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=18}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0008; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_000A; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/undefined2=1, /ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_000C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    undefined2 field_000E; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=4, /undefined2=1, /ushort=5}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0010; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0012; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/undefined2=1, /ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0014; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/short=1, /ushort=8}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_0016; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=8, /undefined2=1, /ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_0018; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/short=8, /ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_001A; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/undefined2=1, /ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_001C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0020; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_0022; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=9, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte _unknown_0026[2];
 };
 
 struct RecoveredRecord_STLightC_0061DD40 {
@@ -39055,16 +33901,6 @@ struct RecoveredRecord_TraksClassTy_00555910 {
     short field_0036; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
     undefined2 field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1, /undefined2=1}
     undefined2 field_003A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2, /undefined2=1}
-};
-
-struct RecoveredRecord_VisibleClassTy_0055B9F0 {
-    byte field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    char field_0001; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_0002; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_0004; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    char field_0006; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte field_0007; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    int field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct RecoveredSourceFamily_dibcopy {
@@ -43641,7 +38477,7 @@ struct TLOEmbryoTy {
 struct TLOFakeTy {
     TLOFakeTyVTable *vtable; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=1
     byte _unknown_0004[20];
-    int *field_0018; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=pointer:/int <= 004D0B90 [this+0x18] passed to STPlaySystemC::SaveObjData parameter param_1
+    int *field_0018; // [STClassLayoutApplier] reads=7, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=4; type_evidence=pointer:/int <= 004D0B90 [this+0x18] passed to STPlaySystemC::SaveObjData parameter param_1
     byte _unknown_001C[4];
     undefined4 field_0020; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     byte _unknown_0024[4];
@@ -43653,9 +38489,9 @@ struct TLOFakeTy {
     byte _unknown_0232[11];
     undefined4 field_023D; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     byte _unknown_0241[4];
-    int field_0245; // [STClassLayoutApplier] reads=9, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=/int <= 004D0D5E CMP/JLE through typed class pointer in TLOFakeTy::GetMessage; 004D0DB3 CMP/JL through typed class pointer in TLOFakeTy::GetMessage
-    undefined4 field_0249; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
-    ushort *field_024D; // [STClassLayoutApplier] reads=5, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/ushort <= 004D0D6F dynamic 2-byte dereference of field-derived address in TLOFakeTy::GetMessage
+    int field_0245; // [STClassLayoutApplier] reads=22, writes=3; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=15; type_evidence=/int <= 004D0983 CMP/JL establishes /int through a field-derived value in TLOFakeTy::sub_004D0970; 004D0983 CMP/JL through typed class pointer in TLOFakeTy::sub_004D0970; 004D0A90 CMP/JLE establishes /int through a field-derived value in TLOFakeTy::sub_004D0A80; 004D0A90 CMP/JLE through typed class pointer in TLOFakeTy::sub_004D0A80; 004D0ABB CMP/JL establishes /int through a field-derived value in TLOFakeTy::sub_004D0A80; 004D0ABB CMP/JL through typed class pointer in TLOFakeTy::sub_004D0A80; 004D0D5E CMP/JLE through typed class pointer in TLOFakeTy::GetMessage; 004D0DB3 CMP/JL through typed class pointer in TLOFakeTy::GetMessage
+    int field_0249; // [STClassLayoutApplier] reads=4, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=3; type_evidence=/int <= 004D0983 CMP/JL establishes /int through a field-derived value in TLOFakeTy::sub_004D0970; 004D0983 CMP/JL through typed class pointer in TLOFakeTy::sub_004D0970
+    ushort *field_024D; // [STClassLayoutApplier] reads=16, writes=5; type_confidence=conflict; name_confidence=medium; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOFakeTy_024D|pointer:/ushort; typed_cross_class_recovery=13; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOFakeTy_024D <= consistent nested dereferences through [this+0x24D] | pointer:/ushort <= 004D0AD3 dynamic 2-byte dereference of field-derived address in TLOFakeTy::sub_004D0A80; 004D0AD8 dynamic 2-byte dereference of field-derived address in TLOFakeTy::sub_004D0A80; 004D0ADD dynamic 2-byte dereference of field-derived address in TLOFakeTy::sub_004D0A80; 004D0D6F dynamic 2-byte dereference of field-derived address in TLOFakeTy::GetMessage; name_evidence=allocation <= 004D0970 [this+0x24D] passed to Library::DKW::LIB::MemRealloc parameter allocation
     int GetMessage(int param_1);
     undefined4 vfunc_04();
     undefined4 vfunc_08();
@@ -43692,6 +38528,8 @@ struct TLOFakeTy {
     void vfunc_10C();
     undefined4 vfunc_11C();
     undefined4 vfunc_120();
+    undefined4 sub_004D0970(int param_1, int param_2, int param_3);
+    undefined4 sub_004D0A80(int param_1, int param_2, int param_3);
 };
 
 struct TabClassTy {

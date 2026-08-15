@@ -4872,9 +4872,10 @@ switchD_00652b42_switchD:
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar37 == 8) {
-                                  if (DAT_00801694 != nullptr) {
-                                    st::fn_00402045(st::pointer_boundary_cast<void *>(DAT_00801694),(char *)local_154,2,
-                                                       (char)local_158,(int)local_15c * 1000);
+                                  if (g_helpString_00801694 != nullptr) {
+                                    st::fn_00402045
+                                              (g_helpString_00801694,(char *)local_154,2,
+                                               (char)local_158,(int)local_15c * 1000);
                                   }
                                   break;
                                 }
@@ -4887,9 +4888,10 @@ switchD_00652b42_switchD:
                                 pDVar10 = &local_34;
                                 do {
                                   if (pDVar10->flags == (uint)DAT_0080874d) {
-                                    if (DAT_00801694 != nullptr) {
-                                      st::fn_00402045(st::pointer_boundary_cast<void *>(DAT_00801694),(char *)local_154,2,
-                                                         (char)local_158,(int)local_15c * 1000);
+                                    if (g_helpString_00801694 != nullptr) {
+                                      st::fn_00402045
+                                                (g_helpString_00801694,(char *)local_154,2,
+                                                 (char)local_158,(int)local_15c * 1000);
                                     }
                                     break;
                                   }

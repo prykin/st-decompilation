@@ -1708,15 +1708,12 @@ void __thiscall st::fn_004CCC10(void *this,int *param_1,int *param_2)
   undefined4 extraout_EDX_01;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
-  undefined4 *puVar6;
+  STMessage *pSVar6;
+  undefined4 *puVar7;
   char recordIndex;
-  undefined4 uVar7;
+  undefined4 uVar8;
   int local_294 [155];
-  undefined4 local_28 [4];
-  undefined4 local_18;
-  undefined2 local_14;
-  undefined2 local_10;
-  short local_e;
+  STMessage local_28;
   int local_8;
 
   piVar1 = param_1;
@@ -1750,10 +1747,10 @@ void __thiscall st::fn_004CCC10(void *this,int *param_1,int *param_2)
       uVar2 = (int)(byte)uVar2;
       if (uVar2 == 1) {
         iVar4 = *(int *)this;
-        uVar7 = 0x74;
+        uVar8 = 0x74;
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_004ccd43:
-        (**(code **)(iVar4 + 0x90))(6,uVar7);
+        (**(code **)(iVar4 + 0x90))(6,uVar8);
       }
       else if (uVar2 == 2) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -1761,15 +1758,19 @@ LAB_004ccd43:
       }
       else if (uVar2 == 3) {
         iVar4 = *(int *)this;
-        uVar7 = 0x76;
+        uVar8 = 0x76;
         goto LAB_004ccd43;
       }
     }
-    if (DAT_008117bc != nullptr) {
-      memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
+    if (g_aiBossClass_008117BC != nullptr) {
+      pSVar6 = &local_28;
+      for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+        pSVar6->unknown_00 = 0;
+        pSVar6 = (STMessage *)&pSVar6->unknown_04;
+      }
       param_1 = local_294;
-      local_18 = 0x5de9;
-      local_14 = SUB42(piVar1,0);
+      local_28.id = 0x5de9;
+      local_28.arg0.words.low = (word)piVar1;
       iVar4 = 0;
       do {
         local_EAX_374 = st::fn_004049B7(STField<char>(this,0x24));
@@ -1779,11 +1780,10 @@ LAB_004ccd43:
           iVar2 = st::fn_0040186B((int)piVar1,iVar4);
           iVar2 = st::fn_00402342((int)piVar1,iVar4,iVar2 + 1);
           if (iVar2 != 0) {
-            local_10 = (undefined2)iVar4;
-            uVar7 = st::fn_0040186B((int)piVar1,iVar4);
-            local_e = (short)uVar7 + 1;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)*DAT_008117bc)(local_28);
+            local_28.arg1.words.low = (word)iVar4;
+            uVar8 = st::fn_0040186B((int)piVar1,iVar4);
+            local_28.arg1.words.high = (short)uVar8 + 1;
+            g_aiBossClass_008117BC->GetMessage(&local_28);
           }
         }
         iVar4 = iVar4 + 1;
@@ -1812,16 +1812,16 @@ LAB_004ccd43:
   }
   st::fn_004023A1(st::pointer_boundary_cast<TLOEmbryoTy *>(this),puVar3);
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-  uVar7 = extraout_EDX_00;
+  uVar8 = extraout_EDX_00;
   if (STField<int>(this,0x5ac) == 0x34) {
     st::fn_004031AC(st::pointer_boundary_cast<AnonShape_004DDCC0_33DEB43E *>(this));
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-    uVar7 = extraout_EDX_01;
+    uVar8 = extraout_EDX_01;
   }
   if (STField<int>(this,0x24) == STField<int>(this,0x23d)) {
 LAB_004ccedc:
     if (STField<int>(this,0x5ac) == 0x50) {
-      st::fn_00404106(STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(STField<undefined1>(this,0x24))),0x28);
+      st::fn_00404106(STReplaceLowByte((uint32_t)(uVar8), (uint8_t)(STField<undefined1>(this,0x24))),0x28);
     }
     if ((STField<int>(this,0x5ac) == 0x6f) || (STField<int>(this,0x5ac) == 0x73)) {
       st::fn_004027F2(st::pointer_boundary_cast<AnonShape_004ECC70_4D35D723 *>(this));
@@ -1844,7 +1844,7 @@ LAB_004ccedc:
     local_EAX_691 = st::fn_004049B7(STField<char>(this,0x24));
     local_EAX_691 = (int)(byte)local_EAX_691;
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-    uVar7 = extraout_EDX_02;
+    uVar8 = extraout_EDX_02;
     if ((&DAT_007e1984)[local_EAX_691 + (iVar2 * 3 + (uint)(byte)local_EAX_654) * 3] != '\0')
     goto LAB_004ccedc;
     STField<undefined4>(this,0x261) = 0;
@@ -1881,16 +1881,16 @@ LAB_004cd038:
     st::fn_0040128F(param_2,STField<undefined4>(this,0x24),STField<ushort>(this,0x32));
   }
   if ((STField<int>(this,0x5ac) == 0x41) && (0 < STField<int>(this,0x4e4))) {
-    puVar6 = (undefined4 *)((int)this + 0x4d0);
+    puVar7 = (undefined4 *)((int)this + 0x4d0);
     do {
-      if (((AnonShape_005EFAE0_B406B78B *)*puVar6 != nullptr) &&
+      if (((AnonShape_005EFAE0_B406B78B *)*puVar7 != nullptr) &&
          (iVar2 = st::fn_006E62D0
-                            (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar6,
+                            (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar7,
                              (int *)&param_2), iVar2 == 0)) {
         st::fn_0040103C(param_2,STField<undefined4>(this,0x24));
       }
       iVar4 = iVar4 + 1;
-      puVar6 = puVar6 + 1;
+      puVar7 = puVar7 + 1;
     } while (iVar4 < STField<int>(this,0x4e4));
   }
   if ((STField<int>(this,0x5ac) == 0x69) &&
@@ -2039,18 +2039,18 @@ LAB_004cd4c0:
     local_EAX_235 = st::fn_004049B7(param_1->field_0x24);
     local_EAX_235 = (int)(byte)local_EAX_235;
     if (local_EAX_235 == 1) {
-      iVar3 = *(int *)param_1;
+      iVar3 = param_1->field_0000;
       uVar6 = 0x7a;
     }
     else {
       if (local_EAX_235 == 2) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*(int *)param_1 + 0x90))(6,0x7b);
+        (**(code **)(param_1->field_0000 + 0x90))(6,0x7b);
         st::fn_00405B1E(param_1);
         return 1;
       }
       if (local_EAX_235 != 3) goto cf_common_exit_004CD624;
-      iVar3 = *(int *)param_1;
+      iVar3 = param_1->field_0000;
       uVar6 = 0x7c;
     }
   }
@@ -2061,18 +2061,18 @@ LAB_004cd4c0:
     uVar1 = st::fn_004049B7(param_1->field_0x24);
     uVar1 = (int)(byte)uVar1;
     if (uVar1 == 1) {
-      iVar3 = *(int *)param_1;
+      iVar3 = param_1->field_0000;
       uVar6 = 0x7d;
     }
     else {
       if (uVar1 == 2) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*(int *)param_1 + 0x90))(6,0x7e);
+        (**(code **)(param_1->field_0000 + 0x90))(6,0x7e);
         st::fn_00405B1E(param_1);
         return 2;
       }
       if (uVar1 != 3) goto cf_common_exit_004CD624;
-      iVar3 = *(int *)param_1;
+      iVar3 = param_1->field_0000;
       uVar6 = 0x7f;
     }
   }
@@ -2596,7 +2596,8 @@ void __fastcall st::fn_004CE720(AnonShape_004CE720_8639BE44 *param_1)
 
 {
   if ((param_1->field_04D0 != 0) && (param_1->field_04DC != 0)) {
-    st::fn_00401DD4(st::pointer_boundary_cast<void *>(DAT_00800bcc),param_1->field_04E0,param_1->field_04E4,param_1->field_04E8);
+    st::fn_00401DD4
+              (g_tLOFake_00800BCC,param_1->field_04E0,param_1->field_04E4,param_1->field_04E8);
   }
   return;
 }

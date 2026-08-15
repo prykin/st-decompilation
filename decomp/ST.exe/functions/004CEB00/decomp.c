@@ -88,10 +88,10 @@ switchD_004ceb68_caseD_32:
   case CASE_2:
     iVar6 = thunk_FUN_004b31c0((int *)this->field_0024,0);
     if (iVar6 == 0) {
-      if (DAT_00811798 == nullptr) {
+      if (g_sndUnderAttMeneg_00811798 == nullptr) {
         return local_10;
       }
-      thunk_FUN_00621580(DAT_00811798,this->field_0024,8);
+      SndUnderAttMenegC::sub_00621580(g_sndUnderAttMeneg_00811798,this->field_0024,8);
       return local_10;
     }
     if ((this->field_05AC == CASE_32) || (local_14 = 1, this->field_05AC == CASE_5C)) {
@@ -119,11 +119,12 @@ switchD_004ceb68_caseD_32:
             this->field_04DC = 1;
             this->field_04E0[1] = local_c;
             this->field_04E0[2] = iVar6 + 1;
-            if (DAT_00800bcc == nullptr) {
+            if (g_tLOFake_00800BCC == nullptr) {
               thunk_FUN_004cf430();
             }
-            thunk_FUN_004d0970(DAT_00800bcc,this->field_04E0[0],this->field_04E0[1],
-                               this->field_04E0[2]);
+            TLOFakeTy::sub_004D0970
+                      (g_tLOFake_00800BCC,this->field_04E0[0],this->field_04E0[1],
+                       this->field_04E0[2]);
             this->field_04D0 = CASE_3;
             this->field_03D0 = 1;
             RotateSpr(this,0);
@@ -172,7 +173,8 @@ switchD_004ceb68_caseD_32:
     if (iVar6 != this->field_01F5->field_020C) {
       return local_10;
     }
-    thunk_FUN_004d0a80(DAT_00800bcc,this->field_04E0[0],this->field_04E0[1],this->field_04E0[2]);
+    TLOFakeTy::sub_004D0A80
+              (g_tLOFake_00800BCC,this->field_04E0[0],this->field_04E0[1],this->field_04E0[2]);
     iVar6 = 0x11;
     ppbVar13 = local_6c;
     while( true ) {

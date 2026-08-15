@@ -4,34 +4,35 @@
 void __fastcall FUN_005f06e0(AnonShape_005F0620_60AA17CE *param_1)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined2 local_e;
-  undefined2 local_c;
-  undefined2 local_a;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_24;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
     switch(param_1->field_02B1) {
     case 0:
     case 1:
     case 2:
-      local_e = param_1->field_0032;
-      local_14 = 0x5dd9;
+      local_24.arg0.words.high = param_1->field_0032;
+      local_24.id = MESS_AIBOSSCLASSTY_5DD0|MESS_CURSORCLASSTY_0009;
       break;
     case 3:
     case 4:
     case 5:
-      local_e = param_1->field_0032;
-      local_14 = 0x5dde;
+      local_24.arg0.words.high = param_1->field_0032;
+      local_24.id = 0x5dde;
       break;
     default:
       goto switchD_005f070c_default;
     }
-    local_a = param_1->field_02AB;
-    local_c = param_1->field_02A3;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+    local_24.arg1.words.high = param_1->field_02AB;
+    local_24.arg1.words.low = param_1->field_02A3;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
   }
 switchD_005f070c_default:
   return;

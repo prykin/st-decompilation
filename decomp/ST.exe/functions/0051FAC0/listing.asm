@@ -1,4 +1,4 @@
-FUN_0051fac0:
+HelpStringTy::sub_0051FAC0:
 0051FAC0  55                        PUSH EBP
 0051FAC1  8B EC                     MOV EBP,ESP
 0051FAC3  8A 55 0C                  MOV DL,byte ptr [EBP + 0xc]

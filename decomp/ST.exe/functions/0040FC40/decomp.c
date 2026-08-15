@@ -442,8 +442,8 @@ LAB_00410872:
     local_78 = STObjectAtByteOffset(pRVar15, iVar19).field_0008;
     if ((((local_68 < 0) || (iVar3 <= local_68)) || (local_6c < 0)) ||
        ((DAT_007f4d30 <= local_6c ||
-        (*(short *)(DAT_007f4cf0 + (local_78 * local_48 + local_68 + iVar3 * local_6c) * 2) != 0))))
-    {
+        (*(short *)((int)PTR_007f4cf0 + (local_78 * local_48 + local_68 + iVar3 * local_6c) * 2) !=
+         0)))) {
       iVar2 = FUN_0040f270(&local_68,&local_6c,(int *)&local_78,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                            DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
       if (iVar2 != 0) goto LAB_004109fd;

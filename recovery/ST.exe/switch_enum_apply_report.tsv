@@ -836,8 +836,8 @@ function_address	enum_name	status	detail
 00619C70	STJumpMineC_sub_00619C70_local_28Enum	disabled	apply=0
 00619C70	STJumpMineC_sub_00619C70_uVar2Enum	disabled	apply=0
 0061BDB0	Global_sub_0061BDB0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0061BDB0_param_1Enum; parameter already uses enum
-00621780	Global_sub_00621780_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00621780_switch_0Enum; generated enum domain already current
-00621780	Global_sub_00621780_switch_0Enum	disabled	apply=0
+00621780	SndUnderAttMenegC_sub_00621780_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/SndUnderAttMenegC_sub_00621780_switch_0Enum; generated enum domain already current
+00621780	SndUnderAttMenegC_sub_00621780_switch_0Enum	disabled	apply=0
 006226C0	STMineSetC_field_02ADState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STMineSetC_field_02ADState; field already uses enum
 006239A0	STMineSetC_field_02AEState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState; field already uses enum
 00624570	Global_sub_00624570_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00624570_param_1Enum; parameter already uses enum

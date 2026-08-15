@@ -53,21 +53,21 @@ undefined4 __thiscall st::fn_00640170(void *this,int param_1,int param_2,undefin
 void __fastcall st::fn_00640240(AnonShape_00640240_D1DBDD81 *param_1)
 
 {
-  uint *puVar1;
+  AnonNested_AnonShape_00640240_D1DBDD81_037F_89D39015 *pAVar1;
 
-  if ((int *)param_1->field_037F != nullptr) {
+  if (param_1->field_037F != nullptr) {
     st::fn_006E8660(st::pointer_boundary_cast<ST3DSMAPContext *>(param_1->field_0211),(int *)param_1->field_037F,0,0,0,0,0,0,0);
     st::fn_006E9520
-              (param_1->field_0211,*(uint *)param_1->field_037F,0,0x640320,(uint)param_1->field_037F
-              );
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              (param_1->field_0211,param_1->field_037F->field_0000,0,0x640320,
+               (uint)param_1->field_037F);
     st::fn_006E9720
-              (param_1->field_0211,*(uint *)param_1->field_037F,
-               (uint)(PTR_008032b8 + (uint)*(byte *)((int)param_1->field_037F + 0x15) * 0x80));
-    puVar1 = (uint *)param_1->field_037F;
+              (param_1->field_0211,param_1->field_037F->field_0000,
+               (uint)(PTR_008032b8 + (uint)(byte)param_1->field_037F->field_0015 * 0x80));
+    pAVar1 = param_1->field_037F;
     st::fn_006EA960
-              (param_1->field_0211,*puVar1,(float)puVar1[1],(float)puVar1[2],49.829998);
-    st::fn_006EAAA0(param_1->field_0211,*(uint *)param_1->field_037F,0);
+              (param_1->field_0211,pAVar1->field_0000,(float)pAVar1->field_0004,
+               (float)pAVar1->field_0008,49.829998);
+    st::fn_006EAAA0(param_1->field_0211,param_1->field_037F->field_0000,0);
   }
   return;
 }
@@ -494,7 +494,7 @@ STTorpC * __cdecl st::fn_00645830(void)
    Evidence: all observed direct callers ignore the return register (ignored=9, used=0, unknown=0),
    and decompilation contains no value return */
 
-void __cdecl st::fn_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
+void __cdecl st::fn_00645880(AnonShape_00645880_8F6B4550 *param_1)
 
 {
   ushort uVar1;

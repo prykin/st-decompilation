@@ -2131,7 +2131,7 @@ LAB_005ce59f:
                           ((int)&pSVar3->data->field_0000 + pSVar3->elementSize * uVar20);
 LAB_005ce8db:
                 if ((pAVar10 != nullptr) &&
-                   (*(uint *)&pAVar10->field_0x0 == local_18)) {
+                   (pAVar10->field_0000 == local_18)) {
                   st::fn_0040393B(this_00,pAVar10,(uint *)local_c);
                   bVar28 = true;
                   goto LAB_005ce8fe;
@@ -2142,7 +2142,7 @@ LAB_005ce8db:
             }
 LAB_005ce8fe:
             if (!bVar28) {
-              STPiece<0,4>(local_9c) = local_18;
+              local_9c.field_0000 = local_18;
               local_9c.field_0008 =st::machine_word_boundary_cast<undefined4>(
                    st::fn_006AAC70
                              (*(uint *)&(this_00->array_00BC[0xc].field_01DB)->field_0x6a6));

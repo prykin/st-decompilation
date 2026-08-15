@@ -1,4 +1,4 @@
-FUN_00566bd0:
+SoundManagerTy::sub_00566BD0:
 00566BD0  55                        PUSH EBP
 00566BD1  8B EC                     MOV EBP,ESP
 00566BD3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

@@ -11,9 +11,9 @@ char * FUN_00674af0(int param_1)
   int *piVar7;
 
   pcVar5 = &CHAR_00h_008016a0;
-  if (DAT_00811934 != nullptr) {
-    cVar3 = *DAT_00811934;
-    pcVar6 = DAT_00811934;
+  if (PTR_00811934 != nullptr) {
+    cVar3 = *(char *)PTR_00811934;
+    pcVar6 = PTR_00811934;
     while (cVar3 != '\0') {
       if (*(int *)(pcVar6 + 4) == param_1) {
         return pcVar6;
@@ -23,9 +23,9 @@ char * FUN_00674af0(int param_1)
       cVar3 = *pcVar1;
     }
   }
-  if (DAT_00811938 != nullptr) {
-    cVar3 = *DAT_00811938;
-    pcVar6 = DAT_00811938;
+  if (PTR_00811938 != nullptr) {
+    cVar3 = *(char *)PTR_00811938;
+    pcVar6 = PTR_00811938;
     while (cVar3 != '\0') {
       if (*(int *)(pcVar6 + 4) == param_1) {
         return pcVar6;
@@ -35,9 +35,9 @@ char * FUN_00674af0(int param_1)
       cVar3 = *pcVar1;
     }
   }
-  if (DAT_0081193c != nullptr) {
-    cVar3 = *DAT_0081193c;
-    pcVar6 = DAT_0081193c;
+  if (PTR_0081193c != nullptr) {
+    cVar3 = *(char *)PTR_0081193c;
+    pcVar6 = PTR_0081193c;
     while (cVar3 != '\0') {
       if (*(int *)(pcVar6 + 4) == param_1) {
         return pcVar6;

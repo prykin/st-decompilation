@@ -41,7 +41,7 @@ FUN_0040f270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,int 
            ((((iVar8 < DAT_007f4d34 && (-1 < iVar9)) && (iVar9 < DAT_007f4d2c)) &&
             ((-1 < iVar10 && (iVar10 < DAT_007f4d30)))))) &&
           (uVar5 = iVar8 * iVar7 + iVar9 + DAT_007f4d2c * iVar10,
-          *(short *)(DAT_007f4cf0 + uVar5 * 2) == 0)) &&
+          *(short *)((int)PTR_007f4cf0 + uVar5 * 2) == 0)) &&
          (uVar5 = uVar5 ^ 7, (g_bitset_007F4CFC[(int)uVar5 >> 3] >> (uVar5 & 7) & 1) == 0)) {
         iVar6 = FUN_006aadd0(iVar9,iVar10,iVar8,param_7,param_8,param_9);
         iVar8 = FUN_006aadd0(iVar9,iVar10,iVar8,param_4,param_5,param_6);

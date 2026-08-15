@@ -134,6 +134,7 @@ TLOBaseTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseT
 TLOBaseTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0291	disabled	0	0	apply=0
 TLOBaseTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_05B4	disabled	0	0	apply=0
 TLOBaseTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	disabled	0	0	apply=0
+TLOFakeTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOFakeTy_024D	disabled	0	0	apply=0
 WaitTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_000C	disabled	0	0	apply=0
 WaitTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1A5B	disabled	0	0	apply=0
 WaitTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1AEC	disabled	0	0	apply=0
@@ -263,7 +264,7 @@ SettMapMTy	/SettMapMTy	unchanged	0	0	125 fields; length=8773
 SettMapSTy	/SettMapSTy	unchanged	0	0	38 fields; length=8680
 SettMapTy	/SettMapTy	unchanged	0	0	97 fields; length=8700
 SliderClassTy	/SliderClassTy	unchanged	0	0	5 fields; length=84
-SndUnderAttMenegC	/SndUnderAttMenegC	unchanged	0	0	18 fields; length=270
+SndUnderAttMenegC	/SndUnderAttMenegC	unchanged	0	0	27 fields; length=270
 SoundClassTy	/SoundClassTy	unchanged	0	0	14 fields; length=4341
 SoundManagerTy	/SoundManagerTy	unchanged	0	0	13 fields; length=65
 SpecPanelTy	/SpecPanelTy	unchanged	0	0	22 fields; length=397

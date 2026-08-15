@@ -17,11 +17,11 @@ SndUnderAttMenegC * __cdecl CreateSndUnderAttMeneg(void)
   if (this != nullptr) {
     sub_006E60E0(this);
     this->field_0000 = &VTable_0079CED8;
-    DAT_00811798 = this;
+    g_sndUnderAttMeneg_00811798 = this;
     thunk_FUN_0061fdb0();
-    return DAT_00811798;
+    return g_sndUnderAttMeneg_00811798;
   }
-  DAT_00811798 = nullptr;
+  g_sndUnderAttMeneg_00811798 = nullptr;
   return nullptr;
 }
 

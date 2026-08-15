@@ -454,8 +454,8 @@ LAB_004d3f38:
 LAB_004d3f76:
           if (((99 < *(int *)&param_1->field_0x2a8) && (param_1->field_02E8 == 0)) &&
              ((iVar11 = thunk_FUN_004d3290((int)param_1), iVar11 == 0 &&
-              (DAT_00811798 != nullptr)))) {
-            thunk_FUN_00621580(DAT_00811798,param_1->field_0024,8);
+              (g_sndUnderAttMeneg_00811798 != nullptr)))) {
+            SndUnderAttMenegC::sub_00621580(g_sndUnderAttMeneg_00811798,param_1->field_0024,8);
           }
         }
         break;
@@ -609,8 +609,8 @@ LAB_004d43f5:
         }
         uVar13 = local_14 / 100;
         if ((*(int *)&param_1->field_0x2b8 == 0) &&
-           (uVar13 = uVar13 << 2, DAT_00811798 != nullptr)) {
-          thunk_FUN_00621580(DAT_00811798,param_1->field_0024,5);
+           (uVar13 = uVar13 << 2, g_sndUnderAttMeneg_00811798 != nullptr)) {
+          SndUnderAttMenegC::sub_00621580(g_sndUnderAttMeneg_00811798,param_1->field_0024,5);
         }
         if (*(int *)&param_1->field_0x2b0 + uVar13 <= g_playSystem_00802A38->field_00E4) {
           *(uint *)&param_1->field_0x2b0 = g_playSystem_00802A38->field_00E4;
@@ -694,18 +694,18 @@ LAB_004d43f5:
             *(undefined4 *)&param_1->field_0x2c4 = 0;
           }
           if (*(int *)&param_1->field_0x2b4 == 0) {
-            if (DAT_00811798 != nullptr) {
+            if (g_sndUnderAttMeneg_00811798 != nullptr) {
               if (*(int *)&param_1->field_0x2bc == 0) {
-                thunk_FUN_00621580(DAT_00811798,param_1->field_0024,4);
+                SndUnderAttMenegC::sub_00621580(g_sndUnderAttMeneg_00811798,param_1->field_0024,4);
               }
               if (*(int *)&param_1->field_0x2c0 == 0) {
-                thunk_FUN_00621580(DAT_00811798,param_1->field_0024,2);
+                SndUnderAttMenegC::sub_00621580(g_sndUnderAttMeneg_00811798,param_1->field_0024,2);
               }
               if (*(int *)&param_1->field_0x2c4 == 0) {
-                thunk_FUN_00621580(DAT_00811798,param_1->field_0024,3);
+                SndUnderAttMenegC::sub_00621580(g_sndUnderAttMeneg_00811798,param_1->field_0024,3);
               }
               if (*(int *)&param_1->field_0x2c8 == 0) {
-                thunk_FUN_00621580(DAT_00811798,param_1->field_0024,7);
+                SndUnderAttMenegC::sub_00621580(g_sndUnderAttMeneg_00811798,param_1->field_0024,7);
               }
             }
           }

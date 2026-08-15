@@ -69,7 +69,7 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
     param_1->field_0265 = st::machine_word_boundary_cast<uint>(param_1->field_0265 & 0xfffffffd);
     param_1->field_026D = 0;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)param_1 + 0x90))(3,0x279);
+    (**(code **)(param_1->field_0000 + 0x90))(3,0x279);
   }
   if ((*(int *)&param_1->field_0x4d0 != 1) && (*(int *)&param_1->field_0x4d0 != 3)) {
     st::fn_00403D0F((STT3DSprC *)param_1->field_05FF);
@@ -105,7 +105,7 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
   st::fn_00402982((void *)param_1->field_05FF,1);
   if (*(int *)&param_1->field_0x4d0 == 3) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)param_1 + 0x90))(3,0x279);
+    (**(code **)(param_1->field_0000 + 0x90))(3,0x279);
   }
   return 0;
 }

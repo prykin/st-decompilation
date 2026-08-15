@@ -12,7 +12,7 @@ void __fastcall FUN_0065d630(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 par
   uVar1 = *(undefined4 *)&param_1->field_0x8;
   memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_24[2] = *(undefined4 *)(*(int *)&param_1->field_0xc + 0x14);
+  local_24[2] = *(undefined4 *)(param_1->field_000C + 0x14);
   local_24[3] = 0;
   local_24[4] = 10;
   local_24[5] = uVar1;

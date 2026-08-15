@@ -159,11 +159,11 @@ apply	address	old_name	library	namespace	confidence	evidence	references
 1	006C6660	Library::DKW::DDX::FUN_006c6660	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\ddrrect.c	006C67DD
 1	006C68F0	Library::DKW::DDX::FUN_006c68f0	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\ddshadr.c	006C6A1A
 1	006C7070	Library::DKW::GPC::FUN_006c7070	DKW_GPC	Library::DKW::GPC	high	E:\\DKW\\GPC\\C\\giftodib.c	006C7211
-1	006C7240	FUN_006c7240	DKW_GPC	Library::DKW::GPC	high	address-installed callback inside closed DKW_GPC source-module envelope	006C7164
+1	006C7240	Library::DKW::GPC::FUN_006c7240	DKW_GPC	Library::DKW::GPC	high	address-installed callback inside closed DKW_GPC source-module envelope	006C7164
 1	006C79A0	Library::DKW::GPC::FUN_006c79a0	DKW_GPC	Library::DKW::GPC	high	E:\\DKW\\GPC\\C\\pcxtodib.c	006C7AF5
-1	006C7B20	FUN_006c7b20	DKW_GPC	Library::DKW::GPC	high	address-installed callback inside closed DKW_GPC source-module envelope	006C7AB7
+1	006C7B20	Library::DKW::GPC::FUN_006c7b20	DKW_GPC	Library::DKW::GPC	high	address-installed callback inside closed DKW_GPC source-module envelope	006C7AB7
 1	006C7C50	Library::DKW::GPC::FUN_006c7c50	DKW_GPC	Library::DKW::GPC	high	E:\\DKW\\GPC\\C\\pcxmemop.c	006C7C93
-1	006C7CB0	FUN_006c7cb0	DKW_GPC	Library::DKW::GPC	high	address-installed callback inside closed DKW_GPC source-module envelope	006C7C73
+1	006C7CB0	Library::DKW::GPC::FUN_006c7cb0	DKW_GPC	Library::DKW::GPC	high	address-installed callback inside closed DKW_GPC source-module envelope	006C7C73
 1	006C7DC0	Library::DKW::GPC::FUN_006c7dc0	DKW_GPC	Library::DKW::GPC	high	E:\\DKW\\GPC\\C\\gifmemop.c	006C7E0D
 1	006C83B0	Library::DKW::DDX::FUN_006c83b0	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\ddsshock.c	006C8654
 1	006C8680	Library::DKW::TBL::FUN_006c8680	DKW_TBL	Library::DKW::TBL	high	E:\\DKW\\TBL\\C\\sarrrstm.c	006C879D
@@ -888,7 +888,7 @@ apply	address	old_name	library	namespace	confidence	evidence	references
 1	00751CB0	Library::DKW::WGR::FUN_00751cb0	DKW_WGR	Library::DKW::WGR	high	E:\\DKW\\WGR\\C\\dibsetsi.c	00751E50
 1	00751E70	Library::DKW::JPG::FUN_00751e70	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jfil2dib.c	00751F0D
 1	00751F30	Library::DKW::GPC::FUN_00751f30	DKW_GPC	Library::DKW::GPC	high	E:\\DKW\\GPC\\C\\pcxfileo.c	00751F73
-1	00751F90	FUN_00751f90	DKW_GPC	Library::DKW::GPC	high	address-installed callback inside closed DKW_GPC source-module envelope	00751F53
+1	00751F90	Library::DKW::GPC::FUN_00751f90	DKW_GPC	Library::DKW::GPC	high	address-installed callback inside closed DKW_GPC source-module envelope	00751F53
 1	00751FC0	Library::DKW::GPC::FUN_00751fc0	DKW_GPC	Library::DKW::GPC	high	E:\\DKW\\GPC\\C\\giffileo.c	0075200D
 1	007520A0	Library::DKW::WGR::FUN_007520a0	DKW_WGR	Library::DKW::WGR	high	E:\\DKW\\WGR\\C\\dibloadc.c	00752186
 1	00752D50	Library::DKW::TBL::FUN_00752d50	DKW_TBL	Library::DKW::TBL	high	E:\\DKW\\TBL\\C\\sarrinss.c	00752DFA
@@ -929,22 +929,22 @@ apply	address	old_name	library	namespace	confidence	evidence	references
 1	00756E90	Library::DKW::JPG::FUN_00756e90	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdmaster.c	00756EEB | 00756FA8
 1	00757070	Library::DKW::JPG::FUN_00757070	DKW_JPG	Library::DKW::JPG	high	inferred static helper between nearest exact source anchors: e:\\dkw\\jpg\\c\\jdmaster.c	00757070
 1	007570F0	Library::DKW::JPG::FUN_007570f0	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdmaster.c	0075717D
-1	00757250	FUN_00757250	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	00756E6D
-1	007572F0	FUN_007572f0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075729D
+1	00757250	Library::DKW::JPG::FUN_00757250	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	00756E6D
+1	007572F0	Library::DKW::JPG::FUN_007572f0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075729D
 1	00757300	Library::DKW::JPG::FUN_00757300	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\readjpeg.c	00757318
-1	00757330	FUN_00757330	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	007572B1
-1	00757350	FUN_00757350	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	007572C5
-1	00757710	FUN_00757710	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	007576E3
+1	00757330	Library::DKW::JPG::FUN_00757330	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	007572B1
+1	00757350	Library::DKW::JPG::FUN_00757350	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	007572C5
+1	00757710	Library::DKW::JPG::FUN_00757710	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	007576E3
 1	00757750	Library::DKW::JPG::FUN_00757750	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdinput.c	007577D5 | 0075788F
 1	007578F0	Library::DKW::JPG::FUN_007578f0	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdinput.c	0075794B
-1	007579A0	FUN_007579a0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	007576EA
+1	007579A0	Library::DKW::JPG::FUN_007579a0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	007576EA
 1	007579C0	Library::DKW::JPG::FUN_007579c0	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdinput.c	00757A21 | 00757A84
 1	00757AA0	Library::DKW::JPG::FUN_00757aa0	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdinput.c	00757ABD | 00757ADB | 00757AF6 | 00757B46
-1	00757C90	FUN_00757c90	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	007576DC
-1	00757CD0	FUN_00757cd0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	007572BB
-1	00757EF0	FUN_00757ef0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	00757EC5
-1	00758010	FUN_00758010	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	00757ED2
-1	00758100	FUN_00758100	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	00757E9C | 00757EB4
+1	00757C90	Library::DKW::JPG::FUN_00757c90	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	007576DC
+1	00757CD0	Library::DKW::JPG::FUN_00757cd0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	007572BB
+1	00757EF0	Library::DKW::JPG::FUN_00757ef0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	00757EC5
+1	00758010	Library::DKW::JPG::FUN_00758010	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	00757ED2
+1	00758100	Library::DKW::JPG::FUN_00758100	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	00757E9C | 00757EB4
 1	00758170	Library::DKW::JPG::FUN_00758170	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdmarker.c	0075821D | 007582F2
 1	00758490	Library::DKW::JPG::FUN_00758490	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdmarker.c	007584B1
 1	00758530	Library::DKW::JPG::FUN_00758530	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdmarker.c	0075868F | 007586BE | 007586E6
@@ -954,8 +954,8 @@ apply	address	old_name	library	namespace	confidence	evidence	references
 1	00758DF0	Library::DKW::JPG::FUN_00758df0	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdmarker.c	00758E96
 1	00758FA0	Library::DKW::JPG::FUN_00758fa0	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdmarker.c	00759003
 1	00759080	Library::DKW::JPG::FUN_00759080	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdmarker.c	007590E8
-1	00759120	FUN_00759120	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	00757E8F
-1	00759190	FUN_00759190	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	00757E76
+1	00759120	Library::DKW::JPG::FUN_00759120	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	00757E8F
+1	00759190	Library::DKW::JPG::FUN_00759190	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	00757E76
 1	007591D0	Library::DKW::JPG::FUN_007591d0	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jmemmgr.c	00759207
 1	00759290	Library::DKW::JPG::FUN_00759290	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jmemmgr.c	007592DB
 1	007593C0	Library::DKW::JPG::FUN_007593c0	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jmemmgr.c	007593CA
@@ -970,62 +970,62 @@ apply	address	old_name	library	namespace	confidence	evidence	references
 1	00759A80	Library::DKW::JPG::FUN_00759a80	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jmemmgr.c	00759AB0 | 00759ADF | 00759B46 | 00759BC3
 1	00759BF0	Library::DKW::JPG::FUN_00759bf0	DKW_JPG	Library::DKW::JPG	high	inferred static helper between nearest exact source anchors: e:\\dkw\\jpg\\c\\jmemmgr.c	00759BF0
 1	00759CA0	Library::DKW::JPG::FUN_00759ca0	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jmemmgr.c	00759CC4
-1	00759D90	FUN_00759d90	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075925B
+1	00759D90	Library::DKW::JPG::FUN_00759d90	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075925B
 1	00759F50	Library::DKW::JPG::FUN_00759f50	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdmainct.c	00759F81 | 00759FAE
 1	0075A040	Library::DKW::JPG::FUN_0075a040	DKW_JPG	Library::DKW::JPG	high	inferred static helper between nearest exact source anchors: e:\\dkw\\jpg\\c\\jdmainct.c	0075A040
 1	0075A0F0	Library::DKW::JPG::FUN_0075a0f0	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdmainct.c	0075A116
-1	0075A2D0	FUN_0075a2d0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A169
-1	0075A350	FUN_0075a350	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A142
-1	0075A640	FUN_0075a640	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A129
-1	0075A780	FUN_0075a780	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A695
-1	0075A800	FUN_0075a800	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A69B
-1	0075A860	FUN_0075a860	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A762
-1	0075AAA0	FUN_0075aaa0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A75B
-1	0075AAB0	FUN_0075aab0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A71C
-1	0075ACB0	FUN_0075acb0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A723 | 0075A83D
-1	0075AF80	FUN_0075af80	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A826
+1	0075A2D0	Library::DKW::JPG::FUN_0075a2d0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A169
+1	0075A350	Library::DKW::JPG::FUN_0075a350	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A142
+1	0075A640	Library::DKW::JPG::FUN_0075a640	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A129
+1	0075A780	Library::DKW::JPG::FUN_0075a780	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A695
+1	0075A800	Library::DKW::JPG::FUN_0075a800	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A69B
+1	0075A860	Library::DKW::JPG::FUN_0075a860	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A762
+1	0075AAA0	Library::DKW::JPG::FUN_0075aaa0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A75B
+1	0075AAB0	Library::DKW::JPG::FUN_0075aab0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A71C
+1	0075ACB0	Library::DKW::JPG::FUN_0075acb0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A723 | 0075A83D
+1	0075AF80	Library::DKW::JPG::FUN_0075af80	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075A826
 1	0075B920	Library::DKW::JPG::FUN_0075b920	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdhuff.c	0075B980 | 0075B9A8
-1	0075BA30	FUN_0075ba30	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075B8FC
+1	0075BA30	Library::DKW::JPG::FUN_0075ba30	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075B8FC
 1	0075BF40	Library::DKW::JPG::FUN_0075bf40	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdphuff.c	0075BFC7 | 0075C0BF | 0075C101
-1	0075C180	FUN_0075c180	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075C041
-1	0075C440	FUN_0075c440	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075C04A
-1	0075C680	FUN_0075c680	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075C057
-1	0075C790	FUN_0075c790	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075C060
+1	0075C180	Library::DKW::JPG::FUN_0075c180	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075C041
+1	0075C440	Library::DKW::JPG::FUN_0075c440	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075C04A
+1	0075C680	Library::DKW::JPG::FUN_0075c680	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075C057
+1	0075C790	Library::DKW::JPG::FUN_0075c790	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075C060
 1	0075CBC0	Library::DKW::JPG::FUN_0075cbc0	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jddctmgr.c	0075CC53 | 0075CC98 | 0075CCE6
 1	0075CE80	Library::DKW::JPG::FUN_0075ce80	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdpostct.c	0075CEA8 | 0075CED7 | 0075CF0D
-1	0075CF90	FUN_0075cf90	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075CF3E
-1	0075D010	FUN_0075d010	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075CEE4
-1	0075D0B0	FUN_0075d0b0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075CF1A
+1	0075CF90	Library::DKW::JPG::FUN_0075cf90	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075CF3E
+1	0075D010	Library::DKW::JPG::FUN_0075d010	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075CEE4
+1	0075D0B0	Library::DKW::JPG::FUN_0075d0b0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075CF1A
 1	0075D150	Library::DKW::JPG::FUN_0075d150	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdsample.c	0075D19A | 0075D2F6
-1	0075D350	FUN_0075d350	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D175
-1	0075D370	FUN_0075d370	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D17B
-1	0075D470	FUN_0075d470	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D239
-1	0075D480	FUN_0075d480	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D223
-1	0075D490	FUN_0075d490	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D2C3
-1	0075D590	FUN_0075d590	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D269
-1	0075D5F0	FUN_0075d5f0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D2A4
-1	0075D680	FUN_0075d680	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D25E
-1	0075D740	FUN_0075d740	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D295
+1	0075D350	Library::DKW::JPG::FUN_0075d350	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D175
+1	0075D370	Library::DKW::JPG::FUN_0075d370	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D17B
+1	0075D470	Library::DKW::JPG::FUN_0075d470	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D239
+1	0075D480	Library::DKW::JPG::FUN_0075d480	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D223
+1	0075D490	Library::DKW::JPG::FUN_0075d490	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D2C3
+1	0075D590	Library::DKW::JPG::FUN_0075d590	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D269
+1	0075D5F0	Library::DKW::JPG::FUN_0075d5f0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D2A4
+1	0075D680	Library::DKW::JPG::FUN_0075d680	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D25E
+1	0075D740	Library::DKW::JPG::FUN_0075d740	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D295
 1	0075D890	Library::DKW::JPG::FUN_0075d890	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jdcolor.c	0075D8DD | 0075D8F5 | 0075D90E | 0075D954 | 0075D9A3 | 0075D9EC
-1	0075DB50	FUN_0075db50	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D9C5
-1	0075DC70	FUN_0075dc70	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D93E | 0075D98C | 0075D9D8
-1	0075DD00	FUN_0075dd00	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075DA19
-1	0075DD30	FUN_0075dd30	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D976
-1	0075DE80	FUN_0075de80	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D8A9
-1	0075DFE0	FUN_0075dfe0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075DEAB
-1	0075E000	FUN_0075e000	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075DECC
-1	0075E0C0	FUN_0075e0c0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075DEF3
-1	0075E100	FUN_0075e100	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075DEFA
-1	0075E260	FUN_0075e260	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075DED3
+1	0075DB50	Library::DKW::JPG::FUN_0075db50	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D9C5
+1	0075DC70	Library::DKW::JPG::FUN_0075dc70	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D93E | 0075D98C | 0075D9D8
+1	0075DD00	Library::DKW::JPG::FUN_0075dd00	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075DA19
+1	0075DD30	Library::DKW::JPG::FUN_0075dd30	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D976
+1	0075DE80	Library::DKW::JPG::FUN_0075de80	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075D8A9
+1	0075DFE0	Library::DKW::JPG::FUN_0075dfe0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075DEAB
+1	0075E000	Library::DKW::JPG::FUN_0075e000	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075DECC
+1	0075E0C0	Library::DKW::JPG::FUN_0075e0c0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075DEF3
+1	0075E100	Library::DKW::JPG::FUN_0075e100	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075DEFA
+1	0075E260	Library::DKW::JPG::FUN_0075e260	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075DED3
 1	0075E460	Library::DKW::JPG::FUN_0075e460	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jquant2.c	0075E4A0 | 0075E4FC | 0075E51B
 1	0075E580	Library::DKW::JPG::FUN_0075e580	DKW_JPG	Library::DKW::JPG	high	inferred static helper between nearest exact source anchors: e:\\dkw\\jpg\\c\\jquant2.c	0075E580
 1	0075E630	Library::DKW::JPG::FUN_0075e630	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jquant2.c	0075E6A4 | 0075E6C4
-1	0075E750	FUN_0075e750	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075E65A
-1	0075E7D0	FUN_0075e7d0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075E683
-1	0075EC80	FUN_0075ec80	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075E67A
-1	0075EF30	FUN_0075ef30	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075E661
-1	0075F710	FUN_0075f710	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075E68A
-1	0075F720	FUN_0075f720	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075E482
+1	0075E750	Library::DKW::JPG::FUN_0075e750	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075E65A
+1	0075E7D0	Library::DKW::JPG::FUN_0075e7d0	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075E683
+1	0075EC80	Library::DKW::JPG::FUN_0075ec80	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075E67A
+1	0075EF30	Library::DKW::JPG::FUN_0075ef30	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075E661
+1	0075F710	Library::DKW::JPG::FUN_0075f710	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075E68A
+1	0075F720	Library::DKW::JPG::FUN_0075f720	DKW_JPG	Library::DKW::JPG	high	address-installed callback inside closed DKW_JPG source-module envelope	0075E482
 1	0075F740	Library::DKW::JPG::FUN_0075f740	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jquant1.c	0075F785 | 0075F7A6
 1	0075F7D0	Library::DKW::JPG::FUN_0075f7d0	DKW_JPG	Library::DKW::JPG	high	inferred static helper between nearest exact source anchors: e:\\dkw\\jpg\\c\\jquant1.c	0075F7D0
 1	0075F8E0	Library::DKW::JPG::FUN_0075f8e0	DKW_JPG	Library::DKW::JPG	high	E:\\DKW\\JPG\\C\\jquant1.c	0075F922

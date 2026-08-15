@@ -98,7 +98,7 @@ undefined4 __fastcall FUN_004ecea0(AnonShape_004D9C80_80F657D3 *param_1)
                _DAT_007904f0 + _DAT_007904fc);
     thunk_FUN_004ad460((void *)param_1->field_05FF,1);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)param_1 + 0x90))(3,0x42a);
+    (**(code **)(param_1->field_0000 + 0x90))(3,0x42a);
     return 0;
   }
   thunk_FUN_004ad430((STT3DSprC *)param_1->field_05FF);

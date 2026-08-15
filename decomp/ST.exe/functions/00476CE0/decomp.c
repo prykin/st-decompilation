@@ -53,14 +53,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   short sVar23;
   byte bVar24;
   STMessage local_64;
-  undefined1 local_44 [4];
-  undefined4 local_40;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
-  undefined2 local_30;
-  undefined2 local_2e;
-  undefined4 local_2c;
+  STMessage local_44;
   undefined4 local_24 [2];
   undefined4 local_1c;
   short local_18;
@@ -515,14 +508,13 @@ cf_common_exit_00477B2E:
     }
     iVar7 = thunk_FUN_004cd480((AnonShape_004CC900_31EE9CAA *)pSVar8);
     if (iVar7 == 1) {
-      if (DAT_008117bc != nullptr) {
-        local_2e = pSVar8->field_0032;
-        local_30 = *(undefined2 *)&pSVar8->field_0024;
-        local_34 = 0x5dd4;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_2c = CONCAT22(this->field_0032,*(undefined2 *)&this->field_0024);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)*DAT_008117bc)(local_44);
+      if (g_aiBossClass_008117BC != nullptr) {
+        local_44.arg0.words.high = pSVar8->field_0032;
+        local_44.arg0.words.low = *(undefined2 *)&pSVar8->field_0024;
+        local_44.id = 0x5dd4;
+        local_44.arg1.words.high = this->field_0032;
+        local_44.arg1.words.low = *(undefined2 *)&this->field_0024;
+        g_aiBossClass_008117BC->GetMessage(&local_44);
       }
       pSVar8->vfunc_10C();
       (*pSVar8->vtable->vfunc_110)(this->field_0024,this->field_06F3);
@@ -530,11 +522,11 @@ cf_common_exit_00477B2E:
     else if (iVar7 != 2) goto cf_common_exit_0047746B;
     uVar8 = LookupRecordByte(*(char *)&pSVar8->field_0024);
     iVar7 = (*pSVar8->vtable->vfunc_2C)();
-    local_64.arg0.ptr = &local_40;
-    local_40 = *(undefined4 *)(&DAT_007e1374 + ((uint)(byte)uVar8 + iVar7 * 3) * 4);
-    local_38 = 0xff;
-    local_3c = 0;
-    local_2c = 1;
+    local_64.arg0.ptr = &local_44.unknown_04;
+    local_44.unknown_04 = *(dword *)(&DAT_007e1374 + ((uint)(byte)uVar8 + iVar7 * 3) * 4);
+    local_44.unknown_0c = 0xff;
+    local_44.unknown_08 = 0;
+    local_44.arg1.u32 = 1;
     local_64.id = MESS_TORPHIT;
     this->GetMessage(&local_64);
     iVar7 = (this->field_0609 + 1) * 0xc9;

@@ -55,7 +55,7 @@ void FUN_0055dee0(byte *param_1)
       pbVar17 = (byte *)(DAT_00803308 + (char)pbVar13[1]);
       if (((((int)puVar15 < 0) || (iVar5 <= (int)puVar15)) || ((int)pbVar17 < 0)) ||
          ((DAT_008033a8 <= (int)pbVar17 ||
-          (*(short *)(DAT_008033b4 + (int)(iVar5 * (int)pbVar17 + (int)puVar15) * 2) < 1)))) {
+          (*(short *)((int)PTR_008033b4 + (int)(iVar5 * (int)pbVar17 + (int)puVar15) * 2) < 1)))) {
         iVar16 = (int)puVar15 * 0x10000;
         iVar18 = (int)pbVar17 * 0x10000;
         iVar11 = DAT_00803390;
@@ -69,8 +69,8 @@ void FUN_0055dee0(byte *param_1)
         } while ((((int)puVar15 < 0) || (iVar5 <= (int)puVar15)) ||
                 (((int)pbVar17 < 0 ||
                  ((DAT_008033a8 <= (int)pbVar17 ||
-                  (*(short *)(DAT_008033b4 + (int)(iVar5 * (int)pbVar17 + (int)puVar15) * 2) < 1))))
-                ));
+                  (*(short *)((int)PTR_008033b4 + (int)(iVar5 * (int)pbVar17 + (int)puVar15) * 2) <
+                   1))))));
         if (DAT_0080335c <= iVar11) goto LAB_0055e02a;
       }
       else {
@@ -88,7 +88,7 @@ LAB_0055e048:
           if ((((-1 < (int)local_10) && ((int)local_10 < DAT_008033a4)) &&
               (pbVar14 = param_1 + *local_28, -1 < (int)pbVar14)) &&
              (((int)pbVar14 < DAT_008033a8 &&
-              (local_20 = (int)*(short *)(DAT_008033b4 +
+              (local_20 = (int)*(short *)((int)PTR_008033b4 +
                                          (int)(DAT_008033a4 * (int)pbVar14 + (int)local_10) * 2),
               0 < local_20)))) {
             if (local_20 <= iVar9) break;
@@ -124,7 +124,7 @@ LAB_0055e048:
             if ((((-1 < (int)local_10) && ((int)local_10 < DAT_008033a4)) &&
                 (pbVar14 = param_1 + *local_28, -1 < (int)pbVar14)) &&
                (((int)pbVar14 < DAT_008033a8 &&
-                (local_20 = (int)*(short *)(DAT_008033b4 +
+                (local_20 = (int)*(short *)((int)PTR_008033b4 +
                                            (int)(DAT_008033a4 * (int)pbVar14 + (int)local_10) * 2),
                 0 < local_20)))) {
               if (local_20 <= iVar9) break;

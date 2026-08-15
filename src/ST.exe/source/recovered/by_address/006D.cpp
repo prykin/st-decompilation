@@ -1258,9 +1258,13 @@ void st::fn_006D14C0(ushort *param_1,int param_2,int param_3,uint *param_4)
    [STReturnSemanticsApplier] repair_unsafe_eax_rollback.
    Evidence: restore the earlier evidence-backed void type after an unsafe automated rollback;
    post-CALL EAX reads alone do not prove a source-level return value; machine CFG audit: used=2,
-   ignored=5, unknown=0 */
+   ignored=5, unknown=0
 
-void st::fn_006D1610(undefined8 *param_1,undefined8 *param_2,int param_3,uint param_4,int param_5)
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 006D1610 -> 006CEA60 @ 006D162F */
+
+void st::fn_006D1610(undefined8 *param_1,undefined8 *param_2,RecoveredSourceFamily_dibcopy *param_3,
+                 uint param_4,int param_5)
 
 {
   int iVar1;
@@ -1268,24 +1272,24 @@ void st::fn_006D1610(undefined8 *param_1,undefined8 *param_2,int param_3,uint pa
   byte *destination;
 
   if (param_1 <= param_2) {
-    st::fn_006CEA60((byte *)param_1,param_3,(byte *)param_2,param_3,param_4,param_5);
+    st::fn_006CEA60((byte *)param_1,(int)param_3,(byte *)param_2,(int)param_3,param_4,param_5);
     return;
   }
-  iVar1 = (param_5 + -1) * param_3;
+  iVar1 = (param_5 + -1) * (int)param_3;
   destination = (byte *)((int)param_1 + iVar1);
   source = (AnonPointee_TLOBaseTy_0607 *)((int)param_2 + iVar1);
   if ((int)destination - (int)source < (int)param_4) {
     if ((0 < (int)param_4) && (0 < param_5)) {
       do {
         st::fn_0072DA70((undefined4 *)destination,source,param_4);
-        source = (AnonPointee_TLOBaseTy_0607 *)((int)source - param_3);
-        destination = destination + -param_3;
+        source = (AnonPointee_TLOBaseTy_0607 *)((int)source - (int)param_3);
+        destination = destination + -(int)param_3;
         param_5 = param_5 + -1;
       } while (param_5 != 0);
     }
     return;
   }
-  st::fn_006CEA60(destination,-param_3,(byte *)source,-param_3,param_4,param_5);
+  st::fn_006CEA60(destination,-(int)param_3,(byte *)source,-(int)param_3,param_4,param_5);
   return;
 }
 
@@ -4314,11 +4318,12 @@ undefined4 __thiscall st::fn_006D5260(void *this,undefined4 *param_1)
 undefined4 __fastcall st::fn_006D54C0(AnonShape_006D54C0_FBA73A61 *param_1)
 
 {
-  int *piVar1;
-  int iVar2;
+  AnonNested_AnonShape_006D54C0_FBA73A61_0284_041C9282 *pAVar1;
+  AnonNested_AnonShape_006D54C0_FBA73A61_0288_92098C55 *pAVar2;
   int iVar3;
-  uint uVar4;
-  int iVar5;
+  int iVar4;
+  uint uVar5;
+  int iVar6;
   uint local_1c;
   _RTL_CRITICAL_SECTION *local_18;
   uint local_14;
@@ -4330,34 +4335,33 @@ undefined4 __fastcall st::fn_006D54C0(AnonShape_006D54C0_FBA73A61 *param_1)
   local_18 = (_RTL_CRITICAL_SECTION *)&param_1->field_0x7c;
   st::external_00000018(local_18);
   st::fn_0074A193(param_1);
-  piVar1 = param_1->field_0284;
-  iVar5 = st::machine_word_boundary_cast<int>(piVar1[3] - piVar1[1]);
-  iVar3 = st::machine_word_boundary_cast<int>(piVar1[2] - *piVar1);
-  if ((iVar3 == 0) || (iVar5 == 0)) {
-    iVar3 = piVar1[0xd];
-    uVar4 = st::machine_word_boundary_cast<uint>(piVar1[0xe] >> 0x1f);
-    iVar5 = (piVar1[0xe] ^ uVar4) - uVar4;
+  pAVar1 = param_1->field_0284;
+  iVar6 = pAVar1->field_000C - pAVar1->field_0004;
+  iVar4 = pAVar1->field_0008 - pAVar1->field_0000;
+  if ((iVar4 == 0) || (iVar6 == 0)) {
+    iVar4 = pAVar1[3].field_0004;
+    uVar5 = (int)pAVar1[3].field_0008 >> 0x1f;
+    iVar6 = (pAVar1[3].field_0008 ^ uVar5) - uVar5;
   }
-  *(undefined4 *)(param_1->field_0288 + 0x18) = 0;
-  *(undefined4 *)(param_1->field_0288 + 0x1c) = 0;
-  *(int *)(param_1->field_0288 + 0x20) = iVar3;
-  *(int *)(param_1->field_0288 + 0x24) = iVar5;
-  *(undefined4 *)(param_1->field_0288 + 8) = 0;
-  *(undefined4 *)(param_1->field_0288 + 0xc) = 0;
-  *(int *)(param_1->field_0288 + 0x10) = iVar3;
-  *(int *)(param_1->field_0288 + 0x14) = iVar5;
-  *(uint *)(param_1->field_0288 + 0x98) =
-       (uint)*(ushort *)(piVar1 + 0xf) * (uint)STField<ushort>(piVar1,0x3e);
-  iVar2 = param_1->field_0288;
-  *(int *)(iVar2 + 0xb0) = piVar1[10];
-  *(int *)(iVar2 + 0xb4) = piVar1[0xb];
-  *(int *)(param_1->field_0288 + 0xb8) = piVar1[8];
-  *(int *)(param_1->field_0288 + 0xbc) = piVar1[9];
-  uVar4 = st::machine_word_boundary_cast<uint>(piVar1[0xe] >> 0x1f);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  param_1->field_0288->field_0018 = 0;
+  param_1->field_0288->field_001C = 0;
+  param_1->field_0288->field_0020 = iVar4;
+  param_1->field_0288->field_0024 = iVar6;
+  param_1->field_0288->field_0008 = 0;
+  param_1->field_0288->field_000C = 0;
+  param_1->field_0288->field_0010 = iVar4;
+  param_1->field_0288->field_0014 = iVar6;
+  param_1->field_0288->field_0098 =
+       (uint)*(ushort *)&pAVar1[3].field_000C * (uint)*(ushort *)((int)&pAVar1[3].field_000C + 2);
+  pAVar2 = param_1->field_0288;
+  pAVar2->field_00B0 = pAVar1[2].field_0008;
+  pAVar2->field_00B4 = pAVar1[2].field_000C;
+  param_1->field_0288->field_00B8 = pAVar1[2].field_0000;
+  param_1->field_0288->field_00BC = pAVar1[2].field_0004;
+  uVar5 = (int)pAVar1[3].field_0008 >> 0x1f;
   local_10 = st::fn_006C4350
-                       (*(int *)(param_1->field_0288 + 0x28),st::pointer_boundary_cast<undefined4 *>(&local_8),piVar1[0xd],
-                        (piVar1[0xe] ^ uVar4) - uVar4,0,0);
+                       (param_1->field_0288->field_0028,st::pointer_boundary_cast<undefined4 *>(&local_8),pAVar1[3].field_0004,
+                        (pAVar1[3].field_0008 ^ uVar5) - uVar5,0,0);
   if (local_10 == 0) {
     local_10 = 0;
     local_c = 0;
@@ -4384,22 +4388,23 @@ LAB_006d5620:
     local_8 = nullptr;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((((((local_10 != 0) || (iVar2 = param_1->field_0288, *(int *)(iVar2 + 0x90) != iVar3)) ||
-        (*(int *)(iVar2 + 0x94) != iVar5)) ||
-       (((piVar1[0xd] * (uint)STField<ushort>(piVar1,0x3e) + 0x1f >> 3 & 0x1ffffffc) != local_14
-        || (-1 < piVar1[0xe])))) ||
-      (iVar2 = *(int *)(iVar2 + 0x28),
-      (uint)STField<ushort>(piVar1,0x3e) != *(uint *)(iVar2 + 0x20))) ||
-     ((piVar1[0x10] == 3 &&
-      (((piVar1[0x16] != *(int *)(iVar2 + 0x4c4) || (piVar1[0x17] != *(int *)(iVar2 + 0x4c8))) ||
-       (piVar1[0x18] != *(int *)(iVar2 + 0x4cc))))))) {
+  if ((((((local_10 != 0) || (pAVar2 = param_1->field_0288, pAVar2->field_0090 != iVar4)) ||
+        (pAVar2->field_0094 != iVar6)) ||
+       ((uVar5 = (uint)*(ushort *)((int)&pAVar1[3].field_000C + 2),
+        (pAVar1[3].field_0004 * uVar5 + 0x1f >> 3 & 0x1ffffffc) != local_14 ||
+        (-1 < (int)pAVar1[3].field_0008)))) ||
+      (iVar3 = pAVar2->field_0028, uVar5 != *(uint *)(iVar3 + 0x20))) ||
+     ((pAVar1[4].field_0000 == 3 &&
+      (((pAVar1[5].field_0008 != *(int *)(iVar3 + 0x4c4) ||
+        (pAVar1[5].field_000C != *(int *)(iVar3 + 0x4c8))) ||
+       (pAVar1[6].field_0000 != *(int *)(iVar3 + 0x4cc))))))) {
     st::fn_006C3500((AnonShape_006C3500_19C01617 *)param_1->field_0288);
     param_1->field_030C = 0;
-    *(int *)(param_1->field_0288 + 0x90) = iVar3;
-    *(int *)(param_1->field_0288 + 0x94) = iVar5;
+    param_1->field_0288->field_0090 = iVar4;
+    param_1->field_0288->field_0094 = iVar6;
   }
-  param_1->field_028C = iVar3;
-  param_1->field_0290 = iVar5;
+  param_1->field_028C = iVar4;
+  param_1->field_0290 = iVar6;
   st::external_00000019(local_18);
   return 0;
 }

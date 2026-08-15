@@ -253,8 +253,8 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 1	0	004CC370	FUN_004cc370	E:\\__titans\\Artem\\TLO_bspr.cpp	895	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	004D01F0	FUN_004d01f0	E:\\__titans\\Artem\\TLO_dock.cpp	651	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	004D0310	FUN_004d0310	E:\\__titans\\Artem\\TLO_dock.cpp	664 | 666	high	unique_embedded_source_path		none	no_strict_free_function_string	-
-1	0	004D0970	FUN_004d0970	E:\\__titans\\Artem\\TLO_dock.cpp	761	high	unique_embedded_source_path		none	no_strict_free_function_string	-
-1	0	004D0A80	FUN_004d0a80	E:\\__titans\\Artem\\TLO_dock.cpp	773	high	unique_embedded_source_path		none	no_strict_free_function_string	-
+1	0	004D0970	TLOFakeTy::sub_004D0970	E:\\__titans\\Artem\\TLO_dock.cpp	761	high	unique_embedded_source_path		none	no_strict_free_function_string	-
+1	0	004D0A80	TLOFakeTy::sub_004D0A80	E:\\__titans\\Artem\\TLO_dock.cpp	773	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 0	0	004D0B90	TLOFakeTy::GetMessage	E:\\__titans\\Artem\\TLO_dock.cpp	806 | 833 | 834	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	004D11D0	TLOEmbryoTy::Create	E:\\__titans\\Artem\\TLO_embryo.cpp	102 | 200 | 202 | 212 | 217 | 219 | 223 | 240 | 257 | 269 | 270 | 317 | 338 | 352 | 358 | 359	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 1	0	004D32C0	FUN_004d32c0	E:\\__titans\\Artem\\TLO_embryo.cpp	606 | 623 | 627 | 641 | 649 | 719 | 721 | 725 | 820 | 826 | 834	high	unique_embedded_source_path		none	no_strict_free_function_string	-

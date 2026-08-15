@@ -4,27 +4,27 @@
 void __fastcall FUN_00627700(AnonShape_00627700_6F319351 *param_1)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined2 local_10;
-  undefined2 local_e;
-  undefined2 local_c;
-  undefined2 local_a;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-    local_10 = param_1->field_0024;
-    local_e = param_1->field_0032;
-    local_c = param_1->field_0262;
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_24;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
+    local_24.arg0.words.low = param_1->field_0024;
+    local_24.arg0.words.high = param_1->field_0032;
+    local_24.arg1.words.low = param_1->field_0262;
     if (param_1->field_02A1 == 0) {
-      local_a = 0xffff;
+      local_24.arg1.words.high = 0xffff;
     }
     else {
-      local_a = param_1->field_02A5;
+      local_24.arg1.words.high = param_1->field_02A5;
     }
-    local_14 = 0x5de3;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+    local_24.id = 0x5de3;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;
 }

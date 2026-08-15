@@ -4,30 +4,26 @@
 void FUN_00750f20(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  int *piVar1;
-  int iVar2;
+  AnonNested_AnonShape_00750F20_F8C16F98_000C_F63CABFC *pAVar1;
+  int *piVar2;
+  int iVar3;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)(param_1->field_0008 + 0x50);
-  param_1->field_000C = iVar2;
-  *(undefined4 *)(iVar2 + 0xc) = param_2;
-  *(undefined4 *)(param_1->field_000C + 0x10) = param_3;
-  *(undefined4 *)(param_1->field_000C + 0x40) = 0;
-  *(undefined4 *)(param_1->field_000C + 0x44) = 0xffffffff;
-  *(undefined4 *)(param_1->field_000C + 0x1c) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  param_1->field_0010 = *(undefined4 *)(param_1->field_000C + 0x24);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  piVar1 = (int *)(*(int *)(param_1->field_0008 + 0x34) + *(int *)(param_1->field_000C + 0x24) + 4);
-  iVar2 = *piVar1;
-  while (iVar2 != -1) {
-    *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = FUN_00753b80(param_1,*piVar1,*(int *)(param_1->field_000C + 0x1c));
-    piVar1 = (int *)(iVar2 + 4);
-    *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) =
-         0xffffffff;
-    iVar2 = *piVar1;
+  pAVar1 = (AnonNested_AnonShape_00750F20_F8C16F98_000C_F63CABFC *)param_1->field_0008->field_0050;
+  param_1->field_000C = pAVar1;
+  pAVar1->field_000C = param_2;
+  param_1->field_000C->field_0010 = param_3;
+  param_1->field_000C->field_0040 = 0;
+  param_1->field_000C->field_0044 = 0xffffffff;
+  param_1->field_000C->field_001C = nullptr;
+  param_1->field_0010 = param_1->field_000C->field_0024;
+  piVar2 = (int *)(param_1->field_0008->field_0034 + param_1->field_000C->field_0024 + 4);
+  iVar3 = *piVar2;
+  while (iVar3 != -1) {
+    param_1->field_000C->field_001C = (uint *)((int)param_1->field_000C->field_001C + 1);
+    iVar3 = FUN_00753b80(param_1,*piVar2,(int)param_1->field_000C->field_001C);
+    piVar2 = (int *)(iVar3 + 4);
+    (&param_1->field_000C->field_0044)[(int)param_1->field_000C->field_001C * 2] = 0xffffffff;
+    iVar3 = *piVar2;
   }
   return;
 }

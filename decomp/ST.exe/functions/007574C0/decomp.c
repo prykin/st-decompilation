@@ -16,11 +16,10 @@ void FUN_007574c0(AnonShape_00753C80_4C8E695D *param_1,int param_2,uint *param_3
   uint uVar4;
   AnonPointee_TLOBaseTy_0607 *pAVar5;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar2 = *(short *)(param_1->field_000C + 0x34);
+  sVar2 = param_1->field_000C->field_0034;
   if (sVar2 == 0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar3 = (**(code **)(param_1->field_000C + 8))(param_3 + 2);
+    iVar3 = (**(code **)&param_1->field_000C->field_0x8)(param_3 + 2);
   }
   else {
     iVar3 = (int)sVar2;

@@ -145,56 +145,6 @@ HelpStringTy * __cdecl st::fn_0051F860(void)
   return nullptr;
 }
 
-// 0051FAC0 FUN_0051fac0
-#line 4 "decomp/ST.exe/functions/0051FAC0/decomp.c"
-/* [STReturnSemanticsApplier] ignored_eax_void.
-   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
-   decompilation contains no value return */
-
-void __thiscall st::fn_0051FAC0(void *this,char *param_1,byte param_2,char param_3,undefined4 param_4)
-
-{
-  char cVar1;
-  DWORD DVar2;
-  uint uVar3;
-  char *pcVar6;
-  char *pcVar7;
-  char *pcVar6_mg0;
-
-  if (STField<byte>(this,0x11c) <= param_2) {
-    if (param_1 != nullptr) {
-      uVar3 = 0xffffffff;
-      do {
-        pcVar6_mg0 = param_1;
-        if (uVar3 == 0) break;
-        uVar3 = uVar3 - 1;
-        pcVar6_mg0 = param_1 + 1;
-        cVar1 = *param_1;
-        param_1 = pcVar6_mg0;
-      } while (cVar1 != '\0');
-      uVar3 = ~uVar3;
-      pcVar6 = pcVar6_mg0 + -uVar3;
-      pcVar7 = (char *)((int)this + 0x18);
-      memmove(pcVar7, pcVar6, uVar3); /* compiler REP MOVS byte copy */
-      STField<byte>(this,0x11c) = param_2;
-      STField<byte>(this,0x11d) = param_3 - 1U;
-      if (1 < (byte)(param_3 - 1U)) {
-        STField<undefined1>(this,0x11d) = 0;
-      }
-      STField<undefined4>(this,0x126) = param_4;
-      DVar2 = st::fn_006E51B0(STField<STAppC *>(this,0x10));
-      STField<DWORD>(this,0x122) = DVar2;
-      STField<undefined4>(this,0x12e) = 1;
-      st::fn_004015FA(st::pointer_boundary_cast<HelpStringTy *>(this));
-      return;
-    }
-    memset((void *)((int)this + 0x18), 0, 0x104); /* compiler bulk-zero initialization */
-    STField<undefined4>(this,0x12e) = 0;
-    st::fn_004015FA(st::pointer_boundary_cast<HelpStringTy *>(this));
-  }
-  return;
-}
-
 // 0051FE40 CreateInfocPanel
 #line 4 "decomp/ST.exe/functions/0051FE40/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.

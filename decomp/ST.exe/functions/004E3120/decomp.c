@@ -14,28 +14,28 @@
 undefined4 __thiscall TLOBaseTy::sub_004E3120(TLOBaseTy *this)
 
 {
-  undefined2 uVar1;
+  word wVar1;
   undefined4 uVar2;
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined2 local_10;
-  undefined2 local_e;
-  undefined2 local_c;
-  short local_a;
+  int iVar3;
+  STMessage *pSVar4;
+  STMessage local_24;
 
   if (*(int *)&this->field_0x361 == 2) {
     thunk_FUN_004e5f20(this->field_0024,*(uint *)&this->field_0x369);
-    if (DAT_008117bc != nullptr) {
-      uVar1 = *(undefined2 *)&this->field_0024;
-      memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-      local_e = this->field_0032;
-      local_c = *(undefined2 *)&this->field_0x369;
-      local_14 = 0x5de8;
-      local_10 = uVar1;
+    if (g_aiBossClass_008117BC != nullptr) {
+      wVar1 = *(word *)&this->field_0024;
+      pSVar4 = &local_24;
+      for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
+        pSVar4->unknown_00 = 0;
+        pSVar4 = (STMessage *)&pSVar4->unknown_04;
+      }
+      local_24.arg0.words.high = this->field_0032;
+      local_24.arg1.words.low = *(undefined2 *)&this->field_0x369;
+      local_24.id = 0x5de8;
+      local_24.arg0.words.low = wVar1;
       uVar2 = thunk_FUN_004e60d0((int)this->field_0024,*(int *)&this->field_0x369);
-      local_a = (short)uVar2 + 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)*DAT_008117bc)(local_24);
+      local_24.arg1.words.high = (short)uVar2 + 1;
+      g_aiBossClass_008117BC->GetMessage(&local_24);
     }
     this->field_04D0 = CASE_0;
     RotateSpr(this,1);

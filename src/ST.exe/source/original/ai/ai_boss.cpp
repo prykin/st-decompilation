@@ -181,13 +181,13 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
                   (-6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_boss.cpp"),0x61);
       }
       st::fn_00403774(this_00,st::pointer_boundary_cast<undefined4 *>(puVar9));
-      DAT_008117bc = st::machine_word_boundary_cast<undefined4>(this_00);
+      g_aiBossClass_008117BC = this_00;
       st::fn_00401F69();
     }
     else if (SVar1 == MESS_SHARED_0003) {
       st::fn_0040281F();
       st::fn_00401528(this_00);
-      DAT_008117bc = 0;
+      g_aiBossClass_008117BC = nullptr;
     }
   }
   else if (SVar1 < 0x5ded) {

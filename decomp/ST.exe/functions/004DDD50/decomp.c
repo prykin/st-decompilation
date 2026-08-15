@@ -55,8 +55,8 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
             iVar5 = thunk_FUN_004b79c0((char)param_1[9],param_1[6]);
             if (iVar5 == 0) {
               local_c = local_c * 4;
-              if (DAT_00811798 != nullptr) {
-                thunk_FUN_00621580(DAT_00811798,(byte *)param_1[9],5);
+              if (g_sndUnderAttMeneg_00811798 != nullptr) {
+                SndUnderAttMenegC::sub_00621580(g_sndUnderAttMeneg_00811798,(byte *)param_1[9],5);
               }
             }
           }

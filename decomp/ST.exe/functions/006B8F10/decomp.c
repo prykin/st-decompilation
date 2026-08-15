@@ -5,7 +5,8 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
 
 {
   uint uVar1;
-  AnonShape_006B8F10_41B61BA9 *pAVar2;
+  int *piVar2;
+  AnonShape_006B8F10_41B61BA9 *pAVar3;
   int local_EAX_86;
   int iVar5;
   int iVar6;
@@ -29,9 +30,8 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
   uint local_c;
   byte *local_8;
 
-  pAVar2 = param_1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(*(int *)param_1 + 0x40) == 0) {
+  pAVar3 = param_1;
+  if (param_1->field_0000->field_0040 == 0) {
     return 0;
   }
   param_2[3] = 0;
@@ -57,11 +57,11 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
       if ((uVar1 & 0xa0000000) == 0) {
         return -0x51;
       }
-      param_1 = *(AnonShape_006B8F10_41B61BA9 **)(param_1->field_0038 + param_1->field_0028 * 4);
+      param_1 = *(AnonShape_006B8F10_41B61BA9 **)(param_1->entries_0038 + param_1->field_0028 * 4);
       local_b4 = 0x7c;
       local_b0 = 6;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar6 = (**(code **)(*(int *)param_1 + 0x58))(param_1,&local_b4);
+      iVar6 = (**(code **)&param_1->field_0000->field_0x58)(param_1,&local_b4);
       if (iVar6 != 0) {
         return iVar6;
       }
@@ -71,34 +71,34 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
     else {
       local_c = param_1->field_0030;
       local_8 = param_1->field_0034;
-      param_1 = (AnonShape_006B8F10_41B61BA9 *)param_1->field_0038;
+      param_1 = (AnonShape_006B8F10_41B61BA9 *)param_1->entries_0038;
     }
   }
   else {
-    param_1 = *(AnonShape_006B8F10_41B61BA9 **)(param_1->field_0038 + param_1->field_0028 * 4);
+    param_1 = *(AnonShape_006B8F10_41B61BA9 **)(param_1->entries_0038 + param_1->field_0028 * 4);
     local_c = param_1->field_0004;
     local_8 = (byte *)param_1->field_0008;
   }
-  iVar4 = FUN_006b91a0((int *)pAVar2,&local_14);
+  iVar4 = FUN_006b91a0((int *)pAVar3,&local_14);
   if (iVar4 == 0) {
-    pAVar2->field_0010 = local_14;
-    pAVar2->field_0014 = local_10;
-    pAVar2->field_0018 = local_c;
-    pAVar2->field_001C = (int)local_8;
+    pAVar3->field_0010 = local_14;
+    pAVar3->field_0014 = local_10;
+    pAVar3->field_0018 = local_c;
+    pAVar3->field_001C = (int)local_8;
     if ((local_c != 0) && (local_8 != nullptr)) {
       local_28 = local_14 - iVar5;
       local_24 = local_10 - local_18;
-      if ((pAVar2->field_0004 & 0x8000000) != 0) {
+      if ((pAVar3->field_0004 & 0x8000000) != 0) {
         iVar3 = Library::DKW::DDX::FUN_006b82e0
-                          (*(DDXContext **)pAVar2,local_14,local_10,(byte *)param_1,local_28,
-                           local_24,local_c,local_8);
-        pAVar2->field_0004 = pAVar2->field_0004 | 0x4000;
+                          ((DDXContext *)pAVar3->field_0000,local_14,local_10,(byte *)param_1,
+                           local_28,local_24,local_c,local_8);
+        pAVar3->field_0004 = pAVar3->field_0004 | 0x4000;
         return iVar3;
       }
-      if ((pAVar2->field_0004 & 0x20000000) != 0) {
+      if ((pAVar3->field_0004 & 0x20000000) != 0) {
         local_24 = local_24 +
-                   ((*(int *)&pAVar2->field_0x2c - pAVar2->field_0028) + -1) *
-                   (int)pAVar2->field_0034;
+                   ((*(int *)&pAVar3->field_0x2c - pAVar3->field_0028) + -1) *
+                   (int)pAVar3->field_0034;
       }
       local_38 = local_14;
       local_20 = local_28 + local_c;
@@ -108,13 +108,13 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
       local_34 = local_10;
       param_2 = nullptr;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      while (iVar5 = (**(code **)(**(int **)(*(int *)pAVar2 + 0x40) + 0x14))
-                               (*(int **)(*(int *)pAVar2 + 0x40),&local_38,param_1,&local_28,
-                                0x1008000,0), iVar5 != 0) {
+      while (piVar2 = (int *)pAVar3->field_0000->field_0040,
+            iVar5 = (**(code **)(*piVar2 + 0x14))(piVar2,&local_38,param_1,&local_28,0x1008000,0),
+            iVar5 != 0) {
         if (iVar5 == -0x7789fe3e) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (**(code **)(*(int *)param_1 + 0x6c))(param_1);
-          FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)pAVar2);
+          (*(code *)param_1->field_0000->field_006C)(param_1);
+          FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar3->field_0000);
         }
         else {
           if (((iVar5 != -0x7789ff60) && (iVar5 != -0x7789fe52)) || (param_2 != nullptr)) break;
@@ -126,7 +126,7 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
       if ((iVar5 == -0x7789ff60) || (iVar5 == -0x7789fe52)) {
         iVar5 = 0;
       }
-      pAVar2->field_0004 = pAVar2->field_0004 | 0x4000;
+      pAVar3->field_0004 = pAVar3->field_0004 | 0x4000;
       return iVar5;
     }
   }

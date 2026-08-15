@@ -7,17 +7,17 @@ void __fastcall FUN_005f9f70(AnonShape_005F9F70_43CA4DAC *param_1)
   STT3DSprC *pSVar1;
   uint uVar2;
 
-  if ((undefined4 *)param_1->field_02E6 != nullptr) {
-    pSVar1 = *(STT3DSprC **)param_1->field_02E6;
+  if (param_1->field_02E6 != nullptr) {
+    pSVar1 = (STT3DSprC *)param_1->field_02E6->field_0000;
     if (pSVar1 != nullptr) {
       thunk_FUN_004ad310(pSVar1);
-      Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)param_1->field_02E6);
-      *(undefined4 *)param_1->field_02E6 = 0;
+      Library::MSVCRT::FUN_0072e2b0((HoloTy *)param_1->field_02E6->field_0000);
+      param_1->field_02E6->field_0000 = 0;
     }
-    uVar2 = *(uint *)(param_1->field_02E6 + 4);
+    uVar2 = param_1->field_02E6->field_0004;
     if (-1 < (int)uVar2) {
       Library::Ourlib::ST3DSMAP::SprClose(param_1->field_0211,uVar2);
-      *(undefined4 *)(param_1->field_02E6 + 4) = 0xffffffff;
+      param_1->field_02E6->field_0004 = 0xffffffff;
     }
   }
   return;

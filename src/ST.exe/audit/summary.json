@@ -1,21 +1,21 @@
 {
   "generator_sha256": "f66429c382cc58ceced2c6ea664268dae5f3ee01f2794f34545cf0984d617f9f",
   "input_files": {
-    "call_relations.jsonl": "782ef9100b5a339259a5535ae30a2d4e5d8c4397267d40c7a827f7fc286deeda",
-    "functions.json": "e03385be40c4df4e0e1d6b3aefa2f078f55698ccc29a033c674873c51d1718e5",
-    "globals.jsonl": "320cb7204b5efa2b84df3cba76a7ec6560966da58e13340c6252cd69a4e001b2",
+    "call_relations.jsonl": "48b99cc779d1e51727bf01788aa95e9187ea579da51b536718ab369c970f2dca",
+    "functions.json": "f0a79bc7802b61ee7f9349739700cc36c49572ca6cf88f2bc43160416821e178",
+    "globals.jsonl": "ff1103ab053a744b458d8baf582c3c897c4fe69800d606f6c7f1cda15254f1ae",
     "imports.json": "1292ae0f2b3d533808f0452471962f3c57fcf6e7d36043f54df1ab6db32f9092",
-    "manifest.json": "bafff15b18472b78d359a6f66c94c43ef1c82e46c0d54e8743becf606190b059",
+    "manifest.json": "0c74fa4297a743f7e423b089334381efd2f5051b4502b55046916c896d19036f",
     "pseudocode_runtime.h": "d28c7cfa02c9b20ad395c60de79c9a6281a62e5488e85153e85dc8dc901e022d",
-    "types.jsonl": "d861416dbd9122828e5affd17c8ca46327b948beb4aed6f20421c3d2bf6297c2"
+    "types.jsonl": "c894d17d15b18eb4a9f110ae24381aebe601226af8b63d9cf7475d8a0badaa2d"
   },
-  "input_manifest_sha256": "bafff15b18472b78d359a6f66c94c43ef1c82e46c0d54e8743becf606190b059",
+  "input_manifest_sha256": "0c74fa4297a743f7e423b089334381efd2f5051b4502b55046916c896d19036f",
   "issue_counts": {
     "ambiguous_direct_call": 9,
     "duplicate_field_name": 3,
     "exact_field_name_rewrite": 14,
     "exact_output_lifetime_materialization": 2,
-    "exact_pointer_boundary_cast": 12077,
+    "exact_pointer_boundary_cast": 12018,
     "global_type_fallback": 1023,
     "host_type_reused": 1,
     "import_prototype_fallback": 1,
@@ -28,7 +28,7 @@
     "tagged_lifetime_scope_unresolved": 30,
     "type_name_collision": 2
   },
-  "program_semantic_sha256": "85b30777b4e7846236f50c68efa495664e45729dd519a55e96d62dab6dc011cc",
+  "program_semantic_sha256": "1f669587552e8e1c36194655261ec8115e211916c56b2db8bdcfc4d78e15cd67",
   "schema": "st-source-generation-summary",
   "schema_version": 1,
   "statistics": {
@@ -39,12 +39,12 @@
     "body_functions": 5555,
     "declared_globals": 2928,
     "declared_imports": 1,
-    "direct_call_or_definition_rewrites": 36844,
+    "direct_call_or_definition_rewrites": 36855,
     "exact_field_name_rewrites": 14,
     "exact_output_lifetime_materializations": 2,
-    "exact_pointer_boundary_casts": 12077,
+    "exact_pointer_boundary_casts": 12018,
     "exported_function_records": 10407,
-    "exported_type_records": 10506,
+    "exported_type_records": 9603,
     "external_call_identities": 264,
     "external_label_address_rewrites": 68,
     "fallback_global_declarations": 1023,
@@ -52,16 +52,16 @@
     "function_definition_rewrites": 5555,
     "functions_with_recovered_source": 1044,
     "functions_without_recovered_source": 4511,
-    "generated_source_member_wrappers": 1283,
+    "generated_source_member_wrappers": 1312,
     "generated_virtual_member_wrappers": 1130,
     "global_type_collision_rewrites": 247,
-    "materialized_gap_field_views": 2230,
+    "materialized_gap_field_views": 2245,
     "opaque_image_address_declarations": 7,
     "promoted_parameter_slot_materializations": 72,
     "qualified_address_symbol_repairs": 116,
     "raw_stack_address_materializations": 1245,
     "raw_stack_arena_functions": 95,
     "tagged_lifetime_materializations": 94,
-    "translation_units": 321
+    "translation_units": 322
   }
 }

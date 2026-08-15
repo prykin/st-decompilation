@@ -712,7 +712,7 @@ void __thiscall st::fn_00493110(void *this,AnonShape_00493110_B173055C *param_1)
                     (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1,(int *)&param_1);
   if (iVar2 != -4) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar3 = (**(code **)(*(int *)param_1 + 0x2c))();
+    iVar3 = (**(code **)(param_1->field_0000 + 0x2c))();
     iVar2 = STField<int>(this,0x6f7);
     if (((iVar2 == 7) || (iVar2 == 0x13)) || (iVar2 == 0x1b)) {
       if ((STField<int>(this,0x7ca) == 0) &&

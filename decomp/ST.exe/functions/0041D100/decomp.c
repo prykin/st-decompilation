@@ -17,7 +17,7 @@ void __fastcall FUN_0041d100(AnonShape_0041D100_A90F7B7E *param_1)
                *(int *)&param_1->field_0x18);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar1 = (**(code **)(*(int *)param_1 + 8))();
+  iVar1 = (**(code **)(param_1->field_0000 + 8))();
   if ((iVar1 == 1) && (*(uint *)&param_1->field_0x24 == (uint)DAT_0080874d)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     ST3DSMAPContext::sub_006E6780

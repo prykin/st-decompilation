@@ -151,7 +151,7 @@ void AiCalcDispositionAreas
     _DAT_0080336c = 0x14;
     _DAT_00803370 = 10;
     DAT_00803354 = 5;
-    DAT_008033b4 = nullptr;
+    PTR_008033b4 = nullptr;
     local_60[0] = nullptr;
     g_runtimeRecords_00803300 = nullptr;
     DAT_00803314 = 0;
@@ -202,9 +202,9 @@ void AiCalcDispositionAreas
       uStackY_470 = 0x55f648;
       local_84 = aiStackY_e6c;
       uStackY_e70 = 0x55f65a;
-      DAT_008032fc = auStackY_eec;
+      PTR_008032fc = auStackY_eec;
       uStackY_ef0 = 0x55f671;
-      DAT_008033b0 = auStackY_f2c;
+      PTR_008033b0 = auStackY_f2c;
       uStackY_f30 = 0x55f685;
       local_164 = (int *)aAStackY_10bc;
       iStackY_10c0 = 0x55f6a4;
@@ -219,7 +219,7 @@ void AiCalcDispositionAreas
       local_8 = 0xffffffff;
       memset(auStackY_eec, 0, 0x80); /* compiler bulk-zero initialization */
       iVar14 = 0;
-      DAT_008033b8 = auStackY_eac;
+      PTR_008033b8 = auStackY_eac;
       memset(auStackY_f2c, 0, 0x40); /* compiler bulk-zero initialization */
       g_runtimeRecords_008032F4 = (RuntimeRecord_008032F4_0014 *)((int)aRStackY_188c + iVar21);
       uVar25 = 0;
@@ -252,16 +252,16 @@ void AiCalcDispositionAreas
           }
           local_78 = local_78 + 1;
           pRVar6 = g_runtimeRecords_008032F8;
-          puVar10 = DAT_008032fc;
+          puVar10 = PTR_008032fc;
           pRVar27 = g_runtimeRecords_00803300;
           pRVar7 = g_runtimeRecords_00803310;
-          puVar8 = DAT_008033b0;
+          puVar8 = PTR_008033b0;
         } while (local_78 < param_5);
       }
-      DAT_008033b0 = puVar8;
+      PTR_008033b0 = puVar8;
       g_runtimeRecords_00803310 = pRVar7;
       g_runtimeRecords_00803300 = pRVar27;
-      DAT_008032fc = puVar10;
+      PTR_008032fc = puVar10;
       g_runtimeRecords_008032F8 = pRVar6;
       iVar21 = -1;
       iVar14 = -1;
@@ -721,18 +721,18 @@ LAB_0056016e:
       }
       *piVar4 = DAT_00803304;
       piVar4[1] = DAT_00803308;
-      DAT_008033b4 = FUN_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1);
+      PTR_008033b4 = FUN_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1);
       FreeAndNull(local_60);
       thunk_FUN_0055dee0(pbVar5);
       iVar21 = 0;
       do {
         iVar14 = (int)(iVar21 * 0x168 + (iVar21 * 0x168 >> 0x1f & 0xfU)) >> 4;
         local_EAX_4178 = FUN_00561240(DAT_008032f0,DAT_008032ec,iVar14);
-        *(int **)((int)DAT_008032fc + iVar21 * 4) = local_EAX_4178;
+        *(int **)((int)PTR_008032fc + iVar21 * 4) = local_EAX_4178;
         piVar10 = FUN_00561240(DAT_00803374,DAT_00803378,iVar14);
-        *(int **)(DAT_008033b8 + iVar21 * 4) = piVar10;
+        *(int **)((int)PTR_008033b8 + iVar21 * 4) = piVar10;
         local_EAX_4230 = FUN_00561240(5,DAT_008032ec,iVar14);
-        *(int **)((int)DAT_008033b0 + iVar21 * 4) = local_EAX_4230;
+        *(int **)((int)PTR_008033b0 + iVar21 * 4) = local_EAX_4230;
         iVar21 = iVar21 + 1;
         iVar14 = DAT_0080339c;
         piVar20 = local_164;
@@ -761,7 +761,7 @@ LAB_0056016e:
             if (((-1 < local_94) && (local_94 < DAT_008033a4)) &&
                ((iVar21 = (char)local_a4[local_50 * 2 + 1] + DAT_00803308, -1 < iVar21 &&
                 ((iVar21 < DAT_008033a8 &&
-                 (0 < *(short *)((int)DAT_008033b4 + (iVar21 * DAT_008033a4 + local_94) * 2))))))) {
+                 (0 < *(short *)((int)PTR_008033b4 + (iVar21 * DAT_008033a4 + local_94) * 2))))))) {
               iVar14 = 0;
               local_148 = 0;
               if (0 < g_runtimeRecordCount_0080338C) {
@@ -1018,17 +1018,17 @@ LAB_0056016e:
     local_70 = iVar15;
     iVar21 = local_70;
     FreeAndNull(local_6c);
-    FreeAndNull(&DAT_008033b4);
+    FreeAndNull(&PTR_008033b4);
     FreeAndNull(local_60);
     FreeAndNull(&DAT_00803380);
     iVar14 = 0;
     do {
-      FreeAndNull((undefined1 *)((int)DAT_008032fc + iVar14));
+      FreeAndNull((void *)(iVar14 + (int)PTR_008032fc));
       iVar14 = iVar14 + 4;
     } while (iVar14 < 0x80);
     iVar14 = 0;
     do {
-      FreeAndNull((undefined1 *)((int)DAT_008033b0 + iVar14));
+      FreeAndNull((void *)(iVar14 + (int)PTR_008033b0));
       iVar14 = iVar14 + 4;
     } while (iVar14 < 0x40);
     if (iVar21 != 0) {

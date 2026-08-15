@@ -88,7 +88,7 @@ LAB_0041329b:
             iVar7 = local_8 + 1;
             if (((param_6 < 0) &&
                 (uVar6 = iVar10 + DAT_007f4d2c * iVar11 + iVar3 * iVar5, iVar7 = local_8,
-                *(short *)(DAT_007f4cf0 + uVar6 * 2) == 0)) &&
+                *(short *)((int)PTR_007f4cf0 + uVar6 * 2) == 0)) &&
                (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) == 0))
             goto LAB_00413319;
           }
@@ -149,7 +149,7 @@ LAB_00413585:
         if ((((iVar10 < 0) || (DAT_007f4d2c <= iVar10)) || (iVar11 < 0)) ||
            (((DAT_007f4d30 <= iVar11 ||
              (uVar6 = iVar10 + DAT_007f4d2c * iVar11 + iVar3 * iVar4,
-             *(short *)(DAT_007f4cf0 + uVar6 * 2) != 0)) ||
+             *(short *)((int)PTR_007f4cf0 + uVar6 * 2) != 0)) ||
             (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) != 0)))) {
 LAB_004135d8:
           pcVar9 = pcVar9 + 4;
@@ -210,7 +210,7 @@ LAB_00413426:
       if (((((-1 < iVar10) && (iVar10 < DAT_007f4d2c)) && (-1 < iVar11)) &&
           ((iVar11 < DAT_007f4d30 && (param_6 = param_6 + -0x10000, param_6 < 0)))) &&
          ((uVar6 = iVar10 + DAT_007f4d2c * iVar11 + iVar3 * iVar7,
-          *(short *)(DAT_007f4cf0 + uVar6 * 2) == 0 &&
+          *(short *)((int)PTR_007f4cf0 + uVar6 * 2) == 0 &&
           (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) == 0))))
       goto LAB_00413496;
 LAB_00413487:

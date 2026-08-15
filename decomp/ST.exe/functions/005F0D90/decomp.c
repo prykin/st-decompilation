@@ -13,25 +13,26 @@
 void __thiscall STContainerC::sub_005F0D90(STContainerC *this)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined2 local_e;
-  ushort local_c;
-  undefined2 local_a;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-    local_e = this->field_0032;
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_24;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
+    local_24.arg0.words.high = this->field_0032;
     if ((this->field_030D == '\0') || (this->field_030E == 0xff)) {
-      local_c = 0xff;
+      local_24.arg1.words.low = 0xff;
     }
     else {
-      local_a = this->field_030F;
-      local_c = (ushort)(byte)this->field_030E;
+      local_24.arg1.words.high = this->field_030F;
+      local_24.arg1.words.low = (word)(byte)this->field_030E;
     }
-    local_14 = 0x5dd7;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+    local_24.id = 0x5dd7;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;
 }

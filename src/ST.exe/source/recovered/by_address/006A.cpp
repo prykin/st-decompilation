@@ -1945,7 +1945,7 @@ undefined4 st::fn_006A5210(void)
     return 1;
   }
   iVar4 = st::fn_007318F0();
-  puVar3 = st::pointer_boundary_cast<undefined4 *>(DAT_0085496c);
+  puVar3 = st::pointer_boundary_cast<undefined4 *>(PTR_0085496c);
   if ((iVar4 != -1) && (iVar4 != -2)) {
     switch(iVar4) {
     case -6:
@@ -2052,7 +2052,7 @@ void __cdecl st::fn_006A5560(undefined *param_1,undefined4 param_2)
 {
   undefined4 *puVar1;
 
-  puVar1 = st::pointer_boundary_cast<undefined4 *>(DAT_0085496c);
+  puVar1 = st::pointer_boundary_cast<undefined4 *>(PTR_0085496c);
   if ((DAT_007ec178 & 1) != 0) {
     for (; puVar1 != nullptr; puVar1 = (undefined4 *)*puVar1) {
       if ((puVar1[5] & 0xffff) == 4) {
@@ -2178,14 +2178,14 @@ void __cdecl st::fn_006A57A0(undefined4 *param_1)
   }
   else {
     iVar4 = 5;
-    *param_1 = DAT_0085496c;
+    *param_1 = st::machine_word_boundary_cast<undefined4>(PTR_0085496c);
     puVar2 = param_1;
     do {
       puVar2[6] = 0;
       puVar2[1] = 0;
       iVar4 = iVar4 + -1;
       puVar2 = puVar2 + 1;
-      puVar3 = st::pointer_boundary_cast<undefined4 *>(DAT_0085496c);
+      puVar3 = st::pointer_boundary_cast<undefined4 *>(PTR_0085496c);
     } while (iVar4 != 0);
     for (; puVar3 != nullptr; puVar3 = (undefined4 *)*puVar3) {
       uVar5 = st::machine_word_boundary_cast<uint>(puVar3[5] & 0xffff);
@@ -2261,7 +2261,7 @@ void __cdecl st::fn_006A5990(undefined4 *param_1)
   if (iVar3 == 1) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  puVar2 = st::pointer_boundary_cast<undefined4 *>(DAT_0085496c);
+  puVar2 = st::pointer_boundary_cast<undefined4 *>(PTR_0085496c);
   if (param_1 != nullptr) {
     puVar5 = (undefined4 *)*param_1;
   }

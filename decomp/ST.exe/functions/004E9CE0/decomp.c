@@ -91,10 +91,11 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
                    (*(short *)&this_00->field_047C + 1) * 200,this_00->field_0062);
       thunk_FUN_004e9650(local_8,&this_00->field_0480,&this_00->field_0484,&this_00->field_0488);
       thunk_FUN_004e96c0(local_8,this_00->field_0018);
-      if (DAT_00800bcc == nullptr) {
+      if (g_tLOFake_00800BCC == nullptr) {
         thunk_FUN_004d0f00();
       }
-      thunk_FUN_004d0970(DAT_00800bcc,this_00->field_0480,this_00->field_0484,this_00->field_0488);
+      TLOFakeTy::sub_004D0970
+                (g_tLOFake_00800BCC,this_00->field_0480,this_00->field_0484,this_00->field_0488);
       this_00->field_0494 = 1;
       g_currentExceptionFrame = local_64.previous;
       return 0;
@@ -165,8 +166,9 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     }
     if (uVar3 + 0x79 <= uVar10) {
       if (local_20->field_0494 != 0) {
-        thunk_FUN_004d0a80(DAT_00800bcc,local_20->field_0480,local_20->field_0484,
-                           local_20->field_0488);
+        TLOFakeTy::sub_004D0A80
+                  (g_tLOFake_00800BCC,local_20->field_0480,local_20->field_0484,local_20->field_0488
+                  );
         this_00->field_0494 = 0;
       }
       sub_0041C5A0(this_00);

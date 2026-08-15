@@ -1,11 +1,11 @@
 program=ST.exe
-functions_scanned=5616
-direct_calls_seen=36943
+functions_scanned=5555
+direct_calls_seen=36888
 type_propagation_passes=10
 type_propagation_cycle_length=4
 type_propagation_cycle_dropped_seeds=108
-proposals=101
-parameter_proposals=101
+proposals=99
+parameter_proposals=99
 return_proposals=0
 type_auto_apply=0
 name_auto_apply=0

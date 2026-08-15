@@ -17,14 +17,14 @@ void __cdecl FUN_006a57a0(undefined4 *param_1)
   }
   else {
     iVar4 = 5;
-    *param_1 = DAT_0085496c;
+    *param_1 = PTR_0085496c;
     puVar2 = param_1;
     do {
       puVar2[6] = 0;
       puVar2[1] = 0;
       iVar4 = iVar4 + -1;
       puVar2 = puVar2 + 1;
-      puVar3 = DAT_0085496c;
+      puVar3 = PTR_0085496c;
     } while (iVar4 != 0);
     for (; puVar3 != nullptr; puVar3 = (undefined4 *)*puVar3) {
       uVar5 = puVar3[5] & 0xffff;

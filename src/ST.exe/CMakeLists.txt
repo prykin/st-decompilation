@@ -228,6 +228,7 @@ add_library(st_recovered OBJECT
     source/recovered/by_owner/FSGSTy.cpp
     source/recovered/by_owner/GameSystemC.cpp
     source/recovered/by_owner/HelpPanelTy.cpp
+    source/recovered/by_owner/HelpStringTy.cpp
     source/recovered/by_owner/InterSystemC.cpp
     source/recovered/by_owner/JumpManagC.cpp
     source/recovered/by_owner/MAdvTy.cpp

@@ -6,70 +6,70 @@
 undefined4 __fastcall FUN_0060d940(AnonShape_0060D940_4FDF4902 *param_1)
 
 {
-  undefined4 uVar1;
-  float fVar2;
-  int iVar3;
+  int iVar1;
+  undefined4 uVar2;
+  float fVar3;
   int iVar4;
-  undefined4 *puVar5;
-  uint uVar6;
-  int iVar7;
-  float10 fVar8;
+  AnonNested_AnonShape_0060D940_4FDF4902_0244_00248A15 *pAVar5;
+  undefined4 *puVar6;
+  uint uVar7;
+  int iVar8;
+  float10 fVar9;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   unkbyte10 extraout_ST1;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_00;
-  longlong lVar9;
+  longlong lVar10;
   int local_c;
   int local_8;
 
-  fVar8 = (float10)_DAT_0079034c;
-  iVar4 = param_1->field_0244;
-  if (iVar4 == 0) {
+  fVar9 = (float10)_DAT_0079034c;
+  pAVar5 = param_1->field_0244;
+  if (pAVar5 == nullptr) {
     return 0;
   }
   local_8 = 0;
-  fVar2 = _DAT_0079c5a4 / (float)*(int *)(iVar4 + 0xc);
-  if (0 < *(int *)(iVar4 + 0xc)) {
+  fVar3 = _DAT_0079c5a4 / (float)(int)pAVar5->field_000C;
+  if (0 < (int)pAVar5->field_000C) {
     do {
-      fcos(fVar8 + (float10)fVar2);
-      iVar4 = *(int *)(iVar4 + 0x10);
-      uVar6 = iVar4 * local_8;
-      lVar9 = Library::MSVCRT::__ftol();
+      fcos(fVar9 + (float10)fVar3);
+      iVar1 = pAVar5->field_0010;
+      uVar7 = iVar1 * local_8;
+      lVar10 = Library::MSVCRT::__ftol();
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       fsin(extraout_ST1);
-      iVar7 = (int)lVar9 + param_1->field_01E9;
-      lVar9 = Library::MSVCRT::__ftol();
-      iVar3 = (int)lVar9 + param_1->field_01ED;
+      iVar8 = (int)lVar10 + param_1->field_01E9;
+      lVar10 = Library::MSVCRT::__ftol();
+      iVar4 = (int)lVar10 + param_1->field_01ED;
       local_c = 0;
-      if (0 < iVar4) {
+      if (0 < iVar1) {
         do {
-          iVar4 = param_1->field_0234;
-          if ((uVar6 < *(uint *)(iVar4 + 0xc)) &&
-             (puVar5 = (undefined4 *)(*(int *)(iVar4 + 8) * uVar6 + *(int *)(iVar4 + 0x1c)),
-             puVar5 != nullptr)) {
-            puVar5[6] = iVar7;
-            puVar5[7] = iVar3;
-            uVar1 = param_1->field_01F1;
-            puVar5[3] = iVar7;
+          iVar1 = param_1->field_0234;
+          if ((uVar7 < *(uint *)(iVar1 + 0xc)) &&
+             (puVar6 = (undefined4 *)(*(int *)(iVar1 + 8) * uVar7 + *(int *)(iVar1 + 0x1c)),
+             puVar6 != nullptr)) {
+            puVar6[6] = iVar8;
+            puVar6[7] = iVar4;
+            uVar2 = param_1->field_01F1;
+            puVar6[3] = iVar8;
             /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-            puVar5[0xb] = (float)extraout_ST1_00;
-            puVar5[8] = uVar1;
-            puVar5[4] = iVar3;
-            puVar5[5] = uVar1;
-            puVar5[10] = 0x14;
-            puVar5[9] = 0;
-            *puVar5 = param_1->field_0211;
+            puVar6[0xb] = (float)extraout_ST1_00;
+            puVar6[8] = uVar2;
+            puVar6[4] = iVar4;
+            puVar6[5] = uVar2;
+            puVar6[10] = 0x14;
+            puVar6[9] = 0;
+            *puVar6 = param_1->field_0211;
           }
           local_c = local_c + 1;
-          uVar6 = uVar6 + 1;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        } while (local_c < *(int *)(param_1->field_0244 + 0x10));
+          uVar7 = uVar7 + 1;
+        } while (local_c < (int)param_1->field_0244->field_0010);
       }
-      iVar4 = param_1->field_0244;
+      pAVar5 = param_1->field_0244;
       local_8 = local_8 + 1;
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-      fVar8 = extraout_ST1_00;
-    } while (local_8 < *(int *)(iVar4 + 0xc));
+      fVar9 = extraout_ST1_00;
+    } while (local_8 < (int)pAVar5->field_000C);
   }
   return 1;
 }

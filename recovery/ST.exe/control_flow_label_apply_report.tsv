@@ -3387,24 +3387,7 @@ function_address	label_address	proposed_name	status	detail
 007553F0	00755464	cf_join_00755464	disabled	apply=0
 00755560	007557FA	cf_join_007557FA	disabled	apply=0
 00755560	0075580A	cf_join_0075580A	disabled	apply=0
-00757CD0	00757CE8	cf_join_00757CE8	disabled	apply=0
-0075A350	0075A413	cf_join_0075A413	disabled	apply=0
 0075B720	0075B7AC	cf_join_0075B7AC	disabled	apply=0
-0075BA30	0075BB2D	cf_join_0075BB2D	disabled	apply=0
-0075BA30	0075BB5C	cf_join_0075BB5C	disabled	apply=0
-0075BA30	0075BC29	cf_join_0075BC29	disabled	apply=0
-0075BA30	0075BC58	cf_join_0075BC58	disabled	apply=0
-0075BA30	0075BCFA	cf_join_0075BCFA	disabled	apply=0
-0075BA30	0075BD2E	cf_join_0075BD2E	disabled	apply=0
-0075BA30	0075BD5D	cf_join_0075BD5D	disabled	apply=0
-0075C180	0075C271	cf_join_0075C271	disabled	apply=0
-0075C180	0075C29E	cf_join_0075C29E	disabled	apply=0
-0075C440	0075C512	cf_join_0075C512	disabled	apply=0
-0075C440	0075C541	cf_join_0075C541	disabled	apply=0
-0075C790	0075C882	cf_join_0075C882	disabled	apply=0
-0075C790	0075C8AF	cf_join_0075C8AF	disabled	apply=0
-0075C790	0075CA4A	cf_join_0075CA4A	disabled	apply=0
-0075C790	0075CB0B	cf_break_loop_0075CB0B	unchanged	label is already primary
 0075E980	0075EA13	cf_join_0075EA13	disabled	apply=0
 0075E980	0075EA6D	cf_join_0075EA6D	disabled	apply=0
 0075E980	0075EAC8	cf_join_0075EAC8	disabled	apply=0

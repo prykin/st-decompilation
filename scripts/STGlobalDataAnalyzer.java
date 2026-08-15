@@ -74,7 +74,10 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             monitor.checkCancelled();
             Function function = functions.next();
             if (function.isThunk() || function.isExternal() || isLibrary(function)) continue;
-            functionsSeen++; callsSeen += analyze(function);
+            functionsSeen++;
+            collectExactGlobalReturnAlias(function);
+            collectCfgThisGlobalStores(function);
+            callsSeen += analyze(function);
         }
         addPointerDereferenceEvidence();
         List<Proposal> proposals = makeProposals();
@@ -159,6 +162,185 @@ public class STGlobalDataAnalyzer extends GhidraScript {
     }
 
     /**
+     * A trusted concrete pointer-returning function may publish its result through
+     * one exact global.  Accept that global type only when every RET is reached
+     * with either a direct load of the same global in EAX or an exact zero EAX.
+     * This covers factory singletons without propagating the neutral allocator's
+     * return type into their consumers.
+     */
+    private void collectExactGlobalReturnAlias(Function function) {
+        if (!trustedPointerReturn(function)) return;
+        String type = concretePointer(function.getReturnType());
+        if (type.isBlank()) return;
+        Address global = null;
+        int returns = 0, globalReturns = 0;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            if (!instruction.getFlowType().isTerminal() ||
+                    !instruction.getMnemonicString().equalsIgnoreCase("RET")) continue;
+            returns++;
+            ReturnOrigin origin = precedingReturnOrigin(function, instruction);
+            if (origin.kind == ReturnOriginKind.UNKNOWN) return;
+            if (origin.kind == ReturnOriginKind.ZERO) continue;
+            globalReturns++;
+            if (global != null && !global.equals(origin.address)) return;
+            global = origin.address;
+        }
+        if (returns == 0 || globalReturns == 0 || global == null) return;
+        String site = addr(function.getEntryPoint()) + " trusted " + type +
+            " return aliases exact global on " + globalReturns + "/" + returns +
+            " non-null/total RET paths";
+        add(global, type, "", true, false, site);
+        Evidence ev = evidence.get(global);
+        ev.typedStores++;
+        ev.typedStoreTypes.merge(type, 1, Integer::sum);
+        ev.typedStoreSites.add(site);
+    }
+
+    private ReturnOrigin precedingReturnOrigin(Function function, Instruction ret) {
+        Instruction cursor = ret.getPrevious();
+        for (int count = 0; cursor != null && count < 24 &&
+                function.getBody().contains(cursor.getAddress()); count++) {
+            String mnemonic = cursor.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(cursor.toString().toUpperCase(Locale.ROOT));
+            if (cursor.getFlowType().isCall() || cursor.getFlowType().isJump())
+                return ReturnOrigin.unknown();
+            String destination = operands.length == 0 ? null : cleanRegister(operands[0]);
+            if ("EAX".equals(destination) && isFullRegister(operands[0])) {
+                if ("MOV".equals(mnemonic) && operands.length >= 2) {
+                    GlobalValue value = referencedGlobal(cursor, 1, operands[1], false);
+                    if (value != null && !value.addressOf)
+                        return ReturnOrigin.global(value.address);
+                    if (isZeroImmediate(operands[1])) return ReturnOrigin.zero();
+                }
+                if (("XOR".equals(mnemonic) || "SUB".equals(mnemonic)) &&
+                        operands.length >= 2 && "EAX".equals(cleanRegister(operands[1])))
+                    return ReturnOrigin.zero();
+                return ReturnOrigin.unknown();
+            }
+            cursor = cursor.getPrevious();
+        }
+        return ReturnOrigin.unknown();
+    }
+
+    /**
+     * Recover exact stores of a named method's unadjusted receiver into a global.
+     *
+     * The ordinary linear register tracker intentionally drops provenance at a
+     * branch.  That is safe for call-site aggregation, but misses VC6 SEH-shaped
+     * methods which spill ECX, cross a setjmp/switch, reload it into EBX/ESI/EDI,
+     * and publish the object in one case.  This small forward must-analysis keeps
+     * a receiver fact only when every predecessor reaching an instruction agrees.
+     * Calls kill volatile registers; stack facts use exact Ghidra stack references.
+     */
+    private void collectCfgThisGlobalStores(Function function) {
+        if (!"__thiscall".equals(function.getCallingConventionName())) return;
+        String ownerType = ownerTypePath(function);
+        if (ownerType.isBlank()) return;
+        Instruction entry = currentProgram.getListing().getInstructionAt(
+            function.getEntryPoint());
+        if (entry == null) return;
+        Map<Address, ThisState> incoming = new HashMap<>();
+        ArrayDeque<Address> work = new ArrayDeque<>();
+        ThisState initial = new ThisState();
+        initial.registers.add("ECX");
+        incoming.put(entry.getAddress(), initial);
+        work.add(entry.getAddress());
+        int visits = 0;
+        int visitLimit = Math.max(1024,
+            (int)Math.min(200000L, function.getBody().getNumAddresses() * 24L));
+        while (!work.isEmpty() && visits++ < visitLimit) {
+            Address address = work.removeFirst();
+            Instruction instruction = currentProgram.getListing().getInstructionAt(address);
+            if (instruction == null || !function.getBody().contains(address)) continue;
+            ThisState state = incoming.get(address).copy();
+            transferThisState(function, instruction, state, ownerType);
+            for (Address successor : instructionSuccessors(function, instruction)) {
+                ThisState old = incoming.get(successor);
+                if (old == null) {
+                    incoming.put(successor, state.copy());
+                    work.addLast(successor);
+                    continue;
+                }
+                ThisState merged = old.intersection(state);
+                if (!merged.equals(old)) {
+                    incoming.put(successor, merged);
+                    work.addLast(successor);
+                }
+            }
+        }
+    }
+
+    private void transferThisState(Function function, Instruction instruction,
+            ThisState state, String ownerType) {
+        String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+        String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+        if (operands.length == 0) {
+            if (instruction.getFlowType().isCall()) state.killVolatile();
+            return;
+        }
+        String destination = cleanRegister(operands[0]);
+        Integer destinationStack = stackOffset(instruction, 0);
+        if ("MOV".equals(mnemonic) && operands.length >= 2) {
+            String source = cleanRegister(operands[1]);
+            Integer sourceStack = stackOffset(instruction, 1);
+            boolean carriesThis =
+                (source != null && isFullRegister(operands[1]) &&
+                    state.registers.contains(source)) ||
+                (sourceStack != null && state.stack.contains(sourceStack));
+            if (destination != null) {
+                if (isFullRegister(operands[0]) && carriesThis)
+                    state.registers.add(destination);
+                else state.registers.remove(destination);
+                return;
+            }
+            if (destinationStack != null) {
+                if (carriesThis) state.stack.add(destinationStack);
+                else state.stack.remove(destinationStack);
+                return;
+            }
+            if (carriesThis) {
+                GlobalValue target = referencedGlobal(instruction, 0, operands[0], false);
+                if (target != null && !target.addressOf) {
+                    String type = "pointer:" + ownerType;
+                    String site = addr(function.getEntryPoint()) + " exact CFG this store @ " +
+                        addr(instruction.getAddress());
+                    add(target.address, type, "", true, false, site);
+                    Evidence ev = evidence.get(target.address);
+                    ev.typedStores++;
+                    ev.typedStoreTypes.merge(type, 1, Integer::sum);
+                    ev.typedStoreSites.add(site);
+                }
+            }
+            return;
+        }
+        if (instruction.getFlowType().isCall()) {
+            state.killVolatile();
+            return;
+        }
+        if (destinationStack != null) state.stack.remove(destinationStack);
+        if (destination != null && writesRegister(mnemonic, operands))
+            state.registers.remove(destination);
+    }
+
+    private List<Address> instructionSuccessors(Function function,
+            Instruction instruction) {
+        List<Address> result = new ArrayList<>();
+        if (instruction.getFlowType().isTerminal()) return result;
+        if (instruction.getFlowType().isJump()) {
+            for (Address flow : instruction.getFlows())
+                if (function.getBody().contains(flow) && !result.contains(flow))
+                    result.add(flow);
+        }
+        Address fallthrough = instruction.getFallThrough();
+        if (fallthrough != null && function.getBody().contains(fallthrough) &&
+                !result.contains(fallthrough)) result.add(fallthrough);
+        return result;
+    }
+
+    /**
      * A word loaded from one exact global and then used as the base of repeated
      * memory accesses is a pointer value, irrespective of whether the
      * pointed record has a semantic name yet.  Keep this as a neutral
@@ -185,6 +367,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 Evidence ev = evidence.computeIfAbsent(value.address,
                     ignored -> new Evidence());
                 ev.pointerDereferences++;
+                ev.pointerDerefFunctions.add(addr(function.getEntryPoint()));
                 boolean compatible = dwordPointerGeometry(address, entry.getKey());
                 if (!compatible) ev.pointerDerefWordCompatible = false;
                 ev.pointerDerefSites.add(addr(function.getEntryPoint()) + " " +
@@ -240,18 +423,38 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             new ArrayList<>(evidence.entrySet());
         for (Map.Entry<Address, Evidence> entry : entries) {
             Evidence ev = entry.getValue();
-            if (ev.pointerDerefSites.size() < 3)
-                continue;
+            if (ev.pointerDerefSites.size() < 3 ||
+                    ev.pointerDerefFunctions.size() < 2) continue;
             String type = unique(ev.callBoundaryTypes);
-            // Indirection proves pointer-ness but not a pointee width.  Make
-            // the mutation automatic only when an independent exact call
-            // boundary supplies one primitive pointer type; otherwise retain
-            // the evidence in the review proposal generated by the ordinary
-            // aggregation path.
-            if (!fourBytePrimitivePointer(type)) continue;
-            for (String site : ev.pointerDerefSites)
-                add(entry.getKey(), type, "", false, false,
-                    "repeated aligned DWORD dereference of exact global value; " + site);
+            // Indirection proves pointer-ness but not a pointee width. Prefer an
+            // independent exact primitive-pointer call boundary when available;
+            // otherwise install only a neutral pointer role which later concrete
+            // evidence may replace.
+            if (fourBytePrimitivePointer(type)) {
+                for (String site : ev.pointerDerefSites)
+                    add(entry.getKey(), type, "", false, false,
+                        "repeated aligned DWORD dereference of exact global value; " + site);
+            }
+            else if (ev.bitStringSites.isEmpty()) {
+                // Repeated use of the loaded machine word as a memory base proves
+                // pointer-ness, but neither its access width nor displacement proves
+                // a pointee.  Keep the result deliberately neutral so later exact
+                // call-boundary, constructor, record, or bit-string evidence wins.
+                for (String site : ev.pointerDerefSites)
+                    add(entry.getKey(), "pointer:/void", "", false, false,
+                        "repeated exact global value dereference proves neutral pointer; " +
+                        site);
+            }
+        }
+        for (Map.Entry<Address, Evidence> entry : entries) {
+            Evidence ev = entry.getValue();
+            if (ev.untypedReceiverSites.size() < 3 ||
+                    ev.untypedReceiverFunctions.size() < 2 ||
+                    ev.untypedReceiverCallees.size() < 2) continue;
+            for (String site : ev.untypedReceiverSites)
+                add(entry.getKey(), "pointer:/void", "", false, false,
+                    "exact global value used as receiver of independent __thiscall targets; " +
+                    site);
         }
         for (Map.Entry<Address, Evidence> entry : entries) {
             Evidence ev = entry.getValue();
@@ -487,7 +690,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         if (isLibrary(function)) return true;
         for (FunctionTag tag : function.getTags())
             if (Set.of("RECOVERED_PROTOTYPE", "RECOVERED_UTILITY_SEMANTICS",
-                    "RECOVERED_CONSTRUCTOR").contains(tag.getName())) return true;
+                    "RECOVERED_CONSTRUCTOR", "RECOVERED_OBJECT_FACTORY")
+                    .contains(tag.getName())) return true;
         return false;
     }
 
@@ -509,6 +713,15 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                     true, receiver.addressOf,
                     addr(containing.getEntryPoint()) + " used as this of " +
                     called.getName(true) + " @ " + addr(site));
+            }
+            else if (!receiver.addressOf) {
+                Evidence ev = evidence.computeIfAbsent(receiver.address,
+                    ignored -> new Evidence());
+                ev.untypedReceiverFunctions.add(addr(containing.getEntryPoint()));
+                ev.untypedReceiverCallees.add(addr(called.getEntryPoint()));
+                ev.untypedReceiverSites.add(addr(containing.getEntryPoint()) + " -> " +
+                    addr(called.getEntryPoint()) + " exact global ECX receiver @ " +
+                    addr(site));
             }
         }
         List<Parameter> parameters = explicitParameters(called);
@@ -818,6 +1031,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             // data, but allow a hash/comment-owned anonymous pointer produced by our earlier
             // shape passes to graduate to a named type when repeated call ABI evidence agrees.
             boolean generatedAnonymous = scriptOwned && anonymousPointer(data.getDataType());
+            boolean generatedBarePointer = scriptOwned &&
+                genericBarePointer(data.getDataType());
             // A direct named-constructor result stored in a synthetic pointer global
             // is stronger than an old DEFAULT/ANALYSIS concrete pointer propagated
             // from one weak consumer.  Preserve all manually/imported symbols and
@@ -832,7 +1047,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 symbol.getSource() != SourceType.USER_DEFINED &&
                 symbol.getSource() != SourceType.IMPORTED;
             boolean currentReplaceable = Undefined.isUndefined(data.getDataType()) ||
-                generatedAnonymous || constructorConcreteOverride ||
+                generatedAnonymous || generatedBarePointer || constructorConcreteOverride ||
                 initializedStringPointer;
             DataType currentBase = data.getDataType() instanceof Pointer pointer ?
                 pointer.getDataType() : null;
@@ -914,7 +1129,13 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             reasons.add("constructor_store_types=" + ev.constructorStores);
             reasons.add("library_context_votes=" + ev.libraryContexts);
             reasons.add("pointer_dereferences=" + ev.pointerDereferences +
+                "; functions=" + ev.pointerDerefFunctions.size() +
                 "; aligned_dword_geometry=" + ev.pointerDerefWordCompatible);
+            if (!ev.untypedReceiverSites.isEmpty())
+                reasons.add("untyped_thiscall_receiver_sites=" +
+                    ev.untypedReceiverSites.size() + "; functions=" +
+                    ev.untypedReceiverFunctions.size() + "; callees=" +
+                    ev.untypedReceiverCallees.size());
             if (!ev.bitStringSites.isEmpty())
                 reasons.add("exact_x86_bit_string_sites=" + ev.bitStringSites.size() +
                     "; functions=" + ev.bitStringFunctions.size());
@@ -924,7 +1145,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             if (constructorDominates && ev.types.size() > 1)
                 reasons.add("constructor_store_dominates_weaker_use_types");
             if (typedStoreDominates && ev.types.size() > 1)
-                reasons.add("trusted_pointer_return_store_dominates_weaker_use_types");
+                reasons.add("exact_typed_pointer_store_dominates_weaker_use_types");
             if (typeConflict) reasons.add("type_conflict");
             if (!narrowCharType.isBlank())
                 reasons.add("dominant_char_pointer_role_over_neutral_byte_consumers");
@@ -1210,6 +1431,11 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             "RAX", "RBX", "RCX", "RDX", "RSI", "RDI", "RBP", "RSP")
             .contains(operand.trim().toUpperCase(Locale.ROOT));
     }
+    private boolean writesRegister(String mnemonic, String[] operands) {
+        return operands.length > 0 && !Set.of("CMP", "TEST", "PUSH", "BT",
+            "JMP", "CALL", "RET", "NOP").contains(mnemonic) &&
+            !mnemonic.startsWith("J");
+    }
     private String[] splitOperands(String instruction) {
         int space = instruction.indexOf(' ');
         return space < 0 || space == instruction.length() - 1 ? new String[0] :
@@ -1405,6 +1631,9 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             "note=Automatic types require repeated non-address-of evidence and replace only undefined/script-owned data.",
             "note_pointer_return_store=A trusted concrete pointer return stored into an exact " +
                 "global is an independent type anchor and dominates weaker use-site spellings.",
+            "note_cfg_this_store=An unadjusted named __thiscall receiver stored into an exact " +
+                "global is propagated only by all-predecessor CFG agreement through exact " +
+                "callee-saved-register and EBP-stack lifetimes.",
             "note_constructor_stores=A unique named constructor result stored into a global " +
                 "dominates weaker generic use-site types.",
             "note_names=Automatic names are structural and retain the address suffix.",
@@ -1432,6 +1661,34 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             this.address = address; this.addressOf = addressOf;
         }
     }
+    private static class ThisState {
+        final Set<String> registers = new TreeSet<>();
+        final Set<Integer> stack = new TreeSet<>();
+        ThisState copy() {
+            ThisState result = new ThisState();
+            result.registers.addAll(registers);
+            result.stack.addAll(stack);
+            return result;
+        }
+        ThisState intersection(ThisState other) {
+            ThisState result = copy();
+            result.registers.retainAll(other.registers);
+            result.stack.retainAll(other.stack);
+            return result;
+        }
+        void killVolatile() {
+            registers.remove("EAX");
+            registers.remove("ECX");
+            registers.remove("EDX");
+        }
+        @Override
+        public boolean equals(Object value) {
+            return value instanceof ThisState other &&
+                registers.equals(other.registers) && stack.equals(other.stack);
+        }
+        @Override
+        public int hashCode() { return registers.hashCode() * 31 + stack.hashCode(); }
+    }
     private static class Evidence {
         final Map<String, Integer> types = new TreeMap<>(), names = new TreeMap<>(),
             constructorStores = new TreeMap<>(), typedStoreTypes = new TreeMap<>(),
@@ -1439,7 +1696,10 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         final Set<String> sites = new TreeSet<>(), strongNames = new TreeSet<>(),
             typedStoreSites = new TreeSet<>(), callBoundarySites = new TreeSet<>(),
             initializedStringNames = new TreeSet<>(), pointerDerefSites = new TreeSet<>(),
-            bitStringSites = new TreeSet<>(), bitStringFunctions = new TreeSet<>();
+            pointerDerefFunctions = new TreeSet<>(), bitStringSites = new TreeSet<>(),
+            bitStringFunctions = new TreeSet<>(), untypedReceiverSites = new TreeSet<>(),
+            untypedReceiverFunctions = new TreeSet<>(),
+            untypedReceiverCallees = new TreeSet<>();
         int strongCount, addressEvidence, typedStores, libraryContextCalls,
             initializedStringPointers, cstringScans, pointerDereferences;
         boolean pointerDerefWordCompatible = true;
@@ -1447,6 +1707,18 @@ public class STGlobalDataAnalyzer extends GhidraScript {
     private record ContextVote(String family, int count, int total) {}
     private record CStringState(Address address, boolean lowAccumulatorZero) {}
     private record TypedValue(String type, String producer, boolean constructorResult) {}
+    private enum ReturnOriginKind { GLOBAL, ZERO, UNKNOWN }
+    private record ReturnOrigin(ReturnOriginKind kind, Address address) {
+        static ReturnOrigin global(Address address) {
+            return new ReturnOrigin(ReturnOriginKind.GLOBAL, address);
+        }
+        static ReturnOrigin zero() {
+            return new ReturnOrigin(ReturnOriginKind.ZERO, null);
+        }
+        static ReturnOrigin unknown() {
+            return new ReturnOrigin(ReturnOriginKind.UNKNOWN, null);
+        }
+    }
     private static class Proposal {
         final Address address; final String expectedName, expectedNameSource, expectedType,
             proposedName, proposedType, confidence, reason; final int expectedLength;

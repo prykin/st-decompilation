@@ -1,7 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __thiscall FUN_00620a00(void *this,int param_1,int param_2,uint param_3)
+/* [STMethodOwnerApplier] Structural method owner recovered as SndUnderAttMenegC.
+   Evidence: this_call_owners=[SndUnderAttMenegC]; agreed_this_calls=1; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall
+SndUnderAttMenegC::sub_00620A00(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
 
 {
   uint uVar1;
@@ -13,11 +19,11 @@ void __thiscall FUN_00620a00(void *this,int param_1,int param_2,uint param_3)
   if (DAT_0080874d == param_3) {
     return;
   }
-  if (STField<uint>(this,0xe5) <= uVar1) {
-    uVar2 = thunk_FUN_00620b20(this,uVar1,param_1,param_2);
+  if (this->field_00E5 <= uVar1) {
+    uVar2 = sub_00620B20(this,uVar1,param_1,param_2);
     if (((-1 < (int)uVar2) ||
-        (uVar2 = thunk_FUN_00620c50(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) &&
-       (uVar2 != 2)) {
+        (uVar2 = sub_00620C50(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) && (uVar2 != 2))
+    {
       return;
     }
     if (DAT_0080874e == '\x01') {
@@ -36,8 +42,8 @@ void __thiscall FUN_00620a00(void *this,int param_1,int param_2,uint param_3)
     local_10.y = -1;
     local_10.unknown = 0;
     SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
-    thunk_FUN_00620da0(this,param_1,param_2,0x8e);
-    STField<uint>(this,0xe5) = uVar1 + 0xfa;
+    sub_00620DA0(this,param_1,param_2,0x8e);
+    this->field_00E5 = uVar1 + 0xfa;
     return;
   }
   return;

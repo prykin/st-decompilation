@@ -57,13 +57,13 @@ void FUN_006c08e0(void)
           pAVar10 = *(uint *)(&DAT_0085500c + iVar9) >> 1;
           local_20 = pAVar10;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar4 = (**(code **)(*(int *)(&DAT_00855004)[local_c * 0x31] + 0x24))
-                            ((int *)(&DAT_00855004)[local_c * 0x31],local_38);
+          iVar4 = (**(code **)(*(int *)(&PTR_00855004)[local_c * 0x31] + 0x24))
+                            ((&PTR_00855004)[local_c * 0x31],local_38);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           if (((iVar4 != 0) || ((local_38[0] & 2) != 0)) ||
-             (iVar4 = (**(code **)(*(int *)(&DAT_00855004)[uVar2 * 0x31] + 0x10))
-                                ((int *)(&DAT_00855004)[uVar2 * 0x31],&local_14,local_3c),
-             iVar4 != 0)) goto cf_common_join_006C0E00;
+             (iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x10))
+                                ((&PTR_00855004)[uVar2 * 0x31],&local_14,local_3c), iVar4 != 0))
+          goto cf_common_join_006C0E00;
           pAVar9 = *(uint *)(&DAT_00855010 + iVar9);
           local_28 = *(AnonShape_006BFBF0_13F73F95 **)(&DAT_0085500c + iVar9);
           if (pAVar9 <= local_28) {
@@ -79,8 +79,8 @@ LAB_006c0af5:
                   else {
                     if ((*(byte *)(&DAT_00854ffc + uVar2 * 0x31) & 1) == 0) {
                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                      (**(code **)(*(int *)(&DAT_00855004)[uVar2 * 0x31] + 0x48))
-                                ((int *)(&DAT_00855004)[uVar2 * 0x31]);
+                      (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x48))
+                                ((&PTR_00855004)[uVar2 * 0x31]);
                       goto cf_common_join_006C0E05;
                     }
                     local_18 = uVar6 & 8;
@@ -93,8 +93,8 @@ LAB_006c0af5:
             else if ((pAVar9 <= local_14) || ((local_14 < pAVar10 && (pAVar10 <= pAVar9)))) {
               if ((*(byte *)(&DAT_00854ffc + uVar2 * 0x31) & 1) == 0) {
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                (**(code **)(*(int *)(&DAT_00855004)[uVar2 * 0x31] + 0x48))
-                          ((int *)(&DAT_00855004)[uVar2 * 0x31]);
+                (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x48))
+                          ((&PTR_00855004)[uVar2 * 0x31]);
                 goto cf_common_join_006C0E05;
               }
               *(undefined4 *)(&DAT_00855010 + iVar9) = 0x7fffffff;
@@ -117,10 +117,9 @@ LAB_006c0af5:
             else {
               if (local_14 < local_20) {
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                iVar4 = (**(code **)(*(int *)(&DAT_00855004)[uVar2 * 0x31] + 0x2c))
-                                  ((int *)(&DAT_00855004)[uVar2 * 0x31],local_20,
-                                   (int)local_28 - local_20,&local_8,&local_1c,&local_30,&local_2c,0
-                                  );
+                iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x2c))
+                                  ((&PTR_00855004)[uVar2 * 0x31],local_20,(int)local_28 - local_20,
+                                   &local_8,&local_1c,&local_30,&local_2c,0);
                 if (iVar4 == 0) {
                   bVar3 = (*(short *)(&DAT_00855090 + iVar9) != 8) - 1;
                   puVar11 = local_8;
@@ -133,8 +132,8 @@ LAB_006c0af5:
                     puVar11 = (uint *)((int)puVar11 + 1);
                   }
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  iVar4 = (**(code **)(*(int *)(&DAT_00855004)[uVar2 * 0x31] + 0x4c))
-                                    ((int *)(&DAT_00855004)[uVar2 * 0x31],local_8,local_1c,local_30,
+                  iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x4c))
+                                    ((&PTR_00855004)[uVar2 * 0x31],local_8,local_1c,local_30,
                                      local_2c);
                   if (iVar4 == 0) {
                     (&DAT_00854ffc)[uVar2 * 0x31] = (&DAT_00854ffc)[uVar2 * 0x31] & 0xffff7fff;
@@ -158,9 +157,9 @@ LAB_006c0b45:
               }
               local_28 = local_ESI_1151;
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              iVar4 = (**(code **)(*(int *)(&DAT_00855004)[uVar2 * 0x31] + 0x2c))
-                                ((int *)(&DAT_00855004)[uVar2 * 0x31],local_24,local_ECX_632,
-                                 &local_8,&local_1c,&local_30,&local_2c,0);
+              iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x2c))
+                                ((&PTR_00855004)[uVar2 * 0x31],local_24,local_ECX_632,&local_8,
+                                 &local_1c,&local_30,&local_2c,0);
               if (iVar4 == 0) {
                 if ((local_ESI_1151 < local_ECX_632) &&
                    ((*(byte *)(&DAT_00854ffc + uVar2 * 0x31) & 1) == 0)) {
@@ -267,9 +266,8 @@ LAB_006c0d87:
                 }
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_006c0d93:
-                iVar4 = (**(code **)(*(int *)(&DAT_00855004)[uVar2 * 0x31] + 0x4c))
-                                  ((int *)(&DAT_00855004)[uVar2 * 0x31],local_8,local_1c,local_30,
-                                   local_2c);
+                iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x4c))
+                                  ((&PTR_00855004)[uVar2 * 0x31],local_8,local_1c,local_30,local_2c);
                 if (iVar4 == 0) {
                   *(uint *)pAVar13 = *(uint *)pAVar13 ^ 4;
                   if ((*(int *)(&DAT_008550b8 + iVar9) < 1) &&
@@ -279,8 +277,8 @@ LAB_006c0d93:
                     }
                     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                     if ((local_20 <= local_24) &&
-                       (iVar4 = (**(code **)(*(int *)(&DAT_00855004)[uVar2 * 0x31] + 0x30))
-                                          ((int *)(&DAT_00855004)[uVar2 * 0x31],0,0,0), iVar4 != 0))
+                       (iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x30))
+                                          ((&PTR_00855004)[uVar2 * 0x31],0,0,0), iVar4 != 0))
                     goto cf_common_join_006C0E00;
                   }
                   goto cf_common_join_006C0F07;
@@ -300,31 +298,30 @@ cf_common_join_006C0F07:
           *(uint *)pAVar13 = uVar6 & 0xffffffdf;
           iVar4 = FUN_006bfbf0((AnonShape_006BFBF0_13F73F95 *)pAVar13);
           if (iVar4 == 0) goto cf_continue_loop_006C0F40;
-          piVar1 = (int *)(&DAT_00855004)[uVar2 * 0x31];
+          piVar1 = (&PTR_00855004)[uVar2 * 0x31];
           bVar3 = 1;
           if (piVar1 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*piVar1 + 0x48))(piVar1);
-            piVar1 = (int *)(&DAT_00855008)[uVar2 * 0x31];
+            piVar1 = (&PTR_00855008)[uVar2 * 0x31];
             if (piVar1 != nullptr) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(*piVar1 + 8))(piVar1);
-              (&DAT_00855008)[uVar2 * 0x31] = 0;
+              (&PTR_00855008)[uVar2 * 0x31] = nullptr;
             }
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)(*(int *)(&DAT_00855004)[uVar2 * 0x31] + 8))
-                      ((int *)(&DAT_00855004)[uVar2 * 0x31]);
-            (&DAT_00855004)[uVar2 * 0x31] = 0;
+            (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 8))((&PTR_00855004)[uVar2 * 0x31]);
+            (&PTR_00855004)[uVar2 * 0x31] = nullptr;
           }
 cf_common_join_006C0E05:
           local_18 = *(uint *)pAVar13 & 8;
-          piVar1 = (int *)(&DAT_00855008)[uVar2 * 0x31];
+          piVar1 = (&PTR_00855008)[uVar2 * 0x31];
           if (piVar1 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*piVar1 + 8))(piVar1);
-            (&DAT_00855008)[uVar2 * 0x31] = 0;
+            (&PTR_00855008)[uVar2 * 0x31] = nullptr;
           }
-          piVar1 = (int *)(&DAT_00855004)[uVar2 * 0x31];
+          piVar1 = (&PTR_00855004)[uVar2 * 0x31];
           if (piVar1 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*piVar1 + 8))(piVar1);

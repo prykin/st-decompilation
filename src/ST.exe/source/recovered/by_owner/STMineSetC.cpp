@@ -976,10 +976,12 @@ LAB_006259bf:
                 if ((this_00->value_20 == 1000) || (this_00->value_20 == 0x14)) {
                   this->field_0241 = *(undefined4 *)&this_00->field_0x18;
                 }
-                if (DAT_00811798 != nullptr) {
+                if (g_sndUnderAttMeneg_00811798 != nullptr) {
                   iVar6 = this->vfunc_2C();
                   iVar7 = this_00->GetObjectTypeId();
-                  st::fn_004058A8(st::pointer_boundary_cast<void *>(DAT_00811798),iVar14,iVar15,(uint)this_00[1].vtable,iVar7,iVar6);
+                  st::fn_004058A8
+                            (g_sndUnderAttMeneg_00811798,iVar14,iVar15,(uint)this_00[1].vtable,iVar7
+                             ,iVar6);
                 }
               }
 LAB_00625ad5:
@@ -1099,10 +1101,12 @@ LAB_00625d60:
                 if ((pSVar16->field_0020 == 1000) || (pSVar16->field_0020 == 0x14)) {
                   this->field_0241 = pSVar16->field_0018;
                 }
-                if (DAT_00811798 != nullptr) {
+                if (g_sndUnderAttMeneg_00811798 != nullptr) {
                   iVar6 = this->vfunc_2C();
                   uVar10 = pSVar16->vfunc_2C();
-                  st::fn_004058A8(st::pointer_boundary_cast<void *>(DAT_00811798),iVar14,iVar15,pSVar16->field_0024,uVar10,iVar6);
+                  st::fn_004058A8
+                            (g_sndUnderAttMeneg_00811798,iVar14,iVar15,pSVar16->field_0024,uVar10,
+                             iVar6);
                 }
               }
               goto LAB_00625d60;
@@ -1142,10 +1146,12 @@ LAB_00625efc:
               }
               if (((bVar18) && (iVar11 = pSVar16->vfunc_F8(), iVar11 != 0)) &&
                  (iVar11 = st::fn_00402CBB(this,(int *)pSVar16,local_20), iVar11 != 0)) {
-                if (DAT_00811798 != nullptr) {
+                if (g_sndUnderAttMeneg_00811798 != nullptr) {
                   iVar11 = this->vfunc_2C();
                   uVar10 = pSVar16->vfunc_2C();
-                  st::fn_004058A8(st::pointer_boundary_cast<void *>(DAT_00811798),iVar14,iVar15,pSVar16->field_0024,uVar10,iVar11);
+                  st::fn_004058A8
+                            (g_sndUnderAttMeneg_00811798,iVar14,iVar15,pSVar16->field_0024,uVar10,
+                             iVar11);
                 }
                 bVar17 = true;
               }

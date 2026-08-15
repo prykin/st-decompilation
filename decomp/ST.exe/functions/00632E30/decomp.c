@@ -75,13 +75,13 @@ LAB_00632f7e:
     param_1->field_0081 = _DAT_007d1b10 * _DAT_0079d1a4;
     param_1->field_0085 = DAT_007d1b14;
     param_1->field_0089 = DAT_007d1b18;
-    if (*(int *)param_1 != 0) {
+    if (param_1->field_0000 != 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar7 = *(int *)(*(int *)param_1 + 0xc);
+      iVar7 = *(int *)(param_1->field_0000 + 0xc);
       uVar12 = 0;
       if (0 < iVar7) {
         do {
-          iVar13 = *(int *)param_1;
+          iVar13 = param_1->field_0000;
           if (uVar12 < *(uint *)(iVar13 + 0xc)) {
             iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c);
           }
@@ -108,9 +108,9 @@ LAB_00632f7e:
           if (_DAT_0079034c < *pfVar8) {
             uVar12 = param_1->field_0019 * (int)local_10;
             iVar7 = param_1->field_0019 + uVar12;
-            if (*(int *)param_1 != 0) {
+            if (param_1->field_0000 != 0) {
               for (; (int)uVar12 < iVar7; uVar12 = uVar12 + 1) {
-                iVar13 = *(int *)param_1;
+                iVar13 = param_1->field_0000;
                 if ((uVar12 < *(uint *)(iVar13 + 0xc)) &&
                    (iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c), iVar13 != 0))
                 {
@@ -123,9 +123,9 @@ LAB_00632f7e:
         else if (*pfVar8 <= _DAT_0079034c) {
           uVar12 = param_1->field_0019 * (int)local_10;
           iVar7 = param_1->field_0019 + uVar12;
-          if (*(int *)param_1 != 0) {
+          if (param_1->field_0000 != 0) {
             for (; (int)uVar12 < iVar7; uVar12 = uVar12 + 1) {
-              iVar13 = *(int *)param_1;
+              iVar13 = param_1->field_0000;
               if ((uVar12 < *(uint *)(iVar13 + 0xc)) &&
                  (iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c), iVar13 != 0)) {
                 *(undefined4 *)(iVar13 + 8) = 1;
@@ -183,13 +183,13 @@ LAB_00632f7e:
     param_1->field_0099 = iVar7 * 4;
     param_1->field_007D = fVar1;
     param_1->field_0075 = _DAT_0079c5a4 / (float)(iVar7 * 3);
-    if (*(int *)param_1 != 0) {
+    if (param_1->field_0000 != 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar7 = *(int *)(*(int *)param_1 + 0xc);
+      iVar7 = *(int *)(param_1->field_0000 + 0xc);
       uVar12 = 0;
       if (0 < iVar7) {
         do {
-          iVar13 = *(int *)param_1;
+          iVar13 = param_1->field_0000;
           if (uVar12 < *(uint *)(iVar13 + 0xc)) {
             puVar6 = (undefined4 *)(*(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c));
           }
@@ -229,13 +229,13 @@ LAB_00632f7e:
     param_1->field_0085 = DAT_007d1b9c;
     param_1->field_0089 = DAT_007d1ba0;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((*(int *)param_1 != 0) && (iVar7 = *(int *)(*(int *)param_1 + 0xc), iVar7 != 0)) {
+    if ((param_1->field_0000 != 0) && (iVar7 = *(int *)(param_1->field_0000 + 0xc), iVar7 != 0)) {
       uVar12 = 0;
       local_10 = 0.0;
       local_8 = _DAT_0079c5a4 / (float)param_1->field_001D;
       if (0 < param_1->field_001D) {
         do {
-          iVar13 = *(int *)param_1;
+          iVar13 = param_1->field_0000;
           if ((uVar12 < *(uint *)(iVar13 + 0xc)) &&
              (iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c), iVar13 != 0)) {
             *(float *)(iVar13 + 0x21) = local_10;
@@ -243,7 +243,7 @@ LAB_00632f7e:
             *(undefined4 *)(iVar13 + 8) = 1;
           }
           uVar11 = param_1->field_001D + uVar12;
-          iVar13 = *(int *)param_1;
+          iVar13 = param_1->field_0000;
           if ((uVar11 < *(uint *)(iVar13 + 0xc)) &&
              (iVar13 = *(int *)(iVar13 + 8) * uVar11 + *(int *)(iVar13 + 0x1c), iVar13 != 0)) {
             *(float *)(iVar13 + 0x21) = local_10;
@@ -259,7 +259,7 @@ LAB_00632f7e:
         } while ((int)uVar12 < param_1->field_001D);
       }
       for (uVar12 = param_1->field_001D * 2; (int)uVar12 < iVar7; uVar12 = uVar12 + 1) {
-        iVar13 = *(int *)param_1;
+        iVar13 = param_1->field_0000;
         if (uVar12 < *(uint *)(iVar13 + 0xc)) {
           iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c);
         }
@@ -286,9 +286,9 @@ LAB_00632f7e:
     }
   }
   iVar7 = param_1->field_0011;
-  if (((iVar7 == 0) || (iVar7 == 1)) && (*(int *)param_1 != 0)) {
+  if (((iVar7 == 0) || (iVar7 == 1)) && (param_1->field_0000 != 0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar12 = *(uint *)(*(int *)param_1 + 0xc);
+    uVar12 = *(uint *)(param_1->field_0000 + 0xc);
     if (iVar7 == 1) {
       iVar7 = param_1->field_001D;
       iVar13 = 0;
@@ -298,7 +298,7 @@ LAB_00632f7e:
       uVar11 = uVar12;
       if (0 < iVar7) {
         do {
-          iVar7 = *(int *)param_1;
+          iVar7 = param_1->field_0000;
           if ((uVar11 < *(uint *)(iVar7 + 0xc)) &&
              (iVar7 = *(int *)(iVar7 + 8) * uVar11 + *(int *)(iVar7 + 0x1c), iVar7 != 0)) {
             *(float *)(iVar7 + 0x21) = fVar2;
@@ -315,7 +315,7 @@ LAB_00632f7e:
     fVar1 = _DAT_0079034c;
     if (0 < (int)uVar12) {
       do {
-        iVar7 = *(int *)param_1;
+        iVar7 = param_1->field_0000;
         if ((uVar11 < *(uint *)(iVar7 + 0xc)) &&
            (iVar7 = *(int *)(iVar7 + 8) * uVar11 + *(int *)(iVar7 + 0x1c), iVar7 != 0)) {
           *(float *)(iVar7 + 0x21) = fVar1;

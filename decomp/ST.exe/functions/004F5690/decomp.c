@@ -1040,9 +1040,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     if (DAT_0080c4f9 != '\0') {
       this_00->field_0028 = 0x5dc6;
       *(undefined **)&this_00->field_0x2c = &DAT_0080c4d7;
-      if (DAT_008117bc != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)*DAT_008117bc)(puVar15);
+      if (g_aiBossClass_008117BC != nullptr) {
+        g_aiBossClass_008117BC->GetMessage((STMessage *)puVar15);
       }
       DAT_0080c4f9 = '\0';
     }

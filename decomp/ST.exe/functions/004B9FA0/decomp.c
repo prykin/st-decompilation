@@ -131,16 +131,10 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
   int local_ca;
   InternalExceptionFrame local_c4;
   TLOBaseTy *local_80;
-  undefined4 local_7c [2];
-  int local_74;
-  undefined4 local_70;
-  undefined4 local_6c;
-  undefined4 local_68;
-  undefined2 local_64;
-  undefined2 local_62;
+  STMessage local_7c;
   int local_5c [2];
   int local_54;
-  undefined2 local_50;
+  word local_50;
   int local_44;
   byte *local_40;
   byte *local_3c;
@@ -698,24 +692,23 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
                       thunk_FUN_004e81b0((int)this_00->field_0024,this_00->field_0235,0);
           }
           TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this_00,puVar17);
-          if ((this_00->field_0231 == CASE_1) && (local_14 = 0, DAT_008117bc != nullptr))
-          {
-            local_64 = *(undefined2 *)&this_00->field_0024;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_68 = CONCAT22(this_00->field_0032,local_64);
-            local_6c = 0x5dd0;
+          if ((this_00->field_0231 == CASE_1) &&
+             (local_14 = 0, g_aiBossClass_008117BC != nullptr)) {
+            local_7c.arg1.words.low = *(undefined2 *)&this_00->field_0024;
+            local_7c.arg0.words.high = this_00->field_0032;
+            local_7c.arg0.words.low = local_7c.arg1.words.low;
+            local_7c.id = MESS_AIBOSSCLASSTY_5DD0;
             iVar27 = STPlaySystemC::sub_006E62D0
                                (g_playSystem_00802A38,
                                 (AnonShape_005EFAE0_B406B78B *)this_00->field_05D3,&local_14);
             if ((iVar27 == 0) && (local_14 != 0)) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_62 = *(undefined2 *)(local_14 + 0x32);
+              local_7c.arg1.words.high = *(word *)(local_14 + 0x32);
             }
             else {
-              local_62 = 0xffff;
+              local_7c.arg1.words.high = 0xffff;
             }
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)*DAT_008117bc)(local_7c);
+            g_aiBossClass_008117BC->GetMessage(&local_7c);
           }
           local_EAX_1723 = LookupRecordByte(*(char *)&this_00->field_023D);
           if (this_00->field_0241 !=
@@ -1266,18 +1259,18 @@ LAB_004bb5dd:
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
-    if ((DAT_008117bc != nullptr) && (local_5c[0] != 0)) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_68 = CONCAT22(this_00->field_0032,*(undefined2 *)&this_00->field_0024);
-      local_62 = local_50;
-      local_6c = 0x5dd5;
-      local_64 = (undefined2)local_54;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)*DAT_008117bc)(local_7c);
+    if ((g_aiBossClass_008117BC != nullptr) && (local_5c[0] != 0)) {
+      local_7c.arg0.words.high = this_00->field_0032;
+      local_7c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
+      local_7c.arg1.words.high = local_50;
+      local_7c.id = MESS_SHARED_5DD5;
+      local_7c.arg1.words.low = (word)local_54;
+      g_aiBossClass_008117BC->GetMessage(&local_7c);
     }
-    if (DAT_00811798 != nullptr) {
-      thunk_FUN_0061f8b0(DAT_00811798,this_00->field_05B0,this_00->field_05B4,
-                         (uint)this_00->field_0024);
+    if (g_sndUnderAttMeneg_00811798 != nullptr) {
+      SndUnderAttMenegC::sub_0061F8B0
+                (g_sndUnderAttMeneg_00811798,this_00->field_05B0,this_00->field_05B4,
+                 (uint)this_00->field_0024);
     }
     this_00->field_0454 = g_playSystem_00802A38->field_00E4;
     if (this_00->field_0458 == 0xfe) {
@@ -1320,34 +1313,34 @@ LAB_004bb5dd:
           }
         }
         else {
-          if ((local_54 != 0xfe) && (DAT_008117bc != nullptr)) {
-            local_62 = local_50;
-            local_6c = 0x5dd1;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_68 = CONCAT22(this_00->field_0032,*(undefined2 *)&this_00->field_0024);
-            local_64 = (short)local_54;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)*DAT_008117bc)(local_7c);
+          if ((local_54 != 0xfe) && (g_aiBossClass_008117BC != nullptr)) {
+            local_7c.arg1.words.high = local_50;
+            local_7c.id = 0x5dd1;
+            local_7c.arg0.words.high = this_00->field_0032;
+            local_7c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
+            local_7c.arg1.words.low = (word)local_54;
+            g_aiBossClass_008117BC->GetMessage(&local_7c);
           }
-          local_68 = this_00->field_0008;
-          local_74 = this_00->field_000C->systemId;
-          local_70 = 0;
-          local_6c = 10;
-          sub_006E60A0(this_00,local_7c);
+          local_7c.arg0 = (STMessageArg)this_00->field_0008;
+          local_7c.unknown_08 = this_00->field_000C->systemId;
+          local_7c.unknown_0c = 0;
+          local_7c.id = MESS_SYSTEMCLASSTY_000A;
+          sub_006E60A0(this_00,&local_7c.unknown_00);
         }
       }
-      if (DAT_008117bc == nullptr) {
-        local_6c = 0x5dd5;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_68 = CONCAT22(this_00->field_0032,*(undefined2 *)&this_00->field_0024);
-        local_62 = 0xffff;
-        local_64 = (short)local_54;
+      if (g_aiBossClass_008117BC == nullptr) {
+        local_7c.id = MESS_SHARED_5DD5;
+        local_7c.arg0.words.high = this_00->field_0032;
+        local_7c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
+        local_7c.arg1.words.high = 0xffff;
+        local_7c.arg1.words.low = (word)local_54;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (*(code *)*puRam00000000)(local_7c);
+        (*(code *)*puRam00000000)(&local_7c);
       }
-      if (DAT_00811798 != nullptr) {
-        thunk_FUN_0061f8b0(DAT_00811798,this_00->field_05B0,this_00->field_05B4,
-                           (uint)this_00->field_0024);
+      if (g_sndUnderAttMeneg_00811798 != nullptr) {
+        SndUnderAttMenegC::sub_0061F8B0
+                  (g_sndUnderAttMeneg_00811798,this_00->field_05B0,this_00->field_05B4,
+                   (uint)this_00->field_0024);
       }
       this_00->field_0454 = g_playSystem_00802A38->field_00E4;
       if (this_00->field_0458 == 0xfe) {

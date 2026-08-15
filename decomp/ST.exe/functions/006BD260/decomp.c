@@ -60,9 +60,9 @@ void FUN_006bd260(void)
   DAT_00854f60 = 0;
   if (0 < DAT_00854fc8) {
     do {
-      DAT_00854f44 = (uint *)PTR_00854fdc[DAT_00854f60];
-      *DAT_00854f44 = *DAT_00854f44 | 2;
-      DAT_00854f44[0x1a] = 5;
+      PTR_00854f44 = (AnonShape_GLOBAL_00854F44_D3146D26 *)PTR_00854fdc[DAT_00854f60];
+      *(uint *)PTR_00854f44 = *(uint *)PTR_00854f44 | 2;
+      PTR_00854f44->field_0068 = 5;
       DAT_00854f60 = DAT_00854f60 + 1;
     } while (DAT_00854f60 < DAT_00854fc8);
   }

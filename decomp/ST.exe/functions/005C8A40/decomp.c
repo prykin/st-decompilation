@@ -376,16 +376,16 @@ cf_common_join_005C8ECC:
           SVar1 = this_00->field_1E26;
           if (((SVar1 == CASE_6) || (SVar1 == CASE_1)) ||
              (temp_3fb09b0dd7 = PTR_0080c502, SVar1 == CASE_2)) {
-            temp_3fb09b0dd7 = DAT_0080c506;
+            temp_3fb09b0dd7 = PTR_0080c506;
           }
           if (uVar18 < temp_3fb09b0dd7->count) {
             if (((SVar1 == CASE_6) || (SVar1 == CASE_1)) ||
                (temp_3f8badc5d2 = PTR_0080c502, SVar1 == CASE_2)) {
-              temp_3f8badc5d2 = DAT_0080c506;
+              temp_3f8badc5d2 = PTR_0080c506;
             }
             if (((SVar1 == CASE_6) || (SVar1 == CASE_1)) ||
                (local_EAX_1567 = PTR_0080c502, SVar1 == CASE_2)) {
-              local_EAX_1567 = DAT_0080c506;
+              local_EAX_1567 = PTR_0080c506;
             }
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pvVar11 = (void *)(local_EAX_1567->elementSize * uVar18 + (int)temp_3f8badc5d2->data);
@@ -508,7 +508,7 @@ cf_common_join_005C8ECC:
       if (this_00->field_0065 == '\x01') {
         SVar1 = this_00->field_1E26;
         if (((SVar1 == CASE_6) || (SVar1 == CASE_1)) || (pDVar21 = PTR_0080c502, SVar1 == CASE_2)) {
-          pDVar21 = DAT_0080c506;
+          pDVar21 = PTR_0080c506;
         }
         this_00->field_2171 = 0x6506;
         this_00->field_2179 = 0;
@@ -1428,15 +1428,15 @@ cf_common_join_005CA971:
     SVar1 = this_00->field_1E26;
     if (((SVar1 == CASE_6) || (SVar1 == CASE_1)) ||
        (temp_3f9b3ed2a5 = PTR_0080c502, SVar1 == CASE_2)) {
-      temp_3f9b3ed2a5 = DAT_0080c506;
+      temp_3f9b3ed2a5 = PTR_0080c506;
     }
     if (this_00->field_1C5F < temp_3f9b3ed2a5->count) {
       if (((SVar1 == CASE_6) || (SVar1 == CASE_1)) ||
          (local_ECX_8181 = PTR_0080c502, SVar1 == CASE_2)) {
-        local_ECX_8181 = DAT_0080c506;
+        local_ECX_8181 = PTR_0080c506;
       }
       if (((SVar1 == CASE_6) || (SVar1 == CASE_1)) || (pDVar12 = PTR_0080c502, SVar1 == CASE_2)) {
-        pDVar12 = DAT_0080c506;
+        pDVar12 = PTR_0080c506;
       }
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
       pcVar17 = (char *)(pDVar12->elementSize * this_00->field_1C5F + (int)local_ECX_8181->data);

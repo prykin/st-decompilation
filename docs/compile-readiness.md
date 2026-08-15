@@ -161,7 +161,7 @@ physical-vtable disagreement as review-only.
     source compiles and behavior-facing ABI tests exist.
 
 `tools/st_source_tree.py` now crosses the missing-translation-unit boundary:
-all 5,555 bodies are placed in 321 generated C++ translation units, 1,044 under
+all 5,555 bodies are placed in 322 generated C++ translation units, 1,044 under
 proven original paths. Its complete generated declaration header passes a
 C++17 syntax probe. Full object compilation is the new measurable boundary;
 current errors expose residual overlapping `field_0x...` views, pointer/word
@@ -176,11 +176,12 @@ address-stable `st::fn_ADDRESS` implementations. It does not alter packed layout
 or synthesize inheritance. It also renames 247 exact address-taken global-object
 uses whose image symbol collides with a C++ type name to `st_global_ADDRESS`,
 without changing the Ghidra symbol. With a fixed 64-error-per-TU Apple Clang
-probe, 187 of 321 units pass; the 1,531 retained errors are led by pointer
-indirection (347), non-callable values (230), undeclared identifiers (180), and
-invalid operands (148). The current audit has 79 assignment-type and two
-call-argument-type diagnostics. Exact unnamed component spelling leaves 78
-missing-record-member diagnostics. Address-
+probe, 193 of 322 units pass; 1,435 errors remain, 1,418 mapped to stable
+function addresses. The largest current categories are pointer indirection
+(304), non-callable values (235), undeclared identifiers (180), missing record
+members (90), assignment types (79), invalid operands (75), invalid casts (74),
+and scalar subscripts (66). Exact unnamed component spelling accounts for part
+of the remaining missing-record-member queue. Address-
 generated aliases now repair 144 invalid address-coded global spellings and 68
 address-taken external labels; exact arity resolves 17 otherwise ambiguous
 direct calls, 94 exporter-tagged stack-slot lifetimes receive safe lexical

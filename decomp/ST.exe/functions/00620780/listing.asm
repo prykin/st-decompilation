@@ -1,4 +1,4 @@
-FUN_00620780:
+SndUnderAttMenegC::sub_00620780:
 00620780  55                        PUSH EBP
 00620781  8B EC                     MOV EBP,ESP
 00620783  83 EC 0C                  SUB ESP,0xc

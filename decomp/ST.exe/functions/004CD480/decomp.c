@@ -51,18 +51,18 @@ LAB_004cd4c0:
     local_EAX_235 = LookupRecordByte(param_1->field_0x24);
     local_EAX_235 = (int)(byte)local_EAX_235;
     if (local_EAX_235 == 1) {
-      iVar3 = *(int *)param_1;
+      iVar3 = param_1->field_0000;
       uVar6 = 0x7a;
     }
     else {
       if (local_EAX_235 == 2) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*(int *)param_1 + 0x90))(6,0x7b);
+        (**(code **)(param_1->field_0000 + 0x90))(6,0x7b);
         thunk_FUN_004cd450(param_1);
         return 1;
       }
       if (local_EAX_235 != 3) goto cf_common_exit_004CD624;
-      iVar3 = *(int *)param_1;
+      iVar3 = param_1->field_0000;
       uVar6 = 0x7c;
     }
   }
@@ -73,18 +73,18 @@ LAB_004cd4c0:
     uVar1 = LookupRecordByte(param_1->field_0x24);
     uVar1 = (int)(byte)uVar1;
     if (uVar1 == 1) {
-      iVar3 = *(int *)param_1;
+      iVar3 = param_1->field_0000;
       uVar6 = 0x7d;
     }
     else {
       if (uVar1 == 2) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*(int *)param_1 + 0x90))(6,0x7e);
+        (**(code **)(param_1->field_0000 + 0x90))(6,0x7e);
         thunk_FUN_004cd450(param_1);
         return 2;
       }
       if (uVar1 != 3) goto cf_common_exit_004CD624;
-      iVar3 = *(int *)param_1;
+      iVar3 = param_1->field_0000;
       uVar6 = 0x7f;
     }
   }

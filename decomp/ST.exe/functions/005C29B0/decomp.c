@@ -147,14 +147,14 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   this_01->field_1F43 = pcVar5;
   SVar1 = this_01->field_1E26;
   if (((SVar1 == 6) || (SVar1 == 1)) || (pDVar18 = PTR_0080c502, SVar1 == 2)) {
-    pDVar18 = DAT_0080c506;
+    pDVar18 = PTR_0080c506;
   }
   if (this_01->field_1C5F < pDVar18->count) {
     if (((SVar1 == 6) || (SVar1 == 1)) || (pDVar18 = PTR_0080c502, SVar1 == 2)) {
-      pDVar18 = DAT_0080c506;
+      pDVar18 = PTR_0080c506;
     }
     if (((SVar1 == 6) || (SVar1 == 1)) || (pDVar6 = PTR_0080c502, SVar1 == 2)) {
-      pDVar6 = DAT_0080c506;
+      pDVar6 = PTR_0080c506;
     }
     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
     pvVar23 = (void *)(pDVar6->elementSize * this_01->field_1C5F + (int)pDVar18->data);

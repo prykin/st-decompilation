@@ -19,7 +19,7 @@ thunk_address	status	proposed_qualified_name	details
 00401064	disabled	STT3DSprC::SetCurFase	apply=0
 00401069	disabled	FUN_00683280	apply=0
 0040106E	disabled	FUN_00652300	apply=0
-00401073	disabled	FUN_00621780	apply=0
+00401073	disabled	SndUnderAttMenegC::sub_00621780	apply=0
 00401078	disabled	STPlaySystemC::SaveObjData	apply=0
 0040107D	disabled	FUN_004e8dc0	apply=0
 00401082	disabled	TLOBaseTy::SetActivity	apply=0
@@ -75,7 +75,7 @@ thunk_address	status	proposed_qualified_name	details
 00401190	disabled	CPanelTy::SetCmdBoat	apply=0
 00401195	disabled	FUN_004c6070	apply=0
 0040119A	disabled	STAllPlayersC::SaveGObjData	apply=0
-0040119F	disabled	FUN_00620030	apply=0
+0040119F	disabled	SndUnderAttMenegC::sub_00620030	apply=0
 004011A4	disabled	FUN_0055b9f0	apply=0
 004011AE	disabled	STBoatC::UnLoadObj	apply=0
 004011B3	disabled	ResearchPanelTy::InitResearchPanel	apply=0
@@ -238,7 +238,7 @@ thunk_address	status	proposed_qualified_name	details
 0040151E	disabled	FUN_00578370	apply=0
 00401523	disabled	FUN_004eccc0	apply=0
 00401528	disabled	FUN_00647ed0	apply=0
-0040152D	disabled	FUN_00620520	apply=0
+0040152D	disabled	SndUnderAttMenegC::sub_00620520	apply=0
 00401532	disabled	FUN_004e99e0	apply=0
 00401537	disabled	FUN_0065d0f0	apply=0
 0040153C	disabled	TLOBldMark::sub_004C63F0	apply=0
@@ -253,7 +253,7 @@ thunk_address	status	proposed_qualified_name	details
 00401573	disabled	FUN_0068e4f0	apply=0
 00401578	disabled	STAppC::ChangeResolution	apply=0
 0040157D	disabled	STFieldC::CreateField	apply=0
-00401582	disabled	FUN_004d0970	apply=0
+00401582	disabled	TLOFakeTy::sub_004D0970	apply=0
 00401587	disabled	OptPanelTy::UpdateObjectives	apply=0
 0040158C	disabled	FUN_00650cf0	apply=0
 00401596	disabled	CreateResearchPanel	apply=0
@@ -547,7 +547,7 @@ thunk_address	status	proposed_qualified_name	details
 00401BAE	disabled	STT3DSprC::sub_004ACE60	apply=0
 00401BB3	disabled	STVolcanoC::sub_006479E0	apply=0
 00401BB8	disabled	MMsgTy::PaintMMsg	apply=0
-00401BBD	disabled	FUN_006211e0	apply=0
+00401BBD	disabled	SndUnderAttMenegC::sub_006211E0	apply=0
 00401BC2	disabled	STPlaySystemC::CreateGameObject	apply=0
 00401BC7	disabled	FUN_004fae70	apply=0
 00401BCC	disabled	FUN_00627170	apply=0
@@ -651,7 +651,7 @@ thunk_address	status	proposed_qualified_name	details
 00401DC5	disabled	FUN_004357f0	apply=0
 00401DCA	disabled	InterSystemC::CreateSystemObjects	apply=0
 00401DCF	disabled	IntercomPanelTy::SwitchIntercomPanel	apply=0
-00401DD4	disabled	FUN_004d0a80	apply=0
+00401DD4	disabled	TLOFakeTy::sub_004D0A80	apply=0
 00401DD9	disabled	FUN_00495420	apply=0
 00401DDE	disabled	FUN_00491200	apply=0
 00401DE3	disabled	FUN_00584ad0	apply=0
@@ -771,7 +771,7 @@ thunk_address	status	proposed_qualified_name	details
 00402036	disabled	FUN_00594850	apply=0
 0040203B	disabled	FUN_0041dbc0	apply=0
 00402040	disabled	FUN_005809e0	apply=0
-00402045	disabled	FUN_0051fac0	apply=0
+00402045	disabled	HelpStringTy::sub_0051FAC0	apply=0
 0040204A	disabled	FUN_00493d10	apply=0
 0040204F	disabled	FUN_006a0c90	apply=0
 00402054	disabled	FUN_00680650	apply=0
@@ -1177,7 +1177,7 @@ thunk_address	status	proposed_qualified_name	details
 004028B5	disabled	StartSystemTy::CreateChatView	apply=0
 004028BA	disabled	STAllPlayersC::GetObjPtr	apply=0
 004028BF	disabled	FUN_005532f0	apply=0
-004028C4	disabled	FUN_0061f8b0	apply=0
+004028C4	disabled	SndUnderAttMenegC::sub_0061F8B0	apply=0
 004028C9	disabled	FUN_0067ef60	apply=0
 004028CE	disabled	FUN_005fff60	apply=0
 004028D3	disabled	FUN_00608b50	apply=0
@@ -1284,7 +1284,7 @@ thunk_address	status	proposed_qualified_name	details
 00402AE0	disabled	FUN_0069c710	apply=0
 00402AE5	disabled	FUN_0064f470	apply=0
 00402AEF	disabled	CreateSTManRuin	apply=0
-00402AF4	disabled	FUN_00621580	apply=0
+00402AF4	disabled	SndUnderAttMenegC::sub_00621580	apply=0
 00402AF9	disabled	FUN_004d7c10	apply=0
 00402AFE	disabled	FUN_004168d0	apply=0
 00402B03	disabled	FUN_00584b10	apply=0
@@ -1312,7 +1312,7 @@ thunk_address	status	proposed_qualified_name	details
 00402B80	disabled	FUN_00681f10	apply=0
 00402B85	disabled	STGroupBoatC::SetMine	apply=0
 00402B8A	disabled	FUN_004b9bb0	apply=0
-00402B8F	disabled	FUN_0061fa40	apply=0
+00402B8F	disabled	SndUnderAttMenegC::sub_0061FA40	apply=0
 00402B99	disabled	FUN_0056abc0	apply=0
 00402B9E	disabled	FUN_00680d00	apply=0
 00402BA3	disabled	FUN_00677200	apply=0
@@ -1562,7 +1562,7 @@ thunk_address	status	proposed_qualified_name	details
 004030BC	disabled	STT3DSprC::ShowCurFase	apply=0
 004030C1	disabled	STGroupC::FUN_00424510	apply=0
 004030CB	disabled	STParticleC::sub_0062A860	apply=0
-004030D0	disabled	FUN_00621430	apply=0
+004030D0	disabled	SndUnderAttMenegC::sub_00621430	apply=0
 004030D5	disabled	STManBasisC::sub_005F1FA0	apply=0
 004030DA	disabled	CGenerate::sub_0069CB50	apply=0
 004030DF	disabled	FUN_005efa70	apply=0
@@ -1625,7 +1625,7 @@ thunk_address	status	proposed_qualified_name	details
 0040320B	disabled	FUN_004e1e30	apply=0
 00403210	disabled	FUN_004d08e0	apply=0
 00403215	disabled	CPanelTy::PaintMap	apply=0
-0040321A	disabled	FUN_00620670	apply=0
+0040321A	disabled	SndUnderAttMenegC::sub_00620670	apply=0
 0040321F	disabled	STGameObjC::ResetSelfCheckFlag	apply=0
 00403224	disabled	VisibleClassTy::PrepareToSave	apply=0
 00403229	disabled	DibPut	apply=0
@@ -2053,7 +2053,7 @@ thunk_address	status	proposed_qualified_name	details
 00403AE4	disabled	FSGSTy::DelPlayer	apply=0
 00403AEE	disabled	FUN_00418d00	apply=0
 00403AF3	disabled	MoneyTy::sub_0052B760	apply=0
-00403AF8	disabled	FUN_00620780	apply=0
+00403AF8	disabled	SndUnderAttMenegC::sub_00620780	apply=0
 00403AFD	disabled	STT3DSprC::sub_004ACF50	apply=0
 00403B02	disabled	VisibleClassTy::sub_0055BB00	apply=0
 00403B07	disabled	MReportTy::SetCtrl	apply=0
@@ -2079,7 +2079,7 @@ thunk_address	status	proposed_qualified_name	details
 00403B6B	disabled	FUN_005ef430	apply=0
 00403B70	disabled	FUN_0058d480	apply=0
 00403B75	disabled	FUN_004be200	apply=0
-00403B7A	disabled	FUN_00620f60	apply=0
+00403B7A	disabled	SndUnderAttMenegC::sub_00620F60	apply=0
 00403B7F	disabled	FUN_004dc760	apply=0
 00403B84	disabled	CreateTLOBase	apply=0
 00403B89	disabled	FUN_0064a5b0	apply=0
@@ -2208,7 +2208,7 @@ thunk_address	status	proposed_qualified_name	details
 00403E1D	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10	apply=0
 00403E22	disabled	FUN_00601d10	apply=0
 00403E27	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50	apply=0
-00403E2C	disabled	FUN_006202b0	apply=0
+00403E2C	disabled	SndUnderAttMenegC::sub_006202B0	apply=0
 00403E31	disabled	STAllPlayersC::AddObjToTmp2	apply=0
 00403E36	disabled	FUN_0067eea0	apply=0
 00403E3B	disabled	FUN_006519e0	apply=0
@@ -2675,7 +2675,7 @@ thunk_address	status	proposed_qualified_name	details
 004047C3	disabled	FUN_00571a30	apply=0
 004047CD	disabled	FUN_00650240	apply=0
 004047D2	disabled	TLOFakeTy::TLOFakeTy	apply=0
-004047D7	disabled	FUN_00621300	apply=0
+004047D7	disabled	SndUnderAttMenegC::sub_00621300	apply=0
 004047DC	disabled	CPanelTy::PaintTab	apply=0
 004047E1	disabled	FUN_0064e260	apply=0
 004047E6	disabled	FUN_0069f5c0	apply=0
@@ -2829,7 +2829,7 @@ thunk_address	status	proposed_qualified_name	details
 00404B01	disabled	CreateBehPanel	apply=0
 00404B06	disabled	FUN_00682fe0	apply=0
 00404B0B	disabled	FUN_00606fd0	apply=0
-00404B10	disabled	FUN_00621090	apply=0
+00404B10	disabled	SndUnderAttMenegC::sub_00621090	apply=0
 00404B15	disabled	STPlaySystemC::sub_00550190	apply=0
 00404B1A	disabled	STGroupBoatC::SetPatrolCmdToBoat	apply=0
 00404B1F	disabled	FUN_0067f740	apply=0
@@ -2880,7 +2880,7 @@ thunk_address	status	proposed_qualified_name	details
 00404C0A	disabled	FUN_0060e470	apply=0
 00404C0F	disabled	ChooseMapTy::sub_005B5BE0	apply=0
 00404C14	disabled	FUN_006a1eb0	apply=0
-00404C19	disabled	FUN_00620c50	apply=0
+00404C19	disabled	SndUnderAttMenegC::sub_00620C50	apply=0
 00404C1E	disabled	FUN_00693ad0	apply=0
 00404C23	disabled	FUN_004e22a0	apply=0
 00404C28	disabled	FUN_00648530	apply=0
@@ -2990,7 +2990,7 @@ thunk_address	status	proposed_qualified_name	details
 00404E53	disabled	TLOBaseTy::sub_004CC330	apply=0
 00404E58	disabled	FUN_00490d90	apply=0
 00404E5D	disabled	VisibleClassTy::sub_005F1D80	apply=0
-00404E62	disabled	FUN_00620a00	apply=0
+00404E62	disabled	SndUnderAttMenegC::sub_00620A00	apply=0
 00404E67	disabled	FUN_00430910	apply=0
 00404E6C	disabled	STBHEShellC::sub_005F5B80	apply=0
 00404E71	disabled	FUN_00691690	apply=0
@@ -2999,7 +2999,7 @@ thunk_address	status	proposed_qualified_name	details
 00404E80	disabled	FUN_004dc260	apply=0
 00404E85	disabled	HelpPanelTy::RCProc	apply=0
 00404E8A	disabled	FUN_0041dd00	apply=0
-00404E8F	disabled	FUN_006203f0	apply=0
+00404E8F	disabled	SndUnderAttMenegC::sub_006203F0	apply=0
 00404E94	disabled	SettMapTy::DeleteCtrls	apply=0
 00404E99	disabled	FUN_005efa90	apply=0
 00404E9E	disabled	TLOBaseTy::sub_004EA620	apply=0
@@ -3052,7 +3052,7 @@ thunk_address	status	proposed_qualified_name	details
 00404F98	disabled	FUN_006010a0	apply=0
 00404F9D	disabled	TradePanelTy::sub_00551B10	apply=0
 00404FA2	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410	apply=0
-00404FA7	disabled	FUN_00620b20	apply=0
+00404FA7	disabled	SndUnderAttMenegC::sub_00620B20	apply=0
 00404FAC	disabled	SettMapMTy::NoneSettMap	apply=0
 00404FB1	disabled	STVolcanoC::STVolcanoC	apply=0
 00404FB6	disabled	FUN_004dd2b0	apply=0
@@ -3086,7 +3086,7 @@ thunk_address	status	proposed_qualified_name	details
 00405047	disabled	FUN_006a5530	apply=0
 0040504C	disabled	PausePanelTy::SwitchPausePanel	apply=0
 00405051	disabled	FUN_00423c70	apply=0
-00405056	disabled	FUN_00620e40	apply=0
+00405056	disabled	SndUnderAttMenegC::sub_00620E40	apply=0
 00405060	disabled	FUN_0048a910	apply=0
 00405065	disabled	AiPlrClassTy::ExecTech	apply=0
 0040506A	disabled	FUN_00690e90	apply=0
@@ -3205,7 +3205,7 @@ thunk_address	status	proposed_qualified_name	details
 004052C2	disabled	STAllPlayersC::RegisterObject	apply=0
 004052C7	disabled	PlayPanelTy::SwitchOptPanel	apply=0
 004052CC	disabled	FUN_004ad650	apply=0
-004052D1	disabled	FUN_006208b0	apply=0
+004052D1	disabled	SndUnderAttMenegC::sub_006208B0	apply=0
 004052D6	disabled	CPanelTy::PaintNameResSI	apply=0
 004052DB	disabled	FUN_004cd6b0	apply=0
 004052E0	disabled	FUN_004dbb10	apply=0
@@ -3477,7 +3477,7 @@ thunk_address	status	proposed_qualified_name	details
 00405899	disabled	FUN_0055d440	apply=0
 0040589E	disabled	FUN_00476cc0	apply=0
 004058A3	disabled	FUN_0044ce40	apply=0
-004058A8	disabled	FUN_0061fe80	apply=0
+004058A8	disabled	SndUnderAttMenegC::sub_0061FE80	apply=0
 004058AD	disabled	STAllPlayersC::SaveAllPlData	apply=0
 004058B2	disabled	FUN_0058bb50	apply=0
 004058B7	disabled	FUN_004dcaa0	apply=0
@@ -3524,7 +3524,7 @@ thunk_address	status	proposed_qualified_name	details
 0040598E	disabled	MTestTy::GetMessage	apply=0
 00405993	disabled	STGenBombC::LoadImagSpr	apply=0
 00405998	disabled	Library::MSVCRT::FUN_006a3c80	apply=0
-0040599D	disabled	FUN_00620160	apply=0
+0040599D	disabled	SndUnderAttMenegC::sub_00620160	apply=0
 004059A2	disabled	FUN_004b7a80	apply=0
 004059A7	disabled	FUN_00423380	apply=0
 004059B1	disabled	MainMenuTy::PaintMainMenu	apply=0
@@ -3533,7 +3533,7 @@ thunk_address	status	proposed_qualified_name	details
 004059C0	disabled	CampaignTy::sub_00592620	apply=0
 004059C5	disabled	FUN_004eb150	apply=0
 004059CA	disabled	FUN_00553b00	apply=0
-004059CF	disabled	FUN_00566bd0	apply=0
+004059CF	disabled	SoundManagerTy::sub_00566BD0	apply=0
 004059D4	disabled	ProdPanelTy::GetMessage	apply=0
 004059D9	disabled	STAllPlayersC::RegisterGroup	apply=0
 004059DE	disabled	FUN_006826a0	apply=0
@@ -3599,7 +3599,7 @@ thunk_address	status	proposed_qualified_name	details
 00405B28	disabled	cLoadingTy::delete	apply=0
 00405B2D	disabled	STBoatC::BackTeleport	apply=0
 00405B32	disabled	FUN_004ead90	apply=0
-00405B37	disabled	FUN_006216e0	apply=0
+00405B37	disabled	SndUnderAttMenegC::sub_006216E0	apply=0
 00405B3C	disabled	FUN_0060e210	apply=0
 00405B41	disabled	FUN_0041ad20	apply=0
 00405B46	disabled	SettMapMTy::ChangePlayerColor	apply=0
@@ -3684,7 +3684,7 @@ thunk_address	status	proposed_qualified_name	details
 00405CEF	disabled	FUN_00488890	apply=0
 00405CF4	disabled	FUN_006767d0	apply=0
 00405CF9	disabled	FUN_0042b760	apply=0
-00405CFE	disabled	FUN_0061fb70	apply=0
+00405CFE	disabled	SndUnderAttMenegC::sub_0061FB70	apply=0
 00405D03	disabled	CPanelTy::sub_004FA870	apply=0
 00405D08	disabled	FUN_00617560	apply=0
 00405D0D	disabled	CGenerate::sub_0069ADA0	apply=0
@@ -3704,7 +3704,7 @@ thunk_address	status	proposed_qualified_name	details
 00405D53	disabled	STParticleC::InitVisibelDeton	apply=0
 00405D58	disabled	STSprGameObjC::FUN_005efac0	apply=0
 00405D5D	disabled	FUN_004908a0	apply=0
-00405D62	disabled	FUN_00620da0	apply=0
+00405D62	disabled	SndUnderAttMenegC::sub_00620DA0	apply=0
 00405D67	disabled	FUN_006834a0	apply=0
 00405D6C	disabled	STLightC::LoadNextLight	apply=0
 00405D71	disabled	FUN_00651db0	apply=0

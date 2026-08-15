@@ -149,9 +149,10 @@ switchD_004806bc_caseD_a:
       if (iVar4 == 1) {
         if (iVar3 == -1) {
           STField<undefined4>(param_1,0x74a) = 0;
-          if (DAT_00811798 != nullptr) {
-            thunk_FUN_00620e40(DAT_00811798,(int)STField<short>(param_1,0x47),
-                               (int)STField<short>(param_1,0x49),(uint)DAT_0080874d);
+          if (g_sndUnderAttMeneg_00811798 != nullptr) {
+            SndUnderAttMenegC::sub_00620E40
+                      (g_sndUnderAttMeneg_00811798,(int)STField<short>(param_1,0x47),
+                       (int)STField<short>(param_1,0x49),(uint)DAT_0080874d);
           }
         }
         else if ((iVar3 < 0) || ((int)PTR_00806724->entryCount / 2 <= iVar3)) {

@@ -25,7 +25,7 @@ void __fastcall FUN_00584b10(AnonShape_00584B10_33997544 *param_1)
   STT3DSprC::StartShow((STT3DSprC *)this,10,g_playSystem_00802A38->field_00E4);
   STT3DSprC::StartShow((STT3DSprC *)this,8,g_playSystem_00802A38->field_00E4);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*(int *)param_1 + 0xd8))();
+  (**(code **)(param_1->field_0000 + 0xd8))();
   iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)this,9,PTR_00806764,"expl_bbt0",CASE_1D);
   if (iVar2 == 0) {
     STT3DSprC::sub_004AD070((STT3DSprC *)this,9);

@@ -12,17 +12,18 @@ info	dispatch_vtable_count	1	1	0	ok	Physical vtable layouts and polymorphic disp
 info	typed_vtable_slot_erasure	0	0	0	ok	-
 info	function_addresses_removed	0	0	0	ok	-
 info	semantic_name_downgrades	0	0	0	ok	-
+warning	quality:anonymous_shape_type	3947	3981	34	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
 info	quality:call_clobber_piece	271	271	0	ok	policy=nonincreasing; blocking=false
-warning	quality:casted_generic_field	3880	3838	-42	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
-info	quality:dynamic_array_indexing	77	77	0	ok	policy=nonincreasing; blocking=false
+warning	quality:casted_generic_field	3838	3800	-38	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+warning	quality:dynamic_array_indexing	77	85	8	regressed	policy=nonincreasing; blocking=false; increased_functions=00621780+1
 info	quality:flattened_global_record_array	36	36	0	ok	policy=nonincreasing; blocking=false
-warning	quality:generic_data_symbol	14591	14543	-48	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
-warning	quality:generic_field_name	61567	61636	69	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
-info	quality:generic_global_aggregate	101	101	0	ok	policy=nonincreasing; blocking=false
-info	quality:raw_indirect_call	1760	1760	0	ok	policy=nonincreasing; blocking=true
-info	quality:raw_pointer_offset	2075	2075	0	ok	policy=nonincreasing; blocking=false
-info	quality:return_width_artifact	292	292	0	ok	policy=nonincreasing; blocking=true
+warning	quality:generic_data_symbol	14543	14373	-170	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+warning	quality:generic_field_name	61636	62190	554	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+warning	quality:generic_global_aggregate	101	113	12	regressed	policy=nonincreasing; blocking=false; increased_functions=<detail unavailable>
+info	quality:raw_indirect_call	1760	1722	-38	improved	policy=nonincreasing; blocking=true
+info	quality:raw_pointer_offset	2075	2025	-50	improved	policy=nonincreasing; blocking=false
+info	quality:return_width_artifact	292	291	-1	improved	policy=nonincreasing; blocking=true
 info	quality:stack_slot_reuse	726	726	0	ok	policy=nonincreasing; blocking=false
 info	quality:string_based_aggregate_address	7	7	0	ok	policy=nonincreasing; blocking=false
-info	quality:undefined_type	17776	17775	-1	improved	policy=nonincreasing; blocking=false
+info	quality:undefined_type	17775	17599	-176	improved	policy=nonincreasing; blocking=false
 info	quality:unresolved_register_input	407	407	0	ok	policy=nonincreasing; blocking=true

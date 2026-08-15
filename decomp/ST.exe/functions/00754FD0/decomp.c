@@ -8,7 +8,8 @@
 uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,ushort param_3)
 
 {
-  int iVar1;
+  AnonNested_AnonShape_00754FD0_6B521B56_000C_1591C729 *pAVar1;
+  AnonNested_AnonShape_00754FD0_6B521B56_0008_2A163446 *pAVar2;
   int iVar3;
   int iVar2;
   uint uVar4;
@@ -16,33 +17,28 @@ uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,ushort
   undefined4 *puVar6;
   byte *puVar7;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar1 = *(int *)(param_1->field_0008 + 0x50);
-  param_1->field_000C = iVar1;
-  *(undefined4 *)(iVar1 + 0x18) = param_2;
-  *(undefined2 *)(param_1->field_000C + 0x2a) = 1;
-  *(ushort *)(param_1->field_000C + 0x2e) = param_3;
-  *(undefined4 *)(param_1->field_000C + 0x14) = 1;
-  *(undefined4 *)(param_1->field_000C + 0x1c) = 0;
-  *(undefined4 *)(param_1->field_000C + 0x40) = 0;
-  *(undefined4 *)(param_1->field_000C + 0x44) = 0xffffffff;
-  Library::MSVCRT::FUN_00730c40((undefined1 *)(param_1->field_000C + 0x36),0x7f2ce8);
+  pAVar1 = (AnonNested_AnonShape_00754FD0_6B521B56_000C_1591C729 *)param_1->field_0008->field_0050;
+  param_1->field_000C = pAVar1;
+  pAVar1->field_0018 = param_2;
+  param_1->field_000C->field_002A = 1;
+  param_1->field_000C->field_002E = param_3;
+  param_1->field_000C->field_0014 = 1;
+  param_1->field_000C->field_001C = 0;
+  param_1->field_000C->field_0040 = 0;
+  param_1->field_000C->field_0044 = 0xffffffff;
+  Library::MSVCRT::FUN_00730c40(&param_1->field_000C->field_0x36,0x7f2ce8);
   iVar2 = FUN_00753b40((AnonShape_00753C80_4C8E695D *)param_1);
-  *(int *)(param_1->field_000C + 0x24) = iVar2;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar4 = *(uint *)(param_1->field_000C + 0x24);
+  param_1->field_000C->field_0024 = iVar2;
+  uVar4 = param_1->field_000C->field_0024;
   if (0 < (int)uVar4) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar4 = Library::DKW::FMM::FUN_006d4c50
-                      (param_1->field_0008,uVar4,(int)*(short *)(param_1->field_0008 + 0x16));
+                      ((int)param_1->field_0008,uVar4,(int)(short)param_1->field_0008->field_0016);
     if (uVar4 == 0) {
-      iVar1 = param_1->field_0008;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar3 = *(int *)(param_1->field_000C + 0x24);
-      *(uint *)(iVar1 + 8) = *(uint *)(iVar1 + 8) | 0x10;
-      puVar6 = (undefined4 *)(*(int *)(iVar1 + 0x34) + iVar3);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar5 = (uint)*(short *)(param_1->field_0008 + 0x16);
+      pAVar2 = param_1->field_0008;
+      iVar3 = param_1->field_000C->field_0024;
+      *(uint *)&pAVar2->field_0x8 = *(uint *)&pAVar2->field_0x8 | 0x10;
+      puVar6 = (undefined4 *)(*(int *)&pAVar2->field_0x34 + iVar3);
+      uVar5 = (uint)(short)param_1->field_0008->field_0016;
       puVar7 = (byte *)(puVar6);
       memset(puVar7, 0, uVar5); /* compiler bulk-zero initialization */
       *puVar6 = 0xffffffff;

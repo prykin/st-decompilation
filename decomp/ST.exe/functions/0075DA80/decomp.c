@@ -17,16 +17,16 @@ void FUN_0075da80(AnonShape_0075DA80_57A0CDEF *param_1)
 
   pAVar1 = param_1->field_01B6;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
+  uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_0008 = uVar2;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
+  uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_000C = uVar2;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
+  uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_0010 = uVar2;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
+  uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_0014 = uVar2;
   iVar3 = 0;
   local_8 = 0x5b6900;

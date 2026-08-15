@@ -215,11 +215,11 @@ int __thiscall st::fn_00566C20(SoundManagerTy *this,STMessage *message)
   SVar2 = message->id;
   if (SVar2 != MESS_ID_NONE) {
     if (SVar2 == MESS_ID_CREATE) {
-      DAT_008033f0 = st::machine_word_boundary_cast<undefined4>(local_8);
+      g_soundManager_008033F0 = local_8;
       local_8->field_0028 = static_cast<undefined4>((message->arg0).u32);
     }
     else if (SVar2 == MESS_SHARED_0003) {
-      DAT_008033f0 = 0;
+      g_soundManager_008033F0 = nullptr;
       st::fn_00403C01(local_8);
     }
     goto LAB_00566d75;

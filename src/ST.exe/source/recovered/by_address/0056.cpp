@@ -212,8 +212,8 @@ int st::fn_00561DC0(int param_1,int param_2,int param_3)
       iVar6 = iVar7 >> 0x10;
       if ((((iVar5 < 0) || (DAT_008033a4 <= iVar5)) || (iVar6 < 0)) ||
          ((DAT_008033a8 <= iVar6 ||
-          (iVar9 = (int)*(short *)(DAT_008033b4 + (DAT_008033a4 * iVar6 + iVar5) * 2), iVar9 < 1))))
-      {
+          (iVar9 = (int)*(short *)((int)PTR_008033b4 + (DAT_008033a4 * iVar6 + iVar5) * 2),
+          iVar9 < 1)))) {
         local_1c = local_1c + DAT_00803344;
       }
       else {
@@ -249,8 +249,8 @@ int st::fn_00561DC0(int param_1,int param_2,int param_3)
       if (((iVar6 < 0) || (DAT_008033a4 <= iVar6)) ||
          ((iVar9 < 0 ||
           ((DAT_008033a8 <= iVar9 ||
-           (iVar10 = (int)*(short *)(DAT_008033b4 + (DAT_008033a4 * iVar9 + iVar6) * 2), iVar10 < 1)
-           ))))) {
+           (iVar10 = (int)*(short *)((int)PTR_008033b4 + (DAT_008033a4 * iVar9 + iVar6) * 2),
+           iVar10 < 1)))))) {
         iVar3 = iVar3 + DAT_00803344;
       }
       else {
@@ -282,8 +282,8 @@ int st::fn_00561DC0(int param_1,int param_2,int param_3)
       iVar5 = iVar2 >> 0x10;
       if ((((iVar4 < 0) || (DAT_008033a4 <= iVar4)) || (iVar5 < 0)) ||
          ((DAT_008033a8 <= iVar5 ||
-          (iVar6 = (int)*(short *)(DAT_008033b4 + (DAT_008033a4 * iVar5 + iVar4) * 2), iVar6 < 1))))
-      {
+          (iVar6 = (int)*(short *)((int)PTR_008033b4 + (DAT_008033a4 * iVar5 + iVar4) * 2),
+          iVar6 < 1)))) {
         iVar8 = iVar8 + DAT_00803344;
       }
       else {
@@ -435,12 +435,12 @@ int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5
 
   if (param_5 == DAT_0080330c) {
     local_24_mg1 = g_runtimeRecords_008032F4;
-    iVar11 = *(int *)(param_3 * 4 + DAT_008032fc);
+    iVar11 = *(int *)(param_3 * 4 + (int)PTR_008032fc);
     DAT_00803398 = DAT_00803314;
   }
   else {
     local_24_mg1 = (RuntimeRecord_008032F4_0014 *)g_runtimeRecords_008032F8;
-    iVar11 = *(int *)(param_3 * 4 + DAT_008033b8);
+    iVar11 = *(int *)(param_3 * 4 + (int)PTR_008033b8);
     DAT_00803398 = DAT_0080337c;
   }
   local_34 = param_3 * 4;
@@ -497,7 +497,7 @@ int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5
     local_EAX_437 = iVar11;
   }
   iVar19 = (int)(local_EAX_437 * uVar12) / DAT_00803390;
-  piVar18 = *(int **)(local_34 + DAT_008033b0);
+  piVar18 = *(int **)(local_34 + (int)PTR_008033b0);
   iVar10 = st::fn_006DB6D0(iVar7);
   iVar4 = st::fn_006DB640(iVar7);
   iVar11 = param_2 * 0x10000 - DAT_00803354 * -iVar4 >> 0x10;
@@ -585,7 +585,7 @@ int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5
   iVar11 = ((int)piVar15 * local_EAX_1115) / DAT_00803390;
   iVar10 = st::fn_004043A9(DAT_00803304,DAT_00803308,param_1,param_2);
   iVar8 = 0;
-  sVar3 = *(short *)(DAT_008033b4 + (DAT_008033a4 * param_2 + param_1) * 2);
+  sVar3 = *(short *)((int)PTR_008033b4 + (DAT_008033a4 * param_2 + param_1) * 2);
   if ((sVar3 != 0) && (sVar3 != -1)) {
     iVar8 = ((DAT_0080339c * DAT_00803320 + (int)sVar3) - iVar10) + -1;
   }
@@ -733,8 +733,8 @@ int st::fn_00562CD0(int param_1,int param_2,int param_3)
       iVar6 = iVar5 >> 0x10;
       if ((((iVar4 < 0) || (DAT_008033a4 <= iVar4)) || (iVar6 < 0)) ||
          ((DAT_008033a8 <= iVar6 ||
-          (iVar8 = (int)*(short *)(DAT_008033b4 + (DAT_008033a4 * iVar6 + iVar4) * 2), iVar8 < 1))))
-      {
+          (iVar8 = (int)*(short *)((int)PTR_008033b4 + (DAT_008033a4 * iVar6 + iVar4) * 2),
+          iVar8 < 1)))) {
         iVar7 = iVar7 + DAT_00803344;
       }
       else {
@@ -902,12 +902,12 @@ int st::fn_00564F30(int param_1,int param_2,int param_3,int *param_4,int param_5
 
   if (param_5 == DAT_0080330c) {
     local_1c_mg1 = g_runtimeRecords_008032F4;
-    iVar9 = *(int *)(DAT_008032fc + param_3 * 4);
+    iVar9 = *(int *)((int)PTR_008032fc + param_3 * 4);
     DAT_00803398 = DAT_00803314;
   }
   else {
     local_1c_mg1 = (RuntimeRecord_008032F4_0014 *)g_runtimeRecords_008032F8;
-    iVar9 = *(int *)(DAT_008033b8 + param_3 * 4);
+    iVar9 = *(int *)((int)PTR_008033b8 + param_3 * 4);
     DAT_00803398 = DAT_0080337c;
   }
   iVar4 = (int)(param_3 * 0x168 + (param_3 * 0x168 >> 0x1f & 0xfU)) >> 4;
@@ -956,7 +956,7 @@ int st::fn_00564F30(int param_1,int param_2,int param_3,int *param_4,int param_5
     local_EAX_378 = iVar9;
   }
   local_8 = (int)(local_EAX_378 * uVar11) / DAT_00803390;
-  piVar15 = *(int **)(DAT_008033b0 + param_3 * 4);
+  piVar15 = *(int **)((int)PTR_008033b0 + param_3 * 4);
   iVar3 = st::fn_006DB6D0(iVar4);
   iVar7 = st::fn_006DB640(iVar4);
   local_28 = param_2 * 0x10000 - DAT_00803354 * -iVar7 >> 0x10;
@@ -1054,7 +1054,7 @@ int st::fn_00564F30(int param_1,int param_2,int param_3,int *param_4,int param_5
   }
   iVar16 = st::fn_004043A9(DAT_00803304,DAT_00803308,param_1,param_2);
   iVar13 = 0;
-  sVar2 = *(short *)(DAT_008033b4 + (DAT_008033a4 * param_2 + param_1) * 2);
+  sVar2 = *(short *)((int)PTR_008033b4 + (DAT_008033a4 * param_2 + param_1) * 2);
   if ((sVar2 != 0) && (sVar2 != -1)) {
     iVar13 = ((DAT_0080339c * DAT_00803320 + (int)sVar2) - iVar16) + -1;
   }
@@ -1203,23 +1203,6 @@ SoundManagerTy * __cdecl st::fn_00566590(void)
     return this;
   }
   return nullptr;
-}
-
-// 00566BD0 FUN_00566bd0
-#line 4 "decomp/ST.exe/functions/00566BD0/decomp.c"
-void __thiscall st::fn_00566BD0(void *this,int param_1)
-
-{
-  uint uVar1;
-
-  if ((param_1 != 0) && (g_sT3DSMAPContext_00807598 != nullptr)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar1 = st::fn_006EB310(g_sT3DSMAPContext_00807598,*(uint *)(param_1 + 0x1ed));
-    if (uVar1 != 0) {
-      STField<undefined4>(this,0x24) = STField<undefined4>(this,0x1c);
-    }
-  }
-  return;
 }
 
 // 00566E70 FUN_00566e70

@@ -4,21 +4,21 @@
 void __fastcall FUN_00640240(AnonShape_00640240_D1DBDD81 *param_1)
 
 {
-  uint *puVar1;
+  AnonNested_AnonShape_00640240_D1DBDD81_037F_89D39015 *pAVar1;
 
-  if ((int *)param_1->field_037F != nullptr) {
+  if (param_1->field_037F != nullptr) {
     ST3DSMAPContext::sub_006E8660(param_1->field_0211,(int *)param_1->field_037F,0,0,0,0,0,0,0);
     Library::Ourlib::ST3DSMAP::SprSetShadow
-              (param_1->field_0211,*(uint *)param_1->field_037F,0,0x640320,(uint)param_1->field_037F
-              );
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              (param_1->field_0211,param_1->field_037F->field_0000,0,0x640320,
+               (uint)param_1->field_037F);
     Library::Ourlib::ST3DSMAP::FUN_006e9720
-              (param_1->field_0211,*(uint *)param_1->field_037F,
-               (uint)(PTR_008032b8 + (uint)*(byte *)((int)param_1->field_037F + 0x15) * 0x80));
-    puVar1 = (uint *)param_1->field_037F;
+              (param_1->field_0211,param_1->field_037F->field_0000,
+               (uint)(PTR_008032b8 + (uint)(byte)param_1->field_037F->field_0015 * 0x80));
+    pAVar1 = param_1->field_037F;
     Library::Ourlib::ST3DSMAP::SprMove
-              (param_1->field_0211,*puVar1,(float)puVar1[1],(float)puVar1[2],49.829998);
-    Library::Ourlib::ST3DSMAP::SprShow(param_1->field_0211,*(uint *)param_1->field_037F,0);
+              (param_1->field_0211,pAVar1->field_0000,(float)pAVar1->field_0004,
+               (float)pAVar1->field_0008,49.829998);
+    Library::Ourlib::ST3DSMAP::SprShow(param_1->field_0211,param_1->field_037F->field_0000,0);
   }
   return;
 }

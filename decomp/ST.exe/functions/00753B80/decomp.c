@@ -15,13 +15,11 @@ undefined4 * FUN_00753b80(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_
   undefined4 *puVar1;
 
   if (param_3 == 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    param_2 = *(undefined4 *)(param_1->field_000C + 0x24);
+    param_2 = param_1->field_000C->field_0024;
   }
   param_1->field_0010 = param_2;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  puVar1 = (undefined4 *)(*(int *)(param_1->field_0008 + 0x34) + param_1->field_0010);
-  *(undefined4 *)(param_1->field_000C + 0x40 + param_3 * 8) = *puVar1;
+  puVar1 = (undefined4 *)(param_1->field_0008->field_0034 + param_1->field_0010);
+  (&param_1->field_000C->field_0040)[param_3 * 2] = *puVar1;
   return puVar1;
 }
 

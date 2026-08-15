@@ -140,7 +140,7 @@ undefined4 st::fn_00412B80(int param_1,int param_2,int param_3)
       if (((((local_c < 0) || (DAT_007f4d2c <= local_c)) || (local_10 < 0)) ||
           (((DAT_007f4d30 <= local_10 ||
             (uVar6 = local_c + DAT_007f4d2c * local_10 + local_8 * iVar4,
-            *(short *)(DAT_007f4cf0 + uVar6 * 2) != 0)) ||
+            *(short *)((int)PTR_007f4cf0 + uVar6 * 2) != 0)) ||
            (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) != 0)))) &&
          (iVar5 = st::fn_0040F270(&local_c,&local_10,&local_8,*(int *)(iVar7 + DAT_007f4d48),
                                *(int *)(iVar7 + 4 + DAT_007f4d48),*(int *)(iVar7 + 8 + DAT_007f4d48)
@@ -202,7 +202,7 @@ undefined4 st::fn_00412DE0(int param_1,int param_2,int param_3)
       if (((((local_c < 0) || (DAT_007f4d2c <= local_c)) || (local_10 < 0)) ||
           (((DAT_007f4d30 <= local_10 ||
             (uVar6 = local_c + DAT_007f4d2c * local_10 + local_8 * iVar4,
-            *(short *)(DAT_007f4cf0 + uVar6 * 2) != 0)) ||
+            *(short *)((int)PTR_007f4cf0 + uVar6 * 2) != 0)) ||
            (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) != 0)))) &&
          (iVar5 = st::fn_0040F270(&local_c,&local_10,&local_8,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                DAT_007f4d1c >> 2,iVar1 >> 2,iVar2 >> 2,iVar3 >> 2), iVar5 != 0)) {
@@ -310,7 +310,7 @@ LAB_0041329b:
             iVar7 = local_8 + 1;
             if (((param_6 < 0) &&
                 (uVar6 = iVar10 + DAT_007f4d2c * iVar11 + iVar3 * iVar5, iVar7 = local_8,
-                *(short *)(DAT_007f4cf0 + uVar6 * 2) == 0)) &&
+                *(short *)((int)PTR_007f4cf0 + uVar6 * 2) == 0)) &&
                (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) == 0))
             goto LAB_00413319;
           }
@@ -371,7 +371,7 @@ LAB_00413585:
         if ((((iVar10 < 0) || (DAT_007f4d2c <= iVar10)) || (iVar11 < 0)) ||
            (((DAT_007f4d30 <= iVar11 ||
              (uVar6 = iVar10 + DAT_007f4d2c * iVar11 + iVar3 * iVar4,
-             *(short *)(DAT_007f4cf0 + uVar6 * 2) != 0)) ||
+             *(short *)((int)PTR_007f4cf0 + uVar6 * 2) != 0)) ||
             (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) != 0)))) {
 LAB_004135d8:
           pcVar9 = pcVar9 + 4;
@@ -432,7 +432,7 @@ LAB_00413426:
       if (((((-1 < iVar10) && (iVar10 < DAT_007f4d2c)) && (-1 < iVar11)) &&
           ((iVar11 < DAT_007f4d30 && (param_6 = param_6 + -0x10000, param_6 < 0)))) &&
          ((uVar6 = iVar10 + DAT_007f4d2c * iVar11 + iVar3 * iVar7,
-          *(short *)(DAT_007f4cf0 + uVar6 * 2) == 0 &&
+          *(short *)((int)PTR_007f4cf0 + uVar6 * 2) == 0 &&
           (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) == 0))))
       goto LAB_00413496;
 LAB_00413487:
@@ -611,7 +611,7 @@ void st::fn_00413AF0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int
   puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
   DAT_007f4d04 = 0;
-  DAT_007f4cf0 = st::machine_word_boundary_cast<undefined4>(g_pathingGrid.cells);
+  PTR_007f4cf0 = g_pathingGrid.cells;
   DAT_007f4d2c = (int)g_pathingGrid.sizeX;
   DAT_007f4d30 = (int)g_pathingGrid.sizeY;
   DAT_007f4d34 = (int)g_pathingGrid.sizeZ;
@@ -3591,7 +3591,7 @@ void __fastcall st::fn_0041CF50(AnonShape_0041CF50_01071190 *param_1)
                *(int *)&param_1->field_0x18,0xffffffff);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar1 = (**(code **)(*(int *)param_1 + 8))();
+  iVar1 = (**(code **)(param_1->field_0000 + 8))();
   if ((iVar1 == 1) && (*(uint *)&param_1->field_0x24 == (uint)DAT_0080874d)) {
     st::fn_006E6780
               (g_sT3DSMAPContext_00807598,
@@ -3651,7 +3651,7 @@ void __fastcall st::fn_0041D100(AnonShape_0041D100_A90F7B7E *param_1)
                *(int *)&param_1->field_0x18);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar1 = (**(code **)(*(int *)param_1 + 8))();
+  iVar1 = (**(code **)(param_1->field_0000 + 8))();
   if ((iVar1 == 1) && (*(uint *)&param_1->field_0x24 == (uint)DAT_0080874d)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     st::fn_006E6780
@@ -3735,7 +3735,7 @@ void __fastcall st::fn_0041D4F0(AnonShape_0041D4F0_1597DF6B *param_1)
                *(int *)&param_1->field_0x18);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar1 = (**(code **)(*(int *)param_1 + 8))();
+  iVar1 = (**(code **)(param_1->field_0000 + 8))();
   if ((iVar1 == 1) && (*(uint *)&param_1->field_0x24 == (uint)DAT_0080874d)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     st::fn_006E6780
@@ -4431,7 +4431,7 @@ LAB_0041f738:
   }
   if (iVar7 != 0x14) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
+    uVar4 = (**(code **)(param_1->field_0000 + 0x2c))();
     switch(uVar4) {
     case 0x3e:
     case 0x3f:
@@ -4463,7 +4463,7 @@ switchD_0041f763_caseD_7:
     }
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
+  uVar4 = (**(code **)(param_1->field_0000 + 0x2c))();
   switch(uVar4) {
   case 7:
   case 8:
@@ -4484,7 +4484,7 @@ switchD_0041f763_caseD_9:
 LAB_0041f793:
   if (param_1->field_0211 != 0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar4 = (**(code **)(*(int *)param_1 + 0x6c))();
+    uVar4 = (**(code **)(param_1->field_0000 + 0x6c))();
     switch(uVar4) {
     case 0:
       local_8 = 10;

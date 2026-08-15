@@ -266,6 +266,14 @@ Original binaries are local under ignored `bin/` and must not be committed.
   value is the memory base of repeated x86 `BT`/`BTS`/`BTR`/`BTC` instructions
   in at least two functions. Represent that storage neutrally as `byte *`; the
   instruction's dword access unit does not make the source pointee a dword.
+- A synthetic writable global may become neutral `void *` when its exact loaded
+  value is dereferenced at least three times across two functions, or is the
+  receiver of at least three calls spanning two callers and two distinct
+  `__thiscall` callees. This proves only pointer role. A concrete `T *` requires
+  either an all-predecessor CFG proof that an unadjusted named method receiver is
+  stored into that global, or a trusted concrete-pointer function whose every
+  return path yields that same global or null. Calls kill volatile receiver
+  provenance, CFG joins intersect it, and manual/imported data remains protected.
 - When Ghidra retains a byte induction variable over an already proven
   structure pointer, export `*(T *)((int)&base->member + byteOffset)` as the
   exact `STObjectAtByteOffset(base, byteOffset).member` view only when the cast

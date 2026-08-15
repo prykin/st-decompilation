@@ -1420,8 +1420,8 @@ st::fn_004F3FE0(CPanelTy *this,byte param_1,AnonShape_004F3FE0_1578D6B9 *param_2
 
   uVar2 = (uint)param_1;
   local_8 = nullptr;
-  local_c = param_2->field_0018[1];
-  local_10 = *param_2->field_0018 - (&this->field_003C)[uVar2];
+  local_c = param_2->field_0018->field_0004;
+  local_10 = st::machine_word_boundary_cast<int>(param_2->field_0018->field_0000 - (&this->field_003C)[uVar2]);
   switch(uVar2) {
   case 1:
     iVar6 = this->field_0134;

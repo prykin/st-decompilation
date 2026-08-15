@@ -15,7 +15,7 @@ undefined4 FUN_006a5210(void)
     return 1;
   }
   iVar4 = Library::MSVCRT::FUN_007318f0();
-  puVar3 = DAT_0085496c;
+  puVar3 = PTR_0085496c;
   if ((iVar4 != -1) && (iVar4 != -2)) {
     switch(iVar4) {
     case -6:

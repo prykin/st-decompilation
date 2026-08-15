@@ -22,11 +22,11 @@ int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *
   int iVar8;
   InternalExceptionFrame local_50;
   float local_c;
-  AnonShape_0061FCC0_94F6689F *local_8;
+  SndUnderAttMenegC *local_8;
 
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  local_8 = (AnonShape_0061FCC0_94F6689F *)this;
+  local_8 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -41,7 +41,7 @@ int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *
   SVar1 = message->id;
   if (SVar1 == MESS_ID_NONE) {
     iVar8 = 0xafffff5;
-    piVar7 = (int *)&local_8->field_0x31;
+    piVar7 = &local_8->field_0031;
     do {
       if (*(char *)((int)piVar7 + -0x11) != '\0') {
         ST3DSMAPContext::sub_006E6780(g_sT3DSMAPContext_00807598,iVar8);
@@ -67,13 +67,13 @@ int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *
   }
   else if (SVar1 == MESS_ID_CREATE) {
     if (g_dumpClass_007FB284 != nullptr) {
-      *(int *)&local_8->field_0x1c = (int)g_worldGrid.sizeX / 2;
+      local_8->field_001C = (int)g_worldGrid.sizeX / 2;
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
   }
   else if (SVar1 == MESS_SHARED_0003) {
-    sub_0061FCC0((SndUnderAttMenegC *)local_8);
+    sub_0061FCC0(local_8);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }

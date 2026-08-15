@@ -293,7 +293,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
         local_60 = STObjectAtByteOffset(pRVar10, iVar7).field_0008;
         if ((((local_50 < 0) || (DAT_007f4d2c <= local_50)) || (local_58 < 0)) ||
            ((DAT_007f4d30 <= local_58 ||
-            (*(short *)(DAT_007f4cf0 +
+            (*(short *)((int)PTR_007f4cf0 +
                        (local_60 * local_38 + local_50 + DAT_007f4d2c * local_58) * 2) != 0)))) {
           iVar3 = FUN_0040f270(&local_50,&local_58,&local_60,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);

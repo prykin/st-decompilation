@@ -4456,7 +4456,7 @@ cf_continue_loop_0060B649:
           *(STFishC **)(puVar28 + -4) = pSVar29;
           *(undefined4 *)(puVar28 + -8) = 0x60b927;
           st::fn_00403FE4(param_1,*(undefined4 **)(puVar28 + -4));
-          if (DAT_00811798 != nullptr) {
+          if (g_sndUnderAttMeneg_00811798 != nullptr) {
             pvVar7 = pSVar29->vtable->slot_2C;
             *(undefined4 *)(puVar28 + -4) = 0x60b937;
             dVar19 = (*pvVar7)(pSVar29);
@@ -4465,8 +4465,9 @@ cf_continue_loop_0060B649:
             *(int *)(puVar28 + -0xc) = local_8c;
             *(int *)(puVar28 + -0x10) = local_7c;
             *(undefined4 *)(puVar28 + -0x14) = 0x60b952;
-            st::fn_00401BBD(st::pointer_boundary_cast<void *>(DAT_00811798),*(int *)(puVar28 + -0x10),*(int *)(puVar28 + -0xc),
-                               *(uint *)(puVar28 + -8));
+            st::fn_00401BBD
+                      (g_sndUnderAttMeneg_00811798,*(int *)(puVar28 + -0x10),
+                       *(int *)(puVar28 + -0xc),*(uint *)(puVar28 + -8));
           }
           local_84 = local_84 + 1;
           if (9 < local_84) {
@@ -5557,70 +5558,70 @@ void __thiscall st::fn_0060D810(void *this,undefined4 param_1,undefined4 param_2
 undefined4 __fastcall st::fn_0060D940(AnonShape_0060D940_4FDF4902 *param_1)
 
 {
-  undefined4 uVar1;
-  float fVar2;
-  int iVar3;
+  int iVar1;
+  undefined4 uVar2;
+  float fVar3;
   int iVar4;
-  undefined4 *puVar5;
-  uint uVar6;
-  int iVar7;
-  float10 fVar8;
+  AnonNested_AnonShape_0060D940_4FDF4902_0244_00248A15 *pAVar5;
+  undefined4 *puVar6;
+  uint uVar7;
+  int iVar8;
+  float10 fVar9;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   unkbyte10 extraout_ST1;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_00;
-  longlong lVar9;
+  longlong lVar10;
   int local_c;
   int local_8;
 
-  fVar8 = (float10)_DAT_0079034c;
-  iVar4 = param_1->field_0244;
-  if (iVar4 == 0) {
+  fVar9 = (float10)_DAT_0079034c;
+  pAVar5 = param_1->field_0244;
+  if (pAVar5 == nullptr) {
     return 0;
   }
   local_8 = 0;
-  fVar2 = _DAT_0079c5a4 / (float)*(int *)(iVar4 + 0xc);
-  if (0 < *(int *)(iVar4 + 0xc)) {
+  fVar3 = _DAT_0079c5a4 / (float)(int)pAVar5->field_000C;
+  if (0 < (int)pAVar5->field_000C) {
     do {
-      fcos(fVar8 + (float10)fVar2);
-      iVar4 = *(int *)(iVar4 + 0x10);
-      uVar6 = iVar4 * local_8;
-      lVar9 = st::fn_0072E288();
+      fcos(fVar9 + (float10)fVar3);
+      iVar1 = pAVar5->field_0010;
+      uVar7 = iVar1 * local_8;
+      lVar10 = st::fn_0072E288();
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       fsin(extraout_ST1);
-      iVar7 = (int)lVar9 + param_1->field_01E9;
-      lVar9 = st::fn_0072E288();
-      iVar3 = (int)lVar9 + param_1->field_01ED;
+      iVar8 = (int)lVar10 + param_1->field_01E9;
+      lVar10 = st::fn_0072E288();
+      iVar4 = (int)lVar10 + param_1->field_01ED;
       local_c = 0;
-      if (0 < iVar4) {
+      if (0 < iVar1) {
         do {
-          iVar4 = param_1->field_0234;
-          if ((uVar6 < *(uint *)(iVar4 + 0xc)) &&
-             (puVar5 = (undefined4 *)(*(int *)(iVar4 + 8) * uVar6 + *(int *)(iVar4 + 0x1c)),
-             puVar5 != nullptr)) {
-            puVar5[6] = iVar7;
-            puVar5[7] = iVar3;
-            uVar1 = param_1->field_01F1;
-            puVar5[3] = iVar7;
+          iVar1 = param_1->field_0234;
+          if ((uVar7 < *(uint *)(iVar1 + 0xc)) &&
+             (puVar6 = (undefined4 *)(*(int *)(iVar1 + 8) * uVar7 + *(int *)(iVar1 + 0x1c)),
+             puVar6 != nullptr)) {
+            puVar6[6] = iVar8;
+            puVar6[7] = iVar4;
+            uVar2 = param_1->field_01F1;
+            puVar6[3] = iVar8;
             /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-            puVar5[0xb] = (float)extraout_ST1_00;
-            puVar5[8] = uVar1;
-            puVar5[4] = iVar3;
-            puVar5[5] = uVar1;
-            puVar5[10] = 0x14;
-            puVar5[9] = 0;
-            *puVar5 = param_1->field_0211;
+            puVar6[0xb] = (float)extraout_ST1_00;
+            puVar6[8] = uVar2;
+            puVar6[4] = iVar4;
+            puVar6[5] = uVar2;
+            puVar6[10] = 0x14;
+            puVar6[9] = 0;
+            *puVar6 = param_1->field_0211;
           }
           local_c = local_c + 1;
-          uVar6 = uVar6 + 1;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        } while (local_c < *(int *)(param_1->field_0244 + 0x10));
+          uVar7 = uVar7 + 1;
+        } while (local_c < (int)param_1->field_0244->field_0010);
       }
-      iVar4 = param_1->field_0244;
+      pAVar5 = param_1->field_0244;
       local_8 = local_8 + 1;
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-      fVar8 = extraout_ST1_00;
-    } while (local_8 < *(int *)(iVar4 + 0xc));
+      fVar9 = extraout_ST1_00;
+    } while (local_8 < (int)pAVar5->field_000C);
   }
   return 1;
 }
@@ -5637,86 +5638,86 @@ undefined4 __fastcall st::fn_0060DAB0(AnonShape_0060DAB0_7A3B9916 *param_1)
   int iVar5;
   undefined4 uVar6;
   int iVar7;
-  int iVar8;
+  AnonNested_AnonShape_0060DAB0_7A3B9916_0244_2655E818 *pAVar8;
   int iVar9;
   uint uVar10;
-  longlong lVar11;
+  int iVar11;
+  longlong lVar12;
   int local_18;
   int local_14;
   int local_10;
   int local_c;
 
-  iVar8 = param_1->field_0244;
+  pAVar8 = param_1->field_0244;
   uVar6 = 2;
-  if ((iVar8 != 0) && (param_1->field_0240 == 1)) {
-    iVar7 = st::machine_word_boundary_cast<int>(g_playSystem_00802A38->field_00E4 - *(int *)(iVar8 + 0x28));
-    *(int *)(iVar8 + 0x1c) = *(int *)(iVar8 + 0x1c) + 6;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar9 = *(int *)(param_1->field_0244 + 0x18) * iVar7;
-    *(int *)(param_1->field_0244 + 0x14) = st::machine_word_boundary_cast<int>(param_1->field_01FD + iVar9);
-    iVar8 = param_1->field_0244;
-    if (iVar9 < *(int *)(iVar8 + 0x1c)) {
-      local_14 = (*(int *)(iVar8 + 0x10) * iVar9) / *(int *)(iVar8 + 0x1c);
+  if ((pAVar8 != nullptr) &&
+     (param_1->field_0240 == 1)) {
+    iVar7 = st::machine_word_boundary_cast<int>(g_playSystem_00802A38->field_00E4 - *(int *)(pAVar8 + 1));
+    pAVar8->field_001C = st::machine_word_boundary_cast<undefined4>(pAVar8->field_001C + 6);
+    iVar9 = st::machine_word_boundary_cast<int>(param_1->field_0244->field_0018 * iVar7);
+    param_1->field_0244->field_0014 = st::machine_word_boundary_cast<undefined4>(param_1->field_01FD + iVar9);
+    pAVar8 = param_1->field_0244;
+    if (iVar9 < (int)pAVar8->field_001C) {
+      local_14 = (pAVar8->field_0010 * iVar9) / (int)pAVar8->field_001C;
     }
     else {
-      local_14 = *(int *)(iVar8 + 0x10);
+      local_14 = pAVar8->field_0010;
     }
-    *(int *)(iVar8 + 0x20) = *(int *)(iVar8 + 0x20) + 1;
-    iVar8 = param_1->field_0244;
-    if (*(int *)(iVar8 + 0x20) <= *(int *)(iVar8 + 0x24)) {
-      *(undefined4 *)(iVar8 + 0x20) = 0;
+    pAVar8->field_0020 = st::machine_word_boundary_cast<undefined4>(pAVar8->field_0020 + 1);
+    pAVar8 = param_1->field_0244;
+    if ((int)pAVar8->field_0020 <= (int)pAVar8->field_0024) {
+      pAVar8->field_0020 = 0;
     }
-    iVar8 = param_1->field_0244;
+    pAVar8 = param_1->field_0244;
     local_18 = 0;
-    if (0 < *(int *)(iVar8 + 0xc)) {
+    if (0 < (int)pAVar8->field_000C) {
       do {
-        iVar8 = *(int *)(iVar8 + 0x10);
+        iVar9 = pAVar8->field_0010;
         local_c = 0;
         if (0 < local_14) {
           local_10 = 0;
           do {
-            iVar9 = param_1->field_0234;
-            uVar10 = local_c + iVar8 * local_18;
-            if ((uVar10 < *(uint *)(iVar9 + 0xc)) &&
-               (iVar9 = *(int *)(iVar9 + 8) * uVar10 + *(int *)(iVar9 + 0x1c), iVar9 != 0)) {
-              iVar4 = param_1->field_0244;
-              iVar5 = *(int *)(iVar4 + 0x14);
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              psVar1 = (short *)(*(int *)(iVar4 + 8) + (local_10 / *(int *)(iVar4 + 0x10)) * 4);
-              iVar4 = *(int *)(iVar4 + 0x1c);
+            iVar11 = param_1->field_0234;
+            uVar10 = local_c + iVar9 * local_18;
+            if ((uVar10 < *(uint *)(iVar11 + 0xc)) &&
+               (iVar11 = *(int *)(iVar11 + 8) * uVar10 + *(int *)(iVar11 + 0x1c), iVar11 != 0)) {
+              pAVar8 = param_1->field_0244;
+              iVar4 = pAVar8->field_0014;
+              psVar1 = (short *)(pAVar8->field_0008 + (local_10 / (int)pAVar8->field_0010) * 4);
+              iVar5 = pAVar8->field_001C;
               sVar2 = *psVar1;
-              fcos((float10)*(float *)(iVar9 + 0x2c));
+              fcos((float10)*(float *)(iVar11 + 0x2c));
               sVar3 = psVar1[1];
-              lVar11 = st::fn_0072E288();
-              fsin((float10)*(float *)(iVar9 + 0x2c));
-              *(int *)(iVar9 + 0xc) = (int)lVar11 + *(int *)(iVar9 + 0x18);
-              lVar11 = st::fn_0072E288();
-              *(int *)(iVar9 + 0x10) = (int)lVar11 + *(int *)(iVar9 + 0x1c);
-              *(int *)(iVar9 + 0x14) = *(int *)(iVar9 + 0x20) + (int)sVar3 / (iVar7 * 0x50 + 200);
-              if (iVar5 - (iVar4 * sVar2) / 10000 < param_1->field_01F9) {
-                if ((*(int *)(iVar9 + 4) == 0) && (-1 < (int)*(uint *)(iVar9 + 0x3c))) {
-                  *(int *)(iVar9 + 0x24) = *(int *)(param_1->field_0244 + 0x20) + local_c;
+              lVar12 = st::fn_0072E288();
+              fsin((float10)*(float *)(iVar11 + 0x2c));
+              *(int *)(iVar11 + 0xc) = (int)lVar12 + *(int *)(iVar11 + 0x18);
+              lVar12 = st::fn_0072E288();
+              *(int *)(iVar11 + 0x10) = (int)lVar12 + *(int *)(iVar11 + 0x1c);
+              *(int *)(iVar11 + 0x14) = *(int *)(iVar11 + 0x20) + (int)sVar3 / (iVar7 * 0x50 + 200);
+              if (iVar4 - (iVar5 * sVar2) / 10000 < param_1->field_01F9) {
+                if ((*(int *)(iVar11 + 4) == 0) && (-1 < (int)*(uint *)(iVar11 + 0x3c))) {
+                  *(int *)(iVar11 + 0x24) = st::machine_word_boundary_cast<int>(param_1->field_0244->field_0020 + local_c);
                   st::fn_006EAAA0
-                            (g_sT3DSMAPContext_00807598,*(uint *)(iVar9 + 0x3c),0);
-                  *(undefined4 *)(iVar9 + 4) = 1;
+                            (g_sT3DSMAPContext_00807598,*(uint *)(iVar11 + 0x3c),0);
+                  *(undefined4 *)(iVar11 + 4) = 1;
                 }
-                if (*(int *)(iVar9 + 0x28) < *(int *)(iVar9 + 0x24)) {
-                  *(int *)(iVar9 + 0x24) = *(int *)(iVar9 + 0x24) % *(int *)(iVar9 + 0x28);
+                if (*(int *)(iVar11 + 0x28) < *(int *)(iVar11 + 0x24)) {
+                  *(int *)(iVar11 + 0x24) = *(int *)(iVar11 + 0x24) % *(int *)(iVar11 + 0x28);
                 }
               }
-              else if ((*(int *)(iVar9 + 4) != 0) && (-1 < (int)*(uint *)(iVar9 + 0x3c))) {
+              else if ((*(int *)(iVar11 + 4) != 0) && (-1 < (int)*(uint *)(iVar11 + 0x3c))) {
                 st::fn_006EAB60
-                          (g_sT3DSMAPContext_00807598,*(uint *)(iVar9 + 0x3c));
-                *(undefined4 *)(iVar9 + 4) = 0xffffffff;
+                          (g_sT3DSMAPContext_00807598,*(uint *)(iVar11 + 0x3c));
+                *(undefined4 *)(iVar11 + 4) = 0xffffffff;
               }
             }
             local_c = local_c + 1;
             local_10 = local_10 + 0x33;
           } while (local_c < local_14);
         }
-        iVar8 = param_1->field_0244;
+        pAVar8 = param_1->field_0244;
         local_18 = local_18 + 1;
-      } while (local_18 < *(int *)(iVar8 + 0xc));
+      } while (local_18 < (int)pAVar8->field_000C);
     }
     uVar6 = 1;
   }

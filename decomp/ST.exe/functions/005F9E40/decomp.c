@@ -6,31 +6,31 @@
 void __fastcall FUN_005f9e40(AnonShape_005F9E40_7E333F34 *param_1)
 
 {
-  undefined4 *puVar1;
+  AnonNested_AnonShape_005F9E40_7E333F34_02E6_E59503F8 *pAVar1;
   STT3DSprC *this;
-  int iVar2;
 
-  puVar1 = (undefined4 *)param_1->field_02E6;
-  if (puVar1 != nullptr) {
-    this = (STT3DSprC *)*puVar1;
+  pAVar1 = param_1->field_02E6;
+  if (pAVar1 != nullptr) {
+    this = *(STT3DSprC **)pAVar1;
     if (this != nullptr) {
-      STT3DSprC::SetCurFase(this,'\x0e',puVar1[8]);
+      STT3DSprC::SetCurFase(this,'\x0e',*(uint *)(pAVar1 + 1));
       STT3DSprC::ShowCurFase(this,'\x0e');
-      iVar2 = param_1->field_02E6;
+      pAVar1 = param_1->field_02E6;
       STT3DSprC::sub_004AD3C0
-                (this,(float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)(iVar2 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+                (this,(float)(int)pAVar1->field_0014 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)(int)pAVar1->field_0018 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)(int)pAVar1->field_001C * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       return;
     }
-    if (-1 < (int)puVar1[1]) {
-      ST3DSMAPContext::sub_006EA270(param_1->field_0211,puVar1[1],0,puVar1[8]);
-      iVar2 = param_1->field_02E6;
+    if (-1 < (int)*(uint *)&pAVar1->field_0x4) {
+      ST3DSMAPContext::sub_006EA270
+                (param_1->field_0211,*(uint *)&pAVar1->field_0x4,0,*(uint *)(pAVar1 + 1));
+      pAVar1 = param_1->field_02E6;
       Library::Ourlib::ST3DSMAP::SprMove
-                (param_1->field_0211,*(uint *)(iVar2 + 4),
-                 (float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)(iVar2 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+                (param_1->field_0211,*(uint *)&pAVar1->field_0x4,
+                 (float)(int)pAVar1->field_0014 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)(int)pAVar1->field_0018 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)(int)pAVar1->field_001C * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     }
   }
   return;

@@ -89,12 +89,12 @@ int FUN_00673210(int param_1)
       return 0;
     }
     if (param_1 == 0) {
-      uVar1 = *(uint *)(DAT_00811924 + *(char *)(iVar7 + iVar4) * 4);
+      uVar1 = *(uint *)((int)PTR_00811924 + *(char *)(iVar7 + iVar4) * 4);
       while ((uVar1 & 0x401) != 0) {
         if (iVar5 <= iVar4) goto LAB_0067339a;
         iVar4 = iVar4 + 1;
         DAT_00811914 = iVar4;
-        uVar1 = *(uint *)(DAT_00811924 + *(char *)(iVar7 + iVar4) * 4);
+        uVar1 = *(uint *)((int)PTR_00811924 + *(char *)(iVar7 + iVar4) * 4);
       }
     }
     if (iVar4 < iVar5) {

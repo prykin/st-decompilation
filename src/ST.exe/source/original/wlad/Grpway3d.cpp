@@ -1314,7 +1314,7 @@ int st::fn_0040E0F0(int param_1,int param_2,int param_3,int param_4,int param_5)
         if ((((local_48[0] < 0) || (DAT_007f4d2c <= local_48[0])) || (local_4c < 0)) ||
            ((DAT_007f4d30 <= local_4c ||
             (iVar3 = local_34,
-            *(short *)(DAT_007f4cf0 +
+            *(short *)((int)PTR_007f4cf0 +
                       (local_54[0] * local_34 + local_48[0] + DAT_007f4d2c * local_4c) * 2) != 0))))
         {
           iVar9 = st::fn_0040F270(local_48,&local_4c,local_54,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
@@ -1798,8 +1798,8 @@ LAB_00410872:
     local_78 = STObjectAtByteOffset(pRVar15, iVar19).field_0008;
     if ((((local_68 < 0) || (iVar3 <= local_68)) || (local_6c < 0)) ||
        ((DAT_007f4d30 <= local_6c ||
-        (*(short *)(DAT_007f4cf0 + (local_78 * local_48 + local_68 + iVar3 * local_6c) * 2) != 0))))
-    {
+        (*(short *)((int)PTR_007f4cf0 + (local_78 * local_48 + local_68 + iVar3 * local_6c) * 2) !=
+         0)))) {
       iVar2 = st::fn_0040F270(&local_68,&local_6c,(int *)&local_78,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                            DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
       if (iVar2 != 0) goto LAB_004109fd;
@@ -1931,8 +1931,8 @@ cf_break_loop_00411005:
           local_10 = STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar3).field_0008;
           if ((((local_8 < 0) || (DAT_007f4d2c <= local_8)) || (local_c < 0)) ||
              ((DAT_007f4d30 <= local_c ||
-              (*(short *)(DAT_007f4cf0 + (local_10 * iVar1 + local_8 + DAT_007f4d2c * local_c) * 2)
-               != 0)))) {
+              (*(short *)((int)PTR_007f4cf0 +
+                         (local_10 * iVar1 + local_8 + DAT_007f4d2c * local_c) * 2) != 0)))) {
             iVar6 = st::fn_0040F270(&local_8,&local_c,&local_10,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                  DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
             if (iVar6 != 0) {
@@ -2253,7 +2253,7 @@ int st::fn_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,
         local_60 = STObjectAtByteOffset(pRVar10, iVar7).field_0008;
         if ((((local_50 < 0) || (DAT_007f4d2c <= local_50)) || (local_58 < 0)) ||
            ((DAT_007f4d30 <= local_58 ||
-            (*(short *)(DAT_007f4cf0 +
+            (*(short *)((int)PTR_007f4cf0 +
                        (local_60 * local_38 + local_50 + DAT_007f4d2c * local_58) * 2) != 0)))) {
           iVar3 = st::fn_0040F270(&local_50,&local_58,&local_60,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
@@ -2592,8 +2592,8 @@ int st::fn_00411E50(int param_1,int param_2,int param_3,int param_4,int param_5,
         if ((((local_54 < 0) || (iVar3 <= local_54)) || (local_5c < 0)) ||
            ((DAT_007f4d30 <= local_5c ||
             (iVar7 = local_3c,
-            *(short *)(DAT_007f4cf0 + (local_64 * local_3c + local_54 + iVar3 * local_5c) * 2) != 0)
-            ))) {
+            *(short *)((int)PTR_007f4cf0 + (local_64 * local_3c + local_54 + iVar3 * local_5c) * 2)
+            != 0)))) {
           iVar3 = st::fn_0040F270(&local_54,&local_5c,&local_64,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
           if (iVar3 != 0) {

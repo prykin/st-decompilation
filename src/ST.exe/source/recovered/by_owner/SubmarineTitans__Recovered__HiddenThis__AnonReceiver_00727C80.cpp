@@ -102,11 +102,11 @@ st::fn_00727DA0
   } while ((int)piVar14 < 0x8570dc);
   if ((int)pAVar9 < (int)pAVar11) {
     DAT_00857098 = (int)pAVar9 >> 0x10;
-    STPiece<0,4>(local_34) = 0xffffffff;
+    local_34.field_0000 = 0xffffffff;
     local_8 = this;
     iVar5 = st::fn_00727C80((int *)&local_34,param_2);
     if (iVar5 != 0) {
-      STPiece<0,4>(local_60) = 1;
+      local_60.field_0000 = 1;
       iVar5 = st::fn_00727C80((int *)&local_60,param_2);
       if (iVar5 != 0) {
         if (*(int *)&this->field_0x124 == 6) {
@@ -169,8 +169,8 @@ st::fn_00727DA0
                   }
                 }
               }
-              STPiece<4,4>(local_34) = STPiece<4,4>(local_34) + -1;
-              if (STPiece<4,4>(local_34) == 0) {
+              local_34.field_0004 = local_34.field_0004 - 1;
+              if (local_34.field_0004 == 0) {
                 iVar5 = st::fn_00727C80((int *)&local_34,STPiece<8,4>(local_34));
                 if (iVar5 == 0) {
                   return;
@@ -180,8 +180,8 @@ st::fn_00727DA0
                 local_34.field_0024 = local_34.field_0024 + local_c;
                 local_34.field_001C = local_34.field_001C + STPiece<32,4>(local_34);
               }
-              STPiece<4,4>(local_60) = STPiece<4,4>(local_60) + -1;
-              if (STPiece<4,4>(local_60) == 0) {
+              local_60.field_0004 = local_60.field_0004 - 1;
+              if (local_60.field_0004 == 0) {
                 iVar5 = st::fn_00727C80((int *)&local_60,STPiece<8,4>(local_60));
                 if (iVar5 == 0) {
                   return;

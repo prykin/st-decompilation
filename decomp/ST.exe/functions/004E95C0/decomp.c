@@ -16,8 +16,9 @@ undefined4 __thiscall FUN_004e95c0(void *this,STBoatC *param_1)
   if (STField<int>(this,0x4d8) == param_1->field_0018) {
     STField<undefined4>(this,0x4d8) = 0xffff;
     if (STField<int>(this,0x4e0) != 0) {
-      thunk_FUN_004d0a80(DAT_00800bcc,STField<int>(this,0x4e4),STField<int>(this,0x4e8),
-                         STField<int>(this,0x4ec));
+      TLOFakeTy::sub_004D0A80
+                (g_tLOFake_00800BCC,STField<int>(this,0x4e4),STField<int>(this,0x4e8),
+                 STField<int>(this,0x4ec));
       STField<undefined4>(this,0x4e0) = 0;
     }
     uVar1 = 1;

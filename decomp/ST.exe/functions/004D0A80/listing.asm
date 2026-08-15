@@ -1,4 +1,4 @@
-FUN_004d0a80:
+TLOFakeTy::sub_004D0A80:
 004D0A80  55                        PUSH EBP
 004D0A81  8B EC                     MOV EBP,ESP
 004D0A83  53                        PUSH EBX

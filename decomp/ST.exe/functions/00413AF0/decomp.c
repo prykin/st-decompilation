@@ -52,7 +52,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   DAT_007f4d04 = nullptr;
-  DAT_007f4cf0 = g_pathingGrid.cells;
+  PTR_007f4cf0 = g_pathingGrid.cells;
   DAT_007f4d2c = (int)g_pathingGrid.sizeX;
   DAT_007f4d30 = (int)g_pathingGrid.sizeY;
   DAT_007f4d34 = (int)g_pathingGrid.sizeZ;

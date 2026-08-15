@@ -84,7 +84,7 @@ void __thiscall st::fn_00571320(void *this,HWND param_1)
   if (uVar2 == 2) {
     st::fn_004041C9((void *)((int)this + 0x38),st::machine_word_boundary_cast<undefined4>(param_1));
   }
-  else if (((uVar2 == 4) || (uVar2 == 8)) && (DAT_008033f0 != 0)) {
+  else if (((uVar2 == 4) || (uVar2 == 8)) && (g_soundManager_008033F0 != nullptr)) {
     cVar1 = STField<char>(this,0x112e);
     if (cVar1 == '\x01') {
       st::fn_00405C36(2);
@@ -118,8 +118,8 @@ void __fastcall st::fn_005713B0(int param_1)
     st::fn_00401C94((void *)(param_1 + 0x38));
     return;
   }
-  if (((uVar1 == 4) || (uVar1 == 8)) && (DAT_008033f0 != nullptr)) {
-    st::fn_00403C01(st::pointer_boundary_cast<SoundManagerTy *>(DAT_008033f0));
+  if (((uVar1 == 4) || (uVar1 == 8)) && (g_soundManager_008033F0 != nullptr)) {
+    st::fn_00403C01(g_soundManager_008033F0);
     return;
   }
   return;
@@ -1665,15 +1665,16 @@ void __cdecl st::fn_005745E0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *pa
 {
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 **ppRVar1;
   ushort uVar2;
-  ST3DSMAPContext *pSVar3;
-  byte bVar4;
-  int *piVar5;
-  int iVar6;
-  uint uVar7;
+  AnonNested_AnonShape_005745E0_AF52CC75_044D_E2486BFB *pAVar3;
+  ST3DSMAPContext *pSVar4;
+  byte bVar5;
+  int *piVar6;
+  int iVar7;
   uint uVar8;
   uint uVar9;
-  char *pcVar10;
-  byte *pbVar11;
+  uint uVar10;
+  char *pcVar11;
+  byte *pbVar12;
   undefined4 local_28;
   void *local_24;
   int local_20;
@@ -1686,16 +1687,16 @@ void __cdecl st::fn_005745E0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *pa
   if (((*(short *)(param_2 + 2) != 0) &&
       (uVar2 = STField<ushort>(param_2,0x4e), (uVar2 & 0x4000) == 0)) &&
      (((uVar2 & 0x2000) == 0 || ((uVar2 & 0x1000) == 0)))) {
-    *(undefined4 *)(param_1->field_044D + 4) = 0;
+    param_1->field_044D->field_0004 = 0;
     do {
-      iVar6 = param_1->field_044D;
-      uVar7 = *(uint *)(iVar6 + 4);
-      if (*(uint *)(iVar6 + 0xc) <= uVar7) goto cf_break_loop_00574651;
-      piVar5 = (int *)(*(int *)(iVar6 + 8) * uVar7 + *(int *)(iVar6 + 0x1c));
-      *(uint *)(iVar6 + 4) = uVar7 + 1;
-      if (piVar5 == nullptr) goto cf_break_loop_00574651;
-    } while (param_2[10] != *piVar5);
-    if (piVar5 == nullptr) {
+      pAVar3 = param_1->field_044D;
+      uVar8 = pAVar3->field_0004;
+      if ((uint)pAVar3->field_000C <= uVar8) goto cf_break_loop_00574651;
+      piVar6 = (int *)(*(int *)&pAVar3->field_0x8 * uVar8 + pAVar3[1].field_000C);
+      pAVar3->field_0004 = uVar8 + 1;
+      if (piVar6 == nullptr) goto cf_break_loop_00574651;
+    } while (param_2[10] != *piVar6);
+    if (piVar6 == nullptr) {
 cf_break_loop_00574651:
       local_14 = (int)STField<short>(param_2,6);
       local_18 = (void *)(int)*(short *)(param_2 + 1);
@@ -1703,19 +1704,19 @@ cf_break_loop_00574651:
       *(undefined2 *)(param_2 + 1) = 0;
       STField<undefined2>(param_2,6) = 0;
       *(undefined2 *)(param_2 + 2) = 0;
-      pSVar3 = g_sT3DSMAPContext_0080760C;
+      pSVar4 = g_sT3DSMAPContext_0080760C;
       ppRVar1 = &g_sT3DSMAPContext_0080760C->field_0140;
       *param_2 = st::machine_word_boundary_cast<undefined4>(g_sT3DSMAPContext_0080760C->field_0140);
       *ppRVar1 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)param_2;
-      pSVar3->field_013C = st::machine_word_boundary_cast<int>(pSVar3->field_013C + 1);
+      pSVar4->field_013C = st::machine_word_boundary_cast<int>(pSVar4->field_013C + 1);
       st::fn_006DDBE0(g_sT3DSMAPContext_0080760C);
       g_sT3DSMAPContext_0080760C->field_0124 = 3;
       st::fn_006DDD50(g_sT3DSMAPContext_0080760C);
       g_sT3DSMAPContext_0080760C->field_0124 = 4;
       st::fn_006DDD50(g_sT3DSMAPContext_0080760C);
-      pSVar3 = g_sT3DSMAPContext_0080760C;
+      pSVar4 = g_sT3DSMAPContext_0080760C;
       g_sT3DSMAPContext_0080760C->field_0140 = nullptr;
-      pSVar3->field_013C = 0;
+      pSVar4->field_013C = 0;
       *(undefined2 *)(param_2 + 1) = STPiece<0,2>(local_18);
       STField<undefined2>(param_2,6) = (undefined2)local_14;
       *(undefined2 *)(param_2 + 2) = (undefined2)local_10;
@@ -1727,46 +1728,46 @@ cf_break_loop_00574651:
       while( true ) {
         do {
           local_14 = 0;
-          uVar7 = (uint)param_1->field_0004;
+          uVar8 = (uint)param_1->field_0004;
           local_8 = 0;
-          if (uVar7 != 0) {
+          if (uVar8 != 0) {
             do {
-              iVar6 = uVar7 * local_10 + local_8;
-              local_20 = uVar7 * local_c;
-              uVar9 = 0;
-              if (uVar7 != 0) {
-                pcVar10 = (char *)(g_sT3DSMAPContext_0080760C->field_0028 * iVar6 +
+              iVar7 = uVar8 * local_10 + local_8;
+              local_20 = uVar8 * local_c;
+              uVar10 = 0;
+              if (uVar8 != 0) {
+                pcVar11 = (char *)(g_sT3DSMAPContext_0080760C->field_0028 * iVar7 +
                                    g_sT3DSMAPContext_0080760C->field_000C + local_20);
                 do {
-                  if (*pcVar10 != '\0') {
-                    if (*pcVar10 == -1) {
+                  if (*pcVar11 != '\0') {
+                    if (*pcVar11 == -1) {
                       local_14 = local_14 + 1;
-                      uVar8 = uVar9 & 0x80000003;
-                      if ((int)uVar8 < 0) {
-                        uVar8 = (uVar8 - 1 | 0xfffffffc) + 1;
+                      uVar9 = uVar10 & 0x80000003;
+                      if ((int)uVar9 < 0) {
+                        uVar9 = (uVar9 - 1 | 0xfffffffc) + 1;
                       }
-                      bVar4 = (&DAT_007ca6a4)[uVar8];
+                      bVar5 = (&DAT_007ca6a4)[uVar9];
                     }
                     else {
-                      uVar8 = uVar9 & 0x80000003;
-                      if ((int)uVar8 < 0) {
-                        uVar8 = (uVar8 - 1 | 0xfffffffc) + 1;
+                      uVar9 = uVar10 & 0x80000003;
+                      if ((int)uVar9 < 0) {
+                        uVar9 = (uVar9 - 1 | 0xfffffffc) + 1;
                       }
-                      bVar4 = *(byte *)(uVar8 + 0x7ca6a8);
+                      bVar5 = *(byte *)(uVar9 + 0x7ca6a8);
                     }
-                    pbVar11 = (byte *)((int)local_24 +
-                                      ((int)(uVar9 + ((int)uVar9 >> 0x1f & 3U)) >> 2) +
+                    pbVar12 = (byte *)((int)local_24 +
+                                      ((int)(uVar10 + ((int)uVar10 >> 0x1f & 3U)) >> 2) +
                                       ((int)(local_20 + (local_20 >> 0x1f & 3U)) >> 2) +
-                                      (int)(uVar7 * iVar6) / 2);
-                    *pbVar11 = *pbVar11 | bVar4;
+                                      (int)(uVar8 * iVar7) / 2);
+                    *pbVar12 = *pbVar12 | bVar5;
                   }
-                  uVar9 = uVar9 + 1;
-                  pcVar10 = pcVar10 + 1;
-                } while ((int)uVar9 < (int)(uint)param_1->field_0004);
+                  uVar10 = uVar10 + 1;
+                  pcVar11 = pcVar11 + 1;
+                } while ((int)uVar10 < (int)(uint)param_1->field_0004);
               }
               local_8 = local_8 + 1;
-              uVar7 = (uint)param_1->field_0004;
-            } while (local_8 < (int)uVar7);
+              uVar8 = (uint)param_1->field_0004;
+            } while (local_8 < (int)uVar8);
           }
           local_c = local_c + 1;
         } while (local_c < 2);
@@ -1779,7 +1780,7 @@ cf_break_loop_00574651:
       param_2[6] = st::machine_word_boundary_cast<undefined4>(local_18);
       return;
     }
-    param_2[6] = piVar5[1];
+    param_2[6] = piVar6[1];
   }
   return;
 }
@@ -2160,53 +2161,54 @@ void __cdecl st::fn_00575460(AnonShape_00575460_06C413C6 *param_1)
 {
   undefined4 *element;
   int *element_00;
-  int iVar1;
+  AnonNested_AnonShape_00575460_06C413C6_0451_3D38181E *pAVar1;
   uint uVar2;
-  ST3DSMAPContext *pSVar3;
-  AnonShape_00575460_06C413C6 *pAVar4;
+  AnonNested_AnonShape_00575460_06C413C6_044D_A1003587 *pAVar3;
+  ST3DSMAPContext *pSVar4;
+  AnonShape_00575460_06C413C6 *pAVar5;
   DArrayTy *array;
-  int iVar5;
-  int *piVar6;
+  int iVar6;
+  int *piVar7;
   int local_8;
 
-  pAVar4 = param_1;
-  pSVar3 = g_sT3DSMAPContext_0080760C;
+  pAVar5 = param_1;
+  pSVar4 = g_sT3DSMAPContext_0080760C;
   if (g_sT3DSMAPContext_0080760C != nullptr) {
     st::fn_006DBCF0(g_sT3DSMAPContext_0080760C);
-    st::fn_0072E2B0((HoloTy *)pSVar3);
+    st::fn_0072E2B0((HoloTy *)pSVar4);
     g_sT3DSMAPContext_0080760C = nullptr;
   }
   if (param_1 != nullptr) {
     array = st::fn_006AE290(nullptr,0x14,4,0x14);
-    *(undefined4 *)(param_1->field_0451 + 4) = 0;
+    param_1->field_0451->field_0004 = 0;
     while( true ) {
-      iVar1 = param_1->field_0451;
-      uVar2 = *(uint *)(iVar1 + 4);
-      if (*(uint *)(iVar1 + 0xc) <= uVar2) break;
-      iVar5 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c);
-      *(uint *)(iVar1 + 4) = uVar2 + 1;
-      if (iVar5 == 0) break;
-      element = (undefined4 *)(iVar5 + 8);
+      pAVar1 = param_1->field_0451;
+      uVar2 = pAVar1->field_0004;
+      if ((uint)pAVar1->field_000C <= uVar2) break;
+      iVar6 = *(int *)&pAVar1->field_0x8 * uVar2 + pAVar1[1].field_000C;
+      pAVar1->field_0004 = uVar2 + 1;
+      if (iVar6 == 0) break;
+      element = (undefined4 *)(iVar6 + 8);
       st::fn_006AE1C0(array,element);
       st::fn_006A5E90((short *)*element);
     }
     st::fn_006AE110((DArrayTy *)param_1->field_0451);
-    param_1->field_0451 = 0;
+    param_1->field_0451 = nullptr;
     local_8 = 0;
     if (0 < param_1->field_0455) {
       param_1 = (AnonShape_00575460_06C413C6 *)&param_1->field_0x459;
       do {
-        iVar1 = *(int *)param_1;
-        if ((iVar1 != 0) && (element_00 = (int *)(iVar1 + 0xc), *(int *)(iVar1 + 0xc) != 0)) {
+        iVar6 = *(int *)param_1;
+        if ((iVar6 != 0) && (element_00 = (int *)(iVar6 + 0xc), *(int *)(iVar6 + 0xc) != 0)) {
           array->iteratorIndex = 0;
           do {
             uVar2 = array->iteratorIndex;
             if (array->count <= uVar2) goto LAB_0057554f;
-            piVar6 = DArrayAt<int>(array, uVar2);
+            piVar7 = DArrayAt<int>(array, uVar2);
             array->iteratorIndex = uVar2 + 1;
-            if (piVar6 == nullptr) goto LAB_0057554f;
-          } while (*element_00 != *piVar6);
-          if (piVar6 == nullptr) {
+            if (piVar7 == nullptr) goto LAB_0057554f;
+          } while (*element_00 != *piVar7);
+          if (piVar7 == nullptr) {
 LAB_0057554f:
             st::fn_006AE1C0(array,element_00);
             st::fn_006AB060(element_00);
@@ -2215,22 +2217,22 @@ LAB_0057554f:
         }
         local_8 = local_8 + 1;
         param_1 = (AnonShape_00575460_06C413C6 *)&param_1->field_0x4;
-      } while (local_8 < pAVar4->field_0455);
+      } while (local_8 < pAVar5->field_0455);
     }
     st::fn_006AE110(array);
   }
-  *(undefined4 *)(*(int *)&pAVar4->field_0x44d + 4) = 0;
+  pAVar5->field_044D->field_0004 = 0;
   while( true ) {
-    iVar1 = *(int *)&pAVar4->field_0x44d;
-    uVar2 = *(uint *)(iVar1 + 4);
-    if (*(uint *)(iVar1 + 0xc) <= uVar2) break;
-    iVar5 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c);
-    *(uint *)(iVar1 + 4) = uVar2 + 1;
-    if (iVar5 == 0) break;
-    st::fn_006A5E90(*(short **)(iVar5 + 4));
+    pAVar3 = pAVar5->field_044D;
+    uVar2 = pAVar3->field_0004;
+    if ((uint)pAVar3->field_000C <= uVar2) break;
+    iVar6 = *(int *)&pAVar3->field_0x8 * uVar2 + pAVar3[1].field_000C;
+    pAVar3->field_0004 = uVar2 + 1;
+    if (iVar6 == 0) break;
+    st::fn_006A5E90(*(short **)(iVar6 + 4));
   }
-  st::fn_006AE110(*(DArrayTy **)&pAVar4->field_0x44d);
-  *(undefined4 *)&pAVar4->field_0x44d = 0;
+  st::fn_006AE110((DArrayTy *)pAVar5->field_044D);
+  pAVar5->field_044D = nullptr;
   return;
 }
 
@@ -2895,7 +2897,7 @@ LAB_005795a9:
   st::fn_004030BC((STT3DSprC *)this,'\x0e');
   param_1->field_023D = st::machine_word_boundary_cast<undefined4>(param_1->field_023D + 1);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*(int *)param_1 + 0xd8))();
+  (**(code **)(param_1->field_0000 + 0xd8))();
   return;
 }
 

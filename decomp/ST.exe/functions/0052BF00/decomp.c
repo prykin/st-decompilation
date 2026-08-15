@@ -511,14 +511,14 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
       }
       if (local_10->field_0068 != MVar11) {
         if (local_10->field_0068 != 0) {
-          STPiece<16,4>(local_78) = 0x4202;
+          local_78.field_0010 = 0x4202;
           sub_0052B760(local_10,&local_78);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(&local_78);
         }
         this_00->field_0068 = MVar11;
         if (MVar11 != 0) {
-          STPiece<16,4>(local_78) = 0x4201;
+          local_78.field_0010 = 0x4201;
           sub_0052B760(this_00,&local_78);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(&local_78);

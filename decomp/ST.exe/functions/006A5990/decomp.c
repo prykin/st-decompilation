@@ -14,7 +14,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
   if (iVar3 == 1) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  puVar2 = DAT_0085496c;
+  puVar2 = PTR_0085496c;
   if (param_1 != nullptr) {
     puVar5 = (undefined4 *)*param_1;
   }

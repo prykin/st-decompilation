@@ -2610,12 +2610,11 @@ int __fastcall st::fn_007295F0(AnonShape_007295F0_722683CC *param_1)
   int iVar1;
   int iVar2;
   int iVar3;
-  int *piVar4;
-  uint uVar5;
-  byte *pbVar6;
+  uint uVar4;
+  byte *pbVar5;
+  int iVar6;
   int iVar7;
-  int iVar8;
-  uint *puVar9;
+  uint *puVar8;
   uint local_2c;
   int local_28;
   int local_24;
@@ -2630,64 +2629,61 @@ int __fastcall st::fn_007295F0(AnonShape_007295F0_722683CC *param_1)
   puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 0);
-  iVar8 = 0;
+  iVar7 = 0;
   local_2c = 0;
   local_24 = 0;
   iVar1 = param_1->field_0328;
   iVar2 = param_1->field_0320;
   local_8 = 0;
-  iVar7 = iVar1 + -1;
-  pbVar6 = (byte *)(param_1->field_0330 + iVar7 * 0x68);
+  iVar6 = iVar1 + -1;
+  pbVar5 = (byte *)(param_1->field_0330 + iVar6 * 0x68);
   ExceptionList = &local_14;
-  for (; iVar1 - iVar2 <= iVar7; iVar7 = iVar7 + -1) {
-    local_20 = *(uint **)(pbVar6 + 100);
-    if ((((*(uint *)(pbVar6 + 4) & 0x8000) != 0) && ((*pbVar6 & 2) != 0)) &&
-       (puVar9 = (uint *)(*(int *)(pbVar6 + 0x60) * 0x10 + local_20[0x3c]), (*puVar9 & 2) == 0)) {
+  for (; iVar1 - iVar2 <= iVar6; iVar6 = iVar6 + -1) {
+    local_20 = *(uint **)(pbVar5 + 100);
+    if ((((*(uint *)(pbVar5 + 4) & 0x8000) != 0) && ((*pbVar5 & 2) != 0)) &&
+       (puVar8 = (uint *)(*(int *)(pbVar5 + 0x60) * 0x10 + local_20[0x3c]), (*puVar8 & 2) == 0)) {
       if (local_2c == 0) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar8 = st::fn_006BBE40(*(int **)(param_1->field_0004 + 0x40),&local_2c,&local_24,0);
-        local_28 = iVar8;
-        if (iVar8 != 0) break;
+        iVar7 = st::fn_006BBE40(&param_1->entries_0004[0x10]->field_0000,&local_2c,&local_24,0);
+        local_28 = iVar7;
+        if (iVar7 != 0) break;
         local_2c = local_2c + param_1->field_0024 * local_24 + param_1->field_0020;
         local_28 = 0;
       }
-      uVar5 = local_20[0x41];
-      if (uVar5 == 0) {
+      uVar4 = local_20[0x41];
+      if (uVar4 == 0) {
         if ((param_1->field_0144 == 0) || (param_1->field_0158 == 0)) {
-          uVar5 = param_1->field_027C;
+          uVar4 = param_1->field_027C;
         }
         else {
           iVar3 = param_1->field_0278;
-          iVar8 = (((int)*(short *)(puVar9[3] + 4) - param_1->field_016C) * iVar3) /
+          iVar7 = (((int)*(short *)(puVar8[3] + 4) - param_1->field_016C) * iVar3) /
                   (param_1->field_0170 - param_1->field_016C);
-          if (iVar8 < 0) {
-            uVar5 = param_1->field_027C;
+          if (iVar7 < 0) {
+            uVar4 = param_1->field_027C;
           }
           else {
-            if (iVar3 <= iVar8) {
-              iVar8 = iVar3 + -1;
+            if (iVar3 <= iVar7) {
+              iVar7 = iVar3 + -1;
             }
-            uVar5 = st::machine_word_boundary_cast<uint>(param_1->field_027C + iVar8 * 0x100);
+            uVar4 = st::machine_word_boundary_cast<uint>(param_1->field_027C + iVar7 * 0x100);
           }
         }
       }
-      iVar8 = st::fn_00728DA0(param_1,local_2c,local_24,(short *)puVar9[3],puVar9[2],*puVar9 & 1,uVar5);
-      local_28 = iVar8;
-      if (iVar8 != 0) break;
+      iVar7 = st::fn_00728DA0(param_1,local_2c,local_24,(short *)puVar8[3],puVar8[2],*puVar8 & 1,uVar4);
+      local_28 = iVar7;
+      if (iVar7 != 0) break;
       *local_20 = *local_20 | 0x10;
     }
     *local_20 = *local_20 & 0xffffffdf;
-    pbVar6 = pbVar6 + -0x68;
+    pbVar5 = pbVar5 + -0x68;
   }
   local_8 = 0xffffffff;
   if (local_2c != 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    piVar4 = *(int **)(param_1->field_0004 + 0x40);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*piVar4 + 0x80))(piVar4,0);
+    (**(code **)(param_1->entries_0004[0x10]->field_0000 + 0x80))(param_1->entries_0004[0x10],0);
   }
   ExceptionList = local_14;
-  return iVar8;
+  return iVar7;
 }
 
 // 007297E0 FUN_007297e0

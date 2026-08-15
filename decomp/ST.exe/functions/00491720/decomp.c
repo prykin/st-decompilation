@@ -16,22 +16,17 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
   uint uVar5;
   byte arg_1;
   uint uVar6;
-  undefined1 local_2c [16];
-  undefined4 local_1c;
-  undefined2 local_18;
-  undefined2 local_16;
-  ushort local_14;
-  ushort local_12;
+  STMessage local_2c;
   uint local_c;
   uint local_8;
 
   arg_1 = 0;
   local_8 = 0;
-  if (DAT_008117bc != nullptr) {
-    local_18 = *(undefined2 *)&param_1->field_0024;
-    local_16 = param_1->field_0032;
+  if (g_aiBossClass_008117BC != nullptr) {
+    local_2c.arg0.words.low = *(undefined2 *)&param_1->field_0024;
+    local_2c.arg0.words.high = param_1->field_0032;
     ppuVar1 = &param_1->field_05A6;
-    local_1c = 0x5dd3;
+    local_2c.id = MESS_AIBOSSCLASSTY_5DD0|MESS_SHARED_0003;
     if ((*ppuVar1 == nullptr) &&
        (iVar3 = STPlaySystemC::sub_006E62D0
                           (g_playSystem_00802A38,param_1->field_05A2,(int *)ppuVar1), iVar3 == -4))
@@ -39,10 +34,9 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x501f);
     }
-    local_14 = (*ppuVar1)[0x12];
-    local_12 = (*ppuVar1)[0x19];
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_2c);
+    local_2c.arg1.words.low = (*ppuVar1)[0x12];
+    local_2c.arg1.words.high = (*ppuVar1)[0x19];
+    g_aiBossClass_008117BC->GetMessage(&local_2c);
   }
   param_1->field_05C0 = 0;
   param_1->field_07C2 = 0;

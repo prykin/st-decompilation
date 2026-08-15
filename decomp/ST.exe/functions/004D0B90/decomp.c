@@ -47,7 +47,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
   STSprGameObjC::GetMessage((STSprGameObjC *)local_c,message);
   SVar2 = message->id;
   if (SVar2 == MESS_ID_CREATE) {
-    DAT_00800bcc = pTVar4;
+    g_tLOFake_00800BCC = pTVar4;
     pTVar4->field_0020 = 0x3ea;
     pTVar4->field_0028 = 2;
     local_8 = (message->arg0).ptr;
@@ -97,7 +97,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
     }
   }
   else if (SVar2 == MESS_SHARED_0003) {
-    DAT_00800bcc = nullptr;
+    g_tLOFake_00800BCC = nullptr;
     thunk_FUN_004ad310((STT3DSprC *)&pTVar4->field_01D5);
     if (pTVar4->field_024D != nullptr) {
       FreeAndNull(&pTVar4->field_024D);

@@ -19,7 +19,8 @@ undefined4 __fastcall FUN_004e9c20(AnonShape_004E9C20_50FC91C6 *param_1)
       }
     }
     if (param_1->field_0494 != 0) {
-      thunk_FUN_004d0a80(DAT_00800bcc,param_1->field_0480,param_1->field_0484,param_1->field_0488);
+      TLOFakeTy::sub_004D0A80
+                (g_tLOFake_00800BCC,param_1->field_0480,param_1->field_0484,param_1->field_0488);
       param_1->field_0494 = 0;
     }
   }

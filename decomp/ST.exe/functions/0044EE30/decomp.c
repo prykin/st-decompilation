@@ -147,38 +147,36 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   int local_EAX_44638;
   int local_EAX_44850;
   int uVar15;
-  void *pvVar23;
+  SndUnderAttMenegC *pSVar23;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  void *extraout_EAX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_00;
+  SndUnderAttMenegC *extraout_EAX;
   int local_EAX_46313;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_01;
+  undefined2 extraout_var_00;
   int iVar13;
   uint uVar16;
   STGroupBoatC *this_01;
   int local_EAX_48884;
   int iVar29;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_02;
+  undefined2 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_03;
+  undefined2 extraout_var_02;
   undefined2 uVar25;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_04;
+  undefined2 extraout_var_03;
   STWorldObject *pSVar24;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_05;
+  undefined2 extraout_var_04;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_06;
+  undefined2 extraout_var_05;
   undefined2 uVar28;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_07;
+  undefined2 extraout_var_06;
   STGroupBoatCVTable *pSVar26;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX;
@@ -350,25 +348,23 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       }
       pSVar31 = (message->arg0).ptr;
       local_1c = pSVar31;
-      if (DAT_008117bc != nullptr) {
+      if (g_aiBossClass_008117BC != nullptr) {
         if (pSVar31 != nullptr) {
           local_9c.id = MESS_SHARED_5DD5;
           local_9c.arg0.words.high = this_00->field_0032;
           local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
           local_9c.arg1.words.high = *(undefined2 *)&pSVar31->field_0xc;
           local_9c.arg1.words.low = *(undefined2 *)&pSVar31->field_0008;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (**(code **)*DAT_008117bc)(&local_9c);
+          g_aiBossClass_008117BC->GetMessage(&local_9c);
         }
-        if (((DAT_008117bc != nullptr) && (pSVar31 != nullptr)) &&
-           (pSVar31->vtable != (STGroupBoatCVTable *)0x2710)) {
+        if (((g_aiBossClass_008117BC != nullptr) && (pSVar31 != nullptr))
+           && (pSVar31->vtable != (STGroupBoatCVTable *)0x2710)) {
           local_9c.id = 0x5dd1;
           local_9c.arg0.words.high = this_00->field_0032;
           local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
           local_9c.arg1.words.high = *(undefined2 *)&pSVar31->field_0xc;
           local_9c.arg1.words.low = *(undefined2 *)&pSVar31->field_0008;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (**(code **)*DAT_008117bc)(&local_9c);
+          g_aiBossClass_008117BC->GetMessage(&local_9c);
         }
       }
       if (this_00->field_07CA != nullptr) {
@@ -787,37 +783,36 @@ LAB_00459f59:
       return 0;
     }
     this_00->field_0716 = this_00->field_0716 - *(int *)pSVar31;
-    pvVar23 = DAT_00811798;
-    if ((((DAT_00811798 != nullptr) && (STField<int>(pSVar31,8) != 0xff)) &&
-        (pvVar23 = (void *)thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)this_00),
-        pvVar23 != nullptr)) && (STField<int>(pSVar31,0x14) == 0)) {
-      thunk_FUN_0061f8b0(DAT_00811798,(int)this_00->field_005B,(int)this_00->field_005D,
-                         this_00->field_0024);
+    pSVar23 = g_sndUnderAttMeneg_00811798;
+    if ((((g_sndUnderAttMeneg_00811798 != nullptr) &&
+         (STField<int>(pSVar31,8) != 0xff)) &&
+        (pSVar23 = (SndUnderAttMenegC *)thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)this_00),
+        pSVar23 != nullptr)) && (STField<int>(pSVar31,0x14) == 0)) {
+      SndUnderAttMenegC::sub_0061F8B0
+                (g_sndUnderAttMeneg_00811798,(int)this_00->field_005B,(int)this_00->field_005D,
+                 this_00->field_0024);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      pvVar23 = extraout_EAX;
+      pSVar23 = extraout_EAX;
     }
-    uVar25 = (undefined2)((uint)pvVar23 >> 0x10);
-    if ((DAT_008117bc != nullptr) && (pSVar31 != nullptr)) {
+    uVar25 = (undefined2)((uint)pSVar23 >> 0x10);
+    if ((g_aiBossClass_008117BC != nullptr) && (pSVar31 != nullptr)) {
       local_9c.id = MESS_SHARED_5DD5;
       local_9c.arg0.words.high = this_00->field_0032;
       local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
       local_9c.arg1.words.high = (short)STField<int>(pSVar31,0xc);
       local_9c.arg1.words.low = (short)STField<int>(pSVar31,8);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)*DAT_008117bc)(&local_9c);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar25 = extraout_var_00;
+      iVar30 = g_aiBossClass_008117BC->GetMessage(&local_9c);
+      uVar25 = (undefined2)((uint)iVar30 >> 0x10);
     }
     if (this_00->field_0716 < 1) {
-      if (((DAT_008117bc != nullptr) && (pSVar31 != nullptr)) &&
+      if (((g_aiBossClass_008117BC != nullptr) && (pSVar31 != nullptr)) &&
          (*(int *)pSVar31 != 10000)) {
         local_9c.id = 0x5dd1;
         local_9c.arg0.words.high = this_00->field_0032;
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
         local_9c.arg1.words.high = (short)STField<int>(pSVar31,0xc);
         local_9c.arg1.words.low = (short)STField<int>(pSVar31,8);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)*DAT_008117bc)(&local_9c);
+        g_aiBossClass_008117BC->GetMessage(&local_9c);
       }
       this_00->field_02C0 = 1;
       switch(this_00->field_06F7) {
@@ -1003,7 +998,7 @@ LAB_00459f59:
       thunk_FUN_00493bc0(this_00);
       sVar42 = this_00->field_06A9;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      local_7c = (AnonShape_0060EA30_DCEB68AD *)CONCAT22(extraout_var_01,sVar42);
+      local_7c = (AnonShape_0060EA30_DCEB68AD *)CONCAT22(extraout_var_00,sVar42);
       sVar4 = this_00->field_06AD;
       sVar5 = this_00->field_06AB;
       if ((((sVar42 < 0) || (g_worldGrid.sizeX <= sVar42)) || (sVar5 < 0)) ||
@@ -1120,7 +1115,7 @@ LAB_00459f59:
     STAllPlayersC::UnRegisterObject
               (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
                STReplaceLowWord((uint32_t)(uVar18), (uint16_t)(this_00->field_0030)),
-               CONCAT22(extraout_var_07,this_00->field_0032),(int *)this_00,this_00->field_0826);
+               CONCAT22(extraout_var_06,this_00->field_0032),(int *)this_00,this_00->field_0826);
     thunk_FUN_00489950((int)this_00);
     if (this_00->field_047B != nullptr) {
       DArrayDestroy(this_00->field_047B);
@@ -7143,16 +7138,16 @@ cf_error_exit_0045AEE3:
       this_00->field_001C = iVar14;
       thunk_FUN_00417ee0(this_00,((ushort)((uint)iVar14 >> 0x10) & 7) * 0x2d);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar25 = extraout_var_03;
+      uVar25 = extraout_var_02;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar28 = extraout_var_06;
+      uVar28 = extraout_var_05;
     }
     else {
       this_00->field_006C = local_10->field_006C;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar25 = extraout_var_02;
+      uVar25 = extraout_var_01;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar28 = extraout_var_05;
+      uVar28 = extraout_var_04;
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterObject
@@ -7321,14 +7316,13 @@ cf_error_exit_0045AEE3:
     uVar17 = this_00->field_001C * 0x41c64e6d + 0x3039;
     this_00->field_001C = uVar17;
     this_00->field_077A = (uVar17 >> 0x10) % (iVar14 - 0xeU);
-    if (DAT_008117bc != nullptr) {
+    if (g_aiBossClass_008117BC != nullptr) {
       local_9c.id = MESS_AIBOSSCLASSTY_5DD0;
       local_9c.arg0.words.high = this_00->field_0032;
       local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
       local_9c.arg1.words.high = *(undefined2 *)(dVar15 + 0x28);
       local_9c.arg1.words.low = *(undefined2 *)&this_00->field_0024;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)*DAT_008117bc)(&local_9c);
+      g_aiBossClass_008117BC->GetMessage(&local_9c);
     }
     switch(this_00->field_06F7) {
     case CASE_1:
@@ -7488,7 +7482,7 @@ cf_error_exit_0045AEE3:
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     STAllPlayersC::RegisterObject
               (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
-               CONCAT22(extraout_var_04,this_00->field_0030),
+               CONCAT22(extraout_var_03,this_00->field_0030),
                CONCAT22(extraout_var,this_00->field_0032),(int *)this_00,1,0);
     if ((this_00->field_045D != CASE_14) || (this_00->field_05C0 != 3)) {
       DumpClassC::WritePtr

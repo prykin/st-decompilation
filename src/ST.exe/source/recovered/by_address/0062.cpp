@@ -1,85 +1,6 @@
 #include "st/generated.hpp"
 // Generated translation unit: source/recovered/by_address/0062.cpp
 
-// 00620030 FUN_00620030
-#line 4 "decomp/ST.exe/functions/00620030/decomp.c"
-undefined4 __thiscall st::fn_00620030(void *this,int param_1,int param_2,int param_3)
-
-{
-  DArrayTy *array;
-  uint index;
-  int *piVar1;
-  undefined4 uVar2;
-  undefined4 local_8;
-
-  uVar2 = 0xffffffff;
-  local_8 = 0xffffffff;
-  if ((STField<int>(this,0xc5) != 0) &&
-     (index = *(int *)(STField<int>(this,0xc5) + 0xc) - 1, -1 < (int)index)) {
-    do {
-      array = STField<DArrayTy *>(this,0xc5);
-      if ((index < array->count) &&
-         (piVar1 = DArrayAt<int>(array, index), piVar1 != nullptr)) {
-        if ((param_2 < piVar1[2] + -3) ||
-           (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
-            (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70(array,index);
-          }
-        }
-        else {
-          piVar1[2] = param_2;
-          uVar2 = 1;
-          local_8 = 1;
-          piVar1[3] = param_3;
-          piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            uVar2 = 2;
-            *piVar1 = param_1;
-            local_8 = 2;
-          }
-        }
-      }
-      index = index - 1;
-    } while (-1 < (int)index);
-    return uVar2;
-  }
-  return 0xffffffff;
-}
-
-// 00620160 FUN_00620160
-#line 4 "decomp/ST.exe/functions/00620160/decomp.c"
-/* [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 0061FE80 -> 00620160 @ 0061FED6; FUN_0061fe80 parameter param_1 */
-
-uint __thiscall
-st::fn_00620160(void *this,undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4)
-
-{
-  DArrayTy *pDVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
-  int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
-  local_14 = param_1;
-  local_18 = param_1;
-  local_10 = param_2;
-  local_c = param_3;
-  local_8 = param_4;
-  if (STField<int>(this,0xc5) == 0) {
-    pDVar1 = st::fn_006AE290(nullptr,10,0x14,10);
-    STField<DArrayTy *>(this,0xc5) = pDVar1;
-  }
-  if (STField<DArrayTy *>(this,0xc5) != nullptr) {
-    uVar2 = st::fn_006AE1C0(STField<DArrayTy *>(this,0xc5),&local_18);
-    return uVar2;
-  }
-  return 0xffffffff;
-}
-
 // 006201F0 FUN_006201f0
 #line 4 "decomp/ST.exe/functions/006201F0/decomp.c"
 undefined4 __thiscall st::fn_006201F0(void *this,undefined4 *param_1,undefined4 *param_2)
@@ -132,141 +53,6 @@ undefined4 __thiscall st::fn_006201F0(void *this,undefined4 *param_1,undefined4 
     }
   }
   return uVar3;
-}
-
-// 006202B0 FUN_006202b0
-#line 4 "decomp/ST.exe/functions/006202B0/decomp.c"
-void __thiscall st::fn_006202B0(void *this,int param_1,int param_2,undefined4 param_3,uint param_4)
-
-{
-  uint uVar1;
-  uint uVar2;
-  int iVar3;
-  SoundPosition local_10;
-
-  uVar1 = g_playSystem_00802A38->field_00E4;
-  if (DAT_0080874d == param_4) {
-    return;
-  }
-  if (uVar1 < STField<uint>(this,0xcd)) {
-    return;
-  }
-  if (DAT_0080874e == '\x01') {
-    iVar3 = 0x40;
-  }
-  else if (DAT_0080874e == '\x02') {
-    iVar3 = 0x8f;
-  }
-  else {
-    if (DAT_0080874e != '\x03') goto LAB_0062030e;
-    iVar3 = 0x4d;
-  }
-  st::fn_0040186B((uint)DAT_0080874d,iVar3);
-LAB_0062030e:
-  uVar2 = st::fn_00404E8F(this,uVar1,param_1,param_2);
-  if (((-1 < (int)uVar2) ||
-      (uVar2 = st::fn_0040152D(this,uVar1,param_1,param_2,param_4), (int)uVar2 < 0)) &&
-     (uVar2 != 2)) {
-    return;
-  }
-  if (DAT_0080874e == '\x01') {
-    iVar3 = 0x80;
-  }
-  else if (DAT_0080874e == '\x02') {
-    iVar3 = 0x81;
-  }
-  else {
-    if (DAT_0080874e != '\x03') {
-      return;
-    }
-    iVar3 = 0x82;
-  }
-  local_10.unknown = 0;
-  local_10.x = -1;
-  local_10.y = -1;
-  st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,iVar3,&local_10,0);
-  st::fn_00405D62(this,param_1,param_2,0x28);
-  STField<uint>(this,0xc1) = uVar1 + 0xfa;
-  return;
-}
-
-// 006203F0 FUN_006203f0
-#line 4 "decomp/ST.exe/functions/006203F0/decomp.c"
-undefined4 __thiscall st::fn_006203F0(void *this,int param_1,int param_2,int param_3)
-
-{
-  DArrayTy *array;
-  uint index;
-  int *piVar1;
-  undefined4 uVar2;
-  undefined4 local_8;
-
-  uVar2 = 0xffffffff;
-  local_8 = 0xffffffff;
-  if ((STField<int>(this,0xd1) != 0) &&
-     (index = *(int *)(STField<int>(this,0xd1) + 0xc) - 1, -1 < (int)index)) {
-    do {
-      array = STField<DArrayTy *>(this,0xd1);
-      if ((index < array->count) &&
-         (piVar1 = DArrayAt<int>(array, index), piVar1 != nullptr)) {
-        if ((param_2 < piVar1[2] + -3) ||
-           (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
-            (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70(array,index);
-          }
-        }
-        else {
-          piVar1[2] = param_2;
-          uVar2 = 1;
-          local_8 = 1;
-          piVar1[3] = param_3;
-          piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            uVar2 = 2;
-            *piVar1 = param_1;
-            local_8 = 2;
-          }
-        }
-      }
-      index = index - 1;
-    } while (-1 < (int)index);
-    return uVar2;
-  }
-  return 0xffffffff;
-}
-
-// 00620520 FUN_00620520
-#line 4 "decomp/ST.exe/functions/00620520/decomp.c"
-/* [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 006202B0 -> 00620520 @ 0062032F; FUN_006202b0 parameter param_1 */
-
-uint __thiscall
-st::fn_00620520(void *this,undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4)
-
-{
-  DArrayTy *pDVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
-  int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
-  local_14 = param_1;
-  local_18 = param_1;
-  local_10 = param_2;
-  local_c = param_3;
-  local_8 = param_4;
-  if (STField<int>(this,0xd1) == 0) {
-    pDVar1 = st::fn_006AE290(nullptr,10,0x14,10);
-    STField<DArrayTy *>(this,0xd1) = pDVar1;
-  }
-  if (STField<DArrayTy *>(this,0xd1) != nullptr) {
-    uVar2 = st::fn_006AE1C0(STField<DArrayTy *>(this,0xd1),&local_18);
-    return uVar2;
-  }
-  return 0xffffffff;
 }
 
 // 006205B0 FUN_006205b0
@@ -323,129 +109,6 @@ undefined4 __thiscall st::fn_006205B0(void *this,undefined4 *param_1,undefined4 
   return uVar3;
 }
 
-// 00620670 FUN_00620670
-#line 4 "decomp/ST.exe/functions/00620670/decomp.c"
-/* [STReturnSemanticsApplier] ignored_eax_void.
-   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
-   and decompilation contains no value return */
-
-void __thiscall st::fn_00620670(void *this,int param_1,int param_2,uint param_3)
-
-{
-  uint uVar1;
-  uint uVar2;
-  int soundId;
-  SoundPosition local_10;
-
-  uVar1 = g_playSystem_00802A38->field_00E4;
-  if (DAT_0080874d != param_3) {
-    return;
-  }
-  if (STField<uint>(this,0xd9) <= uVar1) {
-    uVar2 = st::fn_00403AF8(this,uVar1,param_1,param_2);
-    if (((-1 < (int)uVar2) ||
-        (uVar2 = st::fn_004052D1(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) &&
-       (uVar2 != 2)) {
-      return;
-    }
-    if (DAT_0080874e == '\x01') {
-      soundId = 0x83;
-    }
-    else if (DAT_0080874e == '\x02') {
-      soundId = 0x84;
-    }
-    else {
-      if (DAT_0080874e != '\x03') {
-        return;
-      }
-      soundId = 0x85;
-    }
-    local_10.unknown = 0;
-    local_10.x = -1;
-    local_10.y = -1;
-    st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
-    STField<uint>(this,0xc1) = uVar1 + 0xfa;
-    return;
-  }
-  return;
-}
-
-// 00620780 FUN_00620780
-#line 4 "decomp/ST.exe/functions/00620780/decomp.c"
-undefined4 __thiscall st::fn_00620780(void *this,int param_1,int param_2,int param_3)
-
-{
-  DArrayTy *array;
-  uint index;
-  int *piVar1;
-  undefined4 uVar2;
-  undefined4 local_8;
-
-  uVar2 = 0xffffffff;
-  local_8 = 0xffffffff;
-  if ((STField<int>(this,0xdd) != 0) &&
-     (index = *(int *)(STField<int>(this,0xdd) + 0xc) - 1, -1 < (int)index)) {
-    do {
-      array = STField<DArrayTy *>(this,0xdd);
-      if ((index < array->count) &&
-         (piVar1 = DArrayAt<int>(array, index), piVar1 != nullptr)) {
-        if ((param_2 < piVar1[2] + -3) ||
-           (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
-            (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70(array,index);
-          }
-        }
-        else {
-          piVar1[2] = param_2;
-          uVar2 = 1;
-          local_8 = 1;
-          piVar1[3] = param_3;
-          piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            uVar2 = 2;
-            *piVar1 = param_1;
-            local_8 = 2;
-          }
-        }
-      }
-      index = index - 1;
-    } while (-1 < (int)index);
-    return uVar2;
-  }
-  return 0xffffffff;
-}
-
-// 006208B0 FUN_006208b0
-#line 4 "decomp/ST.exe/functions/006208B0/decomp.c"
-uint __thiscall
-st::fn_006208B0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
-
-{
-  DArrayTy *pDVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
-  local_14 = param_1;
-  local_18 = param_1;
-  local_10 = param_2;
-  local_c = param_3;
-  local_8 = param_4;
-  if (STField<int>(this,0xdd) == 0) {
-    pDVar1 = st::fn_006AE290(nullptr,10,0x14,10);
-    STField<DArrayTy *>(this,0xdd) = pDVar1;
-  }
-  if (STField<DArrayTy *>(this,0xdd) != nullptr) {
-    uVar2 = st::fn_006AE1C0(STField<DArrayTy *>(this,0xdd),&local_18);
-    return uVar2;
-  }
-  return 0xffffffff;
-}
-
 // 00620940 FUN_00620940
 #line 4 "decomp/ST.exe/functions/00620940/decomp.c"
 undefined4 __thiscall st::fn_00620940(void *this,undefined4 *param_1,undefined4 *param_2)
@@ -498,129 +161,6 @@ undefined4 __thiscall st::fn_00620940(void *this,undefined4 *param_1,undefined4 
     }
   }
   return uVar3;
-}
-
-// 00620A00 FUN_00620a00
-#line 4 "decomp/ST.exe/functions/00620A00/decomp.c"
-void __thiscall st::fn_00620A00(void *this,int param_1,int param_2,uint param_3)
-
-{
-  uint uVar1;
-  uint uVar2;
-  int soundId;
-  SoundPosition local_10;
-
-  uVar1 = g_playSystem_00802A38->field_00E4;
-  if (DAT_0080874d == param_3) {
-    return;
-  }
-  if (STField<uint>(this,0xe5) <= uVar1) {
-    uVar2 = st::fn_00404FA7(this,uVar1,param_1,param_2);
-    if (((-1 < (int)uVar2) ||
-        (uVar2 = st::fn_00404C19(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) &&
-       (uVar2 != 2)) {
-      return;
-    }
-    if (DAT_0080874e == '\x01') {
-      soundId = 0x95;
-    }
-    else if (DAT_0080874e == '\x02') {
-      soundId = 0x96;
-    }
-    else {
-      if (DAT_0080874e != '\x03') {
-        return;
-      }
-      soundId = 0x97;
-    }
-    local_10.x = -1;
-    local_10.y = -1;
-    local_10.unknown = 0;
-    st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
-    st::fn_00405D62(this,param_1,param_2,0x8e);
-    STField<uint>(this,0xe5) = uVar1 + 0xfa;
-    return;
-  }
-  return;
-}
-
-// 00620B20 FUN_00620b20
-#line 4 "decomp/ST.exe/functions/00620B20/decomp.c"
-undefined4 __thiscall st::fn_00620B20(void *this,int param_1,int param_2,int param_3)
-
-{
-  DArrayTy *array;
-  uint index;
-  int *piVar1;
-  undefined4 uVar2;
-  undefined4 local_8;
-
-  uVar2 = 0xffffffff;
-  local_8 = 0xffffffff;
-  if ((STField<int>(this,0xe9) != 0) &&
-     (index = *(int *)(STField<int>(this,0xe9) + 0xc) - 1, -1 < (int)index)) {
-    do {
-      array = STField<DArrayTy *>(this,0xe9);
-      if ((index < array->count) &&
-         (piVar1 = DArrayAt<int>(array, index), piVar1 != nullptr)) {
-        if ((param_2 < piVar1[2] + -3) ||
-           (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
-            (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70(array,index);
-          }
-        }
-        else {
-          piVar1[2] = param_2;
-          uVar2 = 1;
-          local_8 = 1;
-          piVar1[3] = param_3;
-          piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            uVar2 = 2;
-            *piVar1 = param_1;
-            local_8 = 2;
-          }
-        }
-      }
-      index = index - 1;
-    } while (-1 < (int)index);
-    return uVar2;
-  }
-  return 0xffffffff;
-}
-
-// 00620C50 FUN_00620c50
-#line 4 "decomp/ST.exe/functions/00620C50/decomp.c"
-/* [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 00620A00 -> 00620C50 @ 00620A56; FUN_00620a00 parameter param_1 */
-
-uint __thiscall
-st::fn_00620C50(void *this,undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4)
-
-{
-  DArrayTy *pDVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
-  int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
-  local_14 = param_1;
-  local_18 = param_1;
-  local_10 = param_2;
-  local_c = param_3;
-  local_8 = param_4;
-  if (STField<int>(this,0xe9) == 0) {
-    pDVar1 = st::fn_006AE290(nullptr,10,0x14,10);
-    STField<DArrayTy *>(this,0xe9) = pDVar1;
-  }
-  if (STField<DArrayTy *>(this,0xe9) != nullptr) {
-    uVar2 = st::fn_006AE1C0(STField<DArrayTy *>(this,0xe9),&local_18);
-    return uVar2;
-  }
-  return 0xffffffff;
 }
 
 // 00620CE0 FUN_00620ce0
@@ -677,163 +217,6 @@ undefined4 __thiscall st::fn_00620CE0(void *this,undefined4 *param_1,undefined4 
   return uVar3;
 }
 
-// 00620DA0 FUN_00620da0
-#line 4 "decomp/ST.exe/functions/00620DA0/decomp.c"
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 0061FE80 -> 00620DA0 @ 0061FFAF | 006202B0 -> 00620DA0 @ 00620392 | 00620A00 ->
-   00620DA0 @ 00620ABA | 00620E40 -> 00620DA0 @ 00620EF8 | 006211E0 -> 00620DA0 @ 0062129A */
-
-undefined4 __thiscall st::fn_00620DA0(void *this,int param_1,undefined4 param_2,undefined4 param_3)
-
-{
-  int iVar1;
-  char *pcVar2;
-
-  iVar1 = 0;
-  pcVar2 = (char *)((int)this + 0x20);
-  do {
-    if (*pcVar2 == '\0') {
-      *(undefined1 *)((int)this + iVar1 * 0x1d + 0x20) = 1;
-      *(int *)((int)this + iVar1 * 0x1d + 0x21) = param_1;
-      *(undefined4 *)((int)this + iVar1 * 0x1d + 0x25) = param_2;
-      *(undefined4 *)((int)this + iVar1 * 0x1d + 0x29) = param_3;
-      *(int *)((int)this + iVar1 * 0x1d + 0x2d) = STField<int>(this,0x1c) * 10;
-      *(uint *)((int)this + iVar1 * 0x1d + 0x39) = g_playSystem_00802A38->field_00E4;
-      *(undefined4 *)((int)this + iVar1 * 0x1d + 0x31) = 0xf;
-      *(float *)((int)this + iVar1 * 0x1d + 0x35) =
-           (float)_DAT_0079cee0 / ((float)STField<int>(this,0x1c) * (float)_DAT_0079cef0);
-      return 1;
-    }
-    iVar1 = iVar1 + 1;
-    pcVar2 = pcVar2 + 0x1d;
-  } while (iVar1 < 5);
-  return 0;
-}
-
-// 00620E40 FUN_00620e40
-#line 4 "decomp/ST.exe/functions/00620E40/decomp.c"
-void __thiscall st::fn_00620E40(void *this,int param_1,int param_2,uint param_3)
-
-{
-  uint uVar1;
-  uint uVar2;
-  int soundId;
-  SoundPosition local_10;
-
-  uVar1 = g_playSystem_00802A38->field_00E4;
-  if (DAT_0080874d == param_3) {
-    return;
-  }
-  if (STField<uint>(this,0xf1) <= uVar1) {
-    uVar2 = st::fn_00403B7A(this,uVar1,param_1,param_2);
-    if (((-1 < (int)uVar2) ||
-        (uVar2 = st::fn_00404B10(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) &&
-       (uVar2 != 2)) {
-      return;
-    }
-    if (DAT_0080874e == '\x01') {
-      soundId = 0x8f;
-    }
-    else if (DAT_0080874e == '\x02') {
-      soundId = 0x90;
-    }
-    else {
-      if (DAT_0080874e != '\x03') {
-        return;
-      }
-      soundId = 0x91;
-    }
-    local_10.unknown = 0;
-    local_10.x = -1;
-    local_10.y = -1;
-    st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
-    st::fn_00405D62(this,param_1,param_2,0x28);
-    STField<uint>(this,0xf1) = uVar1 + 0xfa;
-    return;
-  }
-  return;
-}
-
-// 00620F60 FUN_00620f60
-#line 4 "decomp/ST.exe/functions/00620F60/decomp.c"
-undefined4 __thiscall st::fn_00620F60(void *this,int param_1,int param_2,int param_3)
-
-{
-  DArrayTy *array;
-  uint index;
-  int *piVar1;
-  undefined4 uVar2;
-  undefined4 local_8;
-
-  uVar2 = 0xffffffff;
-  local_8 = 0xffffffff;
-  if ((STField<int>(this,0xf5) != 0) &&
-     (index = *(int *)(STField<int>(this,0xf5) + 0xc) - 1, -1 < (int)index)) {
-    do {
-      array = STField<DArrayTy *>(this,0xf5);
-      if ((index < array->count) &&
-         (piVar1 = DArrayAt<int>(array, index), piVar1 != nullptr)) {
-        if ((param_2 < piVar1[2] + -3) ||
-           (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
-            (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70(array,index);
-          }
-        }
-        else {
-          piVar1[2] = param_2;
-          uVar2 = 1;
-          local_8 = 1;
-          piVar1[3] = param_3;
-          piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            uVar2 = 2;
-            *piVar1 = param_1;
-            local_8 = 2;
-          }
-        }
-      }
-      index = index - 1;
-    } while (-1 < (int)index);
-    return uVar2;
-  }
-  return 0xffffffff;
-}
-
-// 00621090 FUN_00621090
-#line 4 "decomp/ST.exe/functions/00621090/decomp.c"
-/* [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 00620E40 -> 00621090 @ 00620E95; FUN_00620e40 parameter param_1 */
-
-uint __thiscall
-st::fn_00621090(void *this,undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4)
-
-{
-  DArrayTy *pDVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
-  int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
-  local_14 = param_1;
-  local_18 = param_1;
-  local_10 = param_2;
-  local_c = param_3;
-  local_8 = param_4;
-  if (STField<int>(this,0xf5) == 0) {
-    pDVar1 = st::fn_006AE290(nullptr,10,0x14,10);
-    STField<DArrayTy *>(this,0xf5) = pDVar1;
-  }
-  if (STField<DArrayTy *>(this,0xf5) != nullptr) {
-    uVar2 = st::fn_006AE1C0(STField<DArrayTy *>(this,0xf5),&local_18);
-    return uVar2;
-  }
-  return 0xffffffff;
-}
-
 // 00621120 FUN_00621120
 #line 4 "decomp/ST.exe/functions/00621120/decomp.c"
 undefined4 __thiscall st::fn_00621120(void *this,undefined4 *param_1,undefined4 *param_2)
@@ -886,129 +269,6 @@ undefined4 __thiscall st::fn_00621120(void *this,undefined4 *param_1,undefined4 
     }
   }
   return uVar3;
-}
-
-// 006211E0 FUN_006211e0
-#line 4 "decomp/ST.exe/functions/006211E0/decomp.c"
-void __thiscall st::fn_006211E0(void *this,int param_1,int param_2,uint param_3)
-
-{
-  uint uVar1;
-  uint uVar2;
-  int soundId;
-  SoundPosition local_10;
-
-  uVar1 = g_playSystem_00802A38->field_00E4;
-  if (DAT_0080874d != param_3) {
-    return;
-  }
-  if (STField<uint>(this,0xfd) <= uVar1) {
-    uVar2 = st::fn_004047D7(this,uVar1,param_1,param_2);
-    if (((-1 < (int)uVar2) ||
-        (uVar2 = st::fn_004030D0(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) &&
-       (uVar2 != 2)) {
-      return;
-    }
-    if (DAT_0080874e == '\x01') {
-      soundId = 0xaa;
-    }
-    else if (DAT_0080874e == '\x02') {
-      soundId = 0xab;
-    }
-    else {
-      if (DAT_0080874e != '\x03') {
-        return;
-      }
-      soundId = 0xac;
-    }
-    local_10.x = -1;
-    local_10.y = -1;
-    local_10.unknown = 0;
-    st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
-    st::fn_00405D62(this,param_1,param_2,0x8e);
-    STField<uint>(this,0xfd) = uVar1 + 0xfa;
-    return;
-  }
-  return;
-}
-
-// 00621300 FUN_00621300
-#line 4 "decomp/ST.exe/functions/00621300/decomp.c"
-undefined4 __thiscall st::fn_00621300(void *this,int param_1,int param_2,int param_3)
-
-{
-  DArrayTy *array;
-  uint index;
-  int *piVar1;
-  undefined4 uVar2;
-  undefined4 local_8;
-
-  uVar2 = 0xffffffff;
-  local_8 = 0xffffffff;
-  if ((STField<int>(this,0x101) != 0) &&
-     (index = *(int *)(STField<int>(this,0x101) + 0xc) - 1, -1 < (int)index)) {
-    do {
-      array = STField<DArrayTy *>(this,0x101);
-      if ((index < array->count) &&
-         (piVar1 = DArrayAt<int>(array, index), piVar1 != nullptr)) {
-        if ((param_2 < piVar1[2] + -3) ||
-           (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
-            (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70(array,index);
-          }
-        }
-        else {
-          piVar1[2] = param_2;
-          uVar2 = 1;
-          local_8 = 1;
-          piVar1[3] = param_3;
-          piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            uVar2 = 2;
-            *piVar1 = param_1;
-            local_8 = 2;
-          }
-        }
-      }
-      index = index - 1;
-    } while (-1 < (int)index);
-    return uVar2;
-  }
-  return 0xffffffff;
-}
-
-// 00621430 FUN_00621430
-#line 4 "decomp/ST.exe/functions/00621430/decomp.c"
-/* [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 006211E0 -> 00621430 @ 00621236; FUN_006211e0 parameter param_1 */
-
-uint __thiscall
-st::fn_00621430(void *this,undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4)
-
-{
-  DArrayTy *pDVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
-  int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
-  local_14 = param_1;
-  local_18 = param_1;
-  local_10 = param_2;
-  local_c = param_3;
-  local_8 = param_4;
-  if (STField<int>(this,0x101) == 0) {
-    pDVar1 = st::fn_006AE290(nullptr,10,0x14,10);
-    STField<DArrayTy *>(this,0x101) = pDVar1;
-  }
-  if (STField<DArrayTy *>(this,0x101) != nullptr) {
-    uVar2 = st::fn_006AE1C0(STField<DArrayTy *>(this,0x101),&local_18);
-    return uVar2;
-  }
-  return 0xffffffff;
 }
 
 // 006214C0 FUN_006214c0
@@ -1065,35 +325,6 @@ undefined4 __thiscall st::fn_006214C0(void *this,undefined4 *param_1,undefined4 
   return uVar3;
 }
 
-// 00621580 FUN_00621580
-#line 4 "decomp/ST.exe/functions/00621580/decomp.c"
-/* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 004CEB00 -> 00621580 @ 004CEDDB; /TLOBaseTy+0x24 */
-
-void __thiscall st::fn_00621580(void *this,byte *param_1,int param_2)
-
-{
-  uint uVar1;
-  int local_8;
-
-  local_8 = 0;
-  if ((byte *)(uint)DAT_0080874d != param_1) {
-    return;
-  }
-  if ((STField<int>(this,0x10a) == 0) ||
-     (uVar1 = st::fn_00405E1B(this,param_2,st::pointer_boundary_cast<undefined4 *>(&local_8)), (int)uVar1 < 0)) {
-    uVar1 = st::fn_00405B37(this,param_2);
-  }
-  if ((local_8 != 0) && (-1 < (int)uVar1)) {
-    if (10 < g_playSystem_00802A38->field_00E4 - STField<int>(this,0x106)) {
-      st::fn_00401073(this,uVar1);
-      return;
-    }
-    STField<undefined1>(this,0x105) = 1;
-  }
-  return;
-}
-
 // 00621640 FUN_00621640
 #line 4 "decomp/ST.exe/functions/00621640/decomp.c"
 uint __thiscall st::fn_00621640(void *this,int param_1,undefined4 *param_2)
@@ -1130,182 +361,6 @@ uint __thiscall st::fn_00621640(void *this,int param_1,undefined4 *param_2)
   return uVar3;
 }
 
-// 006216E0 FUN_006216e0
-#line 4 "decomp/ST.exe/functions/006216E0/decomp.c"
-uint __thiscall st::fn_006216E0(void *this,undefined4 param_1)
-
-{
-  DArrayTy *pDVar1;
-  uint uVar2;
-  undefined4 local_14;
-  int local_10;
-  undefined4 local_c;
-  undefined1 local_8;
-
-  local_14 = 0;
-  local_8 = (undefined1)((uint)param_1 >> 0x18);
-  local_10 = st::machine_word_boundary_cast<int>(g_playSystem_00802A38->field_00E4 << 8);
-  STPiece<0,1>(local_c) = (undefined1)(g_playSystem_00802A38->field_00E4 >> 0x18);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c = CONCAT31((int3)param_1,(undefined1)local_c);
-  if (STField<int>(this,0x10a) == 0) {
-    pDVar1 = st::fn_006AE290(nullptr,10,0xd,10);
-    STField<DArrayTy *>(this,0x10a) = pDVar1;
-  }
-  if (STField<DArrayTy *>(this,0x10a) != nullptr) {
-    uVar2 = st::fn_006AE1C0(STField<DArrayTy *>(this,0x10a),&local_14);
-    return uVar2;
-  }
-  return 0xffffffff;
-}
-
-// 00621780 FUN_00621780
-#line 4 "decomp/ST.exe/functions/00621780/decomp.c"
-void __thiscall st::fn_00621780(void *this,uint param_1)
-
-{
-  char *text;
-  int iVar1;
-  undefined1 *puVar2;
-  uint uVar3;
-  SoundPosition local_10;
-
-  iVar1 = STField<int>(this,0x10a);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((param_1 < *(uint *)(iVar1 + 0xc)) &&
-     (puVar2 = (undefined1 *)(*(int *)(iVar1 + 8) * param_1 + *(int *)(iVar1 + 0x1c)),
-     puVar2 != nullptr)) {
-    switch(*(undefined4 *)(puVar2 + 9)) {
-    case 1:
-      if (DAT_0080874e == '\x01') {
-        iVar1 = 0x3e;
-      }
-      else if (DAT_0080874e == '\x02') {
-        iVar1 = 0x3f;
-      }
-      else {
-        if (DAT_0080874e != '\x03') {
-          return;
-        }
-        iVar1 = 0x40;
-      }
-      break;
-    case 2:
-      if (DAT_0080874e == '\x01') {
-        iVar1 = 0x41;
-      }
-      else if (DAT_0080874e == '\x02') {
-        iVar1 = 0x42;
-      }
-      else {
-        if (DAT_0080874e != '\x03') {
-          return;
-        }
-        iVar1 = 0x43;
-      }
-      break;
-    case 3:
-      if (DAT_0080874e == '\x01') {
-        iVar1 = 0x44;
-      }
-      else if (DAT_0080874e == '\x02') {
-        iVar1 = 0x45;
-      }
-      else {
-        if (DAT_0080874e != '\x03') {
-          return;
-        }
-        iVar1 = 0x46;
-      }
-      break;
-    case 4:
-      if (DAT_0080874e == '\x01') {
-        iVar1 = 0x47;
-      }
-      else if (DAT_0080874e == '\x02') {
-        iVar1 = 0x48;
-      }
-      else {
-        if (DAT_0080874e != '\x03') {
-          return;
-        }
-        iVar1 = 0x49;
-      }
-      break;
-    case 5:
-      if (DAT_0080874e == '\x01') {
-        iVar1 = 0x4a;
-      }
-      else if (DAT_0080874e == '\x02') {
-        iVar1 = 0x4b;
-      }
-      else {
-        if (DAT_0080874e != '\x03') {
-          return;
-        }
-        iVar1 = 0x4c;
-      }
-      break;
-    case 6:
-      if (DAT_0080874e == '\x01') {
-        iVar1 = 0x4d;
-      }
-      else if (DAT_0080874e == '\x02') {
-        iVar1 = 0x4e;
-      }
-      else {
-        if (DAT_0080874e != '\x03') {
-          return;
-        }
-        iVar1 = 0x4f;
-      }
-      break;
-    case 7:
-      if (DAT_0080874e == '\x01') {
-        iVar1 = 0x50;
-      }
-      else if (DAT_0080874e == '\x02') {
-        iVar1 = 0x51;
-      }
-      else {
-        if (DAT_0080874e != '\x03') {
-          return;
-        }
-        iVar1 = 0x52;
-      }
-      break;
-    case 8:
-      uVar3 = 8;
-      text = st::fn_006B0140(0x274a,g_hINSTANCE_00807618);
-      st::fn_004014D8(g_popUp_008016D8,text,uVar3);
-      if (DAT_0080874e == '\x01') {
-        iVar1 = 0xba;
-      }
-      else if (DAT_0080874e == '\x02') {
-        iVar1 = 0xbb;
-      }
-      else {
-        if (DAT_0080874e != '\x03') {
-          return;
-        }
-        iVar1 = 0xbc;
-      }
-      break;
-    default:
-      goto switchD_006217ba_default;
-    }
-    local_10.unknown = 0;
-    local_10.x = -1;
-    local_10.y = -1;
-    st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,iVar1,&local_10,0);
-    *puVar2 = 1;
-    *(uint *)(puVar2 + 1) = g_playSystem_00802A38->field_00E4;
-    STField<uint>(this,0x106) = g_playSystem_00802A38->field_00E4;
-  }
-switchD_006217ba_default:
-  return;
-}
-
 // 00621A70 FUN_00621a70
 #line 4 "decomp/ST.exe/functions/00621A70/decomp.c"
 void __fastcall st::fn_00621A70(AnonShape_00621A70_2531BB4B *param_1)
@@ -1328,7 +383,7 @@ void __fastcall st::fn_00621A70(AnonShape_00621A70_2531BB4B *param_1)
          pcVar2 != nullptr)) {
         if (((param_1->field_0105 != '\0') && (*pcVar2 == '\0')) &&
            (9 < g_playSystem_00802A38->field_00E4 - param_1->field_0106)) {
-          st::fn_00401073(param_1,index);
+          st::fn_00401073((SndUnderAttMenegC *)param_1,index);
         }
         if (*(uint *)(pcVar2 + 1) < 0x5dd) {
           index = index + 1;
@@ -1510,7 +565,7 @@ LAB_00623863:
         st::fn_00402982(&param_1->field_0x1d5,0);
         param_1->field_02E9 = 1;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*(int *)param_1 + 0xd8))();
+        (**(code **)(param_1->field_0000 + 0xd8))();
         return;
       }
       goto LAB_006238c2;
@@ -1523,7 +578,7 @@ LAB_00623863:
   }
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_006238c2:
-  (**(code **)(*(int *)param_1 + 0xd8))();
+  (**(code **)(param_1->field_0000 + 0xd8))();
   return;
 }
 
@@ -2616,27 +1671,27 @@ undefined4 __fastcall st::fn_00627670(STMineSetC *param_1)
 void __fastcall st::fn_00627700(AnonShape_00627700_6F319351 *param_1)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined2 local_10;
-  undefined2 local_e;
-  undefined2 local_c;
-  undefined2 local_a;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-    local_10 = param_1->field_0024;
-    local_e = param_1->field_0032;
-    local_c = param_1->field_0262;
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_24;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
+    local_24.arg0.words.low = param_1->field_0024;
+    local_24.arg0.words.high = param_1->field_0032;
+    local_24.arg1.words.low = param_1->field_0262;
     if (param_1->field_02A1 == 0) {
-      local_a = 0xffff;
+      local_24.arg1.words.high = 0xffff;
     }
     else {
-      local_a = param_1->field_02A5;
+      local_24.arg1.words.high = param_1->field_02A5;
     }
-    local_14 = 0x5de3;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+    local_24.id = 0x5de3;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;
 }
@@ -2650,36 +1705,34 @@ void __fastcall st::fn_00627790(STMineSetC *param_1)
 
 {
   int iVar1;
-  undefined4 local_28 [4];
-  undefined4 local_18;
-  undefined2 local_14;
-  undefined2 local_12;
-  undefined2 local_10;
-  undefined2 local_e;
+  STMessage *pSVar2;
+  STMessage local_28;
   int local_8;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
-    iVar1 = 0;
-    local_14 = *(undefined2 *)&param_1->field_0024;
-    local_12 = param_1->field_0032;
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_28;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
+    local_28.arg0.words.low = *(undefined2 *)&param_1->field_0024;
+    local_28.arg0.words.high = param_1->field_0032;
     if ((((AnonShape_005EFAE0_B406B78B *)param_1->field_0241 == nullptr)
         || (iVar1 = st::fn_006E62D0
                               (g_playSystem_00802A38,
                                (AnonShape_005EFAE0_B406B78B *)param_1->field_0241,&local_8),
            iVar1 == -4)) || (local_8 == 0)) {
-      local_10 = 0xff;
-      local_e = 0xffff;
+      local_28.arg1.words.low = 0xff;
+      local_28.arg1.words.high = 0xffff;
     }
     else {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_10 = *(undefined2 *)(local_8 + 0x24);
+      local_28.arg1.words.low = *(word *)(local_8 + 0x24);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_e = *(undefined2 *)(local_8 + 0x32);
+      local_28.arg1.words.high = *(word *)(local_8 + 0x32);
     }
-    local_18 = 0x5de4;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_28);
+    local_28.id = 0x5de4;
+    g_aiBossClass_008117BC->GetMessage(&local_28);
     return;
   }
   return;

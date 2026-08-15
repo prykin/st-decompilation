@@ -1,4 +1,4 @@
-FUN_006216e0:
+SndUnderAttMenegC::sub_006216E0:
 006216E0  55                        PUSH EBP
 006216E1  8B EC                     MOV EBP,ESP
 006216E3  83 EC 10                  SUB ESP,0x10

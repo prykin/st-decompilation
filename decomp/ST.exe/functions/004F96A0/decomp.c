@@ -203,9 +203,8 @@ LAB_004f9a8a:
           case 4:
             this_00->field_0028 = 0x5dc6;
             *(undefined **)&this_00->field_0x2c = &DAT_0080c4d7;
-            if (DAT_008117bc != nullptr) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              (**(code **)*DAT_008117bc)(&this_00->field_0x18);
+            if (g_aiBossClass_008117BC != nullptr) {
+              g_aiBossClass_008117BC->GetMessage((STMessage *)&this_00->field_0x18);
             }
             this_00->field_0260 = CASE_4;
             DAT_0080c4f7 = 4;

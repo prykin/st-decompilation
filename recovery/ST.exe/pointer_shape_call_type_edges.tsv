@@ -4208,7 +4208,6 @@ source_target	destination_target	site
 004B9FA0|local|Stack[-0x54]:4	004B9BB0|parameter|Stack[0x8]:2	004B9FA0 C call -> FUN_004b9bb0
 004B9FA0|local|Stack[-0x50]:4	004B9BB0|parameter|Stack[0xc]:2	004B9FA0 C call -> FUN_004b9bb0
 004B9FA0|local|EAX:4	0062B830|parameter|Stack[0x20]:4	004B9FA0 C call -> FUN_0062b830
-004B9FA0|local|Stack[-0x7c]:1	006E60A0|parameter|Stack[0x4]:4	004B9FA0 C call -> sub_006E60A0
 004B9FA0|local|Stack[-0x18]:4	004DBB10|parameter|Stack[0x4]:4	004B9FA0 C call -> FUN_004dbb10
 004B9FA0|local|Stack[-0x18]:4	004DBB60|parameter|Stack[0x4]:4	004B9FA0 C call -> FUN_004dbb60
 004BE1D0|parameter|ECX:4	0041F330|parameter|ECX:4	004BE1D0 C call -> FUN_0041f330
@@ -5045,10 +5044,10 @@ source_target	destination_target	site
 004EA460|parameter|ECX:4 (auto)	004C6C70|parameter|ECX:4 (auto)	004EA460 C call -> TLOBaseTy::sub_004C6C70
 004EA530|parameter|ECX:4 (auto)	004EA460|parameter|ECX:4 (auto)	004EA530 C call -> FUN_004ea460
 004EA6C0|parameter|ECX:4	004EA620|parameter|ECX:4 (auto)	004EA6C0 C call -> TLOBaseTy::sub_004EA620
-004EA6E0|parameter|Stack[0x8]:4	006202B0|parameter|Stack[0x4]:4	004EA6E0 C call -> FUN_006202b0
-004EA6E0|parameter|Stack[0xc]:4	006202B0|parameter|Stack[0x8]:4	004EA6E0 C call -> FUN_006202b0
-004EA6E0|parameter|Stack[0x10]:4	006202B0|parameter|Stack[0xc]:4	004EA6E0 C call -> FUN_006202b0
-004EA6E0|parameter|Stack[0x4]:4	006202B0|parameter|Stack[0x10]:4	004EA6E0 C call -> FUN_006202b0
+004EA6E0|parameter|Stack[0x8]:4	006202B0|parameter|Stack[0x4]:4	004EA6E0 C call -> SndUnderAttMenegC::sub_006202B0
+004EA6E0|parameter|Stack[0xc]:4	006202B0|parameter|Stack[0x8]:4	004EA6E0 C call -> SndUnderAttMenegC::sub_006202B0
+004EA6E0|parameter|Stack[0x10]:4	006202B0|parameter|Stack[0xc]:4	004EA6E0 C call -> SndUnderAttMenegC::sub_006202B0
+004EA6E0|parameter|Stack[0x4]:4	006202B0|parameter|Stack[0x10]:4	004EA6E0 C call -> SndUnderAttMenegC::sub_006202B0
 004EA830|parameter|ECX:4	004CBC10|parameter|ECX:4 (auto)	004EA830 C call -> TLOBaseTy::AddSprInit
 004EA870|parameter|ECX:4	004C7860|parameter|ECX:4 (auto)	004EA870 C call -> TLOBaseTy::sub_004C7860
 004EA870|parameter|ECX:4	004C7C20|parameter|ECX:4	004EA870 C call -> FUN_004c7c20
@@ -6740,7 +6739,7 @@ source_target	destination_target	site
 0054AEE0|local|Stack[-0x28]:4	00523410|parameter|Stack[0x8]:1	0054AEE0 C call -> FUN_00523410
 0054AEE0|local|Stack[-0xd8]:1	0072E560|parameter|Stack[0x4]:4	0054AEE0 C call -> Library::MSVCRT::FUN_0072e560
 0054AEE0|local|EAX:4	0072E560|parameter|Stack[0x4]:4	0054AEE0 C call -> Library::MSVCRT::FUN_0072e560
-0054AEE0|local|Stack[-0xd8]:1	0051FAC0|parameter|Stack[0x4]:4	0054AEE0 C call -> FUN_0051fac0
+0054AEE0|local|Stack[-0xd8]:1	0051FAC0|parameter|Stack[0x4]:4	0054AEE0 C call -> HelpStringTy::sub_0051FAC0
 0054B540|parameter|ECX:4 (auto)	00543C90|parameter|ECX:4 (auto)	0054B540 C call -> CursorClassTy::DrawSprite
 0054B630|parameter|ECX:4 (auto)	0054A8D0|parameter|ECX:4 (auto)	0054B630 C call -> CursorClassTy::sub_0054A8D0
 0054B630|parameter|ECX:4 (auto)	0054B540|parameter|ECX:4 (auto)	0054B630 C call -> CursorClassTy::sub_0054B540
@@ -10570,78 +10569,78 @@ source_target	destination_target	site
 0061F660|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	0061F660 C call -> RaiseInternalException
 0061F660|local|Stack[-0xc]:4	006E6710|parameter|Stack[0xc]:4	0061F660 C call -> ST3DSMAPContext::sub_006E6710
 0061F660|local|Stack[-0x8]:4	0061FCC0|parameter|ECX:4 (auto)	0061F660 C call -> SndUnderAttMenegC::sub_0061FCC0
-0061F8B0|parameter|ECX:4 (auto)	0061FA40|parameter|ECX:4 (auto)	0061F8B0 C call -> FUN_0061fa40
-0061F8B0|local|Stack[-0x8]:4	0061FA40|parameter|Stack[0x4]:4	0061F8B0 C call -> FUN_0061fa40
-0061F8B0|parameter|Stack[0x4]:4	0061FA40|parameter|Stack[0x8]:4	0061F8B0 C call -> FUN_0061fa40
-0061F8B0|parameter|Stack[0x8]:4	0061FA40|parameter|Stack[0xc]:4	0061F8B0 C call -> FUN_0061fa40
-0061F8B0|parameter|ECX:4 (auto)	0061FB70|parameter|ECX:4 (auto)	0061F8B0 C call -> FUN_0061fb70
-0061F8B0|local|Stack[-0x8]:4	0061FB70|parameter|Stack[0x4]:4	0061F8B0 C call -> FUN_0061fb70
-0061F8B0|parameter|Stack[0x4]:4	0061FB70|parameter|Stack[0x8]:4	0061F8B0 C call -> FUN_0061fb70
-0061F8B0|parameter|Stack[0x8]:4	0061FB70|parameter|Stack[0xc]:4	0061F8B0 C call -> FUN_0061fb70
-0061F8B0|parameter|Stack[0xc]:4	0061FB70|parameter|Stack[0x10]:4	0061F8B0 C call -> FUN_0061fb70
-0061FE80|parameter|ECX:4 (auto)	00620030|parameter|ECX:4 (auto)	0061FE80 C call -> FUN_00620030
-0061FE80|parameter|Stack[0x4]:4	00620030|parameter|Stack[0x8]:4	0061FE80 C call -> FUN_00620030
-0061FE80|parameter|Stack[0x8]:4	00620030|parameter|Stack[0xc]:4	0061FE80 C call -> FUN_00620030
-0061FE80|parameter|ECX:4 (auto)	00620160|parameter|ECX:4 (auto)	0061FE80 C call -> FUN_00620160
-0061FE80|parameter|Stack[0x4]:4	00620160|parameter|Stack[0x8]:4	0061FE80 C call -> FUN_00620160
-0061FE80|parameter|Stack[0x8]:4	00620160|parameter|Stack[0xc]:4	0061FE80 C call -> FUN_00620160
-0061FE80|parameter|Stack[0xc]:4	00620160|parameter|Stack[0x10]:4	0061FE80 C call -> FUN_00620160
-0061FE80|parameter|ECX:4 (auto)	00620DA0|parameter|ECX:4 (auto)	0061FE80 C call -> FUN_00620da0
-0061FE80|parameter|Stack[0x4]:4	00620DA0|parameter|Stack[0x4]:4	0061FE80 C call -> FUN_00620da0
-0061FE80|parameter|Stack[0x8]:4	00620DA0|parameter|Stack[0x8]:4	0061FE80 C call -> FUN_00620da0
-006202B0|parameter|ECX:4 (auto)	006203F0|parameter|ECX:4 (auto)	006202B0 C call -> FUN_006203f0
-006202B0|parameter|Stack[0x4]:4	006203F0|parameter|Stack[0x8]:4	006202B0 C call -> FUN_006203f0
-006202B0|parameter|Stack[0x8]:4	006203F0|parameter|Stack[0xc]:4	006202B0 C call -> FUN_006203f0
-006202B0|parameter|ECX:4 (auto)	00620520|parameter|ECX:4 (auto)	006202B0 C call -> FUN_00620520
-006202B0|parameter|Stack[0x4]:4	00620520|parameter|Stack[0x8]:4	006202B0 C call -> FUN_00620520
-006202B0|parameter|Stack[0x8]:4	00620520|parameter|Stack[0xc]:4	006202B0 C call -> FUN_00620520
-006202B0|parameter|Stack[0x10]:4	00620520|parameter|Stack[0x10]:4	006202B0 C call -> FUN_00620520
-006202B0|parameter|ECX:4 (auto)	00620DA0|parameter|ECX:4 (auto)	006202B0 C call -> FUN_00620da0
-006202B0|parameter|Stack[0x4]:4	00620DA0|parameter|Stack[0x4]:4	006202B0 C call -> FUN_00620da0
-006202B0|parameter|Stack[0x8]:4	00620DA0|parameter|Stack[0x8]:4	006202B0 C call -> FUN_00620da0
-00620670|parameter|ECX:4 (auto)	00620780|parameter|ECX:4 (auto)	00620670 C call -> FUN_00620780
-00620670|parameter|Stack[0x4]:4	00620780|parameter|Stack[0x8]:4	00620670 C call -> FUN_00620780
-00620670|parameter|Stack[0x8]:4	00620780|parameter|Stack[0xc]:4	00620670 C call -> FUN_00620780
-00620670|parameter|ECX:4 (auto)	006208B0|parameter|ECX:4 (auto)	00620670 C call -> FUN_006208b0
-00620670|parameter|Stack[0x4]:4	006208B0|parameter|Stack[0x8]:4	00620670 C call -> FUN_006208b0
-00620670|parameter|Stack[0x8]:4	006208B0|parameter|Stack[0xc]:4	00620670 C call -> FUN_006208b0
-00620670|parameter|Stack[0xc]:4	006208B0|parameter|Stack[0x10]:4	00620670 C call -> FUN_006208b0
-00620A00|parameter|ECX:4 (auto)	00620B20|parameter|ECX:4 (auto)	00620A00 C call -> FUN_00620b20
-00620A00|parameter|Stack[0x4]:4	00620B20|parameter|Stack[0x8]:4	00620A00 C call -> FUN_00620b20
-00620A00|parameter|Stack[0x8]:4	00620B20|parameter|Stack[0xc]:4	00620A00 C call -> FUN_00620b20
-00620A00|parameter|ECX:4 (auto)	00620C50|parameter|ECX:4 (auto)	00620A00 C call -> FUN_00620c50
-00620A00|parameter|Stack[0x4]:4	00620C50|parameter|Stack[0x8]:4	00620A00 C call -> FUN_00620c50
-00620A00|parameter|Stack[0x8]:4	00620C50|parameter|Stack[0xc]:4	00620A00 C call -> FUN_00620c50
-00620A00|parameter|Stack[0xc]:4	00620C50|parameter|Stack[0x10]:4	00620A00 C call -> FUN_00620c50
-00620A00|parameter|ECX:4 (auto)	00620DA0|parameter|ECX:4 (auto)	00620A00 C call -> FUN_00620da0
-00620A00|parameter|Stack[0x4]:4	00620DA0|parameter|Stack[0x4]:4	00620A00 C call -> FUN_00620da0
-00620A00|parameter|Stack[0x8]:4	00620DA0|parameter|Stack[0x8]:4	00620A00 C call -> FUN_00620da0
-00620E40|parameter|ECX:4 (auto)	00620F60|parameter|ECX:4 (auto)	00620E40 C call -> FUN_00620f60
-00620E40|parameter|Stack[0x4]:4	00620F60|parameter|Stack[0x8]:4	00620E40 C call -> FUN_00620f60
-00620E40|parameter|Stack[0x8]:4	00620F60|parameter|Stack[0xc]:4	00620E40 C call -> FUN_00620f60
-00620E40|parameter|ECX:4 (auto)	00621090|parameter|ECX:4 (auto)	00620E40 C call -> FUN_00621090
-00620E40|parameter|Stack[0x4]:4	00621090|parameter|Stack[0x8]:4	00620E40 C call -> FUN_00621090
-00620E40|parameter|Stack[0x8]:4	00621090|parameter|Stack[0xc]:4	00620E40 C call -> FUN_00621090
-00620E40|parameter|Stack[0xc]:4	00621090|parameter|Stack[0x10]:4	00620E40 C call -> FUN_00621090
-00620E40|parameter|ECX:4 (auto)	00620DA0|parameter|ECX:4 (auto)	00620E40 C call -> FUN_00620da0
-00620E40|parameter|Stack[0x4]:4	00620DA0|parameter|Stack[0x4]:4	00620E40 C call -> FUN_00620da0
-00620E40|parameter|Stack[0x8]:4	00620DA0|parameter|Stack[0x8]:4	00620E40 C call -> FUN_00620da0
-006211E0|parameter|ECX:4 (auto)	00621300|parameter|ECX:4 (auto)	006211E0 C call -> FUN_00621300
-006211E0|parameter|Stack[0x4]:4	00621300|parameter|Stack[0x8]:4	006211E0 C call -> FUN_00621300
-006211E0|parameter|Stack[0x8]:4	00621300|parameter|Stack[0xc]:4	006211E0 C call -> FUN_00621300
-006211E0|parameter|ECX:4 (auto)	00621430|parameter|ECX:4 (auto)	006211E0 C call -> FUN_00621430
-006211E0|parameter|Stack[0x4]:4	00621430|parameter|Stack[0x8]:4	006211E0 C call -> FUN_00621430
-006211E0|parameter|Stack[0x8]:4	00621430|parameter|Stack[0xc]:4	006211E0 C call -> FUN_00621430
-006211E0|parameter|Stack[0xc]:4	00621430|parameter|Stack[0x10]:4	006211E0 C call -> FUN_00621430
-006211E0|parameter|ECX:4 (auto)	00620DA0|parameter|ECX:4 (auto)	006211E0 C call -> FUN_00620da0
-006211E0|parameter|Stack[0x4]:4	00620DA0|parameter|Stack[0x4]:4	006211E0 C call -> FUN_00620da0
-006211E0|parameter|Stack[0x8]:4	00620DA0|parameter|Stack[0x8]:4	006211E0 C call -> FUN_00620da0
+0061F8B0|parameter|ECX:4 (auto)	0061FA40|parameter|ECX:4 (auto)	0061F8B0 C call -> SndUnderAttMenegC::sub_0061FA40
+0061F8B0|local|Stack[-0x8]:4	0061FA40|parameter|Stack[0x4]:4	0061F8B0 C call -> SndUnderAttMenegC::sub_0061FA40
+0061F8B0|parameter|Stack[0x4]:4	0061FA40|parameter|Stack[0x8]:4	0061F8B0 C call -> SndUnderAttMenegC::sub_0061FA40
+0061F8B0|parameter|Stack[0x8]:4	0061FA40|parameter|Stack[0xc]:4	0061F8B0 C call -> SndUnderAttMenegC::sub_0061FA40
+0061F8B0|parameter|ECX:4 (auto)	0061FB70|parameter|ECX:4 (auto)	0061F8B0 C call -> SndUnderAttMenegC::sub_0061FB70
+0061F8B0|local|Stack[-0x8]:4	0061FB70|parameter|Stack[0x4]:4	0061F8B0 C call -> SndUnderAttMenegC::sub_0061FB70
+0061F8B0|parameter|Stack[0x4]:4	0061FB70|parameter|Stack[0x8]:4	0061F8B0 C call -> SndUnderAttMenegC::sub_0061FB70
+0061F8B0|parameter|Stack[0x8]:4	0061FB70|parameter|Stack[0xc]:4	0061F8B0 C call -> SndUnderAttMenegC::sub_0061FB70
+0061F8B0|parameter|Stack[0xc]:4	0061FB70|parameter|Stack[0x10]:4	0061F8B0 C call -> SndUnderAttMenegC::sub_0061FB70
+0061FE80|parameter|ECX:4 (auto)	00620030|parameter|ECX:4 (auto)	0061FE80 C call -> SndUnderAttMenegC::sub_00620030
+0061FE80|parameter|Stack[0x4]:4	00620030|parameter|Stack[0x8]:4	0061FE80 C call -> SndUnderAttMenegC::sub_00620030
+0061FE80|parameter|Stack[0x8]:4	00620030|parameter|Stack[0xc]:4	0061FE80 C call -> SndUnderAttMenegC::sub_00620030
+0061FE80|parameter|ECX:4 (auto)	00620160|parameter|ECX:4 (auto)	0061FE80 C call -> SndUnderAttMenegC::sub_00620160
+0061FE80|parameter|Stack[0x4]:4	00620160|parameter|Stack[0x8]:4	0061FE80 C call -> SndUnderAttMenegC::sub_00620160
+0061FE80|parameter|Stack[0x8]:4	00620160|parameter|Stack[0xc]:4	0061FE80 C call -> SndUnderAttMenegC::sub_00620160
+0061FE80|parameter|Stack[0xc]:4	00620160|parameter|Stack[0x10]:4	0061FE80 C call -> SndUnderAttMenegC::sub_00620160
+0061FE80|parameter|ECX:4 (auto)	00620DA0|parameter|ECX:4 (auto)	0061FE80 C call -> SndUnderAttMenegC::sub_00620DA0
+0061FE80|parameter|Stack[0x4]:4	00620DA0|parameter|Stack[0x4]:4	0061FE80 C call -> SndUnderAttMenegC::sub_00620DA0
+0061FE80|parameter|Stack[0x8]:4	00620DA0|parameter|Stack[0x8]:4	0061FE80 C call -> SndUnderAttMenegC::sub_00620DA0
+006202B0|parameter|ECX:4 (auto)	006203F0|parameter|ECX:4 (auto)	006202B0 C call -> SndUnderAttMenegC::sub_006203F0
+006202B0|parameter|Stack[0x4]:4	006203F0|parameter|Stack[0x8]:4	006202B0 C call -> SndUnderAttMenegC::sub_006203F0
+006202B0|parameter|Stack[0x8]:4	006203F0|parameter|Stack[0xc]:4	006202B0 C call -> SndUnderAttMenegC::sub_006203F0
+006202B0|parameter|ECX:4 (auto)	00620520|parameter|ECX:4 (auto)	006202B0 C call -> SndUnderAttMenegC::sub_00620520
+006202B0|parameter|Stack[0x4]:4	00620520|parameter|Stack[0x8]:4	006202B0 C call -> SndUnderAttMenegC::sub_00620520
+006202B0|parameter|Stack[0x8]:4	00620520|parameter|Stack[0xc]:4	006202B0 C call -> SndUnderAttMenegC::sub_00620520
+006202B0|parameter|Stack[0x10]:4	00620520|parameter|Stack[0x10]:4	006202B0 C call -> SndUnderAttMenegC::sub_00620520
+006202B0|parameter|ECX:4 (auto)	00620DA0|parameter|ECX:4 (auto)	006202B0 C call -> SndUnderAttMenegC::sub_00620DA0
+006202B0|parameter|Stack[0x4]:4	00620DA0|parameter|Stack[0x4]:4	006202B0 C call -> SndUnderAttMenegC::sub_00620DA0
+006202B0|parameter|Stack[0x8]:4	00620DA0|parameter|Stack[0x8]:4	006202B0 C call -> SndUnderAttMenegC::sub_00620DA0
+00620670|parameter|ECX:4 (auto)	00620780|parameter|ECX:4 (auto)	00620670 C call -> SndUnderAttMenegC::sub_00620780
+00620670|parameter|Stack[0x4]:4	00620780|parameter|Stack[0x8]:4	00620670 C call -> SndUnderAttMenegC::sub_00620780
+00620670|parameter|Stack[0x8]:4	00620780|parameter|Stack[0xc]:4	00620670 C call -> SndUnderAttMenegC::sub_00620780
+00620670|parameter|ECX:4 (auto)	006208B0|parameter|ECX:4 (auto)	00620670 C call -> SndUnderAttMenegC::sub_006208B0
+00620670|parameter|Stack[0x4]:4	006208B0|parameter|Stack[0x8]:4	00620670 C call -> SndUnderAttMenegC::sub_006208B0
+00620670|parameter|Stack[0x8]:4	006208B0|parameter|Stack[0xc]:4	00620670 C call -> SndUnderAttMenegC::sub_006208B0
+00620670|parameter|Stack[0xc]:4	006208B0|parameter|Stack[0x10]:4	00620670 C call -> SndUnderAttMenegC::sub_006208B0
+00620A00|parameter|ECX:4 (auto)	00620B20|parameter|ECX:4 (auto)	00620A00 C call -> SndUnderAttMenegC::sub_00620B20
+00620A00|parameter|Stack[0x4]:4	00620B20|parameter|Stack[0x8]:4	00620A00 C call -> SndUnderAttMenegC::sub_00620B20
+00620A00|parameter|Stack[0x8]:4	00620B20|parameter|Stack[0xc]:4	00620A00 C call -> SndUnderAttMenegC::sub_00620B20
+00620A00|parameter|ECX:4 (auto)	00620C50|parameter|ECX:4 (auto)	00620A00 C call -> SndUnderAttMenegC::sub_00620C50
+00620A00|parameter|Stack[0x4]:4	00620C50|parameter|Stack[0x8]:4	00620A00 C call -> SndUnderAttMenegC::sub_00620C50
+00620A00|parameter|Stack[0x8]:4	00620C50|parameter|Stack[0xc]:4	00620A00 C call -> SndUnderAttMenegC::sub_00620C50
+00620A00|parameter|Stack[0xc]:4	00620C50|parameter|Stack[0x10]:4	00620A00 C call -> SndUnderAttMenegC::sub_00620C50
+00620A00|parameter|ECX:4 (auto)	00620DA0|parameter|ECX:4 (auto)	00620A00 C call -> SndUnderAttMenegC::sub_00620DA0
+00620A00|parameter|Stack[0x4]:4	00620DA0|parameter|Stack[0x4]:4	00620A00 C call -> SndUnderAttMenegC::sub_00620DA0
+00620A00|parameter|Stack[0x8]:4	00620DA0|parameter|Stack[0x8]:4	00620A00 C call -> SndUnderAttMenegC::sub_00620DA0
+00620E40|parameter|ECX:4 (auto)	00620F60|parameter|ECX:4 (auto)	00620E40 C call -> SndUnderAttMenegC::sub_00620F60
+00620E40|parameter|Stack[0x4]:4	00620F60|parameter|Stack[0x8]:4	00620E40 C call -> SndUnderAttMenegC::sub_00620F60
+00620E40|parameter|Stack[0x8]:4	00620F60|parameter|Stack[0xc]:4	00620E40 C call -> SndUnderAttMenegC::sub_00620F60
+00620E40|parameter|ECX:4 (auto)	00621090|parameter|ECX:4 (auto)	00620E40 C call -> SndUnderAttMenegC::sub_00621090
+00620E40|parameter|Stack[0x4]:4	00621090|parameter|Stack[0x8]:4	00620E40 C call -> SndUnderAttMenegC::sub_00621090
+00620E40|parameter|Stack[0x8]:4	00621090|parameter|Stack[0xc]:4	00620E40 C call -> SndUnderAttMenegC::sub_00621090
+00620E40|parameter|Stack[0xc]:4	00621090|parameter|Stack[0x10]:4	00620E40 C call -> SndUnderAttMenegC::sub_00621090
+00620E40|parameter|ECX:4 (auto)	00620DA0|parameter|ECX:4 (auto)	00620E40 C call -> SndUnderAttMenegC::sub_00620DA0
+00620E40|parameter|Stack[0x4]:4	00620DA0|parameter|Stack[0x4]:4	00620E40 C call -> SndUnderAttMenegC::sub_00620DA0
+00620E40|parameter|Stack[0x8]:4	00620DA0|parameter|Stack[0x8]:4	00620E40 C call -> SndUnderAttMenegC::sub_00620DA0
+006211E0|parameter|ECX:4 (auto)	00621300|parameter|ECX:4 (auto)	006211E0 C call -> SndUnderAttMenegC::sub_00621300
+006211E0|parameter|Stack[0x4]:4	00621300|parameter|Stack[0x8]:4	006211E0 C call -> SndUnderAttMenegC::sub_00621300
+006211E0|parameter|Stack[0x8]:4	00621300|parameter|Stack[0xc]:4	006211E0 C call -> SndUnderAttMenegC::sub_00621300
+006211E0|parameter|ECX:4 (auto)	00621430|parameter|ECX:4 (auto)	006211E0 C call -> SndUnderAttMenegC::sub_00621430
+006211E0|parameter|Stack[0x4]:4	00621430|parameter|Stack[0x8]:4	006211E0 C call -> SndUnderAttMenegC::sub_00621430
+006211E0|parameter|Stack[0x8]:4	00621430|parameter|Stack[0xc]:4	006211E0 C call -> SndUnderAttMenegC::sub_00621430
+006211E0|parameter|Stack[0xc]:4	00621430|parameter|Stack[0x10]:4	006211E0 C call -> SndUnderAttMenegC::sub_00621430
+006211E0|parameter|ECX:4 (auto)	00620DA0|parameter|ECX:4 (auto)	006211E0 C call -> SndUnderAttMenegC::sub_00620DA0
+006211E0|parameter|Stack[0x4]:4	00620DA0|parameter|Stack[0x4]:4	006211E0 C call -> SndUnderAttMenegC::sub_00620DA0
+006211E0|parameter|Stack[0x8]:4	00620DA0|parameter|Stack[0x8]:4	006211E0 C call -> SndUnderAttMenegC::sub_00620DA0
 00621580|parameter|ECX:4 (auto)	00621640|parameter|ECX:4 (auto)	00621580 C call -> FUN_00621640
 00621580|parameter|Stack[0x8]:4	00621640|parameter|Stack[0x4]:4	00621580 C call -> FUN_00621640
-00621580|parameter|ECX:4 (auto)	006216E0|parameter|ECX:4 (auto)	00621580 C call -> FUN_006216e0
-00621580|parameter|Stack[0x8]:4	006216E0|parameter|Stack[0x4]:4	00621580 C call -> FUN_006216e0
-00621580|parameter|ECX:4 (auto)	00621780|parameter|ECX:4 (auto)	00621580 C call -> FUN_00621780
-00621A70|parameter|ECX:4	00621780|parameter|ECX:4 (auto)	00621A70 C call -> FUN_00621780
+00621580|parameter|ECX:4 (auto)	006216E0|parameter|ECX:4 (auto)	00621580 C call -> SndUnderAttMenegC::sub_006216E0
+00621580|parameter|Stack[0x8]:4	006216E0|parameter|Stack[0x4]:4	00621580 C call -> SndUnderAttMenegC::sub_006216E0
+00621580|parameter|ECX:4 (auto)	00621780|parameter|ECX:4 (auto)	00621580 C call -> SndUnderAttMenegC::sub_00621780
+00621A70|parameter|ECX:4	00621780|parameter|ECX:4 (auto)	00621A70 C call -> SndUnderAttMenegC::sub_00621780
 00621B50|parameter|ECX:4 (auto)	0041E530|parameter|ECX:4 (auto)	00621B50 C call -> STSprGameObjC::GetMessage
 00621B50|parameter|Stack[0x4]:4	0041E530|parameter|Stack[0x4]:4	00621B50 C call -> STSprGameObjC::GetMessage
 00621B50|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00621B50 C call -> RaiseInternalException
@@ -12070,7 +12069,6 @@ source_target	destination_target	site
 0067C7E0|local|Stack[-0x10]:4	00678BE0|parameter|ECX:4 (auto)	0067C7E0 C call -> AiPlrClassTy::PrepareToSave
 0067C7E0|parameter|Stack[0x4]:4	00652810|parameter|Stack[0x4]:4	0067C7E0 C call -> AiEventClassTy::GetMessage
 0067C7E0|local|Stack[-0x10]:4	00679470|parameter|ECX:4 (auto)	0067C7E0 C call -> AiPlrClassTy::CloseAllTact
-0067C7E0|local|Stack[-0x38]:1	006E5810|parameter|Stack[0x4]:4	0067C7E0 C call -> SystemClassTy::PostMessage
 0067C7E0|local|Stack[-0x8]:4	006AE110|parameter|Stack[0x4]:4	0067C7E0 C call -> DArrayDestroy
 0067C7E0|parameter|Stack[0x4]:4	00652810|parameter|Stack[0x4]:4	0067C7E0 C call -> AiEventClassTy::GetMessage
 0067C7E0|parameter|Stack[0x4]:4	00652810|parameter|Stack[0x4]:4	0067C7E0 C call -> AiEventClassTy::GetMessage
@@ -13611,8 +13609,6 @@ source_target	destination_target	site
 006C6F10|parameter|Stack[0x4]:4	006D80C0|parameter|Stack[0x4]:4	006C6F10 C call -> Library::DKW::GPC::FUN_006d80c0
 006C6F10|parameter|Stack[0x4]:4	006D7D9A|parameter|Stack[0x4]:4	006C6F10 C call -> FUN_006d7d9a
 006C6FC0|parameter|Stack[0x4]:4	006A5E90|parameter|Stack[0x4]:4	006C6FC0 C call -> FUN_006a5e90
-006C7240|parameter|Stack[0x8]:4	006B55F0|parameter|Stack[0x18]:4	006C7240 C call -> Library::DKW::WGR::FUN_006b55f0
-006C7240|parameter|Stack[0x8]:4	006B5110|parameter|Stack[0x18]:4	006C7240 C call -> Library::DKW::WGR::FUN_006b5110
 006C72F0|local|Stack[-0x20]:4	006B55F0|parameter|Stack[0x1c]:4	006C72F0 C call -> Library::DKW::WGR::FUN_006b55f0
 006C72F0|local|Stack[-0x24]:4	006B55F0|parameter|Stack[0x20]:4	006C72F0 C call -> Library::DKW::WGR::FUN_006b55f0
 006C72F0|local|Stack[-0x28]:4	006B55F0|parameter|Stack[0x24]:4	006C72F0 C call -> Library::DKW::WGR::FUN_006b55f0
@@ -13650,8 +13646,6 @@ source_target	destination_target	site
 006C7610|parameter|Stack[0x18]:4	006B4170|parameter|Stack[0x18]:4	006C7610 C call -> FUN_006b4170
 006C7610|parameter|Stack[0x20]:1	006B4170|parameter|Stack[0x1c]:1	006C7610 C call -> FUN_006b4170
 006C7980|parameter|Stack[0x4]:4	006A5E90|parameter|Stack[0x4]:4	006C7980 C call -> FUN_006a5e90
-006C7B20|parameter|Stack[0x8]:4	006B55F0|parameter|Stack[0x18]:4	006C7B20 C call -> Library::DKW::WGR::FUN_006b55f0
-006C7CB0|parameter|Stack[0xc]:4	EXTERNAL:0000000D|parameter|Stack[0x8]:4	006C7CB0 C call -> KERNEL32.DLL::IsBadHugeReadPtr
 006C7D20|parameter|Stack[0x4]:4	006D80C0|parameter|Stack[0x4]:4	006C7D20 C call -> Library::DKW::GPC::FUN_006d80c0
 006C7E30|parameter|Stack[0xc]:4	EXTERNAL:0000000D|parameter|Stack[0x8]:4	006C7E30 C call -> KERNEL32.DLL::IsBadHugeReadPtr
 006C7EA0|parameter|Stack[0xc]:4	006D8260|parameter|Stack[0x4]:4	006C7EA0 C call -> Library::DKW::DDX::FUN_006d8260
@@ -15688,8 +15682,6 @@ source_target	destination_target	site
 00751C40|parameter|Stack[0x10]:4	00754530|parameter|Stack[0x8]:4	00751C40 C call -> Library::DKW::JPG::FUN_00754530
 00751C40|parameter|Stack[0x4]:4	00754530|parameter|Stack[0x14]:4	00751C40 C call -> Library::DKW::JPG::FUN_00754530
 00751C40|parameter|Stack[0x8]:4	00754530|parameter|Stack[0x18]:4	00751C40 C call -> Library::DKW::JPG::FUN_00754530
-00751F90|parameter|Stack[0x8]:4	EXTERNAL:00000075|parameter|Stack[0x8]:4	00751F90 C call -> KERNEL32.DLL::_lread
-00751F90|parameter|Stack[0xc]:4	EXTERNAL:00000075|parameter|Stack[0xc]:4	00751F90 C call -> KERNEL32.DLL::_lread
 00752030|parameter|Stack[0x8]:4	EXTERNAL:00000075|parameter|Stack[0x8]:4	00752030 C call -> KERNEL32.DLL::_lread
 00752030|parameter|Stack[0xc]:4	EXTERNAL:00000075|parameter|Stack[0xc]:4	00752030 C call -> KERNEL32.DLL::_lread
 00752080|parameter|Stack[0x8]:4	EXTERNAL:0000000E|parameter|Stack[0x8]:4	00752080 C call -> KERNEL32.DLL::_llseek
@@ -15805,54 +15797,20 @@ source_target	destination_target	site
 007561D0|parameter|Stack[0x8]:4	00753C80|parameter|Stack[0x8]:4	007561D0 C call -> FUN_00753c80
 007562D0|parameter|Stack[0x4]:4	00759DD0|parameter|Stack[0x4]:4	007562D0 C call -> FUN_00759dd0
 00757670|parameter|Stack[0x8]:4	006D4C50|parameter|Stack[0x8]:4	00757670 C call -> Library::DKW::FMM::FUN_006d4c50
-00757710|parameter|Stack[0x4]:4	00757750|parameter|Stack[0x4]:4	00757710 C call -> Library::DKW::JPG::FUN_00757750
-00757710|parameter|Stack[0x4]:4	007578F0|parameter|Stack[0x4]:4	00757710 C call -> Library::DKW::JPG::FUN_007578f0
-00757CD0|parameter|Stack[0x4]:4	00757D90|parameter|Stack[0x4]:4	00757CD0 C call -> FUN_00757d90
-00757E60|parameter|Stack[0x4]:4	00759190|parameter|Stack[0x4]:4	00757E60 C call -> FUN_00759190
-00759120|parameter|Stack[0x4]:4	00757D90|parameter|Stack[0x4]:4	00759120 C call -> FUN_00757d90
-00759D90|parameter|Stack[0x4]:4	00759CA0|parameter|Stack[0x4]:4	00759D90 C call -> Library::DKW::JPG::FUN_00759ca0
-00759D90|parameter|Stack[0x4]:4	00760300|parameter|Stack[0x4]:4	00759D90 C call -> FUN_00760300
-0075A350|parameter|Stack[0x4]:4	0075A590|parameter|Stack[0x4]:4	0075A350 C call -> FUN_0075a590
-0075A350|parameter|Stack[0x4]:4	0075A490|parameter|Stack[0x4]:4	0075A350 C call -> FUN_0075a490
-0075A780|parameter|Stack[0x4]:4	0075A7A0|parameter|Stack[0x4]:4	0075A780 C call -> FUN_0075a7a0
-0075A800|parameter|Stack[0x4]:4	0075AE60|parameter|Stack[0x4]:4	0075A800 C call -> FUN_0075ae60
-0075A860|parameter|Stack[0x4]:4	0075A7A0|parameter|Stack[0x4]:4	0075A860 C call -> FUN_0075a7a0
-0075AAB0|parameter|Stack[0x4]:4	0075A7A0|parameter|Stack[0x4]:4	0075AAB0 C call -> FUN_0075a7a0
-0075AF80|local|Stack[-0x20]:4	00759F00|parameter|Stack[0x4]:4	0075AF80 C call -> FUN_00759f00
+00757E60|parameter|Stack[0x4]:4	00759190|parameter|Stack[0x4]:4	00757E60 C call -> Library::DKW::JPG::FUN_00759190
 0075B800|parameter|Stack[0x4]:4	0075B720|parameter|Stack[0x4]:4	0075B800 C call -> FUN_0075b720
 0075B800|parameter|Stack[0x8]:4	0075B720|parameter|Stack[0x8]:4	0075B800 C call -> FUN_0075b720
 0075B800|parameter|Stack[0xc]:4	0075B720|parameter|Stack[0xc]:4	0075B800 C call -> FUN_0075b720
 0075B800|parameter|Stack[0x14]:4	0075B720|parameter|Stack[0x10]:4	0075B800 C call -> FUN_0075b720
 0075B800|parameter|Stack[0x4]:4	0075B720|parameter|Stack[0x4]:4	0075B800 C call -> FUN_0075b720
 0075B800|parameter|Stack[0x8]:4	0075B720|parameter|Stack[0x8]:4	0075B800 C call -> FUN_0075b720
-0075BA30|parameter|Stack[0x4]:4	0075BE40|parameter|Stack[0x4]:4	0075BA30 C call -> FUN_0075be40
-0075BA30|local|Stack[-0x10]:4	0075B800|parameter|Stack[0x10]:4	0075BA30 C call -> FUN_0075b800
-0075BA30|local|EAX:4	0075B720|parameter|Stack[0x10]:4	0075BA30 C call -> FUN_0075b720
-0075C180|parameter|Stack[0x4]:4	0075C3B0|parameter|Stack[0x4]:4	0075C180 C call -> FUN_0075c3b0
-0075C180|parameter|Stack[0x4]:4	0075B720|parameter|Stack[0x8]:4	0075C180 C call -> FUN_0075b720
-0075C180|parameter|Stack[0x4]:4	0075B800|parameter|Stack[0x8]:4	0075C180 C call -> FUN_0075b800
-0075C180|parameter|Stack[0x4]:4	0075B720|parameter|Stack[0x8]:4	0075C180 C call -> FUN_0075b720
-0075C180|local|EAX:4	0075B720|parameter|Stack[0x10]:4	0075C180 C call -> FUN_0075b720
-0075C440|parameter|Stack[0x4]:4	0075C3B0|parameter|Stack[0x4]:4	0075C440 C call -> FUN_0075c3b0
-0075C440|local|Stack[-0x8]:4	0075B800|parameter|Stack[0x10]:4	0075C440 C call -> FUN_0075b800
-0075C680|parameter|Stack[0x4]:4	0075C3B0|parameter|Stack[0x4]:4	0075C680 C call -> FUN_0075c3b0
-0075C790|parameter|Stack[0x4]:4	0075C3B0|parameter|Stack[0x4]:4	0075C790 C call -> FUN_0075c3b0
-0075C790|local|Stack[-0x48]:4	0075B800|parameter|Stack[0x10]:4	0075C790 C call -> FUN_0075b800
-0075C790|local|Stack[-0x10]:4	0075B720|parameter|Stack[0x10]:4	0075C790 C call -> FUN_0075b720
-0075D490|parameter|Stack[0x8]:4	00759EB0|parameter|Stack[0x8]:4	0075D490 C call -> FUN_00759eb0
-0075DD00|parameter|Stack[0xc]:4	00759EB0|parameter|Stack[0x8]:4	0075DD00 C call -> FUN_00759eb0
-0075DD00|parameter|Stack[0x10]:4	00759EB0|parameter|Stack[0xc]:4	0075DD00 C call -> FUN_00759eb0
-0075DD00|parameter|Stack[0x14]:4	00759EB0|parameter|Stack[0x14]:4	0075DD00 C call -> FUN_00759eb0
 0075DE90|parameter|Stack[0x4]:4	0075DF10|parameter|Stack[0x4]:4	0075DE90 C call -> FUN_0075df10
 0075DE90|parameter|Stack[0x4]:4	0075DF10|parameter|Stack[0x4]:4	0075DE90 C call -> FUN_0075df10
-0075E7D0|parameter|Stack[0x4]:4	0075E890|parameter|Stack[0x4]:4	0075E7D0 C call -> FUN_0075e890
 0075E890|parameter|Stack[0x4]:4	0075E980|parameter|Stack[0x4]:4	0075E890 C call -> FUN_0075e980
 0075E890|local|Stack[-0x188]:1	0075E980|parameter|Stack[0x14]:4	0075E890 C call -> FUN_0075e980
 0075E890|parameter|Stack[0x4]:4	0075EB40|parameter|Stack[0x4]:4	0075E890 C call -> FUN_0075eb40
 0075E890|local|Stack[-0x188]:1	0075EB40|parameter|Stack[0x18]:4	0075E890 C call -> FUN_0075eb40
 0075E890|local|Stack[-0x88]:1	0075EB40|parameter|Stack[0x1c]:4	0075E890 C call -> FUN_0075eb40
-0075EC80|parameter|Stack[0x4]:4	0075E890|parameter|Stack[0x4]:4	0075EC80 C call -> FUN_0075e890
-0075EF30|parameter|Stack[0x4]:4	0075EF60|parameter|Stack[0x4]:4	0075EF30 C call -> FUN_0075ef60
 0075EF60|parameter|Stack[0x4]:4	0075EFE0|parameter|Stack[0x4]:4	0075EF60 C call -> FUN_0075efe0
 0075EF60|parameter|Stack[0x4]:4	0075F3F0|parameter|Stack[0x4]:4	0075EF60 C call -> FUN_0075f3f0
 0075EF60|parameter|Stack[0x8]:4	0075F3F0|parameter|Stack[0x10]:4	0075EF60 C call -> FUN_0075f3f0
@@ -16273,11 +16231,11 @@ source_target	destination_target	site
 00652810|local|Stack[-0x15c]:4	0052D320|parameter|Stack[0x4]:4	00652810 C call -> FUN_0052d320
 00652810|local|Stack[-0x160]:4	00668F50|parameter|Stack[0x8]:4	00652810 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
 00652810|local|Stack[-0x15c]:4	0052D320|parameter|Stack[0x4]:4	00652810 C call -> FUN_0052d320
-00652810|local|Stack[-0x154]:4	0051FAC0|parameter|Stack[0x4]:4	00652810 C call -> FUN_0051fac0
-00652810|local|Stack[-0x158]:4	0051FAC0|parameter|Stack[0xc]:1	00652810 C call -> FUN_0051fac0
+00652810|local|Stack[-0x154]:4	0051FAC0|parameter|Stack[0x4]:4	00652810 C call -> HelpStringTy::sub_0051FAC0
+00652810|local|Stack[-0x158]:4	0051FAC0|parameter|Stack[0xc]:1	00652810 C call -> HelpStringTy::sub_0051FAC0
 00652810|local|Stack[-0x160]:4	00668F50|parameter|Stack[0x8]:4	00652810 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
-00652810|local|Stack[-0x154]:4	0051FAC0|parameter|Stack[0x4]:4	00652810 C call -> FUN_0051fac0
-00652810|local|Stack[-0x158]:4	0051FAC0|parameter|Stack[0xc]:1	00652810 C call -> FUN_0051fac0
+00652810|local|Stack[-0x154]:4	0051FAC0|parameter|Stack[0x4]:4	00652810 C call -> HelpStringTy::sub_0051FAC0
+00652810|local|Stack[-0x158]:4	0051FAC0|parameter|Stack[0xc]:1	00652810 C call -> HelpStringTy::sub_0051FAC0
 00652810|local|Stack[-0x158]:4	004F9480|parameter|Stack[0x4]:4	00652810 C call -> CPanelTy::OutText
 00652810|local|Stack[-0x15c]:4	004F9480|parameter|Stack[0xc]:4	00652810 C call -> CPanelTy::OutText
 00652810|local|Stack[-0x160]:4	00668F50|parameter|Stack[0x8]:4	00652810 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50

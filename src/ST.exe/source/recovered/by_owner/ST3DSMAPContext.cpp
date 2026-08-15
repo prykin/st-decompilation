@@ -1348,8 +1348,9 @@ st::fn_006E1460(ST3DSMAPContext *this,double param_2,double param_3)
           uVar3 = this->field_02B8;
           if (local_30 == 0) {
             st::fn_006D1610((undefined8 *)(puVar4 + uVar3 * local_90 + local_7c),
-                         (undefined8 *)(puVar4 + uVar3 * local_68 + local_94),uVar3 * 2,
-                         (uVar3 - uVar5) * 2,st::machine_word_boundary_cast<int>(this->field_02BC - iVar6));
+                         (undefined8 *)(puVar4 + uVar3 * local_68 + local_94),
+                         (RecoveredSourceFamily_dibcopy *)(uVar3 * 2),(uVar3 - uVar5) * 2,
+                         st::machine_word_boundary_cast<int>(this->field_02BC - iVar6));
             local_8 = 0xffffffff;
             iVar6 = local_44;
           }

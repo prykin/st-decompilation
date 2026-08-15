@@ -45,6 +45,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
   int *piVar13;
   int *piVar14;
   char *pcVar15;
+  STMessage *pSVar16;
   char *local_1d90 [2];
   int local_1d88;
   _WIN32_FIND_DATAA local_3f4;
@@ -59,9 +60,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
   DWORD local_124;
   InternalExceptionFrame local_d0;
   InternalExceptionFrame local_8c;
-  undefined4 local_48 [4];
-  undefined4 local_38;
-  int local_34;
+  STMessage local_48;
   GameSystemC *local_28;
   AnonShape_00648C10_30A1BBFD *local_24;
   char **local_20;
@@ -296,12 +295,15 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
       }
       break;
     case 9:
-      if (DAT_008117bc != nullptr) {
-        memset(local_48, 0, 0x20); /* compiler bulk-zero initialization */
-        local_38 = 0x5dc5;
-        local_34 = piVar13[1];
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)*DAT_008117bc)(local_48);
+      if (g_aiBossClass_008117BC != nullptr) {
+        pSVar16 = &local_48;
+        for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
+          pSVar16->unknown_00 = 0;
+          pSVar16 = (STMessage *)&pSVar16->unknown_04;
+        }
+        local_48.id = MESS_AIBOSSCLASSTY_5DC5;
+        local_48.arg0 = *(STMessageArg *)(piVar13 + 1);
+        g_aiBossClass_008117BC->GetMessage(&local_48);
       }
     }
   }

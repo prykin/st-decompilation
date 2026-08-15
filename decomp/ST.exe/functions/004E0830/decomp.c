@@ -175,11 +175,12 @@ LAB_004e0a4f:
               param_1->field_04E0[3] = 1;
               param_1->field_04E0[5] = uVar12;
               param_1->field_04E0[6] = iVar8 + 1;
-              if (DAT_00800bcc == nullptr) {
+              if (g_tLOFake_00800BCC == nullptr) {
                 thunk_FUN_004cf430();
               }
-              thunk_FUN_004d0970(DAT_00800bcc,param_1->field_04E0[4],param_1->field_04E0[5],
-                                 param_1->field_04E0[6]);
+              TLOFakeTy::sub_004D0970
+                        (g_tLOFake_00800BCC,param_1->field_04E0[4],param_1->field_04E0[5],
+                         param_1->field_04E0[6]);
               param_1->field_04D0 = CASE_3;
               iVar8 = param_1->field_05B4;
               param_1->field_04E0[7] = param_1->field_05B0 * 0xc9 + 0xdc;
@@ -223,8 +224,9 @@ LAB_004e0a4f:
     break;
   case CASE_4:
     if ((int)param_1->field_04E0[0xc] < 0x1e) break;
-    thunk_FUN_004d0a80(DAT_00800bcc,param_1->field_04E0[4],param_1->field_04E0[5],
-                       param_1->field_04E0[6]);
+    TLOFakeTy::sub_004D0A80
+              (g_tLOFake_00800BCC,param_1->field_04E0[4],param_1->field_04E0[5],
+               param_1->field_04E0[6]);
     piVar22 = param_1->field_0018;
     uVar12 = param_1->field_04E0[6];
     uVar20 = param_1->field_04E0[5];

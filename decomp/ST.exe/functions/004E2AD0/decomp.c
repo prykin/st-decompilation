@@ -17,14 +17,11 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
   byte *pbVar1;
   int uVar2;
   undefined4 uVar3;
+  int iVar4;
   TLOBaseTyVTable *pTVar5;
+  STMessage *pSVar6;
   undefined2 arg_2;
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined2 local_10;
-  undefined2 local_e;
-  undefined2 local_c;
-  short local_a;
+  STMessage local_24;
 
   if (param_1 != 2) {
     return 0;
@@ -51,19 +48,22 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
   }
   (*pTVar5->vfunc_90)(this,4,arg_2);
 cf_common_exit_004E2B69:
-  if (DAT_008117bc == nullptr) {
+  if (g_aiBossClass_008117BC == nullptr) {
     return 0;
   }
   pbVar1 = this->field_0024;
-  memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-  local_e = this->field_0032;
-  local_10 = *(undefined2 *)&this->field_0024;
-  local_14 = 0x5de6;
-  local_c = (undefined2)param_2;
+  pSVar6 = &local_24;
+  for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+    pSVar6->unknown_00 = 0;
+    pSVar6 = (STMessage *)&pSVar6->unknown_04;
+  }
+  local_24.arg0.words.high = this->field_0032;
+  local_24.arg0.words.low = *(undefined2 *)&this->field_0024;
+  local_24.id = 0x5de6;
+  local_24.arg1.words.low = (word)param_2;
   uVar3 = thunk_FUN_004e60d0((int)pbVar1,param_2);
-  local_a = (short)uVar3 + 1;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)*DAT_008117bc)(local_24);
+  local_24.arg1.words.high = (short)uVar3 + 1;
+  g_aiBossClass_008117BC->GetMessage(&local_24);
   return 0;
 }
 

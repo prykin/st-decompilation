@@ -129,8 +129,9 @@ LAB_0054b366:
     sub_0054B700(this_00,(int)(short)local_c);
     pSVar7 = this_00->field_049A;
     if (pSVar7 == nullptr) {
-      if ((this_00->field_049E != 0) && (this_00->field_049E = 0, DAT_00801694 != nullptr)) {
-        thunk_FUN_0051fac0(DAT_00801694,nullptr,0,'\x01',0xfffffc18);
+      if ((this_00->field_049E != 0) &&
+         (this_00->field_049E = 0, g_helpString_00801694 != nullptr)) {
+        HelpStringTy::sub_0051FAC0(g_helpString_00801694,nullptr,0,'\x01',0xfffffc18);
       }
       if (this_00->field_04DE == '\0') goto LAB_0054b2a9;
       iVar6 = this_00->field_0038;
@@ -168,8 +169,8 @@ LAB_0054b366:
         else {
           wsprintfA((LPSTR)local_d8,"%s - \"%s\"",local_d8,(int)&local_28 + 1);
         }
-        if (DAT_00801694 != nullptr) {
-          thunk_FUN_0051fac0(DAT_00801694,(char *)local_d8,0,'\x01',0xfffffc18);
+        if (g_helpString_00801694 != nullptr) {
+          HelpStringTy::sub_0051FAC0(g_helpString_00801694,(char *)local_d8,0,'\x01',0xfffffc18);
         }
       }
       if (this_00->field_04DE == '\0') {

@@ -6,53 +6,54 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
 {
   undefined4 *element;
   int *element_00;
-  int iVar1;
+  AnonNested_AnonShape_00575460_06C413C6_0451_3D38181E *pAVar1;
   uint uVar2;
-  ST3DSMAPContext *pSVar3;
-  AnonShape_00575460_06C413C6 *pAVar4;
+  AnonNested_AnonShape_00575460_06C413C6_044D_A1003587 *pAVar3;
+  ST3DSMAPContext *pSVar4;
+  AnonShape_00575460_06C413C6 *pAVar5;
   DArrayTy *array;
-  int iVar5;
-  int *piVar6;
+  int iVar6;
+  int *piVar7;
   int local_8;
 
-  pAVar4 = param_1;
-  pSVar3 = g_sT3DSMAPContext_0080760C;
+  pAVar5 = param_1;
+  pSVar4 = g_sT3DSMAPContext_0080760C;
   if (g_sT3DSMAPContext_0080760C != nullptr) {
     ST3DSMAPContext::sub_006DBCF0(g_sT3DSMAPContext_0080760C);
-    Library::MSVCRT::FUN_0072e2b0((HoloTy *)pSVar3);
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)pSVar4);
     g_sT3DSMAPContext_0080760C = nullptr;
   }
   if (param_1 != nullptr) {
     array = Library::DKW::TBL::DArrayCreate(nullptr,0x14,4,0x14);
-    *(undefined4 *)(param_1->field_0451 + 4) = 0;
+    param_1->field_0451->field_0004 = 0;
     while( true ) {
-      iVar1 = param_1->field_0451;
-      uVar2 = *(uint *)(iVar1 + 4);
-      if (*(uint *)(iVar1 + 0xc) <= uVar2) break;
-      iVar5 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c);
-      *(uint *)(iVar1 + 4) = uVar2 + 1;
-      if (iVar5 == 0) break;
-      element = (undefined4 *)(iVar5 + 8);
+      pAVar1 = param_1->field_0451;
+      uVar2 = pAVar1->field_0004;
+      if ((uint)pAVar1->field_000C <= uVar2) break;
+      iVar6 = *(int *)&pAVar1->field_0x8 * uVar2 + pAVar1[1].field_000C;
+      pAVar1->field_0004 = uVar2 + 1;
+      if (iVar6 == 0) break;
+      element = (undefined4 *)(iVar6 + 8);
       Library::DKW::TBL::DArrayAppend(array,element);
       FUN_006a5e90((short *)*element);
     }
     DArrayDestroy((DArrayTy *)param_1->field_0451);
-    param_1->field_0451 = 0;
+    param_1->field_0451 = nullptr;
     local_8 = 0;
     if (0 < param_1->field_0455) {
       param_1 = (AnonShape_00575460_06C413C6 *)&param_1->field_0x459;
       do {
-        iVar1 = *(int *)param_1;
-        if ((iVar1 != 0) && (element_00 = (int *)(iVar1 + 0xc), *(int *)(iVar1 + 0xc) != 0)) {
+        iVar6 = *(int *)param_1;
+        if ((iVar6 != 0) && (element_00 = (int *)(iVar6 + 0xc), *(int *)(iVar6 + 0xc) != 0)) {
           array->iteratorIndex = 0;
           do {
             uVar2 = array->iteratorIndex;
             if (array->count <= uVar2) goto LAB_0057554f;
-            piVar6 = DArrayAt<int>(array, uVar2);
+            piVar7 = DArrayAt<int>(array, uVar2);
             array->iteratorIndex = uVar2 + 1;
-            if (piVar6 == nullptr) goto LAB_0057554f;
-          } while (*element_00 != *piVar6);
-          if (piVar6 == nullptr) {
+            if (piVar7 == nullptr) goto LAB_0057554f;
+          } while (*element_00 != *piVar7);
+          if (piVar7 == nullptr) {
 LAB_0057554f:
             Library::DKW::TBL::DArrayAppend(array,element_00);
             FreeAndNull(element_00);
@@ -61,22 +62,22 @@ LAB_0057554f:
         }
         local_8 = local_8 + 1;
         param_1 = (AnonShape_00575460_06C413C6 *)&param_1->field_0x4;
-      } while (local_8 < pAVar4->field_0455);
+      } while (local_8 < pAVar5->field_0455);
     }
     DArrayDestroy(array);
   }
-  *(undefined4 *)(*(int *)&pAVar4->field_0x44d + 4) = 0;
+  pAVar5->field_044D->field_0004 = 0;
   while( true ) {
-    iVar1 = *(int *)&pAVar4->field_0x44d;
-    uVar2 = *(uint *)(iVar1 + 4);
-    if (*(uint *)(iVar1 + 0xc) <= uVar2) break;
-    iVar5 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c);
-    *(uint *)(iVar1 + 4) = uVar2 + 1;
-    if (iVar5 == 0) break;
-    FUN_006a5e90(*(short **)(iVar5 + 4));
+    pAVar3 = pAVar5->field_044D;
+    uVar2 = pAVar3->field_0004;
+    if ((uint)pAVar3->field_000C <= uVar2) break;
+    iVar6 = *(int *)&pAVar3->field_0x8 * uVar2 + pAVar3[1].field_000C;
+    pAVar3->field_0004 = uVar2 + 1;
+    if (iVar6 == 0) break;
+    FUN_006a5e90(*(short **)(iVar6 + 4));
   }
-  DArrayDestroy(*(DArrayTy **)&pAVar4->field_0x44d);
-  *(undefined4 *)&pAVar4->field_0x44d = 0;
+  DArrayDestroy((DArrayTy *)pAVar5->field_044D);
+  pAVar5->field_044D = nullptr;
   return;
 }
 

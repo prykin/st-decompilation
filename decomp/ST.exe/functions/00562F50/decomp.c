@@ -149,7 +149,7 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
     _DAT_0080336c = 0x1e;
     _DAT_00803370 = 0xf;
     DAT_00803354 = 5;
-    DAT_008033b4 = nullptr;
+    PTR_008033b4 = nullptr;
     local_60[0] = nullptr;
     g_runtimeRecords_00803300 = nullptr;
     DAT_00803314 = 0;
@@ -203,9 +203,9 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
       uStackY_4ac = 0x5631b8;
       local_80 = aiStackY_fa8;
       uStackY_fac = 0x5631ca;
-      DAT_008032fc = auStackY_1028;
+      PTR_008032fc = auStackY_1028;
       uStackY_102c = 0x5631e1;
-      DAT_008033b0 = auStackY_1068;
+      PTR_008033b0 = auStackY_1068;
       uStackY_106c = 0x5631f5;
       local_160 = (int *)aAStackY_11f8;
       iStackY_11fc = 0x563214;
@@ -220,7 +220,7 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
       local_8 = 0xffffffff;
       memset(auStackY_1028, 0, 0x80); /* compiler bulk-zero initialization */
       iVar16 = 0;
-      DAT_008033b8 = auStackY_fe8;
+      PTR_008033b8 = auStackY_fe8;
       memset(auStackY_1068, 0, 0x40); /* compiler bulk-zero initialization */
       g_runtimeRecords_008032F4 = (RuntimeRecord_008032F4_0014 *)((int)aRStackY_19c8 + iVar20);
       uVar24 = 0;
@@ -253,16 +253,16 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
           }
           local_78 = local_78 + 1;
           pRVar6 = g_runtimeRecords_008032F8;
-          puVar23 = DAT_008032fc;
+          puVar23 = PTR_008032fc;
           pRVar26 = g_runtimeRecords_00803300;
           pRVar7 = g_runtimeRecords_00803310;
-          puVar8 = DAT_008033b0;
+          puVar8 = PTR_008033b0;
         } while (local_78 < param_5);
       }
-      DAT_008033b0 = puVar8;
+      PTR_008033b0 = puVar8;
       g_runtimeRecords_00803310 = pRVar7;
       g_runtimeRecords_00803300 = pRVar26;
-      DAT_008032fc = puVar23;
+      PTR_008032fc = puVar23;
       g_runtimeRecords_008032F8 = pRVar6;
       iVar20 = -1;
       iVar16 = -1;
@@ -717,18 +717,18 @@ LAB_005637bc:
       }
       *piVar4 = DAT_00803304;
       piVar4[1] = DAT_00803308;
-      DAT_008033b4 = FUN_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1);
+      PTR_008033b4 = FUN_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1);
       FreeAndNull(local_60);
       thunk_FUN_0055dee0(local_a0);
       iVar20 = 0;
       do {
         iVar16 = (int)(iVar20 * 0x168 + (iVar20 * 0x168 >> 0x1f & 0xfU)) >> 4;
         local_EAX_4198 = FUN_00561240(DAT_008032f0,DAT_008032ec,iVar16);
-        *(int **)((int)DAT_008032fc + iVar20 * 4) = local_EAX_4198;
+        *(int **)((int)PTR_008032fc + iVar20 * 4) = local_EAX_4198;
         piVar9 = FUN_00561240(DAT_00803374,DAT_00803378,iVar16);
-        *(int **)(DAT_008033b8 + iVar20 * 4) = piVar9;
+        *(int **)((int)PTR_008033b8 + iVar20 * 4) = piVar9;
         local_EAX_4250 = FUN_00561240(5,DAT_008032ec,iVar16);
-        *(int **)((int)DAT_008033b0 + iVar20 * 4) = local_EAX_4250;
+        *(int **)((int)PTR_008033b0 + iVar20 * 4) = local_EAX_4250;
         iVar20 = iVar20 + 1;
         iVar16 = DAT_0080339c;
       } while (iVar20 < 0x10);
@@ -754,7 +754,7 @@ LAB_005637bc:
             if (((-1 < iVar20) && (iVar20 < DAT_008033a4)) &&
                ((iVar16 = (char)local_a0[local_50 * 2 + 1] + DAT_00803308, -1 < iVar16 &&
                 ((iVar16 < DAT_008033a8 &&
-                 (0 < *(short *)((int)DAT_008033b4 + (iVar16 * DAT_008033a4 + iVar20) * 2))))))) {
+                 (0 < *(short *)((int)PTR_008033b4 + (iVar16 * DAT_008033a4 + iVar20) * 2))))))) {
               local_140 = 0;
               local_150 = 0;
               if (0 < g_runtimeRecordCount_0080338C) {
@@ -1012,17 +1012,17 @@ LAB_005637bc:
     local_70 = iVar14;
     iVar20 = local_70;
     FreeAndNull(local_6c);
-    FreeAndNull(&DAT_008033b4);
+    FreeAndNull(&PTR_008033b4);
     FreeAndNull(local_60);
     FreeAndNull(&DAT_00803380);
     iVar16 = 0;
     do {
-      FreeAndNull((undefined1 *)((int)DAT_008032fc + iVar16));
+      FreeAndNull((void *)(iVar16 + (int)PTR_008032fc));
       iVar16 = iVar16 + 4;
     } while (iVar16 < 0x80);
     iVar16 = 0;
     do {
-      FreeAndNull((undefined1 *)((int)DAT_008033b0 + iVar16));
+      FreeAndNull((void *)(iVar16 + (int)PTR_008033b0));
       iVar16 = iVar16 + 4;
     } while (iVar16 < 0x40);
     if (iVar20 != 0) {

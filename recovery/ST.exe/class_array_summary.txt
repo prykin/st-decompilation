@@ -1,5 +1,5 @@
 program=ST.exe
-functions_scanned=1539
+functions_scanned=1568
 candidate_arrays=85
 auto_apply=73
 bounded_index_arrays=6

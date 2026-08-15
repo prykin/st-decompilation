@@ -12,13 +12,13 @@ void __thiscall CursorClassTy::AddSysAcc(CursorClassTy *this)
   int iVar2;
   int iVar3;
   int iVar4;
-  AnonShape_00544100_1A02F945 *pAVar6;
+  AnonShape_00544100_ABD6BC59 *pAVar6;
   InternalExceptionFrame local_b8;
-  AnonShape_00544100_1A02F945 local_74;
+  AnonShape_00544100_ABD6BC59 local_74;
   CursorClassTy *local_28;
   undefined4 local_24 [4];
   undefined4 local_14;
-  AnonShape_00544100_1A02F945 *local_10;
+  AnonShape_00544100_ABD6BC59 *local_10;
   uint local_c;
 
   local_b8.previous = g_currentExceptionFrame;
@@ -29,7 +29,7 @@ void __thiscall CursorClassTy::AddSysAcc(CursorClassTy *this)
   if (iVar2 == 0) {
     memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
     iVar4 = 0;
-    local_10 = (AnonShape_00544100_1A02F945 *)local_28->field_0008;
+    local_10 = (AnonShape_00544100_ABD6BC59 *)local_28->field_0008;
     local_c = (-(uint)(DAT_0080734c != '\0') & 2) + 1;
     local_14 = 0x13;
     FUN_006e6000(local_28,3,1,local_24);
@@ -41,19 +41,19 @@ void __thiscall CursorClassTy::AddSysAcc(CursorClassTy *this)
     this_00->field_0038 = local_c >> 0x10;
     pAVar6 = &local_74;
     for (iVar4 = 0x13; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(undefined4 *)pAVar6 = 0;
-      pAVar6 = (AnonShape_00544100_1A02F945 *)&pAVar6->field_0004;
+      pAVar6->field_0000 = 0;
+      pAVar6 = (AnonShape_00544100_ABD6BC59 *)&pAVar6->field_0004;
     }
-    STPiece<20,4>(local_74) = this_00->field_0008;
+    local_74.field_0014 = this_00->field_0008;
     local_10 = &local_74;
-    STPiece<0,4>(local_74) = 8;
-    STPiece<24,4>(local_74) = 2;
-    STPiece<56,4>(local_74) = 2;
+    local_74.field_0000 = 8;
+    local_74.field_0018 = 2;
+    local_74.field_0038 = 2;
     local_14 = 0x10;
     local_74.field_0004 = 0x8000000;
     local_74.field_001C = 0xa110;
     local_74.field_003C = 0xa111;
-    STPiece<52,4>(local_74) = STPiece<20,4>(local_74);
+    local_74.field_0034 = local_74.field_0014;
     FUN_006e6000(this_00,3,1,local_24);
     local_74.field_0004 = 0x1000000;
     local_74.field_001C = 0xa112;

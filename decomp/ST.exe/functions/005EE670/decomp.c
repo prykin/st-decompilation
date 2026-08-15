@@ -7,7 +7,7 @@ void __fastcall FUN_005ee670(AnonShape_005EE670_EFEE702F *param_1)
   int iVar1;
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar1 = (**(code **)(*(int *)param_1 + 0x124))(2000);
+  iVar1 = (**(code **)(param_1->field_0000 + 0x124))(2000);
   if (iVar1 != 0) {
     thunk_FUN_005ec9f0(1);
     param_1->field_030E = 0xff;

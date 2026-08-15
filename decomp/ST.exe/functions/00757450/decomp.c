@@ -13,8 +13,7 @@ int FUN_00757450(AnonShape_00755E10_BD685653 *param_1,int param_2)
   short sVar1;
   int iVar2;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)(param_1->field_0008 + 0x34) + param_1->field_0010;
+  iVar2 = param_1->field_0008->field_0034 + param_1->field_0010;
   if (param_2 == -1) {
     *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) = 0;
     return 0;

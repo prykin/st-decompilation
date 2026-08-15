@@ -553,7 +553,7 @@ cf_continue_loop_0060B649:
           *(STFishC **)(puVar28 + -4) = pSVar29;
           *(undefined4 *)(puVar28 + -8) = 0x60b927;
           thunk_FUN_0060bdd0(param_1,*(undefined4 **)(puVar28 + -4));
-          if (DAT_00811798 != nullptr) {
+          if (g_sndUnderAttMeneg_00811798 != nullptr) {
             pvVar7 = pSVar29->vtable->slot_2C;
             *(undefined4 *)(puVar28 + -4) = 0x60b937;
             dVar19 = (*pvVar7)(pSVar29);
@@ -562,8 +562,9 @@ cf_continue_loop_0060B649:
             *(int *)(puVar28 + -0xc) = local_8c;
             *(int *)(puVar28 + -0x10) = local_7c;
             *(undefined4 *)(puVar28 + -0x14) = 0x60b952;
-            thunk_FUN_006211e0(DAT_00811798,*(int *)(puVar28 + -0x10),*(int *)(puVar28 + -0xc),
-                               *(uint *)(puVar28 + -8));
+            SndUnderAttMenegC::sub_006211E0
+                      (g_sndUnderAttMeneg_00811798,*(int *)(puVar28 + -0x10),
+                       *(int *)(puVar28 + -0xc),*(uint *)(puVar28 + -8));
           }
           local_84 = local_84 + 1;
           if (9 < local_84) {

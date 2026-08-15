@@ -449,76 +449,94 @@ undefined4 __fastcall st::fn_00580DC0(STJellyGunC *param_1)
 }
 
 // 00580F50 FUN_00580f50
-#line 4 "decomp/ST.exe/functions/00580F50/decomp.c"
+#line 1 "decomp/ST.exe/functions/00580F50/decomp.c"
+
 void st::fn_00580F50(void)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-    local_14 = 0x5ddf;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_24;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
+    local_24.id = 0x5ddf;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;
 }
 
 // 00580FA0 FUN_00580fa0
-#line 4 "decomp/ST.exe/functions/00580FA0/decomp.c"
+#line 1 "decomp/ST.exe/functions/00580FA0/decomp.c"
+
 void st::fn_00580FA0(void)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-    local_14 = 0x5de0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_24;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
+    local_24.id = 0x5de0;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;
 }
 
 // 00580FF0 FUN_00580ff0
-#line 4 "decomp/ST.exe/functions/00580FF0/decomp.c"
+#line 1 "decomp/ST.exe/functions/00580FF0/decomp.c"
+
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 005804F0 -> 00580FF0 @ 0058053D; FUN_005804f0 parameter param_2 */
 
-void st::fn_00580FF0(ushort param_1,undefined2 param_2)
+void st::fn_00580FF0(ushort param_1,word param_2)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  ushort local_c;
-  undefined2 local_a;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-    local_a = param_2;
-    local_c = param_1;
-    local_14 = 0x5de1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_24;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
+    local_24.arg1.words.high = param_2;
+    local_24.arg1.words.low = param_1;
+    local_24.id = 0x5de1;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;
 }
 
 // 00581060 FUN_00581060
-#line 4 "decomp/ST.exe/functions/00581060/decomp.c"
+#line 1 "decomp/ST.exe/functions/00581060/decomp.c"
+
 void st::fn_00581060(void)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
-  if (DAT_008117bc != nullptr) {
-    memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-    local_14 = 0x5de2;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*DAT_008117bc)(local_24);
+  if (g_aiBossClass_008117BC != nullptr) {
+    pSVar2 = &local_24;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar2->unknown_00 = 0;
+      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+    }
+    local_24.id = 0x5de2;
+    g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;
 }
@@ -1245,7 +1263,7 @@ void __fastcall st::fn_00584B10(AnonShape_00584B10_33997544 *param_1)
   st::fn_00405240((STT3DSprC *)this,10,g_playSystem_00802A38->field_00E4);
   st::fn_00405240((STT3DSprC *)this,8,g_playSystem_00802A38->field_00E4);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*(int *)param_1 + 0xd8))();
+  (**(code **)(param_1->field_0000 + 0xd8))();
   iVar2 = st::fn_00404183((STT3DSprC *)this,9,PTR_00806764,st::mutable_c_string("expl_bbt0"),CASE_1D);
   if (iVar2 == 0) {
     st::fn_00402761((STT3DSprC *)this,9);
@@ -2869,7 +2887,7 @@ undefined4 __fastcall st::fn_00589740(AnonShape_00589740_397F9B27 *param_1)
     st::fn_004044EE((STT3DSprC *)this,PTR_008032b8,0x10);
     st::fn_00405240((STT3DSprC *)this,10,g_playSystem_00802A38->field_00E4);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)param_1 + 0xd8))();
+    (**(code **)(param_1->field_0000 + 0xd8))();
     iVar1 = st::fn_00404183((STT3DSprC *)this,9,PTR_00806764,st::mutable_c_string("bulb_n4"),CASE_1D);
     if (iVar1 == 0) {
       st::fn_00402761((STT3DSprC *)this,9);
@@ -3203,7 +3221,7 @@ void __fastcall st::fn_0058A9E0(AnonShape_0058A9E0_DB5690D0 *param_1)
   st::fn_004030BC((STT3DSprC *)puVar1,'\x0e');
   param_1->field_024D = st::machine_word_boundary_cast<undefined4>(param_1->field_024D + 1);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*(int *)param_1 + 0xd8))();
+  (**(code **)(param_1->field_0000 + 0xd8))();
   return;
 }
 
@@ -3549,7 +3567,7 @@ LAB_0058c38c:
 cf_common_exit_0058C391:
   st::fn_004030BC((STT3DSprC *)&param_1->field_0x1d5,'\x0e');
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*(int *)param_1 + 0xd8))();
+  (**(code **)(param_1->field_0000 + 0xd8))();
   return;
 }
 

@@ -133,10 +133,11 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
         this->field_0742 = 1;
         this->field_063F = 0;
         this->field_0649 = 0;
-        if (DAT_00800bcc == nullptr) {
+        if (g_tLOFake_00800BCC == nullptr) {
           thunk_FUN_004d0f00();
         }
-        thunk_FUN_004d0970(DAT_00800bcc,(int)*psVar3,(int)*(short *)&this->field_0x659,(int)*psVar2);
+        TLOFakeTy::sub_004D0970
+                  (g_tLOFake_00800BCC,(int)*psVar3,(int)*(short *)&this->field_0x659,(int)*psVar2);
         *(undefined4 *)&this->field_0x663 = 5;
         *(undefined4 *)&this->field_0x667 = 0;
         return 2;
@@ -424,8 +425,9 @@ LAB_00479ba6:
                              CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
                                       (short)this->field_0018));
                 }
-                thunk_FUN_004d0a80(DAT_00800bcc,(int)this->field_0657,
-                                   (int)*(short *)&this->field_0x659,(int)this->field_065B);
+                TLOFakeTy::sub_004D0A80
+                          (g_tLOFake_00800BCC,(int)this->field_0657,
+                           (int)*(short *)&this->field_0x659,(int)this->field_065B);
                 thunk_FUN_00417a20(this,this->field_0657,*(short *)&this->field_0x659,
                                    this->field_065B,1);
                 sVar8 = (this->field_0643 + 1) * 0xc9;
@@ -535,16 +537,19 @@ LAB_00479ba6:
                   if (iVar11 < 0) {
                     this->field_071E = 0;
                   }
-                  if ((this->field_064D != 0) && (DAT_00811798 != nullptr)) {
-                    thunk_FUN_00620670(DAT_00811798,(int)this->field_0047,(int)this->field_0049,
-                                       this->field_0024);
+                  if ((this->field_064D != 0) &&
+                     (g_sndUnderAttMeneg_00811798 != nullptr)) {
+                    SndUnderAttMenegC::sub_00620670
+                              (g_sndUnderAttMeneg_00811798,(int)this->field_0047,
+                               (int)this->field_0049,this->field_0024);
                   }
                   thunk_FUN_004ea6e0(this->field_0024,(int)this->field_0657,
                                      (int)*(short *)&this->field_0x659,(int)this->field_065B);
                 }
                 sub_0041C5A0(this);
-                thunk_FUN_004d0a80(DAT_00800bcc,(int)this->field_0657,
-                                   (int)*(short *)&this->field_0x659,(int)this->field_065B);
+                TLOFakeTy::sub_004D0A80
+                          (g_tLOFake_00800BCC,(int)this->field_0657,
+                           (int)*(short *)&this->field_0x659,(int)this->field_065B);
                 thunk_FUN_00417a20(this,this->field_0657,*(short *)&this->field_0x659,
                                    this->field_065B,1);
                 local_20 = (int)this->field_0041;
@@ -972,8 +977,9 @@ LAB_0047a385:
               thunk_FUN_004e9650(local_8,(undefined4 *)&this->field_0657,
                                  (undefined4 *)&this->field_0x659,(undefined4 *)&this->field_065B);
               thunk_FUN_004e96c0(local_8,(int *)this->field_0018);
-              thunk_FUN_004d0970(DAT_00800bcc,(int)this->field_0657,
-                                 (int)*(short *)&this->field_0x659,(int)this->field_065B);
+              TLOFakeTy::sub_004D0970
+                        (g_tLOFake_00800BCC,(int)this->field_0657,(int)*(short *)&this->field_0x659,
+                         (int)this->field_065B);
               *(undefined4 *)&this->field_0x667 = 0;
               *(uint *)&this->field_0x663 = (this->field_0635 != 1) + 4;
               goto cf_common_exit_0047A369;

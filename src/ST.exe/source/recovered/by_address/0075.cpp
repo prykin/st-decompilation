@@ -543,30 +543,26 @@ undefined4 st::fn_00750F10(void)
 void st::fn_00750F20(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  int *piVar1;
-  int iVar2;
+  AnonNested_AnonShape_00750F20_F8C16F98_000C_F63CABFC *pAVar1;
+  int *piVar2;
+  int iVar3;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)(param_1->field_0008 + 0x50);
-  param_1->field_000C = iVar2;
-  *(undefined4 *)(iVar2 + 0xc) = param_2;
-  *(undefined4 *)(param_1->field_000C + 0x10) = param_3;
-  *(undefined4 *)(param_1->field_000C + 0x40) = 0;
-  *(undefined4 *)(param_1->field_000C + 0x44) = 0xffffffff;
-  *(undefined4 *)(param_1->field_000C + 0x1c) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  param_1->field_0010 = *(undefined4 *)(param_1->field_000C + 0x24);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  piVar1 = (int *)(*(int *)(param_1->field_0008 + 0x34) + *(int *)(param_1->field_000C + 0x24) + 4);
-  iVar2 = *piVar1;
-  while (iVar2 != -1) {
-    *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = st::machine_word_boundary_cast<int>(st::fn_00753B80(param_1,*piVar1,*(int *)(param_1->field_000C + 0x1c)));
-    piVar1 = (int *)(iVar2 + 4);
-    *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) =
-         0xffffffff;
-    iVar2 = *piVar1;
+  pAVar1 = (AnonNested_AnonShape_00750F20_F8C16F98_000C_F63CABFC *)param_1->field_0008->field_0050;
+  param_1->field_000C = pAVar1;
+  pAVar1->field_000C = param_2;
+  param_1->field_000C->field_0010 = param_3;
+  param_1->field_000C->field_0040 = 0;
+  param_1->field_000C->field_0044 = 0xffffffff;
+  param_1->field_000C->field_001C = nullptr;
+  param_1->field_0010 = param_1->field_000C->field_0024;
+  piVar2 = (int *)(param_1->field_0008->field_0034 + param_1->field_000C->field_0024 + 4);
+  iVar3 = *piVar2;
+  while (iVar3 != -1) {
+    param_1->field_000C->field_001C = (uint *)((int)param_1->field_000C->field_001C + 1);
+    iVar3 = st::machine_word_boundary_cast<int>(st::fn_00753B80(param_1,*piVar2,(int)param_1->field_000C->field_001C));
+    piVar2 = (int *)(iVar3 + 4);
+    (&param_1->field_000C->field_0044)[(int)param_1->field_000C->field_001C * 2] = 0xffffffff;
+    iVar3 = *piVar2;
   }
   return;
 }
@@ -576,37 +572,35 @@ void st::fn_00750F20(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_2,und
 void st::fn_00750FB0(AnonShape_00750FB0_15A3AC3E *param_1,undefined4 param_2,undefined4 param_3)
 
 {
+  AnonNested_AnonShape_00750FB0_15A3AC3E_000C_71DE54C3 *pAVar1;
   int iVar2;
   int local_EAX_64;
   int iVar1;
   int local_EAX_125;
   int iVar3;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar3 = *(int *)(param_1->field_0008 + 0x50);
-  param_1->field_000C = iVar3;
-  *(undefined4 *)(iVar3 + 0xc) = param_2;
-  *(undefined4 *)(param_1->field_000C + 0x10) = param_3;
-  *(undefined4 *)(param_1->field_000C + 0x40) = 0;
-  *(undefined4 *)(param_1->field_000C + 0x1c) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar3 = *(int *)(param_1->field_0008 + 0x34) + *(int *)(param_1->field_000C + 0x24);
+  pAVar1 = (AnonNested_AnonShape_00750FB0_15A3AC3E_000C_71DE54C3 *)param_1->field_0008->field_0050;
+  param_1->field_000C = pAVar1;
+  pAVar1->field_000C = param_2;
+  param_1->field_000C->field_0010 = param_3;
+  param_1->field_000C->field_0040 = 0;
+  param_1->field_000C->field_001C = nullptr;
+  iVar3 = param_1->field_0008->field_0034 + param_1->field_000C->field_0024;
   local_EAX_64 = st::fn_00753C80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar3 + 8));
   if (-1 < local_EAX_64) {
     iVar1 = st::fn_00753C80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar3 + 8));
     iVar2 = *(int *)(iVar1 + 0x10 + iVar3);
     while (iVar2 != -1) {
-      *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      param_1->field_000C->field_001C = (uint *)((int)param_1->field_000C->field_001C + 1);
       iVar3 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,iVar2,
-                           *(int *)(param_1->field_000C + 0x1c)));
+                           (int)param_1->field_000C->field_001C));
       local_EAX_125 =
            st::fn_00753C80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar3 + 8));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar2 = *(int *)(local_EAX_125 + 0x10 + iVar3);
     }
   }
-  *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) =
+  *(int *)(&param_1->field_000C[1].field_0x0 + (int)param_1->field_000C->field_001C * 8) =
        (int)*(short *)(iVar3 + 8);
   return;
 }
@@ -2103,24 +2097,25 @@ void st::fn_00753B00(LPCSTR param_1,undefined4 *param_2,undefined2 param_3)
 int st::fn_00753B40(AnonShape_00753C80_4C8E695D *param_1)
 
 {
-  int iVar1;
-  AnonShape_00753C80_4C8E695D *pAVar2;
-  int iVar3;
+  AnonNested_AnonShape_00753C80_4C8E695D_0008_9237F694 *pAVar1;
+  int iVar2;
+  AnonShape_00753C80_4C8E695D *pAVar3;
+  int iVar4;
 
-  pAVar2 = param_1;
-  iVar3 = param_1->field_0008;
-  iVar1 = *(int *)(iVar3 + 0x1c);
-  if (iVar1 == -1) {
-    iVar3 = *(int *)(iVar3 + 0x18);
+  pAVar3 = param_1;
+  pAVar1 = param_1->field_0008;
+  iVar2 = pAVar1->field_001C;
+  if (iVar2 == -1) {
+    iVar4 = *(int *)&pAVar1->field_0x18;
   }
   else {
-    iVar3 = st::fn_006D4A40(iVar3,iVar1,st::pointer_boundary_cast<undefined4 *>(&param_1));
-    if (iVar3 == 0) {
-      *(AnonShape_00753C80_4C8E695D **)(pAVar2->field_0008 + 0x1c) = param_1;
-      return iVar1;
+    iVar4 = st::fn_006D4A40((int)pAVar1,iVar2,st::pointer_boundary_cast<undefined4 *>(&param_1));
+    if (iVar4 == 0) {
+      pAVar3->field_0008->field_001C = st::machine_word_boundary_cast<undefined4>(param_1);
+      return iVar2;
     }
   }
-  return iVar3;
+  return iVar4;
 }
 
 // 00753B80 FUN_00753b80
@@ -2139,13 +2134,11 @@ undefined4 * st::fn_00753B80(AnonShape_00750F20_F8C16F98 *param_1,undefined4 par
   undefined4 *puVar1;
 
   if (param_3 == 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    param_2 = *(undefined4 *)(param_1->field_000C + 0x24);
+    param_2 = param_1->field_000C->field_0024;
   }
   param_1->field_0010 = param_2;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  puVar1 = (undefined4 *)(*(int *)(param_1->field_0008 + 0x34) + param_1->field_0010);
-  *(undefined4 *)(param_1->field_000C + 0x40 + param_3 * 8) = *puVar1;
+  puVar1 = (undefined4 *)(param_1->field_0008->field_0034 + param_1->field_0010);
+  (&param_1->field_000C->field_0040)[param_3 * 2] = *puVar1;
   return puVar1;
 }
 
@@ -2162,17 +2155,15 @@ int st::fn_00753C80(AnonShape_00753C80_4C8E695D *param_1,int param_2)
 
   iVar5 = -1;
   iVar2 = param_1->field_0010;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar3 = *(int *)(param_1->field_0008 + 0x34);
+  iVar3 = param_1->field_0008->field_0034;
   iVar4 = 0;
   if (0 < param_2) {
     do {
       iVar5 = iVar4;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      sVar1 = *(short *)(param_1->field_000C + 0x34);
+      sVar1 = param_1->field_000C->field_0034;
       if (sVar1 == 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar4 = (**(code **)(param_1->field_000C + 8))(iVar5 + 0x18 + iVar3 + iVar2);
+        iVar4 = (**(code **)&param_1->field_000C->field_0x8)(iVar5 + 0x18 + iVar3 + iVar2);
       }
       else {
         iVar4 = (int)sVar1;
@@ -2180,7 +2171,7 @@ int st::fn_00753C80(AnonShape_00753C80_4C8E695D *param_1,int param_2)
       iVar4 = iVar5 + 8 + iVar4;
     } while (iVar4 < param_2);
   }
-  *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) = iVar5;
+  *(int *)(&param_1->field_000C[1].field_0xe + (int)param_1->field_000C->field_001C * 8) = iVar5;
   return iVar5;
 }
 
@@ -2738,9 +2729,8 @@ st::fn_00754390(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,undefined4 
 
   iVar1 = st::fn_00755970((AnonShape_00755970_4FB144E0 *)param_1,param_2,1);
   if (0 < iVar1) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar3 = *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) +
-            *(int *)(param_1->field_0008 + 0x34);
+    iVar3 = *(int *)(&param_1->field_000C[1].field_0xe + (int)param_1->field_000C->field_001C * 8) +
+            param_1->field_0008->field_0034;
     iVar2 = param_1->field_0010;
     *param_4 = *(undefined4 *)(iVar3 + 0x10 + iVar2);
     *param_3 = *(undefined4 *)(iVar3 + iVar2 + 0x14);
@@ -2756,26 +2746,26 @@ st::fn_007543F0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefin
 
 {
   short sVar1;
-  int iVar2;
+  AnonNested_AnonShape_007543F0_E9DD5DAA_000C_D54F7079 *pAVar2;
   int iVar3;
   int iVar4;
+  uint *puVar4;
   int iVar5;
   uint uVar6;
   byte *puVar8;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  param_1->field_000C = *(undefined4 *)(param_1->field_0008 + 0x50);
+  param_1->field_000C =
+       *(AnonNested_AnonShape_007543F0_E9DD5DAA_000C_D54F7079 **)(param_1->field_0008 + 0x50);
   do {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar3 = *(int *)(param_1->field_000C + 0x1c);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    puVar4 = param_1->field_000C->field_001C;
     iVar3 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
-                         *(undefined4 *)(param_1->field_000C + 0x40 + iVar3 * 8),iVar3));
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                         *(undefined4 *)(&param_1->field_000C[2].field_0x0 + (int)puVar4 * 8),
+                         (int)puVar4));
     st::fn_007561D0((AnonShape_00753C80_4C8E695D *)param_1,
-                 *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8));
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar5 = *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8);
+                 *(int *)(&param_1->field_000C[2].field_0x4 +
+                         (int)param_1->field_000C->field_001C * 8));
+    iVar5 = *(int *)(&param_1->field_000C[2].field_0x4 + (int)param_1->field_000C->field_001C * 8);
     if (iVar5 == -1) {
       iVar5 = *(int *)(iVar3 + 4);
     }
@@ -2783,41 +2773,41 @@ st::fn_007543F0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefin
       iVar5 = *(int *)(iVar5 + 0x10 + iVar3);
     }
     while (iVar5 != -1) {
-      *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      param_1->field_000C->field_001C = (uint *)((int)param_1->field_000C->field_001C + 1);
       iVar3 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,iVar5,
-                           *(int *)(param_1->field_000C + 0x1c)));
+                           (int)param_1->field_000C->field_001C));
       iVar4 = st::fn_00753C80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar3 + 8));
       iVar5 = *(int *)(iVar4 + 0x10 + iVar3);
     }
-    iVar2 = param_1->field_000C;
-    iVar5 = *(int *)(iVar2 + 0x1c);
-    if (*(int *)(iVar2 + 0x44 + iVar5 * 8) == -1) {
+    pAVar2 = param_1->field_000C;
+    puVar4 = pAVar2->field_001C;
+    if (*(int *)(&pAVar2[2].field_0x4 + (int)puVar4 * 8) == -1) {
       do {
-        if (iVar5 == 0) {
+        if (puVar4 == nullptr) {
           st::fn_00750F20((AnonShape_00750F20_F8C16F98 *)param_1,0,0);
           return 0xfffffffc;
         }
-        *(int *)(iVar2 + 0x1c) = iVar5 + -1;
-        iVar2 = param_1->field_000C;
-        iVar5 = *(int *)(iVar2 + 0x1c);
-      } while (*(int *)(iVar2 + 0x44 + iVar5 * 8) == -1);
+        pAVar2->field_001C = (uint *)((int)puVar4 + -1);
+        pAVar2 = param_1->field_000C;
+        puVar4 = pAVar2->field_001C;
+      } while (*(int *)(&pAVar2[2].field_0x4 + (int)puVar4 * 8) == -1);
       iVar3 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
-                           *(undefined4 *)(iVar2 + 0x40 + *(int *)(iVar2 + 0x1c) * 8),
-                           *(int *)(iVar2 + 0x1c)));
+                           *(undefined4 *)(&pAVar2[2].field_0x0 + (int)pAVar2->field_001C * 8),
+                           (int)pAVar2->field_001C));
     }
-    iVar5 = param_1->field_000C;
-    iVar3 = *(int *)(iVar5 + 0x44 + *(int *)(iVar5 + 0x1c) * 8) + 0x10 + iVar3;
+    pAVar2 = param_1->field_000C;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    iVar3 = *(int *)(&pAVar2[2].field_0x4 + (int)pAVar2->field_001C * 8) + 0x10 + iVar3;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  } while ((*(code **)(iVar5 + 0xc) != nullptr) &&
-          (iVar5 = (**(code **)(iVar5 + 0xc))(iVar3 + 8,*(undefined4 *)(iVar5 + 0x10)), iVar5 != 0));
+  } while (((code *)pAVar2->field_000C != nullptr) &&
+          (iVar5 = (*(code *)pAVar2->field_000C)(iVar3 + 8,*(undefined4 *)&pAVar2->field_0x10),
+          iVar5 != 0));
   *param_3 = *(undefined4 *)(iVar3 + 4);
   if (param_2 != nullptr) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    sVar1 = *(short *)(param_1->field_000C + 0x34);
+    sVar1 = *(short *)&param_1->field_000C[1].field_0x14;
     if (sVar1 == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      uVar6 = (**(code **)(param_1->field_000C + 8))(iVar3 + 8);
+      uVar6 = (**(code **)&param_1->field_000C->field_0x8)(iVar3 + 8);
     }
     else {
       uVar6 = (uint)sVar1;
@@ -2891,7 +2881,7 @@ void st::fn_00754B80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int pa
   byte *pbVar1;
   byte *pbVar2;
   byte *pbVar3;
-  uint *puVar4;
+  AnonNested_AnonShape_00754B80_75BFDB7A_0080_4681841F *pAVar4;
   int iVar5;
   AnonShape_00754B80_75BFDB7A *pAVar6;
   uint uVar7;
@@ -2965,7 +2955,7 @@ void st::fn_00754B80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int pa
       iVar13 = 0;
       if (0 < param_1->field_007C) {
         local_10 = local_220;
-        iVar5 = *(int *)(param_1->field_0080 + 8);
+        iVar5 = param_1->field_0080->field_0008;
         do {
           iVar8 = (uint)*(byte *)(iVar5 + iVar13) << 8;
           local_18 = iVar8 >> (bVar9 & 0x1f) & local_14;
@@ -2981,12 +2971,12 @@ void st::fn_00754B80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int pa
       iVar13 = 0;
       if (0 < param_1->field_007C) {
         local_8 = local_220;
-        puVar4 = (uint *)param_1->field_0080;
-        local_18 = *puVar4;
-        local_10 = (ushort *)puVar4[1];
-        uVar7 = puVar4[2];
+        pAVar4 = param_1->field_0080;
+        local_18 = pAVar4->field_0000;
+        local_10 = (ushort *)pAVar4->field_0004;
+        iVar5 = pAVar4->field_0008;
         do {
-          pbVar1 = (byte *)(uVar7 + iVar13);
+          pbVar1 = (byte *)(iVar5 + iVar13);
           pbVar2 = (byte *)((int)local_10 + iVar13);
           pbVar3 = (byte *)(local_18 + iVar13);
           iVar13 = iVar13 + 1;
@@ -3089,7 +3079,8 @@ undefined4 st::fn_00754F40(LPCSTR param_1)
 uint st::fn_00754FD0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,ushort param_3)
 
 {
-  int iVar1;
+  AnonNested_AnonShape_00754FD0_6B521B56_000C_1591C729 *pAVar1;
+  AnonNested_AnonShape_00754FD0_6B521B56_0008_2A163446 *pAVar2;
   int iVar3;
   int iVar2;
   uint uVar4;
@@ -3097,33 +3088,28 @@ uint st::fn_00754FD0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,ush
   undefined4 *puVar6;
   byte *puVar7;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar1 = *(int *)(param_1->field_0008 + 0x50);
-  param_1->field_000C = iVar1;
-  *(undefined4 *)(iVar1 + 0x18) = param_2;
-  *(undefined2 *)(param_1->field_000C + 0x2a) = 1;
-  *(ushort *)(param_1->field_000C + 0x2e) = param_3;
-  *(undefined4 *)(param_1->field_000C + 0x14) = 1;
-  *(undefined4 *)(param_1->field_000C + 0x1c) = 0;
-  *(undefined4 *)(param_1->field_000C + 0x40) = 0;
-  *(undefined4 *)(param_1->field_000C + 0x44) = 0xffffffff;
-  st::fn_00730C40((undefined1 *)(param_1->field_000C + 0x36),0x7f2ce8);
+  pAVar1 = (AnonNested_AnonShape_00754FD0_6B521B56_000C_1591C729 *)param_1->field_0008->field_0050;
+  param_1->field_000C = pAVar1;
+  pAVar1->field_0018 = param_2;
+  param_1->field_000C->field_002A = 1;
+  param_1->field_000C->field_002E = param_3;
+  param_1->field_000C->field_0014 = 1;
+  param_1->field_000C->field_001C = 0;
+  param_1->field_000C->field_0040 = 0;
+  param_1->field_000C->field_0044 = 0xffffffff;
+  st::fn_00730C40(st::pointer_boundary_cast<undefined1 *>(&param_1->field_000C->field_0x36),0x7f2ce8);
   iVar2 = st::fn_00753B40((AnonShape_00753C80_4C8E695D *)param_1);
-  *(int *)(param_1->field_000C + 0x24) = iVar2;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar4 = *(uint *)(param_1->field_000C + 0x24);
+  param_1->field_000C->field_0024 = iVar2;
+  uVar4 = param_1->field_000C->field_0024;
   if (0 < (int)uVar4) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar4 = st::fn_006D4C50
-                      (param_1->field_0008,uVar4,(int)*(short *)(param_1->field_0008 + 0x16));
+                      ((int)param_1->field_0008,uVar4,(int)(short)param_1->field_0008->field_0016);
     if (uVar4 == 0) {
-      iVar1 = param_1->field_0008;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar3 = *(int *)(param_1->field_000C + 0x24);
-      *(uint *)(iVar1 + 8) = *(uint *)(iVar1 + 8) | 0x10;
-      puVar6 = (undefined4 *)(*(int *)(iVar1 + 0x34) + iVar3);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar5 = (uint)*(short *)(param_1->field_0008 + 0x16);
+      pAVar2 = param_1->field_0008;
+      iVar3 = param_1->field_000C->field_0024;
+      *(uint *)&pAVar2->field_0x8 = *(uint *)&pAVar2->field_0x8 | 0x10;
+      puVar6 = (undefined4 *)(*(int *)&pAVar2->field_0x34 + iVar3);
+      uVar5 = (uint)(short)param_1->field_0008->field_0016;
       puVar7 = (byte *)(puVar6);
       memset(puVar7, 0, uVar5); /* compiler bulk-zero initialization */
       *puVar6 = 0xffffffff;
@@ -3524,7 +3510,7 @@ LAB_0075580a:
 uint st::fn_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3)
 
 {
-  short *psVar1;
+  undefined1 *puVar1;
   short sVar2;
   uint uVar3;
   DWORD uVar4;
@@ -3539,35 +3525,31 @@ uint st::fn_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int para
   uint *puVar12;
 
   if (param_3 < 0) {
-    puVar8 = (byte *)(param_1->field_000C + 0x40);
-    puVar10 = (byte *)(param_1->field_000C + 0x48);
+    puVar8 = (byte *)&param_1->field_000C[1].field_0xa;
+    puVar10 = (byte *)&param_1->field_000C[1].field_0x12;
     memmove(puVar10, puVar8, 0x38); /* compiler REP MOVS byte copy */
     uVar3 = st::fn_00753B40(param_1);
     if ((int)uVar3 < 0) {
       return uVar3;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar4 = st::fn_006D4C50
-                      (param_1->field_0008,uVar3,(int)*(short *)(param_1->field_0008 + 0x16));
+                      ((int)param_1->field_0008,uVar3,
+                       (int)*(short *)&param_1->field_0008->field_0x16);
     if (uVar4 == 0) {
-      *(uint *)(param_1->field_0008 + 8) = *(uint *)(param_1->field_0008 + 8) | 0x10;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar4 = *(int *)(param_1->field_0008 + 0x34);
+      *(uint *)&param_1->field_0008->field_0x8 = *(uint *)&param_1->field_0008->field_0x8 | 0x10;
+      iVar4 = param_1->field_0008->field_0034;
       puVar12 = (uint *)(iVar4 + uVar3);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      puVar7 = (uint *)(*(int *)(param_1->field_000C + 0x24) + iVar4);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar5 = (uint)*(short *)(param_1->field_0008 + 0x16);
+      puVar7 = (uint *)(*(int *)&param_1->field_000C->field_0x24 + iVar4);
+      uVar5 = (uint)*(short *)&param_1->field_0008->field_0x16;
       puVar9 = puVar7;
       puVar11 = puVar12;
       memmove(puVar11, puVar9, uVar5); /* compiler REP MOVS byte copy */
       uVar5 = 0;
       *puVar12 = uVar3;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      sVar2 = *(short *)(param_1->field_000C + 0x34);
+      sVar2 = param_1->field_000C->field_0034;
       if (sVar2 == 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar4 = (**(code **)(param_1->field_000C + 8))(param_2 + 2);
+        iVar4 = (**(code **)&param_1->field_000C->field_0x8)(param_2 + 2);
       }
       else {
         iVar4 = (int)sVar2;
@@ -3577,11 +3559,11 @@ uint st::fn_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int para
       memmove(puVar12, param_2, uVar6); /* compiler REP MOVS byte copy */
       *(short *)(puVar7 + 2) = (short)uVar6;
       puVar7[1] = uVar3;
-      *(undefined4 *)(param_1->field_000C + 0x1c) = 0;
-      *(undefined4 *)(param_1->field_000C + 0x44) = 0;
-      psVar1 = (short *)(param_1->field_000C + 0x2a);
-      *psVar1 = *psVar1 + 1;
-      *(undefined4 *)(param_1->field_000C + 0x14) = 1;
+      param_1->field_000C->field_001C = nullptr;
+      *(undefined4 *)&param_1->field_000C[1].field_0xe = 0;
+      puVar1 = st::pointer_boundary_cast<undefined1 *>(&param_1->field_000C->field_0x2a);
+      *(short *)puVar1 = *(short *)puVar1 + 1;
+      *(undefined4 *)&param_1->field_000C->field_0x14 = 1;
       return 0;
     }
     if (0 < (int)uVar4) {
@@ -3589,9 +3571,8 @@ uint st::fn_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int para
     }
   }
   else {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    st::fn_007574C0(param_1,*(int *)(param_1->field_0008 + 0x34) + param_1->field_0010,param_2,
-                 *(int *)(param_1->field_000C + 0x44 + param_3 * 8));
+    st::fn_007574C0(param_1,param_1->field_0008->field_0034 + param_1->field_0010,param_2,
+                 *(int *)(&param_1->field_000C[1].field_0xe + param_3 * 8));
     uVar4 = 0;
   }
   return uVar4;
@@ -3611,27 +3592,27 @@ int st::fn_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int par
   int iVar7;
   AnonShape_00755970_4FB144E0 *pAVar8;
   int local_c;
-  int local_8;
+  uint *local_8;
 
   pAVar2 = param_1;
   iVar7 = 0;
-  local_8 = 0;
+  local_8 = nullptr;
   local_c = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  param_1->field_000C = *(undefined4 *)(param_1->field_0008 + 0x50);
+  param_1->field_000C =
+       *(AnonNested_AnonShape_00755970_4FB144E0_000C_11C2AAE5 **)(param_1->field_0008 + 0x50);
   do {
-    *(int *)(pAVar2->field_000C + 0x1c) = local_8;
-    iVar7 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)pAVar2,iVar7,local_8));
+    pAVar2->field_000C->field_001C = local_8;
+    iVar7 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)pAVar2,iVar7,(int)local_8));
     param_1 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
     pAVar6 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
     pAVar3 = nullptr;
     if (0 < *(short *)(iVar7 + 8)) {
       do {
         pAVar8 = pAVar3;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (*(int *)(pAVar2->field_000C + 0x30) == 0xff) {
+        if (pAVar2->field_000C->field_0030 == 0xff) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          uVar4 = (**(code **)(pAVar2->field_000C + 4))(param_2);
+          uVar4 = (**(code **)&pAVar2->field_000C->field_0x4)(param_2);
         }
         else {
           uVar4 = st::fn_007575B0((AnonShape_007575B0_A94973CA *)pAVar2,param_2,
@@ -3644,25 +3625,22 @@ int st::fn_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int par
           local_c = 1;
           break;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        sVar1 = *(short *)(pAVar2->field_000C + 0x34);
+        sVar1 = pAVar2->field_000C->field_0034;
         if (sVar1 == 0) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar5 = (**(code **)(pAVar2->field_000C + 8))((int)&pAVar8[1].field_0008 + iVar7);
+          iVar5 = (**(code **)&pAVar2->field_000C->field_0x8)((int)&pAVar8[1].field_0008 + iVar7);
         }
         else {
           iVar5 = (int)sVar1;
         }
         pAVar3 = (AnonShape_00755970_4FB144E0 *)((int)&pAVar8->field_0008 + iVar5);
         *(AnonShape_00755970_4FB144E0 **)
-         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-         (pAVar2->field_000C + 0x44 + *(int *)(pAVar2->field_000C + 0x1c) * 8) = pAVar3;
+         (&pAVar2->field_000C[1].field_0xe + (int)pAVar2->field_000C->field_001C * 8) = pAVar3;
         param_1 = pAVar8;
       } while ((int)pAVar3 < (int)*(short *)(iVar7 + 8));
     }
     *(AnonShape_00755970_4FB144E0 **)
-     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-     (pAVar2->field_000C + 0x44 + *(int *)(pAVar2->field_000C + 0x1c) * 8) = pAVar6;
+     (&pAVar2->field_000C[1].field_0xe + (int)pAVar2->field_000C->field_001C * 8) = pAVar6;
     if ((local_c != 0) && (param_3 != 0)) {
       return local_c;
     }
@@ -3672,8 +3650,8 @@ int st::fn_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int par
     else {
       iVar7 = *(int *)(&pAVar6[1].field_0x0 + iVar7);
     }
-    *(AnonShape_00755970_4FB144E0 **)(pAVar2->field_000C + 0x44 + local_8 * 8) = pAVar6;
-    local_8 = local_8 + 1;
+    *(AnonShape_00755970_4FB144E0 **)(&pAVar2->field_000C[1].field_0xe + (int)local_8 * 8) = pAVar6;
+    local_8 = (uint *)((int)local_8 + 1);
     if (iVar7 == -1) {
       return local_c;
     }
@@ -3857,15 +3835,14 @@ int st::fn_00755E10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 
   undefined4 uVar10;
   undefined2 local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar9 = *(short *)(param_1->field_0008 + 0x16) + -0x10;
+  iVar9 = (short)param_1->field_0008->field_0016 + -0x10;
   *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + -1;
   iVar5 = param_1->field_000C;
   iVar4 = *(int *)(iVar5 + 0x1c);
   iVar7 = *(int *)(iVar5 + 0x44 + iVar4 * 8);
   iVar4 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
                        *(undefined4 *)(iVar5 + 0x40 + iVar4 * 8),iVar4));
-  *(uint *)(param_1->field_0008 + 8) = *(uint *)(param_1->field_0008 + 8) | 0x10;
+  param_1->field_0008->field_0008 = st::machine_word_boundary_cast<undefined4>(param_1->field_0008->field_0008 | 0x10);
   iVar2 = st::fn_00757450(param_1,iVar7);
   iVar5 = param_1->field_000C;
   if (iVar2 < *(short *)(iVar4 + 8)) {
@@ -4009,7 +3986,7 @@ void st::fn_007561D0(AnonShape_00753C80_4C8E695D *param_1,int param_2)
 
 {
   if (param_2 < 1) {
-    *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) =
+    *(undefined4 *)(&param_1->field_000C[1].field_0xe + (int)param_1->field_000C->field_001C * 8) =
          0xffffffff;
     return;
   }
@@ -4116,8 +4093,7 @@ int st::fn_00757450(AnonShape_00755E10_BD685653 *param_1,int param_2)
   short sVar1;
   int iVar2;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)(param_1->field_0008 + 0x34) + param_1->field_0010;
+  iVar2 = param_1->field_0008->field_0034 + param_1->field_0010;
   if (param_2 == -1) {
     *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) = 0;
     return 0;
@@ -4155,11 +4131,10 @@ void st::fn_007574C0(AnonShape_00753C80_4C8E695D *param_1,int param_2,uint *para
   uint uVar4;
   AnonPointee_TLOBaseTy_0607 *pAVar5;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar2 = *(short *)(param_1->field_000C + 0x34);
+  sVar2 = param_1->field_000C->field_0034;
   if (sVar2 == 0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar3 = (**(code **)(param_1->field_000C + 8))(param_3 + 2);
+    iVar3 = (**(code **)&param_1->field_000C->field_0x8)(param_3 + 2);
   }
   else {
     iVar3 = (int)sVar2;
@@ -4320,23 +4295,23 @@ undefined4 st::fn_00757D90(AnonShape_00757D90_5427B306 *param_1)
 {
   int *piVar1;
   byte bVar2;
-  undefined4 *puVar3;
+  AnonNested_AnonShape_00757D90_5427B306_0010_D8C59A06 *pAVar3;
   int iVar4;
   byte *pbVar5;
   uint uVar6;
 
-  puVar3 = param_1->field_0010;
-  pbVar5 = (byte *)*puVar3;
-  iVar4 = puVar3[1];
+  pAVar3 = param_1->field_0010;
+  pbVar5 = (byte *)pAVar3->field_0000;
+  iVar4 = pAVar3->field_0004;
   while( true ) {
     if (iVar4 == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar4 = (*(code *)puVar3[3])(param_1);
+      iVar4 = (*(code *)pAVar3[1].field_0004)(param_1);
       if (iVar4 == 0) {
         return 0;
       }
-      pbVar5 = (byte *)*puVar3;
-      iVar4 = puVar3[1];
+      pbVar5 = (byte *)pAVar3->field_0000;
+      iVar4 = pAVar3->field_0004;
     }
     bVar2 = *pbVar5;
     while( true ) {
@@ -4345,28 +4320,28 @@ undefined4 st::fn_00757D90(AnonShape_00757D90_5427B306 *param_1)
       if (bVar2 == 0xff) break;
       piVar1 = (int *)(param_1->field_01A6 + 0x5c);
       *piVar1 = *piVar1 + 1;
-      *puVar3 = st::machine_word_boundary_cast<undefined4>(pbVar5);
-      puVar3[1] = iVar4;
+      pAVar3->field_0000 = st::machine_word_boundary_cast<undefined4>(pbVar5);
+      pAVar3->field_0004 = iVar4;
       if (iVar4 == 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar4 = (*(code *)puVar3[3])(param_1);
+        iVar4 = (*(code *)pAVar3[1].field_0004)(param_1);
         if (iVar4 == 0) {
           return 0;
         }
-        pbVar5 = (byte *)*puVar3;
-        iVar4 = puVar3[1];
+        pbVar5 = (byte *)pAVar3->field_0000;
+        iVar4 = pAVar3->field_0004;
       }
       bVar2 = *pbVar5;
     }
     do {
       if (iVar4 == 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar4 = (*(code *)puVar3[3])(param_1);
+        iVar4 = (*(code *)pAVar3[1].field_0004)(param_1);
         if (iVar4 == 0) {
           return 0;
         }
-        pbVar5 = (byte *)*puVar3;
-        iVar4 = puVar3[1];
+        pbVar5 = (byte *)pAVar3->field_0000;
+        iVar4 = pAVar3->field_0004;
       }
       iVar4 = iVar4 + -1;
       uVar6 = (uint)*pbVar5;
@@ -4375,16 +4350,16 @@ undefined4 st::fn_00757D90(AnonShape_00757D90_5427B306 *param_1)
     if (uVar6 != 0) break;
     piVar1 = (int *)(param_1->field_01A6 + 0x5c);
     *piVar1 = *piVar1 + 2;
-    *puVar3 = st::machine_word_boundary_cast<undefined4>(pbVar5);
-    puVar3[1] = iVar4;
+    pAVar3->field_0000 = st::machine_word_boundary_cast<undefined4>(pbVar5);
+    pAVar3->field_0004 = iVar4;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1->field_01A6 + 0x5c) != 0) {
     *(undefined4 *)(param_1->field_01A6 + 0x5c) = 0;
   }
   param_1->field_018E = uVar6;
-  *puVar3 = st::machine_word_boundary_cast<undefined4>(pbVar5);
-  puVar3[1] = iVar4;
+  pAVar3->field_0000 = st::machine_word_boundary_cast<undefined4>(pbVar5);
+  pAVar3->field_0004 = iVar4;
   return 1;
 }
 
@@ -4393,25 +4368,26 @@ undefined4 st::fn_00757D90(AnonShape_00757D90_5427B306 *param_1)
 void st::fn_00757E60(AnonShape_00759190_45B6ED67 *param_1)
 
 {
-  undefined4 *puVar1;
+  AnonNested_AnonShape_00759190_45B6ED67_01A6_2E084C16 *pAVar1;
   int iVar2;
   int iVar3;
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  puVar1 = (undefined4 *)(*(code *)**(undefined4 **)param_1)(param_1,0,0x60);
-  param_1->field_01A6 = (int)puVar1;
-  *puVar1 = st::machine_word_boundary_cast<undefined4>(st::fn_00759190);
-  *(code **)(param_1->field_01A6 + 4) = st::pointer_boundary_cast<code *>(st::fn_00758170);
-  *(code **)(param_1->field_01A6 + 8) = st::pointer_boundary_cast<code *>(st::fn_00759120);
-  *(code **)(param_1->field_01A6 + 0xc) = st::pointer_boundary_cast<code *>(st::fn_00758100);
+  pAVar1 = (AnonNested_AnonShape_00759190_45B6ED67_01A6_2E084C16 *)
+           (**(code **)param_1->field_0000)(param_1,0,0x60);
+  param_1->field_01A6 = pAVar1;
+  pAVar1->field_0000 = st::machine_word_boundary_cast<undefined4>(st::fn_00759190);
+  param_1->field_01A6->field_0004 = st::machine_word_boundary_cast<undefined4>(st::fn_00758170);
+  param_1->field_01A6->field_0008 = st::machine_word_boundary_cast<undefined4>(st::fn_00759120);
+  param_1->field_01A6->field_000C = st::machine_word_boundary_cast<undefined4>(st::fn_00758100);
   iVar2 = 0x10;
   do {
     iVar3 = iVar2 + 4;
-    *(code **)(iVar2 + param_1->field_01A6) = st::pointer_boundary_cast<code *>(st::fn_00758100);
+    *(code **)((int)&param_1->field_01A6->field_0000 + iVar2) = st::pointer_boundary_cast<code *>(st::fn_00758100);
     iVar2 = iVar3;
   } while (iVar3 < 0x50);
-  *(code **)(param_1->field_01A6 + 0x10) = st::pointer_boundary_cast<code *>(st::fn_00757EF0);
-  *(code **)(param_1->field_01A6 + 0x48) = st::pointer_boundary_cast<code *>(st::fn_00758010);
+  param_1->field_01A6->field_0010 = st::machine_word_boundary_cast<undefined4>(st::fn_00757EF0);
+  param_1->field_01A6->field_0048 = st::machine_word_boundary_cast<undefined4>(st::fn_00758010);
   st::fn_00759190(param_1);
   return;
 }
@@ -5211,12 +5187,12 @@ undefined4 st::fn_0075BE40(AnonShape_0075BE40_B9FD5FDF *param_1)
   undefined4 *puVar4;
 
   iVar1 = param_1->field_01AA;
-  *(int *)(param_1->field_01A6 + 0x5c) =
-       *(int *)(param_1->field_01A6 + 0x5c) +
-       ((int)(*(int *)(iVar1 + 0xc) + (*(int *)(iVar1 + 0xc) >> 0x1f & 7U)) >> 3);
+  param_1->field_01A6->field_005C =st::machine_word_boundary_cast<undefined4>(
+       param_1->field_01A6->field_005C +
+       ((int)(*(int *)(iVar1 + 0xc) + (*(int *)(iVar1 + 0xc) >> 0x1f & 7U)) >> 3));
   *(undefined4 *)(iVar1 + 0xc) = 0;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar3 = (**(code **)(param_1->field_01A6 + 8))(param_1);
+  iVar3 = (*(code *)param_1->field_01A6->field_0008)(param_1);
   if (iVar3 == 0) {
     return 0;
   }
@@ -5284,12 +5260,12 @@ undefined4 st::fn_0075C3B0(AnonShape_0075BE40_B9FD5FDF *param_1)
   undefined4 *puVar3;
 
   iVar1 = param_1->field_01AA;
-  *(int *)(param_1->field_01A6 + 0x5c) =
-       *(int *)(param_1->field_01A6 + 0x5c) +
-       ((int)(*(int *)(iVar1 + 0xc) + (*(int *)(iVar1 + 0xc) >> 0x1f & 7U)) >> 3);
+  param_1->field_01A6->field_005C =st::machine_word_boundary_cast<undefined4>(
+       param_1->field_01A6->field_005C +
+       ((int)(*(int *)(iVar1 + 0xc) + (*(int *)(iVar1 + 0xc) >> 0x1f & 7U)) >> 3));
   *(undefined4 *)(iVar1 + 0xc) = 0;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar2 = (**(code **)(param_1->field_01A6 + 8))(param_1);
+  iVar2 = (*(code *)param_1->field_01A6->field_0008)(param_1);
   if (iVar2 == 0) {
     return 0;
   }
@@ -5398,16 +5374,16 @@ void st::fn_0075DA80(AnonShape_0075DA80_57A0CDEF *param_1)
 
   pAVar1 = param_1->field_01B6;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
+  uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_0008 = uVar2;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
+  uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_000C = uVar2;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
+  uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_0010 = uVar2;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
+  uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_0014 = uVar2;
   iVar3 = 0;
   local_8 = 0x5b6900;
@@ -5437,7 +5413,8 @@ void st::fn_0075DE90(AnonShape_0075DF10_BA4C6604 *param_1)
   undefined4 uVar2;
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  pAVar1 = (AnonNested_0075DF10_01B2_1F0F9C79 *)(*(code *)**(undefined4 **)param_1)(param_1,1,0x30);
+  pAVar1 = (AnonNested_0075DF10_01B2_1F0F9C79 *)
+           (*(code *)param_1->field_0000->field_0000)(param_1,1,0x30);
   param_1->field_01B2 = pAVar1;
   *(code **)pAVar1 = st::pointer_boundary_cast<code *>(st::fn_0075DFE0);
   *(undefined4 *)&pAVar1->field_0x8 = 0;
@@ -5447,7 +5424,7 @@ void st::fn_0075DE90(AnonShape_0075DF10_BA4C6604 *param_1)
     *(code **)&pAVar1->field_0x4 = st::pointer_boundary_cast<code *>(st::fn_0075E000);
     *(code **)&pAVar1->field_0xc = st::pointer_boundary_cast<code *>(st::fn_0075E260);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar2 = (**(code **)(*(int *)param_1 + 4))(param_1,1,uVar2);
+    uVar2 = (*(code *)param_1->field_0000->field_0004)(param_1,1,uVar2);
     *(undefined4 *)(pAVar1 + 1) = uVar2;
     st::fn_0075DF10(param_1);
     return;
@@ -5473,16 +5450,16 @@ void st::fn_0075DF10(AnonShape_0075DF10_BA4C6604 *param_1)
 
   pAVar1 = param_1->field_01B2;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
+  uVar2 = (*(code *)param_1->field_0000->field_0000)(param_1,1,0x400);
   pAVar1->field_0010 = uVar2;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
+  uVar2 = (*(code *)param_1->field_0000->field_0000)(param_1,1,0x400);
   pAVar1->field_0014 = uVar2;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
+  uVar2 = (*(code *)param_1->field_0000->field_0000)(param_1,1,0x400);
   pAVar1->field_0018 = uVar2;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
+  uVar2 = (*(code *)param_1->field_0000->field_0000)(param_1,1,0x400);
   pAVar1->field_001C = uVar2;
   iVar3 = 0;
   local_8 = 0x5b6900;

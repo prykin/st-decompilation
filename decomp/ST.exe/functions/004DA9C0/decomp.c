@@ -19,14 +19,11 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
   byte recordIndex;
   uint uVar8;
   byte *pbVar9;
+  STMessage *pSVar10;
   int *piVar11;
   bool bVar12;
   int local_2bc [155];
-  undefined4 local_50 [4];
-  undefined4 local_40;
-  undefined2 local_3c;
-  undefined2 local_38;
-  short local_36;
+  STMessage local_50;
   int local_30;
   byte local_2c;
   undefined3 uStack_2b;
@@ -230,10 +227,14 @@ LAB_004dad15:
           local_24 = iVar3;
         } while (iVar3 < 0x9b);
         uVar8 = local_14;
-        if (DAT_008117bc != nullptr) {
-          memset(local_50, 0, 0x20); /* compiler bulk-zero initialization */
-          local_40 = 0x5dea;
-          local_3c = (undefined2)uVar7;
+        if (g_aiBossClass_008117BC != nullptr) {
+          pSVar10 = &local_50;
+          for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
+            pSVar10->unknown_00 = 0;
+            pSVar10 = (STMessage *)&pSVar10->unknown_04;
+          }
+          local_50.id = 0x5dea;
+          local_50.arg0.words.low = (word)uVar7;
           iVar3 = 0;
           piVar11 = local_2bc;
           do {
@@ -241,11 +242,10 @@ LAB_004dad15:
             local_EAX_1149 = (int)(byte)local_EAX_1149;
             if ((*(char *)(*(int *)(&DAT_007bfc00 + local_EAX_1149 * 4) + iVar3) == '\0') &&
                (*piVar11 == 0)) {
-              local_38 = (undefined2)iVar3;
+              local_50.arg1.words.low = (word)iVar3;
               uVar5 = thunk_FUN_004e60d0(uVar7,iVar3);
-              local_36 = (short)uVar5 + 1;
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              (**(code **)*DAT_008117bc)(local_50);
+              local_50.arg1.words.high = (short)uVar5 + 1;
+              g_aiBossClass_008117BC->GetMessage(&local_50);
             }
             iVar3 = iVar3 + 1;
             piVar11 = piVar11 + 1;
