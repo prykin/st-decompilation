@@ -145,8 +145,8 @@ LAB_004857a5:
                 g_bulkInitializedRecords_008087C7[bVar8].field_0023;
       }
       if (bVar9) goto LAB_0048589a;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar1));
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar8));
       if (DAT_00808a8f == '\0') {
         if (bVar1 == bVar8) {
@@ -203,7 +203,6 @@ LAB_0048589a:
         }
         bVar8 = *(byte *)(this_00 + 9);
         bVar1 = *(byte *)&this->field_0024;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
         param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
         if (DAT_00808a8f != '\0') {
@@ -280,7 +279,6 @@ LAB_00485f6a:
           }
           bVar8 = *(byte *)(this_00 + 9);
           bVar1 = *(byte *)&this->field_0024;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
           param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f == '\0') {
@@ -324,7 +322,6 @@ LAB_00485f1f:
         }
         bVar8 = *(byte *)(this_00 + 9);
         bVar1 = *(byte *)&this->field_0024;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
         param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
         if (DAT_00808a8f == '\0') {
@@ -385,7 +382,6 @@ LAB_00485caa:
         if (((iVar5 == 0xc) || (iVar5 == 0x18)) || (iVar5 == 0x19)) {
           bVar8 = *(byte *)(this_00 + 9);
           bVar1 = *(byte *)&this->field_0024;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
           param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f == '\0') {
@@ -415,7 +411,6 @@ LAB_00486163:
         if (iVar5 == 9) {
           bVar8 = *(byte *)(this_00 + 9);
           bVar1 = *(byte *)&this->field_0024;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
           param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f != '\0') {
@@ -473,7 +468,6 @@ LAB_004859d8:
           if ((iVar5 != 0x24) && (iVar5 != 0x25)) {
             bVar8 = *(byte *)(this_00 + 9);
             bVar1 = *(byte *)&this->field_0024;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
             param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
             if (DAT_00808a8f == '\0') {
@@ -521,7 +515,6 @@ LAB_00485c58:
           }
           bVar8 = *(byte *)(this_00 + 9);
           bVar1 = *(byte *)&this->field_0024;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
           param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f == '\0') {
@@ -543,7 +536,6 @@ LAB_00485c58:
         }
         bVar8 = *(byte *)(this_00 + 9);
         bVar1 = *(byte *)&this->field_0024;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
         param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
         if (DAT_00808a8f == '\0') {
@@ -651,7 +643,6 @@ LAB_00485b29:
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((iVar5 != 0x16) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x25)) ||
          (STField<int>(this_00,0x732) != 1)) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)(uint)*(byte *)(this_00 + 9);
         param_1 = (STGameObjC_sub_004845E0_param_1Enum)*(byte *)&this->field_0024;
         if (DAT_00808a8f != '\0') {
@@ -689,7 +680,7 @@ cf_common_exit_00484B10:
       }
       bVar8 = *(byte *)(this_00 + 9);
       bVar1 = *(byte *)&this->field_0024;
-      /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_2 = (int *)CONCAT13(bVar1,STPiece<0,3>(param_2));
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar1));
       if (DAT_00808a8f == '\0') {
@@ -720,7 +711,6 @@ LAB_00484943:
                 g_bulkInitializedRecords_008087C7[bVar8].field_0023;
       }
       if (bVar9) goto LAB_00484a28;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar1));
       if (DAT_00808a8f == '\0') {
         if (bVar1 == bVar8) {
@@ -759,7 +749,6 @@ LAB_00484a28:
     }
     bVar8 = *(byte *)(this_00 + 9);
     bVar1 = *(byte *)&this->field_0024;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
     param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
     if (DAT_00808a8f != '\0') {
@@ -1005,7 +994,6 @@ LAB_004853d2:
     }
     bVar8 = *(byte *)(this_00 + 9);
     bVar1 = *(byte *)&this->field_0024;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
     param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
     if (DAT_00808a8f != '\0') {
@@ -1151,7 +1139,6 @@ LAB_00485002:
     if (this_00[8] == 0x14) {
       bVar8 = *(byte *)(this_00 + 9);
       bVar1 = *(byte *)&this->field_0024;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
       param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
       if (DAT_00808a8f == '\0') {

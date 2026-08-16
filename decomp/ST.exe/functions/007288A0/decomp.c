@@ -35,7 +35,7 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
   int local_8;
 
   iVar10 = (int)g_runtimeRecords_00857110[g_runtimeRecordCount_00857114].field_0002;
-  param_1 = param_1 + iVar10 * param_2;
+  auto param_1_after_write = param_1 + iVar10 * param_2; /* compiler stack-slot lifetime split */
   local_14 = STField<int>(this,0x28);
   iVar12 = iVar10 * local_14 + STField<int>(this,0xc);
   local_30 = 1;
@@ -62,7 +62,7 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
           iVar10 = local_10;
           iVar12 = local_8;
           if (iVar7 != 0 && iVar6 <= iVar5) {
-            puVar13 = (uint *)(param_1 + iVar6);
+            puVar13 = (uint *)(param_1_after_write + iVar6);
             pbVar11 = (byte *)(local_8 + iVar6);
             uVar8 = 0;
             if (2 < iVar7) {
@@ -135,7 +135,7 @@ LAB_00728a04:
         else {
           local_40 = local_40 + local_3c;
         }
-        param_1 = param_1 + param_2;
+        param_1_after_write = param_1_after_write + param_2;
         iVar10 = iVar10 + 1;
         iVar12 = iVar12 + local_14;
         local_10 = iVar10;

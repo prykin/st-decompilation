@@ -118,7 +118,7 @@ LAB_0042bc00:
   Library::DKW::TBL::DArrayPut(pDVar3,local_14,&param_5);
   STField<short>(piVar6,0xe) = STField<short>(piVar6,0xe) + 1;
   this_00 = GetObjPtr(local_c,param_4,(ushort)param_5,CASE_1);
-  this_00->vfunc_E8(1);
+  (*this_00->vtable[1].vfunc_14)(this_00,1);
   g_currentExceptionFrame = local_5c.previous;
   return local_18;
 }

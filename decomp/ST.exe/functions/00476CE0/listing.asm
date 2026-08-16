@@ -106,7 +106,8 @@ switchD_00476d22::caseD_1:
 00476E0B  8B 10                     MOV EDX,dword ptr [EAX]
 00476E0D  51                        PUSH ECX
 00476E0E  8B C8                     MOV ECX,EAX
-00476E10  FF 92 08 01 00 00         CALL dword ptr [EDX + 0x108]
+STBoatC::Capture::override::prt_476e10_66d08e71:
+00476E10  FF 92 08 01 00 00         CALL dword ptr [EDX + 0x108]  ; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4
 00476E16  85 C0                     TEST EAX,EAX
 00476E18  0F 85 60 02 00 00         JNZ 0x0047707e
 LAB_00476e1e:
@@ -166,7 +167,8 @@ LAB_00476e7a:
 00476EAF  8B 06                     MOV EAX,dword ptr [ESI]
 00476EB1  51                        PUSH ECX
 00476EB2  8B CE                     MOV ECX,ESI
-00476EB4  FF 90 08 01 00 00         CALL dword ptr [EAX + 0x108]
+STBoatC::Capture::override::prt_476eb4_66d08e71:
+00476EB4  FF 90 08 01 00 00         CALL dword ptr [EAX + 0x108]  ; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4
 00476EBA  85 C0                     TEST EAX,EAX
 00476EBC  0F 84 63 FF FF FF         JZ 0x00476e25
 00476EC2  8B 46 2C                  MOV EAX,dword ptr [ESI + 0x2c]
@@ -608,7 +610,8 @@ LAB_004773d3:
 0047741D  8B 16                     MOV EDX,dword ptr [ESI]
 0047741F  50                        PUSH EAX
 00477420  8B CE                     MOV ECX,ESI
-00477422  FF 92 08 01 00 00         CALL dword ptr [EDX + 0x108]
+STBoatC::Capture::override::prt_477422_66d08e71:
+00477422  FF 92 08 01 00 00         CALL dword ptr [EDX + 0x108]  ; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4
 00477428  85 C0                     TEST EAX,EAX
 0047742A  74 77                     JZ 0x004774a3
 0047742C  8B 4B 24                  MOV ECX,dword ptr [EBX + 0x24]
@@ -702,7 +705,8 @@ LAB_004774ea:
 00477530  8B 07                     MOV EAX,dword ptr [EDI]
 00477532  51                        PUSH ECX
 00477533  8B CF                     MOV ECX,EDI
-00477535  FF 90 08 01 00 00         CALL dword ptr [EAX + 0x108]
+STBoatC::Capture::override::prt_477535_66d08e71:
+00477535  FF 90 08 01 00 00         CALL dword ptr [EAX + 0x108]  ; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4
 0047753B  85 C0                     TEST EAX,EAX
 0047753D  0F 84 56 01 00 00         JZ 0x00477699
 00477543  8B CF                     MOV ECX,EDI
@@ -732,7 +736,8 @@ LAB_00477555:
 LAB_0047758e:
 0047758E  8B 17                     MOV EDX,dword ptr [EDI]
 00477590  8B CF                     MOV ECX,EDI
-00477592  FF 92 0C 01 00 00         CALL dword ptr [EDX + 0x10c]
+STBoatC::Capture::override::prt_477592_3d2320b:
+00477592  FF 92 0C 01 00 00         CALL dword ptr [EDX + 0x10c]  ; [STIndirectCallsiteApplier] exact slot 0x10C; signature=__thiscall;/void;pointer:/STGameObjC
 00477598  8B 8B F3 06 00 00         MOV ECX,dword ptr [EBX + 0x6f3]
 0047759E  8B 53 24                  MOV EDX,dword ptr [EBX + 0x24]
 004775A1  8B 07                     MOV EAX,dword ptr [EDI]

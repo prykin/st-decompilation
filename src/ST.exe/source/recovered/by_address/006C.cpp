@@ -1050,7 +1050,6 @@ void st::fn_006C3340(int param_1)
   }
   iVar6 = *(int *)(*piVar1 + 0x1c);
   if (iVar6 < local_18.bottom) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = iVar6;
   }
   iVar3 = *(int *)(iVar2 + 0x40);
@@ -1795,6 +1794,7 @@ void st::fn_006C5BF0(AnonShape_006C5BF0_474F0272 *param_1,ushort *param_2,int pa
         do {
           *param_2 = *param_2 ^ param_7;
           param_2 = (ushort *)((int)param_2 + param_3);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = param_4 + -1;
         } while (param_4 != 0);
         return;
@@ -1863,6 +1863,7 @@ void st::fn_006C5D00(AnonShape_006C5D00_C5C8A2E6 *param_1,byte *param_2,int para
         do {
           *param_2 = *param_2 ^ param_7;
           param_2 = param_2 + param_3;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = param_4 + -1;
         } while (param_4 != 0);
         return;
@@ -1976,6 +1977,7 @@ void st::fn_006C5E00(AnonShape_006C5E00_04F0C4FF *param_1,ushort *param_2,int pa
 LAB_006c5ef3:
           *param_2 = *param_2 ^ (ushort)uVar1;
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_12 = param_12 >> 1;
         if (param_12 == 0) {
           param_12 = 0x80000000;
@@ -2184,6 +2186,7 @@ void st::fn_006C6100(AnonShape_006C6100_D1CCA835 *param_1,ushort *param_2,int pa
 LAB_006c61f3:
           *param_2 = *param_2 ^ (ushort)uVar1;
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_12 = param_12 >> 1;
         if (param_12 == 0) {
           param_12 = 0x80000000;
@@ -2287,6 +2290,7 @@ void st::fn_006C6290(AnonShape_006C6290_2B502C58 *param_1,byte *param_2,int para
 LAB_006c637a:
           *param_2 = *param_2 ^ (byte)uVar1;
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_12 = param_12 >> 1;
         if (param_12 == 0) {
           param_12 = 0x80000000;
@@ -2379,6 +2383,7 @@ void st::fn_006C6850(int param_1,int param_2,int param_3,int param_4,int param_5
   int iVar3;
 
   if (param_4 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 + 1 + param_4;
     param_4 = -param_4;
   }
@@ -2694,6 +2699,7 @@ int st::fn_006C6E30(AnonShape_006C6E30_3C2F0429 *param_1)
       pAVar4 = (AnonShape_006C6E30_3C2F0429 *)(*(code *)param_1->field_0042)(param_1,piVar3,pAVar1);
       if (pAVar4 != pAVar1) {
         st::fn_006AB060(slotStorage);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = pAVar4;
         if (-1 < (int)pAVar4) {
           param_1 = (AnonShape_006C6E30_3C2F0429 *)0xfffffffb;
@@ -3093,6 +3099,7 @@ DWORD st::fn_006C7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
     }
     iVar7 = LVar3 + -0x80;
     local_10 = iVar7;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((param_2 == 0) && (bVar1)) {
       LVar3 = st::external_0000000E(param_1->field_0026,0,2);
       if (LVar3 == -1) {
@@ -3420,13 +3427,13 @@ void st::fn_006C7F10(RecoveredSourceFamily_dibcopy *param_1,int param_2,int *par
   piVar1 = param_3;
   if (1 < param_4) {
     piVar2 = param_3 + 1;
-    param_3 = (int *)(param_4 + -1);
+    auto param_3_after_write = (int *)(param_4 + -1); /* compiler stack-slot lifetime split */
     do {
       st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,param_2,piVar2[-1],*piVar2,piVar2[1],
                    piVar2[2],param_5,0xd);
       piVar2 = piVar2 + 2;
-      param_3 = (int *)((int)param_3 + -1);
-    } while (param_3 != nullptr);
+      param_3_after_write = (int *)((int)param_3_after_write + -1);
+    } while (param_3_after_write != nullptr);
   }
   st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,param_2,piVar1[param_4 * 2 + -2],
                piVar1[param_4 * 2 + -1],*piVar1,piVar1[1],param_5,0xd);
@@ -3887,10 +3894,10 @@ uint * st::fn_006C8840(uint *param_1,uint *param_2,int *param_3)
     *(undefined1 *)puVar9 = 0;
     puVar9 = (uint *)((int)puVar9 + 1);
   }
-  param_2 = nullptr;
+  auto param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
   if (0 < (int)param_1[2]) {
     do {
-      pcVar8 = *(char **)(param_1[5] + (int)param_2 * 4);
+      pcVar8 = *(char **)(param_1[5] + (int)param_2_after_write * 4);
       if (pcVar8 != nullptr) {
         uVar6 = 0xffffffff;
         pcVar10 = pcVar8;
@@ -3905,11 +3912,11 @@ uint * st::fn_006C8840(uint *param_1,uint *param_2,int *param_3)
         pcVar10 = local_8;
         memmove(pcVar10, pcVar8, uVar6); /* compiler REP MOVS byte copy */
         local_8 = local_8 + uVar6;
-        pbVar2 = (byte *)((int)puVar7 + ((int)((uint)param_2 ^ 7) >> 3));
-        *pbVar2 = *pbVar2 | '\x01' << (((uint)param_2 ^ 7) & 7);
+        pbVar2 = (byte *)((int)puVar7 + ((int)((uint)param_2_after_write ^ 7) >> 3));
+        *pbVar2 = *pbVar2 | '\x01' << (((uint)param_2_after_write ^ 7) & 7);
       }
-      param_2 = (uint *)((int)param_2 + 1);
-    } while ((int)param_2 < (int)param_1[2]);
+      param_2_after_write = (uint *)((int)param_2_after_write + 1);
+    } while ((int)param_2_after_write < (int)param_1[2]);
   }
   if (param_3 != nullptr) {
     *param_3 = local_c;
@@ -4305,6 +4312,7 @@ st::fn_006C8EC0(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,
   }
   iVar18 = param_2 * param_3;
   local_4c_mg0 = nullptr;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_8 = &SHORT_007ed572;
   while ((((iVar19 = (int)param_8[-1] + (int)psVar15, iVar19 < 0 || (param_2 <= iVar19)) ||
           ((iVar41 = *param_8 + param_9, iVar41 < 0 ||
@@ -4330,6 +4338,7 @@ LAB_006c8f65:
     local_38 = 0;
     local_4c_mg0 = nullptr;
     psVar1[iVar21 * param_2 + (param_5 - (int)psVar15) + uVar42 * iVar18] = 1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((((short *)param_5 == psVar15) && (param_6 == param_9)) && (param_7 == param_10)) {
       return 0;
     }
@@ -4362,6 +4371,7 @@ LAB_006c8f65:
     local_3c = local_4c_mg2 + 5;
     *piVar37 = 0;
     local_40 = 999;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_9 = -1;
     *piVar37 = *(int *)(param_4 + (local_48 + 1) * 4);
     local_18 = (undefined2)iVar21;
@@ -4431,11 +4441,9 @@ cf_continue_loop_006C9187:
         local_3c = local_3c + 4;
       }
       local_10 = 0xff;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_3 = CASE_0;
+      auto param_3_after_write = CASE_0; /* compiler stack-slot lifetime split */
       if (iVar36 < 0) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_3 = CASE_1;
+        param_3_after_write = CASE_1;
         local_10 = 0xfe;
         if (-(int)psVar15 < iVar36) {
           local_10 = 0xee;
@@ -4456,8 +4464,7 @@ cf_continue_loop_006C9187:
         }
       }
       else {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_3 = param_3 | CASE_2;
+        param_3_after_write = param_3_after_write | CASE_2;
         if (iVar19 < iVar21) {
           local_10 = local_10 & 0xffffffdf;
         }
@@ -4482,13 +4489,14 @@ cf_continue_loop_006C9187:
         else {
           param_5 = GVar33 - CASE_1;
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = GVar33 + CASE_1;
       }
       else {
         param_5 = GVar33 + CASE_1;
         param_1 = GVar33 - CASE_1;
       }
-      switch(param_3) {
+      switch(param_3_after_write) {
       case CASE_0:
         uVar42 = local_10 & 0x10;
         piVar37 = piVar38;
@@ -4515,8 +4523,8 @@ cf_continue_loop_006C9187:
           *piVar39 = (int)piVar38;
           *(short *)(piVar38 + 1) = sVar4 + -1;
           *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)iVar35;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
           STField<short>(piVar38,6) = sVar5;
           *(short *)(piVar38 + 3) = sVar8 + 3;
         }
@@ -4537,8 +4545,8 @@ cf_continue_loop_006C9187:
           *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)iVar35;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 3) = sVar8 + 3;
         }
@@ -4561,8 +4569,8 @@ cf_continue_loop_006C9187:
             *piVar39 = (int)piVar38;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 1) = sVar4;
             *(short *)(piVar38 + 3) = sVar8 + 3;
           }
@@ -4582,8 +4590,8 @@ cf_continue_loop_006C9187:
           *piVar39 = (int)piVar37;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)iVar35;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 1) = sVar4;
           *(short *)(piVar37 + 3) = sVar8 + 3;
         }
@@ -4646,8 +4654,8 @@ cf_continue_loop_006C9187:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 4;
           }
           piVar38 = piVar37;
@@ -4669,8 +4677,8 @@ cf_continue_loop_006C9187:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
           piVar37 = piVar38;
@@ -4693,8 +4701,8 @@ cf_continue_loop_006C9187:
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 1) = sVar4;
               *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
               *(short *)(piVar38 + 3) = sVar8 + 4;
             }
           }
@@ -4716,8 +4724,8 @@ cf_continue_loop_006C9187:
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 1) = sVar4;
             *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
@@ -4748,8 +4756,8 @@ cf_continue_loop_006C9187:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 4;
           }
           piVar38 = piVar37;
@@ -4771,8 +4779,8 @@ cf_continue_loop_006C9187:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
           piVar37 = piVar38;
@@ -4795,8 +4803,8 @@ cf_continue_loop_006C9187:
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 1) = sVar4;
               *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
               *(short *)(piVar38 + 3) = sVar8 + 4;
             }
           }
@@ -4818,8 +4826,8 @@ cf_continue_loop_006C9187:
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 1) = sVar4;
             *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
@@ -4851,8 +4859,8 @@ cf_continue_loop_006C9187:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3) = (undefined2)GVar31;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 4;
           }
         }
@@ -4871,8 +4879,8 @@ cf_continue_loop_006C9187:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + -1;
             *(short *)(piVar37 + 2) = sVar6;
-            STPiece<0,2>(param_3) = (undefined2)(GVar33 + 4);
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)(GVar33 + 4);
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
@@ -4884,31 +4892,27 @@ cf_continue_loop_006C9187:
           psVar2[param_2 + -1] = sVar8 + 4;
           if (iVar36 == 0) {
             if (iVar21 == 0) {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_3 = GVar33 + 4;
+              param_3_after_write = GVar33 + 4;
             }
             else {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_3 = GVar33;
+              param_3_after_write = GVar33;
               if (iVar21 != -1) {
-                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-                param_3 = GVar33 - CASE_2;
+                param_3_after_write = GVar33 - CASE_2;
               }
             }
           }
           else {
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            param_3 = GVar33 + ~CASE_3;
+            param_3_after_write = GVar33 + ~CASE_3;
           }
           param_9 = param_9 + -1;
           piVar37 = (int *)*piVar38;
-          piVar39 = (int *)(param_4 + 0x10 + (param_3 + iVar24) * 4);
+          piVar39 = (int *)(param_4 + 0x10 + (param_3_after_write + iVar24) * 4);
           *piVar38 = *piVar39;
           *piVar39 = (int)piVar38;
           *(short *)(piVar38 + 1) = sVar4 + -1;
           STField<short>(piVar38,6) = sVar5 + 1;
           *(short *)(piVar38 + 2) = sVar6;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3;
+          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
           *(short *)(piVar38 + 3) = sVar8 + 4;
         }
         local_10 = local_10 & 3;
@@ -4934,8 +4938,8 @@ cf_continue_loop_006C9187:
           *(short *)(piVar37 + 1) = sVar4 + 1;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)GVar33;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)GVar33;
+          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 4;
         }
         iVar35 = iVar24 + 5;
@@ -4972,8 +4976,8 @@ cf_continue_loop_006C9187:
               STField<short>(piVar38,6) = sVar5 + -1;
               *(ushort *)(piVar38 + 3) = uVar40;
               *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3) = (undefined2)iVar27;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             }
           }
           piVar38 = piVar37;
@@ -5028,8 +5032,8 @@ cf_continue_loop_006C9187:
             STField<short>(piVar38,6) = sVar5 + 1;
             *(ushort *)(piVar38 + 3) = uVar40;
             *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar27;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
           }
           piVar38 = piVar37;
           if (((local_10 == 0) &&
@@ -5057,8 +5061,8 @@ cf_continue_loop_006C9187:
             STField<short>(piVar37,6) = sVar5 + 1;
             *(ushort *)(piVar37 + 3) = uVar40;
             *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)param_5;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)param_5;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           }
         }
         if ((bVar12) && (puVar34 = (ushort *)(psVar2 + -iVar18), (*puVar34 & 0xc000) != 0xc000)) {
@@ -5093,8 +5097,8 @@ cf_continue_loop_006C9187:
               STField<short>(piVar38,6) = sVar5 + -1;
               *(ushort *)(piVar38 + 3) = uVar40;
               *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3) = (undefined2)iVar27;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             }
           }
           piVar39 = piVar37;
@@ -5149,8 +5153,8 @@ cf_continue_loop_006C9187:
             STField<short>(piVar39,6) = sVar5 + 1;
             *(ushort *)(piVar39 + 3) = uVar40;
             *(short *)(piVar39 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar27;
-            STField<undefined2>(piVar39,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+            STField<undefined2>(piVar39,10) = (undefined2)param_3_after_write;
           }
           if (((local_10 == 0) &&
               ((puVar34[param_2 + 1] == 0 || (iVar35 < (short)puVar34[param_2 + 1])))) &&
@@ -5179,10 +5183,10 @@ LAB_006ce57c:
             *piVar37 = *piVar39;
             *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
-            STPiece<0,2>(param_3) = (undefined2)param_1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)param_1;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + -1;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = (short)(iVar24 + 5);
           }
         }
@@ -5205,8 +5209,8 @@ LAB_006ce57c:
           *piVar39 = (int)piVar38;
           *(short *)(piVar38 + 1) = sVar4 + -1;
           *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)iVar35;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
           STField<short>(piVar38,6) = sVar5;
           *(short *)(piVar38 + 3) = sVar8 + 3;
         }
@@ -5225,8 +5229,8 @@ LAB_006ce57c:
           *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)iVar35;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 3) = sVar8 + 3;
         }
@@ -5249,8 +5253,8 @@ LAB_006ce57c:
             *piVar39 = (int)piVar38;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 1) = sVar4;
             *(short *)(piVar38 + 3) = sVar8 + 3;
           }
@@ -5270,8 +5274,8 @@ LAB_006ce57c:
           *piVar39 = (int)piVar37;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)iVar35;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 1) = sVar4;
           *(short *)(piVar37 + 3) = sVar8 + 3;
         }
@@ -5326,8 +5330,8 @@ LAB_006ce57c:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 4;
           }
           piVar38 = piVar37;
@@ -5348,8 +5352,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
           piVar37 = piVar38;
@@ -5372,8 +5376,8 @@ LAB_006ce57c:
               *(short *)(piVar38 + 1) = sVar4;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
               *(short *)(piVar38 + 3) = sVar8 + 4;
             }
           }
@@ -5395,8 +5399,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
@@ -5419,8 +5423,8 @@ LAB_006ce57c:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 4;
           }
           piVar38 = piVar37;
@@ -5441,8 +5445,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
           piVar37 = piVar38;
@@ -5465,8 +5469,8 @@ LAB_006ce57c:
               *(short *)(piVar38 + 1) = sVar4;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
               *(short *)(piVar38 + 3) = sVar8 + 4;
             }
           }
@@ -5488,8 +5492,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
@@ -5537,8 +5541,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + -1;
             *(short *)(piVar37 + 2) = sVar6;
-            STPiece<0,2>(param_3) = (undefined2)GVar31;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
@@ -5565,8 +5569,8 @@ LAB_006ce57c:
           *(short *)(piVar38 + 1) = sVar4 + -1;
           STField<short>(piVar38,6) = sVar5 + 1;
           *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)GVar31;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
+          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
           *(short *)(piVar38 + 3) = sVar8 + 4;
         }
         iVar35 = param_2 * 2 + 2;
@@ -5582,8 +5586,8 @@ LAB_006ce57c:
           *(short *)(piVar37 + 1) = sVar4 + 1;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)(GVar33 + ~CASE_3);
-          STField<undefined2>(piVar37,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)(GVar33 + ~CASE_3);
+          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 4;
         }
         iVar27 = iVar24 + 5;
@@ -5636,8 +5640,8 @@ LAB_006ce57c:
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3) = (undefined2)iVar25;
-              STField<undefined2>(piVar37,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar25;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
               *(ushort *)(piVar37 + 3) = uVar40;
             }
           }
@@ -5666,8 +5670,8 @@ LAB_006ce57c:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + 1;
             *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar25;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar25;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(ushort *)(piVar38 + 3) = uVar40;
           }
           piVar38 = piVar37;
@@ -5685,8 +5689,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)(param_5 + -4);
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)(param_5 + -4);
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(ushort *)(piVar37 + 3) = uVar40;
           }
         }
@@ -5738,8 +5742,8 @@ LAB_006ce57c:
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3) = (undefined2)iVar35;
-              STField<undefined2>(piVar37,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
               *(ushort *)(piVar37 + 3) = uVar40;
             }
           }
@@ -5768,8 +5772,8 @@ LAB_006ce57c:
             *(short *)(piVar39 + 1) = sVar4 + -1;
             STField<short>(piVar39,6) = sVar5 + 1;
             *(short *)(piVar39 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar39,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar39,10) = (undefined2)param_3_after_write;
             *(ushort *)(piVar39 + 3) = uVar40;
           }
           if ((((puVar34[param_2 + 1] == 0) || (iVar27 < (short)puVar34[param_2 + 1])) &&
@@ -5811,8 +5815,8 @@ LAB_006ce57c:
           *(short *)(piVar38 + 1) = sVar4 + -1;
           STField<short>(piVar38,6) = sVar5;
           *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)iVar35;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
           *(short *)(piVar38 + 3) = sVar8 + 3;
         }
         uVar28 = local_10 & 1;
@@ -5833,8 +5837,8 @@ LAB_006ce57c:
           *(short *)(piVar37 + 1) = sVar4 + 1;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)iVar35;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 3;
         }
         uVar29 = local_10 & 0x20;
@@ -5865,8 +5869,8 @@ LAB_006ce57c:
             *(short *)(piVar38 + 1) = sVar4;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 3;
           }
         }
@@ -5888,8 +5892,8 @@ LAB_006ce57c:
           *(short *)(piVar37 + 1) = sVar4;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)iVar35;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 3;
         }
         piVar37 = piVar38;
@@ -5951,8 +5955,8 @@ LAB_006ce57c:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 4;
           }
           piVar38 = piVar37;
@@ -5974,8 +5978,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
           piVar37 = piVar38;
@@ -6006,8 +6010,8 @@ LAB_006ce57c:
               *(short *)(piVar38 + 1) = sVar4;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
               *(short *)(piVar38 + 3) = sVar8 + 4;
             }
           }
@@ -6030,8 +6034,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
@@ -6062,8 +6066,8 @@ LAB_006ce57c:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 4;
           }
           piVar38 = piVar37;
@@ -6085,8 +6089,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
           piVar37 = piVar38;
@@ -6117,8 +6121,8 @@ LAB_006ce57c:
               *(short *)(piVar38 + 1) = sVar4;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
               *(short *)(piVar38 + 3) = sVar8 + 4;
             }
           }
@@ -6140,8 +6144,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
@@ -6178,8 +6182,8 @@ LAB_006ce57c:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3) = (undefined2)GVar31;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 4;
           }
         }
@@ -6210,8 +6214,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + -1;
             *(short *)(piVar37 + 2) = sVar6;
-            STPiece<0,2>(param_3) = (undefined2)GVar31;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
@@ -6241,8 +6245,8 @@ LAB_006ce57c:
           *(short *)(piVar38 + 1) = sVar4 + -1;
           STField<short>(piVar38,6) = sVar5 + 1;
           *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)GVar31;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
+          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
           *(short *)(piVar38 + 3) = sVar8 + 4;
         }
         local_10 = local_10 & 3;
@@ -6259,8 +6263,8 @@ LAB_006ce57c:
           *(short *)(piVar37 + 1) = sVar4 + 1;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)(GVar33 + 4);
-          STField<undefined2>(piVar37,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)(GVar33 + 4);
+          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 4;
         }
         iVar35 = iVar24 + 5;
@@ -6301,8 +6305,8 @@ LAB_006ce57c:
               *(short *)(piVar38 + 1) = sVar4 + -1;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3) = (undefined2)iVar27;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
               *(ushort *)(piVar38 + 3) = uVar40;
             }
           }
@@ -6335,8 +6339,8 @@ LAB_006ce57c:
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3) = (undefined2)iVar27;
-              STField<undefined2>(piVar37,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
               *(ushort *)(piVar37 + 3) = uVar40;
             }
           }
@@ -6368,8 +6372,8 @@ LAB_006ce57c:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + 1;
             *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar27;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(ushort *)(piVar38 + 3) = uVar40;
           }
           piVar38 = piVar37;
@@ -6388,8 +6392,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)(param_5 + 4);
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)(param_5 + 4);
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(ushort *)(piVar37 + 3) = uVar40;
           }
         }
@@ -6429,8 +6433,8 @@ LAB_006ce57c:
               *(short *)(piVar38 + 1) = sVar4 + -1;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3) = (undefined2)iVar27;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
               *(ushort *)(piVar38 + 3) = uVar40;
             }
           }
@@ -6463,8 +6467,8 @@ LAB_006ce57c:
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3) = (undefined2)iVar27;
-              STField<undefined2>(piVar37,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
               *(ushort *)(piVar37 + 3) = uVar40;
             }
           }
@@ -6495,8 +6499,8 @@ LAB_006ce57c:
             *(short *)(piVar39 + 1) = sVar4 + -1;
             STField<short>(piVar39,6) = sVar5 + 1;
             *(short *)(piVar39 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar27;
-            STField<undefined2>(piVar39,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+            STField<undefined2>(piVar39,10) = (undefined2)param_3_after_write;
             *(ushort *)(piVar39 + 3) = uVar40;
           }
           if (((local_10 == 0) &&
@@ -6531,8 +6535,8 @@ LAB_006ce57c:
           *(short *)(piVar38 + 1) = sVar4 + -1;
           STField<short>(piVar38,6) = sVar5;
           *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)iVar35;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
           *(short *)(piVar38 + 3) = sVar8 + 3;
         }
         if ((psVar2[1] == 0) || (piVar38 = piVar37, iVar24 + 3 < (int)psVar2[1])) {
@@ -6551,8 +6555,8 @@ LAB_006ce57c:
           *(short *)(piVar37 + 1) = sVar4 + 1;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)iVar35;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 3;
         }
         uVar28 = local_10 & 0x20;
@@ -6583,8 +6587,8 @@ LAB_006ce57c:
             *(short *)(piVar38 + 1) = sVar4;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 3;
           }
         }
@@ -6606,8 +6610,8 @@ LAB_006ce57c:
           *(short *)(piVar37 + 1) = sVar4;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)iVar35;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 3;
         }
         piVar37 = piVar38;
@@ -6661,8 +6665,8 @@ LAB_006ce57c:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 4;
           }
           piVar38 = piVar37;
@@ -6683,8 +6687,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
           piVar37 = piVar38;
@@ -6715,8 +6719,8 @@ LAB_006ce57c:
               *(short *)(piVar38 + 1) = sVar4;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
               *(short *)(piVar38 + 3) = sVar8 + 4;
             }
           }
@@ -6739,8 +6743,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
@@ -6763,8 +6767,8 @@ LAB_006ce57c:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 4;
           }
           piVar38 = piVar37;
@@ -6785,8 +6789,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
           piVar37 = piVar38;
@@ -6817,8 +6821,8 @@ LAB_006ce57c:
               *(short *)(piVar38 + 1) = sVar4;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
               *(short *)(piVar38 + 3) = sVar8 + 4;
             }
           }
@@ -6840,8 +6844,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
@@ -6873,8 +6877,8 @@ LAB_006ce57c:
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3) = (undefined2)GVar31;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
             *(short *)(piVar38 + 3) = sVar8 + 4;
           }
         }
@@ -6907,8 +6911,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + -1;
             *(short *)(piVar37 + 2) = sVar6;
-            STPiece<0,2>(param_3) = (undefined2)GVar31;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
@@ -6926,8 +6930,8 @@ LAB_006ce57c:
           *(short *)(piVar38 + 1) = sVar4 + -1;
           STField<short>(piVar38,6) = sVar5 + 1;
           *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)(GVar33 + 4);
-          STField<undefined2>(piVar38,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)(GVar33 + 4);
+          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
           *(short *)(piVar38 + 3) = sVar8 + 4;
         }
         local_10 = local_10 & 3;
@@ -6953,8 +6957,8 @@ LAB_006ce57c:
           *(short *)(piVar37 + 1) = sVar4 + 1;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3) = (undefined2)GVar33;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3;
+          STPiece<0,2>(param_3_after_write) = (undefined2)GVar33;
+          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 4;
         }
         iVar35 = iVar24 + 5;
@@ -6990,8 +6994,8 @@ LAB_006ce57c:
               *(short *)(piVar38 + 1) = sVar4 + -1;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3) = (undefined2)iVar27;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
               *(ushort *)(piVar38 + 3) = uVar40;
             }
           }
@@ -7026,8 +7030,8 @@ LAB_006ce57c:
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3) = (undefined2)iVar27;
-              STField<undefined2>(piVar37,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
               *(ushort *)(piVar37 + 3) = uVar40;
             }
           }
@@ -7075,8 +7079,8 @@ LAB_006ce57c:
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3) = (undefined2)param_5;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3;
+            STPiece<0,2>(param_3_after_write) = (undefined2)param_5;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(ushort *)(piVar37 + 3) = uVar40;
           }
         }
@@ -7111,8 +7115,8 @@ LAB_006ce57c:
               *(short *)(piVar38 + 1) = sVar4 + -1;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3) = (undefined2)iVar27;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
               *(ushort *)(piVar38 + 3) = uVar40;
             }
           }
@@ -7147,8 +7151,8 @@ LAB_006ce57c:
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3) = (undefined2)iVar27;
-              STField<undefined2>(piVar37,10) = (undefined2)param_3;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
               *(ushort *)(piVar37 + 3) = uVar40;
             }
           }
@@ -7462,8 +7466,7 @@ void st::fn_006CEBE0(char *param_1,int param_2,char *param_3,int param_4,int par
   iVar4 = param_2 - param_5;
   iVar3 = param_4 - param_5;
   if ((0 < param_5) && (0 < param_6)) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_5 = param_6;
+    auto param_5_after_write = param_6; /* compiler stack-slot lifetime split */
     do {
       iVar5 = iVar2;
       if (0 < iVar2) {
@@ -7479,9 +7482,8 @@ void st::fn_006CEBE0(char *param_1,int param_2,char *param_3,int param_4,int par
       }
       param_1 = param_1 + iVar4;
       param_3 = param_3 + iVar3;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_5 = param_5 + -1;
-    } while (param_5 != 0);
+      param_5_after_write = param_5_after_write + -1;
+    } while (param_5_after_write != 0);
   }
   return;
 }
@@ -7657,7 +7659,7 @@ void st::fn_006CEE60(int param_1)
   piVar1 = (int *)(param_1 + 0x1a0);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   puVar4 = (uint *)**(undefined4 **)(param_1 + 0x1ac);
-  param_1 = *piVar1;
+  auto param_1_after_write = *piVar1; /* compiler stack-slot lifetime split */
   if (0 < *piVar1) {
     do {
       uVar2 = *puVar4;
@@ -7680,8 +7682,8 @@ void st::fn_006CEE60(int param_1)
         }
       }
       puVar4 = puVar4 + 0x35;
-      param_1 = param_1 + -1;
-    } while (param_1 != 0);
+      param_1_after_write = param_1_after_write + -1;
+    } while (param_1_after_write != 0);
   }
   return;
 }
@@ -7843,6 +7845,7 @@ int st::fn_006CEF60(int *param_1,AnonShape_006D86E0_D6D32C07 *param_2,
             0x1ffffffc;
     param_6 = param_6 + ((*(int *)&pAVar6->field_0x8 - ((param_9[1] - param_8) + local_34)) -
                         (int)local_2c) * uVar8 + (*param_9 - param_7) + local_38;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (AnonShape_006D86E0_D6D32C07 *)
               (&param_2->field_0x0 + (int)(local_2c + local_34 + -1) * (int)param_3 + local_38);
     local_8 = 0;
@@ -8509,10 +8512,10 @@ byte * st::fn_006CFE10(byte *param_1,int param_2)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pbVar7 = param_1 + *(ushort *)(param_1 + uVar3 * 2 + 0x14) + 0x16;
   }
-  param_1 = pbVar7;
+  auto param_1_after_write = pbVar7; /* compiler stack-slot lifetime split */
   uVar3 = 0;
   iVar6 = param_2 * iVar2;
-  pbVar7 = param_1;
+  pbVar7 = param_1_after_write;
   do {
     while( true ) {
       pbVar7_mg1 = pbVar7;

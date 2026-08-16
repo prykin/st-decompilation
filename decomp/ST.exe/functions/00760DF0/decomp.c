@@ -89,6 +89,7 @@ void FUN_00760df0(int param_1,AnonShape_00760DF0_41372EAE *param_2,int *param_3,
       pfVar7[0x20] = local_8 + local_10;
       pfVar7[0x18] = local_10 - local_8;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = param_3 + 1;
     pAVar9 = (AnonNested_00760DF0_0050_4F781EBD *)&pAVar9->field_0x4;
     pfVar7 = pfVar7 + 1;

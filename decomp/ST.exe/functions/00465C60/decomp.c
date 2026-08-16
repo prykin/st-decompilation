@@ -131,6 +131,7 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1)
   int local_8;
 
   local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -909,7 +910,7 @@ LAB_0046739a:
           }
           if (((local_18 < iVar8) ||
               (this->field_07DA + this->field_07D6 + this->field_07D2 == 0x28)) ||
-             (iVar8 = (*pSVar6->vtable[2].slots_00_28[10])(&local_8), iVar8 == 0))
+             (iVar8 = (*pSVar6->vtable[2].slots_00_28[10])(pSVar6,&local_8), iVar8 == 0))
           goto LAB_0046744c;
         }
         else {
@@ -921,7 +922,7 @@ LAB_0046744c:
           sub_00481520(this,(int)this->field_04A5,(int)this->field_04A7,this->field_04A9 + 1);
           sub_00460260(this,0);
         }
-        iVar8 = (*pSVar6->vtable[2].slots_00_28[10])(&local_8);
+        iVar8 = (*pSVar6->vtable[2].slots_00_28[10])(pSVar6,&local_8);
         if (iVar8 == 0) {
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           STAllPlayersC::_ChangeMD

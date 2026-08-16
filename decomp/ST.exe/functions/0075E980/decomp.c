@@ -27,17 +27,17 @@ void FUN_0075e980(int param_1,int param_2,int *param_3,int param_4,int param_5)
   local_c = *(int *)(param_1 + 0x7c);
   local_20 = (int)param_3 * 2 + 0x1c >> 1;
   local_8 = 0x7fffffff;
-  param_1 = 0;
+  auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
   local_28 = param_2 * 2 + 0x18 >> 1;
   local_24 = param_4 * 2 + 0x18 >> 1;
   if (0 < local_c) {
     piVar6 = *(int **)(iVar2 + 0x80);
-    param_3 = local_428;
+    auto param_3_after_write = local_428; /* compiler stack-slot lifetime split */
     local_18 = *piVar6;
     local_10 = piVar6[1];
     local_14 = piVar6[2];
     do {
-      uVar1 = (uint)*(byte *)(local_18 + param_1);
+      uVar1 = (uint)*(byte *)(local_18 + param_1_after_write);
       if ((int)uVar1 < param_2) {
         iVar5 = (uVar1 - param_2) * (uVar1 - param_2);
         iVar4 = param_2 + 0x18;
@@ -54,7 +54,7 @@ LAB_0075ea13:
         iVar5 = 0;
         if (local_28 < (int)uVar1) goto LAB_0075ea13;
       }
-      uVar3 = (uint)*(byte *)(local_10 + param_1);
+      uVar3 = (uint)*(byte *)(local_10 + param_1_after_write);
       if ((int)uVar3 < (int)piVar7) {
         iVar4 = (uVar3 - (int)piVar7) * 3;
         iVar5 = iVar5 + iVar4 * iVar4;
@@ -73,7 +73,7 @@ LAB_0075ea13:
         iVar4 = uVar3 - (int)piVar7;
       }
 LAB_0075ea6d:
-      uVar3 = (uint)*(byte *)(local_14 + param_1);
+      uVar3 = (uint)*(byte *)(local_14 + param_1_after_write);
       if ((int)uVar3 < param_4) {
         iVar7 = (uVar3 - param_4) * 2;
         iVar5 = iVar5 + iVar7 * iVar7;
@@ -94,13 +94,13 @@ LAB_0075ea6d:
 LAB_0075eac8:
       iVar2 = (uVar1 - iVar2) * (uVar1 - iVar2) + iVar4 * 3 * iVar4 * 3 +
               local_1c * 2 * local_1c * 2;
-      *param_3 = iVar5;
+      *param_3_after_write = iVar5;
       if (iVar2 < local_8) {
         local_8 = iVar2;
       }
-      param_1 = param_1 + 1;
-      param_3 = param_3 + 1;
-    } while (param_1 < local_c);
+      param_1_after_write = param_1_after_write + 1;
+      param_3_after_write = param_3_after_write + 1;
+    } while (param_1_after_write < local_c);
   }
   iVar2 = 0;
   iVar4 = 0;

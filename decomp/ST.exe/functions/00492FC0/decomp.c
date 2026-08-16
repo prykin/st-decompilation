@@ -8,16 +8,16 @@
 void __fastcall FUN_00492fc0(AnonShape_00492FC0_E6F586EF *param_1)
 
 {
-  STGameObjC *pSVar1;
-  int iVar2;
+  STGameObjC *this;
+  int iVar1;
 
   if ((param_1->field_045D == 9) && (param_1->field_0611 == 3)) {
-    pSVar1 = STAllPlayersC::GetObjPtr
-                       (g_allPlayers_007FA174,param_1->field_05FC,param_1->field_05FD,CASE_1);
-    if ((pSVar1 != nullptr) && (pSVar1->field_0018 == param_1->field_05FF)) {
-      iVar2 = (*pSVar1->vtable->vfunc_108)(param_1->field_0024);
-      if (iVar2 != 0) {
-        thunk_FUN_004cd450((AnonShape_004CC900_31EE9CAA *)pSVar1);
+    this = STAllPlayersC::GetObjPtr
+                     (g_allPlayers_007FA174,param_1->field_05FC,param_1->field_05FD,CASE_1);
+    if ((this != nullptr) && (this->field_0018 == param_1->field_05FF)) {
+      iVar1 = (*this->vtable[1].vfunc_34)(this,param_1->field_0024);
+      if (iVar1 != 0) {
+        thunk_FUN_004cd450((AnonShape_004CC900_31EE9CAA *)this);
       }
     }
   }

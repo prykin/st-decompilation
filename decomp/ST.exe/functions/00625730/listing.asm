@@ -206,7 +206,8 @@ LAB_006259ca:
 006259CC  0F 84 DB 01 00 00         JZ 0x00625bad
 006259D2  8B 06                     MOV EAX,dword ptr [ESI]
 006259D4  8B CE                     MOV ECX,ESI
-006259D6  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STMineSetC::sub_00625730::override::prt_6259d6_e5e2351e:
+006259D6  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 006259DC  85 C0                     TEST EAX,EAX
 006259DE  0F 84 C9 01 00 00         JZ 0x00625bad
 006259E4  E9 EC 00 00 00            JMP 0x00625ad5

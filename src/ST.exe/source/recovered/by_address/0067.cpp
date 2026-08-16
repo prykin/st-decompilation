@@ -181,7 +181,7 @@ int st::fn_00672F00(void)
   }
   st::fn_006B98C0((int *)&DAT_00811958,piVar3);
   if (piVar3 != nullptr) {
-    if ((DAT_00857528 != nullptr) && ((char *)piVar3[6] != nullptr)) {
+    if ((PTR_00857528 != nullptr) && ((char *)piVar3[6] != nullptr)) {
       uVar4 = 0xffffffff;
       pcVar6 = (char *)piVar3[6];
       do {
@@ -194,12 +194,12 @@ int st::fn_00672F00(void)
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
       pcVar6 = pcVar7 + -uVar4;
-      pcVar7 = st::pointer_boundary_cast<char *>(DAT_00857528);
+      pcVar7 = PTR_00857528;
       memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
       uVar5 = 0;
     }
     st::fn_006A5E90((short *)piVar3[6]);
-    if ((DAT_00811948 != nullptr) && ((char *)piVar3[0xb] != nullptr)) {
+    if ((PTR_00811948 != nullptr) && ((char *)piVar3[0xb] != nullptr)) {
       uVar4 = 0xffffffff;
       pcVar6 = (char *)piVar3[0xb];
       do {
@@ -212,7 +212,7 @@ int st::fn_00672F00(void)
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
       pcVar6 = pcVar7 + -uVar4;
-      pcVar7 = st::pointer_boundary_cast<char *>(DAT_00811948);
+      pcVar7 = PTR_00811948;
       memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
       uVar5 = 0;
     }
@@ -235,7 +235,7 @@ int st::fn_00672F00(void)
     }
     st::fn_006A5E90((short *)piVar3[7]);
     DAT_007d2d24 = piVar3[3];
-    DAT_00857548 = piVar3[9];
+    PTR_00857548 = (char *)piVar3[9];
     DAT_0085754c = piVar3[10];
     DAT_007d2d18 = piVar3[4];
     DAT_00811954 = piVar3[5];
@@ -244,9 +244,9 @@ int st::fn_00672F00(void)
     DAT_00857554 = piVar3[8];
   }
   if (DAT_00811958 == nullptr) {
-    st::fn_006AB060(&DAT_00857528);
-    st::fn_006AB060(&DAT_00811948);
-    st::fn_006AB060(&DAT_0085755c);
+    st::fn_006AB060(&PTR_00857528);
+    st::fn_006AB060(&PTR_00811948);
+    st::fn_006AB060(&PTR_0085755c);
     st::fn_006AB060(&DAT_0085753c);
     for (puVar2 = st::pointer_boundary_cast<undefined4 *>(DAT_00811908); puVar2 != nullptr; puVar2 = (undefined4 *)*puVar2) {
       st::fn_006A5E90((short *)puVar2[1]);
@@ -314,7 +314,7 @@ void st::fn_00673190(undefined4 param_1)
 {
   if (0 < DAT_00811914) {
     DAT_00811914 = DAT_00811914 + -1;
-    *(undefined1 *)(DAT_0085755c + DAT_00811914) = (undefined1)param_1;
+    PTR_0085755c[DAT_00811914] = (char)param_1;
     _DAT_00811950 = 0;
     return;
   }
@@ -337,12 +337,12 @@ int st::fn_00673210(int param_1)
   int iVar4;
   int iVar5;
   uint uVar6;
-  int iVar7;
+  char *pcVar7;
 
   iVar4 = DAT_00811914;
   iVar5 = DAT_00857558;
   uVar6 = DAT_007d2d24;
-  iVar7 = DAT_0085755c;
+  pcVar7 = PTR_0085755c;
   do {
     DAT_007d2d18 = 0x84e;
     if (iVar5 < iVar4) {
@@ -359,12 +359,12 @@ int st::fn_00673210(int param_1)
       iVar3 = st::fn_006734C0();
       iVar4 = DAT_00811914;
       iVar5 = DAT_00857558;
-      iVar7 = DAT_0085755c;
-      while (DAT_00811914 = iVar4, DAT_00857558 = iVar5, DAT_0085755c = iVar7, iVar3 != 0) {
+      pcVar7 = PTR_0085755c;
+      while (DAT_00811914 = iVar4, DAT_00857558 = iVar5, PTR_0085755c = pcVar7, iVar3 != 0) {
         if (iVar3 != -1) {
           DAT_00811914 = iVar4;
           DAT_00857558 = iVar5;
-          DAT_0085755c = iVar7;
+          PTR_0085755c = pcVar7;
           return iVar3;
         }
         if ((DAT_007d2d24 & 0x80) == 0) {
@@ -384,7 +384,7 @@ int st::fn_00673210(int param_1)
         iVar3 = st::fn_006734C0();
         iVar4 = DAT_00811914;
         iVar5 = DAT_00857558;
-        iVar7 = DAT_0085755c;
+        pcVar7 = PTR_0085755c;
       }
       uVar6 = DAT_007d2d24;
       if (-1 < iVar5) {
@@ -393,14 +393,14 @@ int st::fn_00673210(int param_1)
         DAT_0081190c = 0;
         _DAT_00857550 = 1;
         iVar4 = 0;
-        if ((0 < iVar5) && (*(char *)(iVar7 + -1 + iVar5) == '\\')) {
+        if ((0 < iVar5) && (pcVar7[iVar5 + -1] == '\\')) {
           DAT_00857558 = iVar5 + -1;
           DAT_00811940 = 1;
-          *(undefined1 *)(iVar7 + DAT_00857558) = 0;
+          pcVar7[DAT_00857558] = '\0';
           iVar4 = DAT_00811914;
           iVar5 = DAT_00857558;
           uVar6 = DAT_007d2d24;
-          iVar7 = DAT_0085755c;
+          pcVar7 = PTR_0085755c;
         }
       }
     }
@@ -412,18 +412,18 @@ int st::fn_00673210(int param_1)
       return 0;
     }
     if (param_1 == 0) {
-      uVar1 = *(uint *)((int)PTR_00811924 + *(char *)(iVar7 + iVar4) * 4);
+      uVar1 = *(uint *)((int)PTR_00811924 + pcVar7[iVar4] * 4);
       while ((uVar1 & 0x401) != 0) {
         if (iVar5 <= iVar4) goto LAB_0067339a;
         iVar4 = iVar4 + 1;
         DAT_00811914 = iVar4;
-        uVar1 = *(uint *)((int)PTR_00811924 + *(char *)(iVar7 + iVar4) * 4);
+        uVar1 = *(uint *)((int)PTR_00811924 + pcVar7[iVar4] * 4);
       }
     }
     if (iVar4 < iVar5) {
       if (param_1 != 0) {
         DAT_00811914 = iVar4 + 1;
-        return (int)*(char *)(iVar7 + iVar4);
+        return (int)pcVar7[iVar4];
       }
       if (DAT_007d2d18 != 0x1d) {
         return 0;
@@ -461,7 +461,7 @@ int st::fn_006734C0(void)
   int *local_8;
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar2 = (*(code *)PTR_0081194c->field_0008)(DAT_00857560,DAT_0085755c,0x400);
+  iVar2 = (*(code *)PTR_0081194c->field_0008)(DAT_00857560,PTR_0085755c,0x400);
   if ((-1 < iVar2) || (iVar2 == -1)) {
     DAT_00857558 = iVar2;
   }
@@ -469,7 +469,7 @@ int st::fn_006734C0(void)
      && (0 < DAT_00857558)) {
     local_8 = st::pointer_boundary_cast<int *>(DAT_00811908);
     do {
-      puVar3 = st::fn_00730590(st::pointer_boundary_cast<uint *>(DAT_0085755c),(char *)local_8[1]);
+      puVar3 = st::fn_00730590((uint *)PTR_0085755c,(char *)local_8[1]);
       if (puVar3 != nullptr) {
         uVar5 = 0xffffffff;
         pcVar8 = (char *)local_8[1];
@@ -492,14 +492,14 @@ int st::fn_006734C0(void)
         do {
           uVar4 = (DAT_00857558 - iVar2) + uVar5;
           if (0x400 < (int)uVar4) {
-            iVar6 = (int)puVar3 - (int)DAT_0085755c;
-            DAT_0085755c = st::machine_word_boundary_cast<undefined4>(st::fn_006ACF50(st::pointer_boundary_cast<void *>(DAT_0085755c),uVar4));
-            puVar3 = (uint *)(iVar6 + (int)DAT_0085755c);
+            iVar6 = (int)puVar3 - (int)PTR_0085755c;
+            PTR_0085755c = st::pointer_boundary_cast<char *>(st::fn_006ACF50(PTR_0085755c,uVar4));
+            puVar3 = (uint *)(PTR_0085755c + iVar6);
           }
           st::fn_0072DA70
                     ((undefined4 *)(uVar5 + (int)puVar3),
                      (AnonPointee_TLOBaseTy_0607 *)(iVar2 + (int)puVar3),
-                     ((DAT_00857558 - iVar2) - (int)puVar3) + 1 + (int)DAT_0085755c);
+                     (uint)(PTR_0085755c + ((DAT_00857558 - iVar2) - (int)puVar3) + 1));
           puVar7 = (uint *)local_8[2];
           puVar9 = puVar3;
           memmove(puVar9, puVar7, uVar5); /* compiler REP MOVS byte copy */
@@ -537,6 +537,10 @@ void st::fn_006736B0(void)
 
 // 006736F0 FUN_006736f0
 #line 4 "decomp/ST.exe/functions/006736F0/decomp.c"
+/* WARNING: Unable to use type for symbol pbVar9 */
+/* WARNING: Unable to use type for symbol temp_3fbe8e62c1 */
+/* WARNING: Unable to use type for symbol pbVar4 */
+
 int st::fn_006736F0(void)
 
 {
@@ -558,9 +562,9 @@ int st::fn_006736F0(void)
   uint local_10;
   byte *local_c;
   int *local_8;
-  byte *pbVar9;
-  byte *temp_3fbe8e62c1;
-  byte *pbVar4;
+  char *pbVar9;
+  char *temp_3fbe8e62c1;
+  char *pbVar4;
 
   local_8 = nullptr;
   local_10 = DAT_007d2d24;
@@ -592,10 +596,10 @@ cf_common_exit_00673BA7:
       if ((DAT_007d2d24 & 0x800) == 0) {
         local_8 = st::pointer_boundary_cast<int *>(DAT_00811908);
         if (DAT_007d2d18 == 0x3c) {
-          local_c = st::pointer_boundary_cast<byte *>(DAT_00811948);
+          local_c = (byte *)PTR_00811948;
         }
         else {
-          local_c = st::pointer_boundary_cast<byte *>(DAT_00857528);
+          local_c = (byte *)PTR_00857528;
         }
         for (; local_8 != nullptr; local_8 = (int *)*local_8) {
           pbVar3 = (byte *)local_8[1];
@@ -648,11 +652,11 @@ joined_r0x00673849:
       }
       if (DAT_007d2d18 == 0x1d) goto cf_common_exit_00673BA7;
       if ((DAT_007d2d24 & 0x800) == 0) {
-        temp_3fbe8e62c1 = st::pointer_boundary_cast<byte *>(DAT_00811948);
+        temp_3fbe8e62c1 = PTR_00811948;
         if (DAT_007d2d18 != 0x3c) {
-          temp_3fbe8e62c1 = st::pointer_boundary_cast<byte *>(DAT_00857528);
+          temp_3fbe8e62c1 = PTR_00857528;
         }
-        pbVar3 = (byte *)st::fn_006C49B0((char *)temp_3fbe8e62c1);
+        pbVar3 = (byte *)st::fn_006C49B0(temp_3fbe8e62c1);
         piVar5 = local_8;
         local_8[2] = (int)pbVar3;
         if (pbVar3 == nullptr) goto LAB_00673bae;
@@ -706,15 +710,15 @@ LAB_00673990:
 LAB_006739be:
   if (DAT_007d2d18 == 0x22) {
 LAB_006739cd:
-    for (; (cVar2 = *(char *)(DAT_0085755c + DAT_00811914), cVar2 == ' ' || (cVar2 == '\t'));
+    for (; (cVar2 = PTR_0085755c[DAT_00811914], cVar2 == ' ' || (cVar2 == '\t'));
         DAT_00811914 = DAT_00811914 + 1) {
     }
     if (cVar2 == ']') {
       DAT_00811914 = DAT_00811914 + 1;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      pcVar6 = (char *)(**(code **)&PTR_0081194c->field_0x10)(DAT_00857528);
+      pcVar6 = (char *)(**(code **)&PTR_0081194c->field_0x10)(PTR_00857528);
       if (pcVar6 == nullptr) {
-        *DAT_00811948 = 0;
+        *PTR_00811948 = '\0';
       }
       else {
         uVar8 = 0xffffffff;
@@ -727,31 +731,31 @@ LAB_006739cd:
           pcVar6 = pcVar11;
         } while (cVar2 != '\0');
         uVar8 = ~uVar8;
-        pbVar3 = (byte *)(pcVar11 + -uVar8);
-        pbVar9 = st::pointer_boundary_cast<byte *>(DAT_00811948);
-        memmove(pbVar9, pbVar3, uVar8); /* compiler REP MOVS byte copy */
+        pcVar6 = pcVar11 + -uVar8;
+        pbVar9 = PTR_00811948;
+        memmove(pbVar9, pcVar6, uVar8); /* compiler REP MOVS byte copy */
       }
       uVar7 = 0xffffffff;
-      pbVar4 = st::pointer_boundary_cast<byte *>(DAT_00811948);
+      pbVar4 = PTR_00811948;
       do {
         if (uVar7 == 0) break;
         uVar7 = uVar7 - 1;
-        bVar1 = *pbVar4;
+        cVar2 = *pbVar4;
         pbVar4 = pbVar4 + 1;
-      } while (bVar1 != 0);
+      } while (cVar2 != '\0');
       uVar7 = ~uVar7;
       uVar8 = uVar7 - 1;
       if (uVar8 != 0) {
-        for (; (cVar2 = *(char *)(DAT_0085755c + DAT_00811914), cVar2 == ' ' || (cVar2 == '\t'));
+        for (; (cVar2 = PTR_0085755c[DAT_00811914], cVar2 == ' ' || (cVar2 == '\t'));
             DAT_00811914 = DAT_00811914 + 1) {
         }
         if (cVar2 == '\\') {
-          if (DAT_00811948[uVar7 - 2] == 0x5c) {
+          if (PTR_00811948[uVar7 - 2] == '\\') {
             uVar8 = uVar7 - 2;
           }
         }
-        else if (((cVar2 != '>') && (cVar2 != '\0')) && (DAT_00811948[uVar7 - 2] != 0x5c)) {
-          DAT_00811948[uVar8] = 0x5c;
+        else if (((cVar2 != '>') && (cVar2 != '\0')) && (PTR_00811948[uVar7 - 2] != '\\')) {
+          PTR_00811948[uVar8] = '\\';
           uVar8 = uVar7;
         }
       }
@@ -760,14 +764,14 @@ LAB_006739cd:
       DAT_00811914 = DAT_00857544;
       uVar8 = 0;
     }
-    bVar1 = *(byte *)(DAT_0085755c + DAT_00811914);
-    while (((bVar1 != 0 && (bVar1 != 0x3e)) && ((bVar1 != 0x20 && (bVar1 != 9))))) {
-      DAT_00811948[uVar8] = bVar1;
+    cVar2 = PTR_0085755c[DAT_00811914];
+    while (((cVar2 != '\0' && (cVar2 != '>')) && ((cVar2 != ' ' && (cVar2 != '\t'))))) {
+      PTR_00811948[uVar8] = cVar2;
       DAT_00811914 = DAT_00811914 + 1;
       uVar8 = uVar8 + 1;
-      bVar1 = *(byte *)(DAT_0085755c + DAT_00811914);
+      cVar2 = PTR_0085755c[DAT_00811914];
     }
-    DAT_00811948[uVar8] = 0;
+    PTR_00811948[uVar8] = '\0';
     DAT_007d2d18 = 0x3c;
   }
   if ((DAT_007d2d24 & 0x800) == 0) {
@@ -779,10 +783,10 @@ LAB_006739cd:
         g_currentExceptionFrame = local_54.previous;
         return iVar3;
       }
-      st::fn_00404426((char *)DAT_00811948,PTR_0081194c);
+      st::fn_00404426(PTR_00811948,PTR_0081194c);
       if ((code *)PTR_0081194c->field_0014 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (*(code *)PTR_0081194c->field_0014)(DAT_00811948,1);
+        (*(code *)PTR_0081194c->field_0014)(PTR_00811948,1);
       }
       DAT_007d2d24 = DAT_007d2d24 | 0x80;
       g_currentExceptionFrame = local_54.previous;
@@ -805,6 +809,8 @@ cf_common_exit_00673BB3:
 
 // 00673D20 FUN_00673d20
 #line 4 "decomp/ST.exe/functions/00673D20/decomp.c"
+/* WARNING: Unable to use type for symbol pbVar16_mg0 */
+/* WARNING: Unable to use type for symbol pbVar17_mg2 */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int st::fn_00673D20(void)
@@ -813,36 +819,35 @@ int st::fn_00673D20(void)
   ushort *puVar1;
   char cVar2;
   byte bVar3;
-  char cVar4;
-  undefined1 uVar5;
+  byte bVar4;
+  bool bVar5;
   bool bVar6;
-  bool bVar7;
-  int iVar9;
+  int iVar7;
   int iVar8;
   int local_EAX_1761;
-  byte bVar10;
-  uint uVar12;
-  uint uVar13;
-  ushort *puVar14;
-  int iVar15;
-  byte *pbVar16;
+  char cVar8;
+  uint uVar10;
+  uint uVar11;
+  ushort *puVar12;
+  int iVar13;
+  byte *pbVar14;
+  char *pcVar15;
   byte *pbVar17_mg1;
-  char *pcVar17;
-  char *pcVar18;
+  char *pcVar16;
   int local_14;
   uint local_10;
-  byte *pbVar16_mg0;
-  byte *pbVar17_mg2;
+  char *pbVar16_mg0;
+  char *pbVar17_mg2;
 
   DAT_00811954 = DAT_007d2d18;
   if (DAT_007d2d18 != 0x1d) {
     _DAT_00857550 = 0;
   }
-  iVar9 = DAT_007d2d20;
+  iVar7 = DAT_007d2d20;
   if (DAT_007d2d20 != -1) {
     DAT_007d2d18 = DAT_007d2d20;
     DAT_007d2d20 = 0xffffffff;
-    return iVar9;
+    return iVar7;
   }
   iVar8 = st::fn_00673210(0);
   if (iVar8 < 0) {
@@ -850,7 +855,7 @@ int st::fn_00673D20(void)
   }
 LAB_00673d71:
   local_14 = 0;
-  bVar7 = true;
+  bVar6 = true;
   DAT_0081190c = DAT_00811914;
   DAT_00857544 = DAT_00811914;
   if ((DAT_007d2d24 & 8) == 0) {
@@ -858,9 +863,9 @@ LAB_00673e66:
     if ((DAT_007d2d18 != 0x84e) && (DAT_007d2d18 != 0x11)) goto cf_common_join_006743F6;
 LAB_00673e7d:
     DAT_00811914 = DAT_0081190c + 1;
-    bVar3 = *(byte *)(DAT_0085755c + DAT_0081190c);
+    bVar3 = PTR_0085755c[DAT_0081190c];
     local_10 = (uint)bVar3;
-    uVar12 = *(uint *)((int)PTR_00811924 + (uint)bVar3 * 4);
+    uVar10 = *(uint *)((int)PTR_00811924 + (uint)bVar3 * 4);
     if ((DAT_007d2d24 & 8) != 0) {
 LAB_006741a7:
       if (DAT_007d2d18 != 0x84e) {
@@ -869,105 +874,103 @@ LAB_006741b3:
       }
 LAB_006741c0:
       DAT_00811914 = DAT_0081190c + 1;
-      if ((uVar12 & 0x100) != 0) {
-        bVar3 = *(byte *)(DAT_0085755c + DAT_00811914);
-        uVar13 = *(uint *)((int)PTR_00811924 + (uint)bVar3 * 4);
-        if ((((uVar13 & 0x100) != 0) && (((uVar13 | uVar12) & 0x200) == 0)) &&
+      if ((uVar10 & 0x100) != 0) {
+        bVar3 = PTR_0085755c[DAT_00811914];
+        uVar11 = *(uint *)((int)PTR_00811924 + (uint)bVar3 * 4);
+        if ((((uVar11 & 0x100) != 0) && (((uVar11 | uVar10) & 0x200) == 0)) &&
            ((PTR_0081193c != nullptr || (PTR_00811938 != nullptr)))) {
-          uVar12 = (uint)bVar3 << 8 | local_10;
+          uVar10 = (uint)bVar3 << 8 | local_10;
           if ((PTR_0081193c != nullptr) &&
-             (cVar2 = *(char *)(DAT_0085755c + 1 + DAT_00811914),
-             (*(byte *)((int)PTR_00811924 + cVar2 * 4 + 1) & 1) != 0)) {
-            cVar4 = *(char *)PTR_0081193c;
-            puVar14 = st::pointer_boundary_cast<ushort *>(PTR_0081193c);
-            while (cVar4 != '\0') {
-              if ((*puVar14 == uVar12) && ((char)puVar14[1] == cVar2)) {
+             ((*(byte *)((int)PTR_00811924 + PTR_0085755c[DAT_0081190c + 2] * 4 + 1) & 1) != 0)) {
+            cVar8 = *(char *)PTR_0081193c;
+            puVar12 = st::pointer_boundary_cast<ushort *>(PTR_0081193c);
+            while (cVar8 != '\0') {
+              if ((*puVar12 == uVar10) && ((char)puVar12[1] == PTR_0085755c[DAT_0081190c + 2])) {
                 DAT_00811914 = DAT_0081190c + 3;
                 if (DAT_007d2d18 == 0x11) goto LAB_00674360;
-                DAT_007d2d18 = *(int *)(puVar14 + 2);
+                DAT_007d2d18 = *(int *)(puVar12 + 2);
                 goto LAB_00674334;
               }
-              puVar1 = puVar14 + 4;
-              puVar14 = puVar14 + 4;
-              cVar4 = (char)*puVar1;
+              puVar1 = puVar12 + 4;
+              puVar12 = puVar12 + 4;
+              cVar8 = (char)*puVar1;
             }
           }
-          cVar2 = *(char *)PTR_00811938;
-          puVar14 = st::pointer_boundary_cast<ushort *>(PTR_00811938);
-          while (cVar2 != '\0') {
-            if (*puVar14 == uVar12) {
+          cVar8 = *(char *)PTR_00811938;
+          puVar12 = st::pointer_boundary_cast<ushort *>(PTR_00811938);
+          while (cVar8 != '\0') {
+            if (*puVar12 == uVar10) {
               DAT_00811914 = DAT_0081190c + 2;
               goto LAB_00674357;
             }
-            puVar1 = puVar14 + 4;
-            puVar14 = puVar14 + 4;
-            cVar2 = (char)*puVar1;
+            puVar1 = puVar12 + 4;
+            puVar12 = puVar12 + 4;
+            cVar8 = (char)*puVar1;
           }
         }
         if (PTR_00811934 != nullptr) {
-          cVar2 = *(char *)PTR_00811934;
-          puVar14 = st::pointer_boundary_cast<ushort *>(PTR_00811934);
-          while (cVar2 != '\0') {
-            if ((int)cVar2 == local_10) goto LAB_00674357;
-            puVar1 = puVar14 + 4;
-            puVar14 = puVar14 + 4;
-            cVar2 = (char)*puVar1;
+          cVar8 = *(char *)PTR_00811934;
+          puVar12 = st::pointer_boundary_cast<ushort *>(PTR_00811934);
+          while (cVar8 != '\0') {
+            if ((int)cVar8 == local_10) goto LAB_00674357;
+            puVar1 = puVar12 + 4;
+            puVar12 = puVar12 + 4;
+            cVar8 = (char)*puVar1;
           }
         }
-        uVar12 = *(uint *)((int)PTR_00811924 + (char)bVar3 * 4);
-        while (((uVar12 & 0x100) != 0 && ((uVar12 & 0x200) == 0))) {
+        uVar10 = *(uint *)((int)PTR_00811924 + (char)bVar3 * 4);
+        while (((uVar10 & 0x100) != 0 && ((uVar10 & 0x200) == 0))) {
           DAT_00811914 = DAT_00811914 + 1;
-          uVar12 = *(uint *)((int)PTR_00811924 + *(char *)(DAT_0085755c + DAT_00811914) * 4);
+          uVar10 = *(uint *)((int)PTR_00811924 + PTR_0085755c[DAT_00811914] * 4);
         }
       }
       goto LAB_00674334;
     }
-    if (((uVar12 & 0x12) != 0) || ((DAT_0081190c == 0 && (DAT_00811930 != 0)))) {
-      bVar10 = *(byte *)((int)PTR_00811924 + *(char *)(DAT_0085755c + DAT_00811914) * 4);
-      while ((bVar10 & 4) != 0) {
+    if (((uVar10 & 0x12) != 0) || ((DAT_0081190c == 0 && (DAT_00811930 != 0)))) {
+      bVar4 = *(byte *)((int)PTR_00811924 + PTR_0085755c[DAT_00811914] * 4);
+      while ((bVar4 & 4) != 0) {
         DAT_00811914 = DAT_00811914 + 1;
-        bVar10 = *(byte *)((int)PTR_00811924 + *(char *)(DAT_0085755c + DAT_00811914) * 4);
+        bVar4 = *(byte *)((int)PTR_00811924 + PTR_0085755c[DAT_00811914] * 4);
       }
-      if (((uVar12 & 0x10) != 0) && ((int)*(char *)(DAT_0085755c + DAT_00811914) == (uint)bVar3)) {
+      if (((uVar10 & 0x10) != 0) && ((int)PTR_0085755c[DAT_00811914] == (uint)bVar3)) {
         DAT_00811914 = DAT_00811914 + 1;
         DAT_007d2d18 = 0x22;
       }
       if ((DAT_0081190c == 0) && (DAT_00811930 != 0)) {
         st::fn_006747E0(DAT_00811930,DAT_00811920);
       }
-      if (((DAT_007d2d18 == 0x84e) || (DAT_007d2d18 == 0x22)) && ((uVar12 & 0x12) != 0)) {
+      if (((DAT_007d2d18 == 0x84e) || (DAT_007d2d18 == 0x22)) && ((uVar10 & 0x12) != 0)) {
         st::fn_006747E0(DAT_00811928,DAT_00811918);
       }
     }
     if (DAT_007d2d18 != 0x84e) goto LAB_006741b3;
-    if (((uVar12 & 2) != 0) &&
-       (((uVar12 & 0x100) == 0 ||
+    if (((uVar10 & 2) != 0) &&
+       (((uVar10 & 0x100) == 0 ||
         ((1 < DAT_00811914 - DAT_0081190c &&
-         ((*(uint *)((int)PTR_00811924 + *(char *)(DAT_0085755c + 1 + DAT_0081190c) * 4) & 0x100) ==
-          0)))))) {
+         ((*(uint *)((int)PTR_00811924 + PTR_0085755c[DAT_0081190c + 1] * 4) & 0x100) == 0)))))) {
       DAT_007d2d18 = 0x22;
       goto cf_common_join_006743F6;
     }
     DAT_00811914 = DAT_0081190c + 1;
-    if ((uVar12 & 0x20) == 0) {
-      if (((uVar12 & 0x1000) != 0) || ((uVar12 & 0x2800) != 0)) {
-        if ((uVar12 & 0x1000) == 0) {
-          DAT_007d2d18 = (-(uint)((uVar12 & 0x800) != 0) & 0xffffffec) + 0x22;
+    if ((uVar10 & 0x20) == 0) {
+      if (((uVar10 & 0x1000) != 0) || ((uVar10 & 0x2800) != 0)) {
+        if ((uVar10 & 0x1000) == 0) {
+          DAT_007d2d18 = (-(uint)((uVar10 & 0x800) != 0) & 0xffffffec) + 0x22;
         }
         else {
           DAT_007d2d18 = 0x3c;
         }
-        iVar9 = 0;
-        *DAT_00811948 = 0;
+        iVar7 = 0;
+        *PTR_00811948 = '\0';
 LAB_00674017:
-        bVar10 = *(byte *)(DAT_0085755c + DAT_00811914);
-        iVar15 = iVar9;
-        while ((bVar10 != bVar3 && (bVar10 != 0x5c))) {
+        bVar4 = PTR_0085755c[DAT_00811914];
+        iVar13 = iVar7;
+        while ((bVar4 != bVar3 && (bVar4 != 0x5c))) {
           if (DAT_00857558 < DAT_00811914) goto LAB_00674068;
           DAT_00811914 = DAT_00811914 + 1;
-          DAT_00811948[iVar15] = bVar10;
-          iVar15 = iVar15 + 1;
-          bVar10 = *(byte *)(DAT_0085755c + DAT_00811914);
+          PTR_00811948[iVar13] = bVar4;
+          iVar13 = iVar13 + 1;
+          bVar4 = PTR_0085755c[DAT_00811914];
         }
         if (DAT_00811914 < DAT_00857558) {
           DAT_00811914 = DAT_00811914 + 1;
@@ -976,72 +979,72 @@ LAB_00674017:
 LAB_00674068:
           local_14 = -0xd2;
         }
-        if (bVar10 == 0x5c) {
-          if ((int)*(char *)(DAT_0085755c + DAT_00811914) == (uint)bVar3) {
+        if (bVar4 == 0x5c) {
+          if ((int)PTR_0085755c[DAT_00811914] == (uint)bVar3) {
             DAT_00811914 = DAT_00811914 + 1;
-            iVar9 = iVar15 + 1;
-            DAT_00811948[iVar15] = bVar3;
+            iVar7 = iVar13 + 1;
+            PTR_00811948[iVar13] = bVar3;
           }
           else {
-            bVar10 = 0x5c;
-            switch((int)*(char *)(DAT_0085755c + DAT_00811914)) {
+            cVar8 = '\\';
+            switch((int)PTR_0085755c[DAT_00811914]) {
             case 0x66:
               DAT_00811914 = DAT_00811914 + 1;
-              DAT_00811948[iVar15] = 0xc;
-              iVar9 = iVar15 + 1;
+              PTR_00811948[iVar13] = '\f';
+              iVar7 = iVar13 + 1;
               break;
             case 0x6e:
               DAT_00811914 = DAT_00811914 + 1;
-              DAT_00811948[iVar15] = 10;
-              iVar9 = iVar15 + 1;
+              PTR_00811948[iVar13] = '\n';
+              iVar7 = iVar13 + 1;
               break;
             case 0x72:
-              bVar10 = 0xd;
+              cVar8 = '\r';
             default:
               DAT_00811914 = DAT_00811914 + 1;
-              iVar9 = iVar15 + 1;
-              DAT_00811948[iVar15] = bVar10;
+              iVar7 = iVar13 + 1;
+              PTR_00811948[iVar13] = cVar8;
               break;
             case 0x74:
               DAT_00811914 = DAT_00811914 + 1;
-              DAT_00811948[iVar15] = 9;
-              iVar9 = iVar15 + 1;
+              PTR_00811948[iVar13] = '\t';
+              iVar7 = iVar13 + 1;
             }
           }
           goto LAB_00674017;
         }
-        bVar10 = *(byte *)(DAT_0085755c + -1 + DAT_00811914);
-        local_10 = (uint)bVar10;
-        if ((bVar10 == bVar3) && ((DAT_007d2d18 == 0x3c || (DAT_007d2d18 == 0x22)))) {
-          DAT_00811948[iVar15] = 0;
-          DAT_00857548 = DAT_00811948;
+        local_10 = (uint)(byte)PTR_0085755c[DAT_00811914 + -1];
+        if ((PTR_0085755c[DAT_00811914 + -1] == bVar3) &&
+           ((DAT_007d2d18 == 0x3c || (DAT_007d2d18 == 0x22)))) {
+          PTR_00811948[iVar13] = '\0';
+          PTR_00857548 = PTR_00811948;
           if (DAT_007d2d18 == 0x22) {
-            bVar7 = false;
+            bVar6 = false;
             if ((DAT_007d2d24 & 0x100) == 0) {
-              st::fn_006B77E0((char *)DAT_00857528,st::pointer_boundary_cast<byte *>(DAT_00811948));
+              st::fn_006B77E0(PTR_00857528,(byte *)PTR_00811948);
             }
             else {
-              if ((DAT_00857528 == nullptr) || (DAT_00811948 == nullptr))
+              if ((PTR_00857528 == nullptr) || (PTR_00811948 == nullptr))
               goto cf_common_join_006743F6;
-              uVar13 = 0xffffffff;
-              pbVar16_mg0 = st::pointer_boundary_cast<byte *>(DAT_00811948);
+              uVar11 = 0xffffffff;
+              pbVar16_mg0 = PTR_00811948;
               do {
-                pbVar16 = pbVar16_mg0;
-                if (uVar13 == 0) break;
-                uVar13 = uVar13 - 1;
-                pbVar16 = pbVar16_mg0 + 1;
-                bVar3 = *pbVar16_mg0;
-                pbVar16_mg0 = pbVar16;
-              } while (bVar3 != 0);
-              uVar13 = ~uVar13;
-              pbVar16 = pbVar16 + -uVar13;
-              pbVar17_mg1 = st::pointer_boundary_cast<byte *>(DAT_00857528);
-              memmove(pbVar17_mg1, pbVar16, uVar13); /* compiler REP MOVS byte copy */
+                pcVar15 = pbVar16_mg0;
+                if (uVar11 == 0) break;
+                uVar11 = uVar11 - 1;
+                pcVar15 = pbVar16_mg0 + 1;
+                cVar8 = *pbVar16_mg0;
+                pbVar16_mg0 = pcVar15;
+              } while (cVar8 != '\0');
+              uVar11 = ~uVar11;
+              pbVar14 = (byte *)(pcVar15 + -uVar11);
+              pbVar17_mg1 = (byte *)PTR_00857528;
+              memmove(pbVar17_mg1, pbVar14, uVar11); /* compiler REP MOVS byte copy */
             }
           }
         }
         else {
-          DAT_00857548 = st::machine_word_boundary_cast<undefined4>((byte *)(int)(char)*DAT_00811948);
+          PTR_00857548 = (char *)(int)*PTR_00811948;
         }
         goto LAB_006741a7;
       }
@@ -1051,36 +1054,36 @@ LAB_00674068:
     goto LAB_0067447d;
   }
   if ((DAT_00811954 != 0x11) || (DAT_00811914 != 0)) {
-    bVar3 = *(byte *)((int)PTR_00811924 + *(char *)(DAT_0085755c + DAT_00811914) * 4 + 1);
-    iVar9 = DAT_00811914;
-    while (((bVar3 & 1) == 0 && (iVar9 < DAT_00857558))) {
-      iVar9 = iVar9 + 1;
-      bVar3 = *(byte *)((int)PTR_00811924 + *(char *)(DAT_0085755c + iVar9) * 4 + 1);
+    bVar3 = *(byte *)((int)PTR_00811924 + PTR_0085755c[DAT_00811914] * 4 + 1);
+    iVar7 = DAT_00811914;
+    while (((bVar3 & 1) == 0 && (iVar7 < DAT_00857558))) {
+      iVar7 = iVar7 + 1;
+      bVar3 = *(byte *)((int)PTR_00811924 + PTR_0085755c[iVar7] * 4 + 1);
     }
     switch(DAT_00811954) {
     case 7:
       DAT_007d2d18 = 0x11;
-      if (iVar9 != DAT_00857558) {
+      if (iVar7 != DAT_00857558) {
 LAB_00673e50:
-        bVar6 = DAT_00811914 < iVar9;
-        DAT_00811914 = iVar9;
-        if ((bVar6) && ((DAT_007d2d24 & 4) == 0)) {
-          DAT_0081190c = iVar9 + -1;
+        bVar5 = DAT_00811914 < iVar7;
+        DAT_00811914 = iVar7;
+        if ((bVar5) && ((DAT_007d2d24 & 4) == 0)) {
+          DAT_0081190c = iVar7 + -1;
         }
         goto LAB_00673e66;
       }
-      DAT_00811914 = iVar9 + 1;
+      DAT_00811914 = iVar7 + 1;
       break;
     default:
-      if (iVar9 != DAT_00857558) goto LAB_00673e50;
-      DAT_00811914 = iVar9 + 1;
+      if (iVar7 != DAT_00857558) goto LAB_00673e50;
+      DAT_00811914 = iVar7 + 1;
       DAT_00811954 = 0x11;
       goto LAB_00674464;
     case 0x11:
       DAT_007d2d18 = 0x11;
-      bVar6 = iVar9 <= DAT_00811914;
-      DAT_00811914 = iVar9;
-      if (bVar6) goto LAB_00673e7d;
+      bVar5 = iVar7 <= DAT_00811914;
+      DAT_00811914 = iVar7;
+      if (bVar5) goto LAB_00673e7d;
       break;
     case 0x12:
       DAT_007d2d24 = DAT_007d2d24 & 0xfffffff7;
@@ -1088,11 +1091,11 @@ LAB_00673e50:
       DAT_00811914 = DAT_00857558;
       break;
     case 0x1d:
-      if (iVar9 != DAT_00857558) {
+      if (iVar7 != DAT_00857558) {
         DAT_007d2d18 = 0x11;
         goto LAB_00673e50;
       }
-      DAT_00811914 = iVar9 + 1;
+      DAT_00811914 = iVar7 + 1;
       DAT_007d2d18 = 0x1d;
       goto cf_common_exit_00674486;
     }
@@ -1104,13 +1107,13 @@ LAB_00674464:
 LAB_00674357:
   if (DAT_007d2d18 == 0x11) {
 LAB_00674360:
-    if (*(int *)(puVar14 + 2) == 0x1b) {
+    if (*(int *)(puVar12 + 2) == 0x1b) {
       DAT_007d2d18 = 0x1b;
 LAB_006743cd:
-      uVar13 = DAT_007d2d24 & 0xfffffff7;
-      uVar12 = DAT_007d2d24 & 4;
-      DAT_007d2d24 = uVar13;
-      if (uVar12 == 0) {
+      uVar11 = DAT_007d2d24 & 0xfffffff7;
+      uVar10 = DAT_007d2d24 & 4;
+      DAT_007d2d24 = uVar11;
+      if (uVar10 == 0) {
         DAT_00811954 = 0x1d;
         goto cf_continue_loop_006743FF;
       }
@@ -1120,7 +1123,7 @@ LAB_0067433f:
     if ((DAT_007d2d24 & 4) != 0) goto cf_break_loop_006744A4;
   }
   else {
-    DAT_007d2d18 = *(int *)(puVar14 + 2);
+    DAT_007d2d18 = *(int *)(puVar12 + 2);
 LAB_00674334:
     if (DAT_007d2d18 == 0x11) goto LAB_0067433f;
     if (DAT_007d2d18 == 0x12) {
@@ -1133,10 +1136,10 @@ LAB_00674334:
       goto cf_continue_loop_006743FF;
     }
     if (DAT_007d2d18 == 7) {
-      uVar13 = DAT_007d2d24 | 8;
-      uVar12 = DAT_007d2d24 & 4;
-      DAT_007d2d24 = uVar13;
-      if (uVar12 == 0) goto cf_continue_loop_006743FF;
+      uVar11 = DAT_007d2d24 | 8;
+      uVar10 = DAT_007d2d24 & 4;
+      DAT_007d2d24 = uVar11;
+      if (uVar10 == 0) goto cf_continue_loop_006743FF;
       goto cf_break_loop_006744A4;
     }
     if (DAT_007d2d18 == 0x1b) goto LAB_006743cd;
@@ -1153,41 +1156,41 @@ cf_continue_loop_006743FF:
 LAB_0067447d:
   if (DAT_007d2d18 == 0x1d) {
 cf_common_exit_00674486:
-    *DAT_00857528 = 10;
-    DAT_00857528[1] = 0;
+    *PTR_00857528 = '\n';
+    PTR_00857528[1] = '\0';
     goto cf_common_exit_00674540;
   }
 cf_break_loop_006744A4:
-  if (!bVar7) goto cf_common_exit_00674540;
+  if (!bVar6) goto cf_common_exit_00674540;
 LAB_006744b5:
-  uVar5 = *(undefined1 *)(DAT_0085755c + DAT_00811914);
-  *(undefined1 *)(DAT_0085755c + DAT_00811914) = 0;
+  cVar8 = PTR_0085755c[DAT_00811914];
+  PTR_0085755c[DAT_00811914] = '\0';
   if ((DAT_007d2d24 & 0x100) == 0) {
-    st::fn_006B77E0((char *)DAT_00857528,(byte *)(DAT_0085755c + DAT_0081190c));
+    st::fn_006B77E0(PTR_00857528,(byte *)(PTR_0085755c + DAT_0081190c));
     goto cf_common_exit_00674521;
   }
-  if ((DAT_00857528 == nullptr) || ((char *)(DAT_0085755c + DAT_0081190c) == nullptr))
+  if ((PTR_00857528 == nullptr) || (PTR_0085755c + DAT_0081190c == nullptr))
   goto cf_common_exit_00674521;
-  uVar12 = 0xffffffff;
-  pcVar17 = (char *)(DAT_0085755c + DAT_0081190c);
+  uVar10 = 0xffffffff;
+  pcVar15 = PTR_0085755c + DAT_0081190c;
   goto code_r0x006744e7;
   while( true ) {
-    uVar12 = uVar12 - 1;
-    pcVar18 = pcVar17 + 1;
-    cVar2 = *pcVar17;
-    pcVar17 = pcVar18;
+    uVar10 = uVar10 - 1;
+    pcVar16 = pcVar15 + 1;
+    cVar2 = *pcVar15;
+    pcVar15 = pcVar16;
     if (cVar2 == '\0') break;
 code_r0x006744e7:
-    pcVar18 = pcVar17;
-    if (uVar12 == 0) break;
+    pcVar16 = pcVar15;
+    if (uVar10 == 0) break;
   }
-  uVar12 = ~uVar12;
-  pbVar16 = (byte *)(pcVar18 + -uVar12);
-  pbVar17_mg2 = st::pointer_boundary_cast<byte *>(DAT_00857528);
-  memmove(pbVar17_mg2, pbVar16, uVar12); /* compiler REP MOVS byte copy */
+  uVar10 = ~uVar10;
+  pcVar15 = pcVar16 + -uVar10;
+  pbVar17_mg2 = PTR_00857528;
+  memmove(pbVar17_mg2, pcVar15, uVar10); /* compiler REP MOVS byte copy */
 cf_common_exit_00674521:
-  DAT_00857528[DAT_00811914 - DAT_0081190c] = 0;
-  *(undefined1 *)(DAT_0085755c + DAT_00811914) = uVar5;
+  PTR_00857528[DAT_00811914 - DAT_0081190c] = '\0';
+  PTR_0085755c[DAT_00811914] = cVar8;
 cf_common_exit_00674540:
   if (local_14 == 0) {
     local_14 = DAT_007d2d18;
@@ -1205,29 +1208,29 @@ cf_common_exit_00674540:
 void st::fn_006747E0(int param_1,int param_2)
 
 {
-  undefined1 uVar1;
+  char cVar1;
   int iVar2;
   int iVar3;
   int iVar4;
   int iVar5;
 
-  uVar1 = *(undefined1 *)(DAT_00811914 + DAT_0085755c);
-  *(undefined1 *)(DAT_00811914 + DAT_0085755c) = 0;
+  cVar1 = PTR_0085755c[DAT_00811914];
+  PTR_0085755c[DAT_00811914] = '\0';
   iVar3 = 0;
   iVar5 = param_2 + -1;
   if (iVar5 < 0) {
-    *(undefined1 *)(DAT_00811914 + DAT_0085755c) = uVar1;
+    PTR_0085755c[DAT_00811914] = cVar1;
     return;
   }
   do {
     iVar4 = iVar5 + iVar3 >> 1;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (*(code *)PTR_thunk_FUN_00673160_007d2d1c)
-                      (DAT_0081190c + DAT_0085755c,*(undefined4 *)(param_1 + iVar4 * 8));
+                      (PTR_0085755c + DAT_0081190c,*(undefined4 *)(param_1 + iVar4 * 8));
     if (iVar2 < 1) {
       if (-1 < iVar2) {
         DAT_007d2d18 = *(undefined4 *)(param_1 + 4 + iVar4 * 8);
-        *(undefined1 *)(DAT_00811914 + DAT_0085755c) = uVar1;
+        PTR_0085755c[DAT_00811914] = cVar1;
         return;
       }
       iVar5 = iVar4 + -1;
@@ -1236,7 +1239,7 @@ void st::fn_006747E0(int param_1,int param_2)
       iVar3 = iVar4 + 1;
     }
   } while (iVar3 <= iVar5);
-  *(undefined1 *)(DAT_00811914 + DAT_0085755c) = uVar1;
+  PTR_0085755c[DAT_00811914] = cVar1;
   return;
 }
 
@@ -1249,7 +1252,7 @@ undefined4 st::fn_006748D0(void)
 {
   uint uVar1;
   int iVar2;
-  byte *pbVar3;
+  char *pcVar3;
   float10 fVar4;
   longlong lVar5;
   InternalExceptionFrame local_50;
@@ -1259,8 +1262,8 @@ undefined4 st::fn_006748D0(void)
   DAT_007d2d18 = 0x25;
   DAT_00811914 = DAT_0081190c;
   local_8 = 0;
-  if (DAT_0085755c[DAT_0081190c] == 0x30) {
-    uVar1 = st::fn_007306E0((uint)DAT_0085755c[DAT_0081190c + 1]);
+  if (PTR_0085755c[DAT_0081190c] == '0') {
+    uVar1 = st::fn_007306E0((uint)(byte)PTR_0085755c[DAT_0081190c + 1]);
     if (uVar1 == 0x62) {
       local_8 = 2;
     }
@@ -1273,15 +1276,15 @@ undefined4 st::fn_006748D0(void)
   iVar2 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    pbVar3 = st::pointer_boundary_cast<byte *>(DAT_0085755c);
+    pcVar3 = PTR_0085755c;
     if (iVar2 == -0x3c) {
       while( true ) {
         if (DAT_007f148c < 2) {
-          uVar1 = (byte)PTR_DAT_007f1280[(char)pbVar3[DAT_00811914] * 2] & 4;
+          uVar1 = (byte)PTR_DAT_007f1280[pcVar3[DAT_00811914] * 2] & 4;
         }
         else {
-          uVar1 = st::fn_00730610((int)(char)pbVar3[DAT_00811914],4);
-          pbVar3 = st::pointer_boundary_cast<byte *>(DAT_0085755c);
+          uVar1 = st::fn_00730610((int)pcVar3[DAT_00811914],4);
+          pcVar3 = PTR_0085755c;
         }
         if (uVar1 == 0) break;
         DAT_00811914 = DAT_00811914 + 1;
@@ -1296,18 +1299,18 @@ undefined4 st::fn_006748D0(void)
   }
   if (local_8 != 0) {
     DAT_00811914 = DAT_00811914 + 2;
-    uVar1 = st::fn_006B9770(st::pointer_boundary_cast<byte *>(DAT_0085755c),st::pointer_boundary_cast<int *>(&DAT_00811914),local_8);
+    uVar1 = st::fn_006B9770((byte *)PTR_0085755c,st::pointer_boundary_cast<int *>(&DAT_00811914),local_8);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    _DAT_00857548 = (double)CONCAT44(DAT_0085754c,uVar1);
+    _PTR_00857548 = (double)CONCAT44(DAT_0085754c,uVar1);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }
-  fVar4 = st::fn_006C8990(st::pointer_boundary_cast<byte *>(DAT_0085755c),st::pointer_boundary_cast<int *>(&DAT_00811914),st::pointer_boundary_cast<undefined4 *>(&local_c));
-  _DAT_00857548 = (double)fVar4;
+  fVar4 = st::fn_006C8990((byte *)PTR_0085755c,st::pointer_boundary_cast<int *>(&DAT_00811914),st::pointer_boundary_cast<undefined4 *>(&local_c));
+  _PTR_00857548 = (double)fVar4;
   if (local_c == 0) {
     lVar5 = st::fn_0072E288();
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    _DAT_00857548 = (double)CONCAT44(DAT_0085754c,(int)lVar5);
+    _PTR_00857548 = (double)CONCAT44(DAT_0085754c,(int)lVar5);
     g_currentExceptionFrame = local_50.previous;
     DAT_007d2d18 = 0x25;
     return 0;
@@ -2198,31 +2201,31 @@ void __cdecl st::fn_00675DC0(uint param_1,DArrayTy *param_2)
 {
   dword dVar1;
   ushort *puVar2;
-  STGameObjC *pSVar3;
-  int iVar4;
+  STGameObjC *this;
+  int iVar3;
+  uint uVar4;
   uint uVar5;
-  uint uVar6;
 
   if (((g_allPlayers_007FA174 != nullptr) && (param_2 != nullptr)) &&
      (dVar1 = param_2->count, dVar1 != 0)) {
-    uVar6 = 0;
+    uVar5 = 0;
     if (dVar1 != 0) {
-      uVar5 = 0;
+      uVar4 = 0;
       if (dVar1 == 0) {
         puVar2 = nullptr;
         goto LAB_00675dfe;
       }
       do {
-        puVar2 = DArrayAt<ushort>(param_2, uVar5);
+        puVar2 = DArrayAt<ushort>(param_2, uVar4);
 LAB_00675dfe:
-        pSVar3 = st::fn_004028BA(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
-        if (((pSVar3 != nullptr) && (iVar4 = (*pSVar3->vtable->vfunc_2C)(), iVar4 == 0x78)
-            ) && (iVar4 = (*pSVar3->vtable->vfunc_2C)(), iVar4 == 0x78)) {
-          pSVar3->field_0269 = 0xffffffff;
+        this = st::fn_004028BA(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
+        if (((this != nullptr) && (iVar3 = this->vfunc_2C(), iVar3 == 0x78)
+            ) && (iVar3 = this->vfunc_2C(), iVar3 == 0x78)) {
+          this->field_0269 = 0xffffffff;
         }
-        uVar6 = uVar6 + 1;
-        uVar5 = uVar6 & 0xffff;
-      } while (uVar5 < param_2->count);
+        uVar5 = uVar5 + 1;
+        uVar4 = uVar5 & 0xffff;
+      } while (uVar4 < param_2->count);
     }
     st::fn_0040178F(g_allPlayers_007FA174,(char)param_1,0,param_2,nullptr);
   }
@@ -2375,12 +2378,12 @@ void __cdecl st::fn_00676930(uint param_1)
     memmove(puVar6, puVar5, 0x20); /* compiler REP MOVS byte copy */
     iVar3 = 0;
     st::fn_00404048(g_allPlayers_007FA174,param_1,st::pointer_boundary_cast<byte *>(&DAT_0080c83e),0);
-    param_1 = 0;
+    auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
     local_8 = st::pointer_boundary_cast<uint *>(&DAT_0080c947);
     puVar4 = st::pointer_boundary_cast<ushort *>(&DAT_0080c8cd);
     do {
-      if ((byte)(&DAT_0080c83f)[param_1] < 8) {
-        puVar1 = (byte *)(st::fn_004044E4(local_298,(&DAT_0080c83f)[param_1]));
+      if ((byte)(&DAT_0080c83f)[param_1_after_write] < 8) {
+        puVar1 = (byte *)(st::fn_004044E4(local_298,(&DAT_0080c83f)[param_1_after_write]));
         puVar7 = (byte *)(local_140);
         memmove(puVar7, puVar1, 0x138); /* compiler REP MOVS byte copy */
         puVar4[-2] = (short)local_140[0x25] + (short)local_140[0x21] + (short)local_140[0x1d] +
@@ -2403,15 +2406,15 @@ void __cdecl st::fn_00676930(uint param_1)
         puVar4[4] = (ushort)uVar2;
         uVar2 = (((uVar2 & 0xffff) + (uint)*puVar4) * 3 + ((uint)puVar4[-1] + (uint)puVar4[3]) * -2
                  + (uint)puVar4[-2] + (uint)puVar4[2]) * 5;
-        if ((int)local_160[(byte)(&DAT_0080c83f)[param_1]] < 0) {
+        if ((int)local_160[(byte)(&DAT_0080c83f)[param_1_after_write]] < 0) {
           *local_8 = ((int)uVar2 < 0) - 1 & uVar2;
         }
         else {
-          *local_8 = local_160[(byte)(&DAT_0080c83f)[param_1]];
+          *local_8 = local_160[(byte)(&DAT_0080c83f)[param_1_after_write]];
         }
       }
       puVar4 = puVar4 + 8;
-      param_1 = param_1 + 1;
+      param_1_after_write = param_1_after_write + 1;
       local_8 = local_8 + 1;
     } while ((int)puVar4 < 0x80c94d);
   }

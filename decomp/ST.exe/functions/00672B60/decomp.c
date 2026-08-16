@@ -63,15 +63,15 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\Ai_lex.c",0xfd);
     return exceptionCode;
   }
-  if (DAT_0085755c == nullptr) {
+  if (PTR_0085755c == nullptr) {
     local_c = Library::DKW::LIB::MemAlloc(0x401);
-    *(undefined1 *)local_c = 0;
+    *(char *)local_c = '\0';
   }
-  if (DAT_00857528 == nullptr) {
+  if (PTR_00857528 == nullptr) {
     local_10 = Library::DKW::LIB::MemAlloc(0x401);
     *(char *)local_10 = '\0';
   }
-  if (DAT_00811948 == nullptr) {
+  if (PTR_00811948 == nullptr) {
     local_14 = Library::DKW::LIB::MemAlloc(0x401);
     *(char *)local_14 = '\0';
   }
@@ -85,9 +85,9 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   piVar2 = local_1c;
   local_1c[1] = DAT_00857560;
   local_1c[2] = (int)PTR_0081194c;
-  pcVar3_mg0 = FUN_006c49b0((char *)DAT_00857528);
+  pcVar3_mg0 = FUN_006c49b0(PTR_00857528);
   piVar2[6] = (int)pcVar3_mg0;
-  pcVar3_mg1 = FUN_006c49b0((char *)DAT_00811948);
+  pcVar3_mg1 = FUN_006c49b0(PTR_00811948);
   piVar2[0xb] = (int)pcVar3_mg1;
   pcVar3_mg2 = FUN_006c49b0(DAT_0085753c);
   piVar2[7] = (int)pcVar3_mg2;
@@ -125,21 +125,21 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
       }
     }
   }
-  if (DAT_0085755c == nullptr) {
-    DAT_0085755c = local_c;
+  if (PTR_0085755c == nullptr) {
+    PTR_0085755c = (char *)local_c;
   }
-  if (DAT_00857528 == nullptr) {
-    DAT_00857528 = local_10;
+  if (PTR_00857528 == nullptr) {
+    PTR_00857528 = (char *)local_10;
   }
-  if (DAT_00811948 == nullptr) {
-    DAT_00811948 = local_14;
+  if (PTR_00811948 == nullptr) {
+    PTR_00811948 = (char *)local_14;
   }
   if (DAT_0085753c == nullptr) {
     DAT_0085753c = (char *)local_8;
   }
   DAT_00857560 = local_18;
   g_currentExceptionFrame = local_60.previous;
-  piVar2[9] = DAT_00857548;
+  piVar2[9] = (int)PTR_00857548;
   piVar2[10] = DAT_0085754c;
   piVar2[8] = DAT_00857554;
   piVar2[3] = DAT_007d2d24;

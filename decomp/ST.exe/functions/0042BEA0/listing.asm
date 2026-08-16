@@ -166,7 +166,8 @@ STAllPlayersC::AddObjToTmp2::cf_common_exit_0042C072:
 0042C083  8B 10                     MOV EDX,dword ptr [EAX]
 0042C085  6A 01                     PUSH 0x1
 0042C087  8B C8                     MOV ECX,EAX
-0042C089  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::AddObjToTmp2::override::prt_42c089_a0bf87f6:
+0042C089  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042C08F  8B 45 AC                  MOV EAX,dword ptr [EBP + -0x54]
 0042C092  A3 F8 8D 85 00            MOV [0x00858df8],EAX
 LAB_0042c097:

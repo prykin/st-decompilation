@@ -1601,14 +1601,14 @@ void st::fn_006829B0(void)
   undefined1 local_c;
   float local_b;
 
-  iVar1 = st::fn_004018FC(st::pointer_boundary_cast<byte *>(DAT_00857528));
+  iVar1 = st::fn_004018FC((byte *)PTR_00857528);
   if (iVar1 == 0) {
     if (DAT_007d3fa4 != 0) {
-      st::fn_00405411(-0x73,(char *)DAT_00857528);
+      st::fn_00405411(-0x73,PTR_00857528);
     }
-    uVar2 = st::fn_00405A10(st::pointer_boundary_cast<byte *>(DAT_00857528));
+    uVar2 = st::fn_00405A10((byte *)PTR_00857528);
     if ((int)uVar2 < 0) {
-      st::fn_00405411(-0x73,(char *)DAT_00857528);
+      st::fn_00405411(-0x73,PTR_00857528);
     }
     else {
       iVar1 = 2;
@@ -1617,28 +1617,28 @@ void st::fn_006829B0(void)
   switch(iVar1) {
   case 1:
     local_c = 6;
-    iVar1 = st::fn_00405CB8(st::pointer_boundary_cast<byte *>(DAT_00857528));
+    iVar1 = st::fn_00405CB8((byte *)PTR_00857528);
     local_b = (float)STReplaceLowWord((uint32_t)(local_b), (uint16_t)((short)iVar1));
     st::fn_00401014((undefined4 *)&local_c);
     st::fn_00402469();
     return;
   case 2:
     local_c = 1;
-    local_b = (float)st::fn_00404075(st::pointer_boundary_cast<byte *>(DAT_00857528));
+    local_b = (float)st::fn_00404075((byte *)PTR_00857528);
     st::fn_00401014((undefined4 *)&local_c);
     st::fn_00402469();
     return;
   case 3:
     local_c = 2;
-    fVar5 = st::fn_0040124E(st::pointer_boundary_cast<byte *>(DAT_00857528));
+    fVar5 = st::fn_0040124E((byte *)PTR_00857528);
     local_b = (float)fVar5;
     st::fn_00401014((undefined4 *)&local_c);
     st::fn_00402469();
     return;
   case 4:
-    iVar1 = st::fn_00405196(st::pointer_boundary_cast<byte *>(DAT_00857528));
+    iVar1 = st::fn_00405196((byte *)PTR_00857528);
     if (iVar1 == 0) {
-      st::fn_00405411(-0x73,(char *)DAT_00857528);
+      st::fn_00405411(-0x73,PTR_00857528);
     }
     iVar4 = 0;
     if (0 < *(int *)(iVar1 + 4)) {
@@ -1657,34 +1657,34 @@ void st::fn_006829B0(void)
     local_b = 1.26117e-44;
     st::fn_00401014((undefined4 *)&local_c);
     local_c = 1;
-    local_b = (float)st::fn_00404548((char *)DAT_00857528);
+    local_b = (float)st::fn_00404548(PTR_00857528);
     st::fn_00401014((undefined4 *)&local_c);
     st::fn_0040308F(0x7d1,2);
     st::fn_00402469();
     return;
   case 6:
     local_c = 1;
-    local_b = (float)st::fn_004046FB((char *)DAT_00857528);
+    local_b = (float)st::fn_004046FB(PTR_00857528);
     st::fn_00401014((undefined4 *)&local_c);
     st::fn_0040308F(0x7d2,1);
     st::fn_00402469();
     return;
   case 7:
     local_c = 1;
-    local_b = (float)st::fn_00403EA9((char *)DAT_00857528);
+    local_b = (float)st::fn_00403EA9(PTR_00857528);
     st::fn_00401014((undefined4 *)&local_c);
     st::fn_0040308F(0x7d4,1);
     st::fn_00402469();
     return;
   case 8:
     local_c = 1;
-    local_b = (float)st::fn_00403EC2((char *)DAT_00857528);
+    local_b = (float)st::fn_00403EC2(PTR_00857528);
     st::fn_00401014((undefined4 *)&local_c);
     st::fn_0040308F(0x7d5,1);
     st::fn_00402469();
     return;
   default:
-    st::fn_00405411(-0x73,(char *)DAT_00857528);
+    st::fn_00405411(-0x73,PTR_00857528);
   }
   st::fn_00402469();
   return;
@@ -1696,10 +1696,10 @@ void st::fn_00682CF0(void)
 
 {
   undefined1 local_c;
-  undefined4 local_b;
+  char *local_b;
 
   local_c = 1;
-  local_b = DAT_00857548;
+  local_b = PTR_00857548;
   st::fn_00401014((undefined4 *)&local_c);
   st::fn_00402469();
   return;
@@ -1715,7 +1715,7 @@ void st::fn_00682D30(void)
   undefined1 local_c;
   float local_b;
 
-  local_b = (float)_DAT_00857548;
+  local_b = (float)_PTR_00857548;
   local_c = 2;
   st::fn_00401014((undefined4 *)&local_c);
   st::fn_00402469();

@@ -61,9 +61,9 @@ STGroupBoatC::GetDepotForAttack
         DArrayGetElement(pSVar6->field_020E,index,&local_24);
         if (uStack_22 != 0xffff) {
           pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_24,uStack_22,(int)cStack_23);
-          iVar5 = (*pSVar3->vtable->vfunc_2C)();
+          iVar5 = pSVar3->vfunc_2C();
           if ((iVar5 == 0x3b) ||
-             (iVar5 = (*pSVar3->vtable->vfunc_2C)(), pSVar6 = local_14, iVar5 == 0x60)) {
+             (iVar5 = pSVar3->vfunc_2C(), pSVar6 = local_14, iVar5 == 0x60)) {
             STFishC::sub_004162B0((STFishC *)pSVar3,&local_8,&local_6,&local_a);
             local_EAX_310 =
                  FUN_006aadd0((int)local_10,(int)local_e,(int)local_c,(int)local_8,(int)local_6,

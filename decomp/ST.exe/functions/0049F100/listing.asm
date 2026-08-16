@@ -200,7 +200,8 @@ LAB_0049f2f9:
 0049F336  8B 10                     MOV EDX,dword ptr [EAX]
 0049F338  51                        PUSH ECX
 0049F339  8B C8                     MOV ECX,EAX
-0049F33B  FF 92 08 01 00 00         CALL dword ptr [EDX + 0x108]
+STGroupBoatC::Capture::override::prt_49f33b_66d08e71:
+0049F33B  FF 92 08 01 00 00         CALL dword ptr [EDX + 0x108]  ; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4
 0049F341  85 C0                     TEST EAX,EAX
 0049F343  0F 85 84 01 00 00         JNZ 0x0049f4cd
 LAB_0049f349:

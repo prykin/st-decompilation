@@ -107,12 +107,14 @@ LAB_0044b6e8:
 0044B70A  75 1C                     JNZ 0x0044b728
 0044B70C  8B 07                     MOV EAX,dword ptr [EDI]
 0044B70E  8B CF                     MOV ECX,EDI
-0044B710  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STAllPlayersC::SelectObjects::override::prt_44b710_d4e0dbd9:
+0044B710  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044B716  85 C0                     TEST EAX,EAX
 0044B718  74 0E                     JZ 0x0044b728
 0044B71A  8B 17                     MOV EDX,dword ptr [EDI]
 0044B71C  8B CF                     MOV ECX,EDI
-0044B71E  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+STAllPlayersC::SelectObjects::override::prt_44b71e_d4e0dbd9:
+0044B71E  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044B724  85 C0                     TEST EAX,EAX
 0044B726  75 17                     JNZ 0x0044b73f
 LAB_0044b728:
@@ -467,12 +469,14 @@ LAB_0044bad0:
 0044BAF2  75 1C                     JNZ 0x0044bb10
 0044BAF4  8B 17                     MOV EDX,dword ptr [EDI]
 0044BAF6  8B CF                     MOV ECX,EDI
-0044BAF8  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STAllPlayersC::SelectObjects::override::prt_44baf8_d4e0dbd9:
+0044BAF8  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044BAFE  85 C0                     TEST EAX,EAX
 0044BB00  74 0E                     JZ 0x0044bb10
 0044BB02  8B 07                     MOV EAX,dword ptr [EDI]
 0044BB04  8B CF                     MOV ECX,EDI
-0044BB06  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]
+STAllPlayersC::SelectObjects::override::prt_44bb06_d4e0dbd9:
+0044BB06  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044BB0C  85 C0                     TEST EAX,EAX
 0044BB0E  75 17                     JNZ 0x0044bb27
 LAB_0044bb10:
@@ -545,7 +549,8 @@ LAB_0044bbac:
 0044BBC3  E8 F2 6C FB FF            CALL 0x004028ba
 0044BBC8  8B 10                     MOV EDX,dword ptr [EAX]
 0044BBCA  8B C8                     MOV ECX,EAX
-0044BBCC  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+STAllPlayersC::SelectObjects::override::prt_44bbcc_d4e0dbd9:
+0044BBCC  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044BBD2  85 C0                     TEST EAX,EAX
 0044BBD4  75 12                     JNZ 0x0044bbe8
 0044BBD6  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]

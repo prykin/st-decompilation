@@ -66,7 +66,8 @@ LAB_0065dda9:
 0065DDC2  0F 84 C9 01 00 00         JZ 0x0065df91
 0065DDC8  8B 17                     MOV EDX,dword ptr [EDI]
 0065DDCA  8B CF                     MOV ECX,EDI
-0065DDCC  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+FUN_0065dd30::override::prt_65ddcc_d4e0dbd9:
+0065DDCC  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0065DDD2  85 C0                     TEST EAX,EAX
 0065DDD4  0F 84 B7 01 00 00         JZ 0x0065df91
 0065DDDA  8B 07                     MOV EAX,dword ptr [EDI]

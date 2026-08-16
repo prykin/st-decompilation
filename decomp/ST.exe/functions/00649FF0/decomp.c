@@ -138,8 +138,8 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
       if (uVar6 != 0) {
         uVar8 = 0xffffffff;
         uVar7 = 0;
-        param_1 = (uint *)0xffffffff;
-        param_4 = (int *)0xffffffff;
+        auto param_1_after_write = (uint *)0xffffffff; /* compiler stack-slot lifetime split */
+        auto param_4_after_write = (int *)0xffffffff; /* compiler stack-slot lifetime split */
         if (0 < (int)uVar6) {
           bVar13 = uVar6 != 0;
           do {
@@ -149,13 +149,13 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
                ((STField<int>(pvVar4,0x108) < 0 &&
                 ((puVar2 = STField<uint *>(pvVar4,0x110), (int)local_c <= (int)puVar2 &&
                  (piVar3 = STField<int *>(pvVar4,0x10c), (int)piVar3 <= (int)local_c)))))) {
-              if ((int)param_4 < (int)piVar3) {
+              if ((int)param_4_after_write < (int)piVar3) {
                 uVar8 = uVar7;
-                param_4 = piVar3;
+                param_4_after_write = piVar3;
               }
-              if ((int)param_1 < (int)puVar2) {
+              if ((int)param_1_after_write < (int)puVar2) {
                 uVar8 = uVar7;
-                param_1 = puVar2;
+                param_1_after_write = puVar2;
               }
             }
             uVar6 = array->count;
@@ -191,8 +191,8 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
         }
         uVar8 = 0xffffffff;
         uVar7 = 0;
-        param_1 = (uint *)0xffffffff;
-        param_4 = (int *)0xffffffff;
+        param_1_after_write = (uint *)0xffffffff;
+        param_4_after_write = (int *)0xffffffff;
         if (0 < (int)uVar6) {
           bVar13 = uVar6 != 0;
           do {
@@ -202,13 +202,13 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
                ((STField<uint>(pvVar4,0x108) == local_c &&
                 ((puVar2 = STField<uint *>(pvVar4,0x110), (int)local_18 <= (int)puVar2 &&
                  (piVar3 = STField<int *>(pvVar4,0x10c), (int)piVar3 <= (int)local_18)))))) {
-              if ((int)param_4 < (int)piVar3) {
+              if ((int)param_4_after_write < (int)piVar3) {
                 uVar8 = uVar7;
-                param_4 = piVar3;
+                param_4_after_write = piVar3;
               }
-              if ((int)param_1 < (int)puVar2) {
+              if ((int)param_1_after_write < (int)puVar2) {
                 uVar8 = uVar7;
-                param_1 = puVar2;
+                param_1_after_write = puVar2;
               }
             }
             uVar6 = array->count;

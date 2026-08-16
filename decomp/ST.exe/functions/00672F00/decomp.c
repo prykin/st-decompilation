@@ -27,7 +27,7 @@ int FUN_00672f00(void)
   }
   FUN_006b98c0((int *)&DAT_00811958,piVar3);
   if (piVar3 != nullptr) {
-    if ((DAT_00857528 != nullptr) && ((char *)piVar3[6] != nullptr)) {
+    if ((PTR_00857528 != nullptr) && ((char *)piVar3[6] != nullptr)) {
       uVar4 = 0xffffffff;
       pcVar6 = (char *)piVar3[6];
       do {
@@ -40,12 +40,12 @@ int FUN_00672f00(void)
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
       pcVar6 = pcVar7 + -uVar4;
-      pcVar7 = DAT_00857528;
+      pcVar7 = PTR_00857528;
       memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
       uVar5 = 0;
     }
     FUN_006a5e90((short *)piVar3[6]);
-    if ((DAT_00811948 != nullptr) && ((char *)piVar3[0xb] != nullptr)) {
+    if ((PTR_00811948 != nullptr) && ((char *)piVar3[0xb] != nullptr)) {
       uVar4 = 0xffffffff;
       pcVar6 = (char *)piVar3[0xb];
       do {
@@ -58,7 +58,7 @@ int FUN_00672f00(void)
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
       pcVar6 = pcVar7 + -uVar4;
-      pcVar7 = DAT_00811948;
+      pcVar7 = PTR_00811948;
       memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
       uVar5 = 0;
     }
@@ -81,7 +81,7 @@ int FUN_00672f00(void)
     }
     FUN_006a5e90((short *)piVar3[7]);
     DAT_007d2d24 = piVar3[3];
-    DAT_00857548 = piVar3[9];
+    PTR_00857548 = (char *)piVar3[9];
     DAT_0085754c = piVar3[10];
     DAT_007d2d18 = piVar3[4];
     DAT_00811954 = piVar3[5];
@@ -90,9 +90,9 @@ int FUN_00672f00(void)
     DAT_00857554 = piVar3[8];
   }
   if (DAT_00811958 == nullptr) {
-    FreeAndNull(&DAT_00857528);
-    FreeAndNull(&DAT_00811948);
-    FreeAndNull(&DAT_0085755c);
+    FreeAndNull(&PTR_00857528);
+    FreeAndNull(&PTR_00811948);
+    FreeAndNull(&PTR_0085755c);
     FreeAndNull(&DAT_0085753c);
     for (puVar2 = DAT_00811908; puVar2 != nullptr; puVar2 = (undefined4 *)*puVar2) {
       FUN_006a5e90((short *)puVar2[1]);

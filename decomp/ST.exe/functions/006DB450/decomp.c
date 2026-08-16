@@ -98,6 +98,7 @@ LAB_006db59d:
       param_3 = (undefined2 *)(puVar9 + (param_4 - param_5));
       iVar4 = param_6 + -1;
       bVar12 = 0 < param_6;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = iVar4;
     } while (iVar4 != 0 && bVar12);
   }

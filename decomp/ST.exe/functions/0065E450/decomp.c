@@ -51,11 +51,11 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
     return 0;
   }
   GVar4 = array->count;
-  param_3 = 0;
+  auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < (int)GVar4) {
     do {
-      if (param_3 < GVar4) {
-        puVar5 = DArrayAt<ushort>(array, param_3);
+      if (param_3_after_write < GVar4) {
+        puVar5 = DArrayAt<ushort>(array, param_3_after_write);
       }
       else {
         puVar5 = nullptr;
@@ -90,8 +90,8 @@ LAB_0065e5a7:
       }
                     /* WARNING: This code block may not be properly labeled as switch case */
       GVar4 = array->count;
-      param_3 = param_3 + 1;
-    } while ((int)param_3 < (int)GVar4);
+      param_3_after_write = param_3_after_write + 1;
+    } while ((int)param_3_after_write < (int)GVar4);
   }
   DArrayDestroy(array);
   return local_8;

@@ -129,8 +129,7 @@ LAB_006d1089:
       } while( true );
     }
     if (0 < param_6) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_9 = param_6;
+      auto param_9_after_write = param_6; /* compiler stack-slot lifetime split */
       do {
         uVar7 = param_5;
         if (0 < (int)param_5) {
@@ -149,9 +148,8 @@ LAB_006d1089:
         }
         param_3 = (uint *)((int)param_3 + (param_4 - param_5));
         param_1 = (AnonShape_006D0F50_D22E7C78 *)((int)param_1 + (param_2 - param_5));
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_9 = param_9 - 1;
-      } while (param_9 != 0);
+        param_9_after_write = param_9_after_write - 1;
+      } while (param_9_after_write != 0);
     }
   }
   return;

@@ -147,7 +147,8 @@ LAB_0042bca0:
 0042BCC1  8B 10                     MOV EDX,dword ptr [EAX]
 0042BCC3  6A 01                     PUSH 0x1
 0042BCC5  8B C8                     MOV ECX,EAX
-0042BCC7  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::AddObjToTmp::override::prt_42bcc7_a0bf87f6:
+0042BCC7  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042BCCD  8B 45 A8                  MOV EAX,dword ptr [EBP + -0x58]
 0042BCD0  A3 F8 8D 85 00            MOV [0x00858df8],EAX
 0042BCD5  8B 45 EC                  MOV EAX,dword ptr [EBP + -0x14]

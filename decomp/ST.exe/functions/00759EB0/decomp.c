@@ -13,8 +13,7 @@ void FUN_00759eb0(int param_1,int param_2,int param_3,int param_4,int param_5,ui
   puVar1 = (undefined4 *)(param_1 + param_2 * 4);
   puVar3 = (undefined4 *)(param_3 + param_4 * 4);
   if (0 < param_5) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_2 = param_5;
+    auto param_2_after_write = param_5; /* compiler stack-slot lifetime split */
     do {
       puVar4 = (undefined4 *)*puVar1;
       puVar5 = (undefined4 *)*puVar3;
@@ -30,9 +29,8 @@ void FUN_00759eb0(int param_1,int param_2,int param_3,int param_4,int param_5,ui
         puVar4 = (undefined4 *)((int)puVar4 + 1);
         puVar5 = (undefined4 *)((int)puVar5 + 1);
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_2 = param_2 + -1;
-    } while (param_2 != 0);
+      param_2_after_write = param_2_after_write + -1;
+    } while (param_2_after_write != 0);
   }
   return;
 }

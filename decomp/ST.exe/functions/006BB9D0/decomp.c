@@ -39,7 +39,7 @@ int FUN_006bb9d0(AnonShape_006BB9D0_BD42D958 *param_1,int param_2,int param_3,in
   local_34 = 0;
   BVar3 = IntersectRect(&local_44,&local_24,&local_14);
   if (BVar3 != 0) {
-    param_1 = nullptr;
+    auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     while (piVar1 = (int *)pAVar2->field_0040,
           iVar4 = (**(code **)(*piVar1 + 0x14))
@@ -52,11 +52,11 @@ int FUN_006bb9d0(AnonShape_006BB9D0_BD42D958 *param_1,int param_2,int param_3,in
       }
       else {
         if (((iVar4 != -0x7789ff60) && (iVar4 != -0x7789fe52)) ||
-           (param_1 != nullptr)) break;
+           (param_1_after_write != nullptr)) break;
         Sleep(2);
       }
-      param_1 = (AnonShape_006BB9D0_BD42D958 *)&param_1->field_0x1;
-      if (1 < (int)param_1) break;
+      param_1_after_write = (AnonShape_006BB9D0_BD42D958 *)&param_1_after_write->field_0x1;
+      if (1 < (int)param_1_after_write) break;
     }
     if ((iVar4 == -0x7789ff60) || (iVar4 == -0x7789fe52)) {
       iVar4 = 0;

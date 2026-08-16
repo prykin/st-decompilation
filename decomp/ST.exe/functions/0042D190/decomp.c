@@ -25,6 +25,7 @@ STAllPlayersC::ResetActivityFromObjs
   objPtr = (char)param_1;
   uVar5 = (ushort)param_4;
   if (param_2 < 0x19b) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x19a) {
 LAB_0042d1f8:
       index = 0;
@@ -36,7 +37,7 @@ LAB_0042d1f8:
         DArrayGetElement(param_3,index,&param_4);
         if ((((ushort)param_4 != 0xffff) &&
             (pSVar3 = GetObjPtr(this,objPtr,(ushort)param_4,CASE_1), pSVar3 != nullptr))
-           && (pSVar3->vfunc_E8(0), param_5 != 0)) {
+           && ((*pSVar3->vtable[1].vfunc_14)(pSVar3,0), param_5 != 0)) {
           STGameObjC::ResetSelfCheckFlag(pSVar3);
         }
         index = index + 1;
@@ -51,7 +52,7 @@ LAB_0042d1c3:
         if (pSVar3 == nullptr) {
           return;
         }
-        pSVar3->vfunc_E8(0);
+        (*pSVar3->vtable[1].vfunc_14)(pSVar3,0);
         goto LAB_0042d2c3;
       }
       if (param_2 == 0) {
@@ -76,7 +77,7 @@ LAB_0042d270:
       if (pSVar3 == nullptr) {
         return;
       }
-      pSVar3->vfunc_E8(0);
+      (*pSVar3->vtable[1].vfunc_14)(pSVar3,0);
       if (param_5 == 0) {
         return;
       }
@@ -94,7 +95,7 @@ LAB_0042d270:
     if (pSVar3 == nullptr) {
       return;
     }
-    pSVar3->vfunc_E8(0);
+    (*pSVar3->vtable[1].vfunc_14)(pSVar3,0);
 LAB_0042d2c3:
     if (param_5 != 0) {
       STGameObjC::ResetSelfCheckFlag(pSVar3);

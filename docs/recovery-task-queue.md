@@ -601,20 +601,62 @@ Accepted state:
 
 ### Q-052 Recover use-site pointer roles and callable table slots
 
-Status: next major cluster. The accepted compiler audit is now led by 304
-pointer-indirection and 235 non-callable-value diagnostics. Of those, 236 are
-exact indirections on neutral `void *`, 64 dereference a scalar `undefined4`,
-and 235 call a value still rendered as opaque `void`/`code`. The semantic corpus
-still contains 1,722 raw indirect calls.
+Status: implemented, runtime-confirmed, and accepted. The new
+`STIndirectCallsiteAnalyzer/Applier` attaches an address-stable Ghidra call
+override only from exact physical dispatch consensus or a complete machine
+fallback. The fallback derives argument count from pushes/cleanup, receiver
+role from the table-load chain, and only neutral machine-width parameter/return
+types. It never widens the shared vtable member. A script-owned stale override
+is removed when the evidence disappears.
 
-Do not solve this by globally specializing every neutral pointer. The next
-analyzer should recover a use-site lifetime/view from an exact typed load,
-stored-target family, physical vtable slot, or complete indirect-call ABI, and
-apply a persistent pointee or function definition only when all uses of the
-same storage identity agree. Heterogeneous loader/context values retain neutral
-storage with consumer-local views. The following source-assembly cluster is 180
-undeclared identifiers plus 90 missing record members and should be handled
-after the database-level pointer/callable pass.
+The first broad attempt exposed an important negative boundary: 195 machine-only
+overrides in one huge function increased unresolved register inputs by 13.
+Machine fallbacks are now capped at 32 per function; crossing that density
+suppresses the entire fallback family while retaining exact physical-dispatch
+rows. The accepted fixed point contains 145 enabled callsite overrides from
+3,431 machine candidates, all unchanged on the confirming pass, and preserves
+3,192 typed physical-vtable slots. Source generation turns 121 exact duplicated-
+receiver sites into readable member calls through 26 non-virtual forwarding
+wrappers and fails hard if that spelling regresses to a nested
+`exact_indirect_callee` expression.
+
+The same accepted layer extends generated global pointer roles from exact
+pointer-producing stores plus repeated dereferences, isolates exact byte-pointer
+addition lifetimes, prevents the legacy PointerShape pass from downgrading
+modern contextual/source-family records, and splits 260 safely bounded reused
+parameter lifetimes across 183 exported functions. Exact `REP STOSD` byte-pointer loops,
+packed-bit access, signed division by four, and 16.16 rounding are presentation
+normalizations only.
+
+Accepted state:
+
+- run `036d42eb0e484bbb8e66c58b122cf717ed21ee49f3a6115be79be02c267db8b5`;
+- semantic hash `f5a831a90f31a838d0544d14c8d8bb95976a1aecae7346b11867562ab0027971`;
+- corpus manifest `4cfa3a9f97a05ffcef736e9e0653fbf0531c142fe45eda7af6b3775cc211ab73`;
+- `pseudocode_runtime.h` hash
+  `e862abf02069a82b42314c50a439d81f7c9b31529c2ec493c0590f99e8e9196d`
+  is bound by that manifest;
+- 10,407 function records, 5,555 bodies, zero failed bodies, and export/ABI
+  gates with zero errors and zero warnings;
+- quality inventory: 1,722 raw indirect calls, 2,027 raw pointer offsets,
+  17,609 undefined occurrences, 476 residual stack-slot-reuse occurrences, and
+  407 unresolved register inputs;
+- generated source contains 5,555 bodies in 322 translation units and 13,479
+  audit rows. The fixed 64-error Apple Clang audit passes 203 units and retains
+  1,109 errors, 1,092 mapped to stable function addresses.
+
+### Q-053 Recover mutable byte-buffer parameters and pointer-to-byte bit writes
+
+Status: next major cluster. Generic pointer prototypes still retain word-shaped
+pointees even when every machine consumer is byte-addressed. `0040F4D0` is the
+representative case: it copies `param_2` bytes from its first parameter, reads
+and writes individual bytes, and is called by four related bodies, yet its
+formal remains `undefined4 *`. Recover `byte *`/`char *` only from complete
+machine def-use and unanimous direct-call boundaries; a decompiler cast or one
+consumer is insufficient. The same proof should cover `*byteCursor |= mask`
+and clear forms after the cursor's base/index identity is established. Do not
+specialize heterogeneous loader buffers or infer an array extent from a byte
+pointee.
 
 ## Definition of done for one queue item
 

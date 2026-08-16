@@ -32,7 +32,8 @@ LAB_0042d1c3:
 0042D1DC  8B 16                     MOV EDX,dword ptr [ESI]
 0042D1DE  6A 00                     PUSH 0x0
 0042D1E0  8B CE                     MOV ECX,ESI
-0042D1E2  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::ResetActivityFromObjs::override::prt_42d1e2_a0bf87f6:
+0042D1E2  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042D1E8  E9 D6 00 00 00            JMP 0x0042d2c3
 LAB_0042d1ed:
 0042D1ED  3D 72 01 00 00            CMP EAX,0x172
@@ -67,7 +68,8 @@ LAB_0042d20b:
 0042D236  8B 06                     MOV EAX,dword ptr [ESI]
 0042D238  6A 00                     PUSH 0x0
 0042D23A  8B CE                     MOV ECX,ESI
-0042D23C  FF 90 E8 00 00 00         CALL dword ptr [EAX + 0xe8]
+STAllPlayersC::ResetActivityFromObjs::override::prt_42d23c_a0bf87f6:
+0042D23C  FF 90 E8 00 00 00         CALL dword ptr [EAX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042D242  8B 45 18                  MOV EAX,dword ptr [EBP + 0x18]
 0042D245  85 C0                     TEST EAX,EAX
 0042D247  74 07                     JZ 0x0042d250
@@ -120,7 +122,8 @@ LAB_0042d2a2:
 0042D2B7  8B 06                     MOV EAX,dword ptr [ESI]
 0042D2B9  6A 00                     PUSH 0x0
 0042D2BB  8B CE                     MOV ECX,ESI
-0042D2BD  FF 90 E8 00 00 00         CALL dword ptr [EAX + 0xe8]
+STAllPlayersC::ResetActivityFromObjs::override::prt_42d2bd_a0bf87f6:
+0042D2BD  FF 90 E8 00 00 00         CALL dword ptr [EAX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 LAB_0042d2c3:
 0042D2C3  8B 45 18                  MOV EAX,dword ptr [EBP + 0x18]
 0042D2C6  85 C0                     TEST EAX,EAX
@@ -146,7 +149,8 @@ LAB_0042d2d8:
 0042D2EF  8B 06                     MOV EAX,dword ptr [ESI]
 0042D2F1  6A 00                     PUSH 0x0
 0042D2F3  8B CE                     MOV ECX,ESI
-0042D2F5  FF 90 E8 00 00 00         CALL dword ptr [EAX + 0xe8]
+STAllPlayersC::ResetActivityFromObjs::override::prt_42d2f5_a0bf87f6:
+0042D2F5  FF 90 E8 00 00 00         CALL dword ptr [EAX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042D2FB  8B 45 18                  MOV EAX,dword ptr [EBP + 0x18]
 0042D2FE  85 C0                     TEST EAX,EAX
 0042D300  74 07                     JZ 0x0042d309

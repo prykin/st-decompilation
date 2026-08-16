@@ -79,11 +79,11 @@ void __cdecl st::fn_00675FE0(uint param_1)
   int iVar3;
   DArrayTy *groupContent;
   ushort *puVar3;
-  STGameObjC *pSVar4;
-  int iVar6;
+  STGameObjC *this;
+  int iVar4;
   int iVar5;
-  uint uVar7;
-  uint uVar8;
+  uint uVar5;
+  uint uVar6;
   char objPtr;
   InternalExceptionFrame local_48;
 
@@ -106,29 +106,29 @@ void __cdecl st::fn_00675FE0(uint param_1)
     if (groupContent != nullptr) {
       dVar1 = groupContent->count;
       if (dVar1 != 0) {
-        uVar8 = 0;
+        uVar6 = 0;
         if (dVar1 != 0) {
-          uVar7 = 0;
+          uVar5 = 0;
           if (dVar1 == 0) {
             puVar3 = nullptr;
             goto LAB_00676053;
           }
           do {
-            puVar3 = DArrayAt<ushort>(groupContent, uVar7);
+            puVar3 = DArrayAt<ushort>(groupContent, uVar5);
 LAB_00676053:
-            pSVar4 = st::fn_004028BA(g_allPlayers_007FA174,objPtr,*puVar3,CASE_1);
-            if (pSVar4 != nullptr) {
-              iVar6 = (*pSVar4->vtable->vfunc_2C)();
-              if (iVar6 == 0x78) {
-                iVar6 = (*pSVar4->vtable->vfunc_2C)();
-                if (iVar6 == 0x78) {
-                  pSVar4->field_0269 = 0xffffffff;
+            this = st::fn_004028BA(g_allPlayers_007FA174,objPtr,*puVar3,CASE_1);
+            if (this != nullptr) {
+              iVar4 = this->vfunc_2C();
+              if (iVar4 == 0x78) {
+                iVar4 = this->vfunc_2C();
+                if (iVar4 == 0x78) {
+                  this->field_0269 = 0xffffffff;
                 }
               }
             }
-            uVar8 = uVar8 + 1;
-            uVar7 = uVar8 & 0xffff;
-          } while (uVar7 < groupContent->count);
+            uVar6 = uVar6 + 1;
+            uVar5 = uVar6 & 0xffff;
+          } while (uVar5 < groupContent->count);
         }
         st::fn_0040178F(g_allPlayers_007FA174,objPtr,0,groupContent,nullptr);
       }
@@ -202,16 +202,16 @@ int __cdecl st::fn_00676260(uint param_1,int param_2)
   int iVar2;
   STGroupBoatC *this;
   ushort *puVar2;
-  STGameObjC *pSVar3;
-  int iVar5;
+  STGameObjC *this_00;
+  int iVar3;
   int iVar4;
-  uint uVar6;
-  uint uVar7;
+  uint uVar4;
+  uint uVar5;
   InternalExceptionFrame local_50;
   DArrayTy *local_c;
   int local_8;
 
-  uVar7 = 0;
+  uVar5 = 0;
   local_c = nullptr;
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
@@ -229,30 +229,30 @@ int __cdecl st::fn_00676260(uint param_1,int param_2)
     }
     array = local_c;
     if (local_c->count != 0) {
-      uVar6 = 0;
+      uVar4 = 0;
       if (local_c->count == 0) {
         puVar2 = nullptr;
         goto LAB_006762e0;
       }
       do {
-        puVar2 = DArrayAt<ushort>(array, uVar6);
+        puVar2 = DArrayAt<ushort>(array, uVar4);
 LAB_006762e0:
-        pSVar3 = st::fn_004028BA(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
-        if (pSVar3 != nullptr) {
-          iVar5 = (*pSVar3->vtable->vfunc_2C)();
-          if (iVar5 == 0x78) {
-            iVar5 = pSVar3->field_0259;
+        this_00 = st::fn_004028BA(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
+        if (this_00 != nullptr) {
+          iVar3 = this_00->vfunc_2C();
+          if (iVar3 == 0x78) {
+            iVar3 = this_00->field_0259;
           }
           else {
-            iVar5 = 0;
+            iVar3 = 0;
           }
-          if (param_2 == iVar5) {
+          if (param_2 == iVar3) {
             local_8 = local_8 + 1;
           }
         }
-        uVar7 = uVar7 + 1;
-        uVar6 = uVar7 & 0xffff;
-      } while (uVar6 < array->count);
+        uVar5 = uVar5 + 1;
+        uVar4 = uVar5 & 0xffff;
+      } while (uVar4 < array->count);
     }
     if (array != nullptr) {
       st::fn_006AE110(array);
@@ -287,16 +287,16 @@ int __cdecl st::fn_006763F0(uint param_1,int param_2,int param_3)
   int iVar2;
   STGroupBoatC *this;
   ushort *puVar2;
-  STGameObjC *pSVar3;
-  int iVar5;
+  STGameObjC *this_00;
+  int iVar3;
   int iVar4;
-  uint uVar6;
-  uint uVar7;
+  uint uVar4;
+  uint uVar5;
   InternalExceptionFrame local_50;
   DArrayTy *local_c;
   int local_8;
 
-  uVar7 = 0;
+  uVar5 = 0;
   local_c = nullptr;
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
@@ -314,39 +314,39 @@ int __cdecl st::fn_006763F0(uint param_1,int param_2,int param_3)
     }
     array = local_c;
     if (local_c->count != 0) {
-      uVar6 = 0;
+      uVar4 = 0;
       if (local_c->count == 0) {
         puVar2 = nullptr;
         goto LAB_00676470;
       }
       do {
-        puVar2 = DArrayAt<ushort>(array, uVar6);
+        puVar2 = DArrayAt<ushort>(array, uVar4);
 LAB_00676470:
-        pSVar3 = st::fn_004028BA(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
-        if (pSVar3 != nullptr) {
-          iVar5 = (*pSVar3->vtable->vfunc_2C)();
-          if (iVar5 == 0x78) {
-            iVar5 = pSVar3->field_0259;
+        this_00 = st::fn_004028BA(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
+        if (this_00 != nullptr) {
+          iVar3 = this_00->vfunc_2C();
+          if (iVar3 == 0x78) {
+            iVar3 = this_00->field_0259;
           }
           else {
-            iVar5 = 0;
+            iVar3 = 0;
           }
-          if (param_2 == iVar5) {
-            iVar5 = (*pSVar3->vtable->vfunc_2C)();
-            if (iVar5 == 0x78) {
-              iVar5 = pSVar3->field_0269;
+          if (param_2 == iVar3) {
+            iVar3 = this_00->vfunc_2C();
+            if (iVar3 == 0x78) {
+              iVar3 = this_00->field_0269;
             }
             else {
-              iVar5 = -1;
+              iVar3 = -1;
             }
-            if (param_3 == iVar5) {
+            if (param_3 == iVar3) {
               local_8 = local_8 + 1;
             }
           }
         }
-        uVar7 = uVar7 + 1;
-        uVar6 = uVar7 & 0xffff;
-      } while (uVar6 < array->count);
+        uVar5 = uVar5 + 1;
+        uVar4 = uVar5 & 0xffff;
+      } while (uVar4 < array->count);
     }
     if (array != nullptr) {
       st::fn_006AE110(array);
@@ -891,10 +891,10 @@ st::fn_00677BE0(short param_1,short param_2,byte *param_3,short param_4,short pa
     }
     this = (STFishC *)*puVar3;
     if (((this != nullptr) &&
-        (local_10 = uVar9, local_1c = (*this->vtable[1].vfunc_08)(this), pDVar8 = g_array_007FA160,
+        (local_10 = uVar9, local_1c = this->vfunc_12C(), pDVar8 = g_array_007FA160,
         (short)local_1c == param_1)) &&
        ((param_2 == 0 ||
-        (iVar4 = (*this->vtable[1].vfunc_0C)(this), pDVar8 = g_array_007FA160, iVar4 == param_2))))
+        (iVar4 = this->vfunc_130(), pDVar8 = g_array_007FA160, iVar4 == param_2))))
     {
       iVar4 = 1;
       local_14 = 1;

@@ -8,7 +8,7 @@ undefined4 FUN_006748d0(void)
 {
   uint uVar1;
   int iVar2;
-  byte *pbVar3;
+  char *pcVar3;
   float10 fVar4;
   longlong lVar5;
   InternalExceptionFrame local_50;
@@ -18,8 +18,8 @@ undefined4 FUN_006748d0(void)
   DAT_007d2d18 = 0x25;
   DAT_00811914 = DAT_0081190c;
   local_8 = 0;
-  if (DAT_0085755c[DAT_0081190c] == 0x30) {
-    uVar1 = Library::MSVCRT::FUN_007306e0((uint)DAT_0085755c[DAT_0081190c + 1]);
+  if (PTR_0085755c[DAT_0081190c] == '0') {
+    uVar1 = Library::MSVCRT::FUN_007306e0((uint)(byte)PTR_0085755c[DAT_0081190c + 1]);
     if (uVar1 == 0x62) {
       local_8 = 2;
     }
@@ -32,15 +32,15 @@ undefined4 FUN_006748d0(void)
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    pbVar3 = DAT_0085755c;
+    pcVar3 = PTR_0085755c;
     if (iVar2 == -0x3c) {
       while( true ) {
         if (DAT_007f148c < 2) {
-          uVar1 = (byte)PTR_DAT_007f1280[(char)pbVar3[DAT_00811914] * 2] & 4;
+          uVar1 = (byte)PTR_DAT_007f1280[pcVar3[DAT_00811914] * 2] & 4;
         }
         else {
-          uVar1 = Library::MSVCRT::FUN_00730610((int)(char)pbVar3[DAT_00811914],4);
-          pbVar3 = DAT_0085755c;
+          uVar1 = Library::MSVCRT::FUN_00730610((int)pcVar3[DAT_00811914],4);
+          pcVar3 = PTR_0085755c;
         }
         if (uVar1 == 0) break;
         DAT_00811914 = DAT_00811914 + 1;
@@ -55,18 +55,18 @@ undefined4 FUN_006748d0(void)
   }
   if (local_8 != 0) {
     DAT_00811914 = DAT_00811914 + 2;
-    uVar1 = Library::DKW::STR::FUN_006b9770(DAT_0085755c,&DAT_00811914,local_8);
+    uVar1 = Library::DKW::STR::FUN_006b9770((byte *)PTR_0085755c,&DAT_00811914,local_8);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    _DAT_00857548 = (double)CONCAT44(DAT_0085754c,uVar1);
+    _PTR_00857548 = (double)CONCAT44(DAT_0085754c,uVar1);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }
-  fVar4 = FUN_006c8990(DAT_0085755c,&DAT_00811914,&local_c);
-  _DAT_00857548 = (double)fVar4;
+  fVar4 = FUN_006c8990((byte *)PTR_0085755c,&DAT_00811914,&local_c);
+  _PTR_00857548 = (double)fVar4;
   if (local_c == 0) {
     lVar5 = Library::MSVCRT::__ftol();
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    _DAT_00857548 = (double)CONCAT44(DAT_0085754c,(int)lVar5);
+    _PTR_00857548 = (double)CONCAT44(DAT_0085754c,(int)lVar5);
     g_currentExceptionFrame = local_50.previous;
     DAT_007d2d18 = 0x25;
     return 0;

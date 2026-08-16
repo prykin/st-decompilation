@@ -154,10 +154,10 @@ void __thiscall CGenerate::sub_0069ADA0(CGenerate *this,int param_1,int param_2)
   if (0 < param_2) {
     do {
       pbVar5 = this->field_000C;
-      param_2 = 0;
+      auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
       if (0 < *(short *)(pbVar5 + 2)) {
         do {
-          psVar6 = (short *)(param_1 + (*(short *)pbVar5 * param_2 + local_10 * iVar3) * 2);
+          psVar6 = (short *)(param_1 + (*(short *)pbVar5 * param_2_after_write + local_10 * iVar3) * 2);
           iVar8 = 0;
           if (0 < *(short *)pbVar5) {
             psVar9 = psVar6 + iVar3;
@@ -172,8 +172,8 @@ void __thiscall CGenerate::sub_0069ADA0(CGenerate *this,int param_1,int param_2)
             } while (iVar8 < *(short *)this->field_000C);
           }
           pbVar5 = this->field_000C;
-          param_2 = param_2 + 1;
-        } while (param_2 < *(short *)(pbVar5 + 2));
+          param_2_after_write = param_2_after_write + 1;
+        } while (param_2_after_write < *(short *)(pbVar5 + 2));
       }
       local_10 = local_10 + 1;
     } while (local_10 < iVar1);

@@ -259,7 +259,8 @@ switchD_0065bf29::caseD_5dd6:
 0065C0AE  0F 84 AD 00 00 00         JZ 0x0065c161
 0065C0B4  8B 13                     MOV EDX,dword ptr [EBX]
 0065C0B6  8B CB                     MOV ECX,EBX
-0065C0B8  FF 92 2C 01 00 00         CALL dword ptr [EDX + 0x12c]
+AiEventClassTy::sub_0065BD70::override::prt_65c0b8_d4e0dbd9:
+0065C0B8  FF 92 2C 01 00 00         CALL dword ptr [EDX + 0x12c]  ; [STIndirectCallsiteApplier] exact slot 0x12C; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0065C0BE  89 86 2F 05 00 00         MOV dword ptr [ESI + 0x52f],EAX
 0065C0C4  8B 03                     MOV EAX,dword ptr [EBX]
 0065C0C6  8B CB                     MOV ECX,EBX
@@ -272,7 +273,8 @@ switchD_0065bf29::caseD_5dd6:
 0065C0E3  89 8E 37 05 00 00         MOV dword ptr [ESI + 0x537],ECX
 0065C0E9  8B 13                     MOV EDX,dword ptr [EBX]
 0065C0EB  8B CB                     MOV ECX,EBX
-0065C0ED  FF 92 30 01 00 00         CALL dword ptr [EDX + 0x130]
+AiEventClassTy::sub_0065BD70::override::prt_65c0ed_d4e0dbd9:
+0065C0ED  FF 92 30 01 00 00         CALL dword ptr [EDX + 0x130]  ; [STIndirectCallsiteApplier] exact slot 0x130; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0065C0F3  89 86 3B 05 00 00         MOV dword ptr [ESI + 0x53b],EAX
 0065C0F9  8D 45 FE                  LEA EAX,[EBP + -0x2]
 0065C0FC  8D 4D 0E                  LEA ECX,[EBP + 0xe]
@@ -291,7 +293,8 @@ switchD_0065bf29::caseD_5dd6:
 0065C12E  89 96 4B 05 00 00         MOV dword ptr [ESI + 0x54b],EDX
 0065C134  8B 03                     MOV EAX,dword ptr [EBX]
 0065C136  8B CB                     MOV ECX,EBX
-0065C138  FF 90 38 01 00 00         CALL dword ptr [EAX + 0x138]
+AiEventClassTy::sub_0065BD70::override::prt_65c138_d4e0dbd9:
+0065C138  FF 90 38 01 00 00         CALL dword ptr [EAX + 0x138]  ; [STIndirectCallsiteApplier] exact slot 0x138; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0065C13E  89 86 4F 05 00 00         MOV dword ptr [ESI + 0x54f],EAX
 0065C144  8B 13                     MOV EDX,dword ptr [EBX]
 0065C146  8D 45 E8                  LEA EAX,[EBP + -0x18]

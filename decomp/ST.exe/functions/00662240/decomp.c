@@ -1444,7 +1444,7 @@ LAB_0066380d:
                  STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,*(char *)&local_c->field_0024,*puVar19,CASE_1);
             if (local_EAX_5775 != nullptr) {
-              iVar20 = (*local_EAX_5775->vtable->vfunc_2C)();
+              iVar20 = local_EAX_5775->vfunc_2C();
               if ((iVar20 < 1) || (0x28 < iVar20)) {
                 bVar25 = false;
               }
@@ -1455,7 +1455,7 @@ LAB_0066380d:
                   ((STField<short>(param_1,9) == -2 ||
                    (STField<short>(param_1,9) == local_EAX_5775->field_081C)))) &&
                  ((STField<int>(param_1,0xb) == 0 ||
-                  (iVar20 = (*local_EAX_5775->vtable->vfunc_2C)(),
+                  (iVar20 = local_EAX_5775->vfunc_2C(),
                   STField<int>(param_1,0xb) == iVar20)))) {
                 STField<short>(param_1,0xf) = STField<short>(param_1,0xf) + 1;
                 if (STField<DArrayTy *>(param_1,0x11) != nullptr) {

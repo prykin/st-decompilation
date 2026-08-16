@@ -5,7 +5,7 @@
 void FUN_005745c0(void)
 
 {
-  DAT_008073c8 = PTR_008032bc;
+  PTR_008073c8 = PTR_008032bc;
   return;
 }
 

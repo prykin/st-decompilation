@@ -32,7 +32,8 @@ FUN_005fd750:
 005FD7AD  74 14                     JZ 0x005fd7c3
 005FD7AF  8B 16                     MOV EDX,dword ptr [ESI]
 005FD7B1  8B CE                     MOV ECX,ESI
-005FD7B3  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+FUN_005fd750::override::prt_5fd7b3_d4e0dbd9:
+005FD7B3  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 005FD7B9  85 C0                     TEST EAX,EAX
 005FD7BB  74 06                     JZ 0x005fd7c3
 005FD7BD  8B 46 18                  MOV EAX,dword ptr [ESI + 0x18]

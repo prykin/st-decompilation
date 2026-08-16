@@ -18,7 +18,7 @@ uint FUN_007488a3(int param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (**(code **)(**(int **)(param_1 + -0x28) + 0x18))();
   iVar6 = 0;
-  param_1 = 0;
+  auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < iVar3) {
     do {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -31,7 +31,7 @@ uint FUN_007488a3(int param_1)
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((local_10 == 1) && (iVar4 = (**(code **)(*piVar1 + 0x18))(piVar1,&local_8), -1 < iVar4)) {
-        param_1 = param_1 + 1;
+        param_1_after_write = param_1_after_write + 1;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (**(code **)*local_8)(local_8,&DAT_007a1b60,&local_c);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -50,6 +50,6 @@ uint FUN_007488a3(int param_1)
       iVar6 = iVar6 + 1;
     } while (iVar6 < iVar3);
   }
-  return (uint)(param_1 != 0);
+  return (uint)(param_1_after_write != 0);
 }
 

@@ -36,7 +36,7 @@ void __thiscall FUN_00424530(void *this,uint param_1)
         this_00 = STAllPlayersC::GetObjPtr
                             (g_allPlayers_007FA174,STField<char>(this,0x24),(ushort)param_1,
                              CASE_1);
-        this_00->vfunc_100((char)uVar2);
+        (*this_00->vtable[1].vfunc_2C)(this_00,(char)uVar2);
       }
       uVar3 = uVar3 + 1;
       index = uVar3 & 0xffff;

@@ -24,7 +24,6 @@ void FUN_006c3340(int param_1)
   }
   iVar6 = *(int *)(*piVar1 + 0x1c);
   if (iVar6 < local_18.bottom) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = iVar6;
   }
   iVar3 = *(int *)(iVar2 + 0x40);

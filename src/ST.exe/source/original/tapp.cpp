@@ -1459,7 +1459,7 @@ undefined4 __thiscall st::fn_0056D1F0(STAppC *this)
       return 0;
     }
     if ((local_8->field_4EF6 != 0) && (DAT_0080673c = DAT_0080673c + -1, DAT_0080673c < 1)) {
-      DAT_0080673c = *(int *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 0x10);
+      DAT_0080673c = *(int *)(st_string_007C2AE0 + (uint)DAT_0080733b * 0x18 + 0x10);
       if ((g_cursorClass_00802A30 != nullptr) &&
          (g_cursorClass_00802A30->field_00A9 == 0)) {
         st::fn_006B8D50((int *)g_cursorClass_00802A30->field_00AD,0,0,0,0);
@@ -1803,7 +1803,7 @@ void __thiscall st::fn_0056DB80(STAppC *this)
     if ((DAT_0080733b == 0) || (3 < DAT_0080733b)) {
       DAT_0080733b = 2;
     }
-    uVar2 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 8);
+    uVar2 = *(undefined4 *)(st_string_007C2AE0 + (uint)DAT_0080733b * 0x18 + 8);
     pSVar11->field_1168 = 0;
     pSVar11->field_0034 = uVar2;
     pSVar11->field_1164 = 0;
@@ -1853,11 +1853,7 @@ void __thiscall st::fn_0056DB80(STAppC *this)
     }
     local_8 = (STAppC_field_1180State *)&pSVar11->field_7D1A;
     g_cMf32_00806758 = nullptr;
-    pcVar12 = (char *)local_8;
-    for (iVar10 = 0x20d; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *(undefined4 *)pcVar12 = 0;
-      pcVar12 = pcVar12 + 4;
-    }
+    memset((char *)local_8, 0, 0x834); /* compiler bulk-zero initialization */
     puVar7 = st::fn_006F1CE0(g_cMf32_00806754,0,PTR_s_ORIG_DB_0079b088,(int *)&local_8,0);
     if ((puVar7 == nullptr) || (local_14 = &pSVar11->field_7D1A, pSVar11->field_7D1A == '\0'))
     {
@@ -2031,8 +2027,8 @@ void __thiscall st::fn_0056DB80(STAppC *this)
     st::fn_00403873();
     st::fn_006E8640
               (g_sT3DSMAPContext_00807598,
-               *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 0x10),
-               *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4));
+               *(char **)(st_string_007C2AE0 + (uint)DAT_0080733b * 0x18 + 0x10),
+               *(char **)(st_string_007C2AE0 + (uint)DAT_0080733b * 0x18 + 4));
     st::fn_006DDA90(g_sT3DSMAPContext_00807598,0.7,0.95);
     st::fn_006DDAE0(g_sT3DSMAPContext_00807598,0x10,4,4,PTR_008032c8);
     if (DAT_00807328 == 0) {

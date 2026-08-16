@@ -61,7 +61,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
       local_8 = 0;
       if (0 < DAT_007f4d40) {
         do {
-          uVar2 = *(uint *)(uVar9 + 0x18 + (int)DAT_007f4d04);
+          uVar2 = *(uint *)(uVar9 + 0x18 + (int)PTR_007f4d04);
           if (uVar2 < param_2->count) {
             puVar6 = DArrayAt<ushort>(param_2, uVar2);
           }
@@ -70,13 +70,13 @@ int STGroupBoatC::Way3DGrpDistribTgt
           }
           pSVar7 = thunk_FUN_00423e70(param_1,*puVar6);
           if (pSVar7 != nullptr) {
-            iVar8 = *(int *)(uVar9 + 0xc + (int)DAT_007f4d04);
+            iVar8 = *(int *)(uVar9 + 0xc + (int)PTR_007f4d04);
             pSVar7->field_00BB = iVar8;
             pSVar7->field_00C7 = iVar8;
-            iVar8 = *(int *)(uVar9 + 0x10 + (int)DAT_007f4d04);
+            iVar8 = *(int *)(uVar9 + 0x10 + (int)PTR_007f4d04);
             pSVar7->field_00BF = iVar8;
             pSVar7->field_00CB = iVar8;
-            iVar8 = *(int *)(uVar9 + 0x14 + (int)DAT_007f4d04);
+            iVar8 = *(int *)(uVar9 + 0x14 + (int)PTR_007f4d04);
             pSVar7->field_00C3 = iVar8;
             pSVar7->field_00CF = iVar8;
           }
@@ -87,13 +87,12 @@ int STGroupBoatC::Way3DGrpDistribTgt
       iVar8 = 0;
       if (0 < DAT_007f4cf8) {
         do {
-          if (*(uint *)(DAT_007f4d04 + ((uint)(ushort)param_1->field_0027 - iVar8) * 0xe + -2) <
+          if ((uint)PTR_007f4d04[((uint)(ushort)param_1->field_0027 - iVar8) * 7 + -1] <
               param_2->count) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             puVar6 = (ushort *)
                      (param_2->elementSize *
-                      *(uint *)(DAT_007f4d04 +
-                               ((uint)(ushort)param_1->field_0027 - iVar8) * 0xe + -2) +
+                      PTR_007f4d04[((uint)(ushort)param_1->field_0027 - iVar8) * 7 + -1] +
                      (int)param_2->data);
           }
           else {
@@ -101,13 +100,13 @@ int STGroupBoatC::Way3DGrpDistribTgt
           }
           pSVar7 = thunk_FUN_00423e70(param_1,*puVar6);
           if (pSVar7 != nullptr) {
-            iVar3 = *(int *)(DAT_007f4d04 + ((uint)(ushort)param_1->field_0027 - iVar8) * 0xe + -8);
+            iVar3 = PTR_007f4d04[((uint)(ushort)param_1->field_0027 - iVar8) * 7 + -4];
             pSVar7->field_00BB = iVar3;
             pSVar7->field_00C7 = iVar3;
-            iVar3 = *(int *)(DAT_007f4d04 + ((uint)(ushort)param_1->field_0027 - iVar8) * 0xe + -6);
+            iVar3 = PTR_007f4d04[((uint)(ushort)param_1->field_0027 - iVar8) * 7 + -3];
             pSVar7->field_00BF = iVar3;
             pSVar7->field_00CB = iVar3;
-            iVar3 = *(int *)(DAT_007f4d04 + ((uint)(ushort)param_1->field_0027 - iVar8) * 0xe + -4);
+            iVar3 = PTR_007f4d04[((uint)(ushort)param_1->field_0027 - iVar8) * 7 + -2];
             pSVar7->field_00C3 = iVar3;
             pSVar7->field_00CF = iVar3;
           }
@@ -151,7 +150,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
     }
   }
 LAB_00415467:
-  FUN_006a5e90(DAT_007f4d04);
+  FUN_006a5e90((short *)PTR_007f4d04);
 LAB_00415472:
   if (iVar7 == 0) {
     return 0;

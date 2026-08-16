@@ -49,7 +49,8 @@ LAB_00677c61:
 00677C65  0F 84 41 01 00 00         JZ 0x00677dac
 00677C6B  8B 17                     MOV EDX,dword ptr [EDI]
 00677C6D  8B CF                     MOV ECX,EDI
-00677C6F  FF 92 2C 01 00 00         CALL dword ptr [EDX + 0x12c]
+_EnumRCCont::override::prt_677c6f_78a36b7d:
+00677C6F  FF 92 2C 01 00 00         CALL dword ptr [EDX + 0x12c]  ; [STIndirectCallsiteApplier] exact slot 0x12C; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STFishC
 00677C75  66 3B 45 08               CMP AX,word ptr [EBP + 0x8]
 00677C79  89 45 E8                  MOV dword ptr [EBP + -0x18],EAX
 00677C7C  0F 85 24 01 00 00         JNZ 0x00677da6
@@ -58,7 +59,8 @@ LAB_00677c61:
 00677C89  74 15                     JZ 0x00677ca0
 00677C8B  8B 07                     MOV EAX,dword ptr [EDI]
 00677C8D  8B CF                     MOV ECX,EDI
-00677C8F  FF 90 30 01 00 00         CALL dword ptr [EAX + 0x130]
+_EnumRCCont::override::prt_677c8f_78a36b7d:
+00677C8F  FF 90 30 01 00 00         CALL dword ptr [EAX + 0x130]  ; [STIndirectCallsiteApplier] exact slot 0x130; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STFishC
 00677C95  0F BF CE                  MOVSX ECX,SI
 00677C98  3B C1                     CMP EAX,ECX
 00677C9A  0F 85 06 01 00 00         JNZ 0x00677da6

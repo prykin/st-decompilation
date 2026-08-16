@@ -74,7 +74,7 @@ LAB_0044ac57:
     if (dVar6 == 0) {
       return -1;
     }
-    tempGroup = dVar6;
+    auto tempGroup_after_write = dVar6; /* compiler stack-slot lifetime split */
     Library::DKW::TBL::FUN_006afe40((int *)&local_c,&objectIds->flags);
     if (0 < (int)dVar6) {
       do {
@@ -87,9 +87,9 @@ LAB_0044ac57:
         }
         uVar7 = uVar7 + 1;
       } while ((int)uVar7 < (int)dVar6);
-      tempGroup = dVar6;
+      tempGroup_after_write = dVar6;
       if (dVar6 != 0) {
-        objectIds = nullptr;
+        auto objectIds_after_write = nullptr; /* compiler stack-slot lifetime split */
         piVar5 = (int *)(iVar3 + 10);
         array = local_c;
         do {
@@ -110,7 +110,7 @@ LAB_0044ac57:
                 }
                 uVar7 = uVar7 + 1;
               } while ((int)uVar7 < iVar3);
-              if ((iVar3 != 0) && (0 < (int)tempGroup)) {
+              if ((iVar3 != 0) && (0 < (int)tempGroup_after_write)) {
                 while( true ) {
                   DArrayGetElement(local_10,0,&stack0x0000001a);
                   uVar7 = 0;
@@ -122,10 +122,10 @@ LAB_0044ac57:
                     if (iVar3 <= (int)uVar7) goto LAB_0044ada0;
                   }
                   DArrayRemoveAt(local_10,0);
-                  tempGroup = tempGroup - 1;
+                  tempGroup_after_write = tempGroup_after_write - 1;
                   DArrayRemoveAt(local_8,uVar7);
                   iVar3 = iVar3 + -1;
-                  if ((int)tempGroup < 1) break;
+                  if ((int)tempGroup_after_write < 1) break;
                 }
               }
             }
@@ -134,17 +134,17 @@ LAB_0044ada0:
             local_10 = nullptr;
             DArrayDestroy(local_8);
             local_8 = nullptr;
-            if ((tempGroup == 0) && (iVar3 == 0)) {
+            if ((tempGroup_after_write == 0) && (iVar3 == 0)) {
               DArrayDestroy(local_c);
-              return (int)objectIds;
+              return (int)objectIds_after_write;
             }
-            tempGroup = local_c->count;
+            tempGroup_after_write = local_c->count;
             array = local_c;
             iVar2 = objectType;
           }
           piVar5 = piVar5 + 4;
-          objectIds = (DArrayTy *)((int)&objectIds->flags + 1);
-          if (4 < (int)objectIds) {
+          objectIds_after_write = (DArrayTy *)((int)&objectIds_after_write->flags + 1);
+          if (4 < (int)objectIds_after_write) {
             DArrayDestroy(array);
             return -1;
           }

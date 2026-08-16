@@ -92,7 +92,7 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
           local_14 = local_14 + *(int *)&local_18->field_0x259;
         }
         else {
-          iVar5 = (*this->vtable[2].slots_00_28[10])(0);
+          iVar5 = (*this->vtable[2].slots_00_28[10])(this,0);
           local_14 = local_14 + iVar5;
         }
       }

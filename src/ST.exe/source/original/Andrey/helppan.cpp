@@ -108,7 +108,7 @@ void __thiscall st::fn_00510E30(HelpPanelTy *this)
   this_00->field_0251 = 0;
   this_00->field_0250 = 0;
   uVar12 = 0;
-  if (*(int *)sizeHelp_exref != 0) {
+  if (*(int *)PTR_sizeHelp_0085c118 != 0) {
     pbVar9 = st::pointer_boundary_cast<byte *>(this_00->field_01C7 + 0xd);
     do {
       if (pbVar9[-5] == 8) {
@@ -128,10 +128,10 @@ void __thiscall st::fn_00510E30(HelpPanelTy *this)
       }
       uVar12 = uVar12 + 1;
       pbVar9 = pbVar9 + 0x11;
-    } while (uVar12 < *(uint *)sizeHelp_exref);
+    } while (uVar12 < *(uint *)PTR_sizeHelp_0085c118);
   }
   local_8 = 0;
-  if (*(int *)sizeHelp_exref != 0) {
+  if (*(int *)PTR_sizeHelp_0085c118 != 0) {
     local_c = nullptr;
     do {
       pbVar9 = st::pointer_boundary_cast<byte *>(this_00->field_01C7 + (int)local_c);
@@ -174,7 +174,7 @@ LAB_00510fa9:
       }
       local_8 = local_8 + 1;
       local_c = (uint *)((int)local_c + 0x11);
-    } while (local_8 < *(uint *)sizeHelp_exref);
+    } while (local_8 < *(uint *)PTR_sizeHelp_0085c118);
   }
   do {
     pHVar5 = this_00->field_01BB;
@@ -1416,7 +1416,7 @@ void __thiscall st::fn_00513030(HelpPanelTy *this,int *param_1,int param_2)
     memset(local_d0, 0, 0x50); /* compiler bulk-zero initialization */
     local_10 = local_10 & 0xffffff00;
     local_5 = '\0';
-    if (*(uint *)sizeHelp_exref != 0) {
+    if (*(uint *)PTR_sizeHelp_0085c118 != 0) {
       pbVar9 = this_00->field_01C7;
       do {
         if ((*(int *)pbVar9 == *piVar13) && (*(int *)(pbVar9 + 4) == piVar13[1])) {
@@ -1425,7 +1425,7 @@ void __thiscall st::fn_00513030(HelpPanelTy *this,int *param_1,int param_2)
         }
         uVar7 = uVar7 + 1;
         pbVar9 = pbVar9 + 0x11;
-      } while (uVar7 < *(uint *)sizeHelp_exref);
+      } while (uVar7 < *(uint *)PTR_sizeHelp_0085c118);
     }
     iVar8 = piVar13[1];
     local_24 = local_1c & 0xffff;
@@ -1448,7 +1448,7 @@ void __thiscall st::fn_00513030(HelpPanelTy *this,int *param_1,int param_2)
     }
     local_24 = local_24 + 1;
     uVar7 = local_18;
-    if (local_24 < *(uint *)sizeHelp_exref) {
+    if (local_24 < *(uint *)PTR_sizeHelp_0085c118) {
       uVar12 = local_24 * 0x11;
       local_c = uVar12;
       do {
@@ -1492,7 +1492,7 @@ LAB_00513233:
         local_24 = local_24 + 1;
         uVar12 = uVar12 + 0x11;
         local_c = uVar12;
-      } while (local_24 < *(uint *)sizeHelp_exref);
+      } while (local_24 < *(uint *)PTR_sizeHelp_0085c118);
     }
     piVar13 = local_14;
     if (local_5 != '\0') {
@@ -1670,7 +1670,7 @@ void __thiscall st::fn_005135F0(HelpPanelTy *this)
     local_8 = 0;
     *(undefined4 *)&this_00->field_01B3->field_0xc = 0;
     this_00->field_01B7 = 0;
-    if (*(int *)sizeHelp_exref != 0) {
+    if (*(int *)PTR_sizeHelp_0085c118 != 0) {
       iVar5 = 0;
       do {
         pbVar3 = st::pointer_boundary_cast<byte *>(this_00->field_01C7 + iVar5);
@@ -1687,7 +1687,7 @@ void __thiscall st::fn_005135F0(HelpPanelTy *this)
         }
         local_8 = local_8 + 1;
         iVar5 = iVar5 + 0x11;
-      } while (local_8 < *(uint *)sizeHelp_exref);
+      } while (local_8 < *(uint *)PTR_sizeHelp_0085c118);
     }
     st::fn_00401ACD(this_00);
     g_currentExceptionFrame = local_64.previous;
@@ -2399,7 +2399,7 @@ void __thiscall st::fn_005149B0(HelpPanelTy *this,int param_1,int param_2)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  local_c = *(uint *)sizeHelp_exref;
+  local_c = *(uint *)PTR_sizeHelp_0085c118;
   if (local_c != 0) {
     uVar9 = 0;
     pHVar11 = local_8;
@@ -2425,7 +2425,7 @@ void __thiscall st::fn_005149B0(HelpPanelTy *this,int param_1,int param_2)
         uVar9 = *(uint *)&pAVar3->field_0xc;
         if (uVar9 == 0) {
 LAB_00514ab9:
-          uVar9 = *(uint *)sizeHelp_exref;
+          uVar9 = *(uint *)PTR_sizeHelp_0085c118;
           pHVar11 = pHVar7;
           local_c = uVar9;
         }
@@ -2444,7 +2444,7 @@ LAB_00514a8f:
             }
             uVar10 = uVar10 + 1;
           } while (uVar10 < uVar9);
-          uVar9 = *(uint *)sizeHelp_exref;
+          uVar9 = *(uint *)PTR_sizeHelp_0085c118;
           pHVar11 = pHVar7;
           local_c = uVar9;
         }
@@ -3030,7 +3030,7 @@ LAB_00515ee1:
           }
           st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x50,*param_1 + 1,'\x01',
                  (byte *)this_00->field_024C);
-          local_24 = *(uint *)sizeHelp_exref;
+          local_24 = *(uint *)PTR_sizeHelp_0085c118;
           if (local_24 != 0) {
             local_5 = *(byte *)((int)local_c + -1);
             pbVar3 = st::pointer_boundary_cast<byte *>(this_00->field_01C7 + 9);

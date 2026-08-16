@@ -482,7 +482,7 @@ STTorpC * __cdecl st::fn_00645830(void)
     st::fn_00401933(this);
     st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_0x1d5);
     *(VTable_0079D60C **)&this->field_0x1d5 = &st_global_0079D60C;
-    this->vtable = (STGameObjCDispatchVTable *)&st_global_0079D4AC;
+    this->vtable = (STGameObjCVTable *)&st_global_0079D4AC;
     return (STTorpC *)this;
   }
   return nullptr;
@@ -494,7 +494,7 @@ STTorpC * __cdecl st::fn_00645830(void)
    Evidence: all observed direct callers ignore the return register (ignored=9, used=0, unknown=0),
    and decompilation contains no value return */
 
-void __cdecl st::fn_00645880(AnonShape_00645880_8F6B4550 *param_1)
+void __cdecl st::fn_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
 
 {
   ushort uVar1;
@@ -912,6 +912,7 @@ int st::fn_00646E00(int param_1,int param_2,int param_3)
   if (param_2 < 0) {
     iVar6 = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
                         (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = iVar6 + -1;
   }
   else {
@@ -919,6 +920,7 @@ int st::fn_00646E00(int param_1,int param_2,int param_3)
                         (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
     param_2 = iVar6;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   if (iVar4 < 0) {
     iVar6 = iVar6 + -1;
@@ -949,9 +951,9 @@ int st::fn_00646E00(int param_1,int param_2,int param_3)
     if (g_worldGrid.sizeY < local_8) {
       local_8 = (int)g_worldGrid.sizeY;
     }
-    param_3 = iVar4 + 4;
-    if (g_worldGrid.sizeX < param_3) {
-      param_3 = (int)g_worldGrid.sizeX;
+    auto param_3_after_write = iVar4 + 4; /* compiler stack-slot lifetime split */
+    if (g_worldGrid.sizeX < param_3_after_write) {
+      param_3_after_write = (int)g_worldGrid.sizeX;
     }
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
           ((st::fn_00403F53
@@ -971,7 +973,7 @@ int st::fn_00646E00(int param_1,int param_2,int param_3)
               (pVVar3->field_004C[local_10 + iVar5 * pVVar3->field_0030] == 0)))) &&
             ((((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)) &&
               ((st::fn_00403F53
-                          (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_3,iVar6
+                          (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_3_after_write,iVar6
                            ,&local_10,&local_c), iVar5 = local_8, pVVar3 = g_visibleClass_00802A88,
                -1 < local_10 &&
                (((local_10 < (int)pVVar2->field_0030 &&
@@ -988,7 +990,7 @@ int st::fn_00646E00(int param_1,int param_2,int param_3)
               ((((local_10 = g_centeredOffsets5[param_1] + local_10, -1 < local_10 &&
                  (local_10 < pVVar3->field_0034)) && (pVVar3->field_004C != nullptr)) &&
                ((pVVar3->field_004C[param_2 + local_10 * pVVar3->field_0030] == 0 &&
-                (iVar5 = st::fn_00404E5D(g_visibleClass_00802A88,param_3,iVar5,param_1)
+                (iVar5 = st::fn_00404E5D(g_visibleClass_00802A88,param_3_after_write,iVar5,param_1)
                 , iVar5 != 1)))))))))))))) {
       return 0;
     }
@@ -1500,8 +1502,8 @@ st::fn_00649FF0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param
       if (uVar6 != 0) {
         uVar8 = 0xffffffff;
         uVar7 = 0;
-        param_1 = (uint *)0xffffffff;
-        param_4 = (int *)0xffffffff;
+        auto param_1_after_write = (uint *)0xffffffff; /* compiler stack-slot lifetime split */
+        auto param_4_after_write = (int *)0xffffffff; /* compiler stack-slot lifetime split */
         if (0 < (int)uVar6) {
           bVar13 = uVar6 != 0;
           do {
@@ -1511,13 +1513,13 @@ st::fn_00649FF0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param
                ((STField<int>(pvVar4,0x108) < 0 &&
                 ((puVar2 = STField<uint *>(pvVar4,0x110), (int)local_c <= (int)puVar2 &&
                  (piVar3 = STField<int *>(pvVar4,0x10c), (int)piVar3 <= (int)local_c)))))) {
-              if ((int)param_4 < (int)piVar3) {
+              if ((int)param_4_after_write < (int)piVar3) {
                 uVar8 = uVar7;
-                param_4 = piVar3;
+                param_4_after_write = piVar3;
               }
-              if ((int)param_1 < (int)puVar2) {
+              if ((int)param_1_after_write < (int)puVar2) {
                 uVar8 = uVar7;
-                param_1 = puVar2;
+                param_1_after_write = puVar2;
               }
             }
             uVar6 = array->count;
@@ -1553,8 +1555,8 @@ st::fn_00649FF0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param
         }
         uVar8 = 0xffffffff;
         uVar7 = 0;
-        param_1 = (uint *)0xffffffff;
-        param_4 = (int *)0xffffffff;
+        param_1_after_write = (uint *)0xffffffff;
+        param_4_after_write = (int *)0xffffffff;
         if (0 < (int)uVar6) {
           bVar13 = uVar6 != 0;
           do {
@@ -1564,13 +1566,13 @@ st::fn_00649FF0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param
                ((STField<uint>(pvVar4,0x108) == local_c &&
                 ((puVar2 = STField<uint *>(pvVar4,0x110), (int)local_18 <= (int)puVar2 &&
                  (piVar3 = STField<int *>(pvVar4,0x10c), (int)piVar3 <= (int)local_18)))))) {
-              if ((int)param_4 < (int)piVar3) {
+              if ((int)param_4_after_write < (int)piVar3) {
                 uVar8 = uVar7;
-                param_4 = piVar3;
+                param_4_after_write = piVar3;
               }
-              if ((int)param_1 < (int)puVar2) {
+              if ((int)param_1_after_write < (int)puVar2) {
                 uVar8 = uVar7;
-                param_1 = puVar2;
+                param_1_after_write = puVar2;
               }
             }
             uVar6 = array->count;
@@ -2101,14 +2103,13 @@ st::fn_0064E5C0(undefined1 param_1,short param_2,short param_3,undefined4 param_
   _param_2 = param_5;
   if ((short)param_4 < 1) {
     local_c = 0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_3 = STPiece<0,4>(g_worldGrid);
   }
   if ((short)param_5 < 1) {
     local_8 = 0;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     in_stack_0000000a = (undefined2)((uint)param_5 >> 0x10);
-    /* ST_PSEUDO[unresolved_register_input,stack_slot_reuse,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
+    /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
     _param_2 = CONCAT22(in_stack_0000000a,g_worldGrid.sizeY);
   }
   st::fn_00401906((short *)&local_c,(short *)&local_8,&param_3,&param_2);

@@ -36,10 +36,10 @@ uint * FUN_006c8840(uint *param_1,uint *param_2,int *param_3)
     *(undefined1 *)puVar9 = 0;
     puVar9 = (uint *)((int)puVar9 + 1);
   }
-  param_2 = nullptr;
+  auto param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
   if (0 < (int)param_1[2]) {
     do {
-      pcVar8 = *(char **)(param_1[5] + (int)param_2 * 4);
+      pcVar8 = *(char **)(param_1[5] + (int)param_2_after_write * 4);
       if (pcVar8 != nullptr) {
         uVar6 = 0xffffffff;
         pcVar10 = pcVar8;
@@ -54,11 +54,11 @@ uint * FUN_006c8840(uint *param_1,uint *param_2,int *param_3)
         pcVar10 = local_8;
         memmove(pcVar10, pcVar8, uVar6); /* compiler REP MOVS byte copy */
         local_8 = local_8 + uVar6;
-        pbVar2 = (byte *)((int)puVar7 + ((int)((uint)param_2 ^ 7) >> 3));
-        *pbVar2 = *pbVar2 | '\x01' << (((uint)param_2 ^ 7) & 7);
+        pbVar2 = (byte *)((int)puVar7 + ((int)((uint)param_2_after_write ^ 7) >> 3));
+        *pbVar2 = *pbVar2 | '\x01' << (((uint)param_2_after_write ^ 7) & 7);
       }
-      param_2 = (uint *)((int)param_2 + 1);
-    } while ((int)param_2 < (int)param_1[2]);
+      param_2_after_write = (uint *)((int)param_2_after_write + 1);
+    } while ((int)param_2_after_write < (int)param_1[2]);
   }
   if (param_3 != nullptr) {
     *param_3 = local_c;

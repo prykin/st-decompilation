@@ -97,8 +97,8 @@ cf_break_loop_00574651:
                       bVar5 = *(byte *)(uVar9 + 0x7ca6a8);
                     }
                     pbVar12 = (byte *)((int)local_24 +
-                                      ((int)(uVar10 + ((int)uVar10 >> 0x1f & 3U)) >> 2) +
-                                      ((int)(local_20 + (local_20 >> 0x1f & 3U)) >> 2) +
+                                      (STSignedDiv4(uVar10)) +
+                                      (STSignedDiv4(local_20)) +
                                       (int)(uVar8 * iVar7) / 2);
                     *pbVar12 = *pbVar12 | bVar5;
                   }

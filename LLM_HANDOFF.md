@@ -46,75 +46,64 @@ have been checked.
 ## Latest accepted run
 
 The current authoritative headless export is run
-`51989204f2f3f306c556cf4ef551f67584b92210595ac8c502cc353529213d5b`.
+`036d42eb0e484bbb8e66c58b122cf717ed21ee49f3a6115be79be02c267db8b5`.
 Its receipt is `passed` with semantic hash
-`b5ccc04d4b3302db3a4dfdc519371fb1e3feefb6d21c7a3e8d4a2f371dec5ed4`
+`f5a831a90f31a838d0544d14c8d8bb95976a1aecae7346b11867562ab0027971`
 and manifest hash
-`6847961dcc13a9c6d104a63a7f88383ba13815fa70cd98c5267d4c4966029ce3`.
-It contains 10,400 function entries, 5,720 bodies, zero failed bodies, and 2,737
-typed physical-vtable slots. Both the broad export gate and the ABI gate pass;
-the latter verifies all 96 class vptrs and nine fixture functions with zero
-errors or warnings. The broad gate also has zero errors and warnings. The final
-quality inventory has 4,231 anonymous-shape occurrences, 18,286 undefined
-types, 2,169 raw pointer offsets, 1,888 honestly catalogued raw indirect calls,
-292 return-width artifacts, and 474 unresolved register inputs. The
-old declaration-plus-use return count was intentionally replaced by a use-only
-metric; declarations are not independent ABI failures.
+`4cfa3a9f97a05ffcef736e9e0653fbf0531c142fe45eda7af6b3775cc211ab73`.
+The manifest now also binds `pseudocode_runtime.h` as
+`e862abf02069a82b42314c50a439d81f7c9b31529c2ec493c0590f99e8e9196d`,
+so a compatibility-helper semantic change cannot hide behind an otherwise
+unchanged corpus receipt.
+It contains 10,407 function entries, 5,555 bodies, zero failed bodies, and 3,192
+typed physical-vtable slots. Both the broad export gate and ABI gate pass with
+zero errors and zero warnings. The latest headless `export` did not mutate the
+Program and completed in `00:05:41`; it reused all 10,407 function bodies and
+all 5,555 cached quality analyses.
 
-`STDecompExport` now emits a separate compile-readiness inventory. All 5,720
-bodies have zero residual Ghidra `._offset_width_` syntax. The generated C++17
-runtime makes 34,786 exact operations expressible through scalar/calling-
-convention aliases, opaque `code`, `STPiece`, `STLiteralPiece`, `STField`, and
-width-checked composition/carry helpers. The exporter itself is not a source
-generator, but `tools/st_source_tree.py` now supplies the missing offline
-assembly layer. It verifies the passed receipt/manifest and emits all 5,720
-bodies as 318 C++17 translation units under `src/ST.exe`, with 1,044 bodies in
-proven original paths and address-stable `st::fn_ADDRESS` identities. The full
-generated declaration header passes Clang syntax checking. Full object
-compilation still exposes the real remaining debt: 3,880 signatures retain
-undefined semantic types, 999 global `__thiscall` functions lack a proven
-owner, 775 bodies contain raw indirect calls, and 233 bodies retain unresolved
-register/high values. See `docs/compile-readiness.md`,
-`docs/source-tree-generation.md`, and `src/ST.exe/audit/`.
+The quality inventory contains 3,972 anonymous-shape occurrences, 17,609
+undefined types, 2,027 raw pointer offsets, 1,722 raw indirect calls, 291
+return-width artifacts, 476 residual stack-slot-reuse occurrences, and 407
+unresolved register inputs. These are occurrence counts over all exported
+`functions/**/decomp.c`, not independent recovery facts.
 
-The first compile-driven source layer is implemented without mutating Ghidra.
-`tools/st_compile_audit.py` verifies the generated manifest, compiles all 318
-translation units independently, and writes an address-stable local queue under
-ignored `.st-local/`. `tools/st_source_tree.py` materializes 2,678 exact
-unnamed-byte views which statically typed bodies actually reference, including
-indexed and nested pointer-member chains. It also emits 780 ordinary non-virtual
-member wrappers over exact receiver-aware physical-vtable slots, preserving
-readable `object->method()` syntax without synthesizing a host ABI vptr or
-inheritance. A further 1,292 uniquely owned, non-virtual `__thiscall` functions
-are exposed as ordinary forwarding class methods; their implementation identity
-remains `st::fn_ADDRESS`. Constructors, destructors, ambiguous overloads, and
-field-name collisions remain explicit source-generation audit rows. The
-complete declaration header passes Clang C++17.
+`STIndirectCallsiteAnalyzer/Applier` is now part of export ABI stabilization.
+The accepted fixed point retains 145 exact call overrides from 3,431 machine
+candidates. Exact physical dispatch consensus wins; neutral machine fallbacks
+are suppressed for an entire function above 32 sites, because the rejected
+195-site dense family caused a measurable SSA/liveness regression. Stale
+script-owned overrides are removable while foreign/manual overrides remain
+protected. `STIndirectCallAnalyzer` still owns shared physical slot types.
 
-The source projection also separates C++ type/value namespace collisions
-such as the image object `FrmPanelTyVTable` and the record type of the same
-name. At the 247 exact address-taking sites currently emitted, only the source-
-level object identifier becomes `st_global_ADDRESS`; the Ghidra symbol and type
-names remain provenance. This removes false local-declaration failures without
-changing the database or object layout.
+Exporter presentation recovery now splits 260 safe post-overwrite parameter
+lifetimes across 183 functions, including the cursor formerly printed as a
+mutation of `0075F590::param_2`. It also folds exact byte-pointer `REP STOSD`
+zero loops, 15 packed-bit reads, 23 indexed bit sets, one indexed bit clear, 29
+MSVC signed-divide-by-four forms, and nine 16.16 rounding forms. These helpers
+preserve machine behavior and make no game-semantic type claim.
 
-With Apple Clang and a fixed limit of 64 diagnostics per translation unit, 178
-of 318 units pass and 2,196 of 2,213 retained errors map to a function address.
-The current dominant clusters are undeclared identifiers (888), pointer
-indirection (354), non-callable values (261), and invalid operands (146); no
-syntax diagnostic remains. Assignment mismatches are down to 72 and
-call-argument mismatches to zero. These are capped comparison counts, not the
-uncapped total. Source identity counts are 37,366 direct-call-or-definition
-rewrites, 5,720 definition rewrites, and 116 stale qualified
-address-symbol repairs.
+`tools/st_source_tree.py` emits 5,555 bodies as 322 C++17 translation units,
+with 1,044 bodies under proven original paths and address-stable
+`st::fn_ADDRESS` implementations. It materializes 2,233 exact unnamed field
+views, 1,130 physical-vtable forwarding wrappers, 1,312 uniquely owned
+non-virtual source methods, and 26 exact use-site dispatch wrappers. The latter
+keep 121 duplicated-receiver callsites readable and generation fails if one
+regresses to nested `exact_indirect_callee` syntax. The deterministic source
+audit contains 13,479 rows.
 
-The previously ugly call in global `__thiscall` function `00717910` now renders
-its proven member load as
-`STField<RecoveredSourceFamily_dibcopy *>(this, 0x28)`. The pointer depth is
-correct for callee `006D2820`; the missing fact is the receiver identity. A broad
-receiver-record database experiment cascaded into unrelated owners/vtables and
-was rejected after 22 hard ABI regressions. No part of that Ghidra mutation was
-retained.
+With Apple Clang and a fixed limit of 64 diagnostics per translation unit, 203
+of 322 units pass. There are 1,109 retained errors, 1,092 mapped to stable
+function addresses. The leading typed clusters are undeclared identifiers
+(135), invalid casts (123), missing record members (100), assignment types (94),
+pointer indirection (92), non-callable values (70), and invalid operands (62).
+Compiler output remains ignored under `.st-local/`.
+
+The next database-level cluster is mutable byte-buffer pointer roles. Function
+`0040F4D0` is the representative case: all meaningful consumers treat its first
+parameter as mutable bytes, but the current prototype remains `undefined4 *`.
+Recover `byte *`/`char *` only from complete machine def-use plus unanimous
+direct-call evidence; do not patch the exported cast or specialize a neutral
+heterogeneous loader. Follow `Q-053` in `docs/recovery-task-queue.md`.
 
 ## Historical pre-compiler checkpoints
 

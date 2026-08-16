@@ -18,13 +18,13 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   STBoatC *this_00;
   dword dVar7;
   DArrayTy *array_00;
-  STGameObjC *objPtr;
+  STGameObjC *this_01;
   int iVar8;
   undefined4 uVar8;
   int iVar9;
   uint uVar10;
   uint index;
-  STWorldObject *this_01;
+  STWorldObject *this_02;
   STBoatC_CmdToObj_param_1Enum SVar12;
   uint *puVar13;
   InternalExceptionFrame local_7c;
@@ -138,16 +138,16 @@ LAB_0049d3ca:
     if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) ||
         ((sVar3 < 0 || ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))))) ||
        (g_worldGrid.sizeZ <= sVar2)) {
-      this_01 = nullptr;
+      this_02 = nullptr;
     }
     else {
-      this_01 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
+      this_02 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
     uVar10 = 0;
-    if (((this_01 == nullptr) ||
-        (this_01[1].vtable != (STWorldObjectVTable *)(int)pSVar6->field_0024)) ||
-       ((iVar9 = this_01->GetObjectTypeId(), iVar9 != 0x3b &&
-        (iVar9 = this_01->GetObjectTypeId(), iVar9 != 0x60)))) {
+    if (((this_02 == nullptr) ||
+        (this_02[1].vtable != (STWorldObjectVTable *)(int)pSVar6->field_0024)) ||
+       ((iVar9 = this_02->GetObjectTypeId(), iVar9 != 0x3b &&
+        (iVar9 = this_02->GetObjectTypeId(), iVar9 != 0x60)))) {
       local_20 = 0;
     }
     else {
@@ -159,20 +159,20 @@ LAB_0049d3ca:
         do {
           DArrayGetElement((DArrayTy *)pSVar6->field_0029,index,local_8);
           if (STPiece<0,2>(local_8) != 0xffff) {
-            objPtr = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar6->field_0024,STPiece<0,2>(local_8),CASE_1);
-            if (objPtr == nullptr) {
+            this_01 = STAllPlayersC::GetObjPtr
+                                (g_allPlayers_007FA174,pSVar6->field_0024,STPiece<0,2>(local_8),CASE_1);
+            if (this_01 == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x989);
             }
-            iVar9 = (*objPtr->vtable->vfunc_2C)();
-            if (((iVar9 == 8) || (iVar9 = (*objPtr->vtable->vfunc_2C)(), iVar9 == 0x14)) ||
-               (iVar9 = (*objPtr->vtable->vfunc_2C)(), iVar9 == 0x1a)) {
+            iVar9 = this_01->vfunc_2C();
+            if (((iVar9 == 8) || (iVar9 = this_01->vfunc_2C(), iVar9 == 0x14)) ||
+               (iVar9 = this_01->vfunc_2C(), iVar9 == 0x1a)) {
               local_18 = local_18 + 1;
-              local_1c = local_1c + objPtr->field_07DA + objPtr->field_07D6 + objPtr->field_07D2;
+              local_1c = local_1c + this_01->field_07DA + this_01->field_07D6 + this_01->field_07D2;
               if (0 < local_1c) break;
-              iVar9 = thunk_FUN_0045ff10(objPtr);
+              iVar9 = thunk_FUN_0045ff10(this_01);
               if (iVar9 == 0xd) {
                 local_28 = 1;
                 break;

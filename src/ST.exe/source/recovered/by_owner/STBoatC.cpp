@@ -406,6 +406,7 @@ undefined4 __thiscall st::fn_0045FF50(STBoatC *this,int param_1)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
     this_00 = st::fn_00405CF9(*(char *)&this->field_0024,this->field_0030);
     if (this_00 != nullptr) {
@@ -1522,6 +1523,7 @@ st::fn_0048DFD0
   if ((param_1 == param_4) && (param_2 == param_5)) {
     uVar6 = st::machine_word_boundary_cast<uint>(local_2c->field_001C * 0x41c64e6d + 0x3039);
     local_2c->field_001C = uVar6;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_3 = uVar6 >> 0x10 & 7;
   }
   else {
@@ -1689,9 +1691,9 @@ st::fn_0048DFD0
       local_14 = 0;
       do {
         local_2c = nullptr;
-        param_6 = local_3fc + _param_3 * 0x15;
+        auto param_6_after_write = local_3fc + _param_3 * 0x15; /* compiler stack-slot lifetime split */
         do {
-          local_f4 = *param_6;
+          local_f4 = *param_6_after_write;
           iVar8 = (int)local_e0[local_f4 * 4];
           local_c8 = local_a4;
           local_c6 = local_6e;
@@ -1798,12 +1800,11 @@ joined_r0x0048f3a9:
             }
           }
           local_2c = (STBoatC *)((int)&local_2c->vtable + 1);
-          param_6 = param_6 + 1;
+          param_6_after_write = param_6_after_write + 1;
         } while ((int)local_2c < 0x15);
         local_14 = local_14 + 1;
       } while (local_14 < 5);
       local_18 = local_18 + 1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_5 = _param_5 + 2;
     } while (local_18 / iVar5 < 5);
   }

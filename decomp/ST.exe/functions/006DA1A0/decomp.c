@@ -53,9 +53,10 @@ void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,
     iVar7 = param_8 + (1 - local_8);
     pbVar3 = param_9 + (1 - iVar11);
     pbVar9 = (byte *)(iVar10 * param_2 + iVar12 + param_1);
-    param_10 = (undefined1 *)(iVar10 * param_4 + iVar12 + param_3);
-    param_7 = 0;
+    auto param_10_after_write = (undefined1 *)(iVar10 * param_4 + iVar12 + param_3); /* compiler stack-slot lifetime split */
+    auto param_7_after_write = 0; /* compiler stack-slot lifetime split */
     if (iVar6 < 1) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_9 = param_5 + (param_5[0xd] >> 1 & 0xe) + 0x16;
     }
     else {
@@ -64,7 +65,7 @@ void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     sVar1 = *(short *)(param_5 + 0x12);
     local_c = (int)sVar1;
-    param_1 = (int)pbVar3;
+    auto param_1_after_write = (int)pbVar3; /* compiler stack-slot lifetime split */
     if (0 < (int)pbVar3) {
       do {
         uVar8 = (uint)*param_9;
@@ -72,7 +73,7 @@ void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,
         iVar11 = param_6 + iVar12;
         if (uVar8 == 0) {
           pbVar9 = pbVar9 + param_2;
-          param_10 = param_10 + param_4;
+          param_10_after_write = param_10_after_write + param_4;
         }
         else {
           while( true ) {
@@ -98,58 +99,58 @@ void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,
             }
           }
 LAB_006da325:
-          param_5 = (byte *)(uVar4 - iVar11);
+          auto param_5_after_write = (byte *)(uVar4 - iVar11); /* compiler stack-slot lifetime split */
           if (((byte)uVar8 & 0xc0) == 0x80) {
             param_9 = param_9 + iVar11;
           }
           iVar11 = iVar7;
-          if ((int)param_5 <= iVar7) {
+          if ((int)param_5_after_write <= iVar7) {
             do {
-              iVar11 = iVar11 - (int)param_5;
+              iVar11 = iVar11 - (int)param_5_after_write;
               if ((uVar8 & 0x80) == 0) {
-                pbVar9 = pbVar9 + (int)param_5;
-                param_10 = param_10 + (int)param_5;
+                pbVar9 = pbVar9 + (int)param_5_after_write;
+                param_10_after_write = param_10_after_write + (int)param_5_after_write;
               }
               else {
                 if ((uVar8 & 0x40) == 0) {
-                  param_9 = param_9 + (int)param_5;
+                  param_9 = param_9 + (int)param_5_after_write;
                 }
                 else {
                   param_9 = param_9 + 1;
                 }
-                if (0 < (int)param_5) {
+                if (0 < (int)param_5_after_write) {
                   do {
-                    pbVar9[local_8c[param_7]] = *param_10;
-                    param_7 = param_7 + 1;
+                    pbVar9[local_8c[param_7_after_write]] = *param_10_after_write;
+                    param_7_after_write = param_7_after_write + 1;
                     pbVar9 = pbVar9 + 1;
-                    param_10 = param_10 + 1;
-                    if (0x1e < param_7) {
-                      param_7 = 0;
+                    param_10_after_write = param_10_after_write + 1;
+                    if (0x1e < param_7_after_write) {
+                      param_7_after_write = 0;
                     }
-                    param_5 = param_5 + -1;
-                  } while (param_5 != nullptr);
+                    param_5_after_write = param_5_after_write + -1;
+                  } while (param_5_after_write != nullptr);
                 }
               }
               if (iVar11 < 1) {
-                param_5 = nullptr;
+                param_5_after_write = nullptr;
                 break;
               }
               bVar5 = *param_9;
               uVar8 = (uint)bVar5;
               param_9 = param_9 + 1;
               if ((bVar5 & 0x80) == 0) {
-                param_5 = (byte *)(uVar8 & 0x7f);
+                param_5_after_write = (byte *)(uVar8 & 0x7f);
               }
               else {
-                param_5 = (byte *)(uVar8 & 0x3f);
+                param_5_after_write = (byte *)(uVar8 & 0x3f);
               }
-            } while ((int)param_5 <= iVar11);
+            } while ((int)param_5_after_write <= iVar11);
           }
-          uVar4 = (int)param_5 - iVar11;
+          uVar4 = (int)param_5_after_write - iVar11;
           bVar5 = (byte)uVar8;
           if ((uVar8 & 0x80) == 0) {
             pbVar9 = pbVar9 + iVar11;
-            param_10 = param_10 + iVar11;
+            param_10_after_write = param_10_after_write + iVar11;
           }
           else {
             if ((uVar8 & 0x40) == 0) {
@@ -160,12 +161,12 @@ LAB_006da325:
             }
             if (0 < iVar11) {
               do {
-                pbVar9[local_8c[param_7]] = *param_10;
-                param_7 = param_7 + 1;
+                pbVar9[local_8c[param_7_after_write]] = *param_10_after_write;
+                param_7_after_write = param_7_after_write + 1;
                 pbVar9 = pbVar9 + 1;
-                param_10 = param_10 + 1;
-                if (0x1e < param_7) {
-                  param_7 = 0;
+                param_10_after_write = param_10_after_write + 1;
+                if (0x1e < param_7_after_write) {
+                  param_7_after_write = 0;
                 }
                 iVar11 = iVar11 + -1;
               } while (iVar11 != 0);
@@ -192,10 +193,10 @@ LAB_006da325:
             param_9 = param_9 + iVar11;
           }
           pbVar9 = pbVar9 + (param_2 - iVar7);
-          param_10 = param_10 + (param_4 - iVar7);
+          param_10_after_write = param_10_after_write + (param_4 - iVar7);
         }
-        param_1 = param_1 + -1;
-      } while (param_1 != 0);
+        param_1_after_write = param_1_after_write + -1;
+      } while (param_1_after_write != 0);
     }
   }
   return;

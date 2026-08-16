@@ -83,7 +83,7 @@ LAB_006a8234:
   local_28 = puVar12;
   local_14 = local_2c;
   do {
-    param_13 = 30000;
+    auto param_13_after_write = 30000; /* compiler stack-slot lifetime split */
     iVar1 = param_1 + (local_c * param_2 + local_30 + local_10 * iVar11) * 2;
     if (uVar7 == 0) {
       uVar9 = FUN_006a6360(param_5,param_6,param_7,local_30,local_c,local_10);
@@ -119,7 +119,7 @@ LAB_006a80b6:
                                            (local_38 * param_2 + local_20 + local_48 * iVar11) * 2);
                 if (((local_20 == param_5) && (local_38 == param_6)) && (local_48 == param_7)) {
                   local_2c = local_24;
-                  param_13 = (&DAT_007ed640)[local_24] + local_4c;
+                  param_13_after_write = (&DAT_007ed640)[local_24] + local_4c;
                   local_44 = local_38;
                   local_40 = local_20;
                   local_18 = local_48;
@@ -127,11 +127,11 @@ LAB_006a80b6:
                 }
                 if (0 < (int)local_4c) {
                   local_4c = local_4c + *local_3c;
-                  if (((int)local_4c < (int)param_13) ||
-                     ((local_4c == param_13 &&
+                  if (((int)local_4c < (int)param_13_after_write) ||
+                     ((local_4c == param_13_after_write &&
                       (((int)(short)uVar3 == local_14 || ((int)(short)uVar3 == local_34)))))) {
                     local_2c = local_24;
-                    param_13 = local_4c;
+                    param_13_after_write = local_4c;
                     local_44 = local_38;
                     local_40 = local_20;
                     local_18 = local_48;
@@ -189,7 +189,7 @@ joined_r0x006a8098:
     *(short *)((int)local_28 + -0x46) = (short)local_44;
     *(undefined2 *)(local_28 + -0x11) = (undefined2)local_18;
     *(short *)((int)local_28 + -0x42) =
-         (*(short *)(&DAT_007ed640 + local_2c) - (short)param_13) + sVar2;
+         (*(short *)(&DAT_007ed640 + local_2c) - (short)param_13_after_write) + sVar2;
     *(undefined2 *)((int)local_28 + -0x3a) = 0x7fff;
     if (((local_40 == param_5) && (local_44 == param_6)) && (local_18 == param_7))
     goto LAB_006a8234;

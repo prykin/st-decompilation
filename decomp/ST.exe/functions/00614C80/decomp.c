@@ -40,7 +40,6 @@ FUN_00614c80(void *this,int param_1,int param_2,int param_3,int param_4,int para
     iVar1 = STField<int>(this,0x2dd) + param_1 * 0x1c;
     iVar3 = (int)*(short *)(iVar1 + -0x18);
     uVar4 = (int)*(short *)(iVar1 + -0x1c);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (int)*(short *)(STField<int>(this,0x2dd) + -0x1a + param_1 * 0x1c);
   }
   iVar5 = iVar5 * 0x1c;
@@ -60,10 +59,8 @@ FUN_00614c80(void *this,int param_1,int param_2,int param_3,int param_4,int para
     local_8 = 0;
     local_1c = (int)(param_8 * 0x46) / 100;
     local_18 = param_8;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_9 = uVar4;
+    auto param_9_after_write = uVar4; /* compiler stack-slot lifetime split */
     local_10 = local_20;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (int)Library::DKW::LIB::MemAlloc(uVar4 * 4);
     iVar5 = thunk_FUN_0060e210(&local_24,&local_14,4,param_1,uVar4);
     if (iVar5 == 0) {
@@ -90,7 +87,7 @@ FUN_00614c80(void *this,int param_1,int param_2,int param_3,int param_4,int para
         puVar6 = (undefined4 *)((int)puVar6 + 1);
         puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
-      STField<uint>(this,0x2e1) = param_9;
+      STField<uint>(this,0x2e1) = param_9_after_write;
       FreeAndNull(&param_1);
       return param_8;
     }

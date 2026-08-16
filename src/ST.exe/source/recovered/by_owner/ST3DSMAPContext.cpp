@@ -478,6 +478,7 @@ void __thiscall st::fn_006DDA90(ST3DSMAPContext *this,float param_1,float param_
 
 {
   if (param_1 < _DAT_0079034c) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0.0;
   }
   if (_DAT_0079dfd0 < param_2) {
@@ -1509,33 +1510,33 @@ st::fn_006E1C20
   fVar1 = (float)((int)param_1 * 0x10000 - local_24) * (float)_DAT_0079b148;
   fVar2 = (float)(param_2 * 0x10000 - local_20) * (float)_DAT_0079b148;
   fVar3 = param_3 * (float)_DAT_0079df60;
-  param_1 = fVar3;
+  auto param_1_after_write = fVar3; /* compiler stack-slot lifetime split */
   switch(this->field_00A8) {
   case CASE_0:
     fVar2 = fVar2 * (float)this->field_00F0;
     fVar1 = fVar1 * (float)this->field_00E8;
-    param_1 = fVar3 + (fVar1 + fVar2) * (float)_DAT_0079df60;
+    param_1_after_write = fVar3 + (fVar1 + fVar2) * (float)_DAT_0079df60;
     fVar3 = fVar3 + (fVar2 * (float)_DAT_0079df60 - fVar1 * (float)_DAT_0079df60);
     break;
   case CASE_1:
     fVar1 = fVar1 * (float)this->field_00E8;
     fVar2 = fVar2 * (float)this->field_00F0;
-    param_1 = -fVar3 + (fVar1 - fVar2) * (float)_DAT_0079df60;
+    param_1_after_write = -fVar3 + (fVar1 - fVar2) * (float)_DAT_0079df60;
     fVar3 = fVar3 + (fVar1 + fVar2) * (float)_DAT_0079df60;
     break;
   case CASE_2:
     fVar2 = fVar2 * (float)this->field_00F0;
     fVar1 = fVar1 * (float)this->field_00E8;
-    param_1 = -fVar3 - (fVar1 + fVar2) * (float)_DAT_0079df60;
+    param_1_after_write = -fVar3 - (fVar1 + fVar2) * (float)_DAT_0079df60;
     fVar3 = -fVar3 + (fVar1 - fVar2) * (float)_DAT_0079df60;
     break;
   case CASE_3:
     fVar2 = fVar2 * (float)this->field_00F0;
     fVar1 = fVar1 * (float)this->field_00E8;
-    param_1 = fVar3 + (fVar2 * (float)_DAT_0079df60 - fVar1 * (float)_DAT_0079df60);
+    param_1_after_write = fVar3 + (fVar2 * (float)_DAT_0079df60 - fVar1 * (float)_DAT_0079df60);
     fVar3 = -fVar3 - (fVar1 + fVar2) * (float)_DAT_0079df60;
   }
-  *param_4 = param_1 + (float)this->field_0098;
+  *param_4 = param_1_after_write + (float)this->field_0098;
   *param_5 = fVar3 + (float)this->field_00A0;
   return 0;
 }
@@ -1703,7 +1704,7 @@ float10 __thiscall st::fn_006E3210(ST3DSMAPContext *param_1,int param_2,int para
       iVar4 = param_3 / iVar2;
       iVar6 = param_3 % iVar2;
       if ((-1 < iVar4) && (iVar4 < iVar1)) {
-        param_3 = 5;
+        auto param_3_after_write = 5; /* compiler stack-slot lifetime split */
         piVar7 = (int *)(&param_1->field_0280[1].field_0xc +
                         (param_1->field_0288 * 5 + iVar3 + iVar1 * iVar4) * 4);
         do {
@@ -1715,8 +1716,8 @@ float10 __thiscall st::fn_006E3210(ST3DSMAPContext *param_1,int param_2,int para
                    (float10)_DAT_0079dfa8 + (float10)param_1->field_0394;
           }
           piVar7 = st::pointer_boundary_cast<int *>(piVar7 + -param_1->field_0288);
-          param_3 = param_3 + -1;
-        } while (0 < param_3);
+          param_3_after_write = param_3_after_write + -1;
+        } while (0 < param_3_after_write);
       }
     }
   }
@@ -2378,7 +2379,7 @@ switchD_006e74ad_default:
           iVar11 = 0;
           local_48 = -iVar8;
           local_34 = 0;
-          local_18 = (local_48 + 1) * iVar14 + ((int)(iVar14 + (iVar14 >> 0x1f & 3U)) >> 2);
+          local_18 = (local_48 + 1) * iVar14 + (STSignedDiv4(iVar14));
           local_2c = iVar13 * iVar8;
           local_3c = iVar10 + local_48;
           local_40 = iVar10 + iVar8;
@@ -3545,6 +3546,7 @@ st::fn_00709470
   int local_c;
   int local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_3 == 0) {
     iVar7 = 0;
     iVar11 = 0;
@@ -3646,6 +3648,7 @@ st::fn_00709470
           st::fn_006B84D0(pRVar5,0,param_4 - local_8,param_4 - param_3,pbVar6);
         }
         piVar8 = piVar8 + -1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + -1;
       } while (param_2 != 0);
     }

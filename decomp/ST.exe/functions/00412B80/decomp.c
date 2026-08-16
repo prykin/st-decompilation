@@ -40,15 +40,14 @@ undefined4 FUN_00412b80(int param_1,int param_2,int param_3)
           (((DAT_007f4d30 <= local_10 ||
             (uVar6 = local_c + DAT_007f4d2c * local_10 + local_8 * iVar4,
             *(short *)((int)PTR_007f4cf0 + uVar6 * 2) != 0)) ||
-           (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) != 0)))) &&
+           (uVar6 = uVar6 ^ 7, (STBitTest(g_bitset_007F4CFC, uVar6)) != 0)))) &&
          (iVar5 = FUN_0040f270(&local_c,&local_10,&local_8,*(int *)(iVar7 + DAT_007f4d48),
                                *(int *)(iVar7 + 4 + DAT_007f4d48),*(int *)(iVar7 + 8 + DAT_007f4d48)
                                ,iVar1 >> 2,iVar2 >> 2,iVar3 >> 2), iVar5 != 0)) {
         return 0xfffffffc;
       }
       uVar6 = local_8 * iVar4 + local_c + DAT_007f4d2c * local_10 ^ 7;
-      g_bitset_007F4CFC[(int)uVar6 >> 3] =
-           g_bitset_007F4CFC[(int)uVar6 >> 3] | '\x01' << (uVar6 & 7);
+      STBitSet(g_bitset_007F4CFC, uVar6);
       *(int *)(iVar7 + 0xc + DAT_007f4d48) = local_c;
       *(int *)(iVar7 + 0x10 + DAT_007f4d48) = local_10;
       *(int *)(iVar7 + 0x14 + DAT_007f4d48) = local_8;

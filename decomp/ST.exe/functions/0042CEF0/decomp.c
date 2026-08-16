@@ -22,6 +22,7 @@ STAllPlayersC::DelObjFromSaveTmps(STAllPlayersC *this,int param_1,char param_2,s
   uVar5 = (uint)DAT_0080874d;
   if (0x1a4 < param_1) {
     if (param_1 < 0x1b9) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((param_1 == 0x1b8) || (param_1 == 0x1ae)) goto LAB_0042d011;
     }
     else if ((999 < param_1) && (param_1 < 0x3ea)) {

@@ -19,8 +19,9 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
   int iVar10;
   undefined4 *puVar11;
   uint *puVar12;
-  undefined4 *puVar13;
-  int iVar14;
+  uint **ppuVar13;
+  undefined4 *puVar14;
+  int iVar15;
   int local_20;
   int local_1c;
   int local_14;
@@ -30,8 +31,11 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
 
   if ((-1 < (int)param_1) && ((int)param_1 < 8)) {
     bVar3 = LookupRecordByte((char)param_1);
-    memset(&DAT_00801020, 0, 0x30c); /* compiler bulk-zero initialization */
-    iVar5 = 0;
+    ppuVar13 = &PTR_00801020;
+    for (iVar5 = 0xc3; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *ppuVar13 = nullptr;
+      ppuVar13 = ppuVar13 + 1;
+    }
     memset(&DAT_00800bd0, 0, 0x30c); /* compiler bulk-zero initialization */
     STPiece<0,1>(DAT_00800bd4) = (undefined1)param_3;
     iVar5 = 0;
@@ -41,31 +45,31 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
     local_1c = 0;
     iVar9 = 0;
     do {
-      iVar14 = iVar9;
+      iVar15 = iVar9;
       if (iVar10 != 0) {
-        iVar14 = iVar9 + iVar10;
-        if (0x9a < iVar14) {
+        iVar15 = iVar9 + iVar10;
+        if (0x9a < iVar15) {
           return;
         }
         puVar11 = &DAT_00800bd0;
-        puVar13 = (undefined4 *)((int)&DAT_00801020 + iVar9 * 5);
+        puVar14 = (undefined4 *)((int)&PTR_00801020 + iVar9 * 5);
         for (uVar6 = (uint)(iVar10 * 5) >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-          *puVar13 = *puVar11;
+          *puVar14 = *puVar11;
           puVar11 = puVar11 + 1;
-          puVar13 = puVar13 + 1;
+          puVar14 = puVar14 + 1;
         }
         for (uVar6 = iVar10 * 5 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-          *(undefined1 *)puVar13 = *(undefined1 *)puVar11;
+          *(undefined1 *)puVar14 = *(undefined1 *)puVar11;
           puVar11 = (undefined4 *)((int)puVar11 + 1);
-          puVar13 = (undefined4 *)((int)puVar13 + 1);
+          puVar14 = (undefined4 *)((int)puVar14 + 1);
         }
         iVar10 = 0;
         iVar5 = iVar9;
-        local_20 = iVar14;
+        local_20 = iVar15;
         local_1c = iVar9;
       }
       bVar2 = false;
-      if (iVar14 <= iVar5) break;
+      if (iVar15 <= iVar5) break;
       local_8 = &DAT_00801024 + iVar5 * 5;
       piVar1 = (int *)(&PTR_DAT_007c0dc8)[bVar3 - 1];
       local_14 = iVar5;
@@ -96,23 +100,23 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
             piVar8 = (int *)((int)piVar8 + 0x19);
             local_10 = (int *)((int)local_10 + 0x19);
             iVar5 = local_1c;
-            iVar14 = local_20;
+            iVar15 = local_20;
           } while (*piVar8 != 0);
         }
         local_14 = local_14 + 1;
         local_8 = local_8 + 5;
-      } while (local_14 < iVar14);
-      iVar9 = iVar14;
+      } while (local_14 < iVar15);
+      iVar9 = iVar15;
     } while (bVar2);
-    if (-1 < iVar14 + -1) {
-      puVar12 = (uint *)((int)&DAT_00801020 + (iVar14 + -1) * 5);
+    if (-1 < iVar15 + -1) {
+      puVar12 = (uint *)((int)&PTR_00801020 + (iVar15 + -1) * 5);
       do {
         if (((param_4 != 0) || (*puVar12 != param_2)) || ((byte)puVar12[1] != param_3)) {
           thunk_FUN_004e6310(param_1,*puVar12,(uint)(byte)puVar12[1]);
         }
         puVar12 = (uint *)((int)puVar12 + -5);
-        iVar14 = iVar14 + -1;
-      } while (iVar14 != 0);
+        iVar15 = iVar15 + -1;
+      } while (iVar15 != 0);
     }
   }
   return;

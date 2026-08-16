@@ -177,13 +177,13 @@ void __cdecl st::fn_006823E0(int param_1,float *param_2)
         local_8 = (short *)(pcVar2 + (int)pfVar8 * 5 + 1);
         iVar4 = st::fn_004038AF((int)*(short *)(pcVar2 + (int)pfVar8 * 5 + 1));
         if ((iVar4 < 0) || (iVar4 = st::fn_004016B3((int)*local_8), iVar4 != 0)) {
-          param_1 = 0;
-          param_2 = st::fn_00401604(pcVar2,(int)pfVar8,&param_1);
+          auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
+          param_2 = st::fn_00401604(pcVar2,(int)pfVar8,st::pointer_boundary_cast<int *>(&param_1_after_write));
           if (param_2 == nullptr) {
-            st::fn_00405411(param_1,st::pointer_boundary_cast<char *>(&DAT_00847824));
+            st::fn_00405411(param_1_after_write,st::pointer_boundary_cast<char *>(&DAT_00847824));
             return;
           }
-          if (param_1 == 1) {
+          if (param_1_after_write == 1) {
             iVar7 = st::fn_00405D17(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               st::fn_006A5E40
@@ -193,7 +193,7 @@ void __cdecl st::fn_006823E0(int param_1,float *param_2)
             local_10 = 1;
             local_f = *param_2;
           }
-          else if (param_1 == 2) {
+          else if (param_1_after_write == 2) {
             iVar7 = st::fn_00405D17(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               st::fn_006A5E40
@@ -204,7 +204,7 @@ void __cdecl st::fn_006823E0(int param_1,float *param_2)
             local_f = *param_2;
           }
           else {
-            if (param_1 != 3) {
+            if (param_1_after_write != 3) {
               st::fn_006AB060(&param_2);
               st::fn_006A5E40
                         (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
@@ -295,7 +295,7 @@ void st::fn_00682850(void)
     pcVar6[3] = '\0';
     pcVar6 = pcVar6 + 4;
   }
-  st::fn_0072E340(local_8c,st::pointer_boundary_cast<char *>(DAT_00857528),0x7f);
+  st::fn_0072E340(local_8c,PTR_00857528,0x7f);
   pfVar3 = (float *)st::fn_004038AF(GVar2);
   pfVar5 = nullptr;
   st::fn_00402469();
@@ -346,7 +346,7 @@ void st::fn_00682D70(void)
   undefined1 local_c;
   undefined2 local_b;
 
-  pcVar3 = st::pointer_boundary_cast<char *>(DAT_00857548);
+  pcVar3 = PTR_00857548;
   pbVar1 = st::fn_00401677();
   iVar2 = st::fn_00405E98(pbVar1,pcVar3);
   if (iVar2 < 0) {
@@ -442,6 +442,7 @@ int __cdecl st::fn_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,in
   undefined1 uStack_9;
   undefined1 uStack_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((param_3 == 0) || (param_1 == nullptr)) || (param_2 == nullptr)
      ) {
     st::fn_006A5E40
@@ -571,15 +572,16 @@ int __cdecl st::fn_006839D0(int param_1,int *param_2,ushort param_3,int param_4)
   iVar5 = 0;
   local_8 = 0;
   local_c = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((param_4 == 0) || (param_2 == nullptr)) || (param_1 == 0)) {
     st::fn_006A5E40
               (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x3e5);
   }
   iVar2 = param_2[1];
-  param_4 = 0;
+  auto param_4_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < (int)(&DAT_00813bc4)[DAT_008488b0 * 0xac5]) {
     do {
-      cVar1 = (&DAT_00813bc8)[param_4 + DAT_008488b0 * 0x2b14];
+      cVar1 = (&DAT_00813bc8)[param_4_after_write + DAT_008488b0 * 0x2b14];
       switch(cVar1) {
       case '\x01':
         st::fn_00403EE5(param_2,cVar1,(byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5 + local_c],
@@ -605,8 +607,8 @@ int __cdecl st::fn_006839D0(int param_1,int *param_2,ushort param_3,int param_4)
         st::fn_006A5E40
                   (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x3f6);
       }
-      param_4 = param_4 + 1;
-    } while (param_4 < (int)(&DAT_00813bc4)[DAT_008488b0 * 0xac5]);
+      param_4_after_write = param_4_after_write + 1;
+    } while (param_4_after_write < (int)(&DAT_00813bc4)[DAT_008488b0 * 0xac5]);
   }
   local_17 = param_3;
   local_18 = 0xb;
@@ -621,6 +623,10 @@ int __cdecl st::fn_006839D0(int param_1,int *param_2,ushort param_3,int param_4)
 // 00683C70 FUN_00683c70
 #line 4 "decomp/ST.exe/functions/00683C70/decomp.c"
 /* WARNING: Unable to use type for symbol pcVar7 */
+/* WARNING: Unable to use type for symbol temp_3fb77f837b */
+/* WARNING: Unable to use type for symbol temp_3f53535d7a */
+/* WARNING: Unable to use type for symbol temp_3f861e3394 */
+/* WARNING: Unable to use type for symbol temp_3f4976a46d */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 1082 | 1127 | 1128 | 1129 | 1130 | 1131 | 1132 | 1133 | 1137 | 1138 |
@@ -841,10 +847,10 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
   char local_5;
   char *pcVar7;
   byte *pbVar14;
-  byte *temp_3fb77f837b;
-  byte *temp_3f53535d7a;
-  byte *temp_3f861e3394;
-  byte *temp_3f4976a46d;
+  char *temp_3fb77f837b;
+  char *temp_3f53535d7a;
+  char *temp_3f861e3394;
+  char *temp_3f4976a46d;
 
   local_30 = 1;
   local_28 = nullptr;
@@ -1023,7 +1029,7 @@ LAB_006840bc:
           }
         }
         local_fc = &DAT_0084790c;
-        st::fn_0072E340(&CHAR_00h_00847d0c,st::pointer_boundary_cast<char *>(DAT_0085755c),0x3fe);
+        st::fn_0072E340(&CHAR_00h_00847d0c,PTR_0085755c,0x3fe);
         local_f4 = &CHAR_00h_00847d0c;
         if (DAT_008489d0 != nullptr) {
           local_e8 = DAT_00848a0c;
@@ -1201,7 +1207,7 @@ LAB_006842d6:
                       iVar8 = DAT_008488b0 + 1;
                       puVar5 = &DAT_00811a90 + iVar8 * 0xac5;
                       DAT_008488b0 = iVar8;
-                      for (iVar9 = 0xac5; temp_3f53535d7a = st::pointer_boundary_cast<byte *>(DAT_00857528), iVar12 = DAT_007d2d18,
+                      for (iVar9 = 0xac5; temp_3f53535d7a = PTR_00857528, iVar12 = DAT_007d2d18,
                           iVar9 != 0; iVar9 = iVar9 + -1) {
                         *puVar5 = 0;
                         puVar5 = puVar5 + 1;
@@ -1210,8 +1216,7 @@ LAB_006842d6:
                       (&DAT_00811a94)[iVar8 * 0xac5] = iVar12;
                       local_EAX_3521 =
                            st::fn_0072E340
-                                     (&CHAR_00h_00811aa4 + iVar8 * 0x2b14,(char *)temp_3f53535d7a,
-                                      0x3f);
+                                     (&CHAR_00h_00811aa4 + iVar8 * 0x2b14,temp_3f53535d7a,0x3f);
                       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                       local_bc = STReplaceLowWord((uint32_t)(local_EAX_3521), (uint16_t)(*(undefined2 *)(local_EAX_3364 + 0x472)));
                       local_d0 = st::machine_word_boundary_cast<int>(PTR_008489cc->field_000F->count + 1);
@@ -1371,15 +1376,14 @@ LAB_00684989:
                       iVar12 = DAT_008488b0 * 0x2b14;
                       iVar8 = DAT_008488b0 * 0xac5;
                       puVar5 = &DAT_00811a90 + iVar8;
-                      for (iVar9 = 0xac5; temp_3f861e3394 = st::pointer_boundary_cast<byte *>(DAT_00857528), iVar9 != 0;
+                      for (iVar9 = 0xac5; temp_3f861e3394 = PTR_00857528, iVar9 != 0;
                           iVar9 = iVar9 + -1) {
                         *puVar5 = 0;
                         puVar5 = puVar5 + 1;
                       }
                       (&DAT_00811a90)[iVar8] = 1;
-                      st::fn_0072E340
-                                (&CHAR_00h_00811aa4 + iVar12,(char *)temp_3f861e3394,0x3f);
-                      local_EAX_1897 = st::fn_004018FC(st::pointer_boundary_cast<byte *>(DAT_00857528));
+                      st::fn_0072E340(&CHAR_00h_00811aa4 + iVar12,temp_3f861e3394,0x3f);
+                      local_EAX_1897 = st::fn_004018FC((byte *)PTR_00857528);
                       iVar8 = DAT_008488b0;
                       (&DAT_00811a9c)[DAT_008488b0 * 0xac5] = local_EAX_1897;
                       if (local_EAX_1897 == 5) {
@@ -1389,7 +1393,7 @@ LAB_00684989:
                                      st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x4bb);
                         }
                         iVar8 = DAT_008488b0;
-                        uVar3 = st::fn_00404548((char *)DAT_00857528);
+                        uVar3 = st::fn_00404548(PTR_00857528);
                         (&DAT_00811aa0)[iVar8 * 0xac5] = uVar3;
                       }
                       iVar9 = DAT_008488b0;
@@ -1400,7 +1404,7 @@ LAB_00684989:
                                      st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x4bf);
                         }
                         iVar8 = DAT_008488b0;
-                        uVar3 = st::fn_004046FB((char *)DAT_00857528);
+                        uVar3 = st::fn_004046FB(PTR_00857528);
                         iVar9 = DAT_008488b0;
                         (&DAT_00811aa0)[iVar8 * 0xac5] = uVar3;
                       }
@@ -1412,7 +1416,7 @@ LAB_00684989:
                                      st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x4c3);
                           iVar8 = DAT_008488b0;
                         }
-                        uVar3 = st::fn_00403EA9((char *)DAT_00857528);
+                        uVar3 = st::fn_00403EA9(PTR_00857528);
                         (&DAT_00811aa0)[iVar8 * 0xac5] = uVar3;
                       }
                       if ((&DAT_00811a9c)[iVar8 * 0xac5] == 8) {
@@ -1421,7 +1425,7 @@ LAB_00684989:
                                     (-0x8f,g_overwriteContext_007ED77C,
                                      st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x4c7);
                         }
-                        uVar3 = st::fn_00403EC2((char *)DAT_00857528);
+                        uVar3 = st::fn_00403EC2(PTR_00857528);
                         (&DAT_00811aa0)[DAT_008488b0 * 0xac5] = uVar3;
                       }
                     }
@@ -1445,7 +1449,7 @@ LAB_00684989:
                     *(undefined4 *)(&DAT_008143f8 + (&DAT_0081458c)[iVar9 * 0xac5] * 8 + iVar12) = 0
                     ;
                     puVar5 = &DAT_00811a90 + iVar11 * 0xac5;
-                    for (iVar8 = 0xac5; temp_3fb77f837b = st::pointer_boundary_cast<byte *>(DAT_00857528), iVar9 = DAT_007d2d18,
+                    for (iVar8 = 0xac5; temp_3fb77f837b = PTR_00857528, iVar9 = DAT_007d2d18,
                         iVar8 != 0; iVar8 = iVar8 + -1) {
                       *puVar5 = 0;
                       puVar5 = puVar5 + 1;
@@ -1453,7 +1457,7 @@ LAB_00684989:
                     (&DAT_00811a90)[iVar11 * 0xac5] = 2;
                     (&DAT_00811a94)[iVar11 * 0xac5] = iVar9;
                     st::fn_0072E340
-                              (&CHAR_00h_00811aa4 + iVar11 * 0x2b14,(char *)temp_3fb77f837b,0x3f);
+                              (&CHAR_00h_00811aa4 + iVar11 * 0x2b14,temp_3fb77f837b,0x3f);
                     DAT_007d3fa4 = 0;
                   }
                   goto switchD_006841b6_default;
@@ -1572,15 +1576,14 @@ switchD_00684bb9_caseD_3f2:
           iVar9 = DAT_008488b0 + 1;
           puVar5 = &DAT_00811a90 + iVar9 * 0xac5;
           DAT_008488b0 = iVar9;
-          for (iVar8 = 0xac5; temp_3f4976a46d = st::pointer_boundary_cast<byte *>(DAT_00857528), iVar12 = DAT_007d2d18, iVar8 != 0;
+          for (iVar8 = 0xac5; temp_3f4976a46d = PTR_00857528, iVar12 = DAT_007d2d18, iVar8 != 0;
               iVar8 = iVar8 + -1) {
             *puVar5 = 0;
             puVar5 = puVar5 + 1;
           }
           (&DAT_00811a90)[iVar9 * 0xac5] = 2;
           (&DAT_00811a94)[iVar9 * 0xac5] = iVar12;
-          st::fn_0072E340
-                    (&CHAR_00h_00811aa4 + iVar9 * 0x2b14,(char *)temp_3f4976a46d,0x3f);
+          st::fn_0072E340(&CHAR_00h_00811aa4 + iVar9 * 0x2b14,temp_3f4976a46d,0x3f);
         }
         goto switchD_006841b6_default;
       case 1:
@@ -2109,7 +2112,7 @@ cf_error_exit_0068A22B:
         memmove(pbVar20, pbVar15, uVar6); /* compiler REP MOVS byte copy */
       }
       param_4[1] = (int)&DAT_0084790c;
-      st::fn_0072E340(&CHAR_00h_00847d0c,st::pointer_boundary_cast<char *>(DAT_0085755c),0x3fe);
+      st::fn_0072E340(&CHAR_00h_00847d0c,PTR_0085755c,0x3fe);
       param_4[3] = (int)&CHAR_00h_00847d0c;
       param_4[4] = (int)&DAT_008488b4;
       param_4[5] = DAT_00857544;
@@ -4944,8 +4947,8 @@ st::fn_0068CEC0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *para
       }
       pDVar5 = st::fn_006B54F0(nullptr,0x32,0x32);
       local_8 = pDVar5;
-      st::fn_006B5AA0(pDVar5,s_include<[_inc_path]_AiScript_dfn_007d56b4);
-      st::fn_006B5AA0(pDVar5,s_include<[_inc_path]_AiScript_mcr_007d5688);
+      st::fn_006B5AA0(pDVar5,s_include<[_inc_path]st_string_007D56B4);
+      st::fn_006B5AA0(pDVar5,s_include<[_inc_path]st_string_007D5688);
       st::fn_006B5AA0(pDVar5,&CHAR_00h_008016a0);
       iVar4 = local_10;
 cf_continue_loop_0068D1EB:
@@ -4983,7 +4986,7 @@ cf_continue_loop_0068D1EB:
           memmove(pbVar12, pbVar10, uVar6); /* compiler REP MOVS byte copy */
         }
         local_30 = &DAT_0084790c;
-        st::fn_0072E340(&CHAR_00h_00847d0c,st::pointer_boundary_cast<char *>(DAT_0085755c),0x3fe);
+        st::fn_0072E340(&CHAR_00h_00847d0c,PTR_0085755c,0x3fe);
         local_28 = &CHAR_00h_00847d0c;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar9 = (*(code *)param_4)(&local_30);
@@ -5055,7 +5058,7 @@ cf_continue_loop_0068D1EB:
               }
             } while (iVar4 != 0);
           }
-          st::fn_0072ED50(local_10bc,st::pointer_boundary_cast<char *>(DAT_0085755c + DAT_00857544),0x1000);
+          st::fn_0072ED50(local_10bc,PTR_0085755c + DAT_00857544,0x1000);
           local_10 = DAT_00857554;
           local_14 = DAT_00857544;
           local_c = 0x3b9;
@@ -5072,7 +5075,7 @@ cf_continue_loop_0068D1EB:
           }
           if (iVar4 < DAT_00857554) {
             st::fn_006B5AA0(local_8,local_10bc);
-            st::fn_0072E340(local_10bc,st::pointer_boundary_cast<char *>(DAT_0085755c),0x1000);
+            st::fn_0072E340(local_10bc,PTR_0085755c,0x1000);
             local_10 = DAT_00857554;
             local_14 = 0;
           }
@@ -5158,7 +5161,7 @@ cf_continue_loop_0068D1EB:
               }
             } while (local_18 != 0);
           }
-          st::fn_0072ED50(local_10bc,st::pointer_boundary_cast<char *>(DAT_0085755c + DAT_00857544),0x1002 - DAT_00857544);
+          st::fn_0072ED50(local_10bc,PTR_0085755c + DAT_00857544,0x1002 - DAT_00857544);
           local_14 = DAT_00857544;
           local_10 = DAT_00857554;
           local_c = 0x44c;
@@ -5175,7 +5178,7 @@ cf_continue_loop_0068D1EB:
         }
         if (iVar4 < DAT_00857554) {
           st::fn_006B5AA0(local_8,local_10bc);
-          st::fn_0072E340(local_10bc,st::pointer_boundary_cast<char *>(DAT_0085755c),0x1000);
+          st::fn_0072E340(local_10bc,PTR_0085755c,0x1000);
           local_10 = DAT_00857554;
           local_14 = 0;
         }
@@ -5240,7 +5243,7 @@ cf_continue_loop_0068D1EB:
       }
       if ((-1 < iVar4) && (iVar4 < DAT_00857554)) {
         st::fn_006B5AA0(local_8,local_10bc);
-        st::fn_0072E340(local_10bc,st::pointer_boundary_cast<char *>(DAT_0085755c),0x1000);
+        st::fn_0072E340(local_10bc,PTR_0085755c,0x1000);
         local_10 = DAT_00857554;
         local_14 = 0;
         iVar4 = DAT_00857554;
@@ -5273,7 +5276,7 @@ cf_continue_loop_0068D1EB:
         memmove(pbVar12, pbVar10, uVar6); /* compiler REP MOVS byte copy */
       }
       param_3[1] = (int)&DAT_0084790c;
-      st::fn_0072E340(&CHAR_00h_00847d0c,st::pointer_boundary_cast<char *>(DAT_0085755c),0x3fe);
+      st::fn_0072E340(&CHAR_00h_00847d0c,PTR_0085755c,0x3fe);
       param_3[3] = (int)&CHAR_00h_00847d0c;
       param_3[4] = (int)&DAT_008488b4;
       param_3[5] = DAT_00857544;

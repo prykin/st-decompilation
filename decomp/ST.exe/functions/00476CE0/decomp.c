@@ -62,6 +62,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   int local_c;
   int local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -105,7 +106,7 @@ cf_common_exit_00476DBA:
       pSVar8 = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
       if (((pSVar8 != nullptr) && (pSVar8->field_0018 == *(int *)&this->field_0x5ff)) &&
-         (iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024), iVar7 != 0)) {
+         (iVar7 = (*pSVar8->vtable[1].vfunc_34)(pSVar8,this->field_0024), iVar7 != 0)) {
         return 2;
       }
       sub_004602B0(this);
@@ -144,7 +145,7 @@ cf_common_exit_00476DBA:
     if (pSVar8->field_0018 != *(int *)&this->field_0x5ff) {
       return 0;
     }
-    iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024);
+    iVar7 = (*pSVar8->vtable[1].vfunc_34)(pSVar8,this->field_0024);
     if (iVar7 != 0) {
       if (pSVar8->field_002C == 0) {
         thunk_FUN_004cd3e0(pSVar8,this->field_0018,this->field_0024);
@@ -312,7 +313,7 @@ cf_common_exit_00476DBA:
         pSVar8 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
         if (((pSVar8 == nullptr) || (pSVar8->field_0018 != *(int *)&this->field_0x5ff)) ||
-           (iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024), iVar7 == 0)) {
+           (iVar7 = (*pSVar8->vtable[1].vfunc_34)(pSVar8,this->field_0024), iVar7 == 0)) {
           this->field_0611 = CASE_4;
           this->field_0615 = CASE_0;
         }
@@ -495,7 +496,7 @@ cf_common_exit_00477B2E:
     pSVar8 = STAllPlayersC::GetObjPtr
                        (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
     if (((pSVar8 == nullptr) || (pSVar8->field_0018 != *(int *)&this->field_0x5ff)) ||
-       (iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024), iVar7 == 0)) {
+       (iVar7 = (*pSVar8->vtable[1].vfunc_34)(pSVar8,this->field_0024), iVar7 == 0)) {
       if (((int)this->field_0041 == (this->field_0609 + 1) * 0xc9) &&
          ((int)this->field_0043 == (this->field_060B + 1) * 0xc9)) {
         this->field_0611 = CASE_4;
@@ -516,12 +517,12 @@ cf_common_exit_00477B2E:
         local_44.arg1.words.low = *(undefined2 *)&this->field_0024;
         g_aiBossClass_008117BC->GetMessage(&local_44);
       }
-      pSVar8->vfunc_10C();
-      (*pSVar8->vtable->vfunc_110)(this->field_0024,this->field_06F3);
+      (*pSVar8->vtable[1].vfunc_38)(pSVar8);
+      (*pSVar8->vtable[1].vfunc_3C)((short)this->field_0024);
     }
     else if (iVar7 != 2) goto cf_common_exit_0047746B;
     uVar8 = LookupRecordByte(*(char *)&pSVar8->field_0024);
-    iVar7 = (*pSVar8->vtable->vfunc_2C)();
+    iVar7 = pSVar8->vfunc_2C();
     local_64.arg0.ptr = &local_44.unknown_04;
     local_44.unknown_04 = *(dword *)(&DAT_007e1374 + ((uint)(byte)uVar8 + iVar7 * 3) * 4);
     local_44.unknown_0c = 0xff;

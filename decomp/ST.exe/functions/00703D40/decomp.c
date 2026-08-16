@@ -31,17 +31,20 @@ void FUN_00703d40(undefined1 *param_1,int param_2,byte *param_3,int param_4,usho
   pbVar3 = (byte *)(param_16 + (param_18 >> 3));
   _DAT_00857000 = 1;
   iVar10 = param_12;
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 joined_r0x00703d68:
   param_12 = iVar10 + -1;
   if (param_12 < 0) {
     return;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_14 == 1) {
     param_12 = iVar10 + -2;
     if (param_12 < 0) {
       return;
     }
     uVar4 = (uint)*param_8;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_8 = param_8 + 1;
     iVar10 = param_9;
     if (uVar4 != 0) {

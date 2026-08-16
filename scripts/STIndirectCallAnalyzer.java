@@ -47,6 +47,10 @@ public class STIndirectCallAnalyzer extends GhidraScript {
     private static final Pattern TARGET = Pattern.compile("(?i)->\\s*([0-9a-f]{8,16})\\b");
     private static final Pattern SLOT = Pattern.compile(
         "(?i)CALL\\s+(?:dword ptr )?\\[([A-Z]{2,3})(?:\\s*\\+\\s*(0x[0-9a-f]+|[0-9a-f]+h?))?\\]");
+    private static final Pattern REGISTER_WRITE = Pattern.compile(
+        "(?i)^MOV\\s+([A-Z]{2,3}),");
+    private static final Pattern VTABLE_LOAD = Pattern.compile(
+        "(?i)^MOV\\s+([A-Z]{2,3}),\\s*(?:DWORD PTR )?\\[([A-Z]{2,3})\\]$");
     private static final Pattern STACK_ARGUMENT = Pattern.compile(
         "^\\[EBP\\+(0X[0-9A-F]+|[0-9]+)\\]$");
     private static final int RETURN_DEFINITION_SCAN_LIMIT = 20;
@@ -788,22 +792,39 @@ public class STIndirectCallAnalyzer extends GhidraScript {
             monitor.checkCancelled(); Function function = functions.next();
             if (function.isExternal()) continue;
             int pushes = 0; String ecx = "";
+            Map<String, String> vtableBases = new TreeMap<>();
             InstructionIterator iterator = currentProgram.getListing().getInstructions(function.getBody(), true);
             while (iterator.hasNext()) {
                 Instruction instruction = iterator.next();
                 String text = instruction.toString().toUpperCase(Locale.ROOT);
                 String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
                 if ("PUSH".equals(mnemonic)) pushes++;
-                if ("MOV".equals(mnemonic) && text.startsWith("MOV ECX,")) ecx = text.substring(8).trim();
+                Matcher written = REGISTER_WRITE.matcher(text);
+                if (written.find()) {
+                    String destination = written.group(1);
+                    vtableBases.remove(destination);
+                    if ("ECX".equals(destination)) ecx = "";
+                    Matcher load = VTABLE_LOAD.matcher(text);
+                    if (load.matches())
+                        vtableBases.put(destination, load.group(2));
+                    if ("ECX".equals(destination)) ecx = text.substring(8).trim();
+                }
                 if ("CALL".equals(mnemonic)) {
                     Matcher matcher = SLOT.matcher(text);
-                    if (matcher.find()) sites.add(new Site(addr(function.getEntryPoint()),
-                        function.getName(true), addr(instruction.getAddress()), matcher.group(1),
-                        slotValue(matcher.group(2)), pushes, ecx, instruction.toString()));
-                    pushes = 0;
+                    if (matcher.find()) {
+                        String table = matcher.group(1).toUpperCase(Locale.ROOT);
+                        sites.add(new Site(addr(function.getEntryPoint()),
+                            function.getName(true), addr(instruction.getAddress()), table,
+                            slotValue(matcher.group(2)), pushes, ecx,
+                            safeText(vtableBases.get(table)), instruction.toString()));
+                    }
+                    pushes = 0; ecx = "";
+                    vtableBases.remove("EAX");
+                    vtableBases.remove("ECX");
+                    vtableBases.remove("EDX");
                 }
                 if (instruction.getFlowType().isJump() || instruction.getFlowType().isTerminal()) {
-                    pushes = 0; ecx = "";
+                    pushes = 0; ecx = ""; vtableBases.clear();
                 }
             }
         }
@@ -865,10 +886,11 @@ public class STIndirectCallAnalyzer extends GhidraScript {
     private void writeSites(Path path) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("function_address\tfunction\tcall_address\ttable_register\tslot_offset\t" +
-                "observed_pushes\tlast_ecx_assignment\tinstruction\n");
+                "observed_pushes\tlast_ecx_assignment\tvtable_receiver_register\tinstruction\n");
             for (Site row : sites) out.write(row.functionAddress + "\t" + clean(row.function) +
                 "\t" + row.callAddress + "\t" + row.register + "\t" + row.slot + "\t" +
-                row.pushes + "\t" + clean(row.ecx) + "\t" + clean(row.instruction) + "\n");
+                row.pushes + "\t" + clean(row.ecx) + "\t" + clean(row.receiverRegister) +
+                "\t" + clean(row.instruction) + "\n");
         }
     }
     private void writeSummary(Path path, List<Row> rows) throws Exception {
@@ -917,7 +939,8 @@ public class STIndirectCallAnalyzer extends GhidraScript {
     private record Synthetic(String mode, String receiverType, int stackParameters,
         String parameterTypes, String returnType, String evidence) {}
     private record Site(String functionAddress, String function, String callAddress,
-        String register, int slot, int pushes, String ecx, String instruction) {}
+        String register, int slot, int pushes, String ecx, String receiverRegister,
+        String instruction) {}
     private record DispatchTable(Structure structure, int slots, String address) {}
     private record TypedTargetComponent(Pointer pointer, String structurePath,
         int offset) {}

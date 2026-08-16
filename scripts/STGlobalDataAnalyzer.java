@@ -73,7 +73,13 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         while (functions.hasNext()) {
             monitor.checkCancelled();
             Function function = functions.next();
-            if (function.isThunk() || function.isExternal() || isLibrary(function)) continue;
+            if (function.isThunk() || function.isExternal()) continue;
+            // Library bodies are excluded from semantic ownership/call-boundary
+            // propagation, but an exact machine store of a typed formal pointer
+            // into one global remains valid storage-role evidence.  Collect that
+            // deliberately narrow fact before applying the library boundary.
+            collectPublishedPointerStores(function);
+            if (isLibrary(function)) continue;
             functionsSeen++;
             collectExactGlobalReturnAlias(function);
             collectCfgThisGlobalStores(function);
@@ -159,6 +165,221 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                     "ESP".equals(cleanRegister(operands[1]))) pushes.clear();
         }
         return calls;
+    }
+
+    /**
+     * Recover the storage role of a writable global word from an exact pointer
+     * producer.  This is deliberately weaker than a semantic pointee proof: a
+     * neutral allocator result, an alloca address, or a LEA-derived address can
+     * establish that the word publishes a pointer without identifying the
+     * pointed record.  Later exact dereference widths and trusted call
+     * boundaries select only a primitive pointee view.
+     *
+     * Stack pointer facts survive branches because the compiler commonly parks
+     * several allocation results in distinct EBP slots and publishes them after
+     * a conditional initialization block.  Any exact write of a non-pointer
+     * value kills the slot.  Register facts remain ordinary forward facts and
+     * are killed by calls or non-transparent writes.
+     */
+    private void collectPublishedPointerStores(Function function) {
+        Map<String, PointerOrigin> registers = new HashMap<>();
+        Map<Integer, PointerOrigin> stack = new HashMap<>();
+        Set<Address> pointerStackStores = pointerStackStoreSites(function);
+        registers.put("ESP", new PointerOrigin("", "stack address"));
+        registers.put("EBP", new PointerOrigin("", "stack frame address"));
+        if ("__thiscall".equals(function.getCallingConventionName())) {
+            String owner = ownerTypePath(function);
+            if (!owner.isBlank()) registers.put("ECX",
+                new PointerOrigin("pointer:" + owner, "typed this receiver"));
+        }
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter() || !parameter.isStackVariable() ||
+                    !(parameter.getDataType() instanceof Pointer)) continue;
+            String type = typeSpecification(parameter.getDataType());
+            stack.put(parameter.getStackOffset(), new PointerOrigin(type,
+                "typed parameter " + parameter.getName()));
+        }
+
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+
+            if ("CALL".equals(mnemonic)) {
+                registers.remove("EAX");
+                registers.remove("ECX");
+                registers.remove("EDX");
+                Function called = calledFunction(instruction);
+                if (called != null && called.getReturnType() instanceof Pointer) {
+                    String type = trustedPointerReturn(called) ?
+                        typeSpecification(called.getReturnType()) : "";
+                    if (type.equals("pointer:/void") ||
+                            type.matches("pointer:/undefined[1248]?")) type = "";
+                    registers.put("EAX", new PointerOrigin(type,
+                        "pointer return from " + called.getName(true)));
+                }
+                continue;
+            }
+            if (operands.length == 0) continue;
+
+            String destination = cleanRegister(operands[0]);
+            Integer destinationStack = stackOffset(instruction, 0);
+            if ("MOV".equals(mnemonic) && operands.length >= 2) {
+                PointerOrigin source = pointerOrigin(instruction, 1, operands[1],
+                    registers, stack);
+                GlobalValue global = referencedGlobal(instruction, 0, operands[0], false);
+                if (global != null && !global.addressOf && source != null) {
+                    Evidence ev = evidence.computeIfAbsent(global.address,
+                        ignored -> new Evidence());
+                    ev.pointerProducerStores++;
+                    if (!source.type.isBlank())
+                        ev.pointerProducerTypes.merge(source.type, 1, Integer::sum);
+                    ev.pointerProducerSites.add(addr(function.getEntryPoint()) +
+                        " publishes " + source.reason + " @ " +
+                        addr(instruction.getAddress()));
+                }
+                if (destination != null) {
+                    if (isFullRegister(operands[0]) && source != null)
+                        registers.put(destination, source);
+                    else registers.remove(destination);
+                }
+                else if (destinationStack != null) {
+                    if (source != null) stack.put(destinationStack, source);
+                    else if (pointerStackStores.contains(instruction.getAddress()))
+                        stack.put(destinationStack, new PointerOrigin("",
+                            "exact stack definition later dereferenced as pointer"));
+                    else stack.remove(destinationStack);
+                }
+                continue;
+            }
+            if ("LEA".equals(mnemonic) && destination != null && operands.length >= 2) {
+                if (isFullRegister(operands[0]) && operands[1].contains("["))
+                    registers.put(destination, new PointerOrigin("", "LEA-derived address"));
+                else registers.remove(destination);
+                continue;
+            }
+            if (destination != null && writesRegister(mnemonic, operands) &&
+                    !(Set.of("ADD", "SUB", "INC", "DEC").contains(mnemonic) &&
+                      registers.containsKey(destination)))
+                registers.remove(destination);
+            if (destinationStack != null && writesMemory(mnemonic))
+                stack.remove(destinationStack);
+        }
+    }
+
+    /**
+     * Find incoming/local EBP slots whose loaded machine word is subsequently
+     * used as the sole unscaled base of a real memory access.  This establishes
+     * the pointer role of the slot without assigning a semantic pointee.  The
+     * fact is intentionally local to one function and is used only when the
+     * exact slot value is later published into a writable global.
+     *
+     * Register provenance is kept only through full-width MOV copies.  Calls
+     * kill volatile registers and control-flow boundaries clear the map, so a
+     * textual register reuse in another basic block cannot manufacture a
+     * pointer producer.
+     */
+    private Set<Address> pointerStackStoreSites(Function function) {
+        Set<Address> result = new HashSet<>();
+        Map<Integer, Address> lastStackStores = new HashMap<>();
+        Map<String, StackDefinition> registerDefinitions = new HashMap<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+
+            if (!"LEA".equals(mnemonic)) {
+                for (String operand : operands) {
+                    int open = operand.indexOf('['), close = operand.lastIndexOf(']');
+                    if (open < 0 || close <= open) continue;
+                    String address = operand.substring(open + 1, close);
+                    for (Map.Entry<String, StackDefinition> entry :
+                            registerDefinitions.entrySet())
+                        if (soleUnscaledBase(address, entry.getKey()))
+                            result.add(entry.getValue().storeSite);
+                }
+            }
+
+            if (instruction.getFlowType().isCall()) {
+                registerDefinitions.remove("EAX");
+                registerDefinitions.remove("ECX");
+                registerDefinitions.remove("EDX");
+                continue;
+            }
+            if (operands.length == 0) {
+                if (instruction.getFlowType().isJump() ||
+                        instruction.getFlowType().isTerminal()) {
+                    registerDefinitions.clear();
+                    lastStackStores.clear();
+                }
+                continue;
+            }
+            Integer destinationStack = stackOffset(instruction, 0);
+            if (destinationStack != null && writesMemory(mnemonic)) {
+                if ("MOV".equals(mnemonic)) {
+                    lastStackStores.put(destinationStack, instruction.getAddress());
+                    if (operands.length >= 2) {
+                        String source = cleanRegister(operands[1]);
+                        if (source != null && isFullRegister(operands[1]))
+                            registerDefinitions.put(source, new StackDefinition(
+                                destinationStack, instruction.getAddress()));
+                    }
+                }
+                else lastStackStores.remove(destinationStack);
+            }
+            String destination = cleanRegister(operands[0]);
+            if (destination != null && writesRegister(mnemonic, operands)) {
+                StackDefinition origin = null;
+                if ("MOV".equals(mnemonic) && operands.length >= 2 &&
+                        isFullRegister(operands[0])) {
+                    Integer sourceStack = stackOffset(instruction, 1);
+                    if (sourceStack != null) {
+                        Address store = lastStackStores.get(sourceStack);
+                        if (store != null) origin = new StackDefinition(sourceStack, store);
+                    }
+                    else {
+                        String source = cleanRegister(operands[1]);
+                        if (source != null && isFullRegister(operands[1]))
+                            origin = registerDefinitions.get(source);
+                    }
+                }
+                if (origin == null) registerDefinitions.remove(destination);
+                else registerDefinitions.put(destination, origin);
+            }
+            if (instruction.getFlowType().isJump() ||
+                    instruction.getFlowType().isTerminal()) {
+                registerDefinitions.clear();
+                lastStackStores.clear();
+            }
+        }
+        return result;
+    }
+
+    private PointerOrigin pointerOrigin(Instruction instruction, int operandIndex,
+            String operand, Map<String, PointerOrigin> registers,
+            Map<Integer, PointerOrigin> stack) {
+        String register = cleanRegister(operand);
+        if (register != null && isFullRegister(operand)) return registers.get(register);
+        Integer stackOffset = stackOffset(instruction, operandIndex);
+        if (stackOffset != null) return stack.get(stackOffset);
+        for (Reference reference : instruction.getReferencesFrom()) {
+            if (reference.getOperandIndex() != operandIndex ||
+                    !reference.isMemoryReference()) continue;
+            Data data = currentProgram.getListing().getDefinedDataAt(reference.getToAddress());
+            if (data != null && data.getDataType() instanceof Pointer)
+                return new PointerOrigin(typeSpecification(data.getDataType()),
+                    "typed global load " + addr(data.getAddress()));
+        }
+        return null;
+    }
+
+    private boolean writesMemory(String mnemonic) {
+        return !Set.of("CMP", "TEST", "PUSH", "BT", "JMP", "CALL", "RET", "NOP")
+            .contains(mnemonic) && !mnemonic.startsWith("J");
     }
 
     /**
@@ -355,7 +576,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         // an address expression must not become a pointer until a later
         // instruction actually dereferences the derived address.
         if ("LEA".equals(mnemonic)) return;
-        for (String operand : operands) {
+        for (int operandIndex = 0; operandIndex < operands.length; operandIndex++) {
+            String operand = operands[operandIndex];
             String upper = operand.toUpperCase(Locale.ROOT);
             int open = upper.indexOf('['), close = upper.lastIndexOf(']');
             if (open < 0 || close <= open) continue;
@@ -368,12 +590,25 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                     ignored -> new Evidence());
                 ev.pointerDereferences++;
                 ev.pointerDerefFunctions.add(addr(function.getEntryPoint()));
+                int width = memoryOperandWidth(upper, mnemonic);
+                if (width > 0) ev.pointerDerefWidths.merge(width, 1, Integer::sum);
                 boolean compatible = dwordPointerGeometry(address, entry.getKey());
                 if (!compatible) ev.pointerDerefWordCompatible = false;
                 ev.pointerDerefSites.add(addr(function.getEntryPoint()) + " " +
                     instruction.toString() + " @ " + addr(instruction.getAddress()));
             }
         }
+    }
+
+    private int memoryOperandWidth(String operand, String mnemonic) {
+        if (operand.contains("BYTE PTR")) return 1;
+        if (operand.contains("QWORD PTR")) return 8;
+        if (operand.contains("DWORD PTR")) return 4;
+        if (operand.contains("WORD PTR")) return 2;
+        if (mnemonic.endsWith("B")) return 1;
+        if (mnemonic.endsWith("W")) return 2;
+        if (mnemonic.endsWith("D")) return 4;
+        return 0;
     }
 
     private boolean soleUnscaledBase(String address, String baseRegister) {
@@ -687,7 +922,6 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         Parameter returned = function.getReturn();
         if (returned != null && (returned.getSource() == SourceType.USER_DEFINED ||
                 returned.getSource() == SourceType.IMPORTED)) return true;
-        if (isLibrary(function)) return true;
         for (FunctionTag tag : function.getTags())
             if (Set.of("RECOVERED_PROTOTYPE", "RECOVERED_UTILITY_SEMANTICS",
                     "RECOVERED_CONSTRUCTOR", "RECOVERED_OBJECT_FACTORY")
@@ -1014,9 +1248,14 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             boolean typedStoreDominates = constructorType.isBlank() &&
                 !typedStoreType.isBlank() && !typedStoreConflict;
             boolean anchoredStoreDominates = constructorDominates || typedStoreDominates;
+            String publishedPointerType = inferredPublishedPointerType(ev);
+            boolean publishedPointerDominates = constructorType.isBlank() &&
+                typedStoreType.isBlank() && !publishedPointerType.isBlank();
+            if (publishedPointerDominates) proposedType = publishedPointerType;
             boolean typeConflict = !contextualAnonymous &&
                 (constructorConflict || typedStoreConflict ||
-                 narrowCharType.isBlank() && !anchoredStoreDominates && ev.types.size() > 1);
+                 narrowCharType.isBlank() && !anchoredStoreDominates &&
+                 !publishedPointerDominates && ev.types.size() > 1);
             int count = proposedType.isBlank() ? 0 : ev.types.getOrDefault(proposedType, 0);
             int currentTypeCount = ev.types.getOrDefault(currentType, 0);
             boolean currentTypeDominates = currentTypeCount >= 3;
@@ -1074,7 +1313,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 currentReplaceable && extentCompatible && addressEvidenceCompatible &&
                 (contextualAnonymous || initializedStringPointer ||
                     !narrowCharType.isBlank() ||
-                    anchoredStoreDominates || ev.typedStores >= 1 ||
+                    anchoredStoreDominates || publishedPointerDominates ||
+                    ev.typedStores >= 1 ||
                     ev.strongCount >= 2 || count >= 3);
             String proposedName = unique(ev.names);
             int proposedNameCount = proposedName.isBlank() ? 0 :
@@ -1111,6 +1351,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 // proves storage type only; keep the address-stable symbol until
                 // independent semantic-name evidence exists.
                 (narrowCharType.isBlank() || strongSemanticName) &&
+                (!publishedPointerDominates || strongSemanticName) &&
                 !symbol.getName().equals(proposedName) && (typeApply || sameConcreteType &&
                     (ev.typedStores >= 1 || ev.strongCount >= 2 || count >= 3) ||
                     currentTypeDominates || contextualAnonymous || strongSemanticName ||
@@ -1130,7 +1371,11 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             reasons.add("library_context_votes=" + ev.libraryContexts);
             reasons.add("pointer_dereferences=" + ev.pointerDereferences +
                 "; functions=" + ev.pointerDerefFunctions.size() +
+                "; widths=" + ev.pointerDerefWidths +
                 "; aligned_dword_geometry=" + ev.pointerDerefWordCompatible);
+            reasons.add("pointer_producer_stores=" + ev.pointerProducerStores +
+                "; producer_types=" + ev.pointerProducerTypes +
+                "; producer_sites=" + ev.pointerProducerSites);
             if (!ev.untypedReceiverSites.isEmpty())
                 reasons.add("untyped_thiscall_receiver_sites=" +
                     ev.untypedReceiverSites.size() + "; functions=" +
@@ -1146,6 +1391,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 reasons.add("constructor_store_dominates_weaker_use_types");
             if (typedStoreDominates && ev.types.size() > 1)
                 reasons.add("exact_typed_pointer_store_dominates_weaker_use_types");
+            if (publishedPointerDominates)
+                reasons.add("published_pointer_role_from_exact_store_and_dereference_width");
             if (typeConflict) reasons.add("type_conflict");
             if (!narrowCharType.isBlank())
                 reasons.add("dominant_char_pointer_role_over_neutral_byte_consumers");
@@ -1190,6 +1437,82 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             .filter(entry -> !"/char".equals(entry.getKey()))
             .mapToInt(Map.Entry::getValue).sum();
         return chars >= Math.max(3, alternatives * 4) ? "/char" : "";
+    }
+
+    private String inferredPublishedPointerType(Evidence evidence) {
+        if (evidence.pointerProducerStores < 1) return "";
+        // A producer store alone proves only that the word temporarily carries
+        // an address.  Require an independent dereference before changing the
+        // persistent global datatype; allocator and CRT bookkeeping returns are
+        // intentionally heterogeneous.
+        if (evidence.pointerDerefWidths.isEmpty()) return "";
+        if (evidence.pointerDereferences < 2) return "";
+
+        int charVotes = evidence.types.getOrDefault("pointer:/char", 0);
+        int byteVotes = evidence.types.getOrDefault("pointer:/byte", 0) +
+            evidence.types.getOrDefault("pointer:/uchar", 0) +
+            evidence.types.getOrDefault("pointer:/undefined1", 0);
+        int pointerVotes = evidence.types.entrySet().stream()
+            .filter(entry -> entry.getKey().startsWith("pointer:"))
+            .mapToInt(Map.Entry::getValue).sum();
+        if (evidence.cstringScans > 0 &&
+                evidence.pointerDerefWidths.keySet().equals(Set.of(1)))
+            return "pointer:/char";
+        if (charVotes >= 3 && charVotes * 3 >= Math.max(1, pointerVotes * 2))
+            return "pointer:/char";
+
+        Set<Integer> widths = evidence.pointerDerefWidths.keySet();
+        int width = dominantDereferenceWidth(evidence.pointerDerefWidths);
+        if (width > 0) {
+            if (width == 1 && charVotes >= 2 && charVotes >= byteVotes)
+                return "pointer:/char";
+            Set<String> primitive = primitivePointerCandidates(evidence, width);
+            if (primitive.size() == 1) return primitive.iterator().next();
+            return switch (width) {
+                case 1 -> "pointer:/undefined1";
+                case 2 -> "pointer:/undefined2";
+                case 4 -> "pointer:/undefined4";
+                case 8 -> "pointer:/undefined8";
+                default -> "";
+            };
+        }
+        // A mixed-width root is byte-addressable storage.  This establishes a
+        // buffer view only; overlapping fields or a semantic record remain a
+        // separate structural-recovery problem.
+        if (widths.contains(1)) return "pointer:/byte";
+        return "";
+    }
+
+    private int dominantDereferenceWidth(Map<Integer, Integer> widths) {
+        if (widths.isEmpty()) return 0;
+        Map.Entry<Integer, Integer> best = widths.entrySet().stream()
+            .max(Map.Entry.<Integer, Integer>comparingByValue()
+                .thenComparing(Map.Entry.comparingByKey())).orElse(null);
+        if (best == null) return 0;
+        int total = widths.values().stream().mapToInt(Integer::intValue).sum();
+        // A rare narrow view of an otherwise machine-word array is a cast/view,
+        // not evidence that the published base has a narrow element type.
+        return widths.size() == 1 || best.getValue() >= 3 &&
+            best.getValue() * 4 >= total * 3 ? best.getKey() : 0;
+    }
+
+    private Set<String> primitivePointerCandidates(Evidence evidence, int wantedWidth) {
+        Set<String> result = new TreeSet<>();
+        Map<String, Integer> candidates = new TreeMap<>();
+        candidates.putAll(evidence.types);
+        for (Map.Entry<String, Integer> entry : evidence.pointerProducerTypes.entrySet())
+            candidates.merge(entry.getKey(), entry.getValue(), Integer::sum);
+        for (Map.Entry<String, Integer> entry : candidates.entrySet()) {
+            String type = entry.getKey();
+            if (!type.startsWith("pointer:/") || type.equals("pointer:/void") ||
+                    type.matches("pointer:/undefined[1248]?")) continue;
+            String pointee = type.substring("pointer:".length());
+            DataType base = dataTypes.getDataType(pointee);
+            if (base == null || base instanceof Structure || base instanceof Pointer) continue;
+            if (wantedWidth > 0 && base.getLength() != wantedWidth) continue;
+            result.add(type);
+        }
+        return result;
     }
 
     private boolean narrowScalarTypesOnly(Map<String, Integer> votes) {
@@ -1689,21 +2012,26 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         @Override
         public int hashCode() { return registers.hashCode() * 31 + stack.hashCode(); }
     }
+    private record StackDefinition(int offset, Address storeSite) {}
     private static class Evidence {
         final Map<String, Integer> types = new TreeMap<>(), names = new TreeMap<>(),
             constructorStores = new TreeMap<>(), typedStoreTypes = new TreeMap<>(),
-            callBoundaryTypes = new TreeMap<>(), libraryContexts = new TreeMap<>();
+            callBoundaryTypes = new TreeMap<>(), libraryContexts = new TreeMap<>(),
+            pointerProducerTypes = new TreeMap<>();
+        final Map<Integer, Integer> pointerDerefWidths = new TreeMap<>();
         final Set<String> sites = new TreeSet<>(), strongNames = new TreeSet<>(),
             typedStoreSites = new TreeSet<>(), callBoundarySites = new TreeSet<>(),
             initializedStringNames = new TreeSet<>(), pointerDerefSites = new TreeSet<>(),
             pointerDerefFunctions = new TreeSet<>(), bitStringSites = new TreeSet<>(),
             bitStringFunctions = new TreeSet<>(), untypedReceiverSites = new TreeSet<>(),
             untypedReceiverFunctions = new TreeSet<>(),
-            untypedReceiverCallees = new TreeSet<>();
+            untypedReceiverCallees = new TreeSet<>(), pointerProducerSites = new TreeSet<>();
         int strongCount, addressEvidence, typedStores, libraryContextCalls,
-            initializedStringPointers, cstringScans, pointerDereferences;
+            initializedStringPointers, cstringScans, pointerDereferences,
+            pointerProducerStores;
         boolean pointerDerefWordCompatible = true;
     }
+    private record PointerOrigin(String type, String reason) {}
     private record ContextVote(String family, int count, int total) {}
     private record CStringState(Address address, boolean lowAccumulatorZero) {}
     private record TypedValue(String type, String producer, boolean constructorResult) {}

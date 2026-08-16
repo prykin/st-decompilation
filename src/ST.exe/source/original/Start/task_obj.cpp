@@ -2972,10 +2972,12 @@ st::fn_005E3E80
                 (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Start\\task_obj.cpp"),0x46c);
     }
     if (param_8 < 0) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_8 = param_7 + 1;
     }
     if (param_9 < 0) {
       if (param_7 < 1) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_9 = 0;
       }
       else {

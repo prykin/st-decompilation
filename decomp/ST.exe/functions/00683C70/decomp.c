@@ -2,6 +2,10 @@
 
 
 /* WARNING: Unable to use type for symbol pcVar7 */
+/* WARNING: Unable to use type for symbol temp_3fb77f837b */
+/* WARNING: Unable to use type for symbol temp_3f53535d7a */
+/* WARNING: Unable to use type for symbol temp_3f861e3394 */
+/* WARNING: Unable to use type for symbol temp_3f4976a46d */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 1082 | 1127 | 1128 | 1129 | 1130 | 1131 | 1132 | 1133 | 1137 | 1138 |
@@ -222,10 +226,10 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
   char local_5;
   char *pcVar7;
   byte *pbVar14;
-  byte *temp_3fb77f837b;
-  byte *temp_3f53535d7a;
-  byte *temp_3f861e3394;
-  byte *temp_3f4976a46d;
+  char *temp_3fb77f837b;
+  char *temp_3f53535d7a;
+  char *temp_3f861e3394;
+  char *temp_3f4976a46d;
 
   local_30 = 1;
   local_28 = nullptr;
@@ -404,7 +408,7 @@ LAB_006840bc:
           }
         }
         local_fc = &DAT_0084790c;
-        Library::MSVCRT::_strncpy(&CHAR_00h_00847d0c,DAT_0085755c,0x3fe);
+        Library::MSVCRT::_strncpy(&CHAR_00h_00847d0c,PTR_0085755c,0x3fe);
         local_f4 = &CHAR_00h_00847d0c;
         if (DAT_008489d0 != nullptr) {
           local_e8 = DAT_00848a0c;
@@ -582,7 +586,7 @@ LAB_006842d6:
                       iVar8 = DAT_008488b0 + 1;
                       puVar5 = &DAT_00811a90 + iVar8 * 0xac5;
                       DAT_008488b0 = iVar8;
-                      for (iVar9 = 0xac5; temp_3f53535d7a = DAT_00857528, iVar12 = DAT_007d2d18,
+                      for (iVar9 = 0xac5; temp_3f53535d7a = PTR_00857528, iVar12 = DAT_007d2d18,
                           iVar9 != 0; iVar9 = iVar9 + -1) {
                         *puVar5 = 0;
                         puVar5 = puVar5 + 1;
@@ -591,8 +595,7 @@ LAB_006842d6:
                       (&DAT_00811a94)[iVar8 * 0xac5] = iVar12;
                       local_EAX_3521 =
                            Library::MSVCRT::_strncpy
-                                     (&CHAR_00h_00811aa4 + iVar8 * 0x2b14,(char *)temp_3f53535d7a,
-                                      0x3f);
+                                     (&CHAR_00h_00811aa4 + iVar8 * 0x2b14,temp_3f53535d7a,0x3f);
                       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                       local_bc = STReplaceLowWord((uint32_t)(local_EAX_3521), (uint16_t)(*(undefined2 *)(local_EAX_3364 + 0x472)));
                       local_d0 = PTR_008489cc->field_000F->count + 1;
@@ -752,15 +755,14 @@ LAB_00684989:
                       iVar12 = DAT_008488b0 * 0x2b14;
                       iVar8 = DAT_008488b0 * 0xac5;
                       puVar5 = &DAT_00811a90 + iVar8;
-                      for (iVar9 = 0xac5; temp_3f861e3394 = DAT_00857528, iVar9 != 0;
+                      for (iVar9 = 0xac5; temp_3f861e3394 = PTR_00857528, iVar9 != 0;
                           iVar9 = iVar9 + -1) {
                         *puVar5 = 0;
                         puVar5 = puVar5 + 1;
                       }
                       (&DAT_00811a90)[iVar8] = 1;
-                      Library::MSVCRT::_strncpy
-                                (&CHAR_00h_00811aa4 + iVar12,(char *)temp_3f861e3394,0x3f);
-                      local_EAX_1897 = thunk_FUN_006800a0(DAT_00857528);
+                      Library::MSVCRT::_strncpy(&CHAR_00h_00811aa4 + iVar12,temp_3f861e3394,0x3f);
+                      local_EAX_1897 = thunk_FUN_006800a0((byte *)PTR_00857528);
                       iVar8 = DAT_008488b0;
                       (&DAT_00811a9c)[DAT_008488b0 * 0xac5] = local_EAX_1897;
                       if (local_EAX_1897 == 5) {
@@ -770,7 +772,7 @@ LAB_00684989:
                                      "E:\\__titans\\ai\\ai_script.cpp",0x4bb);
                         }
                         iVar8 = DAT_008488b0;
-                        uVar3 = thunk_FUN_0067ff00((char *)DAT_00857528);
+                        uVar3 = thunk_FUN_0067ff00(PTR_00857528);
                         (&DAT_00811aa0)[iVar8 * 0xac5] = uVar3;
                       }
                       iVar9 = DAT_008488b0;
@@ -781,7 +783,7 @@ LAB_00684989:
                                      "E:\\__titans\\ai\\ai_script.cpp",0x4bf);
                         }
                         iVar8 = DAT_008488b0;
-                        uVar3 = thunk_FUN_0067ff50((char *)DAT_00857528);
+                        uVar3 = thunk_FUN_0067ff50(PTR_00857528);
                         iVar9 = DAT_008488b0;
                         (&DAT_00811aa0)[iVar8 * 0xac5] = uVar3;
                       }
@@ -793,7 +795,7 @@ LAB_00684989:
                                      "E:\\__titans\\ai\\ai_script.cpp",0x4c3);
                           iVar8 = DAT_008488b0;
                         }
-                        uVar3 = thunk_FUN_0067ffa0((char *)DAT_00857528);
+                        uVar3 = thunk_FUN_0067ffa0(PTR_00857528);
                         (&DAT_00811aa0)[iVar8 * 0xac5] = uVar3;
                       }
                       if ((&DAT_00811a9c)[iVar8 * 0xac5] == 8) {
@@ -802,7 +804,7 @@ LAB_00684989:
                                     (-0x8f,g_overwriteContext_007ED77C,
                                      "E:\\__titans\\ai\\ai_script.cpp",0x4c7);
                         }
-                        uVar3 = thunk_FUN_0067fff0((char *)DAT_00857528);
+                        uVar3 = thunk_FUN_0067fff0(PTR_00857528);
                         (&DAT_00811aa0)[DAT_008488b0 * 0xac5] = uVar3;
                       }
                     }
@@ -826,7 +828,7 @@ LAB_00684989:
                     *(undefined4 *)(&DAT_008143f8 + (&DAT_0081458c)[iVar9 * 0xac5] * 8 + iVar12) = 0
                     ;
                     puVar5 = &DAT_00811a90 + iVar11 * 0xac5;
-                    for (iVar8 = 0xac5; temp_3fb77f837b = DAT_00857528, iVar9 = DAT_007d2d18,
+                    for (iVar8 = 0xac5; temp_3fb77f837b = PTR_00857528, iVar9 = DAT_007d2d18,
                         iVar8 != 0; iVar8 = iVar8 + -1) {
                       *puVar5 = 0;
                       puVar5 = puVar5 + 1;
@@ -834,7 +836,7 @@ LAB_00684989:
                     (&DAT_00811a90)[iVar11 * 0xac5] = 2;
                     (&DAT_00811a94)[iVar11 * 0xac5] = iVar9;
                     Library::MSVCRT::_strncpy
-                              (&CHAR_00h_00811aa4 + iVar11 * 0x2b14,(char *)temp_3fb77f837b,0x3f);
+                              (&CHAR_00h_00811aa4 + iVar11 * 0x2b14,temp_3fb77f837b,0x3f);
                     DAT_007d3fa4 = 0;
                   }
                   goto switchD_006841b6_default;
@@ -953,15 +955,14 @@ switchD_00684bb9_caseD_3f2:
           iVar9 = DAT_008488b0 + 1;
           puVar5 = &DAT_00811a90 + iVar9 * 0xac5;
           DAT_008488b0 = iVar9;
-          for (iVar8 = 0xac5; temp_3f4976a46d = DAT_00857528, iVar12 = DAT_007d2d18, iVar8 != 0;
+          for (iVar8 = 0xac5; temp_3f4976a46d = PTR_00857528, iVar12 = DAT_007d2d18, iVar8 != 0;
               iVar8 = iVar8 + -1) {
             *puVar5 = 0;
             puVar5 = puVar5 + 1;
           }
           (&DAT_00811a90)[iVar9 * 0xac5] = 2;
           (&DAT_00811a94)[iVar9 * 0xac5] = iVar12;
-          Library::MSVCRT::_strncpy
-                    (&CHAR_00h_00811aa4 + iVar9 * 0x2b14,(char *)temp_3f4976a46d,0x3f);
+          Library::MSVCRT::_strncpy(&CHAR_00h_00811aa4 + iVar9 * 0x2b14,temp_3f4976a46d,0x3f);
         }
         goto switchD_006841b6_default;
       case 1:
@@ -1490,7 +1491,7 @@ cf_error_exit_0068A22B:
         memmove(pbVar20, pbVar15, uVar6); /* compiler REP MOVS byte copy */
       }
       param_4[1] = (int)&DAT_0084790c;
-      Library::MSVCRT::_strncpy(&CHAR_00h_00847d0c,DAT_0085755c,0x3fe);
+      Library::MSVCRT::_strncpy(&CHAR_00h_00847d0c,PTR_0085755c,0x3fe);
       param_4[3] = (int)&CHAR_00h_00847d0c;
       param_4[4] = (int)&DAT_008488b4;
       param_4[5] = DAT_00857544;

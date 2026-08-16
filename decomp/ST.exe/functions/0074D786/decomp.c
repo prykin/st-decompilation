@@ -58,7 +58,6 @@ longlong FUN_0074d786(uint param_1,uint param_2,uint param_3,uint param_4,uint p
     uVar5 = -(param_6 + (param_5 != 0));
   }
   else {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = param_5;
     uVar5 = param_6;
   }
@@ -84,6 +83,7 @@ longlong FUN_0074d786(uint param_1,uint param_2,uint param_3,uint param_4,uint p
   local_34 = (uint)local_EDXEAX_175;
   uVar1 = lVar12 + (uVar1 >> 0x20);
   local_28 = (uint)(uVar1 >> 0x20);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_7 == 0 && param_8 == 0) goto LAB_0074d94d;
   if (bVar2) {
     uVar7 = -param_7;
@@ -153,7 +153,7 @@ LAB_0074d94d:
       }
     }
     else {
-      param_8 = 0x40;
+      auto param_8_after_write = 0x40; /* compiler stack-slot lifetime split */
       do {
         local_EDXEAX_650 = Library::MSVCRT::__allshl(1,iVar8);
         lVar13 = Library::MSVCRT::__allshl(1,local_28);
@@ -169,8 +169,8 @@ LAB_0074d94d:
         }
         iVar8 = (int)((ulonglong)local_EDXEAX_650 >> 0x20);
         param_5 = (uint)local_EDXEAX_650;
-        param_8 = param_8 - 1;
-      } while (param_8 != 0);
+        param_8_after_write = param_8_after_write - 1;
+      } while (param_8_after_write != 0);
       if (bVar2) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_EDXEAX_650 = CONCAT44(-(iVar8 + (uint)(param_5 != 0)),-param_5);

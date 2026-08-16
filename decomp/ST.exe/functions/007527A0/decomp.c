@@ -114,14 +114,14 @@ FUN_007527a0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char
   local_c = 0;
   if (0 < iVar1) {
     do {
-      param_5 = (uint *)(iVar10 + local_c);
+      auto param_5_after_write = (uint *)(iVar10 + local_c); /* compiler stack-slot lifetime split */
       iVar8 = local_c >> 3;
       local_1c = (byte *)(iVar8 + (int)puVar3);
       iVar11 = 0;
       if (0 < iVar2) {
         do {
           STPiece<3,1>(param_1) = (byte)(0x80 >> ((byte)local_c & 7));
-          if (((char)*param_5 != param_4) || ((*local_1c & STPiece<3,1>(param_1)) != 0)) {
+          if (((char)*param_5_after_write != param_4) || ((*local_1c & STPiece<3,1>(param_1)) != 0)) {
             if (iVar11 < iVar2) {
               pcVar6 = (char *)(param_2 + local_c);
               iVar14 = iVar2 + -1;
@@ -157,7 +157,7 @@ FUN_007527a0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char
             }
             break;
           }
-          param_5 = (uint *)((int)param_5 - uVar13);
+          param_5_after_write = (uint *)((int)param_5_after_write - uVar13);
           local_1c = local_1c + iVar15;
           iVar11 = iVar11 + 1;
         } while (iVar11 < iVar2);

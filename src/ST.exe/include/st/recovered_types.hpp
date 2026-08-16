@@ -442,13 +442,11 @@ struct AnonShape_0053DAF0_3BDC2979;
 struct AnonShape_0053DCC0_5B8C160B;
 struct AnonShape_0053FCD0_D10A885A;
 struct AnonShape_0053FEE0_A49592EB;
-struct AnonShape_00544100_1A02F945;
 struct AnonShape_00544100_ABD6BC59;
 struct AnonShape_005449B0_F65ED625;
 struct AnonShape_0054A9B0_643B0813;
 struct AnonShape_005557B0_28260162;
 struct AnonShape_005582A0_F54946B9;
-struct AnonShape_0055B9F0_F484F6C2;
 struct AnonShape_0055C320_953077EC;
 struct AnonShape_00567220_C9DD1C7D;
 struct AnonShape_005672E0_9A0A2ED1;
@@ -626,7 +624,6 @@ struct AnonShape_00640320_15B2529E;
 struct AnonShape_00643E20_B7FEAA75;
 struct AnonShape_00644410_A4B3CF3D;
 struct AnonShape_006456C0_B6840D7C;
-struct AnonShape_00645880_8F6B4550;
 struct AnonShape_00647370_C4EFCC30;
 struct AnonShape_00648400_5C076F88;
 struct AnonShape_00648530_D39EB612;
@@ -1207,12 +1204,14 @@ struct RecoveredRecord_MReportTy_005BD4B0;
 struct RecoveredRecord_STBoatC_0040AE40;
 struct RecoveredRecord_STBoatC_00482DB0;
 struct RecoveredRecord_STBoatC_004838E0;
+struct RecoveredRecord_STBoatC_00645880;
 struct RecoveredRecord_STLightC_0061DD40;
 struct RecoveredRecord_STPlaySystemC_00533B80;
 struct RecoveredRecord_STRubbishC_0062F150;
 struct RecoveredRecord_TLOEmbryoTy_004D11D0;
 struct RecoveredRecord_TraksClassTy_00555880;
 struct RecoveredRecord_TraksClassTy_00555910;
+struct RecoveredRecord_VisibleClassTy_0055B9F0;
 struct RecoveredSourceFamily_dibcopy;
 struct RecursiveNode_ST3DSMAPContext_0140_DDDC9F89;
 struct ResearchPanelTy;
@@ -1891,6 +1890,7 @@ using Global_sub_0057CC90_param_1Enum = uint32_t;
 using Global_sub_00580780_uVar1Enum = uint32_t;
 using Global_sub_00580780_uVar2Enum = uint32_t;
 using Global_sub_00580910_param_2Enum = uint32_t;
+using Global_sub_00586AF0_iVar10Enum = uint32_t;
 using Global_sub_00586AF0_iVar7Enum = uint32_t;
 using Global_sub_00586AF0_iVar8Enum = uint32_t;
 using Global_sub_00586AF0_local_38Enum = uint32_t;
@@ -6302,6 +6302,91 @@ using WPARAM = uint;
 using STFnType_vfunc_006E4FC0_RunApp_dd885ee5 = WPARAM __thiscall(AppClassTy *st_this);
 using STFnType_FARPROC_e1bb4c6b = int(void);
 using FARPROC = STFnType_FARPROC_e1bb4c6b *;
+using STFnType_dt_10c888a_67ab1750 = undefined4 __thiscall(SettMapMTy *st_this, undefined4 arg_1);
+using STFnType_dt_12c03e2a_d677f189 = undefined4 __thiscall(AnonReceiver_0064A970 *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_dt_1b6ab291_3858a134 = undefined4 __thiscall(STPlaySystemC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_dt_1ed57cfa_af8d73f2 = undefined4 __thiscall(ViewerClassTy *st_this);
+using STFnType_dt_1ee97086_ad6717d2 = undefined4 __thiscall(ListClassTy *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_dt_2019e160_e4081208 = undefined4 __thiscall(BaseSystemC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_dt_2067f2d1_23fc0194 = undefined4 __thiscall(STDestC *st_this);
+using STFnType_dt_2488b8c6_3b6115ac = undefined4 __thiscall(STArtiafactC *st_this, undefined4 arg_1);
+using STFnType_dt_28012b92_5ca1098d = undefined4 __thiscall(STSharkC *st_this);
+using STFnType_dt_28f0256f_de7c8f6d = undefined4 __thiscall(STTorpC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_dt_2937a85c_9dd9be3d = undefined4 __thiscall(ButtonClassTy *st_this);
+using STFnType_dt_2d7eba62_1db425e1 = undefined4 __thiscall(STMineSetC *st_this, undefined4 arg_1);
+using STFnType_dt_2ee9a9ab_8e551f6a = undefined4 __thiscall(ChooseMapTy *st_this);
+using STFnType_dt_3711949c_29af5084 = undefined4 __thiscall(STGroupBoatC *st_this);
+using STFnType_dt_37780306_adb8b2a1 = undefined4 __thiscall(StartSystemTy *st_this, undefined4 arg_1);
+using STFnType_dt_379b3b98_7c471dce = undefined4 __thiscall(TLOEmbryoTy *st_this);
+using STFnType_dt_37c7846e_bcc25112 = undefined4 __thiscall(InterSystemC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_dt_39f92cd_98a8fa08 = undefined4 __thiscall(AiBossClassTy *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_dt_3d09baff_13264c98 = undefined4 __thiscall(ViewerClassTy *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_dt_3d2320b_04437cdb = void __thiscall(STGameObjC *st_this);
+using STFnType_dt_3d9ec23e_871fdea4 = undefined4 __thiscall(STBoatC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_dt_4047aaec_abd4f45e = undefined4 __thiscall(CampaignTy *st_this);
+using STFnType_dt_40d23a11_28343873 = undefined4 __thiscall(TLOBaseTy *st_this, undefined4 arg_1);
+using STFnType_dt_445d4c6c_c5870e8a = undefined4 __thiscall(MMsgTy *st_this);
+using STFnType_dt_47e0c515_98257bd8 = undefined4 __thiscall(STJellyGunC *st_this);
+using STFnType_dt_491f5ac8_d0e46600 = undefined4 __thiscall(MainMenuTy *st_this);
+using STFnType_dt_523080a7_903c2e1c = undefined4 __thiscall(STGameObjC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_dt_5326aaa7_6b3b130b = undefined4 __thiscall(STBoatC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_dt_538809f8_2a1b0348 = undefined4 __thiscall(AnonReceiver_0064A970 *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3);
+using STFnType_dt_54311be1_05717a6c = undefined1 __thiscall(STGameObjC *st_this, undefined1 arg_1);
+using STFnType_dt_577d6eca_acc4a10e = void __thiscall(STWorldObject *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_dt_5a87881f_8d5d1261 = undefined4 __thiscall(AppClassTy *st_this, undefined4 arg_1);
+using STFnType_dt_5dc83327_fd9947b8 = undefined4 __thiscall(STFishC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_dt_6056d847_83815cf5 = undefined4 __thiscall(AppClassTy *st_this);
+using STFnType_dt_66d08e71_f4206247 = undefined4 __thiscall(STGameObjC *st_this, undefined4 arg_1);
+using STFnType_dt_6c7b7428_ca65dbec = undefined4 __thiscall(STWorldObject *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_dt_6cee3b73_35b4f194 = undefined4 __thiscall(STWorldObject *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+using STFnType_dt_6d2ab0a3_adaa0f93 = undefined4 __thiscall(STDcResourcC *st_this);
+using STFnType_dt_710c851d_069b29c1 = undefined4 __thiscall(BldObjPanelTy *st_this);
+using STFnType_dt_730a423a_13f3b964 = void __thiscall(AnonReceiver_0064A970 *st_this, undefined4 arg_1);
+using STFnType_dt_748e2c74_932564fc = undefined4 __thiscall(STTorpC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_dt_76984750_bf5a9737 = undefined4 __thiscall(SettMapTy *st_this);
+using STFnType_dt_76a05325_2e51d03b = undefined4 __thiscall(SettMapMTy *st_this);
+using STFnType_dt_7733f44b_f96cee34 = undefined4 __thiscall(AnonReceiver_0064A970 *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_dt_78a36b7d_1ec54ed0 = undefined4 __thiscall(STFishC *st_this);
+using STFnType_dt_7b175915_9102f0f1 = undefined4 __thiscall(STBoatC *st_this, undefined4 arg_1);
+using STFnType_dt_7fe5e425_bfa409cb = undefined4 __thiscall(SystemClassTy *st_this);
+using STFnType_dt_827ffc2_3655c1af = undefined4 __thiscall(WaitTy *st_this);
+using STFnType_dt_8a3d2f4a_c70942b5 = undefined4 __thiscall(ResearchPanelTy *st_this);
+using STFnType_dt_8af58c0c_5f3b1613 = undefined4 __thiscall(STMineSetC *st_this);
+using STFnType_dt_8e65d476_4fd4e6ef = undefined4 __thiscall(ListClassTy *st_this);
+using STFnType_dt_9354d98a_3453568c = undefined4 __thiscall(STGroupBoatC *st_this, undefined4 arg_1);
+using STFnType_dt_992a4260_b951259e = undefined4 __thiscall(STFishC *st_this, undefined4 arg_1);
+using STFnType_dt_9a6566b2_4fa0be66 = undefined4 __thiscall(STContainerC *st_this, undefined4 arg_1);
+using STFnType_dt_9c2fb867_64484d06 = undefined4 __thiscall(STBoatC *st_this);
+using STFnType_dt_a0bf87f6_00f89320 = undefined4 __thiscall(STGameObjC *st_this, undefined2 arg_1);
+using STFnType_dt_a68b3caa_b3dfe051 = void __thiscall(STWorldObject *st_this, undefined4 arg_1);
+using STFnType_dt_a7ad556a_7037e28f = undefined4 __thiscall(STContainerC *st_this);
+using STFnType_dt_b632c3d0_7e8615ac = undefined4 __thiscall(STTorpC *st_this);
+using STFnType_dt_b64de466_d3c0904c = undefined4 __thiscall(GameSystemC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_dt_b6d5e945_e6eb9e82 = undefined4 __thiscall(STSprGameObjC *st_this, undefined4 arg_1);
+using STFnType_dt_b897021d_21bf7869 = undefined4 __thiscall(STOctopusC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_dt_bd219d37_0ef29858 = undefined4 __thiscall(STArtiafactC *st_this);
+using STFnType_dt_c1387dae_bb9b7158 = undefined4 __thiscall(TLOBaseTy *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+using STFnType_dt_c31641d_1f7ff906 = undefined4 __thiscall(STAppC *st_this, undefined4 arg_1);
+using STFnType_dt_c5a2ef74_d112cbd7 = undefined4 __thiscall(HelpPanelTy *st_this, undefined4 arg_1);
+using STFnType_dt_c7fac256_5a2e71a3 = undefined4 __thiscall(STBoatC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_dt_ca18e80e_fe3560c7 = undefined4 __thiscall(FSGSTy *st_this);
+using STFnType_dt_cacc193b_bca39c56 = undefined4 __thiscall(SettMapTy *st_this, undefined4 arg_1);
+using STFnType_dt_cb4faf71_1656ff98 = undefined4 __thiscall(TLOBaseTy *st_this);
+using STFnType_dt_cca615bf_6f7f1799 = undefined4 __thiscall(STGameObjC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
+using STFnType_dt_cf472c98_684d41bf = undefined4 __thiscall(STGroupBoatC *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_dt_d2749d14_9c0275cc = undefined4 __thiscall(BldBoatPanelTy *st_this);
+using STFnType_dt_d4e0dbd9_ecae71ab = undefined4 __thiscall(STGameObjC *st_this);
+using STFnType_dt_db162581_3b3100db = undefined4 __thiscall(AnonReceiver_0064A970 *st_this);
+using STFnType_dt_e30b319_4aeb19a2 = undefined4 __thiscall(AiPlrClassTy *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_dt_e4a0ab50_524d95f8 = undefined4 __thiscall(STSprGameObjC *st_this);
+using STFnType_dt_e5e2351e_c6b793f7 = undefined4 __thiscall(STWorldObject *st_this);
+using STFnType_dt_e7adc25_f5737c31 = undefined4 __thiscall(TrackbarClassTy *st_this);
+using STFnType_dt_e9a929de_ac25ac58 = undefined4 __thiscall(STWorldObject *st_this, undefined4 arg_1);
+using STFnType_dt_eefce329_d88df7af = void __thiscall(AnonReceiver_0064A970 *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_dt_f308fe78_adb45e51 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_dt_f6a4d8ed_e39a582e = undefined4 __thiscall(TLOBaseTy *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_dt_fb2c3939_183b8356 = undefined4 __thiscall(STColl3C *st_this);
+using STFnType_dt_fe31059c_bb2f02f9 = undefined4 __thiscall(AnonReceiver_0064A970 *st_this, undefined4 arg_1);
 using DWORD_PTR = ulong;
 using LONG_PTR = int32_t;
 using SIZE_T = ulong;
@@ -6421,6 +6506,91 @@ using dispatch_STGameObjCDispatchVTable_EC = STFnType_dispatch_STGameObjCDispatc
 using dispatch_STGameObjCDispatchVTable_F0 = STFnType_dispatch_STGameObjCDispatchVTable_F0_67c5a363;
 using dispatch_STGameObjCDispatchVTable_F8 = STFnType_dispatch_STGameObjCDispatchVTable_F8_e40fbdd3;
 using dispatch_STGameObjCDispatchVTable_FC = STFnType_dispatch_STGameObjCDispatchVTable_FC_bf7b9e8c;
+using dt_10c888a = STFnType_dt_10c888a_67ab1750;
+using dt_12c03e2a = STFnType_dt_12c03e2a_d677f189;
+using dt_1b6ab291 = STFnType_dt_1b6ab291_3858a134;
+using dt_1ed57cfa = STFnType_dt_1ed57cfa_af8d73f2;
+using dt_1ee97086 = STFnType_dt_1ee97086_ad6717d2;
+using dt_2019e160 = STFnType_dt_2019e160_e4081208;
+using dt_2067f2d1 = STFnType_dt_2067f2d1_23fc0194;
+using dt_2488b8c6 = STFnType_dt_2488b8c6_3b6115ac;
+using dt_28012b92 = STFnType_dt_28012b92_5ca1098d;
+using dt_28f0256f = STFnType_dt_28f0256f_de7c8f6d;
+using dt_2937a85c = STFnType_dt_2937a85c_9dd9be3d;
+using dt_2d7eba62 = STFnType_dt_2d7eba62_1db425e1;
+using dt_2ee9a9ab = STFnType_dt_2ee9a9ab_8e551f6a;
+using dt_3711949c = STFnType_dt_3711949c_29af5084;
+using dt_37780306 = STFnType_dt_37780306_adb8b2a1;
+using dt_379b3b98 = STFnType_dt_379b3b98_7c471dce;
+using dt_37c7846e = STFnType_dt_37c7846e_bcc25112;
+using dt_39f92cd = STFnType_dt_39f92cd_98a8fa08;
+using dt_3d09baff = STFnType_dt_3d09baff_13264c98;
+using dt_3d2320b = STFnType_dt_3d2320b_04437cdb;
+using dt_3d9ec23e = STFnType_dt_3d9ec23e_871fdea4;
+using dt_4047aaec = STFnType_dt_4047aaec_abd4f45e;
+using dt_40d23a11 = STFnType_dt_40d23a11_28343873;
+using dt_445d4c6c = STFnType_dt_445d4c6c_c5870e8a;
+using dt_47e0c515 = STFnType_dt_47e0c515_98257bd8;
+using dt_491f5ac8 = STFnType_dt_491f5ac8_d0e46600;
+using dt_523080a7 = STFnType_dt_523080a7_903c2e1c;
+using dt_5326aaa7 = STFnType_dt_5326aaa7_6b3b130b;
+using dt_538809f8 = STFnType_dt_538809f8_2a1b0348;
+using dt_54311be1 = STFnType_dt_54311be1_05717a6c;
+using dt_577d6eca = STFnType_dt_577d6eca_acc4a10e;
+using dt_5a87881f = STFnType_dt_5a87881f_8d5d1261;
+using dt_5dc83327 = STFnType_dt_5dc83327_fd9947b8;
+using dt_6056d847 = STFnType_dt_6056d847_83815cf5;
+using dt_66d08e71 = STFnType_dt_66d08e71_f4206247;
+using dt_6c7b7428 = STFnType_dt_6c7b7428_ca65dbec;
+using dt_6cee3b73 = STFnType_dt_6cee3b73_35b4f194;
+using dt_6d2ab0a3 = STFnType_dt_6d2ab0a3_adaa0f93;
+using dt_710c851d = STFnType_dt_710c851d_069b29c1;
+using dt_730a423a = STFnType_dt_730a423a_13f3b964;
+using dt_748e2c74 = STFnType_dt_748e2c74_932564fc;
+using dt_76984750 = STFnType_dt_76984750_bf5a9737;
+using dt_76a05325 = STFnType_dt_76a05325_2e51d03b;
+using dt_7733f44b = STFnType_dt_7733f44b_f96cee34;
+using dt_78a36b7d = STFnType_dt_78a36b7d_1ec54ed0;
+using dt_7b175915 = STFnType_dt_7b175915_9102f0f1;
+using dt_7fe5e425 = STFnType_dt_7fe5e425_bfa409cb;
+using dt_827ffc2 = STFnType_dt_827ffc2_3655c1af;
+using dt_8a3d2f4a = STFnType_dt_8a3d2f4a_c70942b5;
+using dt_8af58c0c = STFnType_dt_8af58c0c_5f3b1613;
+using dt_8e65d476 = STFnType_dt_8e65d476_4fd4e6ef;
+using dt_9354d98a = STFnType_dt_9354d98a_3453568c;
+using dt_992a4260 = STFnType_dt_992a4260_b951259e;
+using dt_9a6566b2 = STFnType_dt_9a6566b2_4fa0be66;
+using dt_9c2fb867 = STFnType_dt_9c2fb867_64484d06;
+using dt_a0bf87f6 = STFnType_dt_a0bf87f6_00f89320;
+using dt_a68b3caa = STFnType_dt_a68b3caa_b3dfe051;
+using dt_a7ad556a = STFnType_dt_a7ad556a_7037e28f;
+using dt_b632c3d0 = STFnType_dt_b632c3d0_7e8615ac;
+using dt_b64de466 = STFnType_dt_b64de466_d3c0904c;
+using dt_b6d5e945 = STFnType_dt_b6d5e945_e6eb9e82;
+using dt_b897021d = STFnType_dt_b897021d_21bf7869;
+using dt_bd219d37 = STFnType_dt_bd219d37_0ef29858;
+using dt_c1387dae = STFnType_dt_c1387dae_bb9b7158;
+using dt_c31641d = STFnType_dt_c31641d_1f7ff906;
+using dt_c5a2ef74 = STFnType_dt_c5a2ef74_d112cbd7;
+using dt_c7fac256 = STFnType_dt_c7fac256_5a2e71a3;
+using dt_ca18e80e = STFnType_dt_ca18e80e_fe3560c7;
+using dt_cacc193b = STFnType_dt_cacc193b_bca39c56;
+using dt_cb4faf71 = STFnType_dt_cb4faf71_1656ff98;
+using dt_cca615bf = STFnType_dt_cca615bf_6f7f1799;
+using dt_cf472c98 = STFnType_dt_cf472c98_684d41bf;
+using dt_d2749d14 = STFnType_dt_d2749d14_9c0275cc;
+using dt_d4e0dbd9 = STFnType_dt_d4e0dbd9_ecae71ab;
+using dt_db162581 = STFnType_dt_db162581_3b3100db;
+using dt_e30b319 = STFnType_dt_e30b319_4aeb19a2;
+using dt_e4a0ab50 = STFnType_dt_e4a0ab50_524d95f8;
+using dt_e5e2351e = STFnType_dt_e5e2351e_c6b793f7;
+using dt_e7adc25 = STFnType_dt_e7adc25_f5737c31;
+using dt_e9a929de = STFnType_dt_e9a929de_ac25ac58;
+using dt_eefce329 = STFnType_dt_eefce329_d88df7af;
+using dt_f308fe78 = STFnType_dt_f308fe78_adb45e51;
+using dt_f6a4d8ed = STFnType_dt_f6a4d8ed_e39a582e;
+using dt_fb2c3939 = STFnType_dt_fb2c3939_183b8356;
+using dt_fe31059c = STFnType_dt_fe31059c_bb2f02f9;
 using icall_004137F0_FUN_004137f0_for_STGroupBoatC = STFnType_icall_004137F0_FUN_004137f0_for_STGroupBoatC_dcbf25a0;
 using icall_004137F0_FUN_004137f0_stdcall = STFnType_icall_004137F0_FUN_004137f0_stdcall_d4d3828d;
 using icall_00415B10_FUN_00415b10_for_STArtiafactC = STFnType_icall_00415B10_FUN_00415b10_for_STArtiafactC_488696a8;
@@ -14408,6 +14578,8 @@ struct STFishC {
     void vfunc_10C();
     undefined4 vfunc_11C();
     undefined4 vfunc_120();
+    undefined4 vfunc_12C();
+    undefined4 vfunc_130();
     void LifeFish();
     void sub_004162B0(short *param_1, short *param_2, short *param_3);
     void sub_004162F0(short *param_1, short *param_2, short *param_3);
@@ -14417,7 +14589,7 @@ struct STFishC {
 };
 
 struct STGameObjC {
-    STGameObjCDispatchVTable *vtable; // [STClassLayoutApplier] reads=362, writes=2; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=355
+    STGameObjCVTable *vtable; // [STClassLayoutApplier] reads=362, writes=2; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; cfg_field_recovery=1; typed_cross_class_recovery=355
     undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
     byte _unknown_0005[3];
     undefined4 field_0008; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=2
@@ -14604,29 +14776,44 @@ struct STGameObjC {
     undefined4 field_081E; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=3
     undefined4 GetMessage(AnonShape_0041AF40_F59F8577 *param_1);
     undefined4 vfunc_04();
+    undefined4 vfunc_08();
+    undefined4 vfunc_0C();
     undefined4 vfunc_18(short arg_1, short arg_2, short arg_3);
     undefined4 MoveStep(int *param_1);
     undefined4 vfunc_20();
     undefined4 vfunc_24();
+    undefined4 vfunc_2C();
     undefined4 vfunc_68(undefined2 arg_1);
     undefined4 vfunc_6C();
+    undefined4 vfunc_78();
+    undefined4 vfunc_7C();
     undefined4 vfunc_90(undefined2 arg_1, undefined2 arg_2);
+    void vfunc_94();
+    void vfunc_98();
+    void vfunc_9C();
+    undefined4 vfunc_A4();
     undefined4 vfunc_B4();
     undefined4 vfunc_B8();
+    undefined4 vfunc_BC();
+    undefined4 vfunc_C0();
+    undefined4 vfunc_C4();
     undefined4 vfunc_CC();
     undefined4 vfunc_D0();
-    undefined4 vfunc_D4();
-    undefined4 vfunc_D8();
-    undefined4 vfunc_E8(undefined4 arg_1);
-    undefined4 vfunc_EC();
-    undefined4 vfunc_F0();
-    undefined4 vfunc_F8();
-    undefined4 vfunc_FC();
     undefined1 vfunc_100(undefined1 arg_1);
     undefined1 vfunc_104(undefined1 arg_1);
+    undefined4 vfunc_E8(undefined2 arg_1);
+    undefined4 vfunc_F8();
+    undefined4 vfunc_EC();
+    undefined4 vfunc_108(undefined4 arg_1);
     void vfunc_10C();
-    undefined4 vfunc_11C();
+    undefined4 vfunc_F0();
+    undefined4 vfunc_F4(undefined4 arg_1);
+    undefined4 vfunc_FC();
     undefined4 vfunc_120();
+    undefined4 vfunc_12C();
+    undefined4 vfunc_130();
+    undefined4 vfunc_138();
+    undefined4 vfunc_D4();
     ushort FUN_004845e0(STGameObjC_sub_004845E0_param_1Enum param_1, int *param_2);
     void ResetSelfCheckFlag();
     void SetSelfCheckFlag();
@@ -19447,6 +19634,15 @@ struct STWorldObject {
     undefined1 field_0x1f; // exact unnamed-byte view referenced by exported code
     int value_20; // Frequently compared with 1000; exact semantic name remains unresolved.
     int GetObjectTypeId();
+    undefined4 vfunc_F8();
+    undefined4 vfunc_F4(undefined4 arg_1);
+    undefined4 vfunc_88(undefined4 arg_1);
+    undefined4 vfunc_F0();
+    undefined4 vfunc_DC(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
+    void vfunc_E0(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5);
+    undefined4 vfunc_114(undefined4 arg_1);
+    void vfunc_118(undefined4 arg_1);
+    void vfunc_0(undefined4 arg_1);
 };
 
 struct STWorldObjectVTable {
@@ -22708,8 +22904,7 @@ struct AnonShape_00412960_B35D15BC {
 };
 
 struct AnonShape_004137F0_350C8AE0 {
-    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0001[40];
+    byte _unknown_0000[41];
     AnonNested_AnonShape_004137F0_350C8AE0_0029_743E91AB *field_0029; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_002D[28];
     uint field_0049; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -25491,19 +25686,6 @@ struct AnonShape_0053FEE0_A49592EB {
     AnonNested_0053FEE0_0014_154E5252 *field_0014; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/int=2}
 };
 
-struct AnonShape_00544100_1A02F945 {
-    uint field_0000; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_0004; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=6, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte _unknown_0008[12];
-    uint field_0014; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_0018; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_001C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=6, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte _unknown_0020[20];
-    uint field_0034; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_0038; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_003C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=10, /undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-};
-
 struct AnonShape_00544100_ABD6BC59 {
     uint field_0000; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=3}; exact_widths={}; indexed_strides={}; semantic_roles={}
     uint field_0004; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/uint=7}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -25564,16 +25746,6 @@ struct AnonShape_005582A0_F54946B9 {
     undefined4 field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; indexed_strides={}; semantic_roles={}
     undefined4 field_0048; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; indexed_strides={}; semantic_roles={}
     undefined4 field_004C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_0055B9F0_F484F6C2 {
-    byte field_0000; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/byte=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    char field_0001; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/char=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_0002; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_0004; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    char field_0006; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/char=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte field_0007; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/byte=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    int field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_0055C320_953077EC {
@@ -26067,9 +26239,7 @@ struct AnonShape_005751F0_0FFC949A {
 };
 
 struct AnonShape_00575460_06C413C6 {
-    byte _unknown_0000[4];
-    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0005[1096];
+    byte _unknown_0000[1101];
     AnonNested_AnonShape_00575460_06C413C6_044D_A1003587 *field_044D; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
     AnonNested_AnonShape_00575460_06C413C6_0451_3D38181E *field_0451; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     int field_0455; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -28491,8 +28661,7 @@ struct AnonShape_0062FA80_0B91B2B9 {
     byte _unknown_0025[19];
     undefined1 field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
     undefined1 field_0x39; // exact unnamed-byte view referenced by exported code
-    byte _unknown_003A[1];
-    undefined1 field_0x3b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_003A[2];
 };
 
 struct AnonShape_0062FCA0_22A9EE35 {
@@ -28799,24 +28968,6 @@ struct AnonShape_006456C0_B6840D7C {
     undefined4 field_0060; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_0064; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     int field_0068; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-};
-
-struct AnonShape_00645880_8F6B4550 {
-    uint field_0000; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_0004; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=19}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0008; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_000A; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_000C; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    undefined2 field_000E; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=4, /undefined2=1, /ushort=5}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0010; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0012; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=1, /ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_0016; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=9, /ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    short field_0018; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=9, /ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_001A; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_001C; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    ushort field_0020; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    uint field_0022; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00647370_C4EFCC30 {
@@ -29894,9 +30045,7 @@ struct AnonShape_006BB690_EB7315D1 {
 };
 
 struct AnonShape_006BB8B0_D6DE56CA {
-    byte _unknown_0000[1];
-    undefined1 field_0x1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0002[6];
+    byte _unknown_0000[8];
     uint field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
     uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
     byte _unknown_0010[12];
@@ -29932,9 +30081,7 @@ struct AnonShape_006BB980_E41494A1 {
 };
 
 struct AnonShape_006BB9D0_BD42D958 {
-    byte _unknown_0000[1];
-    undefined1 field_0x1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0002[10];
+    byte _unknown_0000[12];
     uint field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
     int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
@@ -30641,9 +30788,7 @@ struct AnonShape_006D6290_10462BC7 {
 };
 
 struct AnonShape_006D6290_6C97E0B2 {
-    byte _unknown_0000[1];
-    undefined1 field_0x1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0002[10];
+    byte _unknown_0000[12];
     int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_0010[8];
     AnonNested_006D6290_0018_C51D55FE *field_0018; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={/int=1}
@@ -31250,8 +31395,7 @@ struct AnonShape_00724D90_F568CE21 {
 };
 
 struct AnonShape_00727DA0_C4265AA0 {
-    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0001[7];
+    byte _unknown_0000[8];
     short field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
     byte _unknown_000A[30];
     int field_0028; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
@@ -31420,9 +31564,7 @@ struct AnonShape_00747874_535F3AAD {
 };
 
 struct AnonShape_00747AA5_87CB4B56 {
-    byte _unknown_0000[1];
-    undefined1 field_0x1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0002[2];
+    byte _unknown_0000[4];
     int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
     int *field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
 };
@@ -32132,9 +32274,7 @@ struct AnonShape_00754AF0_86EFDBFA {
 };
 
 struct AnonShape_00754B80_75BFDB7A {
-    byte _unknown_0000[1];
-    undefined1 field_0x1; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0002[34];
+    byte _unknown_0000[36];
     int field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_0028[64];
     int field_0068; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -32695,9 +32835,7 @@ struct AnonShape_0075D590_939A8180 {
 
 struct AnonShape_0075DA80_57A0CDEF {
     undefined4 field_0000; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    byte _unknown_0004[242];
-    undefined1 field_0xf6; // exact unnamed-byte view referenced by exported code
-    byte _unknown_00F7[191];
+    byte _unknown_0004[434];
     AnonNested_0075DA80_01B6_323D7698 *field_01B6; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0075DA80_01B6_323D7698=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_01BA[2];
 };
@@ -32720,9 +32858,7 @@ struct AnonShape_0075DF10_BA4C6604 {
     undefined1 field_0x70; // exact unnamed-byte view referenced by exported code
     byte _unknown_0071[181];
     undefined1 field_0x126; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0127[115];
-    undefined1 field_0x19a; // exact unnamed-byte view referenced by exported code
-    byte _unknown_019B[23];
+    byte _unknown_0127[139];
     AnonNested_0075DF10_01B2_1F0F9C79 *field_01B2; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0075DF10_01B2_1F0F9C79=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     byte _unknown_01B6[2];
 };
@@ -33634,8 +33770,7 @@ struct RecoveredRecord_CPanelTy_00501D00 {
     char field_0015; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
     byte _unknown_0016[32];
     int field_0036; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    byte _unknown_003A[1];
-    undefined1 field_0x3b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_003A[2];
 };
 
 struct RecoveredRecord_CursorClassTy_00544100 {
@@ -33785,6 +33920,24 @@ struct RecoveredRecord_STBoatC_004838E0 {
     byte _unknown_0047[1];
 };
 
+struct RecoveredRecord_STBoatC_00645880 {
+    uint field_0000; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0004; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=19}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_0008; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_000A; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_000C; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined2 field_000E; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=4, /undefined2=1, /ushort=5}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_0010; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_0012; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_0014; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=1, /ushort=9}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0016; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=9, /ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0018; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/short=9, /ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_001A; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_001C; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    ushort field_0020; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/ushort=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    uint field_0022; // [STPointerShapeApplier] evidence_count=4; fixed-offset dereference; observed_types={/uint=10}; exact_widths={}; indexed_strides={}; semantic_roles={}
+};
+
 struct RecoveredRecord_STLightC_0061DD40 {
     byte _unknown_0000[48];
     short field_0030; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}
@@ -33901,6 +34054,16 @@ struct RecoveredRecord_TraksClassTy_00555910 {
     short field_0036; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
     undefined2 field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1, /undefined2=1}
     undefined2 field_003A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2, /undefined2=1}
+};
+
+struct RecoveredRecord_VisibleClassTy_0055B9F0 {
+    byte field_0000; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/byte=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    char field_0001; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/char=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0002; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    short field_0004; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/short=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    char field_0006; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/char=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte field_0007; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/byte=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    int field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct RecoveredSourceFamily_dibcopy {
@@ -41627,12 +41790,28 @@ inline undefined4 STFishC::vfunc_120() {
     return (vtable->vfunc_120)(this);
 }
 
+inline undefined4 STFishC::vfunc_12C() {
+    return reinterpret_cast<undefined4 (__thiscall *)(STFishC *)>(vtable[1].vfunc_08)(this);
+}
+
+inline undefined4 STFishC::vfunc_130() {
+    return reinterpret_cast<undefined4 (__thiscall *)(STFishC *)>(vtable[1].vfunc_0C)(this);
+}
+
 inline undefined4 STGameObjC::GetMessage(AnonShape_0041AF40_F59F8577 *param_1) {
     return (vtable->GetMessage)(this, param_1);
 }
 
 inline undefined4 STGameObjC::vfunc_04() {
     return (vtable->vfunc_04)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_08() {
+    return (vtable->vfunc_08)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_0C() {
+    return (vtable->vfunc_0C)(this);
 }
 
 inline undefined4 STGameObjC::vfunc_18(short arg_1, short arg_2, short arg_3) {
@@ -41651,6 +41830,10 @@ inline undefined4 STGameObjC::vfunc_24() {
     return (vtable->vfunc_24)(this);
 }
 
+inline undefined4 STGameObjC::vfunc_2C() {
+    return (vtable->vfunc_2C)(this);
+}
+
 inline undefined4 STGameObjC::vfunc_68(undefined2 arg_1) {
     return (vtable->vfunc_68)(this, arg_1);
 }
@@ -41659,8 +41842,32 @@ inline undefined4 STGameObjC::vfunc_6C() {
     return (vtable->vfunc_6C)(this);
 }
 
+inline undefined4 STGameObjC::vfunc_78() {
+    return (vtable->vfunc_78)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_7C() {
+    return (vtable->vfunc_7C)(this);
+}
+
 inline undefined4 STGameObjC::vfunc_90(undefined2 arg_1, undefined2 arg_2) {
     return (vtable->vfunc_90)(this, arg_1, arg_2);
+}
+
+inline void STGameObjC::vfunc_94() {
+    (vtable->vfunc_94)(this);
+}
+
+inline void STGameObjC::vfunc_98() {
+    (vtable->vfunc_98)(this);
+}
+
+inline void STGameObjC::vfunc_9C() {
+    (vtable->vfunc_9C)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_A4() {
+    return (vtable->vfunc_A4)(this);
 }
 
 inline undefined4 STGameObjC::vfunc_B4() {
@@ -41671,6 +41878,18 @@ inline undefined4 STGameObjC::vfunc_B8() {
     return (vtable->vfunc_B8)(this);
 }
 
+inline undefined4 STGameObjC::vfunc_BC() {
+    return (vtable->vfunc_BC)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_C0() {
+    return (vtable->vfunc_C0)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_C4() {
+    return (vtable->vfunc_C4)(this);
+}
+
 inline undefined4 STGameObjC::vfunc_CC() {
     return (vtable->vfunc_CC)(this);
 }
@@ -41679,52 +41898,64 @@ inline undefined4 STGameObjC::vfunc_D0() {
     return (vtable->vfunc_D0)(this);
 }
 
-inline undefined4 STGameObjC::vfunc_D4() {
-    return (vtable->vfunc_D4)(this);
-}
-
-inline undefined4 STGameObjC::vfunc_D8() {
-    return (vtable->vfunc_D8)(this);
-}
-
-inline undefined4 STGameObjC::vfunc_E8(undefined4 arg_1) {
-    return (vtable->vfunc_E8)(this, arg_1);
-}
-
-inline undefined4 STGameObjC::vfunc_EC() {
-    return (vtable->vfunc_EC)(this);
-}
-
-inline undefined4 STGameObjC::vfunc_F0() {
-    return (vtable->vfunc_F0)(this);
-}
-
-inline undefined4 STGameObjC::vfunc_F8() {
-    return (vtable->vfunc_F8)(this);
-}
-
-inline undefined4 STGameObjC::vfunc_FC() {
-    return (vtable->vfunc_FC)(this);
-}
-
 inline undefined1 STGameObjC::vfunc_100(undefined1 arg_1) {
-    return (vtable->vfunc_100)(this, arg_1);
+    return reinterpret_cast<undefined1 (__thiscall *)(STGameObjC *, undefined1)>(vtable[1].vfunc_2C)(this, arg_1);
 }
 
 inline undefined1 STGameObjC::vfunc_104(undefined1 arg_1) {
-    return (vtable->vfunc_104)(this, arg_1);
+    return reinterpret_cast<undefined1 (__thiscall *)(STGameObjC *, undefined1)>(vtable[1].vfunc_30)(this, arg_1);
+}
+
+inline undefined4 STGameObjC::vfunc_E8(undefined2 arg_1) {
+    return reinterpret_cast<undefined4 (__thiscall *)(STGameObjC *, undefined2)>(vtable[1].vfunc_14)(this, arg_1);
+}
+
+inline undefined4 STGameObjC::vfunc_F8() {
+    return reinterpret_cast<undefined4 (__thiscall *)(STGameObjC *)>(vtable[1].vfunc_24)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_EC() {
+    return reinterpret_cast<undefined4 (__thiscall *)(STGameObjC *)>(vtable[1].vfunc_18)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_108(undefined4 arg_1) {
+    return reinterpret_cast<undefined4 (__thiscall *)(STGameObjC *, undefined4)>(vtable[1].vfunc_34)(this, arg_1);
 }
 
 inline void STGameObjC::vfunc_10C() {
-    (vtable->vfunc_10C)(this);
+    reinterpret_cast<void (__thiscall *)(STGameObjC *)>(vtable[1].vfunc_38)(this);
 }
 
-inline undefined4 STGameObjC::vfunc_11C() {
-    return (vtable->vfunc_11C)(this);
+inline undefined4 STGameObjC::vfunc_F0() {
+    return reinterpret_cast<undefined4 (__thiscall *)(STGameObjC *)>(vtable[1].MoveStep)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_F4(undefined4 arg_1) {
+    return reinterpret_cast<undefined4 (__thiscall *)(STGameObjC *, undefined4)>(vtable[1].vfunc_20)(this, arg_1);
+}
+
+inline undefined4 STGameObjC::vfunc_FC() {
+    return reinterpret_cast<undefined4 (__thiscall *)(STGameObjC *)>(vtable[1].vfunc_28)(this);
 }
 
 inline undefined4 STGameObjC::vfunc_120() {
-    return (vtable->vfunc_120)(this);
+    return reinterpret_cast<undefined4 (__thiscall *)(STGameObjC *)>(vtable[1].vfunc_4C)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_12C() {
+    return reinterpret_cast<undefined4 (__thiscall *)(STGameObjC *)>(vtable[1].vfunc_58)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_130() {
+    return reinterpret_cast<undefined4 (__thiscall *)(STGameObjC *)>(vtable[1].vfunc_5C)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_138() {
+    return reinterpret_cast<undefined4 (__thiscall *)(STGameObjC *)>(vtable[1].vfunc_64)(this);
+}
+
+inline undefined4 STGameObjC::vfunc_D4() {
+    return reinterpret_cast<undefined4 (__thiscall *)(STGameObjC *)>(vtable[1].GetMessage)(this);
 }
 
 inline undefined4 STGroupBoatC::GetMessage(int param_1) {
@@ -43493,6 +43724,42 @@ inline int StartSystemTy::GetMessage(int *param_1) {
 
 inline int STWorldObject::GetObjectTypeId() {
     return (vtable->GetObjectTypeId)(this);
+}
+
+inline undefined4 STWorldObject::vfunc_F8() {
+    return reinterpret_cast<undefined4 (__thiscall *)(STWorldObject *)>(vtable[5].slots_00_28[2])(this);
+}
+
+inline undefined4 STWorldObject::vfunc_F4(undefined4 arg_1) {
+    return reinterpret_cast<undefined4 (__thiscall *)(STWorldObject *, undefined4)>(vtable[5].slots_00_28[1])(this, arg_1);
+}
+
+inline undefined4 STWorldObject::vfunc_88(undefined4 arg_1) {
+    return reinterpret_cast<undefined4 (__thiscall *)(STWorldObject *, undefined4)>(vtable[2].slots_00_28[10])(this, arg_1);
+}
+
+inline undefined4 STWorldObject::vfunc_F0() {
+    return reinterpret_cast<undefined4 (__thiscall *)(STWorldObject *)>(vtable[5].slots_00_28[0])(this);
+}
+
+inline undefined4 STWorldObject::vfunc_DC(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6) {
+    return reinterpret_cast<undefined4 (__thiscall *)(STWorldObject *, undefined4, undefined4, undefined4, undefined4, undefined4, undefined4)>(vtable[4].slots_00_28[7])(this, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6);
+}
+
+inline void STWorldObject::vfunc_E0(undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5) {
+    reinterpret_cast<void (__thiscall *)(STWorldObject *, undefined4, undefined4, undefined4, undefined4, undefined4)>(vtable[4].slots_00_28[8])(this, arg_1, arg_2, arg_3, arg_4, arg_5);
+}
+
+inline undefined4 STWorldObject::vfunc_114(undefined4 arg_1) {
+    return reinterpret_cast<undefined4 (__thiscall *)(STWorldObject *, undefined4)>(vtable[5].slots_00_28[9])(this, arg_1);
+}
+
+inline void STWorldObject::vfunc_118(undefined4 arg_1) {
+    reinterpret_cast<void (__thiscall *)(STWorldObject *, undefined4)>(vtable[5].slots_00_28[10])(this, arg_1);
+}
+
+inline void STWorldObject::vfunc_0(undefined4 arg_1) {
+    reinterpret_cast<void (__thiscall *)(STWorldObject *, undefined4)>(vtable->slots_00_28[0])(this, arg_1);
 }
 
 inline int CampaignTy::GetMessage(STMessage *message) {

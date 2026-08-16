@@ -50,8 +50,8 @@ VisibleClassTy::sub_00558DC0
     }
     if (*(char *)((int)(piVar4 + 0x3f) + (int)this) != '\0') {
       iVar2 = uVar10 * 2 + 1;
-      param_6 = (int *)(param_1 - uVar10);
-      param_4 = (int *)(param_2 - uVar10);
+      auto param_6_after_write = (int *)(param_1 - uVar10); /* compiler stack-slot lifetime split */
+      auto param_4_after_write = (int *)(param_2 - uVar10); /* compiler stack-slot lifetime split */
       pbVar5 = thunk_FUN_005532f0(uVar10);
       if (((pbVar5 != nullptr) && (this->field_0038 != nullptr)) &&
          (((param_7 & 1) != 0 && (iVar8 = 0, uVar10 = param_5, local_c = pbVar5, 0 < iVar2)))) {
@@ -59,8 +59,8 @@ VisibleClassTy::sub_00558DC0
           iVar6 = 0;
           do {
             if (local_c[iVar6] != 0) {
-              iVar11 = iVar8 + (int)param_4;
-              iVar1 = iVar6 + (int)param_6;
+              iVar11 = iVar8 + (int)param_4_after_write;
+              iVar1 = iVar6 + (int)param_6_after_write;
               if ((((-1 < iVar1) && (iVar1 < this->field_0020)) && (-1 < iVar11)) &&
                  (iVar11 < this->field_0024)) {
                 bVar3 = this->field_0038[(this->field_0020 * iVar11 + iVar1) * 2];
@@ -81,9 +81,9 @@ VisibleClassTy::sub_00558DC0
           ppvVar9 = this->field_003C;
           do {
             if (*ppvVar9 != nullptr) {
-              sub_00558C00(this,VVar7,param_1,param_2,(int *)&param_6,(int *)&param_4);
-              param_4 = (int *)((int)param_4 + g_centeredOffsets5[(int)param_3]);
-              thunk_FUN_00553b00((int)param_6,(int)param_4,*ppvVar9,this->field_0028,
+              sub_00558C00(this,VVar7,param_1,param_2,(int *)&param_6_after_write,(int *)&param_4_after_write);
+              param_4_after_write = (int *)((int)param_4_after_write + g_centeredOffsets5[(int)param_3]);
+              thunk_FUN_00553b00((int)param_6_after_write,(int)param_4_after_write,*ppvVar9,this->field_0028,
                                  this->field_002C,(undefined *)param_5);
             }
             VVar7 = VVar7 + CASE_1;
@@ -93,19 +93,18 @@ VisibleClassTy::sub_00558DC0
         }
         if (((pbVar5 != nullptr) && (this->field_004C != nullptr)) &&
            ((this->field_0050 != nullptr && ((param_7 & 0x4000) != 0)))) {
-          sub_00558C00(this,this->field_010C,param_1,param_2,(int *)&param_6,(int *)&param_4);
-          param_6 = (int *)((int)param_6 - uVar10);
-          param_5 = 0;
-          param_4 = (int *)((int)param_4 + (g_centeredOffsets5[(int)param_3] - uVar10));
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_3 = pbVar5;
+          sub_00558C00(this,this->field_010C,param_1,param_2,(int *)&param_6_after_write,(int *)&param_4_after_write);
+          param_6_after_write = (int *)((int)param_6_after_write - uVar10);
+          auto param_5_after_write = 0; /* compiler stack-slot lifetime split */
+          param_4_after_write = (int *)((int)param_4_after_write + (g_centeredOffsets5[(int)param_3] - uVar10));
+          auto param_3_after_write = pbVar5; /* compiler stack-slot lifetime split */
           if (0 < iVar2) {
             do {
-              param_7 = 0;
+              auto param_7_after_write = 0; /* compiler stack-slot lifetime split */
               do {
-                if (param_3[param_7] != '\0') {
-                  iVar8 = param_7 + (int)param_6;
-                  iVar6 = param_5 + (int)param_4;
+                if (param_3_after_write[param_7_after_write] != '\0') {
+                  iVar8 = param_7_after_write + (int)param_6_after_write;
+                  iVar6 = param_5_after_write + (int)param_4_after_write;
                   if ((((-1 < iVar8) && (uVar10 = this->field_0030, iVar8 < (int)uVar10)) &&
                       (-1 < iVar6)) &&
                      ((iVar6 < this->field_0034 && (iVar11 = uVar10 * iVar6 + iVar8, -1 < iVar11))))
@@ -116,12 +115,11 @@ VisibleClassTy::sub_00558DC0
                     this->field_0050[iVar11] = this->field_0050[iVar11] + 1;
                   }
                 }
-                param_7 = param_7 + 1;
-              } while ((int)param_7 < iVar2);
-              param_5 = param_5 + 1;
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_3 = param_3 + iVar2;
-            } while ((int)param_5 < iVar2);
+                param_7_after_write = param_7_after_write + 1;
+              } while ((int)param_7_after_write < iVar2);
+              param_5_after_write = param_5_after_write + 1;
+              param_3_after_write = param_3_after_write + iVar2;
+            } while ((int)param_5_after_write < iVar2);
           }
         }
       }

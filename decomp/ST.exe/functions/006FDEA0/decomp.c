@@ -27,16 +27,18 @@ void FUN_006fdea0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   _DAT_00857000 = 1;
   iVar6 = param_10;
   do {
-    param_10 = iVar6 + -1;
-    if (param_10 < 0) {
+    auto param_10_after_write = iVar6 + -1; /* compiler stack-slot lifetime split */
+    if (param_10_after_write < 0) {
       return;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_12 == 1) {
-      param_10 = iVar6 + -2;
-      if (param_10 < 0) {
+      param_10_after_write = iVar6 + -2;
+      if (param_10_after_write < 0) {
         return;
       }
       uVar4 = (uint)*param_6;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = param_6 + 1;
       iVar6 = param_7;
       if (uVar4 != 0) {
@@ -360,7 +362,7 @@ LAB_006fe395:
     param_3 = (ushort *)((int)param_3 + param_4);
     pbVar3 = pbVar3 + param_14;
     param_12 = param_12 + 1;
-    iVar6 = param_10;
+    iVar6 = param_10_after_write;
     if (2 < param_12) {
       param_12 = 0;
     }

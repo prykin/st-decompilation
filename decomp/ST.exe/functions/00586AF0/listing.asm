@@ -632,7 +632,8 @@ LAB_00587161:
 005871E8  0F 84 35 01 00 00         JZ 0x00587323
 005871EE  8B 07                     MOV EAX,dword ptr [EDI]
 005871F0  8B CF                     MOV ECX,EDI
-005871F2  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+FUN_00586af0::override::prt_5871f2_e5e2351e:
+005871F2  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 005871F8  85 C0                     TEST EAX,EAX
 005871FA  0F 84 23 01 00 00         JZ 0x00587323
 00587200  8B 47 20                  MOV EAX,dword ptr [EDI + 0x20]
@@ -906,7 +907,8 @@ LAB_00587486:
 00587504  0F 84 3E 01 00 00         JZ 0x00587648
 0058750A  8B 17                     MOV EDX,dword ptr [EDI]
 0058750C  8B CF                     MOV ECX,EDI
-0058750E  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+FUN_00586af0::override::prt_58750e_e5e2351e:
+0058750E  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00587514  85 C0                     TEST EAX,EAX
 00587516  0F 84 2C 01 00 00         JZ 0x00587648
 0058751C  8B 47 20                  MOV EAX,dword ptr [EDI + 0x20]
@@ -1953,7 +1955,8 @@ LAB_005880ea:
 0058816A  0F 84 3F 01 00 00         JZ 0x005882af
 00588170  8B 13                     MOV EDX,dword ptr [EBX]
 00588172  8B CB                     MOV ECX,EBX
-00588174  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+FUN_00586af0::override::prt_588174_e5e2351e:
+00588174  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0058817A  85 C0                     TEST EAX,EAX
 0058817C  0F 84 2D 01 00 00         JZ 0x005882af
 00588182  8B 43 20                  MOV EAX,dword ptr [EBX + 0x20]

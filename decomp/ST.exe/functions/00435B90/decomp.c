@@ -40,16 +40,16 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
        (7 < g_bulkInitializedRecords_008087C7[(char)objPtr].field_0022)))))) {
     return 1;
   }
-  param_4 = nullptr;
+  auto param_4_after_write = nullptr; /* compiler stack-slot lifetime split */
   if (0 < (int)dVar3) {
     do {
-      DArrayGetElement(param_2,(uint)param_4,&param_1);
+      DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
       if ((short)param_1 != -1) {
         local_10 = param_1;
         local_c = local_c + 1;
       }
-      param_4 = (int *)((int)param_4 + 1);
-    } while ((int)param_4 < (int)dVar3);
+      param_4_after_write = (int *)((int)param_4_after_write + 1);
+    } while ((int)param_4_after_write < (int)dVar3);
     if (local_c == 1) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)local_10,CASE_1);
@@ -61,12 +61,12 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
   case CASE_0:
     if ((arg_2 == nullptr) ||
        (((iVar7 = arg_2[8], iVar7 != 0x14 && (iVar7 != 1000)) && (iVar7 != 0x3e9)))) {
-      param_4 = nullptr;
+      param_4_after_write = nullptr;
       if ((int)dVar3 < 1) {
         return 0;
       }
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -75,8 +75,8 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
             return 5;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 0;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -84,9 +84,9 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((((iVar7 == 99) || (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x52)) ||
         (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x5f)) &&
-       (param_4 = nullptr, 0 < (int)dVar3)) {
+       (param_4_after_write = nullptr, 0 < (int)dVar3)) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -95,10 +95,11 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
             return 0x1e;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
     }
     bVar1 = *(byte *)(arg_2 + 9);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = STReplaceLowByte((uint32_t)(param_3), (uint8_t)(bVar1));
     if (DAT_00808a8f == '\0') {
       if (bVar1 == objPtr) {
@@ -133,9 +134,9 @@ LAB_004366b0:
         if ((arg_2[8] != 0x3e9) && (arg_2[9] == (int)(char)objPtr)) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar7 = (**(code **)(*arg_2 + 0x2c))();
-          if ((iVar7 == 0x33) && (param_4 = nullptr, 0 < (int)dVar3)) {
+          if ((iVar7 == 0x33) && (param_4_after_write = nullptr, 0 < (int)dVar3)) {
             do {
-              DArrayGetElement(param_2,(uint)param_4,&param_1);
+              DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
               if ((ushort)param_1 != 0xffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -144,16 +145,16 @@ LAB_004366b0:
                   return 0x18;
                 }
               }
-              param_4 = (int *)((int)param_4 + 1);
-            } while ((int)param_4 < (int)dVar3);
+              param_4_after_write = (int *)((int)param_4_after_write + 1);
+            } while ((int)param_4_after_write < (int)dVar3);
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar7 = (**(code **)(*arg_2 + 0x2c))();
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           if (((iVar7 == 0x37) || (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x6c)) &&
-             (param_4 = nullptr, 0 < (int)dVar3)) {
+             (param_4_after_write = nullptr, 0 < (int)dVar3)) {
             do {
-              DArrayGetElement(param_2,(uint)param_4,&param_1);
+              DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
               if ((ushort)param_1 != 0xffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -162,8 +163,8 @@ LAB_004366b0:
                   return 0x1d;
                 }
               }
-              param_4 = (int *)((int)param_4 + 1);
-            } while ((int)param_4 < (int)dVar3);
+              param_4_after_write = (int *)((int)param_4_after_write + 1);
+            } while ((int)param_4_after_write < (int)dVar3);
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar7 = (**(code **)(*arg_2 + 0x2c))();
@@ -171,9 +172,9 @@ LAB_004366b0:
           if ((((iVar7 == 0x38) || (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x39)) ||
               ((iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x4f ||
                (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x5e)))) &&
-             (param_4 = nullptr, 0 < (int)dVar3)) {
+             (param_4_after_write = nullptr, 0 < (int)dVar3)) {
             do {
-              DArrayGetElement(param_2,(uint)param_4,&param_1);
+              DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
               if ((ushort)param_1 != 0xffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -182,8 +183,8 @@ LAB_004366b0:
                   return 0x12;
                 }
               }
-              param_4 = (int *)((int)param_4 + 1);
-            } while ((int)param_4 < (int)dVar3);
+              param_4_after_write = (int *)((int)param_4_after_write + 1);
+            } while ((int)param_4_after_write < (int)dVar3);
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar7 = (**(code **)(*arg_2 + 0xec))();
@@ -193,10 +194,10 @@ LAB_004366b0:
         iVar7 = (**(code **)(*arg_2 + 0xec))();
         return (-(ushort)(iVar7 != 1) & 0xfffc) + 4;
       }
-      param_4 = nullptr;
+      param_4_after_write = nullptr;
       if (0 < (int)dVar3) {
         do {
-          DArrayGetElement(param_2,(uint)param_4,&param_1);
+          DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
           if ((ushort)param_1 != 0xffff) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -208,8 +209,8 @@ LAB_004366b0:
               return 0x1a;
             }
           }
-          param_4 = (int *)((int)param_4 + 1);
-        } while ((int)param_4 < (int)dVar3);
+          param_4_after_write = (int *)((int)param_4_after_write + 1);
+        } while ((int)param_4_after_write < (int)dVar3);
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar7 = (**(code **)(*arg_2 + 0xec))();
@@ -217,11 +218,11 @@ LAB_004366b0:
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar7 = (**(code **)(*arg_2 + 0x2c))();
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (iVar7 == 0x6c) {
       if (0 < (int)dVar3) {
         do {
-          DArrayGetElement(param_2,(uint)param_4,&param_1);
+          DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
           if ((ushort)param_1 != 0xffff) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -233,8 +234,8 @@ LAB_004366b0:
               return 0x1d;
             }
           }
-          param_4 = (int *)((int)param_4 + 1);
-          if ((int)dVar3 <= (int)param_4) {
+          param_4_after_write = (int *)((int)param_4_after_write + 1);
+          if ((int)dVar3 <= (int)param_4_after_write) {
             return 0;
           }
         } while( true );
@@ -242,7 +243,7 @@ LAB_004366b0:
     }
     else if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -251,18 +252,18 @@ LAB_004366b0:
             return 7;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
     }
 switchD_00435c5c_caseD_1:
     return 0;
   default:
     goto switchD_00435c5c_caseD_1;
   case CASE_2:
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -271,8 +272,8 @@ switchD_00435c5c_caseD_1:
             return 6;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 1;
     }
     break;
@@ -281,10 +282,10 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == nullptr) {
       return 1;
     }
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -296,18 +297,18 @@ switchD_00435c5c_caseD_1:
             return 2;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
     }
     return 1;
   case CASE_4:
     if (arg_2 == nullptr) {
       return 1;
     }
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -316,8 +317,8 @@ switchD_00435c5c_caseD_1:
             return 0x18;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 1;
     }
     break;
@@ -325,10 +326,10 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == nullptr) {
       return 1;
     }
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -337,16 +338,16 @@ switchD_00435c5c_caseD_1:
             return 0xd;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 1;
     }
     break;
   case CASE_6:
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -355,8 +356,8 @@ switchD_00435c5c_caseD_1:
             return 0xf;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 1;
     }
     break;
@@ -364,10 +365,10 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == nullptr) {
       return 1;
     }
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -383,15 +384,15 @@ switchD_00435c5c_caseD_1:
             return 0xb;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
     }
     return 1;
   case CASE_8:
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -400,16 +401,16 @@ switchD_00435c5c_caseD_1:
             return 0x11;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 1;
     }
     break;
   case CASE_9:
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -418,8 +419,8 @@ switchD_00435c5c_caseD_1:
             return 8;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 1;
     }
     break;
@@ -427,10 +428,10 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == nullptr) {
       return 1;
     }
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -439,15 +440,15 @@ switchD_00435c5c_caseD_1:
             return 0xc;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 1;
     }
     break;
   case CASE_D:
-    if ((arg_2 != nullptr) && (param_4 = nullptr, 0 < (int)dVar3)) {
+    if ((arg_2 != nullptr) && (param_4_after_write = nullptr, 0 < (int)dVar3)) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -459,18 +460,18 @@ switchD_00435c5c_caseD_1:
             return 0x17;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-        if ((int)dVar3 <= (int)param_4) {
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+        if ((int)dVar3 <= (int)param_4_after_write) {
           return 1;
         }
       } while( true );
     }
     break;
   case CASE_E:
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -482,18 +483,18 @@ switchD_00435c5c_caseD_1:
             return 0x14;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
     }
     return 0x15;
   case CASE_10:
     if (arg_2 == nullptr) {
       return 1;
     }
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -502,8 +503,8 @@ switchD_00435c5c_caseD_1:
             return 0x16;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 1;
     }
     break;
@@ -511,10 +512,10 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == nullptr) {
       return 1;
     }
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -523,8 +524,8 @@ switchD_00435c5c_caseD_1:
             return 0x12;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 1;
     }
     break;
@@ -532,10 +533,10 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == nullptr) {
       return 1;
     }
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -544,8 +545,8 @@ switchD_00435c5c_caseD_1:
             return 0x13;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 1;
     }
     break;
@@ -553,10 +554,10 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == nullptr) {
       return 1;
     }
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -568,18 +569,18 @@ switchD_00435c5c_caseD_1:
             return 0x1a;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-        if ((int)dVar3 <= (int)param_4) {
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+        if ((int)dVar3 <= (int)param_4_after_write) {
           return 1;
         }
       } while( true );
     }
     break;
   case CASE_18:
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -591,18 +592,18 @@ switchD_00435c5c_caseD_1:
             return 0x1d;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-        if ((int)dVar3 <= (int)param_4) {
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+        if ((int)dVar3 <= (int)param_4_after_write) {
           return 1;
         }
       } while( true );
     }
     break;
   case CASE_2D:
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -611,8 +612,8 @@ switchD_00435c5c_caseD_1:
             return 0x10;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 1;
     }
     break;
@@ -620,10 +621,10 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == nullptr) {
       return 1;
     }
-    param_4 = nullptr;
+    param_4_after_write = nullptr;
     if (0 < (int)dVar3) {
       do {
-        DArrayGetElement(param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4_after_write,&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
@@ -632,8 +633,8 @@ switchD_00435c5c_caseD_1:
             return 0x1d;
           }
         }
-        param_4 = (int *)((int)param_4 + 1);
-      } while ((int)param_4 < (int)dVar3);
+        param_4_after_write = (int *)((int)param_4_after_write + 1);
+      } while ((int)param_4_after_write < (int)dVar3);
       return 1;
     }
     break;

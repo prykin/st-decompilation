@@ -28,6 +28,7 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
       DArrayDestroy(STField<DArrayTy *>(piVar7,0x19));
       STField<undefined4>(piVar7,0x19) = 0;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0) {
       param_2 = 0;
     }

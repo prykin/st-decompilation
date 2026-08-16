@@ -13,16 +13,16 @@ int __cdecl _GetEmbrTobjGrpExch(uint param_1,int param_2)
   int iVar2;
   STGroupBoatC *this;
   ushort *puVar2;
-  STGameObjC *pSVar3;
-  int iVar5;
+  STGameObjC *this_00;
+  int iVar3;
   int iVar4;
-  uint uVar6;
-  uint uVar7;
+  uint uVar4;
+  uint uVar5;
   InternalExceptionFrame local_50;
   DArrayTy *local_c;
   int local_8;
 
-  uVar7 = 0;
+  uVar5 = 0;
   local_c = nullptr;
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
@@ -40,30 +40,30 @@ int __cdecl _GetEmbrTobjGrpExch(uint param_1,int param_2)
     }
     array = local_c;
     if (local_c->count != 0) {
-      uVar6 = 0;
+      uVar4 = 0;
       if (local_c->count == 0) {
         puVar2 = nullptr;
         goto LAB_006762e0;
       }
       do {
-        puVar2 = DArrayAt<ushort>(array, uVar6);
+        puVar2 = DArrayAt<ushort>(array, uVar4);
 LAB_006762e0:
-        pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
-        if (pSVar3 != nullptr) {
-          iVar5 = (*pSVar3->vtable->vfunc_2C)();
-          if (iVar5 == 0x78) {
-            iVar5 = pSVar3->field_0259;
+        this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
+        if (this_00 != nullptr) {
+          iVar3 = this_00->vfunc_2C();
+          if (iVar3 == 0x78) {
+            iVar3 = this_00->field_0259;
           }
           else {
-            iVar5 = 0;
+            iVar3 = 0;
           }
-          if (param_2 == iVar5) {
+          if (param_2 == iVar3) {
             local_8 = local_8 + 1;
           }
         }
-        uVar7 = uVar7 + 1;
-        uVar6 = uVar7 & 0xffff;
-      } while (uVar6 < array->count);
+        uVar5 = uVar5 + 1;
+        uVar4 = uVar5 & 0xffff;
+      } while (uVar4 < array->count);
     }
     if (array != nullptr) {
       DArrayDestroy(array);

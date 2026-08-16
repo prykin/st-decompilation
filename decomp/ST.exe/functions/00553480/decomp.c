@@ -31,6 +31,7 @@ uint __cdecl FUN_00553480(int param_1,int param_2,int param_3,uint param_4,int p
     local_8 = 1;
   }
   else {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((0 < param_2) &&
        (bVar1 = *(byte *)((iVar4 - param_4) + -1 + param_3), param_4 = (uint)bVar1, bVar1 < 0xf)) {
       uVar3 = (uint)*(ushort *)(&DAT_007c88f4 + param_4 * 0x10);

@@ -26,10 +26,12 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
   local_c = param_6 + -1 + local_8;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_3 = (int)param_4;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_4 = param_7 + -1 + _param_3;
   iVar3 = (int)param_5;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_5 = param_8 + -1 + iVar3;
-  param_6 = 0;
+  auto param_6_after_write = 0; /* compiler stack-slot lifetime split */
   if (local_8 < 0) {
     local_8 = 0;
   }
@@ -38,7 +40,6 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
     local_c = iVar6;
   }
   if (_param_3 < 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_3 = 0;
   }
   if (g_worldGrid.sizeY + -1 < _param_4) {
@@ -57,7 +58,7 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
     _param_5 = _param_5 + 1;
     iVar8 = local_c;
     iVar10 = local_8;
-    param_6 = 0;
+    param_6_after_write = 0;
     do {
       iVar6 = iVar6 + g_worldGrid.planeStride;
       local_10 = iVar6 - (short)iVar3;
@@ -94,7 +95,7 @@ LAB_0043f4c8:
                 pSVar5 = nullptr;
 LAB_0043f4cd:
                 if (pSVar5 == nullptr) {
-                  param_6 = param_6 + 1;
+                  param_6_after_write = param_6_after_write + 1;
                 }
               }
               iVar8 = iVar8 + -1;
@@ -110,6 +111,6 @@ LAB_0043f4cd:
       _param_5 = _param_5 + -1;
     } while (_param_5 != 0);
   }
-  return STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(param_6));
+  return STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(param_6_after_write));
 }
 

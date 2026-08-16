@@ -53,7 +53,7 @@ switchD_0049655f_caseD_0:
     if ((sVar1 == -2) || (sVar1 == -0x4001)) {
       iVar8 = (int)PTR_00806750[1] * (int)*PTR_00806750;
       iVar11 = iVar12 + 1;
-      iVar8 = (int)(iVar8 + (iVar8 >> 0x1f & 3U)) >> 2;
+      iVar8 = STSignedDiv4(iVar8);
       if (iVar11 < 6) {
         piVar14 = (int *)((int)PTR_00806750 +
                          (((int)uVar10 >> 1) * ((int)*PTR_00806750 / 2) + iVar11 * iVar8 +

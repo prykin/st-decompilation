@@ -1500,11 +1500,12 @@ st::fn_00427F20(void *this,float param_1,float param_2,float param_3,int param_4
   local_30 = 0;
   DAT_007f4d84 = 0;
   DAT_007f4d78 = 0;
-  DAT_007f4d6c = 0;
+  PTR_007f4d6c = nullptr;
   ExceptionList = &local_14;
   puVar2 = (st_stack_frame + 36);
   if (param_4 < 1) goto cf_common_join_004286D0;
   if (param_5 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = 0;
   }
   ExceptionList = &local_14;
@@ -1613,7 +1614,7 @@ st::fn_00427F20(void *this,float param_1,float param_2,float param_3,int param_4
   iVar13 = param_4 * param_4;
   local_44 = 0;
   local_6c = param_4;
-  iVar6 = (1 - param_4) * iVar13 + ((int)(iVar13 + (iVar13 >> 0x1f & 3U)) >> 2);
+  iVar6 = (1 - param_4) * iVar13 + (STSignedDiv4(iVar13));
   local_8c = 0;
   iVar11 = iVar13 * 2 * param_4;
   if (0 < iVar11) {
@@ -1654,7 +1655,7 @@ st::fn_00427F20(void *this,float param_1,float param_2,float param_3,int param_4
     iVar6 = iVar9 * 2;
     local_44 = 0;
     local_6c = param_5;
-    iVar11 = (1 - param_5) * iVar9 + ((int)(iVar9 + (iVar9 >> 0x1f & 3U)) >> 2);
+    iVar11 = (1 - param_5) * iVar9 + (STSignedDiv4(iVar9));
     local_8c = 0;
     iVar13 = iVar6 * param_5;
     if (0 < iVar13) {
@@ -1801,7 +1802,7 @@ joined_r0x004286bb:
   }
   puVar2 = local_1c;
   if (DAT_007f4d78 == 0) {
-    st::fn_006AB060(&DAT_007f4d6c);
+    st::fn_006AB060(&PTR_007f4d6c);
     puVar2 = local_1c;
   }
 cf_common_join_004286D0:
@@ -1827,7 +1828,7 @@ cf_common_join_004286D0:
     param_6[5] = 0;
     param_6[6] = 0;
     param_6[7] = DAT_007f4d78;
-    param_6[8] = (int)DAT_007f4d6c;
+    param_6[8] = (int)PTR_007f4d6c;
     iVar7 = 0;
   }
   else {
@@ -1835,12 +1836,12 @@ cf_common_join_004286D0:
     if (0 < DAT_007f4d78) {
       iVar10 = 0;
       do {
-        st::fn_006A5E90(*(short **)(iVar10 + 8 + (int)DAT_007f4d6c));
+        st::fn_006A5E90(*(short **)(iVar10 + 8 + (int)PTR_007f4d6c));
         iVar7 = iVar7 + 1;
         iVar10 = iVar10 + 0xc;
       } while (iVar7 < DAT_007f4d78);
     }
-    st::fn_006A5E90(st::pointer_boundary_cast<short *>(DAT_007f4d6c));
+    st::fn_006A5E90((short *)PTR_007f4d6c);
     iVar7 = local_30;
     st::fn_006A5E40
               (local_30,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\Td3dshad.cpp"),0x78f);

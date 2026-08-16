@@ -62,19 +62,22 @@ LAB_0048cf12:
 0048CF58  0F 84 94 00 00 00         JZ 0x0048cff2
 0048CF5E  8B 06                     MOV EAX,dword ptr [ESI]
 0048CF60  8B CE                     MOV ECX,ESI
-0048CF62  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STBoatC::_CheckDefenceShots::override::prt_48cf62_d4e0dbd9:
+0048CF62  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0048CF68  83 F8 01                  CMP EAX,0x1
 0048CF6B  0F 85 81 00 00 00         JNZ 0x0048cff2
 0048CF71  8B 16                     MOV EDX,dword ptr [ESI]
 0048CF73  8B CE                     MOV ECX,ESI
-0048CF75  FF 92 F0 00 00 00         CALL dword ptr [EDX + 0xf0]
+STBoatC::_CheckDefenceShots::override::prt_48cf75_d4e0dbd9:
+0048CF75  FF 92 F0 00 00 00         CALL dword ptr [EDX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0048CF7B  83 F8 01                  CMP EAX,0x1
 0048CF7E  75 72                     JNZ 0x0048cff2
 0048CF80  8B 4F 24                  MOV ECX,dword ptr [EDI + 0x24]
 0048CF83  8B 06                     MOV EAX,dword ptr [ESI]
 0048CF85  51                        PUSH ECX
 0048CF86  8B CE                     MOV ECX,ESI
-0048CF88  FF 90 F4 00 00 00         CALL dword ptr [EAX + 0xf4]
+STBoatC::_CheckDefenceShots::override::prt_48cf88_66d08e71:
+0048CF88  FF 90 F4 00 00 00         CALL dword ptr [EAX + 0xf4]  ; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4
 0048CF8E  83 F8 01                  CMP EAX,0x1
 0048CF91  75 5F                     JNZ 0x0048cff2
 0048CF93  8D 55 FE                  LEA EDX,[EBP + -0x2]

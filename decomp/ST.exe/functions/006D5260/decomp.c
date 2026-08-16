@@ -77,10 +77,9 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
   }
   if (local_8 != nullptr) {
     local_EAX_263 = FUN_00749a79(pAVar1);
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = *(undefined4 **)&pAVar1[1].field_0xc;
-    local_8 = param_1;
-    if (param_1 != nullptr) {
+    auto param_1_after_write = *(undefined4 **)&pAVar1[1].field_0xc; /* compiler stack-slot lifetime split */
+    local_8 = param_1_after_write;
+    if (param_1_after_write != nullptr) {
       pptVar8 = &local_414;
       puVar11 = (undefined1 *)(local_EAX_263 + 1);
       do {
@@ -90,10 +89,9 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
         puVar12[(int)(&stack0xfffffbe9 + -local_EAX_263)] = puVar11[-1];
         puVar12[(int)(&stack0xfffffbea + -local_EAX_263)] = 0;
         pptVar8 = pptVar8 + 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = (undefined4 *)((int)param_1 + -1);
+        param_1_after_write = (undefined4 *)((int)param_1_after_write + -1);
         puVar11 = puVar12;
-      } while (param_1 != nullptr);
+      } while (param_1_after_write != nullptr);
     }
     iStart_00 = 0;
     pptVar8 = &local_414;

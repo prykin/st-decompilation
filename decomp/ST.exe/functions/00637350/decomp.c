@@ -26,10 +26,10 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
   short sVar9;
   int iVar11;
   short sVar12;
+  uint **ppuVar14;
   int iVar15;
   bool bVar16;
-  int local_58 [5];
-  uint *local_44;
+  uint *local_58 [8];
   uint local_38 [3];
   ushort local_2c;
   ushort local_2a;
@@ -81,7 +81,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
     do {
       iVar8 = iVar4;
       iVar15 = local_1c;
-      param_9 = uVar7;
+      auto param_9_after_write = uVar7; /* compiler stack-slot lifetime split */
       if (local_1c < local_14) {
         do {
           iVar4 = iVar8;
@@ -96,8 +96,8 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
                     ((this = g_worldGrid.cells
                              [(int)sVar3 * (int)sVar9 + (int)sVar6 * (int)g_worldGrid.planeStride +
                               (int)sVar12].objects[0], this != nullptr &&
-                     (iVar11 = (*this->vtable[5].slots_00_28[0])(), uVar7 = param_9, iVar11 != 0))))
-                   )) && (this[1].vtable < (STWorldObjectVTable *)0x8)) &&
+                     (iVar11 = (*this->vtable[5].slots_00_28[0])(this), uVar7 = param_9_after_write, iVar11 != 0
+                     )))))) && (this[1].vtable < (STWorldObjectVTable *)0x8)) &&
                  ((g_playSystem_00802A38 == nullptr ||
                   (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)))) {
                 bVar1 = *(byte *)&this[1].vtable;
@@ -133,20 +133,25 @@ LAB_006375fd:
                   iVar15 = _param_6;
                 }
                 if ((bVar16) &&
-                   (iVar11 = (*this->vtable[5].slots_00_28[2])(), uVar7 = param_9, iVar11 != 0)) {
+                   (iVar11 = (*this->vtable[5].slots_00_28[2])(this), uVar7 = param_9_after_write, iVar11 != 0))
+                {
                   thunk_FUN_00416270(this,(uint *)((int)&param_4 + 2),(int *)((int)&param_3 + 2),
                                      (short *)&stack0x0000001e);
                   iVar10 = FUN_006aced8((int)STPiece<2,2>(param_4),(int)STPiece<2,2>(param_3),param_1,param_2);
-                  uVar7 = param_9;
+                  uVar7 = param_9_after_write;
                   if (iVar10 < 0x28b) {
-                    memset(local_58, 0, 0x20); /* compiler bulk-zero initialization */
-                    local_58[2] = *(int *)&this->field_0x18;
-                    local_58[3] = 4;
-                    local_58[4] = 0x110;
-                    local_44 = local_38;
-                    (*this->vtable->slots_00_28[0])(local_58);
+                    ppuVar14 = local_58;
+                    for (iVar11 = 8; iVar11 != 0; iVar11 = iVar11 + -1) {
+                      *ppuVar14 = nullptr;
+                      ppuVar14 = ppuVar14 + 1;
+                    }
+                    local_58[2] = *(uint **)&this->field_0x18;
+                    local_58[3] = (uint *)0x4;
+                    local_58[4] = (uint *)0x110;
+                    local_58[5] = local_38;
+                    (*this->vtable->slots_00_28[0])(this,local_58);
                     local_8 = local_8 + 1;
-                    uVar7 = param_9;
+                    uVar7 = param_9_after_write;
                     iVar15 = _param_6;
                   }
                 }

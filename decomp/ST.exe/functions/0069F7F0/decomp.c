@@ -25,10 +25,10 @@ int __cdecl FUN_0069f7f0(int param_1,int param_2,int param_3,int param_4,int par
       iVar5 = iVar5 + -1;
     } while (iVar5 != 0);
     if (0 < iVar6) {
-      param_1 = *piVar1;
+      auto param_1_after_write = *piVar1; /* compiler stack-slot lifetime split */
       iVar2 = 0;
       local_8 = 0;
-      param_4 = param_1;
+      auto param_4_after_write = param_1_after_write; /* compiler stack-slot lifetime split */
       if (0 < param_5) {
         do {
           uVar3 = Library::MSVCRT::FUN_0072e6c0();
@@ -40,15 +40,15 @@ int __cdecl FUN_0069f7f0(int param_1,int param_2,int param_3,int param_4,int par
             iVar6 = iVar6 + *piVar4;
             if ((int)uVar3 % iVar7 <= iVar6) {
               iVar2 = *piVar4;
-              param_4 = iVar5;
+              param_4_after_write = iVar5;
               break;
             }
             iVar5 = iVar5 + 1;
             piVar4 = (int *)((int)piVar4 + param_3);
           } while (iVar5 < param_2);
-          if (param_1 < iVar2) {
-            local_8 = param_4;
-            param_1 = iVar2;
+          if (param_1_after_write < iVar2) {
+            local_8 = param_4_after_write;
+            param_1_after_write = iVar2;
           }
           param_5 = param_5 + -1;
           if (param_5 == 0) {

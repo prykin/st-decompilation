@@ -34,7 +34,7 @@ int FUN_006d6290(AnonShape_006D6290_6C97E0B2 *param_1,int *param_2)
     }
   }
   local_8 = &param_1->field_000C;
-  param_1 = nullptr;
+  auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   do {
     iVar3 = FUN_006bbe40(pAVar1->field_0064,(uint *)local_8,&local_10,0);
     if (iVar3 == 0) {
@@ -55,8 +55,8 @@ LAB_006d6394:
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*pAVar1->field_0064 + 0x6c))(pAVar1->field_0064);
-    param_1 = (AnonShape_006D6290_6C97E0B2 *)&param_1->field_0x1;
-    if (1 < (int)param_1) {
+    param_1_after_write = (AnonShape_006D6290_6C97E0B2 *)&param_1_after_write->field_0x1;
+    if (1 < (int)param_1_after_write) {
 LAB_006d6363:
       if ((local_c->field_0310 != 0) && ((*(uint *)(*(int *)(iVar2 + 0x28) + 8) & 0x4000000) != 0))
       {

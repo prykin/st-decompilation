@@ -122,7 +122,7 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,
   if ((param_1->field_0036 != param_2->field_0036) || (param_1->field_0007 != param_2->field_0007))
   {
     piVar6 = (int *)((int)this + 0x960);
-    param_2 = (RecoveredRecord_CPanelTy_00501D00 *)0x4;
+    auto param_2_after_write = (RecoveredRecord_CPanelTy_00501D00 *)0x4; /* compiler stack-slot lifetime split */
     do {
       if (*piVar6 != 0) {
         STField<undefined4>(this,0x28) = 0x20;
@@ -137,8 +137,8 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,
       }
       piVar6 = piVar6 + 1;
       piVar9 = (int *)((int)piVar9 + 1);
-      param_2 = (RecoveredRecord_CPanelTy_00501D00 *)&param_2[-1].field_0x3b;
-    } while (param_2 != nullptr);
+      param_2_after_write = (RecoveredRecord_CPanelTy_00501D00 *)&param_2_after_write[-1].field_0x3b;
+    } while (param_2_after_write != nullptr);
   }
   return;
 }

@@ -23,14 +23,14 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
   short sVar11;
   int iVar12;
   int iVar13;
-  undefined1 *puVar14;
-  undefined4 *puVar16;
-  short sVar17;
-  int iVar18;
-  byte *puVar19;
+  int iVar14;
+  short sVar15;
+  int iVar16;
+  byte *puVar17;
   STWorldObject *this_00;
-  undefined1 *puVar20;
-  bool bVar21;
+  undefined1 *puVar18;
+  bool bVar19;
+  uint auStack_bc [4];
   undefined4 uStack_ac;
   short local_84 [2];
   int local_80;
@@ -53,7 +53,6 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  undefined4 *puVar15;
 
   puStack_c = &DAT_0079cec0;
   puStack_10 = &LAB_0072d964;
@@ -67,7 +66,7 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
     local_64 = STBiasedDiv16(param_2, 0xc9); /* exact signed 16-bit grid-index division */
     iVar6 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
     if (((((-1 < local_5c) && (-1 < local_64)) && (-1 < iVar6)) &&
-        ((iVar13 = (int)g_worldGrid.sizeX, local_5c < iVar13 &&
+        ((iVar14 = (int)g_worldGrid.sizeX, local_5c < iVar14 &&
          (iVar12 = (int)g_worldGrid.sizeY, local_64 < iVar12)))) && (iVar6 < 5)) {
       local_2c = local_64 + -5;
       if (local_64 + -5 < 0) {
@@ -83,50 +82,47 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
         local_64 = iVar12;
       }
       local_5c = local_5c + 6;
-      if (iVar13 < local_5c) {
-        local_5c = iVar13;
+      if (iVar14 < local_5c) {
+        local_5c = iVar14;
       }
-      iVar13 = (local_5c - local_24) * (local_64 - local_2c);
+      iVar14 = (local_5c - local_24) * (local_64 - local_2c);
       iVar12 = 0;
       uStack_ac = 0x6183b0;
-      puVar14 = &stack0xffffff58 + iVar13 * -0x1e0;
-      puVar20 = &stack0xffffff58 + iVar13 * -0x1e0;
-      local_60 = &stack0xffffff58 + iVar13 * -0x1b8;
-      (&uStack_ac)[iVar13 * -0x6e] = 0x6183c9;
-      local_1c = &stack0xffffff58 + iVar13 * -0x1e0;
-      local_6c = &stack0xffffff58 + iVar13 * -0x1e0;
+      puVar18 = &stack0xffffff58 + iVar14 * -0x1e0;
+      local_60 = &stack0xffffff58 + iVar14 * -0x1b8;
+      auStack_bc[iVar14 * -0x6e + 4] = 0x6183c9;
+      local_1c = &stack0xffffff58 + iVar14 * -0x1e0;
+      local_6c = &stack0xffffff58 + iVar14 * -0x1e0;
       local_8 = 0xffffffff;
       local_34 = 0;
       ExceptionList = &local_14;
       do {
         local_38 = iVar6;
         iVar13 = local_34;
-        iVar18 = iVar6;
+        iVar16 = iVar6;
         if (iVar6 < local_64) {
           do {
             local_80 = local_24;
-            iVar18 = local_24;
+            iVar16 = local_24;
             local_38 = iVar6;
             if (local_24 < local_5c) {
               do {
-                sVar17 = (short)iVar18;
-                if (((sVar17 < 0) || (g_worldGrid.sizeX <= sVar17)) ||
+                sVar15 = (short)iVar16;
+                if (((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) ||
                    ((sVar10 = (short)iVar6, sVar10 < 0 ||
                     (((g_worldGrid.sizeY <= sVar10 || (sVar11 = (short)iVar13, sVar11 < 0)) ||
                      (g_worldGrid.sizeZ <= sVar11)))))) {
                   this_00 = nullptr;
                 }
                 else {
-                  this_00 = STGridAt3D(g_worldGrid, sVar17, sVar10, sVar11).objects[0];
+                  this_00 = STGridAt3D(g_worldGrid, sVar15, sVar10, sVar11).objects[0];
                   iVar13 = local_34;
                 }
                 if (this_00 != nullptr) {
                   pcVar4 = this_00->vtable[5].slots_00_28[0];
-                  puVar15 = (undefined4 *)(puVar14 + -4);
-                  puVar14 = puVar14 + -4;
-                  local_80 = iVar18;
-                  *puVar15 = 0x61846b;
-                  iVar7 = (*pcVar4)();
+                  local_80 = iVar16;
+                  auStack_bc[iVar14 * -0x78 + 4] = 0x61846b;
+                  iVar7 = (*pcVar4)(this_00);
                   iVar6 = local_38;
                   iVar13 = local_34;
                   if (((iVar7 != 0) && (this_00[1].vtable < (STWorldObjectVTable *)0x8)) &&
@@ -157,124 +153,130 @@ LAB_0061856a:
                           iVar7 = 2;
                         }
                       }
-                      bVar21 = iVar7 < 0;
+                      bVar19 = iVar7 < 0;
                     }
                     else {
-                      bVar21 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+                      bVar19 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
                                g_bulkInitializedRecords_008087C7[bVar1].field_0023;
-                      iVar18 = local_80;
+                      iVar16 = local_80;
                     }
-                    if (bVar21) {
+                    if (bVar19) {
                       pcVar4 = this_00->vtable[5].slots_00_28[2];
-                      puVar16 = (undefined4 *)(puVar14 + -4);
-                      puVar14 = puVar14 + -4;
-                      *puVar16 = 0x618587;
-                      iVar7 = (*pcVar4)();
+                      auStack_bc[iVar14 * -0x78 + 4] = 0x618587;
+                      iVar7 = (*pcVar4)(this_00);
                       iVar6 = local_38;
                       iVar13 = local_34;
                       if (iVar7 != 0) {
-                        *(short **)(puVar14 + -4) = local_20;
-                        *(short **)(puVar14 + -8) = local_84;
-                        *(short **)(puVar14 + -0xc) = local_50;
-                        *(undefined4 *)(puVar14 + -0x10) = 0x6185a2;
-                        thunk_FUN_00416270(this_00,*(uint **)(puVar14 + -0xc),
-                                           *(int **)(puVar14 + -8),*(short **)(puVar14 + -4));
-                        puVar19 = (byte *)(local_60 + iVar12 * 0x2c);
-                        *puVar19 = this_00[1].vtable;
+                        auStack_bc[iVar14 * -0x78 + 4] = (uint)local_20;
+                        auStack_bc[iVar14 * -0x78 + 3] = (uint)local_84;
+                        auStack_bc[iVar14 * -0x78 + 2] = (uint)local_50;
+                        auStack_bc[iVar14 * -0x78 + 1] = 0x6185a2;
+                        thunk_FUN_00416270(this_00,(uint *)auStack_bc[iVar14 * -0x78 + 2],
+                                           (int *)auStack_bc[iVar14 * -0x78 + 3],
+                                           (short *)auStack_bc[iVar14 * -0x78 + 4]);
+                        puVar17 = (byte *)(local_60 + iVar12 * 0x2c);
+                        *puVar17 = this_00[1].vtable;
                         pSVar5 = this_00->vtable->GetObjectTypeId;
-                        *(undefined4 *)(puVar14 + -4) = 0x6185ba;
+                        auStack_bc[iVar14 * -0x78 + 4] = 0x6185ba;
                         iVar6 = (*pSVar5)(this_00);
-                        puVar19[1] = iVar6;
-                        STField<undefined4>(puVar19,0x26) = *(undefined4 *)&this_00->field_0x18;
-                        STField<undefined2>(puVar19,0x2a) = *(undefined2 *)&this_00[1].field_0xe;
-                        STField<STWorldObject *>(puVar19,0x1a) = this_00;
-                        *(undefined2 *)(puVar19 + 5) = (undefined2)local_80;
-                        STField<undefined2>(puVar19,0x16) = (undefined2)local_38;
-                        *(undefined2 *)(puVar19 + 6) = (undefined2)local_34;
-                        puVar19[2] = (int)local_50[0];
-                        puVar19[3] = (int)local_84[0];
-                        puVar19[4] = (int)local_20[0];
-                        *(int *)(puVar14 + -4) = (int)local_84[0];
-                        *(int *)(puVar14 + -8) = (int)local_50[0];
-                        *(int *)(puVar14 + -0xc) = param_2;
-                        *(int *)(puVar14 + -0x10) = param_1;
-                        *(undefined4 *)(puVar14 + -0x14) = 0x618612;
-                        iVar8 = FUN_006aced8(*(int *)(puVar14 + -0x10),*(int *)(puVar14 + -0xc),
-                                             *(int *)(puVar14 + -8),*(int *)(puVar14 + -4));
-                        STField<int>(puVar19,0x1e) = iVar8;
+                        puVar17[1] = iVar6;
+                        STField<undefined4>(puVar17,0x26) = *(undefined4 *)&this_00->field_0x18;
+                        STField<undefined2>(puVar17,0x2a) = *(undefined2 *)&this_00[1].field_0xe;
+                        STField<STWorldObject *>(puVar17,0x1a) = this_00;
+                        *(undefined2 *)(puVar17 + 5) = (undefined2)local_80;
+                        STField<undefined2>(puVar17,0x16) = (undefined2)local_38;
+                        *(undefined2 *)(puVar17 + 6) = (undefined2)local_34;
+                        puVar17[2] = (int)local_50[0];
+                        puVar17[3] = (int)local_84[0];
+                        puVar17[4] = (int)local_20[0];
+                        auStack_bc[iVar14 * -0x78 + 4] = (int)local_84[0];
+                        auStack_bc[iVar14 * -0x78 + 3] = (int)local_50[0];
+                        auStack_bc[iVar14 * -0x78 + 2] = param_2;
+                        auStack_bc[iVar14 * -0x78 + 1] = param_1;
+                        auStack_bc[iVar14 * -0x78] = 0x618612;
+                        iVar8 = FUN_006aced8(auStack_bc[iVar14 * -0x78 + 1],
+                                             auStack_bc[iVar14 * -0x78 + 2],
+                                             auStack_bc[iVar14 * -0x78 + 3],
+                                             auStack_bc[iVar14 * -0x78 + 4]);
+                        STField<int>(puVar17,0x1e) = iVar8;
                         iVar12 = iVar12 + 1;
                         iVar6 = local_38;
                         iVar13 = local_34;
-                        iVar18 = local_80;
+                        iVar16 = local_80;
                       }
                     }
                   }
                 }
-                iVar18 = iVar18 + 1;
-                local_80 = iVar18;
-              } while (iVar18 < local_5c);
+                iVar16 = iVar16 + 1;
+                local_80 = iVar16;
+              } while (iVar16 < local_5c);
             }
             iVar6 = iVar6 + 1;
             local_38 = iVar6;
-            iVar18 = local_2c;
-            puVar20 = local_6c;
+            iVar16 = local_2c;
+            puVar18 = local_6c;
           } while (iVar6 < local_64);
         }
         local_34 = iVar13 + 1;
-        iVar6 = iVar18;
+        iVar6 = iVar16;
       } while (iVar13 + 1 < 5);
       if (0 < iVar12) {
         iVar6 = 0;
         if (0 < iVar12) {
           do {
-            *(int *)(puVar20 + iVar6 * 4) = iVar6;
+            *(int *)(puVar18 + iVar6 * 4) = iVar6;
             iVar6 = iVar6 + 1;
           } while (iVar6 < iVar12);
         }
-        *(int *)(puVar14 + -4) = iVar12;
-        *(undefined1 **)(puVar14 + -8) = puVar20;
-        *(undefined1 **)(puVar14 + -0xc) = local_60;
-        *(undefined4 *)(puVar14 + -0x10) = 0x618676;
-        thunk_FUN_006189c0(*(int *)(puVar14 + -0xc),*(int **)(puVar14 + -8),*(int *)(puVar14 + -4));
+        auStack_bc[iVar14 * -0x78 + 4] = iVar12;
+        auStack_bc[iVar14 * -0x78 + 3] = (uint)puVar18;
+        auStack_bc[iVar14 * -0x78 + 2] = (uint)local_60;
+        auStack_bc[iVar14 * -0x78 + 1] = 0x618676;
+        thunk_FUN_006189c0(auStack_bc[iVar14 * -0x78 + 2],(int *)auStack_bc[iVar14 * -0x78 + 3],
+                           auStack_bc[iVar14 * -0x78 + 4]);
         local_58[0] = 1000;
         iVar6 = 0;
         if (0 < iVar12) {
           do {
-            *(int **)(puVar14 + -4) = local_58;
-            puVar20 = local_6c;
-            *(undefined4 *)(puVar14 + -8) =
+            auStack_bc[iVar14 * -0x78 + 4] = (uint)local_58;
+            puVar18 = local_6c;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            auStack_bc[iVar14 * -0x78 + 3] =
                  *(undefined4 *)(local_60 + *(int *)(local_6c + iVar6 * 4) * 0x2c + 0x26);
-            *(undefined4 *)(puVar14 + -0xc) = 0x6186aa;
-            uVar8 = thunk_FUN_00618a50(this,*(int *)(puVar14 + -8),*(int **)(puVar14 + -4));
+            auStack_bc[iVar14 * -0x78 + 2] = 0x6186aa;
+            uVar8 = thunk_FUN_00618a50(this,auStack_bc[iVar14 * -0x78 + 3],
+                                       (int *)auStack_bc[iVar14 * -0x78 + 4]);
             if ((int)uVar8 < 0) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_48 = *(undefined4 *)(local_60 + *(int *)(puVar20 + iVar6 * 4) * 0x2c + 0x26);
+              local_48 = *(undefined4 *)(local_60 + *(int *)(puVar18 + iVar6 * 4) * 0x2c + 0x26);
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_44 = (uint)*(ushort *)(local_60 + *(int *)(puVar20 + iVar6 * 4) * 0x2c + 0x2a);
+              local_44 = (uint)*(ushort *)(local_60 + *(int *)(puVar18 + iVar6 * 4) * 0x2c + 0x2a);
               if (STField<int>(this,0x62) == 0) {
-                *(undefined4 *)(puVar14 + -4) = 10;
-                *(undefined4 *)(puVar14 + -8) = 8;
-                *(undefined4 *)(puVar14 + -0xc) = 7;
-                *(undefined4 *)(puVar14 + -0x10) = 0;
-                *(undefined4 *)(puVar14 + -0x14) = 0x6186f5;
+                auStack_bc[iVar14 * -0x78 + 4] = 10;
+                auStack_bc[iVar14 * -0x78 + 3] = 8;
+                auStack_bc[iVar14 * -0x78 + 2] = 7;
+                auStack_bc[iVar14 * -0x78 + 1] = 0;
+                auStack_bc[iVar14 * -0x78] = 0x6186f5;
                 pDVar9 = Library::DKW::TBL::DArrayCreate
-                                   (*(DArrayTy **)(puVar14 + -0x10),*(uint *)(puVar14 + -0xc),
-                                    *(uint *)(puVar14 + -8),*(uint *)(puVar14 + -4));
+                                   ((DArrayTy *)auStack_bc[iVar14 * -0x78 + 1],
+                                    auStack_bc[iVar14 * -0x78 + 2],auStack_bc[iVar14 * -0x78 + 3],
+                                    auStack_bc[iVar14 * -0x78 + 4]);
                 STField<DArrayTy *>(this,0x62) = pDVar9;
               }
-              *(undefined4 **)(puVar14 + -4) = &local_48;
-              *(undefined4 *)(puVar14 + -8) = STField<undefined4>(this,0x62);
-              *(undefined4 *)(puVar14 + -0xc) = 0x618711;
+              auStack_bc[iVar14 * -0x78 + 4] = (uint)&local_48;
+              auStack_bc[iVar14 * -0x78 + 3] = STField<undefined4>(this,0x62);
+              auStack_bc[iVar14 * -0x78 + 2] = 0x618711;
               iVar13_mg3 = Library::DKW::TBL::DArrayAppend
-                                     (*(DArrayTy **)(puVar14 + -8),*(void **)(puVar14 + -4));
+                                     ((DArrayTy *)auStack_bc[iVar14 * -0x78 + 3],
+                                      (void *)auStack_bc[iVar14 * -0x78 + 4]);
               local_58[0] = 0;
               if (-1 < iVar13_mg3) goto LAB_0061871c;
             }
             else {
 LAB_0061871c:
               if (local_58[0] < 3) {
-                puVar19 = (byte *)(local_60 + *(int *)(puVar20 + iVar6 * 4) * 0x2c);
-                memmove(param_4, puVar19, 0x2c); /* compiler REP MOVS byte copy */
+                puVar17 = (byte *)(local_60 + *(int *)(puVar18 + iVar6 * 4) * 0x2c);
+                memmove(param_4, puVar17, 0x2c); /* compiler REP MOVS byte copy */
                 ExceptionList = local_14;
                 return 1;
               }

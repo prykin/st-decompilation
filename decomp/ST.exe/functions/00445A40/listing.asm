@@ -75,7 +75,8 @@ LAB_00445ae6:
 00445B0A  74 0E                     JZ 0x00445b1a
 00445B0C  8B 10                     MOV EDX,dword ptr [EAX]
 00445B0E  8B C8                     MOV ECX,EAX
-00445B10  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STAllPlayersC::RegisterPGPair::override::prt_445b10_d4e0dbd9:
+00445B10  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00445B16  85 C0                     TEST EAX,EAX
 00445B18  75 0F                     JNZ 0x00445b29
 LAB_00445b1a:
@@ -129,7 +130,8 @@ LAB_00445b5b:
 00445B89  74 16                     JZ 0x00445ba1
 00445B8B  8B 17                     MOV EDX,dword ptr [EDI]
 00445B8D  8B CF                     MOV ECX,EDI
-00445B8F  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STAllPlayersC::RegisterPGPair::override::prt_445b8f_d4e0dbd9:
+00445B8F  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00445B95  85 C0                     TEST EAX,EAX
 00445B97  74 08                     JZ 0x00445ba1
 00445B99  66 81 7F 30 FF FF         CMP word ptr [EDI + 0x30],0xffff

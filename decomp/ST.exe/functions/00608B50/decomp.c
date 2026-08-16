@@ -89,8 +89,8 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
     }
     iVar3 = 0;
     if (0 < iVar2) {
-      param_2 = local_cc;
-      param_3 = (int)this + 0x219;
+      auto param_2_after_write = local_cc; /* compiler stack-slot lifetime split */
+      auto param_3_after_write = (int)this + 0x219; /* compiler stack-slot lifetime split */
       do {
         memset(local_5c, 0, 0x46); /* compiler bulk-zero initialization */
         local_1c = param_9;
@@ -101,7 +101,7 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
         if (0 < param_6) {
           local_44 = param_6;
         }
-        local_48 = *param_2 | 0x400;
+        local_48 = *param_2_after_write | 0x400;
         uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
         STField<uint>(this,0x1c) = uVar1;
         local_20 = uVar1 >> 0x10 & 3;
@@ -121,10 +121,10 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
         local_28 = (uVar1 >> 0x10 & 3) + 9;
         local_7c.arg0.ptr = local_5c;
         local_1a = iVar3;
-        STParticleC::GetMessage(*(STParticleC **)param_3,&local_7c);
+        STParticleC::GetMessage(*(STParticleC **)param_3_after_write,&local_7c);
         iVar3 = iVar3 + 1;
-        param_2 = param_2 + 1;
-        param_3 = param_3 + 4;
+        param_2_after_write = param_2_after_write + 1;
+        param_3_after_write = param_3_after_write + 4;
       } while (iVar3 < iVar2);
     }
     return iVar2;

@@ -55,6 +55,7 @@ undefined4 FUN_006eb570(int *param_1,AnonShape_006EB570_80B255F3 *param_2)
   iVar8 = *(int *)&param_2->field_0x4;
   local_8 = 0;
   if ((*(int *)&param_2->field_0x18 == 0) || (param_2->field_0466 == 0)) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == nullptr) {
       ExceptionList = &local_14;
       CopyRows((byte *)param_2->field_04EA,param_2->field_04EE,*(byte **)(iVar8 + 0x474),

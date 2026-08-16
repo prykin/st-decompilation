@@ -27,10 +27,9 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
   local_8 = 0x7fff;
   uVar5 = 0x7fff;
   if (0 < param_4) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = param_3;
+    auto param_1_after_write = param_3; /* compiler stack-slot lifetime split */
     do {
-      puVar1 = (uint *)*param_1;
+      puVar1 = (uint *)*param_1_after_write;
       if ((*puVar1 & 8) == 0) {
         if (((*puVar1 & 2) == 0) || ((int)puVar1[0x1a] < 5)) {
           iVar4 = FUN_006b0460((int *)&local_20,local_c,(int *)(puVar1 + 1));
@@ -87,8 +86,7 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
         }
       }
       local_10 = local_10 + 1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = param_1 + 1;
+      param_1_after_write = param_1_after_write + 1;
       uVar5 = local_8;
     } while (local_10 < param_4);
   }

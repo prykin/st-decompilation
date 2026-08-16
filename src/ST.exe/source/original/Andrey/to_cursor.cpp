@@ -1901,7 +1901,7 @@ LAB_005458df:
         if (pAVar5->field_0005 == 0) {
           pcVar12_mg11 = st::fn_006B0140(0x36b3,g_hINSTANCE_00807618);
           pcVar13_mgC = st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618);
-          pcVar26 = wsprintfA_exref;
+          pcVar26 = st::pointer_boundary_cast<code *>(PTR_wsprintfA_0085bde8);
           st::external_00000080((LPSTR)local_524,st::mutable_c_string("&%d%s\n%s"),(message->arg0).words.low,pcVar13_mgC,
                     pcVar12_mg11);
         }
@@ -1909,7 +1909,7 @@ LAB_005458df:
           st::fn_006B0140(0x36b3,g_hINSTANCE_00807618);
           st::fn_006B0140(pAVar5->field_0005,g_hINSTANCE_00807618);
           st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618);
-          pcVar26 = wsprintfA_exref;
+          pcVar26 = st::pointer_boundary_cast<code *>(PTR_wsprintfA_0085bde8);
           st::external_00000080((LPSTR)local_524,st::mutable_c_string("&%d%s\n%s\n%s"));
         }
         if (*(short *)&pAVar5->field_0xd != 0) {

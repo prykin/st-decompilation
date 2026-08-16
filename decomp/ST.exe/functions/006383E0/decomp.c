@@ -28,13 +28,12 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
   short sVar10;
   int iVar11;
   undefined1 *puVar12;
-  undefined4 *puVar14;
-  int iVar15;
+  int iVar14;
   STWorldObject *this;
-  short sVar16;
-  int iVar17;
-  undefined4 **ppuVar18;
-  int iVar20;
+  short sVar15;
+  int iVar16;
+  undefined4 **ppuVar17;
+  int iVar19;
   undefined4 *local_a8;
   int *local_a4;
   int local_a0;
@@ -58,14 +57,14 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_80 = 0;
-  iVar17 = STBiasedDiv16(param_1, 0xc9); /* exact signed 16-bit grid-index division */
+  iVar16 = STBiasedDiv16(param_1, 0xc9); /* exact signed 16-bit grid-index division */
   iVar8 = STBiasedDiv16(param_2, 0xc9); /* exact signed 16-bit grid-index division */
   iVar9 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
-  iVar15 = iVar8 - param_9;
-  if (iVar15 < 0) {
-    iVar15 = 0;
+  iVar14 = iVar8 - param_9;
+  if (iVar14 < 0) {
+    iVar14 = 0;
   }
-  local_20 = iVar17 - param_9;
+  local_20 = iVar16 - param_9;
   if (local_20 < 0) {
     local_20 = 0;
   }
@@ -78,15 +77,15 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
   if (g_worldGrid.sizeY < iVar8) {
     iVar8 = (int)g_worldGrid.sizeY;
   }
-  iVar17 = iVar17 + 1 + param_9;
-  if (g_worldGrid.sizeX < iVar17) {
-    iVar17 = (int)g_worldGrid.sizeX;
+  iVar16 = iVar16 + 1 + param_9;
+  if (g_worldGrid.sizeX < iVar16) {
+    iVar16 = (int)g_worldGrid.sizeX;
   }
   local_90 = iVar9 + 1 + param_9;
   if (5 < local_90) {
     local_90 = 5;
   }
-  iVar9 = -(((iVar17 - local_20) * (iVar8 - iVar15) * 5 & 0x3fffffffU) + 3 & 0xfffffffc);
+  iVar9 = -(((iVar16 - local_20) * (iVar8 - iVar14) * 5 & 0x3fffffffU) + 3 & 0xfffffffc);
   puVar12 = &stack0xffffff4c + iVar9;
   local_1c = &stack0xffffff4c + iVar9;
   *(undefined4 *)(&stack0xffffff4c + iVar9) = 0;
@@ -94,42 +93,40 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
   local_a0 = 0;
   ExceptionList = &local_14;
   do {
-    if (iVar8 <= iVar15) {
+    if (iVar8 <= iVar14) {
       ExceptionList = local_14;
       return local_80;
     }
     local_a4 = (int *)(&stack0xffffff4c + iVar9);
-    local_50 = iVar15;
-    iVar20 = iVar11;
-    for (; iVar20 < iVar17; iVar20 = iVar20 + 1) {
+    local_50 = iVar14;
+    iVar19 = iVar11;
+    for (; iVar19 < iVar16; iVar19 = iVar19 + 1) {
       if (local_78 < local_90) {
         local_a8 = (undefined4 *)(&stack0xffffff4c + local_a0 * 4 + iVar9);
         iVar11 = local_78;
         do {
-          sVar16 = (short)iVar20;
-          if ((((sVar16 < 0) || (g_worldGrid.sizeX <= sVar16)) || (sVar5 = (short)iVar15, sVar5 < 0)
+          sVar15 = (short)iVar19;
+          if ((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) || (sVar5 = (short)iVar14, sVar5 < 0)
               ) || (((g_worldGrid.sizeY <= sVar5 || (sVar10 = (short)iVar11, sVar10 < 0)) ||
                     (g_worldGrid.sizeZ <= sVar10)))) {
             this = nullptr;
           }
           else {
-            this = STGridAt3D(g_worldGrid, sVar16, sVar5, sVar10).objects[0];
+            this = STGridAt3D(g_worldGrid, sVar15, sVar5, sVar10).objects[0];
           }
           if (this != nullptr) {
             pcVar1 = this->vtable[5].slots_00_28[0];
-            puVar13 = (undefined4 *)(puVar12 + -4);
-            puVar12 = puVar12 + -4;
-            *puVar13 = 0x6385f4;
-            iVar6 = (*pcVar1)();
-            iVar15 = local_50;
+            *(undefined4 *)(puVar12 + -4) = 0x6385f4;
+            iVar6 = (*pcVar1)(this);
+            iVar14 = local_50;
             if (iVar6 != 0) {
               bVar4 = false;
               if (this->value_20 == 1000) {
                 pSVar2 = this->vtable->GetObjectTypeId;
                 *(undefined4 *)(puVar12 + -4) = 0x63860e;
-                iVar15 = (*pSVar2)(this);
-                if (*(int *)(&DAT_00791d68 + iVar15 * 4) == 1) {
-                  iVar15 = 0;
+                iVar14 = (*pSVar2)(this);
+                if (*(int *)(&DAT_00791d68 + iVar14 * 4) == 1) {
+                  iVar14 = 0;
                   if (0 < local_a0) {
                     piVar7 = local_a4;
                     do {
@@ -137,21 +134,21 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
                         bVar4 = true;
                         break;
                       }
-                      iVar15 = iVar15 + 1;
+                      iVar14 = iVar14 + 1;
                       piVar7 = piVar7 + 1;
-                    } while (iVar15 < local_a0);
+                    } while (iVar14 < local_a0);
                   }
-                  iVar15 = local_50;
+                  iVar14 = local_50;
                   if (bVar4) goto LAB_006386ce;
                   *local_a8 = *(undefined4 *)&this->field_0x18;
                   local_a0 = local_a0 + 1;
                   local_a8 = local_a8 + 1;
                 }
               }
-              ppuVar18 = local_74;
-              for (iVar15 = 8; iVar15 != 0; iVar15 = iVar15 + -1) {
-                *ppuVar18 = nullptr;
-                ppuVar18 = ppuVar18 + 1;
+              ppuVar17 = local_74;
+              for (iVar14 = 8; iVar14 != 0; iVar14 = iVar14 + -1) {
+                *ppuVar17 = nullptr;
+                ppuVar17 = ppuVar17 + 1;
               }
               memset(local_48, 0, 0x1c); /* compiler bulk-zero initialization */
               local_74[2] = *(undefined4 **)&this->field_0x18;
@@ -166,12 +163,12 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
               pSVar3 = this->vtable;
               *(undefined4 ***)(puVar12 + -4) = local_74;
               pcVar1 = pSVar3->slots_00_28[0];
-              puVar14 = (undefined4 *)(puVar12 + -8);
+              puVar13 = (undefined4 *)(puVar12 + -8);
               puVar12 = puVar12 + -8;
-              *puVar14 = 0x6386c2;
+              *puVar13 = 0x6386c2;
               (*pcVar1)();
               local_80 = local_80 + 1;
-              iVar15 = local_50;
+              iVar14 = local_50;
             }
           }
 LAB_006386ce:
@@ -180,7 +177,7 @@ LAB_006386ce:
       }
       iVar11 = local_20;
     }
-    iVar15 = iVar15 + 1;
+    iVar14 = iVar14 + 1;
   } while( true );
 }
 

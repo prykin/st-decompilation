@@ -99,7 +99,7 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
                               [(int)sVar11 * (int)sVar15 +
                                (int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar9].objects[0],
                    this_00 != nullptr &&
-                   (iVar16 = (*this_00->vtable[5].slots_00_28[0])(), iVar16 != 0)) &&
+                   (iVar16 = (*this_00->vtable[5].slots_00_28[0])(this_00), iVar16 != 0)) &&
                   ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
                    ((g_playSystem_00802A38 == nullptr ||
                     (g_bulkInitializedRecords_008087C7[(int)this_00[1].vtable].field_0022 < 8)))))))
@@ -138,7 +138,8 @@ LAB_0061cd61:
                   bVar20 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
                            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                 }
-                if ((bVar20) && (iVar16 = (*this_00->vtable[5].slots_00_28[2])(), iVar16 != 0)) {
+                if ((bVar20) &&
+                   (iVar16 = (*this_00->vtable[5].slots_00_28[2])(this_00), iVar16 != 0)) {
                   thunk_FUN_00416270(this_00,(uint *)&local_6,(int *)((int)&param_3 + 2),&local_22);
                   uVar4 = *(undefined2 *)&this_00[1].field_0xe;
                   memset(piVar17, 0, 0x2c); /* compiler bulk-zero initialization */

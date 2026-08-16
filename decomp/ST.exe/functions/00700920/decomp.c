@@ -30,6 +30,7 @@ void FUN_00700920(byte *param_1,int param_2,ushort *param_3,int param_4,uint par
   bVar1 = 0;
   _DAT_00857000 = 1;
   pbVar10 = param_6;
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 joined_r0x0070093e:
   param_10 = param_10 + -1;
   if (param_10 < 0) {
@@ -59,6 +60,7 @@ joined_r0x0070093e:
       }
     }
     uVar5 = (uint)*param_13;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_13 = param_13 + 1;
     iVar8 = param_14;
     if (uVar5 != 0) {
@@ -80,12 +82,14 @@ joined_r0x0070093e:
         iVar8 = iVar8 - uVar4;
       }
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_12 = param_12 + 1;
     if (4 < (int)param_12) {
       param_12 = 0;
     }
   }
   local_18 = (uint)*pbVar10;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_6 = pbVar10 + 1;
   if (local_18 != 0) {
     local_24 = local_18 & 0xc0;

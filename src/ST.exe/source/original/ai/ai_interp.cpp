@@ -546,7 +546,7 @@ LAB_0066bdcc:
           if (0 < param_2) {
             local_10 = 0;
             do {
-              if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
+              if ((param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x04') && (param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x01')) {
                 local_EAX_2265 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
                 if (local_EAX_2265 != nullptr) {
                   st::fn_0072E340(st::pointer_boundary_cast<char *>(&this_00->field_0x4),local_EAX_2265,0x7f);
@@ -590,7 +590,7 @@ LAB_0066bdcc:
             if (0 < param_2) {
               local_10 = 0;
               do {
-                if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
+                if ((param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x04') && (param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x01')) {
                   local_EAX_2083 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
                   if (local_EAX_2083 != nullptr) {
                     st::fn_0072E340(st::pointer_boundary_cast<char *>(&this_00->field_0x4),local_EAX_2083,0x7f);
@@ -622,7 +622,7 @@ LAB_0066bdcc:
                 if (0 < param_2) {
                   local_10 = 0;
                   do {
-                    if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
+                    if ((param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x04') && (param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x01')) {
                       local_EAX_1650 =
                            st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
                       if (local_EAX_1650 != nullptr) {
@@ -655,7 +655,7 @@ LAB_0066bdcc:
             if (0 < param_2) {
               local_10 = 0;
               do {
-                if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
+                if ((param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x04') && (param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x01')) {
                   local_EAX_1859 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
                   if (local_EAX_1859 != nullptr) {
                     st::fn_0072E340(st::pointer_boundary_cast<char *>(&this_00->field_0x4),local_EAX_1859,0x7f);
@@ -689,7 +689,7 @@ LAB_0066bdcc:
           if (0 < param_2) {
             local_10 = 0;
             do {
-              if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
+              if ((param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x04') && (param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x01')) {
                 local_EAX_1401 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
                 if (local_EAX_1401 != nullptr) {
                   st::fn_0072E340(st::pointer_boundary_cast<char *>(&this_00->field_0x4),local_EAX_1401,0x7f);
@@ -721,7 +721,7 @@ LAB_0066bdcc:
             if (0 < param_2) {
               local_10 = 0;
               do {
-                if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
+                if ((param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x04') && (param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x01')) {
                   local_EAX_452 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
                   if (local_EAX_452 != nullptr) {
                     st::fn_0072E340(st::pointer_boundary_cast<char *>(&this_00->field_0x4),local_EAX_452,0x7f);
@@ -787,7 +787,7 @@ LAB_0066bdcc:
             if (0 < param_2) {
               local_10 = 0;
               do {
-                if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
+                if ((param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x04') && (param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x01')) {
                   local_EAX_315 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
                   if (local_EAX_315 != nullptr) {
                     st::fn_0072E340(st::pointer_boundary_cast<char *>(&this_00->field_0x4),local_EAX_315,0x7f);
@@ -821,7 +821,7 @@ cf_common_exit_00670456:
         if (0 < param_2) {
           local_10 = 0;
           do {
-            if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
+            if ((param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x04') && (param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x01')) {
               local_EAX_901 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
               if (local_EAX_901 != nullptr) {
                 st::fn_0072E340(st::pointer_boundary_cast<char *>(&this_00->field_0x4),local_EAX_901,0x7f);
@@ -907,7 +907,7 @@ LAB_0066b1fb:
           if (0 < param_2) {
             local_10 = 0;
             do {
-              if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
+              if ((param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x04') && (param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x01')) {
                 local_EAX_2671 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
                 if (local_EAX_2671 != nullptr) {
                   st::fn_0072E340(st::pointer_boundary_cast<char *>(&this_00->field_0x4),local_EAX_2671,0x7f);
@@ -963,7 +963,7 @@ joined_r0x0066b1d2:
           if (0 < param_2) {
             local_10 = 0;
             do {
-              if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
+              if ((param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x04') && (param_1[st::machine_word_boundary_cast<uint>(local_10)] != '\x01')) {
                 local_EAX_3000 = st::fn_004057DB((int)*(short *)(param_1 + param_2 * 5 + 1));
                 if (local_EAX_3000 != nullptr) {
                   st::fn_0072E340(st::pointer_boundary_cast<char *>(&this_00->field_0x4),local_EAX_3000,0x7f);
@@ -3575,15 +3575,15 @@ float * st::fn_00671F10(int param_1,int *param_2,int *param_3)
 
 {
   short sVar1;
-  undefined1 *puVar2;
+  undefined1 *arg_1;
   int iVar3;
-  int iVar4;
-  char *pcVar5;
-  float fVar6;
-  int iVar7;
-  short *psVar8;
-  float10 fVar9;
-  int *piVar10;
+  int iVar2;
+  char *pcVar3;
+  float fVar4;
+  int iVar5;
+  short *psVar6;
+  float10 fVar7;
+  int *piVar8;
   InternalExceptionFrame local_70;
   undefined1 local_2c;
   float local_2b;
@@ -3625,10 +3625,10 @@ float * st::fn_00671F10(int param_1,int *param_2,int *param_3)
   *(undefined4 *)&local_24->field_0x84 = 0xffffffff;
   local_c = (AnonShape_00683780_11EA4E23 *)st::fn_0040213F(10);
   local_20 = 0.0;
-  psVar8 = (short *)(param_1 + 1);
+  psVar6 = (short *)(param_1 + 1);
   do {
     while( true ) {
-      if ((*(char *)((int)psVar8 + -1) == '\a') && (*psVar8 == 0x1d)) {
+      if ((*(char *)((int)psVar6 + -1) == '\a') && (*psVar6 == 0x1d)) {
         if (local_c->field_0004 != 1) {
           st::fn_006A5E40
                     (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_interp.cpp"),0x570
@@ -3637,21 +3637,21 @@ float * st::fn_00671F10(int param_1,int *param_2,int *param_3)
         if (param_3 != nullptr) {
           *param_3 = (int)local_20 + 1;
         }
-        puVar2 = (undefined1 *)local_c->field_0008;
-        switch(*puVar2) {
+        arg_1 = (undefined1 *)local_c->field_0008;
+        switch(*arg_1) {
         case 1:
         case 4:
-          fVar6 = (float)(*local_24->vtable->slot_00)(puVar2);
+          fVar4 = (float)local_24->slot_00(arg_1);
           local_18 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
-          *local_18 = fVar6;
+          *local_18 = fVar4;
           if (param_2 != nullptr) {
             *param_2 = 1;
           }
           break;
         case 2:
         case 5:
-          fVar9 = (float10)(*local_24->vtable->slot_04)(puVar2);
-          local_20 = (float)fVar9;
+          fVar7 = (float10)(*local_24->vtable->slot_04)(arg_1);
+          local_20 = (float)fVar7;
           local_18 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           *local_18 = local_20;
           if (param_2 != nullptr) {
@@ -3660,14 +3660,14 @@ float * st::fn_00671F10(int param_1,int *param_2,int *param_3)
           break;
         case 3:
         case 6:
-          fVar6 = (float)(*local_24->vtable->slot_08)(puVar2);
-          if (fVar6 == 0.0) {
+          fVar4 = (float)local_24->slot_08(arg_1);
+          if (fVar4 == 0.0) {
             st::fn_006A5E40
                       (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_interp.cpp"),
                        0x585);
           }
           local_18 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
-          *local_18 = fVar6;
+          *local_18 = fVar4;
           if (param_2 != nullptr) {
             *param_2 = 3;
           }
@@ -3681,30 +3681,30 @@ float * st::fn_00671F10(int param_1,int *param_2,int *param_3)
         g_currentExceptionFrame = local_70.previous;
         return local_18;
       }
-      st::fn_00402149((int *)local_c,(undefined4 *)((int)psVar8 + -1));
-      if (*(char *)((int)psVar8 + -1) == '\a') break;
+      st::fn_00402149((int *)local_c,(undefined4 *)((int)psVar6 + -1));
+      if (*(char *)((int)psVar6 + -1) == '\a') break;
 cf_continue_loop_006721A4:
       local_20 = (float)((int)local_20 + 1);
-      psVar8 = (short *)((int)psVar8 + 5);
+      psVar6 = (short *)((int)psVar6 + 5);
     }
-    iVar7 = (local_c->field_0004 - (int)psVar8[1]) + -1;
-    if (iVar7 < 0) {
+    iVar5 = (local_c->field_0004 - (int)psVar6[1]) + -1;
+    if (iVar5 < 0) {
       st::fn_006A5E40
                 (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_interp.cpp"),0x53e);
     }
     if ((local_10 == 0) && (local_14 == 0)) {
-      iVar4 = st::fn_004038AF((int)*psVar8);
-      if ((iVar4 < 0) || (iVar4 = st::fn_004016B3((int)*psVar8), iVar4 != 0)) {
-        iVar4 = (int)psVar8[1];
-        piVar10 = &local_1c;
-        pcVar5 = st::fn_00403779(local_c,iVar7);
-        local_8 = st::fn_00401604(pcVar5,iVar4,piVar10);
+      iVar2 = st::fn_004038AF((int)*psVar6);
+      if ((iVar2 < 0) || (iVar2 = st::fn_004016B3((int)*psVar6), iVar2 != 0)) {
+        iVar2 = (int)psVar6[1];
+        piVar8 = &local_1c;
+        pcVar3 = st::fn_00403779(local_c,iVar5);
+        local_8 = st::fn_00401604(pcVar3,iVar2,piVar8);
       }
       else {
-        iVar4 = (int)psVar8[1];
-        piVar10 = &local_1c;
-        pcVar5 = st::fn_00403779(local_c,iVar7);
-        local_8 = (float *)st::fn_00402545(local_24,pcVar5,iVar4,piVar10);
+        iVar2 = (int)psVar6[1];
+        piVar8 = &local_1c;
+        pcVar3 = st::fn_00403779(local_c,iVar5);
+        local_8 = (float *)st::fn_00402545(local_24,pcVar3,iVar2,piVar8);
       }
     }
     else {
@@ -3717,8 +3717,8 @@ cf_continue_loop_006721A4:
                 (local_1c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_interp.cpp"),0x56c);
       goto cf_continue_loop_006721A4;
     }
-    iVar7 = st::fn_00405D17(local_c,iVar7);
-    if (iVar7 == 0) {
+    iVar5 = st::fn_00405D17(local_c,iVar5);
+    if (iVar5 == 0) {
       st::fn_006A5E40
                 (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_interp.cpp"),0x54c);
     }
@@ -3731,13 +3731,13 @@ cf_continue_loop_006721A4:
       local_2b = *local_8;
     }
     else if (local_1c == 3) {
-      iVar7 = (*local_24->vtable->slot_0C)(local_8);
-      if (iVar7 < 0) {
+      iVar5 = local_24->slot_0C(local_8);
+      if (iVar5 < 0) {
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_interp.cpp"),0x559);
       }
       local_2c = 3;
-      local_2b = (float)STReplaceLowWord((uint32_t)(local_2b), (uint16_t)((short)iVar7));
+      local_2b = (float)STReplaceLowWord((uint32_t)(local_2b), (uint16_t)((short)iVar5));
     }
     else {
       st::fn_006A5E40
@@ -3745,7 +3745,7 @@ cf_continue_loop_006721A4:
     }
     st::fn_00402149((int *)local_c,(undefined4 *)&local_2c);
     st::fn_006AB060(&local_8);
-    sVar1 = *psVar8;
+    sVar1 = *psVar6;
     if (((sVar1 == 800) && (local_2b == 0.0)) && (local_14 == 0)) {
       local_10 = local_10 + 1;
     }
@@ -3758,7 +3758,7 @@ cf_continue_loop_006721A4:
     if ((sVar1 != 0x34) || (local_14 < 1)) goto cf_continue_loop_006721A4;
     local_14 = local_14 + -1;
     local_20 = (float)((int)local_20 + 1);
-    psVar8 = (short *)((int)psVar8 + 5);
+    psVar6 = (short *)((int)psVar6 + 5);
   } while( true );
 }
 

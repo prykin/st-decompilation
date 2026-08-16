@@ -55,12 +55,12 @@ LAB_006362c5:
     *(int *)&this->field_0x8 = param_6;
     memset(local_50, 0, 0x32); /* compiler bulk-zero initialization */
     Library::DKW::TBL::DArrayPut(array,param_5 * param_6 - 1,local_50);
-    param_1 = 0;
+    auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
     local_c = _DAT_0079c5a4 / (float)param_5;
     if (0 < param_5) {
       do {
-        fcos((float10)(int)param_1 * (float10)local_c);
-        fsin((float10)(int)param_1 * (float10)local_c);
+        fcos((float10)(int)param_1_after_write * (float10)local_c);
+        fsin((float10)(int)param_1_after_write * (float10)local_c);
         lVar6 = Library::MSVCRT::__ftol();
         local_18 = (undefined4)lVar6;
         lVar6 = Library::MSVCRT::__ftol();
@@ -70,9 +70,8 @@ LAB_006362c5:
         lVar6 = Library::MSVCRT::__ftol();
         local_14 = (undefined4)lVar6;
         if (0 < param_6) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_4 = param_6;
-          uVar5 = param_1;
+          auto param_4_after_write = param_6; /* compiler stack-slot lifetime split */
+          uVar5 = param_1_after_write;
           do {
             iVar2 = *(int *)&this->field_0x2c;
             if (uVar5 < *(uint *)(iVar2 + 0xc)) {
@@ -95,8 +94,7 @@ LAB_006362c5:
             STField<int>(piVar3,0x22) = param_6;
             STField<int>(piVar3,0x16) = param_3;
             uVar5 = uVar5 + param_5;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            param_4 = param_4 + -1;
+            param_4_after_write = param_4_after_write + -1;
             piVar3[2] = 0;
             STField<undefined1>(piVar3,0xd) = 0;
             STField<undefined4>(piVar3,0x1a) = 0;
@@ -104,10 +102,10 @@ LAB_006362c5:
             STField<undefined4>(piVar3,0x2a) = local_1c;
             STField<undefined4>(piVar3,0x2e) = 0;
             this = local_8;
-          } while (param_4 != 0);
+          } while (param_4_after_write != 0);
         }
-        param_1 = param_1 + 1;
-      } while ((int)param_1 < param_5);
+        param_1_after_write = param_1_after_write + 1;
+      } while ((int)param_1_after_write < param_5);
     }
   }
   return 0;

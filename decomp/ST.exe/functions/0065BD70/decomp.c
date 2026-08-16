@@ -176,7 +176,7 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
       pSVar4 = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,(char)wVar7,(message->arg0).words.high,CASE_1);
       if (pSVar4 != nullptr) {
-        uVar5 = (*pSVar4->vtable->vfunc_2C)();
+        uVar5 = pSVar4->vfunc_2C();
         this->field_053B = uVar5;
         uVar5 = pSVar4->vfunc_6C();
         this->field_053F = uVar5;
@@ -206,12 +206,12 @@ LAB_0065c021:
   case MESS_AIBOSSCLASSTY_5DD0|MESS_SYSTEMCLASSTY_000A:
     pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,'\0',(message->arg0).words.high,CASE_5);
     if (pSVar4 != nullptr) {
-      uVar5 = (*pSVar4->vtable->vfunc_12C)();
+      uVar5 = (*pSVar4->vtable[1].vfunc_58)(pSVar4);
       this->field_052F = uVar5;
-      uVar5 = (*pSVar4->vtable->vfunc_0C)();
+      uVar5 = pSVar4->vfunc_0C();
       this->field_0533 = uVar5;
       this->field_0537 = (uint)g_bulkInitializedRecords_008087C7[this->field_052F].field_0023;
-      uVar5 = (*pSVar4->vtable->vfunc_130)();
+      uVar5 = (*pSVar4->vtable[1].vfunc_5C)(pSVar4);
       this->field_053B = uVar5;
       this->field_053F = 0;
       STFishC::sub_004162F0
@@ -220,7 +220,7 @@ LAB_0065c021:
       this->field_0543 = (int)STPiece<2,2>(message);
       this->field_0547 = (int)STPiece<2,2>(param_2);
       this->field_054B = (int)local_6;
-      uVar5 = (*pSVar4->vtable->vfunc_138)();
+      uVar5 = (*pSVar4->vtable[1].vfunc_64)(pSVar4);
       this->field_054F = uVar5;
       (*pSVar4->vtable->vfunc_74)((short)local_1c);
       Library::DKW::TBL::FUN_006b6020(this->field_05B3,0,local_1c);
@@ -242,7 +242,7 @@ LAB_0065c021:
     pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,'\0',(message->arg0).words.high,CASE_2);
     if (pSVar4 != nullptr) {
       this->field_052F = 0;
-      uVar5 = (*pSVar4->vtable->vfunc_0C)();
+      uVar5 = pSVar4->vfunc_0C();
       this->field_0533 = uVar5;
       this->field_0537 = 0;
       uVar5 = pSVar4->field_0342;
@@ -298,7 +298,7 @@ LAB_0065c021:
       pSVar4 = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,'\0',(message->arg0).words.high,CASE_3);
       if (pSVar4 != nullptr) {
-        uVar5 = (*pSVar4->vtable->vfunc_2C)();
+        uVar5 = pSVar4->vfunc_2C();
         this->field_053B = uVar5;
         uVar5 = pSVar4->vfunc_6C();
         this->field_053F = uVar5;
@@ -372,7 +372,7 @@ LAB_0065c4bb:
       this->field_0563 = 0;
       goto cf_common_exit_0065C65B;
     }
-    uVar5 = (*pSVar4->vtable->vfunc_2C)();
+    uVar5 = pSVar4->vfunc_2C();
     this->field_0563 = uVar5;
     uVar5 = pSVar4->vfunc_6C();
     this->field_0567 = uVar5;

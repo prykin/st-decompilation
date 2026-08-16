@@ -24,8 +24,7 @@ FUN_00697af0(void *this,AnonShape_00697AF0_A94F4D28 *param_1,int *param_2,int *p
   if (pDVar1 != nullptr) {
     uVar2 = pDVar1->count;
     uVar7 = 0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = nullptr;
+    auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
     local_c = 0;
     local_10 = nullptr;
     local_8 = 0;
@@ -43,9 +42,8 @@ FUN_00697af0(void *this,AnonShape_00697AF0_A94F4D28 *param_1,int *param_2,int *p
           pAVar3 = pAVar8;
           iVar4 = iVar6;
           if (uVar7 != 0) {
-            if ((int)pAVar8 < (int)param_1) {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_1 = pAVar8;
+            if ((int)pAVar8 < (int)param_1_after_write) {
+              param_1_after_write = pAVar8;
             }
             if (iVar6 < local_c) {
               local_c = iVar6;
@@ -53,23 +51,22 @@ FUN_00697af0(void *this,AnonShape_00697AF0_A94F4D28 *param_1,int *param_2,int *p
             if ((int)local_10 < (int)pAVar8) {
               local_10 = pAVar8;
             }
-            pAVar8 = param_1;
+            pAVar8 = param_1_after_write;
             pAVar3 = local_10;
             iVar4 = local_c;
             if (iVar6 <= local_8) goto LAB_00697b99;
           }
           local_c = iVar4;
           local_10 = pAVar3;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = pAVar8;
+          param_1_after_write = pAVar8;
           local_8 = iVar6;
         }
 LAB_00697b99:
         uVar7 = uVar7 + 1;
       } while ((int)uVar7 < (int)uVar2);
       if ((local_14 != 0) &&
-         (local_14 == ((local_8 - local_c) + 1) * ((int)local_10 + (1 - (int)param_1)))) {
-        *param_2 = (int)param_1;
+         (local_14 == ((local_8 - local_c) + 1) * ((int)local_10 + (1 - (int)param_1_after_write)))) {
+        *param_2 = (int)param_1_after_write;
         *param_3 = local_c;
         *param_4 = (int)local_10;
         *param_5 = local_8;

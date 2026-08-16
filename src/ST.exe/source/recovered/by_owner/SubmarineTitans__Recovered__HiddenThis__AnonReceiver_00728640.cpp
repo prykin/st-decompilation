@@ -57,7 +57,7 @@ st::fn_00728A80
 
   iVar15 = (int)g_runtimeRecords_00857110[g_runtimeRecordCount_00857114].field_0002;
   iVar14 = *(int *)&this->field_0x28;
-  param_1 = param_1 + iVar15 * param_2;
+  auto param_1_after_write = param_1 + iVar15 * param_2; /* compiler stack-slot lifetime split */
   local_8 = *(int *)&this->field_0xc + iVar15 * iVar14;
   local_c = *(int *)&this->field_0x14 + iVar15 * iVar14 * 2;
   local_38 = 1;
@@ -103,7 +103,7 @@ st::fn_00728A80
                     iVar6 = iVar6 + 0x10;
                   } while (iVar9 != 0 && bVar5);
                 }
-                puVar13 = (uint *)(iVar7 + param_1);
+                puVar13 = (uint *)(iVar7 + param_1_after_write);
                 pbVar16 = (byte *)(local_8 + iVar7);
                 uVar11 = 0;
                 if (2 < iVar8) {
@@ -170,7 +170,7 @@ st::fn_00728A80
               }
               else {
 LAB_00728cb0:
-                puVar17 = (undefined1 *)(iVar7 + param_1);
+                puVar17 = (undefined1 *)(iVar7 + param_1_after_write);
                 pbVar16 = (byte *)(local_8 + iVar7);
                 puVar13 = (uint *)(local_c + iVar7 * 2);
                 do {
@@ -220,7 +220,7 @@ LAB_00728cf9:
           local_40 = local_40 + local_3c;
         }
         local_8 = local_8 + iVar14;
-        param_1 = param_1 + param_2;
+        param_1_after_write = param_1_after_write + param_2;
         iVar15 = iVar15 + 1;
         local_c = local_c + iVar14 * 2;
         local_14 = iVar15;

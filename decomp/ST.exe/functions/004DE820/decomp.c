@@ -33,12 +33,12 @@ undefined4 __fastcall FUN_004de820(AnonShape_004DE820_615D04DD *param_1)
     while (-1 < iVar2) {
       this_00 = STAllPlayersC::GetObjPtr
                           (g_allPlayers_007FA174,param_1->field_0x24,(ushort)local_8,CASE_1);
-      if (((this_00 != nullptr) && (iVar3 = (*this_00->vtable->vfunc_2C)(), iVar3 == 0x45)
-          ) && ((this_00->field_04D0 == 0 &&
-                ((local_EAX_212 = TLOBaseTy::sub_004C7860((TLOBaseTy *)this_00,3,0,1,1,1),
-                 local_EAX_212 != 0 &&
-                 (local_EAX_229 = thunk_FUN_004c7c20((TLOBaseTy *)this_00), local_EAX_229 != 0))))))
-      {
+      if (((this_00 != nullptr) &&
+          (iVar3 = this_00->vfunc_2C(), iVar3 == 0x45)) &&
+         ((this_00->field_04D0 == 0 &&
+          ((local_EAX_212 = TLOBaseTy::sub_004C7860((TLOBaseTy *)this_00,3,0,1,1,1),
+           local_EAX_212 != 0 &&
+           (local_EAX_229 = thunk_FUN_004c7c20((TLOBaseTy *)this_00), local_EAX_229 != 0)))))) {
         local_EAX_250 = TLOBaseTy::sub_004C7860((TLOBaseTy *)this_00,3,0,1,1,1);
         if ((local_EAX_250 != 0) &&
            (local_EAX_267 = thunk_FUN_004c7c20((TLOBaseTy *)this_00), local_EAX_267 != 0)) {

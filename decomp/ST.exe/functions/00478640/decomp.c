@@ -86,7 +86,7 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
       if (pSVar5[1].vtable != (STWorldObjectVTable *)this->field_0024) {
         return 0;
       }
-      iVar11 = (*pSVar5->vtable[5].slots_00_28[2])();
+      iVar11 = (*pSVar5->vtable[5].slots_00_28[2])(pSVar5);
       if (iVar11 == 0) {
         return 0;
       }
@@ -313,7 +313,7 @@ LAB_00478b1a:
            ((g_worldGrid.sizeZ <= sVar3 ||
             ((pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0],
              pSVar5 == nullptr || (*(int *)&pSVar5->field_0x18 != this->field_0623)))))
-           ) || (iVar11 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar11 == 0)))) {
+           ) || (iVar11 = (*pSVar5->vtable[5].slots_00_28[2])(pSVar5), iVar11 == 0)))) {
         if (this->field_0619 == 0) {
           return 0;
         }

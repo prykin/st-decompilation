@@ -55,6 +55,7 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
       do {
         if (local_30 < local_34 * 2) {
           iVar8 = (local_30 - local_34) + param_3;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (param_4 - param_3) + local_c;
         }
         else if (local_30 < local_14) {

@@ -10,7 +10,7 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
 {
   STGroupC *pSVar2;
   int iVar3;
-  STGameObjC *pSVar3;
+  STGameObjC *this_00;
   int iVar5;
   int iVar4;
   uint *puVar6;
@@ -34,14 +34,14 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
       do {
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
-          pSVar3 = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
-          if (pSVar3 == nullptr) {
+          this_00 = STAllPlayersC::GetObjPtr
+                              (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
+          if (this_00 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\tc_grp.cpp",0x81);
           }
-          iVar5 = (*pSVar3->vtable->vfunc_2C)();
+          iVar5 = this_00->vfunc_2C();
           if (iVar5 == param_1) {
             Library::DKW::TBL::DArrayAppend(local_c,local_8);
           }

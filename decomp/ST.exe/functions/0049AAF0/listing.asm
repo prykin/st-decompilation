@@ -109,7 +109,8 @@ LAB_0049ac2b:
 0049AC47  74 3A                     JZ 0x0049ac83
 0049AC49  8B 16                     MOV EDX,dword ptr [ESI]
 0049AC4B  8B CE                     MOV ECX,ESI
-0049AC4D  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STGroupBoatC::GrpAttack::override::prt_49ac4d_d4e0dbd9:
+0049AC4D  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0049AC53  83 F8 01                  CMP EAX,0x1
 0049AC56  75 2B                     JNZ 0x0049ac83
 0049AC58  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -117,7 +118,8 @@ LAB_0049ac2b:
 0049AC5D  0F BE 51 24               MOVSX EDX,byte ptr [ECX + 0x24]
 0049AC61  52                        PUSH EDX
 0049AC62  8B CE                     MOV ECX,ESI
-0049AC64  FF 90 F4 00 00 00         CALL dword ptr [EAX + 0xf4]
+STGroupBoatC::GrpAttack::override::prt_49ac64_66d08e71:
+0049AC64  FF 90 F4 00 00 00         CALL dword ptr [EAX + 0xf4]  ; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4
 0049AC6A  83 F8 01                  CMP EAX,0x1
 0049AC6D  75 14                     JNZ 0x0049ac83
 0049AC6F  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -314,7 +316,8 @@ LAB_0049aed4:
 0049AEE4  66 89 55 DA               MOV word ptr [EBP + -0x26],DX
 0049AEE8  8B 07                     MOV EAX,dword ptr [EDI]
 0049AEEA  8B CF                     MOV ECX,EDI
-0049AEEC  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STGroupBoatC::GrpAttack::override::prt_49aeec_e5e2351e:
+0049AEEC  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0049AEF2  83 F8 01                  CMP EAX,0x1
 0049AEF5  75 2A                     JNZ 0x0049af21
 0049AEF7  8B 75 FC                  MOV ESI,dword ptr [EBP + -0x4]
@@ -322,7 +325,8 @@ LAB_0049aed4:
 0049AEFC  8B CF                     MOV ECX,EDI
 0049AEFE  0F BE 46 24               MOVSX EAX,byte ptr [ESI + 0x24]
 0049AF02  50                        PUSH EAX
-0049AF03  FF 92 F4 00 00 00         CALL dword ptr [EDX + 0xf4]
+STGroupBoatC::GrpAttack::override::prt_49af03_e9a929de:
+0049AF03  FF 92 F4 00 00 00         CALL dword ptr [EDX + 0xf4]  ; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4
 0049AF09  83 F8 01                  CMP EAX,0x1
 0049AF0C  75 13                     JNZ 0x0049af21
 0049AF0E  8B 96 0E 02 00 00         MOV EDX,dword ptr [ESI + 0x20e]
@@ -448,14 +452,16 @@ LAB_0049b07e:
 0049B08A  66 89 55 DA               MOV word ptr [EBP + -0x26],DX
 0049B08E  8B 06                     MOV EAX,dword ptr [ESI]
 0049B090  8B CE                     MOV ECX,ESI
-0049B092  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STGroupBoatC::GrpAttack::override::prt_49b092_e5e2351e:
+0049B092  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0049B098  83 F8 01                  CMP EAX,0x1
 0049B09B  75 27                     JNZ 0x0049b0c4
 0049B09D  0F BE 47 24               MOVSX EAX,byte ptr [EDI + 0x24]
 0049B0A1  8B 16                     MOV EDX,dword ptr [ESI]
 0049B0A3  50                        PUSH EAX
 0049B0A4  8B CE                     MOV ECX,ESI
-0049B0A6  FF 92 F4 00 00 00         CALL dword ptr [EDX + 0xf4]
+STGroupBoatC::GrpAttack::override::prt_49b0a6_e9a929de:
+0049B0A6  FF 92 F4 00 00 00         CALL dword ptr [EDX + 0xf4]  ; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4
 0049B0AC  83 F8 01                  CMP EAX,0x1
 0049B0AF  75 13                     JNZ 0x0049b0c4
 0049B0B1  8B 97 0E 02 00 00         MOV EDX,dword ptr [EDI + 0x20e]

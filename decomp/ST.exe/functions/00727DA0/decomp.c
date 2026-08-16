@@ -79,21 +79,21 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
   }
   uVar6 = 0;
   pAVar11 = (AnonShape_00727DA0_C4265AA0 *)0x80000000;
-  param_2 = 0;
+  auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
   pAVar9 = (AnonShape_00727DA0_C4265AA0 *)0x7fff0000;
-  param_1 = (AnonShape_00727DA0_C4265AA0 *)0x80000000;
+  auto param_1_after_write = (AnonShape_00727DA0_C4265AA0 *)0x80000000; /* compiler stack-slot lifetime split */
   piVar14 = &DAT_008570ac;
   do {
     pAVar1 = (AnonShape_00727DA0_C4265AA0 *)*piVar14;
     if ((int)pAVar1 < (int)pAVar9) {
       pAVar9 = pAVar1;
-      pAVar11 = param_1;
-      param_2 = uVar6;
+      pAVar11 = param_1_after_write;
+      param_2_after_write = uVar6;
     }
     if ((int)pAVar11 < (int)pAVar1) {
       pAVar11 = pAVar1;
       DAT_00857070 = uVar6;
-      param_1 = pAVar1;
+      param_1_after_write = pAVar1;
     }
     piVar14 = piVar14 + 4;
     uVar6 = uVar6 + 1;
@@ -102,15 +102,15 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
     DAT_00857098 = (int)pAVar9 >> 0x10;
     local_34.field_0000 = 0xffffffff;
     local_8 = this;
-    iVar5 = FUN_00727c80((int *)&local_34,param_2);
+    iVar5 = FUN_00727c80((int *)&local_34,param_2_after_write);
     if (iVar5 != 0) {
       local_60.field_0000 = 1;
-      iVar5 = FUN_00727c80((int *)&local_60,param_2);
+      iVar5 = FUN_00727c80((int *)&local_60,param_2_after_write);
       if (iVar5 != 0) {
         if (*(int *)&this->field_0x124 == 6) {
           iVar5 = *(int *)&this->field_0x28 * DAT_00857098;
-          param_1 = (AnonShape_00727DA0_C4265AA0 *)(*(int *)&this->field_0xc + iVar5);
-          param_2 = *(int *)&this->field_0x14 + iVar5 * 2;
+          param_1_after_write = (AnonShape_00727DA0_C4265AA0 *)(*(int *)&this->field_0xc + iVar5);
+          param_2_after_write = *(int *)&this->field_0x14 + iVar5 * 2;
           if (DAT_00857098 < *(int *)&this->field_0x3c) {
             do {
               uVar6 = local_34.field_001C;
@@ -137,10 +137,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
                   this = local_8;
                   if (uVar12 - uVar15 != 0 && (int)uVar15 <= (int)uVar12) {
                     uVar12 = uVar12 - uVar15 >> 0x10;
-                    pbVar17 = &param_1->field_0x0 + (uVar15 >> 0x10);
+                    pbVar17 = &param_1_after_write->field_0x0 + (uVar15 >> 0x10);
                     uVar7 = uVar12;
                     pbVar13 = pbVar17;
-                    puVar16 = (undefined2 *)((uVar15 >> 0x10) * 2 + param_2);
+                    puVar16 = (undefined2 *)((uVar15 >> 0x10) * 2 + param_2_after_write);
                     do {
                       if ((*pbVar13 != 0xff) &&
                          (DAT_00857078 < (int)(*(int *)(puVar16 + -1) - uVar6))) {
@@ -190,9 +190,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
                 local_60.field_001C = local_60.field_001C + STPiece<32,4>(local_60);
               }
               DAT_00857098 = DAT_00857098 + 1;
-              param_1 = (AnonShape_00727DA0_C4265AA0 *)
-                        (&param_1->field_0x0 + *(int *)&this->field_0x28);
-              param_2 = param_2 + *(int *)&this->field_0x28 * 2;
+              param_1_after_write = (AnonShape_00727DA0_C4265AA0 *)
+                        (&param_1_after_write->field_0x0 + *(int *)&this->field_0x28);
+              param_2_after_write = param_2_after_write + *(int *)&this->field_0x28 * 2;
             } while (DAT_00857098 < *(int *)&this->field_0x3c);
             return;
           }

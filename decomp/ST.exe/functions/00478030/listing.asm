@@ -174,7 +174,8 @@ switchD_00478047::caseD_3:
 00478252  8B 07                     MOV EAX,dword ptr [EDI]
 00478254  51                        PUSH ECX
 00478255  8B CF                     MOV ECX,EDI
-00478257  FF 90 08 01 00 00         CALL dword ptr [EAX + 0x108]
+STBoatC::BackCapture::override::prt_478257_66d08e71:
+00478257  FF 90 08 01 00 00         CALL dword ptr [EAX + 0x108]  ; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4
 0047825D  85 C0                     TEST EAX,EAX
 0047825F  74 07                     JZ 0x00478268
 00478261  8B CF                     MOV ECX,EDI

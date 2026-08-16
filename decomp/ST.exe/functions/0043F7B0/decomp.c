@@ -27,7 +27,7 @@ uint * FUN_0043f7b0(byte param_1,int *param_2,uint *param_3,int param_4,int para
   bVar5 = param_1;
   local_8 = (int)param_3 - (int)param_6;
   iVar6 = param_4 + param_7;
-  param_4 = param_4 - param_7;
+  auto param_4_after_write = param_4 - param_7; /* compiler stack-slot lifetime split */
   iVar9 = param_5 - param_8;
   if (local_8 < 0) {
     local_8 = 0;
@@ -36,12 +36,12 @@ uint * FUN_0043f7b0(byte param_1,int *param_2,uint *param_3,int param_4,int para
   if (g_worldGrid.sizeX + -1 < (int)param_3 + (int)param_6) {
     local_c = g_worldGrid.sizeX + -1;
   }
-  if (param_4 < 0) {
-    param_4 = 0;
+  if (param_4_after_write < 0) {
+    param_4_after_write = 0;
   }
-  param_7 = iVar6;
+  auto param_7_after_write = iVar6; /* compiler stack-slot lifetime split */
   if (g_worldGrid.sizeY + -1 < iVar6) {
-    param_7 = g_worldGrid.sizeY + -1;
+    param_7_after_write = g_worldGrid.sizeY + -1;
   }
   if (iVar9 < 0) {
     iVar9 = 0;
@@ -51,21 +51,23 @@ uint * FUN_0043f7b0(byte param_1,int *param_2,uint *param_3,int param_4,int para
     iVar6 = g_worldGrid.sizeZ + -1;
   }
   array = Library::DKW::TBL::DArrayCreate(nullptr,0xf,4,10);
-  iVar8 = g_worldGrid.sizeX * param_4 + local_8 + (iVar9 + -1) * (int)g_worldGrid.planeStride;
+  iVar8 = g_worldGrid.sizeX * param_4_after_write + local_8 + (iVar9 + -1) * (int)g_worldGrid.planeStride;
   if (iVar9 <= iVar6) {
     local_14 = (iVar6 - iVar9) + 1;
     do {
       iVar8 = iVar8 + g_worldGrid.planeStride;
       iVar6 = iVar8 - g_worldGrid.sizeX;
-      if (param_4 <= param_7) {
-        iVar9 = (param_7 - param_4) + 1;
+      if (param_4_after_write <= param_7_after_write) {
+        iVar9 = (param_7_after_write - param_4_after_write) + 1;
         do {
           iVar6 = iVar6 + g_worldGrid.sizeX;
           if (local_8 <= local_c) {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_1 = (local_c - local_8) + 1;
             iVar10 = iVar6 * 8 + -8;
             do {
               piVar3 = *(int **)((int)g_worldGrid.cells[1].objects + iVar10);
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               if ((piVar3 != nullptr) &&
                  ((((iVar7 = piVar3[8], param_6 = piVar3, iVar7 == 0x14 || (iVar7 == 1000)) ||
                    (iVar7 == 0x3e9)) && (param_2 != piVar3)))) {
@@ -118,6 +120,7 @@ LAB_0043f9fa:
                  (param_2 != piVar3)) {
                 if (param_9 == 0) {
                   bVar1 = *(byte *)(piVar3 + 9);
+                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_8 = STReplaceLowByte((uint32_t)(param_8), (uint8_t)(bVar1));
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == bVar5) {

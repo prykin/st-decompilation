@@ -4,6 +4,7 @@
 /* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* WARNING: Unable to track spacebase fully for stack */
+/* WARNING: Unable to use type for symbol piVar16_mg0 */
 
 void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int param_5)
 
@@ -45,13 +46,13 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  int *piVar16_mg0;
+  undefined4 *piVar16_mg0;
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790090;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
-  DAT_007f4d04 = nullptr;
+  PTR_007f4d04 = nullptr;
   PTR_007f4cf0 = g_pathingGrid.cells;
   DAT_007f4d2c = (int)g_pathingGrid.sizeX;
   DAT_007f4d30 = (int)g_pathingGrid.sizeY;
@@ -111,14 +112,12 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
                   (((sVar2 < g_pathingGrid.sizeY && (sVar3 = pSVar11->field_004B, -1 < sVar3)) &&
                    (sVar3 < g_pathingGrid.sizeZ)))))) {
                 uVar15 = sVar3 * iVar9 + sVar2 * DAT_007f4d2c + (int)sVar1 ^ 7;
-                g_bitset_007F4CFC[(int)uVar15 >> 3] =
-                     g_bitset_007F4CFC[(int)uVar15 >> 3] | '\x01' << (uVar15 & 7);
+                STBitSet(g_bitset_007F4CFC, uVar15);
               }
             }
             else {
               uVar15 = iVar4 * iVar9 + iVar14 + iVar13 * DAT_007f4d2c ^ 7;
-              g_bitset_007F4CFC[(int)uVar15 >> 3] =
-                   g_bitset_007F4CFC[(int)uVar15 >> 3] | '\x01' << (uVar15 & 7);
+              STBitSet(g_bitset_007F4CFC, uVar15);
             }
             DAT_007f4d24 = DAT_007f4d24 + 1;
           }
@@ -131,13 +130,13 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   }
   *(uint *)(&stack0xffffff80 + iVar8 + iVar5) = (uint)STField<ushort>(param_1,0x27) * 0x1c;
   *(undefined4 *)((int)aiStackY_a0 + iVar8 + iVar5 + 0x1c) = 0x413d92;
-  DAT_007f4d04 = Library::DKW::LIB::MemAlloc(*(uint *)(&stack0xffffff80 + iVar8 + iVar5));
+  PTR_007f4d04 = Library::DKW::LIB::MemAlloc(*(uint *)(&stack0xffffff80 + iVar8 + iVar5));
   DAT_007f4d40 = 0;
   DAT_007f4cf8 = 0;
   local_30 = 0;
   local_34 = 0;
   local_40 = 0;
-  DAT_007f4d48 = DAT_007f4d04;
+  DAT_007f4d48 = PTR_007f4d04;
   if ((STField<int>(param_1,0x4d) == -2) || (STField<int>(param_1,0x4d) == -3)) {
     local_48 = 0;
     local_28 = 0;
@@ -196,13 +195,13 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
                     (iVar14 = iVar13, (uint)(ushort)pSVar11->field_0032 != piVar16[iVar13 * 4 + 6]));
           }
           if (iVar14 < *piVar16) {
-            DAT_007f4d04[DAT_007f4d40 * 7] = (int)pSVar11->field_0047;
+            PTR_007f4d04[DAT_007f4d40 * 7] = (int)pSVar11->field_0047;
             local_30 = local_30 + 2 + pSVar11->field_0047 * 4;
-            DAT_007f4d04[DAT_007f4d40 * 7 + 1] = (int)pSVar11->field_0049;
+            PTR_007f4d04[DAT_007f4d40 * 7 + 1] = (int)pSVar11->field_0049;
             local_34 = local_34 + 2 + pSVar11->field_0049 * 4;
-            DAT_007f4d04[DAT_007f4d40 * 7 + 2] = (int)pSVar11->field_004B;
+            PTR_007f4d04[DAT_007f4d40 * 7 + 2] = (int)pSVar11->field_004B;
             local_40 = local_40 + 2 + pSVar11->field_004B * 4;
-            DAT_007f4d04[DAT_007f4d40 * 7 + 6] = local_28;
+            PTR_007f4d04[DAT_007f4d40 * 7 + 6] = local_28;
             if (STField<int>(param_1,0x4d) == -3) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               g_runtimeRecords_007F4D3C[DAT_007f4d40].field_0000 =
@@ -215,13 +214,13 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
             }
             else {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              DAT_007f4d04[DAT_007f4d40 * 7 + 3] =
-                   *(int *)(STField<int>(param_1,0x59) + 0xc + iVar14 * 0x10);
-              DAT_007f4d04[DAT_007f4d40 * 7 + 4] =
-                   *(int *)((iVar14 + 1) * 0x10 + STField<int>(param_1,0x59));
+              PTR_007f4d04[DAT_007f4d40 * 7 + 3] =
+                   *(undefined4 *)(STField<int>(param_1,0x59) + 0xc + iVar14 * 0x10);
+              PTR_007f4d04[DAT_007f4d40 * 7 + 4] =
+                   *(undefined4 *)((iVar14 + 1) * 0x10 + STField<int>(param_1,0x59));
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              DAT_007f4d04[DAT_007f4d40 * 7 + 5] =
-                   *(int *)(STField<int>(param_1,0x59) + 0x14 + iVar14 * 0x10);
+              PTR_007f4d04[DAT_007f4d40 * 7 + 5] =
+                   *(undefined4 *)(STField<int>(param_1,0x59) + 0x14 + iVar14 * 0x10);
             }
             local_48 = iVar14 + 1;
             piVar16_mg0 = STField<int *>(param_1,0x59);
@@ -232,14 +231,14 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
           }
           else {
             DAT_007f4cf8 = DAT_007f4cf8 + 1;
-            DAT_007f4d04[((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 7] =
+            PTR_007f4d04[((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 7] =
                  (int)pSVar11->field_0047;
-            DAT_007f4d04[((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 7 + 1] =
+            PTR_007f4d04[((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 7 + 1] =
                  (int)pSVar11->field_0049;
-            DAT_007f4d04[((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 7 + 2] =
+            PTR_007f4d04[((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 7 + 2] =
                  (int)pSVar11->field_004B;
-            piVar16_mg0 = DAT_007f4d04;
-            DAT_007f4d04[((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 7 + 6] = local_28
+            piVar16_mg0 = PTR_007f4d04;
+            PTR_007f4d04[((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 7 + 6] = local_28
             ;
           }
         }
@@ -267,14 +266,14 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
         piVar16 = extraout_EDX_00;
         if (pSVar11 != nullptr) {
           pSVar11->field_00B7 = 0;
-          DAT_007f4d04[DAT_007f4d40 * 7] = (int)pSVar11->field_0047;
+          PTR_007f4d04[DAT_007f4d40 * 7] = (int)pSVar11->field_0047;
           local_30 = local_30 + 2 + pSVar11->field_0047 * 4;
-          DAT_007f4d04[DAT_007f4d40 * 7 + 1] = (int)pSVar11->field_0049;
+          PTR_007f4d04[DAT_007f4d40 * 7 + 1] = (int)pSVar11->field_0049;
           local_34 = local_34 + 2 + pSVar11->field_0049 * 4;
-          DAT_007f4d04[DAT_007f4d40 * 7 + 2] = (int)pSVar11->field_004B;
+          PTR_007f4d04[DAT_007f4d40 * 7 + 2] = (int)pSVar11->field_004B;
           local_40 = local_40 + 2 + pSVar11->field_004B * 4;
           piVar16 = (int *)(DAT_007f4d40 * 7);
-          DAT_007f4d04[DAT_007f4d40 * 7 + 6] = local_28;
+          PTR_007f4d04[DAT_007f4d40 * 7 + 6] = local_28;
           if (0 < DAT_007f4d24) {
             iVar14 = pSVar11->field_00C7;
             if (((((iVar14 < 0) || (g_pathingGrid.sizeX <= iVar14)) ||
@@ -293,10 +292,9 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
               local_20 = iVar4 * iVar9 + iVar14 + iVar13 * DAT_007f4d2c;
             }
             piVar16 = (int *)(local_20 ^ 7);
-            if ((g_bitset_007F4CFC[(int)piVar16 >> 3] >> ((uint)piVar16 & 7) & 1) != 0) {
+            if ((STBitTest(g_bitset_007F4CFC, piVar16)) != 0) {
               piVar16 = (int *)(local_20 ^ 7);
-              g_bitset_007F4CFC[(int)piVar16 >> 3] =
-                   g_bitset_007F4CFC[(int)piVar16 >> 3] & ~('\x01' << ((uint)piVar16 & 7));
+              STBitClear(g_bitset_007F4CFC, piVar16);
               DAT_007f4d24 = DAT_007f4d24 + -1;
             }
           }
@@ -340,7 +338,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
                          *(int *)((int)aiStackY_a0 + iVar8 + iVar5 + 0x1c),
                          *(int *)(&stack0xffffff80 + iVar8 + iVar5));
     iVar9 = ((iVar7 * 4 + 0x2d) / 0x5a) * 0x5a;
-    iVar9 = (int)(iVar9 + (iVar9 >> 0x1f & 3U)) >> 2;
+    iVar9 = STSignedDiv4(iVar9);
     STField<int>(param_1,0x55) = iVar9;
     if (iVar9 == 0x168) {
       STField<undefined4>(param_1,0x55) = 0;
@@ -463,7 +461,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
                               *(int *)(&stack0xffffff80 + iVar8 + iVar5));
     }
     if ((local_EAX_2487 != 0) || (DAT_007f4cf8 < 1)) break;
-    DAT_007f4d48 = DAT_007f4d04 + ((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 7;
+    DAT_007f4d48 = PTR_007f4d04 + ((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 7;
     DAT_007f4d20 = DAT_007f4cf8;
     iVar9 = STField<int>(param_1,0x55);
     if ((iVar9 < 0x152) && (0x17 < iVar9)) {

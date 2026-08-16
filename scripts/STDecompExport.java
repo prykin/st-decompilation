@@ -90,7 +90,7 @@ public class STDecompExport extends GhidraScript {
     private static final int COVERAGE_PADDING_RUN = 16;
     private static final int COVERAGE_MAX_RANGE = 0x10000;
     private static final String FUNCTION_ANALYSIS_CACHE_SCHEMA = "2";
-    private static final int FUNCTION_ANALYSIS_SCHEMA = 22;
+    private static final int FUNCTION_ANALYSIS_SCHEMA = 27;
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
@@ -122,6 +122,15 @@ public class STDecompExport extends GhidraScript {
         "[ \\t]+\\k<pointer>[ \\t]*=[ \\t]*\\k<pointer>[ \\t]*\\+[ \\t]*1;[ \\t]*\\R" +
         "\\k<indent>\\}(?:[ \\t]*\\R\\k<indent>\\*\\(undefined(?<tail>[1248])[ \\t]*\\*\\)" +
         "\\k<pointer>[ \\t]*=[ \\t]*0;)?");
+    private static final Pattern BULK_ZERO_BYTE_POINTER = Pattern.compile(
+        "(?m)^(?<indent>[ \\t]*)(?<pointer>[A-Za-z_][A-Za-z0-9_]*)[ \\t]*=[ \\t]*" +
+        "(?<target>[^;\\r\\n]+);[ \\t]*\\R" +
+        "\\k<indent>for[ \\t]*\\((?<counter>[A-Za-z_][A-Za-z0-9_]*)[ \\t]*=[ \\t]*" +
+        "(?<count>0x[0-9A-Fa-f]+|[0-9]+);[ \\t]*\\k<counter>[ \\t]*!=[ \\t]*0;[ \\t]*" +
+        "\\k<counter>[ \\t]*=[ \\t]*\\k<counter>[ \\t]*\\+[ \\t]*-1\\)[ \\t]*\\{[ \\t]*\\R" +
+        "[ \\t]+\\*\\(undefined4[ \\t]*\\*\\)\\k<pointer>[ \\t]*=[ \\t]*0;[ \\t]*\\R" +
+        "[ \\t]+\\k<pointer>[ \\t]*=[ \\t]*\\k<pointer>[ \\t]*\\+[ \\t]*4;[ \\t]*\\R" +
+        "\\k<indent>\\}");
     private static final Pattern BULK_ZERO_NULL_SELECT = Pattern.compile(
         "(?m)^(?<indent>[ \\t]*)if[ \\t]*\\([^\\r\\n]+==[ \\t]*\\([^\\r\\n]+\\)0x0\\)[ \\t]*\\{[ \\t]*\\R" +
         "[ \\t]+(?<pointer>[A-Za-z_][A-Za-z0-9_]*)[ \\t]*=[ \\t]*\\(undefined4[ \\t]*\\*\\)0x0;[ \\t]*\\R" +
@@ -137,6 +146,44 @@ public class STDecompExport extends GhidraScript {
         "\\k<pointer>[ \\t]*=[ \\t]*0;)?");
     private static final String BULK_ZERO_MARKER =
         "/* compiler bulk-zero initialization */";
+    private static final String STACK_SLOT_SPLIT_MARKER =
+        "/* compiler stack-slot lifetime split */";
+    private static final Pattern PACKED_BIT_SET = Pattern.compile(
+        "(?m)^(?<indent>[ \\t]*)(?<base>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "\\[\\(int\\)(?<index>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*>>[ \\t]*3\\]" +
+        "[ \\t]*=\\s*(?<rhsBase>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "\\[\\(int\\)(?<rhsIndex>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*>>[ \\t]*3\\]" +
+        "[ \\t]*\\|\\s*(?:'\\\\x01'|1)[ \\t]*<<[ \\t]*" +
+        "\\((?:\\(uint\\))?(?<bitIndex>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "[ \\t]*&[ \\t]*7\\);"
+    );
+    private static final Pattern PACKED_BIT_CLEAR = Pattern.compile(
+        "(?m)^(?<indent>[ \\t]*)(?<base>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "\\[\\(int\\)(?<index>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*>>[ \\t]*3\\]" +
+        "[ \\t]*=\\s*(?<rhsBase>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "\\[\\(int\\)(?<rhsIndex>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*>>[ \\t]*3\\]" +
+        "[ \\t]*&\\s*~\\((?:'\\\\x01'|1)[ \\t]*<<[ \\t]*" +
+        "\\((?:\\(uint\\))?(?<bitIndex>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "[ \\t]*&[ \\t]*7\\)\\);"
+    );
+    private static final Pattern PACKED_BIT_TEST = Pattern.compile(
+        "(?<base>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "\\[\\(int\\)(?<index>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*>>[ \\t]*3\\]" +
+        "[ \\t]*>>[ \\t]*\\((?:\\(uint\\))?\\k<index>[ \\t]*&[ \\t]*7\\)" +
+        "[ \\t]*&[ \\t]*1"
+    );
+    private static final String SIMPLE_ARITHMETIC_VALUE =
+        "\\*?[A-Za-z_$][A-Za-z0-9_$]*(?:\\[[^\\]\\r\\n]+\\])?";
+    private static final Pattern SIGNED_DIVIDE_BY_FOUR = Pattern.compile(
+        "\\(int\\)\\([ \\t]*(?<value>" + SIMPLE_ARITHMETIC_VALUE + ")" +
+        "[ \\t]*\\+[ \\t]*\\([ \\t]*(?:\\(int\\)[ \\t]*)?\\k<value>" +
+        "[ \\t]*>>[ \\t]*0x1f[ \\t]*&[ \\t]*3U\\)[ \\t]*\\)" +
+        "[ \\t]*>>[ \\t]*2"
+    );
+    private static final Pattern FIXED_16_ROUND = Pattern.compile(
+        "(?<value>" + SIMPLE_ARITHMETIC_VALUE + ")" +
+        "[ \\t]*\\+[ \\t]*0x8000[ \\t]*>>[ \\t]*0x10"
+    );
     private static final Pattern BULK_ZERO_MEMSET_LINE = Pattern.compile(
         "^(?<indent>[ \\t]*)memset\\((?<pointer>[A-Za-z_$][A-Za-z0-9_$]*),[ \\t]*0,[ \\t]*" +
         "(?<bytes>0x[0-9A-Fa-f]+|[0-9]+)\\);[ \\t]*" +
@@ -1174,7 +1221,13 @@ public class STDecompExport extends GhidraScript {
             normalizePartialPieceSyntax(lowPieces.code);
         NormalizedCode typedFields =
             normalizeExplicitByteOffsetFields(partialPieces.code);
-        code = typedFields.code;
+        NormalizedCode packedBits =
+            normalizePackedBitOperations(typedFields.code);
+        NormalizedCode signedQuartering =
+            normalizeSignedQuartering(packedBits.code);
+        NormalizedCode fixedRounding =
+            normalizeFixed16Rounding(signedQuartering.code);
+        code = fixedRounding.code;
         String[] lines = code.split("\\R", -1);
         List<String> output = new ArrayList<>();
         int replacements = legacyScalarLifetimes.replacements +
@@ -1186,7 +1239,9 @@ public class STDecompExport extends GhidraScript {
             gridIndexing.replacements + objectByteOffsets.replacements +
             recordAddresses.replacements +
             narrowReturns.replacements + lowPieces.replacements +
-            partialPieces.replacements + typedFields.replacements;
+            partialPieces.replacements + typedFields.replacements +
+            packedBits.replacements + signedQuartering.replacements +
+            fixedRounding.replacements;
         for (int index = 0; index < lines.length; index++) {
             Matcher assignment = INT3_ASSIGNMENT.matcher(lines[index]);
             if (!assignment.matches() || index + 1 >= lines.length) {
@@ -2542,7 +2597,195 @@ public class STDecompExport extends GhidraScript {
             }
         }
         NormalizedCode x87 = normalizeSavedX87AcrossFtol(function, normalized);
-        return new NormalizedCode(x87.code, replacements + x87.replacements);
+        NormalizedCode stackSlots = normalizeReusedParameterLifetimes(
+            function, x87.code);
+        return new NormalizedCode(stackSlots.code,
+            replacements + x87.replacements + stackSlots.replacements);
+    }
+
+    /**
+     * Split a compiler-recycled incoming stack slot in the text projection.
+     *
+     * The Listing must keep the entry parameter because it is part of the ABI.
+     * When the machine code fully overwrites that physical slot with an
+     * independently defined value after the entry value's last use, Ghidra can
+     * nevertheless render both SSA domains with the same parameter name.  A
+     * source local is safe only for one exact assignment whose lexical block
+     * contains every post-write use and has no label which can jump across the
+     * initializer.
+     */
+    private NormalizedCode normalizeReusedParameterLifetimes(Function function,
+            String code) {
+        if (function == null || code == null || code.isEmpty())
+            return new NormalizedCode(code, 0);
+        Set<String> candidates = reusedParameterNames(function);
+        if (candidates.isEmpty()) return new NormalizedCode(code, 0);
+        List<String> lines = new ArrayList<>(Arrays.asList(code.split("\\R", -1)));
+        int replacements = 0;
+        for (String name : candidates) {
+            Pattern assignment = Pattern.compile("^(?<indent>[ \\t]*)" +
+                Pattern.quote(name) + "[ \\t]*=[ \\t]*(?<rhs>[^;\\r\\n]+);[ \\t]*$");
+            int assignmentLine = -1;
+            Matcher selected = null;
+            for (int index = 0; index < lines.size(); index++) {
+                Matcher matcher = assignment.matcher(lines.get(index));
+                if (!matcher.matches()) continue;
+                assignmentLine = index;
+                selected = matcher;
+                break;
+            }
+            if (assignmentLine < 0 || selected == null) continue;
+
+            int depth = 0;
+            for (int index = 0; index < assignmentLine; index++)
+                depth += braceDelta(lines.get(index));
+            int assignmentDepth = depth;
+            int end = lines.size();
+            int running = assignmentDepth;
+            boolean labelled = false;
+            for (int index = assignmentLine + 1; index < lines.size(); index++) {
+                String stripped = lines.get(index).stripLeading();
+                if (running == assignmentDepth &&
+                        (stripped.matches("(?:LAB_|cf_)[A-Za-z0-9_$]+:.*") ||
+                         stripped.matches("(?:case\\b.*|default\\s*:.*)")))
+                    labelled = true;
+                int next = running + braceDelta(lines.get(index));
+                if (next < assignmentDepth) {
+                    end = index;
+                    break;
+                }
+                running = next;
+            }
+            if (labelled) continue;
+            String afterBlock = String.join(System.lineSeparator(),
+                lines.subList(end, lines.size()));
+            if (identifierOccurrences(afterBlock, name) != 0) continue;
+            String interval = String.join(System.lineSeparator(),
+                lines.subList(assignmentLine + 1, end));
+            if (identifierOccurrences(interval, name) == 0) continue;
+
+            String local = name + "_after_write";
+            int suffix = 2;
+            while (identifierOccurrences(code, local) != 0)
+                local = name + "_after_write_" + suffix++;
+            lines.set(assignmentLine, selected.group("indent") + "auto " + local +
+                " = " + selected.group("rhs").trim() + "; " +
+                STACK_SLOT_SPLIT_MARKER);
+            for (int index = assignmentLine + 1; index < end; index++)
+                lines.set(index, replaceIdentifier(lines.get(index), name, local));
+            replacements++;
+        }
+        return new NormalizedCode(String.join(System.lineSeparator(), lines), replacements);
+    }
+
+    private int braceDelta(String line) {
+        int result = 0;
+        boolean string = false, character = false, escaped = false;
+        for (int index = 0; index < line.length(); index++) {
+            char value = line.charAt(index);
+            if (string || character) {
+                if (escaped) escaped = false;
+                else if (value == '\\') escaped = true;
+                else if (string && value == '"') string = false;
+                else if (character && value == '\'') character = false;
+                continue;
+            }
+            if (value == '"') string = true;
+            else if (value == '\'') character = true;
+            else if (value == '{') result++;
+            else if (value == '}') result--;
+            else if (value == '/' && index + 1 < line.length() &&
+                    line.charAt(index + 1) == '/') break;
+        }
+        return result;
+    }
+
+    /**
+     * Fold the exact byte-addressed packed-bit operations emitted by x86 code.
+     * This is deliberately independent of any global name or recovered game
+     * type: byte index is signed index / 8 and bit index is index & 7.  An XOR
+     * used to reverse bit numbering remains outside the helper and therefore
+     * remains visible in the exported source.
+     */
+    private NormalizedCode normalizePackedBitOperations(String code) {
+        Matcher set = PACKED_BIT_SET.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (set.find()) {
+            if (!set.group("base").equals(set.group("rhsBase")) ||
+                    !set.group("index").equals(set.group("rhsIndex")) ||
+                    !set.group("index").equals(set.group("bitIndex"))) {
+                set.appendReplacement(output, Matcher.quoteReplacement(set.group()));
+                continue;
+            }
+            String replacement = set.group("indent") + "STBitSet(" +
+                set.group("base") + ", " + set.group("index") + ");";
+            set.appendReplacement(output, Matcher.quoteReplacement(replacement));
+            replacements++;
+        }
+        set.appendTail(output);
+        Matcher clear = PACKED_BIT_CLEAR.matcher(output.toString());
+        StringBuffer cleared = new StringBuffer();
+        while (clear.find()) {
+            if (!clear.group("base").equals(clear.group("rhsBase")) ||
+                    !clear.group("index").equals(clear.group("rhsIndex")) ||
+                    !clear.group("index").equals(clear.group("bitIndex"))) {
+                clear.appendReplacement(cleared,
+                    Matcher.quoteReplacement(clear.group()));
+                continue;
+            }
+            String replacement = clear.group("indent") + "STBitClear(" +
+                clear.group("base") + ", " + clear.group("index") + ");";
+            clear.appendReplacement(cleared, Matcher.quoteReplacement(replacement));
+            replacements++;
+        }
+        clear.appendTail(cleared);
+        Matcher test = PACKED_BIT_TEST.matcher(cleared.toString());
+        StringBuffer tested = new StringBuffer();
+        while (test.find()) {
+            String replacement = "STBitTest(" + test.group("base") + ", " +
+                test.group("index") + ")";
+            test.appendReplacement(tested, Matcher.quoteReplacement(replacement));
+            replacements++;
+        }
+        test.appendTail(tested);
+        return new NormalizedCode(tested.toString(), replacements);
+    }
+
+    /**
+     * MSVC implements signed division by four with truncation toward zero as
+     * (value + ((value >> 31) & 3)) >> 2.  Fold only an exactly repeated simple
+     * operand; the helper first narrows to the original 32-bit machine word.
+     */
+    private NormalizedCode normalizeSignedQuartering(String code) {
+        Matcher matcher = SIGNED_DIVIDE_BY_FOUR.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            matcher.appendReplacement(output, Matcher.quoteReplacement(
+                "STSignedDiv4(" + matcher.group("value") + ")"));
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    /**
+     * Fold the exact 16.16 fixed-point rounding expression.  The runtime helper
+     * preserves 32-bit addition wrap and arithmetic right-shift behavior; this
+     * is presentation recovery, not a claim about the value's game semantics.
+     */
+    private NormalizedCode normalizeFixed16Rounding(String code) {
+        Matcher matcher = FIXED_16_ROUND.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            matcher.appendReplacement(output, Matcher.quoteReplacement(
+                "STRoundFixed16(" + matcher.group("value") + ")"));
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
     }
 
     /**
@@ -4243,13 +4486,56 @@ public class STDecompExport extends GhidraScript {
             code, BULK_ZERO_NULL_SELECT, candidates, true);
         NormalizedCode simple = normalizeBulkZeroPattern(
             selected.code, BULK_ZERO_SIMPLE, candidates, false);
+        NormalizedCode bytePointer = normalizeBytePointerBulkZero(
+            simple.code, candidates);
         NormalizedCode dynamic =
-            normalizeDynamicBulkZeroLoops(simple.code, candidates);
+            normalizeDynamicBulkZeroLoops(bytePointer.code, candidates);
         NormalizedCode residual = normalizeBulkZeroResidualTails(dynamic.code);
         String normalized = removeDeadBulkZeroLocals(residual.code, candidates);
         return new NormalizedCode(normalized,
             selected.replacements + simple.replacements +
-                dynamic.replacements + residual.replacements);
+                bytePointer.replacements + dynamic.replacements +
+                residual.replacements);
+    }
+
+    /**
+     * Fold REP STOSD when Ghidra keeps the destination as a byte pointer.
+     * Pointer addition is then rendered as +4 and the store retains an
+     * undefined4 cast.  The transfer width still proves one contiguous zero
+     * span; it does not prove that the underlying aggregate contains dword
+     * members.
+     */
+    private NormalizedCode normalizeBytePointerBulkZero(String code,
+            Set<String> deadLocals) {
+        Matcher matcher = BULK_ZERO_BYTE_POINTER.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            long count = parseIntegerLiteral(matcher.group("count"));
+            long bytes;
+            try { bytes = Math.multiplyExact(count, 4L); }
+            catch (ArithmeticException exception) { bytes = -1; }
+            String pointer = matcher.group("pointer");
+            String counter = matcher.group("counter");
+            boolean pointerLive = identifierValueLiveAfter(
+                code, pointer, matcher.end(), matcher.group("indent").length());
+            boolean counterLive = identifierValueLiveAfter(
+                code, counter, matcher.end(), matcher.group("indent").length());
+            if (bytes <= 0 || bytes > 0x1000000L || pointerLive || counterLive) {
+                matcher.appendReplacement(output,
+                    Matcher.quoteReplacement(matcher.group()));
+                continue;
+            }
+            String target = bulkZeroTarget(matcher.group("target").trim());
+            String replacement = matcher.group("indent") + "memset(" + target +
+                ", 0, " + hexLiteral(bytes) + "); " + BULK_ZERO_MARKER;
+            matcher.appendReplacement(output, Matcher.quoteReplacement(replacement));
+            deadLocals.add(pointer);
+            deadLocals.add(counter);
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
     }
 
     /**
@@ -4836,7 +5122,7 @@ public class STDecompExport extends GhidraScript {
 
     private String annotatePseudocode(Function function, String code) {
         if (code == null || code.isEmpty()) return "";
-        Set<String> reusedParameters = reusedParameterNames(function);
+        Set<String> reusedParameters = new HashSet<>(reusedParameterNames(function));
         String[] lines = code.split("\\R", -1);
         List<String> clean = new ArrayList<>();
         boolean needsRuntime = needsPseudocodeRuntime(code);
@@ -4890,6 +5176,9 @@ public class STDecompExport extends GhidraScript {
         if (code == null || code.isEmpty()) return false;
         return code.contains("STDebugBreak()") || code.contains(BULK_ZERO_MARKER) ||
             code.contains(BULK_COPY_MARKER) || code.contains("DArrayAt<") ||
+            code.contains("STBitTest(") || code.contains("STBitSet(") ||
+            code.contains("STBitClear(") ||
+            code.contains("STSignedDiv4(") || code.contains("STRoundFixed16(") ||
             code.contains("STGridAt3D(") || code.contains("STPiece<") ||
             code.contains("STLiteralPiece<") ||
             code.contains("STField<") ||
@@ -4924,6 +5213,8 @@ public class STDecompExport extends GhidraScript {
                 addIdiom(evidence, "bulk_zero_initialization", index + 1, line);
             if (line.contains(BULK_COPY_MARKER))
                 addIdiom(evidence, "bulk_byte_copy", index + 1, line);
+            if (line.contains(STACK_SLOT_SPLIT_MARKER))
+                addIdiom(evidence, "stack_slot_reuse", index + 1, line);
             if (line.contains("DArrayAt<"))
                 addIdiom(evidence, "dynamic_array_indexing", index + 1, line);
         }
@@ -4947,6 +5238,8 @@ public class STDecompExport extends GhidraScript {
                     code.contains(BULK_ZERO_MARKER)) ||
                 (kind.equals("bulk_byte_copy") && code != null &&
                     code.contains(BULK_COPY_MARKER)) ||
+                (kind.equals("stack_slot_reuse") && code != null &&
+                    code.contains(STACK_SLOT_SPLIT_MARKER)) ||
                 (kind.equals("dynamic_array_indexing") && code != null &&
                     code.contains("DArrayAt<"));
             if (normalizedSite) pseudocodeNormalizationCount += value.occurrences;
@@ -4979,7 +5272,7 @@ public class STDecompExport extends GhidraScript {
      */
     private void catalogQualityIssues(Function function, String code) {
         Map<String, QualityEvidence> evidence = new LinkedHashMap<>();
-        Set<String> reusedParameters = reusedParameterNames(function);
+        Set<String> reusedParameters = new HashSet<>(reusedParameterNames(function));
         String[] lines = code == null ? new String[0] : code.split("\\R", -1);
         for (int index = 0; index < lines.length; index++) {
             String line = lines[index];
@@ -5042,6 +5335,7 @@ public class STDecompExport extends GhidraScript {
                 String name = assignment.group(1).replaceFirst("^_", "");
                 if (reusedParameters.contains(name)) {
                     addQuality(evidence, "stack_slot_reuse", 1, index + 1, line);
+                    reusedParameters.remove(name);
                     break;
                 }
             }
@@ -5209,6 +5503,7 @@ public class STDecompExport extends GhidraScript {
             String name = parameterAssignment.group(1).replaceFirst("^_", "");
             if (reusedParameters.contains(name)) {
                 kinds.add("stack_slot_reuse");
+                reusedParameters.remove(name);
                 break;
             }
         }
@@ -5291,6 +5586,7 @@ public class STDecompExport extends GhidraScript {
         long frameBias = currentProgram.getDefaultPointerSize();
         Map<Long, StackSlotLifetime> slots = new HashMap<>();
         Map<String, Set<Long>> registerOrigins = new HashMap<>();
+        Set<String> definedRegisters = new HashSet<>(List.of("EBP", "ESP"));
         List<Parameter> parameters = Arrays.stream(function.getParameters())
             .filter(parameter -> !parameter.isAutoParameter())
             .sorted(Comparator.comparingInt(Parameter::getOrdinal)).toList();
@@ -5332,11 +5628,15 @@ public class STDecompExport extends GhidraScript {
                         operandIndex == 0 && instruction.getNumOperands() >= 2) {
                     Set<Long> sourceOrigins = operandOrigins(instruction, 1,
                         registerOrigins);
-                    if (!sourceOrigins.isEmpty() && !sourceOrigins.contains(offset))
+                    boolean sourceDefined = operandValueDefined(
+                        instruction, 1, definedRegisters);
+                    if (!sourceOrigins.contains(offset) &&
+                            (!sourceOrigins.isEmpty() || sourceDefined))
                         slot.written = true;
                 }
             }
-            updateParameterOrigins(instruction, mnemonic, registerOrigins);
+            updateParameterOrigins(instruction, mnemonic, registerOrigins,
+                definedRegisters);
         }
         Set<String> result = new TreeSet<>();
         for (StackSlotLifetime slot : slots.values())
@@ -5365,16 +5665,31 @@ public class STDecompExport extends GhidraScript {
     }
 
     private void updateParameterOrigins(Instruction instruction, String mnemonic,
-            Map<String, Set<Long>> registerOrigins) {
+            Map<String, Set<Long>> registerOrigins, Set<String> definedRegisters) {
         if ("CALL".equals(mnemonic)) {
-            registerOrigins.remove("EAX");
-            registerOrigins.remove("ECX");
-            registerOrigins.remove("EDX");
+            for (String register : List.of("EAX", "ECX", "EDX")) {
+                registerOrigins.remove(register);
+                definedRegisters.remove(register);
+            }
             return;
         }
         if (instruction.getNumOperands() == 0) return;
         String destination = directRegister(instruction, 0);
-        if (destination.isBlank() || !instructionWritesFirstOperand(mnemonic)) return;
+        if (destination.isBlank() || !instructionWritesFirstOperand(mnemonic) ||
+                !fullMachineRegister(instruction, 0)) return;
+        boolean wasDefined = definedRegisters.contains(destination);
+        boolean sourceDefined = instruction.getNumOperands() >= 2 &&
+            operandValueDefined(instruction, 1, definedRegisters);
+        boolean selfClear = Set.of("XOR", "SUB").contains(mnemonic) &&
+            instruction.getNumOperands() >= 2 && destination.equals(
+                directRegister(instruction, 1));
+        boolean defined = selfClear ||
+            (Set.of("MOV", "MOVSX", "MOVZX", "LEA", "POP").contains(mnemonic) &&
+                ("POP".equals(mnemonic) || sourceDefined)) ||
+            (instructionReadsFirstOperand(mnemonic) && wasDefined &&
+                (instruction.getNumOperands() < 2 || sourceDefined));
+        if (defined) definedRegisters.add(destination);
+        else definedRegisters.remove(destination);
         Set<Long> origins;
         if (instruction.getNumOperands() >= 2 &&
                 Set.of("MOV", "MOVSX", "MOVZX").contains(mnemonic)) {
@@ -5387,6 +5702,37 @@ public class STDecompExport extends GhidraScript {
         else origins = Set.of();
         if (origins.isEmpty()) registerOrigins.remove(destination);
         else registerOrigins.put(destination, Set.copyOf(origins));
+    }
+
+    private boolean operandValueDefined(Instruction instruction, int operandIndex,
+            Set<String> definedRegisters) {
+        if (instruction == null || operandIndex < 0 ||
+                operandIndex >= instruction.getNumOperands()) return false;
+        String direct = directRegister(instruction, operandIndex);
+        if (!direct.isBlank()) return definedRegisters.contains(direct);
+        Object[] objects = instruction.getOpObjects(operandIndex);
+        boolean value = false;
+        for (Object object : objects) {
+            if (object instanceof Register register) {
+                if (!definedRegisters.contains(x86RootRegister(register.getName())))
+                    return false;
+                value = true;
+            }
+            else if (object instanceof Scalar ||
+                    object instanceof ghidra.program.model.address.Address)
+                value = true;
+        }
+        int type = instruction.getOperandType(operandIndex);
+        return value || OperandType.isScalar(type) || OperandType.isAddress(type) ||
+            OperandType.isIndirect(type);
+    }
+
+    private boolean fullMachineRegister(Instruction instruction, int operandIndex) {
+        if (instruction == null || operandIndex < 0 ||
+                operandIndex >= instruction.getNumOperands()) return false;
+        Object[] objects = instruction.getOpObjects(operandIndex);
+        return objects.length == 1 && objects[0] instanceof Register register &&
+            register.getBitLength() == currentProgram.getDefaultPointerSize() * 8;
     }
 
     private String directRegister(Instruction instruction, int operandIndex) {
@@ -5820,6 +6166,35 @@ public class STDecompExport extends GhidraScript {
             "    return static_cast<int16_t>(quotient - (source < 0 ? 1 : 0));\n" +
             "}\n" +
             "template <typename Value>\n" +
+            "static inline int32_t STSignedDiv4(Value value) {\n" +
+            "    return static_cast<int32_t>(STRawWord(value)) / 4;\n" +
+            "}\n" +
+            "template <typename Value>\n" +
+            "static inline int32_t STRoundFixed16(Value value) {\n" +
+            "    uint32_t wrapped = static_cast<uint32_t>(STRawWord(value)) + 0x8000u;\n" +
+            "    using Plain = std::remove_cv_t<std::remove_reference_t<Value>>;\n" +
+            "    if constexpr (std::is_unsigned_v<Plain>)\n" +
+            "        return static_cast<int32_t>(wrapped >> 16);\n" +
+            "    int32_t rounded = static_cast<int32_t>(wrapped);\n" +
+            "    return rounded >= 0 ? rounded / 0x10000 :\n" +
+            "        -static_cast<int32_t>((-static_cast<int64_t>(rounded) + 0xffff) / 0x10000);\n" +
+            "}\n" +
+            "template <typename Bits, typename Index>\n" +
+            "static inline bool STBitTest(Bits bits, Index index) {\n" +
+            "    int32_t bit = static_cast<int32_t>(STRawWord(index));\n" +
+            "    return ((static_cast<uint8_t>(bits[bit >> 3]) >> (bit & 7)) & 1u) != 0;\n" +
+            "}\n" +
+            "template <typename Bits, typename Index>\n" +
+            "static inline void STBitSet(Bits bits, Index index) {\n" +
+            "    int32_t bit = static_cast<int32_t>(STRawWord(index));\n" +
+            "    bits[bit >> 3] |= static_cast<uint8_t>(1u << (bit & 7));\n" +
+            "}\n" +
+            "template <typename Bits, typename Index>\n" +
+            "static inline void STBitClear(Bits bits, Index index) {\n" +
+            "    int32_t bit = static_cast<int32_t>(STRawWord(index));\n" +
+            "    bits[bit >> 3] &= static_cast<uint8_t>(~(1u << (bit & 7)));\n" +
+            "}\n" +
+            "template <typename Value>\n" +
             "static inline long double fsin(Value value) {\n" +
             "    return std::sin(static_cast<long double>(value));\n" +
             "}\n" +
@@ -5967,6 +6342,15 @@ public class STDecompExport extends GhidraScript {
             new CompileRule("runtime_typed_object_byte_offset", "compatibility_shim",
                 "implemented", Pattern.compile("\\bSTObjectAtByteOffset\\s*\\("),
                 "replace the exact byte induction variable with a recovered record index"),
+            new CompileRule("runtime_packed_bit_access", "compatibility_shim",
+                "implemented", Pattern.compile("\\bSTBit(?:Test|Set|Clear)\\s*\\("),
+                "retain the packed-bit helper or recover a semantic bitset owner"),
+            new CompileRule("runtime_signed_divide_by_four", "compatibility_shim",
+                "implemented", Pattern.compile("\\bSTSignedDiv4\\s*\\("),
+                "retain exact signed truncation or recover the source arithmetic domain"),
+            new CompileRule("runtime_fixed16_round", "compatibility_shim",
+                "implemented", Pattern.compile("\\bSTRoundFixed16\\s*\\("),
+                "retain exact 16.16 rounding or recover the source fixed-point type"),
             new CompileRule("residual_partial_piece_syntax", "hard_blocker", "unresolved",
                 Pattern.compile("(?:\\._[0-9]+_[0-9]+_|\\.\\*[0-9]+_[0-9]+\\*)"),
                 "extend the exact lvalue piece rewrite or recover the containing aggregate"),
@@ -7795,6 +8179,8 @@ public class STDecompExport extends GhidraScript {
             rawField("library_function_count", Integer.toString(libraryFunctionCount)),
             rawField("thunk_function_count", Integer.toString(thunkFunctionCount)),
             rawField("body_function_count", Integer.toString(bodyFunctionCount)),
+            field("pseudocode_runtime_sha256",
+                sha256File(programRoot.resolve("pseudocode_runtime.h"))),
             rawField("pseudocode_normalized_site_count",
                 Integer.toString(pseudocodeNormalizationCount)),
             rawField("fingerprint_cfg_fallback_count",
@@ -7977,6 +8363,16 @@ public class STDecompExport extends GhidraScript {
         for (byte item : digest.digest())
             result.append(String.format("%02x", item & 0xff));
         return result.toString();
+    }
+
+    private String sha256File(Path path) throws IOException {
+        try {
+            return sha256Text(Files.readString(path, StandardCharsets.UTF_8));
+        }
+        catch (Exception exception) {
+            throw new IOException("Could not hash " + path + ": " +
+                exception.getMessage(), exception);
+        }
     }
 
     private record CachedFunctionAnalysis(String fingerprint, int normalizationCount,

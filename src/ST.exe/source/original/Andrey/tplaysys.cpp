@@ -590,7 +590,7 @@ undefined4 __thiscall st::fn_0054D640(STPlaySystemC *this)
           this_00->field_002C = iVar7;
           if (iVar7 < 1) {
             this_00->field_002C =
-                 *(int *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4);
+                 *(int *)(st_string_007C2AE0 + (uint)DAT_0080733b * 0x18 + 4);
             st::fn_00404B15(this_00);
             st::fn_00401E51(this_00);
             st::fn_0040174E(this_00);
@@ -1747,7 +1747,7 @@ LAB_0054f531:
       puVar20 = (undefined4 *)CONCAT31(uVar17,bVar7);
       local_c->field_004D = bVar7;
       if ((int)(uint)bVar7 <
-          *(int *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 0xc)) {
+          *(int *)(st_string_007C2AE0 + (uint)DAT_0080733b * 0x18 + 0xc)) {
         g_currentExceptionFrame = local_78.previous;
         return puVar20;
       }
@@ -1795,7 +1795,7 @@ LAB_0054f6c6:
     if (local_20 < 3) {
       if (pSVar23->field_0059 == 0) {
         if (DAT_00807654 <
-            *(int *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 0x14)) {
+            *(int *)(st_string_007C2AE0 + (uint)DAT_0080733b * 0x18 + 0x14)) {
           DAT_00807654 = DAT_00807654 + 1;
         }
       }

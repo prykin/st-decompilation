@@ -54,7 +54,7 @@ int __thiscall CGenerate::sub_0069B190(CGenerate *this,int param_1,int param_2,i
           iVar5 = 0;
           if (-1 < iVar6) {
             iVar7 = iVar6 * local_14 + local_18 * iVar1;
-            param_2 = iVar7 * 2;
+            auto param_2_after_write = iVar7 * 2; /* compiler stack-slot lifetime split */
             do {
               iVar8 = iVar7 + 1;
               iVar5 = iVar5 + 1;
@@ -76,7 +76,7 @@ int __thiscall CGenerate::sub_0069B190(CGenerate *this,int param_1,int param_2,i
                 }
               }
               if (-1 < iVar7) {
-                psVar3 = (short *)((int)this->field_584F + param_2);
+                psVar3 = (short *)((int)this->field_584F + param_2_after_write);
                 if (*psVar3 == -1) {
                   *psVar3 = 1;
                   local_c = local_c + 1;
@@ -84,16 +84,16 @@ int __thiscall CGenerate::sub_0069B190(CGenerate *this,int param_1,int param_2,i
                 if ((((iVar8 != 1 && -1 < iVar7) && (0 < iVar10)) && (0 < iVar6)) && (0 < local_8))
                 {
                   puVar2 = this->field_584F;
-                  if (((((*(short *)(param_2 + (int)puVar2) == -1) ||
-                        (0 < *(short *)(param_2 + (int)puVar2))) &&
+                  if (((((*(short *)(param_2_after_write + (int)puVar2) == -1) ||
+                        (0 < *(short *)(param_2_after_write + (int)puVar2))) &&
                        ((puVar2[iVar10] == 0xffff || (0 < (short)puVar2[iVar10])))) &&
                       ((puVar2[iVar6] == 0xffff || (0 < (short)puVar2[iVar6])))) &&
                      ((puVar2[local_8] == 0xffff || (0 < (short)puVar2[local_8])))) {
-                    *(undefined2 *)(param_2 + (int)puVar2) = 4;
+                    *(undefined2 *)(param_2_after_write + (int)puVar2) = 4;
                   }
                 }
               }
-              param_2 = param_2 + 2;
+              param_2_after_write = param_2_after_write + 2;
               iVar6 = this->field_5833;
               iVar7 = iVar8;
             } while (iVar5 <= iVar6);

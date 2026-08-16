@@ -457,9 +457,9 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this)
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xeb0);
           }
-          iVar7 = (*pSVar4->vtable->vfunc_2C)();
-          if (((iVar7 == 8) || (iVar7 = (*pSVar4->vtable->vfunc_2C)(), iVar7 == 0x14)) ||
-             (iVar7 = (*pSVar4->vtable->vfunc_2C)(), iVar7 == 0x1a)) {
+          iVar7 = pSVar4->vfunc_2C();
+          if (((iVar7 == 8) || (iVar7 = pSVar4->vfunc_2C(), iVar7 == 0x14)) ||
+             (iVar7 = pSVar4->vfunc_2C(), iVar7 == 0x1a)) {
             if (local_10 == nullptr) {
               local_10 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
             }
@@ -552,9 +552,9 @@ LAB_004a1878:
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xee9);
           }
-          iVar7 = (*pSVar4->vtable->vfunc_2C)();
-          if (((iVar7 == 0xc) || (iVar7 = (*pSVar4->vtable->vfunc_2C)(), iVar7 == 0x18)) ||
-             (iVar7 = (*pSVar4->vtable->vfunc_2C)(), iVar7 == 0x19)) {
+          iVar7 = pSVar4->vfunc_2C();
+          if (((iVar7 == 0xc) || (iVar7 = pSVar4->vfunc_2C(), iVar7 == 0x18)) ||
+             (iVar7 = pSVar4->vfunc_2C(), iVar7 == 0x19)) {
             if (local_10 == nullptr) {
               local_10 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
             }
@@ -642,9 +642,9 @@ LAB_004a1a74:
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xf1c);
           }
-          iVar7 = (*pSVar4->vtable->vfunc_2C)();
-          if (((iVar7 == 8) || (iVar7 = (*pSVar4->vtable->vfunc_2C)(), iVar7 == 0x14)) ||
-             (iVar7 = (*pSVar4->vtable->vfunc_2C)(), iVar7 == 0x1a)) {
+          iVar7 = pSVar4->vfunc_2C();
+          if (((iVar7 == 8) || (iVar7 = pSVar4->vfunc_2C(), iVar7 == 0x14)) ||
+             (iVar7 = pSVar4->vfunc_2C(), iVar7 == 0x1a)) {
             if (local_10 == nullptr) {
               local_10 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
             }

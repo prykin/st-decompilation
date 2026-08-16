@@ -44,6 +44,7 @@ void FUN_006b84d0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3
            ((uint)param_1->field_000E * local_24[2] + 0x1f >> 3 & 0x1ffffffc);
   if (local_18 < 0) {
     local_18 = -local_18;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = pRVar4;
   }
   else {

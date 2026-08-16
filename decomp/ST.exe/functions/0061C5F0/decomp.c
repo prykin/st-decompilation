@@ -51,7 +51,7 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
         STField<short>(this,0x137) = local_18;
         STField<undefined4>(this,0x145) = this_00->field_0018;
         STField<undefined2>(this,0x149) = this_00->field_0032;
-        uVar4 = (*this_00->vtable->vfunc_2C)();
+        uVar4 = this_00->vfunc_2C();
         STField<undefined4>(this,0x123) = uVar4;
         iVar5 = FUN_006acf0d(STField<int>(this,0x9f),STField<int>(this,0xa3),
                              STField<int>(this,0xa7),(int)local_8,(int)local_6,(int)local_c);

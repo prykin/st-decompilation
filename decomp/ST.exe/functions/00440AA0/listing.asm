@@ -87,7 +87,8 @@ LAB_00440b78:
 00440B98  E8 1D 1D FC FF            CALL 0x004028ba
 00440B9D  8B 10                     MOV EDX,dword ptr [EAX]
 00440B9F  8B C8                     MOV ECX,EAX
-00440BA1  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STAllPlayersC::_AssignDocks::override::prt_440ba1_d4e0dbd9:
+00440BA1  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00440BA7  85 C0                     TEST EAX,EAX
 00440BA9  75 0C                     JNZ 0x00440bb7
 LAB_00440bab:
@@ -133,7 +134,8 @@ LAB_00440be3:
 00440C06  E8 AF 1C FC FF            CALL 0x004028ba
 00440C0B  8B 10                     MOV EDX,dword ptr [EAX]
 00440C0D  8B C8                     MOV ECX,EAX
-00440C0F  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STAllPlayersC::_AssignDocks::override::prt_440c0f_d4e0dbd9:
+00440C0F  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00440C15  85 C0                     TEST EAX,EAX
 00440C17  75 0F                     JNZ 0x00440c28
 LAB_00440c19:
@@ -333,7 +335,8 @@ LAB_00440e37:
 00440E57  0F 85 80 00 00 00         JNZ 0x00440edd
 00440E5D  8B 17                     MOV EDX,dword ptr [EDI]
 00440E5F  8B CF                     MOV ECX,EDI
-00440E61  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STAllPlayersC::_AssignDocks::override::prt_440e61_e5e2351e:
+00440E61  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00440E67  83 F8 01                  CMP EAX,0x1
 00440E6A  75 71                     JNZ 0x00440edd
 00440E6C  8B 5D E4                  MOV EBX,dword ptr [EBP + -0x1c]

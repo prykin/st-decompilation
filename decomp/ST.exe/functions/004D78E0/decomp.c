@@ -24,6 +24,7 @@ undefined4 FUN_004d78e0(char param_1)
   iVar5 = 0;
   local_c = 0;
   local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_1 = 0;
   iVar3 = 6;
   piVar2 = &g_packedRecords_A62x8[iVar1].field1601_0x7da;

@@ -116,6 +116,35 @@ static inline int16_t STBiasedDiv16(Value value, Divisor divisor) {
     return static_cast<int16_t>(quotient - (source < 0 ? 1 : 0));
 }
 template <typename Value>
+static inline int32_t STSignedDiv4(Value value) {
+    return static_cast<int32_t>(STRawWord(value)) / 4;
+}
+template <typename Value>
+static inline int32_t STRoundFixed16(Value value) {
+    uint32_t wrapped = static_cast<uint32_t>(STRawWord(value)) + 0x8000u;
+    using Plain = std::remove_cv_t<std::remove_reference_t<Value>>;
+    if constexpr (std::is_unsigned_v<Plain>)
+        return static_cast<int32_t>(wrapped >> 16);
+    int32_t rounded = static_cast<int32_t>(wrapped);
+    return rounded >= 0 ? rounded / 0x10000 :
+        -static_cast<int32_t>((-static_cast<int64_t>(rounded) + 0xffff) / 0x10000);
+}
+template <typename Bits, typename Index>
+static inline bool STBitTest(Bits bits, Index index) {
+    int32_t bit = static_cast<int32_t>(STRawWord(index));
+    return ((static_cast<uint8_t>(bits[bit >> 3]) >> (bit & 7)) & 1u) != 0;
+}
+template <typename Bits, typename Index>
+static inline void STBitSet(Bits bits, Index index) {
+    int32_t bit = static_cast<int32_t>(STRawWord(index));
+    bits[bit >> 3] |= static_cast<uint8_t>(1u << (bit & 7));
+}
+template <typename Bits, typename Index>
+static inline void STBitClear(Bits bits, Index index) {
+    int32_t bit = static_cast<int32_t>(STRawWord(index));
+    bits[bit >> 3] &= static_cast<uint8_t>(~(1u << (bit & 7)));
+}
+template <typename Value>
 static inline long double fsin(Value value) {
     return std::sin(static_cast<long double>(value));
 }

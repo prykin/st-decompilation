@@ -359,7 +359,8 @@ LAB_0047d493:
 0047D52A  75 33                     JNZ 0x0047d55f
 0047D52C  8B 17                     MOV EDX,dword ptr [EDI]
 0047D52E  8B CF                     MOV ECX,EDI
-0047D530  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Annih::override::prt_47d530_e5e2351e:
+0047D530  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0047D536  83 F8 01                  CMP EAX,0x1
 0047D539  75 24                     JNZ 0x0047d55f
 0047D53B  33 C0                     XOR EAX,EAX
@@ -445,7 +446,8 @@ LAB_0047d5b7:
 0047D665  75 59                     JNZ 0x0047d6c0
 0047D667  8B 17                     MOV EDX,dword ptr [EDI]
 0047D669  8B CF                     MOV ECX,EDI
-0047D66B  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Annih::override::prt_47d66b_e5e2351e:
+0047D66B  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0047D671  83 F8 01                  CMP EAX,0x1
 0047D674  75 4A                     JNZ 0x0047d6c0
 0047D676  8B 8F D0 04 00 00         MOV ECX,dword ptr [EDI + 0x4d0]
@@ -522,7 +524,8 @@ LAB_0047d6e1:
 0047D783  75 2E                     JNZ 0x0047d7b3
 0047D785  8B 17                     MOV EDX,dword ptr [EDI]
 0047D787  8B CF                     MOV ECX,EDI
-0047D789  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Annih::override::prt_47d789_e5e2351e:
+0047D789  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0047D78F  83 F8 01                  CMP EAX,0x1
 0047D792  75 1F                     JNZ 0x0047d7b3
 0047D794  8B 86 F7 06 00 00         MOV EAX,dword ptr [ESI + 0x6f7]

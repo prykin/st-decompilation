@@ -308,7 +308,7 @@ int __thiscall st::fn_00462180(void *this,int param_1)
   ushort *puVar22;
   STWorldObject *pSVar23;
   bool bVar24;
-  AnonShape_00645880_8F6B4550 local_9c;
+  RecoveredRecord_STBoatC_00645880 local_9c;
   int local_74 [2];
   undefined1 local_6c [16];
   undefined4 local_5c;
@@ -344,8 +344,8 @@ int __thiscall st::fn_00462180(void *this,int param_1)
                          STField<STAllPlayersC_GetObjPtr_param_3Enum>(this,0x33b));
     if (((this_00 != nullptr) && (this_00 != this)) &&
        ((STField<int>(this,0x6f7) != 9 ||
-        ((iVar16 = (*this_00->vtable->vfunc_2C)(), iVar16 == 0x3b ||
-         (iVar16 = (*this_00->vtable->vfunc_2C)(), iVar16 == 0x60)))))) {
+        ((iVar16 = this_00->vfunc_2C(), iVar16 == 0x3b ||
+         (iVar16 = this_00->vfunc_2C(), iVar16 == 0x60)))))) {
       STField<undefined4>(this,0x7f4) = this_00->field_0018;
       STField<undefined4>(this,0x7f8) = this_00->field_002C;
       STField<undefined4>(this,0x7fc) = STField<undefined4>(this,0x33b);
@@ -364,7 +364,7 @@ int __thiscall st::fn_00462180(void *this,int param_1)
       STField<undefined2>(this,0x80a) = 0xffff;
       STField<undefined2>(this,0x808) = 0xffff;
       STField<undefined2>(this,0x806) = 0xffff;
-      iVar16 = (*this_00->vtable->vfunc_2C)();
+      iVar16 = this_00->vfunc_2C();
       if (iVar16 == 0x4d) {
         STField<undefined2>(this,0x816) = 9;
       }
@@ -1084,10 +1084,10 @@ cf_common_exit_0046401F:
 LAB_004644dc:
                 if (((pSVar23 != nullptr) &&
                     (*(int *)&pSVar23->field_0x18 == STField<int>(this,0x7f4))) &&
-                   ((iVar16 = (*pSVar23->vtable[5].slots_00_28[2])(), iVar16 != 0 &&
+                   ((iVar16 = pSVar23->vfunc_F8(), iVar16 != 0 &&
                     ((pSVar23->value_20 != 0x1ae ||
-                     (iVar16 = (*pSVar23->vtable[5].slots_00_28[1])
-                                         (STField<undefined4>(this,0x24)), iVar16 != 0)))))) {
+                     (iVar16 = pSVar23->vfunc_F4(STField<undefined4>(this,0x24)), iVar16 != 0)))
+                    ))) {
 cf_common_exit_00464526:
                   return 2;
                 }

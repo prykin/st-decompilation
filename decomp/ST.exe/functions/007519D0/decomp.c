@@ -74,15 +74,15 @@ joined_r0x00751ad0:
     puVar3 = puVar3 + 1;
   }
   uVar4 = (int)uVar6 >> 1;
-  param_1 = (ushort *)(iVar8 + -1);
+  auto param_1_after_write = (ushort *)(iVar8 + -1); /* compiler stack-slot lifetime split */
   uVar6 = uVar9 * 2 + 2 + (uVar6 & 1);
-  if (param_1 == nullptr) {
-    param_1 = (ushort *)0x10;
+  if (param_1_after_write == nullptr) {
+    param_1_after_write = (ushort *)0x10;
     uVar4 = (uint)*puVar3;
     puVar3 = puVar3 + 1;
   }
   uVar9 = (byte)*puVar3 - 0x100;
-  puVar7 = param_1;
+  puVar7 = param_1_after_write;
   puVar2 = (ushort *)((int)puVar3 + 1);
   goto joined_r0x00751ad0;
 }

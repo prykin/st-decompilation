@@ -165,7 +165,8 @@ LAB_004239da:
 004239E1  8B 16                     MOV EDX,dword ptr [ESI]
 004239E3  50                        PUSH EAX
 004239E4  8B CE                     MOV ECX,ESI
-004239E6  FF 92 00 01 00 00         CALL dword ptr [EDX + 0x100]
+STGroupC::AddObj::override::prt_4239e6_54311be1:
+004239E6  FF 92 00 01 00 00         CALL dword ptr [EDX + 0x100]  ; [STIndirectCallsiteApplier] exact slot 0x100; signature=__thiscall;/undefined1;pointer:/STGameObjC;/undefined1
 LAB_004239ec:
 004239EC  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]
 004239EF  85 C0                     TEST EAX,EAX
@@ -173,7 +174,8 @@ LAB_004239ec:
 004239F3  8B 16                     MOV EDX,dword ptr [ESI]
 004239F5  50                        PUSH EAX
 004239F6  8B CE                     MOV ECX,ESI
-004239F8  FF 92 04 01 00 00         CALL dword ptr [EDX + 0x104]
+STGroupC::AddObj::override::prt_4239f8_54311be1:
+004239F8  FF 92 04 01 00 00         CALL dword ptr [EDX + 0x104]  ; [STIndirectCallsiteApplier] exact slot 0x104; signature=__thiscall;/undefined1;pointer:/STGameObjC;/undefined1
 LAB_004239fe:
 004239FE  83 7E 20 14               CMP dword ptr [ESI + 0x20],0x14
 00423A02  75 0B                     JNZ 0x00423a0f

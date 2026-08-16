@@ -24,6 +24,7 @@ void FUN_006b5b10(AnonShape_006E6FB0_BC494FEA *param_1,int param_2,int param_3,i
 
   iVar11 = param_6;
   iVar10 = param_5;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
     param_2 = FUN_006b4fa0((int *)param_1);
   }
@@ -49,7 +50,6 @@ void FUN_006b5b10(AnonShape_006E6FB0_BC494FEA *param_1,int param_2,int param_3,i
         iVar8 = 0;
       }
       if (iVar4 <= param_5) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = iVar4 + -1;
       }
       if (iVar8 <= param_5) {
@@ -123,29 +123,26 @@ void FUN_006b5b10(AnonShape_006E6FB0_BC494FEA *param_1,int param_2,int param_3,i
     if (iVar12 < param_6) {
       uVar5 = -uVar5;
       if ((int)pAVar1 <= param_6) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = (int)&pAVar1[-1].field_0x17;
       }
       if (param_6 < iVar12) {
         return;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = 0;
     }
     else {
       if (param_6 < 0) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = 0;
       }
       if (iVar12 < param_6) {
         return;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = -param_6;
       iVar12 = -iVar12;
       param_3 = 1 - (int)pAVar1;
     }
     if (iVar4 <= param_5) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = iVar4 + -1;
     }
     if (iVar8 <= param_5) {

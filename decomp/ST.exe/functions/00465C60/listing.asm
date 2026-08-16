@@ -1713,7 +1713,8 @@ LAB_0046741a:
 0046743C  8D 45 FC                  LEA EAX,[EBP + -0x4]
 0046743F  50                        PUSH EAX
 00467440  8B CF                     MOV ECX,EDI
-00467442  FF 92 88 00 00 00         CALL dword ptr [EDX + 0x88]
+STBoatC::LoadRC::override::prt_467442_e9a929de:
+00467442  FF 92 88 00 00 00         CALL dword ptr [EDX + 0x88]  ; [STIndirectCallsiteApplier] exact slot 0x88; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4
 00467448  85 C0                     TEST EAX,EAX
 0046744A  75 4E                     JNZ 0x0046749a
 LAB_0046744c:
@@ -1739,7 +1740,8 @@ LAB_0046749a:
 0046749C  8D 45 FC                  LEA EAX,[EBP + -0x4]
 0046749F  50                        PUSH EAX
 004674A0  8B CF                     MOV ECX,EDI
-004674A2  FF 92 88 00 00 00         CALL dword ptr [EDX + 0x88]
+STBoatC::LoadRC::override::prt_4674a2_e9a929de:
+004674A2  FF 92 88 00 00 00         CALL dword ptr [EDX + 0x88]  ; [STIndirectCallsiteApplier] exact slot 0x88; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4
 004674A8  85 C0                     TEST EAX,EAX
 004674AA  0F 85 A0 17 00 00         JNZ 0x00468c50
 004674B0  66 8B 4F 32               MOV CX,word ptr [EDI + 0x32]

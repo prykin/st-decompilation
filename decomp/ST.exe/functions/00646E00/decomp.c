@@ -32,6 +32,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
   if (param_2 < 0) {
     iVar6 = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
                         (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = iVar6 + -1;
   }
   else {
@@ -39,6 +40,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
                         (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
     param_2 = iVar6;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   if (iVar4 < 0) {
     iVar6 = iVar6 + -1;
@@ -69,9 +71,9 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
     if (g_worldGrid.sizeY < local_8) {
       local_8 = (int)g_worldGrid.sizeY;
     }
-    param_3 = iVar4 + 4;
-    if (g_worldGrid.sizeX < param_3) {
-      param_3 = (int)g_worldGrid.sizeX;
+    auto param_3_after_write = iVar4 + 4; /* compiler stack-slot lifetime split */
+    if (g_worldGrid.sizeX < param_3_after_write) {
+      param_3_after_write = (int)g_worldGrid.sizeX;
     }
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
           ((VisibleClassTy::sub_00558C00
@@ -91,7 +93,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
               (pVVar3->field_004C[local_10 + iVar5 * pVVar3->field_0030] == 0)))) &&
             ((((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)) &&
               ((VisibleClassTy::sub_00558C00
-                          (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_3,iVar6
+                          (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_3_after_write,iVar6
                            ,&local_10,&local_c), iVar5 = local_8, pVVar3 = g_visibleClass_00802A88,
                -1 < local_10 &&
                (((local_10 < (int)pVVar2->field_0030 &&
@@ -108,7 +110,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
               ((((local_10 = g_centeredOffsets5[param_1] + local_10, -1 < local_10 &&
                  (local_10 < pVVar3->field_0034)) && (pVVar3->field_004C != nullptr)) &&
                ((pVVar3->field_004C[param_2 + local_10 * pVVar3->field_0030] == 0 &&
-                (iVar5 = VisibleClassTy::sub_005F1D80(g_visibleClass_00802A88,param_3,iVar5,param_1)
+                (iVar5 = VisibleClassTy::sub_005F1D80(g_visibleClass_00802A88,param_3_after_write,iVar5,param_1)
                 , iVar5 != 1)))))))))))))) {
       return 0;
     }

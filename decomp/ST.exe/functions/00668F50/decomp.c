@@ -26,7 +26,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
 
   iVar6 = 0;
   local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == (char *)0x9) {
       uVar2 = (*this->vtable->slot_18)();
       if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
@@ -49,6 +51,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
           if (*pbVar3 != 0xff) {
             *param_3 = uVar2;
             iVar6 = iVar6 + 1;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_3 = param_3 + 1;
           }
           pbVar3 = pbVar3 + 0x51;

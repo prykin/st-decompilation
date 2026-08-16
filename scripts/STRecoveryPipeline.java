@@ -124,7 +124,10 @@ public class STRecoveryPipeline extends GhidraScript {
             "global_data_summary.txt")),
         Map.entry("STIndirectCallAnalyzer.java", List.of(
             "indirect_call_proposals.tsv", "indirect_call_sites.tsv",
-            "indirect_call_summary.txt")));
+            "indirect_call_summary.txt")),
+        Map.entry("STIndirectCallsiteAnalyzer.java", List.of(
+            "indirect_callsite_proposals.tsv",
+            "indirect_callsite_summary.txt")));
     private static final Map<String, List<String>> CACHEABLE_ANALYZER_INPUTS = Map.ofEntries(
         Map.entry("STDArrayElementAnalyzer.java", List.of()),
         Map.entry("STPointerShapeAnalyzer.java", List.of()),
@@ -154,9 +157,12 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STGlobalRecordAnalyzer.java", List.of()),
         Map.entry("STGlobalAggregateAnalyzer.java", List.of()),
         Map.entry("STGlobalDataAnalyzer.java", List.of()),
-        Map.entry("STIndirectCallAnalyzer.java", List.of("vtable_proposals.tsv")));
+        Map.entry("STIndirectCallAnalyzer.java", List.of("vtable_proposals.tsv")),
+        Map.entry("STIndirectCallsiteAnalyzer.java", List.of(
+            "indirect_call_proposals.tsv", "indirect_call_sites.tsv")));
     private static final Set<String> MUTATING_STATUSES = Set.of(
-        "applied", "created", "converted", "updated", "partial", "renamed", "repaired");
+        "applied", "created", "converted", "updated", "partial", "renamed", "repaired",
+        "removed");
     private static final Set<String> UNCHANGED_STATUSES = Set.of(
         "unchanged", "already_present");
     private static final Set<String> REVIEW_STATUSES = Set.of(
@@ -306,8 +312,7 @@ public class STRecoveryPipeline extends GhidraScript {
         // Exact object-factory vptr stores can split a formerly concatenated generated table.
         // Refresh indirect slot ABIs against the new physical structures before the early gate:
         // the call evidence is still valid, but its structure-relative component moved.
-        pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
-            "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
+        runIndirectCallTyping();
         runAbiRegressionGate("core-final");
     }
 
@@ -361,8 +366,7 @@ public class STRecoveryPipeline extends GhidraScript {
             // namespaces alive after their concrete singleton class is already known.
             changed += pair("STMethodOwnerAnalyzer.java", "STMethodOwnerApplier.java",
                 "method_owner_proposals.tsv", "method_owner_apply_report.tsv");
-            changed += pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
-                "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
+            changed += runIndirectCallTyping();
             // ABI failures are cheap to detect here and expensive to discover after the
             // broad pointer/array/class decompilers have consumed a poisoned boundary.
             runAbiRegressionGate("deep-abi-pass-" + pass);
@@ -414,8 +418,7 @@ public class STRecoveryPipeline extends GhidraScript {
             "STFunctionPointerFieldApplier.java",
             "function_pointer_field_proposals.tsv",
             "function_pointer_field_apply_report.tsv");
-        pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
-            "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
+        runIndirectCallTyping();
         runAbiRegressionGate("post-structural-indirect");
 
         section("deep finalization");
@@ -520,8 +523,7 @@ public class STRecoveryPipeline extends GhidraScript {
                 "STFunctionPointerFieldApplier.java",
                 "function_pointer_field_proposals.tsv",
                 "function_pointer_field_apply_report.tsv");
-            changed += pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
-                "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
+            changed += runIndirectCallTyping();
             runAbiRegressionGate("export-indirect-pass-" + pass);
             println("Export indirect ABI stabilization pass " + pass +
                 ": mutating rows=" + changed);
@@ -530,6 +532,19 @@ public class STRecoveryPipeline extends GhidraScript {
         throw new IllegalStateException("Export indirect ABI stabilization did not reach a " +
             "fixed point in 4 passes; inspect indirect_call_apply_report.tsv under " +
             recoveryProgram);
+    }
+
+    /**
+     * Recover physical vtable component ABIs first, then attach a use-site-only override for
+     * an exact polymorphic slot beyond that physical table.  Keeping the two operations in one
+     * helper prevents core, deep and export modes from drifting into different ABI states.
+     */
+    private int runIndirectCallTyping() throws Exception {
+        int changed = pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
+            "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
+        changed += pair("STIndirectCallsiteAnalyzer.java", "STIndirectCallsiteApplier.java",
+            "indirect_callsite_proposals.tsv", "indirect_callsite_apply_report.tsv");
+        return changed;
     }
 
     /**

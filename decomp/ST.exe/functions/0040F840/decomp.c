@@ -24,7 +24,6 @@ int FUN_0040f840(byte *param_1,int param_2,int param_3,uint param_4)
   if (param_4 == 0) {
     local_14 = 0;
     uVar4 = (uint)*param_1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = 30000;
     iVar11 = 1;
     local_c = 1;
@@ -39,7 +38,6 @@ int FUN_0040f840(byte *param_1,int param_2,int param_3,uint param_4)
           uVar4 = uVar8;
         }
         else {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if ((uVar8 < param_4) ||
              ((param_4 == uVar8 &&
               ((iVar5 < iVar11 ||
@@ -50,7 +48,6 @@ int FUN_0040f840(byte *param_1,int param_2,int param_3,uint param_4)
               )))) {
             local_10 = local_14;
             iVar5 = iVar11;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_4 = uVar8;
             local_8 = iVar11;
           }
@@ -111,7 +108,6 @@ int FUN_0040f840(byte *param_1,int param_2,int param_3,uint param_4)
     return iVar5;
   }
   uVar3 = (uint)*param_1;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_4 = 30000;
   iVar11 = 1;
   iVar5 = 0;
@@ -133,9 +129,7 @@ int FUN_0040f840(byte *param_1,int param_2,int param_3,uint param_4)
         uVar3 = uVar4;
       }
       else {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((uVar4 < param_4) || ((param_4 == uVar4 && (local_8 < iVar11)))) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = uVar4;
           local_10 = iVar5;
           local_8 = iVar11;

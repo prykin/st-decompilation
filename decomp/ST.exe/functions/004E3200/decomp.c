@@ -48,6 +48,7 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
   local_c = 0;
   local_10 = 0;
   local_14 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (*param_1 == 0) {
     pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x30,5);
     *param_1 = (int)pDVar4;
@@ -168,10 +169,10 @@ LAB_004e336e:
   local_18 = 2;
   piVar10 = param_1;
   do {
-    param_1 = *(int **)(*piVar10 + 0xc);
-    while (param_1 != nullptr) {
+    auto param_1_after_write = *(int **)(*piVar10 + 0xc); /* compiler stack-slot lifetime split */
+    while (param_1_after_write != nullptr) {
       pDVar4 = (DArrayTy *)*piVar10;
-      param_1 = nullptr;
+      param_1_after_write = nullptr;
       index_00 = 0;
       if ((int)(pDVar4->count - 2) < 0) break;
       do {
@@ -180,7 +181,7 @@ LAB_004e336e:
         DArrayGetElement((DArrayTy *)*piVar10,index,local_78);
         if ((local_40 == '\0') && (local_70 != '\0')) {
           FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)*piVar10,index_00,index);
-          param_1 = (int *)0x1;
+          param_1_after_write = (int *)0x1;
         }
         pDVar4 = (DArrayTy *)*piVar10;
         index_00 = index;

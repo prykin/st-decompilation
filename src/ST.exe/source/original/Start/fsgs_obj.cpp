@@ -334,7 +334,7 @@ st::fn_005952B0(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjT
       st::fn_006C6470
                 ((int)param_1,param_4 + 0xc,param_5 + 0x13a,(undefined4 *)(param_6 + -0x18),0x15,4,
                  g_startSystem_0081176C->field_0140);
-      iVar4 = param_4 + ((int)(local_c + (local_c >> 0x1f & 3U)) >> 2);
+      iVar4 = param_4 + (STSignedDiv4(local_c));
       st::fn_006C6470
                 ((int)param_1,iVar4 + 0xf,param_5 + 0x157,local_8,0x19,4,
                  g_startSystem_0081176C->field_0140);
@@ -6279,11 +6279,11 @@ LAB_005a1fbe:
     iVar9 = 0;
 LAB_005a1fc3:
     if (iVar9 == 0) {
-      st::external_00000080((LPSTR)local_c,s__s2_s>__s_1d_s_007cc4a0,&DAT_007c6ff0,param_2,&DAT_007c6ff0,param_1
+      st::external_00000080((LPSTR)local_c,s__s2_s>st_string_007CC4A0,&DAT_007c6ff0,param_2,&DAT_007c6ff0,param_1
                 ,param_3);
     }
     else {
-      st::external_00000080((LPSTR)local_c,s__s_1d_s>__s_1d_s_007cc48c,&DAT_007c6ff0,param_4,param_2,
+      st::external_00000080((LPSTR)local_c,s__s_1d_s>st_string_007CC48C,&DAT_007c6ff0,param_4,param_2,
                 &DAT_007c6ff0,param_1,param_3);
     }
   }

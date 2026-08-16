@@ -38,7 +38,8 @@ FUN_004353b0:
 00435426  8B 10                     MOV EDX,dword ptr [EAX]
 00435428  6A 00                     PUSH 0x0
 0043542A  8B C8                     MOV ECX,EAX
-0043542C  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+FUN_004353b0::override::prt_43542c_a0bf87f6:
+0043542C  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 00435432  8D 45 10                  LEA EAX,[EBP + 0x10]
 00435435  50                        PUSH EAX
 00435436  33 C0                     XOR EAX,EAX
@@ -64,7 +65,8 @@ FUN_004353b0:
 00435471  8B 17                     MOV EDX,dword ptr [EDI]
 00435473  6A 01                     PUSH 0x1
 00435475  8B CF                     MOV ECX,EDI
-00435477  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+FUN_004353b0::override::prt_435477_a0bf87f6:
+00435477  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0043547D  6A 00                     PUSH 0x0
 0043547F  6A 04                     PUSH 0x4
 00435481  8B CE                     MOV ECX,ESI

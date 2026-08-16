@@ -13,104 +13,105 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
 
 {
   byte bVar1;
-  void *pvVar2;
-  RuntimeRecord_007F4D74_0010 *pRVar3;
-  int iVar4;
-  byte bVar5;
-  int iVar6;
+  undefined4 *puVar2;
+  void *pvVar3;
+  RuntimeRecord_007F4D74_0010 *pRVar4;
+  int iVar5;
+  byte bVar6;
   int iVar7;
   int iVar8;
+  int iVar9;
   int local_14;
   int local_8;
 
-  pRVar3 = g_runtimeRecords_007F4D74 + param_1;
-  iVar6 = (DAT_007f4d80 + param_1) * *(int *)&this->field_0x37c + *(int *)&this->field_0x38c;
+  pRVar4 = g_runtimeRecords_007F4D74 + param_1;
+  iVar7 = (DAT_007f4d80 + param_1) * *(int *)&this->field_0x37c + *(int *)&this->field_0x38c;
   bVar1 = 0;
   local_8 = 0x7fffffff;
   if (param_1 <= param_2) {
     do {
-      iVar4 = param_1;
-      local_14 = pRVar3->field_0000;
-      param_1 = pRVar3->field_000C;
+      iVar5 = param_1;
+      local_14 = pRVar4->field_0000;
+      auto param_1_after_write = pRVar4->field_000C; /* compiler stack-slot lifetime split */
       if (param_3 == -1) {
-        param_1 = pRVar3->field_0004;
+        param_1_after_write = pRVar4->field_0004;
       }
       else if (param_3 == 1) {
-        local_14 = pRVar3->field_0008;
+        local_14 = pRVar4->field_0008;
       }
-      if (param_1 < local_14) {
+      if (param_1_after_write < local_14) {
         if (local_8 != 0x7fffffff) {
-          sub_00427090(this,local_8,iVar4 + -1,param_3);
+          sub_00427090(this,local_8,iVar5 + -1,param_3);
           local_8 = 0x7fffffff;
         }
       }
       else {
-        bVar5 = *(byte *)(local_14 + DAT_007f4d7c + iVar6);
-        iVar7 = local_14 + 1;
-        if (iVar7 <= param_1) {
+        bVar6 = *(byte *)(local_14 + DAT_007f4d7c + iVar7);
+        iVar8 = local_14 + 1;
+        if (iVar8 <= param_1_after_write) {
           do {
-            if (*(byte *)(DAT_007f4d7c + iVar6 + iVar7) != bVar5) break;
-            iVar7 = iVar7 + 1;
-          } while (iVar7 <= param_1);
+            if (*(byte *)(DAT_007f4d7c + iVar7 + iVar8) != bVar6) break;
+            iVar8 = iVar8 + 1;
+          } while (iVar8 <= param_1_after_write);
         }
-        if ((local_8 != 0x7fffffff) && ((iVar7 <= param_1 || (bVar5 != bVar1)))) {
-          sub_00427090(this,local_8,iVar4 + -1,param_3);
+        if ((local_8 != 0x7fffffff) && ((iVar8 <= param_1_after_write || (bVar6 != bVar1)))) {
+          sub_00427090(this,local_8,iVar5 + -1,param_3);
           local_8 = 0x7fffffff;
         }
-        if (param_1 < iVar7) {
+        if (param_1_after_write < iVar8) {
           if (local_8 == 0x7fffffff) {
-            local_8 = iVar4;
-            bVar1 = bVar5;
+            local_8 = iVar5;
+            bVar1 = bVar6;
           }
         }
         else {
 LAB_00427cca:
-          iVar8 = iVar7;
+          iVar9 = iVar8;
           if (DAT_007f4d84 <= DAT_007f4d78) {
-            pvVar2 = Library::DKW::LIB::MemRealloc(DAT_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4);
-            if (pvVar2 == nullptr) {
+            puVar2 = Library::DKW::LIB::MemRealloc(PTR_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4);
+            if (puVar2 == nullptr) {
               return 0;
             }
             DAT_007f4d84 = DAT_007f4d84 + 10;
-            DAT_007f4d6c = pvVar2;
+            PTR_007f4d6c = puVar2;
           }
-          pvVar2 = Library::DKW::LIB::MemAlloc(0x20);
-          if (pvVar2 == nullptr) {
+          pvVar3 = Library::DKW::LIB::MemAlloc(0x20);
+          if (pvVar3 == nullptr) {
             return 0;
           }
-          *(void **)((int)DAT_007f4d6c + DAT_007f4d78 * 0xc + 8) = pvVar2;
-          iVar7 = sub_004248D0(this,(int)pvVar2,0,DAT_007f4d7c + local_14,DAT_007f4d80 + iVar4,
+          PTR_007f4d6c[DAT_007f4d78 * 3 + 2] = pvVar3;
+          iVar8 = sub_004248D0(this,(int)pvVar3,0,DAT_007f4d7c + local_14,DAT_007f4d80 + iVar5,
                                CASE_0,CASE_1);
-          iVar7 = sub_004248D0(this,(int)pvVar2,iVar7,DAT_007f4d7c + -1 + iVar8,DAT_007f4d80 + iVar4
+          iVar8 = sub_004248D0(this,(int)pvVar3,iVar8,DAT_007f4d7c + -1 + iVar9,DAT_007f4d80 + iVar5
                                ,CASE_3,CASE_2);
-          *(int *)((int)DAT_007f4d6c + DAT_007f4d78 * 0xc + 4) = iVar7;
-          if ((bVar5 & 0x80) == 0) {
-            *(undefined4 *)((int)DAT_007f4d6c + DAT_007f4d78 * 0xc) = 0;
+          PTR_007f4d6c[DAT_007f4d78 * 3 + 1] = iVar8;
+          if ((bVar6 & 0x80) == 0) {
+            PTR_007f4d6c[DAT_007f4d78 * 3] = 0;
           }
           else {
-            *(undefined4 *)((int)DAT_007f4d6c + DAT_007f4d78 * 0xc) = 1;
+            PTR_007f4d6c[DAT_007f4d78 * 3] = 1;
           }
           DAT_007f4d78 = DAT_007f4d78 + 1;
-          if (iVar8 <= param_1) {
-            iVar7 = iVar8 + 1;
-            bVar5 = *(byte *)(DAT_007f4d7c + iVar8 + iVar6);
-            local_14 = iVar8;
-            if (iVar7 <= param_1) {
+          if (iVar9 <= param_1_after_write) {
+            iVar8 = iVar9 + 1;
+            bVar6 = *(byte *)(DAT_007f4d7c + iVar9 + iVar7);
+            local_14 = iVar9;
+            if (iVar8 <= param_1_after_write) {
               do {
-                if (*(byte *)(DAT_007f4d7c + iVar6 + iVar7) != bVar5) break;
-                iVar7 = iVar7 + 1;
-              } while (iVar7 <= param_1);
+                if (*(byte *)(DAT_007f4d7c + iVar7 + iVar8) != bVar6) break;
+                iVar8 = iVar8 + 1;
+              } while (iVar8 <= param_1_after_write);
             }
             goto LAB_00427cca;
           }
         }
       }
-      pRVar3 = pRVar3 + 1;
-      iVar6 = iVar6 + *(int *)&this->field_0x37c;
-      param_1 = iVar4 + 1;
-    } while (iVar4 + 1 <= param_2);
+      pRVar4 = pRVar4 + 1;
+      iVar7 = iVar7 + *(int *)&this->field_0x37c;
+      param_1_after_write = iVar5 + 1;
+    } while (iVar5 + 1 <= param_2);
     if (local_8 != 0x7fffffff) {
-      sub_00427090(this,local_8,iVar4,param_3);
+      sub_00427090(this,local_8,iVar5,param_3);
     }
   }
   return 0;

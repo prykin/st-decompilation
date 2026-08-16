@@ -34,11 +34,9 @@ void FUN_00706e30(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_15 = param_9 + 1;
     if (bVar1) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_15 = 3;
     }
     if ((int)param_16 <= param_15) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_15 = 3;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -47,14 +45,15 @@ void FUN_00706e30(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
     do {
       uVar2 = Library::MSVCRT::FUN_0072e6c0();
       uVar3 = Library::MSVCRT::FUN_0072e6c0();
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_16 = param_16 - 1;
       *piVar12 = ((int)uVar3 % param_15) * param_2 + (int)uVar2 % param_15;
       piVar12 = piVar12 + 1;
     } while (param_16 != 0);
     iVar13 = 0;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_12 = param_12 + -1;
     if (-1 < param_12) {
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_00706ebf:
       if (param_14 == 1) {
         param_12 = param_12 + -1;
@@ -62,6 +61,7 @@ LAB_00706ebf:
           return;
         }
         uVar5 = (uint)*param_6;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = param_6 + 1;
         iVar11 = param_7;
         if (uVar5 != 0) {
@@ -85,11 +85,9 @@ LAB_00706ebf:
         }
         param_14 = 2;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_16 = (uint)*param_6;
       param_6 = param_6 + 1;
       if (param_16 != 0) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_15 = param_8;
         do {
           if ((param_16 & 0x80) == 0) {
@@ -106,9 +104,7 @@ LAB_00706ebf:
               param_6 = param_6 + 1;
             }
           }
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_15 = param_15 - uVar5;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_16 = (uint)*param_6;
           param_6 = param_6 + 1;
         } while( true );
@@ -122,7 +118,6 @@ LAB_00706f7b:
   if (((byte)param_16 & 0xc0) == 0x80) {
     param_6 = param_6 + param_15;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_15 = param_11;
   if (param_10 == 0) {
     puVar7 = param_1;
@@ -130,8 +125,8 @@ LAB_00706f7b:
     iVar11 = param_13;
     if ((int)uVar5 <= param_11) {
       do {
-        param_9 = param_16 & 0x80;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+        param_9 = param_16 & 0x80;
         param_15 = param_15 - uVar5;
         if (param_9 == 0) {
           if (-1 < (int)(uVar5 - 1)) {
@@ -260,7 +255,6 @@ LAB_0070758b:
           break;
         }
         bVar10 = *param_6;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_16 = (uint)bVar10;
         param_6 = param_6 + 1;
         if ((bVar10 & 0x80) == 0) {
@@ -278,7 +272,6 @@ LAB_0070758b:
         if (0 < iVar11) {
           if (iVar11 == 1) {
             param_6 = param_6 + 1;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_15 = param_15 + -1;
           }
           if (param_15 < 1) goto cf_common_join_00707777;
@@ -293,10 +286,8 @@ LAB_0070758b:
           puVar9 = puVar9 + 1;
           puVar7 = puVar7 + 1;
           pbVar11_mg1 = param_6 + 1;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_15 = param_15 + -1;
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         for (; param_6 = pbVar11_mg1, 0 < param_15; param_15 = param_15 + -3) {
           if (param_5 <= *puVar9) {
             piVar12 = local_80 + iVar13;
@@ -325,7 +316,6 @@ LAB_0070758b:
         param_6 = param_6 + 1;
         if (0 < iVar11) {
           if (iVar11 == 1) {
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_15 = param_15 + -1;
           }
           if (param_15 < 1) goto cf_common_join_00707777;
@@ -339,10 +329,8 @@ LAB_0070758b:
           }
           puVar9 = puVar9 + 1;
           puVar7 = puVar7 + 1;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_15 = param_15 + -1;
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         for (; 0 < param_15; param_15 = param_15 + -3) {
           if (param_5 <= *puVar9) {
             piVar12 = local_80 + iVar13;
@@ -374,7 +362,6 @@ LAB_0070758b:
     if ((int)uVar5 <= param_11) {
       do {
         param_9 = param_16 & 0x80;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_15 = param_15 - uVar5;
         if (param_9 == 0) {
           if (-1 < (int)(uVar5 - 1)) {
@@ -503,7 +490,6 @@ LAB_0070719b:
           break;
         }
         bVar10 = *param_6;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_16 = (uint)bVar10;
         param_6 = param_6 + 1;
         if ((bVar10 & 0x80) == 0) {
@@ -521,7 +507,6 @@ LAB_0070719b:
         if (0 < iVar11) {
           if (iVar11 == 1) {
             param_6 = param_6 + 1;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_15 = param_15 + -1;
           }
           if (param_15 < 1) goto cf_common_join_00707777;
@@ -536,10 +521,8 @@ LAB_0070719b:
           puVar9 = puVar9 + 1;
           puVar7 = puVar7 + 1;
           pbVar11_mg3 = param_6 + 1;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_15 = param_15 + -1;
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         for (; param_6 = pbVar11_mg3, 0 < param_15; param_15 = param_15 + -3) {
           if (param_5 <= *puVar9) {
             piVar12 = local_80 + iVar13;
@@ -568,7 +551,6 @@ LAB_0070719b:
         param_6 = param_6 + 1;
         if (0 < iVar11) {
           if (iVar11 == 1) {
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_15 = param_15 + -1;
           }
           if (param_15 < 1) goto cf_common_join_00707777;
@@ -582,10 +564,8 @@ LAB_0070719b:
           }
           puVar9 = puVar9 + 1;
           puVar7 = puVar7 + 1;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_15 = param_15 + -1;
         }
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         for (; 0 < param_15; param_15 = param_15 + -3) {
           if (param_5 <= *puVar9) {
             piVar12 = local_80 + iVar13;
@@ -620,7 +600,6 @@ cf_common_join_00707777:
         param_6 = param_6 + uVar5;
       }
       bVar10 = *param_6;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_16 = (uint)bVar10;
       uVar5 = param_16;
       pbVar2 = param_6 + 1;

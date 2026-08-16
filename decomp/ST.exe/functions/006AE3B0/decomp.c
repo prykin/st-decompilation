@@ -42,6 +42,7 @@ int FUN_006ae3b0(int param_1,int param_2,int param_3,int param_4,int param_5,int
   uVar5 = FUN_006a6360(param_5,param_6,param_7,param_8,param_9,param_10);
   local_3c = FUN_006a6320(uVar5);
   local_28 = local_3c;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((param_8 == param_5) && (param_9 == param_6)) && (param_10 == param_7)) {
     local_8 = param_12 + -2;
     *(short *)(param_11 + local_8 * 2) = (short)param_5;
@@ -54,7 +55,7 @@ int FUN_006ae3b0(int param_1,int param_2,int param_3,int param_4,int param_5,int
       iVar1 = param_1 + (param_9 * param_2 + local_30 + param_10 * iVar4) * 2;
       uVar5 = FUN_006a6360(param_5,param_6,param_7,local_30,param_9,param_10);
       uVar5 = FUN_006a6320(uVar5);
-      param_8 = 0;
+      auto param_8_after_write = 0; /* compiler stack-slot lifetime split */
       local_18 = (ushort *)&SHORT_007ed576;
       local_14 = &DAT_007ed640;
       do {
@@ -72,7 +73,7 @@ int FUN_006ae3b0(int param_1,int param_2,int param_3,int param_4,int param_5,int
 LAB_006ae68b:
                   iVar11 = (int)*(short *)(param_1 + (iVar7 * param_2 + uVar6 + iVar8 * iVar4) * 2);
                   if (((uVar6 == param_5) && (iVar7 == param_6)) && (iVar8 == param_7)) {
-                    local_28 = param_8;
+                    local_28 = param_8_after_write;
                     local_24 = iVar8;
                     local_20 = iVar7;
                     local_1c = uVar6;
@@ -83,7 +84,7 @@ LAB_006ae68b:
                     if ((iVar11 < local_38) ||
                        ((iVar11 == local_38 &&
                         (((int)(short)uVar2 == local_3c || ((int)(short)uVar2 == uVar5)))))) {
-                      local_28 = param_8;
+                      local_28 = param_8_after_write;
                       local_38 = iVar11;
                       local_24 = iVar8;
                       local_20 = iVar7;
@@ -125,7 +126,7 @@ joined_r0x006ae66d:
             }
           }
         }
-        param_8 = param_8 + 1;
+        param_8_after_write = param_8_after_write + 1;
         local_14 = local_14 + 1;
         local_18 = local_18 + 4;
       } while ((int)local_14 < 0x7ed6a8);

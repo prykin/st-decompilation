@@ -1039,6 +1039,7 @@ undefined4 st::fn_0042C300(char param_1,uint param_2,int param_3,char param_4,ui
 
   iVar1 = param_3;
   iVar3 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
     iVar3 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
     if (param_3 == 0) {
@@ -1071,8 +1072,8 @@ LAB_0042c3a0:
   if (((*piVar2 == 0x3c) || (*piVar2 == 0x19a)) && (piVar2[1] == (int)param_4)) {
     array = STField<DArrayTy *>(piVar2,10);
     index = 0;
-    param_2 = array->count;
-    if (0 < (int)param_2) {
+    auto param_2_after_write = array->count; /* compiler stack-slot lifetime split */
+    if (0 < (int)param_2_after_write) {
       do {
         st::fn_006ACC70(array,index,&param_1);
         if (_param_1 == (ushort)param_5) {
@@ -1090,7 +1091,7 @@ LAB_0042c3a0:
           return 0;
         }
         index = index + 1;
-      } while ((int)index < (int)param_2);
+      } while ((int)index < (int)param_2_after_write);
     }
   }
   return 0xffffffff;
@@ -1183,6 +1184,7 @@ st::fn_0042C5F0
 
   local_c = 0xffffffff;
   if (param_2 < 0x1a5) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1a4) {
       iVar8 = 0;
       iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
@@ -1492,6 +1494,7 @@ st::fn_0042CEF0(STAllPlayersC *this,int param_1,char param_2,short param_3)
   uVar5 = (uint)DAT_0080874d;
   if (0x1a4 < param_1) {
     if (param_1 < 0x1b9) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((param_1 == 0x1b8) || (param_1 == 0x1ae)) goto LAB_0042d011;
     }
     else if ((999 < param_1) && (param_1 < 0x3ea)) {
@@ -1611,6 +1614,7 @@ st::fn_0042D190
   objPtr = (char)param_1;
   uVar5 = (ushort)param_4;
   if (param_2 < 0x19b) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x19a) {
 LAB_0042d1f8:
       index = 0;
@@ -5565,6 +5569,7 @@ st::fn_00433E90
       if (uVar4 != 0x1ae) {
         return;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_4 == 1) {
         return;
       }
@@ -7429,9 +7434,9 @@ cf_common_exit_00437E03:
       do {
         st::fn_006ACC70(local_c,uVar14,local_118);
         pSVar15 = st::fn_004028BA(g_allPlayers_007FA174,pSVar16->field_0024,STPiece<0,2>(local_118),CASE_1);
-        iVar24 = (*pSVar15->vtable->vfunc_2C)();
-        if ((((iVar24 == 8) || (iVar24 = (*pSVar15->vtable->vfunc_2C)(), iVar24 == 0x14)) ||
-            (iVar24 = (*pSVar15->vtable->vfunc_2C)(), iVar24 == 0x1a)) &&
+        iVar24 = pSVar15->vfunc_2C();
+        if ((((iVar24 == 8) || (iVar24 = pSVar15->vfunc_2C(), iVar24 == 0x14)) ||
+            (iVar24 = pSVar15->vfunc_2C(), iVar24 == 0x1a)) &&
            (iVar24 = st::fn_00402EDC(pSVar15), iVar24 == 0xc)) {
           puVar18 = (byte *)(st::fn_004024CD(pSVar15,local_1b8));
           puVar25 = (byte *)(&local_1fc);
@@ -9544,6 +9549,7 @@ LAB_0043c293:
       pAVar18->field_0007 = 1;
       GVar8 = st::fn_004058A3(st::machine_word_boundary_cast<undefined4>(this));
       local_18 = st::fn_00401D61(GVar8);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar18->field_000F;
       pbVar9 = local_18;
       pbVar14 = (byte *)param_2;
@@ -10662,7 +10668,7 @@ LAB_0043d5c4:
           st::fn_006ACC70(pDVar1,dVar10,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             pSVar11 = st::fn_004028BA(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
-            uVar12 = (*pSVar11->vtable->vfunc_2C)();
+            uVar12 = pSVar11->vfunc_2C();
             switch(uVar12) {
             case 7:
             case 8:
@@ -11017,7 +11023,7 @@ switchD_0043efb1_caseD_3a:
           bVar3 = false;
         }
         else {
-          SVar5 = (*this_01->vtable->vfunc_2C)();
+          SVar5 = this_01->vfunc_2C();
           if ((SVar5 != param_3) || (iVar7 = this_01->vfunc_F8(), iVar7 == 0))
           goto switchD_0043efb1_caseD_3a;
           if (param_4 != 0) {
@@ -11386,7 +11392,7 @@ LAB_00440bab:
       }
       else {
         pSVar4 = st::fn_004028BA(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
-        iVar5 = pSVar4->vfunc_F8();
+        iVar5 = (*pSVar4->vtable[1].vfunc_24)(pSVar4);
         if (iVar5 == 0) goto LAB_00440bab;
       }
       uVar14 = uVar14 + 1;
@@ -11409,7 +11415,7 @@ LAB_00440c19:
       }
       else {
         pSVar4 = st::fn_004028BA(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
-        iVar5 = pSVar4->vfunc_F8();
+        iVar5 = (*pSVar4->vtable[1].vfunc_24)(pSVar4);
         if (iVar5 == 0) goto LAB_00440c19;
       }
       uVar14 = uVar14 + 1;
@@ -11490,7 +11496,7 @@ LAB_00440c19:
                     if (((this_00 != nullptr) &&
                         (this_00[1].vtable == (STWorldObjectVTable *)(int)param_1)) &&
                        ((iVar5 = this_00->GetObjectTypeId(), iVar5 == 0x33 &&
-                        (iVar5 = (*this_00->vtable[5].slots_00_28[2])(), uVar15 = local_20,
+                        (iVar5 = (*this_00->vtable[5].slots_00_28[2])(this_00), uVar15 = local_20,
                         iVar5 == 1)))) {
                       uVar14 = 0;
                       if (0 < (int)local_20) {
@@ -11563,7 +11569,7 @@ LAB_00440c19:
           st::fn_006ACC70(local_10,uVar15,&local_3c);
           pSVar4 = st::fn_004028BA(local_40,param_1,local_3c,CASE_1);
           st::fn_004018C5((STFishC *)pSVar4,&local_12,&local_14,&local_16);
-          GVar9 = (*pSVar4->vtable->vfunc_2C)();
+          GVar9 = pSVar4->vfunc_2C();
           bVar3 = st::fn_004025AE(GVar9);
           uStack_3a = ((g_pathingScratchGrid.cells
                         [(int)local_16 * (int)g_pathingGrid.planeStride +
@@ -11586,7 +11592,7 @@ LAB_00440c19:
             local_68 = -1;
           }
           else {
-            GVar9 = (*pSVar4->vtable->vfunc_2C)();
+            GVar9 = pSVar4->vfunc_2C();
             bVar3 = st::fn_004025AE(GVar9);
             local_68 = ((local_68 * 0xc9 + -0xc9) / 3) / (int)(uint)bVar3;
           }
@@ -11611,11 +11617,11 @@ LAB_00440c19:
           st::fn_006ACC70(local_10,0,&local_3c);
           pSVar4 = st::fn_004028BA(local_40,param_1,local_3c,CASE_1);
           local_60 = st::fn_004043E0(pSVar4);
-          iVar5 = (*pSVar4->vtable->vfunc_78)();
+          iVar5 = pSVar4->vfunc_78();
           if (iVar5 < 1) {
             iVar5 = 1;
           }
-          iVar11 = (*pSVar4->vtable->vfunc_2C)();
+          iVar11 = pSVar4->vfunc_2C();
           local_c = (DArrayTy *)
                     ((int)(*(int *)(&DAT_007e049c + iVar11 * 4) * local_60) / iVar5 + uStack_3a);
           st::fn_006AE140(pDVar6,local_1c,&local_10);
@@ -11642,11 +11648,11 @@ LAB_00440c19:
           st::fn_006ACC70(array,0,&local_34);
           pSVar4 = st::fn_004028BA(local_40,param_1,local_34,CASE_1);
           local_EAX_2155 = st::fn_004043E0(pSVar4);
-          iVar5 = (*pSVar4->vtable->vfunc_78)();
+          iVar5 = pSVar4->vfunc_78();
           if (iVar5 < 1) {
             iVar5 = 1;
           }
-          iVar11 = (*pSVar4->vtable->vfunc_2C)();
+          iVar11 = pSVar4->vfunc_2C();
           local_74 = (*(int *)(&DAT_007e049c + iVar11 * 4) * local_EAX_2155) / iVar5;
           iVar5 = 0;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -11657,11 +11663,11 @@ LAB_00440c19:
               st::fn_006ACC70(local_10,local_2c,&local_5c);
               pSVar4 = st::fn_004028BA(local_40,param_1,local_5c,CASE_1);
               local_60 = st::fn_004043E0(pSVar4);
-              iVar11 = (*pSVar4->vtable->vfunc_78)();
+              iVar11 = pSVar4->vfunc_78();
               if (iVar11 < 1) {
                 iVar11 = 1;
               }
-              iVar12 = (*pSVar4->vtable->vfunc_2C)();
+              iVar12 = pSVar4->vfunc_2C();
               iVar11 = (int)(*(int *)(&DAT_007e049c + iVar12 * 4) * local_60) / iVar11;
               local_50 = (DArrayTy *)((int)&local_50->flags + iVar11);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -11721,11 +11727,11 @@ LAB_00440c19:
               st::fn_006ACC70(local_10,0,&local_3c);
               pSVar4 = st::fn_004028BA(local_40,param_1,local_3c,CASE_1);
               local_EAX_2660 = st::fn_004043E0(pSVar4);
-              iVar5 = (*pSVar4->vtable->vfunc_78)();
+              iVar5 = pSVar4->vfunc_78();
               if (iVar5 < 1) {
                 iVar5 = 1;
               }
-              iVar11 = (*pSVar4->vtable->vfunc_2C)();
+              iVar11 = pSVar4->vfunc_2C();
               local_8 = (DArrayTy *)
                         ((*(int *)(&DAT_007e049c + iVar11 * 4) * local_EAX_2660) / iVar5 + uStack_3a
                         );
@@ -11750,11 +11756,11 @@ LAB_00440c19:
               st::fn_006ACC70(local_10,0,&local_34);
               pSVar4 = st::fn_004028BA(local_40,param_1,local_34,CASE_1);
               local_EAX_2852 = st::fn_004043E0(pSVar4);
-              iVar5 = (*pSVar4->vtable->vfunc_78)();
+              iVar5 = pSVar4->vfunc_78();
               if (iVar5 < 1) {
                 iVar5 = 1;
               }
-              iVar11 = (*pSVar4->vtable->vfunc_2C)();
+              iVar11 = pSVar4->vfunc_2C();
               local_74 = (*(int *)(&DAT_007e049c + iVar11 * 4) * local_EAX_2852) / iVar5;
               iVar5 = 0;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -11765,11 +11771,11 @@ LAB_00440c19:
                   st::fn_006ACC70(local_10,(uint)local_6c,&local_5c);
                   pSVar4 = st::fn_004028BA(local_40,param_1,local_5c,CASE_1);
                   local_60 = st::fn_004043E0(pSVar4);
-                  iVar11 = (*pSVar4->vtable->vfunc_78)();
+                  iVar11 = pSVar4->vfunc_78();
                   if (iVar11 < 1) {
                     iVar11 = 1;
                   }
-                  iVar12 = (*pSVar4->vtable->vfunc_2C)();
+                  iVar12 = pSVar4->vfunc_2C();
                   iVar11 = (int)(*(int *)(&DAT_007e049c + iVar12 * 4) * local_60) / iVar11;
                   local_50 = (DArrayTy *)((int)&local_50->flags + iVar11);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -12221,7 +12227,7 @@ undefined4 __thiscall st::fn_00442300(STAllPlayersC *this,char param_1,uint para
   local_6c[3] = 0x5e;
   local_5c = this;
   local_44 = st::fn_004028BA(this,param_1,(ushort)param_2,CASE_1);
-  local_58 = (*local_44->vtable->vfunc_2C)();
+  local_58 = local_44->vfunc_2C();
   local_10 = 0;
   local_d4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d4;
@@ -12473,7 +12479,7 @@ undefined4 st::fn_00442B40(undefined4 *param_1,uint param_2)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   this = st::fn_004028BA(in_ECX,objPtr,(ushort)param_2,CASE_1);
   local_14 = this;
-  uVar4 = (*this->vtable->vfunc_2C)();
+  uVar4 = this->vfunc_2C();
   local_c = 0;
   local_18 = uVar4;
   if (this == nullptr) {
@@ -12521,9 +12527,9 @@ undefined4 st::fn_00442B40(undefined4 *param_1,uint param_2)
   st::fn_004018C5((STFishC *)this,(short *)((int)&param_2 + 2),&local_6,&local_8);
   local_1c = this->field_0032;
   local_14 = (STGameObjC *)0x4;
-  param_1 = &g_packedRecords_A62x8[objPtr].field5_0xf;
+  auto param_1_after_write = &g_packedRecords_A62x8[objPtr].field5_0xf; /* compiler stack-slot lifetime split */
   do {
-    pDVar2 = (DArrayTy *)*param_1;
+    pDVar2 = (DArrayTy *)*param_1_after_write;
     if ((pDVar2 != nullptr) && (uVar1 = (ushort)pDVar2->count, uVar1 != 0)) {
       uVar4 = 0;
       local_18 = (uint)uVar1;
@@ -12541,7 +12547,7 @@ undefined4 st::fn_00442B40(undefined4 *param_1,uint param_2)
         } while ((int)uVar4 < (int)local_18);
       }
     }
-    param_1 = param_1 + 1;
+    param_1_after_write = param_1_after_write + 1;
     local_14 = (STGameObjC *)((int)local_14 + -1);
   } while (local_14 != nullptr);
   return local_c;
@@ -12570,7 +12576,7 @@ st::fn_00442E50
   int iVar5;
   uint *puVar6;
   int local_EAX_903;
-  STGameObjC *objPtr;
+  STGameObjC *this_00;
   int local_EAX_1125;
   short *psVar7;
   int local_EAX_2342;
@@ -12831,9 +12837,9 @@ LAB_0044326c:
           uVar16 = local_38;
           st::fn_006ACC70(local_48,(uint)local_44,&local_8);
           if ((ushort)local_8 != 0xffff) {
-            objPtr = st::fn_004028BA(local_8c,param_1,(ushort)local_8,CASE_1);
-            local_40 = (STFishC *)objPtr;
-            if (objPtr == nullptr) {
+            this_00 = st::fn_004028BA(local_8c,param_1,(ushort)local_8,CASE_1);
+            local_40 = (STFishC *)this_00;
+            if (this_00 == nullptr) {
               local_EAX_1125 =
                    st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2539,0,0,
                                       st::mutable_c_string("%s"),"STAllPlayersC::_AssignMDPairs ptr==NULL");
@@ -12844,10 +12850,10 @@ LAB_0044326c:
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x253a);
             }
-            iVar11 = (*objPtr->vtable->vfunc_2C)();
-            if ((((iVar11 != 8) && (iVar11 = (*objPtr->vtable->vfunc_2C)(), iVar11 != 0x14)) &&
-                (iVar11 = (*objPtr->vtable->vfunc_2C)(), iVar11 != 0x1a)) ||
-               (iVar11 = st::fn_00402EDC(objPtr), iVar11 != 0xc)) goto cf_common_join_004435CD;
+            iVar11 = this_00->vfunc_2C();
+            if ((((iVar11 != 8) && (iVar11 = this_00->vfunc_2C(), iVar11 != 0x14))
+                && (iVar11 = this_00->vfunc_2C(), iVar11 != 0x1a)) ||
+               (iVar11 = st::fn_00402EDC(this_00), iVar11 != 0xc)) goto cf_common_join_004435CD;
             uVar15 = 0;
             if (0 < (int)uVar16) {
               do {
@@ -12857,7 +12863,7 @@ LAB_0044326c:
               } while ((int)uVar15 < (int)uVar16);
             }
             if ((int)uVar15 < (int)uVar16) goto cf_common_join_004435CD;
-            psVar7 = (short *)st::fn_004024CD(objPtr,local_19c);
+            psVar7 = (short *)st::fn_004024CD(this_00,local_19c);
             psVar19 = local_158;
             for (iVar11 = 0x10; iVar11 != 0; iVar11 = iVar11 + -1) {
               *(undefined4 *)psVar19 = *(undefined4 *)psVar7;
@@ -14233,8 +14239,8 @@ st::fn_00445A40(STAllPlayersC *this,uint param_1,uint *param_2,uint *param_3)
       st::fn_006ACC70(local_18,uVar7,local_8);
       this_01 = local_34;
       pSVar2 = st::fn_004028BA(local_34,objPtr,local_8[0],CASE_1);
-      if ((pSVar2 == nullptr) || (iVar4 = pSVar2->vfunc_F8(), iVar4 == 0)
-         ) {
+      if ((pSVar2 == nullptr) ||
+         (iVar4 = pSVar2->vfunc_F8(), iVar4 == 0)) {
         st::fn_006B0C70(local_18,uVar7);
         uVar6 = uVar6 - 1;
         uVar7 = uVar7 - 1;
@@ -14254,8 +14260,8 @@ st::fn_00445A40(STAllPlayersC *this,uint param_1,uint *param_2,uint *param_3)
       st::fn_006ACC70(local_14,uVar6,local_8);
       pSVar2 = st::fn_004028BA(this_01,objPtr,local_8[0],CASE_1);
       if (((pSVar2 == nullptr) || (iVar4 = st::fn_00404E58(pSVar2), iVar4 == 0)) ||
-         ((iVar4 = pSVar2->vfunc_F8(), iVar4 == 0 || (pSVar2->field_0030 == -1))))
-      {
+         ((iVar4 = pSVar2->vfunc_F8(), iVar4 == 0 || (pSVar2->field_0030 == -1)))
+         ) {
         st::fn_006B0C70(local_14,uVar6);
         local_c = local_c - 1;
         uVar6 = uVar6 - 1;
@@ -15824,10 +15830,12 @@ st::fn_00448120
         if (-1 < (int)local_24) {
           local_1c = 0;
           do {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = local_20_mg0;
             if (9 < (int)local_20_mg0) {
               _param_4 = 10;
             }
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
               psVar14 = local_6a;
@@ -17120,7 +17128,7 @@ LAB_0044ac57:
     if (dVar6 == 0) {
       return -1;
     }
-    tempGroup = dVar6;
+    auto tempGroup_after_write = dVar6; /* compiler stack-slot lifetime split */
     st::fn_006AFE40((int *)&local_c,st::pointer_boundary_cast<uint *>(&objectIds->flags));
     if (0 < (int)dVar6) {
       do {
@@ -17133,9 +17141,9 @@ LAB_0044ac57:
         }
         uVar7 = uVar7 + 1;
       } while ((int)uVar7 < (int)dVar6);
-      tempGroup = dVar6;
+      tempGroup_after_write = dVar6;
       if (dVar6 != 0) {
-        objectIds = nullptr;
+        auto objectIds_after_write = nullptr; /* compiler stack-slot lifetime split */
         piVar5 = (int *)(iVar3 + 10);
         array = local_c;
         do {
@@ -17156,7 +17164,7 @@ LAB_0044ac57:
                 }
                 uVar7 = uVar7 + 1;
               } while ((int)uVar7 < iVar3);
-              if ((iVar3 != 0) && (0 < (int)tempGroup)) {
+              if ((iVar3 != 0) && (0 < (int)tempGroup_after_write)) {
                 while( true ) {
                   st::fn_006ACC70(local_10,0,(st_stack_frame + 74));
                   uVar7 = 0;
@@ -17168,10 +17176,10 @@ LAB_0044ac57:
                     if (iVar3 <= (int)uVar7) goto LAB_0044ada0;
                   }
                   st::fn_006B0C70(local_10,0);
-                  tempGroup = tempGroup - 1;
+                  tempGroup_after_write = tempGroup_after_write - 1;
                   st::fn_006B0C70(local_8,uVar7);
                   iVar3 = iVar3 + -1;
-                  if ((int)tempGroup < 1) break;
+                  if ((int)tempGroup_after_write < 1) break;
                 }
               }
             }
@@ -17180,17 +17188,17 @@ LAB_0044ada0:
             local_10 = nullptr;
             st::fn_006AE110(local_8);
             local_8 = nullptr;
-            if ((tempGroup == 0) && (iVar3 == 0)) {
+            if ((tempGroup_after_write == 0) && (iVar3 == 0)) {
               st::fn_006AE110(local_c);
-              return (int)objectIds;
+              return (int)objectIds_after_write;
             }
-            tempGroup = local_c->count;
+            tempGroup_after_write = local_c->count;
             array = local_c;
             iVar2 = objectType;
           }
           piVar5 = piVar5 + 4;
-          objectIds = (DArrayTy *)((int)&objectIds->flags + 1);
-          if (4 < (int)objectIds) {
+          objectIds_after_write = (DArrayTy *)((int)&objectIds_after_write->flags + 1);
+          if (4 < (int)objectIds_after_write) {
             st::fn_006AE110(array);
             return -1;
           }
@@ -17590,6 +17598,7 @@ st::fn_0044B5F0
   local_c = nullptr;
   local_8 = st::fn_006AE290(nullptr,0,2,1);
   switch(param_1) {
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_0:
     param_3 = 0;
     iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
@@ -17611,6 +17620,7 @@ st::fn_0044B5F0
     st::fn_00405227(this,objPtr,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,(int *)&local_8,
                     nullptr);
     param_3 = 0;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = local_8->count;
     if (0 < (int)param_2) {
       do {
@@ -17951,6 +17961,7 @@ st::fn_0044C130
     local_c = nullptr;
     local_154[0] = '\0';
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     st::fn_004024A5(param_1,SVar2,0xe,st::pointer_boundary_cast<undefined4 *>(&local_c),local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {

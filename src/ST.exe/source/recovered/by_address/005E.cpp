@@ -322,11 +322,11 @@ undefined4 __fastcall st::fn_005EBD80(AnonShape_005EBD80_1A4ED01F *param_1)
     if (((iVar5 != 0x1b) && (iVar5 != 7)) && (iVar5 != 0x13)) {
       return 0;
     }
-    iVar5 = (*this->vtable[5].slots_00_28[9])(0xfe);
+    iVar5 = this->vfunc_114(0xfe);
     if (iVar5 == 0) {
       return 0;
     }
-    (*this->vtable[5].slots_00_28[10])(param_1->field_0018);
+    this->vfunc_118(param_1->field_0018);
     param_1->field_02A3 = this[1].vtable;
     param_1->field_02AB = *(undefined2 *)&this[1].field_0xe;
     param_1->field_02A7 = *(undefined4 *)&this->field_0x18;
@@ -806,6 +806,7 @@ undefined4 __thiscall st::fn_005ED1C0(void *this,int *param_1,int *param_2,int *
       if (0x17 < *param_4) {
         *param_4 = *param_4 + -0x18;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (*param_4 == STField<int>(this,0x273) / 0xf) {
         STField<undefined4>(this,0x28b) = 0;
       }
@@ -1217,6 +1218,7 @@ st::fn_005EE080(void *this,short param_1,short param_2,short param_3,short param
       iVar2 = (iVar8 - param_4) / 2 + (int)param_4;
       iVar3 = ((int)param_2 - (int)param_5) / 2 + (int)param_5;
       iVar6 = (int)param_6;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       auto _param_6 = (local_10 - param_6) / 2 + iVar6;
       local_c = (int)param_2;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -1235,15 +1237,12 @@ st::fn_005EE080(void *this,short param_1,short param_2,short param_3,short param
         if (((iVar6 < 0) || (DAT_007cdef4 * 2 < iVar6)) ||
            ((iVar8 < 0 ||
             (((DAT_007cdef8 * 2 < iVar8 || (iVar9 < 0)) || (DAT_007cdefc * 2 < iVar9)))))) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_4 = _param_6;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_2 = iVar2;
           _param_5 = iVar3;
         }
         else {
           local_10 = _param_6;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_3 = iVar2;
           local_c = iVar3;
         }
@@ -1255,14 +1254,12 @@ st::fn_005EE080(void *this,short param_1,short param_2,short param_3,short param
       uVar4 = 0;
       do {
         if (*(char *)((int)this + uVar4 + 0x308) == -1) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_2 = uVar4 & 0xff;
           if ((char)uVar4 != -1) goto LAB_005ee2fe;
           break;
         }
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < 5);
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_2 = 4;
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_005ee2fe:

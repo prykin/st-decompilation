@@ -64,7 +64,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
           }
           this_01 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0x24,*puVar4,CASE_1);
           if (((this_01 != nullptr) &&
-              (iVar5 = this_01->vfunc_F8(), iVar5 != 0)) &&
+              (iVar5 = (*this_01->vtable[1].vfunc_24)(this_01), iVar5 != 0)) &&
              (iVar5 = this_01->vfunc_6C(), param_2 == iVar5)) {
             local_8 = local_8 + 1;
           }

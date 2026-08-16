@@ -26,10 +26,12 @@ FUN_0043e9a0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param_3,
   local_c = param_6 + -1 + local_8;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_6 = (int)param_4;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_4 = param_7 + -1 + _param_6;
   iVar2 = (int)param_5;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_5 = param_8 + -1 + iVar2;
-  param_3 = 0;
+  auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
   if (local_8 < 0) {
     local_8 = 0;
   }
@@ -38,7 +40,6 @@ FUN_0043e9a0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param_3,
     local_c = iVar4;
   }
   if (_param_6 < 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_6 = 0;
   }
   if (g_worldGrid.sizeY + -1 < _param_4) {
@@ -57,7 +58,7 @@ FUN_0043e9a0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param_3,
     _param_5 = _param_5 + 1;
     iVar6 = local_c;
     iVar7 = local_8;
-    param_3 = 0;
+    param_3_after_write = 0;
     do {
       iVar4 = iVar4 + g_worldGrid.planeStride;
       local_10 = iVar4 - (short)iVar2;
@@ -83,7 +84,7 @@ LAB_0043eb0f:
                   if ((param_10 == -1) ||
                      (pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0x6c))(),
                      pSVar3 == (STWorldCell *)(int)param_10)) {
-                    param_3 = param_3 + 1;
+                    param_3_after_write = param_3_after_write + 1;
                   }
                 }
                 else {
@@ -113,6 +114,6 @@ LAB_0043eb0f:
       _param_5 = _param_5 + -1;
     } while (_param_5 != 0);
   }
-  return STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(param_3));
+  return STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(param_3_after_write));
 }
 

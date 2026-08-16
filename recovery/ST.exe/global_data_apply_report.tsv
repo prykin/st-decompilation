@@ -16,7 +16,7 @@ address	status	proposed_name	detail
 007EDCAB	disabled		apply flags are 0
 007EE1AC	disabled		apply flags are 0
 007EE1B0	disabled		apply flags are 0
-007F4D00	disabled	g_runtimeRecord_007F4D3C_0014_007F4D00	apply flags are 0
+007F4D3C	disabled		apply flags are 0
 007F4D74	disabled		apply flags are 0
 007FA130	disabled	g_array_007FA130	apply flags are 0
 007FA154	disabled	g_array_007FA154	apply flags are 0
@@ -31,7 +31,15 @@ address	status	proposed_name	detail
 00801680	disabled	g_bldLabPanel_00801680	apply flags are 0
 00801684	disabled	g_bldObjPanel_00801684	apply flags are 0
 008016E8	disabled	g_researchPanel_008016E8	apply flags are 0
+00802A30	disabled		apply flags are 0
 00803144	disabled		apply flags are 0
+008032A8	disabled		apply flags are 0
+008032AC	disabled		apply flags are 0
+008032B0	disabled		apply flags are 0
+008032C4	disabled		apply flags are 0
+008032CC	disabled		apply flags are 0
+008032D0	disabled		apply flags are 0
+008032D4	disabled		apply flags are 0
 008032F4	disabled		apply flags are 0
 008032F8	disabled		apply flags are 0
 00803300	disabled		apply flags are 0
@@ -39,6 +47,7 @@ address	status	proposed_name	detail
 00803408	disabled	g__Path_00803408	apply flags are 0
 00806724	disabled		apply flags are 0
 00806728	disabled	g_app_00806728	apply flags are 0
+00806740	disabled		apply flags are 0
 00806748	disabled	g_hWnd_00806748	apply flags are 0
 00806768	disabled	g_cMf32_00806768	apply flags are 0
 00806778	disabled	g_cMf32_00806778	apply flags are 0
@@ -52,6 +61,8 @@ address	status	proposed_name	detail
 008087B6	disabled		apply flags are 0
 00808AF4	disabled		apply flags are 0
 00809960	disabled		apply flags are 0
+0080C4C7	disabled		apply flags are 0
+0080C4CB	disabled		apply flags are 0
 0080C502	disabled		apply flags are 0
 0080C522	disabled		apply flags are 0
 0080C632	disabled		apply flags are 0
@@ -60,6 +71,8 @@ address	status	proposed_name	detail
 0081175C	disabled		apply flags are 0
 008117C0	disabled		apply flags are 0
 00811914	disabled		apply flags are 0
+0081194C	disabled		apply flags are 0
+00811958	disabled		apply flags are 0
 00811970	disabled		apply flags are 0
 00811978	disabled		apply flags are 0
 00811990	disabled		apply flags are 0
@@ -69,18 +82,20 @@ address	status	proposed_name	detail
 008489CC	disabled		apply flags are 0
 008489D0	disabled	g_cMf32_008489D0	apply flags are 0
 00848A04	disabled		apply flags are 0
+00848A14	disabled		apply flags are 0
+00854EB8	disabled		apply flags are 0
 00854EE8	disabled	g_anonShape_006CEC40_BB23E716_00854EE8	apply flags are 0
 00854EF0	disabled		apply flags are 0
 00854F08	disabled		apply flags are 0
 00854F44	disabled		apply flags are 0
 00854F58	disabled		apply flags are 0
-00854FD8	disabled		apply flags are 0
+008568B0	disabled	g_lpBuffer_008568B0	apply flags are 0
 008568D0	disabled		apply flags are 0
-00856FE4	disabled		apply flags are 0
 00857004	disabled		apply flags are 0
 00857028	disabled		apply flags are 0
 00857110	disabled		apply flags are 0
 0085712C	disabled		apply flags are 0
 0085713C	disabled		apply flags are 0
+00857168	disabled		apply flags are 0
 0085A5C4	disabled		apply flags are 0
 0085E000	disabled	g_lpAddend_0085E000	apply flags are 0

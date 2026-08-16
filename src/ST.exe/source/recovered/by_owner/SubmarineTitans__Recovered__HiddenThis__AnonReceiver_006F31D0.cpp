@@ -145,6 +145,7 @@ LAB_006f32f9:
   }
   uVar15 = puVar19[0xe];
   local_48 = nullptr;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = uVar7;
   if ((int)param_3 < 0) {
     local_50 = (int)uVar15 >> 2;
@@ -332,7 +333,7 @@ LAB_006f397a:
                 DAT_00856fe8 = local_70;
                 _DAT_00856ff0 = local_68;
                 _DAT_00856ff4 = local_64;
-                DAT_00856fe4 = st::machine_word_boundary_cast<undefined4>(local_34);
+                PTR_00856fe4 = local_34;
                 _DAT_00856fec = local_6c;
                 DAT_0085700c = st::machine_word_boundary_cast<undefined4>(pbVar14);
               }
@@ -483,13 +484,13 @@ LAB_006f3a60:
                           }
                           else {
                             local_44 = (AnonShape_006F31D0_0BFF23DC *)(DAT_00856fd0 - DAT_00856fe8);
-                            iVar12 = (DAT_00856fd4 - *(short *)(DAT_00856fe4 + 0x10)) -
+                            iVar12 = (DAT_00856fd4 - *(short *)(PTR_00856fe4 + 0x10)) -
                                      local_2c[0x14];
                             if (iVar12 < 1) {
-                              local_30 = st::pointer_boundary_cast<byte *>(DAT_00856fe4 + (DAT_00856fe4[0xd] >> 1 & 0xe) + 0x16);
+                              local_30 = PTR_00856fe4 + (PTR_00856fe4[0xd] >> 1 & 0xe) + 0x16;
                             }
                             else {
-                              local_30 = st::fn_006CFE10(st::pointer_boundary_cast<byte *>(DAT_00856fe4),iVar12);
+                              local_30 = st::fn_006CFE10(PTR_00856fe4,iVar12);
                             }
                             if (local_38 != 0) {
                               param_1 = 0;
@@ -774,15 +775,15 @@ LAB_006f3a60:
                             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                             local_44 = (AnonShape_006F31D0_0BFF23DC *)
                                        (((int)*(short *)(local_34 + 0xe) -
-                                        (int)*(short *)(DAT_00856fe4 + 0xe)) + iVar13);
+                                        (int)*(short *)(PTR_00856fe4 + 0xe)) + iVar13);
                             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                             iVar5 = ((int)*(short *)(local_34 + 0x10) -
-                                    (int)*(short *)(DAT_00856fe4 + 0x10)) + local_14;
+                                    (int)*(short *)(PTR_00856fe4 + 0x10)) + local_14;
                             if (iVar5 < 1) {
-                              pbVar20 = st::pointer_boundary_cast<byte *>(DAT_00856fe4 + (DAT_00856fe4[0xd] >> 1 & 0xe) + 0x16);
+                              pbVar20 = PTR_00856fe4 + (PTR_00856fe4[0xd] >> 1 & 0xe) + 0x16;
                             }
                             else {
-                              pbVar20 = st::fn_006CFE10(st::pointer_boundary_cast<byte *>(DAT_00856fe4),iVar5);
+                              pbVar20 = st::fn_006CFE10(PTR_00856fe4,iVar5);
                             }
                             if (local_38 != 0) {
                               param_1 = 0;

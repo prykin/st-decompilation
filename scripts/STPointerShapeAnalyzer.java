@@ -2635,8 +2635,11 @@ public class STPointerShapeAnalyzer extends GhidraScript {
 
         // Older STTypeFamilyAnalyzer versions merged anonymous structures on
         // offset/width geometry alone. That is not a type identity: unrelated
-        // records often share the same layout. Rebuild those script-owned
-        // targets from their own access profile so the unsafe merge is reversible.
+        // records often share the same layout. Rebuild only those exact legacy
+        // targets from their own access profile.  Modern contextual/source
+        // families carry interprocedural identity and are semantic anchors;
+        // treating every STTypeFamilyApplier marker as legacy makes this pass
+        // fight the family pass forever.
         if (generatedAnonymous && target.typeFamilyOwned) {
             String path = anonymousPath(target);
             boolean multiField = target.fields.size() >= 2 && target.accessCount >= 3;
@@ -3203,7 +3206,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     }
 
     private boolean typeFamilyOwned(String comment) {
-        return comment != null && comment.contains("[STTypeFamilyApplier]");
+        return comment != null && comment.contains(
+            "[STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT");
     }
 
     private boolean unsettledLocal(TargetEvidence target) {

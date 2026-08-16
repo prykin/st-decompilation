@@ -163,7 +163,8 @@ LAB_006374ab:
 00637511  0F 84 74 01 00 00         JZ 0x0063768b
 00637517  8B 06                     MOV EAX,dword ptr [ESI]
 00637519  8B CE                     MOV ECX,ESI
-0063751B  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]
+FUN_00637350::override::prt_63751b_e5e2351e:
+0063751B  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00637521  85 C0                     TEST EAX,EAX
 00637523  0F 84 5F 01 00 00         JZ 0x00637688
 00637529  8B 46 24                  MOV EAX,dword ptr [ESI + 0x24]
@@ -240,7 +241,8 @@ LAB_00637608:
 0063760A  74 7C                     JZ 0x00637688
 0063760C  8B 16                     MOV EDX,dword ptr [ESI]
 0063760E  8B CE                     MOV ECX,ESI
-00637610  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+FUN_00637350::override::prt_637610_e5e2351e:
+00637610  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00637616  85 C0                     TEST EAX,EAX
 00637618  74 6E                     JZ 0x00637688
 0063761A  8D 45 22                  LEA EAX,[EBP + 0x22]
@@ -277,7 +279,8 @@ LAB_00637608:
 00637677  8B 06                     MOV EAX,dword ptr [ESI]
 00637679  51                        PUSH ECX
 0063767A  8B CE                     MOV ECX,ESI
-0063767C  FF 10                     CALL dword ptr [EAX]
+FUN_00637350::override::prt_63767c_a68b3caa:
+0063767C  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=machine-void; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4
 0063767E  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 00637681  8B 7D 1C                  MOV EDI,dword ptr [EBP + 0x1c]
 00637684  40                        INC EAX

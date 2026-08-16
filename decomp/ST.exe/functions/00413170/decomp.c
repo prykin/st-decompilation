@@ -42,10 +42,12 @@ FUN_00413170(int param_1,int param_2,int param_3,int param_4,undefined4 *param_5
     }
   }
   iVar3 = DAT_007f4d30 * DAT_007f4d2c;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_4 = 0;
   iVar10 = param_1;
   iVar11 = param_1;
   if (DAT_007f4d20 < local_10) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_6 = 0;
     iVar4 = (local_10 << 0x10) / DAT_007f4d20;
     local_8 = 0;
@@ -89,7 +91,7 @@ LAB_0041329b:
             if (((param_6 < 0) &&
                 (uVar6 = iVar10 + DAT_007f4d2c * iVar11 + iVar3 * iVar5, iVar7 = local_8,
                 *(short *)((int)PTR_007f4cf0 + uVar6 * 2) == 0)) &&
-               (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) == 0))
+               (uVar6 = uVar6 ^ 7, (STBitTest(g_bitset_007F4CFC, uVar6)) == 0))
             goto LAB_00413319;
           }
 LAB_0041330a:
@@ -150,7 +152,7 @@ LAB_00413585:
            (((DAT_007f4d30 <= iVar11 ||
              (uVar6 = iVar10 + DAT_007f4d2c * iVar11 + iVar3 * iVar4,
              *(short *)((int)PTR_007f4cf0 + uVar6 * 2) != 0)) ||
-            (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) != 0)))) {
+            (uVar6 = uVar6 ^ 7, (STBitTest(g_bitset_007F4CFC, uVar6)) != 0)))) {
 LAB_004135d8:
           pcVar9 = pcVar9 + 4;
           goto LAB_0041350c;
@@ -211,7 +213,7 @@ LAB_00413426:
           ((iVar11 < DAT_007f4d30 && (param_6 = param_6 + -0x10000, param_6 < 0)))) &&
          ((uVar6 = iVar10 + DAT_007f4d2c * iVar11 + iVar3 * iVar7,
           *(short *)((int)PTR_007f4cf0 + uVar6 * 2) == 0 &&
-          (uVar6 = uVar6 ^ 7, (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) == 0))))
+          (uVar6 = uVar6 ^ 7, (STBitTest(g_bitset_007F4CFC, uVar6)) == 0))))
       goto LAB_00413496;
 LAB_00413487:
       pcVar8 = pcVar9 + 7;

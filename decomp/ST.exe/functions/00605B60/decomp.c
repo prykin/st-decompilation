@@ -68,6 +68,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   if (piVar2 == piVar8) {
     if (0 < (int)piVar8) {
       piVar2 = local_ec;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = piVar8;
       do {
         uVar4 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;

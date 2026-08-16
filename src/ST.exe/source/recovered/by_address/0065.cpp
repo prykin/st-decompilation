@@ -2758,6 +2758,7 @@ int __fastcall st::fn_0065DC00(AiFltClassTy *param_1,undefined4 param_2,uint par
       cVar1 = (char)param_1->field_0024;
     }
     if ((param_4 != '\b') && ((param_4 < '\0' || (cVar1 = param_4, '\b' < param_4)))) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = -1;
       cVar1 = param_4;
     }
@@ -2776,7 +2777,7 @@ int __fastcall st::fn_0065DC00(AiFltClassTy *param_1,undefined4 param_2,uint par
                          (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
         if (((this != nullptr) && (iVar4 = this->vfunc_F8(), iVar4 != 0))
            && ((param_4 < '\0' || (iVar4 = this->vfunc_6C(), param_4 == iVar4)))) {
-          iVar4 = (*this->vtable->vfunc_2C)();
+          iVar4 = this->vfunc_2C();
           pIVar5 = st::fn_0040410B(iVar4);
           if ((param_3 & (uint)pIVar5) != 0) {
             local_8 = local_8 + 1;
@@ -2830,6 +2831,7 @@ st::fn_0065DD30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param
       cVar2 = (char)param_1->field_0024;
     }
     if ((param_5 != '\b') && ((param_5 < '\0' || (cVar2 = param_5, '\b' < param_5)))) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = -1;
       cVar2 = param_5;
     }
@@ -2848,12 +2850,12 @@ st::fn_0065DD30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param
                          (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
         if ((this == nullptr) || (iVar9 = this->vfunc_F8(), iVar9 == 0))
         goto cf_common_join_0065DF91;
-        uVar4 = (*this->vtable->vfunc_2C)();
+        uVar4 = this->vfunc_2C();
         if (param_4 != 0) {
           if (uVar4 == 0x78) {
             if ((param_4 & 0x80000000) == 0) {
               if ((param_4 & 0x3fffffff) != 0) {
-                iVar9 = (*this->vtable->vfunc_2C)();
+                iVar9 = this->vfunc_2C();
                 if (iVar9 == 0x78) {
                   uVar5 = this->field_0259;
                 }
@@ -2909,7 +2911,7 @@ LAB_0065deef:
         }
         else if (uVar4 == 0x78) {
           if ((param_3 & 0x80000000) == 0) {
-            iVar9 = (*this->vtable->vfunc_2C)();
+            iVar9 = this->vfunc_2C();
             if (iVar9 == 0x78) {
               iVar9 = this->field_0259;
             }
@@ -2982,6 +2984,7 @@ st::fn_0065E070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint pa
     cVar3 = (char)*(undefined4 *)(param_1 + 0x24);
   }
   if ((param_6 != '\b') && ((param_6 < '\0' || (cVar3 = param_6, '\b' < param_6)))) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_6 = -1;
     cVar3 = param_6;
   }
@@ -3002,16 +3005,16 @@ st::fn_0065E070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint pa
             puVar4 = nullptr;
           }
           this = st::fn_004028BA(g_allPlayers_007FA174,(char)local_c,*puVar4,CASE_1);
-          if ((this == nullptr) || (iVar9 = this->vfunc_F8(), iVar9 == 0))
-          goto cf_continue_loop_0065E27E;
-          uVar5 = (*this->vtable->vfunc_2C)();
+          if ((this == nullptr) || (iVar9 = this->vfunc_F8(), iVar9 == 0)
+             ) goto cf_continue_loop_0065E27E;
+          uVar5 = this->vfunc_2C();
           st::fn_004018C5((STFishC *)this,&local_8,&local_6,(short *)((int)&param_3 + 2));
           if (param_5 != 0) {
             if (uVar5 == 0x78) {
               if ((param_5 & 0x80000000) == 0) {
                 uVar10 = param_5 & 0x3fffffff;
                 if (uVar10 != 0) {
-                  iVar9 = (*this->vtable->vfunc_2C)();
+                  iVar9 = this->vfunc_2C();
                   if (iVar9 == 0x78) {
                     uVar6 = this->field_0259;
                   }
@@ -3062,7 +3065,7 @@ LAB_0065e261:
           }
           else if (uVar5 == 0x78) {
             if ((param_4 & 0x80000000) == 0) {
-              iVar9 = (*this->vtable->vfunc_2C)();
+              iVar9 = this->vfunc_2C();
               if (iVar9 == 0x78) {
                 iVar9 = this->field_0259;
               }
@@ -3186,11 +3189,11 @@ st::fn_0065E450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
     return 0;
   }
   GVar4 = array->count;
-  param_3 = 0;
+  auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < (int)GVar4) {
     do {
-      if (param_3 < GVar4) {
-        puVar5 = DArrayAt<ushort>(array, param_3);
+      if (param_3_after_write < GVar4) {
+        puVar5 = DArrayAt<ushort>(array, param_3_after_write);
       }
       else {
         puVar5 = nullptr;
@@ -3225,8 +3228,8 @@ LAB_0065e5a7:
       }
                     /* WARNING: This code block may not be properly labeled as switch case */
       GVar4 = array->count;
-      param_3 = param_3 + 1;
-    } while ((int)param_3 < (int)GVar4);
+      param_3_after_write = param_3_after_write + 1;
+    } while ((int)param_3_after_write < (int)GVar4);
   }
   st::fn_006AE110(array);
   return local_8;
@@ -3399,6 +3402,7 @@ st::fn_0065E9A0(void *this,short *param_1,short *param_2,uint param_3,uint param
   if (uVar2 != 0) {
     local_8 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)uVar2 * 0x2c));
     DAT_00811900 = 0;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((char)param_6 == '\b') {
       param_6 = STReplaceLowByte((uint32_t)(param_6), (uint8_t)((char)psVar4));
     }
@@ -3469,6 +3473,7 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
       else {
         local_c = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)uVar1 * 0x2c));
         DAT_00811900 = 0;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((char)param_7 == '\b') {
           param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(cVar6));
         }
@@ -3487,7 +3492,7 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
               if (local_c[iVar2 * 0xb + 3] != 0) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 STPiece<0,2>(param_2) = CONCAT11(1,cVar6);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22((short)local_c[iVar2 * 0xb + 4],(undefined2)param_2);
                 st::fn_006AE1C0((DArrayTy *)param_3,&param_2);
                 local_8 = local_8 + 1;

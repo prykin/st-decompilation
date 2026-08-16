@@ -51,8 +51,7 @@ VisibleClassTy::sub_00559620
       iVar8 = param_2 - param_5;
       pbVar3 = thunk_FUN_005532f0(param_5);
       param_4 = pbVar3;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_5 = iVar1;
+      auto param_5_after_write = iVar1; /* compiler stack-slot lifetime split */
       if (0 < iVar1) {
         do {
           iVar4 = 0;
@@ -70,10 +69,9 @@ VisibleClassTy::sub_00559620
             iVar7 = iVar7 + 1;
           } while (iVar4 < iVar1);
           iVar8 = iVar8 + 1;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_5 = param_5 + -1;
+          param_5_after_write = param_5_after_write + -1;
           param_4 = param_4 + iVar1;
-        } while (param_5 != 0);
+        } while (param_5_after_write != 0);
       }
     }
   }

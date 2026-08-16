@@ -64,7 +64,8 @@ LAB_0043ef76:
 0043EF80  75 54                     JNZ 0x0043efd6
 0043EF82  8B 16                     MOV EDX,dword ptr [ESI]
 0043EF84  8B CE                     MOV ECX,ESI
-0043EF86  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STAllPlayersC::GetTOBJListFromDArr::override::prt_43ef86_d4e0dbd9:
+0043EF86  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0043EF8C  85 C0                     TEST EAX,EAX
 0043EF8E  74 46                     JZ 0x0043efd6
 0043EF90  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]

@@ -18,6 +18,7 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
   STField<undefined4>(this,0xc) = 0;
   STField<undefined4>(this,4) = 0;
   STField<int>(this,8) = param_1;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
     *(undefined4 *)this = 0;
   }

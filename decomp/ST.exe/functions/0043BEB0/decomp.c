@@ -246,6 +246,7 @@ LAB_0043c293:
       pAVar18->field_0007 = 1;
       GVar8 = thunk_FUN_0044ce40(this);
       local_18 = thunk_FUN_0044d320(GVar8);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar18->field_000F;
       pbVar9 = local_18;
       pbVar14 = (byte *)param_2;
@@ -1364,7 +1365,7 @@ LAB_0043d5c4:
           DArrayGetElement(pDVar1,dVar10,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             pSVar11 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
-            uVar12 = (*pSVar11->vtable->vfunc_2C)();
+            uVar12 = pSVar11->vfunc_2C();
             switch(uVar12) {
             case 7:
             case 8:

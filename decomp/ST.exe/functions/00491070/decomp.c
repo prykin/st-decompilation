@@ -37,6 +37,7 @@ void __thiscall STBoatC::ReleaseLoad(STBoatC *this,uint param_1)
         piVar4 = piVar4 + 1;
       } while (iVar3 < 0x17);
       if ((this->field_045D == CASE_14) && (iVar3 == 0x17)) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = g_playSystem_00802A38->field_00E4;
         CmdToObj(this,CASE_3,&param_1);
       }

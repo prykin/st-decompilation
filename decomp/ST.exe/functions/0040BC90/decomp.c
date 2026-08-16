@@ -58,9 +58,9 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
     if (local_20 < 0) {
       local_20 = 0;
     }
-    param_1 = (int)pSVar1->field_004B - 2;
-    if ((int)param_1 < 0) {
-      param_1 = 0;
+    auto param_1_after_write = (int)pSVar1->field_004B - 2; /* compiler stack-slot lifetime split */
+    if ((int)param_1_after_write < 0) {
+      param_1_after_write = 0;
     }
     iVar2 = (int)g_pathingGrid.sizeX;
     local_10 = pSVar1->field_0047 + 2;
@@ -77,9 +77,9 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
     }
     iVar7 = local_20;
     local_14 = iVar8;
-    if ((int)param_1 <= local_c) {
+    if ((int)param_1_after_write <= local_c) {
       do {
-        local_18 = local_8 + ((int)g_pathingGrid.sizeY * param_1 + iVar7) * iVar2;
+        local_18 = local_8 + ((int)g_pathingGrid.sizeY * param_1_after_write + iVar7) * iVar2;
         local_1c = iVar7;
         if (iVar7 <= iVar8) {
           do {
@@ -89,7 +89,7 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
               do {
                 if ((*psVar9 == 0) &&
                    (iVar8 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar1,iVar2,
-                                               local_1c,param_1), iVar8 == 0)) {
+                                               local_1c,param_1_after_write), iVar8 == 0)) {
                   *psVar9 = -3;
                 }
                 iVar2 = iVar2 + 1;
@@ -103,8 +103,8 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
             iVar7 = local_20;
           } while (local_1c <= iVar8);
         }
-        param_1 = param_1 + 1;
-      } while ((int)param_1 <= local_c);
+        param_1_after_write = param_1_after_write + 1;
+      } while ((int)param_1_after_write <= local_c);
     }
     local_8[(int)pSVar1->field_004B * (int)g_pathingGrid.planeStride +
             (int)pSVar1->field_0049 * (int)g_pathingGrid.sizeX + (int)pSVar1->field_0047] = 0;

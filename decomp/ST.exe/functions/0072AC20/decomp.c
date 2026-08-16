@@ -15,7 +15,7 @@ FUN_0072ac20(void *this,byte *param_1,byte *param_2,uint *param_3,int param_4,in
 
   if (1 < param_4) {
     iVar1 = param_4 + -1;
-    param_4 = 0;
+    auto param_4_after_write = 0; /* compiler stack-slot lifetime split */
     if (0 < iVar1) {
       do {
         iVar2 = FUN_007297e0(this,param_1,param_2,param_3,param_3 + 4,param_5,param_6,param_7,
@@ -23,9 +23,9 @@ FUN_0072ac20(void *this,byte *param_1,byte *param_2,uint *param_3,int param_4,in
         if (iVar2 != 0) {
           return iVar2;
         }
-        param_4 = param_4 + 1;
+        param_4_after_write = param_4_after_write + 1;
         param_3 = param_3 + 4;
-      } while (param_4 < iVar1);
+      } while (param_4_after_write < iVar1);
     }
   }
   return 0;

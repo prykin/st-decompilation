@@ -48,6 +48,17 @@ QUALIFIED_ADDRESS_SYMBOL_RE = re.compile(
     r"(st::fn_[0-9A-Fa-f]{8})"
     r"(?![A-Za-z0-9_])"
 )
+DEGRADED_DUPLICATED_RECEIVER_CALL_RE = re.compile(
+    r"\(\*\s*st::exact_indirect_callee<[^;\n]+?>\(\s*"
+    r"(?P<receiver>[A-Za-z_][A-Za-z0-9_]*)->vtable"
+    r"[^;\n]*?\)\s*\)\s*\(\s*(?P=receiver)\s*(?:,|\))"
+)
+EXACT_INDIRECT_CALLSITE_RE = re.compile(
+    r"\[STIndirectCallsiteApplier\]\s+exact slot 0x"
+    r"(?P<slot>[0-9A-Fa-f]+);\s+"
+    r"(?:mode=(?P<mode>[A-Za-z0-9_-]+);\s+)?"
+    r"signature=(?P<signature>[^\]\r\n]+)"
+)
 RESERVED = {
     "alignas", "alignof", "and", "and_eq", "asm", "auto", "bitand",
     "bitor", "bool", "break", "case", "catch", "char", "char16_t",
@@ -112,6 +123,19 @@ class MemberWrapper:
     parameter_types: tuple[str, ...]
     parameters: tuple[str, ...]
     argument_names: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class ExactIndirectMemberWrapper:
+    owner_path: str
+    owner_name: str
+    member_name: str
+    return_type: str
+    function_pointer_type: str
+    parameter_types: tuple[str, ...]
+    parameters: tuple[str, ...]
+    argument_names: tuple[str, ...]
+    callee_expression: str
 
 
 @dataclass(frozen=True)
@@ -385,6 +409,50 @@ def rewrite_address_taken_globals(
     )
 
 
+def exact_exref_global_rewrites(
+    referenced_globals: Iterable[Any],
+) -> dict[str, str]:
+    """Resolve Ghidra's undeclared ``name_exref`` through one exact IAT datum.
+
+    The decompiler sometimes renders the external-location alias instead of the
+    Listing symbol for the image word which holds it.  ``referenced_globals`` is
+    address-authoritative, so a unique ``PTR_name_ADDRESS`` in that same function
+    can restore the declaration without guessing an import prototype or creating
+    a fake source global.  Ambiguous and escaped names deliberately stay alone.
+    """
+    candidates: dict[str, set[str]] = defaultdict(set)
+    for item in referenced_globals:
+        match = re.match(
+            r"^[0-9A-Fa-f]+\s+"
+            r"(?P<global>PTR_(?P<stem>[A-Za-z_][A-Za-z0-9_]*)_"
+            r"[0-9A-Fa-f]{8})(?:\s+=|$)",
+            str(item),
+        )
+        if match is None:
+            continue
+        candidates[match.group("stem") + "_exref"].add(match.group("global"))
+    return {
+        alias: next(iter(globals_))
+        for alias, globals_ in candidates.items()
+        if len(globals_) == 1
+    }
+
+
+def rewrite_exact_identifiers(
+    text: str, replacements: Mapping[str, str]
+) -> tuple[str, int]:
+    if not replacements:
+        return text, 0
+    pattern = re.compile(
+        r"\b(?:"
+        + "|".join(
+            re.escape(item) for item in sorted(replacements, key=len, reverse=True)
+        )
+        + r")\b"
+    )
+    return pattern.subn(lambda match: replacements[match.group(0)], text)
+
+
 class TypeEmitter:
     """Render exact exported data-type paths as one dependency-ordered header."""
 
@@ -433,6 +501,9 @@ class TypeEmitter:
             defaultdict(list)
         )
         self._prepare_member_wrappers()
+        self.exact_indirect_member_wrappers_by_record_path: dict[
+            str, list[ExactIndirectMemberWrapper]
+        ] = defaultdict(list)
         self.source_member_wrappers_by_record_path: dict[
             str, list[SourceMemberWrapper]
         ] = defaultdict(list)
@@ -577,6 +648,90 @@ class TypeEmitter:
                             argument_names=tuple(argument_names),
                         )
                     )
+
+    def register_exact_indirect_member_wrapper(
+        self,
+        receiver_display: str,
+        slot: int,
+        return_type: str,
+        function_pointer_type: str,
+        parameter_types: tuple[str, ...],
+        callee_expression: str,
+    ) -> str | None:
+        """Expose one exact duplicated-receiver override as member-call sugar.
+
+        A call override beyond the current physical vtable record can make
+        Ghidra spell slot F8 as ``vtable[1].vfunc_24``.  That arithmetic is a
+        declaration limitation, not source semantics.  Keep it inside one
+        generated non-virtual forwarding wrapper and preserve readable
+        ``object->vfunc_F8(...)`` at every exact duplicated-receiver callsite.
+        """
+        owner_name = self.display_pointee_type(receiver_display)
+        if owner_name is None:
+            return None
+        paths = self.record_paths_by_name.get(owner_name, set())
+        if len(paths) != 1:
+            return None
+        owner_path = next(iter(paths))
+        owner = self.by_path.get(owner_path)
+        if owner is None or owner["class"] != "StructureDB":
+            return None
+        receiver_key = self._display_type_key(receiver_display)
+        if not parameter_types or self._display_type_key(
+                parameter_types[0]) != receiver_key:
+            return None
+        member_name = f"vfunc_{slot:X}"
+        explicit_types = tuple(parameter_types[1:])
+        return_key = self._display_type_key(return_type)
+
+        for wrapper in self.member_wrappers_by_record_path.get(owner_path, ()):
+            if wrapper.member_name != member_name:
+                continue
+            if (self._display_type_key(wrapper.return_type) == return_key and
+                    tuple(map(self._display_type_key, wrapper.parameter_types)) ==
+                    tuple(map(self._display_type_key, explicit_types))):
+                return member_name
+            return None
+
+        data_fields = {
+            str(component.get("field_name") or "")
+            for component in owner["detail"]["components"]
+        }
+        if member_name in data_fields:
+            return None
+        existing = self.exact_indirect_member_wrappers_by_record_path[owner_path]
+        for wrapper in existing:
+            if wrapper.member_name != member_name:
+                continue
+            if (self._display_type_key(wrapper.return_type) == return_key and
+                    tuple(map(self._display_type_key, wrapper.parameter_types)) ==
+                    tuple(map(self._display_type_key, explicit_types)) and
+                    wrapper.callee_expression == callee_expression):
+                return member_name
+            self.issues.append(Issue(
+                "exact_indirect_member_wrapper_conflict",
+                f"{owner_name}::{member_name}: conflicting callsite ABI or storage",
+            ))
+            return None
+
+        parameters: list[str] = []
+        argument_names: list[str] = []
+        for index, display in enumerate(explicit_types, 1):
+            name = f"arg_{index}"
+            parameters.append(f"{display} {name}")
+            argument_names.append(name)
+        existing.append(ExactIndirectMemberWrapper(
+            owner_path=owner_path,
+            owner_name=owner_name,
+            member_name=member_name,
+            return_type=return_type,
+            function_pointer_type=function_pointer_type,
+            parameter_types=explicit_types,
+            parameters=tuple(parameters),
+            argument_names=tuple(argument_names),
+            callee_expression=callee_expression,
+        ))
+        return member_name
 
     @staticmethod
     def _display_type_key(type_text: str) -> str:
@@ -1270,6 +1425,48 @@ class TypeEmitter:
         return next(iter(results)) if len(results) == 1 else None
 
     @functools.lru_cache(maxsize=None)
+    def display_member_offset(
+        self, display_name: str, field_name: str, pointer_access: bool
+    ) -> int | None:
+        """Return one exact byte offset for a named exported member."""
+        offsets: set[int] = set()
+        viable = 0
+        for path in self.paths_by_display_name.get(display_name, ()):
+            current = self._unwrap_typedef_path(path, set())
+            record = self.by_path.get(current) if current else None
+            if pointer_access:
+                if record is None or record["class"] != "PointerDB":
+                    continue
+                current = self._unwrap_typedef_path(
+                    str(record["detail"]["points_to"]), set()
+                )
+                record = self.by_path.get(current) if current else None
+            if record is None or record["class"] not in self.RECORD_KINDS:
+                continue
+            viable += 1
+            matches = [
+                item for item in record["detail"].get("components", ())
+                if str(item.get("field_name") or "") == field_name
+            ]
+            if len(matches) != 1:
+                return None
+            offsets.add(int(matches[0]["offset"]))
+        return next(iter(offsets)) if viable > 0 and len(offsets) == 1 else None
+
+    @functools.lru_cache(maxsize=None)
+    def display_storage_length(self, display_name: str) -> int | None:
+        """Return the unanimous exact storage width of one display type."""
+        lengths: set[int] = set()
+        for path in self.paths_by_display_name.get(display_name, ()):
+            current = self._unwrap_typedef_path(path, set())
+            record = self.by_path.get(current) if current else None
+            if record is not None:
+                length = int(record.get("length", -1))
+                if length >= 0:
+                    lengths.add(length)
+        return next(iter(lengths)) if len(lengths) == 1 else None
+
+    @functools.lru_cache(maxsize=None)
     def display_record_length(self, display_name: str) -> int | None:
         """Return one unanimous by-value record length, otherwise ``None``."""
         lengths: set[int] = set()
@@ -1786,6 +1983,23 @@ class TypeEmitter:
                 else:
                     lines.append(f"    return {call};")
                 lines.extend(["}", ""])
+            for wrapper in self.exact_indirect_member_wrappers_by_record_path.get(
+                    path, ()):
+                parameters = ", ".join(wrapper.parameters)
+                lines.append(
+                    f"inline {wrapper.return_type} {wrapper.owner_name}::"
+                    f"{wrapper.member_name}({parameters}) {{"
+                )
+                arguments = ", ".join(("this", *wrapper.argument_names))
+                call = (
+                    f"reinterpret_cast<{wrapper.function_pointer_type}>("
+                    f"{wrapper.callee_expression})({arguments})"
+                )
+                if wrapper.return_type == "void":
+                    lines.append(f"    {call};")
+                else:
+                    lines.append(f"    return {call};")
+                lines.extend(["}", ""])
         return "\n".join(lines)
 
     def _emit_record(self, record: Mapping[str, Any]) -> list[str]:
@@ -1892,6 +2106,12 @@ class TypeEmitter:
                 f"    {wrapper.return_type} {wrapper.member_name}"
                 f"({', '.join(wrapper.parameters)});"
             )
+        for wrapper in self.exact_indirect_member_wrappers_by_record_path.get(
+                record_path, ()):
+            lines.append(
+                f"    {wrapper.return_type} {wrapper.member_name}"
+                f"({', '.join(wrapper.parameters)});"
+            )
         for wrapper in self.source_member_wrappers_by_record_path.get(record_path, ()):
             lines.append(
                 f"    {wrapper.return_type} {wrapper.member_name}"
@@ -1913,6 +2133,8 @@ class SourceTreeGenerator:
         self.function_by_address: dict[str, dict[str, Any]] = {}
         self.globals: list[dict[str, Any]] = []
         self.global_by_address: dict[str, dict[str, Any]] = {}
+        self.strings: list[dict[str, Any]] = []
+        self.string_by_address: dict[str, dict[str, Any]] = {}
         self.global_alias_records: dict[str, dict[str, Any]] = {}
         self.types: list[dict[str, Any]] = []
         self.imports: list[dict[str, Any]] = []
@@ -1935,7 +2157,8 @@ class SourceTreeGenerator:
         required = [
             self.corpus / "manifest.json", self.corpus / "functions.json",
             self.corpus / "types.jsonl", self.corpus / "globals.jsonl",
-            self.corpus / "imports.json", self.corpus / "pseudocode_runtime.h",
+            self.corpus / "strings.jsonl", self.corpus / "imports.json",
+            self.corpus / "pseudocode_runtime.h",
             self.corpus / "call_relations.jsonl",
             self.receipt_path,
         ]
@@ -1955,7 +2178,8 @@ class SourceTreeGenerator:
             )
         for name in (
             "manifest.json", "functions.json", "types.jsonl", "globals.jsonl",
-            "imports.json", "call_relations.jsonl", "pseudocode_runtime.h",
+            "strings.jsonl", "imports.json", "call_relations.jsonl",
+            "pseudocode_runtime.h",
         ):
             self.input_hashes[name] = sha256_file(self.corpus / name)
         self.functions = read_json(self.corpus / "functions.json")
@@ -1974,6 +2198,10 @@ class SourceTreeGenerator:
         self.globals = read_jsonl(self.corpus / "globals.jsonl")
         self.global_by_address = {
             str(item["address"]).upper(): item for item in self.globals
+        }
+        self.strings = read_jsonl(self.corpus / "strings.jsonl")
+        self.string_by_address = {
+            str(item["address"]).upper(): item for item in self.strings
         }
         self.imports = read_json(self.corpus / "imports.json")
         self.import_spellings = {
@@ -2128,6 +2356,11 @@ class SourceTreeGenerator:
             len(items)
             for items in self.type_emitter.member_wrappers_by_record_path.values()
         )
+        self.stats["generated_exact_indirect_member_wrappers"] = sum(
+            len(items)
+            for items in self.type_emitter
+                .exact_indirect_member_wrappers_by_record_path.values()
+        )
         self.stats["generated_source_member_wrappers"] = sum(
             len(items)
             for items in self.type_emitter.source_member_wrappers_by_record_path.values()
@@ -2175,6 +2408,18 @@ class SourceTreeGenerator:
             "}\n"
             "inline char *mutable_c_string(const char *value) noexcept {\n"
             "    return const_cast<char *>(value);\n"
+            "}\n"
+            "// Exact per-instruction HighFunction call override exported from\n"
+            "// Ghidra.  The physical vtable member can retain a shorter/base\n"
+            "// declaration while this boundary exposes the proven call ABI.\n"
+            "template <typename Target, typename Source>\n"
+            "inline Target exact_indirect_callee(Source value) noexcept {\n"
+            "    static_assert(std::is_pointer_v<Target>);\n"
+            "    static_assert(std::is_pointer_v<Source> || std::is_integral_v<Source>);\n"
+            "    if constexpr (std::is_pointer_v<Source>)\n"
+            "        return reinterpret_cast<Target>(value);\n"
+            "    else\n"
+            "        return reinterpret_cast<Target>(static_cast<uintptr_t>(value));\n"
             "}\n"
             "}\n",
             encoding="utf-8",
@@ -2357,9 +2602,15 @@ class SourceTreeGenerator:
             replacement = self.global_type_collisions.get(name)
             if replacement:
                 global_rewrites[name] = replacement
+        exref_rewrites = exact_exref_global_rewrites(
+            function.get("referenced_globals", ())
+        )
         def replace(piece: str) -> str:
             nonlocal definition_rewritten
             result = piece
+            if exref_rewrites:
+                result, count = rewrite_exact_identifiers(result, exref_rewrites)
+                self.stats["exact_exref_global_rewrites"] += count
             if global_rewrites:
                 result, count = rewrite_address_taken_globals(
                     result, global_rewrites
@@ -2370,6 +2621,9 @@ class SourceTreeGenerator:
                 nonlocal address_global_rewrites
                 address = match.group("address").upper()
                 item = self.global_by_address.get(address)
+                if item is None and address in self.string_by_address:
+                    address_global_rewrites += 1
+                    return "st_string_" + address
                 if item is None:
                     return match.group(0)
                 token = match.group("name")
@@ -2461,9 +2715,16 @@ class SourceTreeGenerator:
             address, function, transformed
         )
         transformed = self._repair_exact_field_names(address, function, transformed)
+        transformed = self._repair_exact_indirect_calls(
+            address, function, transformed
+        )
+        transformed = self._repair_commuted_byte_subscripts(
+            address, function, transformed
+        )
         transformed = self._repair_exact_pointer_boundaries(
             address, function, transformed
         )
+        self._reject_degraded_duplicated_receiver_calls(address, transformed)
         if not definition_rewritten:
             self.issues.append(Issue(
                 "definition_not_rewritten",
@@ -2471,6 +2732,20 @@ class SourceTreeGenerator:
                 address,
             ))
         return transformed
+
+    @staticmethod
+    def _reject_degraded_duplicated_receiver_calls(
+        address: str, body: str
+    ) -> None:
+        """Never replace an exact member call with duplicated-receiver ABI noise."""
+        match = DEGRADED_DUPLICATED_RECEIVER_CALL_RE.search(code_only(body))
+        if match is None:
+            return
+        raise GenerationError(
+            f"{address}: exact indirect declaration degraded an unadjusted "
+            f"duplicated receiver {match.group('receiver')!r}; generate a "
+            "non-virtual member wrapper instead"
+        )
 
     @staticmethod
     def _signature_result_type(function: Mapping[str, Any]) -> str | None:
@@ -2974,6 +3249,240 @@ class SourceTreeGenerator:
                 body = body[:start] + replacement + body[end:]
                 self.issues.append(Issue("exact_field_name_rewrite", detail, address))
             self.stats["exact_field_name_rewrites"] += len(edits)
+        return body
+
+    def _serialized_type_expression(self, specification: str) -> str | None:
+        """Render one applier fingerprint type without guessing a display alias."""
+        assert self.type_emitter is not None
+        pointer_depth = 0
+        while specification.startswith("pointer:"):
+            pointer_depth += 1
+            specification = specification[len("pointer:"):]
+        if not specification.startswith("/"):
+            return None
+        record = self.type_emitter.by_path.get(specification)
+        if record is None:
+            return None
+        result = self.type_emitter.type_name(specification)
+        return result + (" *" * pointer_depth)
+
+    def _exact_callsite_abis(
+        self, function: Mapping[str, Any]
+    ) -> dict[int, tuple[str, str, tuple[str, ...]]]:
+        """Read only unanimous exact call-site ABIs exported from Ghidra."""
+        by_slot: dict[int, set[str]] = defaultdict(set)
+        for comment in function.get("comments", ()):
+            for match in EXACT_INDIRECT_CALLSITE_RE.finditer(str(comment)):
+                by_slot[int(match.group("slot"), 16)].add(
+                    match.group("signature").strip()
+                )
+        result: dict[int, tuple[str, str, tuple[str, ...]]] = {}
+        for slot, signatures in by_slot.items():
+            if len(signatures) != 1:
+                continue
+            parts = next(iter(signatures)).split(";")
+            if len(parts) < 2 or parts[0] not in {
+                    "__thiscall", "__stdcall", "__cdecl"}:
+                continue
+            returned = self._serialized_type_expression(parts[1])
+            parameters = tuple(
+                value for item in parts[2:]
+                if (value := self._serialized_type_expression(item)) is not None
+            )
+            if returned is None or len(parameters) != len(parts) - 2:
+                continue
+            function_pointer = (
+                f"{returned} ({parts[0]} *)"
+                f"({', '.join(parameters) if parameters else 'void'})"
+            )
+            result[slot] = (function_pointer, returned, parameters)
+        return result
+
+    def _indirect_vtable_site(
+        self, callee: str, declared_types: Mapping[str, str]
+    ) -> tuple[int, str, str] | None:
+        """Resolve wrapped vtable spelling to (byte slot, receiver, member path).
+
+        When a physical table is shorter than a derived dispatch interface,
+        Ghidra prints slot ``N`` as pointer arithmetic over the physical record,
+        for example ``vtable[1].vfunc_14``.  The arithmetic is exact because
+        both the record length and every named component offset are exported.
+        """
+        assert self.type_emitter is not None
+        match = re.fullmatch(
+            r"(?P<base>.+)->vtable"
+            r"(?:\[(?P<table_index>0[xX][0-9A-Fa-f]+|[0-9]+)\])?"
+            r"(?P<op>->|\.)(?P<member>[A-Za-z_][A-Za-z0-9_]*)"
+            r"(?:\[(?P<member_index>0[xX][0-9A-Fa-f]+|[0-9]+)\])?",
+            callee.strip(),
+        )
+        if match is None:
+            return None
+        vtable_expression = match.group("base").strip() + "->vtable"
+        vtable_pointer = self._simple_expression_display(
+            vtable_expression, declared_types
+        )
+        if vtable_pointer is None:
+            return None
+        table = self.type_emitter.display_pointee_type(vtable_pointer)
+        if table is None:
+            return None
+        table_length = self.type_emitter.display_storage_length(table)
+        member_offset = self.type_emitter.display_member_offset(
+            table, match.group("member"), False
+        )
+        member_type = self.type_emitter.display_member_type(
+            table, match.group("member"), False
+        )
+        if table_length is None or member_offset is None or member_type is None:
+            return None
+        table_index = int(match.group("table_index") or "0", 0)
+        slot = table_index * table_length + member_offset
+        if match.group("member_index") is not None:
+            element = self.type_emitter.display_element_type(member_type)
+            element_length = None if element is None else \
+                self.type_emitter.display_storage_length(element)
+            if element_length is None:
+                return None
+            slot += int(match.group("member_index"), 0) * element_length
+        receiver = match.group("base").strip()
+        prefix = receiver + "->"
+        if not callee.strip().startswith(prefix):
+            return None
+        return slot, receiver, callee.strip()[len(prefix):]
+
+    def _indirect_vtable_slot(
+        self, callee: str, declared_types: Mapping[str, str]
+    ) -> int | None:
+        site = self._indirect_vtable_site(callee, declared_types)
+        return None if site is None else site[0]
+
+    def _repair_exact_indirect_calls(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Make a proven Ghidra call override visible to the C++ compiler.
+
+        A per-instruction HighFunction override changes decompiler semantics,
+        but it cannot change the static type of the physical vtable member in
+        the generated header.  Wrap only a callee whose exact computed byte
+        slot has one exported override ABI and whose rendered argument count
+        agrees with that ABI.  This is source declaration assembly, not a new
+        type inference or an error-masking cast.
+        """
+        abis = self._exact_callsite_abis(function)
+        if not abis:
+            return body
+        declared_types = self._declared_types(function, body)
+        pattern = re.compile(
+            r"\(\s*\*\s*(?P<callee>[A-Za-z_][A-Za-z0-9_]*"
+            r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|\[[^\]\n]+\])*)"
+            r"\s*\)\s*\("
+        )
+        masked = code_mask(body)
+        edits: list[tuple[int, int, str, str, str]] = []
+        for match in pattern.finditer(masked):
+            callee = body[match.start("callee"):match.end("callee")]
+            site = self._indirect_vtable_site(callee, declared_types)
+            slot = None if site is None else site[0]
+            abi = None if slot is None else abis.get(slot)
+            if abi is None:
+                continue
+            open_paren = masked.rfind("(", match.start(), match.end())
+            parsed = call_argument_spans(masked, open_paren, body)
+            if parsed is None or len(parsed[0]) != len(abi[2]):
+                continue
+            spans, closing = parsed
+            receiver = site[1]
+            first_argument = body[spans[0][0]:spans[0][1]] if spans else ""
+            receiver_display = self._simple_expression_display(
+                receiver, declared_types
+            )
+            wrapper = None
+            if (receiver_display is not None and
+                    first_argument.strip() == receiver.strip()):
+                wrapper = self.type_emitter.register_exact_indirect_member_wrapper(
+                    receiver_display=receiver_display,
+                    slot=slot,
+                    return_type=abi[1],
+                    function_pointer_type=abi[0],
+                    parameter_types=abi[2],
+                    callee_expression=site[2],
+                )
+            if wrapper is not None:
+                remaining = ", ".join(body[start:end] for start, end in spans[1:])
+                replacement = f"{receiver}->{wrapper}({remaining})"
+                edits.append((match.start(), closing + 1, replacement,
+                    f"slot 0x{slot:X}: {abi[0]}",
+                    "exact_indirect_member_call"))
+                continue
+            replacement = f"st::exact_indirect_callee<{abi[0]}>({callee})"
+            edits.append((match.start("callee"), match.end("callee"), replacement,
+                f"slot 0x{slot:X}: {abi[0]}",
+                "exact_indirect_call_declaration"))
+        member_calls = 0
+        for start, end, replacement, detail, kind in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue(kind, detail, address))
+            if kind == "exact_indirect_member_call":
+                member_calls += 1
+        self.stats["exact_indirect_call_declarations"] += len(edits)
+        self.stats["exact_indirect_member_calls"] += member_calls
+        return body
+
+    def _repair_commuted_byte_subscripts(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Restore pointer/index order for an exact byte-address addition.
+
+        x86 p-code represents ``bytePointer + byteOffset`` as commutative
+        INT_ADD.  With a reused Listing local Ghidra can print the equivalent
+        but ill-formed ``offset[(int)bytePointer]``.  Swapping the operands is
+        exact only for a one-byte pointee; the helper retains the target's
+        32-bit machine-word interpretation under a 64-bit host compiler.
+        """
+        assert self.type_emitter is not None
+        declared = self._declared_types(function, body)
+        pattern = re.compile(
+            r"\b(?P<base>[A-Za-z_][A-Za-z0-9_]*)\s*"
+            r"\[\s*\(\s*(?:int|uint|undefined4)\s*\)\s*"
+            r"(?P<pointer>[A-Za-z_][A-Za-z0-9_]*)\s*\]"
+        )
+        edits: list[tuple[int, int, str]] = []
+        for match in pattern.finditer(code_mask(body)):
+            base = match.group("base")
+            pointer = match.group("pointer")
+            pointer_display = declared.get(pointer)
+            base_display = declared.get(base)
+            if not pointer_display or not base_display:
+                continue
+            pointee = self.type_emitter.display_pointee_type(pointer_display)
+            if re.sub(r"\s+", "", pointee or "") not in {
+                    "char", "byte", "uchar", "undefined", "undefined1"}:
+                continue
+            if not (
+                self.type_emitter.display_machine_word_scalar(base_display) or
+                self.type_emitter.display_pointer_kind(base_display) is not None
+            ):
+                continue
+            replacement = (
+                f"{pointer}[st::machine_word_boundary_cast<uint>({base})]"
+            )
+            edits.append((match.start(), match.end(), replacement))
+            self.issues.append(Issue(
+                "commuted_byte_subscript",
+                f"{base}[(int){pointer}] -> exact byte-pointer plus machine-word offset",
+                address,
+            ))
+        for start, end, replacement in reversed(edits):
+            body = body[:start] + replacement + body[end:]
+        if edits:
+            self.stats["commuted_byte_subscript_repairs"] += len(edits)
         return body
 
     def _repair_exact_pointer_boundaries(
@@ -3650,6 +4159,7 @@ class SourceTreeGenerator:
         names.update(ADDRESS_NAME_RE.findall(code))
         names.update(re.findall(r"\bst_global_[0-9A-F]{8}\b", code))
         names.update(re.findall(r"\bst_image_[0-9A-F]{8}\b", code))
+        names.update(re.findall(r"\bst_string_[0-9A-F]{8}\b", code))
         return names
 
     def _used_import_names(self, code: str) -> set[str]:
@@ -3661,6 +4171,12 @@ class SourceTreeGenerator:
         by_name = {item["name"]: item for item in self.globals}
         lines = ["#pragma once", "", '#include "st/recovered_types.hpp"', ""]
         for name in sorted(names):
+            if name.startswith("st_string_"):
+                lines.append(
+                    f"extern const char {name}[]; // exact image string address"
+                )
+                self.stats["image_string_address_declarations"] += 1
+                continue
             if name.startswith("st_image_"):
                 lines.append(f"extern byte {name}; // exact image address, semantic type unresolved")
                 self.stats["opaque_image_address_declarations"] += 1

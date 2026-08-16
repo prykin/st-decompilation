@@ -115,7 +115,8 @@ LAB_0065db43:
 0065DB5C  74 20                     JZ 0x0065db7e
 0065DB5E  8B 06                     MOV EAX,dword ptr [ESI]
 0065DB60  8B CE                     MOV ECX,ESI
-0065DB62  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50::override::prt_65db62_d4e0dbd9:
+0065DB62  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0065DB68  85 C0                     TEST EAX,EAX
 0065DB6A  74 12                     JZ 0x0065db7e
 0065DB6C  8B 16                     MOV EDX,dword ptr [ESI]

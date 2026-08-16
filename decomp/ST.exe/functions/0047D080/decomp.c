@@ -54,6 +54,7 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
   int local_c;
   int local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (undefined4 *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     sVar15 = this->field_0423;
@@ -193,7 +194,7 @@ LAB_0047d831:
               ((pSVar2 = STGridAt3D(g_worldGrid, sVar15, sVar17, sVar16).objects[0],
                pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))
               ))) {
-            iVar10 = (*pSVar2->vtable[5].slots_00_28[2])();
+            iVar10 = (*pSVar2->vtable[5].slots_00_28[2])(pSVar2);
             if (iVar10 == 1) {
               this->field_06A5 = CASE_0;
               this->field_06A1 = 1;
@@ -222,7 +223,7 @@ LAB_0047d241:
            (((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) && (sVar16 < g_worldGrid.sizeZ)))))) &&
          ((pSVar2 = STGridAt3D(g_worldGrid, sVar15, sVar17, sVar16).objects[0],
           pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
-        iVar10 = (*pSVar2->vtable[5].slots_00_28[2])();
+        iVar10 = (*pSVar2->vtable[5].slots_00_28[2])(pSVar2);
         if (iVar10 == 1) {
           if (*(int *)&pSVar2[0x22].field_0x8 == 2) {
             this->field_06A1 = 2;
@@ -257,7 +258,7 @@ LAB_0047d241:
            (((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) && (sVar16 < g_worldGrid.sizeZ)))))) &&
          ((pSVar2 = STGridAt3D(g_worldGrid, sVar15, sVar17, sVar16).objects[0],
           pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
-        iVar10 = (*pSVar2->vtable[5].slots_00_28[2])();
+        iVar10 = (*pSVar2->vtable[5].slots_00_28[2])(pSVar2);
         if (iVar10 == 1) {
           thunk_FUN_004b7e30(pSVar2,this->field_06F7,0,0);
           thunk_FUN_004b7de0((int *)pSVar2);

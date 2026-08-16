@@ -158,7 +158,7 @@ undefined4 * __thiscall fn_0040119A(STAllPlayersC * st_this, int * param_1);
 // 0040119F SndUnderAttMenegC::sub_00620030
 undefined4 __thiscall fn_0040119F(SndUnderAttMenegC * st_this, int param_1, int param_2, int param_3);
 // 004011A4 thunk_FUN_0055b9f0
-uint __thiscall fn_004011A4(void * st_this, AnonShape_0055B9F0_F484F6C2 * param_1);
+uint __thiscall fn_004011A4(void * st_this, RecoveredRecord_VisibleClassTy_0055B9F0 * param_1);
 // 004011AE STBoatC::UnLoadObj
 int __thiscall fn_004011AE(STBoatC * st_this, int param_1);
 // 004011B3 ResearchPanelTy::InitResearchPanel
@@ -2778,7 +2778,7 @@ int __thiscall fn_00402D10(void * st_this, int param_1, int param_2);
 // 00402D15 thunk_FUN_004e4e90
 undefined4 __thiscall fn_00402D15(void * st_this, int param_1, int param_2);
 // 00402D1A thunk_FUN_00645880
-void __cdecl fn_00402D1A(AnonShape_00645880_8F6B4550 * param_1);
+void __cdecl fn_00402D1A(RecoveredRecord_STBoatC_00645880 * param_1);
 // 00402D1F thunk_FUN_005f00b0
 undefined __thiscall fn_00402D1F(void * st_this, undefined1 * param_1);
 // 00402D24 thunk_FUN_004969f0
@@ -11745,7 +11745,7 @@ fn_0055B5E0(void *st_this,int param_1,int param_2,undefined4 param_3,uint param_
 // 0055B7F0 VisibleClassTy::sub_0055B7F0
 void __thiscall fn_0055B7F0(VisibleClassTy *st_this,int param_1,undefined *param_2);
 // 0055B9F0 FUN_0055b9f0
-uint __thiscall fn_0055B9F0(void *st_this,AnonShape_0055B9F0_F484F6C2 *param_1);
+uint __thiscall fn_0055B9F0(void *st_this,RecoveredRecord_VisibleClassTy_0055B9F0 *param_1);
 // 0055BA90 FUN_0055ba90
 char * __thiscall fn_0055BA90(void *st_this,char param_1,int param_2);
 // 0055BB00 VisibleClassTy::sub_0055BB00
@@ -14975,7 +14975,7 @@ void __fastcall fn_006457E0(int param_1);
 // 00645830 CreateSTTorp
 STTorpC * __cdecl fn_00645830(void);
 // 00645880 FUN_00645880
-void __cdecl fn_00645880(AnonShape_00645880_8F6B4550 *param_1);
+void __cdecl fn_00645880(RecoveredRecord_STBoatC_00645880 *param_1);
 // 00645D30 FUN_00645d30
 undefined4 __cdecl fn_00645D30(int param_1,Global_sub_00645D30_param_2Enum param_2);
 // 00645F10 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10

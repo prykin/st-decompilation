@@ -16,7 +16,7 @@ int FUN_006734c0(void)
   int *local_8;
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar2 = (*(code *)PTR_0081194c->field_0008)(DAT_00857560,DAT_0085755c,0x400);
+  iVar2 = (*(code *)PTR_0081194c->field_0008)(DAT_00857560,PTR_0085755c,0x400);
   if ((-1 < iVar2) || (iVar2 == -1)) {
     DAT_00857558 = iVar2;
   }
@@ -24,7 +24,7 @@ int FUN_006734c0(void)
      && (0 < DAT_00857558)) {
     local_8 = DAT_00811908;
     do {
-      puVar3 = Library::MSVCRT::FUN_00730590(DAT_0085755c,(char *)local_8[1]);
+      puVar3 = Library::MSVCRT::FUN_00730590((uint *)PTR_0085755c,(char *)local_8[1]);
       if (puVar3 != nullptr) {
         uVar5 = 0xffffffff;
         pcVar8 = (char *)local_8[1];
@@ -47,14 +47,14 @@ int FUN_006734c0(void)
         do {
           uVar4 = (DAT_00857558 - iVar2) + uVar5;
           if (0x400 < (int)uVar4) {
-            iVar6 = (int)puVar3 - (int)DAT_0085755c;
-            DAT_0085755c = Library::DKW::LIB::MemRealloc(DAT_0085755c,uVar4);
-            puVar3 = (uint *)(iVar6 + (int)DAT_0085755c);
+            iVar6 = (int)puVar3 - (int)PTR_0085755c;
+            PTR_0085755c = Library::DKW::LIB::MemRealloc(PTR_0085755c,uVar4);
+            puVar3 = (uint *)(PTR_0085755c + iVar6);
           }
           Library::MSVCRT::FUN_0072da70
                     ((undefined4 *)(uVar5 + (int)puVar3),
                      (AnonPointee_TLOBaseTy_0607 *)(iVar2 + (int)puVar3),
-                     ((DAT_00857558 - iVar2) - (int)puVar3) + 1 + (int)DAT_0085755c);
+                     (uint)(PTR_0085755c + ((DAT_00857558 - iVar2) - (int)puVar3) + 1));
           puVar7 = (uint *)local_8[2];
           puVar9 = puVar3;
           memmove(puVar9, puVar7, uVar5); /* compiler REP MOVS byte copy */

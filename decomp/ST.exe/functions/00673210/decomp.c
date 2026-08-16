@@ -14,12 +14,12 @@ int FUN_00673210(int param_1)
   int iVar4;
   int iVar5;
   uint uVar6;
-  int iVar7;
+  char *pcVar7;
 
   iVar4 = DAT_00811914;
   iVar5 = DAT_00857558;
   uVar6 = DAT_007d2d24;
-  iVar7 = DAT_0085755c;
+  pcVar7 = PTR_0085755c;
   do {
     DAT_007d2d18 = 0x84e;
     if (iVar5 < iVar4) {
@@ -36,12 +36,12 @@ int FUN_00673210(int param_1)
       iVar3 = FUN_006734c0();
       iVar4 = DAT_00811914;
       iVar5 = DAT_00857558;
-      iVar7 = DAT_0085755c;
-      while (DAT_00811914 = iVar4, DAT_00857558 = iVar5, DAT_0085755c = iVar7, iVar3 != 0) {
+      pcVar7 = PTR_0085755c;
+      while (DAT_00811914 = iVar4, DAT_00857558 = iVar5, PTR_0085755c = pcVar7, iVar3 != 0) {
         if (iVar3 != -1) {
           DAT_00811914 = iVar4;
           DAT_00857558 = iVar5;
-          DAT_0085755c = iVar7;
+          PTR_0085755c = pcVar7;
           return iVar3;
         }
         if ((DAT_007d2d24 & 0x80) == 0) {
@@ -61,7 +61,7 @@ int FUN_00673210(int param_1)
         iVar3 = FUN_006734c0();
         iVar4 = DAT_00811914;
         iVar5 = DAT_00857558;
-        iVar7 = DAT_0085755c;
+        pcVar7 = PTR_0085755c;
       }
       uVar6 = DAT_007d2d24;
       if (-1 < iVar5) {
@@ -70,14 +70,14 @@ int FUN_00673210(int param_1)
         DAT_0081190c = 0;
         _DAT_00857550 = 1;
         iVar4 = 0;
-        if ((0 < iVar5) && (*(char *)(iVar7 + -1 + iVar5) == '\\')) {
+        if ((0 < iVar5) && (pcVar7[iVar5 + -1] == '\\')) {
           DAT_00857558 = iVar5 + -1;
           DAT_00811940 = 1;
-          *(undefined1 *)(iVar7 + DAT_00857558) = 0;
+          pcVar7[DAT_00857558] = '\0';
           iVar4 = DAT_00811914;
           iVar5 = DAT_00857558;
           uVar6 = DAT_007d2d24;
-          iVar7 = DAT_0085755c;
+          pcVar7 = PTR_0085755c;
         }
       }
     }
@@ -89,18 +89,18 @@ int FUN_00673210(int param_1)
       return 0;
     }
     if (param_1 == 0) {
-      uVar1 = *(uint *)((int)PTR_00811924 + *(char *)(iVar7 + iVar4) * 4);
+      uVar1 = *(uint *)((int)PTR_00811924 + pcVar7[iVar4] * 4);
       while ((uVar1 & 0x401) != 0) {
         if (iVar5 <= iVar4) goto LAB_0067339a;
         iVar4 = iVar4 + 1;
         DAT_00811914 = iVar4;
-        uVar1 = *(uint *)((int)PTR_00811924 + *(char *)(iVar7 + iVar4) * 4);
+        uVar1 = *(uint *)((int)PTR_00811924 + pcVar7[iVar4] * 4);
       }
     }
     if (iVar4 < iVar5) {
       if (param_1 != 0) {
         DAT_00811914 = iVar4 + 1;
-        return (int)*(char *)(iVar7 + iVar4);
+        return (int)pcVar7[iVar4];
       }
       if (DAT_007d2d18 != 0x1d) {
         return 0;

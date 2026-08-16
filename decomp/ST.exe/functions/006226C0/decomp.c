@@ -47,6 +47,7 @@ byte __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param
     }
   }
   pAVar1 = this->field_0211;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((((int)param_1 < (int)pAVar1->field_0048) || ((int)pAVar1->field_0058 < (int)param_1)) ||
       ((param_2 < (int)pAVar1->field_0044 || ((int)pAVar1->field_0054 < param_2)))) ||
      (((param_1 = FUN_006ddbd0(), pVVar2 = g_visibleClass_00802A88, param_1 != 0 &&

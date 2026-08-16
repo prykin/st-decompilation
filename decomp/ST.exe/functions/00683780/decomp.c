@@ -21,6 +21,7 @@ int __cdecl FUN_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,int p
   undefined1 uStack_9;
   undefined1 uStack_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((param_3 == 0) || (param_1 == nullptr)) || (param_2 == nullptr)
      ) {
     RaiseInternalException

@@ -128,6 +128,7 @@ LAB_00491b42:
     local_8 = *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride;
     if (0 < g_pathingScratchGrid.cells[local_8 + iVar11 + (int)param_4]) {
       piVar3 = &local_68;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_3 = 1000000000;
       iVar12 = 0;
       do {
@@ -220,6 +221,7 @@ cf_continue_loop_00491C1C:
       iVar11 = -1;
       iVar9 = 0;
       _param_3 = 1000000000;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_6 = 0;
       do {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

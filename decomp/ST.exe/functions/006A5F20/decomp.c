@@ -66,41 +66,34 @@ FUN_006a5f20(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     local_14 = uVar7;
     bVar2 = bVar1;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_6 = iVar4;
+  auto param_6_after_write = iVar4; /* compiler stack-slot lifetime split */
   uVar7 = uVar6;
   bVar11 = bVar10;
   bVar3 = !bVar1;
   if (iVar8 < iVar4) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_6 = iVar8;
+    param_6_after_write = iVar8;
     iVar8 = iVar4;
     uVar7 = local_2c;
     local_2c = uVar6;
     bVar11 = !bVar1;
     bVar3 = bVar10;
   }
-  if (param_6 * 2 < iVar8) {
+  if (param_6_after_write * 2 < iVar8) {
     uVar7 = 1;
     local_14 = 1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_6 = iVar8 - param_6;
+    param_6_after_write = iVar8 - param_6_after_write;
   }
-  else if (local_18 * 2 < param_6) {
+  else if (local_18 * 2 < param_6_after_write) {
     local_14 = 1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_6 = param_6 - local_18;
+    param_6_after_write = param_6_after_write - local_18;
   }
   else if (local_18 == 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if (param_6 == 0) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_6 = iVar8;
+    if (param_6_after_write == 0) {
+      param_6_after_write = iVar8;
     }
   }
   else {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_6 = local_18;
+    param_6_after_write = local_18;
   }
   uVar6 = local_2c;
   bVar10 = bVar3;
@@ -122,7 +115,7 @@ FUN_006a5f20(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     uVar9 = uVar6;
   }
   if (param_7 != nullptr) {
-    *param_7 = param_6;
+    *param_7 = param_6_after_write;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   return *(undefined4 *)(((uVar9 + uVar7 * 3) * 3 + local_14) * 4 + 0x7ed500);

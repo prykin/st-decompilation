@@ -54,6 +54,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     private static final int EXTENSION_ROLE_WEIGHT = 10;
     private static final int ARITHMETIC_ROLE_WEIGHT = 4;
     private static final int BOOLEAN_ROLE_WEIGHT = 10;
+    private static final int BYTE_AFFINE_ROLE_WEIGHT = 10;
 
     private final List<Row> rows = new ArrayList<>();
     private final List<Failure> failures = new ArrayList<>();
@@ -318,6 +319,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         return evidence.sources.contains("call_return") ||
             evidence.sources.contains("typed_copy") ||
             evidence.sources.contains("typed_cast") ||
+            evidence.sources.contains("byte_pointer_result") ||
+            evidence.sources.contains("byte_pointer_index") ||
             evidence.sources.contains("receiver_alias") ||
             evidence.sources.contains("typed_recursive_field");
     }
@@ -340,6 +343,9 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         if (evidence.sources.contains("call_return")) return RETURN_WEIGHT;
         if (evidence.sources.contains("typed_copy")) return COPY_WEIGHT;
         if (evidence.sources.contains("typed_cast")) return COPY_WEIGHT;
+        if (evidence.sources.contains("byte_pointer_result") ||
+                evidence.sources.contains("byte_pointer_index"))
+            return BYTE_AFFINE_ROLE_WEIGHT;
         if (evidence.sources.contains("typed_recursive_field"))
             return TYPED_FIELD_WEIGHT;
         return ARGUMENT_WEIGHT * 2;
@@ -570,6 +576,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                     collectTypedFieldAddress(definition, varnode, evidence);
                 else if (mnemonic.equals("CAST"))
                     collectTypedCast(definition, varnode, evidence);
+                if (mnemonic.equals("INT_ADD"))
+                    collectBytePointerAffineRole(definition, varnode, evidence);
                 if (scalarEligible)
                     collectScalarRole(definition, varnode, evidence);
             }
@@ -582,6 +590,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                     collectCallArgument(op, varnode, evidence);
                 else if (mnemonic(op).equals("STORE"))
                     collectTypedFieldStore(op, varnode, evidence);
+                if (mnemonic(op).equals("INT_ADD"))
+                    collectBytePointerAffineRole(op, varnode, evidence);
                 if (scalarEligible)
                     collectScalarRole(op, varnode, evidence);
             }
@@ -589,6 +599,79 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         catch (Exception ignored) {
             // One malformed p-code edge does not invalidate other independent anchors.
         }
+    }
+
+    /**
+     * Split the two exact machine roles in ``bytePointer + byteOffset``.
+     *
+     * Ghidra is free to commute INT_ADD.  When a compiler reuses one Listing
+     * local for a pointer in one region and a zero-based byte offset in another,
+     * the decompiler can consequently print ``offset[(int)pointer]`` or reject
+     * subscripting a scalar.  An independently typed one-byte pointer makes the
+     * geometry exact: the INT_ADD result is the same pointer type, while the
+     * other input is an unsigned byte offset.  Pointee sizes above one are not
+     * eligible because p-code byte addition would not equal C pointer scaling.
+     */
+    private void collectBytePointerAffineRole(Object op, Object varnode,
+            Map<String, TypeEvidence> evidence) throws Exception {
+        if (!"INT_ADD".equals(mnemonic(op))) return;
+        int count = ((Number)op.getClass().getMethod("getNumInputs")
+            .invoke(op)).intValue();
+        if (count != 2) return;
+        Object output = op.getClass().getMethod("getOutput").invoke(op);
+        boolean isOutput = sameLifetime(output, varnode);
+        int operand = operandOf(op, varnode);
+        if (!isOutput && operand < 0) return;
+
+        for (int index = 0; index < count; index++) {
+            Object input = op.getClass().getMethod("getInput", int.class)
+                .invoke(op, index);
+            if (sameLifetime(input, varnode)) continue;
+            DataType pointer = independentBytePointer(input);
+            if (pointer == null) continue;
+            DataType proposed = isOutput ? pointer :
+                currentProgram.getDataTypeManager().getDataType("/uint");
+            if (proposed == null) return;
+            String source = isOutput ? "byte_pointer_result" :
+                "byte_pointer_index";
+            Evidence anchor = anchor(op, source,
+                isOutput ? -1 : operand, null, typeSpecification(pointer));
+            addEvidence(evidence, proposed, BYTE_AFFINE_ROLE_WEIGHT,
+                source, anchor);
+            return;
+        }
+    }
+
+    private DataType independentBytePointer(Object varnode) throws Exception {
+        if (varnode == null) return null;
+        Object high = varnode.getClass().getMethod("getHigh").invoke(varnode);
+        if (high == null) return null;
+        DataType type = (DataType)high.getClass().getMethod("getDataType")
+            .invoke(high);
+        DataType base = untypedef(type);
+        if (!(base instanceof Pointer pointer)) return null;
+        DataType pointed = untypedef(pointer.getDataType());
+        if (pointed == null || pointed.getLength() != 1 ||
+                Undefined.isUndefined(pointed) ||
+                pointed.getPathName().equals("/void")) return null;
+
+        Object symbol = high.getClass().getMethod("getSymbol").invoke(high);
+        if (symbol != null) {
+            boolean parameter = (boolean)symbol.getClass()
+                .getMethod("isParameter").invoke(symbol);
+            boolean global = (boolean)symbol.getClass()
+                .getMethod("isGlobal").invoke(symbol);
+            if (parameter || global) return type;
+        }
+        Object definition = varnode.getClass().getMethod("getDef").invoke(varnode);
+        if (definition != null && "CALL".equals(mnemonic(definition))) {
+            CallTarget target = callTarget(definition);
+            Function function = target == null ? null :
+                signatureFunctionForReturn(target);
+            if (function != null && equivalentLifetimeType(
+                    function.getReturnType(), type)) return type;
+        }
+        return null;
     }
 
     /**

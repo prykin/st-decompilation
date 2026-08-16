@@ -60,6 +60,7 @@ cf_break_loop_004B1816:
     }
   }
   local_8 = nullptr;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == 0xdd) {
     local_8 = &DAT_007907ac;
   }

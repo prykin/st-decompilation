@@ -1,13 +1,13 @@
 program=ST.exe
 functions_scanned=5555
 direct_calls_seen=36888
-globals_with_evidence=1196
-proposals=85
+globals_with_evidence=1252
+proposals=100
 type_auto_apply=0
 name_auto_apply=0
-conflicts=0
+conflicts=2
 globals_with_call_boundary_evidence=309
-globals_with_trusted_pointer_return_store=98
+globals_with_trusted_pointer_return_store=72
 note=Automatic types require repeated non-address-of evidence and replace only undefined/script-owned data.
 note_pointer_return_store=A trusted concrete pointer return stored into an exact global is an independent type anchor and dominates weaker use-site spellings.
 note_cfg_this_store=An unadjusted named __thiscall receiver stored into an exact global is propagated only by all-predecessor CFG agreement through exact callee-saved-register and EBP-stack lifetimes.

@@ -307,7 +307,7 @@ LAB_00565c6c:
     }
     local_38 = param_2 - local_30;
     pDVar6_mg1 = Library::DKW::TBL::DArrayCreate
-                           (nullptr,(int)(*local_14 + (*local_14 >> 0x1f & 3U)) >> 2,6,10);
+                           (nullptr,STSignedDiv4(*local_14),6,10);
     local_8 = 0;
     local_1c = local_34;
     local_24 = pDVar6_mg1;
@@ -423,6 +423,7 @@ LAB_00565c6c:
             iVar15 = iVar15 + 1;
           } while (iVar15 < (int)dVar17);
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_7 = param_7 - dVar17;
         if ((int)param_7 < 1) goto cf_common_exit_0056623F;
         local_94[(int)((int)&local_58->iteratorIndex + 1)] = 0;

@@ -57,7 +57,6 @@ st::fn_0065ED90
       *(uint *)&local_10->field_0x1c = uVar5;
       param_3 = (-(uint)((uVar5 & 0x10000) != 0) & 0x200) + 0x200;
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (short *)param_3;
     if ((short *)param_3 != (short *)0x200) {
       *psVar1 = ((short)iVar7 - (short)((iVar6 * (local_c - iVar4)) / iVar3)) + -1;

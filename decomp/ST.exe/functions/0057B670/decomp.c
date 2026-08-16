@@ -37,6 +37,7 @@ FUN_0057b670(int *param_1,uint param_2,uint param_3,short *param_4,short *param_
   this = param_1;
   uVar5 = 0;
   local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {
     return 1;
   }

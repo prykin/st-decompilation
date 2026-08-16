@@ -23,7 +23,6 @@ FUN_005fac40(void *this,short param_1,int param_2,int param_3,short param_4,shor
   if (STField<int>(this,0x2e6) != 0) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (_param_1 == 0) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_1 = _param_4;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_4 = _param_5;

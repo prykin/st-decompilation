@@ -689,6 +689,7 @@ int __thiscall st::fn_007140E0(void *this,int param_1,char param_2)
       goto cf_common_exit_00714ACB;
     }
     if (((int)this_00->field_005C < 0) && (STField<int>(this,0x74) < -4)) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = '\x01';
     }
     if (-1 < STField<int>(this,0x7c)) {
@@ -973,6 +974,7 @@ undefined4 __thiscall st::fn_00714B30(void *this,int param_1)
     iVar3 = *(int *)(iVar1 + 0x76);
   }
   if (*(int *)(iVar1 + 0x7a) == 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
     if (0 < iVar2) {
       do {

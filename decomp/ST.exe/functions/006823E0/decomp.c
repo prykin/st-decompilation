@@ -43,13 +43,13 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
         local_8 = (short *)(pcVar2 + (int)pfVar8 * 5 + 1);
         iVar4 = thunk_FUN_006686f0((int)*(short *)(pcVar2 + (int)pfVar8 * 5 + 1));
         if ((iVar4 < 0) || (iVar4 = thunk_FUN_00668a70((int)*local_8), iVar4 != 0)) {
-          param_1 = 0;
-          param_2 = thunk_FUN_0064a970(pcVar2,(int)pfVar8,&param_1);
+          auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
+          param_2 = thunk_FUN_0064a970(pcVar2,(int)pfVar8,&param_1_after_write);
           if (param_2 == nullptr) {
-            thunk_FUN_006802a0(param_1,&DAT_00847824);
+            thunk_FUN_006802a0(param_1_after_write,&DAT_00847824);
             return;
           }
-          if (param_1 == 1) {
+          if (param_1_after_write == 1) {
             iVar7 = thunk_FUN_0064a940(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               RaiseInternalException
@@ -59,7 +59,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
             local_10 = 1;
             local_f = *param_2;
           }
-          else if (param_1 == 2) {
+          else if (param_1_after_write == 2) {
             iVar7 = thunk_FUN_0064a940(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               RaiseInternalException
@@ -70,7 +70,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
             local_f = *param_2;
           }
           else {
-            if (param_1 != 3) {
+            if (param_1_after_write != 3) {
               FreeAndNull(&param_2);
               RaiseInternalException
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",

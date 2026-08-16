@@ -56,7 +56,7 @@ HelpPanelTy * __thiscall st::fn_00510C80(HelpPanelTy *this)
   this->field_01CB = nullptr;
   this->field_01BB = nullptr;
   this->field_01B3 = nullptr;
-  pbVar1 = *(byte **)structHelp_exref;
+  pbVar1 = *(byte **)PTR_structHelp_0085c11c;
   this->field_01CF = 0xffffffff;
   this->field_01C7 = pbVar1;
   this->field_01BF = 0;
@@ -174,7 +174,7 @@ st::fn_00514BC0
 
   bVar7 = false;
   local_c = 0;
-  if (*(int *)sizeHelp_exref == 0) {
+  if (*(int *)PTR_sizeHelp_0085c118 == 0) {
     return;
   }
 LAB_00514be2:
@@ -281,11 +281,11 @@ LAB_00514d04:
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_004054C5(this,*(int *)(this->field_01C7 + iVar6 + 9),*(int *)(this->field_01C7 + iVar6 + 0xd));
     st::fn_00405100(this);
-    local_c = *(uint *)sizeHelp_exref;
+    local_c = *(uint *)PTR_sizeHelp_0085c118;
     this->SetPanel('\x01');
   }
   local_c = local_c + 1;
-  if (*(uint *)sizeHelp_exref <= local_c) {
+  if (*(uint *)PTR_sizeHelp_0085c118 <= local_c) {
     return;
   }
   goto LAB_00514be2;

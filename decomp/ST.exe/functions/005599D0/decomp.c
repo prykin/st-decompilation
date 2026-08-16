@@ -66,7 +66,6 @@ VisibleClassTy::sub_005599D0
           iVar7 = iVar7 + 1;
         } while (iVar4 < iVar1);
         iVar8 = iVar8 + 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         _param_3 = _param_3 + -1;
         param_5 = param_5 + iVar1;
       } while (_param_3 != 0);

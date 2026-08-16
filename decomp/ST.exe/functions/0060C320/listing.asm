@@ -164,7 +164,8 @@ LAB_0060c4e4:
 0060C4E6  0F 84 DB 01 00 00         JZ 0x0060c6c7
 0060C4EC  8B 16                     MOV EDX,dword ptr [ESI]
 0060C4EE  8B CE                     MOV ECX,ESI
-0060C4F0  FF 92 F0 00 00 00         CALL dword ptr [EDX + 0xf0]
+FUN_0060c320::override::prt_60c4f0_e5e2351e:
+0060C4F0  FF 92 F0 00 00 00         CALL dword ptr [EDX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0060C4F6  85 C0                     TEST EAX,EAX
 0060C4F8  0F 84 C6 01 00 00         JZ 0x0060c6c4
 0060C4FE  8B 46 24                  MOV EAX,dword ptr [ESI + 0x24]
@@ -244,7 +245,8 @@ LAB_0060c600:
 0060C602  0F 84 BC 00 00 00         JZ 0x0060c6c4
 0060C608  8B 06                     MOV EAX,dword ptr [ESI]
 0060C60A  8B CE                     MOV ECX,ESI
-0060C60C  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+FUN_0060c320::override::prt_60c60c_e5e2351e:
+0060C60C  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0060C612  85 C0                     TEST EAX,EAX
 0060C614  0F 84 AA 00 00 00         JZ 0x0060c6c4
 0060C61A  8B 5D 90                  MOV EBX,dword ptr [EBP + -0x70]
@@ -254,7 +256,8 @@ LAB_0060c600:
 0060C626  89 37                     MOV dword ptr [EDI],ESI
 0060C628  8B 06                     MOV EAX,dword ptr [ESI]
 0060C62A  8B CE                     MOV ECX,ESI
-0060C62C  FF 50 78                  CALL dword ptr [EAX + 0x78]
+FUN_0060c320::override::prt_60c62c_e5e2351e:
+0060C62C  FF 50 78                  CALL dword ptr [EAX + 0x78]  ; [STIndirectCallsiteApplier] exact slot 0x78; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0060C62F  8B F0                     MOV ESI,EAX
 0060C631  46                        INC ESI
 0060C632  85 F6                     TEST ESI,ESI

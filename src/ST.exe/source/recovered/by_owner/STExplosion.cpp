@@ -354,8 +354,9 @@ st::fn_00606050
   }
   iVar5 = 0;
   memset(local_90, 0, 0x18); /* compiler bulk-zero initialization */
-  param_7 = 0;
+  auto param_7_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < local_28) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = local_100;
     local_20 = local_28;
     do {
@@ -389,9 +390,9 @@ LAB_00606189:
            (uVar4 & 0x10000) != 0)) {
           *param_5 = uVar3 | 0x100;
         }
-        iVar5 = param_7 + 1;
+        iVar5 = param_7_after_write + 1;
         param_5 = param_5 + 1;
-        param_7 = iVar5;
+        param_7_after_write = iVar5;
       }
       local_20 = local_20 + -1;
     } while (local_20 != 0);
@@ -418,9 +419,9 @@ LAB_00606282:
            (uVar3 & 0x10000) != 0)) {
           *puVar9 = *puVar9 | 0x100;
         }
-        iVar5 = param_7 + 1;
+        iVar5 = param_7_after_write + 1;
         puVar9 = puVar9 + 1;
-        param_7 = iVar5;
+        param_7_after_write = iVar5;
       }
       param_5 = (uint *)((int)param_5 + 1);
     } while ((int)param_5 < local_1c);
@@ -441,9 +442,9 @@ LAB_00606282:
       this->field_001C = uVar3;
       *puVar9 = (uint)local_10[(uVar3 >> 0x10) % (uint)bVar1 + 0x19];
 LAB_00606321:
-      iVar5 = param_7 + 1;
+      iVar5 = param_7_after_write + 1;
       puVar9 = puVar9 + 1;
-      param_7 = iVar5;
+      param_7_after_write = iVar5;
     }
     param_5 = (uint *)((int)param_5 + 1);
   } while ((int)param_5 < 0x14);

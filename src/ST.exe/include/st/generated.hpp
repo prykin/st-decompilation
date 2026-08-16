@@ -34,4 +34,16 @@ inline Target machine_word_boundary_cast(Source value) noexcept {
 inline char *mutable_c_string(const char *value) noexcept {
     return const_cast<char *>(value);
 }
+// Exact per-instruction HighFunction call override exported from
+// Ghidra.  The physical vtable member can retain a shorter/base
+// declaration while this boundary exposes the proven call ABI.
+template <typename Target, typename Source>
+inline Target exact_indirect_callee(Source value) noexcept {
+    static_assert(std::is_pointer_v<Target>);
+    static_assert(std::is_pointer_v<Source> || std::is_integral_v<Source>);
+    if constexpr (std::is_pointer_v<Source>)
+        return reinterpret_cast<Target>(value);
+    else
+        return reinterpret_cast<Target>(static_cast<uintptr_t>(value));
+}
 }

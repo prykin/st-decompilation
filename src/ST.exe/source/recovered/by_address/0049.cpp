@@ -135,6 +135,7 @@ st::fn_00490B30(void *this,AnonShape_00490B30_6CCF6294 *param_1,short param_2,ui
     sVar3 = STField<short>(this,0x802);
     if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
         ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = nullptr;
     }
     else {
@@ -533,7 +534,7 @@ undefined4 __fastcall st::fn_00492B20(STBoatC *param_1)
   this = st::fn_004028BA
                    (g_allPlayers_007FA174,param_1->field_05FC,param_1->field_05FD,CASE_1);
   if ((((((this != nullptr) && (this->field_0018 == *(int *)&param_1->field_0x5ff)) &&
-        (iVar1 = (*this->vtable->vfunc_108)(param_1->field_0024), iVar1 != 0)) &&
+        (iVar1 = this->vfunc_108(param_1->field_0024), iVar1 != 0)) &&
        ((st::fn_004018C5((STFishC *)this,&local_8,&local_6,local_c), -1 < local_8 &&
         (local_8 < g_pathingGrid.sizeX)))) && (-1 < local_6)) &&
      (((local_6 < g_pathingGrid.sizeY && (-1 < local_c[0])) &&
@@ -652,16 +653,16 @@ void __fastcall st::fn_00492F30(STBoatC *param_1,undefined4 param_2)
 void __fastcall st::fn_00492FC0(AnonShape_00492FC0_E6F586EF *param_1)
 
 {
-  STGameObjC *pSVar1;
-  int iVar2;
+  STGameObjC *this;
+  int iVar1;
 
   if ((param_1->field_045D == 9) && (param_1->field_0611 == 3)) {
-    pSVar1 = st::fn_004028BA
-                       (g_allPlayers_007FA174,param_1->field_05FC,param_1->field_05FD,CASE_1);
-    if ((pSVar1 != nullptr) && (pSVar1->field_0018 == param_1->field_05FF)) {
-      iVar2 = (*pSVar1->vtable->vfunc_108)(param_1->field_0024);
-      if (iVar2 != 0) {
-        st::fn_00405B1E((AnonShape_004CC900_31EE9CAA *)pSVar1);
+    this = st::fn_004028BA
+                     (g_allPlayers_007FA174,param_1->field_05FC,param_1->field_05FD,CASE_1);
+    if ((this != nullptr) && (this->field_0018 == param_1->field_05FF)) {
+      iVar1 = this->vfunc_108(param_1->field_0024);
+      if (iVar1 != 0) {
+        st::fn_00405B1E((AnonShape_004CC900_31EE9CAA *)this);
       }
     }
   }
@@ -881,7 +882,7 @@ void __fastcall st::fn_00493BC0(STBoatC *param_1)
        ((-1 < sVar2 && (sVar2 < g_worldGrid.sizeZ)))) {
       this = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
       if ((this != nullptr) && (*(int *)&this->field_0x18 == param_1->field_063F)) {
-        iVar4 = (*this->vtable[5].slots_00_28[2])();
+        iVar4 = this->vfunc_F8();
         if (iVar4 != 0) {
           st::fn_00404971(this,param_1);
         }
@@ -1118,7 +1119,6 @@ void __thiscall st::fn_00494160(void *this,int param_1)
       if (param_1 == STField<int>(this,0x72e)) {
         return;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 1) {
         if (STField<int>(this,0x722) < 1) {
           return;
@@ -1137,7 +1137,6 @@ void __thiscall st::fn_00494160(void *this,int param_1)
       return;
     }
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == STField<int>(this,0x732)) {
     return;
   }
@@ -2051,7 +2050,7 @@ switchD_0049655f_caseD_0:
     if ((sVar1 == -2) || (sVar1 == -0x4001)) {
       iVar8 = (int)PTR_00806750[1] * (int)*PTR_00806750;
       iVar11 = iVar12 + 1;
-      iVar8 = (int)(iVar8 + (iVar8 >> 0x1f & 3U)) >> 2;
+      iVar8 = STSignedDiv4(iVar8);
       if (iVar11 < 6) {
         piVar14 = (int *)((int)PTR_00806750 +
                          (((int)uVar10 >> 1) * ((int)*PTR_00806750 / 2) + iVar11 * iVar8 +
@@ -2366,6 +2365,7 @@ void st::fn_00496B30(uint param_1,int param_2,int param_3)
     }
     uVar1 = *piVar2 - 7;
     if ((int)uVar1 < 0) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 0;
       iVar5 = -uVar1;
     }
@@ -2931,7 +2931,7 @@ void st::fn_004977C0(int param_1,int *param_2,int param_3)
     do {
       iVar1 = *(int *)(iVar3 + 0x10 + *piVar5 * 0x18);
       piVar4 = param_2;
-      param_1 = local_8;
+      auto param_1_after_write = local_8; /* compiler stack-slot lifetime split */
       if (0 < local_8) {
         do {
           iVar2 = *piVar4;
@@ -2939,9 +2939,9 @@ void st::fn_004977C0(int param_1,int *param_2,int param_3)
             *piVar4 = *piVar5;
             *piVar5 = iVar2;
           }
-          param_1 = param_1 + -1;
+          param_1_after_write = param_1_after_write + -1;
           piVar4 = piVar4 + 1;
-        } while (param_1 != 0);
+        } while (param_1_after_write != 0);
       }
       local_8 = local_8 + 1;
       piVar5 = piVar5 + 1;

@@ -635,8 +635,8 @@ int __fastcall st::fn_00661800(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 p
           puVar1 = nullptr;
         }
         this = st::fn_004028BA(g_allPlayers_007FA174,param_1->field_0024,*puVar1,CASE_1);
-        if ((((this != nullptr) && (iVar3 = (*this->vtable->vfunc_2C)(), 0x31 < iVar3)) &&
-            (iVar3 < 0x74)) &&
+        if ((((this != nullptr) && (iVar3 = this->vfunc_2C(), 0x31 < iVar3)
+             ) && (iVar3 < 0x74)) &&
            ((*(short *)&param_1->field_0x39 != 3 &&
             ((this->field_0361 == 5 || (iVar2 = st::fn_004046C9(this,5), 0 < iVar2)))))) {
           local_8 = local_8 + 1;
@@ -705,7 +705,7 @@ st::fn_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param_2,int para
      , this != nullptr)) {
     local_10 = this;
     local_20 = st::fn_00401DC5(param_1->field_0024);
-    uVar5 = (*this->vtable->vfunc_2C)();
+    uVar5 = this->vfunc_2C();
     pSVar4 = local_10;
     local_c = uVar5;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -823,7 +823,7 @@ LAB_00661e5f:
         local_60 = param_1->field_0280;
         local_64 = (AnonShape_0068FD00_A5257008 *)0x6c;
         local_5c = 0;
-        GVar7 = (*local_10->vtable->vfunc_2C)();
+        GVar7 = local_10->vfunc_2C();
         iVar10 = st::fn_004020C2(GVar7);
         local_5b = (undefined1)iVar10;
         psStack_5a = &local_30;

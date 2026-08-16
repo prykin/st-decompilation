@@ -687,7 +687,7 @@ void __thiscall st::fn_005BE5B0(MReportTy *this,char param_1)
   st::fn_00402298(0x1a,0x46,0x1a,0x46,this_00->field_0073->field_0004,
              (byte *)this_00->field_0073->field_0008,'\x01',(BITMAPINFO *)this_00->field_005D);
   st::fn_006B4170((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0,0x2e,1,0x2ba,0x15c,0x4c);
-  pcVar19 = wsprintfA_exref;
+  pcVar19 = st::pointer_boundary_cast<code *>(PTR_wsprintfA_0085bde8);
   if (this_00->field_0067 == '\0') {
     st::fn_00710A90(this_00->field_0083,(int)this_00->field_0073,0,0x37,10,
                      st::machine_word_boundary_cast<int>(this_00->field_0073->field_0004 + -0x41),0xf);
@@ -898,7 +898,7 @@ LAB_005bf156:
       st::fn_007119C0(this_00->field_0083,(char *)&DAT_0080f33a,-1,-1,0);
       st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0x2f,2,'\x01',(byte *)local_c);
       st::fn_00710F00(this_00->field_0083);
-      pcVar19 = wsprintfA_exref;
+      pcVar19 = st::pointer_boundary_cast<code *>(PTR_wsprintfA_0085bde8);
     }
     if (this_00->field_0069 == 1) {
       uVar12 = 0xffffffff;

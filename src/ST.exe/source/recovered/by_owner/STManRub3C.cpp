@@ -88,9 +88,9 @@ byte * __thiscall st::fn_0062D670(STManRub3C *this,uint *param_1)
   pbVar7 = local_10;
   memmove(pbVar7, puVar5, 0x98); /* compiler REP MOVS byte copy */
   *param_1 = 0x98;
-  param_1 = nullptr;
+  auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   do {
-    switch(param_1) {
+    switch(param_1_after_write) {
     case nullptr:
       ppDVar2 = (DArrayTy **)local_8->field_0030;
       break;
@@ -117,8 +117,8 @@ byte * __thiscall st::fn_0062D670(STManRub3C *this,uint *param_1)
       st::fn_006AB060(&local_14);
     }
 switchD_0062d6cc_default:
-    param_1 = (uint *)((int)param_1 + 1);
-    if (3 < (int)param_1) {
+    param_1_after_write = (uint *)((int)param_1_after_write + 1);
+    if (3 < (int)param_1_after_write) {
       return local_10;
     }
   } while( true );
@@ -149,7 +149,7 @@ int __thiscall st::fn_0062D840(STManRub3C *this,undefined4 *param_1)
   else {
     puVar6 = (byte *)(&this->field_001C);
   }
-  param_1 = (undefined4 *)0x98;
+  auto param_1_after_write = (undefined4 *)0x98; /* compiler stack-slot lifetime split */
   puVar4 = (byte *)(puVar1);
   memmove(puVar6, puVar4, 0x98); /* compiler REP MOVS byte copy */
   piVar5 = st::pointer_boundary_cast<int *>(puVar1 + 0x26);
@@ -176,10 +176,10 @@ int __thiscall st::fn_0062D840(STManRub3C *this,undefined4 *param_1)
     iVar2 = st::fn_00404AA7((int *)ppDVar7,piVar5);
 switchD_0062d881_default:
     piVar5 = (int *)((int)piVar5 + iVar2);
-    param_1 = (undefined4 *)((int)param_1 + iVar2);
+    param_1_after_write = (undefined4 *)((int)param_1_after_write + iVar2);
     iVar3 = iVar3 + 1;
     if (3 < iVar3) {
-      return (int)param_1;
+      return (int)param_1_after_write;
     }
   } while( true );
 }

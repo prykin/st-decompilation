@@ -112,10 +112,10 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       local_c = local_c | 0x10;
     }
     if (local_c != 0) {
-      this_00->vfunc_100((char)local_c);
+      (*this_00->vtable[1].vfunc_2C)(this_00,(char)local_c);
     }
     if (local_10 != 0) {
-      this_00->vfunc_104((char)local_10);
+      (*this_00->vtable[1].vfunc_30)(this_00,(char)local_10);
     }
     if (this_00->field_0020 == 0x14) {
       thunk_FUN_004956c0(this_00,pSVar2->field_0039);

@@ -122,7 +122,7 @@ LAB_00440bab:
       }
       else {
         pSVar4 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
-        iVar5 = pSVar4->vfunc_F8();
+        iVar5 = (*pSVar4->vtable[1].vfunc_24)(pSVar4);
         if (iVar5 == 0) goto LAB_00440bab;
       }
       uVar14 = uVar14 + 1;
@@ -145,7 +145,7 @@ LAB_00440c19:
       }
       else {
         pSVar4 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
-        iVar5 = pSVar4->vfunc_F8();
+        iVar5 = (*pSVar4->vtable[1].vfunc_24)(pSVar4);
         if (iVar5 == 0) goto LAB_00440c19;
       }
       uVar14 = uVar14 + 1;
@@ -226,7 +226,7 @@ LAB_00440c19:
                     if (((this_00 != nullptr) &&
                         (this_00[1].vtable == (STWorldObjectVTable *)(int)param_1)) &&
                        ((iVar5 = this_00->GetObjectTypeId(), iVar5 == 0x33 &&
-                        (iVar5 = (*this_00->vtable[5].slots_00_28[2])(), uVar15 = local_20,
+                        (iVar5 = (*this_00->vtable[5].slots_00_28[2])(this_00), uVar15 = local_20,
                         iVar5 == 1)))) {
                       uVar14 = 0;
                       if (0 < (int)local_20) {
@@ -299,7 +299,7 @@ LAB_00440c19:
           DArrayGetElement(local_10,uVar15,&local_3c);
           pSVar4 = GetObjPtr(local_40,param_1,local_3c,CASE_1);
           STFishC::sub_004162B0((STFishC *)pSVar4,&local_12,&local_14,&local_16);
-          GVar9 = (*pSVar4->vtable->vfunc_2C)();
+          GVar9 = pSVar4->vfunc_2C();
           bVar3 = thunk_FUN_00430750(GVar9);
           uStack_3a = ((g_pathingScratchGrid.cells
                         [(int)local_16 * (int)g_pathingGrid.planeStride +
@@ -322,7 +322,7 @@ LAB_00440c19:
             local_68 = -1;
           }
           else {
-            GVar9 = (*pSVar4->vtable->vfunc_2C)();
+            GVar9 = pSVar4->vfunc_2C();
             bVar3 = thunk_FUN_00430750(GVar9);
             local_68 = ((local_68 * 0xc9 + -0xc9) / 3) / (int)(uint)bVar3;
           }
@@ -347,11 +347,11 @@ LAB_00440c19:
           DArrayGetElement(local_10,0,&local_3c);
           pSVar4 = GetObjPtr(local_40,param_1,local_3c,CASE_1);
           local_60 = thunk_FUN_00486b40(pSVar4);
-          iVar5 = (*pSVar4->vtable->vfunc_78)();
+          iVar5 = pSVar4->vfunc_78();
           if (iVar5 < 1) {
             iVar5 = 1;
           }
-          iVar11 = (*pSVar4->vtable->vfunc_2C)();
+          iVar11 = pSVar4->vfunc_2C();
           local_c = (DArrayTy *)
                     ((int)(*(int *)(&DAT_007e049c + iVar11 * 4) * local_60) / iVar5 + uStack_3a);
           Library::DKW::TBL::DArrayPut(pDVar6,local_1c,&local_10);
@@ -378,11 +378,11 @@ LAB_00440c19:
           DArrayGetElement(array,0,&local_34);
           pSVar4 = GetObjPtr(local_40,param_1,local_34,CASE_1);
           local_EAX_2155 = thunk_FUN_00486b40(pSVar4);
-          iVar5 = (*pSVar4->vtable->vfunc_78)();
+          iVar5 = pSVar4->vfunc_78();
           if (iVar5 < 1) {
             iVar5 = 1;
           }
-          iVar11 = (*pSVar4->vtable->vfunc_2C)();
+          iVar11 = pSVar4->vfunc_2C();
           local_74 = (*(int *)(&DAT_007e049c + iVar11 * 4) * local_EAX_2155) / iVar5;
           iVar5 = 0;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -393,11 +393,11 @@ LAB_00440c19:
               DArrayGetElement(local_10,local_2c,&local_5c);
               pSVar4 = GetObjPtr(local_40,param_1,local_5c,CASE_1);
               local_60 = thunk_FUN_00486b40(pSVar4);
-              iVar11 = (*pSVar4->vtable->vfunc_78)();
+              iVar11 = pSVar4->vfunc_78();
               if (iVar11 < 1) {
                 iVar11 = 1;
               }
-              iVar12 = (*pSVar4->vtable->vfunc_2C)();
+              iVar12 = pSVar4->vfunc_2C();
               iVar11 = (int)(*(int *)(&DAT_007e049c + iVar12 * 4) * local_60) / iVar11;
               local_50 = (DArrayTy *)((int)&local_50->flags + iVar11);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -457,11 +457,11 @@ LAB_00440c19:
               DArrayGetElement(local_10,0,&local_3c);
               pSVar4 = GetObjPtr(local_40,param_1,local_3c,CASE_1);
               local_EAX_2660 = thunk_FUN_00486b40(pSVar4);
-              iVar5 = (*pSVar4->vtable->vfunc_78)();
+              iVar5 = pSVar4->vfunc_78();
               if (iVar5 < 1) {
                 iVar5 = 1;
               }
-              iVar11 = (*pSVar4->vtable->vfunc_2C)();
+              iVar11 = pSVar4->vfunc_2C();
               local_8 = (DArrayTy *)
                         ((*(int *)(&DAT_007e049c + iVar11 * 4) * local_EAX_2660) / iVar5 + uStack_3a
                         );
@@ -486,11 +486,11 @@ LAB_00440c19:
               DArrayGetElement(local_10,0,&local_34);
               pSVar4 = GetObjPtr(local_40,param_1,local_34,CASE_1);
               local_EAX_2852 = thunk_FUN_00486b40(pSVar4);
-              iVar5 = (*pSVar4->vtable->vfunc_78)();
+              iVar5 = pSVar4->vfunc_78();
               if (iVar5 < 1) {
                 iVar5 = 1;
               }
-              iVar11 = (*pSVar4->vtable->vfunc_2C)();
+              iVar11 = pSVar4->vfunc_2C();
               local_74 = (*(int *)(&DAT_007e049c + iVar11 * 4) * local_EAX_2852) / iVar5;
               iVar5 = 0;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -501,11 +501,11 @@ LAB_00440c19:
                   DArrayGetElement(local_10,(uint)local_6c,&local_5c);
                   pSVar4 = GetObjPtr(local_40,param_1,local_5c,CASE_1);
                   local_60 = thunk_FUN_00486b40(pSVar4);
-                  iVar11 = (*pSVar4->vtable->vfunc_78)();
+                  iVar11 = pSVar4->vfunc_78();
                   if (iVar11 < 1) {
                     iVar11 = 1;
                   }
-                  iVar12 = (*pSVar4->vtable->vfunc_2C)();
+                  iVar12 = pSVar4->vfunc_2C();
                   iVar11 = (int)(*(int *)(&DAT_007e049c + iVar12 * 4) * local_60) / iVar11;
                   local_50 = (DArrayTy *)((int)&local_50->flags + iVar11);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

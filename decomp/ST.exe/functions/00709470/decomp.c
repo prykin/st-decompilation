@@ -35,6 +35,7 @@ ST3DSMAPContext::sub_00709470
   int local_c;
   int local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_3 == 0) {
     iVar7 = 0;
     iVar11 = 0;
@@ -136,6 +137,7 @@ ST3DSMAPContext::sub_00709470
           FUN_006b84d0(pRVar5,0,param_4 - local_8,param_4 - param_3,pbVar6);
         }
         piVar8 = piVar8 + -1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + -1;
       } while (param_2 != 0);
     }

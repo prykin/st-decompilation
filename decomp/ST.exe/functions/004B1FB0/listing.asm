@@ -200,7 +200,8 @@ switchD_004b2185::caseD_5f:
 004B21C7  8B 06                     MOV EAX,dword ptr [ESI]
 004B21C9  6A 00                     PUSH 0x0
 004B21CB  8B CE                     MOV ECX,ESI
-004B21CD  FF 90 88 00 00 00         CALL dword ptr [EAX + 0x88]
+FUN_004b1fb0::override::prt_4b21cd_e9a929de:
+004B21CD  FF 90 88 00 00 00         CALL dword ptr [EAX + 0x88]  ; [STIndirectCallsiteApplier] exact slot 0x88; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4
 004B21D3  01 45 F0                  ADD dword ptr [EBP + -0x10],EAX
 004B21D6  EB 11                     JMP 0x004b21e9
 LAB_004b21d8:

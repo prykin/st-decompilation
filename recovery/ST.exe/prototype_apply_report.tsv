@@ -22,6 +22,8 @@ function_address	target	status	detail
 004C7260	parameter:6	disabled	apply flags are 0
 004D7480	parameter:2	disabled	apply flags are 0
 004E20D0	parameter:4	disabled	apply flags are 0
+004E5AF0	parameter:1	disabled	apply flags are 0
+004E5D50	parameter:1	disabled	apply flags are 0
 004E9650	parameter:1	disabled	apply flags are 0
 004E9650	parameter:3	disabled	apply flags are 0
 004E9960	parameter:1	disabled	apply flags are 0

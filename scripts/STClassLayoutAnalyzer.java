@@ -2531,19 +2531,11 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 result.put(owner, type.getPathName());
             }
         }
-        // Keep a polymorphic dispatch shape distinct from the exact physical table applied
-        // at a constructor address. This prevents high virtual offsets from wrapping through
-        // vtable[1] after the indirect-call pass has created the wider interface.
-        for (String owner : new ArrayList<>(result.keySet())) {
-            String dispatchName = leaf(owner).replaceAll("[^A-Za-z0-9_]", "_") +
-                "DispatchVTable";
-            DataType dispatch = dataTypes.getDataType(
-                "/SubmarineTitans/Recovered/VTables/" + dispatchName);
-            if (dispatch instanceof Structure &&
-                    dispatch.getDescription() != null &&
-                    dispatch.getDescription().contains("[STIndirectCallApplier]"))
-                result.put(owner, dispatch.getPathName());
-        }
+        // The owner field describes the exact physical vptr installed by a constructor.
+        // A wider *DispatchVTable is only an audit view assembled from several related
+        // physical tables: using it as the stored field type makes its generic prefix erase
+        // already recovered physical-slot ABIs.  High-offset polymorphic calls retain an
+        // explicit use-site dispatch view instead of changing the object's physical layout.
         return result;
     }
 

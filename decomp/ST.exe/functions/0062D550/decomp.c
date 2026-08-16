@@ -19,7 +19,7 @@ uint * FUN_0062d550(int *param_1,int *param_2)
   iVar5 = 0;
   iVar3 = 0;
   *param_2 = 0;
-  param_2 = (int *)0x8;
+  auto param_2_after_write = (int *)0x8; /* compiler stack-slot lifetime split */
   piVar7 = param_1;
   do {
     iVar1 = *piVar7;
@@ -28,8 +28,8 @@ uint * FUN_0062d550(int *param_1,int *param_2)
       iVar5 = iVar5 + 0x1c + *(int *)(iVar1 + 0xc) * *(int *)(iVar1 + 8);
     }
     piVar7 = piVar7 + 1;
-    param_2 = (int *)((int)param_2 + -1);
-  } while (param_2 != nullptr);
+    param_2_after_write = (int *)((int)param_2_after_write + -1);
+  } while (param_2_after_write != nullptr);
   if (iVar5 != 0) {
     uVar6 = *piVar2 + iVar5 + iVar3 * 4;
     *piVar2 = uVar6;
@@ -38,23 +38,23 @@ uint * FUN_0062d550(int *param_1,int *param_2)
     puVar8 = puVar4;
     do {
       if ((uint *)*param_1 != nullptr) {
-        local_8 = (uint *)FUN_006b0020((uint *)*param_1,(int *)&param_2);
-        if ((local_8 != nullptr) && (param_2 != nullptr)) {
-          *puVar8 = (uint)param_2;
+        local_8 = (uint *)FUN_006b0020((uint *)*param_1,(int *)&param_2_after_write);
+        if ((local_8 != nullptr) && (param_2_after_write != nullptr)) {
+          *puVar8 = (uint)param_2_after_write;
           puVar9 = local_8;
           puVar10 = puVar8 + 1;
-          for (uVar6 = (uint)param_2 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
+          for (uVar6 = (uint)param_2_after_write >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
             *puVar10 = *puVar9;
             puVar9 = puVar9 + 1;
             puVar10 = puVar10 + 1;
           }
-          for (uVar6 = (uint)param_2 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+          for (uVar6 = (uint)param_2_after_write & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
             *(char *)puVar10 = (char)*puVar9;
             puVar9 = (uint *)((int)puVar9 + 1);
             puVar10 = (uint *)((int)puVar10 + 1);
           }
           FreeAndNull(&local_8);
-          puVar8 = (uint *)((int)(puVar8 + 1) + (int)param_2);
+          puVar8 = (uint *)((int)(puVar8 + 1) + (int)param_2_after_write);
         }
       }
       param_1 = param_1 + 1;

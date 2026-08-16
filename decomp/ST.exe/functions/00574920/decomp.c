@@ -52,7 +52,7 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
   local_1c = &stack0xffffff54;
   local_4c = nullptr;
   iVar3 = (int)param_1->field_0002 * (int)param_1->field_0000;
-  local_24 = (int)(iVar3 + (iVar3 >> 0x1f & 3U)) >> 2;
+  local_24 = STSignedDiv4(iVar3);
   local_40 = 1;
   local_2c = (int *)(&param_1[1].field_0x4 +
                     (local_24 * 5 + param_2 + (param_1->field_0000 * param_3) / 2) * 4);
@@ -214,7 +214,7 @@ LAB_00574bcc:
                   if ((int)uVar10 < 0) {
                     uVar10 = (uVar10 - 1 | 0xfffffffc) + 1;
                   }
-                  local_5c = (uint)(*(byte *)(((int)(local_30 + ((int)local_30 >> 0x1f & 3U)) >> 2)
+                  local_5c = (uint)(*(byte *)((STSignedDiv4(local_30))
                                              + local_48) & (&DAT_007ca6a4)[uVar10]);
                   if (local_5c == 0) {
 LAB_00574e10:
@@ -223,10 +223,10 @@ LAB_00574e10:
                   }
                   else {
                     if (local_5c != (byte)(&DAT_007ca6a4)[uVar10]) {
-                      *local_60 = *(byte *)((uint)*local_60 + DAT_008073c8);
+                      *local_60 = *(byte *)((uint)*local_60 + (int)PTR_008073c8);
                       goto LAB_00574e10;
                     }
-                    *local_60 = *(byte *)((uint)*local_60 + DAT_00807560);
+                    *local_60 = *(byte *)((uint)*local_60 + (int)PTR_00807560);
                     local_30 = local_30 + 1;
                     local_60 = local_60 + 1;
                   }
@@ -243,7 +243,7 @@ LAB_00574e10:
                 local_60 = (byte *)(*(int *)(iVar3 + 0xc) + iVar11 * 2);
                 for (local_30 = 0; (int)local_30 < (int)((uint)(byte)param_1->field_0x4 * 2);
                     local_30 = local_30 + 1) {
-                  iVar3 = (int)(local_30 + ((int)local_30 >> 0x1f & 3U)) >> 2;
+                  iVar3 = STSignedDiv4(local_30);
                   uVar10 = local_30 & 0x80000003;
                   if ((int)uVar10 < 0) {
                     uVar10 = (uVar10 - 1 | 0xfffffffc) + 1;
@@ -253,10 +253,10 @@ LAB_00574e10:
                     local_5c = (uint)(*(byte *)(iVar3 + local_48) & bVar1);
                     if (local_5c != 0) {
                       if (local_5c == bVar1) {
-                        *local_60 = *(byte *)((uint)*local_60 + DAT_00807560);
+                        *local_60 = *(byte *)((uint)*local_60 + (int)PTR_00807560);
                       }
                       else {
-                        *local_60 = *(byte *)((uint)*local_60 + DAT_008073c8);
+                        *local_60 = *(byte *)((uint)*local_60 + (int)PTR_008073c8);
                       }
                     }
                   }

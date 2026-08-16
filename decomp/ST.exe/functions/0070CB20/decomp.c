@@ -30,6 +30,7 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
   local_8 = 0;
   local_10 = 0x10;
   local_18 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_10 == 0x800000) {
     local_10 = 4;
   }
@@ -37,7 +38,7 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
     local_10 = 0x20;
   }
   local_14 = local_54;
-  param_10 = 0;
+  auto param_10_after_write = 0; /* compiler stack-slot lifetime split */
   local_c = &DAT_007f014c;
   do {
     iVar6 = local_c[-1] + param_1;
@@ -49,7 +50,7 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
                         ) * ((param_3[2] - iVar10) + -1) + iVar6 + iVar2);
       if (bVar1 != param_7) {
         uVar2 = (uint)bVar1;
-        local_14[-1] = param_10;
+        local_14[-1] = param_10_after_write;
         bVar1 = *(byte *)(param_8 + 5 + uVar2 * 4);
         *local_14 = (uint)*(byte *)(param_8 + 4 + uVar2 * 4);
         local_14[1] = (uint)bVar1;
@@ -59,34 +60,32 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
       }
     }
     local_c = local_c + 3;
-    param_10 = param_10 + 1;
+    param_10_after_write = param_10_after_write + 1;
   } while ((int)local_c < 0x7f017c);
   if (local_8 < 1) {
     return 0xffffffff;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = (uint)param_6;
+  auto param_1_after_write = (uint)param_6; /* compiler stack-slot lifetime split */
   uVar2 = (uint)param_6;
   iVar6 = (4 - local_8) * local_10;
   iVar10 = (uint)*(byte *)(param_8 + 4 + uVar2 * 4) * iVar6;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_7 = (uint)*(byte *)(param_8 + 5 + uVar2 * 4) * iVar6;
-  param_10 = (uint)*(byte *)(param_8 + 6 + uVar2 * 4) * iVar6;
+  param_10_after_write = (uint)*(byte *)(param_8 + 6 + uVar2 * 4) * iVar6;
   if (0 < local_8) {
-    param_3 = &DAT_007f0150;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_8 = local_8;
+    auto param_3_after_write = &DAT_007f0150; /* compiler stack-slot lifetime split */
+    auto param_8_after_write = local_8; /* compiler stack-slot lifetime split */
     puVar7 = local_54 + 1;
     do {
-      iVar8 = *param_3;
+      iVar8 = *param_3_after_write;
       iVar10 = iVar10 + puVar7[-1] * iVar8;
       _param_7 = _param_7 + iVar8 * *puVar7;
       iVar6 = iVar6 + iVar8;
-      param_10 = param_10 + puVar7[1] * iVar8;
-      param_3 = param_3 + 3;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_8 = param_8 + -1;
+      param_10_after_write = param_10_after_write + puVar7[1] * iVar8;
+      param_3_after_write = param_3_after_write + 3;
+      param_8_after_write = param_8_after_write + -1;
       puVar7 = puVar7 + 4;
-    } while (param_8 != 0);
+    } while (param_8_after_write != 0);
   }
   iVar8 = iVar6;
   if (iVar6 == 0) {
@@ -101,7 +100,7 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
   if (iVar6 == 0) {
     iVar6 = 1;
   }
-  uVar4 = (int)param_10 / iVar6;
+  uVar4 = (int)param_10_after_write / iVar6;
   if (((uVar2 == 0) && (uVar3 == 0)) && (uVar4 == 0)) {
     return 0;
   }
@@ -116,12 +115,11 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   UVar5 = GetNearestPaletteIndex(h,(uint)CONCAT11((char)uVar4,(char)uVar3) << 8 | uVar2 & 0xff);
   if (UVar5 != 0xffffffff) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = UVar5 & 0xff;
+    param_1_after_write = UVar5 & 0xff;
     if (param_11 != 0) {
       *(char *)(uVar9 + param_11) = (char)UVar5;
     }
   }
-  return param_1;
+  return param_1_after_write;
 }
 

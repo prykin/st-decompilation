@@ -130,6 +130,7 @@ STAllPlayersC::PointPick
       if (uVar4 != 0x1ae) {
         return;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_4 == 1) {
         return;
       }

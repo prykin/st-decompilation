@@ -13,7 +13,7 @@ FUN_00575120(void *this,AnonShape_005745E0_AF52CC75 *param_1,int param_2,int par
 
   iVar3 = 6;
   iVar2 = (int)*(short *)&param_1->field_0x2 * (int)*(short *)param_1;
-  iVar2 = (int)(iVar2 + (iVar2 >> 0x1f & 3U)) >> 2;
+  iVar2 = STSignedDiv4(iVar2);
   puVar4 = (undefined4 *)
            (&param_1[1].field_0x5 + (iVar2 * 5 + param_2 + (*(short *)param_1 * param_3) / 2) * 4);
   local_8 = this;

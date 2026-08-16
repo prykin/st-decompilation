@@ -209,7 +209,7 @@ LAB_004b057d:
                      cVar2 != '\x01' && (cVar2 != '\x03')) && (cVar2 != '\x02')))))) {
               local_34 = (short *)(iVar9 * local_18 + (int)local_10);
               memset(local_88, 0, 0x20); /* compiler bulk-zero initialization */
-              param_1 = 0;
+              auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
               if (0 < local_40) {
                 local_20 = local_14 + -1;
                 local_58 = (local_14 + 1) * (int)local_8;
@@ -228,7 +228,7 @@ LAB_004b057d:
                       local_88[0] = 1;
                     }
                     else {
-                      param_1 = param_1 + 1;
+                      param_1_after_write = param_1_after_write + 1;
                     }
                   }
                   if ((local_88[1] == 0) && (-1 < local_44 + local_20)) {
@@ -236,7 +236,7 @@ LAB_004b057d:
                       local_88[1] = 1;
                     }
                     else {
-                      param_1 = param_1 + 1;
+                      param_1_after_write = param_1_after_write + 1;
                     }
                   }
                   if ((local_88[2] == 0) && (local_5c + iVar9 + iVar16 < (int)g_worldGrid.sizeY)) {
@@ -245,7 +245,7 @@ LAB_004b057d:
                       local_88[2] = 1;
                     }
                     else {
-                      param_1 = param_1 + 1;
+                      param_1_after_write = param_1_after_write + 1;
                     }
                   }
                   if ((local_88[3] == 0) && (-1 < local_20)) {
@@ -254,7 +254,7 @@ LAB_004b057d:
                       local_88[3] = 1;
                     }
                     else {
-                      param_1 = param_1 + 1;
+                      param_1_after_write = param_1_after_write + 1;
                     }
                   }
                   if (iVar9 * iVar9 < (local_40 * local_40) / 2) {
@@ -265,7 +265,7 @@ LAB_004b057d:
                         local_88[4] = 1;
                       }
                       else {
-                        param_1 = param_1 + 1;
+                        param_1_after_write = param_1_after_write + 1;
                       }
                     }
                     if (((local_88[5] == 0) && (-1 < local_20)) && (-1 < local_44 + local_20)) {
@@ -274,7 +274,7 @@ LAB_004b057d:
                         local_88[5] = 1;
                       }
                       else {
-                        param_1 = param_1 + 1;
+                        param_1_after_write = param_1_after_write + 1;
                       }
                     }
                     if (((local_88[6] == 0) && (local_5c + iVar9 + iVar16 < (int)g_worldGrid.sizeY))
@@ -284,7 +284,7 @@ LAB_004b057d:
                         local_88[6] = 1;
                       }
                       else {
-                        param_1 = param_1 + 1;
+                        param_1_after_write = param_1_after_write + 1;
                       }
                     }
                     if (((local_88[7] == 0) && (-1 < local_20)) && (iVar9 + iVar16 < (int)local_8))
@@ -294,7 +294,7 @@ LAB_004b057d:
                         local_88[7] = 1;
                       }
                       else {
-                        param_1 = param_1 + 1;
+                        param_1_after_write = param_1_after_write + 1;
                       }
                     }
                   }
@@ -336,11 +336,11 @@ LAB_004b057d:
                 if (iVar9 < 0) {
                   if (local_50 < 0) {
 LAB_004b0a3e:
-                    if (((int)param_1 <= (int)local_48) &&
-                       ((param_1 != local_48 || (local_3c < local_EAX_1940)))) goto LAB_004b0a79;
+                    if (((int)param_1_after_write <= (int)local_48) &&
+                       ((param_1_after_write != local_48 || (local_3c < local_EAX_1940)))) goto LAB_004b0a79;
                   }
 LAB_004b0a54:
-                  local_48 = param_1;
+                  local_48 = param_1_after_write;
                   *param_3 = iVar16;
                   *param_4 = local_14;
                   local_88[8] = 1;
@@ -352,8 +352,8 @@ LAB_004b0a54:
                   if (iVar9 < 0) goto LAB_004b0a3e;
                   if ((local_50 < iVar9) ||
                      ((iVar9 == local_50 &&
-                      (((int)local_48 < (int)param_1 ||
-                       ((param_1 == local_48 && (local_EAX_1940 <= local_3c))))))))
+                      (((int)local_48 < (int)param_1_after_write ||
+                       ((param_1_after_write == local_48 && (local_EAX_1940 <= local_3c))))))))
                   goto LAB_004b0a54;
                 }
               }

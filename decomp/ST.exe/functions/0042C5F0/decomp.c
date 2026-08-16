@@ -28,6 +28,7 @@ STAllPlayersC::DelObjFromTmps
 
   local_c = 0xffffffff;
   if (param_2 < 0x1a5) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1a4) {
       iVar8 = 0;
       iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
@@ -36,7 +37,7 @@ STAllPlayersC::DelObjFromTmps
         if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x1a4) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
           pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_5);
-          pSVar6->vfunc_E8(0);
+          (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -68,7 +69,7 @@ STAllPlayersC::DelObjFromTmps
               DArrayGetElement(pDVar3,uVar9,&local_8);
               if ((ushort)local_8 == (ushort)param_4) {
                 pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_1);
-                pSVar6->vfunc_E8(0);
+                (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
                 local_8 = 0xffff;
                 Library::DKW::TBL::DArrayPut(pDVar3,uVar9,&local_8);
                 STField<short>(puVar1,0xe) = STField<short>(puVar1,0xe) + -1;
@@ -106,7 +107,7 @@ STAllPlayersC::DelObjFromTmps
         if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x5a) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
           pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_4);
-          pSVar6->vfunc_E8(0);
+          (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -132,7 +133,7 @@ STAllPlayersC::DelObjFromTmps
         if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x172) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
           pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_2);
-          pSVar6->vfunc_E8(0);
+          (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -160,7 +161,7 @@ STAllPlayersC::DelObjFromTmps
         if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x1b8) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
           pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_6);
-          pSVar6->vfunc_E8(0);
+          (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -186,7 +187,7 @@ STAllPlayersC::DelObjFromTmps
         if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x1ae) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
           pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_3);
-          pSVar6->vfunc_E8(0);
+          (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -219,7 +220,7 @@ STAllPlayersC::DelObjFromTmps
             DArrayGetElement(pDVar3,uVar9,&local_8);
             if ((ushort)local_8 == (ushort)param_4) {
               pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_1);
-              pSVar6->vfunc_E8(0);
+              (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
               local_8 = 0xffff;
               Library::DKW::TBL::DArrayPut(pDVar3,uVar9,&local_8);
               STField<short>(puVar1,0xe) = STField<short>(puVar1,0xe) + -1;

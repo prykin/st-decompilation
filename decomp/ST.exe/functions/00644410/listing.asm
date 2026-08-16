@@ -332,7 +332,8 @@ LAB_0064478a:
 006447BE  50                        PUSH EAX
 006447BF  51                        PUSH ECX
 006447C0  8B CE                     MOV ECX,ESI
-006447C2  FF 92 DC 00 00 00         CALL dword ptr [EDX + 0xdc]
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410::override::prt_6447c2_6c7b7428:
+006447C2  FF 92 DC 00 00 00         CALL dword ptr [EDX + 0xdc]  ; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 006447C8  8B F8                     MOV EDI,EAX
 006447CA  85 FF                     TEST EDI,EDI
 006447CC  0F 8D EA 04 00 00         JGE 0x00644cbc
@@ -875,7 +876,8 @@ LAB_00644cee:
 00644D31  52                        PUSH EDX
 00644D32  57                        PUSH EDI
 00644D33  8B CE                     MOV ECX,ESI
-00644D35  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410::override::prt_644d35_577d6eca:
+00644D35  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]  ; [STIndirectCallsiteApplier] exact slot 0xE0; mode=machine-void; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00644D3B  0F BF 45 FE               MOVSX EAX,word ptr [EBP + -0x2]
 00644D3F  8B 4D 0C                  MOV ECX,dword ptr [EBP + 0xc]
 00644D42  0F BF 55 FC               MOVSX EDX,word ptr [EBP + -0x4]

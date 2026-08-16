@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Removing unreachable block (ram,0x0041112c) */
 /* WARNING: Removing unreachable block (ram,0x00411131) */
@@ -32,7 +34,9 @@ int FUN_00410dc0(int param_1,int param_2,int param_3,int param_4,int param_5)
      (((-1 < param_2 && (param_2 < DAT_007f4d30)) && ((-1 < param_3 && (param_3 < DAT_007f4d34))))))
   {
     if (0 < param_4) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 - (DAT_007f4d38 * param_4 >> 0x10);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + (DAT_007f4d28 * param_4 >> 0x10);
     }
     iVar1 = DAT_007f4d30 * DAT_007f4d2c;
@@ -46,14 +50,14 @@ int FUN_00410dc0(int param_1,int param_2,int param_3,int param_4,int param_5)
     if (iVar2 != 0) {
       return iVar2;
     }
-    param_4 = 1;
+    auto param_4_after_write = 1; /* compiler stack-slot lifetime split */
     iVar3 = (int)((uVar7 & 0xfffffffe) - ((int)uVar7 >> 0x1f)) >> 1;
     if (0 < iVar3) {
       local_14 = (uVar7 & 0xfffffffe) - 1;
       do {
         if (DAT_007f4d20 <= g_runtimeRecordCount_007F4D14) goto cf_break_loop_00411005;
-        local_8 = (DAT_007f4d38 * param_4 >> 0x10) + param_1;
-        local_c = param_2 - (DAT_007f4d28 * param_4 >> 0x10);
+        local_8 = (DAT_007f4d38 * param_4_after_write >> 0x10) + param_1;
+        local_c = param_2 - (DAT_007f4d28 * param_4_after_write >> 0x10);
         iVar4 = DAT_007f4d20 - g_runtimeRecordCount_007F4D14;
         iVar6 = iVar4 / (local_14 + 1);
         if (iVar4 < iVar6) {
@@ -64,9 +68,9 @@ int FUN_00410dc0(int param_1,int param_2,int param_3,int param_4,int param_5)
           return iVar5;
         }
         if (DAT_007f4d20 <= g_runtimeRecordCount_007F4D14) goto cf_break_loop_00411005;
-        local_8 = param_1 - (DAT_007f4d38 * param_4 >> 0x10);
+        local_8 = param_1 - (DAT_007f4d38 * param_4_after_write >> 0x10);
         iVar4 = DAT_007f4d20 - g_runtimeRecordCount_007F4D14;
-        local_c = (DAT_007f4d28 * param_4 >> 0x10) + param_2;
+        local_c = (DAT_007f4d28 * param_4_after_write >> 0x10) + param_2;
         iVar6 = iVar4 / local_14;
         if (iVar4 < iVar4 / local_14) {
           iVar6 = iVar4;
@@ -78,14 +82,14 @@ int FUN_00410dc0(int param_1,int param_2,int param_3,int param_4,int param_5)
         if (local_EAX_522 != 0) {
           return local_EAX_522;
         }
-        param_4 = param_4 + 1;
+        param_4_after_write = param_4_after_write + 1;
         local_14 = local_14 + -2;
-      } while (param_4 <= iVar3);
+      } while (param_4_after_write <= iVar3);
     }
     if (DAT_007f4d20 <= g_runtimeRecordCount_007F4D14) {
 cf_break_loop_00411005:
       iVar3 = 0;
-      param_4 = 0;
+      param_4_after_write = 0;
       iVar4_mg2 = g_runtimeRecordCount_007F4D14;
       if (0 < g_runtimeRecordCount_007F4D14) {
         do {
@@ -102,16 +106,15 @@ cf_break_loop_00411005:
               return -4;
             }
             uVar7 = local_10 * iVar1 + local_8 + DAT_007f4d2c * local_c ^ 7;
-            g_bitset_007F4CFC[(int)uVar7 >> 3] =
-                 g_bitset_007F4CFC[(int)uVar7 >> 3] | '\x01' << (uVar7 & 7);
+            STBitSet(g_bitset_007F4CFC, uVar7);
             STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar3).field_0000 = local_8;
             STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar3).field_0004 = local_c;
             STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar3).field_0008 = local_10;
             iVar4_mg2 = g_runtimeRecordCount_007F4D14;
           }
-          param_4 = param_4 + 1;
+          param_4_after_write = param_4_after_write + 1;
           iVar3 = iVar3 + 0x14;
-        } while (param_4 < iVar4_mg2);
+        } while (param_4_after_write < iVar4_mg2);
       }
       FUN_0040eb90();
       return 0;

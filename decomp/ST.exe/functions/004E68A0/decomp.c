@@ -45,21 +45,21 @@ void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *par
           return;
         }
       }
-      param_3 = 0;
+      auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
       if (*(int *)(iVar6 * 0x19 + 5 + (int)piVar1) != 0) {
-        param_2 = (undefined1 *)((int)param_4 + 5);
+        auto param_2_after_write = (undefined1 *)((int)param_4 + 5); /* compiler stack-slot lifetime split */
         iVar6 = iVar6 * 0x19 + 5;
         do {
-          if (3 < (int)param_3) {
+          if (3 < (int)param_3_after_write) {
             return;
           }
           puVar2 = (&PTR_DAT_007c0dc8)[iVar8];
           bVar3 = puVar2[iVar6 + 4];
           iVar7 = thunk_FUN_004e60d0((int)param_1,*(int *)(puVar2 + iVar6));
           if (iVar7 < (int)(uint)bVar3) {
-            *(uint *)(param_2 + -5) = (uint)CONCAT12(bVar3,*(undefined2 *)(puVar2 + iVar6));
+            *(uint *)(param_2_after_write + -5) = (uint)CONCAT12(bVar3,*(undefined2 *)(puVar2 + iVar6));
             bVar3 = LookupRecordByte((char)param_1);
-            param_2[-1] = bVar3;
+            param_2_after_write[-1] = bVar3;
             bVar4 = thunk_FUN_004e5c40(param_1,*(uint *)((&PTR_DAT_007c0dc8)[iVar8] + iVar6));
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             if ((CONCAT31(extraout_var_00,bVar4) == 0) ||
@@ -71,11 +71,11 @@ void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *par
             else {
               uVar5 = 1;
             }
-            *param_2 = uVar5;
-            param_2 = param_2 + 6;
+            *param_2_after_write = uVar5;
+            param_2_after_write = param_2_after_write + 6;
           }
           iVar6 = iVar6 + 5;
-          param_3 = param_3 + 1;
+          param_3_after_write = param_3_after_write + 1;
         } while (*(int *)((&PTR_DAT_007c0dc8)[iVar8] + iVar6) != 0);
       }
     }

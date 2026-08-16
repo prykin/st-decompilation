@@ -36,6 +36,7 @@ uint FUN_0075b800(undefined4 *param_1,AnonShape_0075C180_8EED234B *param_2,int p
       iVar1 = iVar1 + -1;
       piVar3 = piVar3 + 1;
       uVar2 = uVar2 << 1 | (int)param_2 >> ((byte)iVar1 & 0x1f) & 1U;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = param_5 + 1;
     } while (*piVar3 < (int)uVar2);
   }

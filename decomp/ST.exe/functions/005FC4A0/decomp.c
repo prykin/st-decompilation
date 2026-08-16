@@ -77,11 +77,11 @@ undefined4 __fastcall FUN_005fc4a0(AnonShape_005FC4A0_70B17F95 *param_1)
     if (((iVar6 != 0x1b) && (iVar6 != 7)) && (iVar6 != 0x13)) {
       return 0;
     }
-    iVar6 = (*this->vtable[5].slots_00_28[9])(0xfe);
+    iVar6 = (*this->vtable[5].slots_00_28[9])(this,0xfe);
     if (iVar6 == 0) {
       return 0;
     }
-    (*this->vtable[5].slots_00_28[10])(param_1->field_0018);
+    (*this->vtable[5].slots_00_28[10])(this,param_1->field_0018);
     param_1->field_02A3 = this[1].vtable;
     param_1->field_02AB = *(undefined2 *)&this[1].field_0xe;
     param_1->field_02A7 = *(undefined4 *)&this->field_0x18;

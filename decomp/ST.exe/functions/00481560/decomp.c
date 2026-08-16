@@ -140,7 +140,9 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
       local_68 = Library::MSVCRT::__allmul(local_14,local_10,local_14,local_10);
       local_80 = Library::MSVCRT::__allmul(uVar4,local_38,uVar4,local_38);
       if ((uVar3 == 0 && local_20 == 0) && (local_14 == 0 && local_10 == 0)) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = param_4 + 1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = param_5 + 1;
         local_68 = 1;
         local_14 = 1;
@@ -495,6 +497,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
             iVar10 = Library::DKW::TBL::DArrayAppend(pDVar8,&local_c);
             return iVar10 << 0x10 | uVar4 & 0xffff;
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_1 = 0xffffffff;
           uVar3 = pDVar8->count - 1;
           if (-1 < (int)uVar3) {

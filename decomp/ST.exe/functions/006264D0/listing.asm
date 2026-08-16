@@ -328,7 +328,8 @@ LAB_0062688a:
 LAB_00626892:
 00626892  8B 17                     MOV EDX,dword ptr [EDI]
 00626894  8B CF                     MOV ECX,EDI
-00626896  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+FUN_006264d0::override::prt_626896_e5e2351e:
+00626896  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0062689C  85 C0                     TEST EAX,EAX
 0062689E  0F 84 47 01 00 00         JZ 0x006269eb
 LAB_006268a4:

@@ -1427,6 +1427,7 @@ undefined4 st::fn_004D78E0(char param_1)
   iVar5 = 0;
   local_c = 0;
   local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   auto _param_1 = 0;
   iVar3 = 6;
   piVar2 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[iVar1].field1601_0x7da);
@@ -1861,15 +1862,19 @@ undefined4 st::fn_004D83D0(undefined1 param_1,int param_2,int param_3,uint param
     DAT_007fa168 = st::machine_word_boundary_cast<undefined4>(st::fn_006AAC70((int)g_worldGrid.planeStride));
   }
   if (param_2 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
   }
   if (param_3 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
   }
   if ((int)g_worldGrid.sizeX < (int)(param_4 + param_2)) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = g_worldGrid.sizeX - param_2;
   }
   if ((int)g_worldGrid.sizeY < param_3 + param_5) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = g_worldGrid.sizeY - param_3;
   }
   iVar1 = param_3 + param_5;
@@ -2841,15 +2846,12 @@ undefined4 __thiscall st::fn_004DA390(void *this,uint param_1,byte *param_2,int 
         param_2 = (byte *)0x3d;
       }
       else if (uVar5 == 2) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (byte *)0x8d;
       }
       else if (uVar5 == 3) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (byte *)0x49;
       }
       else {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = nullptr;
       }
       bVar4 = *pbVar8;
@@ -4979,6 +4981,7 @@ int __thiscall st::fn_004DE4F0(void *this,int param_1)
       do {
         st::fn_006ACC70(pDVar4,uVar5,&local_8);
         if (local_8 != nullptr) {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 0;
           if (local_8[8] == 0x14) {
             puVar8 = &local_24;
@@ -5109,12 +5112,12 @@ undefined4 __fastcall st::fn_004DE820(AnonShape_004DE820_615D04DD *param_1)
     while (-1 < iVar2) {
       this_00 = st::fn_004028BA
                           (g_allPlayers_007FA174,param_1->field_0x24,(ushort)local_8,CASE_1);
-      if (((this_00 != nullptr) && (iVar3 = (*this_00->vtable->vfunc_2C)(), iVar3 == 0x45)
-          ) && ((this_00->field_04D0 == 0 &&
-                ((local_EAX_212 = st::fn_00405ACE((TLOBaseTy *)this_00,3,0,1,1,1),
-                 local_EAX_212 != 0 &&
-                 (local_EAX_229 = st::fn_0040283D((TLOBaseTy *)this_00), local_EAX_229 != 0))))))
-      {
+      if (((this_00 != nullptr) &&
+          (iVar3 = this_00->vfunc_2C(), iVar3 == 0x45)) &&
+         ((this_00->field_04D0 == 0 &&
+          ((local_EAX_212 = st::fn_00405ACE((TLOBaseTy *)this_00,3,0,1,1,1),
+           local_EAX_212 != 0 &&
+           (local_EAX_229 = st::fn_0040283D((TLOBaseTy *)this_00), local_EAX_229 != 0)))))) {
         local_EAX_250 = st::fn_00405ACE((TLOBaseTy *)this_00,3,0,1,1,1);
         if ((local_EAX_250 != 0) &&
            (local_EAX_267 = st::fn_0040283D((TLOBaseTy *)this_00), local_EAX_267 != 0)) {
@@ -5734,6 +5737,7 @@ int st::fn_004DFB90(uint param_1,int param_2,int param_3)
   iVar5 = 0;
   pPVar2 = g_packedRecords_A62x8 + param_1;
   array = pPVar2->field1967_0x9d2;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((array != nullptr) && (param_1 = 0, 0 < (int)array->count)) {
     do {
       st::fn_006ACC70(array,param_1,&param_3);

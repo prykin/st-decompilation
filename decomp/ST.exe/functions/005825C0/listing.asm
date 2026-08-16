@@ -79,7 +79,8 @@ switchD_00582651::caseD_3:
 005826AE  0F 84 8A 01 00 00         JZ 0x0058283e
 005826B4  8B 17                     MOV EDX,dword ptr [EDI]
 005826B6  8B CF                     MOV ECX,EDI
-005826B8  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STJellyGunC::LifeGun::override::prt_5826b8_d4e0dbd9:
+005826B8  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 005826BE  85 C0                     TEST EAX,EAX
 005826C0  0F 84 78 01 00 00         JZ 0x0058283e
 005826C6  A1 38 2A 80 00            MOV EAX,[0x00802a38]
@@ -304,7 +305,8 @@ LAB_005829a2:
 005829CA  74 0E                     JZ 0x005829da
 005829CC  8B 10                     MOV EDX,dword ptr [EAX]
 005829CE  8B C8                     MOV ECX,EAX
-005829D0  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STJellyGunC::LifeGun::override::prt_5829d0_d4e0dbd9:
+005829D0  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 005829D6  85 C0                     TEST EAX,EAX
 005829D8  75 1A                     JNZ 0x005829f4
 LAB_005829da:
@@ -356,7 +358,8 @@ LAB_00582a01:
 LAB_00582a93:
 00582A93  8B 03                     MOV EAX,dword ptr [EBX]
 00582A95  8B CB                     MOV ECX,EBX
-00582A97  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]
+STJellyGunC::LifeGun::override::prt_582a97_e5e2351e:
+00582A97  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00582A9D  85 C0                     TEST EAX,EAX
 00582A9F  0F 84 23 FD FF FF         JZ 0x005827c8
 00582AA5  8B 43 24                  MOV EAX,dword ptr [EBX + 0x24]
@@ -450,7 +453,8 @@ LAB_00582bbb:
 00582BBD  0F 84 05 FC FF FF         JZ 0x005827c8
 00582BC3  8B 03                     MOV EAX,dword ptr [EBX]
 00582BC5  8B CB                     MOV ECX,EBX
-00582BC7  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STJellyGunC::LifeGun::override::prt_582bc7_e5e2351e:
+00582BC7  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00582BCD  85 C0                     TEST EAX,EAX
 00582BCF  0F 84 F3 FB FF FF         JZ 0x005827c8
 00582BD5  8B 45 F8                  MOV EAX,dword ptr [EBP + -0x8]
@@ -467,7 +471,8 @@ LAB_00582bbb:
 00582BF0  50                        PUSH EAX
 00582BF1  51                        PUSH ECX
 00582BF2  8B CB                     MOV ECX,EBX
-00582BF4  FF 92 DC 00 00 00         CALL dword ptr [EDX + 0xdc]
+STJellyGunC::LifeGun::override::prt_582bf4_6c7b7428:
+00582BF4  FF 92 DC 00 00 00         CALL dword ptr [EDX + 0xdc]  ; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00582BFA  85 C0                     TEST EAX,EAX
 00582BFC  89 86 52 02 00 00         MOV dword ptr [ESI + 0x252],EAX
 00582C02  0F 8C C0 FB FF FF         JL 0x005827c8
@@ -510,7 +515,8 @@ LAB_00582bbb:
 00582C88  52                        PUSH EDX
 00582C89  51                        PUSH ECX
 00582C8A  8B CB                     MOV ECX,EBX
-00582C8C  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]
+STJellyGunC::LifeGun::override::prt_582c8c_577d6eca:
+00582C8C  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]  ; [STIndirectCallsiteApplier] exact slot 0xE0; mode=machine-void; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00582C92  8B 45 EC                  MOV EAX,dword ptr [EBP + -0x14]
 00582C95  85 C0                     TEST EAX,EAX
 00582C97  75 1E                     JNZ 0x00582cb7

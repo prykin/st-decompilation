@@ -49,6 +49,7 @@ STAllPlayersC::SelectObjects
   local_c = nullptr;
   local_8 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   switch(param_1) {
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_0:
     param_3 = 0;
     iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
@@ -70,13 +71,14 @@ STAllPlayersC::SelectObjects
     GetGObjFromZone(this,objPtr,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,(int *)&local_8,
                     nullptr);
     param_3 = 0;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = local_8->count;
     if (0 < (int)param_2) {
       do {
         pSVar7 = GetObjPtr(this,objPtr,*(ushort *)((int)local_8->data + param_3 * 2),CASE_1);
         if ((((pSVar7 == nullptr) || (pSVar7->field_0020 != 0x14)) ||
-            (iVar9 = pSVar7->vfunc_F8(), iVar9 == 0)) ||
-           (iVar9 = pSVar7->vfunc_EC(), iVar9 == 0)) {
+            (iVar9 = (*pSVar7->vtable[1].vfunc_24)(pSVar7), iVar9 == 0)) ||
+           (iVar9 = (*pSVar7->vtable[1].vfunc_18)(pSVar7), iVar9 == 0)) {
           DArrayRemoveAt(local_8,param_3);
           param_2 = param_2 - 1;
           param_3 = param_3 - 1;
@@ -184,8 +186,8 @@ STAllPlayersC::SelectObjects
         do {
           pSVar7 = GetObjPtr(this,objPtr,*(ushort *)((int)local_8->data + param_3 * 2),CASE_1);
           if ((((pSVar7 == nullptr) || (pSVar7->field_0020 != 0x14)) ||
-              (iVar9 = pSVar7->vfunc_F8(), iVar9 == 0)) ||
-             (iVar9 = pSVar7->vfunc_EC(), iVar9 == 0)) {
+              (iVar9 = (*pSVar7->vtable[1].vfunc_24)(pSVar7), iVar9 == 0)) ||
+             (iVar9 = (*pSVar7->vtable[1].vfunc_18)(pSVar7), iVar9 == 0)) {
             DArrayRemoveAt(local_8,param_3);
             param_2 = param_2 - 1;
             param_3 = param_3 - 1;
@@ -209,7 +211,7 @@ STAllPlayersC::SelectObjects
         do {
           DArrayGetElement(local_8,index,local_14);
           pSVar7 = GetObjPtr(this,objPtr,STPiece<0,2>(local_14),CASE_1);
-          iVar9 = pSVar7->vfunc_EC();
+          iVar9 = (*pSVar7->vtable[1].vfunc_18)(pSVar7);
           if (iVar9 == 0) {
             DArrayRemoveAt(local_8,index);
             param_2 = param_2 - 1;

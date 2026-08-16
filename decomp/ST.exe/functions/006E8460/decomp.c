@@ -17,7 +17,7 @@ void __cdecl FUN_006e8460(int param_1,int param_2,uint param_3,byte param_4)
 
   iVar1 = DAT_00856d84;
   lVar6 = Library::MSVCRT::__ftol();
-  param_1 = (int)lVar6;
+  auto param_1_after_write = (int)lVar6; /* compiler stack-slot lifetime split */
   lVar6 = Library::MSVCRT::__ftol();
   iVar4 = (int)lVar6;
   if ((int)lVar6 < (int)(param_3 - 1)) {
@@ -28,25 +28,25 @@ void __cdecl FUN_006e8460(int param_1,int param_2,uint param_3,byte param_4)
   }
   if (iVar1 < iVar4) {
     iVar3 = (iVar1 - DAT_00856da0) + iVar4;
-    if (param_1 <= iVar3 + 1) {
-      param_1 = iVar3 + 2;
+    if (param_1_after_write <= iVar3 + 1) {
+      param_1_after_write = iVar3 + 2;
     }
-    if ((DAT_00856da0 - iVar4) + iVar1 <= (int)(param_1 + param_3)) {
-      param_1 = ((DAT_00856da0 - iVar4) - param_3) + -1 + iVar1;
+    if ((DAT_00856da0 - iVar4) + iVar1 <= (int)(param_1_after_write + param_3)) {
+      param_1_after_write = ((DAT_00856da0 - iVar4) - param_3) + -1 + iVar1;
     }
   }
   else {
-    if (param_1 < iVar1 - iVar4) {
-      param_1 = iVar1 - iVar4;
+    if (param_1_after_write < iVar1 - iVar4) {
+      param_1_after_write = iVar1 - iVar4;
     }
-    if (iVar1 + iVar4 <= (int)(param_1 + -1 + param_3)) {
-      param_1 = (iVar1 - param_3) + iVar4;
+    if (iVar1 + iVar4 <= (int)(param_1_after_write + -1 + param_3)) {
+      param_1_after_write = (iVar1 - param_3) + iVar4;
     }
   }
-  param_2 = 0;
+  auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < (int)param_3) {
     do {
-      pbVar5 = (byte *)((DAT_00856d88 - (param_2 + iVar4) * DAT_00856d8c) + param_1);
+      pbVar5 = (byte *)((DAT_00856d88 - (param_2_after_write + iVar4) * DAT_00856d8c) + param_1_after_write);
       for (uVar2 = param_3 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
         *(uint *)pbVar5 = CONCAT22(CONCAT11(param_4,param_4),CONCAT11(param_4,param_4));
         pbVar5 = pbVar5 + 4;
@@ -55,8 +55,8 @@ void __cdecl FUN_006e8460(int param_1,int param_2,uint param_3,byte param_4)
         *pbVar5 = param_4;
         pbVar5 = pbVar5 + 1;
       }
-      param_2 = param_2 + 1;
-    } while (param_2 < (int)param_3);
+      param_2_after_write = param_2_after_write + 1;
+    } while (param_2_after_write < (int)param_3);
   }
   return;
 }

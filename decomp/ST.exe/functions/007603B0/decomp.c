@@ -31,7 +31,7 @@ void FUN_007603b0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *param_3
 
   local_14 = param_2->field_0050;
   iVar6 = STField<int>(param_1,0x132) + 0x80;
-  param_1 = local_134;
+  auto param_1_after_write = local_134; /* compiler stack-slot lifetime split */
   local_2c = iVar6;
   local_10 = param_3;
   local_1c = 8;
@@ -42,14 +42,14 @@ void FUN_007603b0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *param_3
     if ((((((local_30 == 0 && local_10[0x10] == 0) && local_c == 0) && local_10[0x20] == 0) &&
          local_8 == 0) && local_10[0x30] == 0) && local_10[0x38] == 0) {
       iVar3 = *local_10 * local_14->field_0000 * 4;
-      *param_1 = iVar3;
-      param_1[8] = iVar3;
-      param_1[0x10] = iVar3;
-      param_1[0x18] = iVar3;
-      param_1[0x20] = iVar3;
-      param_1[0x28] = iVar3;
-      param_1[0x30] = iVar3;
-      param_1[0x38] = iVar3;
+      *param_1_after_write = iVar3;
+      param_1_after_write[8] = iVar3;
+      param_1_after_write[0x10] = iVar3;
+      param_1_after_write[0x18] = iVar3;
+      param_1_after_write[0x20] = iVar3;
+      param_1_after_write[0x28] = iVar3;
+      param_1_after_write[0x30] = iVar3;
+      param_1_after_write[0x38] = iVar3;
       local_14 = (AnonNested_007603B0_0050_0992C9A2 *)&local_14->field_0x4;
     }
     else {
@@ -80,19 +80,19 @@ void FUN_007603b0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *param_3
       iVar2 = local_8 * 0x41b3 + local_c + iVar6;
       local_8 = iVar7 * 0x6254 + iVar9 + iVar6;
       iVar4 = local_c + local_30 * 0x300b + iVar4;
-      *param_1 = iVar3 + 0x400 + iVar4 >> 0xb;
-      param_1[0x38] = (iVar3 - iVar4) + 0x400 >> 0xb;
-      param_1[0x30] = (local_24 - local_8) + 0x400 >> 0xb;
-      param_1[0x28] = (local_20 - iVar2) + 0x400 >> 0xb;
-      param_1[0x18] = local_28 + 0x400 + iVar10 >> 0xb;
-      param_1[0x10] = local_20 + 0x400 + iVar2 >> 0xb;
-      param_1[8] = local_24 + 0x400 + local_8 >> 0xb;
-      param_1[0x20] = (local_28 - iVar10) + 0x400 >> 0xb;
+      *param_1_after_write = iVar3 + 0x400 + iVar4 >> 0xb;
+      param_1_after_write[0x38] = (iVar3 - iVar4) + 0x400 >> 0xb;
+      param_1_after_write[0x30] = (local_24 - local_8) + 0x400 >> 0xb;
+      param_1_after_write[0x28] = (local_20 - iVar2) + 0x400 >> 0xb;
+      param_1_after_write[0x18] = local_28 + 0x400 + iVar10 >> 0xb;
+      param_1_after_write[0x10] = local_20 + 0x400 + iVar2 >> 0xb;
+      param_1_after_write[8] = local_24 + 0x400 + local_8 >> 0xb;
+      param_1_after_write[0x20] = (local_28 - iVar10) + 0x400 >> 0xb;
       local_14 = (AnonNested_007603B0_0050_0992C9A2 *)&local_14->field_0x4;
       iVar6 = local_2c;
     }
     local_10 = local_10 + 1;
-    param_1 = param_1 + 1;
+    param_1_after_write = param_1_after_write + 1;
     local_1c = local_1c + -1;
   } while (local_1c != 0);
   piVar8 = local_134;

@@ -13,6 +13,7 @@ undefined4 FUN_004eb300(uint param_1,int param_2,int param_3,int param_4)
   recordIndex = (char)param_1;
   bVar1 = LookupRecordByte(recordIndex);
   if (bVar1 == 3) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0xdd) {
       iVar4 = g_packedRecords_A62x8[param_1].field1954_0x9aa;
       iVar2 = thunk_FUN_004d89b0(recordIndex);

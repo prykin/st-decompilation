@@ -198,14 +198,16 @@ LAB_005fc744:
 005FC744  8B 07                     MOV EAX,dword ptr [EDI]
 005FC746  68 FE 00 00 00            PUSH 0xfe
 005FC74B  8B CF                     MOV ECX,EDI
-005FC74D  FF 90 14 01 00 00         CALL dword ptr [EAX + 0x114]
+FUN_005fc4a0::override::prt_5fc74d_e9a929de:
+005FC74D  FF 90 14 01 00 00         CALL dword ptr [EAX + 0x114]  ; [STIndirectCallsiteApplier] exact slot 0x114; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4
 005FC753  85 C0                     TEST EAX,EAX
 005FC755  0F 84 26 02 00 00         JZ 0x005fc981
 005FC75B  8B 46 18                  MOV EAX,dword ptr [ESI + 0x18]
 005FC75E  8B 17                     MOV EDX,dword ptr [EDI]
 005FC760  50                        PUSH EAX
 005FC761  8B CF                     MOV ECX,EDI
-005FC763  FF 92 18 01 00 00         CALL dword ptr [EDX + 0x118]
+FUN_005fc4a0::override::prt_5fc763_a68b3caa:
+005FC763  FF 92 18 01 00 00         CALL dword ptr [EDX + 0x118]  ; [STIndirectCallsiteApplier] exact slot 0x118; mode=machine-void; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4
 005FC769  8B 4F 24                  MOV ECX,dword ptr [EDI + 0x24]
 005FC76C  89 8E A3 02 00 00         MOV dword ptr [ESI + 0x2a3],ECX
 005FC772  66 8B 57 32               MOV DX,word ptr [EDI + 0x32]

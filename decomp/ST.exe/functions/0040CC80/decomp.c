@@ -16,6 +16,7 @@ int __thiscall FUN_0040cc80(void *this,uint param_1)
     return -4;
   }
   local_8 = pSVar1->field_00A7;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = 0;
   if (-1 < local_8) {
     psVar4 = pSVar1->field_009F + local_8 * 0x24;

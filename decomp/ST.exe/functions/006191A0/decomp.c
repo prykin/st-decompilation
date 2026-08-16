@@ -23,6 +23,7 @@ byte __thiscall STJumpMineC::sub_006191A0(STJumpMineC *this,uint param_1,int par
       (g_sT3DSMAPContext_00807598->field_0044 <= param_2)) &&
      (param_2 <= g_sT3DSMAPContext_00807598->field_0054)) {
     local_8 = this;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = FUN_006ddbd0();
     pVVar1 = g_visibleClass_00802A88;
     if (((param_1 == 0) || (g_visibleClass_00802A88 == nullptr)) ||

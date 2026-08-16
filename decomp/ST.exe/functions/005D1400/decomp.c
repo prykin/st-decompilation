@@ -1362,11 +1362,7 @@ LAB_005d3188:
         this_00->field_2179 = local_2c + this_00->field_1F88;
         this_00->field_2191 = 0x6500;
         this_00->field_1E2F->count = 0;
-        pcVar29 = &this_00->field_1E33;
-        for (iVar24 = 0x43; iVar24 != 0; iVar24 = iVar24 + -1) {
-          *(undefined4 *)pcVar29 = 0;
-          pcVar29 = pcVar29 + 4;
-        }
+        memset(&this_00->field_1E33, 0, 0x10c); /* compiler bulk-zero initialization */
         if (pAVar27->field_0x0 == '\0') {
           uVar30 = local_2c + this_00->field_1F88;
           local_5 = '\0';

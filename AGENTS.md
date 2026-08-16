@@ -36,6 +36,9 @@ Original binaries are local under ignored `bin/` and must not be committed.
   says `passed`. Export is whole-corpus transactional; `incomplete` means the
   exporter or gate stopped, and the retained `pre_export/` snapshot—not a hash
   update—is the next regression baseline.
+- The corpus manifest binds `pseudocode_runtime.h` by SHA-256. Compatibility
+  helper semantics are executable source input, not untracked presentation;
+  changing them requires a fresh accepted export and regenerated source tree.
 - `ST_PSEUDO[...]` comments and `pseudocode_idioms.jsonl` describe presentation
   gaps which Ghidra could not safely fold. They are exporter-owned and
   regenerated; do not treat them as recovered semantic facts.
@@ -98,11 +101,14 @@ Original binaries are local under ignored `bin/` and must not be committed.
   prior value after a full-pointee write proven on every callee return path and
   allow the post-write scalar lifetime to flow to later calls. Do not infer the
   output type from caller pseudocode alone.
-- Exporter `stack_slot_reuse` evidence requires a full overwrite whose machine
-  value traces through transparent `MOV`/`MOVSX`/`MOVZX` operations to a
-  different incoming parameter slot. Arithmetic, `LEA`, and registers used only
-  to address a memory operand do not carry argument identity; read/modify/write
-  and same-origin transforms are ordinary mutable parameters.
+- Exporter `stack_slot_reuse` evidence requires an incoming EBP slot which is
+  read before one later full-width overwrite. The new value must trace through
+  transparent `MOV`/`MOVSX`/`MOVZX` operations either to a different incoming
+  parameter or to an independently defined full register; arithmetic, `LEA`,
+  and registers used only to address a memory operand do not carry argument
+  identity. Text may introduce `auto param_N_after_write` only at the first
+  exact assignment when it dominates every later use in one lexical block, no
+  label can cross it, and the old spelling is unused outside that block.
 - A generated scalar class field may become an anonymous state enum from exact
   immediate writes plus comparisons. Comparison evidence includes only direct
   `CMP field,imm`, a bounded load/compare def-use, or a contiguous
@@ -235,6 +241,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   receiver-aware generated function-pointer ABI already installed in a physical
   vtable slot. Recover the deterministic generated slot family or leave the
   proposed downgrade disabled.
+- A use-site-only indirect-call override is a last-resort ABI view, not physical
+  slot evidence. Retain exact physical-dispatch consensus, but if one function
+  would need more than 32 machine-fallback overrides, suppress that whole dense
+  fallback family and remove earlier script-owned members of it; per-call
+  overrides at that density perturb High SSA/liveness more than they recover.
 - Generated vtable types which name the same exact physical table address are
   aliases, not independent ABI evidence. A unanimous independently recovered
   slot ABI on one such alias must be retained by every generated alias at that
@@ -320,6 +331,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   algebraically identical apart from the exact negative bias. The helper keeps
   the original narrow quotient and subtracts one for every negative source;
   this is deliberately not ordinary floor division at exact negative multiples.
+- Export may fold byte-addressed packed-bit test/set/clear, MSVC's exact signed
+  divide-by-four bias, and 16.16 rounding only when the repeated operands are
+  textually identical and the complete mask/shift form matches. These helpers
+  preserve 32-bit wrap, signed truncation, and bit numbering; they do not assert
+  a semantic game type. An XOR which reverses bit numbering remains explicit.
 - Hash generated class layouts only after Ghidra installs the final
   `StructureDB`; hashing the transient `StructureDataType` can make Ghidra's own
   canonicalization look like a manual edit. A legacy hash-diverged generated
@@ -344,6 +360,12 @@ Original binaries are local under ignored `bin/` and must not be committed.
   field-name collisions remain audit rows. Materialize an unnamed
   `field_0xOFFSET` view only for an exact statically typed path/offset use
   already present in the corpus.
+- When a per-call override proves one receiver-aware physical-vtable slot but
+  the shared field declaration cannot be widened safely, the source tree may
+  emit a non-virtual forwarding wrapper for that exact owner/slot ABI. An exact
+  duplicated-receiver call must never degrade from readable member syntax to an
+  `exact_indirect_callee<...>(...)(receiver, ...)` expression; generation fails
+  instead.
 - Compiler audits are local evidence. Normalize them by function address, keep
   machine/compiler output under ignored `.st-local/` by default, and compare
   runs with the same per-TU error limit. A compiler diagnostic is a recovery

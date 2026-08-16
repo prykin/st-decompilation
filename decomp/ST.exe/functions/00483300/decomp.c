@@ -52,9 +52,9 @@ LAB_00483342:
     if ((short)param_1[0x205] < iVar2) {
       return (-(uint)(STField<int>(param_1,0x7e6) != 0) & 4) + 5;
     }
-    iVar3 = this->vfunc_F8();
-    if (((iVar3 == 0) || (iVar3 = this->vfunc_F0(), iVar3 == 0)) ||
-       (iVar3 = (*this->vtable->vfunc_F4)(param_1[9]), iVar3 == 0)) {
+    iVar3 = (*this->vtable[1].vfunc_24)(this);
+    if (((iVar3 == 0) || (iVar3 = (*this->vtable[1].MoveStep)(this), iVar3 == 0)) ||
+       (iVar3 = (*this->vtable[1].vfunc_20)(this,param_1[9]), iVar3 == 0)) {
       return 3;
     }
     sVar1 = STField<short>(param_1,0x45);

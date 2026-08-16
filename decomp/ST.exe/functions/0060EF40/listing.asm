@@ -229,7 +229,8 @@ LAB_0060f1da:
 0060F1DC  74 3D                     JZ 0x0060f21b
 0060F1DE  8B 16                     MOV EDX,dword ptr [ESI]
 0060F1E0  8B CE                     MOV ECX,ESI
-0060F1E2  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40::override::prt_60f1e2_e5e2351e:
+0060F1E2  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0060F1E8  85 C0                     TEST EAX,EAX
 0060F1EA  74 2C                     JZ 0x0060f218
 0060F1EC  8B 46 24                  MOV EAX,dword ptr [ESI + 0x24]

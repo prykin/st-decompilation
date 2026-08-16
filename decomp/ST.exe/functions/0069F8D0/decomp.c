@@ -52,7 +52,6 @@ LAB_0069fb6f:
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = param_4;
       *local_28 = (short)param_4;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = iVar7;
       local_28[1] = (short)iVar7;
       puVar2 = local_28;
@@ -75,9 +74,7 @@ LAB_0069fb6f:
             }
             psVar6 = psVar6 + 2;
           } while ((int)psVar6 < 0x7d8022);
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_5 = local_3c;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = local_40;
           *local_38 = (short)local_3c;
           puVar2[3] = (short)local_40;

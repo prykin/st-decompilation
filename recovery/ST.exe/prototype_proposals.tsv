@@ -22,6 +22,8 @@ type_apply	name_apply	repair	protected_override	function_address	expected_functi
 0	0	0	0	004C7260	FUN_004c7260	parameter	6	param_6	pointer:/undefined4	DEFAULT		pointer:/int	review	004C7CC0 -> 004C7260 @ 004C7FBE; /TLOBaseTy+0x3a4	type_evidence={pointer:/int=1}; name_evidence={}; strong_evidence=0
 0	0	0	0	004D7480	FUN_004d7480	parameter	2	param_3	/undefined4	DEFAULT		/int	review	004749C0 -> 004D7480 @ 004751BF; /STBoatC+0x18	type_evidence={/int=1}; name_evidence={}; strong_evidence=0
 0	0	0	0	004E20D0	FUN_004e20d0	parameter	4	param_4	/undefined4	DEFAULT		/int	review	0046F5C0 -> 004E20D0 @ 004706A7; /STBoatC+0x716	type_evidence={/int=1}; name_evidence={}; strong_evidence=0
+0	0	0	0	004E5AF0	FUN_004e5af0	parameter	1	param_2	/uint	DEFAULT		pointer:/uint	review	004E7980 -> 004E5AF0 @ 004E7A08; data at 00801020	type_evidence={pointer:/uint=1}; name_evidence={}; strong_evidence=0
+0	0	0	0	004E5D50	FUN_004e5d50	parameter	1	param_2	/uint	DEFAULT		pointer:/uint	review	004E7980 -> 004E5D50 @ 004E7BCB; data at 00801020	type_evidence={pointer:/uint=1}; name_evidence={}; strong_evidence=0
 0	0	0	0	004E9650	FUN_004e9650	parameter	1	param_1	pointer:/undefined4	DEFAULT		pointer:/short	review	00479600 -> 004E9650 @ 0047A452; /STBoatC+0x657	type_evidence={pointer:/short=1}; name_evidence={}; strong_evidence=0
 0	0	0	0	004E9650	FUN_004e9650	parameter	3	param_3	pointer:/undefined4	DEFAULT		pointer:/short	review	00479600 -> 004E9650 @ 0047A452; /STBoatC+0x65b	type_evidence={pointer:/short=1}; name_evidence={}; strong_evidence=0
 0	0	0	0	004E9960	FUN_004e9960	parameter	1	param_1	pointer:/undefined4	DEFAULT		pointer:/short	review	00660700 -> 004E9960 @ 00660835; address of FUN_00660700 parameter param_1	type_evidence={pointer:/short=1}; name_evidence={}; strong_evidence=0

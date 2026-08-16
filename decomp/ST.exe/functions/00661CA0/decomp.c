@@ -52,7 +52,7 @@ AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param
      , this != nullptr)) {
     local_10 = this;
     local_20 = thunk_FUN_004357f0(param_1->field_0024);
-    uVar5 = (*this->vtable->vfunc_2C)();
+    uVar5 = this->vfunc_2C();
     pSVar4 = local_10;
     local_c = uVar5;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -170,7 +170,7 @@ LAB_00661e5f:
         local_60 = param_1->field_0280;
         local_64 = (AnonShape_0068FD00_A5257008 *)0x6c;
         local_5c = 0;
-        GVar7 = (*local_10->vtable->vfunc_2C)();
+        GVar7 = local_10->vfunc_2C();
         iVar10 = thunk_FUN_006753a0(GVar7);
         local_5b = (undefined1)iVar10;
         psStack_5a = &local_30;

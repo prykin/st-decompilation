@@ -24,10 +24,10 @@ byte * FUN_006cfe10(byte *param_1,int param_2)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pbVar7 = param_1 + *(ushort *)(param_1 + uVar3 * 2 + 0x14) + 0x16;
   }
-  param_1 = pbVar7;
+  auto param_1_after_write = pbVar7; /* compiler stack-slot lifetime split */
   uVar3 = 0;
   iVar6 = param_2 * iVar2;
-  pbVar7 = param_1;
+  pbVar7 = param_1_after_write;
   do {
     while( true ) {
       pbVar7_mg1 = pbVar7;

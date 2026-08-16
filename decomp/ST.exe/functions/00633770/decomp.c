@@ -125,6 +125,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
            STField<float>(this,0x6d);
     }
     if (*(int *)this != 0) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = STField<int>(this,0x1d);
       iVar14 = param_1 * 2;
       uVar13 = *(int *)(*(int *)this + 0xc) - param_1;
@@ -348,10 +349,10 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           }
           else {
             iVar18 = 1;
-            param_2 = iVar14;
+            auto param_2_after_write = iVar14; /* compiler stack-slot lifetime split */
             if (0 < iVar14) {
               do {
-                param_2 = param_2 + -1;
+                param_2_after_write = param_2_after_write + -1;
                 if (iVar18 % 3 == 0) {
                   uVar10 = iVar18 / 3;
                   iVar17 = *(int *)this;
@@ -363,7 +364,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
                   }
                   *(undefined4 *)(iVar17 + 8) = 1;
                   *(float *)(iVar17 + 0x21) =
-                       (float)param_2 * STField<float>(this,0x75) + STField<float>(this,0x41)
+                       (float)param_2_after_write * STField<float>(this,0x75) + STField<float>(this,0x41)
                        + fVar1;
                   if (iVar14 != STField<int>(this,0x1d)) {
                     iVar17 = *(int *)this;
@@ -377,7 +378,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
                     *(undefined4 *)(iVar17 + 8) = 1;
                     *(float *)(iVar17 + 0x21) =
                          STField<float>(this,0x41) -
-                         ((float)param_2 * STField<float>(this,0x75) + fVar1);
+                         ((float)param_2_after_write * STField<float>(this,0x75) + fVar1);
                   }
                 }
                 else {
@@ -390,7 +391,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
                   else {
                     iVar16 = 0;
                   }
-                  fVar6 = (float)param_2;
+                  fVar6 = (float)param_2_after_write;
                   *(undefined4 *)(iVar16 + 8) = 1;
                   *(float *)(iVar16 + 0x21) =
                        fVar6 * STField<float>(this,0x75) + STField<float>(this,0x41) + fVar1;

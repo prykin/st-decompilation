@@ -28,7 +28,7 @@ FUN_006a17b0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
     thunk_FUN_006a1410(param_1,param_2,param_3,param_4,param_5,param_7,param_8);
     local_c = 0;
     do {
-      param_4 = 0;
+      auto param_4_after_write = 0; /* compiler stack-slot lifetime split */
       local_8 = &DAT_007df82c;
       do {
         iVar2 = local_8[-1] + param_2;
@@ -60,14 +60,14 @@ FUN_006a17b0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               uVar5 = CONCAT22(uStack_12,local_14);
             }
-            if ((*(ushort *)(&DAT_007df898 + (param_4 + (uVar5 & 0xf) * 8) * 2) &
+            if ((*(ushort *)(&DAT_007df898 + (param_4_after_write + (uVar5 & 0xf) * 8) * 2) &
                  (&DAT_007df808)[uVar6 & 0xf] & 0xf00) != 0) {
               thunk_FUN_006a1410(param_1,iVar2,iVar7,iVar1,param_5,param_7,param_8);
             }
           }
         }
         local_8 = local_8 + 2;
-        param_4 = param_4 + 1;
+        param_4_after_write = param_4_after_write + 1;
       } while ((int)local_8 < 0x7df86c);
       local_c = local_c + 1;
     } while (local_c < 1);

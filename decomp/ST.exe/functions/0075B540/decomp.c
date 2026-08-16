@@ -27,6 +27,7 @@ void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
   int local_c;
   int local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (*param_3 == 0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar4 = (**(code **)*param_1)(param_1,1,0x5d4);
@@ -35,7 +36,7 @@ void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
   iVar4 = *param_3;
   piVar7 = nullptr;
   *(int *)(iVar4 + 0xd0) = param_2;
-  param_3 = nullptr;
+  auto param_3_after_write = nullptr; /* compiler stack-slot lifetime split */
   local_8 = 1;
   do {
     bVar1 = *(byte *)(local_8 + param_2);
@@ -50,8 +51,8 @@ void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
         *(undefined1 *)puVar12 = uVar3;
         puVar12 = (undefined4 *)((int)puVar12 + 1);
       }
-      piVar7 = (int *)((int)param_3 + (uint)bVar1);
-      param_3 = piVar7;
+      piVar7 = (int *)((int)param_3_after_write + (uint)bVar1);
+      param_3_after_write = piVar7;
     }
     local_8 = local_8 + 1;
   } while (local_8 < 0x11);
@@ -98,7 +99,7 @@ void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
   iVar5 = 1;
   *(undefined4 *)(iVar4 + 0x88) = 0xfffff;
   memset((void *)(iVar4 + 0xd4), 0, 0x400); /* compiler bulk-zero initialization */
-  param_3 = nullptr;
+  param_3_after_write = nullptr;
   local_8 = 7;
   do {
     local_c = 1;
@@ -121,10 +122,10 @@ void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
           } while (iVar6 != 0);
         }
         local_c = local_c + 1;
-        piVar7 = (int *)((int)param_3 + 1);
+        piVar7 = (int *)((int)param_3_after_write + 1);
         local_10 = local_10 + 1;
         puVar13 = puVar13 + 1;
-        param_3 = piVar7;
+        param_3_after_write = piVar7;
       } while (local_c <= (int)(uint)*(byte *)(iVar5 + param_2));
     }
     iVar5 = iVar5 + 1;

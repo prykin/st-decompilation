@@ -27,7 +27,7 @@ void FUN_00682850(void)
     pcVar6[3] = '\0';
     pcVar6 = pcVar6 + 4;
   }
-  Library::MSVCRT::_strncpy(local_8c,DAT_00857528,0x7f);
+  Library::MSVCRT::_strncpy(local_8c,PTR_00857528,0x7f);
   pfVar3 = (float *)thunk_FUN_006686f0(GVar2);
   pfVar5 = nullptr;
   thunk_FUN_006827a0();

@@ -439,7 +439,7 @@ undefined4 __thiscall st::fn_00571E40(void *this,LPDWORD lpcbData)
   HKEY local_8;
 
   LVar4 = st::external_000000C5((HKEY)&DAT_80000001,st::pointer_boundary_cast<LPCSTR>("SOFTWARE\\Ellipse Studios\\Submarine Titans\\Directories"),st::pointer_boundary_cast<PHKEY>(&local_8));
-  pcVar9 = RegQueryValueExA_exref;
+  pcVar9 = st::pointer_boundary_cast<code *>(PTR_RegQueryValueExA_0085b954);
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   pBVar1 = (LPBYTE)((int)this + 0x28);
   local_10[1] = 0x104;
@@ -545,7 +545,7 @@ LAB_005720f0:
       pcVar12 = pcVar12 + 4;
       pcVar13 = pcVar13 + 4;
     }
-    for (uVar6 = uVar6 & 3; pcVar9 = RegQueryValueExA_exref, uVar6 != 0; uVar6 = uVar6 - 1) {
+    for (uVar6 = uVar6 & 3; pcVar9 = st::pointer_boundary_cast<code *>(PTR_RegQueryValueExA_0085b954), uVar6 != 0; uVar6 = uVar6 - 1) {
       *pcVar13 = *pcVar12;
       pcVar12 = pcVar12 + 1;
       pcVar13 = pcVar13 + 1;
@@ -972,7 +972,7 @@ undefined4 __thiscall st::fn_00572D30(void *this,BYTE *param_1,BYTE *param_2)
   HKEY local_8;
 
   LVar3 = st::external_000000C7((HKEY)&DAT_80000002,st::pointer_boundary_cast<LPCSTR>("SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version"),st::pointer_boundary_cast<PHKEY>(&local_8));
-  pcVar10 = RegSetValueExA_exref;
+  pcVar10 = st::pointer_boundary_cast<code *>(PTR_RegSetValueExA_0085b95c);
   if (LVar3 == 0) {
     LVar3 = st::external_000000C6(local_8,st::pointer_boundary_cast<LPCSTR>(&DAT_007ca4f8),0,4,(BYTE *)((int)this + 0x779),4);
     if ((((LVar3 == 0) &&
@@ -1027,7 +1027,7 @@ undefined4 __thiscall st::fn_00572D30(void *this,BYTE *param_1,BYTE *param_2)
           pcVar9 = pcVar9 + 4;
           pcVar11 = pcVar11 + 4;
         }
-        for (uVar6 = uVar6 & 3; pcVar10 = RegSetValueExA_exref, uVar6 != 0; uVar6 = uVar6 - 1) {
+        for (uVar6 = uVar6 & 3; pcVar10 = st::pointer_boundary_cast<code *>(PTR_RegSetValueExA_0085b95c), uVar6 != 0; uVar6 = uVar6 - 1) {
           *pcVar11 = *pcVar9;
           pcVar9 = pcVar9 + 1;
           pcVar11 = pcVar11 + 1;
@@ -1641,7 +1641,7 @@ void st::fn_00574540(void)
 void st::fn_00574580(void)
 
 {
-  DAT_00807560 = st::machine_word_boundary_cast<undefined4>(PTR_008032c4);
+  PTR_00807560 = PTR_008032c4;
   return;
 }
 
@@ -1654,7 +1654,7 @@ void st::fn_00574580(void)
 void st::fn_005745C0(void)
 
 {
-  DAT_008073c8 = st::machine_word_boundary_cast<undefined4>(PTR_008032bc);
+  PTR_008073c8 = PTR_008032bc;
   return;
 }
 
@@ -1756,8 +1756,8 @@ cf_break_loop_00574651:
                       bVar5 = *(byte *)(uVar9 + 0x7ca6a8);
                     }
                     pbVar12 = (byte *)((int)local_24 +
-                                      ((int)(uVar10 + ((int)uVar10 >> 0x1f & 3U)) >> 2) +
-                                      ((int)(local_20 + (local_20 >> 0x1f & 3U)) >> 2) +
+                                      (STSignedDiv4(uVar10)) +
+                                      (STSignedDiv4(local_20)) +
                                       (int)(uVar8 * iVar7) / 2);
                     *pbVar12 = *pbVar12 | bVar5;
                   }
@@ -1840,7 +1840,7 @@ st::fn_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,und
   local_1c = (st_stack_frame + 8);
   local_4c = nullptr;
   iVar3 = (int)param_1->field_0002 * (int)param_1->field_0000;
-  local_24 = (int)(iVar3 + (iVar3 >> 0x1f & 3U)) >> 2;
+  local_24 = STSignedDiv4(iVar3);
   local_40 = 1;
   local_2c = (int *)(&param_1[1].field_0x4 +
                     (local_24 * 5 + param_2 + (param_1->field_0000 * param_3) / 2) * 4);
@@ -2002,7 +2002,7 @@ LAB_00574bcc:
                   if ((int)uVar10 < 0) {
                     uVar10 = (uVar10 - 1 | 0xfffffffc) + 1;
                   }
-                  local_5c = (uint)(*(byte *)(((int)(local_30 + ((int)local_30 >> 0x1f & 3U)) >> 2)
+                  local_5c = (uint)(*(byte *)((STSignedDiv4(local_30))
                                              + local_48) & (&DAT_007ca6a4)[uVar10]);
                   if (local_5c == 0) {
 LAB_00574e10:
@@ -2011,10 +2011,10 @@ LAB_00574e10:
                   }
                   else {
                     if (local_5c != (byte)(&DAT_007ca6a4)[uVar10]) {
-                      *local_60 = *(byte *)((uint)*local_60 + DAT_008073c8);
+                      *local_60 = *(byte *)((uint)*local_60 + (int)PTR_008073c8);
                       goto LAB_00574e10;
                     }
-                    *local_60 = *(byte *)((uint)*local_60 + DAT_00807560);
+                    *local_60 = *(byte *)((uint)*local_60 + (int)PTR_00807560);
                     local_30 = local_30 + 1;
                     local_60 = local_60 + 1;
                   }
@@ -2031,7 +2031,7 @@ LAB_00574e10:
                 local_60 = (byte *)(*(int *)(iVar3 + 0xc) + iVar11 * 2);
                 for (local_30 = 0; (int)local_30 < (int)((uint)(byte)param_1->field_0x4 * 2);
                     local_30 = local_30 + 1) {
-                  iVar3 = (int)(local_30 + ((int)local_30 >> 0x1f & 3U)) >> 2;
+                  iVar3 = STSignedDiv4(local_30);
                   uVar10 = local_30 & 0x80000003;
                   if ((int)uVar10 < 0) {
                     uVar10 = (uVar10 - 1 | 0xfffffffc) + 1;
@@ -2041,10 +2041,10 @@ LAB_00574e10:
                     local_5c = (uint)(*(byte *)(iVar3 + local_48) & bVar1);
                     if (local_5c != 0) {
                       if (local_5c == bVar1) {
-                        *local_60 = *(byte *)((uint)*local_60 + DAT_00807560);
+                        *local_60 = *(byte *)((uint)*local_60 + (int)PTR_00807560);
                       }
                       else {
-                        *local_60 = *(byte *)((uint)*local_60 + DAT_008073c8);
+                        *local_60 = *(byte *)((uint)*local_60 + (int)PTR_008073c8);
                       }
                     }
                   }
@@ -2093,8 +2093,8 @@ void __cdecl st::fn_00575030(int *param_1,int param_2,int param_3)
   piVar3 = param_1;
   iVar4 = (int)STField<short>(param_1,2) * (int)(short)*param_1;
   iVar5 = (short)*param_1 * param_3;
-  iVar4 = (int)(iVar4 + (iVar4 >> 0x1f & 3U)) >> 2;
-  param_3 = 6;
+  iVar4 = STSignedDiv4(iVar4);
+  auto param_3_after_write = 6; /* compiler stack-slot lifetime split */
   param_1 = (int *)((int)param_1 + (iVar4 * 5 + param_2 + iVar5 / 2) * 4 + 0x459);
   do {
     iVar5 = *param_1;
@@ -2114,8 +2114,8 @@ LAB_005750c2:
       }
     }
     param_1 = param_1 + -iVar4;
-    param_3 = param_3 + -1;
-    if (param_3 == 0) {
+    param_3_after_write = param_3_after_write + -1;
+    if (param_3_after_write == 0) {
       return;
     }
   } while( true );
@@ -2135,7 +2135,7 @@ st::fn_00575120(void *this,AnonShape_005745E0_AF52CC75 *param_1,int param_2,int 
 
   iVar3 = 6;
   iVar2 = (int)*(short *)&param_1->field_0x2 * (int)*(short *)param_1;
-  iVar2 = (int)(iVar2 + (iVar2 >> 0x1f & 3U)) >> 2;
+  iVar2 = STSignedDiv4(iVar2);
   puVar4 = (undefined4 *)
            (&param_1[1].field_0x5 + (iVar2 * 5 + param_2 + (*(short *)param_1 * param_3) / 2) * 4);
   local_8 = st::pointer_boundary_cast<undefined4 *>(this);
@@ -2196,9 +2196,9 @@ void __cdecl st::fn_00575460(AnonShape_00575460_06C413C6 *param_1)
     param_1->field_0451 = nullptr;
     local_8 = 0;
     if (0 < param_1->field_0455) {
-      param_1 = (AnonShape_00575460_06C413C6 *)&param_1->field_0x459;
+      auto param_1_after_write = (AnonShape_00575460_06C413C6 *)&param_1->field_0x459; /* compiler stack-slot lifetime split */
       do {
-        iVar6 = *(int *)param_1;
+        iVar6 = *(int *)param_1_after_write;
         if ((iVar6 != 0) && (element_00 = (int *)(iVar6 + 0xc), *(int *)(iVar6 + 0xc) != 0)) {
           array->iteratorIndex = 0;
           do {
@@ -2216,7 +2216,7 @@ LAB_0057554f:
           *element_00 = 0;
         }
         local_8 = local_8 + 1;
-        param_1 = (AnonShape_00575460_06C413C6 *)&param_1->field_0x4;
+        param_1_after_write = (AnonShape_00575460_06C413C6 *)&param_1_after_write->field_0x4;
       } while (local_8 < pAVar5->field_0455);
     }
     st::fn_006AE110(array);
@@ -2273,6 +2273,7 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
          ((*(byte *)(iVar14 + 0x4f) & 0x40) == 0)) {
         uVar8 = 0x8000;
         local_8 = 8;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (short *)0x80;
         local_14 = 0;
         psVar10 = (short *)((int)param_2 +
@@ -2352,6 +2353,7 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
       do {
         iVar5 = (int)*psVar2;
         iVar13 = 0;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_1 + iVar5 * iVar14 + iVar4 * 4;
         if (0 < iVar5) {
           do {
@@ -3352,6 +3354,7 @@ st::fn_0057B670(int *param_1,uint param_2,uint param_3,short *param_4,short *par
   this = param_1;
   uVar5 = 0;
   local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {
     return 1;
   }

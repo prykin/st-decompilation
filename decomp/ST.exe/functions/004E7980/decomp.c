@@ -17,10 +17,10 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,byte param_3)
   int iVar7;
   uint *puVar8;
   int iVar9;
-  byte *puVar10;
+  undefined4 *puVar10;
   byte *pbVar11;
   int *piVar12;
-  byte *puVar13;
+  uint **ppuVar13;
   undefined4 *local_1c;
   int local_10;
   int local_c;
@@ -31,20 +31,23 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,byte param_3)
   }
   bVar5 = LookupRecordByte((char)param_1);
   iVar6 = bVar5 - 1;
-  memset(&DAT_00801020, 0, 0x30c); /* compiler bulk-zero initialization */
-  iVar9 = 0;
-  DAT_00801020 = param_2;
+  ppuVar13 = &PTR_00801020;
+  for (iVar9 = 0xc3; iVar9 != 0; iVar9 = iVar9 + -1) {
+    *ppuVar13 = nullptr;
+    ppuVar13 = ppuVar13 + 1;
+  }
+  PTR_00801020 = (uint *)param_2;
   DAT_00801024 = param_3;
   do {
     local_c = 0;
     memset(&DAT_00800bd0, 0, 0x30c); /* compiler bulk-zero initialization */
     iVar9 = 0;
-    if (DAT_00801020 == 0) {
+    if (PTR_00801020 == nullptr) {
       return 0;
     }
-    param_1 = (uint *)&DAT_00801020;
+    auto param_1_after_write = (uint *)&PTR_00801020; /* compiler stack-slot lifetime split */
     do {
-      thunk_FUN_004e5af0((int)puVar5,*param_1,(uint)(byte)param_1[1]);
+      thunk_FUN_004e5af0((int)puVar5,*param_1_after_write,(uint)(byte)param_1_after_write[1]);
       pbVar11 = &DAT_007c0dd4;
       do {
         bVar2 = pbVar11[1];
@@ -57,7 +60,7 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,byte param_3)
 LAB_004e7a7f:
         pbVar11 = pbVar11 + 3;
       } while ((int)pbVar11 < 0x7c0e4c);
-      param_2 = 0x42;
+      auto param_2_after_write = 0x42; /* compiler stack-slot lifetime split */
       pbVar11 = &DAT_007c0e4c + iVar6 * 0xc6;
       do {
         bVar2 = pbVar11[1];
@@ -69,20 +72,21 @@ LAB_004e7a7f:
         *(undefined4 *)(STRecordByteAddress(g_packedRecords_A62x8, (int)puVar5, 0x593) + (uint)*pbVar11 * 4) = 1;
 LAB_004e7b13:
         pbVar11 = pbVar11 + 3;
-        param_2 = param_2 + -1;
-      } while (param_2 != 0);
+        param_2_after_write = param_2_after_write + -1;
+      } while (param_2_after_write != 0);
       piVar12 = (int *)(&PTR_DAT_007c0dc8)[iVar6];
       if (*piVar12 != 0) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         _param_3 = 0;
-        param_2 = 5;
+        param_2_after_write = 5;
         local_1c = (undefined4 *)((int)&DAT_00800bd0 + local_c * 5);
         do {
-          if ((*(uint *)((int)piVar12 + _param_3) == *param_1) &&
-             (*(char *)((int)piVar12 + _param_3 + 4) == (char)param_1[1])) {
+          if ((*(uint *)((int)piVar12 + _param_3) == *param_1_after_write) &&
+             (*(char *)((int)piVar12 + _param_3 + 4) == (char)param_1_after_write[1])) {
             bVar4 = true;
             local_10 = 0;
             iVar9 = _param_3;
-            if (*(int *)((int)piVar12 + param_2) != 0) {
+            if (*(int *)((int)piVar12 + param_2_after_write) != 0) {
               do {
                 if (3 < local_10) break;
                 puVar3 = (&PTR_DAT_007c0dc8)[iVar6];
@@ -96,16 +100,16 @@ LAB_004e7b13:
               } while (*(int *)(puVar3 + iVar7) != 0);
               if (!bVar4) goto LAB_004e7bd3;
             }
-            thunk_FUN_004e5d50((int)puVar5,*param_1);
+            thunk_FUN_004e5d50((int)puVar5,*param_1_after_write);
           }
 LAB_004e7bd3:
           iVar9 = 0;
           piVar12 = (int *)(&PTR_DAT_007c0dc8)[iVar6];
-          if (*(int *)((int)piVar12 + param_2) != 0) {
+          if (*(int *)((int)piVar12 + param_2_after_write) != 0) {
             puVar8 = (uint *)((int)piVar12 + _param_3 + 5);
             do {
               if (3 < iVar9) break;
-              if ((*puVar8 == *param_1) && ((char)puVar8[1] == (char)param_1[1])) {
+              if ((*puVar8 == *param_1_after_write) && ((char)puVar8[1] == (char)param_1_after_write[1])) {
                 *local_1c = *(undefined4 *)((int)piVar12 + _param_3);
                 *(undefined1 *)(local_1c + 1) = *(undefined1 *)((int)piVar12 + _param_3 + 4);
                 local_c = local_c + 1;
@@ -117,19 +121,23 @@ LAB_004e7bd3:
               iVar9 = iVar9 + 1;
             } while (*piVar1 != 0);
           }
-          param_2 = param_2 + 0x19;
+          param_2_after_write = param_2_after_write + 0x19;
           _param_3 = _param_3 + 0x19;
         } while (*(int *)((int)piVar12 + _param_3) != 0);
       }
-      piVar12 = (int *)((int)param_1 + 5);
-      param_1 = (uint *)((int)param_1 + 5);
+      piVar12 = (int *)((int)param_1_after_write + 5);
+      param_1_after_write = (uint *)((int)param_1_after_write + 5);
     } while (*piVar12 != 0);
     if (local_c == 0) {
       return 0;
     }
-    puVar10 = (byte *)(&DAT_00800bd0);
-    puVar13 = (byte *)(&DAT_00801020);
-    memmove(puVar13, puVar10, 0x30c); /* compiler REP MOVS byte copy */
+    puVar10 = &DAT_00800bd0;
+    ppuVar13 = &PTR_00801020;
+    for (iVar9 = 0xc3; iVar9 != 0; iVar9 = iVar9 + -1) {
+      *ppuVar13 = (uint *)*puVar10;
+      puVar10 = puVar10 + 1;
+      ppuVar13 = ppuVar13 + 1;
+    }
   } while( true );
 }
 

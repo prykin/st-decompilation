@@ -18,7 +18,7 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
   AiTactClassTy *pAVar5;
   int iVar6;
   ushort *puVar6;
-  STGameObjC *objPtr;
+  STGameObjC *this_00;
   int iVar7;
   AiFltClassTy *pAVar8;
   int iVar9;
@@ -73,15 +73,15 @@ joined_r0x0068f3e2:
           puVar6 = nullptr;
         }
         if (g_allPlayers_007FA174 == nullptr) {
-          objPtr = nullptr;
+          this_00 = nullptr;
         }
         else {
-          objPtr = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar6,CASE_1);
+          this_00 = STAllPlayersC::GetObjPtr
+                              (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar6,CASE_1);
         }
         pAVar5 = local_8;
-      } while (objPtr == nullptr);
-      iVar7 = (*objPtr->vtable->vfunc_2C)();
+      } while (this_00 == nullptr);
+      iVar7 = this_00->vfunc_2C();
       if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
       pAVar11 = local_8->field_00A5;
       if ((pAVar11 == nullptr) ||
@@ -97,9 +97,9 @@ joined_r0x0068f3e2:
         }
       }
       uVar1 = pAVar8->field_007D;
-      iVar7 = (*objPtr->vtable->vfunc_2C)();
+      iVar7 = this_00->vfunc_2C();
       if (iVar7 == 0x78) {
-        objPtr->field_0269 = (uint)uVar1;
+        this_00->field_0269 = (uint)uVar1;
       }
       DArrayRemoveAt((DArrayTy *)param_1,index);
       pAVar5 = local_8;
@@ -163,7 +163,7 @@ LAB_0068f516:
         pAVar8 = *(AiFltClassTy **)((int)&pAVar11->data->field_0004 + pAVar11->elementSize * uVar12);
       }
     }
-    AiFltClassTy::_AddObjFlt(pAVar8,(uint)objPtr,0);
+    AiFltClassTy::_AddObjFlt(pAVar8,(uint)this_00,0);
     DArrayRemoveAt((DArrayTy *)param_1,index);
     pAVar5 = local_8;
   }

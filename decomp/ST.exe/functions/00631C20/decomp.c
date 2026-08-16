@@ -31,6 +31,7 @@ FUN_00631c20(void *this,int param_1,int param_2,byte param_3,undefined4 param_4,
             (g_bulkInitializedRecords_008087C7[*puVar7].field_0022 < 8)))) {
           bVar1 = (byte)*puVar7;
           if (DAT_00808a8f == '\0') {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             if (param_3 == bVar1) {
 LAB_00631d60:
               iVar6 = 0;

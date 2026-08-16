@@ -228,7 +228,7 @@ LAB_00610886:
       iVar9 = local_24 - (int)(short)((short)iVar9 * 0xc9 + 100);
       iVar10 = iVar10 + iVar4 * -0xc9;
       iVar10 = iVar10 * iVar10;
-      if (0x2773 < ((int)(iVar10 + (iVar10 >> 0x1f & 3U)) >> 2) + iVar9 * iVar9 + iVar15 * iVar15)
+      if (0x2773 < (STSignedDiv4(iVar10)) + iVar9 * iVar9 + iVar15 * iVar15)
       goto LAB_00610886;
       local_EAX_1692 =
            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500

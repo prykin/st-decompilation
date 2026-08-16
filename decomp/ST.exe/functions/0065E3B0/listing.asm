@@ -37,7 +37,8 @@ LAB_0065e3e3:
 0065E3FA  74 0D                     JZ 0x0065e409
 0065E3FC  8B 10                     MOV EDX,dword ptr [EAX]
 0065E3FE  8B C8                     MOV ECX,EAX
-0065E400  FF 92 D4 00 00 00         CALL dword ptr [EDX + 0xd4]
+FUN_0065e3b0::override::prt_65e400_d4e0dbd9:
+0065E400  FF 92 D4 00 00 00         CALL dword ptr [EDX + 0xd4]  ; [STIndirectCallsiteApplier] exact slot 0xD4; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0065E406  01 45 FC                  ADD dword ptr [EBP + -0x4],EAX
 LAB_0065e409:
 0065E409  8B 46 0C                  MOV EAX,dword ptr [ESI + 0xc]

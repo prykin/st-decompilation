@@ -46,8 +46,8 @@ void FUN_0055d910(void)
     cMf32::RecMemFree(in_stack_00000004,(uint *)&PTR_008032d4);
   }
   PTR_008073cc = PTR_008032c0;
-  DAT_00807560 = PTR_008032c4;
-  DAT_008073c8 = PTR_008032bc;
+  PTR_00807560 = PTR_008032c4;
+  PTR_008073c8 = PTR_008032bc;
   return;
 }
 

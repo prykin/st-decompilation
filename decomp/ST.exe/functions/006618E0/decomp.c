@@ -79,17 +79,17 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
                                   );
               if ((this_00 != nullptr) && ((int)pAVar3->field_0179 < local_20 - local_c))
               {
-                iVar7 = (*this_00->vtable->vfunc_2C)();
+                iVar7 = this_00->vfunc_2C();
                 pIVar8 = thunk_FUN_00674fb0(iVar7);
                 if ((pAVar3->field_017F & (uint)pIVar8) != 0) {
                   if (pAVar3->field_0039 == 3) {
-                    iVar7 = (*this_00->vtable->vfunc_C4)();
+                    iVar7 = this_00->vfunc_C4();
                   }
                   else {
-                    iVar7 = (*this_00->vtable->vfunc_7C)();
+                    iVar7 = this_00->vfunc_7C();
                   }
                   if (iVar7 < pAVar3->field_0177) {
-                    iVar7 = (*this_00->vtable->vfunc_2C)();
+                    iVar7 = this_00->vfunc_2C();
                     if ((iVar7 < 0x32) || (0x73 < iVar7)) {
                       bVar2 = false;
                     }
@@ -122,7 +122,7 @@ LAB_00661a96:
                         local_c = local_c + 1;
                       }
                     }
-                    iVar7 = (*this_00->vtable->vfunc_2C)();
+                    iVar7 = this_00->vfunc_2C();
                     if ((iVar7 < 1) || (0x28 < iVar7)) {
                       bVar2 = false;
                     }

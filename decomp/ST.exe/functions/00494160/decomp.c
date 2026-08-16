@@ -18,7 +18,6 @@ void __thiscall FUN_00494160(void *this,int param_1)
       if (param_1 == STField<int>(this,0x72e)) {
         return;
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 1) {
         if (STField<int>(this,0x722) < 1) {
           return;
@@ -37,7 +36,6 @@ void __thiscall FUN_00494160(void *this,int param_1)
       return;
     }
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == STField<int>(this,0x732)) {
     return;
   }

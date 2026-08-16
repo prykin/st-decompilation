@@ -214,7 +214,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
         iVar14 = STField<int>(param_1,0x5833);
         local_140 = iVar14 * 8;
         local_6c = 0;
-        local_7c = (int)(iVar14 + (iVar14 >> 0x1f & 3U)) >> 2;
+        local_7c = STSignedDiv4(iVar14);
         while ((0 < local_140 && (local_6c < local_7c))) {
           *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69cd41;
           local_EAX_492 = Library::MSVCRT::FUN_0072e6c0();

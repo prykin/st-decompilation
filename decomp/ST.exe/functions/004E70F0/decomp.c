@@ -23,23 +23,23 @@ void FUN_004e70f0(int param_1,int param_2,int param_3,uint *param_4)
     *param_4 = 0xffffffff;
     *(undefined4 *)param_3 = 0xffffffff;
     bVar4 = LookupRecordByte((char)param_1);
-    param_1 = 0;
+    auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
     iVar2 = param_2 + (bVar4 - 1) * 3;
     if (0 < *(int *)(&DAT_007995bc + iVar2 * 0x195)) {
       puVar6 = (uint *)(&DAT_007995bc + iVar2 * 0x195);
-      while (param_1 < 0x51) {
+      while (param_1_after_write < 0x51) {
         iVar5 = thunk_FUN_004e60d0(iVar3,*puVar6);
         if (((iVar5 < (int)(uint)(byte)puVar6[1]) &&
             (iVar5 = thunk_FUN_004e5910(iVar3,*puVar6), iVar5 != 0)) &&
            (iVar5 = thunk_FUN_004e5f90(iVar3,*puVar6), iVar5 == 0)) {
-          iVar3 = iVar2 * 0x51 + param_1;
+          iVar3 = iVar2 * 0x51 + param_1_after_write;
           *(undefined4 *)param_3 = *(undefined4 *)(&DAT_007995bc + iVar3 * 5);
           *param_4 = (uint)(byte)(&DAT_007995c0)[iVar3 * 5];
           return;
         }
         piVar1 = (int *)((int)puVar6 + 5);
         puVar6 = (uint *)((int)puVar6 + 5);
-        param_1 = param_1 + 1;
+        param_1_after_write = param_1_after_write + 1;
         if (*piVar1 < 1) {
           return;
         }

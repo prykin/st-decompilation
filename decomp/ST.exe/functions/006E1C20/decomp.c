@@ -33,33 +33,33 @@ ST3DSMAPContext::sub_006E1C20
   fVar1 = (float)((int)param_1 * 0x10000 - local_24) * (float)_DAT_0079b148;
   fVar2 = (float)(param_2 * 0x10000 - local_20) * (float)_DAT_0079b148;
   fVar3 = param_3 * (float)_DAT_0079df60;
-  param_1 = fVar3;
+  auto param_1_after_write = fVar3; /* compiler stack-slot lifetime split */
   switch(this->field_00A8) {
   case CASE_0:
     fVar2 = fVar2 * (float)this->field_00F0;
     fVar1 = fVar1 * (float)this->field_00E8;
-    param_1 = fVar3 + (fVar1 + fVar2) * (float)_DAT_0079df60;
+    param_1_after_write = fVar3 + (fVar1 + fVar2) * (float)_DAT_0079df60;
     fVar3 = fVar3 + (fVar2 * (float)_DAT_0079df60 - fVar1 * (float)_DAT_0079df60);
     break;
   case CASE_1:
     fVar1 = fVar1 * (float)this->field_00E8;
     fVar2 = fVar2 * (float)this->field_00F0;
-    param_1 = -fVar3 + (fVar1 - fVar2) * (float)_DAT_0079df60;
+    param_1_after_write = -fVar3 + (fVar1 - fVar2) * (float)_DAT_0079df60;
     fVar3 = fVar3 + (fVar1 + fVar2) * (float)_DAT_0079df60;
     break;
   case CASE_2:
     fVar2 = fVar2 * (float)this->field_00F0;
     fVar1 = fVar1 * (float)this->field_00E8;
-    param_1 = -fVar3 - (fVar1 + fVar2) * (float)_DAT_0079df60;
+    param_1_after_write = -fVar3 - (fVar1 + fVar2) * (float)_DAT_0079df60;
     fVar3 = -fVar3 + (fVar1 - fVar2) * (float)_DAT_0079df60;
     break;
   case CASE_3:
     fVar2 = fVar2 * (float)this->field_00F0;
     fVar1 = fVar1 * (float)this->field_00E8;
-    param_1 = fVar3 + (fVar2 * (float)_DAT_0079df60 - fVar1 * (float)_DAT_0079df60);
+    param_1_after_write = fVar3 + (fVar2 * (float)_DAT_0079df60 - fVar1 * (float)_DAT_0079df60);
     fVar3 = -fVar3 - (fVar1 + fVar2) * (float)_DAT_0079df60;
   }
-  *param_4 = param_1 + (float)this->field_0098;
+  *param_4 = param_1_after_write + (float)this->field_0098;
   *param_5 = fVar3 + (float)this->field_00A0;
   return 0;
 }

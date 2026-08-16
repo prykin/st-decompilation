@@ -36,6 +36,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
       else {
         local_c = Library::DKW::LIB::MemAllocClear((uint)uVar1 * 0x2c);
         DAT_00811900 = 0;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((char)param_7 == '\b') {
           param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(cVar6));
         }
@@ -54,7 +55,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
               if (local_c[iVar2 * 0xb + 3] != 0) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 STPiece<0,2>(param_2) = CONCAT11(1,cVar6);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22((short)local_c[iVar2 * 0xb + 4],(undefined2)param_2);
                 Library::DKW::TBL::DArrayAppend((DArrayTy *)param_3,&param_2);
                 local_8 = local_8 + 1;

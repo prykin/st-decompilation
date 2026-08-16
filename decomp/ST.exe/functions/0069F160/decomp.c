@@ -55,6 +55,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
   uVar9 = (param_3 + 1) * param_1 * param_2;
   iVar4 = param_1 * param_2;
   if (100 < param_4) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = 100;
   }
   auStack_c8[1] = 0x69f1c0;
@@ -171,9 +172,9 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
           iVar15 = iVar16 + 1;
           iVar13 = iVar15 * iVar4 + iVar10 + iVar11;
           if ((*(short *)(&stack0xffffff40 + iVar13 * 2 + iVar1) == 0) &&
-             (*(short *)(DAT_00853dd4 +
-                        (iVar11 + iVar16 * iVar12 * iVar17 * 4 +
-                        *STField<int *>(this,8) * local_2c * 2) * 2) == 0)) {
+             (PTR_00853dd4
+              [iVar11 + iVar16 * iVar12 * iVar17 * 4 + *STField<int *>(this,8) * local_2c * 2] ==
+              0)) {
             *(undefined4 *)((int)auStack_c8 + iVar2 + iVar1 + 4) = 0x69f424;
             uVar10_mg2 = Library::MSVCRT::FUN_0072e6c0();
             if (1 < (int)uVar10_mg2 %

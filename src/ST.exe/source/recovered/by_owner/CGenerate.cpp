@@ -242,9 +242,9 @@ void __thiscall st::fn_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50FDB9 *par
       else {
         psVar8 = nullptr;
       }
-      if (*(short *)(DAT_00853dd4 +
-                    ((int)psVar8[2] * iVar3 * iVar4 * 4 + (int)psVar8[1] * *this->field_0008 * 2 +
-                    (int)*psVar8) * 2) == 0) {
+      if (PTR_00853dd4
+          [(int)psVar8[2] * iVar3 * iVar4 * 4 + (int)psVar8[1] * *this->field_0008 * 2 +
+           (int)*psVar8] == 0) {
         local_10 = 0;
         puVar7 = st::fn_00405A56(CASE_5A,*(int *)(psVar8 + 5),st::pointer_boundary_cast<undefined4 *>(&local_10),(int)psVar8[2],0);
         puVar7[5] = (int)*psVar8;
@@ -452,8 +452,8 @@ st::fn_006952B0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byte *param
     }
     if (local_c == 1) {
       st::fn_00403521(this);
-      DAT_00853dd4 = st::machine_word_boundary_cast<undefined4>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(this->field_0008[1] * *this->field_0008 * 0x28)));
-      st::fn_00401C8A((short *)this->field_000C,st::pointer_boundary_cast<undefined4 *>(DAT_00853dd4),(short *)0x1);
+      PTR_00853dd4 = st::pointer_boundary_cast<undefined2 *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(this->field_0008[1] * *this->field_0008 * 0x28)));
+      st::fn_00401C8A((short *)this->field_000C,(undefined4 *)PTR_00853dd4,(short *)0x1);
       _DAT_00853dd0 = st::fn_0072E6C0();
       st::fn_00402D88(this,(AnonShape_00694CD0_AC50FDB9 *)stack_bytes_neg_90);
       _DAT_00853dd0 = st::fn_0072E6C0();
@@ -467,8 +467,8 @@ st::fn_006952B0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byte *param
       st::fn_00403D91(this,iVar3 * 2,iVar1 * 2,local_34,(iVar3 * iVar1 * 4) / 100);
       local_40 = st::fn_00404417(this);
       st::fn_00404A43(this);
-      if (DAT_00853dd4 != nullptr) {
-        st::fn_006AB060(&DAT_00853dd4);
+      if (PTR_00853dd4 != nullptr) {
+        st::fn_006AB060(&PTR_00853dd4);
       }
       local_d4.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_d4;
@@ -3264,10 +3264,10 @@ void __thiscall st::fn_0069ADA0(CGenerate *this,int param_1,int param_2)
   if (0 < param_2) {
     do {
       pbVar5 = st::pointer_boundary_cast<byte *>(this->field_000C);
-      param_2 = 0;
+      auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
       if (0 < *(short *)(pbVar5 + 2)) {
         do {
-          psVar6 = (short *)(param_1 + (*(short *)pbVar5 * param_2 + local_10 * iVar3) * 2);
+          psVar6 = (short *)(param_1 + (*(short *)pbVar5 * param_2_after_write + local_10 * iVar3) * 2);
           iVar8 = 0;
           if (0 < *(short *)pbVar5) {
             psVar9 = psVar6 + iVar3;
@@ -3282,8 +3282,8 @@ void __thiscall st::fn_0069ADA0(CGenerate *this,int param_1,int param_2)
             } while (iVar8 < *(short *)this->field_000C);
           }
           pbVar5 = st::pointer_boundary_cast<byte *>(this->field_000C);
-          param_2 = param_2 + 1;
-        } while (param_2 < *(short *)(pbVar5 + 2));
+          param_2_after_write = param_2_after_write + 1;
+        } while (param_2_after_write < *(short *)(pbVar5 + 2));
       }
       local_10 = local_10 + 1;
     } while (local_10 < iVar1);
@@ -3346,7 +3346,7 @@ int __thiscall st::fn_0069B190(CGenerate *this,int param_1,int param_2,int param
           iVar5 = 0;
           if (-1 < iVar6) {
             iVar7 = iVar6 * local_14 + local_18 * iVar1;
-            param_2 = iVar7 * 2;
+            auto param_2_after_write = iVar7 * 2; /* compiler stack-slot lifetime split */
             do {
               iVar8 = iVar7 + 1;
               iVar5 = iVar5 + 1;
@@ -3368,7 +3368,7 @@ int __thiscall st::fn_0069B190(CGenerate *this,int param_1,int param_2,int param
                 }
               }
               if (-1 < iVar7) {
-                psVar3 = (short *)((int)this->field_584F + param_2);
+                psVar3 = (short *)((int)this->field_584F + param_2_after_write);
                 if (*psVar3 == -1) {
                   *psVar3 = 1;
                   local_c = local_c + 1;
@@ -3376,16 +3376,16 @@ int __thiscall st::fn_0069B190(CGenerate *this,int param_1,int param_2,int param
                 if ((((iVar8 != 1 && -1 < iVar7) && (0 < iVar10)) && (0 < iVar6)) && (0 < local_8))
                 {
                   puVar2 = st::pointer_boundary_cast<ushort *>(this->field_584F);
-                  if (((((*(short *)(param_2 + (int)puVar2) == -1) ||
-                        (0 < *(short *)(param_2 + (int)puVar2))) &&
+                  if (((((*(short *)(param_2_after_write + (int)puVar2) == -1) ||
+                        (0 < *(short *)(param_2_after_write + (int)puVar2))) &&
                        ((puVar2[iVar10] == 0xffff || (0 < (short)puVar2[iVar10])))) &&
                       ((puVar2[iVar6] == 0xffff || (0 < (short)puVar2[iVar6])))) &&
                      ((puVar2[local_8] == 0xffff || (0 < (short)puVar2[local_8])))) {
-                    *(undefined2 *)(param_2 + (int)puVar2) = 4;
+                    *(undefined2 *)(param_2_after_write + (int)puVar2) = 4;
                   }
                 }
               }
-              param_2 = param_2 + 2;
+              param_2_after_write = param_2_after_write + 2;
               iVar6 = this->field_5833;
               iVar7 = iVar8;
             } while (iVar5 <= iVar6);
@@ -3427,11 +3427,11 @@ st::fn_0069B400(CGenerate *this,int param_1,int param_2,int param_3,int param_4,
   if (this->field_5847 != 1 && -1 < this->field_5847 + -1) {
     local_10 = (int *)(param_5 + 0x18);
     do {
-      param_3 = 0;
-      param_4 = 0;
+      auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
+      auto param_4_after_write = 0; /* compiler stack-slot lifetime split */
       if (0 < iVar6) {
         iVar4 = (this->field_5833 * param_2 + this->field_582F * local_c + param_1) * 2;
-        param_5 = iVar6;
+        auto param_5_after_write = iVar6; /* compiler stack-slot lifetime split */
         do {
           if (0 < iVar3) {
             psVar7 = (short *)((int)this->field_584F + iVar4);
@@ -3441,10 +3441,10 @@ st::fn_0069B400(CGenerate *this,int param_1,int param_2,int param_3,int param_4,
               if (0 < sVar1) {
                 iVar2 = iVar2 + sVar1;
                 if (sVar1 == 4) {
-                  param_4 = param_4 + 1;
+                  param_4_after_write = param_4_after_write + 1;
                 }
                 else {
-                  param_3 = param_3 + 1;
+                  param_3_after_write = param_3_after_write + 1;
                 }
               }
               psVar7 = psVar7 + 1;
@@ -3452,12 +3452,12 @@ st::fn_0069B400(CGenerate *this,int param_1,int param_2,int param_3,int param_4,
             } while (iVar5 != 0);
           }
           iVar4 = iVar4 + this->field_5833 * 2;
-          param_5 = param_5 + -1;
-        } while (param_5 != 0);
+          param_5_after_write = param_5_after_write + -1;
+        } while (param_5_after_write != 0);
       }
       local_c = local_c + 1;
-      local_10[-5] = param_3;
-      *local_10 = param_4;
+      local_10[-5] = param_3_after_write;
+      *local_10 = param_4_after_write;
       local_10 = local_10 + 1;
     } while (local_c < this->field_5847 + -1);
   }
@@ -3913,7 +3913,7 @@ uint __fastcall st::fn_0069CB50(int *param_1)
         iVar14 = STField<int>(param_1,0x5833);
         local_140 = iVar14 * 8;
         local_6c = 0;
-        local_7c = (int)(iVar14 + (iVar14 >> 0x1f & 3U)) >> 2;
+        local_7c = STSignedDiv4(iVar14);
         while ((0 < local_140 && (local_6c < local_7c))) {
           *(undefined4 *)((st_stack_frame + 0) + iVar19 * -0x30) = 0x69cd41;
           local_EAX_492 = st::fn_0072E6C0();

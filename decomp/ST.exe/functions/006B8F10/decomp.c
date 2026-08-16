@@ -57,6 +57,7 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
       if ((uVar1 & 0xa0000000) == 0) {
         return -0x51;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = *(AnonShape_006B8F10_41B61BA9 **)(param_1->entries_0038 + param_1->field_0028 * 4);
       local_b4 = 0x7c;
       local_b0 = 6;
@@ -106,7 +107,7 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
       local_1c = local_8 + local_24;
       local_2c = local_8 + local_10;
       local_34 = local_10;
-      param_2 = nullptr;
+      auto param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       while (piVar2 = (int *)pAVar3->field_0000->field_0040,
             iVar5 = (**(code **)(*piVar2 + 0x14))(piVar2,&local_38,param_1,&local_28,0x1008000,0),
@@ -117,11 +118,11 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
           FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar3->field_0000);
         }
         else {
-          if (((iVar5 != -0x7789ff60) && (iVar5 != -0x7789fe52)) || (param_2 != nullptr)) break;
+          if (((iVar5 != -0x7789ff60) && (iVar5 != -0x7789fe52)) || (param_2_after_write != nullptr)) break;
           Sleep(2);
         }
-        param_2 = (int *)((int)param_2 + 1);
-        if (1 < (int)param_2) break;
+        param_2_after_write = (int *)((int)param_2_after_write + 1);
+        if (1 < (int)param_2_after_write) break;
       }
       if ((iVar5 == -0x7789ff60) || (iVar5 == -0x7789fe52)) {
         iVar5 = 0;

@@ -19,7 +19,7 @@ byte * FUN_006f5430(byte *param_1,int param_2,uint *param_3,int param_4,int para
   uint uVar10;
   byte *pbVar11;
 
-  DAT_00857034 = param_11;
+  PTR_00857034 = param_11;
   DAT_00856ff8 = param_13;
   _DAT_00857000 = 1;
 LAB_006f545a:
@@ -84,9 +84,9 @@ LAB_006f545a:
       while (uVar7 < (uint)(param_5 << 0x10)) {
         param_3 = (uint *)((int)puVar5 + 2);
         DAT_00857014 = pbVar6 + 1;
-        param_11 = (byte *)(uint)*(byte *)(iVar9 + (uint)*DAT_00857034);
-        *param_1 = *(byte *)(iVar9 + (uint)*DAT_00857034);
-        DAT_00857034 = DAT_00857034 + 1;
+        param_11 = (byte *)(uint)*(byte *)(iVar9 + (uint)*PTR_00857034);
+        *param_1 = *(byte *)(iVar9 + (uint)*PTR_00857034);
+        PTR_00857034 = PTR_00857034 + 1;
         param_1 = param_1 + 1;
         pbVar11 = DAT_00857014;
         if (uVar4 - 1 == 0 || (int)uVar4 < 1) goto cf_common_join_006F55D3;
@@ -99,7 +99,7 @@ LAB_006f545a:
       pbVar11 = pbVar6 + 1;
       *param_1 = *pbVar6;
       param_3 = (uint *)((int)puVar5 + 2);
-      DAT_00857034 = DAT_00857034 + 1;
+      PTR_00857034 = PTR_00857034 + 1;
       param_1 = param_1 + 1;
       uVar8 = uVar4 - 1;
     } while (uVar8 != 0 && 0 < (int)uVar4);
@@ -116,14 +116,14 @@ LAB_006f55be:
         if (0 < (int)uVar10) {
           uVar8 = uVar8 - uVar10;
           param_1 = param_1 + uVar10;
-          DAT_00857034 = DAT_00857034 + uVar10;
+          PTR_00857034 = PTR_00857034 + uVar10;
           param_3 = (uint *)((int)param_3 + uVar10 * 2);
         }
         goto cf_common_join_006F56D2;
       }
       uVar10 = uVar10 - uVar8;
       param_1 = param_1 + uVar8;
-      DAT_00857034 = DAT_00857034 + uVar8;
+      PTR_00857034 = PTR_00857034 + uVar8;
       param_3 = (uint *)((int)param_3 + uVar8 * 2);
       pbVar11 = param_6;
       goto cf_common_join_006F55D3;
@@ -147,8 +147,8 @@ LAB_006f54e6:
         uVar4 = uVar8;
         puVar5 = param_3;
         while (uVar7 < (uint)(param_5 << 0x10)) {
-          bVar2 = *DAT_00857034;
-          DAT_00857034 = DAT_00857034 + 1;
+          bVar2 = *PTR_00857034;
+          PTR_00857034 = PTR_00857034 + 1;
           param_3 = (uint *)((int)puVar5 + 2);
           *param_1 = *(byte *)(iVar9 + (uint)bVar2);
           param_1 = param_1 + 1;
@@ -160,7 +160,7 @@ LAB_006f54e6:
         *param_1 = bVar1;
         param_3 = (uint *)((int)puVar5 + 2);
         param_1 = param_1 + 1;
-        DAT_00857034 = DAT_00857034 + 1;
+        PTR_00857034 = PTR_00857034 + 1;
         uVar8 = uVar4 - 1;
       } while (uVar8 != 0 && 0 < (int)uVar4);
       goto cf_common_join_006F55D3;
@@ -177,9 +177,9 @@ LAB_006f54e6:
       while (uVar7 < (uint)(param_5 << 0x10)) {
         param_3 = (uint *)((int)puVar5 + 2);
         DAT_00857014 = param_6 + 1;
-        param_11 = (byte *)(uint)*(byte *)(iVar9 + (uint)*DAT_00857034);
-        *param_1 = *(byte *)(iVar9 + (uint)*DAT_00857034);
-        DAT_00857034 = DAT_00857034 + 1;
+        param_11 = (byte *)(uint)*(byte *)(iVar9 + (uint)*PTR_00857034);
+        *param_1 = *(byte *)(iVar9 + (uint)*PTR_00857034);
+        PTR_00857034 = PTR_00857034 + 1;
         param_1 = param_1 + 1;
         param_6 = DAT_00857014;
         if (uVar4 - 1 == 0 || (int)uVar4 < 1) goto cf_common_join_006F56D2;
@@ -192,7 +192,7 @@ LAB_006f54e6:
       param_6 = param_6 + 1;
       *param_1 = bVar1;
       param_3 = (uint *)((int)puVar5 + 2);
-      DAT_00857034 = DAT_00857034 + 1;
+      PTR_00857034 = PTR_00857034 + 1;
       param_1 = param_1 + 1;
       uVar10 = uVar4 - 1;
     } while (uVar10 != 0 && 0 < (int)uVar4);
@@ -205,8 +205,8 @@ LAB_006f55f7:
     puVar5 = param_3;
     uVar4 = uVar10;
     while (uVar7 < (uint)(param_5 << 0x10)) {
-      bVar2 = *DAT_00857034;
-      DAT_00857034 = DAT_00857034 + 1;
+      bVar2 = *PTR_00857034;
+      PTR_00857034 = PTR_00857034 + 1;
       param_3 = (uint *)((int)puVar5 + 2);
       *param_1 = *(byte *)(iVar9 + (uint)bVar2);
       param_1 = param_1 + 1;
@@ -218,7 +218,7 @@ LAB_006f55f7:
     *param_1 = bVar1;
     param_3 = (uint *)((int)puVar5 + 2);
     param_1 = param_1 + 1;
-    DAT_00857034 = DAT_00857034 + 1;
+    PTR_00857034 = PTR_00857034 + 1;
     uVar10 = uVar4 - 1;
   } while (uVar10 != 0 && 0 < (int)uVar4);
 cf_common_join_006F56D2:
@@ -251,7 +251,7 @@ cf_common_join_006F56D2:
   }
   param_6 = pbVar11 + uVar10;
 cf_continue_loop_006F571D:
-  DAT_00857034 = DAT_00857034 + (param_12 - param_9);
+  PTR_00857034 = PTR_00857034 + (param_12 - param_9);
   param_3 = (uint *)((int)param_3 + param_9 * -2 + param_4);
   param_1 = param_1 + (param_2 - param_9);
   iVar9 = param_10 + -1;

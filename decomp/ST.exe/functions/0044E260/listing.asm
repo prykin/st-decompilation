@@ -50,7 +50,8 @@ LAB_0044e2b4:
 0044E2D7  74 1E                     JZ 0x0044e2f7
 0044E2D9  8B 10                     MOV EDX,dword ptr [EAX]
 0044E2DB  8B C8                     MOV ECX,EAX
-0044E2DD  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+FUN_0044e260::override::prt_44e2dd_d4e0dbd9:
+0044E2DD  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044E2E3  85 C0                     TEST EAX,EAX
 0044E2E5  74 10                     JZ 0x0044e2f7
 0044E2E7  8B 4D EC                  MOV ECX,dword ptr [EBP + -0x14]

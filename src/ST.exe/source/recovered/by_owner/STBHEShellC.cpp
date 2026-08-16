@@ -190,6 +190,7 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
   undefined4 local_8;
 
   local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == '\0') {
     this->field_00D1 = (short)this->field_0093;
     sVar2 = (short)this->field_009B;
@@ -500,6 +501,7 @@ st::fn_005F4C50
       iVar1 = iVar7 / this->field_0121;
       iVar7 = iVar7 + -0x96;
       puVar4[4] = iVar1 + g_playSystem_00802A38->field_00E4 + param_6;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = param_4 + -1;
       puVar4 = puVar4 + 1;
     } while (param_4 != 0);
@@ -512,8 +514,8 @@ st::fn_005F4C50
   this->field_0169 = pSVar2;
   if ((pSVar2 != nullptr) && (param_4 = 0, 0 < this->field_010D)) {
     do {
-      param_1 = 0.0;
-      param_3 = 0;
+      auto param_1_after_write = 0.0; /* compiler stack-slot lifetime split */
+      auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
       iVar6 = st::machine_word_boundary_cast<int>(this->field_0109 * param_4);
       if (0 < this->field_0109) {
         do {
@@ -521,14 +523,14 @@ st::fn_005F4C50
           memset(puVar4, 0, 0x23); /* compiler bulk-zero initialization */
           puVar4 = (undefined4 *)((byte *)puVar4 + 0x20);
           if (param_4 == 0) {
-            fcos((float10)param_1);
+            fcos((float10)param_1_after_write);
             lVar8 = st::fn_0072E288();
             iVar7 = (int)lVar8;
-            fsin((float10)param_1);
+            fsin((float10)param_1_after_write);
             local_1a = iVar7;
             lVar8 = st::fn_0072E288();
             local_16 = (int)lVar8;
-            param_1 = param_1 + local_8;
+            param_1_after_write = param_1_after_write + local_8;
           }
           else {
             pSVar2 = this->field_0169;
@@ -555,9 +557,9 @@ st::fn_005F4C50
           }
           local_2c[0] = uVar5 == 0;
           st::fn_006AE1C0((DArrayTy *)this->field_0169,local_2c);
-          param_3 = param_3 + 1;
+          param_3_after_write = param_3_after_write + 1;
           iVar6 = iVar6 + 1;
-        } while (param_3 < this->field_0109);
+        } while (param_3_after_write < this->field_0109);
       }
       param_4 = param_4 + 1;
     } while (param_4 < this->field_010D);

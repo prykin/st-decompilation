@@ -63,6 +63,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 1) {
     DArrayDestroy(local_8->field_020E);
     pSVar13->field_020E = nullptr;
@@ -101,9 +102,9 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
                (pSVar7 = STAllPlayersC::GetObjPtr
                                    (g_allPlayers_007FA174,local_2c,uStack_2a,(int)cStack_2b),
                pSVar13 = local_8, pSVar7 != nullptr)) &&
-              ((iVar11 = pSVar7->vfunc_F8(), pSVar13 = local_8, iVar11 == 1 &&
-               (iVar11 = (*pSVar7->vtable->vfunc_F4)((int)local_8->field_0024), pSVar13 = local_8,
-               iVar11 == 1)))))) {
+              ((iVar11 = (*pSVar7->vtable[1].vfunc_24)(pSVar7), pSVar13 = local_8, iVar11 == 1 &&
+               (iVar11 = (*pSVar7->vtable[1].vfunc_20)(pSVar7,(int)local_8->field_0024),
+               pSVar13 = local_8, iVar11 == 1)))))) {
             Library::DKW::TBL::DArrayPut(local_8->field_020E,uVar15,&local_2c);
             pSVar13 = local_8;
           }
@@ -208,10 +209,10 @@ LAB_0049b073:
                       if (bVar17) {
                         uStack_2a = *(ushort *)&pSVar12[1].field_0xe;
                         cStack_2b = '\x03';
-                        iVar11 = (*pSVar12->vtable[5].slots_00_28[2])();
+                        iVar11 = (*pSVar12->vtable[5].slots_00_28[2])(pSVar12);
                         if ((iVar11 == 1) &&
-                           (dVar9 = (*pSVar12->vtable[5].slots_00_28[1])((int)pSVar13->field_0024),
-                           dVar9 == 1)) {
+                           (dVar9 = (*pSVar12->vtable[5].slots_00_28[1])
+                                              (pSVar12,(int)pSVar13->field_0024), dVar9 == 1)) {
                           local_18 = dVar9;
                           Library::DKW::TBL::DArrayAppend(pSVar13->field_020E,&local_2c);
                         }
@@ -261,11 +262,11 @@ LAB_0049aec9:
                       if (bVar17) {
                         uStack_2a = *(ushort *)&pSVar12[1].field_0xe;
                         cStack_2b = '\x01';
-                        iVar8 = (*pSVar12->vtable[5].slots_00_28[2])();
+                        iVar8 = (*pSVar12->vtable[5].slots_00_28[2])(pSVar12);
                         pSVar13 = local_8;
                         if ((iVar8 == 1) &&
-                           (dVar9 = (*pSVar12->vtable[5].slots_00_28[1])((int)local_8->field_0024),
-                           dVar9 == 1)) {
+                           (dVar9 = (*pSVar12->vtable[5].slots_00_28[1])
+                                              (pSVar12,(int)local_8->field_0024), dVar9 == 1)) {
                           local_18 = dVar9;
                           Library::DKW::TBL::DArrayAppend(pSVar13->field_020E,&local_2c);
                         }

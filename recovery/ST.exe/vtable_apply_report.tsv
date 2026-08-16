@@ -1,5 +1,5 @@
 kind	address	status	name	detail
-owner_vptr	STGameObjC+0x0	skipped	STGameObjC	offset is not a generated generic vptr field
+owner_vptr	STGameObjC+0x0	already_present	STGameObjC	owner already points to /SubmarineTitans/Recovered/VTables/STGameObjCVTable
 table	007900A0	already_present	STGameObjCVTable	used existing manual type /SubmarineTitans/Recovered/VTables/STGameObjCVTable; 53 slots; vptr references materialized=0
 table	00790508	already_present	VTable_00790508	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_00790508; 10 slots; vptr references materialized=0
 owner_vptr	STAllPlayersC+0x0	already_present	STAllPlayersC	owner already points to /SubmarineTitans/Recovered/VTables/STAllPlayersCVTable

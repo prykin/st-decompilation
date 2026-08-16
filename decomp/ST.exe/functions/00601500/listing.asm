@@ -306,7 +306,8 @@ LAB_0060183a:
 LAB_0060184f:
 0060184F  8B 16                     MOV EDX,dword ptr [ESI]
 00601851  8B CE                     MOV ECX,ESI
-00601853  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500::override::prt_601853_e5e2351e:
+00601853  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00601859  85 C0                     TEST EAX,EAX
 0060185B  0F 84 F5 02 00 00         JZ 0x00601b56
 00601861  8B 45 28                  MOV EAX,dword ptr [EBP + 0x28]
@@ -327,7 +328,8 @@ LAB_0060184f:
 00601887  50                        PUSH EAX
 00601888  51                        PUSH ECX
 00601889  8B CE                     MOV ECX,ESI
-0060188B  FF 92 DC 00 00 00         CALL dword ptr [EDX + 0xdc]
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500::override::prt_60188b_6c7b7428:
+0060188B  FF 92 DC 00 00 00         CALL dword ptr [EDX + 0xdc]  ; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00601891  85 C0                     TEST EAX,EAX
 00601893  7E 2F                     JLE 0x006018c4
 00601895  8B 4D 38                  MOV ECX,dword ptr [EBP + 0x38]
@@ -505,7 +507,8 @@ LAB_006019ed:
 00601A7E  50                        PUSH EAX
 00601A7F  51                        PUSH ECX
 00601A80  8B CE                     MOV ECX,ESI
-00601A82  FF 92 DC 00 00 00         CALL dword ptr [EDX + 0xdc]
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500::override::prt_601a82_6c7b7428:
+00601A82  FF 92 DC 00 00 00         CALL dword ptr [EDX + 0xdc]  ; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00601A88  85 C0                     TEST EAX,EAX
 00601A8A  7E 11                     JLE 0x00601a9d
 00601A8C  8B 4D 38                  MOV ECX,dword ptr [EBP + 0x38]

@@ -29,7 +29,7 @@ undefined4 __fastcall FUN_00492b20(STBoatC *param_1)
   this = STAllPlayersC::GetObjPtr
                    (g_allPlayers_007FA174,param_1->field_05FC,param_1->field_05FD,CASE_1);
   if ((((((this != nullptr) && (this->field_0018 == *(int *)&param_1->field_0x5ff)) &&
-        (iVar1 = (*this->vtable->vfunc_108)(param_1->field_0024), iVar1 != 0)) &&
+        (iVar1 = (*this->vtable[1].vfunc_34)(this,param_1->field_0024), iVar1 != 0)) &&
        ((STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,local_c), -1 < local_8 &&
         (local_8 < g_pathingGrid.sizeX)))) && (-1 < local_6)) &&
      (((local_6 < g_pathingGrid.sizeY && (-1 < local_c[0])) &&

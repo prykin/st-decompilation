@@ -12,8 +12,8 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
   bool bVar2;
   int iVar3;
   ushort *puVar4;
-  STGameObjC *objPtr;
-  AiFltClassTy *this_00;
+  STGameObjC *this_00;
+  AiFltClassTy *this_01;
   int iVar5;
   InternalExceptionFrame local_4c;
   AiTactClassTy *local_8;
@@ -32,14 +32,14 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
           puVar4 = nullptr;
         }
         if (g_allPlayers_007FA174 == nullptr) {
-          objPtr = nullptr;
+          this_00 = nullptr;
         }
         else {
-          objPtr = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,*(char *)&local_8->field_0024,*puVar4,CASE_1);
+          this_00 = STAllPlayersC::GetObjPtr
+                              (g_allPlayers_007FA174,*(char *)&local_8->field_0024,*puVar4,CASE_1);
         }
-        if (objPtr != nullptr) {
-          iVar3 = (*objPtr->vtable->vfunc_2C)();
+        if (this_00 != nullptr) {
+          iVar3 = this_00->vfunc_2C();
           if ((iVar3 < 1) || (0x28 < iVar3)) {
             bVar2 = false;
           }
@@ -47,9 +47,9 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
             bVar2 = true;
           }
           if ((bVar2) &&
-             (this_00 = (AiFltClassTy *)sub_0068E290(local_8,objPtr->field_081C),
-             this_00 != nullptr)) {
-            AiFltClassTy::_AddObjFlt(this_00,(uint)objPtr,0);
+             (this_01 = (AiFltClassTy *)sub_0068E290(local_8,this_00->field_081C),
+             this_01 != nullptr)) {
+            AiFltClassTy::_AddObjFlt(this_01,(uint)this_00,0);
             DArrayRemoveAt(param_1,index);
           }
         }

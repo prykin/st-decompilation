@@ -99,11 +99,7 @@ int __thiscall st::fn_0051FBA0(HelpStringTy *this,STMessage *message)
       if ((local_8->field_012E != 0) &&
          (DVar5 = st::fn_006E51B0(local_8->field_0010),
          this_00->field_0126 <= DVar5 - this_00->field_0122)) {
-        pcVar10 = &this_00->field_0018;
-        for (iVar7 = 0x41; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *(undefined4 *)pcVar10 = 0;
-          pcVar10 = pcVar10 + 4;
-        }
+        memset(&this_00->field_0018, 0, 0x104); /* compiler bulk-zero initialization */
         st::fn_004015FA(this_00);
         this_00->field_011C = 0;
         this_00->field_012E = 0;

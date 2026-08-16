@@ -20,34 +20,32 @@ void FUN_00564dd0(undefined4 param_1,undefined4 param_2,undefined4 *param_3,unde
   iVar5 = 0;
   if (0 < DAT_0080337c) {
     iVar6 = 0;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = param_3;
+    auto param_4_after_write = param_3; /* compiler stack-slot lifetime split */
     do {
       iVar4 = FUN_006acf90(STObjectAtByteOffset(g_runtimeRecords_00803300, iVar6).field_0000,
                            STObjectAtByteOffset(g_runtimeRecords_00803300, iVar6).field_0004,iVar1,iVar2
                           );
       if (iVar4 < DAT_00803378 / 2 + iVar3 / 4) {
-        *param_4 = 0xffffffff;
+        *param_4_after_write = 0xffffffff;
       }
       iVar5 = iVar5 + 1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_4 = param_4 + 1;
+      param_4_after_write = param_4_after_write + 1;
       iVar6 = iVar6 + 0x14;
     } while (iVar5 < DAT_0080337c);
   }
   if (iVar5 < DAT_00803398) {
     iVar6 = iVar5 * 0x14;
-    param_3 = param_3 + iVar5;
+    auto param_3_after_write = param_3 + iVar5; /* compiler stack-slot lifetime split */
     do {
       iVar4 = FUN_006acf90(STObjectAtByteOffset(g_runtimeRecords_00803300, iVar6).field_0000,
                            STObjectAtByteOffset(g_runtimeRecords_00803300, iVar6).field_0004,iVar1,iVar2
                           );
       if (iVar4 < DAT_008032ec / 2 + iVar3 / 4) {
-        *param_3 = 0xffffffff;
+        *param_3_after_write = 0xffffffff;
       }
       iVar5 = iVar5 + 1;
       iVar6 = iVar6 + 0x14;
-      param_3 = param_3 + 1;
+      param_3_after_write = param_3_after_write + 1;
     } while (iVar5 < DAT_00803398);
   }
   return;

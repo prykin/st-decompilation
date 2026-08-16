@@ -36,6 +36,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
          ((*(byte *)(iVar14 + 0x4f) & 0x40) == 0)) {
         uVar8 = 0x8000;
         local_8 = 8;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (short *)0x80;
         local_14 = 0;
         psVar10 = (short *)((int)param_2 +
@@ -115,6 +116,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
       do {
         iVar5 = (int)*psVar2;
         iVar13 = 0;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_1 + iVar5 * iVar14 + iVar4 * 4;
         if (0 < iVar5) {
           do {

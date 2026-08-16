@@ -36,19 +36,19 @@ undefined4 FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4
     fVar7 = (float10)_DAT_0079cd88 / (float10)(param_5 + -1);
     iVar3 = 0;
     pdVar5 = pdVar2;
-    param_3 = iVar6;
+    auto param_3_after_write = iVar6; /* compiler stack-slot lifetime split */
     if (-1 < iVar4) {
       do {
         iVar3 = iVar3 + 1;
-        pdVar5[1] = ((double)param_3 * *pdVar5) / (double)iVar3;
+        pdVar5[1] = ((double)param_3_after_write * *pdVar5) / (double)iVar3;
         pdVar5 = pdVar5 + 1;
-        param_3 = param_3 + -1;
+        param_3_after_write = param_3_after_write + -1;
       } while (iVar3 <= iVar4);
     }
-    param_3 = 0;
+    param_3_after_write = 0;
     if (0 < param_5) {
       do {
-        if ((float10)_DAT_007901c0 < (float10)param_3 * fVar7) {
+        if ((float10)_DAT_007901c0 < (float10)param_3_after_write * fVar7) {
           if (1 < iVar6) {
             iVar4 = iVar1 + -2;
             do {
@@ -81,10 +81,10 @@ undefined4 FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4
         lVar8 = Library::MSVCRT::__ftol();
         *(short *)(param_4 + 2) = (short)lVar8;
         param_4 = param_4 + 4;
-        param_3 = param_3 + 1;
+        param_3_after_write = param_3_after_write + 1;
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         fVar7 = extraout_ST1;
-      } while (param_3 < param_5);
+      } while (param_3_after_write < param_5);
     }
     FUN_006a5e90((short *)pdVar2);
     return 0;

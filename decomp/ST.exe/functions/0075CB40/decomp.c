@@ -18,7 +18,7 @@ void FUN_0075cb40(undefined4 *param_1)
   iVar4 = 0;
   if (0 < (int)param_1[7]) {
     local_8 = (undefined4 *)(param_1[0x34] + 0x50);
-    param_1 = puVar2 + 0xb;
+    auto param_1_after_write = puVar2 + 0xb; /* compiler stack-slot lifetime split */
     do {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       puVar2 = (undefined4 *)(**(code **)*puVar1)(puVar1,1,0x100);
@@ -29,8 +29,8 @@ void FUN_0075cb40(undefined4 *param_1)
         puVar2 = puVar2 + 1;
       }
       local_8 = local_8 + 0x15;
-      *param_1 = 0xffffffff;
-      param_1 = param_1 + 1;
+      *param_1_after_write = 0xffffffff;
+      param_1_after_write = param_1_after_write + 1;
     } while (iVar4 < (int)puVar1[7]);
   }
   return;

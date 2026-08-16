@@ -645,7 +645,9 @@ st::fn_00481560(void *this,short param_1,short param_2,short param_3,short param
       local_68 = st::fn_0072E4F0(local_14,local_10,local_14,local_10);
       local_80 = st::fn_0072E4F0(uVar4,local_38,uVar4,local_38);
       if ((uVar3 == 0 && local_20 == 0) && (local_14 == 0 && local_10 == 0)) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = param_4 + 1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = param_5 + 1;
         local_68 = 1;
         local_14 = 1;
@@ -1000,6 +1002,7 @@ st::fn_00481560(void *this,short param_1,short param_2,short param_3,short param
             iVar10 = st::fn_006AE1C0(pDVar8,&local_c);
             return iVar10 << 0x10 | uVar4 & 0xffff;
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           auto _param_1 = 0xffffffff;
           uVar3 = st::machine_word_boundary_cast<uint>(pDVar8->count - 1);
           if (-1 < (int)uVar3) {
@@ -1249,7 +1252,7 @@ LAB_00483342:
     }
     iVar3 = this->vfunc_F8();
     if (((iVar3 == 0) || (iVar3 = this->vfunc_F0(), iVar3 == 0)) ||
-       (iVar3 = (*this->vtable->vfunc_F4)(param_1[9]), iVar3 == 0)) {
+       (iVar3 = this->vfunc_F4(param_1[9]), iVar3 == 0)) {
       return 3;
     }
     sVar1 = STField<short>(param_1,0x45);

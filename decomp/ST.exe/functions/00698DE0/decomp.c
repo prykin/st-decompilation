@@ -34,13 +34,12 @@ int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4
       uVar4 = param_2;
     } while ((int)uVar5 < (int)param_2);
   }
-  param_2 = uVar4;
+  auto param_2_after_write = uVar4; /* compiler stack-slot lifetime split */
   if (0 < param_3) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_7 = param_3;
+    auto param_7_after_write = param_3; /* compiler stack-slot lifetime split */
     psVar6 = (short *)(param_6 + 4);
     do {
-      local_EAX_152 = thunk_FUN_0069f7f0((int)puVar3,param_2,10,6,10);
+      local_EAX_152 = thunk_FUN_0069f7f0((int)puVar3,param_2_after_write,10,6,10);
       psVar8 = psVar6;
       if (-1 < local_EAX_152) {
         psVar8 = psVar6 + 5;
@@ -49,8 +48,8 @@ int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4
         psVar6[-1] = psVar1[1];
         local_8 = local_8 + 1;
         *psVar6 = psVar1[2];
-        if (-1 < (int)param_2) {
-          param_1 = (undefined1 *)(param_2 + 1);
+        if (-1 < (int)param_2_after_write) {
+          auto param_1_after_write = (undefined1 *)(param_2_after_write + 1); /* compiler stack-slot lifetime split */
           puVar7 = (uint *)(puVar3 + 6);
           do {
             iVar5 = FUN_006acf90((int)*psVar1,(int)psVar1[1],(int)*(short *)((int)puVar7 + -6),
@@ -64,14 +63,13 @@ int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4
               }
             }
             puVar7 = (uint *)((int)puVar7 + 10);
-            param_1 = param_1 + -1;
-          } while (param_1 != nullptr);
+            param_1_after_write = param_1_after_write + -1;
+          } while (param_1_after_write != nullptr);
         }
       }
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_7 = param_7 + -1;
+      param_7_after_write = param_7_after_write + -1;
       psVar6 = psVar8;
-    } while (param_7 != 0);
+    } while (param_7_after_write != 0);
   }
   return local_8;
 }

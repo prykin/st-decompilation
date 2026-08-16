@@ -54,6 +54,7 @@ st::fn_004AB070
     return 0;
   }
   DAT_008073e0 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 1.4013e-45) {
     if (param_3 == 0) {
       DAT_00807461 = DAT_00807461 + 1;

@@ -39,7 +39,7 @@ python3 tools/st_compile_audit.py
 ```
 
 It verifies every file listed by `source_manifest.json`, invokes the selected
-C++ compiler separately for all 321 translation units, and maps diagnostics
+C++ compiler separately for all 322 translation units, and maps diagnostics
 back to stable function addresses through the generated `#line` directives.
 The default report is local under `.st-local/source-compile-audit/ST.exe/` and
 therefore never enters Git. `--compiler`, `--jobs`, `--error-limit`,
@@ -69,7 +69,7 @@ src/ST.exe/
     └── issues.jsonl
 ```
 
-The current accepted corpus produces 5,555 bodies in 321 translation units.
+The current accepted corpus produces 5,555 bodies in 322 translation units.
 1,044 bodies have a recovered original path; the other 4,511 are grouped by
 owner or address page without pretending that this was their original file.
 
@@ -139,6 +139,12 @@ plain POD declaration would otherwise lose:
   through the explicit physical `vtable` field. Thus `object->slot()` remains
   readable without asking the host compiler to invent a vptr, inheritance, or
   layout;
+- when a per-call override proves a receiver-aware ABI which cannot safely
+  widen the shared physical slot declaration, the same owner may receive one
+  exact non-virtual forwarding wrapper for that slot. The generator refuses to
+  emit a duplicated-receiver
+  `exact_indirect_callee<...>(slot)(object, ...)` regression when this member
+  form is available;
 - when a non-thunk `__thiscall` has one exact exported structure owner and a
   matching receiver parameter, that structure receives an ordinary forwarding
   method over `st::fn_ADDRESS`. Virtual slots keep their dispatch wrappers;
@@ -196,7 +202,7 @@ before layout assertions or a real link are meaningful.
 It intentionally does not link. A full object build is expected to fail today
 and is now useful evidence rather than a missing-infrastructure failure. The
 current Apple Clang C++17 probe, with a limit of 64 diagnostics per translation
-unit, passes 187 of 321 units and records 1,531 errors, 1,514 of them mapped to
+unit, passes 203 of 322 units and records 1,109 errors, 1,092 of them mapped to
 a function address. No syntax diagnostic remains. The cap makes this a
 monotonic comparison baseline, not the
 uncapped total of all errors. Remaining diagnostics principally identify:

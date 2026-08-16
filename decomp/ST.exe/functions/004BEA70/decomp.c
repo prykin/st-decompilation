@@ -1098,6 +1098,7 @@ cf_common_join_004C01F3:
   case CASE_33:
     puVar22 = (undefined2 *)((int)param_1 + 0x2b);
     local_8 = (int *)((int)param_1 + 0x1d);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = nullptr;
     piVar25 = &this->field_04D8;
     do {

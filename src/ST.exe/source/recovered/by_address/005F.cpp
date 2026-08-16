@@ -1551,24 +1551,24 @@ undefined4 __thiscall st::fn_005F89F0(void *this,int param_1)
   if (g_worldGrid.sizeY <= iVar5) {
     iVar5 = g_worldGrid.sizeY + -1;
   }
-  param_1 = STField<int>(this,0x285);
+  auto param_1_after_write = STField<int>(this,0x285); /* compiler stack-slot lifetime split */
   while( true ) {
     sVar6 = (short)iVar4;
     sVar7 = (short)iVar5;
-    sVar8 = (short)param_1;
+    sVar8 = (short)param_1_after_write;
     iVar3 = st::fn_00404D3B(sVar6,sVar7,sVar8);
     if ((iVar3 != 0) &&
        (((((sVar6 < 0 || (g_worldGrid.sizeX <= sVar6)) || (sVar7 < 0)) ||
          ((g_worldGrid.sizeY <= sVar7 || (sVar8 < 0)))) ||
         ((g_worldGrid.sizeZ <= sVar8 ||
          (STGridAt3D(g_worldGrid, sVar6, sVar7, sVar8).objects[0] == nullptr)))))) break;
-    param_1 = param_1 + 1;
-    if ((4 < param_1) || (STField<int>(this,0x285) + 2 < param_1)) break;
+    param_1_after_write = param_1_after_write + 1;
+    if ((4 < param_1_after_write) || (STField<int>(this,0x285) + 2 < param_1_after_write)) break;
   }
-  if ((-1 < param_1) && (param_1 < 5)) {
+  if ((-1 < param_1_after_write) && (param_1_after_write < 5)) {
     STField<int>(this,0x295) = iVar5;
     STField<int>(this,0x291) = iVar4;
-    STField<int>(this,0x299) = param_1;
+    STField<int>(this,0x299) = param_1_after_write;
     return 1;
   }
   return 0;
@@ -2065,6 +2065,7 @@ undefined4 __thiscall st::fn_005F9CB0(void *this,int param_1,int *param_2,int *p
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = *(int *)(iVar2 + 0x60) - (param_1 - *(int *)(iVar2 + 0x68)) * *(int *)(iVar2 + 100);
     if (iVar4 < 1) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 3;
       iVar4 = 0;
       goto LAB_005f9d2f;
@@ -2491,7 +2492,6 @@ st::fn_005FAC40(void *this,short param_1,int param_2,int param_3,short param_4,s
   if (STField<int>(this,0x2e6) != 0) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (_param_1 == 0) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_1 = _param_4;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_4 = _param_5;
@@ -2994,11 +2994,11 @@ undefined4 __fastcall st::fn_005FC4A0(AnonShape_005FC4A0_70B17F95 *param_1)
     if (((iVar6 != 0x1b) && (iVar6 != 7)) && (iVar6 != 0x13)) {
       return 0;
     }
-    iVar6 = (*this->vtable[5].slots_00_28[9])(0xfe);
+    iVar6 = this->vfunc_114(0xfe);
     if (iVar6 == 0) {
       return 0;
     }
-    (*this->vtable[5].slots_00_28[10])(param_1->field_0018);
+    this->vfunc_118(param_1->field_0018);
     param_1->field_02A3 = this[1].vtable;
     param_1->field_02AB = *(undefined2 *)&this[1].field_0xe;
     param_1->field_02A7 = *(undefined4 *)&this->field_0x18;
@@ -4236,7 +4236,7 @@ int __thiscall st::fn_005FEB60(void *this,int param_1,int param_2,int param_3)
               this_00 = STGridAt3D(g_worldGrid, sVar14, sVar5, sVar11).objects[0];
             }
             if (((this_00 != nullptr) &&
-                (iVar8 = (*this_00->vtable[5].slots_00_28[0])(), iVar8 != 0)) &&
+                (iVar8 = this_00->vfunc_F0(), iVar8 != 0)) &&
                ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
                 ((g_playSystem_00802A38 == nullptr ||
                  (g_bulkInitializedRecords_008087C7[(int)this_00[1].vtable].field_0022 < 8)))))) {
@@ -4270,7 +4270,7 @@ LAB_005fee45:
                 bVar18 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
                          g_bulkInitializedRecords_008087C7[bVar1].field_0023;
               }
-              if ((bVar18) && (iVar8 = (*this_00->vtable[5].slots_00_28[2])(), iVar8 != 0)) {
+              if ((bVar18) && (iVar8 = this_00->vfunc_F8(), iVar8 != 0)) {
                 st::fn_004031E3(this_00,(uint *)local_20,(int *)local_30,local_2c);
                 iVar7 = st::fn_006ACF90(param_1,param_2,(int)local_20[0],(int)local_30[0]);
                 iVar8 = st::fn_00404B9C(param_3 - local_2c[0],iVar7);
@@ -4516,7 +4516,7 @@ st::fn_005FF430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,u
       return 0;
     }
     st::fn_004031E3(this_00,st::pointer_boundary_cast<uint *>(&param_3),(int *)&param_4,(short *)((int)&param_5 + 2));
-    iVar4 = (*this_00->vtable->vfunc_78)();
+    iVar4 = this_00->vfunc_78();
     if (iVar4 < 1) {
       return 0;
     }

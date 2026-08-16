@@ -19,7 +19,6 @@ st::fn_0051FAC0(HelpStringTy *this,char *param_1,byte param_2,char param_3,uint 
   char cVar1;
   DWORD DVar2;
   uint uVar3;
-  int iVar5;
   char *pcVar6;
   char *pcVar7;
   char *pcVar6_mg0;
@@ -51,11 +50,7 @@ st::fn_0051FAC0(HelpStringTy *this,char *param_1,byte param_2,char param_3,uint 
       st::fn_004015FA(this);
       return;
     }
-    pcVar6 = &this->field_0018;
-    for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *(undefined4 *)pcVar6 = 0;
-      pcVar6 = pcVar6 + 4;
-    }
+    memset(&this->field_0018, 0, 0x104); /* compiler bulk-zero initialization */
     this->field_012E = 0;
     st::fn_004015FA(this);
   }

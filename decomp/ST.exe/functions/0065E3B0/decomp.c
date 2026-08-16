@@ -27,7 +27,7 @@ int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 para
         }
         this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,param_1->field_0024,*puVar1,CASE_1);
         if (this != nullptr) {
-          iVar2 = this->vfunc_D4();
+          iVar2 = (*this->vtable[1].GetMessage)(this);
           local_8 = local_8 + iVar2;
         }
         uVar3 = uVar3 + 1;

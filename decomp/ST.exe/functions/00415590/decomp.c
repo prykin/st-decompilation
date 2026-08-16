@@ -19,9 +19,9 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   int local_EBX_18;
   int iVar6;
   InternalExceptionFrame local_58;
-  short local_14;
-  short local_12;
-  short local_10;
+  undefined2 local_14;
+  undefined2 local_12;
+  undefined2 local_10;
   int local_c;
   DArrayTy *local_8;
 
@@ -37,9 +37,9 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   uVar2 = thunk_FUN_004233c0(param_1);
   DAT_007f4d4c = (uint)uVar2;
   if ((DAT_007f4d4c < 2) && (param_1->field_0027 == 1)) {
-    local_14 = (short)param_6;
-    local_12 = (short)param_7;
-    local_10 = (short)param_8;
+    local_14 = (undefined2)param_6;
+    local_12 = (undefined2)param_7;
+    local_10 = (undefined2)param_8;
     Library::DKW::TBL::DArrayAppend(array,&local_14);
     goto LAB_004157f0;
   }
@@ -50,7 +50,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
     if (param_1->field_004D != 0) {
       iVar4 = FUN_006db910(param_3,param_4,param_6,param_7);
       iVar3 = ((iVar4 * 4 + 0x2d) / 0x5a) * 0x5a;
-      iVar3 = (int)(iVar3 + (iVar3 >> 0x1f & 3U)) >> 2;
+      iVar3 = STSignedDiv4(iVar3);
       param_1->field_0055 = iVar3;
       if (iVar3 == 0x168) {
         param_1->field_0055 = 0;
@@ -63,11 +63,11 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
       if (0 < DAT_007f4d40) {
         iVar6 = 0;
         do {
-          local_14 = *(short *)(iVar6 + 0xc + (int)DAT_007f4d04);
-          local_12 = *(short *)(iVar6 + 0x10 + (int)DAT_007f4d04);
-          local_10 = *(short *)(iVar6 + 0x14 + (int)DAT_007f4d04);
+          local_14 = *(undefined2 *)(iVar6 + 0xc + (int)PTR_007f4d04);
+          local_12 = *(undefined2 *)(iVar6 + 0x10 + (int)PTR_007f4d04);
+          local_10 = *(undefined2 *)(iVar6 + 0x14 + (int)PTR_007f4d04);
           Library::DKW::TBL::DArrayPut
-                    (local_8,*(uint *)(iVar6 + 0x18 + (int)DAT_007f4d04),&local_14);
+                    (local_8,*(uint *)(iVar6 + 0x18 + (int)PTR_007f4d04),&local_14);
           iVar3 = iVar3 + 1;
           iVar6 = iVar6 + 0x1c;
         } while (iVar3 < DAT_007f4d40);
@@ -76,10 +76,10 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
       if (0 < DAT_007f4cf8) {
         do {
           iVar6 = (uint)(ushort)param_1->field_0027 - iVar3;
-          local_14 = DAT_007f4d04[iVar6 * 0xe + -8];
-          local_12 = DAT_007f4d04[iVar6 * 0xe + -6];
-          local_10 = DAT_007f4d04[iVar6 * 0xe + -4];
-          Library::DKW::TBL::DArrayPut(local_8,*(uint *)(DAT_007f4d04 + iVar6 * 0xe + -2),&local_14);
+          local_14 = *(undefined2 *)(PTR_007f4d04 + iVar6 * 7 + -4);
+          local_12 = *(undefined2 *)(PTR_007f4d04 + iVar6 * 7 + -3);
+          local_10 = *(undefined2 *)(PTR_007f4d04 + iVar6 * 7 + -2);
+          Library::DKW::TBL::DArrayPut(local_8,PTR_007f4d04[iVar6 * 7 + -1],&local_14);
           iVar3 = iVar3 + 1;
         } while (iVar3 < DAT_007f4cf8);
         g_currentExceptionFrame = local_58.previous;
@@ -89,9 +89,9 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
     }
     else {
       iVar3 = 0;
-      local_10 = (short)param_8;
-      local_14 = (short)param_6;
-      local_12 = (short)param_7;
+      local_10 = (undefined2)param_8;
+      local_14 = (undefined2)param_6;
+      local_12 = (undefined2)param_7;
       if (param_1->field_0027 != 0) {
         do {
           Library::DKW::TBL::DArrayAppend(local_8,&local_14);
@@ -112,7 +112,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
     }
   }
 LAB_004157e1:
-  FUN_006a5e90(DAT_007f4d04);
+  FUN_006a5e90((short *)PTR_007f4d04);
   array = local_8;
 LAB_004157f0:
   if (local_EBX_18 != 0) {

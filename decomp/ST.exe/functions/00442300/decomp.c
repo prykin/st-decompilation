@@ -65,7 +65,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   local_6c[3] = 0x5e;
   local_5c = this;
   local_44 = GetObjPtr(this,param_1,(ushort)param_2,CASE_1);
-  local_58 = (*local_44->vtable->vfunc_2C)();
+  local_58 = local_44->vfunc_2C();
   local_10 = 0;
   local_d4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d4;

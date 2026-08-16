@@ -65,15 +65,15 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\Ai_lex.c"),0xfd);
     return exceptionCode;
   }
-  if (DAT_0085755c == nullptr) {
+  if (PTR_0085755c == nullptr) {
     local_c = st::pointer_boundary_cast<short *>(st::fn_006AAC70(0x401));
-    *(undefined1 *)local_c = 0;
+    *(char *)local_c = '\0';
   }
-  if (DAT_00857528 == nullptr) {
+  if (PTR_00857528 == nullptr) {
     local_10 = st::pointer_boundary_cast<short *>(st::fn_006AAC70(0x401));
     *(char *)local_10 = '\0';
   }
-  if (DAT_00811948 == nullptr) {
+  if (PTR_00811948 == nullptr) {
     local_14 = st::pointer_boundary_cast<short *>(st::fn_006AAC70(0x401));
     *(char *)local_14 = '\0';
   }
@@ -87,9 +87,9 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   piVar2 = local_1c;
   local_1c[1] = DAT_00857560;
   local_1c[2] = (int)PTR_0081194c;
-  pcVar3_mg0 = st::fn_006C49B0((char *)DAT_00857528);
+  pcVar3_mg0 = st::fn_006C49B0(PTR_00857528);
   piVar2[6] = (int)pcVar3_mg0;
-  pcVar3_mg1 = st::fn_006C49B0((char *)DAT_00811948);
+  pcVar3_mg1 = st::fn_006C49B0(PTR_00811948);
   piVar2[0xb] = (int)pcVar3_mg1;
   pcVar3_mg2 = st::fn_006C49B0(st::pointer_boundary_cast<char *>(DAT_0085753c));
   piVar2[7] = (int)pcVar3_mg2;
@@ -127,21 +127,21 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
       }
     }
   }
-  if (DAT_0085755c == nullptr) {
-    DAT_0085755c = st::machine_word_boundary_cast<undefined4>(local_c);
+  if (PTR_0085755c == nullptr) {
+    PTR_0085755c = (char *)local_c;
   }
-  if (DAT_00857528 == nullptr) {
-    DAT_00857528 = st::machine_word_boundary_cast<undefined4>(local_10);
+  if (PTR_00857528 == nullptr) {
+    PTR_00857528 = (char *)local_10;
   }
-  if (DAT_00811948 == nullptr) {
-    DAT_00811948 = st::machine_word_boundary_cast<undefined4>(local_14);
+  if (PTR_00811948 == nullptr) {
+    PTR_00811948 = (char *)local_14;
   }
   if (DAT_0085753c == nullptr) {
     DAT_0085753c = st::machine_word_boundary_cast<undefined4>((char *)local_8);
   }
   DAT_00857560 = local_18;
   g_currentExceptionFrame = local_60.previous;
-  piVar2[9] = DAT_00857548;
+  piVar2[9] = (int)PTR_00857548;
   piVar2[10] = DAT_0085754c;
   piVar2[8] = DAT_00857554;
   piVar2[3] = DAT_007d2d24;

@@ -12,19 +12,46 @@ from st_source_tree import (
     ADDRESS_TAKEN_LABEL_RE,
     ADDRESS_CODED_FUNCTION_RE,
     BoundaryValue,
+    GenerationError,
     QUALIFIED_ADDRESS_SYMBOL_RE,
     SourceTreeGenerator,
     TypeEmitter,
     call_argument_count,
     call_argument_spans,
     code_mask,
+    exact_exref_global_rewrites,
     global_alias_for_token,
     rewrite_address_taken_globals,
+    rewrite_exact_identifiers,
     statement_expression_end,
 )
 
 
 class SourceTreeCallParsingTests(unittest.TestCase):
+    def test_unique_exref_uses_exact_referenced_pointer_global(self) -> None:
+        replacements = exact_exref_global_rewrites([
+            "0085C118 PTR_sizeHelp_0085c118 = 0045d28c",
+            "00858DF8 g_currentExceptionFrame = 00000000",
+        ])
+        self.assertEqual(
+            replacements,
+            {"sizeHelp_exref": "PTR_sizeHelp_0085c118"},
+        )
+        rewritten, count = rewrite_exact_identifiers(
+            "if (*(int *)sizeHelp_exref != 0) return sizeHelp_exref;",
+            replacements,
+        )
+        self.assertEqual(count, 2)
+        self.assertNotIn("sizeHelp_exref", rewritten)
+        self.assertIn("PTR_sizeHelp_0085c118", rewritten)
+
+    def test_ambiguous_exref_is_not_rewritten(self) -> None:
+        replacements = exact_exref_global_rewrites([
+            "0085C118 PTR_sizeHelp_0085c118 = 0045d28c",
+            "0085C120 PTR_sizeHelp_0085c120 = 0045d290",
+        ])
+        self.assertNotIn("sizeHelp_exref", replacements)
+
     def test_argument_spans_preserve_nested_expressions(self) -> None:
         text = "fn(one, nested(two, three), value[index + 1])"
         parsed = call_argument_spans(text, text.index("("))
@@ -225,6 +252,101 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         self.assertIn("undefined1 field_0x2;", header)
         self.assertNotIn("undefined1 field_0x0;", header)
         self.assertEqual(emitter.materialized_gap_fields, 2)
+
+    def test_commuted_byte_subscript_restores_pointer_index_order(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter([], generator.issues)
+        function = {
+            "parameters": [{"name": "stream", "type": "char *"}],
+        }
+        body = (
+            "void fn(char *stream) {\n"
+            "  undefined4 offset;\n"
+            "  if (offset[(int)stream] != 4) use();\n"
+            "}\n"
+        )
+        actual = generator._repair_commuted_byte_subscripts(
+            "00102030", function, body
+        )
+        self.assertIn(
+            "stream[st::machine_word_boundary_cast<uint>(offset)]", actual
+        )
+        self.assertEqual(generator.stats["commuted_byte_subscript_repairs"], 1)
+
+    def test_commuted_nonbyte_pointer_subscript_is_preserved(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter([], generator.issues)
+        function = {
+            "parameters": [{"name": "words", "type": "int *"}],
+        }
+        body = (
+            "void fn(int *words) {\n"
+            "  undefined4 offset;\n"
+            "  use(offset[(int)words]);\n"
+            "}\n"
+        )
+        self.assertEqual(
+            generator._repair_commuted_byte_subscripts(
+                "00102030", function, body
+            ),
+            body,
+        )
+
+    def test_exact_callsite_declaration_unwraps_wrapped_vtable_slot(self) -> None:
+        records = self.records()
+        # Make the physical record eight bytes so [1].method denotes slot 8.
+        table = next(item for item in records if item["path"] == "/OwnerVTable")
+        table["length"] = 8
+        table["detail"]["components"].append(
+            component(1, 4, 4, "padding", "/int")
+        )
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("."), Path("receipt.json")
+        )
+        generator.type_emitter = TypeEmitter(records, generator.issues)
+        function = {
+            "address": "00400000",
+            "parameters": [{"name": "owner", "type": "Owner *"}],
+            "comments": [
+                "00400010 [eol] [STIndirectCallsiteApplier] exact slot 0x8; "
+                "mode=dispatch; signature=__thiscall;/int;pointer:/Owner"
+            ],
+        }
+        body = "int f(Owner *owner) { return (*owner->vtable[1].method)(owner); }"
+        rewritten = generator._repair_exact_indirect_calls(
+            "00400000", function, body
+        )
+        self.assertIn("owner->vfunc_8()", rewritten)
+        declarations = generator.type_emitter.emit()
+        self.assertIn("int vfunc_8();", declarations)
+        self.assertIn("inline int Owner::vfunc_8()", declarations)
+        self.assertIn(
+            "reinterpret_cast<int (__thiscall *)(Owner *)>"
+            "(vtable[1].method)(this)",
+            declarations,
+        )
+        self.assertEqual(generator.stats["exact_indirect_call_declarations"], 1)
+        self.assertEqual(generator.stats["exact_indirect_member_calls"], 1)
+
+    def test_duplicated_receiver_exact_cast_is_a_hard_regression(self) -> None:
+        degraded = (
+            "int f(STGameObjC *object) { return "
+            "(*st::exact_indirect_callee<undefined4 (__thiscall *)"
+            "(STGameObjC *)>(object->vtable[1].vfunc_24))(object); }"
+        )
+        with self.assertRaises(GenerationError):
+            SourceTreeGenerator._reject_degraded_duplicated_receiver_calls(
+                "0065DA50", degraded
+            )
+
+        adjusted = degraded.replace(")(object);", ")(object + 1);")
+        SourceTreeGenerator._reject_degraded_duplicated_receiver_calls(
+            "0065DA50", adjusted
+        )
 
     def test_semantic_anchor_wins_same_leaf_name_collision(self) -> None:
         records = self.records() + [

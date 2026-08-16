@@ -30,6 +30,7 @@ STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 p
   undefined4 local_8;
 
   local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == '\0') {
     this->field_00D1 = (short)this->field_0093;
     sVar2 = (short)this->field_009B;

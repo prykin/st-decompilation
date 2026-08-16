@@ -71,7 +71,8 @@ LAB_004245a2:
 004245C9  8B 10                     MOV EDX,dword ptr [EAX]
 004245CB  53                        PUSH EBX
 004245CC  8B C8                     MOV ECX,EAX
-004245CE  FF 92 00 01 00 00         CALL dword ptr [EDX + 0x100]
+FUN_00424530::override::prt_4245ce_54311be1:
+004245CE  FF 92 00 01 00 00         CALL dword ptr [EDX + 0x100]  ; [STIndirectCallsiteApplier] exact slot 0x100; signature=__thiscall;/undefined1;pointer:/STGameObjC;/undefined1
 LAB_004245d4:
 004245D4  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 004245D7  47                        INC EDI

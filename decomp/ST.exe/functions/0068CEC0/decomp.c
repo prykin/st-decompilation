@@ -198,7 +198,7 @@ cf_continue_loop_0068D1EB:
           memmove(pbVar12, pbVar10, uVar6); /* compiler REP MOVS byte copy */
         }
         local_30 = &DAT_0084790c;
-        Library::MSVCRT::_strncpy(&CHAR_00h_00847d0c,DAT_0085755c,0x3fe);
+        Library::MSVCRT::_strncpy(&CHAR_00h_00847d0c,PTR_0085755c,0x3fe);
         local_28 = &CHAR_00h_00847d0c;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar9 = (*(code *)param_4)(&local_30);
@@ -270,7 +270,7 @@ cf_continue_loop_0068D1EB:
               }
             } while (iVar4 != 0);
           }
-          Library::MSVCRT::_strncat(local_10bc,DAT_0085755c + DAT_00857544,0x1000);
+          Library::MSVCRT::_strncat(local_10bc,PTR_0085755c + DAT_00857544,0x1000);
           local_10 = DAT_00857554;
           local_14 = DAT_00857544;
           local_c = 0x3b9;
@@ -287,7 +287,7 @@ cf_continue_loop_0068D1EB:
           }
           if (iVar4 < DAT_00857554) {
             Library::DKW::TBL::FUN_006b5aa0(local_8,local_10bc);
-            Library::MSVCRT::_strncpy(local_10bc,DAT_0085755c,0x1000);
+            Library::MSVCRT::_strncpy(local_10bc,PTR_0085755c,0x1000);
             local_10 = DAT_00857554;
             local_14 = 0;
           }
@@ -373,7 +373,7 @@ cf_continue_loop_0068D1EB:
               }
             } while (local_18 != 0);
           }
-          Library::MSVCRT::_strncat(local_10bc,DAT_0085755c + DAT_00857544,0x1002 - DAT_00857544);
+          Library::MSVCRT::_strncat(local_10bc,PTR_0085755c + DAT_00857544,0x1002 - DAT_00857544);
           local_14 = DAT_00857544;
           local_10 = DAT_00857554;
           local_c = 0x44c;
@@ -390,7 +390,7 @@ cf_continue_loop_0068D1EB:
         }
         if (iVar4 < DAT_00857554) {
           Library::DKW::TBL::FUN_006b5aa0(local_8,local_10bc);
-          Library::MSVCRT::_strncpy(local_10bc,DAT_0085755c,0x1000);
+          Library::MSVCRT::_strncpy(local_10bc,PTR_0085755c,0x1000);
           local_10 = DAT_00857554;
           local_14 = 0;
         }
@@ -455,7 +455,7 @@ cf_continue_loop_0068D1EB:
       }
       if ((-1 < iVar4) && (iVar4 < DAT_00857554)) {
         Library::DKW::TBL::FUN_006b5aa0(local_8,local_10bc);
-        Library::MSVCRT::_strncpy(local_10bc,DAT_0085755c,0x1000);
+        Library::MSVCRT::_strncpy(local_10bc,PTR_0085755c,0x1000);
         local_10 = DAT_00857554;
         local_14 = 0;
         iVar4 = DAT_00857554;
@@ -488,7 +488,7 @@ cf_continue_loop_0068D1EB:
         memmove(pbVar12, pbVar10, uVar6); /* compiler REP MOVS byte copy */
       }
       param_3[1] = (int)&DAT_0084790c;
-      Library::MSVCRT::_strncpy(&CHAR_00h_00847d0c,DAT_0085755c,0x3fe);
+      Library::MSVCRT::_strncpy(&CHAR_00h_00847d0c,PTR_0085755c,0x3fe);
       param_3[3] = (int)&CHAR_00h_00847d0c;
       param_3[4] = (int)&DAT_008488b4;
       param_3[5] = DAT_00857544;

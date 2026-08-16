@@ -124,6 +124,7 @@ int FUN_006cef60(int *param_1,AnonShape_006D86E0_D6D32C07 *param_2,
             0x1ffffffc;
     param_6 = param_6 + ((*(int *)&pAVar6->field_0x8 - ((param_9[1] - param_8) + local_34)) -
                         (int)local_2c) * uVar8 + (*param_9 - param_7) + local_38;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (AnonShape_006D86E0_D6D32C07 *)
               (&param_2->field_0x0 + (int)(local_2c + local_34 + -1) * (int)param_3 + local_38);
     local_8 = 0;

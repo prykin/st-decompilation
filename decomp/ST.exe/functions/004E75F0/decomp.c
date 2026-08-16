@@ -15,11 +15,11 @@ void FUN_004e75f0(int param_1)
   iVar2 = param_1;
   if ((-1 < param_1) && (param_1 < 8)) {
     bVar3 = LookupRecordByte((char)param_1);
-    param_1 = 0;
+    auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
     if (0 < *(int *)(&DAT_007995bc + (bVar3 - 1) * 0x4bf)) {
       puVar5 = (uint *)(&DAT_007995bc + (bVar3 - 1) * 0x4bf);
       do {
-        if (0x50 < param_1) {
+        if (0x50 < param_1_after_write) {
           return;
         }
         iVar4 = thunk_FUN_004e60d0(iVar2,*puVar5);
@@ -30,7 +30,7 @@ void FUN_004e75f0(int param_1)
         }
         piVar1 = (int *)((int)puVar5 + 5);
         puVar5 = (uint *)((int)puVar5 + 5);
-        param_1 = param_1 + 1;
+        param_1_after_write = param_1_after_write + 1;
       } while (0 < *piVar1);
     }
   }

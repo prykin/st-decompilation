@@ -125,7 +125,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
              (pSVar4 = STAllPlayersC::GetObjPtr
                                  (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1),
              pSVar4 != nullptr)) {
-            iVar9 = (*pSVar4->vtable->vfunc_2C)();
+            iVar9 = pSVar4->vfunc_2C();
             iVar10 = 0;
             if (0 < local_14) {
               piVar12 = local_34;
@@ -204,7 +204,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
               (pSVar4 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1)
               , pSVar4 != nullptr)) &&
-             ((iVar9 = (*pSVar4->vtable->vfunc_2C)(), iVar9 == 0x3b || (iVar9 == 0x60)))) {
+             ((iVar9 = pSVar4->vfunc_2C(), iVar9 == 0x3b || (iVar9 == 0x60)))) {
             Library::DKW::TBL::DArrayAppend(this_00->field_0266,&local_8);
           }
           uVar15 = uVar15 + 1;

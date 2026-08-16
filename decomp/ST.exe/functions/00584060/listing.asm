@@ -21,7 +21,8 @@ STJellyGunC::sub_00584060:
 00584095  74 4A                     JZ 0x005840e1
 00584097  8B 17                     MOV EDX,dword ptr [EDI]
 00584099  8B CF                     MOV ECX,EDI
-0058409B  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STJellyGunC::sub_00584060::override::prt_58409b_d4e0dbd9:
+0058409B  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 005840A1  85 C0                     TEST EAX,EAX
 005840A3  74 3C                     JZ 0x005840e1
 005840A5  8D 45 FA                  LEA EAX,[EBP + -0x6]

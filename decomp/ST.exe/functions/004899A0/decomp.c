@@ -81,9 +81,9 @@ LAB_0048a37f:
                           (g_allPlayers_007FA174,*(char *)&this->field_0487,(ushort)this->field_048B
                            ,this->field_0483);
       if ((((local_8 != nullptr) &&
-           (iVar12 = local_8->vfunc_F8(), iVar12 == 1)) &&
-          (iVar12 = local_8->vfunc_F0(), iVar12 == 1)) &&
-         ((iVar12 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar12 == 1 &&
+           (iVar12 = (*local_8->vtable[1].vfunc_24)(local_8), iVar12 == 1)) &&
+          (iVar12 = (*local_8->vtable[1].MoveStep)(local_8), iVar12 == 1)) &&
+         ((iVar12 = (*local_8->vtable[1].vfunc_20)(local_8), iVar12 == 1 &&
           (this->field_047F % 0x28 != 0)))) {
         return 0;
       }
@@ -110,18 +110,18 @@ LAB_0048a37f:
             if ((iVar12 != -4) && (iVar12 < 9)) {
               iVar16 = (8 - iVar12) * 0x32;
               DArrayGetElement(pDVar4,local_18,&local_8);
-              iVar12 = local_8->vfunc_F8();
+              iVar12 = (*local_8->vtable[1].vfunc_24)(local_8);
               if ((iVar12 != 0) &&
-                 ((iVar12 = local_8->vfunc_F0(), iVar12 != 0 &&
-                  (iVar12 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar12 != 0)))) {
-                iVar12 = local_8->vfunc_FC();
+                 ((iVar12 = (*local_8->vtable[1].MoveStep)(local_8), iVar12 != 0 &&
+                  (iVar12 = (*local_8->vtable[1].vfunc_20)(local_8), iVar12 != 0)))) {
+                iVar12 = (*local_8->vtable[1].vfunc_28)(local_8);
                 if (0 < iVar12) {
                   iVar16 = iVar16 + 300;
                 }
                 iVar12 = local_8->field_0219;
                 iVar1 = local_8->field_0215;
-                iVar8 = (*local_8->vtable->vfunc_7C)();
-                local_38 = iVar16 + ((int)(iVar12 + (iVar12 >> 0x1f & 3U)) >> 2) + iVar1 + iVar8 * 2
+                iVar8 = local_8->vfunc_7C();
+                local_38 = iVar16 + (STSignedDiv4(iVar12)) + iVar1 + iVar8 * 2
                 ;
                 if ((((uint)(ushort)local_8->field_0032 == this->field_048B) &&
                     (local_8->field_0024 == this->field_0487)) &&
@@ -204,7 +204,7 @@ LAB_00489dfc:
                   } while ((int)uVar5 < (int)pDVar10->count);
                 }
                 if ((this->field_06F7 == CASE_1C) &&
-                   (iVar16 = local_8->vfunc_120(), iVar16 == 1)) {
+                   (iVar16 = (*local_8->vtable[1].vfunc_4C)(local_8), iVar16 == 1)) {
                   iVar12 = iVar12 / 0x14;
                 }
                 if (local_34 < iVar12) {
@@ -250,9 +250,9 @@ LAB_00489eb0:
         if (0 < (int)pDVar4->count) {
           do {
             DArrayGetElement(pDVar4,local_18,&local_8);
-            iVar12 = local_8->vfunc_F8();
-            if (((iVar12 != 0) && (iVar12 = local_8->vfunc_F0(), iVar12 != 0)) &&
-               (iVar12 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar12 != 0)) {
+            iVar12 = (*local_8->vtable[1].vfunc_24)(local_8);
+            if (((iVar12 != 0) && (iVar12 = (*local_8->vtable[1].MoveStep)(local_8), iVar12 != 0))
+               && (iVar12 = (*local_8->vtable[1].vfunc_20)(local_8), iVar12 != 0)) {
               thunk_FUN_00416270(local_8,&local_14,&local_10,(short *)&local_c);
               local_EAX_1627 =
                    FUN_006acf0d((int)this->field_0041,(int)this->field_0043,(int)this->field_0045,
@@ -305,14 +305,14 @@ LAB_00489eb0:
                   } while (local_2c < (int)(uint)(byte)this->field_02B2);
                 }
                 iVar16 = ((int)this->field_0816 - local_EAX_1627 / 0xc9) * 0x32;
-                iVar12 = local_8->vfunc_FC();
+                iVar12 = (*local_8->vtable[1].vfunc_28)(local_8);
                 if (0 < iVar12) {
                   iVar16 = iVar16 + 300;
                 }
                 iVar12 = local_8->field_0219;
                 iVar1 = local_8->field_0215;
-                iVar8 = (*local_8->vtable->vfunc_7C)();
-                iVar12 = iVar16 + ((int)(iVar12 + (iVar12 >> 0x1f & 3U)) >> 2) + iVar1 + iVar8 * 2;
+                iVar8 = local_8->vfunc_7C();
+                iVar12 = iVar16 + (STSignedDiv4(iVar12)) + iVar1 + iVar8 * 2;
                 if (((uint)(ushort)local_8->field_0032 == this->field_048B) &&
                    (local_8->field_0024 == this->field_0487)) {
                   if ((this->field_0483 == CASE_1) &&
@@ -343,7 +343,7 @@ LAB_0048a22c:
                   if (local_8->field_0020 != 0x1ae) goto LAB_0048a235;
                 }
                 if ((this->field_06F7 == CASE_1C) &&
-                   (iVar16 = local_8->vfunc_120(), iVar16 == 1)) {
+                   (iVar16 = (*local_8->vtable[1].vfunc_4C)(local_8), iVar16 == 1)) {
                   iVar12 = iVar12 / 0x14;
                 }
                 if (local_34 < iVar12) {

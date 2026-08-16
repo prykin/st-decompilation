@@ -19,8 +19,8 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   int iVar5;
   byte *pbVar5;
   LPSTR pCVar6;
-  STGameObjC *objPtr;
-  AiFltClassTy *this_01;
+  STGameObjC *this_01;
+  AiFltClassTy *this_02;
   DArrayTy *pDVar7;
   int iVar8;
   int iVar9;
@@ -210,15 +210,15 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
     }
     else if (SVar2 == MESS_AIPLRCLASSTY_5D94) {
       if (g_allPlayers_007FA174 == nullptr) {
-        objPtr = nullptr;
+        this_01 = nullptr;
       }
       else {
-        objPtr = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,*(char *)&local_10->field_05D7,
-                            (message->arg0).words.high,CASE_1);
+        this_01 = STAllPlayersC::GetObjPtr
+                            (g_allPlayers_007FA174,*(char *)&local_10->field_05D7,
+                             (message->arg0).words.high,CASE_1);
       }
-      if (objPtr != nullptr) {
-        iVar9 = (*objPtr->vtable->vfunc_2C)();
+      if (this_01 != nullptr) {
+        iVar9 = this_01->vfunc_2C();
         if ((iVar9 < 1) || (0x28 < iVar9)) {
           bVar17 = false;
         }
@@ -226,9 +226,9 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           bVar17 = true;
         }
         if ((bVar17) &&
-           (this_01 = (AiFltClassTy *)thunk_FUN_00679e70(this_00,objPtr->field_081C),
-           this_01 != nullptr)) {
-          AiFltClassTy::_AddObjFlt(this_01,(uint)objPtr,0);
+           (this_02 = (AiFltClassTy *)thunk_FUN_00679e70(this_00,this_01->field_081C),
+           this_02 != nullptr)) {
+          AiFltClassTy::_AddObjFlt(this_02,(uint)this_01,0);
         }
       }
     }

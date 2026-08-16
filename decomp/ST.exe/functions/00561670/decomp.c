@@ -89,7 +89,9 @@ LAB_00561bff:
           piVar11[1] = param_4[1];
           piVar11 = piVar11 + 2;
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = param_4 + 2;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = param_5 + -1;
         iVar8 = local_18;
       } while (param_5 != 0);

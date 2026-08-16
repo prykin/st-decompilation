@@ -39,9 +39,9 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
   pbVar7 = local_10;
   memmove(pbVar7, puVar5, 0x98); /* compiler REP MOVS byte copy */
   *param_1 = 0x98;
-  param_1 = nullptr;
+  auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   do {
-    switch(param_1) {
+    switch(param_1_after_write) {
     case nullptr:
       ppDVar2 = (DArrayTy **)local_8->field_0030;
       break;
@@ -68,8 +68,8 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
       FreeAndNull(&local_14);
     }
 switchD_0062d6cc_default:
-    param_1 = (uint *)((int)param_1 + 1);
-    if (3 < (int)param_1) {
+    param_1_after_write = (uint *)((int)param_1_after_write + 1);
+    if (3 < (int)param_1_after_write) {
       return local_10;
     }
   } while( true );

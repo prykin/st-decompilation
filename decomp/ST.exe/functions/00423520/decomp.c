@@ -10,7 +10,7 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
 {
   STGroupC *pSVar2;
   int iVar3;
-  STGameObjC *pSVar3;
+  STGameObjC *this_00;
   int iVar5;
   int iVar4;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -35,14 +35,14 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
       do {
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,local_c);
         if (STPiece<0,2>(local_c) != 0xffff) {
-          pSVar3 = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_c),CASE_1);
-          if (pSVar3 == nullptr) {
+          this_00 = STAllPlayersC::GetObjPtr
+                              (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_c),CASE_1);
+          if (this_00 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\tc_grp.cpp",0x66);
           }
-          iVar5 = (*pSVar3->vtable->vfunc_2C)();
+          iVar5 = this_00->vfunc_2C();
           if (iVar5 == param_1) {
             local_8 = local_8 + 1;
           }

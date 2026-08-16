@@ -50,7 +50,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
   undefined4 uVar11;
   undefined2 *puVar12;
   bool bVar13;
-  AnonShape_00645880_8F6B4550 local_64;
+  RecoveredRecord_STBoatC_00645880 local_64;
   undefined4 local_3c [2];
   short local_34;
   short sStack_32;

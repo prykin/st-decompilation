@@ -7,38 +7,38 @@
     },
     {
       "path": "README.generated.md",
-      "sha256": "3c5918c3d47187f14930a1047a8db472d1bfaf318d367d904e3f5132f65f1728",
+      "sha256": "a1ba328cbe56350ae974954eb6178f2db6d40e3bbc03b05ec47a46fd712d4458",
       "size": 1425
     },
     {
       "path": "audit/issues.jsonl",
-      "sha256": "f157dcb34605ed540edd09eaf8f3bf6aefe58559d23e0f59fdab32f890e63e87",
-      "size": 1651987
+      "sha256": "606fbd0d150b0ff6fe41e413d566bbe96f457aa6873c287a6deb20146561c72e",
+      "size": 1661796
     },
     {
       "path": "audit/summary.json",
-      "sha256": "9347afeb75838e232ee4e0fe08de3fae77c8813f38f3cf0195ff54c97569730a",
-      "size": 2934
+      "sha256": "ba25a4883af13fed3298609a983bf87bf677c580c1e566fbb3162d088cd3a11c",
+      "size": 3360
     },
     {
       "path": "include/st/generated.hpp",
-      "sha256": "4a8fa8e839102d575bfba0848de1534c763bef42c0ed4c71431401486e90170b",
-      "size": 1441
+      "sha256": "6caced843caa313bc97bfc2f59253f301f7ac0df107496448dedab98bc88ea30",
+      "size": 2039
     },
     {
       "path": "include/st/pseudocode_runtime.hpp",
-      "sha256": "d28c7cfa02c9b20ad395c60de79c9a6281a62e5488e85153e85dc8dc901e022d",
-      "size": 11353
+      "sha256": "e862abf02069a82b42314c50a439d81f7c9b31529c2ec493c0590f99e8e9196d",
+      "size": 12657
     },
     {
       "path": "include/st/recovered_functions.hpp",
-      "sha256": "79852b88dd0853a97ad1600c411010704dab210a23a70edacedfb89ee7b5c662",
-      "size": 1340710
+      "sha256": "49ac3a1b5e0bf2f44f3591aec4a5527d94bf5ab324eeb5a4fce5b7e7d0440995",
+      "size": 1340744
     },
     {
       "path": "include/st/recovered_globals.hpp",
-      "sha256": "5e719745cbeda1baa3eb45e9add4f277f8c63576c2cffb116f2c2e831dc42eb7",
-      "size": 118350
+      "sha256": "3ed079b6001ed5db7e934d86d91dad6a7221fdce9dec0ec145abcdd20c000ac0",
+      "size": 119081
     },
     {
       "path": "include/st/recovered_imports.hpp",
@@ -47,8 +47,8 @@
     },
     {
       "path": "include/st/recovered_types.hpp",
-      "sha256": "6ea22077acc07d8c2c9fca22d1903917ef3803656ded55b964fc10a85ec6bb2d",
-      "size": 4482793
+      "sha256": "a2a70f7632331c3fdc81e2baa256b09eb0c555993cdb0972c1cfa0b7effb74e9",
+      "size": 4499034
     },
     {
       "path": "source/original/Andrey/behpanel.cpp",
@@ -107,13 +107,13 @@
     },
     {
       "path": "source/original/Andrey/helppan.cpp",
-      "sha256": "89ae95f3d9a3e3bbb046e04a6878648dfe7875eeb6d513ee40fa24bc6bb06ca3",
-      "size": 276466
+      "sha256": "9c24ed76fc9149033d23cf0e155431b747dd9bf1cfcbbb1a75ab0e66df32982f",
+      "size": 276564
     },
     {
       "path": "source/original/Andrey/helpstr.cpp",
-      "sha256": "b1819ab9804dfd3f9380e7444bf2b48e1a215dce455f677465a4d46c9545e31b",
-      "size": 5679
+      "sha256": "a4a38a24d6ebd1ce387b3a9d20617265b98c8b0384b6477571ab3f0a50203c3c",
+      "size": 5585
     },
     {
       "path": "source/original/Andrey/infocen.cpp",
@@ -142,8 +142,8 @@
     },
     {
       "path": "source/original/Andrey/optpanel.cpp",
-      "sha256": "aafa793cae2d805581ac70ed04fed0ea07e6ebcc261fe7b0b35953bb96f8a2db",
-      "size": 215676
+      "sha256": "b2f1be3f8906824c038f3147d946c2a60ca84892da717de6a137e0864b71e4ac",
+      "size": 215616
     },
     {
       "path": "source/original/Andrey/panel.cpp",
@@ -187,13 +187,13 @@
     },
     {
       "path": "source/original/Andrey/to_cursor.cpp",
-      "sha256": "734e820aa8d175e940db8add355bed749eba8a6ef813c449a5a1297961eca9ac",
-      "size": 160594
+      "sha256": "23d2648d9b49f7aed2d48fabbe6e9f6adb404a543fb973ced5a834007d32f7a2",
+      "size": 160678
     },
     {
       "path": "source/original/Andrey/tplaysys.cpp",
-      "sha256": "6e699b8373ed562eaa53f594f3542c7358c4d6ac0ddbf2215753c0d2a59556c4",
-      "size": 73338
+      "sha256": "f8ea5bcda042f870e49434acca4234e229dbcf528adb88738ae97d83f319165e",
+      "size": 73293
     },
     {
       "path": "source/original/Andrey/tradecen.cpp",
@@ -217,8 +217,8 @@
     },
     {
       "path": "source/original/Artem/TLO_ai_fnd.cpp",
-      "sha256": "4beb106395fe4e56faf53fad48ccbf6b7a2212ee047f90261c27b28b00233b09",
-      "size": 101679
+      "sha256": "0ea09ec378c2f70e2d2d332d3b9bd7d663f26bc76d23483cf71fb261e6d0267b",
+      "size": 101652
     },
     {
       "path": "source/original/Artem/TLO_base.cpp",
@@ -317,8 +317,8 @@
     },
     {
       "path": "source/original/Igor/To_shark.cpp",
-      "sha256": "03985b4feda43bd61ffaf985ba6f592be7e2437bfa53eab42f9276388bd968c6",
-      "size": 29011
+      "sha256": "f3bdff3fc0f44f81f02d58081c2590f0e67fe9f0708b7229dcc5aadd5466bd35",
+      "size": 28979
     },
     {
       "path": "source/original/Igor/to_crab.cpp",
@@ -327,8 +327,8 @@
     },
     {
       "path": "source/original/Igor/to_etorp.cpp",
-      "sha256": "30a96cf22bc778052cbab59b7714f489743dcef41bff1628a547a2584e03fd75",
-      "size": 25709
+      "sha256": "8e506509922e1b7bf2b726088f1600272f4413e997e68d311125923f67f6179c",
+      "size": 25969
     },
     {
       "path": "source/original/Igor/to_jell_m.cpp",
@@ -337,8 +337,8 @@
     },
     {
       "path": "source/original/Igor/to_jelly.cpp",
-      "sha256": "8fd823d6f9c3fa66f8cff5eb2c9aa4726b817ffab1ed3aed4450bf254e365122",
-      "size": 31789
+      "sha256": "bc939f6c5e43fba06077712b6375a4edbe3d572752df07056a0c691fa9c20a03",
+      "size": 31627
     },
     {
       "path": "source/original/Igor/to_lbomb.cpp",
@@ -367,8 +367,8 @@
     },
     {
       "path": "source/original/Maps/DefObj.cpp",
-      "sha256": "ab189c175358a8a47bd5d176d7f6300d43023b009e7e4b2183346090d0538e00",
-      "size": 9966
+      "sha256": "2692c0c7217bf162a2be6d08abf9bfa57b734b51f600d8eb768023a01409a6f3",
+      "size": 10106
     },
     {
       "path": "source/original/Maps/gen_map.cpp",
@@ -382,13 +382,13 @@
     },
     {
       "path": "source/original/Maps/map_cnt.cpp",
-      "sha256": "5c7c2957d5581abbc87f3f39fe92e8429c064e9b4281fa2e988f3bbd609ceecd",
-      "size": 1944
+      "sha256": "f7212bd0292ec7437bcdd4f0bbf2275c7f893c20cdc54ae64d4f38acce41f595",
+      "size": 2050
     },
     {
       "path": "source/original/Maps/prepare.cpp",
-      "sha256": "2c7e51fc72a63ca035931a996262fc5ecc9df8746de8f294a9d85e69ad5ad1a1",
-      "size": 7598
+      "sha256": "5e4d403cfa0785565963628253de70de3bedc17fc0339ad06fbb82fa80472bc0",
+      "size": 7316
     },
     {
       "path": "source/original/Object/To_alga.cpp",
@@ -412,8 +412,8 @@
     },
     {
       "path": "source/original/Start/fsgs_obj.cpp",
-      "sha256": "107f79c21bb7d55949069f0cdc99d077b850e5f1a3d5d8586287f601f187209f",
-      "size": 405434
+      "sha256": "e0432469e25642a72e8c12c2dfad7291135ff12138a7944a21330eec12f45e7d",
+      "size": 405413
     },
     {
       "path": "source/original/Start/hologram.cpp",
@@ -447,8 +447,8 @@
     },
     {
       "path": "source/original/Start/rpt_obj.cpp",
-      "sha256": "bdf3a305c52848f2db853699c71866d1f64f26be5766a829c81fe0a560ec33ed",
-      "size": 90508
+      "sha256": "e441dec2df11279e18531b43c9f45ff28e4597c3f10aa5ffdf5fe512b44c96a6",
+      "size": 90592
     },
     {
       "path": "source/original/Start/sett_obj.cpp",
@@ -457,8 +457,8 @@
     },
     {
       "path": "source/original/Start/settmobj.cpp",
-      "sha256": "35a84e9dae057467ffe1d0c72aa4071c7a49bb7c3772e6f35396302dadf4e778",
-      "size": 218436
+      "sha256": "415639e01b01086a41343a52756e8234af3f066b400c096bb326616b3799a2a3",
+      "size": 218338
     },
     {
       "path": "source/original/Start/settsobj.cpp",
@@ -477,8 +477,8 @@
     },
     {
       "path": "source/original/Start/task_obj.cpp",
-      "sha256": "c2dc4576f7dc82a03fc6bf00d88ad3cb8d62081c5f8c77f5b503e3b782063d50",
-      "size": 150853
+      "sha256": "c8809760423fcb43959ba216d97bf282f18aecdb061a616a32ed5c44d41c80df",
+      "size": 151135
     },
     {
       "path": "source/original/Start/test_obj.cpp",
@@ -492,8 +492,8 @@
     },
     {
       "path": "source/original/ai/Ai_lex.cpp",
-      "sha256": "361d60e66c1bce215c4967fc4f01ade31438885c53d880aa8d9645ff08465d3e",
-      "size": 5035
+      "sha256": "25ea0c834aaddc22b171945950ccd4d9778ecb3df3f201a637e030c5426dfa00",
+      "size": 4913
     },
     {
       "path": "source/original/ai/ai_boss.cpp",
@@ -517,8 +517,8 @@
     },
     {
       "path": "source/original/ai/ai_event.cpp",
-      "sha256": "e9169ae2f75dd71f81cf06175a144cb4b4bf6463b162faefad677c631fff7c81",
-      "size": 418733
+      "sha256": "73134a6a0de61ffc683f7f2d904979df2c25f160e6e57772e98bb486da04f64c",
+      "size": 419017
     },
     {
       "path": "source/original/ai/ai_event_d.cpp",
@@ -527,8 +527,8 @@
     },
     {
       "path": "source/original/ai/ai_flt.cpp",
-      "sha256": "d1ca8b25fe77149953facd5efd33ba312065430fd2974f56e4fc42d1f57b510d",
-      "size": 85362
+      "sha256": "dfc7cf07daece28c4e5cf82d2c34bdf5041e0e3bcbfb813fd96216a1575c0d5e",
+      "size": 85285
     },
     {
       "path": "source/original/ai/ai_flt_d.cpp",
@@ -537,18 +537,18 @@
     },
     {
       "path": "source/original/ai/ai_interp.cpp",
-      "sha256": "1aa6bf175601d01239dcdb8e42e26a92357b61d55c83eed6ab2354c5e7376a16",
-      "size": 167302
+      "sha256": "49a766f26bfe6e864b3544cb8f0bfeae8ca1a532c1aa6eed4ee026d1b539935f",
+      "size": 167918
     },
     {
       "path": "source/original/ai/ai_mdef.cpp",
-      "sha256": "45b128cdf87d0aec0e735cb89ebcf9c65266b8dd75ce2dab2c74bfe3cb0ebe0b",
-      "size": 43963
+      "sha256": "dd9cc8790f2e3d7098631c1cf3adc6612eddd20f39ee7bf0a9b26e887431db59",
+      "size": 43876
     },
     {
       "path": "source/original/ai/ai_plr.cpp",
-      "sha256": "2cbd5eaef0e0b2c955fd08d51b3ee1f33116405cd73ad65266ff198a51ad6a4c",
-      "size": 44566
+      "sha256": "03aeb832a04c771ae050a7d56c6da3bb5a804a35dc0d20ccc9519030c9e230fe",
+      "size": 44564
     },
     {
       "path": "source/original/ai/ai_plr_d.cpp",
@@ -557,13 +557,13 @@
     },
     {
       "path": "source/original/ai/ai_script.cpp",
-      "sha256": "e0d35c30cc491eaa3599561c6c4af80bc449ba342bb793bf75e487807adb75b4",
-      "size": 212847
+      "sha256": "86564f2967c06269c01a3b43d3f4af5588e7cf3c04470488d3397da588eb0445",
+      "size": 212904
     },
     {
       "path": "source/original/ai/ai_tact.cpp",
-      "sha256": "8515996a5ecbd3e2ca8fc6d79d752eeb5437de520be628d83d2782b9b4361920",
-      "size": 53094
+      "sha256": "be3f0dc672bd9939fe91babdc78eea447aa53b7160cb90b35d5c39a77d2ddb61",
+      "size": 53056
     },
     {
       "path": "source/original/ai/ai_tact_d.cpp",
@@ -692,8 +692,8 @@
     },
     {
       "path": "source/original/nick/to_torp.cpp",
-      "sha256": "51aadc6c93afce4958bf2ba6dcff4f5e77b3a9f425c8d86852a94d73ec70e9e0",
-      "size": 93601
+      "sha256": "7c2cf1c97dbf143f1254e90665a0c5e308e3ad331be25fc7046e15d0fc90d322",
+      "size": 93531
     },
     {
       "path": "source/original/nick/to_volc.cpp",
@@ -702,8 +702,8 @@
     },
     {
       "path": "source/original/pal_tbl.cpp",
-      "sha256": "e05f59d29cd8b4d55c5b63b30adc2fd7b74b9e7dd3a8d4b161165eb22254f3c4",
-      "size": 3860
+      "sha256": "a4c9d752ebe196275911da3c68b487af26134625527edc8a6cef1463a5cfc34c",
+      "size": 3772
     },
     {
       "path": "source/original/paltool.cpp",
@@ -712,8 +712,8 @@
     },
     {
       "path": "source/original/scoreai.cpp",
-      "sha256": "37aefda82ee381e57912200cd4927b1f444f49d1ce69866c66dacca38a054a14",
-      "size": 108627
+      "sha256": "eb00366b2dc022c0d453189d25f489b93194ef91021f21ec2783b7d06390fa2a",
+      "size": 108303
     },
     {
       "path": "source/original/snd_mngr.cpp",
@@ -727,8 +727,8 @@
     },
     {
       "path": "source/original/tapp.cpp",
-      "sha256": "9fb6d6e553968d55841326ac7796257fe913f5bd6c8c1b4c95b3eea40b93e9b8",
-      "size": 112608
+      "sha256": "35415b412ffc21e987ba5c6f886adbb92eb92fb6410c065abb371581f4de929e",
+      "size": 112465
     },
     {
       "path": "source/original/tinittxt.cpp",
@@ -742,13 +742,13 @@
     },
     {
       "path": "source/original/tsystem.cpp",
-      "sha256": "f6684d914762145d84b0d73f70ad1c7107b07da23d941a33492886feb01ff30b",
-      "size": 28906
+      "sha256": "41abc380817a4f9060fd7226382bcb70b18255dfc126824768be7d8d8250e8b9",
+      "size": 28846
     },
     {
       "path": "source/original/wlad/Grpway3d.cpp",
-      "sha256": "925d6f6e02a9c85f37708a3478fd84b010fe4258866430ad7c89b839ab43e458",
-      "size": 115432
+      "sha256": "ea581222415668a888fec01ce4a79e4a7974f0a6084b3d36b07ba2e209edcb8c",
+      "size": 116148
     },
     {
       "path": "source/original/wlad/Tc_gobj.cpp",
@@ -757,13 +757,13 @@
     },
     {
       "path": "source/original/wlad/Td3dshad.cpp",
-      "sha256": "0e42ff7fe6ea7d331fbcaa432706d4bcb974b0c46ef03a7310585c8c5f556397",
-      "size": 84189
+      "sha256": "dadba01345d42eaba871df1525fcdce06226050b841b10d58a5120b98a1a15ff",
+      "size": 84263
     },
     {
       "path": "source/original/wlad/To_boat.cpp",
-      "sha256": "6787c8dc8a118f240d03a68a24d5fe5cc078ce01051c2867d02b0115cfe69749",
-      "size": 951130
+      "sha256": "84513a1d70a51b2d272499a6d3ef5e33b3564175dd97bd48d790782ec523de35",
+      "size": 952731
     },
     {
       "path": "source/original/wlad/To_dump.cpp",
@@ -782,42 +782,42 @@
     },
     {
       "path": "source/original/wlad/tc_grp.cpp",
-      "sha256": "4582334202a6291a2ab6f5069f8ba624aa3fdd111960d285af39f002d6f83dee",
-      "size": 22968
+      "sha256": "08c1b2962ee3891e2b6d866d07a9660f269d5669db947dcb3dba32557ca16373",
+      "size": 22956
     },
     {
       "path": "source/original/wlad/to_allpl.cpp",
-      "sha256": "fb48ee0478934393d518dc450c4f26d5d3e64689e1edf041ca369ba15f54d550",
-      "size": 698573
+      "sha256": "6beb20429b7da1e67c6f0318edef1a90c93681d3b38e262620011635dc3c6450",
+      "size": 700326
     },
     {
       "path": "source/original/wlad/to_grpb.cpp",
-      "sha256": "0b42626b9eb67081ebd3bea36124e6f3b8ab428adeec9a99869ee69b7ba3d809",
-      "size": 368814
+      "sha256": "ba062cac35972d52fda1a307e49ad5fb7636b801aac7f3d1be753e250665a3a4",
+      "size": 368676
     },
     {
       "path": "source/recovered/by_address/0040.cpp",
-      "sha256": "fb7f2bba40502080ff4f4818feeae05600f9533c52cac62f131239e4d7a71c20",
-      "size": 52254
+      "sha256": "b028189cbd455593a4d83da2a2f00fe609623be0b370607b92c20499fc8cc61f",
+      "size": 51482
     },
     {
       "path": "source/recovered/by_address/0041.cpp",
-      "sha256": "4ca780de398867e9d058f156dcbbb9f671dc134085ff259018c1fd1885c56e42",
-      "size": 163858
+      "sha256": "1026d6e41eec001e80dd9da2e4a2a86cf1648a811aac813c720f9df537f17aaa",
+      "size": 164488
     },
     {
       "path": "source/recovered/by_address/0042.cpp",
-      "sha256": "814f2ea369db78562bf92231ffe1758deb933c7b71c0d2dad90438101055f0c7",
-      "size": 48252
+      "sha256": "42bf844381791223dd05cfc46c249d633afaeafbd8e83d54236e38516a46057d",
+      "size": 48388
     },
     {
       "path": "source/recovered/by_address/0043.cpp",
-      "sha256": "178301b0e86cb180004fbbb586d42818cee1ece3e41b944cd52c111a8f97e072",
-      "size": 66689
+      "sha256": "0318d9d395d7584ff7e666ae491ae373d46d13921a5a9a2a5fe0451f7de72e02",
+      "size": 70319
     },
     {
       "path": "source/recovered/by_address/0044.cpp",
-      "sha256": "e43287df65a91dc9762fe18f114745f695d383412291a508d7f6cb5750dc9849",
+      "sha256": "ed18e81548183dedc191c89b34600b2dbf4dbf5a02e7a289957cd98c0163df08",
       "size": 55798
     },
     {
@@ -827,8 +827,8 @@
     },
     {
       "path": "source/recovered/by_address/0046.cpp",
-      "sha256": "b198296cb30eaf47fcee42301bc3c8f8af804fbcff7368c8c0603585b9e9339d",
-      "size": 76081
+      "sha256": "883cb89324a9c28d5b4d539cf933f09a8a492770ce9979697d641569fc7fd9ff",
+      "size": 75994
     },
     {
       "path": "source/recovered/by_address/0047.cpp",
@@ -837,38 +837,38 @@
     },
     {
       "path": "source/recovered/by_address/0048.cpp",
-      "sha256": "2a6ba511ea5ff064fc1c96b0aad04ebfeed8e57d7441ef61658cba882e5840bc",
-      "size": 161337
+      "sha256": "6d8b873f6f6b7e81a76e263c7d07b279d2db219e62cbd37e274315798a3c4678",
+      "size": 161754
     },
     {
       "path": "source/recovered/by_address/0049.cpp",
-      "sha256": "aa33998510670798cc7c912f4732916abc4557af13a411cd1e0b742bac40311e",
-      "size": 109680
+      "sha256": "c58c47ba8f91bc29194a8a049f0d137066d0e4905c1c996f735880c9f888472a",
+      "size": 109702
     },
     {
       "path": "source/recovered/by_address/004A.cpp",
-      "sha256": "3b5498f2ab19b9e4c32548b893cac8702b2b3376c1e97912b83eb62b90e13106",
-      "size": 99901
+      "sha256": "7f6351ba70c50f6d3c973adfe6136fb9b6f816b559245a623c05186a7e138187",
+      "size": 100315
     },
     {
       "path": "source/recovered/by_address/004B.cpp",
-      "sha256": "38733431ff41e004f90da2de094812f540a50d79a860df495dd8f94c6e235ef5",
-      "size": 115087
+      "sha256": "98d88414bda5110bad8c1ce6c29e00329a7a5ead6bebf076ae1a3b89ea5b1f2b",
+      "size": 114585
     },
     {
       "path": "source/recovered/by_address/004C.cpp",
-      "sha256": "5bbaf6692f72200bc2aad28246593226612942672d21f7449e6fca2617080247",
-      "size": 106346
+      "sha256": "eae3bfde2d10b392b788e8035d29c5c8d84ed9ac63329acefd162078d8c8f2b0",
+      "size": 106626
     },
     {
       "path": "source/recovered/by_address/004D.cpp",
-      "sha256": "302db31f7180839448f286e9ce69780d3556bcc16a615f739c7f491543da61e4",
-      "size": 193707
+      "sha256": "ea65cd48ef48ff49359726ac5c21325d34c3c8c4c4004a61e9836d91b4452f1b",
+      "size": 194222
     },
     {
       "path": "source/recovered/by_address/004E.cpp",
-      "sha256": "e3daade74711589f7cc4393ee6e18047a791309b0e69bd64d08aa7515a3feb15",
-      "size": 229282
+      "sha256": "eead882b56fc7dd18bdedaa0f2f7d5d08b3bb4007b688af87fef0a54eedcbd1c",
+      "size": 231141
     },
     {
       "path": "source/recovered/by_address/004F.cpp",
@@ -877,18 +877,18 @@
     },
     {
       "path": "source/recovered/by_address/0050.cpp",
-      "sha256": "750c6412e1e417a3fa29f981494a16c52f536e9565b5d4a4a8a9330bc003d280",
-      "size": 7339
+      "sha256": "9f88adb31118dedf2865b1ae02a676a799937451ce30be09ee425c5feee8d4e5",
+      "size": 7433
     },
     {
       "path": "source/recovered/by_address/0051.cpp",
-      "sha256": "f60e8d724849cbe226b42ab1369fc0d7b877b17c25bc32040d45dc92212a8571",
-      "size": 5491
+      "sha256": "2bfd493f24b215929d97565cb5662648720df9d07dc7263b6a139bdcae129bf2",
+      "size": 5418
     },
     {
       "path": "source/recovered/by_address/0052.cpp",
-      "sha256": "cf91cd11dd208ecdeb5477c1ac71ae50189a88b282921346fd1cbfb7f92dec2a",
-      "size": 140491
+      "sha256": "93368710af5dceec601464515f04a1f697b2d420787dcc0af5e7002062844907",
+      "size": 140497
     },
     {
       "path": "source/recovered/by_address/0053.cpp",
@@ -897,28 +897,28 @@
     },
     {
       "path": "source/recovered/by_address/0054.cpp",
-      "sha256": "e679fc7445b501d5df621bed55eb788bbfb1442f62a07a6647088f9d0b8dc892",
-      "size": 47865
+      "sha256": "9c465d860942f01f6c740099bb097c56549993097d586c594d8bfcfe25aeadeb",
+      "size": 47971
     },
     {
       "path": "source/recovered/by_address/0055.cpp",
-      "sha256": "4277fed209931f9714cabeaf0c94ebb5785648d4265a0ed5726e10a35b4a8aea",
-      "size": 122469
+      "sha256": "0374afd994eaa5533a9ee5d8dde0f2f8ffb87ae33774cf126fbe881dbac8711d",
+      "size": 121638
     },
     {
       "path": "source/recovered/by_address/0056.cpp",
-      "sha256": "8d82495e274447df7ea929b78711a70144ae87e0b9cb92adb05921a8ad8c6e24",
-      "size": 102084
+      "sha256": "071c0686c8fa547629ba6398ff2f6f4cd5bf52e86d6510ca516d0d0bd9fc9b3c",
+      "size": 101960
     },
     {
       "path": "source/recovered/by_address/0057.cpp",
-      "sha256": "1347ec1e242309d137e20fa8333cbab28e68b60dc777e76e34f0aa439aa03ff5",
-      "size": 130364
+      "sha256": "0e1cb0e5029832ef36d4b8af0321f17bdc23148cad4feedab23aab43cd54a359",
+      "size": 130900
     },
     {
       "path": "source/recovered/by_address/0058.cpp",
-      "sha256": "54bed8508a756c7422593fcd89af83d72916765b1bae7178b7ccbb10c36b9457",
-      "size": 152286
+      "sha256": "e57bb50f29a01ab6e70ea660f0ae04963d28550187216d7779db2460ee49dc31",
+      "size": 153684
     },
     {
       "path": "source/recovered/by_address/0059.cpp",
@@ -932,8 +932,8 @@
     },
     {
       "path": "source/recovered/by_address/005B.cpp",
-      "sha256": "c659a30cb831186d58cc416a09779061615d3f94534e46d60217e4419a5cf740",
-      "size": 15023
+      "sha256": "501c4020b79b50a4d40f053691eca8bead448537ae7cdd6a5a088b7e00819331",
+      "size": 15159
     },
     {
       "path": "source/recovered/by_address/005C.cpp",
@@ -947,43 +947,43 @@
     },
     {
       "path": "source/recovered/by_address/005E.cpp",
-      "sha256": "644b0db1cf49576bdd04dc3c3cd1438d61dda008c5436b2ecbd70ce1340f7100",
-      "size": 74367
+      "sha256": "bd1e2f05b1957f1923830de05ca019a0b0b8074400b257707fbd95b480912608",
+      "size": 73894
     },
     {
       "path": "source/recovered/by_address/005F.cpp",
-      "sha256": "2b28fb6789cc6c01a00ecb71449813e43a9c10d08483fb2bfc861827d9604bc5",
-      "size": 153778
+      "sha256": "687d83f137bb26b3445e7c8905a812720a0541717c9ba1fab728d81bec6fb765",
+      "size": 153846
     },
     {
       "path": "source/recovered/by_address/0060.cpp",
-      "sha256": "6ce9b9035a8cc440fb1ef3ba5f8942af4f0450929a528b40d0f29a99b040866c",
-      "size": 221839
+      "sha256": "61cff247ea47ae0b69e74da2e77438754f270ca7339fda985ea3467b99cf271a",
+      "size": 222744
     },
     {
       "path": "source/recovered/by_address/0061.cpp",
-      "sha256": "67d9d3a116a4f9946c58c6aba6a497f63e19cab3f345d2bfb446ab939e5322f1",
-      "size": 192523
+      "sha256": "59d3a8eb2b888d685bb317352baca288599f756385504b4fa2d5af24036dac72",
+      "size": 193112
     },
     {
       "path": "source/recovered/by_address/0062.cpp",
-      "sha256": "5d5df07defde2661c89d08069440674445bdc5d7776d08a53835e7652a661ae2",
-      "size": 139599
+      "sha256": "12522501ce8fe23bb9ef64363fcf16707b431c9a8217577abc232bfd057b25ca",
+      "size": 140244
     },
     {
       "path": "source/recovered/by_address/0063.cpp",
-      "sha256": "8dd2336332fd9ad0eef9603b5bd7410c394de4e1f21411a92954a0451b87ae46",
-      "size": 284587
+      "sha256": "6608c83df299b9cfcc5bbb86737141b2a9582c7b619ac0ef67595e805378dcce",
+      "size": 285529
     },
     {
       "path": "source/recovered/by_address/0064.cpp",
-      "sha256": "7bb61cf4f086976e28ec97bb8b29d2992f3bbe7d9192b8cca409d2201a399c82",
-      "size": 111158
+      "sha256": "73a4054edacfe0b107987c18591c70e9bb04ca15de3ea501c2c45fc4c3f70946",
+      "size": 111516
     },
     {
       "path": "source/recovered/by_address/0065.cpp",
-      "sha256": "c6df59d64638425e2044f97ad2696c2d7213647849d9c1ce4aad18ad6df3a34a",
-      "size": 105473
+      "sha256": "f4214b52a7a49c09115c72c83b05abd4c857c0c6047995370d16652a7ed7064b",
+      "size": 106333
     },
     {
       "path": "source/recovered/by_address/0066.cpp",
@@ -992,78 +992,78 @@
     },
     {
       "path": "source/recovered/by_address/0067.cpp",
-      "sha256": "c923677f8b6a6b378180d2e2ee948b99d3e9a657e77c139c98c46da0c30d69fe",
-      "size": 169584
+      "sha256": "3cc9c0f61714230ee6bcc2215b3530d36d2b2e7ede9408915a1bf8419d022831",
+      "size": 168827
     },
     {
       "path": "source/recovered/by_address/0068.cpp",
-      "sha256": "8841940f1d179e5228c771826416f6b2434b9bbb57d2d94d14409c48b94d272c",
-      "size": 71381
+      "sha256": "aa8d849126305c155109eb08f7adc9d422382e8532bac9be8f8f5b5cb3c4f945",
+      "size": 71150
     },
     {
       "path": "source/recovered/by_address/0069.cpp",
-      "sha256": "cc1c8876a3e9837cee73b7b452f803bda3c94a681079523eed35866ab13227f8",
-      "size": 163229
+      "sha256": "3889b523acb192b2be7dd8fa66a19cfa9e83090076cb7efa729e837a4dc95110",
+      "size": 162333
     },
     {
       "path": "source/recovered/by_address/006A.cpp",
-      "sha256": "01a1153cf81ebe961a597f299bfb620459ff2535dea45772087b0810bd1081a7",
-      "size": 222756
+      "sha256": "8a026668259c8811a66b92c78ef30718cb2a7632900a8bdaf6ba96361a188df7",
+      "size": 225641
     },
     {
       "path": "source/recovered/by_address/006B.cpp",
-      "sha256": "789568c39b28eb5b56de7168ca772907da1288117368057e470bb7cd11028a22",
-      "size": 236496
+      "sha256": "748dc85a10b008647ce3537dbd129235d5f99102b5ac4da3c36a8828c6959e2c",
+      "size": 237641
     },
     {
       "path": "source/recovered/by_address/006C.cpp",
-      "sha256": "2acd338af04a67a006601c2987c701302eb15b202cdf6c912f7e1b366f64a344",
-      "size": 303082
+      "sha256": "8d8c52175932c54d1c662a6e8da3261777f1b1375912fccb7adba786d382b475",
+      "size": 306174
     },
     {
       "path": "source/recovered/by_address/006D.cpp",
-      "sha256": "27123abbc5dbc7ace908439911e8f7df91a13b8bc7ebf7f5b2eef44ab5bede31",
-      "size": 401020
+      "sha256": "9e18ae512e965c67b07cb47ba49e85747f7cc0cd7a51d6aa446b8a6fc83cd2e7",
+      "size": 379280
     },
     {
       "path": "source/recovered/by_address/006E.cpp",
-      "sha256": "7bed3411d604d689afaa1a46624e4228d5663d37840adc20bd02f5cf1aa8c1fd",
-      "size": 63402
+      "sha256": "16550fa2969e4387e0f23070e64c22712a767921223f4b69de3f76b242090956",
+      "size": 64228
     },
     {
       "path": "source/recovered/by_address/006F.cpp",
-      "sha256": "e9daef5ee2eb005933b27e58763b8402e1339251a19ca068c582e59126dc7108",
-      "size": 384540
+      "sha256": "c60ad7ef331b42c1359c680e10d18f9ddc1f338b834b1812511da3b2c9b674b2",
+      "size": 390996
     },
     {
       "path": "source/recovered/by_address/0070.cpp",
-      "sha256": "dda17bda3443463a9cf40dedafc66e17c5d1bdb827979c974aafd4b02ef9ccfa",
-      "size": 326355
+      "sha256": "7527405cf65fbf2e6980b5ae02dad0081cec8e48cea615e62e5bc9bc99c5e396",
+      "size": 316837
     },
     {
       "path": "source/recovered/by_address/0071.cpp",
-      "sha256": "ea739b1587ada28e06476cce747a68ac12fd1605967cfc1c0281136cdcc3ca4f",
-      "size": 94929
+      "sha256": "3e895471c0d8e7da7d555814c08aab71488caca01c744274e8c0fb5eb55b0c10",
+      "size": 95207
     },
     {
       "path": "source/recovered/by_address/0072.cpp",
-      "sha256": "95c429ee044a69e2217430e01f274fc88fceb85a130b934000927f21a042da57",
-      "size": 142505
+      "sha256": "3c47456d60f29449ee9987195987b95f4103308e61f870b45541d3f11b34e52b",
+      "size": 141497
     },
     {
       "path": "source/recovered/by_address/0074.cpp",
-      "sha256": "4dfabf274d530f0e0d0e6497f10785aa4ee756021fc93de5651c73857233ecee",
-      "size": 436451
+      "sha256": "726957845841a6d4218c7793dc3e5f25382145a84b020ec703691eb9d4f2a678",
+      "size": 437120
     },
     {
       "path": "source/recovered/by_address/0075.cpp",
-      "sha256": "6f428270dbdc31ad37321f175be2191244ae5b46684ae020ba75f6e7a1c43f4e",
-      "size": 208493
+      "sha256": "f617bb9aa2a8f96a0e080b3374bf78b0fc9dd0627f523a8a91f5d7078db23a25",
+      "size": 209203
     },
     {
       "path": "source/recovered/by_address/0076.cpp",
-      "sha256": "a7c84c46e8ea1e1f29c9d9e686ad432fbbbc62362384dd410d97d0a086528536",
-      "size": 28427
+      "sha256": "ddc4f5b8394acf6deb94893937013d8934e64ca0b5f0b629ea3252728973b3c1",
+      "size": 28841
     },
     {
       "path": "source/recovered/by_owner/AiBossClassTy.cpp",
@@ -1072,13 +1072,13 @@
     },
     {
       "path": "source/recovered/by_owner/AiEventClassTy.cpp",
-      "sha256": "6a1598eb8817fb694553b8749b71e1108c3adae8a7a76654c4e994435897a731",
-      "size": 14744
+      "sha256": "105cadd9a38a287ac15f4305ac42dc094223eab28e696952101d52477c218789",
+      "size": 14656
     },
     {
       "path": "source/recovered/by_owner/AiFltClassTy.cpp",
-      "sha256": "7a0a5a5adbce2cf7dc685e372edc095c7ccc26dadbe655af8b5c673f8f3a5629",
-      "size": 114860
+      "sha256": "360c72503661634185d35dc91c0c2e6e7bd3da66c12a27f56044e8a518f99d38",
+      "size": 114829
     },
     {
       "path": "source/recovered/by_owner/AiPlrClassTy.cpp",
@@ -1122,8 +1122,8 @@
     },
     {
       "path": "source/recovered/by_owner/CGenerate.cpp",
-      "sha256": "ba4149fd9930ea66a52c16b3b6c131f643d9890f87b6af70757f698796dec1a2",
-      "size": 209530
+      "sha256": "963dda27902cd53530a6dd5ff88ec966882623cba6308e435e2b415639ea1901",
+      "size": 209959
     },
     {
       "path": "source/recovered/by_owner/CPanelTy.cpp",
@@ -1177,13 +1177,13 @@
     },
     {
       "path": "source/recovered/by_owner/HelpPanelTy.cpp",
-      "sha256": "ce1b55bb0f303d5d02a3863c45555358f58b9af7e37cda1219c1b87ebd0b7896",
-      "size": 14714
+      "sha256": "052c46f19b22c8b25e2aeb9a300a5ddd6b0c3d41219708cdde2f23979860e309",
+      "size": 14742
     },
     {
       "path": "source/recovered/by_owner/HelpStringTy.cpp",
-      "sha256": "370ea2cceedf68605207d17cde886d447fde7b49f97b1190072f934f2675a2ee",
-      "size": 1994
+      "sha256": "7c0af8e4a9df634c33a73e8608b652950156653ceeef2083e6f0e78df2bf8df2",
+      "size": 1907
     },
     {
       "path": "source/recovered/by_owner/InterSystemC.cpp",
@@ -1227,8 +1227,8 @@
     },
     {
       "path": "source/recovered/by_owner/MoneyTy.cpp",
-      "sha256": "6898464c0b719a02c9cbc10e1596faa46d209650f3fcec89b8d6c41213986367",
-      "size": 12848
+      "sha256": "398bfc11c6a6ba096697ccf4f20355a60605f2da8453e7a7b189a053686c4eb6",
+      "size": 12984
     },
     {
       "path": "source/recovered/by_owner/OptPanelTy.cpp",
@@ -1237,8 +1237,8 @@
     },
     {
       "path": "source/recovered/by_owner/OpticClassC.cpp",
-      "sha256": "98432cd6ac356f13393f9336be25b9598335a87e41e46e870cdef326cd841f5c",
-      "size": 3315
+      "sha256": "add19ee4a32e86fd5237ec66462085b47465f29522846d13307c195c06ec372c",
+      "size": 3451
     },
     {
       "path": "source/recovered/by_owner/PlayPanelTy.cpp",
@@ -1262,13 +1262,13 @@
     },
     {
       "path": "source/recovered/by_owner/ST3DSMAPContext.cpp",
-      "sha256": "343a6bb9094a94774bd84bad54c9fc202e8a82e2c72a4967463043ca12b72565",
-      "size": 141704
+      "sha256": "dad29662ef506588c51806e9efe18d1599874e39a101d51e37397983eb077745",
+      "size": 142310
     },
     {
       "path": "source/recovered/by_owner/STAllPlayersC.cpp",
-      "sha256": "c7ca230648477e989ea87a89c9d16910ce493c8c67ab1862b85433af849ff225",
-      "size": 25853
+      "sha256": "0731d2c5956c242ad6865c0a5f1bfb610fd1f2b94d26cfc8734437c1ce23e00b",
+      "size": 25795
     },
     {
       "path": "source/recovered/by_owner/STAppC.cpp",
@@ -1282,13 +1282,13 @@
     },
     {
       "path": "source/recovered/by_owner/STBHEShellC.cpp",
-      "sha256": "5243c420e8300575c2c5df6d2309ad65818744de6ff4d1d456eb8194b539901e",
-      "size": 39523
+      "sha256": "31e088b35eaad3261b25749457466169b5997ff0d83cd415323d49f2f9590159",
+      "size": 39999
     },
     {
       "path": "source/recovered/by_owner/STBoatC.cpp",
-      "sha256": "17dac687e47bb96f47661bf8d247e1e9175f259614f5a12cbc2b837dc502114a",
-      "size": 87845
+      "sha256": "24907da15c0f455581ca736225e78cf7434840698e31e3192392a4b99187814c",
+      "size": 88073
     },
     {
       "path": "source/recovered/by_owner/STColl3C.cpp",
@@ -1317,8 +1317,8 @@
     },
     {
       "path": "source/recovered/by_owner/STExplosion.cpp",
-      "sha256": "e61aaf008bf8db030b4f58b29d36ea22b6e5e09bf469940876042d425dcb6b1c",
-      "size": 21948
+      "sha256": "7cebfc09db88ac54da82eeac426efc9689d19a3e9650fc51504b599c64221a20",
+      "size": 22216
     },
     {
       "path": "source/recovered/by_owner/STFieldC.cpp",
@@ -1332,8 +1332,8 @@
     },
     {
       "path": "source/recovered/by_owner/STGameObjC.cpp",
-      "sha256": "cd6e15dd5ca4eca1af050a922997defd73802289c2eb501b0250623aee85591e",
-      "size": 49981
+      "sha256": "d1fac4a718b5e3039f8455a72bf5a5c596cbfa6c29364ddc1455d1e3874ab430",
+      "size": 47990
     },
     {
       "path": "source/recovered/by_owner/STGroupBoatC.cpp",
@@ -1357,8 +1357,8 @@
     },
     {
       "path": "source/recovered/by_owner/STJumpMineC.cpp",
-      "sha256": "65793fb84155530e3251123df38944a0f64061daf7dc446fa8379cc1ef6a0627",
-      "size": 40968
+      "sha256": "5434e2566eb864e203af429d85edf674b8191ca805083f319968a7b475b7803a",
+      "size": 41030
     },
     {
       "path": "source/recovered/by_owner/STLBombC.cpp",
@@ -1367,8 +1367,8 @@
     },
     {
       "path": "source/recovered/by_owner/STLightC.cpp",
-      "sha256": "92daf68ca6644e52fec723c2180c868143da82926b3165bd1e5f2b161f41f321",
-      "size": 19514
+      "sha256": "1f3653bff10ee8c77ae475aed75e8d9a09526f95e64db63b280463d58fbb009a",
+      "size": 19788
     },
     {
       "path": "source/recovered/by_owner/STMBombC.cpp",
@@ -1382,8 +1382,8 @@
     },
     {
       "path": "source/recovered/by_owner/STManRub3C.cpp",
-      "sha256": "35cd47a0ce2e308e58fca12b81d6c452901c600075771ed5a53f3accd2a4b4b6",
-      "size": 6997
+      "sha256": "208256d85328ebd537a3b9e9f17dffec237bed45c80c185cdf50f57279ff97aa",
+      "size": 7197
     },
     {
       "path": "source/recovered/by_owner/STManRuinC.cpp",
@@ -1392,8 +1392,8 @@
     },
     {
       "path": "source/recovered/by_owner/STMineSetC.cpp",
-      "sha256": "3418366e38c65915df3cb99fbe906795b4d9e3c8dda48781d6f24f93839e2421",
-      "size": 51361
+      "sha256": "33e8008022e77d5df14ae92d870723cf691554271db1ac9b6ebb86bd5c1f55a3",
+      "size": 51478
     },
     {
       "path": "source/recovered/by_owner/STOctopusC.cpp",
@@ -1497,8 +1497,8 @@
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004248D0.cpp",
-      "sha256": "96977c43287669853789043cecea48cd1a8dad6195dee1be81631cf820642982",
-      "size": 16131
+      "sha256": "434e09920ad888b089543d0c4512a260b617d4130057c9ba3f8fcc822e4328d8",
+      "size": 16040
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004603B0.cpp",
@@ -1522,28 +1522,28 @@
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00601500.cpp",
-      "sha256": "b6988fcce660592c13f62f54cefa75275fcf64944f8ee0bf1abcaaac5581fd8e",
-      "size": 9422
+      "sha256": "5b29fc56fbe55869a8c7fc7e9a1bf2fac08a626551a37f115f9904f9b60dba47",
+      "size": 9625
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40.cpp",
-      "sha256": "b7d48c13a5bed87df1555939a8bfce3ff3286b72c74ce3d5a75645eebbb708c5",
-      "size": 16549
+      "sha256": "fe4359e6616baff9640a05a4da90528858fa0a3257a287905509f9c2b8baf662",
+      "size": 20724
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00636260.cpp",
-      "sha256": "67319860f2db06489431048b924c6c7ee7b7a53df66835d8991847c985a5e76f",
-      "size": 6888
+      "sha256": "6b262b2742b3a6a421abda2447331935fff363790c6bce84bcd308bb518ef529",
+      "size": 6822
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00644410.cpp",
-      "sha256": "85159dea608d72950eb264b5af22682b05226dc3d59c24732f75a34b093537c7",
-      "size": 20366
+      "sha256": "ac7b85d174e433829702a81750ac38b33b970d5421025cfa055d07ba77d31448",
+      "size": 20106
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970.cpp",
-      "sha256": "af5b3e6ebda7e27ea41918cef9460d11a18f902d27e0b52854801c42b5007391",
-      "size": 41878
+      "sha256": "6381629e8b075902363bf76bb5fd1a2b7250b61ab75b32ad1bed8d5dd0043ff9",
+      "size": 42283
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0065DA50.cpp",
@@ -1552,8 +1552,8 @@
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0065ED90.cpp",
-      "sha256": "00680ff2d890041d90a4fb94955db2318039b3ca7d530b5c7161039c954a6d4f",
-      "size": 2749
+      "sha256": "12d228473c85034f41341f97751a81b89cad17c47dac14944af7104d2f20f33d",
+      "size": 2611
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00664540.cpp",
@@ -1577,13 +1577,13 @@
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_006F31D0.cpp",
-      "sha256": "104a862943507f552adb4c7afb89eeeded4f61fecc8580a4e87d35c25048f39a",
-      "size": 60422
+      "sha256": "6510fc927fe1c588a77d6f8fd3b1f4f66a368b49f8b7e96c37ebaebec41c452e",
+      "size": 60374
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00702510.cpp",
-      "sha256": "bcac519239d2268959069167ccb4bf0e48d5e3cdb37d03fe0d96e4df6cabef85",
-      "size": 13283
+      "sha256": "14a640b61fd819076d50f0e50ed6b5b0a1d4c9f44822032724f12829162ae06a",
+      "size": 13423
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00714CE0.cpp",
@@ -1592,13 +1592,13 @@
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00727C80.cpp",
-      "sha256": "958eb95a91b7c2b12e9c64fd37a63e19bd95a6a7b5468a420f0f025ec908d3ce",
-      "size": 13644
+      "sha256": "111d6e3f6cebb58afefb07bb101dca21fe8ac938a7701654f1e33cb7c675dd58",
+      "size": 13881
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00728640.cpp",
-      "sha256": "3a4e25f6a119b1a0bbf4d37ed10f966eb46ab5edebf0d859c23a31ca778c7401",
-      "size": 8935
+      "sha256": "ff9ebf875d6143141dafa3336895605bc30311de4cb6d29cbdfa64a7e8f9dc96",
+      "size": 9041
     },
     {
       "path": "source/recovered/by_owner/SystemClassTy.cpp",
@@ -1612,8 +1612,8 @@
     },
     {
       "path": "source/recovered/by_owner/TLOBaseTy.cpp",
-      "sha256": "f014e583587c755e21a39c939fe723e6f1e858e243e983cb3adf9409054b2459",
-      "size": 186882
+      "sha256": "01a6cf7acc842989f27d290cb7788579082e1e85ed751bdef3c1f54ec86cbdca",
+      "size": 187242
     },
     {
       "path": "source/recovered/by_owner/TLOBldMark.cpp",
@@ -1647,8 +1647,8 @@
     },
     {
       "path": "source/recovered/by_owner/VisibleClassTy.cpp",
-      "sha256": "a9d53dfc4939663858d26f4256d799e5694c3e1d1e5d3828edfedc34aaf66a65",
-      "size": 63164
+      "sha256": "914c31868fa3c1edf8b68c57743edc837480fb6aa42ac1ae620167e772c81b3a",
+      "size": 62944
     },
     {
       "path": "source/recovered/by_owner/WaitTy.cpp",
@@ -1662,18 +1662,19 @@
     }
   ],
   "function_identity": "entry_address",
-  "generator_sha256": "f66429c382cc58ceced2c6ea664268dae5f3ee01f2794f34545cf0984d617f9f",
+  "generator_sha256": "fd2990105dac82113706b65ed8ad94b06da2543c834a7f033cd2953f11d52a1d",
   "input_files": {
-    "call_relations.jsonl": "48b99cc779d1e51727bf01788aa95e9187ea579da51b536718ab369c970f2dca",
-    "functions.json": "f0a79bc7802b61ee7f9349739700cc36c49572ca6cf88f2bc43160416821e178",
-    "globals.jsonl": "ff1103ab053a744b458d8baf582c3c897c4fe69800d606f6c7f1cda15254f1ae",
+    "call_relations.jsonl": "246a795d0a8aebed4c46a944b2f8b8a7c705c81a4100c439c842afe5e9ca1676",
+    "functions.json": "fbe4e86a02fd6b7b74c95cae7aad968246d3680f3050d2f4710dfd6b887e321d",
+    "globals.jsonl": "a07d70187d8377e1b240a5b5f148c00b2ded0fe9b83393c0105b7b6381cbda68",
     "imports.json": "1292ae0f2b3d533808f0452471962f3c57fcf6e7d36043f54df1ab6db32f9092",
-    "manifest.json": "0c74fa4297a743f7e423b089334381efd2f5051b4502b55046916c896d19036f",
-    "pseudocode_runtime.h": "d28c7cfa02c9b20ad395c60de79c9a6281a62e5488e85153e85dc8dc901e022d",
-    "types.jsonl": "c894d17d15b18eb4a9f110ae24381aebe601226af8b63d9cf7475d8a0badaa2d"
+    "manifest.json": "4cfa3a9f97a05ffcef736e9e0653fbf0531c142fe45eda7af6b3775cc211ab73",
+    "pseudocode_runtime.h": "e862abf02069a82b42314c50a439d81f7c9b31529c2ec493c0590f99e8e9196d",
+    "strings.jsonl": "af7f49fc202ec99f463ea140b4981d3178ae744881683ed3db9fb55e6c903525",
+    "types.jsonl": "66f3b5cef73f2507f4f999a695b14cb2fd02c6db2925d2ef90e703ce669ad68f"
   },
-  "input_manifest_sha256": "0c74fa4297a743f7e423b089334381efd2f5051b4502b55046916c896d19036f",
-  "program_semantic_sha256": "1f669587552e8e1c36194655261ec8115e211916c56b2db8bdcfc4d78e15cd67",
+  "input_manifest_sha256": "4cfa3a9f97a05ffcef736e9e0653fbf0531c142fe45eda7af6b3775cc211ab73",
+  "program_semantic_sha256": "f5a831a90f31a838d0544d14c8d8bb95976a1aecae7346b11867562ab0027971",
   "schema": "st-source-tree",
   "schema_version": 1
 }

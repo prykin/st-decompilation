@@ -38,7 +38,7 @@ undefined4 __thiscall st::fn_005121F0(void *this,Global_sub_005121F0_param_1Enum
   uint uVar3;
 
   uVar3 = 0;
-  if (*(uint *)sizeHelp_exref != 0) {
+  if (*(uint *)PTR_sizeHelp_0085c118 != 0) {
     pGVar2 = (Global_sub_005121F0_param_1Enum *)(STField<int>(this,0x1c7) + 9);
     do {
       switch(*(byte *)((int)pGVar2 + -1)) {
@@ -103,7 +103,7 @@ undefined4 __thiscall st::fn_005121F0(void *this,Global_sub_005121F0_param_1Enum
       }
       uVar3 = uVar3 + 1;
       pGVar2 = (Global_sub_005121F0_param_1Enum *)((int)pGVar2 + 0x11);
-    } while (uVar3 < *(uint *)sizeHelp_exref);
+    } while (uVar3 < *(uint *)PTR_sizeHelp_0085c118);
   }
   return 0;
 }
@@ -121,7 +121,6 @@ HelpStringTy * __cdecl st::fn_0051F860(void)
 
 {
   HelpStringTy *this;
-  int iVar1;
   char *pcVar2;
 
   this = (HelpStringTy *)st::fn_006B04D0(0x132);
@@ -135,11 +134,7 @@ HelpStringTy * __cdecl st::fn_0051F860(void)
     this->field_011E = nullptr;
     this->field_012A = nullptr;
     this->field_012E = 0;
-    pcVar2 = &this->field_0018;
-    for (iVar1 = 0x41; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *(undefined4 *)pcVar2 = 0;
-      pcVar2 = pcVar2 + 4;
-    }
+    memset(&this->field_0018, 0, 0x104); /* compiler bulk-zero initialization */
     return this;
   }
   return nullptr;

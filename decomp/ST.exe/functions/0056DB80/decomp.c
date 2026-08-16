@@ -139,11 +139,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     }
     local_8 = (STAppC_field_1180State *)&pSVar11->field_7D1A;
     g_cMf32_00806758 = nullptr;
-    pcVar12 = (char *)local_8;
-    for (iVar10 = 0x20d; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *(undefined4 *)pcVar12 = 0;
-      pcVar12 = pcVar12 + 4;
-    }
+    memset((char *)local_8, 0, 0x834); /* compiler bulk-zero initialization */
     puVar7 = cMf32::RecGet(g_cMf32_00806754,0,PTR_s_ORIG_DB_0079b088,(int *)&local_8,0);
     if ((puVar7 == nullptr) || (local_14 = &pSVar11->field_7D1A, pSVar11->field_7D1A == '\0'))
     {

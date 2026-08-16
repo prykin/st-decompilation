@@ -25,7 +25,7 @@ int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_
   do {
     pAVar2->field_000C->field_001C = local_8;
     iVar7 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)pAVar2,iVar7,(int)local_8);
-    param_1 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
+    auto param_1_after_write = (AnonShape_00755970_4FB144E0 *)0xffffffff; /* compiler stack-slot lifetime split */
     pAVar6 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
     pAVar3 = nullptr;
     if (0 < *(short *)(iVar7 + 8)) {
@@ -39,7 +39,7 @@ int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_
           uVar4 = FUN_007575b0((AnonShape_007575B0_A94973CA *)pAVar2,param_2,
                                (ushort *)((int)&pAVar8[1].field_0008 + iVar7));
         }
-        pAVar6 = param_1;
+        pAVar6 = param_1_after_write;
         if ((int)uVar4 < 0) break;
         pAVar6 = pAVar8;
         if (uVar4 == 0) {
@@ -57,7 +57,7 @@ int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_
         pAVar3 = (AnonShape_00755970_4FB144E0 *)((int)&pAVar8->field_0008 + iVar5);
         *(AnonShape_00755970_4FB144E0 **)
          (&pAVar2->field_000C[1].field_0xe + (int)pAVar2->field_000C->field_001C * 8) = pAVar3;
-        param_1 = pAVar8;
+        param_1_after_write = pAVar8;
       } while ((int)pAVar3 < (int)*(short *)(iVar7 + 8));
     }
     *(AnonShape_00755970_4FB144E0 **)

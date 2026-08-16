@@ -21,18 +21,18 @@ int FUN_0074706a(int param_1)
     piVar1 = (int *)(param_1 + -0xc);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (**(code **)(*(int *)(param_1 + -0xc) + 0x18))();
-    param_1 = 0;
+    auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
     if (0 < iVar3) {
       do {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        piVar4 = (int *)(**(code **)(*piVar1 + 0x1c))(param_1);
+        piVar4 = (int *)(**(code **)(*piVar1 + 0x1c))(param_1_after_write);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar4[6] != 0) && (iVar5 = (**(code **)(*piVar4 + 0x18))(), iVar5 < 0)) &&
            (-1 < local_8)) {
           local_8 = iVar5;
         }
-        param_1 = param_1 + 1;
-      } while (param_1 < iVar3);
+        param_1_after_write = param_1_after_write + 1;
+      } while (param_1_after_write < iVar3);
     }
   }
   *(undefined4 *)(iVar2 + 8) = 0;

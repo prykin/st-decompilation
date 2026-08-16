@@ -22,6 +22,7 @@ void FUN_0075a670(int *param_1,undefined4 *param_2)
   *puVar3 = Library::DKW::JPG::FUN_0075a780;
   puVar3[2] = Library::DKW::JPG::FUN_0075a800;
   puVar3[0x1c] = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar6 = (**(code **)(*param_1 + 4))(param_1,1,0xa00);
@@ -40,9 +41,9 @@ void FUN_0075a670(int *param_1,undefined4 *param_2)
   }
   piVar8 = param_1 + 7;
   piVar1 = param_1 + 0x34;
-  param_1 = nullptr;
+  auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   if (0 < *piVar8) {
-    param_2 = puVar3 + 0x12;
+    auto param_2_after_write = puVar3 + 0x12; /* compiler stack-slot lifetime split */
     piVar8 = (int *)(*piVar1 + 0xc);
     do {
       iVar6 = *piVar8;
@@ -56,10 +57,10 @@ void FUN_0075a670(int *param_1,undefined4 *param_2)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (**(code **)(iVar2 + 0x14))(piVar7,1,1,iVar5,iVar4,iVar9);
       piVar8 = piVar8 + 0x15;
-      *param_2 = uVar4;
-      param_2 = param_2 + 1;
-      param_1 = (int *)((int)param_1 + 1);
-    } while ((int)param_1 < piVar7[7]);
+      *param_2_after_write = uVar4;
+      param_2_after_write = param_2_after_write + 1;
+      param_1_after_write = (int *)((int)param_1_after_write + 1);
+    } while ((int)param_1_after_write < piVar7[7]);
   }
   puVar3[1] = Library::DKW::JPG::FUN_0075aab0;
   puVar3[3] = Library::DKW::JPG::FUN_0075acb0;

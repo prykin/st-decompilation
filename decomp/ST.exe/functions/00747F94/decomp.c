@@ -12,6 +12,7 @@ int * FUN_00747f94(LPCRITICAL_SECTION lpCriticalSection,int *param_2,int param_3
   LPCRITICAL_SECTION lpCriticalSection_00;
   int *piVar2;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_2 == nullptr) || (param_3 == 0)) {
     param_2 = (int *)0x80004003;
   }

@@ -52,7 +52,8 @@ LAB_0042d3c9:
 0042D3EF  8B 10                     MOV EDX,dword ptr [EAX]
 0042D3F1  6A 01                     PUSH 0x1
 0042D3F3  8B C8                     MOV ECX,EAX
-0042D3F5  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::SetActivityToObjs::override::prt_42d3f5_a0bf87f6:
+0042D3F5  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 LAB_0042d3fb:
 0042D3FB  8B 45 14                  MOV EAX,dword ptr [EBP + 0x14]
 0042D3FE  46                        INC ESI
@@ -99,7 +100,8 @@ STAllPlayersC::SetActivityToObjs::cf_common_exit_0042D44C:
 0042D45F  8B 10                     MOV EDX,dword ptr [EAX]
 0042D461  6A 01                     PUSH 0x1
 0042D463  8B C8                     MOV ECX,EAX
-0042D465  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::SetActivityToObjs::override::prt_42d465_a0bf87f6:
+0042D465  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042D46B  5F                        POP EDI
 0042D46C  5E                        POP ESI
 0042D46D  5D                        POP EBP
@@ -117,7 +119,8 @@ LAB_0042d471:
 0042D486  8B 10                     MOV EDX,dword ptr [EAX]
 0042D488  6A 01                     PUSH 0x1
 0042D48A  8B C8                     MOV ECX,EAX
-0042D48C  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::SetActivityToObjs::override::prt_42d48c_a0bf87f6:
+0042D48C  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 LAB_0042d492:
 0042D492  5F                        POP EDI
 0042D493  5E                        POP ESI

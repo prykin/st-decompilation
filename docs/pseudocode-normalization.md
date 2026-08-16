@@ -38,20 +38,22 @@ then reads the new lifetime. Ghidra may spell the result as assignments to
 type. A bare read → write → read sequence is insufficient: source-level
 parameters are routinely clamped, scaled, and otherwise mutated in place. The
 exporter now requires a full overwrite whose register value traces through
-transparent `MOV`/`MOVSX`/`MOVZX` operations to a different incoming argument
-slot. Arithmetic, `LEA`, and registers used only to address a memory operand do
-not carry value identity. Read/modify/write instructions and
-same-parameter-origin transforms are left alone. Only the proven foreign-origin
-lifetime receives:
+transparent `MOV`/`MOVSX`/`MOVZX` operations either to a different incoming
+argument slot or to an independently defined full register. Arithmetic, `LEA`,
+and registers used only to address a memory operand do not carry value identity.
+Read/modify/write instructions and same-parameter-origin transforms are left
+alone. The first exact assignment may become a distinct local only when every
+post-write use remains in the same lexical block, no label can jump across the
+initializer, and the old spelling is unused outside it:
 
 ```c
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot;
-   split the post-write lifetime into a local variable */
+auto param_2_after_write = computedCursor;
+/* compiler stack-slot lifetime split */
 ```
 
-This is not a request to change the ABI signature. A later source extractor
-should introduce a distinct local at the first overwrite. The same sites are
-catalogued in `pseudocode_idioms.jsonl` and `decomp_quality_issues.jsonl`.
+The entry parameter and ABI signature remain unchanged. Unsafe cases retain an
+`ST_PSEUDO[stack_slot_reuse]` review comment. The same sites are catalogued in
+`pseudocode_idioms.jsonl` and `decomp_quality_issues.jsonl`.
 
 ### Dynamic stack buffers
 
@@ -118,6 +120,32 @@ negative source. That exact boundary behavior differs from mathematical floor
 division for negative exact multiples, so the exporter does not replace the
 idiom with an ordinary `/` or a misleading `floor` helper. Alias-mismatched or
 split-result SSA forms remain visible until their value identity is proven.
+
+### Exact scalar and packed-bit lowering idioms
+
+Three smaller compiler forms are normalized without assigning a game-specific
+type. The complete byte-addressed bit test/set/clear:
+
+```c
+bits[(int)index >> 3] >> (index & 7) & 1;
+bits[(int)index >> 3] |= 1 << (index & 7);
+```
+
+becomes `STBitTest(bits, index)`, `STBitSet(bits, index)`, or
+`STBitClear(bits, index)`. A preceding `index ^= 7` remains explicit because it
+is part of the observed bit-numbering convention. Pointer-to-one-byte forms are
+not conflated with an indexed array until their base identity is also proven.
+
+Likewise, the exact MSVC truncating signed division:
+
+```c
+(int)(value + (value >> 31 & 3U)) >> 2
+```
+
+becomes `STSignedDiv4(value)`, and exact `(value + 0x8000) >> 16` becomes
+`STRoundFixed16(value)`. The helpers preserve the original 32-bit conversion,
+wrap, and negative behavior. They improve presentation but do not claim that a
+particular value is an angle, coordinate, or other semantic fixed-point type.
 
 ### Opaque `code *` locals
 
@@ -207,8 +235,9 @@ includes `<string.h>`, and every normalized site is recorded as
 The same normalization accepts the exact dynamic-size `REP STOSD` plus
 `REP STOSB` pair when the advanced pointer and both counters are dead. If
 Ghidra has already typed the destination as `byte *`, the dword store may render
-as four consecutive `buffer[0..3] = 0` assignments; that exact unrolled spelling
-is accepted as the same machine operation:
+as `*(undefined4 *)cursor = 0; cursor += 4`, or as four consecutive
+`buffer[0..3] = 0` assignments. Those exact spellings are accepted as the same
+machine operation:
 
 ```c
 memset(buffer, 0, byteCount); /* compiler bulk-zero initialization */

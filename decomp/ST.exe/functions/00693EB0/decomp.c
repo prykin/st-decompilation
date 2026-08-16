@@ -59,7 +59,7 @@ undefined4 FUN_00693eb0(int param_1,int param_2)
   } while (iVar7 < 8);
   iVar7 = param_2 + param_1 * 8;
   iVar1 = param_1 + param_2 * 8;
-  param_2 = 8;
+  auto param_2_after_write = 8; /* compiler stack-slot lifetime split */
   uVar2 = *(undefined1 *)((int)auStack_1713 + iVar7);
   *(undefined1 *)(iVar1 + 0x299 + (int)in_ECX) = uVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -69,8 +69,8 @@ undefined4 FUN_00693eb0(int param_1,int param_2)
     puVar5[iVar10 - param_1] = *puVar5;
     *puVar5 = 0;
     puVar5 = puVar5 + 8;
-    param_2 = param_2 + -1;
-  } while (param_2 != 0);
+    param_2_after_write = param_2_after_write + -1;
+  } while (param_2_after_write != 0);
   uVar3 = *(undefined1 *)((int)auStack_1713 + iVar1);
   uVar4 = auStack_1713[iVar10 * 2];
   *(undefined1 *)(iVar7 + 0x299 + (int)in_ECX) = uVar3;

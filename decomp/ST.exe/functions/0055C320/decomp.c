@@ -32,6 +32,7 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
     uVar3 = uVar3 - 1;
     pbVar7_mg0 = param_1 + 1;
     bVar1 = *param_1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = pbVar7_mg0;
   } while (bVar1 != 0);
   uVar3 = ~uVar3;

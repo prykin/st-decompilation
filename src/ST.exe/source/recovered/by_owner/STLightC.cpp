@@ -275,12 +275,14 @@ int __thiscall st::fn_0061D9C0(STLightC *this,ushort *param_1,int *param_2,int p
 
   local_8 = 0;
   local_c = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_3 == 0) {
     param_3 = 0x10;
     this->field_0093 = *(int *)param_1;
     this->field_0097 = *(undefined4 *)(param_1 + 2);
     this->field_009B = *(void **)(param_1 + 4);
     this->field_009F = *(void **)(param_1 + 6);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + 8;
   }
   else {

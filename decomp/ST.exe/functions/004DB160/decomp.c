@@ -150,19 +150,18 @@ cf_common_join_004DB690:
       return;
     }
   }
-/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_004db257:
-  param_5 = (int *)0x1;
+  auto param_5_after_write = (int *)0x1; /* compiler stack-slot lifetime split */
   sVar2 = g_worldGrid.sizeZ;
   do {
     local_8 = 0;
     if (sVar2 != 1 && -1 < sVar2 + -1) {
       do {
-        iVar11 = *param_3 - (int)param_5;
-        if (iVar11 <= *param_3 + (int)param_5) {
+        iVar11 = *param_3 - (int)param_5_after_write;
+        if (iVar11 <= *param_3 + (int)param_5_after_write) {
           do {
             if ((-1 < iVar11) && (iVar11 < g_worldGrid.sizeX)) {
-              iVar12 = *param_4 - (int)param_5;
+              iVar12 = *param_4 - (int)param_5_after_write;
               sVar2 = (short)iVar11;
               if ((((-1 < iVar12) &&
                    (((iVar12 < g_worldGrid.sizeY && (-1 < sVar2)) && (sVar2 < g_worldGrid.sizeX))))
@@ -197,7 +196,7 @@ LAB_004db257:
                 if (iVar5 != 0) goto cf_common_join_004DB690;
               }
 LAB_004db3e4:
-              iVar12 = *param_4 + (int)param_5;
+              iVar12 = *param_4 + (int)param_5_after_write;
               if ((((-1 < iVar12) && (iVar12 < g_worldGrid.sizeY)) &&
                   (this_00 = (STWorldObject *)
                              thunk_FUN_004db980(sVar2,(short)iVar12,(short)local_8,0),
@@ -230,13 +229,13 @@ LAB_004db3e4:
             }
 LAB_004db497:
             iVar11 = iVar11 + 1;
-          } while (iVar11 <= *param_3 + (int)param_5);
+          } while (iVar11 <= *param_3 + (int)param_5_after_write);
         }
-        iVar12 = (*param_4 - (int)param_5) + 1;
-        if (iVar12 <= *param_4 + -1 + (int)param_5) {
+        iVar12 = (*param_4 - (int)param_5_after_write) + 1;
+        if (iVar12 <= *param_4 + -1 + (int)param_5_after_write) {
           do {
             if ((-1 < iVar12) && (iVar12 < g_worldGrid.sizeY)) {
-              iVar11 = *param_3 - (int)param_5;
+              iVar11 = *param_3 - (int)param_5_after_write;
               if ((-1 < iVar11) &&
                  ((((iVar11 < g_worldGrid.sizeX &&
                     (this_00 = (STWorldObject *)
@@ -268,7 +267,7 @@ LAB_004db497:
                 if (iVar5 != 0) goto cf_common_join_004DB690;
               }
 LAB_004db58d:
-              iVar11 = *param_3 + (int)param_5;
+              iVar11 = *param_3 + (int)param_5_after_write;
               if ((((-1 < iVar11) && (iVar11 < g_worldGrid.sizeX)) &&
                   ((this_00 = (STWorldObject *)
                               thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0),
@@ -301,15 +300,14 @@ LAB_004db58d:
             }
 LAB_004db638:
             iVar12 = iVar12 + 1;
-          } while (iVar12 <= *param_4 + -1 + (int)param_5);
+          } while (iVar12 <= *param_4 + -1 + (int)param_5_after_write);
         }
         local_8 = local_8 + 1;
         sVar2 = g_worldGrid.sizeZ;
       } while (local_8 < g_worldGrid.sizeZ + -1);
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_5 = (int *)((int)param_5 + 1);
-    if (7 < (int)param_5) {
+    param_5_after_write = (int *)((int)param_5_after_write + 1);
+    if (7 < (int)param_5_after_write) {
       return;
     }
   } while( true );

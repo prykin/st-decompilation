@@ -22,7 +22,7 @@ void __thiscall FUN_004eb600(void *this,short *param_1)
     iVar2 = 0;
     psVar4 = param_1;
     do {
-      param_1 = (short *)0x2;
+      auto param_1_after_write = (short *)0x2; /* compiler stack-slot lifetime split */
       iVar3 = iVar2;
       psVar5 = psVar4;
       do {
@@ -40,10 +40,10 @@ void __thiscall FUN_004eb600(void *this,short *param_1)
         psVar4 = psVar5 + 2;
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         psVar5[1] = *(short *)(iVar3 + 0x7f57c2 + STField<int>(this,0x24) * 0xa62);
-        param_1 = (short *)((int)param_1 + -1);
+        param_1_after_write = (short *)((int)param_1_after_write + -1);
         iVar3 = iVar2;
         psVar5 = psVar4;
-      } while (param_1 != nullptr);
+      } while (param_1_after_write != nullptr);
     } while (iVar2 < 0x20);
   }
   return;

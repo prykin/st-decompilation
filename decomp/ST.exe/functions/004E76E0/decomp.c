@@ -15,35 +15,39 @@ undefined4 FUN_004e76e0(int param_1,uint *param_2,byte param_3)
   int iVar6;
   int iVar7;
   uint *puVar8;
-  byte *puVar9;
+  undefined4 *puVar9;
   int *piVar10;
-  byte *puVar11;
+  uint **ppuVar11;
   uint *local_c;
 
   if ((param_1 < 0) || (7 < param_1)) {
     return 0;
   }
   bVar4 = LookupRecordByte((char)param_1);
-  memset(&DAT_00801020, 0, 0x30c); /* compiler bulk-zero initialization */
-  iVar7 = 0;
-  DAT_00801020 = param_2;
+  ppuVar11 = &PTR_00801020;
+  for (iVar7 = 0xc3; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *ppuVar11 = nullptr;
+    ppuVar11 = ppuVar11 + 1;
+  }
+  PTR_00801020 = param_2;
   DAT_00801024 = param_3;
   do {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_3 = 0;
     memset(&DAT_00800bd0, 0, 0x30c); /* compiler bulk-zero initialization */
-    if (DAT_00801020 == nullptr) {
+    if (PTR_00801020 == nullptr) {
       return 0;
     }
-    param_2 = (uint *)&DAT_00801020;
+    auto param_2_after_write = (uint *)&PTR_00801020; /* compiler stack-slot lifetime split */
     do {
-      thunk_FUN_004e5b80(param_1,*param_2,(uint)(byte)param_2[1]);
+      thunk_FUN_004e5b80(param_1,*param_2_after_write,(uint)(byte)param_2_after_write[1]);
       pbVar5 = &DAT_007c0dd4;
       do {
         bVar2 = pbVar5[1];
         iVar7 = 1;
         while( true ) {
           if ((bVar2 == 0) || (2 < iVar7)) goto LAB_004e77b8;
-          if ((uint)pbVar5[iVar7] == *param_2) break;
+          if ((uint)pbVar5[iVar7] == *param_2_after_write) break;
           bVar2 = pbVar5[iVar7 + 1];
           iVar7 = iVar7 + 1;
         }
@@ -58,7 +62,7 @@ LAB_004e77b8:
         iVar6 = 1;
         while( true ) {
           if ((bVar2 == 0) || (2 < iVar6)) goto LAB_004e7823;
-          if ((uint)pbVar5[iVar6] == *param_2) break;
+          if ((uint)pbVar5[iVar6] == *param_2_after_write) break;
           bVar2 = pbVar5[iVar6 + 1];
           iVar6 = iVar6 + 1;
         }
@@ -77,8 +81,8 @@ LAB_004e7823:
           puVar3 = puVar8;
           while( true ) {
             if ((iVar7 == 0) || (3 < iVar6)) goto LAB_004e789c;
-            if ((STField<uint>(puVar3,5) == *param_2) &&
-               (STField<char>(puVar3,9) == (char)param_2[1])) break;
+            if ((STField<uint>(puVar3,5) == *param_2_after_write) &&
+               (STField<char>(puVar3,9) == (char)param_2_after_write[1])) break;
             iVar7 = STField<int>(puVar3,10);
             iVar6 = iVar6 + 1;
             puVar3 = (uint *)((int)puVar3 + 5);
@@ -93,14 +97,18 @@ LAB_004e789c:
           piVar10 = (int *)((int)piVar10 + 0x19);
         } while (*piVar1 != 0);
       }
-      param_2 = (uint *)((int)param_2 + 5);
-    } while (*param_2 != 0);
+      param_2_after_write = (uint *)((int)param_2_after_write + 5);
+    } while (*param_2_after_write != 0);
     if (_param_3 == 0) {
       return 0;
     }
-    puVar9 = (byte *)(&DAT_00800bd0);
-    puVar11 = (byte *)(&DAT_00801020);
-    memmove(puVar11, puVar9, 0x30c); /* compiler REP MOVS byte copy */
+    puVar9 = &DAT_00800bd0;
+    ppuVar11 = &PTR_00801020;
+    for (iVar7 = 0xc3; iVar7 != 0; iVar7 = iVar7 + -1) {
+      *ppuVar11 = (uint *)*puVar9;
+      puVar9 = puVar9 + 1;
+      ppuVar11 = ppuVar11 + 1;
+    }
   } while( true );
 }
 

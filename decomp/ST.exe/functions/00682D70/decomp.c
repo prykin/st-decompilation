@@ -15,7 +15,7 @@ void FUN_00682d70(void)
   undefined1 local_c;
   undefined2 local_b;
 
-  pcVar3 = DAT_00857548;
+  pcVar3 = PTR_00857548;
   pbVar1 = thunk_FUN_0067eca0();
   iVar2 = thunk_FUN_0067f180(pbVar1,pcVar3);
   if (iVar2 < 0) {

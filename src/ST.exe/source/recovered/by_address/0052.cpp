@@ -447,7 +447,7 @@ LAB_00522294:
               } while (bVar11 < DAT_00808aaf);
             }
           }
-          st::external_00000080((LPSTR)&DAT_0080f33a,s__s>__s_007c40dc,local_4b4,local_474);
+          st::external_00000080((LPSTR)&DAT_0080f33a,s__s>st_string_007C40DC,local_4b4,local_474);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d != 0xff) {
               st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,(uint)DAT_0080874d);

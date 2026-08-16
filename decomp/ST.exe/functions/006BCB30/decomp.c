@@ -27,9 +27,9 @@ void FUN_006bcb30(int *param_1,int param_2,int param_3,int param_4,int param_5)
     param_4 = param_4 + iVar8;
     iVar8 = 0;
   }
-  param_3 = param_3 - param_1[param_1[0x79] * 2 + 0x48];
-  if (param_3 < 0) {
-    param_3 = 0;
+  auto param_3_after_write = param_3 - param_1[param_1[0x79] * 2 + 0x48]; /* compiler stack-slot lifetime split */
+  if (param_3_after_write < 0) {
+    param_3_after_write = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = param_5 + iVar8;
   }
@@ -37,13 +37,13 @@ void FUN_006bcb30(int *param_1,int param_2,int param_3,int param_4,int param_5)
     iVar7 = param_1[0x7b];
     iVar5 = param_1[0x7c];
     iVar3 = (iVar8 % iVar7 + iVar7 + -1 + param_4) / iVar7;
-    local_10 = (param_3 % iVar5 + iVar5 + -1 + param_5) / iVar5;
+    local_10 = (param_3_after_write % iVar5 + iVar5 + -1 + param_5) / iVar5;
     uVar4 = iVar8 / iVar7;
-    iVar5 = param_3 / iVar5;
+    iVar5 = param_3_after_write / iVar5;
     iVar8 = param_1[0x7d] + 7;
     iVar8 = (int)(iVar8 + (iVar8 >> 0x1f & 7U)) >> 3;
     iVar7 = iVar8 * iVar5;
-    param_3 = param_1[0x88] + iVar7;
+    param_3_after_write = param_1[0x88] + iVar7;
     iVar5 = param_1[0x7d] * iVar5;
     iVar9 = param_1[0x81] + iVar5 + uVar4;
     iVar5 = param_1[0x87] + iVar5 + uVar4;
@@ -58,7 +58,7 @@ void FUN_006bcb30(int *param_1,int param_2,int param_3,int param_4,int param_5)
             if ((piVar2[0x81] == 0) || ((uint)*(byte *)(iVar7 + uVar6) == piVar2[0x80] - 1U)) {
               if ((piVar2[0x87] != 0) &&
                  ((uint)*(byte *)(iVar7 + (iVar5 - iVar9) + uVar6) != piVar2[0x86] - 1U)) {
-                pbVar1 = (byte *)(param_3 + ((int)(uVar6 ^ 7) >> 3));
+                pbVar1 = (byte *)(param_3_after_write + ((int)(uVar6 ^ 7) >> 3));
                 *pbVar1 = *pbVar1 | '\x01' << ((uVar6 ^ 7) & 7);
               }
             }
@@ -66,7 +66,7 @@ void FUN_006bcb30(int *param_1,int param_2,int param_3,int param_4,int param_5)
               pbVar1 = (byte *)((int)param_1 + ((int)(uVar6 ^ 7) >> 3));
               *pbVar1 = *pbVar1 | '\x01' << ((uVar6 ^ 7) & 7);
               if ((piVar2[0x87] != 0) && (*(char *)(iVar7 + uVar6) != '\0')) {
-                pbVar1 = (byte *)(param_3 + ((int)(uVar6 ^ 7) >> 3));
+                pbVar1 = (byte *)(param_3_after_write + ((int)(uVar6 ^ 7) >> 3));
                 *pbVar1 = *pbVar1 | '\x01' << ((uVar6 ^ 7) & 7);
               }
             }
@@ -76,7 +76,7 @@ void FUN_006bcb30(int *param_1,int param_2,int param_3,int param_4,int param_5)
         }
         iVar9 = iVar9 + piVar2[0x7d];
         iVar5 = iVar5 + piVar2[0x7d];
-        param_3 = param_3 + iVar8;
+        param_3_after_write = param_3_after_write + iVar8;
         local_10 = local_10 + -1;
         param_1 = (int *)((int)param_1 + iVar8);
       } while (local_10 != 0);

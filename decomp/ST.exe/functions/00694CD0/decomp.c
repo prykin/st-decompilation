@@ -55,9 +55,9 @@ void __thiscall CGenerate::sub_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50F
       else {
         psVar8 = nullptr;
       }
-      if (*(short *)(DAT_00853dd4 +
-                    ((int)psVar8[2] * iVar3 * iVar4 * 4 + (int)psVar8[1] * *this->field_0008 * 2 +
-                    (int)*psVar8) * 2) == 0) {
+      if (PTR_00853dd4
+          [(int)psVar8[2] * iVar3 * iVar4 * 4 + (int)psVar8[1] * *this->field_0008 * 2 +
+           (int)*psVar8] == 0) {
         local_10 = 0;
         puVar7 = thunk_FUN_00692c10(CASE_5A,*(int *)(psVar8 + 5),&local_10,(int)psVar8[2],0);
         puVar7[5] = (int)*psVar8;

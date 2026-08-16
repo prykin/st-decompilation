@@ -65,11 +65,11 @@ int * __fastcall FUN_00586320(AnonShape_00586320_9792A2C7 *param_1)
           (((pSVar4 = STGridAt3D(g_worldGrid, sVar12, local_14, sVar11).objects[0],
             pSVar4 != nullptr &&
             (((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
-             (iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar7 != 0)))) &&
+             (iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(pSVar4), iVar7 != 0)))) &&
            (pSVar4[1].vtable < (STWorldObjectVTable *)0x8)))) &&
          (((g_playSystem_00802A38 == nullptr ||
            (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)) &&
-          (iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(), iVar7 != 0)))) {
+          (iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(pSVar4), iVar7 != 0)))) {
         bVar1 = *(byte *)&pSVar4[1].vtable;
         bVar2 = param_1->field_0024;
         iVar7 = param_1->field_0010;
@@ -164,7 +164,7 @@ LAB_00586713:
                (pSVar4 = STGridAt3D(g_worldGrid, sVar12, sVar11, sVar8).objects[0],
                pSVar4 != nullptr)))) &&
              (((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
-              ((iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar7 != 0 &&
+              ((iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(pSVar4), iVar7 != 0 &&
                (pSVar4[1].vtable < (STWorldObjectVTable *)0x8)))))))) &&
            ((g_playSystem_00802A38 == nullptr ||
             (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)))) {
@@ -204,7 +204,7 @@ LAB_00586713:
             bVar14 = *(char *)((uint)bVar2 * 0x51 + 0x11ca + iVar7) !=
                      *(char *)((uint)bVar1 * 0x51 + 0x11ca + iVar7);
           }
-          if ((bVar14) && (iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(), iVar7 != 0)) {
+          if ((bVar14) && (iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(pSVar4), iVar7 != 0)) {
             param_1->field_0231 = 0;
             param_1->field_0257 = 0;
             param_1->field_0273 = *(undefined2 *)&pSVar4[1].field_0xe;

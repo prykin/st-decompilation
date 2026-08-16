@@ -21,13 +21,13 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
   AiTactClassTy *this_00;
   int iVar5;
   ushort *puVar5;
-  STGameObjC *objPtr;
+  STGameObjC *this_01;
   int iVar7;
   AiTactClassTy_field_00A5Element *element_00a5;
   AiTactClassTy_field_00BDElement *element_00bd_2;
   int iVar6;
   AiTactClassTy_field_00A5DArray *pAVar9;
-  AiFltClassTy *this_01;
+  AiFltClassTy *this_02;
   uint uVar10;
   bool bVar11;
   InternalExceptionFrame local_50;
@@ -73,18 +73,18 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
           puVar5 = nullptr;
         }
         if (g_allPlayers_007FA174 == nullptr) {
-          objPtr = nullptr;
+          this_01 = nullptr;
         }
         else {
-          objPtr = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar5,CASE_1);
+          this_01 = STAllPlayersC::GetObjPtr
+                              (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar5,CASE_1);
         }
-        if (objPtr != nullptr) {
-          iVar7 = (*objPtr->vtable->vfunc_2C)();
+        if (this_01 != nullptr) {
+          iVar7 = this_01->vfunc_2C();
           if (iVar7 == 0x78) {
-            iVar7 = (*objPtr->vtable->vfunc_2C)();
+            iVar7 = this_01->vfunc_2C();
             if (iVar7 == 0x78) {
-              iVar7 = objPtr->field_0259;
+              iVar7 = this_01->field_0259;
             }
             else {
               iVar7 = 0;
@@ -100,9 +100,9 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
               }
               if ((element_00bd_2 != nullptr) && (-1 < element_00bd_2->field_0030)) {
                 uVar1 = element_00bd_2->field_000C;
-                iVar7 = (*objPtr->vtable->vfunc_2C)();
+                iVar7 = this_01->vfunc_2C();
                 if (iVar7 == 0x78) {
-                  objPtr->field_0269 = (uint)uVar1;
+                  this_01->field_0269 = (uint)uVar1;
                 }
                 DArrayRemoveAt((DArrayTy *)param_1,local_c);
               }
@@ -125,17 +125,17 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
                 pAVar9 = this_00->field_00A5;
                 if ((pAVar9 == nullptr) ||
                    (((int)uVar3 < 0 || ((int)pAVar9->count <= (int)uVar3)))) {
-                  this_01 = nullptr;
+                  this_02 = nullptr;
                 }
                 else {
-                  this_01 = pARam00000004;
+                  this_02 = pARam00000004;
                   if (uVar3 < pAVar9->count) {
                     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-                    this_01 = *(AiFltClassTy **)
+                    this_02 = *(AiFltClassTy **)
                                ((int)&pAVar9->data->field_0004 + pAVar9->elementSize * uVar3);
                   }
                 }
-                AiFltClassTy::_AddObjFlt(this_01,(uint)objPtr,0);
+                AiFltClassTy::_AddObjFlt(this_02,(uint)this_01,0);
                 DArrayRemoveAt((DArrayTy *)param_1,local_c);
               }
               DArrayRemoveAt((DArrayTy *)this_00->field_00BD,uVar10);

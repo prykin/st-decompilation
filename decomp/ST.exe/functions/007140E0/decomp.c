@@ -262,6 +262,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       goto cf_common_exit_00714ACB;
     }
     if (((int)this_00->field_005C < 0) && (STField<int>(this,0x74) < -4)) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = '\x01';
     }
     if (-1 < STField<int>(this,0x7c)) {

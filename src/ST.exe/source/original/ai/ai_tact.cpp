@@ -567,13 +567,13 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
   AiTactClassTy *this_00;
   int iVar5;
   ushort *puVar5;
-  STGameObjC *objPtr;
+  STGameObjC *this_01;
   int iVar7;
   AiTactClassTy_field_00A5Element *element_00a5;
   AiTactClassTy_field_00BDElement *element_00bd_2;
   int iVar6;
   AiTactClassTy_field_00A5DArray *pAVar9;
-  AiFltClassTy *this_01;
+  AiFltClassTy *this_02;
   uint uVar10;
   bool bVar11;
   InternalExceptionFrame local_50;
@@ -619,18 +619,18 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
           puVar5 = nullptr;
         }
         if (g_allPlayers_007FA174 == nullptr) {
-          objPtr = nullptr;
+          this_01 = nullptr;
         }
         else {
-          objPtr = st::fn_004028BA
-                             (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar5,CASE_1);
+          this_01 = st::fn_004028BA
+                              (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar5,CASE_1);
         }
-        if (objPtr != nullptr) {
-          iVar7 = (*objPtr->vtable->vfunc_2C)();
+        if (this_01 != nullptr) {
+          iVar7 = this_01->vfunc_2C();
           if (iVar7 == 0x78) {
-            iVar7 = (*objPtr->vtable->vfunc_2C)();
+            iVar7 = this_01->vfunc_2C();
             if (iVar7 == 0x78) {
-              iVar7 = objPtr->field_0259;
+              iVar7 = this_01->field_0259;
             }
             else {
               iVar7 = 0;
@@ -646,9 +646,9 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
               }
               if ((element_00bd_2 != nullptr) && (-1 < element_00bd_2->field_0030)) {
                 uVar1 = element_00bd_2->field_000C;
-                iVar7 = (*objPtr->vtable->vfunc_2C)();
+                iVar7 = this_01->vfunc_2C();
                 if (iVar7 == 0x78) {
-                  objPtr->field_0269 = (uint)uVar1;
+                  this_01->field_0269 = (uint)uVar1;
                 }
                 st::fn_006B0C70((DArrayTy *)param_1,local_c);
               }
@@ -671,17 +671,17 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
                 pAVar9 = this_00->field_00A5;
                 if ((pAVar9 == nullptr) ||
                    (((int)uVar3 < 0 || ((int)pAVar9->count <= (int)uVar3)))) {
-                  this_01 = nullptr;
+                  this_02 = nullptr;
                 }
                 else {
-                  this_01 = pARam00000004;
+                  this_02 = pARam00000004;
                   if (uVar3 < pAVar9->count) {
                     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-                    this_01 = *(AiFltClassTy **)
+                    this_02 = *(AiFltClassTy **)
                                ((int)&pAVar9->data->field_0004 + pAVar9->elementSize * uVar3);
                   }
                 }
-                st::fn_00404200(this_01,(uint)objPtr,0);
+                st::fn_00404200(this_02,(uint)this_01,0);
                 st::fn_006B0C70((DArrayTy *)param_1,local_c);
               }
               st::fn_006B0C70((DArrayTy *)this_00->field_00BD,uVar10);
@@ -723,7 +723,7 @@ void __thiscall st::fn_0068F360(AiTactClassTy *this,uint *param_1)
   AiTactClassTy *pAVar5;
   int iVar6;
   ushort *puVar6;
-  STGameObjC *objPtr;
+  STGameObjC *this_00;
   int iVar7;
   AiFltClassTy *pAVar8;
   int iVar9;
@@ -778,15 +778,15 @@ joined_r0x0068f3e2:
           puVar6 = nullptr;
         }
         if (g_allPlayers_007FA174 == nullptr) {
-          objPtr = nullptr;
+          this_00 = nullptr;
         }
         else {
-          objPtr = st::fn_004028BA
-                             (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar6,CASE_1);
+          this_00 = st::fn_004028BA
+                              (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar6,CASE_1);
         }
         pAVar5 = local_8;
-      } while (objPtr == nullptr);
-      iVar7 = (*objPtr->vtable->vfunc_2C)();
+      } while (this_00 == nullptr);
+      iVar7 = this_00->vfunc_2C();
       if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
       pAVar11 = local_8->field_00A5;
       if ((pAVar11 == nullptr) ||
@@ -802,9 +802,9 @@ joined_r0x0068f3e2:
         }
       }
       uVar1 = pAVar8->field_007D;
-      iVar7 = (*objPtr->vtable->vfunc_2C)();
+      iVar7 = this_00->vfunc_2C();
       if (iVar7 == 0x78) {
-        objPtr->field_0269 = (uint)uVar1;
+        this_00->field_0269 = (uint)uVar1;
       }
       st::fn_006B0C70((DArrayTy *)param_1,index);
       pAVar5 = local_8;
@@ -868,7 +868,7 @@ LAB_0068f516:
         pAVar8 = *(AiFltClassTy **)((int)&pAVar11->data->field_0004 + pAVar11->elementSize * uVar12);
       }
     }
-    st::fn_00404200(pAVar8,(uint)objPtr,0);
+    st::fn_00404200(pAVar8,(uint)this_00,0);
     st::fn_006B0C70((DArrayTy *)param_1,index);
     pAVar5 = local_8;
   }
@@ -888,8 +888,8 @@ void __thiscall st::fn_0068F660(AiTactClassTy *this,DArrayTy *param_1)
   bool bVar2;
   int iVar3;
   ushort *puVar4;
-  STGameObjC *objPtr;
-  AiFltClassTy *this_00;
+  STGameObjC *this_00;
+  AiFltClassTy *this_01;
   int iVar5;
   InternalExceptionFrame local_4c;
   AiTactClassTy *local_8;
@@ -908,14 +908,14 @@ void __thiscall st::fn_0068F660(AiTactClassTy *this,DArrayTy *param_1)
           puVar4 = nullptr;
         }
         if (g_allPlayers_007FA174 == nullptr) {
-          objPtr = nullptr;
+          this_00 = nullptr;
         }
         else {
-          objPtr = st::fn_004028BA
-                             (g_allPlayers_007FA174,*(char *)&local_8->field_0024,*puVar4,CASE_1);
+          this_00 = st::fn_004028BA
+                              (g_allPlayers_007FA174,*(char *)&local_8->field_0024,*puVar4,CASE_1);
         }
-        if (objPtr != nullptr) {
-          iVar3 = (*objPtr->vtable->vfunc_2C)();
+        if (this_00 != nullptr) {
+          iVar3 = this_00->vfunc_2C();
           if ((iVar3 < 1) || (0x28 < iVar3)) {
             bVar2 = false;
           }
@@ -923,9 +923,9 @@ void __thiscall st::fn_0068F660(AiTactClassTy *this,DArrayTy *param_1)
             bVar2 = true;
           }
           if ((bVar2) &&
-             (this_00 = (AiFltClassTy *)st::fn_00405B23(local_8,objPtr->field_081C),
-             this_00 != nullptr)) {
-            st::fn_00404200(this_00,(uint)objPtr,0);
+             (this_01 = (AiFltClassTy *)st::fn_00405B23(local_8,this_00->field_081C),
+             this_01 != nullptr)) {
+            st::fn_00404200(this_01,(uint)this_00,0);
             st::fn_006B0C70(param_1,index);
           }
         }

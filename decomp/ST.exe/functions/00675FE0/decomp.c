@@ -13,11 +13,11 @@ void __cdecl _AddAllGrpExch(uint param_1)
   int iVar3;
   DArrayTy *groupContent;
   ushort *puVar3;
-  STGameObjC *pSVar4;
-  int iVar6;
+  STGameObjC *this;
+  int iVar4;
   int iVar5;
-  uint uVar7;
-  uint uVar8;
+  uint uVar5;
+  uint uVar6;
   char objPtr;
   InternalExceptionFrame local_48;
 
@@ -40,29 +40,29 @@ void __cdecl _AddAllGrpExch(uint param_1)
     if (groupContent != nullptr) {
       dVar1 = groupContent->count;
       if (dVar1 != 0) {
-        uVar8 = 0;
+        uVar6 = 0;
         if (dVar1 != 0) {
-          uVar7 = 0;
+          uVar5 = 0;
           if (dVar1 == 0) {
             puVar3 = nullptr;
             goto LAB_00676053;
           }
           do {
-            puVar3 = DArrayAt<ushort>(groupContent, uVar7);
+            puVar3 = DArrayAt<ushort>(groupContent, uVar5);
 LAB_00676053:
-            pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,objPtr,*puVar3,CASE_1);
-            if (pSVar4 != nullptr) {
-              iVar6 = (*pSVar4->vtable->vfunc_2C)();
-              if (iVar6 == 0x78) {
-                iVar6 = (*pSVar4->vtable->vfunc_2C)();
-                if (iVar6 == 0x78) {
-                  pSVar4->field_0269 = 0xffffffff;
+            this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,objPtr,*puVar3,CASE_1);
+            if (this != nullptr) {
+              iVar4 = this->vfunc_2C();
+              if (iVar4 == 0x78) {
+                iVar4 = this->vfunc_2C();
+                if (iVar4 == 0x78) {
+                  this->field_0269 = 0xffffffff;
                 }
               }
             }
-            uVar8 = uVar8 + 1;
-            uVar7 = uVar8 & 0xffff;
-          } while (uVar7 < groupContent->count);
+            uVar6 = uVar6 + 1;
+            uVar5 = uVar6 & 0xffff;
+          } while (uVar5 < groupContent->count);
         }
         STAllPlayersC::AddObjsToGroup(g_allPlayers_007FA174,objPtr,0,groupContent,nullptr);
       }

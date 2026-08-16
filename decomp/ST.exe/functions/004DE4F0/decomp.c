@@ -45,6 +45,7 @@ int __thiscall FUN_004de4f0(void *this,int param_1)
       do {
         DArrayGetElement(pDVar4,uVar5,&local_8);
         if (local_8 != nullptr) {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 0;
           if (local_8[8] == 0x14) {
             puVar8 = &local_24;

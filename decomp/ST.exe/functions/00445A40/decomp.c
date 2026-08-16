@@ -88,8 +88,8 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       DArrayGetElement(local_18,uVar7,local_8);
       this_01 = local_34;
       pSVar2 = GetObjPtr(local_34,objPtr,local_8[0],CASE_1);
-      if ((pSVar2 == nullptr) || (iVar4 = pSVar2->vfunc_F8(), iVar4 == 0)
-         ) {
+      if ((pSVar2 == nullptr) ||
+         (iVar4 = (*pSVar2->vtable[1].vfunc_24)(pSVar2), iVar4 == 0)) {
         DArrayRemoveAt(local_18,uVar7);
         uVar6 = uVar6 - 1;
         uVar7 = uVar7 - 1;
@@ -109,8 +109,8 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       DArrayGetElement(local_14,uVar6,local_8);
       pSVar2 = GetObjPtr(this_01,objPtr,local_8[0],CASE_1);
       if (((pSVar2 == nullptr) || (iVar4 = thunk_FUN_00490d90(pSVar2), iVar4 == 0)) ||
-         ((iVar4 = pSVar2->vfunc_F8(), iVar4 == 0 || (pSVar2->field_0030 == -1))))
-      {
+         ((iVar4 = (*pSVar2->vtable[1].vfunc_24)(pSVar2), iVar4 == 0 || (pSVar2->field_0030 == -1)))
+         ) {
         DArrayRemoveAt(local_14,uVar6);
         local_c = local_c - 1;
         uVar6 = uVar6 - 1;

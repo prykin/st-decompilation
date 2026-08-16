@@ -44,6 +44,7 @@ byte __thiscall st::fn_006191A0(STJumpMineC *this,uint param_1,int param_2)
       (g_sT3DSMAPContext_00807598->field_0044 <= param_2)) &&
      (param_2 <= g_sT3DSMAPContext_00807598->field_0054)) {
     local_8 = this;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = st::fn_006DDBD0();
     pVVar1 = g_visibleClass_00802A88;
     if (((param_1 == 0) || (g_visibleClass_00802A88 == nullptr)) ||
@@ -918,8 +919,8 @@ st::fn_0061B340
              ((g_playSystem_00802A38 == nullptr ||
               (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)))) &&
             (pSVar4->value_20 == 1000)) &&
-           ((iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar7 != 0 &&
-            (iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(), iVar7 != 0)))) {
+           ((iVar7 = pSVar4->vfunc_F0(), iVar7 != 0 &&
+            (iVar7 = pSVar4->vfunc_F8(), iVar7 != 0)))) {
           bVar1 = *(byte *)&pSVar4[1].vtable;
           bVar2 = *(byte *)&this->field_0051;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -1032,11 +1033,11 @@ LAB_0061b993:
                  g_bulkInitializedRecords_008087C7[bVar1].field_0023;
       }
       if (bVar10) {
-        iVar7 = (*pSVar4->vtable[5].slots_00_28[0])();
+        iVar7 = pSVar4->vfunc_F0();
         if (iVar7 == 0) {
           return local_8;
         }
-        iVar7 = (*pSVar4->vtable[5].slots_00_28[2])();
+        iVar7 = pSVar4->vfunc_F8();
         if (iVar7 == 0) {
           return local_8;
         }

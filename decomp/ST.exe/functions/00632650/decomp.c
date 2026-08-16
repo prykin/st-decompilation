@@ -44,6 +44,7 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
   if (*(int *)this != 0) {
     thunk_FUN_00635fd0(this);
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
     param_2 = 1;
   }

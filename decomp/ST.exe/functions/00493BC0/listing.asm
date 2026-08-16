@@ -44,7 +44,8 @@ LAB_00493bda:
 00493C53  75 16                     JNZ 0x00493c6b
 00493C55  8B 06                     MOV EAX,dword ptr [ESI]
 00493C57  8B CE                     MOV ECX,ESI
-00493C59  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+FUN_00493bc0::override::prt_493c59_e5e2351e:
+00493C59  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00493C5F  85 C0                     TEST EAX,EAX
 00493C61  74 08                     JZ 0x00493c6b
 00493C63  57                        PUSH EDI

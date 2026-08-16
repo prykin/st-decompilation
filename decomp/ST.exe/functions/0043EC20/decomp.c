@@ -26,6 +26,7 @@ uint * FUN_0043ec20(char param_1,Global_sub_0043EC20_param_2Enum param_2,short p
   local_c = param_6 + -1 + local_8;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_3 = (int)param_4;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_6 = param_7 + -1 + _param_3;
   iVar5 = (int)param_5;
   iVar3 = param_8 + -1 + iVar5;
@@ -36,7 +37,6 @@ uint * FUN_0043ec20(char param_1,Global_sub_0043EC20_param_2Enum param_2,short p
     local_c = g_worldGrid.sizeX + -1;
   }
   if (_param_3 < 0) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_3 = 0;
   }
   if (g_worldGrid.sizeY + -1 < _param_6) {
@@ -51,6 +51,7 @@ uint * FUN_0043ec20(char param_1,Global_sub_0043EC20_param_2Enum param_2,short p
   array = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   iVar4 = g_worldGrid.sizeX * _param_3 + local_8 + (iVar5 + -1) * (int)g_worldGrid.planeStride;
   if (iVar5 <= iVar3) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_5 = (iVar3 - iVar5) + 1;
     do {
       iVar4 = iVar4 + g_worldGrid.planeStride;
@@ -61,6 +62,7 @@ uint * FUN_0043ec20(char param_1,Global_sub_0043EC20_param_2Enum param_2,short p
         do {
           iVar3 = iVar3 + g_worldGrid.sizeX;
           if (local_8 <= local_c) {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = (local_c - local_8) + 1;
             iVar6 = iVar3 * 8 + -8;
             do {

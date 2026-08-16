@@ -1473,6 +1473,7 @@ cf_common_join_004C01F3:
   case CASE_33:
     puVar22 = (undefined2 *)((int)param_1 + 0x2b);
     local_8 = (int *)((int)param_1 + 0x1d);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = nullptr;
     piVar25 = st::pointer_boundary_cast<int *>(&this->field_04D8);
     do {
@@ -2464,6 +2465,7 @@ undefined4 __thiscall st::fn_004C4550(TLOBaseTy *this,int *param_1)
       iVar3 = (int)param_1 * 0x20;
       iVar9 = (int)param_1 * 0x80;
       iVar11 = (int)param_1 * 0x80;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)(&this->field_0x2a5 + iVar9);
       st::fn_00403909
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
@@ -2669,15 +2671,15 @@ undefined4 __thiscall st::fn_004C56B0(TLOBaseTy *this,void *param_1)
   if (*(int *)((int)&this->field_02CC + iVar6 + 1) < *(int *)((int)&this->field_02D0 + iVar6 + 1)) {
     pvVar1 = (void *)((int)param_1 + this->field_0235 * 2);
     if ((&DAT_00792ca0)[(int)pvVar1 * 3] == 0xb3) {
-      param_1 = nullptr;
+      auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
       if (((AnonShape_005EFAE0_B406B78B *)this->field_04E0[3] != nullptr)
          && (iVar4 = st::fn_006E62D0
                                (g_playSystem_00802A38,
-                                (AnonShape_005EFAE0_B406B78B *)this->field_04E0[3],(int *)&param_1),
+                                (AnonShape_005EFAE0_B406B78B *)this->field_04E0[3],(int *)&param_1_after_write),
             iVar4 == 0)) {
         uVar5 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar5;
-        iVar3 = st::fn_0040122B(param_1,(int *)&local_8,&local_10,&local_18,(int *)&local_c,
+        iVar3 = st::fn_0040122B(param_1_after_write,(int *)&local_8,&local_10,&local_18,(int *)&local_c,
                                    (int *)&local_14,(int *)&local_1c,uVar5 >> 0x10);
         if (iVar3 != 0) {
           *(uint *)(&this->field_0x2a5 + iVar6) = local_8;

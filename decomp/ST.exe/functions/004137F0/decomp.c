@@ -18,6 +18,7 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
 
   this = param_1;
   if ((int)param_3 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
   }
   else if (9 < (int)param_3) {
@@ -26,7 +27,7 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
   uVar3 = param_3;
   param_1->field_0051 = param_3;
   iVar4 = ((param_4 * 4 + 0x2d) / 0x5a) * 0x5a;
-  iVar4 = (int)(iVar4 + (iVar4 >> 0x1f & 3U)) >> 2;
+  iVar4 = STSignedDiv4(iVar4);
   if (iVar4 == 0x168) {
     iVar4 = 0;
   }
@@ -36,12 +37,13 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
     param_1->field_004D = param_2;
     FreeAndNull(&param_1->field_0059);
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_2 == -2) || (param_2 == -3)) {
     iVar8 = param_1->field_0029->field_000C;
     param_1->field_0049 = param_1->field_0049 & 0xfffffffe;
-    param_1 = nullptr;
-    param_4 = 0;
-    param_2 = 0;
+    auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+    auto param_4_after_write = 0; /* compiler stack-slot lifetime split */
+    auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
     pAVar5 = Library::DKW::LIB::MemAlloc(iVar8 * 0x10 + 0xc);
     this->field_0059 = pAVar5;
     piVar9 = &pAVar5->field_000C;
@@ -73,9 +75,9 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
               iVar4 = pSVar7->field_00CF;
             }
             piVar9[2] = iVar4 * 4 + 2;
-            param_1 = (AnonShape_004137F0_350C8AE0 *)(&param_1->field_0x0 + *piVar9);
-            param_4 = param_4 + piVar9[1];
-            param_2 = param_2 + piVar9[2];
+            param_1_after_write = (AnonShape_004137F0_350C8AE0 *)(&param_1_after_write->field_0x0 + *piVar9);
+            param_4_after_write = param_4_after_write + piVar9[1];
+            param_2_after_write = param_2_after_write + piVar9[2];
             piVar9[3] = (uint)(ushort)pSVar7->field_0032;
             piVar9 = piVar9 + 4;
             this->field_0059->field_0000 = this->field_0059->field_0000 + 1;
@@ -90,9 +92,9 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
     iVar10 = 0;
     if (0 < iVar4) {
       do {
-        *piVar9 = *piVar9 - (int)(&param_1->field_0x0 + iVar8) / iVar4;
-        piVar9[1] = piVar9[1] - (iVar8 + param_4) / iVar4;
-        piVar9[2] = piVar9[2] - (param_2 + iVar8) / iVar4;
+        *piVar9 = *piVar9 - (int)(&param_1_after_write->field_0x0 + iVar8) / iVar4;
+        piVar9[1] = piVar9[1] - (iVar8 + param_4_after_write) / iVar4;
+        piVar9[2] = piVar9[2] - (param_2_after_write + iVar8) / iVar4;
         iVar10 = iVar10 + 1;
         piVar9 = piVar9 + 4;
       } while (iVar10 < (int)this->field_0059->field_0000);

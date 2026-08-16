@@ -168,12 +168,14 @@ LAB_0061b544:
 0061B54B  0F 85 B7 01 00 00         JNZ 0x0061b708
 0061B551  8B 17                     MOV EDX,dword ptr [EDI]
 0061B553  8B CF                     MOV ECX,EDI
-0061B555  FF 92 F0 00 00 00         CALL dword ptr [EDX + 0xf0]
+STJumpMineC::sub_0061B340::override::prt_61b555_e5e2351e:
+0061B555  FF 92 F0 00 00 00         CALL dword ptr [EDX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0061B55B  85 C0                     TEST EAX,EAX
 0061B55D  0F 84 A5 01 00 00         JZ 0x0061b708
 0061B563  8B 07                     MOV EAX,dword ptr [EDI]
 0061B565  8B CF                     MOV ECX,EDI
-0061B567  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STJumpMineC::sub_0061B340::override::prt_61b567_e5e2351e:
+0061B567  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0061B56D  85 C0                     TEST EAX,EAX
 0061B56F  0F 84 93 01 00 00         JZ 0x0061b708
 0061B575  8A 15 8F 8A 80 00         MOV DL,byte ptr [0x00808a8f]
@@ -630,12 +632,14 @@ LAB_0061ba9b:
 LAB_0061babc:
 0061BABC  8B 17                     MOV EDX,dword ptr [EDI]
 0061BABE  8B CF                     MOV ECX,EDI
-0061BAC0  FF 92 F0 00 00 00         CALL dword ptr [EDX + 0xf0]
+STJumpMineC::sub_0061B340::override::prt_61bac0_e5e2351e:
+0061BAC0  FF 92 F0 00 00 00         CALL dword ptr [EDX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0061BAC6  85 C0                     TEST EAX,EAX
 0061BAC8  0F 84 AE 00 00 00         JZ 0x0061bb7c
 0061BACE  8B 07                     MOV EAX,dword ptr [EDI]
 0061BAD0  8B CF                     MOV ECX,EDI
-0061BAD2  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STJumpMineC::sub_0061B340::override::prt_61bad2_e5e2351e:
+0061BAD2  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0061BAD8  85 C0                     TEST EAX,EAX
 0061BADA  0F 84 9C 00 00 00         JZ 0x0061bb7c
 0061BAE0  66 8B 8E 89 00 00 00      MOV CX,word ptr [ESI + 0x89]

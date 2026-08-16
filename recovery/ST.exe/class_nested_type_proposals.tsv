@@ -31,7 +31,7 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	FSGSTy	6904	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AF8	24	2	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	FSGSTy	6908	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1AFC	24	2	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	FSGSTy	6912	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1B00	24	2	4	review	multiple non-overlapping fixed offsets through one class pointer field
-0	FSGSTy	6924	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1B0C	4	2	8	review	multiple non-overlapping fixed offsets through one class pointer field
+0	FSGSTy	6924	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1B0C	2	2	8	review	multiple non-overlapping fixed offsets through one class pointer field
 0	FSGSTy	7842	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1EA2	24	2	6	review	multiple non-overlapping fixed offsets through one class pointer field
 0	FSGSTy	7971	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F23	27	4	29	review	multiple non-overlapping fixed offsets through one class pointer field
 0	FSGSTy	7975	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F27	27	4	8	review	multiple non-overlapping fixed offsets through one class pointer field
@@ -93,8 +93,8 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	STAllPlayersC	441	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01B9	12	4	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	STAppC	4442	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAppC_115A	8	2	6	review	multiple non-overlapping fixed offsets through one class pointer field
 0	STBHEShellC	243	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STBHEShellC_00F3	256	7	7	review	multiple non-overlapping fixed offsets through one class pointer field
-0	STBoatC	151	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STBoatC_0097	16	3	3	review	multiple non-overlapping fixed offsets through one class pointer field
-0	STColl3C	742	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STColl3C_02E6	108	4	10	review	multiple non-overlapping fixed offsets through one class pointer field
+0	STBoatC	151	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STBoatC_0097	14	3	3	review	multiple non-overlapping fixed offsets through one class pointer field
+0	STColl3C	742	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STColl3C_02E6	96	4	10	review	multiple non-overlapping fixed offsets through one class pointer field
 0	STGameObjC	405	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_0195	20	6	6	review	multiple non-overlapping fixed offsets through one class pointer field
 0	STGameObjC	409	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_0199	20	6	6	review	multiple non-overlapping fixed offsets through one class pointer field
 0	STGameObjC	429	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01AD	12	4	4	review	multiple non-overlapping fixed offsets through one class pointer field

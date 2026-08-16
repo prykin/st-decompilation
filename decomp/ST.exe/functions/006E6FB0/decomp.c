@@ -380,7 +380,7 @@ switchD_006e74ad_default:
           iVar11 = 0;
           local_48 = -iVar8;
           local_34 = 0;
-          local_18 = (local_48 + 1) * iVar14 + ((int)(iVar14 + (iVar14 >> 0x1f & 3U)) >> 2);
+          local_18 = (local_48 + 1) * iVar14 + (STSignedDiv4(iVar14));
           local_2c = iVar13 * iVar8;
           local_3c = iVar10 + local_48;
           local_40 = iVar10 + iVar8;

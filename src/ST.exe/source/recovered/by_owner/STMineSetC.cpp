@@ -194,6 +194,7 @@ byte __thiscall st::fn_006226C0(STMineSetC *this,uint param_1,int param_2)
     }
   }
   pAVar1 = this->field_0211;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((((int)param_1 < (int)pAVar1->field_0048) || ((int)pAVar1->field_0058 < (int)param_1)) ||
       ((param_2 < (int)pAVar1->field_0044 || ((int)pAVar1->field_0054 < param_2)))) ||
      (((param_1 = st::fn_006DDBD0(), pVVar2 = g_visibleClass_00802A88, param_1 != 0 &&
@@ -951,7 +952,7 @@ LAB_006259bf:
                   bVar17 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
                            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                 }
-                if ((bVar17) && (iVar6 = (*this_00->vtable[5].slots_00_28[2])(), iVar6 != 0))
+                if ((bVar17) && (iVar6 = this_00->vfunc_F8(), iVar6 != 0))
                 goto LAB_00625ad5;
               }
             }

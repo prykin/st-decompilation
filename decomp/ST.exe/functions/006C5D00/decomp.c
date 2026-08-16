@@ -9,6 +9,7 @@ void FUN_006c5d00(AnonShape_006C5D00_C5C8A2E6 *param_1,byte *param_2,int param_3
         do {
           *param_2 = *param_2 ^ param_7;
           param_2 = param_2 + param_3;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = param_4 + -1;
         } while (param_4 != 0);
         return;

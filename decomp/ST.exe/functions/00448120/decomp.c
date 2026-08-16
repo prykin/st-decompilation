@@ -236,10 +236,12 @@ STAllPlayersC::PutOnPlaceGuardBoats
         if (-1 < (int)local_24) {
           local_1c = 0;
           do {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = local_20_mg0;
             if (9 < (int)local_20_mg0) {
               _param_4 = 10;
             }
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
               psVar14 = local_6a;

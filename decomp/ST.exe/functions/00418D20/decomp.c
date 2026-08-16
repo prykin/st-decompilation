@@ -371,7 +371,6 @@ LAB_004192c9:
     iVar2 = (param_2 + -1) * (int)g_worldGrid.sizeX;
     iVar3 = (int)param_3 * (int)g_worldGrid.planeStride;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_4 = (int)param_3;
   if (g_worldGrid.cells[iVar3 + param_1 + iVar2].objects[0] != nullptr) {
     return 1;

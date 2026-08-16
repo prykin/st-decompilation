@@ -57,6 +57,7 @@ int FUN_00411cf0(char *param_1,int param_2)
     pcVar4 = param_1 + (int)pcVar1 * 4;
     int scalar_pcVar7 = (int)pcVar1 * 2; /* split integer lifetime from pointer-typed SSA storage */
     pcVar8_mg1 = param_1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = pcVar1;
     do {
       *pcVar4 = pcVar8_mg1[1];

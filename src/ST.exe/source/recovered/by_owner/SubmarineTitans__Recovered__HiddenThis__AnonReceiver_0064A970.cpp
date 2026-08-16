@@ -28,7 +28,9 @@ st::fn_00668F50
 
   iVar6 = 0;
   local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == (char *)0x9) {
       uVar2 = (*this->vtable->slot_18)();
       if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
@@ -51,6 +53,7 @@ st::fn_00668F50
           if (*pbVar3 != 0xff) {
             *param_3 = uVar2;
             iVar6 = iVar6 + 1;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_3 = param_3 + 1;
           }
           pbVar3 = pbVar3 + 0x51;
@@ -960,13 +963,13 @@ st::fn_00672440
           short *param_3)
 
 {
-  AnonReceiver_0064A970 *pAVar1;
+  AnonReceiver_0064A970 *this_00;
   int iVar2;
-  char *pcVar2;
-  undefined4 uVar3;
-  int iVar4;
-  short *psVar5;
-  float10 fVar6;
+  char *arg_1;
+  undefined4 uVar1;
+  int iVar3;
+  short *psVar4;
+  float10 fVar5;
   InternalExceptionFrame local_64;
   int local_20;
   AnonReceiver_0064A970 *local_1c;
@@ -983,7 +986,7 @@ st::fn_00672440
   g_currentExceptionFrame = &local_64;
   local_1c = this;
   iVar2 = st::fn_0072D7F0(local_64.jumpBuffer,0);
-  pAVar1 = local_1c;
+  this_00 = local_1c;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_64.previous;
     if (0 < iVar2) {
@@ -992,15 +995,15 @@ st::fn_00672440
     return iVar2;
   }
   st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_1c->field_0x4),&CHAR_00h_008016a0,0x7f);
-  *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
+  *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
   if (param_3 != nullptr) {
-    psVar5 = param_3;
-    for (iVar4 = 0x40; iVar4 != 0; iVar4 = iVar4 + -1) {
-      psVar5[0] = 0;
-      psVar5[1] = 0;
-      psVar5 = psVar5 + 2;
+    psVar4 = param_3;
+    for (iVar3 = 0x40; iVar3 != 0; iVar3 = iVar3 + -1) {
+      psVar4[0] = 0;
+      psVar4[1] = 0;
+      psVar4 = psVar4 + 2;
     }
-    *psVar5 = 0;
+    *psVar4 = 0;
   }
   do {
     while( true ) {
@@ -1008,21 +1011,21 @@ st::fn_00672440
         g_currentExceptionFrame = local_64.previous;
         return local_18;
       }
-      pcVar2 = st::fn_00403779(param_1,local_8);
-      if (pcVar2 != nullptr) break;
-      *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
+      arg_1 = st::fn_00403779(param_1,local_8);
+      if (arg_1 != nullptr) break;
+      *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       st::fn_006A5E40(-4,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
     }
-    switch(*pcVar2) {
+    switch(*arg_1) {
     case '\b':
       if (param_3 != nullptr) {
         if (0x31 < *param_3) {
-          *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
+          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
           st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 8;
-        uVar3 = (*pAVar1->vtable->slot_00)(pcVar2);
-        *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar3;
+        uVar1 = this_00->slot_00(arg_1);
+        *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar1;
         *param_3 = *param_3 + 1;
         param_3[2] = param_3[2] + 1;
       }
@@ -1031,12 +1034,12 @@ st::fn_00672440
     case '\t':
       if (param_3 != nullptr) {
         if (0x31 < *param_3) {
-          *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
+          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
           st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 9;
-        fVar6 = (float10)(*pAVar1->vtable->slot_04)(pcVar2);
-        *(float *)(param_3 + *param_3 * 2 + 4) = (float)fVar6;
+        fVar5 = (float10)(*this_00->vtable->slot_04)(arg_1);
+        *(float *)(param_3 + *param_3 * 2 + 4) = (float)fVar5;
         *param_3 = *param_3 + 1;
         param_3[3] = param_3[3] + 1;
       }
@@ -1045,14 +1048,14 @@ st::fn_00672440
     case '\n':
       if (param_3 != nullptr) {
         if (0x31 < *param_3) {
-          *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
+          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
           st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 10;
-        uVar3 = (*pAVar1->vtable->slot_08)(pcVar2);
-        *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar3;
+        uVar1 = this_00->slot_08(arg_1);
+        *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar1;
         if (*(int *)(param_3 + *param_3 * 2 + 4) == 0) {
-          *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
+          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
           st::fn_006A5E40(-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         *param_3 = *param_3 + 1;
@@ -1061,20 +1064,20 @@ st::fn_00672440
       local_8 = local_8 + 1;
       break;
     case '\v':
-      local_18 = (int)*(short *)(pcVar2 + 1);
+      local_18 = (int)*(short *)(arg_1 + 1);
       local_10 = 1;
       break;
     default:
-      local_c = st::fn_00401F5F((int)pcVar2,&local_14,&local_20);
+      local_c = st::fn_00401F5F((int)arg_1,&local_14,&local_20);
       if (local_c == nullptr) {
-        *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
+        *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
 LAB_0067276f:
         st::fn_006A5E40(local_14,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
       }
       else if (local_14 == 1) {
         if (param_3 != nullptr) {
           if (0x31 < *param_3) {
-            *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
+            *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
             st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
           }
           *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 8;
@@ -1086,7 +1089,7 @@ LAB_0067276f:
       else if (local_14 == 2) {
         if (param_3 != nullptr) {
           if (0x31 < *param_3) {
-            *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
+            *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
             st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
           }
           *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 9;
@@ -1097,12 +1100,12 @@ LAB_0067276f:
       }
       else {
         if (local_14 != 3) {
-          *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
+          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
           goto LAB_0067276f;
         }
         if (param_3 != nullptr) {
           if (0x31 < *param_3) {
-            *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
+            *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
             st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
           }
           *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 10;

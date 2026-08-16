@@ -60,7 +60,9 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
     local_30 = (uint)(0 < DAT_007f4d24);
     local_24 = nullptr;
     if (0 < param_4) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 - (DAT_007f4d38 * param_4 >> 0x10);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + (DAT_007f4d28 * param_4 >> 0x10);
     }
     local_2c = 0;
@@ -115,7 +117,7 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
             if ((((-1 < local_48[0]) && (local_48[0] < DAT_007f4d2c)) && (-1 < local_4c)) &&
                ((local_4c < DAT_007f4d30 &&
                 (uVar5 = local_54[0] * local_34 + local_48[0] + DAT_007f4d2c * local_4c ^ 7,
-                (g_bitset_007F4CFC[(int)uVar5 >> 3] >> (uVar5 & 7) & 1) != 0)))) {
+                (STBitTest(g_bitset_007F4CFC, uVar5)) != 0)))) {
               local_5c = local_5c + 1;
               local_24[iVar9] = 1;
             }
@@ -152,8 +154,7 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
                 if (((-1 < local_48[0]) && (local_48[0] < DAT_007f4d2c)) &&
                    ((-1 < local_4c && (local_4c < DAT_007f4d30)))) {
                   uVar6 = local_54[0] * local_34 + local_48[0] + DAT_007f4d2c * local_4c ^ 7;
-                  g_bitset_007F4CFC[(int)uVar6 >> 3] =
-                       g_bitset_007F4CFC[(int)uVar6 >> 3] | '\x01' << (uVar6 & 7);
+                  STBitSet(g_bitset_007F4CFC, uVar6);
                 }
                 local_bc = local_bc + -1;
                 uVar6 = local_20;
@@ -177,8 +178,7 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
                 if ((((-1 < local_48[0]) && (local_48[0] < DAT_007f4d2c)) && (-1 < local_4c)) &&
                    (local_4c < DAT_007f4d30)) {
                   uVar5 = local_54[0] * local_34 + local_48[0] + DAT_007f4d2c * local_4c ^ 7;
-                  g_bitset_007F4CFC[(int)uVar5 >> 3] =
-                       g_bitset_007F4CFC[(int)uVar5 >> 3] | '\x01' << (uVar5 & 7);
+                  STBitSet(g_bitset_007F4CFC, uVar5);
                 }
                 local_b8 = local_b8 + -1;
               } while (local_b8 != 0);
@@ -203,7 +203,7 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
             }
             if ((!bVar2) ||
                (uVar6 = local_54[0] * local_34 + local_48[0] + DAT_007f4d2c * local_4c ^ 7,
-               (g_bitset_007F4CFC[(int)uVar6 >> 3] >> (uVar6 & 7) & 1) == 0)) {
+               (STBitTest(g_bitset_007F4CFC, uVar6)) == 0)) {
               STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar10).field_0000 = local_48[0];
               STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar10).field_0004 = local_4c;
               STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar10).field_0008 = local_54[0];
@@ -212,8 +212,7 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
               local_28 = local_28 + -1;
               if (bVar2) {
                 uVar6 = local_54[0] * local_34 + local_48[0] + DAT_007f4d2c * local_4c ^ 7;
-                g_bitset_007F4CFC[(int)uVar6 >> 3] =
-                     g_bitset_007F4CFC[(int)uVar6 >> 3] | '\x01' << (uVar6 & 7);
+                STBitSet(g_bitset_007F4CFC, uVar6);
               }
             }
             iVar7 = iVar7 + local_74;
@@ -282,8 +281,7 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
             goto LAB_0040e872;
           }
           uVar6 = local_54[0] * iVar3 + local_48[0] + DAT_007f4d2c * local_4c ^ 7;
-          g_bitset_007F4CFC[(int)uVar6 >> 3] =
-               g_bitset_007F4CFC[(int)uVar6 >> 3] | '\x01' << (uVar6 & 7);
+          STBitSet(g_bitset_007F4CFC, uVar6);
           STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar4).field_0000 = local_48[0];
           STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar4).field_0004 = local_4c;
           STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar4).field_0008 = local_54[0];

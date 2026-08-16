@@ -46,6 +46,7 @@ void __cdecl FUN_00553e20(int param_1,undefined *param_2,byte param_3)
   pcVar5 = pcVar7 + -uVar3;
   pCVar8 = local_98.lfFaceName;
   memmove(pCVar8, pcVar5, uVar3); /* compiler REP MOVS byte copy */
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_3 = 0xe4fae200;
   local_5c[0] = 0x20;
   local_5c[1] = 0x21;

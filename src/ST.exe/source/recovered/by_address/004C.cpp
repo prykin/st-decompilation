@@ -1724,7 +1724,7 @@ void __thiscall st::fn_004CCC10(void *this,int *param_1,int *param_2)
      (*(int *)(&DAT_007e1218 + (STField<int>(this,0x235) * 3 + STField<int>(this,0x239)) * 4)
       != 0)) {
     memset(local_294, 0, 0x26c); /* compiler bulk-zero initialization */
-    param_1 = local_294;
+    auto param_1_after_write = local_294; /* compiler stack-slot lifetime split */
     iVar4 = 0;
     do {
       local_EAX_120 = st::fn_004049B7(STField<char>(this,0x24));
@@ -1733,11 +1733,11 @@ void __thiscall st::fn_004CCC10(void *this,int *param_1,int *param_2)
         iVar2 = st::fn_0040186B((int)piVar1,iVar4);
         iVar2 = st::fn_00402342((int)piVar1,iVar4,iVar2 + 1);
         if (iVar2 != 0) {
-          *param_1 = 1;
+          *param_1_after_write = 1;
         }
       }
       iVar4 = iVar4 + 1;
-      param_1 = param_1 + 1;
+      param_1_after_write = param_1_after_write + 1;
     } while (iVar4 < 0x9b);
     st::fn_00404DC2((int)piVar1,STField<int>(this,0x24),
                        *(int *)(&DAT_007e1218 +
@@ -1768,7 +1768,7 @@ LAB_004ccd43:
         pSVar6->unknown_00 = 0;
         pSVar6 = (STMessage *)&pSVar6->unknown_04;
       }
-      param_1 = local_294;
+      param_1_after_write = local_294;
       local_28.id = 0x5de9;
       local_28.arg0.words.low = (word)piVar1;
       iVar4 = 0;
@@ -1776,7 +1776,7 @@ LAB_004ccd43:
         local_EAX_374 = st::fn_004049B7(STField<char>(this,0x24));
         local_EAX_374 = (int)(byte)local_EAX_374;
         if ((*(char *)(*(int *)(&DAT_007bfc00 + local_EAX_374 * 4) + iVar4) == '\0') &&
-           (*param_1 == 0)) {
+           (*param_1_after_write == 0)) {
           iVar2 = st::fn_0040186B((int)piVar1,iVar4);
           iVar2 = st::fn_00402342((int)piVar1,iVar4,iVar2 + 1);
           if (iVar2 != 0) {
@@ -1787,7 +1787,7 @@ LAB_004ccd43:
           }
         }
         iVar4 = iVar4 + 1;
-        param_1 = param_1 + 1;
+        param_1_after_write = param_1_after_write + 1;
       } while (iVar4 < 0x9b);
     }
   }
@@ -1854,6 +1854,7 @@ LAB_004ccedc:
     }
   }
   if (STField<int>(this,0x408) != 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = nullptr;
     if (STField<int>(this,0x24) != STField<int>(this,0x23d)) {
       local_EAX_948 = st::fn_004049B7((char)STField<int>(this,0x23d));

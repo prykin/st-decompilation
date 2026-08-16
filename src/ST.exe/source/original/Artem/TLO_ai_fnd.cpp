@@ -989,7 +989,7 @@ LAB_004b4c99:
                           do {
                             if ((((uVar24 != 4) && (uVar24 != 5)) && (uVar24 != 8)) && (uVar24 != 9)
                                ) {
-                              iVar15 = ((int)(uVar24 + ((int)uVar24 >> 0x1f & 3U)) >> 2) + -1 +
+                              iVar15 = (STSignedDiv4(uVar24)) + -1 +
                                        local_138;
                               uVar21 = uVar24 & 0x80000003;
                               if ((int)uVar21 < 0) {

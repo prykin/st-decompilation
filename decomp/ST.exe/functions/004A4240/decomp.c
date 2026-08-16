@@ -64,8 +64,8 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                       (g_allPlayers_007FA174,local_24->field_0024,(ushort)param_2,CASE_1);
   local_18 = this_01;
   if (param_1 == 1) {
-    iVar5 = (*this_01->vtable->vfunc_2C)();
-    if ((iVar5 == 0x3b) || (iVar5 = (*this_01->vtable->vfunc_2C)(), iVar5 == 0x60)) {
+    iVar5 = this_01->vfunc_2C();
+    if ((iVar5 == 0x3b) || (iVar5 = this_01->vfunc_2C(), iVar5 == 0x60)) {
       if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
         if (this_00->field_0266 == nullptr) {
           RaiseInternalException
@@ -136,7 +136,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       if (0 < local_1c) {
         piVar9 = local_34;
         do {
-          iVar6 = (*local_18->vtable->vfunc_2C)();
+          iVar6 = local_18->vfunc_2C();
           this_01 = local_18;
           if (iVar6 == *piVar9) break;
           iVar5 = iVar5 + 1;
@@ -158,7 +158,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      iVar5 = (*this_01->vtable->vfunc_2C)();
+      iVar5 = this_01->vfunc_2C();
       if (iVar5 != this_00->field_025E) {
         g_currentExceptionFrame = local_78.previous;
         return;
@@ -215,9 +215,9 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     pDVar12 = this_00->field_024E;
     goto LAB_004a4aab;
   }
-  iVar5 = (*this_01->vtable->vfunc_2C)();
-  if ((iVar5 == 0x3b) || (iVar6 = (*this_01->vtable->vfunc_2C)(), iVar5 = local_1c, iVar6 == 0x60))
-  {
+  iVar5 = this_01->vfunc_2C();
+  if ((iVar5 == 0x3b) ||
+     (iVar6 = this_01->vfunc_2C(), iVar5 = local_1c, iVar6 == 0x60)) {
     if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
       if (this_00->field_0266 == nullptr) {
         RaiseInternalException
@@ -303,7 +303,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     if (0 < local_1c) {
       local_20 = local_34;
       do {
-        iVar7 = (*local_18->vtable->vfunc_2C)();
+        iVar7 = local_18->vfunc_2C();
         if (iVar7 == *local_20) break;
         iVar6 = iVar6 + 1;
         local_20 = local_20 + 1;

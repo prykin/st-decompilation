@@ -104,8 +104,7 @@ LAB_006a2f2f:
   }
   puVar5 = (byte *)FUN_006b4fa0((int *)pbVar4);
   memset(puVar5, 0, uVar13); /* compiler bulk-zero initialization */
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = local_8;
+  auto param_1_after_write = local_8; /* compiler stack-slot lifetime split */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   in_stack_00000008 = (cMf32 *)0x45;
   iVar7 = FUN_006b4fa0((int *)pbVar4);
@@ -126,12 +125,11 @@ LAB_006a2f2f:
       puVar12 = (undefined1 *)(iVar8 + iVar15);
       do {
         iVar6 = iVar6 + -1;
-        *puVar12 = (puVar12 + 1)[(int)param_1 + (-1 - iVar8)];
+        *puVar12 = (puVar12 + 1)[(int)param_1_after_write + (-1 - iVar8)];
         puVar12 = puVar12 + 1;
       } while (iVar6 != 0);
     }
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (short *)((int)param_1 + 0x8b);
+    param_1_after_write = (short *)((int)param_1_after_write + 0x8b);
     iVar8 = iVar8 - ((uint)*(ushort *)(pbVar4 + 0xe) * *(int *)(pbVar4 + 4) + 0x1f >> 3 & 0x1ffffffc
                     );
     local_18 = local_18 + -1;
@@ -151,14 +149,13 @@ LAB_006a2f2f:
       puVar12 = (undefined1 *)(iVar8 + iVar15);
       do {
         iVar6 = iVar6 + -1;
-        *puVar12 = puVar12[(int)param_1 - iVar8];
+        *puVar12 = puVar12[(int)param_1_after_write - iVar8];
         puVar12 = puVar12 + 1;
       } while (iVar6 != 0);
     }
     iVar8 = iVar8 - ((uint)*(ushort *)(pbVar4 + 0xe) * *(int *)(pbVar4 + 4) + 0x1f >> 3 & 0x1ffffffc
                     );
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (short *)((int)param_1 + 0x8b);
+    param_1_after_write = (short *)((int)param_1_after_write + 0x8b);
     local_18 = local_18 + -1;
   } while (local_18 != 0);
   if (local_14 != nullptr) {

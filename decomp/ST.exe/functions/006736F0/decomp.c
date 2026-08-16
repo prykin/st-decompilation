@@ -1,6 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Unable to use type for symbol pbVar9 */
+/* WARNING: Unable to use type for symbol temp_3fbe8e62c1 */
+/* WARNING: Unable to use type for symbol pbVar4 */
+
 int FUN_006736f0(void)
 
 {
@@ -22,9 +26,9 @@ int FUN_006736f0(void)
   uint local_10;
   byte *local_c;
   int *local_8;
-  byte *pbVar9;
-  byte *temp_3fbe8e62c1;
-  byte *pbVar4;
+  char *pbVar9;
+  char *temp_3fbe8e62c1;
+  char *pbVar4;
 
   local_8 = nullptr;
   local_10 = DAT_007d2d24;
@@ -56,10 +60,10 @@ cf_common_exit_00673BA7:
       if ((DAT_007d2d24 & 0x800) == 0) {
         local_8 = DAT_00811908;
         if (DAT_007d2d18 == 0x3c) {
-          local_c = DAT_00811948;
+          local_c = (byte *)PTR_00811948;
         }
         else {
-          local_c = DAT_00857528;
+          local_c = (byte *)PTR_00857528;
         }
         for (; local_8 != nullptr; local_8 = (int *)*local_8) {
           pbVar3 = (byte *)local_8[1];
@@ -112,11 +116,11 @@ joined_r0x00673849:
       }
       if (DAT_007d2d18 == 0x1d) goto cf_common_exit_00673BA7;
       if ((DAT_007d2d24 & 0x800) == 0) {
-        temp_3fbe8e62c1 = DAT_00811948;
+        temp_3fbe8e62c1 = PTR_00811948;
         if (DAT_007d2d18 != 0x3c) {
-          temp_3fbe8e62c1 = DAT_00857528;
+          temp_3fbe8e62c1 = PTR_00857528;
         }
-        pbVar3 = (byte *)FUN_006c49b0((char *)temp_3fbe8e62c1);
+        pbVar3 = (byte *)FUN_006c49b0(temp_3fbe8e62c1);
         piVar5 = local_8;
         local_8[2] = (int)pbVar3;
         if (pbVar3 == nullptr) goto LAB_00673bae;
@@ -170,15 +174,15 @@ LAB_00673990:
 LAB_006739be:
   if (DAT_007d2d18 == 0x22) {
 LAB_006739cd:
-    for (; (cVar2 = *(char *)(DAT_0085755c + DAT_00811914), cVar2 == ' ' || (cVar2 == '\t'));
+    for (; (cVar2 = PTR_0085755c[DAT_00811914], cVar2 == ' ' || (cVar2 == '\t'));
         DAT_00811914 = DAT_00811914 + 1) {
     }
     if (cVar2 == ']') {
       DAT_00811914 = DAT_00811914 + 1;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      pcVar6 = (char *)(**(code **)&PTR_0081194c->field_0x10)(DAT_00857528);
+      pcVar6 = (char *)(**(code **)&PTR_0081194c->field_0x10)(PTR_00857528);
       if (pcVar6 == nullptr) {
-        *DAT_00811948 = 0;
+        *PTR_00811948 = '\0';
       }
       else {
         uVar8 = 0xffffffff;
@@ -191,31 +195,31 @@ LAB_006739cd:
           pcVar6 = pcVar11;
         } while (cVar2 != '\0');
         uVar8 = ~uVar8;
-        pbVar3 = (byte *)(pcVar11 + -uVar8);
-        pbVar9 = DAT_00811948;
-        memmove(pbVar9, pbVar3, uVar8); /* compiler REP MOVS byte copy */
+        pcVar6 = pcVar11 + -uVar8;
+        pbVar9 = PTR_00811948;
+        memmove(pbVar9, pcVar6, uVar8); /* compiler REP MOVS byte copy */
       }
       uVar7 = 0xffffffff;
-      pbVar4 = DAT_00811948;
+      pbVar4 = PTR_00811948;
       do {
         if (uVar7 == 0) break;
         uVar7 = uVar7 - 1;
-        bVar1 = *pbVar4;
+        cVar2 = *pbVar4;
         pbVar4 = pbVar4 + 1;
-      } while (bVar1 != 0);
+      } while (cVar2 != '\0');
       uVar7 = ~uVar7;
       uVar8 = uVar7 - 1;
       if (uVar8 != 0) {
-        for (; (cVar2 = *(char *)(DAT_0085755c + DAT_00811914), cVar2 == ' ' || (cVar2 == '\t'));
+        for (; (cVar2 = PTR_0085755c[DAT_00811914], cVar2 == ' ' || (cVar2 == '\t'));
             DAT_00811914 = DAT_00811914 + 1) {
         }
         if (cVar2 == '\\') {
-          if (DAT_00811948[uVar7 - 2] == 0x5c) {
+          if (PTR_00811948[uVar7 - 2] == '\\') {
             uVar8 = uVar7 - 2;
           }
         }
-        else if (((cVar2 != '>') && (cVar2 != '\0')) && (DAT_00811948[uVar7 - 2] != 0x5c)) {
-          DAT_00811948[uVar8] = 0x5c;
+        else if (((cVar2 != '>') && (cVar2 != '\0')) && (PTR_00811948[uVar7 - 2] != '\\')) {
+          PTR_00811948[uVar8] = '\\';
           uVar8 = uVar7;
         }
       }
@@ -224,14 +228,14 @@ LAB_006739cd:
       DAT_00811914 = DAT_00857544;
       uVar8 = 0;
     }
-    bVar1 = *(byte *)(DAT_0085755c + DAT_00811914);
-    while (((bVar1 != 0 && (bVar1 != 0x3e)) && ((bVar1 != 0x20 && (bVar1 != 9))))) {
-      DAT_00811948[uVar8] = bVar1;
+    cVar2 = PTR_0085755c[DAT_00811914];
+    while (((cVar2 != '\0' && (cVar2 != '>')) && ((cVar2 != ' ' && (cVar2 != '\t'))))) {
+      PTR_00811948[uVar8] = cVar2;
       DAT_00811914 = DAT_00811914 + 1;
       uVar8 = uVar8 + 1;
-      bVar1 = *(byte *)(DAT_0085755c + DAT_00811914);
+      cVar2 = PTR_0085755c[DAT_00811914];
     }
-    DAT_00811948[uVar8] = 0;
+    PTR_00811948[uVar8] = '\0';
     DAT_007d2d18 = 0x3c;
   }
   if ((DAT_007d2d24 & 0x800) == 0) {
@@ -243,10 +247,10 @@ LAB_006739cd:
         g_currentExceptionFrame = local_54.previous;
         return iVar3;
       }
-      thunk_FUN_00672b60((char *)DAT_00811948,PTR_0081194c);
+      thunk_FUN_00672b60(PTR_00811948,PTR_0081194c);
       if ((code *)PTR_0081194c->field_0014 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (*(code *)PTR_0081194c->field_0014)(DAT_00811948,1);
+        (*(code *)PTR_0081194c->field_0014)(PTR_00811948,1);
       }
       DAT_007d2d24 = DAT_007d2d24 | 0x80;
       g_currentExceptionFrame = local_54.previous;

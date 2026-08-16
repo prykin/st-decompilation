@@ -40,8 +40,8 @@ void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x1743);
         }
-        iVar4 = (*this_00->vtable->vfunc_2C)();
-        if ((iVar4 == 0x16) || (iVar4 = (*this_00->vtable->vfunc_2C)(), iVar4 == 0x25)) {
+        iVar4 = this_00->vfunc_2C();
+        if ((iVar4 == 0x16) || (iVar4 = this_00->vfunc_2C(), iVar4 == 0x25)) {
           thunk_FUN_00494160(this_00,param_1);
         }
       }

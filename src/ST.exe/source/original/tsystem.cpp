@@ -496,17 +496,17 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         DAT_0080733b = (byte)uVar10;
         if (DAT_0080877e == '\0') {
           iVar9 = (uVar10 & 0xff) * 0x18;
-          DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar9 + 0x14);
+          DAT_00807654 = *(undefined4 *)(st_string_007C2AE0 + iVar9 + 0x14);
         }
         else {
           iVar9 = (uVar10 & 0xff) * 0x18;
-          DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar9 + 8);
+          DAT_00807654 = *(undefined4 *)(st_string_007C2AE0 + iVar9 + 8);
         }
         if (g_sT3DSMAPContext_00807598 != nullptr) {
           st::fn_006E8640
                     (g_sT3DSMAPContext_00807598,
-                     *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar9 + 0x10),
-                     *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar9 + 4));
+                     *(char **)(st_string_007C2AE0 + iVar9 + 0x10),
+                     *(char **)(st_string_007C2AE0 + iVar9 + 4));
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }

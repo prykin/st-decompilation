@@ -49,6 +49,7 @@ void FUN_006db1f0(ushort *param_1,int param_2,byte *param_3,int param_4,int para
       iVar6 = param_6 + -1;
       bVar3 = 0 < param_6;
       iVar5 = param_5;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = iVar6;
     } while (iVar6 != 0 && bVar3);
   }

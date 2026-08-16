@@ -13,6 +13,7 @@ uint FUN_00749708(undefined4 *param_1,int *param_2,uint param_3)
   uint local_8;
 
   puVar3 = param_1;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {
     uVar4 = 1;
   }
@@ -26,9 +27,9 @@ uint FUN_00749708(undefined4 *param_1,int *param_2,uint param_3)
       uVar4 = (**(code **)(*param_2 + 0xc))
                         (param_2,*puVar6,puVar6[1],puVar6[2],puVar6[3],param_1[1],param_1[2]);
       if ((-1 < (int)uVar4) && (local_8 = 0, param_1[3] != 0)) {
-        param_1 = nullptr;
+        auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
         while( true ) {
-          puVar5 = (undefined4 *)(puVar3[4] + (int)param_1);
+          puVar5 = (undefined4 *)(puVar3[4] + (int)param_1_after_write);
           puVar6 = (undefined4 *)puVar5[5];
           puVar1 = (undefined4 *)*puVar3;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -38,7 +39,7 @@ uint FUN_00749708(undefined4 *param_1,int *param_2,uint param_3)
                              puVar5[6]);
           if ((int)uVar4 < 0) break;
           param_3 = 0;
-          puVar6 = (undefined4 *)(puVar3[4] + (int)param_1);
+          puVar6 = (undefined4 *)(puVar3[4] + (int)param_1_after_write);
           if (puVar6[7] != 0) {
             do {
               puVar1 = *(undefined4 **)(puVar6[8] + 4 + param_3 * 8);
@@ -51,12 +52,12 @@ uint FUN_00749708(undefined4 *param_1,int *param_2,uint param_3)
                                 );
               if ((int)uVar4 < 0) goto LAB_0074982d;
               param_3 = param_3 + 1;
-              puVar6 = (undefined4 *)(puVar3[4] + (int)param_1);
+              puVar6 = (undefined4 *)(puVar3[4] + (int)param_1_after_write);
             } while (param_3 < (uint)puVar6[7]);
           }
           if ((int)uVar4 < 0) break;
           local_8 = local_8 + 1;
-          param_1 = param_1 + 9;
+          param_1_after_write = param_1_after_write + 9;
           if ((uint)puVar3[3] <= local_8) break;
         }
       }

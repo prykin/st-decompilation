@@ -23,8 +23,8 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
   int local_EAX_36;
   int local_EAX_253;
   int local_EAX_463;
-  STGameObjC *pSVar4;
-  uint uVar5;
+  STGameObjC *this_00;
+  uint uVar4;
   int iVar5;
   int local_EAX_1096;
   int local_EAX_1172;
@@ -63,9 +63,9 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
       this->field_0615 = 4;
     }
     if (this->field_0615 == 4) {
-      uVar5 = sub_004176C0(this,this->field_060F);
-      uVar5 = sub_00417910(this,(short)uVar5);
-      if (uVar5 == 0xffffffff) {
+      uVar4 = sub_004176C0(this,this->field_060F);
+      uVar4 = sub_00417910(this,(short)uVar4);
+      if (uVar4 == 0xffffffff) {
         local_EAX_253 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3336,0,0,"%s",
                                 "STBoatC::BackCapture, CAPTURE_PMOVE");
@@ -74,7 +74,7 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if (uVar5 == 0) {
+      if (uVar4 == 0) {
         this->field_0615 = CASE_5;
 LAB_00478373:
         iVar6 = this->vfunc_D8();
@@ -109,11 +109,11 @@ LAB_0047848a:
     }
     break;
   case CASE_3:
-    pSVar4 = STAllPlayersC::GetObjPtr
-                       (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
-    if (((pSVar4 != nullptr) && (pSVar4->field_0018 == *(int *)&this->field_0x5ff)) &&
-       (iVar6 = (*pSVar4->vtable->vfunc_108)(this->field_0024), iVar6 != 0)) {
-      thunk_FUN_004cd450((AnonShape_004CC900_31EE9CAA *)pSVar4);
+    this_00 = STAllPlayersC::GetObjPtr
+                        (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
+    if (((this_00 != nullptr) && (this_00->field_0018 == *(int *)&this->field_0x5ff)) &&
+       (iVar6 = (*this_00->vtable[1].vfunc_34)(this_00,this->field_0024), iVar6 != 0)) {
+      thunk_FUN_004cd450((AnonShape_004CC900_31EE9CAA *)this_00);
     }
     if (((int)this->field_0041 != (this->field_0609 + 1) * 0xc9) ||
        ((int)this->field_0043 != (this->field_060B + 1) * 0xc9)) {
@@ -136,9 +136,9 @@ LAB_0047848a:
       this->field_0615 = 1;
     }
     if (this->field_0615 == 1) {
-      uVar5 = sub_004176C0(this,this->field_060F);
-      uVar5 = sub_00417910(this,(short)uVar5);
-      if (uVar5 == 0xffffffff) {
+      uVar4 = sub_004176C0(this,this->field_060F);
+      uVar4 = sub_00417910(this,(short)uVar4);
+      if (uVar4 == 0xffffffff) {
         iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3373,0,0,"%s",
                                    "STBoatC::BackCapture, CAPTURE_OMOVE");
         if (iVar5 == 0) {
@@ -146,7 +146,7 @@ LAB_0047848a:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if (uVar5 == 0) {
+      if (uVar4 == 0) {
         this->field_0615 = CASE_2;
         goto LAB_00478373;
       }

@@ -7,6 +7,26 @@
 {"address": "0056FA60", "detail": "AddSystem: 006E4650, 006E47E0", "kind": "ambiguous_direct_call"}
 {"address": "0056FA60", "detail": "AppClassTy::AddSystem: 006E4650, 006E47E0", "kind": "ambiguous_direct_call"}
 {"address": "00596CC0", "detail": "OutTRGlProc: 0040303F, 004035E9", "kind": "ambiguous_direct_call"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
+{"address": "0066ACC0", "detail": "local_10[(int)param_1] -> exact byte-pointer plus machine-word offset", "kind": "commuted_byte_subscript"}
 {"detail": "/SubmarineTitans/Recovered/PointerShapes/AnonShape_0052D0A0_90C708AF:entries renamed to entries_dup2", "kind": "duplicate_field_name"}
 {"detail": "/SubmarineTitans/Recovered/PointerShapes/AnonShape_006A58B0_8049417A:entries renamed to entries_dup2", "kind": "duplicate_field_name"}
 {"detail": "/SubmarineTitans/Recovered/PointerShapes/AnonShape_006A58B0_CDE73679:entries renamed to entries_dup2", "kind": "duplicate_field_name"}
@@ -24,6 +44,127 @@
 {"address": "005D1400", "detail": "SettMapMTy_field_1F84Element *->field_0x4 -> field_0004", "kind": "exact_field_name_rewrite"}
 {"address": "005E1330", "detail": "MTaskTy_field_0074Element.field_0xf -> field_000F", "kind": "exact_field_name_rewrite"}
 {"address": "005E1330", "detail": "MTaskTy_field_0074Element.field_0xf -> field_000F", "kind": "exact_field_name_rewrite"}
+{"address": "00423850", "detail": "slot 0x100: undefined1 (__thiscall *)(STGameObjC *, undefined1)", "kind": "exact_indirect_member_call"}
+{"address": "00423850", "detail": "slot 0x104: undefined1 (__thiscall *)(STGameObjC *, undefined1)", "kind": "exact_indirect_member_call"}
+{"address": "00424530", "detail": "slot 0x100: undefined1 (__thiscall *)(STGameObjC *, undefined1)", "kind": "exact_indirect_member_call"}
+{"address": "00424620", "detail": "slot 0x104: undefined1 (__thiscall *)(STGameObjC *, undefined1)", "kind": "exact_indirect_member_call"}
+{"address": "0042BB30", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042BEA0", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042C300", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042C5F0", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042C5F0", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042C5F0", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042C5F0", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042C5F0", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042C5F0", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042C5F0", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042D190", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042D190", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042D190", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042D190", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042D370", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042D370", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0042D370", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "004353B0", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "004353B0", "detail": "slot 0xE8: undefined4 (__thiscall *)(STGameObjC *, undefined2)", "kind": "exact_indirect_member_call"}
+{"address": "0043EED0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "00445A40", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "00445A40", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0044B5F0", "detail": "slot 0xEC: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0044B5F0", "detail": "slot 0xEC: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0044B5F0", "detail": "slot 0xEC: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0044B5F0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0044B5F0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0044E260", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "00462180", "detail": "slot 0xF4: undefined4 (__thiscall *)(STWorldObject *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00462180", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00465C60", "detail": "slot 0x88: undefined4 (__thiscall *)(STWorldObject *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00465C60", "detail": "slot 0x88: undefined4 (__thiscall *)(STWorldObject *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00476CE0", "detail": "slot 0x108: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00476CE0", "detail": "slot 0x108: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00476CE0", "detail": "slot 0x108: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00476CE0", "detail": "slot 0x108: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00476CE0", "detail": "slot 0x10C: void (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "00478030", "detail": "slot 0x108: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00478640", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00478640", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "0047D080", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "0047D080", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "0047D080", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00483300", "detail": "slot 0xF0: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "00483300", "detail": "slot 0xF4: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00483300", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0x120: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0x120: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0xF0: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0xF0: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0xF0: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0xFC: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0xFC: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0048CEA0", "detail": "slot 0xF0: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0048CEA0", "detail": "slot 0xF4: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "0048CEA0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "00492B20", "detail": "slot 0x108: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00492FC0", "detail": "slot 0x108: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00493BC0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "0049F100", "detail": "slot 0x108: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "004B1FB0", "detail": "slot 0x88: undefined4 (__thiscall *)(STWorldObject *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "0057A2C0", "detail": "slot 0xF0: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "0057A2C0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00581200", "detail": "slot 0xF0: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00581200", "detail": "slot 0xF0: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00581200", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00581200", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "005825C0", "detail": "slot 0xDC: undefined4 (__thiscall *)(STWorldObject *, undefined4, undefined4, undefined4, undefined4, undefined4, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "005825C0", "detail": "slot 0xE0: void (__thiscall *)(STWorldObject *, undefined4, undefined4, undefined4, undefined4, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "005825C0", "detail": "slot 0xF0: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00584060", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "00586320", "detail": "slot 0xF0: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00586320", "detail": "slot 0xF0: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00586320", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00586320", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00586AF0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00586AF0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00586AF0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "005EBD80", "detail": "slot 0x114: undefined4 (__thiscall *)(STWorldObject *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "005EBD80", "detail": "slot 0x118: void (__thiscall *)(STWorldObject *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "005FC4A0", "detail": "slot 0x114: undefined4 (__thiscall *)(STWorldObject *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "005FC4A0", "detail": "slot 0x118: void (__thiscall *)(STWorldObject *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "005FD750", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "005FEB60", "detail": "slot 0xF0: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "005FEB60", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "005FF3A0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "00601500", "detail": "slot 0xDC: undefined4 (__thiscall *)(STWorldObject *, undefined4, undefined4, undefined4, undefined4, undefined4, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00601500", "detail": "slot 0xDC: undefined4 (__thiscall *)(STWorldObject *, undefined4, undefined4, undefined4, undefined4, undefined4, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00601500", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00614400", "detail": "slot 0xF0: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00614400", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "0061B340", "detail": "slot 0xF0: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "0061B340", "detail": "slot 0xF0: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "0061B340", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "0061B340", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "0061CA90", "detail": "slot 0xF0: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "0061CA90", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00625730", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "006264D0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00637350", "detail": "slot 0x0: void (__thiscall *)(STWorldObject *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00637350", "detail": "slot 0xF0: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00637350", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
+{"address": "00644410", "detail": "slot 0xDC: undefined4 (__thiscall *)(STWorldObject *, undefined4, undefined4, undefined4, undefined4, undefined4, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "00644410", "detail": "slot 0xE0: void (__thiscall *)(STWorldObject *, undefined4, undefined4, undefined4, undefined4, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "0065BD70", "detail": "slot 0x12C: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0065BD70", "detail": "slot 0x130: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0065BD70", "detail": "slot 0x138: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0065DA50", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0065DC00", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0065DD30", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0065E070", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "0065E3B0", "detail": "slot 0xD4: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "00677BE0", "detail": "slot 0x12C: undefined4 (__thiscall *)(STFishC *)", "kind": "exact_indirect_member_call"}
+{"address": "00677BE0", "detail": "slot 0x130: undefined4 (__thiscall *)(STFishC *)", "kind": "exact_indirect_member_call"}
 {"address": "0042B760", "detail": "call 006ACC70 argument 3: param_1 -> _param_1 as STGroupBoatC *", "kind": "exact_output_lifetime_materialization"}
 {"address": "004407A0", "detail": "call 006ACC70 argument 3: param_1 -> _param_1 as STGroupBoatC *", "kind": "exact_output_lifetime_materialization"}
 {"address": "0040AE40", "detail": "assignment local_10: unresolved field word -> short *", "kind": "exact_pointer_boundary_cast"}
@@ -91,14 +232,11 @@
 {"address": "0040E0F0", "detail": "assignment uVar6: int * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "0040E0F0", "detail": "assignment uVar6: int * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "0040E0F0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0040EB90", "detail": "assignment DAT_007f4d00: int * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "0040EB90", "detail": "assignment DAT_007f4d00: int * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "0040EB90", "detail": "assignment aiStack_a8[iVar3 * -3 + 4]: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "0040EB90", "detail": "assignment aiStack_a8[iVar3 * -3 + 6]: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "0040EB90", "detail": "assignment aiStack_a8[iVar3 * -3 + 6]: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "0040EB90", "detail": "assignment piVar10: undefined4 -> int *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0040EB90", "detail": "assignment piVar14: undefined4 -> int *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0040EB90", "detail": "assignment piVar6: undefined4 -> int *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0040EB90", "detail": "assignment piVar14: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0040EB90", "detail": "assignment piVar6: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0040EB90", "detail": "assignment puStack_10: address of unresolved image datum -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0040EB90", "detail": "assignment puStack_c: address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0040EB90", "detail": "assignment uVar12: int * -> uint", "kind": "exact_pointer_boundary_cast"}
@@ -144,9 +282,11 @@
 {"address": "004137F0", "detail": "assignment piVar9[1]: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "004137F0", "detail": "assignment piVar9[2]: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "004137F0", "detail": "assignment this->field_0059->field_0000: AnonShape_004137F0_350C8AE0 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "00413AF0", "detail": "assignment DAT_007f4d04: nullptr -> zero word", "kind": "exact_pointer_boundary_cast"}
-{"address": "00413AF0", "detail": "assignment DAT_007f4d04: void * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "00413AF0", "detail": "assignment piVar16_mg0: undefined4 -> int *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00413AF0", "detail": "assignment DAT_007f4d48: undefined4 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "00413AF0", "detail": "assignment PTR_007f4d04: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00413AF0", "detail": "assignment piVar16_mg0: int * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00413AF0", "detail": "assignment piVar16_mg0: int * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00413AF0", "detail": "assignment piVar16_mg0: int * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00413AF0", "detail": "assignment puStack_10: address of unresolved image datum -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00413AF0", "detail": "assignment puStack_c: address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00414980", "detail": "call 00401104 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -156,12 +296,10 @@
 {"address": "00414A70", "detail": "assignment DAT_007f4d18: void * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "00415160", "detail": "assignment puVar6: void * -> ushort *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00415160", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00415160", "detail": "call 006A5E90 argument 1: undefined4 -> short *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00415160", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00415160", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00415590", "detail": "assignment param_1->field_0049: STGroupBoatC * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "00415590", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00415590", "detail": "call 006A5E90 argument 1: undefined4 -> short *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00415590", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00415590", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00415590", "detail": "return: dword * -> uint *", "kind": "exact_pointer_boundary_cast"}
@@ -441,7 +579,8 @@
 {"address": "00424E10", "detail": "assignment puVar26[-1]: uint * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "00424E10", "detail": "assignment puVar26[-2]: uint * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "00424E10", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00427090", "detail": "assignment DAT_007f4d6c: void * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "00427090", "detail": "assignment PTR_007f4d6c[DAT_007f4d78 * 3 + 2]: void * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "00427090", "detail": "assignment puVar2: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427090", "detail": "call 00405010 argument 4: RuntimeRecord_007F4D74_0010 * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427090", "detail": "call 00405010 argument 4: RuntimeRecord_007F4D74_0010 * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427090", "detail": "call 00405010 argument 4: RuntimeRecord_007F4D74_0010 * -> int", "kind": "exact_pointer_boundary_cast"}
@@ -452,10 +591,8 @@
 {"address": "00427090", "detail": "call 00405010 argument 4: RuntimeRecord_007F4D74_0010 * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427090", "detail": "call 00405010 argument 4: RuntimeRecord_007F4D74_0010 * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427090", "detail": "call 00405010 argument 4: RuntimeRecord_007F4D74_0010 * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "00427090", "detail": "call 006ACF50 argument 1: undefined4 -> void *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00427BB0", "detail": "assignment DAT_007f4d6c: void * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "00427BB0", "detail": "call 006ACF50 argument 1: undefined4 -> void *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00427F20", "detail": "assignment DAT_007f4d6c: nullptr -> zero word", "kind": "exact_pointer_boundary_cast"}
+{"address": "00427BB0", "detail": "assignment PTR_007f4d6c[DAT_007f4d78 * 3 + 2]: void * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "00427BB0", "detail": "assignment puVar2: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427F20", "detail": "assignment puStack_10: address of unresolved image datum -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427F20", "detail": "assignment puStack_c: address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427F20", "detail": "call 00403288 argument 1: void * -> AnonReceiver_004248D0 *", "kind": "exact_pointer_boundary_cast"}
@@ -464,7 +601,6 @@
 {"address": "00427F20", "detail": "call 00403288 argument 1: void * -> AnonReceiver_004248D0 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427F20", "detail": "call 00403288 argument 1: void * -> AnonReceiver_004248D0 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427F20", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00427F20", "detail": "call 006A5E90 argument 1: undefined4 -> short *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427F20", "detail": "call 006E25D0 argument 1: void * -> ST3DSMAPContext *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427F20", "detail": "call 006E25D0 argument 1: void * -> ST3DSMAPContext *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00427F20", "detail": "call 006E25D0 argument 1: void * -> ST3DSMAPContext *", "kind": "exact_pointer_boundary_cast"}
@@ -3152,7 +3288,6 @@
 {"address": "004E6E10", "detail": "assignment piVar5: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "004E6E10", "detail": "assignment puVar3: address inside unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "004E7390", "detail": "assignment local_8: undefined1 * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "004E76E0", "detail": "assignment DAT_00801020: uint * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "004E76E0", "detail": "assignment pbVar5: address inside unresolved image datum -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "004E76E0", "detail": "assignment pbVar5: undefined1 * -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "004E7980", "detail": "assignment pbVar11: address inside unresolved image datum -> byte *", "kind": "exact_pointer_boundary_cast"}
@@ -5150,6 +5285,8 @@
 {"address": "00544800", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00544800", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005449B0", "detail": "assignment pAVar5: void * -> AnonShape_005449B0_F65ED625 *", "kind": "exact_pointer_boundary_cast"}
+{"address": "005449B0", "detail": "assignment pcVar26: pointer -> code *", "kind": "exact_pointer_boundary_cast"}
+{"address": "005449B0", "detail": "assignment pcVar26: pointer -> code *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005449B0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005449B0", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005449B0", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -5293,7 +5430,7 @@
 {"address": "0054EC20", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0054EC20", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0054EC20", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0054EDF0", "detail": "call 00401FFF argument 2: undefined4 * * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0054EDF0", "detail": "call 00401FFF argument 2: auto * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0054EEE0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0054EEE0", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0054EEE0", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -5535,9 +5672,8 @@
 {"address": "00558840", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00558840", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00558C00", "detail": "assignment param_1: VisibleClassTy * -> VisibleClassTy_sub_00558C00_param_1Enum", "kind": "exact_pointer_boundary_cast"}
-{"address": "00558DC0", "detail": "assignment param_3: byte * -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00558DC0", "detail": "call 004059CA argument 3: void * -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00559110", "detail": "assignment param_2: byte * -> undefined *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00559110", "detail": "call 00403F53 argument 6: auto * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005594A0", "detail": "assignment param_4: byte * -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00559620", "detail": "assignment param_4: byte * -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005597A0", "detail": "assignment iVar8: VisibleClassTy * -> int", "kind": "exact_pointer_boundary_cast"}
@@ -5585,13 +5721,9 @@
 {"address": "0055C830", "detail": "external external_00000080 argument 2: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055C830", "detail": "external external_00000080 argument 2: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055D390", "detail": "external external_000000FA argument 1: void * -> CFsgsConnection *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055D730", "detail": "assignment DAT_008073c8: ushort * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055D730", "detail": "assignment DAT_00807560: ushort * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055D730", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055D730", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055D730", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055D910", "detail": "assignment DAT_008073c8: ushort * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055D910", "detail": "assignment DAT_00807560: ushort * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055DA40", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055DA40", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055DA40", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -5606,41 +5738,47 @@
 {"address": "0055DEE0", "detail": "assignment local_28: undefined2 * -> short *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055DEE0", "detail": "assignment local_28: undefined2 * -> short *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055DEE0", "detail": "assignment local_34: address of unresolved image datum -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055DEE0", "detail": "assignment param_1: undefined1 * -> byte *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055DEE0", "detail": "assignment pbVar17: undefined1 * -> byte *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055DEE0", "detail": "assignment pbVar17: undefined1 * -> byte *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055DEE0", "detail": "assignment pbVar17: undefined1 * -> byte *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055DEE0", "detail": "assignment pbVar17: undefined1 * -> byte *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055DEE0", "detail": "assignment pbVar17: undefined1 * -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055F0C0", "detail": "assignment local_44[0]: void * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055F0C0", "detail": "assignment puStack_10: address of unresolved image datum -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055F0C0", "detail": "assignment puStack_c: address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment *(int *)(iVar22 + 4): RuntimeRecord_00803300_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment *(int *)(iVar22 + 8): RuntimeRecord_00803300_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment DAT_00803380: void * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment g_runtimeRecords_008032F4[iVar14].field_000C: RuntimeRecord_008032F4_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment g_runtimeRecords_008032F8[iVar14].field_000C: RuntimeRecord_008032F8_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment iVar11: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment iVar14: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment iVar14: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment iVar22: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment iVar23: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment local_13c[iVar14]: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment *(int *)(iVar19 + 4): RuntimeRecord_00803300_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment *(int *)(iVar19 + 8): RuntimeRecord_00803300_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment PTR_008032fc[iVar18]: int * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment PTR_00803380: void * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment PTR_008033b0[iVar18]: int * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment PTR_008033b8[iVar18]: int * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment g_runtimeRecords_008032F4[iVar13].field_000C: RuntimeRecord_008032F4_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment g_runtimeRecords_008032F8[iVar13].field_000C: RuntimeRecord_008032F8_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment iVar10: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment iVar13: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment iVar13: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment iVar19: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment iVar21: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055F410", "detail": "assignment local_13c[iVar13]: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055F410", "detail": "assignment local_88: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055F410", "detail": "assignment local_ac: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055F410", "detail": "assignment puStack_10: address of unresolved image datum -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055F410", "detail": "assignment puStack_c: address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment puVar10: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0055F410", "detail": "assignment puVar8: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055F410", "detail": "call 00403044 argument 6: function address -> callback_0055F0C0_p5 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055F410", "detail": "call 00403044 argument 7: function address -> callback_0055F0C0_p6 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055F410", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055F410", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055F410", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00561240", "detail": "assignment iVar4: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "00561240", "detail": "assignment iVar6: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "00561240", "detail": "assignment local_1c: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00561240", "detail": "assignment piVar5: void * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00561670", "detail": "assignment psVar9: undefined2 * -> short *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00561670", "detail": "assignment psVar9: undefined2 * -> short *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00561670", "detail": "assignment puVar5: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00561670", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005623C0", "detail": "assignment iVar11: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "005623C0", "detail": "assignment iVar13: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "005623C0", "detail": "assignment iVar17: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "005623C0", "detail": "assignment local_28: undefined1 * -> byte *", "kind": "exact_pointer_boundary_cast"}
+{"address": "005623C0", "detail": "assignment scalar_param_4: undefined1 * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "005623C0", "detail": "assignment uVar12: int * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "005623C0", "detail": "assignment uVar12: int * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "005623C0", "detail": "assignment uVar12: int * -> uint", "kind": "exact_pointer_boundary_cast"}
@@ -5648,30 +5786,32 @@
 {"address": "005623C0", "detail": "assignment uVar14: int * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "005623C0", "detail": "assignment uVar14: int * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "005623C0", "detail": "call 0072DA70 argument 1: int * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00562F50", "detail": "assignment *(int *)(iVar21 + 4): RuntimeRecord_00803300_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "00562F50", "detail": "assignment *(int *)(iVar21 + 8): RuntimeRecord_00803300_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "00562F50", "detail": "assignment DAT_00803380: void * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "00562F50", "detail": "assignment g_runtimeRecords_008032F4[iVar16].field_000C: RuntimeRecord_008032F4_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "00562F50", "detail": "assignment g_runtimeRecords_008032F8[iVar16].field_000C: RuntimeRecord_008032F8_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "00562F50", "detail": "assignment iVar11: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "00562F50", "detail": "assignment *(int *)(iVar20 + 4): RuntimeRecord_00803300_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "00562F50", "detail": "assignment *(int *)(iVar20 + 8): RuntimeRecord_00803300_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "00562F50", "detail": "assignment PTR_008032fc[iVar18]: int * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "00562F50", "detail": "assignment PTR_00803380: void * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00562F50", "detail": "assignment PTR_008033b0[iVar18]: int * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "00562F50", "detail": "assignment PTR_008033b8[iVar18]: int * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "00562F50", "detail": "assignment g_runtimeRecords_008032F4[iVar13].field_000C: RuntimeRecord_008032F4_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "00562F50", "detail": "assignment g_runtimeRecords_008032F8[iVar13].field_000C: RuntimeRecord_008032F8_0014 * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "00562F50", "detail": "assignment iVar13: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "00562F50", "detail": "assignment iVar13: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00562F50", "detail": "assignment iVar16: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00562F50", "detail": "assignment iVar16: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "00562F50", "detail": "assignment iVar17: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "00562F50", "detail": "assignment iVar17: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "00562F50", "detail": "assignment local_134[iVar16]: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "00562F50", "detail": "assignment iVar9: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "00562F50", "detail": "assignment local_134[iVar13]: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00562F50", "detail": "assignment local_4c: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00562F50", "detail": "assignment local_84: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00562F50", "detail": "assignment local_a8: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00562F50", "detail": "assignment puStack_10: address of unresolved image datum -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00562F50", "detail": "assignment puStack_c: address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00562F50", "detail": "assignment puVar23: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00562F50", "detail": "assignment puVar8: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00562F50", "detail": "call 00403044 argument 6: function address -> callback_0055F0C0_p5 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00562F50", "detail": "call 00403044 argument 7: function address -> callback_0055F0C0_p6 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00562F50", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00562F50", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00562F50", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00564F30", "detail": "assignment iVar13: int * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "00564F30", "detail": "assignment scalar_param_4: undefined1 * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00564F30", "detail": "assignment uVar11: int * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "00564F30", "detail": "assignment uVar11: int * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "00564F30", "detail": "assignment uVar11: int * -> uint", "kind": "exact_pointer_boundary_cast"}
@@ -5910,6 +6050,8 @@
 {"address": "005718D0", "detail": "external external_00000080 argument 2: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00571CD0", "detail": "assignment pcVar5: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00571E40", "detail": "assignment pcVar12: CHAR * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00571E40", "detail": "assignment pcVar9: pointer -> code *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00571E40", "detail": "assignment pcVar9: pointer -> code *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00571E40", "detail": "call 004026A8 argument 1: void * -> AnonReceiver_00573260 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00571E40", "detail": "external external_0000004E argument 1: CHAR * -> LPCSTR", "kind": "exact_pointer_boundary_cast"}
 {"address": "00571E40", "detail": "external external_00000080 argument 2: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -5950,6 +6092,8 @@
 {"address": "00572920", "detail": "external external_000000C6 argument 2: const char * -> LPCSTR", "kind": "exact_pointer_boundary_cast"}
 {"address": "00572920", "detail": "external external_000000C6 argument 2: const char * -> LPCSTR", "kind": "exact_pointer_boundary_cast"}
 {"address": "00572BA0", "detail": "external external_00000080 argument 2: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00572D30", "detail": "assignment pcVar10: pointer -> code *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00572D30", "detail": "assignment pcVar10: pointer -> code *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00572D30", "detail": "external external_000000C6 argument 2: address of unresolved image datum -> LPCSTR", "kind": "exact_pointer_boundary_cast"}
 {"address": "00572D30", "detail": "external external_000000C6 argument 2: address of unresolved image datum -> LPCSTR", "kind": "exact_pointer_boundary_cast"}
 {"address": "00572D30", "detail": "external external_000000C6 argument 2: const char * -> LPCSTR", "kind": "exact_pointer_boundary_cast"}
@@ -5972,8 +6116,6 @@
 {"address": "005734C0", "detail": "external external_000000C4 argument 2: const char * -> LPCSTR", "kind": "exact_pointer_boundary_cast"}
 {"address": "005734C0", "detail": "external external_000000C5 argument 2: const char * -> LPCSTR", "kind": "exact_pointer_boundary_cast"}
 {"address": "005738D0", "detail": "external external_00000080 argument 2: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00574580", "detail": "assignment DAT_00807560: ushort * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "005745C0", "detail": "assignment DAT_008073c8: ushort * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "005745E0", "detail": "assignment *param_2: RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "005745E0", "detail": "assignment pSVar4->field_013C: ST3DSMAPContext * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "005745E0", "detail": "assignment param_2[6]: void * -> undefined4", "kind": "exact_pointer_boundary_cast"}
@@ -6253,7 +6395,7 @@
 {"address": "00581BF0", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00581BF0", "detail": "call 006E5380 argument 3: int * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005823D0", "detail": "assignment this->field_01D5: VTable_0079B8EC * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "005825C0", "detail": "assignment iVar11: STJellyGunC * -> int", "kind": "exact_pointer_boundary_cast"}
+{"address": "005825C0", "detail": "assignment iVar9: STJellyGunC * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "005825C0", "detail": "assignment this->field_0241: STWorldObjectVTable * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "005825C0", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005825C0", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -7283,6 +7425,8 @@
 {"address": "005BE310", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005BE310", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005BE310", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "005BE5B0", "detail": "assignment pcVar19: pointer -> code *", "kind": "exact_pointer_boundary_cast"}
+{"address": "005BE5B0", "detail": "assignment pcVar19: pointer -> code *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005BE5B0", "detail": "assignment puVar16: address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005BE5B0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "005BE5B0", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -8406,7 +8550,6 @@
 {"address": "0060AEF0", "detail": "assignment *puVar1: STFishC * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "0060AEF0", "detail": "assignment puStack_10: address of unresolved image datum -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0060AEF0", "detail": "assignment puStack_c: address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0060BDD0", "detail": "assignment local_38[0]: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "0060C020", "detail": "assignment allocation: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0060C020", "detail": "assignment allocation: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0060C020", "detail": "assignment allocation: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
@@ -8882,16 +9025,16 @@
 {"address": "0063F790", "detail": "assignment iVar6: AnonShape_0063F790_F83B8A8C * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00640240", "detail": "call 006E8660 argument 1: void * -> ST3DSMAPContext *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006405F0", "detail": "call 00401BC2 argument 5: undefined4 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "006406D0", "detail": "assignment pcVar25: undefined1 * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006406D0", "detail": "assignment pcVar25: undefined1 * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006406D0", "detail": "assignment pcVar25: undefined1 * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "006406D0", "detail": "assignment pcVar24: undefined1 * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "006406D0", "detail": "assignment pcVar24: undefined1 * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "006406D0", "detail": "assignment pcVar24: undefined1 * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006406D0", "detail": "assignment puVar15: undefined4 * -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006406D0", "detail": "assignment this_00->field_0068: STTorpC * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "006406D0", "detail": "assignment uVar20: STTorpC * -> uint", "kind": "exact_pointer_boundary_cast"}
-{"address": "006406D0", "detail": "assignment uVar20: STTorpC * -> uint", "kind": "exact_pointer_boundary_cast"}
-{"address": "006406D0", "detail": "assignment uVar20: STTorpC * -> uint", "kind": "exact_pointer_boundary_cast"}
-{"address": "006406D0", "detail": "assignment uVar20: STTorpC * -> uint", "kind": "exact_pointer_boundary_cast"}
-{"address": "006406D0", "detail": "assignment uVar20: STTorpC * -> uint", "kind": "exact_pointer_boundary_cast"}
+{"address": "006406D0", "detail": "assignment uVar19: STTorpC * -> uint", "kind": "exact_pointer_boundary_cast"}
+{"address": "006406D0", "detail": "assignment uVar19: STTorpC * -> uint", "kind": "exact_pointer_boundary_cast"}
+{"address": "006406D0", "detail": "assignment uVar19: STTorpC * -> uint", "kind": "exact_pointer_boundary_cast"}
+{"address": "006406D0", "detail": "assignment uVar19: STTorpC * -> uint", "kind": "exact_pointer_boundary_cast"}
+{"address": "006406D0", "detail": "assignment uVar19: STTorpC * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "006406D0", "detail": "call 00404FA2 argument 2: int * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006406D0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006406D0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -9822,153 +9965,153 @@
 {"address": "0066ACC0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0066ACC0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0066ACC0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0066ACC0", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0066ACC0", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00671F10", "detail": "assignment local_18: void * -> float *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00671F10", "detail": "assignment local_18: void * -> float *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00671F10", "detail": "assignment local_18: void * -> float *", "kind": "exact_pointer_boundary_cast"}
@@ -9983,7 +10126,7 @@
 {"address": "00671F10", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00671F10", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00671F10", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00671F10", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00671F10", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672440", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672440", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672440", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -9993,15 +10136,12 @@
 {"address": "00672440", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672440", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672440", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00672440", "detail": "call 0072E340 argument 1: AnonReceiver_0064A970 * * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00672440", "detail": "call 0072E340 argument 1: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006728F0", "detail": "assignment DAT_00811910: undefined4 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672930", "detail": "assignment PTR_thunk_FUN_00673160_007d2d1c: function address -> pointer", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672930", "detail": "assignment PTR_thunk_FUN_00673160_007d2d1c: function address -> pointer", "kind": "exact_pointer_boundary_cast"}
-{"address": "00672B60", "detail": "assignment DAT_00811948: short * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672B60", "detail": "assignment DAT_00811958: int * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "00672B60", "detail": "assignment DAT_00857528: short * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672B60", "detail": "assignment DAT_0085753c: char * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "00672B60", "detail": "assignment DAT_0085755c: short * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672B60", "detail": "assignment local_10: void * -> short *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672B60", "detail": "assignment local_14: void * -> short *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672B60", "detail": "assignment local_1c: void * -> int *", "kind": "exact_pointer_boundary_cast"}
@@ -10011,35 +10151,16 @@
 {"address": "00672B60", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672B60", "detail": "call 006C49B0 argument 1: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672F00", "detail": "assignment pcVar7: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00672F00", "detail": "assignment pcVar7: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00672F00", "detail": "assignment pcVar7: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672F00", "detail": "assignment piVar3: undefined4 -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00672F00", "detail": "assignment puVar2: undefined4 -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006734C0", "detail": "assignment DAT_0085755c: void * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "006734C0", "detail": "assignment PTR_0085755c: void * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006734C0", "detail": "assignment local_8: undefined4 -> int *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006734C0", "detail": "call 006ACF50 argument 1: undefined4 -> void *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006734C0", "detail": "call 00730590 argument 1: undefined4 -> uint *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006736F0", "detail": "assignment local_8: undefined4 -> int *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006736F0", "detail": "assignment local_c: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006736F0", "detail": "assignment local_c: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006736F0", "detail": "assignment pbVar4: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006736F0", "detail": "assignment pbVar9: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006736F0", "detail": "assignment piVar5: void * -> int *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006736F0", "detail": "assignment temp_3fbe8e62c1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006736F0", "detail": "assignment temp_3fbe8e62c1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00673D20", "detail": "assignment DAT_00857548: byte * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "00673D20", "detail": "assignment pbVar16_mg0: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00673D20", "detail": "assignment pbVar17_mg1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00673D20", "detail": "assignment pbVar17_mg2: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00673D20", "detail": "assignment puVar14: void * -> ushort *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00673D20", "detail": "assignment puVar14: void * -> ushort *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00673D20", "detail": "assignment puVar14: void * -> ushort *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00673D20", "detail": "call 006B77E0 argument 2: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006748D0", "detail": "assignment pbVar3: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006748D0", "detail": "assignment pbVar3: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006748D0", "detail": "call 006B9770 argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00673D20", "detail": "assignment puVar12: void * -> ushort *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00673D20", "detail": "assignment puVar12: void * -> ushort *", "kind": "exact_pointer_boundary_cast"}
+{"address": "00673D20", "detail": "assignment puVar12: void * -> ushort *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006748D0", "detail": "call 006B9770 argument 2: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006748D0", "detail": "call 006C8990 argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006748D0", "detail": "call 006C8990 argument 2: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006748D0", "detail": "call 006C8990 argument 3: int * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00674AF0", "detail": "assignment pcVar6: void * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -10307,6 +10428,7 @@
 {"address": "00680890", "detail": "call 006F13F0 argument 1: undefined4 -> cMf32 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006809F0", "detail": "call 00403346 argument 4: uint * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006809F0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "006823E0", "detail": "call 00401604 argument 3: auto * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006823E0", "detail": "call 00405411 argument 2: address of unresolved image datum -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006823E0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006823E0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -10317,14 +10439,6 @@
 {"address": "006827A0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006827A0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00682850", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00682850", "detail": "call 0072E340 argument 2: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006829B0", "detail": "call 0040124E argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006829B0", "detail": "call 004018FC argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006829B0", "detail": "call 00404075 argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006829B0", "detail": "call 00405196 argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006829B0", "detail": "call 00405A10 argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006829B0", "detail": "call 00405CB8 argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00682D70", "detail": "assignment pcVar3: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00682D70", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006836C0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00683780", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -10348,11 +10462,6 @@
 {"address": "00683C70", "detail": "assignment pAVar17: undefined4 -> AllocationRecord_0065CD10 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00683C70", "detail": "assignment pbVar14: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00683C70", "detail": "assignment pcVar4: undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00683C70", "detail": "assignment temp_3f4976a46d: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00683C70", "detail": "assignment temp_3f53535d7a: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00683C70", "detail": "assignment temp_3f861e3394: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00683C70", "detail": "assignment temp_3fb77f837b: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00683C70", "detail": "call 004018FC argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00683C70", "detail": "call 0040193D argument 1: AnonShape_00683780_11EA4E23 * * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00683C70", "detail": "call 0040193D argument 1: AnonShape_00683780_11EA4E23 * * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00683C70", "detail": "call 0040193D argument 1: AnonShape_00683780_11EA4E23 * * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
@@ -10619,8 +10728,6 @@
 {"address": "00683C70", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00683C70", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00683C70", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00683C70", "detail": "call 0072E340 argument 2: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00683C70", "detail": "call 0072E340 argument 2: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00683C70", "detail": "call 0072E730 argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00683C70", "detail": "call 0072E730 argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0068CEC0", "detail": "assignment pbVar5_mg2: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
@@ -10652,19 +10759,12 @@
 {"address": "0068CEC0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0068CEC0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0068CEC0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0068CEC0", "detail": "call 0072E340 argument 2: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0068CEC0", "detail": "call 0072E340 argument 2: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0068CEC0", "detail": "call 0072E340 argument 2: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0068CEC0", "detail": "call 0072E340 argument 2: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0068CEC0", "detail": "call 0072E340 argument 2: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0068CEC0", "detail": "call 0072E730 argument 1: address of unresolved image datum -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0068CEC0", "detail": "call 0072E730 argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0068CEC0", "detail": "call 0072E730 argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0068CEC0", "detail": "call 0072E730 argument 2: address of unresolved image datum -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0068CEC0", "detail": "call 0072E730 argument 3: address of unresolved image datum -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0068CEC0", "detail": "call 0072E730 argument 4: address of unresolved image datum -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0068CEC0", "detail": "call 0072ED50 argument 2: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0068CEC0", "detail": "call 0072ED50 argument 2: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0068CEC0", "detail": "call 0072F110 argument 1: address of unresolved image datum -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0068CEC0", "detail": "call 0072F110 argument 2: address of unresolved image datum -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0068CEC0", "detail": "call 0072F110 argument 3: address of unresolved image datum -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -10800,10 +10900,9 @@
 {"address": "00694BE0", "detail": "call 006F07E0 argument 1: CGenerate * * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00694CD0", "detail": "assignment iVar3: CGenerate * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00694CD0", "detail": "call 00405A56 argument 3: uint * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006952B0", "detail": "assignment DAT_00853dd4: void * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "006952B0", "detail": "assignment PTR_00853dd4: void * -> undefined2 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006952B0", "detail": "assignment iVar1: CGenerate * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "006952B0", "detail": "assignment pAVar5: CGenerate * * -> AnonShape_006952B0_7A982E30 *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006952B0", "detail": "call 00401C8A argument 2: undefined4 -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006952B0", "detail": "call 00402446 argument 3: CGenerate * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "006952B0", "detail": "call 00402446 argument 3: CGenerate * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "006952B0", "detail": "call 00402BD5 argument 3: CGenerate * -> int", "kind": "exact_pointer_boundary_cast"}
@@ -10886,7 +10985,7 @@
 {"address": "0069F160", "detail": "call 0040564B argument 1: void * -> CGenerate *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0069F160", "detail": "call 00405D0D argument 1: void * -> CGenerate *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0069F5C0", "detail": "call 00404822 argument 1: void * -> CGenerate *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0069F5C0", "detail": "call 00405A56 argument 3: uint * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0069F5C0", "detail": "call 00405A56 argument 3: auto * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0069F660", "detail": "assignment puVar2: void * -> undefined2 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0069F8D0", "detail": "assignment iVar7: short * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "0069F8D0", "detail": "assignment local_1c: void * -> short *", "kind": "exact_pointer_boundary_cast"}
@@ -10974,26 +11073,22 @@
 {"address": "006A5100", "detail": "assignment puVar1: pointer -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A5130", "detail": "assignment puStack_10: address of unresolved image datum -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A5130", "detail": "assignment puStack_c: address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006A5210", "detail": "assignment puVar3: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A5210", "detail": "call 00730FA0 argument 5: const char * -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A5210", "detail": "call 00730FA0 argument 5: const char * -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A5210", "detail": "call 00730FA0 argument 5: const char * -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A5210", "detail": "call 00730FA0 argument 5: const char * -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A5210", "detail": "call 00730FA0 argument 5: const char * -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006A5560", "detail": "assignment puVar1: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A55D0", "detail": "external external_0000001D argument 1: void * -> LPVOID", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A5620", "detail": "external external_0000001C argument 1: undefined4 -> HANDLE", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A5620", "detail": "external external_0000001C argument 3: void * -> LPCVOID", "kind": "exact_pointer_boundary_cast"}
-{"address": "006A57A0", "detail": "assignment *param_1: void * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "006A57A0", "detail": "assignment *param_1: undefined4 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A57A0", "detail": "assignment param_1[(puVar3[5] & 0xffff) + 6]: undefined4 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A57A0", "detail": "assignment param_1[uVar5 + 1]: undefined4 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "006A57A0", "detail": "assignment puVar3: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A57A0", "detail": "assignment uVar5: undefined4 * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A57A0", "detail": "call 00730FA0 argument 5: const char * -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A58B0", "detail": "assignment iVar4: AnonShape_006A58B0_CDE73679 * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A58B0", "detail": "assignment param_1[iVar3 + 6]: AnonShape_006A58B0_CDE73679 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A58B0", "detail": "call 00730FA0 argument 5: const char * -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006A5990", "detail": "assignment puVar2: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A5990", "detail": "assignment uVar4: undefined4 * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A5990", "detail": "assignment uVar4: undefined4 * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "006A5990", "detail": "call 00730FA0 argument 5: const char * -> byte *", "kind": "exact_pointer_boundary_cast"}
@@ -11141,19 +11236,16 @@
 {"address": "006BCB30", "detail": "assignment iVar5: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BCB30", "detail": "assignment iVar8: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BCB30", "detail": "assignment iVar9: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "006BCB30", "detail": "assignment param_3: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BD0C0", "detail": "assignment iVar4: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BD0C0", "detail": "assignment iVar6: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BD260", "detail": "assignment puStack_10: address of unresolved image datum -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BD260", "detail": "assignment puStack_c: address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006BD4B0", "detail": "assignment DAT_00854fd8: int * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BD4B0", "detail": "call 006CEA60 argument 3: undefined * -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BD4B0", "detail": "call 006CEF60 argument 13: undefined4 -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BD4B0", "detail": "call 006CEF60 argument 13: undefined4 -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BD4B0", "detail": "call 006CEF60 argument 6: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BD4B0", "detail": "call 006CEF60 argument 6: undefined4 -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BD4B0", "detail": "call 006CFEB0 argument 1: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006BD4B0", "detail": "call 006CFEB0 argument 2: undefined4 -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BFBF0", "detail": "assignment local_24: undefined * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BFBF0", "detail": "assignment local_34[2]: AnonShape_006BFBF0_13F73F95 * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "006BFBF0", "detail": "assignment param_1->field_0092: AnonShape_006BFBF0_13F73F95 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
@@ -11346,7 +11438,7 @@
 {"address": "006D7350", "detail": "return: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006D7770", "detail": "assignment param_1->field_0028: int * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "006D7770", "detail": "assignment param_1->field_002C: int * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "006D86E0", "detail": "assignment puVar2: undefined * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
+{"address": "006D86E0", "detail": "assignment puVar2: auto * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006D86E0", "detail": "assignment puVar2: undefined * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006D8A60", "detail": "assignment param_11: address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006D8A60", "detail": "assignment pbVar1: unresolved field word -> byte *", "kind": "exact_pointer_boundary_cast"}
@@ -11460,23 +11552,18 @@
 {"address": "006F2C00", "detail": "assignment pCVar5: address inside unresolved image datum -> LPSTR", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F2C00", "detail": "assignment pCVar5: address inside unresolved image datum -> LPSTR", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F2C00", "detail": "external external_00000080 argument 2: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006F31D0", "detail": "assignment DAT_00856fe4: byte * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "assignment DAT_0085700c: byte * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "006F31D0", "detail": "assignment local_30: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "assignment local_3c: uint * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "assignment local_4c: uint * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "assignment local_6c: undefined * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "assignment local_70: uint * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "assignment pbVar18: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006F31D0", "detail": "assignment pbVar20: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "assignment puVar10: undefined * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "assignment puVar10: undefined * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "call 006B0460 argument 1: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "call 006B0460 argument 1: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "call 006B0460 argument 2: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "call 006B0460 argument 3: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006F31D0", "detail": "call 006CFE10 argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006F31D0", "detail": "call 006CFE10 argument 1: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "call 006F4E70 argument 7: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "call 006F5240 argument 9: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "call 006F5760 argument 1: byte * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
@@ -11513,17 +11600,14 @@
 {"address": "006F31D0", "detail": "call 007068D0 argument 1: byte * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "call 00706E30 argument 1: byte * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F31D0", "detail": "call 00707810 argument 1: byte * -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006F4FE0", "detail": "assignment DAT_00856fe0: byte * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F4FE0", "detail": "assignment DAT_00856ffc: byte * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F4FE0", "detail": "assignment param_6: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F5430", "detail": "assignment DAT_00857014: byte * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F5430", "detail": "assignment DAT_00857014: byte * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "006F5430", "detail": "assignment DAT_00857034: byte * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F5430", "detail": "assignment param_6: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F5430", "detail": "assignment pbVar11: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F5430", "detail": "assignment pbVar6: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F5920", "detail": "assignment DAT_00857018: byte * -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "006F5920", "detail": "assignment DAT_00857024: byte * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "006F5920", "detail": "assignment param_6: undefined4 -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00708650", "detail": "assignment local_44: uint * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00708650", "detail": "assignment local_44: uint * -> int", "kind": "exact_pointer_boundary_cast"}
@@ -11558,7 +11642,6 @@
 {"address": "0070C9E0", "detail": "assignment puVar3: void * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0070CB20", "detail": "assignment iVar6: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "0070CB20", "detail": "assignment local_c: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0070CB20", "detail": "assignment param_3: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0070CDC0", "detail": "call 00734570 argument 2: byte * * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00710FB0", "detail": "call 0070E030 argument 1: void * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00710FB0", "detail": "call 00710790 argument 1: void * -> AnonShape_00710790_4CBB90D4 *", "kind": "exact_pointer_boundary_cast"}
@@ -11625,7 +11708,6 @@
 {"address": "00727D50", "detail": "assignment param_1[7]: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00727D50", "detail": "assignment param_1[9]: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00727DA0", "detail": "assignment iVar5: AnonShape_00727DA0_C4265AA0 * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "00727DA0", "detail": "assignment pbVar17: undefined * -> byte *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00727DA0", "detail": "assignment piVar14: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00728170", "detail": "assignment iVar4: AnonShape_00728170_7560EBA7 * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00728170", "detail": "assignment uVar3: AnonShape_00728170_7560EBA7 * -> uint", "kind": "exact_pointer_boundary_cast"}
@@ -11666,14 +11748,13 @@
 {"address": "0072AA60", "detail": "assignment uVar3: int * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072AB80", "detail": "assignment param_5[6]: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072AB80", "detail": "assignment uVar2: int * -> uint", "kind": "exact_pointer_boundary_cast"}
-{"address": "0072AE80", "detail": "call 006B3730 argument 1: undefined4 -> uint *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0072AE80", "detail": "call 006B3730 argument 1: undefined4 * -> uint *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072AE80", "detail": "call 0071B630 argument 1: undefined4 -> void *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072AE80", "detail": "call 0071B630 argument 2: int * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072AE80", "detail": "call 0071B630 argument 3: int * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0072AFC0", "detail": "assignment DAT_00857134: nullptr -> zero word", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072AFC0", "detail": "assignment DAT_0085713c: HANDLE -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072AFC0", "detail": "assignment DAT_0085713c: HANDLE -> undefined4", "kind": "exact_pointer_boundary_cast"}
-{"address": "0072AFC0", "detail": "call 006B3BB0 argument 1: undefined4 -> int *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0072AFC0", "detail": "call 006B3BB0 argument 1: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072AFC0", "detail": "external external_00000010 argument 1: undefined4 -> HANDLE", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072B0B0", "detail": "assignment PTR_00857118[0xb]: uint * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072B0B0", "detail": "assignment PTR_00857118[10]: uint * -> uint", "kind": "exact_pointer_boundary_cast"}
@@ -11681,7 +11762,7 @@
 {"address": "0072B0B0", "detail": "assignment PTR_00857118[7]: uint * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072B0B0", "detail": "assignment iVar4: uint * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072B0B0", "detail": "assignment local_68: uint * -> int", "kind": "exact_pointer_boundary_cast"}
-{"address": "0072B0B0", "detail": "assignment piVar1: undefined4 -> int *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0072B0B0", "detail": "assignment piVar1: undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072B0B0", "detail": "assignment puStack_10: address of unresolved image datum -> undefined1 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072B0B0", "detail": "assignment puStack_c: address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0072B0B0", "detail": "external external_0000009B argument 2: tagPOINT * -> LPPOINT", "kind": "exact_pointer_boundary_cast"}
@@ -11714,7 +11795,6 @@
 {"address": "00747AA5", "detail": "assignment param_1->field_0004: AnonShape_00747AA5_87CB4B56 * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "00747BDF", "detail": "assignment pcVar4: undefined1 * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00747BDF", "detail": "assignment pcVar4: undefined1 * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00747D92", "detail": "call 0074BC50 argument 1: int * -> LPVOID", "kind": "exact_pointer_boundary_cast"}
 {"address": "00747F94", "detail": "assignment lpCriticalSection->OwningThread: int * -> HANDLE", "kind": "exact_pointer_boundary_cast"}
 {"address": "00748186", "detail": "assignment iVar2: AnonShape_00748186_DDF6596C * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "0074823A", "detail": "assignment *param_2: undefined4 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
@@ -13067,6 +13147,7 @@
 {"detail": "_DAT_00857518: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "_DAT_00857550: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "_DAT_00858e28: no globals.jsonl data record", "kind": "global_type_fallback"}
+{"detail": "_PTR_00857548: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "skipped exported struct tm", "kind": "host_type_reused"}
 {"detail": "_BinkClose_4: no matching function definition", "kind": "import_prototype_fallback"}
 {"detail": "/-BAD-", "kind": "missing_type_path"}
@@ -13182,8 +13263,8 @@
 {"address": "00604A90", "detail": "18 address use(s), exact EBP span [-204, 4)", "kind": "raw_stack_arena_materialization"}
 {"address": "0060AEF0", "detail": "9 address use(s), exact EBP span [-268, 4)", "kind": "raw_stack_arena_materialization"}
 {"address": "0060D390", "detail": "2 address use(s), exact EBP span [-112, 4)", "kind": "raw_stack_arena_materialization"}
-{"address": "0060EF40", "detail": "5 address use(s), exact EBP span [-208, 4)", "kind": "raw_stack_arena_materialization"}
-{"address": "00618240", "detail": "5 address use(s), exact EBP span [-188, 4)", "kind": "raw_stack_arena_materialization"}
+{"address": "0060EF40", "detail": "53 address use(s), exact EBP span [-220, 4)", "kind": "raw_stack_arena_materialization"}
+{"address": "00618240", "detail": "4 address use(s), exact EBP span [-188, 4)", "kind": "raw_stack_arena_materialization"}
 {"address": "0062D2D0", "detail": "5 address use(s), exact EBP span [-156, 4)", "kind": "raw_stack_arena_materialization"}
 {"address": "00637350", "detail": "1 address use(s), exact EBP span [-128, 36)", "kind": "raw_stack_arena_materialization"}
 {"address": "006383E0", "detail": "5 address use(s), exact EBP span [-220, 4)", "kind": "raw_stack_arena_materialization"}

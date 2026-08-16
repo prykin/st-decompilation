@@ -24,7 +24,8 @@ FUN_00492fc0:
 00493008  8B 06                     MOV EAX,dword ptr [ESI]
 0049300A  51                        PUSH ECX
 0049300B  8B CE                     MOV ECX,ESI
-0049300D  FF 90 08 01 00 00         CALL dword ptr [EAX + 0x108]
+FUN_00492fc0::override::prt_49300d_66d08e71:
+0049300D  FF 90 08 01 00 00         CALL dword ptr [EAX + 0x108]  ; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4
 00493013  85 C0                     TEST EAX,EAX
 00493015  74 07                     JZ 0x0049301e
 00493017  8B CE                     MOV ECX,ESI

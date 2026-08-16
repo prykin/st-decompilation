@@ -14,7 +14,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   STBoatC *pSVar3;
   dword dVar4;
   int iVar6;
-  STGameObjC *objPtr;
+  STGameObjC *this_01;
   undefined4 uVar7;
   DArrayTy *pDVar8;
   int iVar5;
@@ -170,8 +170,8 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
           pSVar3 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
-          iVar6 = (*((STGameObjCDispatchVTable *)pSVar3->vtable)->vfunc_2C)();
-          if (iVar6 == 9) {
+          dVar4 = pSVar3->slot_2C();
+          if (dVar4 == 9) {
             GetDepotForAttack(this_00,local_c,&local_5,&local_16,&local_2a,&local_28,&local_26);
             if (local_16 == -1) {
               puVar16 = &local_20;
@@ -247,14 +247,14 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         do {
           DArrayGetElement((DArrayTy *)this_00->field_0029,uVar11,&local_c);
           if ((ushort)local_c != 0xffff) {
-            objPtr = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
-            if (objPtr == nullptr) {
+            this_01 = STAllPlayersC::GetObjPtr
+                                (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
+            if (this_01 == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x5c4);
             }
-            uVar7 = (*objPtr->vtable->vfunc_2C)();
+            uVar7 = this_01->vfunc_2C();
             switch(uVar7) {
             case 7:
             case 8:
@@ -269,7 +269,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
             case 0x25:
               break;
             default:
-              iVar6 = (*objPtr->vtable->vfunc_2C)();
+              iVar6 = this_01->vfunc_2C();
               if (iVar6 == 0x17) {
                 pDVar15 = pDVar8;
                 if (pDVar8 == nullptr) {
@@ -279,7 +279,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
                 }
               }
               else {
-                iVar6 = thunk_FUN_00490d90(objPtr);
+                iVar6 = thunk_FUN_00490d90(this_01);
                 if (iVar6 == 0) break;
                 pDVar15 = local_30;
                 if (local_30 == nullptr) {

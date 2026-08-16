@@ -34,12 +34,14 @@ STBoatC::GetDefenceTarget:
 00489A0A  74 63                     JZ 0x00489a6f
 00489A0C  8B 10                     MOV EDX,dword ptr [EAX]
 00489A0E  8B C8                     MOV ECX,EAX
-00489A10  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::GetDefenceTarget::override::prt_489a10_d4e0dbd9:
+00489A10  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00489A16  83 F8 01                  CMP EAX,0x1
 00489A19  75 54                     JNZ 0x00489a6f
 00489A1B  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00489A1E  8B 01                     MOV EAX,dword ptr [ECX]
-00489A20  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]
+STBoatC::GetDefenceTarget::override::prt_489a20_d4e0dbd9:
+00489A20  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00489A26  83 F8 01                  CMP EAX,0x1
 00489A29  75 44                     JNZ 0x00489a6f
 00489A2B  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -156,12 +158,14 @@ LAB_00489b35:
 00489B69  E8 02 31 22 00            CALL 0x006acc70
 00489B6E  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00489B71  8B 01                     MOV EAX,dword ptr [ECX]
-00489B73  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STBoatC::GetDefenceTarget::override::prt_489b73_d4e0dbd9:
+00489B73  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00489B79  85 C0                     TEST EAX,EAX
 00489B7B  0F 84 2F 03 00 00         JZ 0x00489eb0
 00489B81  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00489B84  8B 11                     MOV EDX,dword ptr [ECX]
-00489B86  FF 92 F0 00 00 00         CALL dword ptr [EDX + 0xf0]
+STBoatC::GetDefenceTarget::override::prt_489b86_d4e0dbd9:
+00489B86  FF 92 F0 00 00 00         CALL dword ptr [EDX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00489B8C  85 C0                     TEST EAX,EAX
 00489B8E  0F 84 1C 03 00 00         JZ 0x00489eb0
 00489B94  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -173,7 +177,8 @@ LAB_00489b35:
 00489BA5  0F 84 05 03 00 00         JZ 0x00489eb0
 00489BAB  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00489BAE  8B 01                     MOV EAX,dword ptr [ECX]
-00489BB0  FF 90 FC 00 00 00         CALL dword ptr [EAX + 0xfc]
+STBoatC::GetDefenceTarget::override::prt_489bb0_d4e0dbd9:
+00489BB0  FF 90 FC 00 00 00         CALL dword ptr [EAX + 0xfc]  ; [STIndirectCallsiteApplier] exact slot 0xFC; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00489BB6  85 C0                     TEST EAX,EAX
 00489BB8  7E 06                     JLE 0x00489bc0
 00489BBA  81 C7 2C 01 00 00         ADD EDI,0x12c
@@ -424,7 +429,8 @@ LAB_00489e4e:
 00489E55  75 25                     JNZ 0x00489e7c
 00489E57  8B 10                     MOV EDX,dword ptr [EAX]
 00489E59  8B C8                     MOV ECX,EAX
-00489E5B  FF 92 20 01 00 00         CALL dword ptr [EDX + 0x120]
+STBoatC::GetDefenceTarget::override::prt_489e5b_d4e0dbd9:
+00489E5B  FF 92 20 01 00 00         CALL dword ptr [EDX + 0x120]  ; [STIndirectCallsiteApplier] exact slot 0x120; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00489E61  83 F8 01                  CMP EAX,0x1
 00489E64  75 13                     JNZ 0x00489e79
 00489E66  B8 67 66 66 66            MOV EAX,0x66666667
@@ -534,12 +540,14 @@ LAB_00489f7d:
 00489F87  E8 E4 2C 22 00            CALL 0x006acc70
 00489F8C  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00489F8F  8B 11                     MOV EDX,dword ptr [ECX]
-00489F91  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::GetDefenceTarget::override::prt_489f91_d4e0dbd9:
+00489F91  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00489F97  85 C0                     TEST EAX,EAX
 00489F99  0F 84 3E 03 00 00         JZ 0x0048a2dd
 00489F9F  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00489FA2  8B 01                     MOV EAX,dword ptr [ECX]
-00489FA4  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]
+STBoatC::GetDefenceTarget::override::prt_489fa4_d4e0dbd9:
+00489FA4  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00489FAA  85 C0                     TEST EAX,EAX
 00489FAC  0F 84 2B 03 00 00         JZ 0x0048a2dd
 00489FB2  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -724,7 +732,8 @@ LAB_0048a17b:
 0048A19A  8B 11                     MOV EDX,dword ptr [ECX]
 0048A19C  8D 3C 80                  LEA EDI,[EAX + EAX*0x4]
 0048A19F  D1 E7                     SHL EDI,0x1
-0048A1A1  FF 92 FC 00 00 00         CALL dword ptr [EDX + 0xfc]
+STBoatC::GetDefenceTarget::override::prt_48a1a1_d4e0dbd9:
+0048A1A1  FF 92 FC 00 00 00         CALL dword ptr [EDX + 0xfc]  ; [STIndirectCallsiteApplier] exact slot 0xFC; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0048A1A7  85 C0                     TEST EAX,EAX
 0048A1A9  7E 06                     JLE 0x0048a1b1
 0048A1AB  81 C7 2C 01 00 00         ADD EDI,0x12c
@@ -805,7 +814,8 @@ LAB_0048a27b:
 0048A282  75 25                     JNZ 0x0048a2a9
 0048A284  8B 10                     MOV EDX,dword ptr [EAX]
 0048A286  8B C8                     MOV ECX,EAX
-0048A288  FF 92 20 01 00 00         CALL dword ptr [EDX + 0x120]
+STBoatC::GetDefenceTarget::override::prt_48a288_d4e0dbd9:
+0048A288  FF 92 20 01 00 00         CALL dword ptr [EDX + 0x120]  ; [STIndirectCallsiteApplier] exact slot 0x120; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0048A28E  83 F8 01                  CMP EAX,0x1
 0048A291  75 13                     JNZ 0x0048a2a6
 0048A293  B8 67 66 66 66            MOV EAX,0x66666667

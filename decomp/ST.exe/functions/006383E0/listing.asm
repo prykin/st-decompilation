@@ -181,7 +181,8 @@ LAB_006385e2:
 006385E4  0F 84 E4 00 00 00         JZ 0x006386ce
 006385EA  8B 16                     MOV EDX,dword ptr [ESI]
 006385EC  8B CE                     MOV ECX,ESI
-006385EE  FF 92 F0 00 00 00         CALL dword ptr [EDX + 0xf0]
+FUN_006383e0::override::prt_6385ee_e5e2351e:
+006385EE  FF 92 F0 00 00 00         CALL dword ptr [EDX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 006385F4  85 C0                     TEST EAX,EAX
 006385F6  0F 84 CF 00 00 00         JZ 0x006386cb
 006385FC  33 FF                     XOR EDI,EDI

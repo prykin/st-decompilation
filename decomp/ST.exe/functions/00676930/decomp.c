@@ -47,12 +47,12 @@ void __cdecl FUN_00676930(uint param_1)
     memmove(puVar6, puVar5, 0x20); /* compiler REP MOVS byte copy */
     iVar3 = 0;
     thunk_FUN_004da390(g_allPlayers_007FA174,param_1,&DAT_0080c83e,0);
-    param_1 = 0;
+    auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
     local_8 = &DAT_0080c947;
     puVar4 = &DAT_0080c8cd;
     do {
-      if ((byte)(&DAT_0080c83f)[param_1] < 8) {
-        puVar1 = (byte *)(thunk_FUN_0043e420(local_298,(&DAT_0080c83f)[param_1]));
+      if ((byte)(&DAT_0080c83f)[param_1_after_write] < 8) {
+        puVar1 = (byte *)(thunk_FUN_0043e420(local_298,(&DAT_0080c83f)[param_1_after_write]));
         puVar7 = (byte *)(local_140);
         memmove(puVar7, puVar1, 0x138); /* compiler REP MOVS byte copy */
         puVar4[-2] = (short)local_140[0x25] + (short)local_140[0x21] + (short)local_140[0x1d] +
@@ -75,15 +75,15 @@ void __cdecl FUN_00676930(uint param_1)
         puVar4[4] = (ushort)uVar2;
         uVar2 = (((uVar2 & 0xffff) + (uint)*puVar4) * 3 + ((uint)puVar4[-1] + (uint)puVar4[3]) * -2
                  + (uint)puVar4[-2] + (uint)puVar4[2]) * 5;
-        if ((int)local_160[(byte)(&DAT_0080c83f)[param_1]] < 0) {
+        if ((int)local_160[(byte)(&DAT_0080c83f)[param_1_after_write]] < 0) {
           *local_8 = ((int)uVar2 < 0) - 1 & uVar2;
         }
         else {
-          *local_8 = local_160[(byte)(&DAT_0080c83f)[param_1]];
+          *local_8 = local_160[(byte)(&DAT_0080c83f)[param_1_after_write]];
         }
       }
       puVar4 = puVar4 + 8;
-      param_1 = param_1 + 1;
+      param_1_after_write = param_1_after_write + 1;
       local_8 = local_8 + 1;
     } while ((int)puVar4 < 0x80c94d);
   }

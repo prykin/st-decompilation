@@ -33,7 +33,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar6 = *(int *)((int)this + param_1 * 0x28 + 0x4e8);
     if ((uint)(iVar6 + iVar5) <= g_playSystem_00802A38->field_00E4) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      /* ST_PSEUDO[stack_slot_reuse,raw_pointer_offset]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; candidate structure field after proof; otherwise retain buffer arithmetic */
       param_1 = ((g_playSystem_00802A38->field_00E4 - iVar6) *
                 *(int *)((int)this + param_1 * 0x28 + 0x4e4)) /
                 *(uint *)(&DAT_007e091c + *piVar1 * 4);
@@ -43,7 +43,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
       if ((iVar5 != 0) &&
          (iVar5 = thunk_FUN_004b79c0(STField<char>(this,0x24),STField<int>(this,0x18)),
          iVar5 == 0)) {
-        param_1 = (int)(param_1 + ((int)param_1 >> 0x1f & 3U)) >> 2;
+        param_1 = STSignedDiv4(param_1);
         if (param_1 == 0) {
           param_1 = 1;
         }
@@ -61,7 +61,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
         local_8 = 0;
         local_c = 0;
         iVar5 = *(int *)(&DAT_007e085c + *piVar1 * 4);
-        param_2 = (int)(iVar5 * param_1) / iVar6;
+        auto param_2_after_write = (int)(iVar5 * param_1) / iVar6; /* compiler stack-slot lifetime split */
         iVar5 = iVar5 - (iVar5 * *(int *)((int)this + uVar3 * 0x28 + 0x4dc)) / iVar6;
         iVar6 = *(int *)((int)this + uVar3 * 0x28 + 0x4ec);
         if ((0 < iVar6) && (local_8 = -iVar6, local_8 < 0)) {
@@ -72,15 +72,15 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
           local_c = 0;
         }
         iVar6 = *(int *)((int)this + uVar3 * 0x28 + 0x4f4);
-        if ((iVar5 < iVar6 + param_2) && (param_2 = iVar5 - iVar6, param_2 < 0)) {
-          param_2 = 0;
+        if ((iVar5 < iVar6 + param_2_after_write) && (param_2_after_write = iVar5 - iVar6, param_2_after_write < 0)) {
+          param_2_after_write = 0;
         }
         if ((((local_8 == 0) ||
              (iVar5 = thunk_FUN_004d7b10(STField<char>(this,0x24),4), local_8 <= iVar5)) &&
             ((local_c == 0 ||
              (iVar5 = thunk_FUN_004d7b50(STField<char>(this,0x24),4), local_c <= iVar5)))) &&
-           ((param_2 == 0 ||
-            (iVar5 = thunk_FUN_004d7b90(STField<char>(this,0x24),4), param_2 <= iVar5)))) {
+           ((param_2_after_write == 0 ||
+            (iVar5 = thunk_FUN_004d7b90(STField<char>(this,0x24),4), param_2_after_write <= iVar5)))) {
           if (local_8 != 0) {
             *(int *)((int)this + uVar3 * 0x28 + 0x4ec) =
                  *(int *)((int)this + uVar3 * 0x28 + 0x4ec) + local_8;
@@ -91,10 +91,10 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
                  *(int *)((int)this + uVar3 * 0x28 + 0x4f0) + local_c;
             thunk_FUN_004d7d30(STField<char>(this,0x24),4,STField<int>(this,0x18),local_c);
           }
-          if (param_2 != 0) {
+          if (param_2_after_write != 0) {
             *(int *)((int)this + uVar3 * 0x28 + 0x4f4) =
-                 *(int *)((int)this + uVar3 * 0x28 + 0x4f4) + param_2;
-            thunk_FUN_004d7e50(STField<char>(this,0x24),4,STField<int>(this,0x18),param_2);
+                 *(int *)((int)this + uVar3 * 0x28 + 0x4f4) + param_2_after_write;
+            thunk_FUN_004d7e50(STField<char>(this,0x24),4,STField<int>(this,0x18),param_2_after_write);
           }
           *(uint *)((int)this + uVar3 * 0x28 + 0x4e0) =
                *(int *)((int)this + uVar3 * 0x28 + 0x4e0) + param_1;

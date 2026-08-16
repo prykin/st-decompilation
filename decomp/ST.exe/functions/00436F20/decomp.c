@@ -918,9 +918,9 @@ cf_common_exit_00437E03:
       do {
         DArrayGetElement(local_c,uVar14,local_118);
         pSVar15 = GetObjPtr(g_allPlayers_007FA174,pSVar16->field_0024,STPiece<0,2>(local_118),CASE_1);
-        iVar24 = (*pSVar15->vtable->vfunc_2C)();
-        if ((((iVar24 == 8) || (iVar24 = (*pSVar15->vtable->vfunc_2C)(), iVar24 == 0x14)) ||
-            (iVar24 = (*pSVar15->vtable->vfunc_2C)(), iVar24 == 0x1a)) &&
+        iVar24 = pSVar15->vfunc_2C();
+        if ((((iVar24 == 8) || (iVar24 = pSVar15->vfunc_2C(), iVar24 == 0x14)) ||
+            (iVar24 = pSVar15->vfunc_2C(), iVar24 == 0x1a)) &&
            (iVar24 = thunk_FUN_0045ff10(pSVar15), iVar24 == 0xc)) {
           puVar18 = (byte *)(thunk_FUN_0048dc90(pSVar15,local_1b8));
           puVar25 = (byte *)(&local_1fc);

@@ -22,7 +22,7 @@ undefined2 * FUN_0060cbe0(undefined2 *param_1,int *param_2)
   local_18 = 0;
   local_8 = 0;
   iVar1 = (int)(iVar2 + (iVar2 >> 0x1f & 7U)) >> 3;
-  local_28 = (int)(iVar2 + (iVar2 >> 0x1f & 3U)) >> 2;
+  local_28 = STSignedDiv4(iVar2);
   local_24 = iVar2 / 2;
   local_10 = iVar1 * -2 - iVar1 / 2;
   local_20 = (int)(iVar2 * 3 + (iVar2 * 3 >> 0x1f & 3U)) >> 2;

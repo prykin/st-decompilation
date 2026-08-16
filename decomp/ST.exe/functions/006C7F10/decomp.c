@@ -16,13 +16,13 @@ void FUN_006c7f10(RecoveredSourceFamily_dibcopy *param_1,int param_2,int *param_
   piVar1 = param_3;
   if (1 < param_4) {
     piVar2 = param_3 + 1;
-    param_3 = (int *)(param_4 + -1);
+    auto param_3_after_write = (int *)(param_4 + -1); /* compiler stack-slot lifetime split */
     do {
       FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,param_2,piVar2[-1],*piVar2,piVar2[1],
                    piVar2[2],param_5,0xd);
       piVar2 = piVar2 + 2;
-      param_3 = (int *)((int)param_3 + -1);
-    } while (param_3 != nullptr);
+      param_3_after_write = (int *)((int)param_3_after_write + -1);
+    } while (param_3_after_write != nullptr);
   }
   FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,param_2,piVar1[param_4 * 2 + -2],
                piVar1[param_4 * 2 + -1],*piVar1,piVar1[1],param_5,0xd);

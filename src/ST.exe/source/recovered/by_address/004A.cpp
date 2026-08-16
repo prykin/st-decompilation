@@ -134,8 +134,10 @@ void st::fn_004A8E00(int param_1,int param_2,int param_3)
   int iVar1;
 
   switch(DAT_008073fc) {
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case 0:
     param_1 = param_1 - param_3;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 - param_3;
     break;
   case 1:
@@ -2104,6 +2106,7 @@ LAB_004ae41c:
     }
     else if (param_4 == 0x4d) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1971_0x9e2;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_10 = (int *)&g_packedRecords_A62x8[param_5].field1971_0x9e2;
       if (pDVar12 != nullptr) {
         iVar11 = DAT_00795118 / 0xc9;

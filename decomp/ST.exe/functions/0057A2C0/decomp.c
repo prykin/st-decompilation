@@ -107,6 +107,7 @@ FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,shor
   ExceptionList = &local_14;
   pvVar10 = Library::DKW::LIB::MemAlloc(param_2 * 8);
   *param_3 = (int)pvVar10;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((pvVar10 == nullptr) || (param_2 == 0)) || ((param_2 != 5 && (param_2 != 7)))) {
     iVar11_mg0 = ReportDebugMessage("E:\\__titans\\Igor\\to_etorp.cpp",0x4c,0,0,"%s");
     if (iVar11_mg0 != 0) {
@@ -363,7 +364,7 @@ LAB_0057ac02:
                   }
                   local_74 = iVar23;
                   if (((this != nullptr) &&
-                      (iVar16 = (*this->vtable[5].slots_00_28[0])(), iVar16 != 0)) &&
+                      (iVar16 = (*this->vtable[5].slots_00_28[0])(this), iVar16 != 0)) &&
                      ((this[1].vtable < (STWorldObjectVTable *)0x8 &&
                       ((g_playSystem_00802A38 == nullptr ||
                        (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8))))))
@@ -398,7 +399,8 @@ LAB_0057a96b:
                       bVar26 = g_bulkInitializedRecords_008087C7[bVar3].field_0023 !=
                                g_bulkInitializedRecords_008087C7[bVar2].field_0023;
                     }
-                    if ((bVar26) && (iVar16 = (*this->vtable[5].slots_00_28[2])(), iVar16 != 0)) {
+                    if ((bVar26) && (iVar16 = (*this->vtable[5].slots_00_28[2])(this), iVar16 != 0))
+                    {
                       thunk_FUN_00416270(this,(uint *)local_b4,(int *)local_e8,local_20);
                       iVar14 = thunk_FUN_0057bc50(iVar24,iVar20,local_40,local_8c,local_98,local_a8,
                                                   (int)local_b4[0],(int)local_e8[0],(int)local_20[0]

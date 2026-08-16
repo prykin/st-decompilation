@@ -26,7 +26,7 @@ void __fastcall FUN_00493bc0(STBoatC *param_1)
        ((-1 < sVar2 && (sVar2 < g_worldGrid.sizeZ)))) {
       this = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
       if ((this != nullptr) && (*(int *)&this->field_0x18 == param_1->field_063F)) {
-        iVar4 = (*this->vtable[5].slots_00_28[2])();
+        iVar4 = (*this->vtable[5].slots_00_28[2])(this);
         if (iVar4 != 0) {
           thunk_FUN_004e95c0(this,param_1);
         }

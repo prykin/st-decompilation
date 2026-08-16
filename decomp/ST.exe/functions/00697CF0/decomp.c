@@ -523,9 +523,9 @@ LAB_00697e8c:
                                      *(int *)(puVar17 + -0x14),*(uint *)(puVar17 + -0x10),
                                      *(int *)(puVar17 + -0xc),*(int *)(puVar17 + -8),
                                      *(uint *)(puVar17 + -4));
-                  param_1 = param_1 + -1;
+                  auto param_1_after_write = param_1 + -1; /* compiler stack-slot lifetime split */
                   local_50 = local_50 + -1;
-                  if ((local_50 < 1) || (param_1 < 1)) break;
+                  if ((local_50 < 1) || (param_1_after_write < 1)) break;
                 }
               }
             }

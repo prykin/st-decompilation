@@ -39,7 +39,7 @@ uint FUN_007479cd(AnonShape_00747AA5_87CB4B56 *param_1,uint param_2,LPVOID *para
       else {
         *param_4 = 0;
       }
-      param_1 = nullptr;
+      auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
       while (param_2 != 0) {
         FUN_0074b91d(local_4c);
         iVar4 = pAVar1->field_0004;
@@ -57,7 +57,7 @@ LAB_00747a71:
         param_3 = param_3 + 1;
         puVar6 = (byte *)(local_4c);
         memmove(puVar5, puVar6, 0x48); /* compiler REP MOVS byte copy */
-        param_1 = (AnonShape_00747AA5_87CB4B56 *)&param_1->field_0x1;
+        param_1_after_write = (AnonShape_00747AA5_87CB4B56 *)&param_1_after_write->field_0x1;
         param_2 = param_2 - 1;
         local_8 = 0;
         local_c = 0;
@@ -65,7 +65,7 @@ LAB_00747a71:
         FUN_0074b916((int)local_4c);
       }
       if (param_4 != nullptr) {
-        *param_4 = (int)param_1;
+        *param_4 = (int)param_1_after_write;
       }
       uVar2 = (uint)(param_2 != 0);
     }

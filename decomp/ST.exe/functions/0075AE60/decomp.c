@@ -30,7 +30,7 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
   local_c = 0;
   if (0 < (int)param_1[7]) {
     local_8 = (undefined4 *)(param_1[0x34] + 0x4c);
-    param_1 = nullptr;
+    auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
     do {
       psVar1 = (short *)*local_8;
       if (psVar1 == nullptr) {
@@ -54,7 +54,7 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
       if (psVar1[2] == 0) {
         return 0;
       }
-      piVar4 = (int *)(puVar2[0x26] + (int)param_1);
+      piVar4 = (int *)(puVar2[0x26] + (int)param_1_after_write);
       if (*piVar4 < 0) {
         return 0;
       }
@@ -70,7 +70,7 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
       } while (iVar5 != 0);
       iVar7 = iVar7 + 0x18;
       local_c = local_c + 1;
-      param_1 = param_1 + 0x40;
+      param_1_after_write = param_1_after_write + 0x40;
       local_8 = local_8 + 0x15;
     } while (local_c < (int)puVar2[7]);
   }

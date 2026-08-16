@@ -111,6 +111,7 @@ st::fn_0057A2C0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,s
   ExceptionList = &local_14;
   pvVar10 = st::fn_006AAC70(param_2 * 8);
   *param_3 = (int)pvVar10;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((pvVar10 == nullptr) || (param_2 == 0)) || ((param_2 != 5 && (param_2 != 7)))) {
     iVar11_mg0 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_etorp.cpp"),0x4c,0,0,st::mutable_c_string("%s"));
     if (iVar11_mg0 != 0) {
@@ -367,7 +368,7 @@ LAB_0057ac02:
                   }
                   local_74 = iVar23;
                   if (((this != nullptr) &&
-                      (iVar16 = (*this->vtable[5].slots_00_28[0])(), iVar16 != 0)) &&
+                      (iVar16 = this->vfunc_F0(), iVar16 != 0)) &&
                      ((this[1].vtable < (STWorldObjectVTable *)0x8 &&
                       ((g_playSystem_00802A38 == nullptr ||
                        (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8))))))
@@ -402,7 +403,8 @@ LAB_0057a96b:
                       bVar26 = g_bulkInitializedRecords_008087C7[bVar3].field_0023 !=
                                g_bulkInitializedRecords_008087C7[bVar2].field_0023;
                     }
-                    if ((bVar26) && (iVar16 = (*this->vtable[5].slots_00_28[2])(), iVar16 != 0)) {
+                    if ((bVar26) && (iVar16 = this->vfunc_F8(), iVar16 != 0))
+                    {
                       st::fn_004031E3(this,(uint *)local_b4,(int *)local_e8,local_20);
                       iVar14 = st::fn_00401726(iVar24,iVar20,local_40,local_8c,local_98,local_a8,
                                                   (int)local_b4[0],(int)local_e8[0],(int)local_20[0]
@@ -531,6 +533,7 @@ undefined4 __cdecl st::fn_0057B350(int *param_1,int param_2,int *param_3)
       local_18 = 3;
       do {
         local_14 = 3;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)0xffffff37;
         do {
           iVar10 = -200;

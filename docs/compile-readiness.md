@@ -36,7 +36,7 @@ sites, not unique source objects.
 
 | Class | Functions | Body share | Occurrences | State | What remains |
 | --- | ---: | ---: | ---: | --- | --- |
-| Translation-unit/declaration assembly | 5,555 | 100.00% | 5,555 | assembled and audited | `tools/st_source_tree.py` emits 321 deterministic TUs; the current 64-diagnostic compiler audit passes 187 and maps 1,514 of 1,531 capped errors to function addresses. |
+| Translation-unit/declaration assembly | 5,555 | 100.00% | 5,555 | assembled and audited | `tools/st_source_tree.py` emits 322 deterministic TUs; the current 64-diagnostic compiler audit passes 203 and maps 1,092 of 1,109 capped errors to function addresses. |
 | Default `FUN_ADDRESS` names | 3,996 | 71.94% | 3,996 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
 | Undefined function signatures | 3,745 | 67.42% | 3,745 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
 | Undefined scalar spelling | 3,522 | 63.40% | 17,775 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
@@ -142,10 +142,11 @@ physical-vtable disagreement as review-only.
    `functions.json`, imports, and `call_relations.jsonl`.
 2. **Implemented:** emit address-stable `st::fn_ADDRESS` free functions,
    including explicit receiver ABI for ownerless `__thiscall`.
-3. Recover the 1,888 raw indirect calls from stored targets and physical vtable
-   slots; unresolved `code *` remains an explicit portability boundary.
+3. Recover the remaining 1,722 raw indirect calls from stored targets, physical
+   vtable slots, and exact use-site ABI families; unresolved `code *` remains an
+   explicit portability boundary.
 4. Split undefined debt by role (signature, field, local, return, pointer target)
-   before ranking it. The raw 18,286 count is not 18,286 independent problems.
+   before ranking it. The raw 17,609 count is not 17,609 independent problems.
 5. Finish whole-CFG return/high-register recovery for the 138 affected bodies.
 6. Refine casted generic fields and complete pointer families, prioritizing
    high-fanout structures rather than raw occurrence count.
@@ -168,21 +169,23 @@ current errors expose residual overlapping `field_0x...` views, pointer/word
 role conflicts, untyped vtable slots, and weak prototypes. See
 `docs/source-tree-generation.md` and `src/ST.exe/audit/`.
 
-The source-compilation layer now materializes 2,230 exact unnamed-byte views
+The source-compilation layer now materializes 2,233 exact unnamed-byte views
 actually referenced by statically typed bodies, emits 1,130 non-virtual member
-wrappers over receiver-aware physical-vtable slots, and exposes 1,283 uniquely
+wrappers over receiver-aware physical-vtable slots, adds 26 exact use-site
+dispatch wrappers, and exposes 1,312 uniquely
 owned non-virtual `__thiscall` functions as forwarding class methods over their
 address-stable `st::fn_ADDRESS` implementations. It does not alter packed layout
 or synthesize inheritance. It also renames 247 exact address-taken global-object
 uses whose image symbol collides with a C++ type name to `st_global_ADDRESS`,
 without changing the Ghidra symbol. With a fixed 64-error-per-TU Apple Clang
-probe, 193 of 322 units pass; 1,435 errors remain, 1,418 mapped to stable
-function addresses. The largest current categories are pointer indirection
-(304), non-callable values (235), undeclared identifiers (180), missing record
-members (90), assignment types (79), invalid operands (75), invalid casts (74),
-and scalar subscripts (66). Exact unnamed component spelling accounts for part
+probe, 203 of 322 units pass; 1,109 errors remain, 1,092 mapped to stable
+function addresses. The largest typed categories are undeclared identifiers
+(135), invalid casts (123), missing record members (100), assignment types (94),
+pointer indirection (92), non-callable values (70), invalid operands (62), call
+arity (12), and call argument types (9); 411 diagnostics remain in the general
+`other` bucket. Exact unnamed component spelling accounts for part
 of the remaining missing-record-member queue. Address-
-generated aliases now repair 144 invalid address-coded global spellings and 68
+generated aliases now repair 167 invalid address-coded global spellings and 68
 address-taken external labels; exact arity resolves 17 otherwise ambiguous
 direct calls, 94 exporter-tagged stack-slot lifetimes receive safe lexical
 declarations, and 72 promoted narrow parameter slots receive an exact full-word

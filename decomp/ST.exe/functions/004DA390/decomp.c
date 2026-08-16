@@ -57,15 +57,12 @@ undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int par
         param_2 = (byte *)0x3d;
       }
       else if (uVar5 == 2) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (byte *)0x8d;
       }
       else if (uVar5 == 3) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (byte *)0x49;
       }
       else {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = nullptr;
       }
       bVar4 = *pbVar8;

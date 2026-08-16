@@ -51,7 +51,8 @@ LAB_0042c651:
 0042C68B  8B 10                     MOV EDX,dword ptr [EAX]
 0042C68D  6A 00                     PUSH 0x0
 0042C68F  8B C8                     MOV ECX,EAX
-0042C691  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::DelObjFromTmps::override::prt_42c691_a0bf87f6:
+0042C691  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042C697  C7 07 00 00 00 00         MOV dword ptr [EDI],0x0
 0042C69D  C7 47 04 FF 00 00 00      MOV dword ptr [EDI + 0x4],0xff
 0042C6A4  85 DB                     TEST EBX,EBX
@@ -116,7 +117,8 @@ LAB_0042c703:
 0042C73B  8B 10                     MOV EDX,dword ptr [EAX]
 0042C73D  6A 00                     PUSH 0x0
 0042C73F  8B C8                     MOV ECX,EAX
-0042C741  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::DelObjFromTmps::override::prt_42c741_a0bf87f6:
+0042C741  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042C747  C7 07 00 00 00 00         MOV dword ptr [EDI],0x0
 0042C74D  C7 47 04 FF 00 00 00      MOV dword ptr [EDI + 0x4],0xff
 0042C754  85 DB                     TEST EBX,EBX
@@ -199,7 +201,8 @@ LAB_0042c815:
 0042C826  8B 10                     MOV EDX,dword ptr [EAX]
 0042C828  6A 00                     PUSH 0x0
 0042C82A  8B C8                     MOV ECX,EAX
-0042C82C  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::DelObjFromTmps::override::prt_42c82c_a0bf87f6:
+0042C82C  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042C832  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
 0042C835  8D 45 FC                  LEA EAX,[EBP + -0x4]
 0042C838  50                        PUSH EAX
@@ -280,7 +283,8 @@ LAB_0042c8ca:
 0042C904  8B 10                     MOV EDX,dword ptr [EAX]
 0042C906  6A 00                     PUSH 0x0
 0042C908  8B C8                     MOV ECX,EAX
-0042C90A  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::DelObjFromTmps::override::prt_42c90a_a0bf87f6:
+0042C90A  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042C910  C7 07 00 00 00 00         MOV dword ptr [EDI],0x0
 0042C916  C7 47 04 FF 00 00 00      MOV dword ptr [EDI + 0x4],0xff
 0042C91D  85 DB                     TEST EBX,EBX
@@ -350,7 +354,8 @@ LAB_0042c998:
 0042C9D2  8B 10                     MOV EDX,dword ptr [EAX]
 0042C9D4  6A 00                     PUSH 0x0
 0042C9D6  8B C8                     MOV ECX,EAX
-0042C9D8  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::DelObjFromTmps::override::prt_42c9d8_a0bf87f6:
+0042C9D8  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042C9DE  C7 07 00 00 00 00         MOV dword ptr [EDI],0x0
 0042C9E4  C7 47 04 FF 00 00 00      MOV dword ptr [EDI + 0x4],0xff
 0042C9EB  85 DB                     TEST EBX,EBX
@@ -415,7 +420,8 @@ LAB_0042ca4a:
 0042CA84  8B 10                     MOV EDX,dword ptr [EAX]
 0042CA86  6A 00                     PUSH 0x0
 0042CA88  8B C8                     MOV ECX,EAX
-0042CA8A  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::DelObjFromTmps::override::prt_42ca8a_a0bf87f6:
+0042CA8A  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042CA90  C7 07 00 00 00 00         MOV dword ptr [EDI],0x0
 0042CA96  C7 47 04 FF 00 00 00      MOV dword ptr [EDI + 0x4],0xff
 0042CA9D  85 DB                     TEST EBX,EBX
@@ -502,7 +508,8 @@ LAB_0042cb76:
 0042CB87  8B 10                     MOV EDX,dword ptr [EAX]
 0042CB89  6A 00                     PUSH 0x0
 0042CB8B  8B C8                     MOV ECX,EAX
-0042CB8D  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]
+STAllPlayersC::DelObjFromTmps::override::prt_42cb8d_a0bf87f6:
+0042CB8D  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042CB93  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
 0042CB96  8D 45 FC                  LEA EAX,[EBP + -0x4]
 0042CB99  50                        PUSH EAX

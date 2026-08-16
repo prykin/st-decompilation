@@ -45,6 +45,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
     return 0;
   }
   iVar5 = *(int *)(STField<int>(this,0x336) + 0xc);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == '\n') {
     fVar3 = _DAT_007d2044 + _DAT_007d2044;
     _param_1 = 0;

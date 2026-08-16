@@ -73,10 +73,10 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x1192);
           }
-          iVar6 = (*pSVar4->vtable->vfunc_2C)();
+          iVar6 = pSVar4->vfunc_2C();
           pDVar8 = local_c;
           if (((iVar6 != 9) &&
-              (iVar6 = (*pSVar4->vtable->vfunc_2C)(), pDVar8 = local_c, iVar6 != 0x15)) &&
+              (iVar6 = pSVar4->vfunc_2C(), pDVar8 = local_c, iVar6 != 0x15)) &&
              (local_EAX_299 = thunk_FUN_00486b40(pSVar4), pDVar8 = local_c, local_EAX_299 != 0)) {
             pDVar8 = local_20;
           }

@@ -60,6 +60,7 @@ int __thiscall st::fn_0040CC80(void *this,uint param_1)
     return -4;
   }
   local_8 = pSVar1->field_00A7;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = 0;
   if (-1 < local_8) {
     psVar4 = pSVar1->field_009F + local_8 * 0x24;
@@ -607,6 +608,7 @@ LAB_0040dde1:
 #line 4 "decomp/ST.exe/functions/0040EB90/decomp.c"
 /* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* WARNING: Unable to track spacebase fully for stack */
+/* WARNING: Unable to use type for symbol piVar10 */
 
 undefined4 st::fn_0040EB90(void)
 
@@ -645,7 +647,7 @@ undefined4 st::fn_0040EB90(void)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  int *piVar10;
+  undefined4 *piVar10;
 
   iVar3 = DAT_007f4d20;
   puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790040);
@@ -653,17 +655,17 @@ undefined4 st::fn_0040EB90(void)
   local_14 = ExceptionList;
   iVar13 = 0;
   uStack_90 = 0x40ebd1;
-  DAT_007f4d00 = st::machine_word_boundary_cast<undefined4>((int *)((st_stack_frame + 4) + DAT_007f4d20 * -0xc));
+  PTR_007f4d00 = (undefined4 *)((st_stack_frame + 4) + DAT_007f4d20 * -0xc);
   local_8 = 0xffffffff;
   iVar11 = 0;
   ExceptionList = &local_14;
   if (0 < DAT_007f4d20) {
     iVar9 = 0;
     iVar5 = 0;
-    DAT_007f4d00 = st::machine_word_boundary_cast<undefined4>((int *)((st_stack_frame + 4) + DAT_007f4d20 * -0xc));
+    PTR_007f4d00 = (undefined4 *)((st_stack_frame + 4) + DAT_007f4d20 * -0xc);
     ExceptionList = &local_14;
     do {
-      *(int *)(iVar9 + 8 + (int)DAT_007f4d00) = DAT_007f4d48 + iVar5;
+      *(int *)(iVar9 + 8 + (int)PTR_007f4d00) = DAT_007f4d48 + iVar5;
       iVar11 = iVar11 + 1;
       iVar5 = iVar5 + 0x1c;
       iVar9 = iVar9 + 0xc;
@@ -702,7 +704,7 @@ undefined4 st::fn_0040EB90(void)
   local_54 = 0;
   if (0 < DAT_007f4d20) {
     piVar6 = (int *)(DAT_007f4d48 + 4);
-    piVar10 = st::pointer_boundary_cast<int *>(DAT_007f4d00);
+    piVar10 = PTR_007f4d00;
     do {
       aiStack_a8[iVar3 * -3 + 6] = st::machine_word_boundary_cast<int>(piVar6[1] * 4 + 2);
       aiStack_a8[iVar3 * -3 + 5] = *piVar6 * 4 + 2;
@@ -791,7 +793,7 @@ undefined4 st::fn_0040EB90(void)
         iVar13 = 30000;
         local_54 = 0;
         if (0 < DAT_007f4d20) {
-          piVar14 = st::pointer_boundary_cast<int *>(DAT_007f4d00 + 2);
+          piVar14 = st::pointer_boundary_cast<int *>(PTR_007f4d00 + 2);
           do {
             if (-1 < piVar14[-2]) {
               puVar1 = (undefined4 *)*piVar14;
@@ -819,11 +821,11 @@ undefined4 st::fn_0040EB90(void)
             piVar14 = piVar14 + 3;
           } while (local_54 < DAT_007f4d20);
         }
-        *(int *)(DAT_007f4d00[local_48 * 3 + 2] + 0xc) =
+        *(int *)(PTR_007f4d00[local_48 * 3 + 2] + 0xc) =
              ((RuntimeRecord_007F4D3C_0014 *)(piVar6 + -1))->field_0000;
-        *(int *)(DAT_007f4d00[local_48 * 3 + 2] + 0x10) = *piVar6;
-        *(int *)(DAT_007f4d00[local_48 * 3 + 2] + 0x14) = piVar6[1];
-        DAT_007f4d00[local_48 * 3] = -1;
+        *(int *)(PTR_007f4d00[local_48 * 3 + 2] + 0x10) = *piVar6;
+        *(int *)(PTR_007f4d00[local_48 * 3 + 2] + 0x14) = piVar6[1];
+        PTR_007f4d00[local_48 * 3] = 0xffffffff;
         local_28 = local_28 + 1;
         piVar6 = piVar6 + 5;
       } while (local_28 < DAT_007f4d20);
@@ -833,14 +835,14 @@ undefined4 st::fn_0040EB90(void)
     aiStack_a8[iVar3 * -3 + 6] = (int)st::fn_0040F1D0;
     aiStack_a8[iVar3 * -3 + 5] = 0xc;
     aiStack_a8[iVar3 * -3 + 4] = DAT_007f4d20;
-    aiStack_a8[iVar3 * -3 + 3] = (int)DAT_007f4d00;
+    aiStack_a8[iVar3 * -3 + 3] = (int)PTR_007f4d00;
     aiStack_a8[iVar3 * -3 + 2] = 0x40ee65;
     st::fn_006ACCD0((RuntimeRecord_007F4D3C_0014 *)aiStack_a8[iVar3 * -3 + 3],
                  (undefined4 *)aiStack_a8[iVar3 * -3 + 4],aiStack_a8[iVar3 * -3 + 5],
                  (callback_006ACCD0_p3 *)aiStack_a8[iVar3 * -3 + 6]);
     local_54 = 0;
     if (0 < DAT_007f4d20) {
-      piVar6 = st::pointer_boundary_cast<int *>(DAT_007f4d00 + 2);
+      piVar6 = st::pointer_boundary_cast<int *>(PTR_007f4d00 + 2);
       do {
         iVar13 = 30000;
         local_28 = 0;
@@ -959,7 +961,7 @@ st::fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,i
             ((-1 < iVar10 && (iVar10 < DAT_007f4d30)))))) &&
           (uVar5 = iVar8 * iVar7 + iVar9 + DAT_007f4d2c * iVar10,
           *(short *)((int)PTR_007f4cf0 + uVar5 * 2) == 0)) &&
-         (uVar5 = uVar5 ^ 7, (g_bitset_007F4CFC[(int)uVar5 >> 3] >> (uVar5 & 7) & 1) == 0)) {
+         (uVar5 = uVar5 ^ 7, (STBitTest(g_bitset_007F4CFC, uVar5)) == 0)) {
         iVar6 = st::fn_006AADD0(iVar9,iVar10,iVar8,param_7,param_8,param_9);
         iVar8 = st::fn_006AADD0(iVar9,iVar10,iVar8,param_4,param_5,param_6);
         if ((iVar8 < local_14) || ((iVar8 == local_14 && (iVar6 < local_1c)))) {
@@ -1187,7 +1189,6 @@ int st::fn_0040F840(byte *param_1,int param_2,int param_3,uint param_4)
   if (param_4 == 0) {
     local_14 = 0;
     uVar4 = (uint)*param_1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = 30000;
     iVar11 = 1;
     local_c = 1;
@@ -1202,7 +1203,6 @@ int st::fn_0040F840(byte *param_1,int param_2,int param_3,uint param_4)
           uVar4 = uVar8;
         }
         else {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if ((uVar8 < param_4) ||
              ((param_4 == uVar8 &&
               ((iVar5 < iVar11 ||
@@ -1213,7 +1213,6 @@ int st::fn_0040F840(byte *param_1,int param_2,int param_3,uint param_4)
               )))) {
             local_10 = local_14;
             iVar5 = iVar11;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_4 = uVar8;
             local_8 = iVar11;
           }
@@ -1274,7 +1273,6 @@ int st::fn_0040F840(byte *param_1,int param_2,int param_3,uint param_4)
     return iVar5;
   }
   uVar3 = (uint)*param_1;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_4 = 30000;
   iVar11 = 1;
   iVar5 = 0;
@@ -1296,9 +1294,7 @@ int st::fn_0040F840(byte *param_1,int param_2,int param_3,uint param_4)
         uVar3 = uVar4;
       }
       else {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((uVar4 < param_4) || ((param_4 == uVar4 && (local_8 < iVar11)))) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = uVar4;
           local_10 = iVar5;
           local_8 = iVar11;

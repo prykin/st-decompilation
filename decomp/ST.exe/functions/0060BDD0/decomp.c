@@ -41,7 +41,7 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
       iVar2 = thunk_FUN_004e60d0(param_1[9],0x2d);
     }
     if (iVar2 != 0) {
-      local_38[0] = local_38[0] - ((int)(local_38[0] + (local_38[0] >> 0x1f & 3U)) >> 2);
+      local_38[0] = local_38[0] - (STSignedDiv4(local_38[0]));
     }
     local_2c = STField<undefined2>(this,0x205);
     local_2a = STField<undefined2>(this,0x201);

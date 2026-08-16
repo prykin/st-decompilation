@@ -119,8 +119,8 @@ STJumpMineC::sub_0061B340
              ((g_playSystem_00802A38 == nullptr ||
               (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)))) &&
             (pSVar4->value_20 == 1000)) &&
-           ((iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar7 != 0 &&
-            (iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(), iVar7 != 0)))) {
+           ((iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(pSVar4), iVar7 != 0 &&
+            (iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(pSVar4), iVar7 != 0)))) {
           bVar1 = *(byte *)&pSVar4[1].vtable;
           bVar2 = *(byte *)&this->field_0051;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -234,11 +234,11 @@ LAB_0061b993:
                  g_bulkInitializedRecords_008087C7[bVar1].field_0023;
       }
       if (bVar10) {
-        iVar7 = (*pSVar4->vtable[5].slots_00_28[0])();
+        iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(pSVar4);
         if (iVar7 == 0) {
           return local_8;
         }
-        iVar7 = (*pSVar4->vtable[5].slots_00_28[2])();
+        iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(pSVar4);
         if (iVar7 == 0) {
           return local_8;
         }

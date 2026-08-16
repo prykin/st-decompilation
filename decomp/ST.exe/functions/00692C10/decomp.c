@@ -49,6 +49,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
         return (uint *)&DAT_007d5af8;
       }
       switch(param_1) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       case CASE_A:
         *param_3 = 0xa6;
         memset(&DAT_00853cd8, 0, 0xa6); /* compiler bulk-zero initialization */

@@ -58,6 +58,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
     }
     iVar7 = LVar3 + -0x80;
     local_10 = iVar7;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((param_2 == 0) && (bVar1)) {
       LVar3 = _llseek(param_1->field_0026,0,2);
       if (LVar3 == -1) {

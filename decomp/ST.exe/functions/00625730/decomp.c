@@ -142,7 +142,7 @@ LAB_006259bf:
                   bVar17 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
                            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                 }
-                if ((bVar17) && (iVar6 = (*this_00->vtable[5].slots_00_28[2])(), iVar6 != 0))
+                if ((bVar17) && (iVar6 = (*this_00->vtable[5].slots_00_28[2])(this_00), iVar6 != 0))
                 goto LAB_00625ad5;
               }
             }

@@ -8633,7 +8633,7 @@ int __thiscall st::fn_004608B0(STBoatC *this,int param_1)
   uint uVar11;
   undefined2 *puVar12;
   bool bVar13;
-  AnonShape_00645880_8F6B4550 local_64;
+  RecoveredRecord_STBoatC_00645880 local_64;
   undefined4 local_3c [2];
   short local_34;
   short sStack_32;
@@ -9628,6 +9628,7 @@ int __thiscall st::fn_00465C60(STBoatC *this,int *param_1)
   int local_8;
 
   local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -10406,7 +10407,7 @@ LAB_0046739a:
           }
           if (((local_18 < iVar8) ||
               (this->field_07DA + this->field_07D6 + this->field_07D2 == 0x28)) ||
-             (iVar8 = (*pSVar6->vtable[2].slots_00_28[10])(&local_8), iVar8 == 0))
+             (iVar8 = pSVar6->vfunc_88(&local_8), iVar8 == 0))
           goto LAB_0046744c;
         }
         else {
@@ -10418,7 +10419,7 @@ LAB_0046744c:
           st::fn_00404F6B(this,(int)this->field_04A5,(int)this->field_04A7,st::machine_word_boundary_cast<int>(this->field_04A9 + 1));
           st::fn_004031DE(this,0);
         }
-        iVar8 = (*pSVar6->vtable[2].slots_00_28[10])(&local_8);
+        iVar8 = pSVar6->vfunc_88(&local_8);
         if (iVar8 == 0) {
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           st::fn_0040494E
@@ -13105,6 +13106,7 @@ int __thiscall st::fn_0046D450(STBoatC *this,int param_1)
   int local_c;
   undefined4 *local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -14074,6 +14076,7 @@ int __thiscall st::fn_0046F5C0(STBoatC *this,int param_1)
   int local_c;
   undefined4 *local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -15082,7 +15085,7 @@ int __thiscall st::fn_00471AC0(STBoatC *this,int param_1)
   undefined4 uVar11;
   undefined2 *puVar12;
   bool bVar13;
-  AnonShape_00645880_8F6B4550 local_64;
+  RecoveredRecord_STBoatC_00645880 local_64;
   undefined4 local_3c [2];
   short local_34;
   short sStack_32;
@@ -16995,6 +16998,7 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
   AnonShape_004758E0_51E65DA0 *local_c;
   undefined1 local_5;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -17114,9 +17118,9 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
     local_20 = st::fn_00402847((STJellyGunC *)this,&local_18,&local_14);
     local_10 = 0;
     if (this->field_02BF != '\0') {
-      param_1 = (int)&this->field_0x2b3;
+      auto param_1_after_write = (int)&this->field_0x2b3; /* compiler stack-slot lifetime split */
       do {
-        puVar8 = st::pointer_boundary_cast<byte *>(st::fn_0040342C(local_30,(short)*(undefined4 *)param_1,*(ushort *)(param_1 + 4),
+        puVar8 = st::pointer_boundary_cast<byte *>(st::fn_0040342C(local_30,(short)*(undefined4 *)param_1_after_write,*(ushort *)(param_1_after_write + 4),
                                     this->field_006C));
         local_28 = *puVar8;
         local_24 = *(short *)(puVar8 + 1);
@@ -17167,7 +17171,7 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
                    (uVar7 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_28,
                    iVar10 + -3,iVar6,sVar5,sVar14,sVar15,sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
         local_10 = local_10 + 1;
-        param_1 = param_1 + 6;
+        param_1_after_write = param_1_after_write + 6;
       } while (local_10 < (int)(uint)(byte)this->field_02BF);
     }
     if (local_20 == -1) {
@@ -17534,6 +17538,7 @@ int __thiscall st::fn_00476CE0(STBoatC *this,int param_1)
   int local_c;
   int local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -17577,7 +17582,7 @@ cf_common_exit_00476DBA:
       pSVar8 = st::fn_004028BA
                          (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
       if (((pSVar8 != nullptr) && (pSVar8->field_0018 == *(int *)&this->field_0x5ff)) &&
-         (iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024), iVar7 != 0)) {
+         (iVar7 = pSVar8->vfunc_108(this->field_0024), iVar7 != 0)) {
         return 2;
       }
       st::fn_00403855(this);
@@ -17616,7 +17621,7 @@ cf_common_exit_00476DBA:
     if (pSVar8->field_0018 != *(int *)&this->field_0x5ff) {
       return 0;
     }
-    iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024);
+    iVar7 = pSVar8->vfunc_108(this->field_0024);
     if (iVar7 != 0) {
       if (pSVar8->field_002C == 0) {
         st::fn_00402AD6(pSVar8,this->field_0018,this->field_0024);
@@ -17784,7 +17789,7 @@ cf_common_exit_00476DBA:
         pSVar8 = st::fn_004028BA
                            (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
         if (((pSVar8 == nullptr) || (pSVar8->field_0018 != *(int *)&this->field_0x5ff)) ||
-           (iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024), iVar7 == 0)) {
+           (iVar7 = pSVar8->vfunc_108(this->field_0024), iVar7 == 0)) {
           this->field_0611 = CASE_4;
           this->field_0615 = CASE_0;
         }
@@ -17967,7 +17972,7 @@ cf_common_exit_00477B2E:
     pSVar8 = st::fn_004028BA
                        (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
     if (((pSVar8 == nullptr) || (pSVar8->field_0018 != *(int *)&this->field_0x5ff)) ||
-       (iVar7 = (*pSVar8->vtable->vfunc_108)(this->field_0024), iVar7 == 0)) {
+       (iVar7 = pSVar8->vfunc_108(this->field_0024), iVar7 == 0)) {
       if (((int)this->field_0041 == (this->field_0609 + 1) * 0xc9) &&
          ((int)this->field_0043 == (this->field_060B + 1) * 0xc9)) {
         this->field_0611 = CASE_4;
@@ -17989,11 +17994,11 @@ cf_common_exit_00477B2E:
         g_aiBossClass_008117BC->GetMessage(&local_44);
       }
       pSVar8->vfunc_10C();
-      (*pSVar8->vtable->vfunc_110)(this->field_0024,this->field_06F3);
+      (*pSVar8->vtable[1].vfunc_3C)((short)this->field_0024);
     }
     else if (iVar7 != 2) goto cf_common_exit_0047746B;
     uVar8 = st::fn_004049B7(*(char *)&pSVar8->field_0024);
-    iVar7 = (*pSVar8->vtable->vfunc_2C)();
+    iVar7 = pSVar8->vfunc_2C();
     local_64.arg0.ptr = &local_44.unknown_04;
     local_44.unknown_04 = *(dword *)(&DAT_007e1374 + ((uint)(byte)uVar8 + iVar7 * 3) * 4);
     local_44.unknown_0c = 0xff;
@@ -18046,8 +18051,8 @@ int __thiscall st::fn_00478030(STBoatC *this,int *param_1)
   int local_EAX_36;
   int local_EAX_253;
   int local_EAX_463;
-  STGameObjC *pSVar4;
-  uint uVar5;
+  STGameObjC *this_00;
+  uint uVar4;
   int iVar5;
   int local_EAX_1096;
   int local_EAX_1172;
@@ -18086,9 +18091,9 @@ int __thiscall st::fn_00478030(STBoatC *this,int *param_1)
       this->field_0615 = 4;
     }
     if (this->field_0615 == 4) {
-      uVar5 = st::fn_004030B2(this,this->field_060F);
-      uVar5 = st::fn_004022FC(this,(short)uVar5);
-      if (uVar5 == 0xffffffff) {
+      uVar4 = st::fn_004030B2(this,this->field_060F);
+      uVar4 = st::fn_004022FC(this,(short)uVar4);
+      if (uVar4 == 0xffffffff) {
         local_EAX_253 =
              st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x3336,0,0,st::mutable_c_string("%s"),
                                 "STBoatC::BackCapture, CAPTURE_PMOVE");
@@ -18097,7 +18102,7 @@ int __thiscall st::fn_00478030(STBoatC *this,int *param_1)
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if (uVar5 == 0) {
+      if (uVar4 == 0) {
         this->field_0615 = CASE_5;
 LAB_00478373:
         iVar6 = this->vfunc_D8();
@@ -18132,11 +18137,11 @@ LAB_0047848a:
     }
     break;
   case CASE_3:
-    pSVar4 = st::fn_004028BA
-                       (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
-    if (((pSVar4 != nullptr) && (pSVar4->field_0018 == *(int *)&this->field_0x5ff)) &&
-       (iVar6 = (*pSVar4->vtable->vfunc_108)(this->field_0024), iVar6 != 0)) {
-      st::fn_00405B1E((AnonShape_004CC900_31EE9CAA *)pSVar4);
+    this_00 = st::fn_004028BA
+                        (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
+    if (((this_00 != nullptr) && (this_00->field_0018 == *(int *)&this->field_0x5ff)) &&
+       (iVar6 = this_00->vfunc_108(this->field_0024), iVar6 != 0)) {
+      st::fn_00405B1E((AnonShape_004CC900_31EE9CAA *)this_00);
     }
     if (((int)this->field_0041 != (this->field_0609 + 1) * 0xc9) ||
        ((int)this->field_0043 != (this->field_060B + 1) * 0xc9)) {
@@ -18159,9 +18164,9 @@ LAB_0047848a:
       this->field_0615 = 1;
     }
     if (this->field_0615 == 1) {
-      uVar5 = st::fn_004030B2(this,this->field_060F);
-      uVar5 = st::fn_004022FC(this,(short)uVar5);
-      if (uVar5 == 0xffffffff) {
+      uVar4 = st::fn_004030B2(this,this->field_060F);
+      uVar4 = st::fn_004022FC(this,(short)uVar4);
+      if (uVar4 == 0xffffffff) {
         iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_boat.cpp"),0x3373,0,0,st::mutable_c_string("%s"),
                                    "STBoatC::BackCapture, CAPTURE_OMOVE");
         if (iVar5 == 0) {
@@ -18169,7 +18174,7 @@ LAB_0047848a:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if (uVar5 == 0) {
+      if (uVar4 == 0) {
         this->field_0615 = CASE_2;
         goto LAB_00478373;
       }
@@ -18298,7 +18303,7 @@ int __thiscall st::fn_00478640(STBoatC *this,int param_1)
       if (pSVar5[1].vtable != (STWorldObjectVTable *)this->field_0024) {
         return 0;
       }
-      iVar11 = (*pSVar5->vtable[5].slots_00_28[2])();
+      iVar11 = pSVar5->vfunc_F8();
       if (iVar11 == 0) {
         return 0;
       }
@@ -18525,7 +18530,7 @@ LAB_00478b1a:
            ((g_worldGrid.sizeZ <= sVar3 ||
             ((pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0],
              pSVar5 == nullptr || (*(int *)&pSVar5->field_0x18 != this->field_0623)))))
-           ) || (iVar11 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar11 == 0)))) {
+           ) || (iVar11 = pSVar5->vfunc_F8(), iVar11 == 0)))) {
         if (this->field_0619 == 0) {
           return 0;
         }
@@ -18720,6 +18725,7 @@ int __thiscall st::fn_00479600(STBoatC *this,int param_1)
   STWorldObject *local_8;
 
   local_8 = nullptr;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -19872,6 +19878,7 @@ undefined4 __thiscall st::fn_0047C050(STBoatC *this,STBoatC *param_1)
   short local_c;
   STBoatC *local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (STBoatC *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     SVar5 = this->field_06F7;
@@ -20367,6 +20374,7 @@ int __thiscall st::fn_0047D080(STBoatC *this,undefined4 *param_1)
   int local_c;
   int local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (undefined4 *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     sVar15 = this->field_0423;
@@ -20506,7 +20514,7 @@ LAB_0047d831:
               ((pSVar2 = STGridAt3D(g_worldGrid, sVar15, sVar17, sVar16).objects[0],
                pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))
               ))) {
-            iVar10 = (*pSVar2->vtable[5].slots_00_28[2])();
+            iVar10 = pSVar2->vfunc_F8();
             if (iVar10 == 1) {
               this->field_06A5 = CASE_0;
               this->field_06A1 = 1;
@@ -20535,7 +20543,7 @@ LAB_0047d241:
            (((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) && (sVar16 < g_worldGrid.sizeZ)))))) &&
          ((pSVar2 = STGridAt3D(g_worldGrid, sVar15, sVar17, sVar16).objects[0],
           pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
-        iVar10 = (*pSVar2->vtable[5].slots_00_28[2])();
+        iVar10 = pSVar2->vfunc_F8();
         if (iVar10 == 1) {
           if (*(int *)&pSVar2[0x22].field_0x8 == 2) {
             this->field_06A1 = 2;
@@ -20570,7 +20578,7 @@ LAB_0047d241:
            (((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) && (sVar16 < g_worldGrid.sizeZ)))))) &&
          ((pSVar2 = STGridAt3D(g_worldGrid, sVar15, sVar17, sVar16).objects[0],
           pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
-        iVar10 = (*pSVar2->vtable[5].slots_00_28[2])();
+        iVar10 = pSVar2->vfunc_F8();
         if (iVar10 == 1) {
           st::fn_00403CCE(pSVar2,this->field_06F7,0,0);
           st::fn_00403BA2((int *)pSVar2);
@@ -20841,6 +20849,7 @@ int __thiscall st::fn_0047DF00(STBoatC *this,int *param_1)
   undefined4 *local_c;
   int local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -21598,6 +21607,7 @@ int __thiscall st::fn_0047FAD0(STBoatC *this,int *param_1)
     sVar3 = this->field_06AB;
     if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
         ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = nullptr;
     }
     else {
@@ -22622,7 +22632,7 @@ LAB_0048a37f:
       if ((((local_8 != nullptr) &&
            (iVar12 = local_8->vfunc_F8(), iVar12 == 1)) &&
           (iVar12 = local_8->vfunc_F0(), iVar12 == 1)) &&
-         ((iVar12 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar12 == 1 &&
+         ((iVar12 = (*local_8->vtable[1].vfunc_20)(local_8), iVar12 == 1 &&
           (this->field_047F % 0x28 != 0)))) {
         return 0;
       }
@@ -22652,15 +22662,15 @@ LAB_0048a37f:
               iVar12 = local_8->vfunc_F8();
               if ((iVar12 != 0) &&
                  ((iVar12 = local_8->vfunc_F0(), iVar12 != 0 &&
-                  (iVar12 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar12 != 0)))) {
+                  (iVar12 = (*local_8->vtable[1].vfunc_20)(local_8), iVar12 != 0)))) {
                 iVar12 = local_8->vfunc_FC();
                 if (0 < iVar12) {
                   iVar16 = iVar16 + 300;
                 }
                 iVar12 = local_8->field_0219;
                 iVar1 = local_8->field_0215;
-                iVar8 = (*local_8->vtable->vfunc_7C)();
-                local_38 = iVar16 + ((int)(iVar12 + (iVar12 >> 0x1f & 3U)) >> 2) + iVar1 + iVar8 * 2
+                iVar8 = local_8->vfunc_7C();
+                local_38 = iVar16 + (STSignedDiv4(iVar12)) + iVar1 + iVar8 * 2
                 ;
                 if ((((uint)(ushort)local_8->field_0032 == this->field_048B) &&
                     (local_8->field_0024 == this->field_0487)) &&
@@ -22790,8 +22800,8 @@ LAB_00489eb0:
           do {
             st::fn_006ACC70(pDVar4,local_18,&local_8);
             iVar12 = local_8->vfunc_F8();
-            if (((iVar12 != 0) && (iVar12 = local_8->vfunc_F0(), iVar12 != 0)) &&
-               (iVar12 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar12 != 0)) {
+            if (((iVar12 != 0) && (iVar12 = local_8->vfunc_F0(), iVar12 != 0))
+               && (iVar12 = (*local_8->vtable[1].vfunc_20)(local_8), iVar12 != 0)) {
               st::fn_004031E3(local_8,&local_14,&local_10,(short *)&local_c);
               local_EAX_1627 =
                    st::fn_006ACF0D((int)this->field_0041,(int)this->field_0043,(int)this->field_0045,
@@ -22850,8 +22860,8 @@ LAB_00489eb0:
                 }
                 iVar12 = local_8->field_0219;
                 iVar1 = local_8->field_0215;
-                iVar8 = (*local_8->vtable->vfunc_7C)();
-                iVar12 = iVar16 + ((int)(iVar12 + (iVar12 >> 0x1f & 3U)) >> 2) + iVar1 + iVar8 * 2;
+                iVar8 = local_8->vfunc_7C();
+                iVar12 = iVar16 + (STSignedDiv4(iVar12)) + iVar1 + iVar8 * 2;
                 if (((uint)(ushort)local_8->field_0032 == this->field_048B) &&
                    (local_8->field_0024 == this->field_0487)) {
                   if ((this->field_0483 == CASE_1) &&
@@ -23160,7 +23170,7 @@ void __thiscall st::fn_0048CEA0(STBoatC *this,int param_1)
             if (iVar4 == 1) {
               iVar4 = this_00->vfunc_F0();
               if (iVar4 == 1) {
-                iVar4 = (*this_00->vtable->vfunc_F4)(pSVar2->field_0024);
+                iVar4 = this_00->vfunc_F4(pSVar2->field_0024);
                 if (iVar4 == 1) {
                   st::fn_004031E3(this_00,(uint *)&local_a,(int *)&local_8,&local_6);
                   iVar4 = (int)pSVar2->field_0041 - (int)local_a;
@@ -23814,6 +23824,7 @@ void __thiscall st::fn_00491070(STBoatC *this,uint param_1)
         piVar4 = piVar4 + 1;
       } while (iVar3 < 0x17);
       if ((this->field_045D == CASE_14) && (iVar3 == 0x17)) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = g_playSystem_00802A38->field_00E4;
         st::fn_00402126(this,CASE_3,st::pointer_boundary_cast<uint *>(&param_1));
       }
@@ -24223,6 +24234,7 @@ LAB_00491b42:
     local_8 = *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride;
     if (0 < g_pathingScratchGrid.cells[local_8 + iVar11 + (int)param_4]) {
       piVar3 = &local_68;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_3 = 1000000000;
       iVar12 = 0;
       do {
@@ -24315,6 +24327,7 @@ cf_continue_loop_00491C1C:
       iVar11 = -1;
       iVar9 = 0;
       _param_3 = 1000000000;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       auto _param_6 = 0;
       do {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

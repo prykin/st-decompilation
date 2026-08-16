@@ -44,6 +44,7 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
       local_18 = 3;
       do {
         local_14 = 3;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)0xffffff37;
         do {
           iVar10 = -200;

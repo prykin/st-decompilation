@@ -34,11 +34,11 @@ void FUN_0075f590(AnonShape_0075F590_570A7014 *param_1,int *param_2,int param_3)
     local_c = iVar7 * 8 + 4;
     local_28 = (param_2[1] - iVar7) + 1;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    param_2 = (int *)(*(int *)(param_1->field_01BA + 0x18) + iVar7 * 4);
+    auto param_2_after_write = (int *)(*(int *)(param_1->field_01BA + 0x18) + iVar7 * 4); /* compiler stack-slot lifetime split */
     do {
       if (iVar6 <= *piVar1) {
         iVar7 = iVar6 * 4 + 2;
-        puVar10 = (ushort *)(*param_2 + (iVar6 * 0x20 + iVar3) * 2);
+        puVar10 = (ushort *)(*param_2_after_write + (iVar6 * 0x20 + iVar3) * 2);
         iVar4 = (*piVar1 - iVar6) + 1;
         do {
           if (iVar3 <= *piVar2) {
@@ -64,7 +64,7 @@ void FUN_0075f590(AnonShape_0075F590_570A7014 *param_1,int *param_2,int param_3)
           iVar9 = local_8;
         } while (iVar4 != 0);
       }
-      param_2 = param_2 + 1;
+      param_2_after_write = param_2_after_write + 1;
       local_c = local_c + 8;
       local_28 = local_28 + -1;
     } while (local_28 != 0);

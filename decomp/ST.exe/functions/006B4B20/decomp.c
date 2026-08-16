@@ -36,6 +36,7 @@ undefined4 FUN_006b4b20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int pa
   AnonShape_006B4B20_3D4F4412 *pAVar16_mg0;
 
   *param_1 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_3 == 0) {
     param_3 = FUN_006b4fa0((int *)param_2);
   }
@@ -49,7 +50,7 @@ undefined4 FUN_006b4b20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int pa
   pbVar6 = (byte *)((uVar4 - 1) * uVar15 + param_3);
   pbVar14 = (byte *)((int)puVar5 + 0x16);
   local_1c = -1;
-  param_2 = nullptr;
+  auto param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
   local_20 = 0;
   local_14 = 0;
   iVar12 = 0;
@@ -80,15 +81,15 @@ undefined4 FUN_006b4b20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int pa
           pbVar6 = pbVar6 + 1;
           bVar1 = *pbVar6;
         }
-        if ((int)param_2 < (int)pAVar16) {
-          param_2 = pAVar16;
+        if ((int)param_2_after_write < (int)pAVar16) {
+          param_2_after_write = pAVar16;
         }
       }
 LAB_006b4c1b:
       pbVar6 = pbVar6 + -(int)(&pAVar3->field_0x0 + uVar15);
       local_14 = local_14 + 1;
       iVar12 = local_20;
-      pAVar16_mg0 = param_2;
+      pAVar16_mg0 = param_2_after_write;
     } while ((int)local_14 < (int)uVar4);
   }
   local_c = (int)pAVar16_mg0 - (int)local_2c;

@@ -37,6 +37,7 @@ FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,
       cVar2 = (char)param_1->field_0024;
     }
     if ((param_5 != '\b') && ((param_5 < '\0' || (cVar2 = param_5, '\b' < param_5)))) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = -1;
       cVar2 = param_5;
     }
@@ -53,14 +54,14 @@ FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,
         }
         this = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
-        if ((this == nullptr) || (iVar9 = this->vfunc_F8(), iVar9 == 0))
+        if ((this == nullptr) || (iVar9 = (*this->vtable[1].vfunc_24)(this), iVar9 == 0))
         goto cf_common_join_0065DF91;
-        uVar4 = (*this->vtable->vfunc_2C)();
+        uVar4 = this->vfunc_2C();
         if (param_4 != 0) {
           if (uVar4 == 0x78) {
             if ((param_4 & 0x80000000) == 0) {
               if ((param_4 & 0x3fffffff) != 0) {
-                iVar9 = (*this->vtable->vfunc_2C)();
+                iVar9 = this->vfunc_2C();
                 if (iVar9 == 0x78) {
                   uVar5 = this->field_0259;
                 }
@@ -116,7 +117,7 @@ LAB_0065deef:
         }
         else if (uVar4 == 0x78) {
           if ((param_3 & 0x80000000) == 0) {
-            iVar9 = (*this->vtable->vfunc_2C)();
+            iVar9 = this->vfunc_2C();
             if (iVar9 == 0x78) {
               iVar9 = this->field_0259;
             }

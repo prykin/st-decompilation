@@ -33,8 +33,8 @@ int __fastcall AiFltClassTy::sub_00661800(AnonShape_0065DA10_8B0AA883 *param_1,u
           puVar1 = nullptr;
         }
         this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,param_1->field_0024,*puVar1,CASE_1);
-        if ((((this != nullptr) && (iVar3 = (*this->vtable->vfunc_2C)(), 0x31 < iVar3)) &&
-            (iVar3 < 0x74)) &&
+        if ((((this != nullptr) && (iVar3 = this->vfunc_2C(), 0x31 < iVar3)
+             ) && (iVar3 < 0x74)) &&
            ((*(short *)&param_1->field_0x39 != 3 &&
             ((this->field_0361 == 5 || (iVar2 = thunk_FUN_004c93e0(this,5), 0 < iVar2)))))) {
           local_8 = local_8 + 1;

@@ -30,18 +30,18 @@ void FUN_0075da80(AnonShape_0075DA80_57A0CDEF *param_1)
   pAVar1->field_0014 = uVar2;
   iVar3 = 0;
   local_8 = 0x5b6900;
-  param_1 = (AnonShape_0075DA80_57A0CDEF *)0xff1daf00;
+  auto param_1_after_write = (AnonShape_0075DA80_57A0CDEF *)0xff1daf00; /* compiler stack-slot lifetime split */
   iVar5 = -0xb2f480;
   iVar4 = 0x2c8d00;
   do {
     *(int *)(pAVar1->field_0008 + iVar3) = iVar5 >> 0x10;
     iVar5 = iVar5 + 0x166e9;
-    *(int *)(pAVar1->field_000C + iVar3) = (int)param_1 >> 0x10;
+    *(int *)(pAVar1->field_000C + iVar3) = (int)param_1_after_write >> 0x10;
     *(int *)(pAVar1->field_0010 + iVar3) = local_8;
     local_8 = local_8 + -0xb6d2;
     *(int *)(pAVar1->field_0014 + iVar3) = iVar4;
     iVar4 = iVar4 + -0x581a;
-    param_1 = (AnonShape_0075DA80_57A0CDEF *)&param_1[0x105].field_0xf6;
+    param_1_after_write = (AnonShape_0075DA80_57A0CDEF *)&param_1_after_write[0x105].field_0xf6;
     iVar3 = iVar3 + 4;
   } while (-0x2b34e7 < iVar4);
   return;

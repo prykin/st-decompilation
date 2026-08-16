@@ -22,7 +22,7 @@ STAllPlayersC::_AssignMDPairs
   int iVar5;
   uint *puVar6;
   int local_EAX_903;
-  STGameObjC *objPtr;
+  STGameObjC *this_00;
   int local_EAX_1125;
   short *psVar7;
   int local_EAX_2342;
@@ -283,9 +283,9 @@ LAB_0044326c:
           uVar16 = local_38;
           DArrayGetElement(local_48,(uint)local_44,&local_8);
           if ((ushort)local_8 != 0xffff) {
-            objPtr = GetObjPtr(local_8c,param_1,(ushort)local_8,CASE_1);
-            local_40 = (STFishC *)objPtr;
-            if (objPtr == nullptr) {
+            this_00 = GetObjPtr(local_8c,param_1,(ushort)local_8,CASE_1);
+            local_40 = (STFishC *)this_00;
+            if (this_00 == nullptr) {
               local_EAX_1125 =
                    ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2539,0,0,
                                       "%s","STAllPlayersC::_AssignMDPairs ptr==NULL");
@@ -296,10 +296,10 @@ LAB_0044326c:
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_allpl.cpp",0x253a);
             }
-            iVar11 = (*objPtr->vtable->vfunc_2C)();
-            if ((((iVar11 != 8) && (iVar11 = (*objPtr->vtable->vfunc_2C)(), iVar11 != 0x14)) &&
-                (iVar11 = (*objPtr->vtable->vfunc_2C)(), iVar11 != 0x1a)) ||
-               (iVar11 = thunk_FUN_0045ff10(objPtr), iVar11 != 0xc)) goto cf_common_join_004435CD;
+            iVar11 = this_00->vfunc_2C();
+            if ((((iVar11 != 8) && (iVar11 = this_00->vfunc_2C(), iVar11 != 0x14))
+                && (iVar11 = this_00->vfunc_2C(), iVar11 != 0x1a)) ||
+               (iVar11 = thunk_FUN_0045ff10(this_00), iVar11 != 0xc)) goto cf_common_join_004435CD;
             uVar15 = 0;
             if (0 < (int)uVar16) {
               do {
@@ -309,7 +309,7 @@ LAB_0044326c:
               } while ((int)uVar15 < (int)uVar16);
             }
             if ((int)uVar15 < (int)uVar16) goto cf_common_join_004435CD;
-            psVar7 = (short *)thunk_FUN_0048dc90(objPtr,local_19c);
+            psVar7 = (short *)thunk_FUN_0048dc90(this_00,local_19c);
             psVar19 = local_158;
             for (iVar11 = 0x10; iVar11 != 0; iVar11 = iVar11 + -1) {
               *(undefined4 *)psVar19 = *(undefined4 *)psVar7;

@@ -31,24 +31,24 @@ undefined4 __thiscall FUN_005f89f0(void *this,int param_1)
   if (g_worldGrid.sizeY <= iVar5) {
     iVar5 = g_worldGrid.sizeY + -1;
   }
-  param_1 = STField<int>(this,0x285);
+  auto param_1_after_write = STField<int>(this,0x285); /* compiler stack-slot lifetime split */
   while( true ) {
     sVar6 = (short)iVar4;
     sVar7 = (short)iVar5;
-    sVar8 = (short)param_1;
+    sVar8 = (short)param_1_after_write;
     iVar3 = thunk_FUN_004961b0(sVar6,sVar7,sVar8);
     if ((iVar3 != 0) &&
        (((((sVar6 < 0 || (g_worldGrid.sizeX <= sVar6)) || (sVar7 < 0)) ||
          ((g_worldGrid.sizeY <= sVar7 || (sVar8 < 0)))) ||
         ((g_worldGrid.sizeZ <= sVar8 ||
          (STGridAt3D(g_worldGrid, sVar6, sVar7, sVar8).objects[0] == nullptr)))))) break;
-    param_1 = param_1 + 1;
-    if ((4 < param_1) || (STField<int>(this,0x285) + 2 < param_1)) break;
+    param_1_after_write = param_1_after_write + 1;
+    if ((4 < param_1_after_write) || (STField<int>(this,0x285) + 2 < param_1_after_write)) break;
   }
-  if ((-1 < param_1) && (param_1 < 5)) {
+  if ((-1 < param_1_after_write) && (param_1_after_write < 5)) {
     STField<int>(this,0x295) = iVar5;
     STField<int>(this,0x291) = iVar4;
-    STField<int>(this,0x299) = param_1;
+    STField<int>(this,0x299) = param_1_after_write;
     return 1;
   }
   return 0;

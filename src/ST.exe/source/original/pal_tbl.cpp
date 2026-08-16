@@ -35,8 +35,8 @@ int __cdecl st::fn_0055D730(int param_1,byte param_2)
     PTR_008032d4 = st::fn_00717FC0(param_1,PTR_s_PLT_DKD_0079af94,param_2,1);
     PTR_008073cc = PTR_008032c0;
     g_currentExceptionFrame = local_48.previous;
-    DAT_00807560 = st::machine_word_boundary_cast<undefined4>(PTR_008032c4);
-    DAT_008073c8 = st::machine_word_boundary_cast<undefined4>(PTR_008032bc);
+    PTR_00807560 = PTR_008032c4;
+    PTR_008073c8 = PTR_008032bc;
     return 0;
   }
   g_currentExceptionFrame = local_48.previous;

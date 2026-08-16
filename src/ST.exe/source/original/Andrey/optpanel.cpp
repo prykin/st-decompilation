@@ -4759,11 +4759,11 @@ LAB_005350bc:
       DAT_0080733b = 4 - *(char *)(message->arg0).ptr;
       if (DAT_0080877e == '\0') {
         iVar18 = (uint)DAT_0080733b * 0x18;
-        DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar18 + 0x14);
+        DAT_00807654 = *(undefined4 *)(st_string_007C2AE0 + iVar18 + 0x14);
       }
       else {
         iVar18 = (uint)DAT_0080733b * 0x18;
-        DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar18 + 8);
+        DAT_00807654 = *(undefined4 *)(st_string_007C2AE0 + iVar18 + 8);
       }
       local_44 = (uint)DAT_0080733b;
       if (DAT_00808783 == '\x03') {
@@ -4775,8 +4775,8 @@ LAB_005350bc:
       if (g_sT3DSMAPContext_00807598 != nullptr) {
         st::fn_006E8640
                   (g_sT3DSMAPContext_00807598,
-                   *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar18 + 0x10),
-                   *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar18 + 4));
+                   *(char **)(st_string_007C2AE0 + iVar18 + 0x10),
+                   *(char **)(st_string_007C2AE0 + iVar18 + 4));
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }

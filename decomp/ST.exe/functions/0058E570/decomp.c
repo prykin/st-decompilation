@@ -56,8 +56,8 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
   undefined2 extraout_var_00;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
-  AnonShape_0041AF40_F59F8577 *pAVar12;
-  AnonShape_0041AF40_F59F8577 local_30;
+  undefined4 **ppuVar12;
+  undefined4 *local_30 [8];
   uint local_10;
   undefined4 local_c;
   STGameObjC *local_8;
@@ -211,18 +211,18 @@ LAB_0058ea68:
       iVar6 = 0;
 LAB_0058e87e:
       DAT_00811728 = 1000;
-      pAVar12 = &local_30;
+      ppuVar12 = local_30;
       for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *(undefined4 *)pAVar12 = 0;
-        pAVar12 = (AnonShape_0041AF40_F59F8577 *)&pAVar12->field_0x4;
+        *ppuVar12 = nullptr;
+        ppuVar12 = ppuVar12 + 1;
       }
       _DAT_00811730 = 0xff;
       _DAT_00811734 = 0xffff;
-      STPiece<8,4>(local_30) = local_8->field_0008;
-      STPiece<12,4>(local_30) = 2;
-      local_30.field_0010 = 0x110;
-      local_30.field_0014 = &DAT_00811728;
-      local_8->GetMessage(&local_30);
+      local_30[2] = (undefined4 *)local_8->field_0008;
+      local_30[3] = (undefined4 *)0x2;
+      local_30[4] = (undefined4 *)0x110;
+      local_30[5] = &DAT_00811728;
+      (*local_8->vtable->GetMessage)((STFishC *)local_8,(int)local_30);
       this->field_023D = 0;
       iVar6 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)this_00,8,PTR_00806764,"expshark",CASE_1D);

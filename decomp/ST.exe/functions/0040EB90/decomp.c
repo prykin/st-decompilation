@@ -3,6 +3,7 @@
 
 /* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* WARNING: Unable to track spacebase fully for stack */
+/* WARNING: Unable to use type for symbol piVar10 */
 
 undefined4 FUN_0040eb90(void)
 
@@ -39,7 +40,7 @@ undefined4 FUN_0040eb90(void)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  int *piVar10;
+  undefined4 *piVar10;
 
   iVar3 = DAT_007f4d20;
   puStack_c = &DAT_00790040;
@@ -47,17 +48,17 @@ undefined4 FUN_0040eb90(void)
   local_14 = ExceptionList;
   iVar13 = 0;
   uStack_90 = 0x40ebd1;
-  DAT_007f4d00 = (int *)(&stack0xffffff74 + DAT_007f4d20 * -0xc);
+  PTR_007f4d00 = (undefined4 *)(&stack0xffffff74 + DAT_007f4d20 * -0xc);
   local_8 = 0xffffffff;
   iVar11 = 0;
   ExceptionList = &local_14;
   if (0 < DAT_007f4d20) {
     iVar9 = 0;
     iVar5 = 0;
-    DAT_007f4d00 = (int *)(&stack0xffffff74 + DAT_007f4d20 * -0xc);
+    PTR_007f4d00 = (undefined4 *)(&stack0xffffff74 + DAT_007f4d20 * -0xc);
     ExceptionList = &local_14;
     do {
-      *(int *)(iVar9 + 8 + (int)DAT_007f4d00) = DAT_007f4d48 + iVar5;
+      *(int *)(iVar9 + 8 + (int)PTR_007f4d00) = DAT_007f4d48 + iVar5;
       iVar11 = iVar11 + 1;
       iVar5 = iVar5 + 0x1c;
       iVar9 = iVar9 + 0xc;
@@ -96,7 +97,7 @@ undefined4 FUN_0040eb90(void)
   local_54 = 0;
   if (0 < DAT_007f4d20) {
     piVar6 = (int *)(DAT_007f4d48 + 4);
-    piVar10 = DAT_007f4d00;
+    piVar10 = PTR_007f4d00;
     do {
       aiStack_a8[iVar3 * -3 + 6] = piVar6[1] * 4 + 2;
       aiStack_a8[iVar3 * -3 + 5] = *piVar6 * 4 + 2;
@@ -185,7 +186,7 @@ undefined4 FUN_0040eb90(void)
         iVar13 = 30000;
         local_54 = 0;
         if (0 < DAT_007f4d20) {
-          piVar14 = DAT_007f4d00 + 2;
+          piVar14 = PTR_007f4d00 + 2;
           do {
             if (-1 < piVar14[-2]) {
               puVar1 = (undefined4 *)*piVar14;
@@ -213,11 +214,11 @@ undefined4 FUN_0040eb90(void)
             piVar14 = piVar14 + 3;
           } while (local_54 < DAT_007f4d20);
         }
-        *(int *)(DAT_007f4d00[local_48 * 3 + 2] + 0xc) =
+        *(int *)(PTR_007f4d00[local_48 * 3 + 2] + 0xc) =
              ((RuntimeRecord_007F4D3C_0014 *)(piVar6 + -1))->field_0000;
-        *(int *)(DAT_007f4d00[local_48 * 3 + 2] + 0x10) = *piVar6;
-        *(int *)(DAT_007f4d00[local_48 * 3 + 2] + 0x14) = piVar6[1];
-        DAT_007f4d00[local_48 * 3] = -1;
+        *(int *)(PTR_007f4d00[local_48 * 3 + 2] + 0x10) = *piVar6;
+        *(int *)(PTR_007f4d00[local_48 * 3 + 2] + 0x14) = piVar6[1];
+        PTR_007f4d00[local_48 * 3] = 0xffffffff;
         local_28 = local_28 + 1;
         piVar6 = piVar6 + 5;
       } while (local_28 < DAT_007f4d20);
@@ -227,14 +228,14 @@ undefined4 FUN_0040eb90(void)
     aiStack_a8[iVar3 * -3 + 6] = (int)FUN_0040f1d0;
     aiStack_a8[iVar3 * -3 + 5] = 0xc;
     aiStack_a8[iVar3 * -3 + 4] = DAT_007f4d20;
-    aiStack_a8[iVar3 * -3 + 3] = (int)DAT_007f4d00;
+    aiStack_a8[iVar3 * -3 + 3] = (int)PTR_007f4d00;
     aiStack_a8[iVar3 * -3 + 2] = 0x40ee65;
     FUN_006accd0((RuntimeRecord_007F4D3C_0014 *)aiStack_a8[iVar3 * -3 + 3],
                  (undefined4 *)aiStack_a8[iVar3 * -3 + 4],aiStack_a8[iVar3 * -3 + 5],
                  (callback_006ACCD0_p3 *)aiStack_a8[iVar3 * -3 + 6]);
     local_54 = 0;
     if (0 < DAT_007f4d20) {
-      piVar6 = DAT_007f4d00 + 2;
+      piVar6 = PTR_007f4d00 + 2;
       do {
         iVar13 = 30000;
         local_28 = 0;

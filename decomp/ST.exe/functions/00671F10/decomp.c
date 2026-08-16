@@ -11,15 +11,15 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
 
 {
   short sVar1;
-  undefined1 *puVar2;
+  undefined1 *arg_1;
   int iVar3;
-  int iVar4;
-  char *pcVar5;
-  float fVar6;
-  int iVar7;
-  short *psVar8;
-  float10 fVar9;
-  int *piVar10;
+  int iVar2;
+  char *pcVar3;
+  float fVar4;
+  int iVar5;
+  short *psVar6;
+  float10 fVar7;
+  int *piVar8;
   InternalExceptionFrame local_70;
   undefined1 local_2c;
   float local_2b;
@@ -61,10 +61,10 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
   *(undefined4 *)&local_24->field_0x84 = 0xffffffff;
   local_c = (AnonShape_00683780_11EA4E23 *)thunk_FUN_0064a630(10);
   local_20 = 0.0;
-  psVar8 = (short *)(param_1 + 1);
+  psVar6 = (short *)(param_1 + 1);
   do {
     while( true ) {
-      if ((*(char *)((int)psVar8 + -1) == '\a') && (*psVar8 == 0x1d)) {
+      if ((*(char *)((int)psVar6 + -1) == '\a') && (*psVar6 == 0x1d)) {
         if (local_c->field_0004 != 1) {
           RaiseInternalException
                     (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x570
@@ -73,21 +73,21 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
         if (param_3 != nullptr) {
           *param_3 = (int)local_20 + 1;
         }
-        puVar2 = (undefined1 *)local_c->field_0008;
-        switch(*puVar2) {
+        arg_1 = (undefined1 *)local_c->field_0008;
+        switch(*arg_1) {
         case 1:
         case 4:
-          fVar6 = (float)(*local_24->vtable->slot_00)(puVar2);
+          fVar4 = (float)local_24->slot_00(arg_1);
           local_18 = Library::DKW::LIB::MemAllocClear(4);
-          *local_18 = fVar6;
+          *local_18 = fVar4;
           if (param_2 != nullptr) {
             *param_2 = 1;
           }
           break;
         case 2:
         case 5:
-          fVar9 = (float10)(*local_24->vtable->slot_04)(puVar2);
-          local_20 = (float)fVar9;
+          fVar7 = (float10)(*local_24->vtable->slot_04)(arg_1);
+          local_20 = (float)fVar7;
           local_18 = Library::DKW::LIB::MemAllocClear(4);
           *local_18 = local_20;
           if (param_2 != nullptr) {
@@ -96,14 +96,14 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
           break;
         case 3:
         case 6:
-          fVar6 = (float)(*local_24->vtable->slot_08)(puVar2);
-          if (fVar6 == 0.0) {
+          fVar4 = (float)local_24->slot_08(arg_1);
+          if (fVar4 == 0.0) {
             RaiseInternalException
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",
                        0x585);
           }
           local_18 = Library::DKW::LIB::MemAllocClear(4);
-          *local_18 = fVar6;
+          *local_18 = fVar4;
           if (param_2 != nullptr) {
             *param_2 = 3;
           }
@@ -117,31 +117,31 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
         g_currentExceptionFrame = local_70.previous;
         return local_18;
       }
-      thunk_FUN_0064a830((int *)local_c,(undefined4 *)((int)psVar8 + -1));
-      if (*(char *)((int)psVar8 + -1) == '\a') break;
+      thunk_FUN_0064a830((int *)local_c,(undefined4 *)((int)psVar6 + -1));
+      if (*(char *)((int)psVar6 + -1) == '\a') break;
 cf_continue_loop_006721A4:
       local_20 = (float)((int)local_20 + 1);
-      psVar8 = (short *)((int)psVar8 + 5);
+      psVar6 = (short *)((int)psVar6 + 5);
     }
-    iVar7 = (local_c->field_0004 - (int)psVar8[1]) + -1;
-    if (iVar7 < 0) {
+    iVar5 = (local_c->field_0004 - (int)psVar6[1]) + -1;
+    if (iVar5 < 0) {
       RaiseInternalException
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x53e);
     }
     if ((local_10 == 0) && (local_14 == 0)) {
-      iVar4 = thunk_FUN_006686f0((int)*psVar8);
-      if ((iVar4 < 0) || (iVar4 = thunk_FUN_00668a70((int)*psVar8), iVar4 != 0)) {
-        iVar4 = (int)psVar8[1];
-        piVar10 = &local_1c;
-        pcVar5 = thunk_FUN_0064a910(local_c,iVar7);
-        local_8 = thunk_FUN_0064a970(pcVar5,iVar4,piVar10);
+      iVar2 = thunk_FUN_006686f0((int)*psVar6);
+      if ((iVar2 < 0) || (iVar2 = thunk_FUN_00668a70((int)*psVar6), iVar2 != 0)) {
+        iVar2 = (int)psVar6[1];
+        piVar8 = &local_1c;
+        pcVar3 = thunk_FUN_0064a910(local_c,iVar5);
+        local_8 = thunk_FUN_0064a970(pcVar3,iVar2,piVar8);
       }
       else {
-        iVar4 = (int)psVar8[1];
-        piVar10 = &local_1c;
-        pcVar5 = thunk_FUN_0064a910(local_c,iVar7);
+        iVar2 = (int)psVar6[1];
+        piVar8 = &local_1c;
+        pcVar3 = thunk_FUN_0064a910(local_c,iVar5);
         local_8 = (float *)SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
-                           thunk_FUN_0066acc0(local_24,pcVar5,iVar4,piVar10);
+                           thunk_FUN_0066acc0(local_24,pcVar3,iVar2,piVar8);
       }
     }
     else {
@@ -154,8 +154,8 @@ cf_continue_loop_006721A4:
                 (local_1c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x56c);
       goto cf_continue_loop_006721A4;
     }
-    iVar7 = thunk_FUN_0064a940(local_c,iVar7);
-    if (iVar7 == 0) {
+    iVar5 = thunk_FUN_0064a940(local_c,iVar5);
+    if (iVar5 == 0) {
       RaiseInternalException
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x54c);
     }
@@ -168,13 +168,13 @@ cf_continue_loop_006721A4:
       local_2b = *local_8;
     }
     else if (local_1c == 3) {
-      iVar7 = (*local_24->vtable->slot_0C)(local_8);
-      if (iVar7 < 0) {
+      iVar5 = local_24->slot_0C(local_8);
+      if (iVar5 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x559);
       }
       local_2c = 3;
-      local_2b = (float)STReplaceLowWord((uint32_t)(local_2b), (uint16_t)((short)iVar7));
+      local_2b = (float)STReplaceLowWord((uint32_t)(local_2b), (uint16_t)((short)iVar5));
     }
     else {
       RaiseInternalException
@@ -182,7 +182,7 @@ cf_continue_loop_006721A4:
     }
     thunk_FUN_0064a830((int *)local_c,(undefined4 *)&local_2c);
     FreeAndNull(&local_8);
-    sVar1 = *psVar8;
+    sVar1 = *psVar6;
     if (((sVar1 == 800) && (local_2b == 0.0)) && (local_14 == 0)) {
       local_10 = local_10 + 1;
     }
@@ -195,7 +195,7 @@ cf_continue_loop_006721A4:
     if ((sVar1 != 0x34) || (local_14 < 1)) goto cf_continue_loop_006721A4;
     local_14 = local_14 + -1;
     local_20 = (float)((int)local_20 + 1);
-    psVar8 = (short *)((int)psVar8 + 5);
+    psVar6 = (short *)((int)psVar6 + 5);
   } while( true );
 }
 

@@ -39,6 +39,7 @@ int FUN_006c6e30(AnonShape_006C6E30_3C2F0429 *param_1)
       pAVar4 = (AnonShape_006C6E30_3C2F0429 *)(*(code *)param_1->field_0042)(param_1,piVar3,pAVar1);
       if (pAVar4 != pAVar1) {
         FreeAndNull(slotStorage);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = pAVar4;
         if (-1 < (int)pAVar4) {
           param_1 = (AnonShape_006C6E30_3C2F0429 *)0xfffffffb;

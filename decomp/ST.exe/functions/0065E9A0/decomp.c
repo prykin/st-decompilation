@@ -38,6 +38,7 @@ FUN_0065e9a0(void *this,short *param_1,short *param_2,uint param_3,uint param_4,
   if (uVar2 != 0) {
     local_8 = Library::DKW::LIB::MemAllocClear((uint)uVar2 * 0x2c);
     DAT_00811900 = 0;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((char)param_6 == '\b') {
       param_6 = STReplaceLowByte((uint32_t)(param_6), (uint8_t)((char)psVar4));
     }
